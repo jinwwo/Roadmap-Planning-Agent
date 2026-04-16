@@ -4,7 +4,8 @@
 # run.sh(--tmux) 로 띄운 서버 + 터널 + Ollama 데몬을 모두 정리합니다.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_DIR"
 
 say() { printf "\033[1;36m[stop]\033[0m %s\n" "$*"; }
 

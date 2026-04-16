@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # stop_tunnel.sh — cloudflared 터널 종료
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_DIR"
 
 if [[ -f .run/tunnel.pid ]]; then
   PID="$(cat .run/tunnel.pid)"
