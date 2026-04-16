@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Roadmap Agent · Interactive Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <span class="title">Technology Roadmap Agent</span>
+      <span class="subtitle">Interactive Demo</span>
+    </div>
+    <div class="llm-badge" id="llm-badge">LLM: …</div>
+  </header>
+
+  <main class="app">
+    <!-- LEFT: chat + progress -->
+    <section class="chat-col">
+      <div class="messages" id="messages">
+        <div class="msg system">
+          <div class="bubble">
+            <b>안녕하세요!</b> 어떤 도메인의 기술 로드맵을 그려드릴까요?<br/>
+            예) <i>"2030년까지의 2nm 파운드리 로드맵을 그려줘"</i>
+          </div>
+        </div>
+      </div>
+      <div class="composer">
+        <textarea id="input" rows="2" placeholder="분석하고 싶은 기술 도메인을 자연어로 입력…"></textarea>
+        <button id="send-btn">▶ 전송</button>
+      </div>
+    </section>
+
+    <!-- RIGHT: panel for HITL + roadmap -->
+    <aside class="panel-col">
+      <div class="panel" id="panel">
+        <div class="panel-empty">
+          <div class="panel-empty-icon">◎</div>
+          <div>분석 결과와 상호작용 카드가 여기 표시됩니다.</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
