@@ -4,7 +4,7 @@ LLM 기반 4-에이전트 파이프라인으로 **기업의 기술 로드맵을 
 사용자가 자연어로 도메인을 입력하면 → 후보 기술 발굴 → 의존성/타임라인 역산 →
 투자 전략 수립 → TRM 평가 기반 보고서 생성까지 완주.
 
-> **이 문서는 팀 엔트리 포인트야.** 처음 프로젝트 받았다면 이것부터 읽으면 돼.
+> **이 문서는 팀 엔트리 포인트.** 
 > 세부 가이드:
 > - 설치 환경 → [ENVIRONMENT.md](ENVIRONMENT.md)
 > - CLI / Ablation 실험 → [DEMO.md](DEMO.md)
@@ -40,12 +40,11 @@ Tech-Analysis-Agent/                     ← GitHub 레포 루트 (이 폴더)
 
 | 폴더 | 담당 | 핵심 책임 |
 |------|------|-----------|
-| `tech_analysis_agent/` | (친구) | 외부 데이터 (USPTO 특허 + Tavily 시장) → 후보 기술 발굴 |
-| `roadmap_planner_agent/` | 성훈 | 의존성 트리 + TRL 역산 → 분기별 타임라인 |
-| `investment_strategist_agent/` | 시언 | 단계(stage) 단위 5-지표 평가 + Tier 도출 |
-| `orchestration_agent/` | 준기 | 위 셋 호출 + TRM 평가 + 최종 보고서 |
+| `tech_analysis_agent/`  | 외부 데이터 (USPTO 특허 + Tavily 시장) → 후보 기술 발굴 |
+| `roadmap_planner_agent/`  | 의존성 트리 + TRL 역산 → 분기별 타임라인 |
+| `investment_strategist_agent/` |  단계(stage) 단위 5-지표 평가 + Tier 도출 |
+| `orchestration_agent/` |  위 셋 호출 + TRM 평가 + 최종 보고서 |
 
-각자 자기 폴더만 건드리면 되게 구조 잡혀있음 — GitHub merge 충돌 최소화.
 
 ---
 
@@ -63,9 +62,9 @@ Tech-Analysis-Agent/                     ← GitHub 레포 루트 (이 폴더)
 
 **오프라인 데모 모드**: `USE_MOCK_PATENT=1`, `USE_MOCK_MARKET=1` 설정 시
 [tools/mock_data.py](tech_analysis_agent/tools/mock_data.py) 의 합성 데이터로 동작.
-Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, HBM 본딩 등) 30종 템플릿 기반 — 합성이지만 현실적.
+Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, HBM 본딩 등) 30종 템플릿 기반 
 
-**웹 UI**: 이 에이전트만 **자체 FastAPI 웹 UI** 도 가짐 (친구가 만든 거).
+**웹 UI**: 이 에이전트만 **자체 FastAPI 웹 UI** 도 가짐
 `cd tech_analysis_agent && bash scripts/run.sh` 로 단독 실행 가능.
 
 ---
@@ -91,7 +90,7 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 **입력**: `planned_roadmap.json` + `tech_candidates.json` + `investment_policy` (선택)
 **출력**: `investment_strategy.json` — stage 당 하나의 전략 객체
 
-**핵심 원칙** (시언 spec): **"판단 단위는 개별 기술이 아니라 로드맵 단계(stage)"**.
+**핵심 원칙** : **"판단 단위는 개별 기술이 아니라 로드맵 단계(stage)"**.
 
 **내부 2 단계**:
 1. `stage_aggregator` — **pure Python**. 기술 단위 로드맵을 stage 로 집계
