@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Orchestration Agent · Interactive Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <span class="title">Technology Roadmap · Orchestration Agent</span>
+      <span class="subtitle">4-agent Interactive Demo</span>
+    </div>
+    <div class="llm-badge" id="llm-badge">LLM: …</div>
+  </header>
+
+  <main class="app">
+    <!-- LEFT: chat + progress -->
+    <section class="chat-col">
+      <div class="messages" id="messages">
+        <div class="msg system">
+          <div class="bubble">
+            <b>안녕하세요!</b> 어떤 도메인의 기술 로드맵을 그려드릴까요?<br/>
+            예) <i>"2030년까지의 2nm 파운드리 로드맵을 그려줘"</i><br/>
+            <span class="dim">아래에서 활성화할 Agent 를 선택한 뒤 전송하세요. Agent 유무에 따라 보고서 품질 차이를 비교할 수 있습니다.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent toggle + composer -->
+      <div class="composer">
+        <div class="agent-toggle-row">
+          <label class="agent-toggle"><input type="checkbox" id="agent1" checked />
+            <span class="agent-chip">Agent 1 · Tech Analyst</span>
+          </label>
+          <label class="agent-toggle"><input type="checkbox" id="agent2" checked />
+            <span class="agent-chip">Agent 2 · Roadmap Planner</span>
+          </label>
+          <label class="agent-toggle"><input type="checkbox" id="agent3" checked />
+            <span class="agent-chip">Agent 3 · Investment Strategist</span>
+          </label>
+          <span class="toggle-hint">OFF = 폴백 산출물로 대체 · Orchestrator 는 항상 ON</span>
+        </div>
+        <div class="composer-row">
+          <textarea id="input" rows="2" placeholder="분석하고 싶은 기술 도메인을 자연어로 입력…"></textarea>
+          <button id="send-btn">▶ 전송</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: 4-panel results -->
+    <aside class="panel-col">
+      <div class="panel" id="panel">
+        <div class="panel-empty">
+          <div class="panel-empty-icon">◎</div>
+          <div>파이프라인 진행에 따라<br/>Setup · 후보 · 로드맵 · 전략 · TRM 보고서가 순차로 표시됩니다.</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
