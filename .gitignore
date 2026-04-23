@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment files (각 에이전트 폴더의 .env 는 symlink 이지만 위 규칙에 포함)
+.env
+*/.env
+
+# Outputs (orchestration_agent 산출물)
+orchestration_agent/outputs/*.json
+# (keep .gitkeep)
+!orchestration_agent/outputs/.gitkeep
+
+# Per-agent standalone 실행 산출물
+*/output_*.json
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Run logs
+.run/
