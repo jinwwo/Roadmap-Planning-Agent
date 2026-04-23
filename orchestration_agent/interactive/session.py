@@ -19,6 +19,7 @@ REVISE 를 자체 판단), 대신 **active_agents 토글** 이 세션 시작 시
 from __future__ import annotations
 
 import json
+import os
 import re
 import threading
 import traceback
@@ -28,6 +29,7 @@ from typing import Any, List, Optional
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
+from config import OUTPUTS_DIR, FILE_ORCHESTRATOR_REPORT
 from interactive.event_bus import EventBus, capture_stdout_to
 from llm_factory import get_llm, describe_llm
 from pipeline import run_orchestration, stream_subprocess_stdout, events_to
@@ -232,6 +234,21 @@ class Session:
                             out_prefix=out_prefix,
                             stage_mode=self.stage_mode,
                         )
+
+            # Orchestrator 최종 보고서 저장 (outputs/web_<sid>_orchestrator_report.json)
+            report_path = os.path.join(OUTPUTS_DIR, f"{out_prefix}{FILE_ORCHESTRATOR_REPORT}")
+            try:
+                with open(report_path, "w", encoding="utf-8") as f:
+                    json.dump({
+                        "problem_frame": result.get("problem_frame"),
+                        "active_agents": result.get("active_agents"),
+                        "iteration": result.get("iteration"),
+                        "review": result.get("review"),
+                        "artifact_paths": result.get("paths"),
+                    }, f, ensure_ascii=False, indent=2)
+                bus.log(f"[Session] 보고서 저장: {report_path}", source="session")
+            except Exception as e:
+                bus.log(f"[Session] ⚠️ 보고서 저장 실패: {e}", source="session")
 
             bus.emit("final", result=_slim_result(result))
             bus.emit("done", ok=True)
