@@ -229,11 +229,23 @@ If REVISE:
 - Provide actionable feedback
 
 Each item in `issues` MUST be an object with two keys:
-- `axis` : one of
+- `axis` : EXACTLY one of these five strings (case-sensitive, no variations):
     "feasibility" | "sequencing" | "strategic_alignment"
     | "investment_rationality" | "portfolio_balance"
-- `text` : concise one-line description of the issue
-Do NOT output plain string issues.
+- `text` : concise one-line description of the issue (MUST be non-empty)
+
+STRICT axis rules — issues violating these will be silently dropped:
+- DO NOT invent new axis names. "investment_attractiveness", "investment_urgency",
+  "investment_tier", "investment_scope" are STAGE FIELDS, NOT axes. Investment
+  concerns go under `investment_rationality`.
+- DO NOT use "alignment", "technology_strategy", "trend_alignment" — these map to
+  `strategic_alignment`.
+- DO NOT use "dependency", "dependencies", "roadmap", "timeline" — use `sequencing`.
+- DO NOT use "portfolio", "balance", "risk_balance" — use `portfolio_balance`.
+- DO NOT use "budget", "schedule" — these are sub-fields of `feasibility`.
+- DO NOT output issues with empty `text`. If you have nothing concrete to say about
+  an axis, set `trm_assessment.<axis>.comment` instead and omit from issues.
+- DO NOT output plain string issues.
 
 --------------------------------------------------
 [REPORT GENERATION]
@@ -267,6 +279,16 @@ If decision == "REVISE":
 
 --------------------------------------------------
 [OUTPUT FORMAT — STRICT JSON ONLY]
+
+CRITICAL FIELD-LEVEL RULES:
+- `decision` MUST be a plain string: exactly "ACCEPT" or "REVISE".
+  DO NOT wrap it in an object like {"acceptance": true, ...} or
+  {"investment_plan": ..., "roadmap_draft": ..., "issues": ...}.
+  DO NOT nest the entire response inside the `decision` field.
+- `issues`, `refinement`, `report` MUST appear at the TOP LEVEL of your JSON,
+  NOT nested inside `decision` or any other field.
+- DO NOT echo back the input data (investment_plan, roadmap_draft, tech_candidates)
+  in your output. The orchestrator already has them. Your job is to EVALUATE.
 
 {
   "decision": "ACCEPT or REVISE",
@@ -304,9 +326,14 @@ If decision == "REVISE":
   ],
 
   "refinement": {
-    "rerun_agents": [],
-    "feedback": []
+    "rerun_agents": ["Technology Analyst" | "Roadmap Planner" | "Investment Strategist"],
+    "feedback": ["actionable instruction string", ...]
   },
+
+  // rerun_agents MUST be a flat array of STRINGS — exactly one of the three
+  //   canonical names above. DO NOT output objects like
+  //   {"agent_id": "Agent 1", "task": "..."}. Put the task description in
+  //   `feedback` as a string instead.
 
   "report": {
     "executive_summary": "",
@@ -730,6 +757,82 @@ def run_orchestrator_review(
             "diagnostic_summary": "",
         }
 
+    # ── decision 필드 타입 정규화 ───────────────────────────────
+    # LLM 이 "ACCEPT" 대신 {"value": "ACCEPT"} / {"decision": "ACCEPT"} /
+    # {"action": "ACCEPT"} / {"verdict": "ACCEPT"} 같은 dict 로 반환하거나
+    # ["ACCEPT"] 처럼 리스트로 반환하는 경우가 있어 string 으로 강제 변환.
+    raw_decision = result.get("decision")
+
+    def _coerce_decision(d):
+        if isinstance(d, str):
+            return d.strip().upper()
+        if isinstance(d, dict):
+            # 1) 문자열 키: "value"/"decision"/"action"/"verdict"/"result"/"label"/"status"
+            for k in ("value", "decision", "action", "verdict", "result", "label", "status"):
+                v = d.get(k)
+                if isinstance(v, str) and v.strip():
+                    s = v.strip().upper()
+                    # "APPROVED"/"PASS"/"OK" 등을 ACCEPT 로 매핑
+                    if s in ("APPROVED", "PASS", "PASSED", "OK", "APPROVE"):
+                        return "ACCEPT"
+                    if s in ("REJECTED", "FAIL", "FAILED", "REJECT"):
+                        return "REVISE"
+                    return s
+            # 2) boolean 키: "acceptance"/"approved"/"accepted"/"pass"
+            for k in ("acceptance", "approved", "accepted", "pass"):
+                v = d.get(k)
+                if isinstance(v, bool):
+                    return "ACCEPT" if v else "REVISE"
+            # 3) boolean "rejected"/"revise"
+            for k in ("rejected", "revise", "needs_revision"):
+                v = d.get(k)
+                if isinstance(v, bool):
+                    return "REVISE" if v else "ACCEPT"
+            return ""
+        if isinstance(d, bool):
+            return "ACCEPT" if d else "REVISE"
+        if isinstance(d, list) and d:
+            first = d[0]
+            if isinstance(first, str):
+                return first.strip().upper()
+        return ""
+
+    coerced = _coerce_decision(raw_decision)
+
+    # LLM 이 decision 필드 안에 response 전체를 통째로 쑤셔넣은 경우
+    # (예: {"investment_plan": ..., "issues": ...})
+    # → decision 안의 익숙한 키를 top-level 로 복구
+    if coerced not in ("ACCEPT", "REVISE") and isinstance(raw_decision, dict):
+        promoted = []
+        for nested_key in ("issues", "refinement", "report", "trm_assessment",
+                           "diagnostic_summary"):
+            if nested_key in raw_decision and not result.get(nested_key):
+                result[nested_key] = raw_decision[nested_key]
+                promoted.append(nested_key)
+        if promoted:
+            print(
+                f"[Orchestrator · Review] ⚠️  decision dict 안에서 "
+                f"{promoted} 를 top-level 로 복구"
+            )
+
+    if coerced not in ("ACCEPT", "REVISE"):
+        # 알 수 없으면 안전하게 ACCEPT (무한 루프 방지)
+        if raw_decision is not None:
+            # 전체 dict 를 로그에 찍으면 너무 길어서 type + 키 목록만 노출
+            if isinstance(raw_decision, dict):
+                summary = f"dict keys={list(raw_decision.keys())}"
+            elif isinstance(raw_decision, (list, tuple)):
+                summary = f"{type(raw_decision).__name__} len={len(raw_decision)}"
+            else:
+                summary = repr(raw_decision)[:120]
+            print(
+                f"[Orchestrator · Review] ⚠️  decision 필드 해석 실패 "
+                f"({type(raw_decision).__name__}: {summary}) → ACCEPT 로 폴백"
+            )
+        coerced = "ACCEPT"
+    if coerced != raw_decision:
+        result["decision"] = coerced
+
     result = _force_accept_on_last_iteration(result, iteration)
 
     # ── 비활성 agent 필터링 가드 ─────────────────────────────
@@ -742,10 +845,17 @@ def run_orchestrator_review(
         "technology analyst": ("Technology Analyst", "1"),
         "roadmap planner":    ("Roadmap Planner",    "2"),
         "investment strategist": ("Investment Strategist", "3"),
+        # 숫자 id 별칭 — "Agent 1", "agent_1", "1" 모두 커버
+        "1":                  ("Technology Analyst", "1"),
+        "2":                  ("Roadmap Planner",    "2"),
+        "3":                  ("Investment Strategist", "3"),
     }
 
-    def _normalize_agent_label(s: str):
-        """임의 라벨 → (canonical_label, key) 또는 None"""
+    def _normalize_agent_label(s):
+        """임의 라벨(string or dict) → (canonical_label, key) 또는 None"""
+        # LLM 이 {"agent_id": "Agent 1", "task": "..."} 형태로 반환하는 경우 대응
+        if isinstance(s, dict):
+            s = s.get("agent_id") or s.get("agent") or s.get("name") or s.get("id")
         if not isinstance(s, str):
             return None
         base = s.strip().lower()
@@ -753,22 +863,42 @@ def run_orchestrator_review(
         for suf in (" agent", " 에이전트"):
             if base.endswith(suf):
                 base = base[: -len(suf)].strip()
-        for pre in ("agent ",):
+        for pre in ("agent ", "agent_", "agent"):
             if base.startswith(pre):
                 base = base[len(pre):].strip()
+                break
         return _CANONICAL_LABELS.get(base)
+
+    def _extract_task_text(r) -> str:
+        """rerun_agents 항목이 dict 면 task/feedback 텍스트 추출 (피드백 보강용)"""
+        if isinstance(r, dict):
+            for k in ("task", "feedback", "instruction", "reason"):
+                v = r.get(k)
+                if isinstance(v, str) and v.strip():
+                    return v.strip()
+        return ""
 
     ref = result.get("refinement") or {}
     raw_rerun = ref.get("rerun_agents", []) or []
 
     filtered_rerun = []
     dropped = []
+    extra_feedback = []   # dict 항목의 task 를 feedback 으로 보존
     for r in raw_rerun:
         hit = _normalize_agent_label(r)
         if hit is not None and hit[1] in active_agents:
             filtered_rerun.append(hit[0])   # 정규화된 canonical 라벨로 저장
+            t = _extract_task_text(r)
+            if t:
+                extra_feedback.append(f"[{hit[0]}] {t}")
         else:
             dropped.append(r)
+
+    # dict 형태로 온 task 들은 refinement.feedback 에 추가 (회수 방지)
+    if extra_feedback:
+        existing_fb = list(ref.get("feedback") or [])
+        ref["feedback"] = existing_fb + extra_feedback
+        result["refinement"] = ref
 
     if dropped:
         print(f"[Orchestrator · Review] ⚠️  rerun 요청 중 비활성/미매칭 제거: {dropped}")
@@ -834,31 +964,169 @@ def run_orchestrator_review(
             trm[axis] = _AXIS_STUBS[axis]
     result["trm_assessment"] = trm
 
-    # (2) issues: `{"axis": "...", "text": "..."}` 중 disabled axis 제거.
-    #     plain string issue 는 axis 미태깅이므로 그대로 유지 (하위 호환).
+    # (2) issues 정규화 + 비활성 축 드롭
+    #     순서: ①axis 정규화 → ②무효 issue 드롭 → ③disabled axis 드롭
+    #     (ablation 순수성 유지: 별칭을 canonical 축으로 매핑한 다음에
+    #      disabled 여부를 판단해야 Agent OFF 일 때 제대로 걸러짐)
+    _CANONICAL_AXES = {
+        "feasibility", "sequencing", "strategic_alignment",
+        "investment_rationality", "portfolio_balance",
+    }
+    # LLM 이 자주 만드는 별칭/오타 → canonical 매핑
+    _AXIS_ALIASES = {
+        # investment_rationality 계열 (stage 필드명을 axis 로 오인하는 경우)
+        "investment_attractiveness":  "investment_rationality",
+        "investment_urgency":         "investment_rationality",
+        "investment_tier":            "investment_rationality",
+        "investment_scope":           "investment_rationality",
+        "investment":                 "investment_rationality",
+        "investment_plan":            "investment_rationality",
+        "budget_allocation":          "investment_rationality",
+        # strategic_alignment 계열
+        "alignment":                  "strategic_alignment",
+        "strategy_alignment":         "strategic_alignment",
+        "technology_strategy":        "strategic_alignment",
+        "trend_alignment":            "strategic_alignment",
+        # sequencing 계열
+        "dependency":                 "sequencing",
+        "dependencies":               "sequencing",
+        "roadmap":                    "sequencing",
+        "timeline":                   "sequencing",
+        # portfolio_balance 계열
+        "portfolio":                  "portfolio_balance",
+        "balance":                    "portfolio_balance",
+        "risk_balance":               "portfolio_balance",
+        # feasibility 계열
+        "budget":                     "feasibility",
+        "schedule":                   "feasibility",
+    }
+
+    def _canonicalize_axis(ax):
+        if not isinstance(ax, str):
+            return None
+        k = ax.strip().lower().replace(" ", "_").replace("-", "_")
+        if k in _CANONICAL_AXES:
+            return k
+        return _AXIS_ALIASES.get(k)   # None → 알 수 없는 축
+
+    # 일반 "category" 이름 → TRM axis 매핑 (LLM 이 자유 카테고리로 내는 경우)
+    _CATEGORY_TO_AXIS = {
+        "roadmap":              "sequencing",
+        "dependency":           "sequencing",
+        "timeline":             "sequencing",
+        "schedule":             "feasibility",
+        "budget":               "feasibility",
+        "cost":                 "feasibility",
+        "strategy":             "strategic_alignment",
+        "alignment":            "strategic_alignment",
+        "technology":           "strategic_alignment",
+        "trend":                "strategic_alignment",
+        "investment":           "investment_rationality",
+        "portfolio":            "portfolio_balance",
+        "risk":                 "portfolio_balance",
+        "balance":              "portfolio_balance",
+    }
+
+    def _extract_issue_axis_and_text(it: dict):
+        """
+        dict issue 에서 (axis, text) 추출. 표준 스키마 외 변종 포맷도 지원.
+          표준 :  {"axis": "...", "text": "..."}
+          변종 :  {"id": "T01", "description": "...", "category": "Roadmap", "severity": "..."}
+                 {"type": "...", "message": "..."} 등
+        """
+        # axis 후보 키
+        for ak in ("axis", "category", "type", "area", "dimension"):
+            raw_ax = it.get(ak)
+            if raw_ax:
+                canon = _canonicalize_axis(raw_ax)
+                if canon is None and isinstance(raw_ax, str):
+                    canon = _CATEGORY_TO_AXIS.get(raw_ax.strip().lower())
+                if canon:
+                    break
+        else:
+            canon = None
+
+        # text 후보 키
+        text = ""
+        for tk in ("text", "description", "message", "detail", "issue", "comment"):
+            v = it.get(tk)
+            if isinstance(v, str) and v.strip():
+                text = v.strip()
+                break
+
+        return canon, text
+
     disabled_axes = {ax for ax, on in _AXIS_ACTIVE.items() if not on}
 
-    def _issue_axis(it):
-        if isinstance(it, dict):
-            ax = it.get("axis")
-            return ax if isinstance(ax, str) else None
-        return None
-
     raw_issues = result.get("issues") or []
-    kept_issues, dropped_issues = [], []
+    kept_issues = []
+    dropped_invalid = []     # axis 알 수 없음 or text 비어있음
+    dropped_disabled = []    # disabled 축으로 매핑되어 드롭
+    normalized_log = []      # 별칭 → canonical 매핑 로그
+
     for it in raw_issues:
-        ax = _issue_axis(it)
-        if ax is not None and ax in disabled_axes:
-            dropped_issues.append(it)
-        else:
+        if isinstance(it, dict):
+            canon, text = _extract_issue_axis_and_text(it)
+
+            # text 가 비어있으면 issue 로서 의미 없음 → 드롭
+            if not text:
+                dropped_invalid.append(it)
+                continue
+
+            # axis 가 canonical 5개 중 하나가 아니고 별칭도 아니면 드롭
+            if canon is None:
+                dropped_invalid.append(it)
+                continue
+
+            # 원본 axis key 와 다르게 정규화된 경우 로그 (추적용)
+            raw_ax_hint = it.get("axis") or it.get("category") or it.get("type")
+            if isinstance(raw_ax_hint, str) and raw_ax_hint.strip().lower().replace(" ", "_").replace("-", "_") != canon:
+                normalized_log.append((raw_ax_hint, canon))
+
+            # 정규화된 dict 재조립 (다른 메타 필드는 유지)
+            it = {**it, "axis": canon, "text": text}
+
+            # disabled axis 로 매핑됐으면 드롭 (ablation 순수성)
+            if canon in disabled_axes:
+                dropped_disabled.append(it)
+                continue
+
             kept_issues.append(it)
-    if dropped_issues:
+        elif isinstance(it, str):
+            # plain string issue — 스키마 위반이지만 복구 시도.
+            # 문자열 전체가 canonical axis 이름/별칭이면 내용 없는 빈 라벨이므로 드롭.
+            s = it.strip()
+            canon = _canonicalize_axis(s)
+            if canon is not None and len(s.split()) <= 2:
+                # "strategic_alignment", "investment attractiveness" 같은 bare axis 라벨
+                dropped_invalid.append(it)
+                continue
+            # 그 외 의미 있는 문장은 하위 호환으로 유지
+            kept_issues.append(s)
+        else:
+            # 기타 타입 (list/None/숫자 등) → 드롭
+            dropped_invalid.append(it)
+
+    if normalized_log:
+        print(f"[Orchestrator · Review] axis 별칭 정규화 {len(normalized_log)}건:")
+        for orig, canon in normalized_log:
+            print(f"    {orig!r} → {canon!r}")
+    if dropped_invalid:
+        print(
+            f"[Orchestrator · Review] 무효 issue {len(dropped_invalid)}건 drop "
+            f"(axis 미매칭 or text 공란):"
+        )
+        for d in dropped_invalid:
+            print(f"    - {d}")
+    if dropped_disabled:
         print(
             f"[Orchestrator · Review] 비활성 축({sorted(disabled_axes)}) "
-            f"관련 issue {len(dropped_issues)}건 drop:"
+            f"관련 issue {len(dropped_disabled)}건 drop:"
         )
-        for d in dropped_issues:
+        for d in dropped_disabled:
             print(f"    - {d}")
+
+    if normalized_log or dropped_invalid or dropped_disabled:
         result["issues"] = kept_issues
 
     # (3) REVISE 인데 남은 issue 가 전부 disabled 축이어서 사라졌고
