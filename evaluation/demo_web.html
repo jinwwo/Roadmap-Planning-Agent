@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRM Evaluation Suite</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#06080f;--s1:#0d1120;--s2:#141a2e;--s3:#1c2440;
+  --brd:#232e4a;--brd2:#2e3d66;
+  --tx:#dce4f4;--dim:#6e7da0;--mut:#404e6e;
+  --ac:#4f8cff;--ac2:#7aadff;--gn:#2dd4a0;--am:#f5a623;--rd:#f05252;--pr:#9f7aea;--cy:#22d3ee;--tl:#14b8a6;
+  --mono:'JetBrains Mono',monospace;--sans:'Outfit',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);min-height:100vh}
+button{font-family:var(--sans);cursor:pointer}
+.app{max-width:1060px;margin:0 auto;padding:28px 20px 80px}
+.hdr{margin-bottom:28px}
+.hdr-tag{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.hdr-dot{width:7px;height:7px;border-radius:7px;background:var(--gn);box-shadow:0 0 10px #2dd4a060}
+.hdr-label{font-size:11px;font-weight:600;color:var(--gn);letter-spacing:.08em;text-transform:uppercase}
+.hdr h1{font-size:28px;font-weight:800;letter-spacing:-.03em}
+.hdr p{font-size:13px;color:var(--dim);margin-top:2px}
+.tabs{display:flex;gap:3px;background:var(--s1);border-radius:10px;padding:3px;border:1px solid var(--brd);width:fit-content;margin-bottom:24px}
+.tab{padding:7px 18px;border-radius:8px;border:none;font-size:13px;font-weight:600;background:transparent;color:var(--dim);transition:.2s}
+.tab.on{background:#4f8cff18;color:var(--ac)}
+.card{background:var(--s1);border:1px solid var(--brd);border-radius:14px;padding:20px;margin-bottom:14px}
+.card-alt{background:var(--s2)}
+.hd{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.hd h3{font-size:14px;font-weight:700}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:11px;font-weight:600;letter-spacing:.03em}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{padding:8px;text-align:left;font-weight:600;color:var(--dim);font-size:11px;border-bottom:1px solid var(--brd)}
+td{padding:7px 8px;border-bottom:1px solid #232e4a12}
+.m{font-family:var(--mono)}.b{font-weight:700}
+.rlist{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ritem{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;background:var(--s1);border:1px solid var(--brd);cursor:pointer;transition:.2s}
+.ritem:hover{border-color:var(--ac);background:var(--s2)}
+.ritem.sel{border-color:var(--ac);box-shadow:0 0 0 2px #4f8cff20}
+.ritem-ck{width:18px;height:18px;border-radius:4px;border:2px solid var(--brd2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;color:var(--ac);transition:.2s}
+.ritem.sel .ritem-ck{border-color:var(--ac);background:#4f8cff18}
+.ritem-info{flex:1;min-width:0}
+.ritem-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ritem-meta{font-size:11px;color:var(--dim)}
+.ritem-score{font-family:var(--mono);font-size:18px;font-weight:700;flex-shrink:0}
+.ritem-actions{display:flex;gap:6px}
+.btn{padding:8px 18px;border-radius:8px;border:none;font-weight:600;font-size:13px}
+.btn-ac{background:#4f8cff15;color:var(--ac);border:1px solid #4f8cff40}
+.btn-tl{background:var(--tl);color:#fff}
+.btn-sm{padding:5px 12px;font-size:12px;border-radius:6px}
+.btn-rd{background:#f0525215;color:var(--rd);border:1px solid #f0525240}
+.dropzone{border:2px dashed var(--brd2);border-radius:12px;padding:40px 20px;text-align:center;transition:.2s;cursor:pointer}
+.dropzone:hover,.dropzone.over{border-color:var(--ac);background:#4f8cff08}
+.dropzone p{color:var(--dim);font-size:13px;margin-top:8px}
+.dropzone .icon{font-size:32px;margin-bottom:4px}
+.desc-panel{background:var(--s2);border:1px solid var(--brd);border-radius:10px;padding:14px 16px;margin-top:10px}
+.desc-row{display:flex;gap:8px;margin-bottom:8px;font-size:12px;line-height:1.5}
+.desc-label{font-weight:600;color:var(--ac2);min-width:120px;flex-shrink:0}
+.desc-text{color:var(--dim)}
+.bar-r{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.bar-l{font-size:12px;color:var(--dim);min-width:130px;flex-shrink:0}
+.bar-t{flex:1;height:7px;border-radius:7px;background:var(--s2);overflow:hidden}
+.bar-f{height:100%;border-radius:7px;transition:width .5s}
+.bar-v{font-family:var(--mono);font-size:12px;font-weight:600;min-width:38px;text-align:right}
+@media(max-width:700px){.g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}}
+.hidden{display:none}
+.fade-in{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="hdr">
+    <div class="hdr-tag"><div class="hdr-dot"></div><span class="hdr-label">Evaluation Suite</span></div>
+    <h1>TRM Final Evaluation</h1>
+    <p>LLM Judge + Back Test → Composite Score · 다중 결과 비교</p>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="view"></div>
+</div>
+<script>
+const cl=(v,lo=0,hi=100)=>Math.min(hi,Math.max(lo,v));
+const fm=(v,d=1)=>typeof v==='number'?v.toFixed(d):'–';
+const sc=v=>v>=75?'var(--gn)':v>=55?'var(--am)':v>=35?'#f97316':'var(--rd)';
+function nq(q){if(!q)return'';const m=String(q).match(/(\d{4})\s*-?\s*Q(\d)/i);return m?`${m[1]}-Q${m[2]}`:q}
+function qf(q){if(!q)return 0;const m=q.match(/(\d{4})-?Q(\d)/i);return m?parseInt(m[1])+(parseInt(m[2])-1)*.25:0}
+const TM={"Tier 1":"Strategic","Tier 2":"High","Tier 3":"Medium"};
+
+function evaluate(pack){
+  const T=pack.tech_candidates||[],R=pack.planned_roadmap||[],I=pack.investment_strategy||[],
+        H=pack.holdout_data||{},C=pack.constraints||{};
+  R.forEach(r=>{r.start_q=nq(r.start_q);r.target_q=nq(r.target_q)});
+  const rf={};
+  Object.entries(H).forEach(([id,h])=>{
+    const bp=h.baseline_patents??h.past_patents??1,rp=h.realized_patents??h.future_patents??1,
+          bm=h.baseline_market_m??h.past_market_size_m??1,rm=h.realized_market_m??h.future_market_size_m??1;
+    rf[id]={pg:Math.log((rp+1)/(bp+1)),mg:Math.log((rm+1)/(bm+1)),ms:Math.log(rm+1)};
+  });
+  const vs=k=>Object.values(rf).map(f=>f[k]);
+  const mm=(v,a)=>{const l=Math.min(...a),h2=Math.max(...a);return h2===l?.5:(v-l)/(h2-l)};
+  const nm={};Object.entries(rf).forEach(([id,f])=>{nm[id]={pgn:mm(f.pg,vs('pg')),mgn:mm(f.mg,vs('mg')),msn:mm(f.ms,vs('ms'))}});
+  const CM={Low:1,Medium:2,High:3,Strategic:4};
+  const td=R.map(r=>{
+    const inv=I.find(i=>i.tech_id===r.tech_id)||{},n=nm[r.tech_id]||{pgn:.5,mgn:.5,msn:.5};
+    const val=.4*n.pgn+.3*n.mgn+.3*n.msn,cp=CM[inv.investment_tier]||2;
+    return{tech_id:r.tech_id,tech_name:r.tech_name||T.find(t=>t.tech_id===r.tech_id)?.tech_name||r.tech_id,
+      pgn:n.pgn,mgn:n.mgn,msn:n.msn,value:val,investment_tier:inv.investment_tier||'Medium',costProxy:cp,adjReturn:val-.15*(cp-1)/3};
+  });
+  const tgt={};R.forEach(r=>{tgt[r.tech_id]=qf(r.target_q)});
+  let dv=0;R.forEach(r=>{(r.prerequisites||[]).forEach(p=>{if(p in tgt&&qf(r.start_q)<tgt[p])dv++})});
+  const bud=C.total_budget||100;
+  const bvp=0;
+  let te=[];R.forEach(r=>{const tc=T.find(t=>t.tech_id===r.tech_id);
+    if(tc?.expected_market_boom_quarter){te.push({tech_name:r.tech_name||r.tech_id,error:qf(r.target_q)-qf(nq(tc.expected_market_boom_quarter))})}});
+  const mte=te.length?te.reduce((s,e)=>s+Math.abs(e.error),0)/te.length:0;
+  const vv=td.map(t=>t.value),rr=td.map(t=>t.adjReturn);
+  const sq=vv.length?cl((vv.reduce((a,b)=>a+b,0)/vv.length)*100):0;
+  const car=rr.length?cl((rr.reduce((a,b)=>a+b,0)/rr.length)*100):0;
+  let mis=0;td.forEach(t=>{let e=1;if(t.value>.5)e++;if(t.value>.7)e++;e=Math.min(4,e);if(Math.abs(t.costProxy-e)>1)mis++});
+  const ir=cl((1-mis/Math.max(td.length,1))*100),bf=cl(100-bvp*2),dvs=cl(100-dv*20),ta=cl(100-mte*30);
+  const bt=.30*sq+.30*car+.15*ir+.10*bf+.10*dvs+.05*ta;
+  const amg=td.length?td.reduce((s,t)=>s+t.mgn,0)/td.length:0;
+  const cats=new Set(T.map(t=>t.category)),tiers=new Set(I.map(i=>i.investment_tier));
+  const trls=T.map(t=>t.TRL||t.trl||5),tsp=trls.length?Math.max(...trls)-Math.min(...trls):0;
+  const ax={alignment:cl(Math.round(1+amg*4),1,5),sequencing:cl(5-dv,1,5),
+    investment:cl(Math.round(1+(1-mis/Math.max(td.length,1))*4),1,5),
+    coherence:cl(Math.round(1+(Math.min(1,cats.size/3)*.5+Math.min(1,tsp/4)*.5)*4),1,5),
+    balance:cl(Math.round(1+(tiers.size/4)*4),1,5)};
+  const raw=.3*ax.alignment+.2*ax.sequencing+.2*ax.investment+.2*ax.coherence+.1*ax.balance;
+  const llm=((raw-1)/4)*100;
+  let pen=0;if(dv>0)pen+=dv*3;if(bvp>0)pen+=bvp*.5;if(mte>1)pen+=(mte-1)*5;
+  const pre=.4*llm+.6*bt,fin=Math.max(0,pre-pen);
+  const catStr=[...cats].join(', '),tierStr=[...tiers].join(', ');
+  const trlR=trls.length?`${Math.min(...trls)}~${Math.max(...trls)}`:'N/A';
+  const best=td.length?td.reduce((a,b)=>a.value>b.value?a:b):{tech_name:'N/A',value:0};
+  const worst=td.length?td.reduce((a,b)=>a.value<b.value?a:b):{tech_name:'N/A',value:0};
+  return{metadata:pack.metadata||{},axes:ax,llmScore:llm,
+    backtest:{sq,car,ir,bf,dv:dvs,ta,bt},techDetails:td,
+    constraints:{bvp,depV:dv,mte,te},composite:{pre,pen,fin},
+    llmDesc:{alignment:`점수 ${ax.alignment}/5 — 시장 성장률 평균 기반`,sequencing:`점수 ${ax.sequencing}/5 — 의존성 위반 ${dv}건`,
+      investment:`점수 ${ax.investment}/5 — 가치 대비 투자등급 일치도`,coherence:`점수 ${ax.coherence}/5 — 카테고리 ${cats.size}종(${catStr}), TRL ${trlR}`,
+      balance:`점수 ${ax.balance}/5 — 투자등급 ${tiers.size}종(${tierStr})`,
+      formula:`(0.3×${ax.alignment}+0.2×${ax.sequencing}+0.2×${ax.investment}+0.2×${ax.coherence}+0.1×${ax.balance}-1)/4×100=${fm(llm)}`},
+    btDesc:{selection_quality:`${fm(sq)}/100 — ${td.length}개 평균 value. 최고:${best.tech_name}(${fm(best.value,3)}), 최저:${worst.tech_name}(${fm(worst.value,3)})`,
+      cost_adjusted_return:`${fm(car)}/100 — value-투자비용 proxy`,investment_rationality:`${fm(ir)}/100 — 기대 tier vs 실제 tier`,
+      budget_feasibility:`${fm(bf)}/100 — 예산 초과 ${fm(bvp)}%`,dependency_validity:`${fm(dvs)}/100 — 위반 ${dv}건`,
+      timing_accuracy:`${fm(ta)}/100 — 평균 오차 ${fm(mte,2)}년`,
+      formula:`0.30×${fm(sq)}+0.30×${fm(car)}+0.15×${fm(ir)}+0.10×${fm(bf)}+0.10×${fm(dvs)}+0.05×${fm(ta)}=${fm(bt)}`},
+    compDesc:`0.4×${fm(llm)}+0.6×${fm(bt)}=${fm(pre)}.${pen>0?' Penalty:-'+fm(pen)+'.':''} Final=${fm(fin)}`};
+}
+
+function adaptBundle(b){
+  const tc=(b.tech_candidates||[]).map(t=>({tech_id:t.tech_id||'',tech_name:t.name||t.tech_name||'',category:t.category||'General',
+    TRL:t.trl||t.TRL||5,patent_score:t.patent_score||0,market_score:t.market_score||0,final_score:t.final_score||0,
+    expected_market_boom_quarter:nq(t.expected_market_boom_quarter||''),dependency_hints:t.dependency_hints||[]}));
+  const rm=(b.planned_roadmap||[]).filter(r=>(r.phase_name||'')!=='DROPPED').map(r=>({tech_id:r.tech_id||'',tech_name:r.name||r.tech_name||'',
+    start_q:nq(r.start_q||''),target_q:nq(r.target_q||''),prerequisites:r.prerequisites||[]}));
+  const strats=b.investment_strategy||[],stages=b.stages||[];
+  const sm={};strats.forEach(s=>{sm[s.stage||s.stage_name||s.phase_name||'']=s});
+  const st2={};stages.forEach(s=>{st2[s.stage||s.stage_name||s.phase_name||'']=s.tech_ids||[]});
+  const cov=new Set(),inv=[];
+  Object.entries(st2).forEach(([sn,tids])=>{const s=sm[sn]||{},sc2=s.evaluation_scores||{},tr=TM[s.recommended_investment_tier||s.tier||'Tier 2']||'Medium';
+    tids.forEach(tid=>{if(!tid||cov.has(tid))return;cov.add(tid);inv.push({tech_id:tid,tech_name:(tc.find(t=>t.tech_id===tid)||{}).tech_name||'',
+      investment_tier:tr,market_opportunity:sc2.market_opportunity||3,strategic_fit:sc2.strategic_fit||3,executability:sc2.executability||3,uncertainty:sc2.uncertainty||3,urgency:sc2.urgency||3})})});
+  tc.forEach(t=>{if(!cov.has(t.tech_id))inv.push({tech_id:t.tech_id,tech_name:t.tech_name,investment_tier:'Medium',market_opportunity:3,strategic_fit:3,executability:3,uncertainty:3,urgency:3})});
+  let meta={scenario_label:'uploaded',domain:'Unknown',evaluation_cutoff_year:2025};
+  if(b.orchestrator_report?.problem_frame){const pf=b.orchestrator_report.problem_frame;meta.domain=pf.industry||'Unknown';
+    const yrs=(pf.time_horizon||'').match(/20\d{2}/g);if(yrs)meta.evaluation_cutoff_year=parseInt(yrs[yrs.length-1])}
+  const aa=b.active_agents||[];if(aa.length===3)meta.scenario_label='full';
+  else if(aa.length>0){meta.scenario_label='noA'+['1','2','3'].filter(x=>!aa.includes(x)).join(',')}
+  return{metadata:meta,tech_candidates:tc,planned_roadmap:rm,investment_strategy:inv,
+    constraints:{total_budget:100,budget_allocation:{},planning_horizon_end:'2030-Q4'},holdout_data:b.holdout_data||{}};
+}
+
+// ═══════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════
+let results=[];
+let selected=new Set();
+let activeIdx=null;
+let tab='list';
+
+function addResult(name,pack){results.push({name,result:evaluate(pack),pack});render()}
+
+// ═══════════════════════════════════════
+//  RENDER HELPERS
+// ═══════════════════════════════════════
+function badge(t,c='var(--ac)'){return`<span class="badge" style="background:${c}18;color:${c};border:1px solid ${c}40">${t}</span>`}
+
+function ring(v,sz=100,label='',sub=''){
+  const r2=(sz-8)/2,c=2*Math.PI*r2,off=c-(cl(v)/100)*c,col=sc(v);
+  return`<div style="text-align:center"><div style="position:relative;width:${sz}px;height:${sz}px;margin:0 auto">
+    <svg width="${sz}" height="${sz}" style="transform:rotate(-90deg)">
+      <circle cx="${sz/2}" cy="${sz/2}" r="${r2}" fill="none" stroke="var(--s2)" stroke-width="8"/>
+      <circle cx="${sz/2}" cy="${sz/2}" r="${r2}" fill="none" stroke="${col}" stroke-width="8"
+        stroke-dasharray="${c}" stroke-dashoffset="${off}" stroke-linecap="round" style="transition:.6s"/>
+    </svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:${sz*.28}px;font-weight:700;color:${col}">${fm(v)}</div>
+  </div>${label?`<div style="margin-top:5px;font-size:12px;font-weight:600">${label}</div>`:''}${sub?`<div style="font-size:11px;color:var(--dim)">${sub}</div>`:''}</div>`}
+
+function bar(v,label){const w=cl(v),c=sc(v);
+  return`<div class="bar-r"><span class="bar-l">${label}</span><div class="bar-t"><div class="bar-f" style="width:${w}%;background:${c}"></div></div><span class="bar-v" style="color:${c}">${fm(v)}</span></div>`}
+
+function radar(ax,sz=190){
+  const ks=['alignment','sequencing','investment','coherence','balance'],ls=['Align','Seq','Invest','Coher','Bal'];
+  const cx=sz/2,cy=sz/2,mr=sz*.36,st=2*Math.PI/5;
+  const pt=(i,r)=>{const a=-Math.PI/2+i*st;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};
+  let s=`<svg width="${sz}" height="${sz}" style="display:block;margin:0 auto">`;
+  for(let l=1;l<=5;l++){const r=l/5*mr;s+=`<polygon points="${ks.map((_,i)=>pt(i,r).join(',')).join(' ')}" fill="none" stroke="var(--brd)" stroke-width="1" opacity=".4"/>`}
+  ks.forEach((_,i)=>{const[x,y]=pt(i,mr+2);s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--brd)" opacity=".3"/>`});
+  const dp=ks.map((k,i)=>pt(i,(ax[k]/5)*mr));
+  s+=`<polygon points="${dp.map(p=>p.join(',')).join(' ')}" fill="#4f8cff30" stroke="var(--ac)" stroke-width="2"/>`;
+  dp.forEach(([x,y])=>{s+=`<circle cx="${x}" cy="${y}" r="3.5" fill="var(--ac)"/>`});
+  ls.forEach((l,i)=>{const[x,y]=pt(i,mr+16);s+=`<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" fill="var(--dim)" font-size="10" font-family="var(--sans)">${l}</text>`});
+  ks.forEach((k,i)=>{const[x,y]=pt(i,(ax[k]/5)*mr+13);s+=`<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" fill="var(--ac2)" font-size="11" font-weight="700" font-family="var(--mono)">${ax[k]}</text>`});
+  return s+'</svg>'}
+
+function descPanel(descs){
+  if(!descs||!Object.keys(descs).length)return'';
+  let h='<div class="desc-panel">';
+  Object.entries(descs).forEach(([k,v])=>{h+=`<div class="desc-row"><span class="desc-label">${k}</span><span class="desc-text">${v}</span></div>`});
+  return h+'</div>'}
+
+function tierCol(t){return t==='Strategic'?'var(--rd)':t==='High'?'var(--am)':t==='Medium'?'var(--ac)':'var(--dim)'}
+
+// ═══════════════════════════════════════
+//  NORMALIZE: server format → local format
+// ═══════════════════════════════════════
+function N(r){
+  if(!r)return null;
+  if(r.llmScore!==undefined&&r.backtest?.bt!==undefined)return r;
+  const lj=r.llm_judge||{},bt=r.backtest||{},co=r.composite||{},cr=r.constraints||{};
+  return{metadata:r.metadata||{},
+    axes:{alignment:lj.alignment||3,sequencing:lj.sequencing||3,investment:lj.investment||3,coherence:lj.coherence||3,balance:lj.balance||3},
+    llmScore:lj.llm_structural_score||0,
+    backtest:{sq:bt.selection_quality||0,car:bt.cost_adjusted_return||0,ir:bt.investment_rationality_score||0,
+      bf:bt.budget_feasibility_score||0,dv:bt.dependency_validity_score||0,ta:bt.timing_accuracy_score||0,bt:bt.backtest_score||0},
+    techDetails:(bt.tech_details||[]).map(t=>({tech_id:t.tech_id||'',tech_name:t.tech_name||'',
+      pgn:t.patent_growth_norm||0,mgn:t.market_growth_norm||0,msn:t.market_size_norm||0,
+      value:t.value||0,investment_tier:t.investment_tier||'Medium',costProxy:t.cost_proxy||2,adjReturn:t.cost_adjusted_return||0})),
+    constraints:{bvp:cr.budget_violation_pct||0,depV:cr.dependency_violations||0,mte:cr.mean_timing_error_years||0,te:cr.timing_details||[]},
+    composite:{pre:co.pre_penalty_score||0,pen:co.total_penalty||0,fin:co.final_composite_score||0},
+    llmDesc:lj.description||{},btDesc:bt.description||{},compDesc:co.description||''};
+}
+
+// ═══════════════════════════════════════
+//  DETAIL VIEW
+// ═══════════════════════════════════════
+function renderDetail(raw){
+  const r=N(raw);if(!r)return'<div class="card">데이터 없음</div>';
+  const bt=r.backtest,co=r.composite;
+  let h=`<button class="btn btn-sm btn-ac" onclick="activeIdx=null;tab='list';render()" style="margin-bottom:14px">← 목록으로</button>`;
+  h+=`<div class="card" style="display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:14px;padding:24px 16px">
+    ${ring(r.llmScore,88,'LLM Judge','구조 (40%)')}<span style="font-size:20px;color:var(--mut)">+</span>
+    ${ring(bt.bt,88,'Backtest','경제성 (60%)')}<span style="font-size:20px;color:var(--mut)">=</span>
+    ${ring(co.fin,110,'Final',co.pen>0?`-${fm(co.pen)}pt`:'')}
+    <div style="text-align:center">${badge((r.metadata||{}).scenario_label||'','var(--cy)')}<div style="margin-top:4px;font-size:11px;color:var(--dim)">${(r.metadata||{}).domain||''}</div></div>
+  </div>`;
+  h+=`<div class="card card-alt"><div class="hd"><h3>Composite</h3></div><div style="font-size:12px;color:var(--dim);font-family:var(--mono)">${r.compDesc||''}</div></div>`;
+  h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM Judge</h3>${badge('5축','var(--pr)')}</div>${radar(r.axes)}
+    <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(r.llmScore)}">${fm(r.llmScore)}</span></div>
+    ${descPanel(r.llmDesc)}</div>
+    <div class="card"><div class="hd"><h3>Back Test</h3>${badge('6지표','var(--pr)')}</div>
+    ${bar(bt.sq,'Selection Quality')}${bar(bt.car,'Cost-Adj Return')}${bar(bt.ir,'Invest Rationality')}${bar(bt.bf,'Budget Feasibility')}${bar(bt.dv,'Dep Validity')}${bar(bt.ta,'Timing Accuracy')}
+    <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(bt.bt)}">${fm(bt.bt)}</span></div>
+    ${descPanel(r.btDesc)}</div></div>`;
+  if(r.techDetails&&r.techDetails.length){
+    h+=`<div class="card"><div class="hd"><h3>기술별 Value</h3></div><div style="overflow-x:auto"><table><thead><tr>
+      <th>기술</th><th>Patent↑</th><th>Market↑</th><th>Size</th><th>Value</th><th>Tier</th><th>Return</th></tr></thead><tbody>`;
+    r.techDetails.forEach(t=>{h+=`<tr><td class="b">${t.tech_name}</td><td class="m" style="color:var(--cy)">${fm(t.pgn,2)}</td>
+      <td class="m" style="color:var(--pr)">${fm(t.mgn,2)}</td><td class="m" style="color:var(--am)">${fm(t.msn,2)}</td>
+      <td class="m b" style="color:${sc(t.value*100)}">${fm(t.value,3)}</td><td>${badge(t.investment_tier,tierCol(t.investment_tier))}</td>
+      <td class="m b" style="color:${t.adjReturn>=0?'var(--gn)':'var(--rd)'}">${t.adjReturn>=0?'+':''}${fm(t.adjReturn,3)}</td></tr>`});
+    h+=`</tbody></table></div></div>`;}
+  const cd=[[' 예산',r.constraints.bvp,'%',0],['의존성',r.constraints.depV,'건',0],['타이밍',r.constraints.mte,'yr',1]];
+  h+=`<div class="card"><div class="hd"><h3>Constraints</h3></div><div class="g3">`;
+  cd.forEach(([l,v,u,th])=>{const bad=v>th;h+=`<div style="padding:10px 12px;border-radius:8px;background:${bad?'var(--rd)':'var(--gn)'}10;border:1px solid ${bad?'var(--rd)':'var(--gn)'}30">
+    <div style="font-size:11px;color:var(--dim)">${l}</div><div class="m" style="font-size:18px;font-weight:700;color:${bad?'var(--rd)':'var(--gn)'}">${fm(v)}<span style="font-size:12px;font-weight:400"> ${u}</span></div></div>`});
+  h+=`</div></div>`;
+  return h;
+}
+
+// ═══════════════════════════════════════
+//  PAIRWISE VIEW
+// ═══════════════════════════════════════
+function renderPairwise(idxA,idxB){
+  const a=N(results[idxA].result),b=N(results[idxB].result);
+  if(!a||!b)return'<div class="card">데이터 없음</div>';
+  const fa=a.composite.fin,fb=b.composite.fin;
+  const w=fa>fb?'A':fb>fa?'B':'Tie',wc=w==='A'?'var(--ac)':w==='B'?'var(--pr)':'var(--dim)';
+  let h=`<button class="btn btn-sm btn-ac" onclick="selected.clear();tab='list';render()" style="margin-bottom:14px">← 목록으로</button>`;
+  h+=`<div class="card" style="display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding:24px">
+    <div style="text-align:center">${badge('A·'+results[idxA].name,'var(--ac)')}<div style="margin-top:10px">${ring(fa,100,'Final')}</div></div>
+    <div style="text-align:center"><div style="font-size:13px;font-weight:700;color:var(--mut)">VS</div>
+      <div style="margin-top:6px;padding:6px 14px;border-radius:8px;background:${wc}18;border:1px solid ${wc}40">
+        <div style="font-size:10px;color:var(--dim)">WINNER</div>
+        <div style="font-size:16px;font-weight:700;color:${wc}">${w==='A'?results[idxA].name:w==='B'?results[idxB].name:'Tie'}</div></div>
+      <div style="margin-top:4px;font-size:11px;color:var(--mut)">Δ ${fm(Math.abs(fa-fb))}</div></div>
+    <div style="text-align:center">${badge('B·'+results[idxB].name,'var(--pr)')}<div style="margin-top:10px">${ring(fb,100,'Final')}</div></div></div>`;
+  const axk=['alignment','sequencing','investment','coherence','balance'];
+  h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM 축별</h3></div>`;
+  axk.forEach(k=>{const va=a.axes[k],vb=b.axes[k],aw=va>vb?'◀':vb>va?'▶':'=';
+    h+=`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #232e4a12">
+      <span style="font-size:12px;color:var(--dim);flex:1">${k}</span>
+      <span class="m b" style="color:var(--ac);width:24px;text-align:center">${va}</span>
+      <span style="margin:0 8px;font-size:11px;font-weight:700;color:${va>vb?'var(--ac)':vb>va?'var(--pr)':'var(--mut)'}">${aw}</span>
+      <span class="m b" style="color:var(--pr);width:24px;text-align:center">${vb}</span></div>`});
+  h+=`</div>`;
+  const btk=[['sq','Sel Quality'],['car','Cost-Adj'],['ir','Invest Rat.'],['bf','Budget'],['dv','Dep Valid.'],['ta','Timing']];
+  h+=`<div class="card"><div class="hd"><h3>Backtest 지표별</h3></div>`;
+  btk.forEach(([k,l])=>{const va=a.backtest[k],vb=b.backtest[k],aw=va>vb?'◀':vb>va?'▶':'=';
+    h+=`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #232e4a12">
+      <span style="font-size:12px;color:var(--dim);flex:1">${l}</span>
+      <span class="m" style="color:var(--ac);width:40px;text-align:right">${fm(va)}</span>
+      <span style="margin:0 8px;font-size:11px;font-weight:700;color:${va>vb?'var(--ac)':vb>va?'var(--pr)':'var(--mut)'}">${aw}</span>
+      <span class="m" style="color:var(--pr);width:40px;text-align:right">${fm(vb)}</span></div>`});
+  h+=`</div></div>`;
+  return h;
+}
+
+// ═══════════════════════════════════════
+//  LIST VIEW
+// ═══════════════════════════════════════
+function renderList(){
+  let h='';
+  h+=`<div class="dropzone" id="dz" onclick="document.getElementById('fi').click()"
+    ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')"
+    ondrop="event.preventDefault();this.classList.remove('over');handleFiles(event.dataTransfer.files)">
+    <div class="icon">📁</div>
+    <div style="font-weight:600;font-size:14px">JSON 파일 드래그 또는 클릭</div>
+    <p>evaluation_bundle.json · input_pack.json · orchestrator 출력 등<br>여러 파일을 한 번에 올릴 수 있습니다</p>
+    ${serverMode
+      ?'<div style="margin-top:8px;font-size:12px;color:var(--cy)">🟢 서버 모드: USPTO holdout 추출 + LLM judge API 자동 실행</div>'
+      :'<div style="margin-top:8px;font-size:12px;color:var(--am)">🟡 로컬 모드: rule-based 평가만 가능 (서버 없음)</div>'}
+    <input type="file" id="fi" accept=".json" multiple style="display:none" onchange="handleFiles(this.files)">
+  </div>`;
+  if(!results.length){h+=`<div class="card" style="text-align:center;padding:40px;color:var(--dim)">
+    <p>아직 평가 결과가 없습니다. 위에서 JSON을 업로드하세요.</p></div>`;return h}
+  if(selected.size===2){const[a,b]=[...selected];
+    h+=`<div style="margin-bottom:12px;display:flex;gap:8px;align-items:center">
+      <button class="btn btn-tl" onclick="tab='pair';render()">🔀 선택 2개 비교</button>
+      <span style="font-size:12px;color:var(--dim)">${results[a].name} vs ${results[b].name}</span></div>`}
+  else if(selected.size>0){h+=`<div style="margin-bottom:12px;font-size:12px;color:var(--dim)">2개 선택하면 비교할 수 있습니다 (${selected.size}/2)</div>`}
+  h+=`<div class="rlist">`;
+  results.forEach((item,i)=>{
+    if(!item.result){
+      h+=`<div class="ritem" style="opacity:.6"><div class="ritem-ck"></div>
+        <div class="ritem-info"><div class="ritem-name">${item.name}</div><div class="ritem-meta">평가 중...</div></div>
+        <div class="ritem-score" style="color:var(--dim)">⏳</div></div>`;return;}
+    const nr=N(item.result);if(!nr)return;
+    const isSel=selected.has(i);
+    const domain=(nr.metadata||{}).domain||'';
+    const nTechs=(nr.techDetails||[]).length;
+    h+=`<div class="ritem ${isSel?'sel':''}" onclick="toggleSelect(${i})">
+      <div class="ritem-ck">${isSel?'✓':''}</div>
+      <div class="ritem-info">
+        <div class="ritem-name">${item.name}</div>
+        <div class="ritem-meta">${domain} · ${nTechs} techs · LLM ${fm(nr.llmScore)} / BT ${fm(nr.backtest.bt)}</div>
+      </div>
+      <div class="ritem-score" style="color:${sc(nr.composite.fin)}">${fm(nr.composite.fin)}</div>
+      <div class="ritem-actions">
+        <button class="btn btn-sm btn-ac" onclick="event.stopPropagation();activeIdx=${i};tab='detail';render()">상세</button>
+        <button class="btn btn-sm btn-rd" onclick="event.stopPropagation();results.splice(${i},1);selected.clear();render()">✕</button>
+      </div>
+    </div>`});
+  h+=`</div>`;
+  const valid=results.filter(x=>x.result);
+  if(valid.length>1){
+    h+=`<div class="card"><div class="hd"><h3>전체 비교</h3></div><table><thead><tr>
+      <th>결과</th><th style="text-align:right">LLM</th><th style="text-align:right">Backtest</th>
+      <th style="text-align:right">Penalty</th><th style="text-align:right">Composite</th></tr></thead><tbody>`;
+    valid.forEach(item=>{const nr=N(item.result);if(!nr)return;
+      h+=`<tr><td class="b">${item.name}</td><td class="m" style="text-align:right">${fm(nr.llmScore)}</td>
+        <td class="m" style="text-align:right">${fm(nr.backtest.bt)}</td>
+        <td class="m" style="text-align:right;color:${nr.composite.pen>0?'var(--rd)':'var(--dim)'}">${nr.composite.pen>0?'-'+fm(nr.composite.pen):'0.0'}</td>
+        <td class="m b" style="text-align:right;color:${sc(nr.composite.fin)}">${fm(nr.composite.fin)}</td></tr>`});
+    h+=`</tbody></table></div>`}
+  return h;
+}
+
+// ═══════════════════════════════════════
+//  SERVER
+// ═══════════════════════════════════════
+let serverMode=false;
+let serverUrl='';
+
+async function checkServer(){
+  for(const url of [window.location.origin,'http://localhost:8000']){
+    try{const r=await fetch(url+'/config',{signal:AbortSignal.timeout(1500)});
+      if(r.ok){serverMode=true;serverUrl=url;return await r.json()}}catch(e){}}
+  serverMode=false;serverUrl='';return null;
+}
+
+async function serverEvaluate(file){
+  const form=new FormData();form.append('file',file);form.append('name',file.name.replace('.json',''));
+  const r=await fetch(serverUrl+'/evaluate',{method:'POST',body:form});
+  if(!r.ok)throw new Error(await r.text());
+  return r.json();
+}
+
+async function loadServerResults(){
+  if(!serverMode)return;
+  try{
+    const r=await fetch(serverUrl+'/results');
+    const data=await r.json();
+    if(!data.results||!data.results.length)return;
+    const details=await Promise.all(data.results.map(item=>fetch(serverUrl+'/results/'+item.id).then(r=>r.json())));
+    details.forEach(d=>{if(!results.find(r=>r.name===d.name)){results.push({name:d.name,result:d.result})}});
+    render();
+  }catch(e){console.log('Results load failed:',e)}
+}
+
+function handleFiles(files){
+  [...files].forEach(f=>{
+    if(serverMode){
+      const tempIdx=results.length;
+      results.push({name:f.name.replace('.json','')+' ⏳',result:null});
+      render();
+      serverEvaluate(f).then(resp=>{
+        results[tempIdx]={name:resp.name||f.name.replace('.json',''),result:resp.result};render();
+      }).catch(err=>{results.splice(tempIdx,1);alert('서버 평가 실패: '+err.message);handleFileLocal(f);});
+    }else{handleFileLocal(f);}
+  });
+}
+
+function handleFileLocal(f){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{const data=JSON.parse(e.target.result);let pack;
+      if(data.tech_candidates&&data.planned_roadmap&&data.investment_strategy){
+        pack=data.orchestrator_report?adaptBundle(data):data;
+      }else{alert('인식할 수 없는 포맷: '+f.name);return;}
+      addResult(f.name.replace('.json',''),pack);
+    }catch(err){alert('파싱 실패: '+f.name+'\n'+err)}
+  };reader.readAsText(f);
+}
+
+function toggleSelect(i){
+  if(selected.has(i))selected.delete(i);
+  else{if(selected.size>=2){selected.delete([...selected][0])}selected.add(i)}
+  render();
+}
+
+// ═══════════════════════════════════════
+//  MAIN RENDER
+// ═══════════════════════════════════════
+function render(){
+  const tabs=[['list','📋 결과 목록'],['detail','📊 상세'],['pair','🔀 비교']];
+  let th='';tabs.forEach(([id,label])=>{
+    const on=tab===id;const dis=(id==='detail'&&activeIdx===null)||(id==='pair'&&selected.size!==2);
+    th+=`<button class="tab ${on?'on':''}" ${dis?'disabled style="opacity:.4"':''} onclick="tab='${id}';render()">${label}</button>`});
+  document.getElementById('tabs').innerHTML=th;
+  let vh='<div class="fade-in">';
+  if(tab==='detail'&&activeIdx!==null&&results[activeIdx]){vh+=renderDetail(results[activeIdx].result)}
+  else if(tab==='pair'&&selected.size===2){const[a,b]=[...selected];vh+=renderPairwise(a,b)}
+  else{tab='list';vh+=renderList()}
+  vh+='</div>';
+  document.getElementById('view').innerHTML=vh;
+}
+
+// ═══════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════
+render();
+checkServer().then(cfg=>{
+  if(cfg){
+    document.querySelector('.hdr-dot').style.background='var(--cy)';
+    document.querySelector('.hdr-label').textContent='Server Connected — '+serverUrl;
+    loadServerResults();
+  }
+  render();
+});
+</script>
+</body>
+</html>
