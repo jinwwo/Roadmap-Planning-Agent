@@ -7,7 +7,7 @@ Tech-Analysis-Agent/                 ← 레포 루트 (이 폴더)
 ├── .venv/                            ← 공용 venv (아래 가이드로 생성)
 ├── .env                              ← 공용 환경변수 (symlink 으로 각 폴더에 공유)
 ├── .env.example
-├── requirements.txt                  ← 4개 폴더 requirements 합집합
+├── requirements.txt                  ← 통합 의존성 (4개 에이전트 공용)
 ├── tech_analysis_agent/
 ├── roadmap_planner_agent/
 ├── investment_strategist_agent/
@@ -63,7 +63,7 @@ bash scripts/setup.sh --anthropic      # Ollama 설치 스킵, API 키는 수동
 
 `setup.sh` 가 하는 일:
 1. `uv venv --python 3.10 .venv`
-2. 루트의 `requirements.txt` 설치 (4개 폴더 합집합)
+2. 루트의 `requirements.txt` 설치 (4개 에이전트 공용)
 3. `.env` 없으면 `.env.example` 에서 복사
 4. 각 sibling 폴더에 `.env -> ../.env` symlink 생성
 5. (Ollama 모드) 데몬 기동 + 모델 pull

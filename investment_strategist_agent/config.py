@@ -31,7 +31,7 @@ MID_TERM_MAX_QUARTERS:   int = 16   # 16분기(=4년) 이내면 mid-term
 DEFAULT_INVESTMENT_POLICY: dict = {
     "risk_appetite": "medium",           # low | medium | high
     "investment_horizon": "balanced",    # short | balanced | long
-    "budget_constraint": "medium",       # low | medium | high
+    "total_budget": 0.0,                 # 전체 예산 (USD) — 0 이면 명시 안 됨
     "strategic_priority": [
         "market entry",
         "core capability building",

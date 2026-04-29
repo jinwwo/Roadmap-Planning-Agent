@@ -96,21 +96,23 @@ Tech-Analysis-Agent/
 
 ## TRL 기반 리드 타임
 
-| TRL | 의미 | 리드 타임 |
+| TRL | 의미 | 리드 타임 (분기) |
 |-----|------|-----------|
-| 1–3 | 기초 연구 | 6–8+ 분기 |
-| 4–6 | 프로토타이핑 | 3–5 분기 |
-| 7–8 | 최적화 / 양산 준비 | 1–2 분기 |
-| 9   | 양산 가능 | 1 분기 |
+| 1–3 | 기초 연구 | 5 |
+| 4–6 | 프로토타이핑 | 3 |
+| 7–8 | 최적화 / 양산 준비 | 2 |
+| 9   | 양산 가능 | 1 |
 
-상세 값은 [config.py](config.py) 의 `TRL_LEAD_TIME_QUARTERS` 에서 조정.
+값은 단일 정수 (이전엔 `(min, max)` 튜플이었으나 backcasting 결정성 보장을 위해 단순화).
+[config.py](config.py) 의 `TRL_LEAD_TIME_QUARTERS` 에서 조정.
 
 ## 실행
 
 ### 설치
 
 ```bash
-cd roadmap_planner_agent
+# 의존성은 루트 requirements.txt 에 통합되어 있음
+cd Tech-Analysis-Agent
 pip install -r requirements.txt
 ```
 
@@ -162,12 +164,33 @@ from roadmap_planner_agent.graphs.roadmap_graph import run_roadmap_planner
 result = run_roadmap_planner(
     tech_candidates=tech_candidates,
     market_context=market_context,
-    orchestrator_feedback={"shift": [...], "drop": [...]},
+    orchestrator_feedback={
+        "shift": [{"tech_id": "T02", "new_start_q": "2026 Q1"}],
+        "drop":  ["T04"],
+        "text":  ["[portfolio_balance] 단기 우세 — 후기 단계로 일부 기술 미루기"],
+    },
 )
 # result["planned_roadmap"]   : List[RoadmapItem]
 # result["dependency_tree"]   : Dict[tech_id, DependencyNode]
 # result["timeline_draft"]    : 중간 산출물
 ```
+
+`orchestrator_feedback` 의 세 채널:
+
+| 채널 | 의미 | 적용 위치 |
+|------|------|---------|
+| `shift` | 특정 기술의 시작 분기 강제 변경 (cascade 자동 처리) | timeline_calculator |
+| `drop`  | 기술 제외 (dropped=True 표시) | timeline_calculator |
+| `text`  | Orchestrator REVISE 의 자유 피드백 (한국어/영문 OK) | dependency_analyzer + roadmap_builder 의 LLM 프롬프트 |
+
+`text` 는 LLM 이 시스템 프롬프트와 함께 받아 다음 iter 에서 분기 / 의존성 / phase_name 을 조정하는 데 사용합니다.
+
+## 의존성 분석 강화
+
+`dependency_analyzer` 는 카테고리 계층 (Layer 0/1/2) 간 의존성뿐 아니라
+**같은 레이어 안의 정밀한 인과관계** 도 LLM 이 추론하도록 프롬프트에서 예시를 제공
+(예: 검사 장비 T01 → 공정 T02 의 결과 검증 / ALD 장비 → ALD 공정 등).
+단, hard constraint 는 아니며 명백히 필요한 경우만 의존성 추가하라는 지침 (spec 준수).
 
 ## CLI 옵션 요약
 

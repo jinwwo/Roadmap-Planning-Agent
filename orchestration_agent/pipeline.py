@@ -384,25 +384,17 @@ def _run_agent3(
     else:
         print("\n[Pipeline] Agent 3 (Investment Strategist) — ✅ ON")
 
-        # ProblemFrame → InvestmentPolicy 유도
+        # ProblemFrame + state override → InvestmentPolicy 구성
         pf = state["problem_frame"]
-        # budget_constraint: 예산 규모에 따른 간단한 매핑 (CLI 에서 override 가능)
-        budget = float(pf.get("total_budget", 0))
-        if budget >= 5e9:
-            budget_constraint = "low"
-        elif budget >= 1e9:
-            budget_constraint = "medium"
-        else:
-            budget_constraint = "high"
-
         investment_policy = {
-            "risk_appetite": "medium",
-            "investment_horizon": "balanced",
-            "budget_constraint": budget_constraint,
+            "risk_appetite": state.get("risk_appetite") or "medium",
+            "investment_horizon": state.get("investment_horizon") or "balanced",
+            "total_budget": float(pf.get("total_budget", 0)),
             "strategic_priority": pf.get("strategic_priorities", []),
         }
 
         use_phase_name = (stage_mode == "phase")
+        feedback = state.get("orchestrator_feedback") or None
 
         snippet = f"""
 import sys, json, os
@@ -410,18 +402,22 @@ sys.path.insert(0, os.getcwd())
 from agents.stage_aggregator import aggregate_stages
 from agents.strategist import run_strategist
 
+# planned_roadmap 은 Agent 2 출력에서, market_context 와 tech_candidates 는
+# Agent 1 출력에서 직접 읽음 (single source of truth)
 with open({roadmap_path!r}, "r", encoding="utf-8") as f:
     rd = json.load(f)
 planned_roadmap = rd.get("planned_roadmap") or []
-market_context = rd.get("market_context") or {{}}
 
+market_context = {{}}
 tech_candidates = []
 try:
     with open({tech_path!r}, "r", encoding="utf-8") as f:
         tc = json.load(f)
+    market_context = tc.get("market_context") or {{}}
     tech_candidates = tc.get("tech_candidates") or []
 except FileNotFoundError:
-    pass
+    # 폴백: Agent 1 파일이 없으면 Agent 2 의 passthrough 사용
+    market_context = rd.get("market_context") or {{}}
 
 stages = aggregate_stages(
     planned_roadmap=planned_roadmap,
@@ -433,6 +429,7 @@ strategies = run_strategist(
     tech_candidates=tech_candidates,
     investment_policy={investment_policy!r},
     market_context=market_context,
+    orchestrator_feedback={feedback!r},
 )
 
 out = {{
@@ -514,6 +511,9 @@ def run_orchestration(
     objective: Optional[str] = None,
     priorities: Optional[List[str]] = None,
     future_trend_summary: Optional[str] = None,
+    # Investment policy overrides (Agent 3 가 사용)
+    risk_appetite: Optional[str] = None,        # low / medium / high
+    investment_horizon: Optional[str] = None,   # short / balanced / long
     # 내부 설정
     out_prefix: str = "",
     stage_mode: str = "phase",
@@ -566,6 +566,9 @@ def run_orchestration(
         "investment_strategy": [],
         "stages": [],
         "orchestrator_feedback": None,
+        # Investment policy override (None 이면 _run_agent3 가 기본값 사용)
+        "risk_appetite": risk_appetite,
+        "investment_horizon": investment_horizon,
     }
 
     # ② 첫 실행: 세 Agent 를 순서대로 (OFF 이면 폴백)
@@ -577,6 +580,7 @@ def run_orchestration(
     previous_feedback: List[str] = []
     iteration = 0
     review = None
+    review_history: List[Dict[str, Any]] = []  # 매 iter 의 review 누적
 
     while True:
         _emit("review_start", iteration=iteration + 1,
@@ -593,6 +597,7 @@ def run_orchestration(
             active_agents=active_agents,
         )
         iteration += 1
+        review_history.append({"iteration": iteration, "review": review})
         _emit("review_done", iteration=iteration, review=review)
 
         if review["decision"] == "ACCEPT":
@@ -628,6 +633,7 @@ def run_orchestration(
         "investment_strategy": state["investment_strategy"],
         "stages": state["stages"],
         "review": review,
+        "review_history": review_history,
         "iteration": iteration,
         "paths": {
             "tech_candidates": state.get("path_tech_candidates"),

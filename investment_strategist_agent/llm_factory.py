@@ -21,6 +21,9 @@ from config import (
 def get_llm(max_tokens: int = 4096, json_mode: bool = True, temperature: float = 0.0):
     """
     Provider-agnostic LLM 인스턴스 반환.
+
+    Ollama 의 기본 num_ctx 는 2048 (작음) — 긴 user_prompt + 출력 시 컨텍스트 초과로
+    JSON 잘림 → 파싱 실패. num_ctx=8192 로 명시적 확장.
     """
     if LLM_PROVIDER == "ollama":
         try:
@@ -35,6 +38,7 @@ def get_llm(max_tokens: int = 4096, json_mode: bool = True, temperature: float =
             base_url=OLLAMA_BASE_URL,
             temperature=temperature,
             num_predict=max_tokens,
+            num_ctx=8192,   # ★ 컨텍스트 윈도우 확장 (기본 2048 → 8192)
         )
         if json_mode:
             kwargs["format"] = "json"

@@ -49,6 +49,7 @@ def get_llm(max_tokens: int = 4096, json_mode: bool = True, temperature: float =
             base_url=OLLAMA_BASE_URL,
             temperature=temperature,
             num_predict=max_tokens,
+            num_ctx=8192,   # ★ 컨텍스트 윈도우 확장 (기본 2048 → 8192)
         )
         if json_mode:
             kwargs["format"] = "json"

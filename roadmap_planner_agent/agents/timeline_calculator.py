@@ -61,17 +61,14 @@ def add_quarters(q: str, delta: int) -> str:
 
 def get_lead_time(trl: int) -> int:
     """
-    현재 TRL → 상용화까지 필요한 분기 수
+    현재 TRL → 상용화까지 필요한 분기 수 (계획서 스펙 그대로)
 
-    TRL 1–3 : 7분기 (약 2년, 원천 R&D)
-    TRL 4–6 : 4분기 (약 1년, 프로토타이핑)
-    TRL 7–8 : 2분기 (약 6개월, 최적화 / 스케일업)
-    TRL 9   : 1분기 (이미 양산 가능)
-
-    config.TRL_LEAD_TIME_QUARTERS 의 (min, max) 중앙값을 사용.
+    TRL 1-3 : 5 분기 (약 15개월, 원천 R&D)
+    TRL 4-6 : 3 분기 (약 9개월, 프로토타이핑)
+    TRL 7-8 : 2 분기 (약 6개월, 최적화 / 스케일업)
+    TRL 9   : 1 분기 (이미 양산 가능)
     """
-    lo, hi = TRL_LEAD_TIME_QUARTERS.get(trl, (4, 6))
-    return (lo + hi) // 2
+    return TRL_LEAD_TIME_QUARTERS.get(trl, 3)
 
 
 def get_phase_name(trl: int, layer: int) -> str:
@@ -175,9 +172,15 @@ def backcast_timeline(
         prereqs = [p for p in node.get("prerequisites", []) if p in active_tree]
 
         # ④ 역산: 이 기술이 완료되어야 하는 최후 시점 결정
+        # - per-tech expected_market_boom_quarter 우선, 없으면 top-level market_boom_q
         # - 다음 기술들의 시작 시점 중 가장 빠른 것 - 1
-        # - 기본은 market_boom_q - 1 분기 (최종 통합 직전에 완료)
-        latest_needed = boom_int - 1
+        # - 기본은 boom_q - 1 분기 (최종 통합 직전에 완료)
+        per_tech_boom = node.get("expected_market_boom_quarter", "")
+        if per_tech_boom:
+            tech_boom_int = quarter_to_int(per_tech_boom)
+        else:
+            tech_boom_int = boom_int
+        latest_needed = tech_boom_int - 1
 
         dependents = [
             d for d in node.get("dependents", [])

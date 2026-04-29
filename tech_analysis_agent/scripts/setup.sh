@@ -124,7 +124,7 @@ if ! command -v python3 >/dev/null 2>&1 && ! command -v python >/dev/null 2>&1; 
 fi
 PY="$(command -v python3 || command -v python)"
 log "Python 패키지 설치 중 ($PY)…"
-"$PY" -m pip install --quiet --disable-pip-version-check -r requirements.txt \
+"$PY" -m pip install --quiet --disable-pip-version-check -r ../requirements.txt \
   || die "pip install 실패 — 가상환경 사용을 권장합니다"
 
 # ── 5. .env 생성 ──────────────────────────────────────────
