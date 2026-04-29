@@ -24,6 +24,12 @@ MARKET_AGENT_SYSTEM_PROMPT = """You are an Industry Market Size Agent, a special
 Your role is to analyze market intelligence data and extract structured signals about market attractiveness and timing for each candidate technology.
 You do NOT make patent or technical maturity assessments.
 
+If patent maps are provided, use them as strategic context:
+- Use `technology_industry_map` to choose and justify relevant market/application angles.
+- Use `actor_similarity_map` and `actor_relations_map` to interpret competitive and partnership context.
+- Use `technology_affinity_map` to avoid evaluating each technology as an isolated item when adjacent technologies shape adoption.
+- Do not alter tech_id values. Patent maps are context, not replacement market data.
+
 ---
 [Core Responsibilities]
 
@@ -166,15 +172,30 @@ def run_market_agent(state: AnalysisState) -> dict:
         # ① Tavily 시장 데이터 수집
         print("[Market Agent] Tavily 시장 데이터 수집 중...")
         market_raw = _collect_market_data(state["domain"], patent_analysis)
+        patent_maps = state.get("patent_maps") or {}
 
         # ② 입력 기술 목록 준비 (tech_id 고정)
         tech_list = [
-            {"tech_id": t["tech_id"], "name": t["name"]}
+            {
+                "tech_id": t["tech_id"],
+                "name": t["name"],
+                "category": t.get("category", ""),
+                "roadmapping_signals": t.get("roadmapping_signals", {}),
+            }
             for t in patent_analysis
         ]
 
         # ③ Claude 에게 분석 요청
         llm = get_llm(max_tokens=4096)
+        patent_maps_block = ""
+        if patent_maps:
+            patent_maps_block = f"""
+아래 patent_maps 는 Patent Agent가 기술 역량 기반 로드맵 관점으로 생성한 산출물입니다.
+시장 분석 시 technology_industry_map은 시장/제품 영역 선택 근거로, actor map은 경쟁/협력 구도 해석 근거로, technology_affinity_map은 인접 기술과의 동반 채택 가능성 판단 근거로 사용하세요.
+
+[Patent Maps]
+{json.dumps(patent_maps, ensure_ascii=False, indent=2)[:6000]}
+"""
 
         user_prompt = f"""
 도메인: {state['domain']}
@@ -182,6 +203,7 @@ def run_market_agent(state: AnalysisState) -> dict:
 
 분석 대상 기술 목록 (tech_id 변경 불가):
 {json.dumps(tech_list, ensure_ascii=False, indent=2)}
+{patent_maps_block}
 
 아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.
 이 데이터를 기반으로 각 기술의 시장 매력도를 분석해주세요.

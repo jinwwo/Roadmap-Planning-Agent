@@ -264,9 +264,11 @@ def _run_agent1(
         domain = state["domain"]
         ref_year = state["reference_year"]
         hints = state.get("category_hints") or []
+        patent_method = state.get("patent_method") or "A_current"
 
         snippet = f"""
 import sys, json, os
+os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
 sys.path.insert(0, os.getcwd())
 from graphs.analysis_graph import run_technology_analysis
 
@@ -279,6 +281,8 @@ result = run_technology_analysis(
 out = {{
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
+    "patent_maps": result.get("patent_maps") or {{}},
+    "patent_prompt": result.get("patent_prompt") or {{}},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
@@ -517,6 +521,7 @@ def run_orchestration(
     # 내부 설정
     out_prefix: str = "",
     stage_mode: str = "phase",
+    patent_method: str = "A_current",
 ) -> Dict[str, Any]:
     """
     Orchestration Agent 전체 파이프라인 실행.
@@ -569,6 +574,7 @@ def run_orchestration(
         # Investment policy override (None 이면 _run_agent3 가 기본값 사용)
         "risk_appetite": risk_appetite,
         "investment_horizon": investment_horizon,
+        "patent_method": patent_method,
     }
 
     # ② 첫 실행: 세 Agent 를 순서대로 (OFF 이면 폴백)
@@ -627,6 +633,7 @@ def run_orchestration(
     result = {
         "problem_frame": problem_frame,
         "active_agents": active_agents,
+        "patent_method": patent_method,
         "tech_candidates": state["tech_candidates"],
         "market_context": state["market_context"],
         "planned_roadmap": state["planned_roadmap"],

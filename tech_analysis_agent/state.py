@@ -79,6 +79,8 @@ class AnalysisState(TypedDict):
 
     # ③ LLM 분석 결과
     patent_analysis: Optional[List[PatentAnalysisResult]]
+    patent_maps: Optional[dict]
+    patent_prompt: Optional[dict]
     market_analysis: Optional[List[MarketAnalysisResult]]
 
     # ④ 최종 출력
@@ -102,6 +104,8 @@ class GlobalState(TypedDict):
     # Agent 1 출력 → Agent 2 입력
     tech_candidates: Optional[List[TechCandidate]]
     market_context: Optional[dict]
+    patent_maps: Optional[dict]
+    patent_prompt: Optional[dict]
 
     # Agent 2 출력 → Agent 3 입력
     planned_roadmap: Optional[List[dict]]

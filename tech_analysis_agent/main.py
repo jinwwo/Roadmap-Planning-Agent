@@ -17,6 +17,7 @@ Technology Roadmap AI Agent System 진입점
 """
 
 import json
+import os
 from config import validate_config
 from graphs.global_graph import create_global_graph
 from state import GlobalState
@@ -25,6 +26,7 @@ from state import GlobalState
 def main():
     # ① 환경 변수 검증
     validate_config()
+    patent_method = os.getenv("PATENT_ANALYSIS_METHOD", "A_current")
 
     # ② 분석 요청 설정
     domain = "차세대 2nm 이하 파운드리 및 AI 가속기 시장"
@@ -49,6 +51,8 @@ def main():
         "category_hints": category_hints,
         "tech_candidates": None,
         "market_context": None,
+        "patent_maps": None,
+        "patent_prompt": None,
         "planned_roadmap": None,
         "dependency_tree": None,
         "investment_plan": None,
@@ -63,6 +67,7 @@ def main():
     print("  Technology Roadmap AI Agent System 시작")
     print(f"  도메인  : {domain}")
     print(f"  기준연도: {reference_year}")
+    print(f"  patent_method: {patent_method}")
     print("=" * 60)
 
     final_state = global_graph.invoke(initial_state)
@@ -71,6 +76,8 @@ def main():
     agent1_output = {
         "market_context": final_state.get("market_context", {}),
         "tech_candidates": final_state.get("tech_candidates", []),
+        "patent_maps": final_state.get("patent_maps", {}),
+        "patent_prompt": final_state.get("patent_prompt", {}),
     }
     with open("output_tech_candidates.json", "w", encoding="utf-8") as f:
         json.dump(agent1_output, f, ensure_ascii=False, indent=2)

@@ -93,6 +93,10 @@ def run_aggregator(state: AnalysisState) -> dict:
                 f"[Market] {market.get('rationale', '')}"
             ).strip(),
         }
+        if patent.get("roadmapping_signals"):
+            candidate["roadmapping_signals"] = patent.get("roadmapping_signals")
+        if patent.get("patent_signals"):
+            candidate["patent_signals"] = patent.get("patent_signals")
         tech_candidates.append(candidate)
 
     # ⑤ 정렬 + 상위 N개 선택
@@ -128,6 +132,7 @@ def run_aggregator(state: AnalysisState) -> dict:
     return {
         "tech_candidates": tech_candidates,
         "market_context": market_context,
+        "patent_maps": state.get("patent_maps") or {},
         "messages": messages,
         "error": None,
     }

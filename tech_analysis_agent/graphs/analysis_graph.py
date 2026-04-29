@@ -121,6 +121,8 @@ def run_technology_analysis(
         "patent_raw_data": None,
         "market_raw_data": None,
         "patent_analysis": None,
+        "patent_maps": None,
+        "patent_prompt": None,
         "market_analysis": None,
         "tech_candidates": None,
         "market_context": None,
