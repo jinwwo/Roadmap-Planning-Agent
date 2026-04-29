@@ -198,6 +198,14 @@ pipeline.py · run_orchestration(...)
   Agent I/O 카드 / TRM 평가 그리드 / 7-섹션 보고서 등을 렌더.
 - **HITL 없음** — Orchestrator 가 ACCEPT/REVISE 를 자체 판단 (spec 그대로). 사용자는 시작 전에
   체크박스로 `active_agents` 선택.
+- **사용자 정책 입력** — 자연어 요청 외에 시작 폼에서 다음을 직접 지정:
+  - `active_agents` 토글 (Agent 1/2/3 ON/OFF)
+  - **투자 정책 (Investment Policy)** — Agent 3 입력으로 들어감
+    - `risk_appetite` : low / medium / high
+    - `investment_horizon` : short / balanced / long
+    - `total_budget` : USD 숫자
+    - `strategic_priority` : preset (균형/공격적/보수적) 또는 직접 입력
+  - 미입력 시 기본값 (medium / balanced / problem_frame.strategic_priorities) 자동 적용
 
 ---
 

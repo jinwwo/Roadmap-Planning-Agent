@@ -27,7 +27,7 @@ class RoadmapItem(TypedDict, total=False):
 
 class TechAnalysis(TypedDict, total=False):
     """
-    Technology Analyst Agent 의 원본 출력 (필드는 느슨). 시언 spec 과 맞추기 위해
+    Technology Analyst Agent 의 원본 출력 (필드는 느슨). Strategist 입력에 맞추기 위해
     아래 필드들을 사용:
       - technology / name (기술명)
       - market_attractiveness (high/medium/low) 또는 market_score (0-100)
@@ -46,7 +46,7 @@ class TechAnalysis(TypedDict, total=False):
     expected_market_boom_quarter: str
     dependency_hints: List[str]
     rationale: str
-    # 시언 spec 정렬 필드 (없으면 위 필드에서 유도)
+    # Strategist 입력 정규화 필드 (없으면 위 필드에서 유도)
     market_attractiveness: str
     technology_maturity: str
     patent_competition: str
@@ -72,15 +72,15 @@ class EvaluationScores(TypedDict):
     market_opportunity: int      # 1-5
     strategic_fit: int           # 1-5
     executability: int           # 1-5
-    uncertainty: int             # 1-5
+    uncertainty: int             # 1-5 (높을수록 리스크 큼)
     urgency: int                 # 1-5
 
 
-class InvestmentStrategy(TypedDict, total=False):
-    """시언 spec 의 출력 스키마 (stage 당 하나)"""
-    stage: str
-    period: str
-    evaluation_scores: EvaluationScores
+class TechInvestment(TypedDict, total=False):
+    """개별 기술 단위 투자 평가 — 투자 의사결정의 진짜 단위 (Tier 라벨 위주)"""
+    tech_id: str
+    name: str
+    evaluation_scores: EvaluationScores   # 5-지표 (1~5 정수)
     investment_attractiveness: str        # high / medium / low
     investment_urgency: str               # high / medium / low
     recommended_investment_tier: str      # "Tier 1" / "Tier 2" / "Tier 3"
@@ -91,12 +91,25 @@ class InvestmentStrategy(TypedDict, total=False):
     resource_focus: List[str]             # 2-4
 
 
+class InvestmentStrategy(TypedDict, total=False):
+    """
+    Stage 컨테이너 — stage 통합 판단(narrative) + stage 예산 + 그 안의 기술별 평가
+    예산은 stage 단위만 결정 (per-tech 분배는 없음)
+    """
+    stage: str
+    period: str
+    stage_assessment: str                 # stage 통합 판단 (timing/synergy/의존성 narrative)
+    stage_budget_ratio: float             # 0.0~1.0, 모든 stage 합 = 1.0 (LLM 결정)
+    stage_estimated_usd: float            # total_budget × stage_budget_ratio (코드 계산)
+    tech_investments: List[TechInvestment]  # 각 기술별 투자 평가 (Tier 라벨 + 권고)
+
+
 # ── Investment Policy ────────────────────────────────────────
 
 class InvestmentPolicy(TypedDict, total=False):
     risk_appetite: str           # low / medium / high
     investment_horizon: str      # short / balanced / long
-    budget_constraint: str       # low / medium / high
+    total_budget: float          # 전체 예산 (USD) — Orchestrator 의 total_budget 그대로
     strategic_priority: List[str]
 
 

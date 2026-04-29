@@ -134,6 +134,48 @@ html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: 
 .agent-toggle:hover .agent-chip { color: var(--text); border-color: var(--accent-soft); }
 .toggle-hint { margin-left: auto; font-size: 11px; color: var(--text-dim); }
 
+/* Investment Policy panel (collapsible) */
+.policy-row {
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 10px;
+}
+.policy-summary {
+  cursor: pointer; font-size: 12px; font-weight: 600;
+  color: var(--accent-soft); padding: 4px 0;
+  list-style: none;
+}
+.policy-summary::-webkit-details-marker { display: none; }
+.policy-summary::before { content: "▶"; display: inline-block; margin-right: 6px; transition: transform 0.15s ease; }
+.policy-row[open] .policy-summary::before { transform: rotate(90deg); }
+.policy-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+  margin-top: 8px;
+}
+.policy-field { display: flex; flex-direction: column; gap: 4px; }
+.policy-field-wide { grid-column: 1 / -1; }
+.policy-field label {
+  font-size: 11px; color: var(--text-dim); font-weight: 600;
+}
+.policy-field select,
+.policy-field input[type="text"],
+.policy-field input[type="number"] {
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); border-radius: 6px; padding: 6px 8px;
+  font-family: inherit; font-size: 12px; outline: none;
+}
+.policy-field select:focus,
+.policy-field input:focus { border-color: var(--accent); }
+.policy-field input:disabled { opacity: 0.4; cursor: not-allowed; }
+.priority-presets {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 4px;
+}
+.priority-radio {
+  font-size: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
+  color: var(--text-dim);
+}
+.priority-radio input { margin: 0; }
+.priority-radio:has(input:checked) { color: var(--accent-soft); font-weight: 600; }
+
 .composer-row { display: flex; gap: 8px; }
 .composer textarea {
   flex: 1; resize: none; background: var(--bg-elev); border: 1px solid var(--border);

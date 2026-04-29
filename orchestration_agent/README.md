@@ -28,17 +28,19 @@ Tech-Analysis-Agent/                    ← GitHub 레포 루트
  ├─ Agent 2 (subprocess) ←──┤ ← orchestrator_feedback(text/shift/drop) 전달
  │  roadmap_planner_agent/  │
  │                          │
- └─ Agent 3 (subprocess) ←──┘ ← ProblemFrame → investment_policy 자동 매핑
+ └─ Agent 3 (subprocess) ←──┘ ← investment_policy (웹/CLI 입력 또는 ProblemFrame 기본값)
     investment_strategist_agent/
         │
         ▼
   Orchestrator Review (LLM)   ← TRM 5-축 평가:
         │                         feasibility / sequencing / alignment /
         │                         investment rationality / portfolio balance
+        │                       + 매 iter 마다 7-섹션 보고서 생성 (잠정 또는 최종)
         │
-        ├── ACCEPT  → 7-섹션 최종 report 생성 → END
-        └── REVISE  → refinement.rerun_agents 만 재실행 → 다시 Review
+        ├── ACCEPT  → 최종 report → END
+        └── REVISE  → refinement.rerun_agents + feedback 으로 재실행 → 다시 Review
                       (최대 MAX_ORCHESTRATOR_ITERATIONS 회)
+                      매 iter 의 review 는 review_history 에 누적 저장
 ```
 
 ## 왜 subprocess 인가?
@@ -74,14 +76,9 @@ LLM 호출이 메인 비용인 파이프라인에서는 무시할 수 있습니�
 ### 환경 준비
 
 ```bash
-# Orchestration-Agent 자신의 의존성
-cd orchestration_agent
+# 4개 에이전트 통합 의존성 (루트 requirements.txt 한 번에 설치)
+cd Tech-Analysis-Agent
 pip install -r requirements.txt
-
-# sibling 각자의 의존성도 먼저 설치되어 있어야 함
-(cd ../tech_analysis_agent         && pip install -r requirements.txt)
-(cd ../roadmap_planner_agent       && pip install -r requirements.txt)
-(cd ../investment_strategist_agent && pip install -r requirements.txt)
 ```
 
 LLM provider 설정은 각 폴더의 `.env` 를 이용합니다 (모두 동일한 이름 규약):
@@ -145,7 +142,7 @@ python main.py \
 | `<prefix>tech_candidates.json`     | Agent 1 결과 (market_context + tech_candidates) |
 | `<prefix>planned_roadmap.json`     | Agent 2 결과 (planned_roadmap + dependency_tree) |
 | `<prefix>investment_strategy.json` | Agent 3 결과 (stages + investment_strategy) |
-| `<prefix>orchestrator_report.json` | Orchestrator 최종 (problem_frame / active_agents / iteration / review) |
+| `<prefix>orchestrator_report.json` | Orchestrator 최종 (problem_frame / active_agents / iteration / review / **review_history[]** / artifact_paths) |
 
 `orchestrator_report.json` 의 `review` 구조 (ACCEPT 시):
 
@@ -174,9 +171,36 @@ python main.py \
 }
 ```
 
-REVISE 시에는 `report` 필드가 비워지고 `diagnostic_summary` 만 채워집니다.
-Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정된
-에이전트만 재실행되고 (파이프라인 순서상 앞 단계부터 뒤까지) 다시 Review 됩니다.
+**REVISE 시에도 7-섹션 보고서가 생성됩니다** (잠정 보고서). 잔여 issues / feedback 은
+`feasibility_and_risk` 섹션에 명시되며, 다음 iter 에서 갱신되어 최종 ACCEPT 시점
+보고서가 최종본이 됩니다. `review_history[]` 에 매 iter 의 review + report 가 누적 저장됨.
+
+Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정된 에이전트만
+재실행되고 (파이프라인 순서상 앞 단계부터 뒤까지) `refinement.feedback` 이 자유 텍스트
+채널로 Agent 2 / Agent 3 의 시스템 프롬프트에 박혀 다음 iter 의 산출물에 반영됩니다.
+
+## 자동 보정 메커니즘
+
+LLM 이 review 응답에서 빠뜨리거나 모순된 정보를 코드가 자동 보강합니다:
+
+| 보정 | 트리거 | 동작 |
+|------|------|------|
+| **TRM FAIL 자동 감지** | `trm_assessment` 의 boolean 이 `false` 인데 `decision=ACCEPT` 로 통과 | issues / feedback 자동 추가 + ACCEPT → REVISE 강제 전환 |
+| **rerun_agents 자동 보강** | `issues[].axis` 의 책임 Agent 가 `rerun_agents` 에서 누락 | axis → Agent 매핑으로 자동 추가 (예: `strategic_alignment` → Technology Analyst) |
+| **JSON 파싱 강건화** | LLM 응답이 trailing comma / smart quotes 등 형식 오류 | 자동 보정 후 재파싱 |
+| **Partial recovery** | JSON 파싱 완전 실패 (e.g. 쉼표 누락) | regex 로 `decision`/`issues`/`trm_assessment`/`refinement`/`report` 핵심 필드만 발췌해 dict 재조립 |
+| **Issue axis 정규화** | `axis` 가 별칭 (e.g. `alignment`, `dependency`) 또는 누락 | 5축 canonical 이름으로 매핑, text 기반 추론 |
+| **강제 ACCEPT** | `MAX_ORCHESTRATOR_ITERATIONS` 도달했는데 여전히 REVISE | ACCEPT 로 전환 후 잔여 issue 를 보고서 `feasibility_and_risk` 에 명시 |
+
+axis → 책임 Agent 매핑 (`fail_axis_to_agent`):
+
+| axis | 자동 보강 대상 |
+|------|------|
+| `feasibility`            | Roadmap Planner + Investment Strategist |
+| `sequencing`             | Roadmap Planner |
+| `strategic_alignment`    | Technology Analyst |
+| `investment_rationality` | Investment Strategist |
+| `portfolio_balance`      | Roadmap Planner + Investment Strategist |
 
 ## Agent OFF 시 폴백 동작
 

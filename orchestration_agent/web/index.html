@@ -22,9 +22,37 @@
       <div class="messages" id="messages">
         <div class="msg system">
           <div class="bubble">
-            <b>안녕하세요!</b> 어떤 도메인의 기술 로드맵을 그려드릴까요?<br/>
-            예) <i>"2030년까지의 2nm 파운드리 로드맵을 그려줘"</i><br/>
-            <span class="dim">아래에서 활성화할 Agent 를 선택한 뒤 전송하세요. Agent 유무에 따라 보고서 품질 차이를 비교할 수 있습니다.</span>
+            <b>안녕하세요!</b> 어떤 도메인의 기술 로드맵을 그려드릴까요?<br/><br/>
+
+            <b>📝 자연어 한 문단에 다음 정보를 다 녹여 적어주세요</b> — LLM 이 자동으로 구조화 추출합니다.<br/><br/>
+
+            <table style="font-size:12px; border-collapse:collapse; width:100%;">
+              <tr style="border-bottom:1px solid var(--border); color:var(--accent-soft);">
+                <th style="text-align:left; padding:4px 8px;">필드</th>
+                <th style="text-align:left; padding:4px 8px;">필수?</th>
+                <th style="text-align:left; padding:4px 8px;">자연어 예시</th>
+              </tr>
+              <tr><td style="padding:3px 8px;"><b>domain</b></td><td style="padding:3px 8px;">✅ 필수</td><td style="padding:3px 8px;"><i>"2nm 파운드리"</i> · <i>"전기차 배터리"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>reference_year</b></td><td style="padding:3px 8px;">✅ 필수</td><td style="padding:3px 8px;"><i>"2030년까지"</i> · <i>"향후 5년"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>category_hints</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"EUV, GAA, BSPDN 중심으로"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>industry</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"Tier-1 IDM Foundry 입장에서"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>objective</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"시장 선점이 목표"</i></td></tr>
+              <tr style="border-top:1px solid var(--border);"><td colspan="3" style="padding:6px 8px; color:var(--accent-soft);"><b>👤 투자 정책 (Investment Policy)</b> — 함께 자연어로 적으면 됩니다</td></tr>
+              <tr><td style="padding:3px 8px;"><b>total_budget</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"예산 $5B 규모"</i> · <i>"$10B capex"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>risk_appetite</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"위험 선호도 균형"</i> · <i>"공격적 베팅"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>investment_horizon</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"단기·장기 균형"</i> · <i>"장기 위주"</i></td></tr>
+              <tr><td style="padding:3px 8px;"><b>strategic_priority</b></td><td style="padding:3px 8px;">선택</td><td style="padding:3px 8px;"><i>"first-mover, 시장 확장 우선"</i></td></tr>
+            </table><br/>
+
+            <b>📌 예시 1 — 최소 입력 (필수만):</b><br/>
+            <span style="font-family:monospace; color:var(--accent-soft);">"2030년까지의 2nm 파운드리 로드맵 그려줘"</span><br/>
+            <span class="dim">→ domain, reference_year 만 추출. 정책은 모두 기본값.</span><br/><br/>
+
+            <b>📌 예시 2 — 풀 입력 (모든 필드 자연어에 포함):</b><br/>
+            <span style="font-family:monospace; color:var(--accent-soft);">"Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B 규모, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략 우선순위는 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘"</span><br/>
+            <span class="dim">→ 9개 필드 모두 자동 추출. Active Agents 토글만 별도 선택.</span><br/><br/>
+
+            <span class="dim">▶ 전송하면 4개 Agent 가 순차 실행되고, Agent 토글로 ablation 비교 가능합니다.</span>
           </div>
         </div>
       </div>
@@ -43,8 +71,9 @@
           </label>
           <span class="toggle-hint">OFF = 폴백 산출물로 대체 · Orchestrator 는 항상 ON</span>
         </div>
+
         <div class="composer-row">
-          <textarea id="input" rows="2" placeholder="분석하고 싶은 기술 도메인을 자연어로 입력…"></textarea>
+          <textarea id="input" rows="5" placeholder='예: "Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략은 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘"'>Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략은 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘</textarea>
           <button id="send-btn">▶ 전송</button>
         </div>
       </div>

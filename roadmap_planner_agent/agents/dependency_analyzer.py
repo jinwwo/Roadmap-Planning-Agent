@@ -60,11 +60,28 @@ For each technology, determine:
    A Process technology CANNOT start before its required Material or Equipment technology is complete.
 
 2. Intra-layer dependencies:
-   Within the same layer, if Technology A's function is clearly required for Technology B to work,
-   A is a prerequisite of B.
+   Within the same layer, if Technology A's function is clearly required for
+   Technology B to work, A is a prerequisite of B.
+
+   For example, within the Process layer technologies often have natural sequence:
+   - Foundation processes (e-beam inspection, basic etching, ALD precursor deposition)
+     are typically required before advanced processes (DSA patterning, GAA fabrication, ALE).
+   - Pattern definition (lithography) is typically required for pattern transfer (etching)
+     and pattern refinement (selective deposition).
+   - System verification techs (final integration, packaging-readiness) typically
+     depend on at least one foundation or intermediate process tech.
+
+   Use these examples as guidance only when functional dependency is genuine —
+   do not invent dependencies just to vary the timeline.
 
 3. Hint integration:
    Use the provided dependency_hints as strong signals, but override them if logically inconsistent.
+
+3a. Description integration:
+   Each tech may include a `description` field (Agent 1 의 시장/특허 분석 본문 발췌).
+   Use it to refine intra-layer dependencies — e.g., if description mentions
+   "EUV scanner is required for High-NA patterning", then the High-NA patterning tech
+   has the EUV scanner as prerequisite.
 
 4. Cross-layer rules:
    - A technology cannot have prerequisites from a HIGHER layer.
@@ -141,6 +158,7 @@ def _build_fallback_tree(tech_candidates: list) -> dict:
             "prerequisites": [],
             "dependents": [],
             "layer": layer,
+            "expected_market_boom_quarter": t.get("expected_market_boom_quarter", ""),
         }
         if layer == 0:
             layer0_ids.append(tid)
@@ -183,6 +201,13 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
         llm = get_llm(max_tokens=3000)
 
         # 입력 데이터 요약 (필요 필드만)
+        # rationale 의 [Patent]/[Market] 본문은 의존성 추론에 도움이 되므로 포함
+        # (단 길면 240자 제한)
+        def _slim_rationale(r: str) -> str:
+            if not isinstance(r, str):
+                return ""
+            return r[:240] + ("…" if len(r) > 240 else "")
+
         tech_summary = [
             {
                 "tech_id": t["tech_id"],
@@ -190,6 +215,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
                 "category": t.get("category", "Process"),
                 "trl": t.get("trl", 3),
                 "dependency_hints": t.get("dependency_hints", []),
+                "description": _slim_rationale(t.get("rationale", "")),
             }
             for t in tech_candidates
         ]
@@ -217,6 +243,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
         # name/category/trl 를 재생성/할루시네이션 하는 경우가 있음.
         # prerequisites / dependents / layer 만 LLM 결과를 유지하고 나머지는
         # 원본 tech_candidates 값으로 강제 덮어쓰기.
+        # 추가로 expected_market_boom_quarter (per-tech) 도 함께 보존 — 역산 시 활용.
         tc_by_id = {t["tech_id"]: t for t in tech_candidates}
         for tid, node in list(dependency_tree.items()):
             src = tc_by_id.get(tid)
@@ -226,6 +253,9 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
             node["name"] = src.get("name", node.get("name", ""))
             node["category"] = src.get("category", node.get("category", ""))
             node["trl"] = src.get("trl", node.get("trl", 1))
+            # per-tech 시장 개화 시점 (Agent 1 산출) — timeline_calculator 가 활용
+            if src.get("expected_market_boom_quarter"):
+                node["expected_market_boom_quarter"] = src["expected_market_boom_quarter"]
 
         # LLM 이 tech_id 를 누락시켰을 때 원본을 fallback 노드로 보강
         for tid, src in tc_by_id.items():
@@ -238,6 +268,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
                     "prerequisites": [],
                     "dependents": [],
                     "layer": CATEGORY_LAYER.get(src.get("category", "Process"), 1),
+                    "expected_market_boom_quarter": src.get("expected_market_boom_quarter", ""),
                 }
 
         print(f"[Dependency Analyzer] ✅ {len(dependency_tree)}개 노드 의존성 트리 구성 완료 (원본 필드 복구)")

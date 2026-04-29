@@ -18,15 +18,15 @@ LLM 기반 4-에이전트 파이프라인으로 **기업의 기술 로드맵을 
 ```
 Tech-Analysis-Agent/                     ← GitHub 레포 루트 (이 폴더)
 │
-├── tech_analysis_agent/                   Agent 1  · 친구 구현
-├── roadmap_planner_agent/                 Agent 2  · 성훈
-├── investment_strategist_agent/           Agent 3  · 시언
-├── orchestration_agent/                   Orchestrator · 준기
+├── tech_analysis_agent/                   Agent 1
+├── roadmap_planner_agent/                 Agent 2
+├── investment_strategist_agent/           Agent 3
+├── orchestration_agent/                   Orchestrator
 │
 ├── .venv/                                 공용 Python 3.10 venv (uv 로 생성)
 ├── .env                                   공용 환경변수 (각 폴더에서 symlink)
 ├── .env.example
-├── requirements.txt                       4개 폴더 의존성 합집합
+├── requirements.txt                       통합 의존성 (4개 에이전트 공용)
 ├── README.md                              ← 이 문서
 ├── ENVIRONMENT.md                         설치/환경 상세
 ├── DEMO.md                                시스템 전체 데모 가이드
@@ -76,12 +76,15 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 **내부 3 단계** (LangGraph 서브그래프):
 1. `dependency_analyzer` — LLM 이 기술 간 선후 관계 분석, 카테고리 계층 (Material/Equipment → Process → Architecture/Packaging) 적용해 `layer: 0|1|2` 부여
-2. `timeline_calculator` — **pure Python**, TRL 기반 lead time (TRL 1-3: 7분기 / 4-6: 4분기 / 7-8: 2분기) + 시장 개화 시점부터 **역산(Backcasting)** + **Zero-slack 보장** (선행 완료 < 후행 시작)
+2. `timeline_calculator` — **pure Python**, TRL 기반 lead time (TRL 1-3: 5분기 / 4-6: 3분기 / 7-8: 2분기 / 9: 1분기) + 시장 개화 시점부터 **역산(Backcasting)** + **Zero-slack 보장** (선행 완료 ≤ 후행 시작). LLM 은 분기 결정 권한 없음 — 결정성 보장.
 3. `roadmap_builder` — LLM 이 `phase_name` + `justification` 한국어로 작성
 
-**Orchestrator 피드백 반영**: `orchestrator_feedback.shift` / `drop` 으로 특정 기술 연기 또는 제외, 연쇄 지연(Cascade) 자동 처리.
+**Orchestrator 피드백 반영** (3 채널):
+- `shift` — 특정 기술 시작 분기 강제 변경 (cascade 자동)
+- `drop`  — 기술 제외 (`dropped=True` 표시)
+- `text`  — Orchestrator REVISE 의 자유 텍스트 피드백 → dependency_analyzer + roadmap_builder 의 LLM 프롬프트에 박혀 분기/의존성/phase_name 조정에 활용
 
-**기술명 복구 패치** (최근 적용): 작은 LLM (llama3.1:8b) 이 `name` 을 할루시네이션 하면 원본 `tech_candidates` 에서 강제 덮어쓰기. LLM 은 `prerequisites`/`dependents`/`layer` 만 유지.
+**기술명 복구 패치**: 작은 LLM 이 `name` 을 할루시네이션 하면 원본 `tech_candidates` 에서 강제 덮어쓰기. LLM 은 `prerequisites`/`dependents`/`layer` 만 유지.
 
 ---
 
@@ -90,21 +93,28 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 **입력**: `planned_roadmap.json` + `tech_candidates.json` + `investment_policy` (선택)
 **출력**: `investment_strategy.json` — stage 당 하나의 전략 객체
 
-**핵심 원칙** : **"판단 단위는 개별 기술이 아니라 로드맵 단계(stage)"**.
+**핵심 원칙** : Stage 는 컨테이너 (시간/의존성 그룹), **실제 의사결정 단위는 개별 기술**.
 
 **내부 2 단계**:
 1. `stage_aggregator` — **pure Python**. 기술 단위 로드맵을 stage 로 집계
    - 기본 (`--stage-mode phase`): Roadmap Planner 의 `phase_name` 그대로 사용
    - `--stage-mode horizon`: 시작 분기 기준 short-term (≤8Q) / mid-term (≤16Q) / long-term
-2. `strategist` — LLM 이 각 stage 에 대해:
-   - **5-지표 점수 (1-5)** 부여: `market_opportunity`, `strategic_fit`, `executability`, `uncertainty`, `urgency`
-   - 점수 해석 → **Tier 1 / 2 / 3** 결정
-     - Tier 1: 적극 투자 (선제적 · 우선)
-     - Tier 2: 선택적 / 단계적 투자
-     - Tier 3: 탐색적 투자 / 관찰
-   - `investment_attractiveness`, `investment_urgency`, `investment_scope`, `recommended_action`, `rationale[]`, `major_risks[]`, `resource_focus[]`
+2. `strategist` — LLM 이 각 stage 에 대해 **두 수준** 동시 산출:
+   - **A. Stage narrative**: `stage_assessment` 1~3 문장 (timing / synergy / dependency / scale)
+   - **B. Per-tech 평가** (`tech_investments[]`): stage 안 각 기술마다
+     - 5-지표 점수 (1-5): `market_opportunity` / `strategic_fit` / `executability` / `uncertainty` / `urgency`
+     - **Tier 1 / 2 / 3** — 같은 stage 안에서도 tech 마다 다를 수 있음
+     - `investment_attractiveness`, `investment_urgency`, `investment_scope`, `recommended_action`, `rationale[]`, `major_risks[]`, `resource_focus[]`
+   - **C. Stage-level 예산 분배**: `stage_budget_ratio` (0.0~1.0, 모든 stage 합 = 1.0). 코드가 자동 정규화 + `stage_estimated_usd = total_budget × ratio` 계산.
 
-**외부 API 호출 없음** — Agent 1/2 의 출력 + Problem Frame 의 `investment_policy` 만으로 추론. 별도 mock 불필요.
+**Adaptive LLM 전략** ([_is_strong_llm](investment_strategist_agent/agents/strategist.py)):
+- 강한 LLM (Claude / Ollama 32B+) → **Single-call** (모든 stage 한 번에, cross-stage 추론 풍부, max_tokens=16384)
+- 작은 LLM (Ollama 8B 이하) → **Per-stage 분할** (stage 별 독립 콜 + cross-stage summary 동봉, JSON 안정성 우선)
+- Single-call 실패 시 → per-stage 자동 폴백 (self-healing)
+
+**Orchestrator REVISE feedback 반영**: `orchestrator_feedback.text` 채널이 strategist 의 LLM 프롬프트에 박혀 다음 iter 의 Tier / 예산 비율 조정에 직접 사용됨.
+
+**외부 API 호출 없음** — Agent 1/2 의 출력 + Problem Frame 의 `investment_policy` 만으로 추론.
 
 ---
 
@@ -217,7 +227,7 @@ bash scripts/setup.sh
 
 `setup.sh` 가 하는 일:
 1. `uv venv --python 3.10 .venv` (공용 venv 생성)
-2. 루트 `requirements.txt` 설치 (4개 폴더 의존성 합집합)
+2. 루트 `requirements.txt` 설치 (4개 에이전트 공용 의존성)
 3. `.env` 없으면 `.env.example` 에서 복사
 4. 각 sibling 폴더에 `.env -> ../.env` symlink 생성
 5. (기본 Ollama 모드) 데몬 기동 + `llama3.1:8b` 모델 pull

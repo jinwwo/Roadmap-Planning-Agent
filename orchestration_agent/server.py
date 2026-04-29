@@ -8,9 +8,13 @@ FastAPI + Server-Sent Events 백엔드 (Orchestration Agent 웹 데모).
   POST /api/session       → 새 세션 생성 + 파이프라인 시작
                              body: {
                                "request": "<user 자연어>",
-                               "active_agents": ["1","2","3"],      # 선택 (기본 전부 ON)
-                               "total_budget": 5_000_000_000,       # 선택
-                               "stage_mode": "phase" | "horizon"    # 선택
+                               "active_agents": ["1","2","3"],          # 선택 (기본 전부 ON)
+                               "total_budget": 5_000_000_000,           # 선택 (USD 숫자)
+                               "stage_mode": "phase" | "horizon",       # 선택
+                               # Investment Policy (Agent 3 입력)
+                               "risk_appetite": "low|medium|high",      # 선택 (기본 medium)
+                               "investment_horizon": "short|balanced|long",  # 선택 (기본 balanced)
+                               "strategic_priority": ["...", "..."]     # 선택 (기본 problem_frame)
                              }
   GET  /api/stream/{sid}  → SSE 스트림 (진행 상황 + 결과 이벤트)
   GET  /api/status        → LLM provider 정보
@@ -50,6 +54,13 @@ def index():
     return FileResponse(WEB_DIR / "index.html")
 
 
+@app.get("/favicon.ico")
+def favicon():
+    """브라우저의 자동 favicon 요청에 빈 응답 (404 로그 방지)"""
+    from fastapi.responses import Response
+    return Response(status_code=204)   # No Content
+
+
 app.mount("/static", StaticFiles(directory=str(WEB_DIR)), name="static")
 
 
@@ -58,8 +69,14 @@ app.mount("/static", StaticFiles(directory=str(WEB_DIR)), name="static")
 class StartRequest(BaseModel):
     request: str                                  # 사용자 자연어 요청
     active_agents: Optional[List[str]] = None     # 예: ["1","2","3"] · 미지정 시 전부 ON
-    total_budget: Optional[float] = None
     stage_mode: Optional[str] = "phase"           # "phase" | "horizon"
+    # Investment policy — 자연어 한 줄 (LLM 이 4 필드로 추출)
+    investment_policy_text: Optional[str] = None
+    # (하위 호환) 구조화 입력도 지원 — text 가 없으면 이걸 사용
+    total_budget: Optional[float] = None
+    risk_appetite: Optional[str] = None
+    investment_horizon: Optional[str] = None
+    strategic_priority: Optional[List[str]] = None
 
 
 # ── 엔드포인트 ───────────────────────────────────────────────
@@ -83,6 +100,10 @@ def start_session(req: StartRequest):
         active_agents=req.active_agents,
         total_budget=req.total_budget,
         stage_mode=req.stage_mode or "phase",
+        risk_appetite=req.risk_appetite,
+        investment_horizon=req.investment_horizon,
+        strategic_priority=req.strategic_priority,
+        investment_policy_text=req.investment_policy_text,
     )
     return {
         "session_id": s.id,

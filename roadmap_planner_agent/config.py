@@ -40,16 +40,15 @@ CATEGORY_LAYER: dict = {
 # (정책: (min + max) // 2 를 사용하되, 시장 역산에서 prerequisites 체인이 길어지면
 #        timeline_calculator 에서 자동 조정)
 TRL_LEAD_TIME_QUARTERS: dict = {
-    # TRL: (min, max)
-    1: (8, 10),
-    2: (7, 9),
-    3: (6, 8),
-    4: (4, 6),
-    5: (3, 5),
-    6: (2, 4),
-    7: (1, 3),
-    8: (1, 2),
-    9: (1, 1),
+    # 계획서 스펙 그대로 — band 단위 lead time:
+    #   TRL 1-3 : 5 분기 (4-6 분기 band 의 중앙값)
+    #   TRL 4-6 : 3 분기 (2-4 분기 band 의 중앙값)
+    #   TRL 7-8 : 2 분기 (1-2 분기 band 의 중앙값)
+    #   TRL 9   : 1 분기 (이미 양산 가능)
+    1: 5, 2: 5, 3: 5,
+    4: 3, 5: 3, 6: 3,
+    7: 2, 8: 2,
+    9: 1,
 }
 
 # ── 기본 시장 목표 분기 (market_context 미제공 시) ────────────
