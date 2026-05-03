@@ -80,6 +80,8 @@ industry / objective may be omitted if not inferable."""
 
 
 def _extract_json(text: str) -> dict:
+    # Qwen3 시리즈 등 thinking 모드 모델의 <think>...</think> 블록 자동 제거.
+    text = re.sub(r"<think>[\s\S]*?</think>", "", text, flags=re.IGNORECASE).strip()
     cleaned = re.sub(r"```(?:json)?\s*", "", text).replace("```", "").strip()
     try:
         return json.loads(cleaned)
@@ -90,28 +92,79 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"Intake JSON parse failed: {text[:200]}")
 
 
+def _extract_year_from_text(text: str, current_year: int) -> Optional[int]:
+    """사용자 원문에서 4자리 미래 연도를 직접 발췌 (LLM 없이).
+
+    예: '2030년까지', 'by 2030', 'until 2030', '2028 진입', '2030년 시장 개화'
+    → 2030 / 2028 / 2030
+
+    여러 연도가 있으면 가장 큰 미래 연도 (= 마감 연도) 우선.
+    """
+    if not isinstance(text, str):
+        return None
+    matches = re.findall(r"(?<!\d)(20\d{2}|21\d{2})(?!\d)", text)
+    future_years = [int(y) for y in matches if int(y) > current_year]
+    if future_years:
+        return max(future_years)
+    return None
+
+
 def extract_intake(user_request: str) -> dict:
-    """사용자 자연어를 domain / reference_year / category_hints 등으로 파싱"""
+    """사용자 자연어를 domain / reference_year / category_hints 등으로 파싱.
+    LLM 응답이 빈 채로 와도 사용자 원문 기반 fallback 으로 동작 보장.
+
+    reference_year 우선순위:
+      ① 사용자 원문에서 regex 로 발췌한 미래 연도 (가장 신뢰성 높음, LLM 무관)
+      ② LLM 이 추출한 reference_year
+      ③ default = current_year + 5
+    """
     from datetime import datetime
     current_year = datetime.now().year
     default_ref_year = current_year + 5  # 기본 5년 horizon
 
-    llm = get_llm(max_tokens=512)
-    resp = llm.invoke([
-        SystemMessage(content=_INTAKE_SYSTEM),
-        HumanMessage(content=user_request),
-    ])
-    data = _extract_json(resp.content if hasattr(resp, "content") else str(resp))
-    data.setdefault("category_hints",
-                    ["Equipment", "Material", "Process", "Architecture", "Packaging"])
+    # ① 원문 regex 추출 — LLM 호출 전에 먼저 시도
+    text_year = _extract_year_from_text(user_request, current_year)
+
+    fallback = {
+        "domain": user_request.strip(),
+        "reference_year": text_year or default_ref_year,
+        "category_hints": ["Equipment", "Material", "Process", "Architecture", "Packaging"],
+    }
+
+    try:
+        llm = get_llm(max_tokens=512)
+        resp = llm.invoke([
+            SystemMessage(content=_INTAKE_SYSTEM),
+            HumanMessage(content=user_request),
+        ])
+        raw = resp.content if hasattr(resp, "content") else str(resp)
+        if not raw or not raw.strip():
+            print(f"[Session] ⚠️ Intake LLM 빈 응답 → 사용자 입력 fallback 사용")
+            return fallback
+        data = _extract_json(raw)
+    except Exception as e:
+        print(f"[Session] ⚠️ Intake 파싱 실패 ({e}) → fallback 사용. raw 샘플: {(raw[:200] if 'raw' in dir() else '(no resp)')!r}")
+        return fallback
+
+    data.setdefault("category_hints", fallback["category_hints"])
     data["domain"] = data.get("domain") or user_request.strip()
 
-    # reference_year 정수 변환 + sanity check
+    # reference_year — 원문 regex 결과를 LLM 결과보다 우선
     try:
-        ry = int(data.get("reference_year", default_ref_year))
+        ry_llm = int(data.get("reference_year", default_ref_year))
     except Exception:
-        ry = default_ref_year
-    # 과거 연도 또는 너무 가까운 미래(<= 현재 연도) 면 기본값으로 보정
+        ry_llm = default_ref_year
+
+    if text_year and text_year > current_year:
+        if ry_llm != text_year:
+            print(
+                f"[Session] reference_year 보정: LLM={ry_llm} → 원문 regex={text_year} "
+                f"(사용자 원문 우선)"
+            )
+        ry = text_year
+    else:
+        ry = ry_llm
+
     if ry <= current_year:
         print(f"[Session] ⚠️ reference_year={ry} 가 현재({current_year}) 이하 → {default_ref_year} 로 보정")
         ry = default_ref_year

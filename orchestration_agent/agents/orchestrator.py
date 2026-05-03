@@ -55,6 +55,8 @@ def _try_repair_json(text: str) -> str:
 
 
 def _extract_json(text: str) -> dict:
+    # Qwen3 시리즈 등 thinking 모드 모델의 <think>...</think> 블록 자동 제거.
+    text = re.sub(r"<think>[\s\S]*?</think>", "", text, flags=re.IGNORECASE).strip()
     cleaned = re.sub(r"```(?:json)?\s*", "", text).replace("```", "").strip()
     # 1차: 그대로 파싱
     try:
@@ -142,34 +144,110 @@ def _partial_recover_review(text: str) -> dict:
     if m:
         out["refinement"]["feedback"] = _strs_in_array(m.group(1))
 
-    # trm_assessment 의 5축 — 각 boolean / 점수만 추출
-    trm_block_m = re.search(r'"trm_assessment"\s*:\s*\{([\s\S]*?)\}\s*,\s*"', text)
-    trm_block = trm_block_m.group(1) if trm_block_m else text  # 전체에서도 fallback 검색
+    # ── trm_assessment 의 5축 — 각 axis 별 nested object 적극 발췌 ──
+    # 단순 패턴 한 번에 안 잡히는 케이스가 많아 axis 별로 따로 시도.
 
-    bool_keys = (
-        "budget_feasible", "schedule_feasible", "dependency_feasible",
-        "over_invested", "under_invested",
-    )
-    num_keys = (
-        ("strategic_alignment", "company_fit"),
-        ("strategic_alignment", "future_trend_alignment"),
-        ("portfolio_balance", "short_long_balance"),
-        ("portfolio_balance", "risk_balance"),
-    )
+    def _extract_axis_block(axis_name: str) -> str:
+        """trm_assessment 안의 특정 axis 블록을 발췌 (없으면 빈 string)."""
+        # "feasibility": { ... } 형태 — 중첩 {} 처리는 비잔류 패턴으로
+        m = re.search(
+            rf'"{axis_name}"\s*:\s*\{{([^{{}}]*(?:\{{[^{{}}]*\}}[^{{}}]*)*)\}}',
+            text
+        )
+        return m.group(1) if m else ""
+
+    def _bool_in(block: str, key: str):
+        bm = re.search(
+            rf'"{key}"\s*:\s*(true|false|True|False|"true"|"false"|"yes"|"no")',
+            block,
+        )
+        if not bm:
+            return None
+        v = bm.group(1).strip('"').lower()
+        return v in ("true", "yes")
+
+    def _float_in(block: str, key: str):
+        nm = re.search(rf'"{key}"\s*:\s*([0-9]*\.?[0-9]+)', block)
+        if not nm:
+            return None
+        try:
+            v = float(nm.group(1))
+            # 0~100 범위로 잘못 줬을 가능성 (0.85 vs 85) — 자동 정규화
+            if v > 1.0 and v <= 100.0:
+                v = v / 100.0
+            return max(0.0, min(1.0, v))
+        except ValueError:
+            return None
+
+    def _comment_in(block: str):
+        cm = re.search(r'"comment"\s*:\s*"((?:[^"\\]|\\.)*)"', block)
+        return cm.group(1) if cm else ""
+
+    def _strs_in_named_array(block: str, key: str) -> list:
+        m = re.search(rf'"{key}"\s*:\s*\[([\s\S]*?)\]', block)
+        return _strs_in_array(m.group(1)) if m else []
 
     trm_collected: dict = {}
-    for k in bool_keys:
-        bm = re.search(rf'"{k}"\s*:\s*(true|false)', trm_block, re.IGNORECASE)
-        if bm:
-            trm_collected[k] = (bm.group(1).lower() == "true")
 
-    for parent, child in num_keys:
-        nm = re.search(rf'"{child}"\s*:\s*([0-9.]+)', trm_block)
-        if nm:
-            try:
-                trm_collected.setdefault(parent, {})[child] = float(nm.group(1))
-            except ValueError:
-                pass
+    # ① feasibility — bool × 2 + comment
+    feas_block = _extract_axis_block("feasibility")
+    if feas_block:
+        feas_ent: dict = {}
+        b = _bool_in(feas_block, "budget_feasible")
+        if b is not None: feas_ent["budget_feasible"] = b
+        s = _bool_in(feas_block, "schedule_feasible")
+        if s is not None: feas_ent["schedule_feasible"] = s
+        c = _comment_in(feas_block)
+        if c: feas_ent["comment"] = c
+        if feas_ent: trm_collected["feasibility"] = feas_ent
+
+    # ② sequencing — bool + comment (dependency_valid / dependency_feasible 둘 다 흡수)
+    seq_block = _extract_axis_block("sequencing")
+    if seq_block:
+        seq_ent: dict = {}
+        d = _bool_in(seq_block, "dependency_valid")
+        if d is None:
+            d = _bool_in(seq_block, "dependency_feasible")
+        if d is not None: seq_ent["dependency_valid"] = d
+        c = _comment_in(seq_block)
+        if c: seq_ent["comment"] = c
+        if seq_ent: trm_collected["sequencing"] = seq_ent
+
+    # ③ strategic_alignment — float × 2 + comment
+    al_block = _extract_axis_block("strategic_alignment")
+    if al_block:
+        al_ent: dict = {}
+        cf = _float_in(al_block, "company_fit")
+        if cf is not None: al_ent["company_fit"] = cf
+        ft = _float_in(al_block, "future_trend_alignment")
+        if ft is not None: al_ent["future_trend_alignment"] = ft
+        c = _comment_in(al_block)
+        if c: al_ent["comment"] = c
+        if al_ent: trm_collected["strategic_alignment"] = al_ent
+
+    # ④ investment_rationality — array × 2 + comment
+    ir_block = _extract_axis_block("investment_rationality")
+    if ir_block:
+        ir_ent: dict = {
+            "over_invested":  _strs_in_named_array(ir_block, "over_invested"),
+            "under_invested": _strs_in_named_array(ir_block, "under_invested"),
+        }
+        c = _comment_in(ir_block)
+        if c: ir_ent["comment"] = c
+        # 비어있는 두 array + 빈 comment 도 LLM 이 명시적으로 평가한 것일 수 있어 수록
+        trm_collected["investment_rationality"] = ir_ent
+
+    # ⑤ portfolio_balance — float × 2 + comment
+    pb_block = _extract_axis_block("portfolio_balance")
+    if pb_block:
+        pb_ent: dict = {}
+        sl = _float_in(pb_block, "short_long_balance")
+        if sl is not None: pb_ent["short_long_balance"] = sl
+        rb = _float_in(pb_block, "risk_balance")
+        if rb is not None: pb_ent["risk_balance"] = rb
+        c = _comment_in(pb_block)
+        if c: pb_ent["comment"] = c
+        if pb_ent: trm_collected["portfolio_balance"] = pb_ent
 
     if trm_collected:
         out["trm_assessment"] = trm_collected
@@ -288,9 +366,9 @@ You must:
      - Select which agent(s) to rerun
      - Provide clear feedback
 
-6. Report Generation
-   - If ACCEPT:
-     - Generate a structured TRM report
+6. Report Generation — DELEGATED
+   - 최종 7-섹션 TRM 보고서는 별도 LLM 콜 (`generate_final_report`) 이 책임진다.
+   - 이 review 콜은 평가 (decision/trm_assessment/issues/refinement) 만 출력한다.
 
 --------------------------------------------------
 [TRM STRUCTURING PRINCIPLES]
@@ -405,34 +483,14 @@ issues 에 axis A 가 들어있다면 그 axis 의 책임 Agent 는 반드시 re
 (누락 시 코드가 자동 보강하지만, 처음부터 정확히 출력하는 것이 우선)
 
 --------------------------------------------------
-[REPORT GENERATION]
+[REPORT GENERATION — DELEGATED]
 
-If decision == "ACCEPT":
+이 LLM 콜의 책임은 **평가만** 이다. 최종 7-섹션 TRM 보고서는 별도 LLM 콜
+(`generate_final_report()`) 이 책임진다. 따라서 이 응답 JSON 의 `report` 필드는
+**전부 빈 문자열** 로 두어라. 보고서 본문을 여기서 작성하지 마라.
 
-Generate a structured TRM report including:
-
-1. Executive Summary
-2. Technology Strategy
-3. Roadmap Structure
-4. Investment Strategy
-5. Trend Alignment
-6. Feasibility & Risk Analysis
-7. Expected Outcomes
-
-Report Requirements:
-- Formal tone
-- Logical explanation
-- Justify every decision
-- Avoid vague statements
-- 한국어로 작성 (기술 고유명사/약어는 영문 허용: EUV, ALD, GAA, HBM, TRL, BSPDN 등).
-
---------------------------------------------------
-[REVISE RULE]
-
-If decision == "REVISE":
-
-- DO NOT generate full report
-- Provide diagnostic summary only (한국어 1-2 문단)
+`diagnostic_summary` 는 짧은 한국어 1~2 문장으로 평가 요약 — REVISE 시에는
+주요 지적, ACCEPT 시에는 통과 근거를 적어라.
 
 --------------------------------------------------
 [OUTPUT FORMAT — STRICT JSON ONLY]
@@ -492,18 +550,61 @@ CRITICAL FIELD-LEVEL RULES:
   //   {"agent_id": "Agent 1", "task": "..."}. Put the task description in
   //   `feedback` as a string instead.
 
-  "report": {
-    "executive_summary": "",
-    "technology_strategy": "",
-    "roadmap_structure": "",
-    "investment_strategy": "",
-    "trend_alignment": "",
-    "feasibility_and_risk": "",
-    "expected_outcomes": ""
-  },
-
   "diagnostic_summary": ""
 }
+
+NOTE: 이 review 응답에는 `report` 필드를 출력하지 마라. 최종 보고서는 별도 LLM
+콜이 작성하므로 여기에 빈 문자열로 남기거나 아예 키를 생략해도 좋다.
+
+--------------------------------------------------
+[CRITICAL: trm_assessment 출력 규칙 — 가장 중요]
+
+`trm_assessment` 는 **반드시 5개 axis 키를 모두 포함** 해야 한다. 누락 절대 금지.
+각 axis 의 schema 는 정확히 다음 형태여야 한다 (다른 형태로 변형 금지):
+
+  - feasibility            : { budget_feasible: bool, schedule_feasible: bool, comment: str }
+  - sequencing             : { dependency_valid: bool, comment: str }
+  - strategic_alignment    : { company_fit: 0.0~1.0, future_trend_alignment: 0.0~1.0, comment: str }
+  - investment_rationality : { over_invested: [str], under_invested: [str], comment: str }
+  - portfolio_balance      : { short_long_balance: 0.0~1.0, risk_balance: 0.0~1.0, comment: str }
+
+[5개 axis 모범 응답 예시 — 이 형태 정확히 따라라]
+
+```json
+"trm_assessment": {
+  "feasibility": {
+    "budget_feasible": true,
+    "schedule_feasible": false,
+    "comment": "총 예산 $5B 안에서 가능하나 일부 기술의 lead_time 이 시장 boom 직전에 빠듯함."
+  },
+  "sequencing": {
+    "dependency_valid": true,
+    "comment": "T01 (장비) → T03 (공정) 의 prereq 순서 정상."
+  },
+  "strategic_alignment": {
+    "company_fit": 0.78,
+    "future_trend_alignment": 0.85,
+    "comment": "Tier-1 Foundry 의 핵심 역량과 정합. EUV/GAA 트렌드 강한 정합."
+  },
+  "investment_rationality": {
+    "over_invested": ["T01", "T02"],
+    "under_invested": [],
+    "comment": "초기 단계에 Tier 1 두 개 집중 — 분산 권고."
+  },
+  "portfolio_balance": {
+    "short_long_balance": 0.55,
+    "risk_balance": 0.45,
+    "comment": "단기 우세 — 장기 베팅 부족."
+  }
+}
+```
+
+규칙:
+- 5개 키 모두 존재 (누락 시 응답이 자동 거부됨).
+- boolean 필드는 정확히 `true` / `false` (`"yes"`, `True` 등 변형 금지).
+- 점수 필드 (company_fit, short_long_balance 등) 는 0.0 ~ 1.0 사이 실수.
+- comment 는 한국어 짧은 문장 (10~50 자) — 빈 문자열 가능하지만 권장 안 함.
+- over_invested / under_invested 는 tech_id 문자열 배열 (없으면 `[]`).
 
 --------------------------------------------------
 [SCOPE RULE · DISABLED AGENTS — VERY IMPORTANT]
@@ -527,9 +628,7 @@ this ablation experiment. You MUST observe the following:
 4. Every `issues[i]` MUST include an `axis` field. Issues tied to an axis whose
    supporting agent is disabled will be dropped. Tag them correctly.
 
-5. When ACCEPT, the 7-section report MUST still be generated, but sections that
-   depend on disabled agents can be shorter or reference the absence as an
-   acknowledged experiment limitation (not a problem to fix).
+5. (보고서는 이 review 의 책임이 아님 — 별도 LLM 콜이 처리.)
 
 6. When REVISE, `rerun_agents` must contain ONLY active agents. If the only
    issues trace back to disabled agents, decide ACCEPT instead of REVISE.
@@ -539,8 +638,8 @@ this ablation experiment. You MUST observe the following:
 
 - Output MUST be valid JSON
 - DO NOT include text outside JSON
-- If ACCEPT → include report (all 7 sections filled)
-- If REVISE → include diagnostic_summary only, leave report fields as ""
+- 보고서 본문 (report 7섹션) 은 작성하지 마라 — 별도 LLM 콜이 처리한다.
+- diagnostic_summary 는 짧은 한국어 (1~2문장) 로 작성.
 - rerun_agents values MUST be from ACTIVE agents only
    (subset of ["Technology Analyst", "Roadmap Planner", "Investment Strategist"])
 - Be consistent and deterministic"""
@@ -1754,18 +1853,13 @@ def run_orchestrator_review(
                 f"+ feedback {len(auto_feedback)}건 추가"
             )
 
-    # ── 보고서 생성 — ACCEPT/REVISE 모두 (매 iter 결과를 풀 보고서로 보여줌) ──
-    # REVISE 일 때는 "잠정" 보고서 — residual_issues 가 feasibility_and_risk 에 명시됨.
-    # 다음 iter 에서 갱신되며 최종 ACCEPT 시점의 보고서가 최종본.
+    # ── 보고서 생성 — 최종 ACCEPT 시점에만 호출 ──
+    # review LLM 은 평가만 출력. 7-섹션 보고서는 별도 LLM 콜 (generate_final_report).
+    # REVISE 일 때는 보고서 생성 skip — 어차피 다음 iter 에서 갱신될 잠정 결과이므로
+    # 시간 (LLM 콜 1.5-2 분) + 토큰 비용 절약. 최종 ACCEPT (혹은 강제 ACCEPT) 시점에만 작성.
     decision_upper = (result.get("decision") or "ACCEPT").upper()
-    report = result.get("report") or {}
-    if _report_fill_count(report) < 3:
-        if decision_upper == "REVISE":
-            label = f"REVISE iter {iteration+1} 잠정 보고서"
-        elif result.get("_forced_accept"):
-            label = "강제 ACCEPT"
-        else:
-            label = "report 섹션 부족"
+    if decision_upper == "ACCEPT":
+        label = "강제 ACCEPT" if result.get("_forced_accept") else "ACCEPT 최종 보고서"
         print(f"[Orchestrator · Review] {label} → 보고서 전용 LLM 호출")
         try:
             final_report = generate_final_report(
@@ -1783,6 +1877,11 @@ def run_orchestrator_review(
             print(f"[Orchestrator · Review] 보고서 생성 완료 · {fill}/7 섹션 ({label})")
         except Exception as e:
             print(f"[Orchestrator · Review] ⚠️  보고서 생성 실패: {e}")
+            result["report"] = result.get("report") or _empty_report()
+    else:
+        # REVISE — 보고서 생성 skip. report 는 빈 dict 로 둠 (frontend 가 sections 0/7 표시).
+        print(f"[Orchestrator · Review] REVISE iter {iteration+1} → 보고서 생성 skip (시간 절약)")
+        result["report"] = result.get("report") or _empty_report()
 
     # 로그 출력
     decision = (result.get("decision") or "ACCEPT").upper()
