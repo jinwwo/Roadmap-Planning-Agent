@@ -28,6 +28,7 @@ ACTOR_ALIASES = {
     "SK hynix Inc.": "SK hynix",
     "IBM Corporation": "IBM",
     "GlobalFoundries Inc.": "GlobalFoundries",
+    "ASML Holding N.V.": "ASML",
 }
 
 INDUSTRY_ALIASES = {
@@ -70,12 +71,11 @@ def _short_label(value: Any, max_len: int = 24) -> str:
     text = _ascii_label(value)
     if len(text) > max_len:
         text = text[: max_len - 1] + "."
-    return "\n".join(textwrap.wrap(text, width=18)) if len(text) > 18 else text
+    return "\n".join(textwrap.wrap(text, width=16)) if len(text) > 16 else text
 
 
 def _node_size(label: str, kind: str) -> int:
-    base = {"actor": 1550, "technology": 1500, "industry": 1450}.get(kind, 1350)
-    return base + min(450, len(label.replace("\n", "")) * 12)
+    return {"actor": 470, "technology": 500, "industry": 500}.get(kind, 450)
 
 
 def _add_node(graph, node_id: str, label: str, kind: str) -> None:
@@ -96,7 +96,7 @@ def _component_layout(graph, nx):
     components.sort(key=len, reverse=True)
     cols = 2 if len(components) > 1 else 1
     pos = {}
-    cell_w, cell_h = 3.0, 2.35
+    cell_w, cell_h = 2.45, 1.75
 
     for idx, nodes in enumerate(components):
         row, col = divmod(idx, cols)
@@ -104,9 +104,9 @@ def _component_layout(graph, nx):
         if len(nodes) == 1:
             local = {nodes[0]: (0.0, 0.0)}
         elif len(nodes) == 2:
-            local = {nodes[0]: (-0.55, 0.0), nodes[1]: (0.55, 0.0)}
+            local = {nodes[0]: (-0.48, 0.0), nodes[1]: (0.48, 0.0)}
         else:
-            local = nx.spring_layout(sub, seed=42 + idx, k=1.2, iterations=200)
+            local = nx.spring_layout(sub, seed=42 + idx, k=0.85, iterations=220)
 
         x_offset = (col - (cols - 1) / 2) * cell_w
         y_offset = -row * cell_h
@@ -131,11 +131,11 @@ def _bipartite_positions(graph):
             return {}
         if len(nodes) == 1:
             return {nodes[0]: 0.0}
-        step = 2.2 / (len(nodes) - 1)
-        return {node: 1.1 - i * step for i, node in enumerate(nodes)}
+        step = 1.65 / (len(nodes) - 1)
+        return {node: 0.825 - i * step for i, node in enumerate(nodes)}
 
-    pos = {node: (-1.15, y) for node, y in y_positions(tech_nodes).items()}
-    pos.update({node: (1.15, y) for node, y in y_positions(industry_nodes).items()})
+    pos = {node: (-1.05, y) for node, y in y_positions(tech_nodes).items()}
+    pos.update({node: (1.05, y) for node, y in y_positions(industry_nodes).items()})
     return pos
 
 
@@ -144,21 +144,171 @@ def _normalize_view(ax, pos):
         return
     xs = [p[0] for p in pos.values()]
     ys = [p[1] for p in pos.values()]
-    x_pad = max(0.5, (max(xs) - min(xs)) * 0.16)
-    y_pad = max(0.35, (max(ys) - min(ys)) * 0.18)
+    x_pad = max(0.42, (max(xs) - min(xs)) * 0.13)
+    y_pad = max(0.32, (max(ys) - min(ys)) * 0.16)
     ax.set_xlim(min(xs) - x_pad, max(xs) + x_pad)
     ax.set_ylim(min(ys) - y_pad, max(ys) + y_pad)
 
 
 def _legend_handles(kinds):
-    import matplotlib.patches as mpatches
+    import matplotlib.lines as mlines
 
     specs = [
-        ("actor", "#4C78A8", "Actor"),
-        ("technology", "#59A14F", "Technology"),
-        ("industry", "#F2C14E", "Industry"),
+        ("actor", "#2563EB", "Actor"),
+        ("technology", "#16A34A", "Technology"),
+        ("industry", "#F59E0B", "Industry"),
     ]
-    return [mpatches.Patch(color=color, label=label) for kind, color, label in specs if kind in kinds]
+    return [
+        mlines.Line2D(
+            [],
+            [],
+            color=color,
+            marker="o",
+            linestyle="None",
+            markersize=5.5,
+            markerfacecolor="white",
+            markeredgewidth=1.5,
+            label=label,
+        )
+        for kind, color, label in specs
+        if kind in kinds
+    ]
+
+
+def _draw_node_labels(ax, graph, pos):
+    y0, y1 = ax.get_ylim()
+    offset = (y1 - y0) * 0.075
+    for node, data in graph.nodes(data=True):
+        x, y = pos[node]
+        label = data.get("label", node)
+        kind = data.get("kind")
+        va = "bottom"
+        y_text = y + offset
+        if kind == "industry":
+            y_text = y - offset
+            va = "top"
+        ax.text(
+            x,
+            y_text,
+            label,
+            ha="center",
+            va=va,
+            fontsize=7.1,
+            fontweight="semibold",
+            color="#111827",
+            linespacing=1.03,
+            bbox={
+                "boxstyle": "round,pad=0.22,rounding_size=0.08",
+                "fc": "white",
+                "ec": "#E5E7EB",
+                "lw": 0.45,
+                "alpha": 0.96,
+            },
+            zorder=5,
+        )
+
+
+def _draw_matrix_map(
+    rows: list[str],
+    cols: list[str],
+    values: Dict[Tuple[str, str], float],
+    output_path: Path,
+    title: str,
+    *,
+    row_label: str,
+    col_label: str,
+) -> bool:
+    if not rows or not cols:
+        return False
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.rcParams.update({
+        "font.family": "DejaVu Sans",
+        "axes.facecolor": "#FFFFFF",
+        "figure.facecolor": "white",
+        "savefig.facecolor": "white",
+    })
+
+    matrix = np.array([[values.get((r, c), 0.0) for c in cols] for r in rows], dtype=float)
+    width = max(5.8, 1.35 + len(cols) * 1.35 + len(rows) * 0.25)
+    height = max(3.5, 1.9 + len(rows) * 0.62)
+    fig, ax = plt.subplots(figsize=(width, height), dpi=260)
+    ax.set_facecolor("white")
+
+    fig.text(0.055, 0.94, title, ha="left", va="top", fontsize=11.5, fontweight="bold", color="#111827")
+    fig.text(
+        0.055,
+        0.885,
+        f"{len(rows)} {row_label.lower()} · {len(cols)} {col_label.lower()} · circle size encodes score",
+        ha="left",
+        va="top",
+        fontsize=7.5,
+        color="#6B7280",
+    )
+
+    ax.set_xlim(-0.65, len(cols) - 0.35)
+    ax.set_ylim(len(rows) - 0.35, -0.65)
+    ax.set_xticks(range(len(cols)))
+    ax.set_yticks(range(len(rows)))
+    ax.set_xticklabels([_short_label(c, max_len=18).replace("\n", " ") for c in cols], fontsize=7.2, fontweight="semibold")
+    ax.set_yticklabels([_short_label(r, max_len=18).replace("\n", " ") for r in rows], fontsize=7.2, fontweight="semibold")
+    ax.tick_params(axis="both", length=0, colors="#111827")
+    ax.xaxis.tick_top()
+
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    for x in range(len(cols)):
+        ax.axvline(x, color="#F3F4F6", lw=0.8, zorder=0)
+    for y in range(len(rows)):
+        ax.axhline(y, color="#F3F4F6", lw=0.8, zorder=0)
+
+    xs, ys, sizes, colors = [], [], [], []
+    for y, row in enumerate(rows):
+        for x, col in enumerate(cols):
+            value = matrix[y, x]
+            if value <= 0:
+                continue
+            xs.append(x)
+            ys.append(y)
+            sizes.append(120 + value * 720)
+            colors.append(value)
+
+    scatter = ax.scatter(
+        xs,
+        ys,
+        s=sizes,
+        c=colors,
+        cmap="Blues",
+        vmin=0.0,
+        vmax=1.0,
+        edgecolors="#1D4ED8",
+        linewidths=0.8,
+        alpha=0.9,
+        zorder=3,
+    )
+
+    for y, row in enumerate(rows):
+        for x, col in enumerate(cols):
+            value = values.get((row, col), 0.0)
+            if value > 0:
+                ax.text(x, y, f"{value:.2f}", ha="center", va="center", fontsize=5.8, color="white", fontweight="bold", zorder=4)
+
+    cbar = fig.colorbar(scatter, ax=ax, fraction=0.035, pad=0.035)
+    cbar.outline.set_visible(False)
+    cbar.ax.tick_params(labelsize=6.2, length=0, colors="#6B7280")
+    cbar.set_label("score", fontsize=6.5, color="#6B7280")
+
+    fig.subplots_adjust(left=0.2, right=0.9, top=0.72, bottom=0.12)
+    fig.savefig(output_path, bbox_inches="tight", pad_inches=0.08, facecolor="white")
+    plt.close(fig)
+    return True
 
 
 def _draw_graph(
@@ -182,14 +332,14 @@ def _draw_graph(
 
     plt.rcParams.update({
         "font.family": "DejaVu Sans",
-        "axes.facecolor": "#FAFAFA",
+        "axes.facecolor": "#FFFFFF",
         "figure.facecolor": "white",
         "savefig.facecolor": "white",
     })
 
-    width = max(7.2, min(11.2, 5.6 + graph.number_of_nodes() * 0.36))
-    height = max(2.9, min(6.8, 2.15 + graph.number_of_nodes() * 0.18))
-    fig, ax = plt.subplots(figsize=(width, height), dpi=220)
+    width = max(6.4, min(9.8, 5.2 + graph.number_of_nodes() * 0.26))
+    height = max(2.75, min(5.8, 2.05 + graph.number_of_nodes() * 0.16))
+    fig, ax = plt.subplots(figsize=(width, height), dpi=260)
     ax.axis("off")
 
     if bipartite:
@@ -205,9 +355,9 @@ def _draw_graph(
         title,
         ha="left",
         va="top",
-        fontsize=12.5,
+        fontsize=11.5,
         fontweight="bold",
-        color="#222222",
+        color="#111827",
     )
     fig.text(
         0.035,
@@ -215,24 +365,28 @@ def _draw_graph(
         f"{graph.number_of_nodes()} nodes · {graph.number_of_edges()} links · edge width encodes score",
         ha="left",
         va="top",
-        fontsize=8.5,
-        color="#666666",
+        fontsize=7.5,
+        color="#6B7280",
     )
 
     color_by_kind = {
-        "actor": "#4C78A8",
-        "technology": "#59A14F",
-        "industry": "#F2C14E",
+        "actor": "#2563EB",
+        "technology": "#16A34A",
+        "industry": "#F59E0B",
     }
     node_colors = [
-        color_by_kind.get(data.get("kind"), "#A6A6A6")
+        "white"
+        for _, data in graph.nodes(data=True)
+    ]
+    node_edge_colors = [
+        color_by_kind.get(data.get("kind"), "#9CA3AF")
         for _, data in graph.nodes(data=True)
     ]
     node_sizes = [data.get("size", 1350) for _, data in graph.nodes(data=True)]
 
     edge_weights = [_edge_weight(data.get("weight")) for _, _, data in graph.edges(data=True)]
-    edge_widths = [0.8 + w * 2.4 for w in edge_weights]
-    edge_alphas = [0.28 + w * 0.45 for w in edge_weights]
+    edge_widths = [0.75 + w * 2.15 for w in edge_weights]
+    edge_alphas = [0.25 + w * 0.42 for w in edge_weights]
 
     if directed:
         nx.draw_networkx_edges(
@@ -240,11 +394,11 @@ def _draw_graph(
             pos,
             ax=ax,
             width=edge_widths,
-            alpha=0.58,
-            edge_color="#5F6368",
+            alpha=0.5,
+            edge_color="#9CA3AF",
             arrows=True,
             arrowstyle="-|>",
-            arrowsize=13,
+            arrowsize=11,
             connectionstyle="arc3,rad=0.12",
         )
     elif bipartite:
@@ -258,7 +412,7 @@ def _draw_graph(
                 edgelist=[edge],
                 width=width,
                 alpha=alpha,
-                edge_color="#5F6368",
+                edge_color="#9CA3AF",
                 arrows=True,
                 arrowstyle="-",
                 arrowsize=1,
@@ -273,7 +427,7 @@ def _draw_graph(
                 edgelist=[edge],
                 width=width,
                 alpha=alpha,
-                edge_color="#5F6368",
+                edge_color="#9CA3AF",
             )
 
     nx.draw_networkx_nodes(
@@ -282,18 +436,10 @@ def _draw_graph(
         ax=ax,
         node_size=node_sizes,
         node_color=node_colors,
-        edgecolors="#2B2B2B",
-        linewidths=0.7,
+        edgecolors=node_edge_colors,
+        linewidths=1.6,
     )
-    nx.draw_networkx_labels(
-        graph,
-        pos,
-        labels={n: data.get("label", n) for n, data in graph.nodes(data=True)},
-        ax=ax,
-        font_size=6.2,
-        font_weight="bold",
-        font_color="#202124",
-    )
+    _draw_node_labels(ax, graph, pos)
 
     if (not bipartite) and graph.number_of_edges() <= 12:
         edge_labels = {
@@ -305,9 +451,9 @@ def _draw_graph(
             pos,
             edge_labels=edge_labels,
             ax=ax,
-            font_size=6,
-            font_color="#444444",
-            bbox={"boxstyle": "round,pad=0.13", "fc": "white", "ec": "#DDDDDD", "lw": 0.35, "alpha": 0.9},
+            font_size=5.7,
+            font_color="#374151",
+            bbox={"boxstyle": "round,pad=0.12", "fc": "white", "ec": "#E5E7EB", "lw": 0.35, "alpha": 0.94},
         )
 
     kinds = {data.get("kind") for _, data in graph.nodes(data=True)}
@@ -319,7 +465,7 @@ def _draw_graph(
             bbox_to_anchor=(0.035, 0.035),
             ncol=min(3, len(handles)),
             frameon=False,
-            fontsize=7.2,
+            fontsize=6.8,
         )
 
     fig.subplots_adjust(left=0.035, right=0.985, top=0.84, bottom=0.13)
@@ -374,6 +520,25 @@ def _technology_industry_graph(items: list):
             _add_node(graph, industry_node, industry, "industry")
             graph.add_edge(tech_node, industry_node, weight=_edge_weight(item.get("strength")))
     return graph
+
+
+def _technology_industry_matrix(items: list):
+    rows = []
+    cols = []
+    values: Dict[Tuple[str, str], float] = {}
+    for item in _top_items(items, "strength", limit=18):
+        tech = item.get("tech_id") or item.get("technology")
+        if not tech:
+            continue
+        tech = _short_label(tech, max_len=18).replace("\n", " ")
+        if tech not in rows:
+            rows.append(tech)
+        for industry in item.get("industries") or []:
+            industry = _short_label(industry, max_len=18).replace("\n", " ")
+            if industry not in cols:
+                cols.append(industry)
+            values[(tech, industry)] = max(values.get((tech, industry), 0.0), _edge_weight(item.get("strength")))
+    return rows, cols, values
 
 
 def _technology_affinity_graph(items: list):
@@ -447,9 +612,22 @@ def render_patent_maps(
     )
 
     for map_key, title, builder, filename, directed, bipartite in specs:
-        graph = builder(patent_maps.get(map_key) or [])
         path = output_root / f"{safe_prefix}_{filename}"
-        if _draw_graph(graph, path, title, directed=directed, bipartite=bipartite):
+        if map_key == "technology_industry_map":
+            rows, cols, values = _technology_industry_matrix(patent_maps.get(map_key) or [])
+            did_render = _draw_matrix_map(
+                rows,
+                cols,
+                values,
+                path,
+                title,
+                row_label="Technologies",
+                col_label="Industries",
+            )
+        else:
+            graph = builder(patent_maps.get(map_key) or [])
+            did_render = _draw_graph(graph, path, title, directed=directed, bipartite=bipartite)
+        if did_render:
             rendered[map_key] = str(path)
 
     return rendered
