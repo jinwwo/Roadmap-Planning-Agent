@@ -66,11 +66,11 @@ def _ascii_label(value: Any) -> str:
     return text or "N/A"
 
 
-def _short_label(value: Any, max_len: int = 22) -> str:
+def _short_label(value: Any, max_len: int = 24) -> str:
     text = _ascii_label(value)
     if len(text) > max_len:
         text = text[: max_len - 1] + "."
-    return "\n".join(textwrap.wrap(text, width=13)) if len(text) > 13 else text
+    return "\n".join(textwrap.wrap(text, width=18)) if len(text) > 18 else text
 
 
 def _node_size(label: str, kind: str) -> int:
@@ -144,8 +144,8 @@ def _normalize_view(ax, pos):
         return
     xs = [p[0] for p in pos.values()]
     ys = [p[1] for p in pos.values()]
-    x_pad = max(0.55, (max(xs) - min(xs)) * 0.18)
-    y_pad = max(0.45, (max(ys) - min(ys)) * 0.22)
+    x_pad = max(0.5, (max(xs) - min(xs)) * 0.16)
+    y_pad = max(0.35, (max(ys) - min(ys)) * 0.18)
     ax.set_xlim(min(xs) - x_pad, max(xs) + x_pad)
     ax.set_ylim(min(ys) - y_pad, max(ys) + y_pad)
 
@@ -187,8 +187,8 @@ def _draw_graph(
         "savefig.facecolor": "white",
     })
 
-    width = max(7.4, min(11.5, 5.8 + graph.number_of_nodes() * 0.36))
-    height = max(5.2, min(8.2, 4.3 + graph.number_of_nodes() * 0.22))
+    width = max(7.2, min(11.2, 5.6 + graph.number_of_nodes() * 0.36))
+    height = max(2.9, min(6.8, 2.15 + graph.number_of_nodes() * 0.18))
     fig, ax = plt.subplots(figsize=(width, height), dpi=220)
     ax.axis("off")
 
@@ -197,24 +197,24 @@ def _draw_graph(
     else:
         pos = _component_layout(graph, nx)
 
-    ax.text(
-        0.0,
-        1.055,
+    _normalize_view(ax, pos)
+
+    fig.text(
+        0.035,
+        0.945,
         title,
-        transform=ax.transAxes,
         ha="left",
-        va="bottom",
-        fontsize=13,
+        va="top",
+        fontsize=12.5,
         fontweight="bold",
         color="#222222",
     )
-    ax.text(
-        0.0,
-        1.018,
+    fig.text(
+        0.035,
+        0.895,
         f"{graph.number_of_nodes()} nodes · {graph.number_of_edges()} links · edge width encodes score",
-        transform=ax.transAxes,
         ha="left",
-        va="bottom",
+        va="top",
         fontsize=8.5,
         color="#666666",
     )
@@ -313,18 +313,17 @@ def _draw_graph(
     kinds = {data.get("kind") for _, data in graph.nodes(data=True)}
     handles = _legend_handles(kinds)
     if handles:
-        ax.legend(
+        fig.legend(
             handles=handles,
             loc="lower left",
-            bbox_to_anchor=(0.0, -0.02),
+            bbox_to_anchor=(0.035, 0.035),
             ncol=min(3, len(handles)),
             frameon=False,
             fontsize=7.2,
         )
 
-    _normalize_view(ax, pos)
-    fig.tight_layout(pad=1.6)
-    fig.savefig(output_path, bbox_inches="tight", facecolor="white")
+    fig.subplots_adjust(left=0.035, right=0.985, top=0.84, bottom=0.13)
+    fig.savefig(output_path, bbox_inches="tight", pad_inches=0.08, facecolor="white")
     plt.close(fig)
     return True
 

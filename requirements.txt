@@ -28,6 +28,8 @@ requests>=2.31.0
 # ── tech_analysis_agent 전용 (시장/특허 API) ─────────────────
 tavily-python>=0.3.0
 pydantic>=2.0.0
+networkx>=3.0
+matplotlib>=3.7.0
 
 # ── 웹 데모 공용 (tech_analysis_agent / orchestration_agent) ─
 fastapi>=0.110.0
