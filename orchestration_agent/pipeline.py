@@ -265,23 +265,32 @@ def _run_agent1(
         ref_year = state["reference_year"]
         hints = state.get("category_hints") or []
         patent_method = state.get("patent_method") or "A_current"
+        graph_prefix = (out_prefix.rstrip("_") or "run")
 
         snippet = f"""
 import sys, json, os
 os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
 sys.path.insert(0, os.getcwd())
 from graphs.analysis_graph import run_technology_analysis
+from tools.patent_map_renderer import render_patent_maps
 
 result = run_technology_analysis(
     domain={domain!r},
     reference_year={int(ref_year)},
     category_hints={list(hints)!r},
 )
+patent_maps = result.get("patent_maps") or {{}}
+graph_paths = render_patent_maps(
+    patent_maps=patent_maps,
+    output_dir={os.path.join(OUTPUTS_DIR, "graphs")!r},
+    prefix={graph_prefix!r},
+)
 
 out = {{
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
-    "patent_maps": result.get("patent_maps") or {{}},
+    "patent_maps": patent_maps,
+    "patent_map_graphs": graph_paths,
     "patent_prompt": result.get("patent_prompt") or {{}},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
