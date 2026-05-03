@@ -87,7 +87,11 @@ class AnalysisState(TypedDict):
     tech_candidates: Optional[List[TechCandidate]]
     market_context: Optional[dict]
 
-    # ⑤ 제어
+    # ⑤ Orchestrator REVISE feedback (재실행 시 후보 재도출에 활용)
+    #    {"text": ["피드백 문장", ...], "shift": [...], "drop": [...]}
+    orchestrator_feedback: Optional[dict]
+
+    # ⑥ 제어
     messages: Annotated[List[BaseMessage], add_messages]
     error: Optional[str]
     retry_count: int

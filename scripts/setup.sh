@@ -20,6 +20,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$ROOT"
 
+# .env 가 있으면 셸 환경변수로 export — OLLAMA_MODEL/LLM_PROVIDER 등이
+# 아래 단계에 자동 반영되도록 (.env 가 단일 진실원).
+if [ -f .env ]; then
+  set -a
+  # shellcheck disable=SC1091
+  source .env
+  set +a
+fi
+
 PROVIDER="${LLM_PROVIDER:-ollama}"
 INSTALL_OLLAMA=1
 while [[ $# -gt 0 ]]; do

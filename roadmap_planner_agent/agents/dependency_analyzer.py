@@ -136,6 +136,22 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
 
 
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 dependency_analyzer 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "의존성 트리 / 레이어 할당 시 반영하라 (예: 시점 지연 지적 → prerequisite 단순화).\n"
+        f"{bullet}\n"
+    )
+
+
 def _build_fallback_tree(tech_candidates: list) -> dict:
     """
     LLM 호출 없이 카테고리 계층만으로 단순 의존성 트리를 구성합니다.
@@ -220,6 +236,8 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
             for t in tech_candidates
         ]
 
+        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+
         user_prompt = f"""
 다음 {len(tech_candidates)}개의 후보 기술에 대한 의존성 트리를 구성해주세요.
 
@@ -227,7 +245,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
 {json.dumps(tech_summary, ensure_ascii=False, indent=2)}
 
 시장 컨텍스트: {state.get('market_context', {}).get('target_market', '')}
-"""
+{feedback_block}"""
 
         print("[Dependency Analyzer] LLM 의존성 분석 요청 중...")
         response = llm.invoke([

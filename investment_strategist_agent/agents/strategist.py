@@ -53,8 +53,13 @@ def _is_strong_llm() -> bool:
 
     # Ollama 의 경우 모델 크기로 판정
     model = (OLLAMA_MODEL or "").lower()
-    # 70B+ 또는 32B+ 는 강함으로 간주
-    strong_indicators = (":70b", "70b-", ":32b", "32b-", ":34b", "34b-", "llama3.1:70b", "qwen2.5:32b", "qwen2.5:72b")
+    # 27B+ 는 강함으로 간주 (qwen3/qwen3.5 계열 포함)
+    strong_indicators = (
+        ":70b", "70b-", ":32b", "32b-", ":34b", "34b-", ":27b", "27b-",
+        "llama3.1:70b", "qwen2.5:32b", "qwen2.5:72b",
+        "qwen3:27b", "qwen3:32b", "qwen3:72b",
+        "qwen3.5:27b", "qwen3.5:32b", "qwen3.5:72b",
+    )
     for ind in strong_indicators:
         if ind in model:
             return True

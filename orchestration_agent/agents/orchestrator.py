@@ -892,6 +892,14 @@ residual issues as caveats inside `feasibility_and_risk` rather than refusing to
 - **보일러플레이트 시작 금지** — "본 보고서는...", "다음과 같다" 같은 도입부 X
 - **tech_id 자연스럽게 인용** — T01, T03 같은 식으로 본문에 녹여서
 - **수치 인용** — 시장 규모 ($X B), CAGR (Y%), 분기 명시 (2028 Q1) 등 가능한 한 인용
+- **출처 표기 [필수]** — 모든 수치/판정 뒤에 출처 Agent 를 짧은 마커로 명시.
+  · `[A1]` = Agent 1 (Technology Analyst — final_score, market_score, patent_score, boom_quarter, market_signal)
+  · `[A2]` = Agent 2 (Roadmap Planner — phase_name, start_q/target_q, prerequisites, lead_time)
+  · `[A3]` = Agent 3 (Investment Strategist — Tier, evaluation_scores, recommended_action, major_risks)
+  · 예시:
+    "T01 (High-NA EUV) 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류하여 2026 Q3 → 2027 Q1 [A2] 양산 전환을 추진한다."
+    "GAA 트렌드 [A1·market_signal] 와 정합되는 T03→T04 [A2·prereq] 흐름을 ..."
+  · 마커는 한 문장에 두 번 이상 나올 수 있음. 복합 출처는 `[A1·A3]` 처럼 점으로 묶기.
 - **한국어 작성**, 기술 약어 영문 허용 (EUV, ALD, GAA, HBM, TRL, BSPDN 등)
 - **입력에 없는 사실 지어내지 말 것** — TECH CANDIDATES, PLANNED ROADMAP, INVESTMENT STRATEGY 에서만 인용
 
@@ -1219,6 +1227,59 @@ def generate_final_report(
             report["technology_strategy"] = f"final_score 상위 핵심 기술: {top_names}."
         issues_str = "; ".join(str(i) for i in (residual_issues or [])) or "(없음)"
         report["feasibility_and_risk"] = f"잔여 이슈: {issues_str}"
+
+    # ── artifacts_summary — 보고서 narrative 의 출처 데이터 부록 ────
+    # LLM 호출 없이 코드로 채움. 사용자가 [A1]/[A2]/[A3] 마커를 따라
+    # 실제 데이터를 추적할 수 있도록 각 Agent 핵심 출력을 첨부.
+    a1_summary = [
+        {
+            "tech_id": t.get("tech_id"),
+            "name": (t.get("name") or "")[:30],
+            "category": t.get("category"),
+            "trl": t.get("trl"),
+            "final_score": t.get("final_score"),
+            "market_score": t.get("market_score"),
+            "patent_score": t.get("patent_score"),
+            "expected_market_boom_quarter": t.get("expected_market_boom_quarter"),
+        }
+        for t in tech_slim
+    ]
+    a2_summary = [
+        {
+            "tech_id": r.get("tech_id"),
+            "phase_name": r.get("phase_name"),
+            "start_q": r.get("start_q"),
+            "target_q": r.get("target_q"),
+            "prerequisites": r.get("prerequisites") or [],
+            "lead_time_quarters": r.get("lead_time_quarters"),
+        }
+        for r in roadmap_slim
+    ]
+    a3_summary = []
+    for s in invest_slim:
+        techs_brief = []
+        for ti in s.get("tech_investments", []) or []:
+            techs_brief.append({
+                "tech_id": ti.get("tech_id"),
+                "tier": ti.get("recommended_investment_tier"),
+                "investment_attractiveness": ti.get("investment_attractiveness"),
+                "investment_urgency": ti.get("investment_urgency"),
+                "recommended_action": (ti.get("recommended_action") or "")[:120],
+                "major_risks": (ti.get("major_risks") or [])[:3],
+            })
+        a3_summary.append({
+            "stage": s.get("stage"),
+            "period": s.get("period"),
+            "stage_assessment": (s.get("stage_assessment") or "")[:200],
+            "tech_investments": techs_brief,
+        })
+
+    report["artifacts_summary"] = {
+        "agent1_tech_candidates": a1_summary,
+        "agent2_planned_roadmap": a2_summary,
+        "agent3_investment_strategy": a3_summary,
+        "insights": insights,
+    }
 
     return report
 

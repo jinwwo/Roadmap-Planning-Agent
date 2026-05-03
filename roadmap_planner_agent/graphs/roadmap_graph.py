@@ -7,7 +7,10 @@ Roadmap Planner Agent 의 Local Orchestrator 그래프
   START
     │
     ▼
-  [dependency_analyzer]    기술 트리 구성 + 레이어 할당 (LLM)
+  [tech_selector]          후보 기술 종합 평가 → 핵심만 K개 선별 (최소 K_MIN 보장)
+    │
+    ▼
+  [dependency_analyzer]    선별된 기술 트리 구성 + 레이어 할당 (LLM)
     │
     ▼
   [timeline_calculator]    TRL 기반 역산 → 분기별 start/target 산출 (pure Python)
@@ -27,12 +30,19 @@ Roadmap Planner Agent 의 Local Orchestrator 그래프
 from langgraph.graph import StateGraph, END
 
 from state import RoadmapState
+from agents.tech_selector import run_tech_selector
 from agents.dependency_analyzer import run_dependency_analyzer
 from agents.timeline_calculator import run_timeline_calculator
 from agents.roadmap_builder import run_roadmap_builder
 
 
 # ── 조건부 엣지 ──────────────────────────────────────────────
+
+def route_after_selector(state: RoadmapState) -> str:
+    if not state.get("tech_candidates"):
+        return "end"
+    return "dependency_analyzer"
+
 
 def route_after_dependency(state: RoadmapState) -> str:
     if state.get("error") and not state.get("dependency_tree"):
@@ -58,12 +68,18 @@ def create_roadmap_graph():
     """
     graph = StateGraph(RoadmapState)
 
+    graph.add_node("tech_selector", run_tech_selector)
     graph.add_node("dependency_analyzer", run_dependency_analyzer)
     graph.add_node("timeline_calculator", run_timeline_calculator)
     graph.add_node("roadmap_builder", run_roadmap_builder)
 
-    graph.set_entry_point("dependency_analyzer")
+    graph.set_entry_point("tech_selector")
 
+    graph.add_conditional_edges(
+        "tech_selector",
+        route_after_selector,
+        {"dependency_analyzer": "dependency_analyzer", "end": END},
+    )
     graph.add_conditional_edges(
         "dependency_analyzer",
         route_after_dependency,
@@ -104,6 +120,7 @@ def run_roadmap_planner(
     initial_state: RoadmapState = {
         "tech_candidates": tech_candidates,
         "market_context": market_context,
+        "tech_selection": None,
         "dependency_tree": None,
         "timeline_draft": None,
         "planned_roadmap": None,

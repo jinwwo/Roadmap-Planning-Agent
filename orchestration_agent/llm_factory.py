@@ -27,16 +27,36 @@ def get_llm(max_tokens: int = 4096, json_mode: bool = True, temperature: float =
                 "langchain-ollama 패키지가 필요합니다: pip install langchain-ollama"
             ) from e
 
+        # num_predict — OLLAMA_NUM_PREDICT 는 "최소 보장" floor 로 동작.
+        # 호출자가 큰 max_tokens 를 요청하면 그걸 그대로 쓰고, 작으면 env 값으로 끌어올림.
+        # (Qwen3 thinking 모드 잔여 토큰 여유 — 작은 호출에서 잘림 방지)
+        num_predict = max_tokens
+        np_env = os.getenv("OLLAMA_NUM_PREDICT")
+        if np_env:
+            try:
+                num_predict = max(num_predict, int(np_env))
+            except ValueError:
+                pass
+
         kwargs = dict(
             model=OLLAMA_MODEL,
             base_url=OLLAMA_BASE_URL,
             temperature=temperature,
-            num_predict=max_tokens,
+            num_predict=num_predict,
             num_ctx=int(os.getenv("OLLAMA_NUM_CTX", "16384") or 16384),   # ★ 컨텍스트 윈도우 (기본 16K · OLLAMA_NUM_CTX 로 override)
             keep_alive=os.getenv("OLLAMA_KEEP_ALIVE", "24h"),   # 모델 메모리 유지 (default 24h)
             client_kwargs={"timeout": int(os.getenv("OLLAMA_TIMEOUT_SEC", "600") or 600)},
         )
-        if json_mode:
+        # OLLAMA_NO_THINK=1 → ChatOllama 에 reasoning=False 전달 (Ollama 의 think:false 옵션)
+        # Qwen3/3.5 는 응답을 "thinking" 필드로 분리하는데 langchain 은 "response" 만 읽어
+        # 빈 응답으로 처리됨 → reasoning=False 가 thinking 자체를 끔.
+        if (os.getenv("OLLAMA_NO_THINK") or "").strip().lower() in ("1", "true", "yes"):
+            kwargs["reasoning"] = False
+        # format=json — Qwen3 hybrid reasoning 과 충돌해 빈 응답을 만들 수 있어
+        # OLLAMA_FORMAT_JSON=0 으로 끌 수 있게 함. 끈 경우 코드 측 _extract_json regex 가 후처리.
+        fj_env = (os.getenv("OLLAMA_FORMAT_JSON") or "").strip().lower()
+        use_format_json = json_mode and fj_env not in ("0", "false", "no")
+        if use_format_json:
             kwargs["format"] = "json"
         return _maybe_wrap_no_think(ChatOllama(**kwargs))
 

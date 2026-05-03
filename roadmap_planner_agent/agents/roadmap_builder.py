@@ -73,6 +73,22 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
 
 
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 roadmap_builder 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "각 기술의 justification 작성 시 반드시 언급하여 어떻게 대응했는지 명시하라.\n"
+        f"{bullet}\n"
+    )
+
+
 def _check_market_feasibility(timeline_draft: list, market_boom_q: str) -> list:
     """
     각 기술의 완료 분기가 시장 개화 전인지 검증.
@@ -122,6 +138,8 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
         llm = get_llm(max_tokens=4096)
         active_items = [t for t in timeline_draft if not t.get("dropped")]
 
+        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+
         user_prompt = f"""
 목표 시장     : {market_context.get('target_market', '')}
 시장 개화 목표: {market_boom_q}
@@ -133,7 +151,7 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
 {json.dumps(active_items, ensure_ascii=False, indent=2)}
 
 {f"[주의] 다음 기술들은 시장 개화 이후 완료 예정: {warnings}" if warnings else ""}
-"""
+{feedback_block}"""
 
         print("[Roadmap Builder] LLM justification 생성 요청 중...")
         response = llm.invoke([

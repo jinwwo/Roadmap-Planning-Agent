@@ -128,6 +128,22 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"유효한 JSON을 파싱할 수 없습니다:\n{text[:300]}")
 
 
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 market_agent 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "해당 트렌드/기술의 시장 매력도 평가 시 반영하라.\n"
+        f"{bullet}\n"
+    )
+
+
 def _collect_market_data(
     domain: str,
     patent_analysis: list,
@@ -214,6 +230,9 @@ def run_market_agent(state: AnalysisState) -> dict:
 위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.
 모든 tech_id는 반드시 입력 목록의 값과 동일해야 합니다.
 """
+
+        # Orchestrator REVISE feedback 을 user_prompt 끝에 append
+        user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
 
         print("[Market Agent] Claude 분석 요청 중...")
         response = llm.invoke(

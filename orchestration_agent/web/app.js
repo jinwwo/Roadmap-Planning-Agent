@@ -752,7 +752,7 @@ function renderReviewSection(review, iteration) {
             <summary>${escapeHtml(label)}</summary>
             <div class="body">${escapeHtml(report[k])}</div>
           </details>`)
-        .join("")
+        .join("") + renderArtifactsSummary(report.artifacts_summary)
     : (review.diagnostic_summary
          ? `<div class="report-section"><div class="body" style="padding:10px 12px;">${escapeHtml(review.diagnostic_summary)}</div></div>`
          : "");
@@ -790,11 +790,141 @@ function renderReviewSection(review, iteration) {
 function appendRefineBanner(rerunAgents, feedback) {
   const sec = panel().querySelector(".review-sec");
   if (!sec) return;
+
+  const wrap = document.createElement("div");
+  wrap.className = "refine-block";
+
   const banner = document.createElement("div");
   banner.className = "refine-line";
   banner.textContent = `↻ REVISE — rerun: ${(rerunAgents || []).join(", ")} | feedback: ${(feedback || []).length}건`;
-  sec.appendChild(banner);
+  wrap.appendChild(banner);
+
+  // feedback 내용 리스트 출력 — 다음 iteration 의 각 agent prompt 에 박힐 텍스트
+  const items = (feedback || []).filter(t => typeof t === "string" && t.trim());
+  if (items.length) {
+    const list = document.createElement("details");
+    list.className = "refine-feedback";
+    list.open = true;
+    list.innerHTML = `
+      <summary>피드백 ${items.length}건 — 다음 iteration 의 재실행 Agent prompt 에 전달됨</summary>
+      <ul>${items.map(t => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`;
+    wrap.appendChild(list);
+  }
+
+  sec.appendChild(wrap);
 }
+
+// ── 8. Artifacts Summary 렌더 ──────────────────────────────────
+// review.report.artifacts_summary 는 dict 형태 (string 이 아닌 raw 데이터).
+// 7개 string narrative 섹션과 다른 렌더링 — 표 형식으로 [A1]/[A2]/[A3] 출처 추적용.
+function renderArtifactsSummary(artifacts) {
+  if (!artifacts || typeof artifacts !== "object") return "";
+  const a1 = artifacts.agent1_tech_candidates || [];
+  const a2 = artifacts.agent2_planned_roadmap || [];
+  const a3 = artifacts.agent3_investment_strategy || [];
+  const insights = artifacts.insights || {};
+
+  // Agent 1 표 — tech_id / name / category / TRL / scores / boom
+  const a1Rows = a1.map(t => `
+    <tr>
+      <td><b>${escapeHtml(t.tech_id || "")}</b></td>
+      <td>${escapeHtml(t.name || "")}</td>
+      <td>${escapeHtml(t.category || "")}</td>
+      <td>${escapeHtml(String(t.trl ?? ""))}</td>
+      <td>${escapeHtml(String(t.final_score ?? ""))}</td>
+      <td>${escapeHtml(String(t.market_score ?? ""))}</td>
+      <td>${escapeHtml(String(t.patent_score ?? ""))}</td>
+      <td>${escapeHtml(t.expected_market_boom_quarter || "")}</td>
+    </tr>`).join("");
+  const a1Html = a1.length ? `
+    <details class="artifact-sub" open>
+      <summary>[A1] Agent 1 · Tech Candidates (${a1.length})</summary>
+      <div class="body">
+        <table class="artifact-table">
+          <thead><tr>
+            <th>tech_id</th><th>name</th><th>category</th><th>TRL</th>
+            <th>final</th><th>market</th><th>patent</th><th>boom</th>
+          </tr></thead>
+          <tbody>${a1Rows}</tbody>
+        </table>
+      </div>
+    </details>` : "";
+
+  // Agent 2 표 — tech_id / phase / start → target / prereq / lead
+  const a2Rows = a2.map(r => `
+    <tr>
+      <td><b>${escapeHtml(r.tech_id || "")}</b></td>
+      <td>${escapeHtml(r.phase_name || "")}</td>
+      <td>${escapeHtml(r.start_q || "")} → ${escapeHtml(r.target_q || "")}</td>
+      <td>${escapeHtml((r.prerequisites || []).join(", "))}</td>
+      <td>${escapeHtml(String(r.lead_time_quarters ?? ""))}</td>
+    </tr>`).join("");
+  const a2Html = a2.length ? `
+    <details class="artifact-sub">
+      <summary>[A2] Agent 2 · Planned Roadmap (${a2.length})</summary>
+      <div class="body">
+        <table class="artifact-table">
+          <thead><tr>
+            <th>tech_id</th><th>phase</th><th>start → target</th>
+            <th>prerequisites</th><th>lead (Q)</th>
+          </tr></thead>
+          <tbody>${a2Rows}</tbody>
+        </table>
+      </div>
+    </details>` : "";
+
+  // Agent 3 — stage 별로 그룹
+  const a3Html = a3.length ? `
+    <details class="artifact-sub">
+      <summary>[A3] Agent 3 · Investment Strategy (${a3.length} stages)</summary>
+      <div class="body">
+        ${a3.map(s => {
+          const techRows = (s.tech_investments || []).map(ti => `
+            <tr>
+              <td><b>${escapeHtml(ti.tech_id || "")}</b></td>
+              <td>${escapeHtml(ti.tier || "")}</td>
+              <td>${escapeHtml(String(ti.investment_attractiveness ?? ""))}</td>
+              <td>${escapeHtml(String(ti.investment_urgency ?? ""))}</td>
+              <td>${escapeHtml(ti.recommended_action || "")}</td>
+              <td>${escapeHtml((ti.major_risks || []).join("; "))}</td>
+            </tr>`).join("");
+          return `
+            <div class="artifact-stage">
+              <div class="artifact-stage-title">
+                <b>${escapeHtml(s.stage || "")}</b>
+                <span style="color:var(--text-dim);">· ${escapeHtml(s.period || "")}</span>
+              </div>
+              ${s.stage_assessment ? `<div class="artifact-stage-assess">${escapeHtml(s.stage_assessment)}</div>` : ""}
+              <table class="artifact-table">
+                <thead><tr>
+                  <th>tech_id</th><th>tier</th><th>attract</th><th>urgency</th>
+                  <th>action</th><th>risks</th>
+                </tr></thead>
+                <tbody>${techRows}</tbody>
+              </table>
+            </div>`;
+        }).join("")}
+      </div>
+    </details>` : "";
+
+  // Insights — tier 분포 / 카테고리 / 평균 TRL / 의존성 엣지
+  const insightsHtml = Object.keys(insights).length ? `
+    <details class="artifact-sub">
+      <summary>Insights (집계 통계)</summary>
+      <div class="body">
+        <pre class="artifact-insights">${escapeHtml(JSON.stringify(insights, null, 2))}</pre>
+      </div>
+    </details>` : "";
+
+  return `
+    <details class="report-section artifact-section">
+      <summary>8. Artifacts Summary <span style="color:var(--text-dim);font-weight:normal;">— [A1]/[A2]/[A3] 출처 데이터</span></summary>
+      <div class="body" style="padding:8px 4px;">
+        ${a1Html}${a2Html}${a3Html}${insightsHtml}
+      </div>
+    </details>`;
+}
+
 
 // ── Utils ─────────────────────────────────────────────────────
 function escapeHtml(s) {

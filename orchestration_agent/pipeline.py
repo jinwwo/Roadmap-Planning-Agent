@@ -266,6 +266,7 @@ def _run_agent1(
         hints = state.get("category_hints") or []
         patent_method = state.get("patent_method") or "A_current"
         graph_prefix = (out_prefix.rstrip("_") or "run")
+        feedback = state.get("orchestrator_feedback") or None
 
         snippet = f"""
 import sys, json, os
@@ -278,6 +279,7 @@ result = run_technology_analysis(
     domain={domain!r},
     reference_year={int(ref_year)},
     category_hints={list(hints)!r},
+    orchestrator_feedback={feedback!r},
 )
 patent_maps = result.get("patent_maps") or {{}}
 graph_paths = render_patent_maps(
@@ -356,10 +358,13 @@ out = {{
     "market_context": market_context,
     "planned_roadmap": result.get("planned_roadmap") or [],
     "dependency_tree": result.get("dependency_tree") or {{}},
+    "tech_selection": result.get("tech_selection") or {{}},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
-print(f"[Agent 2] 저장: {out_path!r} ({{len(out['planned_roadmap'])}}개 항목)")
+sel = out["tech_selection"]
+sel_count = sel.get("selected_count") if isinstance(sel, dict) else None
+print(f"[Agent 2] 저장: {out_path!r} ({{len(out['planned_roadmap'])}}개 항목, 선별 {{sel_count}})")
 """
         _run_subprocess(snippet, cwd=SIBLING_ROADMAP_PLANNER, label="Roadmap Planner")
 
