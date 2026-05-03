@@ -10,7 +10,7 @@ venv/
 env/
 
 # Environment files (각 에이전트 폴더의 .env 는 symlink 이지만 위 규칙에 포함)
-# .env
+.env
 */.env
 
 # Outputs (orchestration_agent 산출물)
