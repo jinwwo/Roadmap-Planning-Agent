@@ -45,8 +45,8 @@
             </table><br/>
 
             <b>📌 예시 1 — 최소 입력 (필수만):</b><br/>
-            <span style="font-family:monospace; color:var(--accent-soft);">"2030년까지의 2nm 파운드리 로드맵 그려줘"</span><br/>
-            <span class="dim">→ domain, reference_year 만 추출. 정책은 모두 기본값.</span><br/><br/>
+            <span style="font-family:monospace; color:var(--accent-soft);">"삼성의 반도체 분야의 2025년부터 2030년까지 예산 50B 정도로 로드맵을 그려줘"</span><br/>
+            <span class="dim">→ domain, reference_year, total_budget 자동 추출. 나머지 정책은 기본값.</span><br/><br/>
 
             <b>📌 예시 2 — 풀 입력 (모든 필드 자연어에 포함):</b><br/>
             <span style="font-family:monospace; color:var(--accent-soft);">"Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B 규모, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략 우선순위는 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘"</span><br/>
@@ -73,7 +73,7 @@
         </div>
 
         <div class="composer-row">
-          <textarea id="input" rows="5" placeholder='예: "Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략은 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘"'>Tier-1 IDM Foundry 입장에서 2030년까지의 2nm 파운드리 로드맵을 EUV·GAA·BSPDN 중심으로, 시장 선점을 목표로. 예산 $5B, 위험 선호도 균형(medium), 투자 horizon 균형(balanced), 전략은 단기 사업화 + 기반 기술 + 장기 베팅의 균형으로 그려줘</textarea>
+          <textarea id="input" rows="5" placeholder='예: "삼성의 반도체 분야의 2025년부터 2030년까지 예산 50B 정도로 로드맵을 그려줘"'>삼성의 반도체 분야의 2025년부터 2030년까지 예산 50B 정도로 로드맵을 그려줘</textarea>
           <button id="send-btn">▶ 전송</button>
         </div>
       </div>

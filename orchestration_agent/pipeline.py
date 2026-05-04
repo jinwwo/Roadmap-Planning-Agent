@@ -113,6 +113,26 @@ def _output_path(filename: str, out_prefix: str = "") -> str:
     return os.path.join(OUTPUTS_DIR, f"{out_prefix}{filename}")
 
 
+def _backup_iter_outputs(out_prefix: str, iteration: int) -> None:
+    """REVISE 직전 — 직전 iter 의 main 산출물 (tech_candidates / planned_roadmap /
+    investment_strategy) 을 `<prefix>iter{N}_<filename>` 으로 복사 보존.
+
+    이러면 main 파일 (`<prefix><filename>`) 은 항상 마지막 iter 결과,
+    이전 iter 결과는 iter{N}_ 접두사로 추적 가능.
+    """
+    import shutil
+    iter_prefix = f"{out_prefix}iter{iteration}_"
+    for fn in (FILE_TECH_CANDIDATES, FILE_PLANNED_ROADMAP, FILE_INVESTMENT_STRATEGY):
+        src = _output_path(fn, out_prefix)
+        dst = _output_path(fn, iter_prefix)
+        if os.path.exists(src):
+            try:
+                shutil.copy2(src, dst)
+                print(f"[Pipeline] iter{iteration} 산출물 백업: {os.path.basename(dst)}")
+            except Exception as e:
+                print(f"[Pipeline] ⚠️ iter{iteration} 백업 실패 ({fn}): {e}")
+
+
 def _run_subprocess(snippet: str, cwd: str, label: str) -> None:
     """
     sibling 에이전트를 별도 Python 프로세스로 실행합니다.
@@ -337,6 +357,7 @@ def _run_agent2(
     else:
         print("\n[Pipeline] Agent 2 (Roadmap Planner) — ✅ ON")
         feedback = state.get("orchestrator_feedback") or None
+        ref_year = state.get("reference_year")
 
         snippet = f"""
 import sys, json, os
@@ -352,6 +373,7 @@ result = run_roadmap_planner(
     tech_candidates=tech_candidates,
     market_context=market_context,
     orchestrator_feedback={feedback!r},
+    reference_year={ref_year!r},
 )
 
 out = {{
@@ -639,6 +661,9 @@ def run_orchestration(
             "text": feedback,
         }
         previous_feedback = feedback
+
+        # 직전 iter 의 산출물을 iter{N}_ suffix 로 백업 (rerun 이 main 파일을 덮어쓰기 전)
+        _backup_iter_outputs(out_prefix=out_prefix, iteration=iteration)
 
         _emit("refine", rerun_agents=rerun, feedback=feedback, iteration=iteration)
         _rerun_from(state, rerun, out_prefix=out_prefix, stage_mode=stage_mode)
