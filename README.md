@@ -5,6 +5,13 @@ LLM 기반 4-에이전트 파이프라인으로 **기업의 기술 로드맵을 
 투자 전략 수립 → TRM 평가 기반 보고서 생성까지 완주.
 
 > **이 문서는 팀 엔트리 포인트.** 
+>
+> **📖 추천 읽기 순서** (협업자용):
+> 1. **(지금 이 문서)** — 전체 아키텍처 + 4 에이전트 역할 + 데이터 흐름 파악
+> 2. **[ENVIRONMENT.md](ENVIRONMENT.md)** — 환경 셋업 (Docker 컨테이너 권장)
+> 3. **본인 담당 agent 의 README** — 설계 세부
+> 4. **[orchestration_agent/README.md](orchestration_agent/README.md)** (필요 시) — 다른 agent 와의 결합 방식 / 보고서 형식
+>
 > 세부 가이드:
 > - 설치 환경 → [ENVIRONMENT.md](ENVIRONMENT.md)
 > - CLI / Ablation 실험 → [DEMO.md](DEMO.md)
@@ -16,19 +23,22 @@ LLM 기반 4-에이전트 파이프라인으로 **기업의 기술 로드맵을 
 ## 📐 아키텍처
 
 ```
-Tech-Analysis-Agent/                     ← GitHub 레포 루트 (이 폴더)
+Roadmap-Planning-Agent/                  ← GitHub 레포 루트 (이 폴더)
 │
 ├── tech_analysis_agent/                   Agent 1
 ├── roadmap_planner_agent/                 Agent 2
 ├── investment_strategist_agent/           Agent 3
 ├── orchestration_agent/                   Orchestrator
 │
+├── run_container.sh                       Docker 컨테이너 띄우기 (호스트에서 실행)
+├── container_bootstrap.sh                 컨테이너 안 환경 자동 셋업 (uv+ollama+venv+모델 pull)
+│
 ├── .venv/                                 공용 Python 3.10 venv (uv 로 생성)
-├── .env                                   공용 환경변수 (각 폴더에서 symlink)
-├── .env.example
+├── .env                                   공용 환경변수 (각 폴더에서 symlink, gitignored)
+├── .env.example                           템플릿 (안전한 default 값)
 ├── requirements.txt                       통합 의존성 (4개 에이전트 공용)
 ├── README.md                              ← 이 문서
-├── ENVIRONMENT.md                         설치/환경 상세
+├── ENVIRONMENT.md                         설치/환경 상세 (Docker 포함)
 ├── DEMO.md                                시스템 전체 데모 가이드
 └── scripts/
     ├── setup.sh                           원샷 세팅 (venv + deps + .env + Ollama)
@@ -72,17 +82,18 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 ### Agent 2 · Roadmap Planner (roadmap_planner_agent/)
 
 **입력**: `tech_candidates.json` + `orchestrator_feedback` (선택)
-**출력**: `planned_roadmap.json` — 기술별 `{tech_id, phase_name, start_q, target_q, prerequisites, lead_time_quarters, justification}`
+**출력**: `planned_roadmap.json` — 기술별 `{tech_id, phase_name, start_q, target_q, prerequisites, lead_time_quarters, justification}` + `tech_selection` (선별 사유)
 
-**내부 3 단계** (LangGraph 서브그래프):
-1. `dependency_analyzer` — LLM 이 기술 간 선후 관계 분석, 카테고리 계층 (Material/Equipment → Process → Architecture/Packaging) 적용해 `layer: 0|1|2` 부여
-2. `timeline_calculator` — **pure Python**, TRL 기반 lead time (TRL 1-3: 5분기 / 4-6: 3분기 / 7-8: 2분기 / 9: 1분기) + 시장 개화 시점부터 **역산(Backcasting)** + **Zero-slack 보장** (선행 완료 ≤ 후행 시작). LLM 은 분기 결정 권한 없음 — 결정성 보장.
-3. `roadmap_builder` — LLM 이 `phase_name` + `justification` 한국어로 작성
+**내부 4 단계** (LangGraph 서브그래프):
+1. **`tech_selector`** — LLM 이 후보 N개 중 핵심 K개를 자율 선별. **5축 큐레이션** (점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거). final_score 신뢰 + 단일 차원 의존 금지. **`ROADMAP_TECH_K_MIN`** (default 3) 최소 보장. LLM 실패 시 모든 후보 통과로 fallback.
+2. `dependency_analyzer` — LLM 이 기술 간 선후 관계 분석, 카테고리 계층 (Material/Equipment → Process → Architecture/Packaging) 적용해 `layer: 0|1|2` 부여
+3. `timeline_calculator` — **pure Python**, TRL 기반 lead time (TRL 1-3: 5분기 / 4-6: 3분기 / 7-8: 2분기 / 9: 1분기) + 시장 개화 시점부터 **역산(Backcasting)** + **Zero-slack 보장** (선행 완료 ≤ 후행 시작). LLM 은 분기 결정 권한 없음 — 결정성 보장.
+4. `roadmap_builder` — LLM 이 `phase_name` + `justification` 한국어로 작성
 
 **Orchestrator 피드백 반영** (3 채널):
 - `shift` — 특정 기술 시작 분기 강제 변경 (cascade 자동)
 - `drop`  — 기술 제외 (`dropped=True` 표시)
-- `text`  — Orchestrator REVISE 의 자유 텍스트 피드백 → dependency_analyzer + roadmap_builder 의 LLM 프롬프트에 박혀 분기/의존성/phase_name 조정에 활용
+- `text`  — Orchestrator REVISE 의 자유 텍스트 피드백 → **`tech_selector` + `dependency_analyzer` + `roadmap_builder` 의 LLM 프롬프트 모두에 박힘** → 선별/의존성/justification 조정에 활용
 
 **기술명 복구 패치**: 작은 LLM 이 `name` 을 할루시네이션 하면 원본 `tech_candidates` 에서 강제 덮어쓰기. LLM 은 `prerequisites`/`dependents`/`layer` 만 유지.
 
@@ -108,9 +119,11 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
    - **C. Stage-level 예산 분배**: `stage_budget_ratio` (0.0~1.0, 모든 stage 합 = 1.0). 코드가 자동 정규화 + `stage_estimated_usd = total_budget × ratio` 계산.
 
 **Adaptive LLM 전략** ([_is_strong_llm](investment_strategist_agent/agents/strategist.py)):
-- 강한 LLM (Claude / Ollama 32B+) → **Single-call** (모든 stage 한 번에, cross-stage 추론 풍부, max_tokens=16384)
+- 강한 LLM (Claude / Ollama 27B+) → **Single-call** (모든 stage 한 번에, cross-stage 추론 풍부, max_tokens=16384)
+  - 인식되는 모델: `:27b`, `:32b`, `:34b`, `:70b`, `qwen3.5:27b/32b/72b`, `qwen3:27b/32b/72b`, `llama3.1:70b`, `qwen2.5:32b/72b`
 - 작은 LLM (Ollama 8B 이하) → **Per-stage 분할** (stage 별 독립 콜 + cross-stage summary 동봉, JSON 안정성 우선)
 - Single-call 실패 시 → per-stage 자동 폴백 (self-healing)
+- 환경변수 `STRATEGIST_LLM_STRATEGY=single_call` 또는 `=per_stage` 로 강제 override 가능
 
 **Orchestrator REVISE feedback 반영**: `orchestrator_feedback.text` 채널이 strategist 의 LLM 프롬프트에 박혀 다음 iter 의 Tier / 예산 비율 조정에 직접 사용됨.
 
@@ -122,11 +135,16 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 **파이프라인 제어 + TRM 평가**. 두 phase 로 동작:
 
-#### Phase A · Setup (LLM 없음)
-- 사용자 자연어 입력 → **ProblemFrame** 구조화
-  - `industry`, `company_type`, `time_horizon`, `total_budget`, `objective`, `strategic_priorities[]`, `future_trend_summary`
-- `active_agents` 결정 (`--agent "1 2 3"` 등)
-- 각 에이전트 역할 로그 출력
+#### Phase A · Setup (Problem Setup + Task Orchestration)
+계획서의 "Problem Setup" 단계 — 사용자 자연어 입력을 **LLM 이 해석** 하여 구조화된 문제로 변환.
+
+- **Intake LLM** ([session.py:112](orchestration_agent/interactive/session.py#L112) `extract_intake()`):
+  사용자 입력 (예: *"2030년까지의 2nm 파운드리 로드맵 그려줘"*) → `{domain, reference_year, category_hints}`
+- **Policy LLM** ([session.py:207](orchestration_agent/interactive/session.py#L207) `extract_investment_policy()`):
+  자연어 정책 (예: *"예산 5B, 균형 위험"*) → `{risk_appetite, investment_horizon, total_budget, strategic_priority}`
+- → **ProblemFrame** 으로 통합: `industry`, `company_type`, `time_horizon`, `total_budget`, `objective`, `strategic_priorities[]`, `future_trend_summary`
+- **Task Orchestration**: `active_agents` 결정 (`--agent "1 2 3"` 등) + 각 에이전트에게 역할 + 입력 + 지시사항 배분
+- (CLI 모드 `python main.py --domain ... --reference-year ...` 처럼 인자로 직접 주면 intake LLM 호출 없이 ProblemFrame 직접 구성 가능 — 이 경우만 LLM 없음)
 
 #### Phase B · Review (LLM)
 Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
@@ -141,10 +159,16 @@ Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
 
 결과 → `decision: "ACCEPT" | "REVISE"`
 - **ACCEPT** → 7-섹션 한국어 TRM 보고서 생성 → 종료
-- **REVISE** → `refinement.rerun_agents` + `feedback` 로 재실행 지시
+- **REVISE** → `refinement.rerun_agents` + `feedback` 로 재실행 지시 — feedback 은 **Agent 1 / 2 / 3 모든 에이전트의 LLM 프롬프트에 자동 박힘** (각 sibling 의 `_format_orchestrator_feedback()` helper)
 
 **REVISE 루프**: `MAX_ORCHESTRATOR_ITERATIONS` (기본 2) 까지 반복.
-상한 도달 시 강제 ACCEPT + 전용 LLM 콜로 보고서 채움.
+상한 도달 시 강제 ACCEPT + 전용 LLM 콜로 보고서 채움. 잔여 issue 는 `feasibility_and_risk` 섹션에 명시.
+
+**최종 TRM 보고서 형식** (`orchestrator_report.json` 의 `review.report`):
+- **7-섹션 한국어 narrative**: `executive_summary` / `technology_strategy` / `roadmap_structure` / `investment_strategy` / `trend_alignment` / `feasibility_and_risk` / `expected_outcomes`
+- **인라인 출처 인용**: 각 수치/판정 뒤에 `[A1]` (Tech Analyst), `[A2]` (Roadmap Planner), `[A3]` (Strategist) 마커
+  - 예: *"T01 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류, 2026 Q3 → 2027 Q1 [A2] 양산 전환"*
+- **`artifacts_summary` 부록** (8번째 섹션): Agent 1/2/3 의 핵심 출력 raw 데이터 + 집계 insights (Tier 분포, top tech, 카테고리 분포, dependency edges 등). UI 에서 `[A?]` 마커 따라 추적 가능.
 
 **subprocess 기반**: 각 sibling 은 자기 `config.py`/`state.py` 를 가져서 같은 프로세스에서 import 하면 네임 충돌. Orchestrator 는 `subprocess.Popen` 으로 각 에이전트를 별도 Python 프로세스로 호출해 완전 격리. 웹 데모에서는 stdout 을 PIPE 로 받아 SSE 로 스트리밍.
 
@@ -156,8 +180,8 @@ Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
 [User 입력: "2030년까지의 2nm 파운드리 로드맵을 그려줘"]
         │
         ▼
-  Orchestrator Setup             ← ProblemFrame 구조화 (LLM 없음)
-  (Phase A)                         industry=반도체, budget=$5B, priorities=[...]
+  Orchestrator Setup             ← Problem Setup (intake/policy LLM) + Task Orchestration
+  (Phase A)                         자연어 → ProblemFrame: industry=반도체, budget=$5B, priorities=[...]
         │
         ▼
   ┌─ Agent 1 · Technology Analyst  [subprocess]
@@ -220,17 +244,34 @@ Stage 의 5-지표 점수 (market_opportunity 등) → Tier 결정
 
 ### 1단계 · 최초 1회만 — 환경 세팅
 
+#### 옵션 A: Docker 컨테이너 (권장 — GPU 호스트)
+
+호스트 환경을 건드리지 않고, 컨테이너 안에서 끝까지 자동 셋업.
+
 ```bash
-cd /path/to/Tech-Analysis-Agent
+# 호스트에서
+cd /path/to/Roadmap-Planning-Agent           # 레포 폴더 안
+bash run_container.sh                        # nvcr.io/nvidia/pytorch + GPU 마운트
+
+# 컨테이너 안에서 (한 줄)
+bash /workspace/26-tech-roadmap/Roadmap-Planning-Agent/container_bootstrap.sh
+```
+
+`container_bootstrap.sh` 가 자동 처리: uv/ollama 설치, GPU 멀티 분산 환경변수, ollama 데몬 기동, venv + requirements + 모델 pull (`.env` 의 `OLLAMA_MODEL` 읽음). **idempotent** — 재실행 안전. 자세한 옵션은 [ENVIRONMENT.md](ENVIRONMENT.md#docker-컨테이너-셋업-권장) 참고.
+
+#### 옵션 B: 직접 설치 (호스트 또는 기존 venv)
+
+```bash
+cd /path/to/Roadmap-Planning-Agent
 bash scripts/setup.sh
 ```
 
 `setup.sh` 가 하는 일:
 1. `uv venv --python 3.10 .venv` (공용 venv 생성)
 2. 루트 `requirements.txt` 설치 (4개 에이전트 공용 의존성)
-3. `.env` 없으면 `.env.example` 에서 복사
+3. `.env` 없으면 `.env.example` 에서 복사 (`OLLAMA_NO_THINK=1`, `OLLAMA_FORMAT_JSON=1` 등 Qwen3.5 안전 default 포함)
 4. 각 sibling 폴더에 `.env -> ../.env` symlink 생성
-5. (기본 Ollama 모드) 데몬 기동 + `llama3.1:8b` 모델 pull
+5. (기본 Ollama 모드) 데몬 기동 + `.env` 의 `OLLAMA_MODEL` pull
 
 Anthropic Claude 쓰려면:
 ```bash

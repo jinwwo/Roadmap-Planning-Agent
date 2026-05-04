@@ -169,8 +169,18 @@ phase_name="2단계: 공정 통합"  →  stage 2 (T03, T04, T05 묶임)
 | LLM 환경 | 자동 선택 | 이유 |
 |---|---|---|
 | **Anthropic Claude (sonnet/opus/haiku 4.x+)** | ⭐ Single-call | 16K 출력 안정 + JSON strict + 풍부한 cross-stage 추론 |
-| **Ollama llama3.1:70b / qwen2.5:32b+** | ⭐ Single-call | 큰 모델은 single-call 처리 가능 |
-| **Ollama llama3.1:8b 이하 (기본 데모)** | ✅ Per-stage 분할 | 출력 토큰 제한 / JSON 약함 → 안정성 우선 |
+| **Ollama 27B+** (아래 패턴 매칭) | ⭐ Single-call | 큰 모델은 single-call 처리 가능 |
+| **Ollama 9B 이하 (기본 데모)** | ✅ Per-stage 분할 | 출력 토큰 제한 / JSON 약함 → 안정성 우선 |
+
+**Single-call 로 인식되는 Ollama 모델** ([strategist.py:_is_strong_llm](agents/strategist.py)):
+
+| 카테고리 | 매칭 패턴 |
+|---|---|
+| 크기 패턴 | `:27b`, `27b-`, `:32b`, `32b-`, `:34b`, `34b-`, `:70b`, `70b-` |
+| 명시적 (Qwen3 / Qwen3.5) | `qwen3:27b`, `qwen3:32b`, `qwen3:72b`, `qwen3.5:27b`, `qwen3.5:32b`, `qwen3.5:72b` |
+| 명시적 (Qwen2.5 / Llama 3.1) | `qwen2.5:32b`, `qwen2.5:72b`, `llama3.1:70b` |
+
+→ 즉 27B 이상이면 자동으로 single-call. Qwen3 / Qwen3.5 는 명시적으로 등록되어 있어 모델명만 봐도 인식 가능 (단 `OLLAMA_NO_THINK=1` 권장 — 자세한 건 [ENVIRONMENT.md](../ENVIRONMENT.md) 참고).
 
 **환경변수 override**: `STRATEGIST_LLM_STRATEGY=single_call` 또는 `per_stage` 로 강제 지정 가능 (디버깅·실험용).
 

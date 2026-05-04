@@ -4,9 +4,9 @@
 # Docker 컨테이너 안에서 처음(또는 다시) 들어왔을 때 환경을 끝까지 셋업.
 #
 # 흐름:
-#   호스트:  bash run_container.sh        # 컨테이너 진입
+#   호스트:  cd /path/to/Roadmap-Planning-Agent && bash run_container.sh
 #   컨테이너 안:
-#       bash /workspace/26-tech-roadmap/container_bootstrap.sh
+#       bash /workspace/26-tech-roadmap/Roadmap-Planning-Agent/container_bootstrap.sh
 #
 # 수행 단계:
 #   1) uv 설치 (한 번만)

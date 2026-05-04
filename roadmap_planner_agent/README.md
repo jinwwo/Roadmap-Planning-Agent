@@ -14,6 +14,7 @@ Tech-Analysis-Agent/
 
 ## 핵심 책임
 
+- **후보 기술 큐레이션** — N개 후보 중 핵심 K개를 5축 균형으로 자율 선별 (`tech_selector`)
 - **기술 계층 구조화** — Material/Equipment (Layer 0) → Process (Layer 1) → Architecture/Packaging (Layer 2)
 - **타임라인 역산 (Backcasting)** — 목표 시장 개화 분기로부터 lead time 을 거꾸로 계산
 - **Zero-slack 검증** — 선행 기술의 완료 분기 ≤ 후행 기술의 시작 분기
@@ -25,6 +26,11 @@ Tech-Analysis-Agent/
 ```
   START
     │
+    ▼
+  [tech_selector]          ← LLM: 후보 N개 → K개 선별 (5축 큐레이션)
+    │                         · 점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거
+    │                         · ROADMAP_TECH_K_MIN 보장 (default 3)
+    │                         · final_score 신뢰 (재평가 X) — 단순 큐레이션
     ▼
   [dependency_analyzer]    ← LLM: 기술 트리 구성 + 레이어 할당
     │                         (카테고리 계층 + dependency_hints 정밀화)
@@ -46,10 +52,11 @@ Tech-Analysis-Agent/
 | `config.py`                   | LLM provider, TRL 리드타임, 카테고리 레이어 | - |
 | `state.py`                    | LangGraph State TypedDict | - |
 | `llm_factory.py`              | Claude / Ollama provider 추상화 | - |
+| `agents/tech_selector.py`       | 후보 K개 선별 (5축 큐레이션 + K_MIN 보장) | ✅ |
 | `agents/dependency_analyzer.py` | 기술 의존성 트리 구성 | ✅ |
 | `agents/timeline_calculator.py` | TRL 역산 알고리즘 + Zero-slack | ❌ |
 | `agents/roadmap_builder.py`     | 최종 로드맵 + Justification 생성 | ✅ |
-| `graphs/roadmap_graph.py`       | 3-단계 LangGraph 조립 + `run_roadmap_planner()` 헬퍼 | - |
+| `graphs/roadmap_graph.py`       | 4-단계 LangGraph 조립 + `run_roadmap_planner()` 헬퍼 | - |
 
 ## 입력 / 출력 포맷
 
@@ -90,7 +97,15 @@ Tech-Analysis-Agent/
       "justification": "공정 개발(T03) 을 위해 장비 셋업이 최우선되어야 함. TRL 4 기준 6개 분기 소요 예상."
     }
   ],
-  "dependency_tree": { ... }
+  "dependency_tree": { ... },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "8개 후보 중 5개 선별. GAA·BSPDN 트렌드 후보 보존 + 카테고리 균형.",
+    "dropped": [
+      {"tech_id":"T02","name":"...","reason":"T01 과 기능 중복"},
+      {"tech_id":"T08","name":"...","reason":"final_score 낮고 시점 부적합"}
+    ]
+  }
 }
 ```
 

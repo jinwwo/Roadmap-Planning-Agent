@@ -16,31 +16,36 @@ Tech-Analysis-Agent/                    ← GitHub 레포 루트
 ## 파이프라인
 
 ```
-[User Input: domain, year, budget, priorities, ...]
+[User Input: 자연어 (예: "2030년까지의 2nm 파운드리 로드맵 그려줘. 예산 5B, 균형 위험")]
         │
         ▼
-  Orchestrator Setup          ← ProblemFrame 구조화 + Agent 역할 배분
+  Orchestrator Setup          ← Problem Setup (intake/policy LLM) + Task Orchestration
+   (Phase A)                    · extract_intake()   → domain/reference_year/category_hints
+                                · extract_investment_policy() → risk/horizon/budget/priorities
+                                → ProblemFrame 으로 통합 + active_agents 배분
         │
         ▼
  ┌─ Agent 1 (subprocess) ←──┐ ← active_agents 에 따라 ON / OFF
- │  tech_analysis_agent/    │
+ │  tech_analysis_agent/    │   + orchestrator_feedback (REVISE 시 자유 텍스트)
  │                          │
- ├─ Agent 2 (subprocess) ←──┤ ← orchestrator_feedback(text/shift/drop) 전달
+ ├─ Agent 2 (subprocess) ←──┤ ← orchestrator_feedback (text/shift/drop)
  │  roadmap_planner_agent/  │
  │                          │
- └─ Agent 3 (subprocess) ←──┘ ← investment_policy (웹/CLI 입력 또는 ProblemFrame 기본값)
+ └─ Agent 3 (subprocess) ←──┘ ← investment_policy + orchestrator_feedback
     investment_strategist_agent/
         │
         ▼
-  Orchestrator Review (LLM)   ← TRM 5-축 평가:
-        │                         feasibility / sequencing / alignment /
-        │                         investment rationality / portfolio balance
+  Orchestrator Review (LLM)   ← TRM 5-축 평가 (Phase B):
+   (Phase B)                    feasibility / sequencing / alignment /
+        │                       investment rationality / portfolio balance
         │                       + 매 iter 마다 7-섹션 보고서 생성 (잠정 또는 최종)
+        │                       + [A1]/[A2]/[A3] 인라인 인용 + artifacts_summary 부록
         │
         ├── ACCEPT  → 최종 report → END
         └── REVISE  → refinement.rerun_agents + feedback 으로 재실행 → 다시 Review
                       (최대 MAX_ORCHESTRATOR_ITERATIONS 회)
                       매 iter 의 review 는 review_history 에 누적 저장
+                      상한 도달 시 강제 ACCEPT + 잔여 issue 를 feasibility_and_risk 에 명시
 ```
 
 ## 왜 subprocess 인가?
@@ -67,8 +72,10 @@ LLM 호출이 메인 비용인 파이프라인에서는 무시할 수 있습니�
 | `config.py`               | sibling 경로, 출력 폴더, 기본 ProblemFrame 값 | - |
 | `state.py`                | TypedDict (ProblemFrame, ReviewResult 등) | - |
 | `llm_factory.py`          | Claude / Ollama provider 추상화 | - |
-| `agents/orchestrator.py`  | Setup (LLM 없음) + Review (LLM, TRM 평가 + 7-섹션 보고서) | ✅ |
-| `pipeline.py`             | subprocess 기반 3-에이전트 러너 + REVISE 루프 | - |
+| `agents/orchestrator.py`  | Setup (CLI 모드 LLM 없음) + Review (TRM 5축 평가) + `generate_final_report` (7-섹션 + `[A1/A2/A3]` 인용 + `artifacts_summary` 부록) | ✅ |
+| `interactive/session.py`  | 웹/대화 세션 진입점. **`extract_intake()` / `extract_investment_policy()` 가 사용자 자연어를 LLM 으로 ProblemFrame 으로 변환** | ✅ |
+| `pipeline.py`             | subprocess 기반 3-에이전트 러너 + REVISE 루프. Agent 1/2/3 모두 `orchestrator_feedback` 전달 | - |
+| `web/app.js · style.css`  | 7-섹션 보고서 + `artifacts_summary` 8번째 섹션 + REVISE feedback 내용 리스트 렌더 | - |
 | `outputs/`                | 중간/최종 JSON 산출물 | - |
 
 ## 실행
@@ -159,17 +166,28 @@ python main.py \
   "issues": [],
   "refinement": {"rerun_agents": [], "feedback": []},
   "report": {
-    "executive_summary": "...",
+    "executive_summary": "T01(High-NA EUV) 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류, 2026 Q3 → 2027 Q1 [A2] 양산 전환...",
     "technology_strategy": "...",
     "roadmap_structure": "...",
     "investment_strategy": "...",
     "trend_alignment": "...",
     "feasibility_and_risk": "...",
-    "expected_outcomes": "..."
+    "expected_outcomes": "...",
+    "artifacts_summary": {
+      "agent1_tech_candidates": [...],
+      "agent2_planned_roadmap":  [...],
+      "agent3_investment_strategy": [...],
+      "insights": {"tier_distribution": {...}, "top_5_tech_by_score": [...], "dependency_edges": [...]}
+    }
   },
   "diagnostic_summary": ""
 }
 ```
+
+**보고서 형식 — 핵심**:
+- **7-섹션 한국어 narrative** (`executive_summary` ... `expected_outcomes`)
+- **인라인 인용**: 각 수치/판정 뒤에 `[A1]` (Tech Analyst), `[A2]` (Roadmap Planner), `[A3]` (Strategist) 마커 — 협업자가 출처 추적 가능
+- **`artifacts_summary` 8번째 섹션**: Agent 1/2/3 의 raw 데이터 + 집계 insights 자동 첨부 (LLM 호출 없이 Python 후처리). UI 에서도 표 형태로 렌더.
 
 **REVISE 시에도 7-섹션 보고서가 생성됩니다** (잠정 보고서). 잔여 issues / feedback 은
 `feasibility_and_risk` 섹션에 명시되며, 다음 iter 에서 갱신되어 최종 ACCEPT 시점
@@ -177,7 +195,10 @@ python main.py \
 
 Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정된 에이전트만
 재실행되고 (파이프라인 순서상 앞 단계부터 뒤까지) `refinement.feedback` 이 자유 텍스트
-채널로 Agent 2 / Agent 3 의 시스템 프롬프트에 박혀 다음 iter 의 산출물에 반영됩니다.
+채널로 **Agent 1 / 2 / 3 모든 에이전트의 시스템 프롬프트에 박혀** 다음 iter 의 산출물에 반영됩니다.
+- Agent 1: `patent_agent` / `market_agent` 의 user_prompt 끝에 feedback 블록 (누락된 후보 보강 지시)
+- Agent 2: `tech_selector` / `dependency_analyzer` / `roadmap_builder` 모두 feedback 받음
+- Agent 3: `strategist` 의 prompt 에 박혀 Tier / 예산 비율 조정
 
 ## 자동 보정 메커니즘
 
