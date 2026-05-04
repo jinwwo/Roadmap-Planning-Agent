@@ -181,7 +181,17 @@ done
 | 키 | 의미 | 기본값 |
 |----|------|--------|
 | `ROADMAP_TECH_K_MIN` | tech_selector 의 **최소 보존 후보 수** | `3` |
+| `ROADMAP_DESIGN_MODE` | Roadmap 설계 모드 — `holistic` (spec LLM 통합) / `hybrid` (Python 결정성) | `holistic` |
 | `PATENT_ANALYSIS_METHOD` | Patent prompt variant (`A_current` / `B_lee2009`) | `A_current` |
+
+#### `ROADMAP_DESIGN_MODE` 자세히
+
+- **`holistic`** (default): spec 의 System Prompt 그대로 — `roadmap_designer` 가 LLM 한 번 호출로 dependency tree + TRL lead_time + backcasting + phase_name + justification 모두 종합 판단.
+  - 자연스러운 horizon 분포, 의미적 단계 흐름
+  - 단점: 결정성 ↓ (LLM 비결정성), TRL lead_time 정확성 약화
+- **`hybrid`**: 옛 모드 — `dependency_analyzer (LLM)` + `timeline_calculator (Python)` + `roadmap_builder (LLM)` 3 노드 분리
+  - 결정성 ↑ (TRL 1-3=5분기 등 강제, Zero-slack 검증 코드)
+  - 단점: chain sparse 시 timeline 이 한 시점 몰리는 경향
 
 ### Qwen3.5 사용 시 짚어둘 점
 

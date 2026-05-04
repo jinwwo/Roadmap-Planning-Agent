@@ -118,6 +118,18 @@ def run_patent_agent(state: AnalysisState) -> dict:
             patent_raw=patent_raw_for_prompt,
         )
 
+        # Horizon 인식 가이드 — 강제 X, 참고 톤 (TRL 분포 권장)
+        user_prompt = user_prompt + f"""
+
+[Horizon 인식 — 권장 (강제 X)]
+reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종료 연도** 이다.
+후보 기술 발굴 시 다음을 고려:
+- 단기 (TRL 7+, 양산 가까운) / 중기 (TRL 5-6, 프로토타입) / 장기 (TRL 3-4, R&D) 가
+  골고루 분포하도록 권장 — 모든 후보를 한 TRL 대역으로 채우지 말 것.
+- 단 도메인 특성상 한 대역에 집중되는 게 자연스러우면 그대로 — 정직한 분석 우선.
+- 즉 "정직한 분석" ≫ "TRL 분포 균형". 둘이 충돌하면 정직성 선호, 비슷하면 분포 권장.
+"""
+
         # Orchestrator REVISE feedback 을 user_prompt 끝에 append
         user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
 

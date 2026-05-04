@@ -47,10 +47,18 @@ SELECTOR_SYSTEM_PROMPT = """당신은 기술 로드맵의 후보 기술을 선�
    EUV, Low-k 등) 와 관련된 후보는 final_score 가 다소 낮아도 키워드당 최소 1개 보존.
 3. **카테고리 균형**: Equipment / Material / Process / Architecture / Packaging 한쪽으로
    치우치지 않게 (시장 성격상 한 카테고리 핵심이면 비율 편중 OK).
-4. **시점 분포**: expected_market_boom_quarter 가 한 시점에 몰리지 않게.
+4. **시점 분포 [필수]**: expected_market_boom_quarter 가 reference_year 가 입력되면 그
+   horizon 안에 **반드시 stagger 분포**되도록 선별. 모든 후보가 boom 한 시점에 몰리면 안 됨.
+   - reference_year=2030 이면 boom 분포가 2026~2030 에 골고루 (예: 단기 2027, 중기 2028, 장기 2029-2030)
+   - 한 시점 집중 후보 풀밖에 없으면 — final_score 다소 낮아도 다른 boom 분기 후보를 강제 보존
 5. **중복 제거**: 비슷한 기능 후보 다수면 final_score 높은 대표 1개만.
 
 평가를 다시 매기지 말 것 (final_score 가 정답). 위 5축 trade-off 만 큐레이션.
+
+[reference_year horizon — 필수]
+- 사용자 입력의 reference_year 가 있다면 그 시점까지 timeline 이 채워지는 것이 **로드맵의 본질**
+- 후보 선별이 horizon 분포에 직접 영향 — 단기/중기/장기 후보 골고루 보존
+- "마지막 단계 (양산 전환)" 가 reference_year 와 가까운 분기에 도달하도록 후보 풀 구성
 
 [출력 — strict JSON only, no prose, no markdown]
 {
@@ -170,6 +178,7 @@ def run_tech_selector(state: RoadmapState) -> dict:
 
     market_ctx = state.get("market_context", {}) or {}
     feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+    ref_year = state.get("reference_year")
 
     # LLM 입력 — 핵심 필드만 (토큰 절약)
     def _slim(t: dict) -> dict:
@@ -188,15 +197,20 @@ def run_tech_selector(state: RoadmapState) -> dict:
             "rationale": rationale,
         }
 
+    horizon_block = (
+        f"- reference_year: {ref_year} (로드맵 horizon 의 목표 종료 연도)\n"
+        if ref_year else ""
+    )
     user_prompt = f"""[후보 기술 {n_in}개]
 {json.dumps([_slim(t) for t in tech_candidates], ensure_ascii=False, indent=2)}
 
 [시장 컨텍스트]
 - target_market: {market_ctx.get("target_market", "")}
 - expected_boom_quarter: {market_ctx.get("expected_boom_quarter", "")}
-{feedback_block}
+{horizon_block}{feedback_block}
 위 후보 중 중요도가 떨어지는 기술을 자율적으로 제외하고 핵심만 남겨주세요.
 최소 {k_min}개는 유지해야 합니다.
+{f"reference_year={ref_year} 까지 horizon 을 고려하여 단기/중기/장기 기술이 골고루 분포되도록 권장 (강제 X — 도메인 특성에 맞게)." if ref_year else ""}
 """
 
     try:

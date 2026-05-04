@@ -81,21 +81,34 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 ### Agent 2 · Roadmap Planner (roadmap_planner_agent/)
 
-**입력**: `tech_candidates.json` + `orchestrator_feedback` (선택)
+**입력**: `tech_candidates.json` + `reference_year` + `orchestrator_feedback` (선택)
 **출력**: `planned_roadmap.json` — 기술별 `{tech_id, phase_name, start_q, target_q, prerequisites, lead_time_quarters, justification}` + `tech_selection` (선별 사유)
 
-**내부 4 단계** (LangGraph 서브그래프):
-1. **`tech_selector`** — LLM 이 후보 N개 중 핵심 K개를 자율 선별. **5축 큐레이션** (점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거). final_score 신뢰 + 단일 차원 의존 금지. **`ROADMAP_TECH_K_MIN`** (default 3) 최소 보장. LLM 실패 시 모든 후보 통과로 fallback.
-2. `dependency_analyzer` — LLM 이 기술 간 선후 관계 분석, 카테고리 계층 (Material/Equipment → Process → Architecture/Packaging) 적용해 `layer: 0|1|2` 부여
-3. `timeline_calculator` — **pure Python**, TRL 기반 lead time (TRL 1-3: 5분기 / 4-6: 3분기 / 7-8: 2분기 / 9: 1분기) + 시장 개화 시점부터 **역산(Backcasting)** + **Zero-slack 보장** (선행 완료 ≤ 후행 시작). LLM 은 분기 결정 권한 없음 — 결정성 보장.
-4. `roadmap_builder` — LLM 이 `phase_name` + `justification` 한국어로 작성
+**두 가지 설계 모드** — 환경변수 `ROADMAP_DESIGN_MODE` 로 토글:
+
+#### `holistic` (default — spec 의 LLM 통합 모드)
+1. **`tech_selector`** — LLM 이 후보 N개 중 핵심 K개를 자율 선별. **5축 큐레이션** (점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거). final_score 신뢰 + 단일 차원 의존 금지. **`ROADMAP_TECH_K_MIN`** (default 3) 최소 보장.
+2. **`roadmap_designer`** — **LLM 한 번에 통합 처리** (spec System Prompt 그대로):
+   - dependency tree (mental model) + TRL-based lead time + Backcasting from boom_quarter
+   - `phase_name` + `start_q` + `target_q` + `prerequisites` + `justification` 모두 한 번에
+   - Zero-slack 자체 검증 + `reference_year` horizon stagger 분포
+
+→ 자연스러운 horizon 분포 + 의미적 단계 흐름. 결정성 약간 ↓.
+
+#### `hybrid` (옛 모드 — Python 결정성 우선)
+1. `tech_selector` (동일)
+2. `dependency_analyzer` — LLM 이 의존성 트리 + 양방향 정합 보강
+3. `timeline_calculator` — **pure Python** TRL 역산 (TRL 1-3: 5분기 / 4-6: 3분기 / 7-8: 2분기 / 9: 1분기) + Zero-slack + leaf 기술 reference_year 안전망
+4. `roadmap_builder` — LLM 이 `phase_name` + `justification` (분기 변경 X), 시간순 단조 증가 룰
+
+→ 결정성 ↑ (TRL lead_time 강제). 단 chain sparse 시 timeline 한 시점 몰림 경향.
 
 **Orchestrator 피드백 반영** (3 채널):
 - `shift` — 특정 기술 시작 분기 강제 변경 (cascade 자동)
 - `drop`  — 기술 제외 (`dropped=True` 표시)
-- `text`  — Orchestrator REVISE 의 자유 텍스트 피드백 → **`tech_selector` + `dependency_analyzer` + `roadmap_builder` 의 LLM 프롬프트 모두에 박힘** → 선별/의존성/justification 조정에 활용
+- `text`  — Orchestrator REVISE 의 자유 텍스트 피드백 → **모든 LLM 노드의 프롬프트에 박힘** (holistic: tech_selector + roadmap_designer / hybrid: tech_selector + dependency_analyzer + roadmap_builder)
 
-**기술명 복구 패치**: 작은 LLM 이 `name` 을 할루시네이션 하면 원본 `tech_candidates` 에서 강제 덮어쓰기. LLM 은 `prerequisites`/`dependents`/`layer` 만 유지.
+**기술명 복구 패치** (hybrid): 작은 LLM 이 `name` 을 할루시네이션 하면 원본 `tech_candidates` 에서 강제 덮어쓰기.
 
 ---
 

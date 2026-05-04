@@ -136,6 +136,31 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
 
 
+def _enforce_bidirectional(tree: dict) -> dict:
+    """LLM 응답에서 한쪽만 등록된 의존성을 양방향으로 강제 정합.
+
+    예) T01.dependents 에 T08 이 등록됐지만 T08.prerequisites 가 비어있으면
+        T08.prerequisites 에 T01 자동 추가. 그 반대도 동일.
+
+    이게 없으면 timeline_calculator 가 prerequisites 만 보기 때문에
+    선행 기술이 후행 기술보다 늦게 시작되는 비정상 timeline 이 발생.
+    """
+    for tid, node in list(tree.items()):
+        for prereq_id in list(node.get("prerequisites", []) or []):
+            if prereq_id in tree:
+                deps = tree[prereq_id].setdefault("dependents", []) or []
+                if tid not in deps:
+                    deps.append(tid)
+                tree[prereq_id]["dependents"] = deps
+        for dep_id in list(node.get("dependents", []) or []):
+            if dep_id in tree:
+                preqs = tree[dep_id].setdefault("prerequisites", []) or []
+                if tid not in preqs:
+                    preqs.append(tid)
+                tree[dep_id]["prerequisites"] = preqs
+    return tree
+
+
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     """REVISE 시 전달된 feedback 을 dependency_analyzer 프롬프트에 박을 섹션으로 포맷."""
     if not orchestrator_feedback:
@@ -289,7 +314,13 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
                     "expected_market_boom_quarter": src.get("expected_market_boom_quarter", ""),
                 }
 
-        print(f"[Dependency Analyzer] ✅ {len(dependency_tree)}개 노드 의존성 트리 구성 완료 (원본 필드 복구)")
+        # ── 양방향 정합 강제 ───────────────────────────────────
+        # LLM 이 한쪽 (예: T01.dependents) 만 등록하고 반대쪽 (T08.prerequisites)
+        # 을 누락하면 timeline_calculator 가 후자만 보기 때문에 후행 기술이
+        # 선행 기술보다 빨리 시작되는 비정상 timeline 발생. 강제 양방향 보강.
+        dependency_tree = _enforce_bidirectional(dependency_tree)
+
+        print(f"[Dependency Analyzer] ✅ {len(dependency_tree)}개 노드 의존성 트리 구성 완료 (원본 필드 복구 + 양방향 정합)")
 
         # 레이어별 요약 출력
         layers = {0: [], 1: [], 2: []}

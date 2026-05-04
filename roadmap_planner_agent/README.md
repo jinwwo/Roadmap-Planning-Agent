@@ -21,7 +21,9 @@ Tech-Analysis-Agent/
 - **병목 유발 로드맵 생성** — 자원 제약 고려 없이 기술적 필요 일정 모두 배치
   (이후 Investment Strategist 가 '선택과 집중' 결정)
 
-## 파이프라인
+## 파이프라인 — 두 가지 설계 모드 (`ROADMAP_DESIGN_MODE`)
+
+### `holistic` (default — spec 의 LLM 통합)
 
 ```
   START
@@ -32,17 +34,47 @@ Tech-Analysis-Agent/
     │                         · ROADMAP_TECH_K_MIN 보장 (default 3)
     │                         · final_score 신뢰 (재평가 X) — 단순 큐레이션
     ▼
-  [dependency_analyzer]    ← LLM: 기술 트리 구성 + 레이어 할당
-    │                         (카테고리 계층 + dependency_hints 정밀화)
-    ▼
-  [timeline_calculator]    ← pure Python: TRL 기반 역산
-    │                         (Kahn's topological sort + backcasting)
-    ▼
-  [roadmap_builder]        ← LLM: phase_name + justification 생성
-    │
+  [roadmap_designer]       ← LLM 한 번에 통합 처리 (spec System Prompt 그대로):
+    │                         · dependency tree (mental model)
+    │                         · TRL-based lead time
+    │                         · Backcasting from market boom_quarter
+    │                         · phase_name + start_q + target_q + prerequisites + justification
+    │                         · Zero-slack 자체 검증
+    │                         · reference_year horizon stagger 분포
     ▼
   END
 ```
+
+자연스러운 horizon 분포 + 의미적 단계 흐름. 결정성은 약간 ↓ 단 LLM 이 종합 맥락으로 합리적 결정.
+
+### `hybrid` (옛 모드 — Python 알고리즘 결정성 우선)
+
+```
+  START
+    │
+    ▼
+  [tech_selector]          ← (동일)
+    │
+    ▼
+  [dependency_analyzer]    ← LLM: 기술 트리 구성 + 레이어 할당 + 양방향 정합
+    │                         (카테고리 계층 + dependency_hints 정밀화)
+    ▼
+  [timeline_calculator]    ← pure Python: TRL 기반 역산
+    │                         · Kahn's topological sort + backcasting
+    │                         · reference_year leaf 안전망 (가장 후행 기술만 horizon 끝까지)
+    ▼
+  [roadmap_builder]        ← LLM: phase_name + justification (분기 변경 X)
+    │                         · phase_name 단조 증가 룰 (시간순)
+    │                         · reference_year horizon narrative
+    ▼
+  END
+```
+
+결정성 보장 (TRL lead_time 강제, Zero-slack 검증). 단 chain 이 sparse 하면 timeline 이 한 시점에 몰리는 경향.
+
+### 모드 전환
+
+`.env` 의 `ROADMAP_DESIGN_MODE=holistic` (default) 또는 `=hybrid` 로 토글. server 재시작.
 
 ## 파일 구조
 
@@ -53,10 +85,11 @@ Tech-Analysis-Agent/
 | `state.py`                    | LangGraph State TypedDict | - |
 | `llm_factory.py`              | Claude / Ollama provider 추상화 | - |
 | `agents/tech_selector.py`       | 후보 K개 선별 (5축 큐레이션 + K_MIN 보장) | ✅ |
-| `agents/dependency_analyzer.py` | 기술 의존성 트리 구성 | ✅ |
-| `agents/timeline_calculator.py` | TRL 역산 알고리즘 + Zero-slack | ❌ |
-| `agents/roadmap_builder.py`     | 최종 로드맵 + Justification 생성 | ✅ |
-| `graphs/roadmap_graph.py`       | 4-단계 LangGraph 조립 + `run_roadmap_planner()` 헬퍼 | - |
+| `agents/roadmap_designer.py`    | **(holistic 모드)** spec System Prompt 그대로 — dependency + lead_time + backcasting + phase_name + justification 한 번에 | ✅ |
+| `agents/dependency_analyzer.py` | (hybrid 모드) 기술 의존성 트리 + 양방향 정합 | ✅ |
+| `agents/timeline_calculator.py` | (hybrid 모드) TRL 역산 알고리즘 + Zero-slack + reference_year leaf 안전망 | ❌ |
+| `agents/roadmap_builder.py`     | (hybrid 모드) phase_name + Justification (분기 변경 X) | ✅ |
+| `graphs/roadmap_graph.py`       | LangGraph 조립 (`ROADMAP_DESIGN_MODE` 분기) + `run_roadmap_planner()` 헬퍼 | - |
 
 ## 입력 / 출력 포맷
 

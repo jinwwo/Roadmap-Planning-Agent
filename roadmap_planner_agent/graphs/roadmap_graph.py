@@ -3,29 +3,48 @@ graphs/roadmap_graph.py
 ────────────────────────
 Roadmap Planner Agent 의 Local Orchestrator 그래프
 
-노드 흐름:
+노드 흐름은 환경변수 `ROADMAP_DESIGN_MODE` 로 결정:
+
+  ────────────────────────────────────────────────────────────
+  ROADMAP_DESIGN_MODE=holistic   (default — spec 의 LLM 통합)
+  ────────────────────────────────────────────────────────────
   START
     │
     ▼
-  [tech_selector]          후보 기술 종합 평가 → 핵심만 K개 선별 (최소 K_MIN 보장)
+  [tech_selector]       후보 종합 평가 → K개 선별
     │
     ▼
-  [dependency_analyzer]    선별된 기술 트리 구성 + 레이어 할당 (LLM)
+  [roadmap_designer]    LLM 한 번에: dependency tree + lead_time + backcasting
+    │                    + phase_name + start_q/target_q + justification
+    ▼
+  END
+
+  ────────────────────────────────────────────────────────────
+  ROADMAP_DESIGN_MODE=hybrid     (옛 모드 — Python 알고리즘 결정성 우선)
+  ────────────────────────────────────────────────────────────
+  START
     │
     ▼
-  [timeline_calculator]    TRL 기반 역산 → 분기별 start/target 산출 (pure Python)
+  [tech_selector]
     │
     ▼
-  [roadmap_builder]        LLM justification 생성 → 최종 로드맵
+  [dependency_analyzer]   LLM: 트리 구성 + 레이어
+    │
+    ▼
+  [timeline_calculator]   pure Python: TRL 역산 + Zero-slack
+    │
+    ▼
+  [roadmap_builder]       LLM: phase_name + justification (분기 변경 X)
     │
     ▼
   END
 
-오케스트레이터 피드백 처리:
-  - orchestrator_feedback 이 있으면 timeline_calculator 에서 자동 반영
-  - Shift : 특정 기술의 시작 분기를 강제 연기
-  - Drop  : 특정 기술을 로드맵에서 제외 (dropped=True 표시)
+오케스트레이터 피드백:
+  - holistic: roadmap_designer 의 LLM 프롬프트에 박힘 (text/shift/drop 모두)
+  - hybrid: timeline_calculator 가 shift/drop 처리 + 각 LLM 노드가 text 반영
 """
+
+import os
 
 from langgraph.graph import StateGraph, END
 
@@ -34,6 +53,13 @@ from agents.tech_selector import run_tech_selector
 from agents.dependency_analyzer import run_dependency_analyzer
 from agents.timeline_calculator import run_timeline_calculator
 from agents.roadmap_builder import run_roadmap_builder
+from agents.roadmap_designer import run_roadmap_designer
+
+
+def _design_mode() -> str:
+    """ROADMAP_DESIGN_MODE: 'holistic' (default) | 'hybrid'."""
+    mode = (os.getenv("ROADMAP_DESIGN_MODE") or "holistic").strip().lower()
+    return "hybrid" if mode == "hybrid" else "holistic"
 
 
 # ── 조건부 엣지 ──────────────────────────────────────────────
@@ -56,41 +82,61 @@ def route_after_timeline(state: RoadmapState) -> str:
     return "roadmap_builder"
 
 
+def route_after_selector_holistic(state: RoadmapState) -> str:
+    if not state.get("tech_candidates"):
+        return "end"
+    return "roadmap_designer"
+
+
 # ── 그래프 생성 ───────────────────────────────────────────────
 
 def create_roadmap_graph():
     """
-    Roadmap Planner Agent LangGraph 그래프 생성 및 컴파일
+    Roadmap Planner Agent LangGraph 그래프 생성 및 컴파일.
+    환경변수 ROADMAP_DESIGN_MODE 에 따라 holistic / hybrid 두 모드 분기.
 
     Returns
     -------
     CompiledGraph
     """
+    mode = _design_mode()
     graph = StateGraph(RoadmapState)
-
     graph.add_node("tech_selector", run_tech_selector)
-    graph.add_node("dependency_analyzer", run_dependency_analyzer)
-    graph.add_node("timeline_calculator", run_timeline_calculator)
-    graph.add_node("roadmap_builder", run_roadmap_builder)
 
-    graph.set_entry_point("tech_selector")
-
-    graph.add_conditional_edges(
-        "tech_selector",
-        route_after_selector,
-        {"dependency_analyzer": "dependency_analyzer", "end": END},
-    )
-    graph.add_conditional_edges(
-        "dependency_analyzer",
-        route_after_dependency,
-        {"timeline_calculator": "timeline_calculator", "end": END},
-    )
-    graph.add_conditional_edges(
-        "timeline_calculator",
-        route_after_timeline,
-        {"roadmap_builder": "roadmap_builder", "end": END},
-    )
-    graph.add_edge("roadmap_builder", END)
+    if mode == "holistic":
+        # spec 의 LLM 통합 모드 (default)
+        print(f"[Roadmap Graph] 모드: holistic (spec LLM 통합)")
+        graph.add_node("roadmap_designer", run_roadmap_designer)
+        graph.set_entry_point("tech_selector")
+        graph.add_conditional_edges(
+            "tech_selector",
+            route_after_selector_holistic,
+            {"roadmap_designer": "roadmap_designer", "end": END},
+        )
+        graph.add_edge("roadmap_designer", END)
+    else:
+        # hybrid 모드 (옛 모드 — Python 알고리즘 결정성 우선)
+        print(f"[Roadmap Graph] 모드: hybrid (Python timeline_calculator)")
+        graph.add_node("dependency_analyzer", run_dependency_analyzer)
+        graph.add_node("timeline_calculator", run_timeline_calculator)
+        graph.add_node("roadmap_builder", run_roadmap_builder)
+        graph.set_entry_point("tech_selector")
+        graph.add_conditional_edges(
+            "tech_selector",
+            route_after_selector,
+            {"dependency_analyzer": "dependency_analyzer", "end": END},
+        )
+        graph.add_conditional_edges(
+            "dependency_analyzer",
+            route_after_dependency,
+            {"timeline_calculator": "timeline_calculator", "end": END},
+        )
+        graph.add_conditional_edges(
+            "timeline_calculator",
+            route_after_timeline,
+            {"roadmap_builder": "roadmap_builder", "end": END},
+        )
+        graph.add_edge("roadmap_builder", END)
 
     return graph.compile()
 
@@ -101,6 +147,7 @@ def run_roadmap_planner(
     tech_candidates: list,
     market_context: dict,
     orchestrator_feedback: dict = None,
+    reference_year: int = None,
 ) -> dict:
     """
     Roadmap Planner Agent 를 단독 실행합니다.
@@ -120,6 +167,7 @@ def run_roadmap_planner(
     initial_state: RoadmapState = {
         "tech_candidates": tech_candidates,
         "market_context": market_context,
+        "reference_year": reference_year,
         "tech_selection": None,
         "dependency_tree": None,
         "timeline_draft": None,

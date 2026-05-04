@@ -82,6 +82,8 @@ class RoadmapState(TypedDict):
     # ① 입력 (Analyst Agent 로부터)
     tech_candidates: List[TechCandidate]
     market_context: dict          # {"target_market": ..., "expected_boom_quarter": "YYYY QX"}
+    reference_year: Optional[int]  # 사용자 명시 horizon 종료 연도 (예: 2030)
+                                    # tech_selector / roadmap_builder 의 LLM 프롬프트에서 활용
 
     # ② 중간 결과
     tech_selection: Optional[TechSelection]   # tech_selector 산출 (선별 사유 + 제외 목록)

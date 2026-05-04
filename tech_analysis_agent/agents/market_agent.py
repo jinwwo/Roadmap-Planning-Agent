@@ -83,6 +83,16 @@ market_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)
 - Format: "YYYY QX" (e.g., "2028 Q1")
 - Default if data insufficient: 3 years from reference year, Q1
 
+[Horizon 인식 — 권장 (강제 X, 가이드)]
+사용자가 명시한 `reference_year` 는 로드맵 horizon 의 **목표 종료 연도** 이다.
+boom_quarter 는 시장 데이터 그대로 정직하게 결정하되, 다음을 고려하라:
+
+- 후보 기술 전체적으로 **boom_quarter 분포가 horizon 에 stagger** 되도록 신경 쓸 것
+  (예: reference_year=2030 → 일부는 2027, 일부는 2028, 일부는 2029-2030 으로 분포)
+- 모든 후보의 boom 이 한 시점에 몰리면 로드맵의 일부 구간이 비어 horizon 활용도 ↓
+- 시장 데이터가 명백히 한쪽 시점을 가리키면 정직한 분석 우선 — 인위적 분산 금지
+- **정직한 분석 ≫ 분포 균형** (둘이 충돌할 때만 정직성 선호, 비슷하면 분포 권장)
+
 ---
 [Language Rules — CRITICAL]
 - `name` 은 입력 리스트의 한국어 기술명을 그대로 사용하거나 동일 의미의 한국어로 유지.
