@@ -1,0 +1,265 @@
+{
+  "market_context": {
+    "target_market": "2nm 파운드리",
+    "expected_boom_quarter": "2028 Q3"
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "long",
+    "total_budget": 5000000000.0,
+    "strategic_priority": [
+      "Short-term commercialization",
+      "Enabling technology",
+      "Long-term exploratory bets"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "1 단계: 핵심 장비 도입 및 기반 구축",
+      "period": "2026 Q3 - 2027 Q1",
+      "goal": "1 단계: 핵심 장비 도입 및 기반 구축",
+      "technologies": [
+        "High-NA EUV 스캐너"
+      ],
+      "tech_ids": [
+        "T01"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "2 단계: GAA 소재 개발 및 공정 통합",
+      "period": "2027 Q2 - 2028 Q1",
+      "goal": "2 단계: GAA 소재 개발 및 공정 통합",
+      "technologies": [
+        "GAA 나노시트 채널 소재"
+      ],
+      "tech_ids": [
+        "T02"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "2 단계: 3D 패키징 기술 상용화",
+      "period": "2027 Q3 - 2028 Q1",
+      "goal": "2 단계: 3D 패키징 기술 상용화",
+      "technologies": [
+        "3D 칩렛 스태킹"
+      ],
+      "tech_ids": [
+        "T08"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "3 단계: 고정밀 증착 공정 최적화",
+      "period": "2028 Q2 - 2028 Q4",
+      "goal": "3 단계: 고정밀 증착 공정 최적화",
+      "technologies": [
+        "고정밀 ALD 증착 공정"
+      ],
+      "tech_ids": [
+        "T06"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "3 단계: 차세대 소재 선제적 R&D",
+      "period": "2029 Q2 - 2030 Q1",
+      "goal": "3 단계: 차세대 소재 선제적 R&D",
+      "technologies": [
+        "2D 반도체 채널 기술"
+      ],
+      "tech_ids": [
+        "T05"
+      ],
+      "num_items": 1
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "1 단계: 핵심 장비 도입 및 기반 구축",
+      "period": "2026 Q3 - 2027 Q1",
+      "stage_assessment": "2028 Q3 시장 붐 직전의 가장 결정적인 선행 단계로, High-NA EUV(T01) 도입 없이는 후속 모든 공정 (GAA, ALD, 패키징) 이 불가능한 절대적 병목 구간입니다. 전체 로드맵의 실행 가능성 (Executability) 을 좌우하는 핵심 인프라 구축 단계이므로, 시장 타이밍과 전략적 의존성 측면에서 가장 높은 투자 우선순위를 부여해야 합니다.",
+      "stage_budget_ratio": 0.35,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "High-NA EUV 스캐너",
+          "evaluation_scores": {
+            "market_opportunity": 5,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "aggressive",
+          "recommended_action": "ASML 과의 독점적 공급 계약 체결 및 대규모 CAPEX 를 즉시 집행하여 2027 Q1 까지 설비 가동률을 확보해야 합니다.",
+          "rationale": [
+            "2028 Q3 시장 붐 대비 2026 Q3 시작은 최적의 선점 타이밍이며, T01 은 T02, T06, T08 등 후속 모든 기술의 필수 선행 조건 (Prerequisite) 입니다.",
+            "시장 규모 $763B 와 25.3% CAGR 은 파운드리 경쟁력의 핵심이며, TRL 7 은 상용화 직전으로 실행 리스크가 관리 가능한 수준입니다."
+          ],
+          "major_risks": [
+            "ASML 의 독점적 공급으로 인한 납기 지연 및 가격 협상력 약화",
+            "초기 도입 비용 (CAPEX) 과 유지보수 비용의 과도한 부담"
+          ],
+          "resource_focus": [
+            "초기 설비 도입 예산 (CAPEX) 확보",
+            "고급 엔지니어링 인력 및 ASML 기술 지원 팀 구성"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 1750000000.0
+    },
+    {
+      "stage": "2 단계: GAA 소재 개발 및 공정 통합",
+      "period": "2027 Q2 - 2028 Q1",
+      "stage_assessment": "T01(High-NA EUV) 의 도입이 완료된 직후 시작되는 핵심 공정 단계로, 2nm 노드의 물리적 성능을 결정짓는 GAA 나노시트 소재 (T02) 개발이 주된 목표입니다. 시장 붐 직전 (2028 Q3) 에 양산 준비를 마쳐야 하므로, T01 과의 시너지를 극대화하는 동시에 기술적 불확실성을 빠르게 해소해야 하는 고강도 투자 구간입니다.",
+      "stage_budget_ratio": 0.25,
+      "tech_investments": [
+        {
+          "tech_id": "T02",
+          "name": "GAA 나노시트 채널 소재",
+          "evaluation_scores": {
+            "market_opportunity": 5,
+            "strategic_fit": 5,
+            "executability": 3,
+            "uncertainty": 4,
+            "urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "proactive",
+          "recommended_action": "T01 설비 가동과 병행하여 GAA 소재의 양산 공정 적합성 (Yield) 을 검증하는 대규모 파일럿 라인을 즉시 구축해야 합니다.",
+          "rationale": [
+            "T01 의 도입이 선행되어야만 구현 가능한 핵심 기술로, 2028 Q3 시장 붐 직전인 2028 Q1 까지 양산 준비를 마쳐야 하는 높은 Urgency 를 가집니다.",
+            "시장 규모 $240B 로 경쟁이 치열하며, TRL 6 에서 7 로의 성숙도 도약이 성공 여부를 결정짓는 전략적 핵심입니다."
+          ],
+          "major_risks": [
+            "GAA 구조 구현 시 발생하는 결함률 (Defect Rate) 과 수율 (Yield) 저하",
+            "T01(High-NA EUV) 과의 공정 통합 시 발생하는 예상치 못한 물리적 간섭"
+          ],
+          "resource_focus": [
+            "소재 합성 및 패터닝 검증 라인 구축",
+            "고급 소재 연구 인력 및 공정 엔지니어 확보"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 1250000000.0
+    },
+    {
+      "stage": "2 단계: 3D 패키징 기술 상용화",
+      "period": "2027 Q3 - 2028 Q1",
+      "stage_assessment": "T01, T02 등 핵심 칩 제조 기술이 완료된 후 성능을 극대화하기 위한 필수 단계이나, 과투자 우려와 치열한 경쟁으로 인해 마진 확보가 어려울 수 있습니다. T01/T02 의 성공적 양산이 전제되어야 의미가 있으므로, 선행 기술의 검증 결과에 따라 투자 강도를 조절하는 '조건부' 전략이 필요합니다.",
+      "stage_budget_ratio": 0.15,
+      "tech_investments": [
+        {
+          "tech_id": "T08",
+          "name": "3D 칩렛 스태킹",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 4,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "investment_scope": "selective",
+          "recommended_action": "T01/T02 의 양산 수율 확보가 확인된 시점에 한해, AI 칩 특화 3D 패키징 기술에 대한 마일스톤 기반 투자를 진행합니다.",
+          "rationale": [
+            "2028 Q2 예상 붐과 2027 Q3 시작 시기는 적절하나, T01/T02 의 성공이 선행되어야 하는 의존성으로 인해 독립적 투자 우선순위는 낮아집니다.",
+            "과투자 우려와 경쟁 심화로 인해 Tier 1 급의 무조건적 투자보다는 검증된 마일스톤 달성 시 확장하는 전략이 효율적입니다."
+          ],
+          "major_risks": [
+            "3D 스태킹 공정에서의 열 관리 및 신호 무결성 문제",
+            "T01/T02 칩렛의 수율 저하로 인한 전체 시스템 비용 증가"
+          ],
+          "resource_focus": [
+            "3D 패키징 전용 테스트베드 구축",
+            "시스템 레벨 통합 검증 인력"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 750000000.0
+    },
+    {
+      "stage": "3 단계: 고정밀 증착 공정 최적화",
+      "period": "2028 Q2 - 2028 Q4",
+      "stage_assessment": "시장 붐 (2028 Q3) 과 거의 동시에 시작되는 단계로, T01/T02 기반의 양산 라인에서 수율과 성능을 극대화하기 위한 최적화 작업이 주된 목표입니다. 초기 R&D 단계가 아닌 양산 안정화 단계이므로, 대규모 신규 투자보다는 기존 설비의 고도화와 공정 파라미터 최적화에 집중해야 합니다.",
+      "stage_budget_ratio": 0.1,
+      "tech_investments": [
+        {
+          "tech_id": "T06",
+          "name": "고정밀 ALD 증착 공정",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 4,
+            "executability": 5,
+            "uncertainty": 2,
+            "urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "investment_scope": "milestone-based",
+          "recommended_action": "T01/T02 양산 라인 가동과 병행하여 ALD 공정의 수율 향상 및 결함 감소를 위한 지속적인 공정 최적화 (Process Tuning) 를 수행합니다.",
+          "rationale": [
+            "T01(High-NA EUV) 과 T02(GAA) 의 성공적 양산이 선행되어야 의미가 있으므로, 독립적인 초기 투자보다는 양산 라인 최적화 차원에서 접근합니다.",
+            "TRL 7 로 성숙도가 높고 불확실성이 낮아, 대규모 R&D 예산보다는 운영 효율성 향상에 집중하는 것이 타당합니다."
+          ],
+          "major_risks": [
+            "양산 라인 가동 중 발생하는 공정 변수의 복잡성",
+            "기존 설비와의 호환성 문제"
+          ],
+          "resource_focus": [
+            "공정 엔지니어링 및 데이터 분석 팀",
+            "고정밀 측정 장비 및 모니터링 시스템"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 500000000.0
+    },
+    {
+      "stage": "3 단계: 차세대 소재 선제적 R&D",
+      "period": "2029 Q2 - 2030 Q1",
+      "stage_assessment": "2028 Q3 시장 붐 이후인 2030 년을 목표로 하는 장기 기술 (T05) 로, 현재 2nm 공정의 한계를 극복하기 위한 차세대 백업 기술입니다. 당장의 수익성은 낮지만, 조직의 장기 경쟁력을 확보하기 위한 필수적인 '선제적 베팅'이므로, 소규모이지만 지속적인 R&D 투자를 유지해야 합니다.",
+      "stage_budget_ratio": 0.15,
+      "tech_investments": [
+        {
+          "tech_id": "T05",
+          "name": "2D 반도체 채널 기술",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 2,
+            "uncertainty": 5,
+            "urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 3",
+          "investment_scope": "exploratory",
+          "recommended_action": "2030 년 이후 차세대 노드를 위한 2D 소재 기술의 핵심 IP 확보와 기초 연구에 집중하며, PoC 성공 시 투자를 확대하는 옵션 전략을 취합니다.",
+          "rationale": [
+            "2030 Q2 예상 붐과 2029 Q2 시작 시기는 장기적 관점에서 적절하나, TRL 4 로 실행 가능성이 낮고 불확실성이 매우 높습니다.",
+            "GAA 나노시트 (T02) 의 물리적 한계를 극복할 수 있는 유일한 백업 기술로, 장기 전략적 적합성 (Strategic Fit) 은 매우 높습니다."
+          ],
+          "major_risks": [
+            "2D 소재의 대면적 성장 및 결함 제어 기술의 미성숙",
+            "상용화 시점의 불확실성으로 인한 투자 회수 기간 지연"
+          ],
+          "resource_focus": [
+            "기초 연구 인력 및 실험실 인프라",
+            "특허 포트폴리오 구축 및 IP 모니터링"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 750000000.0
+    }
+  ]
+}

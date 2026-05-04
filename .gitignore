@@ -14,7 +14,7 @@ env/
 */.env
 
 # Outputs (orchestration_agent 산출물)
-orchestration_agent/outputs/*.json
+# orchestration_agent/outputs/*.json
 # (keep .gitkeep)
 !orchestration_agent/outputs/.gitkeep
 

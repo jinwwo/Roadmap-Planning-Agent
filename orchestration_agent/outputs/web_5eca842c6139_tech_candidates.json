@@ -1,0 +1,179 @@
+{
+  "market_context": {
+    "target_market": "2nm 파운드리",
+    "expected_boom_quarter": "2028 Q3"
+  },
+  "tech_candidates": [
+    {
+      "tech_id": "T01",
+      "name": "High-NA EUV 스캐너",
+      "category": "Equipment",
+      "trl": 7,
+      "patent_score": 88.4,
+      "market_score": 92.5,
+      "final_score": 90.66,
+      "expected_market_boom_quarter": "2027 Q2",
+      "dependency_hints": [],
+      "rationale": "[Patent] ASML, TSMC 등 Tier-1 기업들의 집중적인 특허 출현과 높은 인용 비율은 2nm 노드의 핵심 선행 기술임을 시사합니다. 2024 년 최근 출원 데이터가 다수 포함되어 상용화 직전 단계 (TRL 7) 로 추정되며, 후속 공정 기술들의 필수 전제 조건입니다. [Market] 2028 년까지 763 억 달러 규모의 시장 성장과 25.3% 의 높은 CAGR 을 보이며, AI/HPC 수요에 의해 주도되는 핵심 선행 기술입니다. ASML 의 독점적 지위와 주요 파운드리들의 대규모 CAPEX, 그리고 미·한·EU 의 강력한 정책 지원이 시장 진입 장벽과 성장 동력을 동시에 높이고 있습니다.",
+      "patent_signals": {
+        "filing_growth_rate": 82,
+        "citation_concentration": 85,
+        "white_space_index": 75,
+        "key_assignee_concentration": 95
+      }
+    },
+    {
+      "tech_id": "T02",
+      "name": "GAA 나노시트 채널 소재",
+      "category": "Material",
+      "trl": 6,
+      "patent_score": 84.2,
+      "market_score": 88.2,
+      "final_score": 86.4,
+      "expected_market_boom_quarter": "2027 Q1",
+      "dependency_hints": [
+        "T01"
+      ],
+      "rationale": "[Patent] 2D 채널 소재 (MoS2 등) 와 GAA 구조를 위한 신소재 특허가 급증하고 있으며, TSMC 와 Intel 등 주요 파운드리가 주도하고 있습니다. High-NA EUV(T01) 가 확보된 후 구현 가능한 핵심 소재 기술로, 2nm 공정 상용화의 물리적 기반을 제공합니다. [Market] 2028 년 240 억 달러 시장 규모와 18% 성장률을 기록하며, TSMC, 삼성, 인텔 등 3 대 파운드리 간의 경쟁이 치열한 핵심 소재 분야입니다. CHIPS Act 등 글로벌 정책 지원이 강력하고, High-NA EUV 와의 시너지를 통해 2027 년부터 본격적인 양산이 예상됩니다.",
+      "patent_signals": {
+        "filing_growth_rate": 88,
+        "citation_concentration": 72,
+        "white_space_index": 80,
+        "key_assignee_concentration": 85
+      }
+    },
+    {
+      "tech_id": "T06",
+      "name": "고정밀 ALD 증착 공정",
+      "category": "Process",
+      "trl": 7,
+      "patent_score": 81.6,
+      "market_score": 81.3,
+      "final_score": 81.44,
+      "expected_market_boom_quarter": "2027 Q3",
+      "dependency_hints": [
+        "T01"
+      ],
+      "rationale": "[Patent] Lam Research 와 Applied Materials 의 sub-3nm 노드용 ALD 리액터 특허는 2nm 공정 구현을 위한 핵심 증착 기술을 보여줍니다. 고분해능 패터닝 (T01) 과 신소재 (T02, T03) 적용을 위한 필수 선행 공정입니다. [Market] GAA 나노시트 및 Ru/Co 인터커넥트 구현을 위한 필수 선행 공정으로, T01 의 도입과 함께 그 중요성이 급격히 부각됩니다. 2027 년 이후 2nm 양산 라인 구축에 필수적이므로 시장 진입 시기가 빠르고, 주요 장비 기업들의 기술 경쟁이 치열할 것으로 예상됩니다.",
+      "patent_signals": {
+        "filing_growth_rate": 78,
+        "citation_concentration": 82,
+        "white_space_index": 60,
+        "key_assignee_concentration": 92
+      }
+    },
+    {
+      "tech_id": "T07",
+      "name": "멀티빔 e-beam 검사",
+      "category": "Equipment",
+      "trl": 6,
+      "patent_score": 77.9,
+      "market_score": 79.6,
+      "final_score": 78.84,
+      "expected_market_boom_quarter": "2027 Q4",
+      "dependency_hints": [
+        "T01",
+        "T06"
+      ],
+      "rationale": "[Patent] IBM 과 Applied Materials 의 멀티빔 e-beam 검사 시스템 특허는 초미세 결함 검출을 위한 필수 장비로, 높은 인용률을 보입니다. High-NA EUV(T01) 와 ALD 공정 (T06) 으로 생산된 웨이퍼의 품질 보장을 위한 후속 기술입니다. [Market] 2nm 공정에서 결함 검출의 정확도와 속도를 높이는 핵심 검사 기술로, 투자 전략상 저평가되었던 기술로 재평가되어 중요성이 상승했습니다. High-NA EUV 도입과 동시에 검사 장비의 고도화가 필수적이므로, 2027 년 말부터 시장 수요가 급증할 것으로 예상됩니다.",
+      "patent_signals": {
+        "filing_growth_rate": 80,
+        "citation_concentration": 88,
+        "white_space_index": 68,
+        "key_assignee_concentration": 85
+      }
+    },
+    {
+      "tech_id": "T08",
+      "name": "3D 칩렛 스태킹",
+      "category": "Packaging",
+      "trl": 7,
+      "patent_score": 83.1,
+      "market_score": 74.1,
+      "final_score": 78.15,
+      "expected_market_boom_quarter": "2028 Q2",
+      "dependency_hints": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "rationale": "[Patent] 2nm 노드 칩의 성능 극대화를 위한 3D 스태킹 패키징 기술은 TSMC 등 주요 기업에 의해 활발히 개발 중입니다. 고해상도 패터닝 (T01) 과 신소재 (T02, T03) 기반의 칩렛을 통합하기 위한 최종 단계 기술입니다. [Market] 과투자 우려가 있는 기술로 평가되나, 2nm 공정과 결합된 3D 패키징은 AI 칩 성능 향상을 위해 필수적입니다. 2028 년경 본격적인 시장 성장이 예상되지만, 경쟁이 치열하여 마진 확보가 어려울 수 있어 투자 우선순위를 조정할 필요가 있습니다.",
+      "patent_signals": {
+        "filing_growth_rate": 86,
+        "citation_concentration": 79,
+        "white_space_index": 70,
+        "key_assignee_concentration": 90
+      }
+    },
+    {
+      "tech_id": "T03",
+      "name": "Ru/Co 배리어 인터커넥트",
+      "category": "Material",
+      "trl": 7,
+      "patent_score": 79.5,
+      "market_score": 72.4,
+      "final_score": 75.59,
+      "expected_market_boom_quarter": "2028 Q3",
+      "dependency_hints": [
+        "T01",
+        "T06"
+      ],
+      "rationale": "[Patent] 구리 대체를 위한 루테늄 (Ru) 과 코발트 (Co) 기반 인터커넥트 소재 특허가 Intel, GlobalFoundries 등에 의해 활발히 출원되고 있습니다. 고밀도 배선을 위한 필수 소재로, ALD 공정 (T06) 과 High-NA EUV(T01) 의 선행 확보가 필요합니다. [Market] 구리 대체 소재로서 2nm 공정 필수 요소이나, T01 과 T02 에 비해 직접적인 시장 데이터가 부족하여 성장률과 투자 강도가 상대적으로 낮게 평가됩니다. 주요 장비 및 소재 기업들의 기술 경쟁이 존재하지만, 아직은 파운드리들의 공정 최적화 단계에 따라 시장 성숙도가 결정될 것입니다.",
+      "patent_signals": {
+        "filing_growth_rate": 75,
+        "citation_concentration": 78,
+        "white_space_index": 65,
+        "key_assignee_concentration": 90
+      }
+    },
+    {
+      "tech_id": "T05",
+      "name": "2D 반도체 채널 기술",
+      "category": "Material",
+      "trl": 4,
+      "patent_score": 72.3,
+      "market_score": 76.8,
+      "final_score": 74.78,
+      "expected_market_boom_quarter": "2030 Q2",
+      "dependency_hints": [
+        "T01",
+        "T02"
+      ],
+      "rationale": "[Patent] MoS2 등 2D 소재를 활용한 포스트 실리콘 FET 특허는 아직 초기 단계이나 성장률이 매우 높습니다. 2030 년 이후의 차세대 노드를 위한 장기 기술로, GAA 나노시트 (T02) 의 한계를 넘어서는 백업 기술입니다. [Market] 2030 년 이후 2nm 이하 공정에서 차세대 채널 소재로 주목받으며, 투자 전략상 저평가되었던 기술로 재평가되어 정책 및 투자 지원이 확대되고 있습니다. 아직 상용화 초기 단계이나, 독보적인 성능을 가진 경우 높은 진입 장벽과 시장 지배력을 확보할 수 있는 잠재력이 큽니다.",
+      "patent_signals": {
+        "filing_growth_rate": 92,
+        "citation_concentration": 55,
+        "white_space_index": 90,
+        "key_assignee_concentration": 65
+      }
+    },
+    {
+      "tech_id": "T04",
+      "name": "DSA 패터닝 기술",
+      "category": "Process",
+      "trl": 5,
+      "patent_score": 76.8,
+      "market_score": 68.5,
+      "final_score": 72.24,
+      "expected_market_boom_quarter": "2029 Q1",
+      "dependency_hints": [
+        "T01"
+      ],
+      "rationale": "[Patent] ASML 의 DSA 패터닝 장비 특허는 기존 리소그래피 한계를 극복하기 위한 차세대 공정으로 높은 성장률을 보입니다. High-NA EUV(T01) 와 병행되거나 후속하여 적용될 가능성이 높은 백업 기술로 평가됩니다. [Market] EUV 의 해상도 한계를 보완하는 기술로 잠재력은 있으나, 현재는 보조 공정으로 활용되며 시장 규모와 투자 집중도가 상대적으로 낮습니다. 2030 년 이후 본격적인 상용화 가능성이 있어, 단기적인 시장 폭발력은 제한적일 것으로 예상됩니다.",
+      "patent_signals": {
+        "filing_growth_rate": 85,
+        "citation_concentration": 68,
+        "white_space_index": 82,
+        "key_assignee_concentration": 75
+      }
+    }
+  ],
+  "patent_maps": {},
+  "patent_map_graphs": {},
+  "patent_prompt": {
+    "agent": "patent_agent",
+    "variant": "A_current",
+    "system_path": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/tech_analysis_agent/prompts/patent_agent/A_current/system.md",
+    "user_template_path": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/tech_analysis_agent/prompts/patent_agent/A_current/user.md"
+  }
+}

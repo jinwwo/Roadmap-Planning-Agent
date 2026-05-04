@@ -1,0 +1,295 @@
+{
+  "market_context": {
+    "target_market": "2nm 파운드리",
+    "expected_boom_quarter": "2027 Q2"
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "long",
+    "total_budget": 5000000000.0,
+    "strategic_priority": [
+      "Short-term commercialization",
+      "Enabling technology",
+      "Long-term exploratory bets"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "3 단계: 양산 전환 및 장비 도입",
+      "period": "2026 Q3 - 2027 Q1",
+      "goal": "3 단계: 양산 전환 및 장비 도입",
+      "technologies": [
+        "High-NA EUV 스캐너"
+      ],
+      "tech_ids": [
+        "T01"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "2 단계: 공정 통합 및 검증",
+      "period": "2026 Q3 - 2028 Q2",
+      "goal": "2 단계: 공정 통합 및 검증",
+      "technologies": [
+        "Ru 배리어 메탈",
+        "Co 인터커넥트 공정"
+      ],
+      "tech_ids": [
+        "T03",
+        "T04"
+      ],
+      "num_items": 2
+    },
+    {
+      "stage": "2 단계: 프로토타이핑 및 통합",
+      "period": "2027 Q2 - 2028 Q1",
+      "goal": "2 단계: 프로토타이핑 및 통합",
+      "technologies": [
+        "GAA 나노시트 트랜지스터"
+      ],
+      "tech_ids": [
+        "T02"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "2 단계: 장기 기술 개발 및 최적화",
+      "period": "2028 Q1 - 2028 Q4",
+      "goal": "2 단계: 장기 기술 개발 및 최적화",
+      "technologies": [
+        "Low-k 다공성 유전체"
+      ],
+      "tech_ids": [
+        "T07"
+      ],
+      "num_items": 1
+    },
+    {
+      "stage": "3 단계: 시스템 검증 및 고도화",
+      "period": "2028 Q3 - 2029 Q2",
+      "goal": "3 단계: 시스템 검증 및 고도화",
+      "technologies": [
+        "BSPDN 백사이드 전력망"
+      ],
+      "tech_ids": [
+        "T06"
+      ],
+      "num_items": 1
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "3 단계: 양산 전환 및 장비 도입",
+      "period": "2026 Q3 - 2027 Q1",
+      "stage_assessment": "2027 Q2 시장 붐 직전의 가장 시급한 단계로, High-NA EUV 도입 없이는 후속 모든 공정이 불가능한 절대적 병목 구간입니다. ASML 의 독점적 공급망으로 인해 실행 가능성은 높으나, 막대한 CAPEX 가 요구되어 전체 예산의 상당 부분을 선점해야 합니다. 이 단계의 성공 여부가 2nm 노드 진입의 성패를 가르는 결정적 요인입니다.",
+      "stage_budget_ratio": 0.35,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "High-NA EUV 스캐너",
+          "evaluation_scores": {
+            "market_opportunity": 5,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "aggressive",
+          "recommended_action": "2027 Q2 시장 붐에 맞춰 장비 도입 및 설치 공정을 즉시 착수하여 양산 라인 가동 준비를 완료해야 합니다.",
+          "rationale": [
+            "2027 Q2 시장 붐 직전 시점과 T01 의 TRL 7 성숙도가 결합되어 즉각적인 양산 전환이 가능한 유일한 단계입니다.",
+            "ASML 의 독점적 지위와 763 억 달러 시장 규모로 인해 선점 효과가 극대화되며, 후속 GAA 및 BSPDN 기술의 전제 조건입니다."
+          ],
+          "major_risks": [
+            "ASML 의 공급 부족으로 인한 납기 지연 리스크",
+            "초기 양산 수율 (Yield) 확보 실패로 인한 비용 폭증"
+          ],
+          "resource_focus": [
+            "장비 도입을 위한 대규모 CAPEX 확보",
+            "설치 및 검증 (Qualification) 을 위한 전문 엔지니어링 인력 투입"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 1750000000.0
+    },
+    {
+      "stage": "2 단계: 공정 통합 및 검증",
+      "period": "2026 Q3 - 2028 Q2",
+      "stage_assessment": "T01 장비 도입과 병행하여 Ru 배리어와 Co 인터커넥트 공정을 통합 검증하는 핵심 단계로, 2nm 노드의 물리적 성능을 결정합니다. T01 과의 높은 시너지가 요구되며, 2027 Q2~Q4 시장 붐에 맞춰 양산 준비를 마쳐야 하므로 실행 속도가 매우 중요합니다. 장기 기술 (T07) 과의 의존성도 고려하여 초기 검증이 필수적입니다.",
+      "stage_budget_ratio": 0.25,
+      "tech_investments": [
+        {
+          "tech_id": "T03",
+          "name": "Ru 배리어 메탈",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "proactive",
+          "recommended_action": "T04 와의 통합 공정을 2027 Q3 전까지 검증 완료하여 양산 라인에 적용할 수 있도록 소재 공급망 안정화를 우선시해야 합니다.",
+          "rationale": [
+            "2027 Q3 시장 붐과 맞물려 구리 대체 필수 소재로, T04 와의 시너지가 없으면 2nm 성능 달성 불가합니다.",
+            "TRL 6 수준으로 양산 직전 단계이며, Intel/Tokyo Electron 등의 특허 집중으로 기술 방향성이 명확합니다."
+          ],
+          "major_risks": [
+            "Ru 소재의 공정 내 안정성 및 누설 전류 제어 실패",
+            "공급망 단절로 인한 양산 지연"
+          ],
+          "resource_focus": [
+            "소재 공급업체와의 공동 개발 (Joint Development) 예산",
+            "BEOL 공정 통합을 위한 검증 라인 (Pilot Line) 운영"
+          ]
+        },
+        {
+          "tech_id": "T04",
+          "name": "Co 인터커넥트 공정",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "proactive",
+          "recommended_action": "T03 Ru 배리어와 결합된 Co 증착 공정을 2027 Q4 전까지 최적화하여 저전력 고주파 특성을 확보해야 합니다.",
+          "rationale": [
+            "2027 Q4 시장 붐에 맞춰 저전력 고주파 특성을 확보해야 하는 필수 공정으로, T03 과의 의존성이 절대적입니다.",
+            "TRL 6 수준으로 기술 성숙도가 높으나, 장비 및 소재 공급업체 간 독점성으로 인한 진입 장벽이 존재합니다."
+          ],
+          "major_risks": [
+            "Co 증착 공정의 균일성 및 저항 감소 효과 미달",
+            "T03 Ru 배리어와의 공정 호환성 문제"
+          ],
+          "resource_focus": [
+            "Co 증착 장비 (ALD/CVD) 의 최적화 및 검증",
+            "저전력 고주파 특성을 위한 전기적 특성 분석 인프라"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 1250000000.0
+    },
+    {
+      "stage": "2 단계: 프로토타이핑 및 통합",
+      "period": "2027 Q2 - 2028 Q1",
+      "stage_assessment": "2027 Q2 시장 붐 직후에 시작되는 GAA 나노시트 트랜지스터 아키텍처 검증 단계로, T01 장비의 성능을 극대화하는 핵심 기술입니다. T01 의 도입과 T03/T04 의 공정 검증과 병행되어야 하며, 2028 Q1 시장 붐을 목표로 한 양산 전환의 핵심입니다. 장기 기술 (T07) 과의 연계성을 고려하여 초기 아키텍처 검증이 필수적입니다.",
+      "stage_budget_ratio": 0.2,
+      "tech_investments": [
+        {
+          "tech_id": "T02",
+          "name": "GAA 나노시트 트랜지스터",
+          "evaluation_scores": {
+            "market_opportunity": 5,
+            "strategic_fit": 5,
+            "executability": 3,
+            "uncertainty": 4,
+            "urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "proactive",
+          "recommended_action": "T01 High-NA EUV 와의 통합을 통해 2028 Q1 전까지 GAA 아키텍처의 양산 가능성을 검증하고, TSMC/삼성 대비 경쟁력을 확보해야 합니다.",
+          "rationale": [
+            "2028 Q1 시장 붐을 목표로 한 2nm 노드의 핵심 아키텍처로, T01 장비 없이는 구현 불가능한 필수 기술입니다.",
+            "TRL 6 수준으로 양산 직전 단계이나, TSMC/삼성 등과의 치열한 경쟁으로 인해 빠른 선점이 전략적 우위를 결정합니다."
+          ],
+          "major_risks": [
+            "GAA 구조의 제조 수율 (Yield) 확보 실패",
+            "T01 High-NA EUV 와의 공정 호환성 문제"
+          ],
+          "resource_focus": [
+            "GAA 구조 제조를 위한 고해상도 리소그래피 검증",
+            "아키텍처 최적화를 위한 시뮬레이션 및 설계 인력"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 1000000000.0
+    },
+    {
+      "stage": "2 단계: 장기 기술 개발 및 최적화",
+      "period": "2028 Q1 - 2028 Q4",
+      "stage_assessment": "2029 Q1 시장 붐을 목표로 한 Low-k 다공성 유전체 개발 단계로, 2nm 이하 공정에서의 신호 지연 문제를 해결하는 장기적 기술입니다. T04 Co 인터커넥트와의 의존성이 높으며, 2028 년 이후 본격적인 양산 준비를 위한 필수 기술입니다. 단기 양산 기술에 비해 불확실성이 높지만, 장기 경쟁력 확보를 위한 필수 투자 대상입니다.",
+      "stage_budget_ratio": 0.1,
+      "tech_investments": [
+        {
+          "tech_id": "T07",
+          "name": "Low-k 다공성 유전체",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 4,
+            "executability": 2,
+            "uncertainty": 5,
+            "urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "investment_scope": "selective",
+          "recommended_action": "2029 Q1 시장 붐을 목표로 T04 와의 통합 공정을 2028 년 말까지 검증하고, 내구성과 공정 호환성을 확보해야 합니다.",
+          "rationale": [
+            "2029 Q1 시장 붐을 목표로 한 장기 기술로, T04 Co 인터커넥트와의 의존성이 높아 초기 검증이 필수적입니다.",
+            "TRL 4 수준으로 기술 성숙도가 낮아 불확실성이 높지만, 고집적화 시 신호 지연 해결을 위한 필수 소재입니다."
+          ],
+          "major_risks": [
+            "Low-k 소재의 내구성 및 공정 호환성 문제",
+            "2029 년 이후 시장 수요 변화에 따른 기술 방향성 불확실성"
+          ],
+          "resource_focus": [
+            "소재 내구성 및 공정 호환성 검증 예산",
+            "고집적화 시 신호 지연 해결을 위한 R&D 인력"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 500000000.0
+    },
+    {
+      "stage": "3 단계: 시스템 검증 및 고도화",
+      "period": "2028 Q3 - 2029 Q2",
+      "stage_assessment": "2028 Q2 시장 붐을 목표로 한 BSPDN 백사이드 전력망 아키텍처 검증 단계로, T02 GAA 및 T04 Co 인터커넥트와의 통합을 통해 전류 밀도와 성능을 극대화합니다. 2028 년 이후 본격적인 양산 준비를 위한 필수 기술로, 장기 경쟁력 확보를 위한 핵심 투자 대상입니다. 단기 양산 기술에 비해 불확실성이 높지만, 2nm 이하 공정에서의 필수 아키텍처입니다.",
+      "stage_budget_ratio": 0.1,
+      "tech_investments": [
+        {
+          "tech_id": "T06",
+          "name": "BSPDN 백사이드 전력망",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 3,
+            "uncertainty": 4,
+            "urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "investment_scope": "proactive",
+          "recommended_action": "T02 GAA 및 T04 Co 인터커넥트와의 통합을 통해 2028 Q2 전까지 BSPDN 아키텍처의 양산 가능성을 검증하고, 파운드리 간 기술 격차의 핵심 요소로 작용해야 합니다.",
+          "rationale": [
+            "2028 Q2 시장 붐을 목표로 한 2nm 노드의 핵심 아키텍처로, T02 및 T04 와의 의존성이 절대적입니다.",
+            "TRL 5 수준으로 양산 직전 단계이나, 파운드리 간 기술 격차의 핵심 요소로 작용하며 높은 진입 장벽을 가집니다."
+          ],
+          "major_risks": [
+            "BSPDN 아키텍처의 전류 밀도 및 신호 간섭 해결 실패",
+            "T02 GAA 및 T04 Co 인터커넥트와의 공정 호환성 문제"
+          ],
+          "resource_focus": [
+            "BSPDN 아키텍처 검증 위한 고전류 밀도 테스트 인프라",
+            "전력망 최적화를 위한 시뮬레이션 및 설계 인력"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 500000000.0
+    }
+  ]
+}
