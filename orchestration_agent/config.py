@@ -49,23 +49,25 @@ MAX_ORCHESTRATOR_ITERATIONS: int = int(os.getenv("MAX_ORCHESTRATOR_ITERATIONS", 
 SUBPROCESS_TIMEOUT_SEC: int = int(os.getenv("SUBPROCESS_TIMEOUT_SEC", "900"))
 
 # ── Problem Frame 기본값 (CLI 로 override 가능) ───────────────
-DEFAULT_INDUSTRY: str = "AI / Semiconductor"
-DEFAULT_COMPANY_TYPE: str = "Tier-1 IDM / Foundry"
-DEFAULT_TIME_HORIZON: str = "2025-2030"
-DEFAULT_TOTAL_BUDGET: float = 5_000_000_000.0   # USD
+DEFAULT_INDUSTRY: str = "AI / Semiconductor / GPU"
+DEFAULT_COMPANY_TYPE: str = "AI hardware and accelerated computing platform leader"
+DEFAULT_TIME_HORIZON: str = "2026-2030"
+DEFAULT_TOTAL_BUDGET: float = 60_000_000_000.0   # USD, 5-year R&D envelope (12B/year)
 DEFAULT_OBJECTIVE: str = (
-    "Build a 5-year technology roadmap that secures leadership in "
-    "next-generation sub-2nm foundry and AI accelerator markets."
+    "Build a 2026-2030 technology roadmap for NVIDIA that maintains AI hardware "
+    "leadership, expands AI infrastructure and platform ecosystems, and strengthens "
+    "the end-to-end AI stack across hardware and software."
 )
 DEFAULT_PRIORITIES: list = [
-    "Short-term commercialization readiness",
-    "Enabling-technology foundation (materials / equipment)",
-    "Balanced long-term exploratory bets",
+    "Maintain leadership in AI hardware and GPU acceleration",
+    "Expand AI infrastructure and platform ecosystem",
+    "Strengthen end-to-end AI stack (hardware + software)",
 ]
 DEFAULT_FUTURE_TREND_SUMMARY: str = (
-    "Global AI compute demand (GenAI, HPC) accelerates HBM/packaging and sub-2nm foundry investments. "
-    "GAA transistor structure and BSPDN become mainstream in 2027-2028 horizon. "
-    "Material/equipment bottlenecks (High-NA EUV, EUV PR, ALD precursors) gate process timelines."
+    "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, "
+    "and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, "
+    "chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the "
+    "software platform layer that binds hardware into full-stack AI systems."
 )
 
 

@@ -72,6 +72,9 @@ class AnalysisState(TypedDict):
     domain: str
     reference_year: int
     category_hints: List[str]
+    company_name: Optional[str]
+    company_profile: Optional[str]
+    related_companies: Optional[List[str]]
 
     # ② 원시 데이터 (API 응답)
     patent_raw_data: Optional[dict]   # USPTO 응답 묶음
@@ -104,6 +107,9 @@ class GlobalState(TypedDict):
     domain: str
     reference_year: int
     category_hints: List[str]
+    company_name: Optional[str]
+    company_profile: Optional[str]
+    related_companies: Optional[List[str]]
 
     # Agent 1 출력 → Agent 2 입력
     tech_candidates: Optional[List[TechCandidate]]

@@ -75,13 +75,13 @@ def parse_args():
     # 분석 도메인 입력
     p.add_argument(
         "--domain", type=str,
-        default="차세대 2nm 이하 파운드리 및 AI 가속기 시장",
+        default="AI / Semiconductor / GPU",
         help="Technology Analysis 대상 도메인",
     )
-    p.add_argument("--year", type=int, default=2025, help="기준 연도")
+    p.add_argument("--year", type=int, default=2030, help="기준 연도")
     p.add_argument(
         "--categories", type=str,
-        default="Equipment,Material,Process,Architecture,Packaging",
+        default="Architecture,Packaging,Process,Equipment",
         help="카테고리 힌트 (콤마 구분)",
     )
     # 활성 Agent
@@ -92,6 +92,34 @@ def parse_args():
     # Problem Frame override
     p.add_argument("--industry", type=str, default=DEFAULT_INDUSTRY)
     p.add_argument("--company-type", dest="company_type", type=str, default=DEFAULT_COMPANY_TYPE)
+    p.add_argument(
+        "--company-name",
+        dest="company_name",
+        type=str,
+        default="NVIDIA",
+        help="Patent Agent 가 중심 actor 로 사용할 우리 기업명",
+    )
+    p.add_argument(
+        "--company-profile",
+        dest="company_profile",
+        type=str,
+        default=(
+            "Company Scenario: NVIDIA. Industry: AI / Semiconductor / GPU. "
+            "Annual Revenue: ~60B USD. R&D Budget Ratio: ~20%. "
+            "Annual R&D Budget: ~12B USD. Planning Horizon: 2026-2030 (5 years). "
+            "Strategic Direction: Maintain leadership in AI hardware (GPU); "
+            "expand AI infrastructure and platform ecosystem; strengthen end-to-end "
+            "AI stack (hardware + software)."
+        ),
+        help="Patent Agent 가 관련 기업/기술 후보를 해석할 때 사용할 우리 기업 정보",
+    )
+    p.add_argument(
+        "--related-companies",
+        dest="related_companies",
+        type=str,
+        default="",
+        help="관련 기업명 직접 지정 (콤마 구분). 비우면 LLM/fallback 으로 탐색",
+    )
     p.add_argument("--time-horizon", dest="time_horizon", type=str, default=DEFAULT_TIME_HORIZON)
     p.add_argument("--budget", type=float, default=DEFAULT_TOTAL_BUDGET, help="총 예산 (USD)")
     p.add_argument("--objective", type=str, default=DEFAULT_OBJECTIVE)
@@ -112,8 +140,8 @@ def parse_args():
         help="Investment Strategist 의 stage 집계 방식",
     )
     p.add_argument(
-        "--patent-method", dest="patent_method", type=str, default="A_current",
-        choices=["A_current", "B_lee2009"],
+        "--patent-method", dest="patent_method", type=str, default="C_company_portfolio",
+        choices=["A_current", "B_lee2009", "C_company_portfolio"],
         help="Technology Analyst Patent Agent prompt/method variant",
     )
     # 결과 저장 경로 prefix (비교 실험 시 파일 덮어쓰기 방지용)
@@ -137,6 +165,9 @@ def main():
     active = args.agent  # list[str]
     category_hints = [c.strip() for c in args.categories.split(",") if c.strip()]
     priorities = [p.strip() for p in args.priorities.split("|") if p.strip()]
+    related_companies = [
+        c.strip() for c in args.related_companies.split(",") if c.strip()
+    ] or None
 
     print("\n" + "=" * 70)
     print("  Technology Roadmap Orchestration Agent")
@@ -147,6 +178,7 @@ def main():
     print(f"  budget         : {args.budget:,.0f} USD")
     print(f"  stage_mode     : {args.stage_mode}")
     print(f"  patent_method  : {args.patent_method}")
+    print(f"  company_name   : {args.company_name}")
     print(f"  out_prefix     : {args.out_prefix!r}")
     print("=" * 70)
 
@@ -166,6 +198,9 @@ def main():
         out_prefix=args.out_prefix,
         stage_mode=args.stage_mode,
         patent_method=args.patent_method,
+        company_name=args.company_name,
+        company_profile=args.company_profile,
+        related_companies=related_companies,
     )
 
     # Orchestrator 최종 보고서 저장

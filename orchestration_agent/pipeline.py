@@ -284,9 +284,12 @@ def _run_agent1(
         domain = state["domain"]
         ref_year = state["reference_year"]
         hints = state.get("category_hints") or []
-        patent_method = state.get("patent_method") or "A_current"
+        patent_method = state.get("patent_method") or "C_company_portfolio"
         graph_prefix = (out_prefix.rstrip("_") or "run")
         feedback = state.get("orchestrator_feedback") or None
+        company_name = state.get("company_name")
+        company_profile = state.get("company_profile")
+        related_companies = state.get("related_companies")
 
         snippet = f"""
 import sys, json, os
@@ -300,6 +303,9 @@ result = run_technology_analysis(
     reference_year={int(ref_year)},
     category_hints={list(hints)!r},
     orchestrator_feedback={feedback!r},
+    company_name={company_name!r},
+    company_profile={company_profile!r},
+    related_companies={related_companies!r},
 )
 patent_maps = result.get("patent_maps") or {{}}
 graph_paths = render_patent_maps(
@@ -557,7 +563,10 @@ def run_orchestration(
     # 내부 설정
     out_prefix: str = "",
     stage_mode: str = "phase",
-    patent_method: str = "A_current",
+    patent_method: str = "C_company_portfolio",
+    company_name: Optional[str] = None,
+    company_profile: Optional[str] = None,
+    related_companies: Optional[List[str]] = None,
 ) -> Dict[str, Any]:
     """
     Orchestration Agent 전체 파이프라인 실행.
@@ -599,6 +608,9 @@ def run_orchestration(
         "domain": domain,
         "reference_year": reference_year,
         "category_hints": category_hints,
+        "company_name": company_name,
+        "company_profile": company_profile,
+        "related_companies": related_companies,
         "problem_frame": problem_frame,
         "active_agents": active_agents,
         "tech_candidates": [],

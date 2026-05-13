@@ -25,10 +25,16 @@ OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 # ── Tavily (시장 데이터 검색) ─────────────────────────────────
 TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 # Tavily 키가 없으면 mock 데이터를 사용 (toy/offline 데모용)
-USE_MOCK_MARKET: bool = os.getenv("USE_MOCK_MARKET", "").lower() in ("1", "true", "yes") or not TAVILY_API_KEY
+USE_MOCK_MARKET: bool = os.getenv("USE_MOCK_MARKET", "").lower() in ("1", "true", "yes")
 
-# ── USPTO PatentsView (특허 데이터 - 키 불필요) ───────────────
-USPTO_BASE_URL: str = "https://api.patentsview.org/patents/query"
+# ── USPTO PatentsView / PatentSearch API ─────────────────────
+# Legacy `api.patentsview.org/patents/query` 는 2026년 현재 sunset 되어
+# HTML portal 로 redirect 되므로 PatentSearch API 를 사용합니다.
+USPTO_BASE_URL: str = os.getenv(
+    "USPTO_BASE_URL",
+    "https://search.patentsview.org/api/v1/patent/",
+)
+PATENTSVIEW_API_KEY: str = os.getenv("PATENTSVIEW_API_KEY", "")
 USPTO_TIMEOUT: int = 30
 USPTO_MAX_RESULTS: int = 25
 # USPTO API 장애 시 mock 데이터 사용
@@ -37,7 +43,8 @@ USE_MOCK_PATENT: bool = os.getenv("USE_MOCK_PATENT", "").lower() in ("1", "true"
 # ── Patent Agent prompt / method selection ───────────────────
 #   A_current : 기존 특허 signal 기반 후보 기술 추출 방식
 #   B_lee2009 : Lee et al. (2009) technology-driven roadmapping 모듈 반영 방식
-PATENT_ANALYSIS_METHOD: str = os.getenv("PATENT_ANALYSIS_METHOD", "A_current")
+#   C_company_portfolio : 우리 기업 중심 관련 기업 특허 포트폴리오 분석 방식
+PATENT_ANALYSIS_METHOD: str = os.getenv("PATENT_ANALYSIS_METHOD", "C_company_portfolio")
 
 # ── 에이전트 공통 설정 ────────────────────────────────────────
 MAX_TECH_CANDIDATES: int = 10

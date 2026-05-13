@@ -26,12 +26,20 @@ from state import GlobalState
 def main():
     # ① 환경 변수 검증
     validate_config()
-    patent_method = os.getenv("PATENT_ANALYSIS_METHOD", "A_current")
+    patent_method = os.getenv("PATENT_ANALYSIS_METHOD", "C_company_portfolio")
 
     # ② 분석 요청 설정
-    domain = "차세대 2nm 이하 파운드리 및 AI 가속기 시장"
-    reference_year = 2025
-    category_hints = ["Equipment", "Material", "Process", "Architecture", "Packaging"]
+    domain = "AI / Semiconductor / GPU"
+    company_name = "NVIDIA"
+    company_profile = (
+        "Company Scenario: NVIDIA. Industry: AI / Semiconductor / GPU. "
+        "Annual Revenue: ~60B USD. R&D Budget Ratio: ~20%. Annual R&D Budget: ~12B USD. "
+        "Planning Horizon: 2026-2030 (5 years). Strategic Direction: Maintain leadership "
+        "in AI hardware (GPU); expand AI infrastructure and platform ecosystem; strengthen "
+        "end-to-end AI stack (hardware + software)."
+    )
+    reference_year = 2030
+    category_hints = ["Architecture", "Packaging", "Process", "Equipment"]
 
     # ③ [선택] 오케스트레이터 피드백 예시
     #    실제 Investment Strategist 가 예산 부족을 이유로 일부 기술을 연기/제외할 때 사용
@@ -49,6 +57,9 @@ def main():
         "domain": domain,
         "reference_year": reference_year,
         "category_hints": category_hints,
+        "company_name": company_name,
+        "company_profile": company_profile,
+        "related_companies": None,
         "tech_candidates": None,
         "market_context": None,
         "patent_maps": None,

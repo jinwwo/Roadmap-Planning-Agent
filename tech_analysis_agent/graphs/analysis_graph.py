@@ -99,6 +99,9 @@ def run_technology_analysis(
     reference_year: int,
     category_hints: list = None,
     orchestrator_feedback: dict = None,
+    company_name: str = None,
+    company_profile: str = None,
+    related_companies: list = None,
 ) -> dict:
     """
     Technology Analysis Agent 를 단독 실행합니다.
@@ -121,6 +124,9 @@ def run_technology_analysis(
         "domain": domain,
         "reference_year": reference_year,
         "category_hints": category_hints or [],
+        "company_name": company_name,
+        "company_profile": company_profile,
+        "related_companies": related_companies,
         "patent_raw_data": None,
         "market_raw_data": None,
         "patent_analysis": None,
@@ -138,6 +144,8 @@ def run_technology_analysis(
     print(f"\n{'='*60}")
     print(f"  Technology Analysis Agent 시작")
     print(f"  도메인  : {domain}")
+    if company_name or company_profile:
+        print(f"  기업    : {company_name or '(profile only)'}")
     print(f"  기준연도: {reference_year}")
     print(f"  카테고리: {category_hints or '전체'}")
     print(f"{'='*60}")

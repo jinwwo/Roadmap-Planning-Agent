@@ -14,10 +14,22 @@ import re
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
-from config import PATENT_ANALYSIS_METHOD
+from config import PATENT_ANALYSIS_METHOD, USE_MOCK_PATENT
 from prompt_loader import load_prompt
 from state import AnalysisState
 from tools.patent_tools import USPTOPatentTool
+
+
+_RELATED_COMPANY_FALLBACKS = {
+    "ai": ["AMD", "Intel", "Google", "Broadcom", "Qualcomm", "TSMC", "Arm"],
+    "gpu": ["AMD", "Intel", "Google", "Broadcom", "Qualcomm", "TSMC", "Arm"],
+    "semiconductor": ["TSMC", "Intel", "Samsung Electronics", "ASML", "Applied Materials", "SK hynix"],
+    "반도체": ["TSMC", "Intel", "Samsung Electronics", "ASML", "Applied Materials", "SK hynix"],
+    "foundry": ["TSMC", "Intel", "Samsung Electronics", "GlobalFoundries", "UMC", "ASML"],
+    "파운드리": ["TSMC", "Intel", "Samsung Electronics", "GlobalFoundries", "UMC", "ASML"],
+    "battery": ["CATL", "LG Energy Solution", "Panasonic", "Samsung SDI", "BYD", "SK On"],
+    "배터리": ["CATL", "LG Energy Solution", "Panasonic", "Samsung SDI", "BYD", "SK On"],
+}
 
 
 # ── 헬퍼 함수 ─────────────────────────────────────────────────
@@ -87,6 +99,127 @@ def _collect_patent_data(domain: str, category_hints: list) -> dict:
     return raw_data
 
 
+def _normalize_actor_name(name: str) -> str:
+    text = re.sub(r"\s+", " ", str(name or "")).strip()
+    return text
+
+
+def _fallback_related_companies(domain: str, company_name: str) -> list:
+    domain_l = (domain or "").lower()
+    candidates = []
+    for key, companies in _RELATED_COMPANY_FALLBACKS.items():
+        if key.lower() in domain_l:
+            candidates.extend(companies)
+    if not candidates:
+        candidates = ["TSMC", "Intel", "Samsung Electronics", "ASML", "Applied Materials"]
+
+    seen = set()
+    output = []
+    center_l = (company_name or "").lower()
+    for company in candidates:
+        key = company.lower()
+        if key == center_l or key in seen:
+            continue
+        seen.add(key)
+        output.append(company)
+    return output[:5]
+
+
+def _discover_related_companies(
+    company_name: str,
+    company_profile: str,
+    domain: str,
+    category_hints: list,
+    provided: list | None = None,
+) -> list:
+    """회사 정보 기반 관련 기업 후보를 도출합니다. 명시 입력이 있으면 그것을 우선합니다."""
+    if provided:
+        companies = [_normalize_actor_name(c) for c in provided if _normalize_actor_name(c)]
+        return companies[:8]
+
+    system = """You identify peer or adjacent companies for patent portfolio analysis.
+Return ONLY valid JSON:
+{"related_companies":["Company A","Company B",...]}
+Choose companies whose patent portfolios are likely relevant to the user's company and domain.
+Prefer real company names. Do not include the user's own company."""
+    user = f"""[User company]
+company_name: {company_name}
+company_profile: {company_profile}
+
+[Analysis domain]
+domain: {domain}
+category_hints: {category_hints}
+
+Find 4-6 related companies for patent portfolio comparison."""
+
+    try:
+        llm = get_llm(max_tokens=1024)
+        response = llm.invoke([
+            SystemMessage(content=system),
+            HumanMessage(content=user),
+        ])
+        result = _extract_json(response.content)
+        companies = result.get("related_companies") or []
+        companies = [_normalize_actor_name(c) for c in companies if _normalize_actor_name(c)]
+        companies = [c for c in companies if c.lower() != (company_name or "").lower()]
+        return companies[:6] or _fallback_related_companies(domain, company_name)
+    except Exception as e:
+        print(f"[Patent Agent] 관련 기업 LLM 탐색 실패 → fallback 사용 ({e})")
+        return _fallback_related_companies(domain, company_name)
+
+
+def _collect_company_patent_data(
+    *,
+    company_name: str,
+    company_profile: str,
+    domain: str,
+    category_hints: list,
+    related_companies: list | None,
+) -> dict:
+    """
+    우리 기업을 중심으로 관련 기업을 찾고, 각 기업의 특허 포트폴리오를 수집합니다.
+    """
+    tool = USPTOPatentTool()
+    center = _normalize_actor_name(company_name) or "User Company"
+    peers = _discover_related_companies(
+        center,
+        company_profile,
+        domain,
+        category_hints,
+        provided=related_companies,
+    )
+    domain_keywords = " ".join(
+        [str(domain or "").strip(), *[str(c).strip() for c in category_hints or []]]
+    ).strip()
+
+    raw_data = {
+        "analysis_mode": "company_portfolio",
+        "domain": domain,
+        "company": {
+            "name": center,
+            "profile": company_profile,
+        },
+        "related_companies": peers,
+        "company_portfolios": {},
+    }
+
+    targets = [center] + peers
+    for company in targets:
+        print(f"  [Patent] '{company}' 기업 특허 포트폴리오 수집 중...")
+        raw_data["company_portfolios"][company] = tool.collect_company_portfolio(
+            company,
+            domain_keywords=domain_keywords,
+        )
+
+    return raw_data
+
+
+def _is_company_portfolio_mode(state: AnalysisState) -> bool:
+    if PATENT_ANALYSIS_METHOD == "C_company_portfolio":
+        return True
+    return bool(state.get("company_name") or state.get("company_profile") or state.get("related_companies"))
+
+
 # ── LangGraph 노드 함수 ───────────────────────────────────────
 
 def run_patent_agent(state: AnalysisState) -> dict:
@@ -100,21 +233,35 @@ def run_patent_agent(state: AnalysisState) -> dict:
     try:
         # ① USPTO 데이터 수집
         print("[Patent Agent] USPTO API 데이터 수집 중...")
-        patent_raw = _collect_patent_data(
-            state["domain"], state.get("category_hints", [])
-        )
+        if _is_company_portfolio_mode(state):
+            patent_raw = _collect_company_patent_data(
+                company_name=state.get("company_name") or state["domain"],
+                company_profile=state.get("company_profile") or state["domain"],
+                domain=state["domain"],
+                category_hints=state.get("category_hints", []),
+                related_companies=state.get("related_companies"),
+            )
+            prompt_variant = "C_company_portfolio"
+        else:
+            patent_raw = _collect_patent_data(
+                state["domain"], state.get("category_hints", [])
+            )
+            prompt_variant = PATENT_ANALYSIS_METHOD
 
         # ② Claude/Ollama 에게 분석 요청
         llm = get_llm(max_tokens=4096)
-        prompt = load_prompt("patent_agent", PATENT_ANALYSIS_METHOD)
+        prompt = load_prompt("patent_agent", prompt_variant)
         patent_raw_for_prompt = json.dumps(
             patent_raw, ensure_ascii=False, indent=2
-        )[:6000]
+        )[:12000]
 
         user_prompt = prompt.render_user(
             domain=state["domain"],
             reference_year=state["reference_year"],
             category_hints=state.get("category_hints", []),
+            company_name=patent_raw.get("company", {}).get("name", state.get("company_name") or ""),
+            company_profile=patent_raw.get("company", {}).get("profile", state.get("company_profile") or ""),
+            related_companies=patent_raw.get("related_companies", state.get("related_companies") or []),
             patent_raw=patent_raw_for_prompt,
         )
 
@@ -132,6 +279,24 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
 
         # Orchestrator REVISE feedback 을 user_prompt 끝에 append
         user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+
+        if patent_raw.get("analysis_mode") == "company_portfolio" and not USE_MOCK_PATENT:
+            portfolios = patent_raw.get("company_portfolios") or {}
+            real_patent_count = sum(
+                len((p or {}).get("recent_patents") or [])
+                for p in portfolios.values()
+                if not (p or {}).get("_mock")
+            )
+            if real_patent_count == 0:
+                errors = {
+                    actor: data.get("error")
+                    for actor, data in portfolios.items()
+                    if isinstance(data, dict) and data.get("error")
+                }
+                raise RuntimeError(
+                    "Company portfolio mode requires real patent data, but no real patents were collected. "
+                    f"Errors: {errors}"
+                )
 
         print(f"[Patent Agent] prompt variant: {prompt.variant}")
         print("[Patent Agent] LLM 분석 요청 중...")
