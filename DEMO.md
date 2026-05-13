@@ -122,7 +122,8 @@ OLLAMA_BASE_URL=http://localhost:11434
 
 # tech_analysis_agent 의 외부 API (없어도 mock 자동 사용)
 TAVILY_API_KEY=
-USE_MOCK_MARKET=1
+PATENTSVIEW_API_KEY=
+USE_MOCK_MARKET=0
 USE_MOCK_PATENT=0
 
 # Orchestrator

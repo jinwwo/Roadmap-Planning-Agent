@@ -10,7 +10,9 @@ tools/mock_data.py
 """
 
 import hashlib
+import json
 import random
+from pathlib import Path
 from typing import List
 
 
@@ -18,6 +20,44 @@ def _seed_from(text: str) -> random.Random:
     """텍스트로부터 결정적 난수 발생기 생성 (같은 입력 → 같은 출력)"""
     h = hashlib.md5(text.encode("utf-8")).hexdigest()
     return random.Random(int(h[:8], 16))
+
+
+_EXAMPLE_DATA_PATH = Path(__file__).resolve().parents[1] / "example_data" / "nvidia_company_portfolios.json"
+_EXAMPLE_PORTFOLIOS = None
+
+
+def _load_example_company_portfolios() -> dict:
+    global _EXAMPLE_PORTFOLIOS
+    if _EXAMPLE_PORTFOLIOS is not None:
+        return _EXAMPLE_PORTFOLIOS
+    try:
+        data = json.loads(_EXAMPLE_DATA_PATH.read_text(encoding="utf-8"))
+        _EXAMPLE_PORTFOLIOS = data.get("company_portfolios") or {}
+    except Exception:
+        _EXAMPLE_PORTFOLIOS = {}
+    return _EXAMPLE_PORTFOLIOS
+
+
+def _lookup_example_portfolio(company_name: str) -> dict | None:
+    target = (company_name or "").strip().lower()
+    if not target:
+        return None
+    aliases = {
+        "nvidia corporation": "nvidia",
+        "nvidia corp": "nvidia",
+        "advanced micro devices": "amd",
+        "alphabet": "google",
+        "google llc": "google",
+        "broadcom inc": "broadcom",
+        "qualcomm inc": "qualcomm",
+        "taiwan semiconductor manufacturing company": "tsmc",
+        "arm holdings": "arm",
+    }
+    target = aliases.get(target, target)
+    for name, portfolio in _load_example_company_portfolios().items():
+        if name.lower() == target:
+            return json.loads(json.dumps(portfolio, ensure_ascii=False))
+    return None
 
 
 # ── Patent Mock ──────────────────────────────────────────────
@@ -155,6 +195,75 @@ def mock_patent_signal(keyword: str) -> dict:
         "filing_trend": trend,
         "citation_summary": citation_summary,
         "top_assignees": top_assignees,
+        "_mock": True,
+    }
+
+
+def mock_company_portfolio(company_name: str, domain_keywords: str = "") -> dict:
+    """기업별 특허 포트폴리오 mock. company-driven Patent Agent 경로에서 사용."""
+    example = _lookup_example_portfolio(company_name)
+    if example:
+        example["domain_keywords"] = domain_keywords or example.get("domain_keywords", "")
+        return example
+
+    rng = _seed_from(f"{company_name}|{domain_keywords}")
+    all_concepts = []
+    for category, concepts in _CATEGORY_CONCEPTS.items():
+        for title_en, concept_ko, tags in concepts:
+            all_concepts.append((category, title_en, concept_ko, tags))
+    rng.shuffle(all_concepts)
+
+    picked = all_concepts[: rng.randint(8, 14)]
+    recent = []
+    concept_candidates = []
+    for category, title_en, concept_ko, tags in picked:
+        concept_candidates.append({
+            "category": category,
+            "concept_ko": concept_ko,
+            "tags": tags,
+        })
+        recent.append({
+            "id": f"MOCK-{abs(hash(company_name + title_en)) % 999999}",
+            "title": title_en,
+            "abstract": (
+                f"{company_name} portfolio filing related to {', '.join(tags)} "
+                f"for {domain_keywords or 'advanced technology roadmap'}."
+            ),
+            "date": f"2024-{rng.randint(1,12):02d}-{rng.randint(1,28):02d}",
+            "assignee": company_name,
+            "cited_by": rng.randint(0, 180),
+            "num_claims": rng.randint(8, 42),
+            "category": category,
+            "concept_ko": concept_ko,
+            "concept_tags": tags,
+        })
+
+    base = rng.randint(120, 900)
+    trend = {
+        2022: int(base * rng.uniform(0.65, 0.9)),
+        2023: int(base * rng.uniform(0.8, 1.05)),
+        2024: base,
+    }
+    start = trend[2022] or 1
+    trend["cagr_pct"] = round(((trend[2024] / start) ** 0.5 - 1) * 100, 2)
+    citations = [p["cited_by"] for p in recent]
+    total_cit = sum(citations)
+    threshold = sorted(citations, reverse=True)[max(0, len(citations) // 10)]
+
+    return {
+        "company_name": company_name,
+        "domain_keywords": domain_keywords,
+        "recent_patents": recent,
+        "concept_candidates": concept_candidates,
+        "filing_trend": trend,
+        "citation_summary": {
+            "total_patents": base + rng.randint(200, 2500),
+            "avg_citations": round(total_cit / len(citations), 2) if citations else 0,
+            "max_citations": max(citations) if citations else 0,
+            "high_citation_ratio": round(
+                sum(c for c in citations if c >= threshold) / total_cit * 100, 2
+            ) if total_cit else 0.0,
+        },
         "_mock": True,
     }
 

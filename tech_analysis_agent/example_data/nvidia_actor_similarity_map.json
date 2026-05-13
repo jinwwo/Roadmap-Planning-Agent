@@ -1,0 +1,67 @@
+{
+  "actor_similarity_map": [
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "AMD",
+      "similarity": 0.88,
+      "edge_weight": 0.88,
+      "shared_technology_areas": ["GPU chiplets", "HBM packaging", "AI accelerator scheduling"],
+      "basis": "AMD 포트폴리오는 GPU 칩렛, HBM 인터포저, AI 텐서 스케줄링에서 NVIDIA와 가장 직접적으로 겹친다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "Intel",
+      "similarity": 0.82,
+      "edge_weight": 0.82,
+      "shared_technology_areas": ["chiplet packaging", "on-package fabric", "backside power"],
+      "basis": "Intel은 브리지 기반 패키징과 온패키지 패브릭, 전력망 기술에서 NVIDIA의 AI GPU 패키징 로드맵과 강하게 인접한다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "TSMC",
+      "similarity": 0.80,
+      "edge_weight": 0.80,
+      "shared_technology_areas": ["CoWoS-L", "HBM", "AI package thermal management"],
+      "basis": "TSMC는 CoWoS-L, HBM, 열관리 패키징에서 NVIDIA GPU 제품화와 직접 연결되는 제조/패키징 축을 형성한다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "Broadcom",
+      "similarity": 0.76,
+      "edge_weight": 0.76,
+      "shared_technology_areas": ["SerDes", "scale-out fabric", "co-packaged optical I/O"],
+      "basis": "Broadcom은 AI 클러스터 네트워킹, SerDes, 광 I/O에서 NVIDIA의 랙스케일 패브릭 전략과 높은 인접성을 보인다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "Google",
+      "similarity": 0.69,
+      "edge_weight": 0.69,
+      "shared_technology_areas": ["AI accelerator", "pod scheduling", "software stack"],
+      "basis": "Google은 TPU와 AI 팟 스케줄링 관점에서 NVIDIA의 하드웨어+소프트웨어 AI 스택 전략과 비교할 만하다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "Arm",
+      "similarity": 0.64,
+      "edge_weight": 0.64,
+      "shared_technology_areas": ["coherent fabric", "CPU-GPU memory", "platform security"],
+      "basis": "Arm은 이기종 코히어런트 패브릭과 플랫폼 보안 측면에서 Grace/CPU-GPU 통합 방향과 관련된다.",
+      "evidence_level": "proxy"
+    },
+    {
+      "center_actor": "NVIDIA",
+      "related_actor": "Qualcomm",
+      "similarity": 0.58,
+      "edge_weight": 0.58,
+      "shared_technology_areas": ["low-power inference", "AI compiler", "memory scheduling"],
+      "basis": "Qualcomm은 저전력 추론과 메모리 인식 컴파일러 측면에서 NVIDIA의 edge/inference 확장과 일부 접점이 있다.",
+      "evidence_level": "proxy"
+    }
+  ]
+}

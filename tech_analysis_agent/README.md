@@ -53,7 +53,7 @@ tech_roadmap_agent/
 ├── .env.example              # 환경변수 설정 가이드 (의존성은 루트 requirements.txt)
 │
 ├── tools/                    # 외부 API 클라이언트 (순수 데이터 수집)
-│   ├── patent_tools.py       # USPTO PatentsView API 래퍼 (키 불필요)
+│   ├── patent_tools.py       # PatentsView PatentSearch API 래퍼 (API key 필요)
 │   └── market_tools.py       # Tavily Search API 래퍼
 │
 ├── agents/                   # 각 에이전트 노드 함수
@@ -87,7 +87,7 @@ tech_roadmap_agent/
 
 | 파일 | 역할 | API |
 |------|------|-----|
-| `patent_tools.py` | 특허 키워드 검색, 연도별 출원 트렌드, 피인용 통계, 주요 출원인 수집 | USPTO PatentsView (무료, 키 불필요) |
+| `patent_tools.py` | 특허 키워드/기업 포트폴리오 검색, 연도별 출원 트렌드, 피인용 통계, 주요 출원인 수집 | PatentsView PatentSearch API (API key 필요) |
 | `market_tools.py` | 시장 규모, 투자 동향, 정책 신호, 경쟁 구도, 상용화 타임라인 검색 | Tavily Search (무료 1000회/월) |
 
 ### agents/ — 분석 레이어
@@ -188,7 +188,7 @@ orchestrator_feedback = {
 
 | API | 용도 | 비용 |
 |-----|------|------|
-| USPTO PatentsView | 특허 출원 검색, 트렌드, 인용 통계 | 완전 무료 (키 불필요) |
+| PatentsView PatentSearch | 특허 출원 검색, 트렌드, 인용 통계 | API key 필요 |
 | Tavily Search | 시장 규모, 투자 동향, 정책 뉴스 | 무료 (1,000 searches/월) |
 | Anthropic Claude | LLM 분석 및 서술 생성 | API 사용료 |
 

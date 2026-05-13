@@ -139,6 +139,29 @@ def _bipartite_positions(graph):
     return pos
 
 
+def _center_actor_positions(graph):
+    """Radial layout with the user's company at the center."""
+    import math
+
+    center = graph.graph.get("center_actor")
+    center_node = f"actor:{center}" if center else None
+    if not center_node or center_node not in graph:
+        return None
+
+    others = sorted(
+        [n for n in graph.nodes() if n != center_node],
+        key=lambda n: graph.nodes[n].get("label", n),
+    )
+    pos = {center_node: (0.0, 0.0)}
+    if not others:
+        return pos
+    radius = 1.25 if len(others) <= 5 else 1.55
+    for idx, node in enumerate(others):
+        angle = (2 * math.pi * idx / len(others)) - math.pi / 2
+        pos[node] = (radius * math.cos(angle), radius * math.sin(angle))
+    return pos
+
+
 def _normalize_view(ax, pos):
     if not pos:
         return
@@ -344,6 +367,8 @@ def _draw_graph(
 
     if bipartite:
         pos = _bipartite_positions(graph)
+    elif graph.graph.get("center_actor"):
+        pos = _center_actor_positions(graph) or _component_layout(graph, nx)
     else:
         pos = _component_layout(graph, nx)
 
@@ -479,13 +504,19 @@ def _actor_similarity_graph(items: list):
 
     graph = nx.Graph()
     for item in _top_items(items, "similarity", limit=18):
-        a = item.get("actor_a")
-        b = item.get("actor_b")
+        a = item.get("center_actor") or item.get("actor_a")
+        b = item.get("related_actor") or item.get("actor_b")
         if not a or not b:
             continue
+        if item.get("center_actor"):
+            graph.graph["center_actor"] = item.get("center_actor")
         _add_node(graph, f"actor:{a}", a, "actor")
         _add_node(graph, f"actor:{b}", b, "actor")
-        graph.add_edge(f"actor:{a}", f"actor:{b}", weight=_edge_weight(item.get("similarity")))
+        graph.add_edge(
+            f"actor:{a}",
+            f"actor:{b}",
+            weight=_edge_weight(item.get("edge_weight", item.get("similarity"))),
+        )
     return graph
 
 

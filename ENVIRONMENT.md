@@ -160,9 +160,10 @@ done
 | `CLAUDE_MODEL` | Claude 모델 | `claude-sonnet-4-20250514` |
 | `OLLAMA_MODEL` | 로컬 모델 | `qwen3.5:27b` (권장) |
 | `OLLAMA_BASE_URL` | Ollama 서버 주소 | `http://localhost:11434` |
-| `TAVILY_API_KEY` | 시장 데이터 (선택) | (비어있음) |
-| `USE_MOCK_PATENT` | USPTO mock 사용 | `1` |
-| `USE_MOCK_MARKET` | Tavily mock 사용 | `1` |
+| `TAVILY_API_KEY` | Tavily 시장 검색 API key (`USE_MOCK_MARKET=0`이면 필요) | (비어있음) |
+| `PATENTSVIEW_API_KEY` | PatentsView PatentSearch API key (`USE_MOCK_PATENT=0`이면 필요) | (비어있음) |
+| `USE_MOCK_PATENT` | PatentsView mock 사용 | `0` |
+| `USE_MOCK_MARKET` | Tavily mock 사용 | `0` |
 | `MAX_ORCHESTRATOR_ITERATIONS` | Review REVISE 루프 상한 | `2` |
 | `SUBPROCESS_TIMEOUT_SEC` | sibling 호출 timeout | `900` |
 
@@ -182,7 +183,7 @@ done
 |----|------|--------|
 | `ROADMAP_TECH_K_MIN` | tech_selector 의 **최소 보존 후보 수** | `3` |
 | `ROADMAP_DESIGN_MODE` | Roadmap 설계 모드 — `holistic` (spec LLM 통합) / `hybrid` (Python 결정성) | `holistic` |
-| `PATENT_ANALYSIS_METHOD` | Patent prompt variant (`A_current` / `B_lee2009`) | `A_current` |
+| `PATENT_ANALYSIS_METHOD` | Patent prompt variant (`A_current` / `B_lee2009` / `C_company_portfolio`) | `C_company_portfolio` |
 
 #### `ROADMAP_DESIGN_MODE` 자세히
 

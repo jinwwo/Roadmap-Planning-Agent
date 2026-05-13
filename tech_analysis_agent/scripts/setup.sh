@@ -129,13 +129,15 @@ log "Python 패키지 설치 중 ($PY)…"
 
 # ── 5. .env 생성 ──────────────────────────────────────────
 if [[ ! -f .env ]]; then
-  log ".env 파일 생성 (오프라인 데모 프리셋)"
+  log ".env 파일 생성 (실제 API 모드 프리셋 — API key 입력 필요)"
   cat > .env <<EOF
 LLM_PROVIDER=ollama
 OLLAMA_MODEL=$MODEL
 OLLAMA_BASE_URL=http://localhost:11434
-USE_MOCK_PATENT=true
-USE_MOCK_MARKET=true
+TAVILY_API_KEY=
+PATENTSVIEW_API_KEY=
+USE_MOCK_PATENT=false
+USE_MOCK_MARKET=false
 EOF
 else
   warn ".env 가 이미 존재합니다 — 덮어쓰지 않습니다. 필요시 .env.example 참고."

@@ -50,11 +50,13 @@ ollama serve &                                   # 백그라운드
 ```bash
 LLM_PROVIDER=ollama
 OLLAMA_MODEL=llama3.1:8b
-USE_MOCK_PATENT=true
-USE_MOCK_MARKET=true
+PATENTSVIEW_API_KEY=...
+TAVILY_API_KEY=...
+USE_MOCK_PATENT=false
+USE_MOCK_MARKET=false
 ```
 
-> 실제 USPTO/Tavily API 를 쓰고 싶다면 `USE_MOCK_*=false` 로 두고 `TAVILY_API_KEY` 설정.
+> 실제 PatentsView/Tavily API 를 쓰려면 `USE_MOCK_*=false` 로 두고 `PATENTSVIEW_API_KEY`, `TAVILY_API_KEY` 를 설정.
 > Claude 를 쓰고 싶다면 `LLM_PROVIDER=anthropic`, `ANTHROPIC_API_KEY=sk-ant-...`.
 
 ### 4. 서버 실행
@@ -120,7 +122,7 @@ interactive/session.py   ← 파이프라인 orchestrator (백그라운드 스�
 | 422 / 400 on `/api/session` | `LLM_PROVIDER=anthropic` 인데 `ANTHROPIC_API_KEY` 미설정 |
 | Ollama 연결 실패 | `ollama serve` 실행 여부, `OLLAMA_BASE_URL` 확인 |
 | JSON 파싱 에러 | 더 큰 모델로 교체 (`qwen2.5:14b-instruct`, `llama3.1:70b`) — 7B 급은 복잡한 스키마에서 실패 가능 |
-| USPTO 503/400 | `USE_MOCK_PATENT=true` 로 mock 폴백 |
+| PatentsView 인증/검색 실패 | `PATENTSVIEW_API_KEY` 확인 또는 임시로 `USE_MOCK_PATENT=true` |
 | SSE 끊김 | 프록시(nginx 등)의 버퍼링 — 응답 헤더에 `X-Accel-Buffering: no` 포함돼 있음 |
 
 ---
