@@ -162,6 +162,8 @@ def _collect_market_data(
     Tavily API 로 각 후보 기술의 시장 데이터를 수집합니다.
     """
     tool = MarketIntelligenceTool()
+    if not tool.use_mock and not tool.client:
+        raise RuntimeError(tool.init_error or "Tavily client is not initialized")
     market_raw = {"domain": domain, "technologies": {}}
 
     for tech in patent_analysis:

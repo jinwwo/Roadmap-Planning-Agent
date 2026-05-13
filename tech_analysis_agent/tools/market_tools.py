@@ -17,18 +17,21 @@ from tools.mock_data import mock_market_signal
 
 
 class MarketIntelligenceTool:
-    """Tavily 기반 시장 인텔리전스 수집 클라이언트 (키 없으면 mock 모드)"""
+    """Tavily 기반 시장 인텔리전스 수집 클라이언트."""
 
     def __init__(self):
-        self.use_mock = USE_MOCK_MARKET or not TAVILY_API_KEY
+        self.use_mock = USE_MOCK_MARKET
+        self.init_error = ""
         self.client = None
         if not self.use_mock:
+            if not TAVILY_API_KEY:
+                self.init_error = "TAVILY_API_KEY is required when USE_MOCK_MARKET is false"
+                return
             try:
                 from tavily import TavilyClient
                 self.client = TavilyClient(api_key=TAVILY_API_KEY)
-            except Exception:
-                # Tavily 패키지 미설치 또는 초기화 실패 → mock 으로
-                self.use_mock = True
+            except Exception as e:
+                self.init_error = str(e)
 
     def _search(
         self,
@@ -146,6 +149,18 @@ class MarketIntelligenceTool:
         """
         if self.use_mock:
             return mock_market_signal(tech_name, domain)
+        if not self.client:
+            return {
+                "tech_name": tech_name,
+                "domain": domain,
+                "market_size_data": [],
+                "investment_data": [],
+                "policy_data": [],
+                "competitive_data": [],
+                "timeline_data": [],
+                "error": self.init_error or "Tavily client is not initialized",
+                "_mock": False,
+            }
 
         def _extract_snippets(result: dict) -> list:
             """검색 결과에서 스니펫만 추출"""
@@ -178,6 +193,7 @@ class MarketIntelligenceTool:
             "timeline_data": _extract_snippets(
                 self.search_tech_timeline(tech_name)
             ),
+            "_mock": False,
         }
 
     def search_domain_overview(self, domain: str) -> dict:
