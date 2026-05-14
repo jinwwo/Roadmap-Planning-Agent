@@ -16,7 +16,7 @@ LangGraph 기반 계층형 멀티에이전트 시스템으로, 특허 데이터�
 │  ┌────────────────────────┐  │
 │  │  Agent 1               │  │
 │  │  Technology Analysis   │  │  ← analysis_graph.py
-│  │  ├─ Patent Agent       │  │     USPTO API + Claude
+│  │  ├─ Patent Agent       │  │     KIPRIS API + Claude/Ollama
 │  │  ├─ Market Agent       │  │     Tavily API + Claude
 │  │  └─ Aggregator         │  │     final_score 산출
 │  └──────────┬─────────────┘  │
@@ -53,7 +53,7 @@ tech_roadmap_agent/
 ├── .env.example              # 환경변수 설정 가이드 (의존성은 루트 requirements.txt)
 │
 ├── tools/                    # 외부 API 클라이언트 (순수 데이터 수집)
-│   ├── patent_tools.py       # PatentsView PatentSearch API 래퍼 (API key 필요)
+│   ├── patent_tools.py       # KIPRIS/mock patent provider router
 │   └── market_tools.py       # Tavily Search API 래퍼
 │
 ├── agents/                   # 각 에이전트 노드 함수
@@ -87,14 +87,14 @@ tech_roadmap_agent/
 
 | 파일 | 역할 | API |
 |------|------|-----|
-| `patent_tools.py` | 특허 키워드/기업 포트폴리오 검색, 연도별 출원 트렌드, 피인용 통계, 주요 출원인 수집 | PatentsView PatentSearch API (API key 필요) |
+| `patent_tools.py` | 기업 특허 포트폴리오 검색, 연도별 출원 트렌드, 피인용 통계 수집 | KIPRIS Plus API 또는 mock/example data |
 | `market_tools.py` | 시장 규모, 투자 동향, 정책 신호, 경쟁 구도, 상용화 타임라인 검색 | Tavily Search (무료 1000회/월) |
 
 ### agents/ — 분석 레이어
 
 | 파일 | 역할 | LLM 사용 |
 |------|------|----------|
-| `patent_agent.py` | USPTO 원시 데이터 → Claude 분석 → `patent_analysis` JSON | ✅ |
+| `patent_agent.py` | KIPRIS 원시 데이터 → LLM 분석 → `patent_analysis` JSON | ✅ |
 | `market_agent.py` | Tavily 원시 데이터 → Claude 분석 → `market_analysis` JSON | ✅ |
 | `aggregator.py` | `final_score = patent×0.45 + market×0.55`, 필터링·정렬 | ❌ |
 | `dependency_analyzer.py` | 카테고리 계층 + dependency_hints → Claude가 정밀 의존성 트리 구성 | ✅ |
@@ -188,7 +188,7 @@ orchestrator_feedback = {
 
 | API | 용도 | 비용 |
 |-----|------|------|
-| PatentsView PatentSearch | 특허 출원 검색, 트렌드, 인용 통계 | API key 필요 |
+| KIPRIS Plus | 한국 특허/공개 데이터 검색, 기업별 포트폴리오 수집 | API key 필요 |
 | Tavily Search | 시장 규모, 투자 동향, 정책 뉴스 | 무료 (1,000 searches/월) |
 | Anthropic Claude | LLM 분석 및 서술 생성 | API 사용료 |
 

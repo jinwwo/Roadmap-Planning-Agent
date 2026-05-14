@@ -162,6 +162,8 @@ done
 | `OLLAMA_BASE_URL` | Ollama 서버 주소 | `http://localhost:11434` |
 | `TAVILY_API_KEY` | Tavily 시장 검색 API key (`USE_MOCK_MARKET=0`이면 필요) | (비어있음) |
 | `PATENTSVIEW_API_KEY` | PatentsView PatentSearch API key (`USE_MOCK_PATENT=0`이면 필요) | (비어있음) |
+| `PATENT_DATA_PROVIDER` | 특허 데이터 provider (`kipris` / `patentsview` / `mock`) | `kipris` |
+| `KIPRIS_API_KEY` | KIPRIS Plus API key (`PATENT_DATA_PROVIDER=kipris`이면 필요) | (비어있음) |
 | `USE_MOCK_PATENT` | PatentsView mock 사용 | `0` |
 | `USE_MOCK_MARKET` | Tavily mock 사용 | `0` |
 | `MAX_ORCHESTRATOR_ITERATIONS` | Review REVISE 루프 상한 | `2` |

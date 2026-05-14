@@ -2,7 +2,7 @@
 분석 기준 연도: {reference_year}
 카테고리 힌트: {category_hints}
 
-아래는 USPTO PatentsView API에서 수집한 특허 데이터입니다.
+아래는 configured patent provider에서 수집한 특허 데이터입니다.
 특허 데이터를 기술 역량 기반 로드맵 관점으로 분석해주세요.
 
 특히 다음 네 가지 질문에 답할 수 있도록 후보 기술을 구성하세요.
