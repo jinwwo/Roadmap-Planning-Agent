@@ -60,18 +60,106 @@ class MarketIntelligenceTool:
 
         try:
             result = self.client.search(**kwargs)
+            if isinstance(result, dict):
+                result["_query"] = query
             return result
         except Exception as e:
-            return {"error": str(e), "results": []}
+            return {"error": str(e), "results": [], "_query": query}
 
     # ── 공개 메서드 ──────────────────────────────────────────
 
-    def search_market_size(self, tech_name: str, domain: str) -> dict:
+    def _actor_query_context(self, actor_context: Optional[dict] = None) -> str:
+        if not actor_context:
+            return ""
+        actors = actor_context.get("related_actors") or []
+        areas = actor_context.get("shared_technology_areas") or []
+        center = actor_context.get("center_actor") or ""
+        parts = [center, *actors[:4], *areas[:6]]
+        return " ".join(str(part).strip() for part in parts if str(part).strip())
+
+    def _extract_snippets(self, result: dict) -> list:
+        """검색 결과에서 스니펫만 추출"""
+        items = result.get("results", [])
+        return [
+            {
+                "title": r.get("title", ""),
+                "url": r.get("url", ""),
+                "content": r.get("content", "")[:650],
+                "score": r.get("score", 0),
+            }
+            for r in items
+        ]
+
+    def search_market_reports(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
+        """
+        시장 보고서/산업 리서치 자료를 우선 탐색합니다.
+        """
+        context = self._actor_query_context(actor_context)
+        query = (
+            f"{tech_name} {context} market report industry analysis forecast "
+            f"TAM SAM SOM CAGR {domain} 2025 2026 2027 2028 2030"
+        )
+        return self._search(
+            query,
+            max_results=6,
+            include_domains=[
+                "grandviewresearch.com", "marketsandmarkets.com",
+                "mordorintelligence.com", "precedenceresearch.com",
+                "fortunebusinessinsights.com", "idc.com", "gartner.com",
+                "semianalysis.com", "yolegroup.com", "techinsights.com",
+                "globenewswire.com", "businesswire.com", "prnewswire.com",
+            ],
+        )
+
+    def search_tam_sam_som(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
+        """
+        TAM/SAM/SOM 추정을 위한 수치 근거를 검색합니다.
+        """
+        context = self._actor_query_context(actor_context)
+        query = (
+            f"{tech_name} {context} TAM SAM SOM serviceable obtainable market "
+            f"revenue opportunity {domain} billion forecast"
+        )
+        return self._search(query, max_results=5, search_depth="advanced")
+
+    def search_cagr_forecast(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
+        """
+        CAGR 및 성장 전망 수치를 검색합니다.
+        """
+        context = self._actor_query_context(actor_context)
+        query = (
+            f"{tech_name} {context} CAGR growth forecast market outlook "
+            f"2025 2030 {domain}"
+        )
+        return self._search(query, max_results=5, search_depth="advanced")
+
+    def search_market_size(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         기술 관련 시장 규모(TAM/CAGR) 데이터를 검색합니다.
         """
+        context = self._actor_query_context(actor_context)
         query = (
-            f"{tech_name} market size TAM CAGR forecast 2025 2026 2027 2028 "
+            f"{tech_name} {context} market size TAM CAGR forecast 2025 2026 2027 2028 "
             f"{domain} billion growth rate"
         )
         return self._search(
@@ -84,22 +172,33 @@ class MarketIntelligenceTool:
             ],
         )
 
-    def search_investment_trends(self, tech_name: str) -> dict:
+    def search_investment_trends(
+        self,
+        tech_name: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         주요 기업 투자 동향 및 VC 활동을 검색합니다.
         """
+        context = self._actor_query_context(actor_context)
         query = (
-            f"{tech_name} investment funding venture capital corporate R&D "
+            f"{tech_name} {context} investment funding venture capital corporate R&D "
             f"2024 2025 semiconductor tech"
         )
         return self._search(query, max_results=5)
 
-    def search_policy_signals(self, tech_name: str, domain: str) -> dict:
+    def search_policy_signals(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         정부 정책, 보조금, 규제 신호를 검색합니다.
         """
+        context = self._actor_query_context(actor_context)
         query = (
-            f"{tech_name} government policy subsidy CHIPS Act K-Chips "
+            f"{tech_name} {context} government policy subsidy CHIPS Act K-Chips "
             f"regulation support program {domain}"
         )
         return self._search(
@@ -111,22 +210,32 @@ class MarketIntelligenceTool:
             ],
         )
 
-    def search_competitive_landscape(self, tech_name: str) -> dict:
+    def search_competitive_landscape(
+        self,
+        tech_name: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         경쟁 구도 및 주요 플레이어를 검색합니다.
         """
+        context = self._actor_query_context(actor_context)
         query = (
-            f"{tech_name} leading companies players market share competition "
-            f"TSMC Samsung Intel ASML 2024 2025"
+            f"{tech_name} {context} leading companies players market share competition "
+            f"NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025"
         )
         return self._search(query, max_results=5)
 
-    def search_tech_timeline(self, tech_name: str) -> dict:
+    def search_tech_timeline(
+        self,
+        tech_name: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         기술 상용화/양산 예상 시점을 검색합니다.
         """
+        context = self._actor_query_context(actor_context)
         query = (
-            f"{tech_name} commercialization timeline roadmap mass production "
+            f"{tech_name} {context} commercialization timeline roadmap mass production "
             f"volume manufacturing 2026 2027 2028"
         )
         return self._search(
@@ -138,7 +247,12 @@ class MarketIntelligenceTool:
             ],
         )
 
-    def collect_full_signal(self, tech_name: str, domain: str) -> dict:
+    def collect_full_signal(
+        self,
+        tech_name: str,
+        domain: str,
+        actor_context: Optional[dict] = None,
+    ) -> dict:
         """
         Market Size Agent 가 필요로 하는 모든 시장 신호를 수집합니다.
         Tavily 키가 없거나 USE_MOCK_MARKET=true 면 합성 데이터를 반환합니다.
@@ -148,11 +262,20 @@ class MarketIntelligenceTool:
         dict  {tech_name, market_size, investment, policy, competitive, timeline}
         """
         if self.use_mock:
-            return mock_market_signal(tech_name, domain)
+            data = mock_market_signal(tech_name, domain)
+            data["actor_context"] = actor_context or {}
+            data["market_reports"] = []
+            data["tam_sam_som_data"] = []
+            data["cagr_forecast_data"] = []
+            return data
         if not self.client:
             return {
                 "tech_name": tech_name,
                 "domain": domain,
+                "actor_context": actor_context or {},
+                "market_reports": [],
+                "tam_sam_som_data": [],
+                "cagr_forecast_data": [],
                 "market_size_data": [],
                 "investment_data": [],
                 "policy_data": [],
@@ -162,37 +285,37 @@ class MarketIntelligenceTool:
                 "_mock": False,
             }
 
-        def _extract_snippets(result: dict) -> list:
-            """검색 결과에서 스니펫만 추출"""
-            items = result.get("results", [])
-            return [
-                {
-                    "title": r.get("title", ""),
-                    "url": r.get("url", ""),
-                    "content": r.get("content", "")[:500],  # 500자 제한
-                    "score": r.get("score", 0),
-                }
-                for r in items
-            ]
+        market_reports = self.search_market_reports(tech_name, domain, actor_context)
+        tam_sam_som = self.search_tam_sam_som(tech_name, domain, actor_context)
+        cagr_forecast = self.search_cagr_forecast(tech_name, domain, actor_context)
+        market_size = self.search_market_size(tech_name, domain, actor_context)
+        investment = self.search_investment_trends(tech_name, actor_context)
+        policy = self.search_policy_signals(tech_name, domain, actor_context)
+        competitive = self.search_competitive_landscape(tech_name, actor_context)
+        timeline = self.search_tech_timeline(tech_name, actor_context)
 
         return {
             "tech_name": tech_name,
             "domain": domain,
-            "market_size_data": _extract_snippets(
-                self.search_market_size(tech_name, domain)
-            ),
-            "investment_data": _extract_snippets(
-                self.search_investment_trends(tech_name)
-            ),
-            "policy_data": _extract_snippets(
-                self.search_policy_signals(tech_name, domain)
-            ),
-            "competitive_data": _extract_snippets(
-                self.search_competitive_landscape(tech_name)
-            ),
-            "timeline_data": _extract_snippets(
-                self.search_tech_timeline(tech_name)
-            ),
+            "actor_context": actor_context or {},
+            "queries": {
+                "market_reports": market_reports.get("_query"),
+                "tam_sam_som": tam_sam_som.get("_query"),
+                "cagr_forecast": cagr_forecast.get("_query"),
+                "market_size": market_size.get("_query"),
+                "investment": investment.get("_query"),
+                "policy": policy.get("_query"),
+                "competitive": competitive.get("_query"),
+                "timeline": timeline.get("_query"),
+            },
+            "market_reports": self._extract_snippets(market_reports),
+            "tam_sam_som_data": self._extract_snippets(tam_sam_som),
+            "cagr_forecast_data": self._extract_snippets(cagr_forecast),
+            "market_size_data": self._extract_snippets(market_size),
+            "investment_data": self._extract_snippets(investment),
+            "policy_data": self._extract_snippets(policy),
+            "competitive_data": self._extract_snippets(competitive),
+            "timeline_data": self._extract_snippets(timeline),
             "_mock": False,
         }
 

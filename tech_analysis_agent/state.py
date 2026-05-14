@@ -45,6 +45,10 @@ class MarketAnalysisResult(TypedDict):
     name: str
     market_score: float     # 0–100
     market_signals: MarketSignals
+    tam_sam_som: dict
+    cagr_forecast: dict
+    key_market_reports: List[dict]
+    map_context_used: dict
     expected_market_boom_quarter: str   # "YYYY QX"
     competitive_landscape: str
     data_quality: str
@@ -77,7 +81,7 @@ class AnalysisState(TypedDict):
     related_companies: Optional[List[str]]
 
     # ② 원시 데이터 (API 응답)
-    patent_raw_data: Optional[dict]   # USPTO 응답 묶음
+    patent_raw_data: Optional[dict]   # 특허 provider 응답 묶음
     market_raw_data: Optional[dict]   # Tavily 검색 결과 묶음
 
     # ③ LLM 분석 결과

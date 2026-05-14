@@ -113,6 +113,17 @@ def _output_path(filename: str, out_prefix: str = "") -> str:
     return os.path.join(OUTPUTS_DIR, f"{out_prefix}{filename}")
 
 
+def _agent_run_id(out_prefix: str = "") -> str:
+    """중간 산출물 run 디렉터리명. 기본은 사용자가 요청한 run_01 패턴."""
+    return os.getenv("AGENT_RUN_ID") or "run_01"
+
+
+def _agent_output_dir(agent_name: str, run_id: str) -> str:
+    path = os.path.join(OUTPUTS_DIR, agent_name, run_id)
+    os.makedirs(path, exist_ok=True)
+    return path
+
+
 def _backup_iter_outputs(out_prefix: str, iteration: int) -> None:
     """REVISE 직전 — 직전 iter 의 main 산출물 (tech_candidates / planned_roadmap /
     investment_strategy) 을 `<prefix>iter{N}_<filename>` 으로 복사 보존.
@@ -286,6 +297,10 @@ def _run_agent1(
         hints = state.get("category_hints") or []
         patent_method = state.get("patent_method") or "C_company_portfolio"
         graph_prefix = (out_prefix.rstrip("_") or "run")
+        run_id = _agent_run_id(out_prefix)
+        patent_log_dir = _agent_output_dir("patent_agent", run_id)
+        market_log_dir = _agent_output_dir("market_agent", run_id)
+        aggregator_log_dir = _agent_output_dir("aggregator", run_id)
         feedback = state.get("orchestrator_feedback") or None
         company_name = state.get("company_name")
         company_profile = state.get("company_profile")
@@ -294,6 +309,13 @@ def _run_agent1(
         snippet = f"""
 import sys, json, os
 os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
+os.environ["AGENT_RUN_ID"] = {run_id!r}
+os.environ["PATENT_AGENT_RUN_ID"] = {run_id!r}
+os.environ["MARKET_AGENT_RUN_ID"] = {run_id!r}
+os.environ["AGGREGATOR_RUN_ID"] = {run_id!r}
+os.environ["PATENT_AGENT_LOG_DIR"] = {patent_log_dir!r}
+os.environ["MARKET_AGENT_LOG_DIR"] = {market_log_dir!r}
+os.environ["AGGREGATOR_LOG_DIR"] = {aggregator_log_dir!r}
 sys.path.insert(0, os.getcwd())
 from graphs.analysis_graph import run_technology_analysis
 from tools.patent_map_renderer import render_patent_maps
@@ -317,9 +339,18 @@ graph_paths = render_patent_maps(
 out = {{
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
+    "market_raw_data": result.get("market_raw_data") or {{}},
+    "market_analysis": result.get("market_analysis") or [],
+    "patent_raw_data": result.get("patent_raw_data") or {{}},
+    "patent_analysis": result.get("patent_analysis") or [],
     "patent_maps": patent_maps,
     "patent_map_graphs": graph_paths,
     "patent_prompt": result.get("patent_prompt") or {{}},
+    "intermediate_output_dirs": {{
+        "patent_agent": {patent_log_dir!r},
+        "market_agent": {market_log_dir!r},
+        "aggregator": {aggregator_log_dir!r},
+    }},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)

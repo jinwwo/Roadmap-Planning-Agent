@@ -11,6 +11,12 @@ Technology Analysis Agent 최종 통합 노드
 5. Roadmap Planner Agent 입력 포맷으로 변환하여 반환
 """
 
+import json
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+
 from langchain_core.messages import AIMessage
 from config import PATENT_WEIGHT, MARKET_WEIGHT, MIN_FINAL_SCORE, MAX_TECH_CANDIDATES
 from state import AnalysisState, TechCandidate
@@ -26,6 +32,74 @@ def _find_dominant_boom_quarter(market_analysis: list) -> str:
         return "2028 Q1"
     # 최빈값 반환
     return max(set(quarters), key=quarters.count)
+
+
+def _run_id() -> str:
+    return os.getenv("AGGREGATOR_RUN_ID") or os.getenv("AGENT_RUN_ID") or datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+
+
+def _safe_filename(value: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(value or "").strip())
+    return cleaned.strip("_") or "aggregator"
+
+
+def _aggregator_log_dir(run_id: str) -> Path:
+    configured = os.getenv("AGGREGATOR_LOG_DIR")
+    if configured:
+        return Path(configured)
+    default_root = Path(__file__).resolve().parents[2] / "orchestration_agent" / "outputs" / "aggregator"
+    return default_root / run_id
+
+
+def _write_aggregator_outputs(state: AnalysisState, output: dict) -> None:
+    try:
+        run_id = _run_id()
+        output_dir = _aggregator_log_dir(run_id)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        prefix = _safe_filename(state.get("company_name") or state.get("domain") or "aggregator")
+        serializable_output = {k: v for k, v in output.items() if k != "messages"}
+        serializable_output["messages"] = [
+            getattr(msg, "content", str(msg))
+            for msg in output.get("messages", [])
+        ]
+        payload = {
+            "run_id": run_id,
+            "timestamp_utc": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "input": {
+                "patent_analysis": state.get("patent_analysis") or [],
+                "market_analysis": state.get("market_analysis") or [],
+                "patent_maps": state.get("patent_maps") or {},
+            },
+            "output": serializable_output,
+        }
+        log_path = output_dir / f"{prefix}_aggregator_output.json"
+        log_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        (output_dir / "latest_aggregator_output.json").write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        print(f"[Aggregator] output 저장: {log_path}")
+    except Exception as e:
+        print(f"[Aggregator] ⚠️ output 저장 실패: {e}")
+
+
+def _market_research_summary(market_list: list) -> dict:
+    by_tech = {}
+    for item in market_list or []:
+        tech_id = item.get("tech_id")
+        if not tech_id:
+            continue
+        by_tech[tech_id] = {
+            "name": item.get("name"),
+            "market_score": item.get("market_score"),
+            "expected_market_boom_quarter": item.get("expected_market_boom_quarter"),
+            "tam_sam_som": item.get("tam_sam_som"),
+            "cagr_forecast": item.get("cagr_forecast"),
+            "competitive_landscape": item.get("competitive_landscape"),
+            "key_market_reports": item.get("key_market_reports", []),
+            "map_context_used": item.get("map_context_used", {}),
+        }
+    return by_tech
 
 
 def run_aggregator(state: AnalysisState) -> dict:
@@ -93,6 +167,12 @@ def run_aggregator(state: AnalysisState) -> dict:
                 f"[Market] {market.get('rationale', '')}"
             ).strip(),
         }
+        if market:
+            candidate["market_signals"] = market.get("market_signals", {})
+            candidate["tam_sam_som"] = market.get("tam_sam_som", {})
+            candidate["cagr_forecast"] = market.get("cagr_forecast", {})
+            candidate["key_market_reports"] = market.get("key_market_reports", [])
+            candidate["map_context_used"] = market.get("map_context_used", {})
         if patent.get("roadmapping_signals"):
             candidate["roadmapping_signals"] = patent.get("roadmapping_signals")
         if patent.get("patent_signals"):
@@ -107,6 +187,7 @@ def run_aggregator(state: AnalysisState) -> dict:
     market_context = {
         "target_market": state["domain"],
         "expected_boom_quarter": _find_dominant_boom_quarter(market_list),
+        "market_research_summary": _market_research_summary(market_list),
     }
 
     # 결과 요약 출력
@@ -129,10 +210,12 @@ def run_aggregator(state: AnalysisState) -> dict:
         )
     )
 
-    return {
+    output = {
         "tech_candidates": tech_candidates,
         "market_context": market_context,
         "patent_maps": state.get("patent_maps") or {},
         "messages": messages,
         "error": None,
     }
+    _write_aggregator_outputs(state, output)
+    return output
