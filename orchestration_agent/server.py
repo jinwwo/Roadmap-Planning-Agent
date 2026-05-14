@@ -49,9 +49,16 @@ app = FastAPI(title="Technology Roadmap Orchestration — Interactive Demo")
 
 # ── 정적 자원 ────────────────────────────────────────────────
 
+_NO_CACHE_HEADERS = {
+    "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+    "Pragma": "no-cache",
+    "Expires": "0",
+}
+
+
 @app.get("/")
 def index():
-    return FileResponse(WEB_DIR / "index.html")
+    return FileResponse(WEB_DIR / "index.html", headers=_NO_CACHE_HEADERS)
 
 
 @app.get("/favicon.ico")
@@ -61,7 +68,19 @@ def favicon():
     return Response(status_code=204)   # No Content
 
 
-app.mount("/static", StaticFiles(directory=str(WEB_DIR)), name="static")
+class _NoCacheStaticFiles(StaticFiles):
+    async def get_response(self, path, scope):
+        response = await super().get_response(path, scope)
+        for k, v in _NO_CACHE_HEADERS.items():
+            response.headers[k] = v
+        return response
+
+
+app.mount("/static", _NoCacheStaticFiles(directory=str(WEB_DIR)), name="static")
+
+# outputs/ 폴더의 .md/.html/.json 직접 열람 가능하게
+from config import OUTPUTS_DIR
+app.mount("/outputs", _NoCacheStaticFiles(directory=OUTPUTS_DIR), name="outputs")
 
 
 # ── API 스키마 ───────────────────────────────────────────────

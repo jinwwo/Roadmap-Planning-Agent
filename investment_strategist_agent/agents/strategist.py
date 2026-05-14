@@ -68,134 +68,100 @@ def _is_strong_llm() -> bool:
 
 # ── 시스템 프롬프트 ───────────
 
-STRATEGIST_SYSTEM_PROMPT = """당신은 기술 로드맵을 투자 의사결정 계획으로 전환하는 역할을 담당하는 Investment Strategist Agent이다.
+STRATEGIST_SYSTEM_PROMPT = """당신은 기술 로드맵을 투자 의사결정 계획으로 전환하는 Investment Strategist Agent 이다.
 
-당신의 주요 판단 단위는 개별 기술이 아니라 로드맵 단계(roadmap stage)이다.
+[판단 단위]
+- 실제 투자 의사결정 단위 = **개별 기술 (tech_id)**.
+- 로드맵 단계 (stage) 는 timing 컨텍스트 (period, synergy) 제공용.
 
-당신의 임무는 개별 기술 분석 결과를 단순히 반복하거나 요약하는 것이 아니다. 대신 각 로드맵 단계를 하나의 통합된 투자 단위로 평가하고, 구조화된 평가 점수를 부여한 뒤, 해당 단계에 적절한 투자 전략을 도출해야 한다.
+[입력]
+1. 로드맵 (planned_roadmap) — 각 기술의 수행 시점 (start_q, target_q, year_idx_start/target, reasoning).
+2. 기술 데이터 (tech_candidates) — 각 기술의 TRL, market_score, patent_score, final_score,
+   expected_market_boom_quarter, rationale (시장/기술 분석).
+3. 시장 데이터 (market_context) — target_market, expected_boom_quarter.
+4. 상위 컨텍스트 (Company Scenario / Strategic Direction) + Investment Policy
+   (total_budget, risk_appetite, investment_horizon, strategic_priority).
 
-당신에게는 다음 정보가 주어진다:
+[과업]
+각 기술마다 아래 **5개 축**으로 1-5점 평가 후 예산을 배분하라.
 
-1. 기술 분석 결과 (technology analysis results)
-2. 로드맵 계획 결과 (roadmap planning results)
-3. 투자 정책 또는 조직 맥락 정보 (investment policy or organizational context)
-4. 시장 맥락 정보 (market context — target_market, expected_boom_quarter)
-
-당신의 목표는 각 로드맵 단계를 투자 관점에서 해석하고, 조직이 로드맵 전반에 걸쳐 어떻게 투자해야 하는지에 대한 권고안을 제시하는 것이다.
-
-각 stage 의 tech_candidates 에 포함된 시장 정보 (market_score, expected_market_boom_quarter, rationale 의 [Market] 섹션 등) 를 참고하여 평가에 반영하라.
+축 정의:
+1. **market_size_growth** (TAM/CAGR — 시장 크기·성장률)
+   - 5: 거대 시장 ($100B+) + 빠른 성장 (CAGR 20%+)
+   - 1: 작은 niche 시장 또는 stagnant
+2. **tech_readiness** (TRL — 기술 준비도)
+   - tech_candidate.trl 을 그대로 1-5 scale 로 환산 (TRL 1-2 → 1점, 3-4 → 2점, 5-6 → 3점, 7 → 4점, 8-9 → 5점)
+3. **tech_risk** (기술 위험도 — 불확실성)
+   - 5 = 위험 매우 큼 (낮은 TRL + 불명확한 path), 1 = 거의 검증됨
+4. **competitive_advantage** (경쟁 우위)
+   - 5: 회사 기존 강점 / 특허 포트폴리오 / Strategic Direction 정합 매우 높음
+   - 1: 경쟁사 우위 영역, 우리 강점 없음
+5. **development_urgency** (개발 긴급도)
+   - 5: market boom 임박, 늦으면 기회 상실. 1: 충분히 여유 있음
 
 ---
 
 [핵심 과업]
 
-각 로드맵 단계에 대해 다음 순서로 작업하라.
+각 기술별로 5축 평가 + 예산 배분 + 투자 결정 reasoning 을 작성.
+**stage 통합 narrative (stage_assessment) 는 작성하지 않는다 — 빈 문자열 또는 생략.**
+모든 의사결정은 기술 (tech) 단위이고, stage 는 단순 컨테이너일 뿐.
 
-Step 1. **stage 통합 판단** (narrative) — 점수를 매기는 게 아니라, 이 stage 를 전체로 보았을 때의 통합적 판단을 1~3문장으로 `stage_assessment` 에 작성하라.
+각 tech 마다:
+- `tech_id`, `name`: 입력 그대로
+- `evaluation_scores` (5축 1-5 정수):
+  · market_size_growth, tech_readiness, tech_risk, competitive_advantage, development_urgency
+- `investment_attractiveness` (high/medium/low): 5축 종합 매력도
+- `investment_urgency` (high/medium/low): 적시성
+- `recommended_investment_tier` (Tier 1/2/3): 우선순위 라벨
+- `tech_budget_usd` (정수, USD): 이 기술에 배분할 절대 금액
+  · **모든 tech_budget_usd 의 합은 total_budget 을 절대 초과하면 안 됨 (hard constraint)**.
+    초과 시 Review LLM 이 즉시 REVISE 한다.
+  · 합이 total_budget 의 90-100% 범위가 이상적. 미만 (-25% 이내) 도 허용.
+  · 5축 점수 + Tier + planning_horizon 길이를 고려한 합리적 배분.
+  · 예: total_budget=$5B, 10개 tech 중 Tier 1 3개 (60%=$3B 분배) / Tier 2 4개 (30%=$1.5B) / Tier 3 3개 (10%=$500M). 합계 $5B.
+- `tech_budget_rationale`: 왜 이 금액인지 (2-3 문장, 핵심 근거만).
+- `reasoning` (3가지 분리 — Designer 의 reasoning 과 짝맞춤, **각 항목 2-3 문장**):
+  · `market_evaluation`: TAM/CAGR, 시장 타이밍, target_market 적합도 등을 구체 수치와 함께 (2-3 문장).
+  · `tech_evaluation`: TRL, 기술 위험, 경쟁 우위, 회사 강점 활용 가능성 (2-3 문장).
+  · `investment_decision`: Tier + 예산 결정 근거. 5축 점수 종합 + Strategic Direction 인용 (2-3 문장).
+- `investment_scope`: aggressive / proactive / selective / milestone-based / exploratory / watchful
+- `recommended_action`: 실행 권고 (1-2 문장)
+- `rationale`: 5축 점수 + 시장/기술 신호 인용 (2-4개 bullet, 각 1문장)
+- `major_risks`: 이 기술 투자의 주요 리스크 (2-4개 bullet, 각 1문장)
+- `resource_focus`: 집중 자원 — 인력, 인프라, PoC 등 (2-4개 bullet, 각 1문장)
 
-다음 관점을 종합:
-- **Timing**: stage period vs `expected_boom_quarter` — 적시인가, 지연인가, 너무 이른가?
-- **Synergy**: stage 안의 기술들이 함께 진행되어야 하는 시너지가 있는가? 일부만 해도 되는가?
-- **Dependency**: 후속 stage 와의 의존 관계 — 이 stage 가 무엇을 후속에 제공하는가?
-- **Scale**: 전체적으로 어느 정도의 자원이 필요한 stage 인가?
-
-이 판단은 Step 2 의 각 기술 평가에 컨텍스트로 작용한다.
-
-Step 2. **stage 안의 각 기술별 투자 평가** (`tech_investments`) — 투자 의사결정의 실제 단위는 개별 기술이다. Step 1 의 stage 통합 판단을 컨텍스트로 두고, 각 tech_candidate 에 대해 평가 점수와 투자 전략을 결정하라.
-
-각 tech 에 대해:
-
-- `tech_id`, `name`: 입력에서 그대로 가져옴
-- `evaluation_scores` (5축 1~5):
-  · market_opportunity, strategic_fit, executability, uncertainty, urgency
-  · 평가 기준 / 점수 정의 / 점수 부여 원칙은 아래 [점수 정의], [점수 부여 원칙] 적용
-  · **stage 컨텍스트 반영**: stage period, 시장 timing, 의존성 등을 점수에 반영. 예: 같은 시장 강도여도 boom 이후의 stage 면 urgency 가 낮아진다.
-- `investment_attractiveness` (high/medium/low): 시장 기회·전략 적합성·실행성을 종합한 매력도
-- `investment_urgency` (high/medium/low): 적시성. stage period + boom timing 반영.
-- `recommended_investment_tier` (Tier 1/2/3):
-  · 같은 stage 안에서도 tech 마다 다를 수 있다 — 예: 1단계에서 T01 은 Tier 1, T02 는 Tier 2
-- `investment_scope`: aggressive / proactive / selective / milestone-based / exploratory / watchful 등
-- `recommended_action`: 실행 중심의 투자 권고 (1~2문장)
-- `rationale`: 2~4개 항목. **stage 통합 판단 + tech 자체 신호** 둘 다 인용 (예: "stage 가 boom 직전 적시 + T01 의 시장 규모 $117B → Tier 1")
-- `major_risks`: 2~4개. tech 고유 리스크 + stage 차원 리스크 모두 가능
-- `resource_focus`: 2~4개. PoC 예산, 인력, 인프라, 검증 등
-
-Step 3. **각 stage 의 예산 배분 비율** 결정 (`stage_budget_ratio`)
-
-각 stage 가 전체 total_budget 의 몇 % 를 받을지를 LLM 이 결정:
-- 모든 stage 의 ratio 합 ≈ 1.0 (전체 100%) — 코드가 자동 정규화하지만 LLM 이 의식적으로 맞추기
-- 0.0 ~ 1.0 사이 실수 (예: 0.40 = 40%)
-
-판단 기준:
-- stage 의 Tier 분포 (Tier 1 많은 stage 면 비중 ↑)
-- stage 의 timing 중요도 (boom 직전 stage 면 비중 ↑)
-- stage 의 자원 집약도 (인프라/장비 큰 stage 면 비중 ↑)
-- 전체 로드맵에서 이 stage 의 전략적 위치
-
-예시 (3개 stage, total_budget = $5B):
-- 1단계 R&D: 0.40 ($2.0B) — 기반 인프라 큰 투자
-- 2단계 공정 통합: 0.35 ($1.75B) — 핵심 기술 검증
-- 3단계 시스템 검증: 0.25 ($1.25B) — 마지막 통합
-
-**Per-tech 별 예산은 결정하지 않음** — Tier 라벨이 우선순위 신호 역할.
+Step 3. **각 stage 의 합산 budget ratio** (`stage_budget_ratio`)
+- stage 안 tech_budget_usd 합 / total_budget. 0.0-1.0 사이 실수.
+- 모든 stage 의 합 ≈ 1.0.
 
 ---
 
-[점수 정의]
+[점수 부여 — 1-5 척도, 기술 데이터/시장 데이터 직접 참조]
 
-다음의 1~5 척도를 일관되게 사용하라.
+각 tech_candidate 의 fields (trl, market_score, patent_score, final_score,
+expected_market_boom_quarter, rationale) 와 market_context, Strategic Direction 을
+참조하여 점수 부여.
 
-1 = 매우 낮음
-2 = 낮음
-3 = 보통
-4 = 높음
-5 = 매우 높음
-
-각 평가 항목의 정의는 다음과 같다.
-
-- market_opportunity:
-해당 로드맵 단계가 가지는 시장 수요, 성장 가능성, 사업화 가능성, 경쟁적 가치의 수준
-- strategic_fit:
-해당 단계가 조직의 전략적 우선순위, 핵심 역량 확보, 장기적 포지셔닝과 얼마나 잘 부합하는지의 수준
-- executability:
-해당 단계가 제시된 기간 내에 실제로 실행 가능한 정도. 기술 성숙도, 내부 역량, 구현 가능성을 고려한다.
-- uncertainty:
-해당 단계와 관련된 불확실성 또는 리스크의 수준. 기술 불확실성, 시장 불확실성, 역량 격차, 외부 의존성 등을 포함한다.
-점수가 높을수록 불확실성이 큰 것이다.
-- urgency:
-해당 단계에 대한 적시 투자가 얼마나 중요한지의 수준.
-점수가 높을수록 투자 지연 시 전략적 가치 또는 시장 가치가 감소할 가능성이 크다.
+- **market_size_growth**: market_score 와 rationale 의 [Market] 섹션 (TAM/CAGR 언급)
+  참조. 큰 TAM + 높은 CAGR → 5. 작은 niche → 1.
+- **tech_readiness**: tech_candidate.trl 직접 사용.
+  TRL 1-2 → 1, 3-4 → 2, 5-6 → 3, 7 → 4, 8-9 → 5.
+- **tech_risk**: TRL 낮을수록 + uncertainty 신호 많을수록 ↑. 점수 ↑ = 위험 ↑ (부정).
+- **competitive_advantage**: patent_score + Strategic Direction 정합 + 기존 강점 영역.
+- **development_urgency**: 현재 분기 ~ expected_market_boom_quarter 까지의 distance ↓
+  + boom 임박 → 5. 충분한 여유 → 1.
 
 ---
 
-[점수 부여 원칙]
+[Tier 가이드]
 
-점수를 부여할 때 다음 원칙을 따르라.
+5축 점수 → Tier 결정 일반 가이드:
+- market_size_growth ≥4 + competitive_advantage ≥4 + tech_risk ≤3 → Tier 1
+- market_size_growth ≥3 + tech_risk =3 → Tier 2
+- tech_risk ≥4 또는 market_size_growth ≤2 → Tier 3
 
-1. Market Opportunity
-- 강한 시장 수요, 높은 성장 잠재력, 높은 사업화 관련성이 있으면 높은 점수를 부여하라.
-- 시장 수요가 불분명하거나 먼 미래의 기회에 가까우면 낮은 점수를 부여하라.
-
-2. Strategic Fit
-- 조직의 전략적 우선순위나 핵심 역량 확보에 강하게 기여하면 높은 점수를 부여하라.
-- 전략적 우선순위와의 관련성이 약하면 낮은 점수를 부여하라.
-
-3. Executability
-- 해당 단계의 기술들이 PoC, 적용, 확산, 운영 실행에 충분한 성숙도를 갖추고 있고, 주어진 기간 내 실행 가능성이 높으면 높은 점수를 부여하라.
-- 기술 성숙도가 낮거나 필요한 역량이 부족하거나 실행 가정이 비현실적이면 낮은 점수를 부여하라.
-
-4. Uncertainty
-- 기술, 시장, 규제, 자원, 실행 측면에서 불확실성이 크면 높은 점수를 부여하라.
-- 비교적 명확하고 관리 가능한 단계라면 낮은 점수를 부여하라.
-- 주의: uncertainty는 리스크 점수이므로, 숫자가 높을수록 부정적 의미이다.
-
-5. Urgency
-- 선점 효과, 전략적 포지셔닝, 고객 확보, 조기 학습이 중요하여 빠른 투자가 필요하면 높은 점수를 부여하라.
-- 늦게 투자해도 큰 문제가 없으면 낮은 점수를 부여하라.
-
-6. Resource Requirement
-- 해당 단계가 대규모 자본, 핵심 인력, 인프라 구축, 외부 파트너십, 광범위한 검증 작업 등을 요구하면 높은 점수를 부여하라.
-- 소규모 PoC 또는 기존 자원으로 처리 가능한 단계라면 낮은 점수를 부여하라.
+기계적 변환 X — 종합 판단.
 
 ---
 
@@ -216,24 +182,6 @@ Step 3. **각 stage 의 예산 배분 비율** 결정 (`stage_budget_ratio`)
 
 ---
 
-[최종 판단 도출 가이드]
-
-점수 프로파일을 기반으로 최종 투자 권고안을 도출하라.
-
-일반적인 가이드:
-
-- market_opportunity가 높고, strategic_fit이 높고, executability가 높고, uncertainty가 관리 가능한 수준이면 → investment_attractiveness가 높고 Tier 1일 가능성이 크다.
-- market_opportunity와 strategic_fit은 높지만 executability가 낮거나 uncertainty가 높으면 → Tier 2일 가능성이 크다.
-- executability가 낮고 uncertainty가 높으며 urgency도 약하면 → Tier 3일 가능성이 크다.
-
-중요:
-
-- 점수를 기계적으로 변환하지 마라.
-- 반드시 로드맵 단계 전체를 하나의 판단 단위로 해석하라.
-- 점수 조합이 왜 해당 투자 권고안으로 이어지는지 설명하라.
-
----
-
 [기본 가정]
 
 investment_policy가 제공되지 않은 경우, 다음을 기본값으로 가정하라.
@@ -248,16 +196,18 @@ investment_policy가 제공되지 않은 경우, 다음을 기본값으로 가�
 [출력 제약]
 
 - 각 로드맵 단계마다 정확히 하나의 stage block 을 생성하라.
-- 각 stage block 의 `tech_investments` 배열에는 그 stage 에 속한 모든 tech_candidate 에 대해 하나씩 평가 entry 를 생성하라 (입력에 들어온 tech 를 누락하지 마라).
-- 각 tech 의 `evaluation_scores` 는 market_opportunity, strategic_fit, executability, uncertainty, urgency 5축 모두 반드시 1~5 사이의 정수여야 한다.
-- 각 tech 의 `investment_attractiveness`, `investment_urgency` 는 반드시 high / medium / low 중 하나.
-- 각 tech 의 `recommended_investment_tier` 는 반드시 Tier 1 / Tier 2 / Tier 3 중 하나.
-- 같은 stage 안의 tech 들이 모두 같은 Tier 일 필요는 없다 (오히려 차별화가 자연스러움).
-- 각 tech 의 `rationale`, `major_risks`, `resource_focus` 는 각각 2~4개의 간결한 항목.
-- 각 stage 의 `stage_budget_ratio` 는 0.0~1.0 사이의 실수, 모든 stage 합 ≈ 1.0.
-- `stage_assessment` 는 1~3 문장의 narrative (점수 X).
-- 출력은 반드시 유효한 JSON 형식만 제공하라.
-- JSON 외의 설명은 출력하지 마라.
+- 각 stage block 의 `tech_investments` 배열에는 그 stage 에 속한 모든 tech_candidate 에 대해 하나씩 평가 entry 를 생성 (누락 금지).
+- 각 tech 의 `evaluation_scores` 는 market_size_growth, tech_readiness, tech_risk,
+  competitive_advantage, development_urgency 5축 모두 반드시 1~5 정수.
+- `investment_attractiveness`, `investment_urgency` 는 high/medium/low 중 하나.
+- `recommended_investment_tier` 는 Tier 1/2/3 중 하나.
+- `tech_budget_usd` 는 정수 (USD). 모든 tech_budget_usd 의 합이 total_budget 의 ±5% 이내.
+- `reasoning.market_evaluation / tech_evaluation / investment_decision` 와 `tech_budget_rationale` 은 각각 2-3 문장.
+- `recommended_action` 은 1-2 문장.
+- `rationale / major_risks / resource_focus` 는 각각 2-4개 bullet (각 1문장).
+- `stage_budget_ratio` 는 그 stage 안 tech_budget_usd 합 / total_budget. 모든 stage 합 ≈ 1.0.
+- **`stage_assessment` 는 빈 문자열 "" 로 둘 것** (사용 X).
+- 출력은 유효한 JSON only. JSON 외 텍스트 금지.
 
 ---
 
@@ -274,19 +224,26 @@ investment_policy가 제공되지 않은 경우, 다음을 기본값으로 가�
           "tech_id": "T01",
           "name": "<기술명>",
           "evaluation_scores": {
-            "market_opportunity": 1,
-            "strategic_fit": 1,
-            "executability": 1,
-            "uncertainty": 1,
-            "urgency": 1
+            "market_size_growth": 1,
+            "tech_readiness": 1,
+            "tech_risk": 1,
+            "competitive_advantage": 1,
+            "development_urgency": 1
           },
           "investment_attractiveness": "high | medium | low",
           "investment_urgency": "high | medium | low",
           "recommended_investment_tier": "Tier 1 | Tier 2 | Tier 3",
+          "tech_budget_usd": 1500000000,
+          "tech_budget_rationale": "<왜 이 금액인지 — 길이 제한 없이 충분히>",
+          "reasoning": {
+            "market_evaluation": "<TAM/CAGR/시장 타이밍 평가 근거 — 자세히, 길이 제한 없음>",
+            "tech_evaluation": "<TRL/기술 위험/경쟁 우위 평가 근거 — 자세히>",
+            "investment_decision": "<Tier + 예산 결정 근거 — 자세히>"
+          },
           "investment_scope": "<투자 범위>",
           "recommended_action": "<실행 중심의 투자 권고안>",
           "rationale": [
-            "<stage 판단 + tech 신호 종합 근거 1>",
+            "<5축 점수 + 시장/기술 신호 인용 근거 1>",
             "<근거 2>"
           ],
           "major_risks": [
@@ -339,16 +296,30 @@ def _list_bounded(v, hi: int = 4) -> List[str]:
     return cleaned[:hi]
 
 
+_NEW_AXES = ("market_size_growth", "tech_readiness", "tech_risk",
+             "competitive_advantage", "development_urgency")
+# Backward compat — 옛 axis name → 새 axis name 매핑 (옛 LLM 응답 처리)
+_OLD_TO_NEW_AXIS = {
+    "market_opportunity": "market_size_growth",
+    "strategic_fit":      "competitive_advantage",
+    "executability":      "tech_readiness",
+    "uncertainty":        "tech_risk",
+    "urgency":            "development_urgency",
+}
+
+
 def _coerce_tech_investment(t_item: dict, stage_techs: list) -> dict:
     """LLM 이 출력한 단일 tech_investment object 를 스키마에 맞게 정규화."""
     scores = t_item.get("evaluation_scores") or {}
-    eval_scores = {
-        "market_opportunity": _clip_score(scores.get("market_opportunity", 3)),
-        "strategic_fit":      _clip_score(scores.get("strategic_fit", 3)),
-        "executability":      _clip_score(scores.get("executability", 3)),
-        "uncertainty":        _clip_score(scores.get("uncertainty", 3)),
-        "urgency":            _clip_score(scores.get("urgency", 3)),
-    }
+    # 새 axis name 우선, 없으면 옛 axis name (backward compat), 둘 다 없으면 3
+    def _pick(new_key: str) -> int:
+        if new_key in scores:
+            return _clip_score(scores[new_key])
+        for old_key, mapped in _OLD_TO_NEW_AXIS.items():
+            if mapped == new_key and old_key in scores:
+                return _clip_score(scores[old_key])
+        return 3
+    eval_scores = {ax: _pick(ax) for ax in _NEW_AXES}
 
     attractiveness = (t_item.get("investment_attractiveness") or "medium").lower()
     urgency = (t_item.get("investment_urgency") or "medium").lower()
@@ -361,6 +332,24 @@ def _coerce_tech_investment(t_item: dict, stage_techs: list) -> dict:
     if tier not in _ALLOWED_TIER:
         tier = "Tier 2"
 
+    # tech_budget_usd — LLM 직접 출력 우선, 누락 시 0 (후처리에서 균등 배분 폴백)
+    try:
+        budget_usd = float(t_item.get("tech_budget_usd", 0) or 0)
+    except Exception:
+        budget_usd = 0.0
+    budget_usd = max(0.0, budget_usd)
+
+    # reasoning 3 분리 — LLM 출력 우선, 누락 시 다른 필드에서 폴백
+    reasoning_raw = t_item.get("reasoning", {}) or {}
+    rationale_list = t_item.get("rationale", []) or []
+    rationale_joined = "; ".join(str(x) for x in rationale_list[:3]) if isinstance(rationale_list, list) else ""
+    reasoning = {
+        "market_evaluation": (reasoning_raw.get("market_evaluation") or "").strip() or "(reasoning 누락)",
+        "tech_evaluation": (reasoning_raw.get("tech_evaluation") or "").strip() or "(reasoning 누락)",
+        "investment_decision": (reasoning_raw.get("investment_decision") or "").strip()
+            or (t_item.get("tech_budget_rationale") or rationale_joined or "(reasoning 누락)"),
+    }
+
     return {
         "tech_id": t_item.get("tech_id", "") or "",
         "name": t_item.get("name", "") or "",
@@ -368,11 +357,12 @@ def _coerce_tech_investment(t_item: dict, stage_techs: list) -> dict:
         "investment_attractiveness": attractiveness,
         "investment_urgency": urgency,
         "recommended_investment_tier": tier,
+        "tech_budget_usd": budget_usd,
+        "tech_budget_rationale": (t_item.get("tech_budget_rationale", "") or "").strip(),
+        "reasoning": reasoning,
         "investment_scope": t_item.get("investment_scope", "") or "selective",
         "recommended_action": t_item.get("recommended_action", "") or "",
-        "rationale": _list_bounded(t_item.get("rationale", []), 4) or ["(근거 정보 누락)"],
-        "major_risks": _list_bounded(t_item.get("major_risks", []), 4) or ["(리스크 정보 누락)"],
-        "resource_focus": _list_bounded(t_item.get("resource_focus", []), 4) or ["(자원 배분 정보 누락)"],
+        "rationale": _list_bounded(t_item.get("rationale", []), 4),
     }
 
 
@@ -430,14 +420,8 @@ def _coerce_strategy(item: dict, stage: StageSummary, stage_techs: list) -> Inve
             placeholder["recommended_action"] = "(LLM 평가 누락)"
             tech_investments.append(placeholder)
 
-    # stage_assessment 폴백 — 옛 스키마면 stage 의 첫 rationale 항목으로 대체
+    # stage_assessment — 더 이상 사용하지 않음. 옛 호환 위해 LLM 출력 보존만 (없으면 빈 문자열)
     stage_assessment = (item.get("stage_assessment") or "").strip()
-    if not stage_assessment and has_old_schema:
-        old_rationale = item.get("rationale", [])
-        if isinstance(old_rationale, list) and old_rationale:
-            stage_assessment = "; ".join(str(r) for r in old_rationale[:2])
-    if not stage_assessment:
-        stage_assessment = "(stage 통합 판단 누락)"
 
     # stage_budget_ratio — 0.0~1.0 사이로 clip (정규화는 후처리에서)
     raw_ratio = item.get("stage_budget_ratio")
@@ -464,6 +448,9 @@ def run_strategist(
     investment_policy: InvestmentPolicy = None,
     market_context: dict = None,
     orchestrator_feedback: dict = None,
+    company_scenario: dict = None,
+    strategic_direction: list = None,
+    planned_roadmap: list = None,
 ) -> List[InvestmentStrategy]:
     """
     각 stage 에 대해 5-지표 점수 부여 + 투자 권고안을 LLM 으로 산출.
@@ -491,12 +478,16 @@ def run_strategist(
     if _is_strong_llm():
         print(f"[Strategist] 강한 LLM 감지 ({LLM_PROVIDER}) → single-call 전략")
         strategies = _run_strategist_single_call(
-            stages, tech_candidates, investment_policy, market_context, orchestrator_feedback
+            stages, tech_candidates, investment_policy, market_context, orchestrator_feedback,
+            company_scenario=company_scenario, strategic_direction=strategic_direction,
+            planned_roadmap=planned_roadmap,
         )
     else:
         print(f"[Strategist] 작은 LLM 감지 ({LLM_PROVIDER}/{OLLAMA_MODEL}) → per-stage 분할 전략")
         strategies = _run_strategist_per_stage(
-            stages, tech_candidates, investment_policy, market_context, orchestrator_feedback
+            stages, tech_candidates, investment_policy, market_context, orchestrator_feedback,
+            company_scenario=company_scenario, strategic_direction=strategic_direction,
+            planned_roadmap=planned_roadmap,
         )
 
     # ── 후처리: stage_budget_ratio 정규화 + stage_estimated_usd 계산 ──
@@ -505,51 +496,96 @@ def run_strategist(
     return strategies
 
 
+_TIER_WEIGHT = {"Tier 1": 3.0, "Tier 2": 1.5, "Tier 3": 1.0}
+
+
 def _normalize_budget_allocation(strategies: list, total_budget: float) -> list:
     """
-    Stage 단위 예산 분배 — 모든 stage 의 stage_budget_ratio 합이 1.0 이 되도록 정규화
-    + 절대 USD 계산. LLM 이 정확히 1.0 으로 안 맞춰도 자동 보정.
-
-    각 stage 안의 tech 들에는 별도 USD 분배하지 않음 — Tier 라벨이 우선순위 신호.
+    예산 분배 정규화:
+    1. tech_budget_usd 가 있으면 그것을 기준 — total_budget 으로 정규화.
+    2. 없으면 Tier weight (Tier1:Tier2:Tier3 = 3:1.5:1) 로 폴백 분배.
+    3. stage_budget_ratio = stage 안 tech_budget_usd 합 / total_budget 으로 재계산.
     """
-    # 모든 stage 의 stage_budget_ratio 수집
-    raw_ratios = [st.get("stage_budget_ratio", 0) or 0 for st in strategies]
-    total_ratio = sum(raw_ratios)
+    # ── 1) 각 tech 의 raw budget 수집 ──
+    all_techs = []  # list of (stage_idx, tech_dict)
+    for si, st in enumerate(strategies):
+        for ti in st.get("tech_investments", []):
+            all_techs.append((si, ti))
 
-    if total_ratio <= 0:
-        # 모두 0 이면 균등 분배
-        n = len(strategies)
-        if n > 0:
-            scale = 1.0 / n
-            norm_ratios = [scale] * n
-        else:
-            norm_ratios = []
-    else:
-        # 정규화 (합 = 1.0)
-        norm_ratios = [r / total_ratio for r in raw_ratios]
+    # ── 2) LLM 이 제공한 tech_budget_usd 의 합 ──
+    raw_budgets = [ti.get("tech_budget_usd", 0) or 0 for _, ti in all_techs]
+    raw_sum = sum(raw_budgets)
 
-    # 각 stage 에 정규화 ratio + 절대 USD 기록
-    for st, nr in zip(strategies, norm_ratios):
-        st["stage_budget_ratio"] = round(nr, 4)
-        st["stage_estimated_usd"] = round(total_budget * nr, 0)
+    if raw_sum > 0 and total_budget > 0:
+        # 정규화: 합이 total_budget 과 일치하도록 scale (overflow 방지 hard guarantee)
+        scale = total_budget / raw_sum
+        if raw_sum > total_budget:
+            print(f"[Strategist] ⚠️ LLM 출력 합 ${raw_sum/1e9:.2f}B > total_budget ${total_budget/1e9:.2f}B "
+                  f"→ 비례 축소 (scale={scale:.3f})")
+        for (_, ti), raw in zip(all_techs, raw_budgets):
+            ti["tech_budget_usd"] = round(raw * scale, 0)
+    elif total_budget > 0:
+        # 폴백: Tier weight 기반 분배
+        weights = [_TIER_WEIGHT.get(ti.get("recommended_investment_tier", "Tier 2"), 1.5) for _, ti in all_techs]
+        w_sum = sum(weights) or 1.0
+        for (_, ti), w in zip(all_techs, weights):
+            ti["tech_budget_usd"] = round(total_budget * w / w_sum, 0)
+            if not ti.get("tech_budget_rationale"):
+                ti["tech_budget_rationale"] = f"(Tier weight 자동 분배 — {ti.get('recommended_investment_tier', 'Tier 2')})"
 
-    # 합산 검증 로그
-    total_estimated = sum(st.get("stage_estimated_usd", 0) for st in strategies)
+    # ── 3) stage_budget_ratio = stage 안 tech_budget_usd 합 / total_budget ──
+    for st in strategies:
+        stage_sum = sum(ti.get("tech_budget_usd", 0) for ti in st.get("tech_investments", []))
+        st["stage_estimated_usd"] = round(stage_sum, 0)
+        st["stage_budget_ratio"] = round(stage_sum / total_budget, 4) if total_budget > 0 else 0.0
+
+    # ── 4) 로그 ──
     if total_budget > 0:
+        total_estimated = sum(st.get("stage_estimated_usd", 0) for st in strategies)
         ratio_summary = ", ".join(
             f"{st['stage'][:14]}: {st.get('stage_budget_ratio', 0)*100:.0f}%"
             for st in strategies
         )
         print(
-            f"[Strategist] 💰 단계별 예산 분배: total ${total_budget/1e9:.2f}B "
+            f"[Strategist] 💰 예산 분배: total ${total_budget/1e9:.2f}B "
             f"vs 합계 ${total_estimated/1e9:.2f}B "
-            f"(원본 ratio 합 {total_ratio:.2f} → 정규화 1.00)"
+            f"(LLM raw_sum=${raw_sum/1e9:.2f}B → 정규화)"
         )
-        print(f"             → {ratio_summary}")
+        print(f"             → stage 분포: {ratio_summary}")
+        tier_totals = {}
+        for _, ti in all_techs:
+            tier = ti.get("recommended_investment_tier", "Tier 2")
+            tier_totals[tier] = tier_totals.get(tier, 0) + ti.get("tech_budget_usd", 0)
+        tier_summary = ", ".join(f"{t}: ${v/1e9:.2f}B" for t, v in sorted(tier_totals.items()))
+        print(f"             → Tier 분포: {tier_summary}")
     return strategies
 
 
 # ── 전략 1: Per-stage 분할 (작은 LLM 용) ──────────────────────
+
+def _format_upper_context(company_scenario: dict, strategic_direction: list) -> str:
+    """Orchestrator 추출 Company Scenario + Strategic Direction → 상위 컨텍스트 블록."""
+    if not company_scenario and not strategic_direction:
+        return ""
+    block = "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n"
+    if company_scenario:
+        cn = company_scenario.get("company_name", "")
+        ind = company_scenario.get("industry", "")
+        rev = company_scenario.get("annual_revenue", 0) or 0
+        ratio = company_scenario.get("rd_budget_ratio", 0) or 0
+        rd = company_scenario.get("annual_rd_budget", 0) or 0
+        horizon = company_scenario.get("planning_horizon", "")
+        block += f"- Company: {cn}\n- Industry: {ind}\n"
+        if rev: block += f"- Annual Revenue: ${rev:,.0f}\n"
+        if ratio: block += f"- R&D Budget Ratio: {ratio:.0%}\n"
+        if rd: block += f"- Annual R&D Budget: ${rd:,.0f}\n"
+        if horizon: block += f"- Planning Horizon: {horizon}\n"
+    if strategic_direction:
+        block += "\n[Strategic Direction]\n"
+        for i, d in enumerate(strategic_direction, 1):
+            block += f"  {i}. {d}\n"
+    return block + "\n"
+
 
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     """REVISE 시 전달된 feedback 을 LLM 프롬프트에 박을 한국어 섹션으로 포맷."""
@@ -567,12 +603,39 @@ def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     )
 
 
+def _build_roadmap_mapping_block(planned_roadmap: list, tech_ids: list = None) -> str:
+    """planned_roadmap 의 {tech_id, year_idx, reasoning} 을 user_prompt 용 블록으로 포맷.
+    tech_ids 가 주어지면 해당 ID 만 필터링."""
+    if not planned_roadmap:
+        return ""
+    by_id = {r.get("tech_id"): r for r in planned_roadmap if r.get("tech_id")}
+    selected_ids = tech_ids if tech_ids else list(by_id.keys())
+    lines = ["\n[Roadmap Mapping — Designer 가 매핑한 {기술, 수행년도, reasoning}]"]
+    for tid in selected_ids:
+        r = by_id.get(tid)
+        if not r:
+            continue
+        ys = r.get("year_idx_start", "?")
+        yt = r.get("year_idx_target", "?")
+        reasoning = r.get("reasoning") or {}
+        lines.append(f"- {tid} ({r.get('name', '')}): {ys}차년도 → {yt}차년도 "
+                     f"({r.get('start_q', '')} → {r.get('target_q', '')})")
+        yp = reasoning.get("year_placement") or r.get("justification", "")
+        te = reasoning.get("tech_execution", "")
+        if yp: lines.append(f"    · 차년도 배치 이유: {yp}")
+        if te: lines.append(f"    · 기술 수행 이유: {te}")
+    return "\n".join(lines) + "\n"
+
+
 def _run_strategist_per_stage(
     stages: List[StageSummary],
     tech_candidates: list,
     investment_policy: InvestmentPolicy = None,
     market_context: dict = None,
     orchestrator_feedback: dict = None,
+    company_scenario: dict = None,
+    strategic_direction: list = None,
+    planned_roadmap: list = None,
 ) -> List[InvestmentStrategy]:
     """
     Per-stage LLM 분할 전략.
@@ -582,6 +645,7 @@ def _run_strategist_per_stage(
     policy = investment_policy or DEFAULT_INVESTMENT_POLICY
     market_context = market_context or {}
     feedback_block = _format_orchestrator_feedback(orchestrator_feedback)
+    upper_block = _format_upper_context(company_scenario, strategic_direction)
 
     by_tech_id = {t.get("tech_id"): t for t in (tech_candidates or []) if t.get("tech_id")}
 
@@ -615,14 +679,14 @@ def _run_strategist_per_stage(
             "technologies": stage["technologies"],
             "tech_candidates": stage_techs,
         }]
+        roadmap_block = _build_roadmap_mapping_block(planned_roadmap, stage.get("tech_ids"))
 
-        user_prompt = f"""
-[Market Context]
+        user_prompt = f"""{upper_block}[Market Context]
 {json.dumps(market_context, ensure_ascii=False, indent=2)}
 
 [Investment Policy]
 {json.dumps(policy, ensure_ascii=False, indent=2)}
-
+{roadmap_block}
 [ALL ROADMAP STAGES SUMMARY] — 전체 로드맵 맥락 (cross-stage 평가 시 참조)
 이번 평가가 아닌 다른 stage 들도 같이 보여 timing / 상대 우선순위 / 예산 분배의 큰 그림을 잡으세요.
 - 평가 중인 stage 의 idx: {idx + 1} / {len(stages)}
@@ -635,7 +699,8 @@ def _run_strategist_per_stage(
 {json.dumps(single_stage_payload, ensure_ascii=False, indent=2)}
 {feedback_block}
 [작업 지시]
-- stage_assessment 작성 시 위 ALL STAGES SUMMARY 를 참고해 다른 stage 와의 timing / synergy / dependency 를 명시
+- stage_assessment 는 빈 문자열 "" 로 둘 것 (사용 X).
+- 각 tech 마다 reasoning 3분리 + tech_budget_rationale 을 각각 **2-3 문장** 으로 작성 (핵심 근거만).
 - tech_investments 의 Tier 결정 시 전체 로드맵 안에서 이 stage 의 상대적 중요도 고려
   (예: 후속 stage 의 기반인 stage → Tier 높게 / 후순위 stage → 더 신중하게)
 - ORCHESTRATOR REVISE FEEDBACK 이 있으면 해당 지적을 반드시 반영하여 Tier 분포 / 예산 비율 조정
@@ -678,6 +743,9 @@ def _run_strategist_single_call(
     investment_policy: InvestmentPolicy = None,
     market_context: dict = None,
     orchestrator_feedback: dict = None,
+    company_scenario: dict = None,
+    strategic_direction: list = None,
+    planned_roadmap: list = None,
 ) -> List[InvestmentStrategy]:
     """
     한 번의 LLM 콜로 모든 stage 처리.
@@ -688,6 +756,7 @@ def _run_strategist_single_call(
     policy = investment_policy or DEFAULT_INVESTMENT_POLICY
     market_context = market_context or {}
     feedback_block = _format_orchestrator_feedback(orchestrator_feedback)
+    upper_block = _format_upper_context(company_scenario, strategic_direction)
     by_tech_id = {t.get("tech_id"): t for t in (tech_candidates or []) if t.get("tech_id")}
 
     # 모든 stage 의 tech_candidates 풀 데이터 동봉
@@ -702,13 +771,13 @@ def _run_strategist_single_call(
             "tech_candidates": stage_techs,
         })
 
-    user_prompt = f"""
-[Market Context]
+    roadmap_block = _build_roadmap_mapping_block(planned_roadmap)
+    user_prompt = f"""{upper_block}[Market Context]
 {json.dumps(market_context, ensure_ascii=False, indent=2)}
 
 [Investment Policy]
 {json.dumps(policy, ensure_ascii=False, indent=2)}
-
+{roadmap_block}
 [Roadmap Stages] — 전체 {len(stages)}개 stage 한 번에 평가 (cross-stage 추론 적극 활용)
 각 stage 의 tech_candidates 는 Technology Analyst Agent 의 원본 기술 분석 결과입니다.
 점수는 0~100, TRL 은 1~9, rationale 에 [Patent]/[Market] 섹션 포함될 수 있습니다.
@@ -716,9 +785,11 @@ def _run_strategist_single_call(
 {feedback_block}
 [작업 지시]
 - 전체 {len(stages)}개 stage 모두 평가 — investment_strategy 배열에 정확히 {len(stages)}개 항목
-- 각 stage 의 stage_assessment 작성 시 다른 stage 와의 timing / synergy / dependency 명시
+- stage_assessment 는 빈 문자열 "" 로 둘 것 (사용 X).
+- 각 tech 마다 reasoning 3분리 (market_evaluation / tech_evaluation / investment_decision) + tech_budget_rationale 을
+  **충분히 자세히** 작성 (글자수 제한 없음 — 시장/기술/투자 결정 근거를 구체적인 수치 인용과 함께).
 - tech_investments 의 Tier 결정 시 전체 로드맵 안에서 stage 의 상대적 중요도 + 전체 total_budget 분배 균형 고려
-  (모든 stage 가 Tier 1 일 수 없음 — 전체 균형이 중요)
+  (모든 tech 가 Tier 1 일 수 없음 — 전체 균형이 중요)
 - ORCHESTRATOR REVISE FEEDBACK 이 있으면 해당 지적을 반드시 반영하여 Tier 분포 / 예산 비율 조정
 - 출력은 strict JSON 으로만, 모든 필드 채우기
 """

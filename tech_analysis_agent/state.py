@@ -94,6 +94,11 @@ class AnalysisState(TypedDict):
     #    {"text": ["피드백 문장", ...], "shift": [...], "drop": [...]}
     orchestrator_feedback: Optional[dict]
 
+    # ⑤-b Company Scenario + Strategic Direction (상위 컨텍스트)
+    # Orchestrator Setup 에서 추출되어 모든 LLM 노드 프롬프트에 박힘
+    company_scenario: Optional[dict]
+    strategic_direction: Optional[List[str]]
+
     # ⑥ 제어
     messages: Annotated[List[BaseMessage], add_messages]
     error: Optional[str]

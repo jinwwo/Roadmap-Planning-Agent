@@ -148,6 +148,8 @@ def run_roadmap_planner(
     market_context: dict,
     orchestrator_feedback: dict = None,
     reference_year: int = None,
+    company_scenario: dict = None,
+    strategic_direction: list = None,
 ) -> dict:
     """
     Roadmap Planner Agent 를 단독 실행합니다.
@@ -173,6 +175,8 @@ def run_roadmap_planner(
         "timeline_draft": None,
         "planned_roadmap": None,
         "orchestrator_feedback": orchestrator_feedback,
+        "company_scenario": company_scenario,
+        "strategic_direction": strategic_direction,
         "messages": [],
         "error": None,
         "iteration": 0,
@@ -182,6 +186,7 @@ def run_roadmap_planner(
     print(f"  Roadmap Planner Agent 시작")
     print(f"  후보 기술 수    : {len(tech_candidates)}")
     print(f"  시장 개화 목표 : {market_context.get('expected_boom_quarter', 'N/A')}")
+    print(f"  Planning Horizon: {(company_scenario or {}).get('planning_horizon', '(unknown)')}  (reference_year={reference_year})")
     if orchestrator_feedback:
         print(f"  오케스트레이터 피드백: {orchestrator_feedback}")
     print(f"{'=' * 60}")

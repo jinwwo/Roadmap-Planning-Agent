@@ -12,15 +12,31 @@ from typing import TypedDict, List, Optional
 
 # ── Problem Frame ─────────────────────────────────────────────
 
-class ProblemFrame(TypedDict):
-    """사용자 입력을 Orchestrator 가 구조화한 문제 정의"""
+class ProblemFrame(TypedDict, total=False):
+    """사용자 입력을 Orchestrator 가 구조화한 문제 정의.
+
+    Company Scenario (NVIDIA, AI/Semiconductor, 60B Revenue 등) 와
+    Strategic Direction (AI 하드웨어 리더십 유지, 플랫폼 확장 등) 를 추출하여
+    각 sibling agent 에게 상위 정보로 전달.
+    """
+    # ── 기존 필드 (호환성 유지) ──
     industry: str
     company_type: str
-    time_horizon: str            # "2025-2030"
-    total_budget: float          # USD
+    time_horizon: str            # planning_horizon — "2025-2030"
+    total_budget: float          # USD — 전체 horizon 합산 (annual × years)
     objective: str
     strategic_priorities: List[str]
     future_trend_summary: str
+
+    # ── NEW: Company Scenario ──
+    company_name: str            # 예: "NVIDIA"
+    annual_revenue: float        # USD — 예: 60_000_000_000
+    rd_budget_ratio: float       # 0.0-1.0 — 예: 0.20 (20%)
+    annual_rd_budget: float      # USD — 예: 12_000_000_000
+
+    # ── NEW: Strategic Direction (LLM 생성 — 3-5개 bullet) ──
+    # 각 agent prompt 에 상위 컨텍스트로 박힘
+    strategic_direction: List[str]
 
 
 # ── Orchestrator Review 결과 타입 (시스템 프롬프트 스키마와 동기) ─

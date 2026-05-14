@@ -48,6 +48,38 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"유효한 JSON을 파싱할 수 없습니다:\n{text[:300]}")
 
 
+def _format_upper_context(company_scenario: dict, strategic_direction: list) -> str:
+    """Orchestrator 가 추출한 Company Scenario + Strategic Direction 을
+    LLM 프롬프트의 상위 컨텍스트 블록으로 포맷.
+    모든 sibling agent 의 LLM 노드에서 동일한 형식으로 사용.
+    """
+    if not company_scenario and not strategic_direction:
+        return ""
+    block = "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n"
+    if company_scenario:
+        cn = company_scenario.get("company_name", "")
+        ind = company_scenario.get("industry", "")
+        rev = company_scenario.get("annual_revenue", 0) or 0
+        ratio = company_scenario.get("rd_budget_ratio", 0) or 0
+        rd = company_scenario.get("annual_rd_budget", 0) or 0
+        horizon = company_scenario.get("planning_horizon", "")
+        block += f"- Company: {cn}\n"
+        block += f"- Industry: {ind}\n"
+        if rev:
+            block += f"- Annual Revenue: ${rev:,.0f}\n"
+        if ratio:
+            block += f"- R&D Budget Ratio: {ratio:.0%}\n"
+        if rd:
+            block += f"- Annual R&D Budget: ${rd:,.0f}\n"
+        if horizon:
+            block += f"- Planning Horizon: {horizon}\n"
+    if strategic_direction:
+        block += "\n[Strategic Direction]\n"
+        for i, d in enumerate(strategic_direction, 1):
+            block += f"  {i}. {d}\n"
+    return block + "\n"
+
+
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     """REVISE 시 전달된 feedback 을 patent_agent 프롬프트에 박을 섹션으로 포맷.
     Agent 1 은 후보 자체를 도출하므로, 누락된 기술/카테고리 보강 지시로 작동."""
@@ -255,7 +287,7 @@ def run_patent_agent(state: AnalysisState) -> dict:
             patent_raw, ensure_ascii=False, indent=2
         )[:12000]
 
-        user_prompt = prompt.render_user(
+        rendered = prompt.render_user(
             domain=state["domain"],
             reference_year=state["reference_year"],
             category_hints=state.get("category_hints", []),
@@ -265,8 +297,15 @@ def run_patent_agent(state: AnalysisState) -> dict:
             patent_raw=patent_raw_for_prompt,
         )
 
-        # Horizon 인식 가이드 — 강제 X, 참고 톤 (TRL 분포 권장)
-        user_prompt = user_prompt + f"""
+        # Company Scenario + Strategic Direction (상위 컨텍스트) — 모든 분석의 기반,
+        # prompt 맨 앞에 prepend 하여 LLM 이 가장 먼저 인식하도록.
+        upper_block = _format_upper_context(
+            state.get("company_scenario"),
+            state.get("strategic_direction"),
+        )
+
+        # Horizon 인식 가이드 (분석 가이드)
+        horizon_guide = f"""
 
 [Horizon 인식 — 권장 (강제 X)]
 reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종료 연도** 이다.
@@ -277,8 +316,10 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
 - 즉 "정직한 분석" ≫ "TRL 분포 균형". 둘이 충돌하면 정직성 선호, 비슷하면 분포 권장.
 """
 
-        # Orchestrator REVISE feedback 을 user_prompt 끝에 append
-        user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+
+        # 최종 user_prompt: [상위 컨텍스트] → [본문] → [horizon 가이드] → [feedback]
+        user_prompt = upper_block + rendered + horizon_guide + feedback_block
 
         if patent_raw.get("analysis_mode") == "company_portfolio" and not USE_MOCK_PATENT:
             portfolios = patent_raw.get("company_portfolios") or {}

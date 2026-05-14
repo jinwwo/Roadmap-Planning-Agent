@@ -199,11 +199,14 @@ html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: 
 
 /* Problem Frame */
 .problem-frame { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
-.pf-row { display: grid; grid-template-columns: 110px 1fr; font-size: 12px; padding: 3px 0; }
+.pf-row { display: grid; grid-template-columns: 140px 1fr; font-size: 12px; padding: 3px 0; align-items: baseline; }
 .pf-row .k { color: var(--text-dim); font-family: var(--mono); font-size: 11px; }
 .pf-row .v { color: var(--text); }
+.pf-row-block { grid-template-columns: 140px 1fr; align-items: start; padding-top: 6px; }
 .pf-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
 .pf-chip { font-size: 11px; padding: 1px 6px; background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--text-dim); font-family: var(--mono); }
+.pf-direction { margin: 0; padding-left: 18px; font-size: 12px; color: var(--text); line-height: 1.7; }
+.pf-direction li { margin-bottom: 2px; }
 
 /* Agent status indicators */
 .agent-status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
@@ -239,6 +242,108 @@ html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: 
 .timeline-label .cat { font-size: 11px; color: var(--text-dim); }
 .timeline-bar-wrap { position: relative; height: 22px; background: var(--bg); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
 .timeline-bar { position: absolute; top: 0; bottom: 0; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%); border-radius: 3px; display: flex; align-items: center; padding: 0 6px; font-size: 11px; color: #1a1a1a; font-weight: 600; font-family: var(--mono); white-space: nowrap; overflow: hidden; }
+
+/* Agent 2 — Year-based gantt header & rows */
+.a2-year-header {
+  display: grid; grid-template-columns: 200px 1fr; gap: 10px;
+  align-items: center; padding: 6px 0; margin-top: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.timeline-label-spacer { width: 200px; }
+.year-col-row {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  gap: 0; width: 100%;
+}
+.year-col-label {
+  font-family: var(--mono); font-size: 11px; color: var(--accent-soft);
+  text-align: center; padding: 4px 2px;
+  border-left: 1px dashed var(--border);
+}
+.year-col-label:first-child { border-left: none; }
+
+.a2-row { animation: fadeInLine 0.4s ease-out; }
+.a2-bar-wrap {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(100% / var(--cols, 1) - 1px),
+    rgba(255,255,255,0.05) calc(100% / var(--cols, 1) - 1px),
+    rgba(255,255,255,0.05) calc(100% / var(--cols, 1))
+  );
+}
+
+/* Per-row reasoning collapsible */
+.reasoning-box {
+  margin: 4px 0 10px 210px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: 6px; padding: 0;
+  font-size: 12px;
+}
+.reasoning-box summary {
+  cursor: pointer; padding: 6px 10px; font-weight: 600;
+  color: var(--accent-soft); font-size: 11px;
+  list-style: none; font-family: var(--mono);
+}
+.reasoning-box summary::-webkit-details-marker { display: none; }
+.reasoning-box summary::before {
+  content: "▶"; display: inline-block; margin-right: 6px;
+  transition: transform 0.15s ease; font-size: 9px;
+}
+.reasoning-box[open] summary::before { transform: rotate(90deg); }
+.reasoning-box[open] summary { border-bottom: 1px solid var(--border); }
+.reason-block {
+  padding: 8px 12px; font-size: 12px; line-height: 1.55;
+  color: var(--text); border-bottom: 1px dashed var(--border);
+}
+.reason-block:last-child { border-bottom: none; }
+.reason-block b { color: var(--accent-soft); font-weight: 600; }
+.reason-block.strategist { border-left: 2px solid var(--tier2); background: rgba(138,173,217,0.05); }
+.reason-block.strategist b { color: var(--tier2); }
+
+/* Budget badge — 간트 옆에 표시 */
+.budget-overlay {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  z-index: 2; pointer-events: auto;
+}
+.budget-badge {
+  display: inline-block; padding: 2px 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  background: var(--bg); border: 1px solid var(--accent);
+  border-radius: 999px; color: var(--accent-soft);
+  white-space: nowrap;
+}
+.budget-badge.tier-1 { border-color: var(--tier1); color: var(--tier1); background: rgba(215,154,90,0.12); }
+.budget-badge.tier-2 { border-color: var(--tier2); color: var(--tier2); background: rgba(138,173,217,0.1); }
+.budget-badge.tier-3 { border-color: var(--tier3); color: var(--tier3); background: rgba(154,154,154,0.1); }
+.timeline-bar-wrap.a2-bar-wrap { overflow: visible; }
+
+/* Year × Tech 매트릭스 */
+.matrix-table { width: 100%; border-collapse: collapse; }
+.matrix-table th { padding: 6px 8px; text-align: center; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); }
+.matrix-table th .dim, .matrix-table .dim { color: var(--text-dim); font-size: 10px; font-family: var(--mono); }
+.matrix-tech-label { padding: 6px 10px !important; min-width: 140px; border-right: 1px solid var(--border); vertical-align: top; line-height: 1.35; }
+.matrix-tech-label b { color: var(--accent); font-family: var(--mono); font-size: 11px; }
+.matrix-cell { padding: 6px 4px; text-align: center; border: 1px solid var(--border); font-family: var(--mono); font-size: 11px; min-width: 60px; color: var(--text-dim); }
+.matrix-cell.active { color: #1a1a1a; font-weight: 700; }
+.matrix-cell.active.tier-1 { background: var(--tier1); }
+.matrix-cell.active.tier-2 { background: var(--tier2); }
+.matrix-cell.active.tier-3 { background: var(--tier3); color: #1a1a1a; }
+.matrix-cell.active.tier-x { background: var(--accent-soft); }
+.badge.tier { display: inline-block; padding: 1px 6px; font-size: 10px; font-family: var(--mono); border-radius: 3px; margin-top: 3px; }
+.badge.tier.tier-1 { background: rgba(215,154,90,0.2); color: var(--tier1); border: 1px solid var(--tier1); }
+.badge.tier.tier-2 { background: rgba(138,173,217,0.2); color: var(--tier2); border: 1px solid var(--tier2); }
+.badge.tier.tier-3 { background: rgba(154,154,154,0.2); color: var(--tier3); border: 1px solid var(--tier3); }
+.badge.tier.tier-x { background: var(--bg); color: var(--text-dim); border: 1px solid var(--border); }
+
+.matrix-reasoning {
+  margin: 6px 0; padding: 6px 10px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-left: 2px solid var(--accent); border-radius: 4px;
+}
+.matrix-reasoning summary { cursor: pointer; font-size: 12px; padding: 2px 0; font-family: var(--mono); }
+.matrix-reasoning summary .dim { color: var(--text-dim); font-size: 11px; }
+.matrix-reasoning .reasoning-blocks { padding-top: 6px; }
 
 /* Investment strategy (stage cards) */
 .stage-card {

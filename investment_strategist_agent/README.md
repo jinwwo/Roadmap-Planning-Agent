@@ -1,8 +1,13 @@
 # Investment Strategist Agent (Agent 3)
 
 앞선 두 에이전트 (Technology Analyst / Roadmap Planner) 의 결과를 종합해,
-**로드맵 단계(stage) 단위로** 투자 매력도·시급성·Tier·범위·권고안을
-도출하는 에이전트.
+**기술 (tech_id) 단위로** 투자 매력도·Tier·예산 (USD) 을 직접 결정하는 에이전트.
+
+핵심 입력:
+- Designer 가 매핑한 `{기술, 수행년도(year_idx), reasoning}`
+- Agent 1 의 원본 기술 데이터 (TRL, market_score, rationale [Patent]/[Market] 등)
+- 시장 데이터 (target_market, expected_boom_quarter)
+- 상위 컨텍스트 (Company Scenario + Strategic Direction + Investment Policy)
 
 ```
 Tech-Analysis-Agent/
@@ -23,17 +28,30 @@ Tech-Analysis-Agent/
   - Dependency: 후속 stage 와의 의존 관계
   - Scale: 자원 집약도
 
-  **② 각 기술별 투자 평가 (실제 의사결정)** — Stage 통합 판단을 컨텍스트로 두고, 각 tech 마다:
-  - 5-지표 점수 (1~5):
-    - `market_opportunity` · `strategic_fit` · `executability` · `uncertainty` · `urgency`
-  - `recommended_investment_tier` (Tier 1/2/3) — **같은 stage 안에서도 tech 마다 다를 수 있음**
-  - `investment_attractiveness`, `investment_urgency`
-  - `recommended_action`, `rationale`, `major_risks`, `resource_focus`
+  **② 각 기술별 평가 + 예산 결정** (실제 의사결정 단위) — 각 tech 마다:
+  - **5축 점수 (1~5)** — 기술/시장 데이터 직접 인용해서 결정:
+    - `market_size_growth` — TAM/CAGR (시장 크기/성장률)
+    - `tech_readiness` — TRL 기반 (1-2→1점, 3-4→2점, 5-6→3점, 7→4점, 8-9→5점)
+    - `tech_risk` — 기술 위험도 (점수 ↑ = 위험 ↑)
+    - `competitive_advantage` — 회사 강점 / 특허 / Strategic Direction 정합
+    - `development_urgency` — 현재 시점 ~ boom 까지 거리
+  - `recommended_investment_tier` (Tier 1/2/3) — 같은 stage 안에서도 tech 마다 다를 수 있음
+  - `tech_budget_usd` (USD 정수) — **각 기술에 배분되는 절대 금액 (hard constraint)**:
+    · 모든 tech_budget_usd 의 합은 **total_budget 을 절대 초과 불가** (post-processing 비례 축소 보장)
+    · LLM 누락 시 Tier weight (3:1.5:1) 자동 분배
+    · 합이 total_budget 미만은 OK (-25% 까지)
+  - `tech_budget_rationale` — 왜 이 금액인지 2-3 문장
+  - `reasoning` (3 분리, **각 2-3 문장**):
+    - `market_evaluation` — TAM/CAGR/시장 타이밍 평가 근거
+    - `tech_evaluation` — TRL/기술 위험/경쟁 우위 평가 근거
+    - `investment_decision` — Tier + 예산 결정 근거
+  - `investment_attractiveness`, `investment_urgency`, `investment_scope`, `recommended_action`
+  - `rationale`, `major_risks`, `resource_focus` (각 2-4개 bullet)
 
-  **③ Stage 단위 예산 분배** — LLM 이 각 stage 의 `stage_budget_ratio` (0.0~1.0) 결정
-  - 모든 stage 의 합이 1.0 이 되도록 코드가 자동 정규화
-  - `stage_estimated_usd = total_budget × stage_budget_ratio` 자동 계산
-  - per-tech 분배는 안 함 (Tier 1/2/3 라벨이 사실상 우선순위 차등)
+  **참고** : `stage_assessment` 는 빈 문자열 "" 로 둠 (사용 X). 의사결정의 진짜 단위는 개별 기술이고, stage 는 timing 컨테이너 역할만.
+
+  **③ Stage 단위 예산 합산 (후처리)** — `stage_budget_ratio` = stage 안 tech_budget_usd 합 / total_budget
+  - `stage_estimated_usd` = stage 안 tech_budget_usd 합 (정확한 USD)
 
 > 같은 stage 안의 두 기술이 다른 Tier 를 받을 수 있다. 예: 1단계 R&D 안에서 T01 멀티빔은 Tier 1 (시장 거대 + 즉시 투자), T02 극저온 에칭은 Tier 2 (조건부).
 
@@ -156,9 +174,11 @@ phase_name="2단계: 공정 통합"  →  stage 2 (T03, T04, T05 묶임)
 **A. Stage 통합 판단 (narrative)** — `stage_assessment` 1~3문장
 - timing / synergy / dependency / scale 종합 판단
 
-**B. 각 기술별 투자 평가 (tech_investments[])** — stage 의 tech 마다 하나씩
-- 5-지표 점수 (1~5): market_opportunity / strategic_fit / executability / uncertainty / urgency
+**B. 각 기술별 투자 평가 + 예산 (tech_investments[])** — stage 의 tech 마다 하나씩
+- 5축 점수 (1~5): market_size_growth / tech_readiness / tech_risk / competitive_advantage / development_urgency
 - Tier (Tier 1/2/3) — **같은 stage 안에서도 tech 마다 다를 수 있음**
+- **tech_budget_usd (USD)** — 절대 예산 금액
+- **reasoning (3분리)**: market_evaluation / tech_evaluation / investment_decision
 - investment_attractiveness / investment_urgency / investment_scope
 - recommended_action, rationale, major_risks, resource_focus
 
@@ -354,49 +374,46 @@ Agent 3 는 **2개의 JSON 파일** 을 읽어서 3가지 데이터를 추출합
       "stage": "1단계: 기반 R&D",
       "period": "2025 Q1 - 2026 Q4",
       "stage_assessment": "boom_quarter (2028 Q1) 직전 R&D 단계로 적시. 멀티빔 e-beam 검사와 극저온 에칭이 함께 진행되어야 후속 공정 통합 단계의 기반이 마련된다.",
-      "stage_budget_ratio": 0.40,                    // ← LLM 이 결정 (모든 stage 합 = 1.0)
-      "stage_estimated_usd": 2000000000.0,           // ← 코드가 total_budget × ratio 로 자동 계산
+      "stage_budget_ratio": 0.40,                    // ← stage 안 tech_budget_usd 합 / total_budget
+      "stage_estimated_usd": 2000000000.0,           // ← stage 안 tech_budget_usd 합
       "tech_investments": [
         {
           "tech_id": "T01",
           "name": "멀티빔 e-beam 검사",
           "evaluation_scores": {
-            "market_opportunity": 5,
-            "strategic_fit": 5,
-            "executability": 4,
-            "uncertainty": 2,
-            "urgency": 5
+            "market_size_growth": 5,
+            "tech_readiness": 2,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
           },
           "investment_attractiveness": "high",
           "investment_urgency": "high",
           "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 1500000000,
+          "tech_budget_rationale": "Tier 1 + market_size_growth=5 + competitive_advantage=5 → 핵심 투자, total_budget 의 30% 배정.",
+          "reasoning": {
+            "market_evaluation": "TAM $117B + CAGR 19.9% 로 시장 매력도 매우 높음. boom 2028 Q1 임박해 1차년도 진입이 결정적.",
+            "tech_evaluation": "TRL 4 라 즉시 양산 X, 6 분기 lead time 필요. 단 회사 기존 검사 장비 노하우 + 특허 포트폴리오 우위 → 경쟁 우위 강함.",
+            "investment_decision": "5축 평균 3.8 + Strategic Direction #1 정합 → Tier 1 확정. R&D 예산 $12B 의 12.5% (=$1.5B) 배정 — boom 직전 fast-follow 보다 first-mover 가 합리적."
+          },
           "investment_scope": "proactive and execution-focused",
           "recommended_action": "$117B 시장 + 19.9% CAGR 반영, 2026 Q3 PoC 즉시 착수",
           "rationale": [
             "stage 가 boom 직전 적시 + T01 시장 규모 $117B 로 즉시 투자 가치 큼",
             "Tier-1 공장 capex $34B 이미 진행 → 시장 진입 창 좁음"
           ],
-          "major_risks": [
-            "장비 공급망 의존",
-            "초기 PoC 성과가 제한적일 경우 사업화 전환 지연"
-          ],
-          "resource_focus": [
-            "PoC 예산",
-            "장비 셋업 인력",
-            "초기 제품화 개발 역량"
-          ]
+          "major_risks": ["장비 공급망 의존", "초기 PoC 성과 제한 시 사업화 전환 지연"],
+          "resource_focus": ["PoC 예산", "장비 셋업 인력", "초기 제품화 개발 역량"]
         },
         {
           "tech_id": "T02",
           "name": "극저온 에칭 장비",
-          "evaluation_scores": { "...": "..." },
+          "evaluation_scores": { "market_size_growth": 4, "tech_readiness": 3, "tech_risk": 3, "competitive_advantage": 3, "development_urgency": 3 },
           "recommended_investment_tier": "Tier 2",
-          "investment_scope": "milestone-based",
-          "recommended_action": "T01 PoC 결과 검증 후 단계적 투자",
-          "rationale": [
-            "stage 통합 판단상 T01 보완재이지만 즉시 풀 투자 위험",
-            "23.5% CAGR 매력적이나 capex 규모 $119B 로 큼"
-          ],
+          "tech_budget_usd": 500000000,
+          "tech_budget_rationale": "Tier 2 + 보완재 위치 → T01 의 1/3 수준 배정.",
+          "reasoning": { "market_evaluation": "...", "tech_evaluation": "...", "investment_decision": "..." },
           "...": "..."
         }
       ]
@@ -483,7 +500,11 @@ stages = aggregate_stages(planned_roadmap, market_context)
 strategies = run_strategist(
     stages=stages,
     tech_candidates=tech_candidates,
-    investment_policy={"risk_appetite": "medium", ...},
+    investment_policy={"risk_appetite": "medium", "total_budget": 5_000_000_000, ...},
     market_context=market_context,
+    company_scenario=company_scenario,        # ← 상위 컨텍스트
+    strategic_direction=strategic_direction,  # ← 상위 컨텍스트
+    planned_roadmap=planned_roadmap,          # ← Designer 의 reasoning 까지 prompt 에 인용
 )
+# 결과: 각 stage 의 tech_investments[] 에 tech_budget_usd + reasoning(3분리) 포함
 ```

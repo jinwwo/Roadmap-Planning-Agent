@@ -102,6 +102,8 @@ def run_technology_analysis(
     company_name: str = None,
     company_profile: str = None,
     related_companies: list = None,
+    company_scenario: dict = None,
+    strategic_direction: list = None,
 ) -> dict:
     """
     Technology Analysis Agent 를 단독 실행합니다.
@@ -136,6 +138,8 @@ def run_technology_analysis(
         "tech_candidates": None,
         "market_context": None,
         "orchestrator_feedback": orchestrator_feedback,
+        "company_scenario": company_scenario,
+        "strategic_direction": strategic_direction,
         "messages": [],
         "error": None,
         "retry_count": 0,
@@ -143,11 +147,20 @@ def run_technology_analysis(
 
     print(f"\n{'='*60}")
     print(f"  Technology Analysis Agent 시작")
-    print(f"  도메인  : {domain}")
-    if company_name or company_profile:
-        print(f"  기업    : {company_name or '(profile only)'}")
-    print(f"  기준연도: {reference_year}")
-    print(f"  카테고리: {category_hints or '전체'}")
+    cs = company_scenario or {}
+    if cs.get("company_name") and cs["company_name"] != "(unknown)":
+        print(f"  Company : {cs['company_name']}")
+    industry = cs.get("industry") if cs.get("industry") and cs["industry"] != "(unknown)" else domain
+    print(f"  Industry: {industry}")
+    if cs.get("planning_horizon") and cs["planning_horizon"] != "(unknown)":
+        print(f"  Horizon : {cs['planning_horizon']}")
+    else:
+        print(f"  Horizon : ~{reference_year}")
+    sd = strategic_direction or []
+    if sd:
+        print(f"  Strategic Direction ({len(sd)} bullets):")
+        for i, d in enumerate(sd, 1):
+            print(f"    {i}. {d}")
     print(f"{'='*60}")
 
     final_state = graph.invoke(initial_state)

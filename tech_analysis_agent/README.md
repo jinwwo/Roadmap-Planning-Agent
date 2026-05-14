@@ -1,6 +1,15 @@
-# Technology Roadmap AI Agent System
+# Technology Analyst Agent (Agent 1)
 
-LangGraph 기반 계층형 멀티에이전트 시스템으로, 특허 데이터와 시장 인텔리전스를 분석하여 기업의 기술 개발 로드맵을 자동으로 설계합니다.
+LangGraph 기반 sub-graph 로 **USPTO 특허** 데이터와 **Tavily 시장** 인텔리전스를 수집·분석하여
+후보 기술 (`tech_candidates`) + 시장 컨텍스트 (`market_context`) 를 산출합니다.
+산출물은 sibling Agent 2 (Roadmap Planner) 와 Agent 3 (Investment Strategist) 의 입력으로 사용됩니다.
+
+**입력 상위 컨텍스트** (Orchestrator Setup 에서 주입):
+- `company_scenario` (Company / Industry / Annual Revenue / R&D Budget Ratio / Annual R&D Budget / Planning Horizon)
+- `strategic_direction` (3-5 bullets, Setup 단계 LLM 이 생성)
+
+이 두 컨텍스트가 `patent_agent` / `market_agent` 의 LLM user_prompt 상단에 박혀,
+후보 발굴이 회사 전략 방향과 정합되도록 가이드됩니다.
 
 ---
 

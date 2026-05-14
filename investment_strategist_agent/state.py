@@ -68,22 +68,32 @@ class StageSummary(TypedDict):
 
 # ── 투자 전략 출력 타입 ──────────────────────────────────────
 
-class EvaluationScores(TypedDict):
-    market_opportunity: int      # 1-5
-    strategic_fit: int           # 1-5
-    executability: int           # 1-5
-    uncertainty: int             # 1-5 (높을수록 리스크 큼)
-    urgency: int                 # 1-5
+class EvaluationScores(TypedDict, total=False):
+    # 신규 5축
+    market_size_growth: int       # 1-5 (TAM/CAGR)
+    tech_readiness: int           # 1-5 (TRL 기반)
+    tech_risk: int                # 1-5 (높을수록 위험 ↑)
+    competitive_advantage: int    # 1-5
+    development_urgency: int      # 1-5
+    # 옛 axis name (backward compat — 옛 JSON 로드 시)
+    market_opportunity: int
+    strategic_fit: int
+    executability: int
+    uncertainty: int
+    urgency: int
 
 
 class TechInvestment(TypedDict, total=False):
-    """개별 기술 단위 투자 평가 — 투자 의사결정의 진짜 단위 (Tier 라벨 위주)"""
+    """개별 기술 단위 투자 평가 — 투자 의사결정의 진짜 단위 (Tier + per-tech 예산)"""
     tech_id: str
     name: str
     evaluation_scores: EvaluationScores   # 5-지표 (1~5 정수)
     investment_attractiveness: str        # high / medium / low
     investment_urgency: str               # high / medium / low
     recommended_investment_tier: str      # "Tier 1" / "Tier 2" / "Tier 3"
+    tech_budget_usd: float                # 이 기술에 배분된 USD 절대 금액
+    tech_budget_rationale: str            # 왜 이 금액인지 1-2 문장
+    reasoning: dict                       # {market_evaluation, tech_evaluation, investment_decision}
     investment_scope: str
     recommended_action: str
     rationale: List[str]                  # 2-4

@@ -290,6 +290,8 @@ def _run_agent1(
         company_name = state.get("company_name")
         company_profile = state.get("company_profile")
         related_companies = state.get("related_companies")
+        company_scenario = state.get("company_scenario") or None
+        strategic_direction = state.get("strategic_direction") or None
 
         snippet = f"""
 import sys, json, os
@@ -306,6 +308,8 @@ result = run_technology_analysis(
     company_name={company_name!r},
     company_profile={company_profile!r},
     related_companies={related_companies!r},
+    company_scenario={company_scenario!r},
+    strategic_direction={strategic_direction!r},
 )
 patent_maps = result.get("patent_maps") or {{}}
 graph_paths = render_patent_maps(
@@ -364,6 +368,8 @@ def _run_agent2(
         print("\n[Pipeline] Agent 2 (Roadmap Planner) — ✅ ON")
         feedback = state.get("orchestrator_feedback") or None
         ref_year = state.get("reference_year")
+        company_scenario = state.get("company_scenario") or None
+        strategic_direction = state.get("strategic_direction") or None
 
         snippet = f"""
 import sys, json, os
@@ -380,6 +386,8 @@ result = run_roadmap_planner(
     market_context=market_context,
     orchestrator_feedback={feedback!r},
     reference_year={ref_year!r},
+    company_scenario={company_scenario!r},
+    strategic_direction={strategic_direction!r},
 )
 
 out = {{
@@ -398,7 +406,12 @@ print(f"[Agent 2] 저장: {out_path!r} ({{len(out['planned_roadmap'])}}개 항�
 
     data = _safe_load(out_path)
     state["planned_roadmap"] = data.get("planned_roadmap", [])
+    state["tech_selection"] = data.get("tech_selection") or {}
     print(f"[Pipeline] Agent 2 결과 로드: {len(state['planned_roadmap'])}개 로드맵 항목")
+    if state["tech_selection"]:
+        sel = state["tech_selection"]
+        print(f"[Pipeline] Tech Selector 큐레이션: {sel.get('selected_count', '?')} 선별, "
+              f"{len(sel.get('dropped', []))} 의도적 제외")
     _emit("agent_end", agent="2", count=len(state["planned_roadmap"]))
     _emit("roadmap_ready", planned_roadmap=state["planned_roadmap"])
 
@@ -431,16 +444,19 @@ def _run_agent3(
         print("\n[Pipeline] Agent 3 (Investment Strategist) — ✅ ON")
 
         # ProblemFrame + state override → InvestmentPolicy 구성
+        # strategic_priority 는 strategic_direction 으로 대체되어 더 이상 채우지 않음
         pf = state["problem_frame"]
         investment_policy = {
             "risk_appetite": state.get("risk_appetite") or "medium",
             "investment_horizon": state.get("investment_horizon") or "balanced",
             "total_budget": float(pf.get("total_budget", 0)),
-            "strategic_priority": pf.get("strategic_priorities", []),
+            "strategic_priority": [],
         }
 
         use_phase_name = (stage_mode == "phase")
         feedback = state.get("orchestrator_feedback") or None
+        company_scenario = state.get("company_scenario") or None
+        strategic_direction = state.get("strategic_direction") or None
 
         snippet = f"""
 import sys, json, os
@@ -476,6 +492,9 @@ strategies = run_strategist(
     investment_policy={investment_policy!r},
     market_context=market_context,
     orchestrator_feedback={feedback!r},
+    company_scenario={company_scenario!r},
+    strategic_direction={strategic_direction!r},
+    planned_roadmap=planned_roadmap,
 )
 
 out = {{
@@ -560,6 +579,9 @@ def run_orchestration(
     # Investment policy overrides (Agent 3 가 사용)
     risk_appetite: Optional[str] = None,        # low / medium / high
     investment_horizon: Optional[str] = None,   # short / balanced / long
+    # NEW: Company Scenario + Strategic Direction (Setup 단계에서 추출)
+    company_scenario: Optional[Dict[str, Any]] = None,
+    strategic_direction: Optional[List[str]] = None,
     # 내부 설정
     out_prefix: str = "",
     stage_mode: str = "phase",
@@ -601,6 +623,8 @@ def run_orchestration(
         objective=objective,
         priorities=priorities,
         future_trend_summary=future_trend_summary,
+        company_scenario=company_scenario,
+        strategic_direction=strategic_direction,
     )
     _emit("setup_done", problem_frame=problem_frame, active_agents=active_agents)
 
@@ -623,6 +647,9 @@ def run_orchestration(
         "risk_appetite": risk_appetite,
         "investment_horizon": investment_horizon,
         "patent_method": patent_method,
+        # NEW: Company Scenario + Strategic Direction — 모든 sibling agent 에 전달
+        "company_scenario": company_scenario,
+        "strategic_direction": strategic_direction,
     }
 
     # ② 첫 실행: 세 Agent 를 순서대로 (OFF 이면 폴백)
@@ -649,6 +676,7 @@ def run_orchestration(
             market_context=state["market_context"],
             previous_feedback=previous_feedback,
             active_agents=active_agents,
+            tech_selection=state.get("tech_selection") or {},
         )
         iteration += 1
         review_history.append({"iteration": iteration, "review": review})
