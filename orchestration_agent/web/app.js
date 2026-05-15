@@ -571,11 +571,10 @@ function renderAgent2Section() {
         <div class="timeline-label">
           <div><span class="id">${escapeHtml(it.tech_id)}</span></div>
           <div class="name">${escapeHtml(it.name || "")}</div>
-          ${it.start_q && it.target_q ? `<div class="cat" style="font-family:var(--mono);font-size:10px;">${escapeHtml(it.start_q)} – ${escapeHtml(it.target_q)}</div>` : (it.phase_name ? `<div class="cat">${escapeHtml(it.phase_name)}</div>` : "")}
         </div>
         <div class="timeline-bar-wrap a2-bar-wrap" style="--cols:${totalYears};">
-          <div class="timeline-bar" style="left:${left}%;width:${width}%;" title="${escapeHtml(it.start_q || "")} → ${escapeHtml(it.target_q || "")}">
-            ${ys}차 → ${yt}차${it.start_q && it.target_q ? ` <span style="font-size:10px;opacity:0.85;">(${escapeHtml(it.start_q)} → ${escapeHtml(it.target_q)})</span>` : ""}
+          <div class="timeline-bar" style="left:${left}%;width:${width}%;">
+            ${ys}차년도 → ${yt}차년도
           </div>
           ${budgetBadge ? `<div class="budget-overlay">${budgetBadge}</div>` : ""}
         </div>
@@ -1016,14 +1015,12 @@ function renderArtifactsSummary(artifacts) {
       </div>
     </details>` : "";
 
-  // Agent 2 표 — tech_id / phase / start → target / prereq / lead
+  // Agent 2 표 — tech_id / 차년도 / prereq
   const a2Rows = a2.map(r => `
     <tr>
       <td><b>${escapeHtml(r.tech_id || "")}</b></td>
-      <td>${escapeHtml(r.phase_name || "")}</td>
-      <td>${escapeHtml(r.start_q || "")} → ${escapeHtml(r.target_q || "")}</td>
+      <td>${r.year_idx_start ?? "?"}차년도 → ${r.year_idx_target ?? "?"}차년도</td>
       <td>${escapeHtml((r.prerequisites || []).join(", "))}</td>
-      <td>${escapeHtml(String(r.lead_time_quarters ?? ""))}</td>
     </tr>`).join("");
   const a2Html = a2.length ? `
     <details class="artifact-sub">
@@ -1031,8 +1028,7 @@ function renderArtifactsSummary(artifacts) {
       <div class="body">
         <table class="artifact-table">
           <thead><tr>
-            <th>tech_id</th><th>phase</th><th>start → target</th>
-            <th>prerequisites</th><th>lead (Q)</th>
+            <th>tech_id</th><th>차년도</th><th>prerequisites</th>
           </tr></thead>
           <tbody>${a2Rows}</tbody>
         </table>

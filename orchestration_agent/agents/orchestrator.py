@@ -793,10 +793,9 @@ def _build_review_user_prompt(
     if a2_on:
         roadmap_slim = [
             {"tech_id": r.get("tech_id"), "name": r.get("name"),
-             "phase_name": r.get("phase_name"),
-             "start_q": r.get("start_q"), "target_q": r.get("target_q"),
-             "prerequisites": r.get("prerequisites"),
-             "lead_time_quarters": r.get("lead_time_quarters")}
+             "year_idx_start": r.get("year_idx_start"),
+             "year_idx_target": r.get("year_idx_target"),
+             "prerequisites": r.get("prerequisites")}
             for r in (planned_roadmap or [])
         ]
         sections.append(
@@ -909,10 +908,8 @@ residual issues as caveats inside `feasibility_and_risk` rather than refusing to
              어떤 카테고리에 우선 투자하는 논리
 
 3. roadmap_structure
-   입력 : PLANNED ROADMAP (phase_name, start_q/target_q, prerequisites) + stages
-   필수 인용 : 각 phase 의 시작/완료 분기 (예: "1단계 R&D: 2027 Q1-Q4") /
-             대표 tech_id / 핵심 의존성 (예: "T01 → T03 prereq")
-   금지 : phase 이름만 나열하고 끝내기
+   입력 : PLANNED ROADMAP (year_idx_start/target, prerequisites) + stages
+   필수 인용 : 각 기술의 시작/완료 차년도 / 대표 tech_id / 핵심 의존성 (예: "T01 → T03 prereq")
 
 4. investment_strategy
    입력 : INVESTMENT STRATEGY 의 tech_investments[] 의 Tier 분포 + investment_policy +
@@ -952,7 +949,7 @@ residual issues as caveats inside `feasibility_and_risk` rather than refusing to
 - **수치 인용** — 시장 규모 ($X B), CAGR (Y%), 분기 명시 (2028 Q1) 등 가능한 한 인용
 - **출처 표기 [필수]** — 모든 수치/판정 뒤에 출처 Agent 를 짧은 마커로 명시.
   · `[A1]` = Agent 1 (Technology Analyst — final_score, market_score, patent_score, boom_quarter, market_signal)
-  · `[A2]` = Agent 2 (Roadmap Planner — phase_name, start_q/target_q, prerequisites, lead_time)
+  · `[A2]` = Agent 2 (Roadmap Planner — year_idx_start/target, prerequisites)
   · `[A3]` = Agent 3 (Investment Strategist — Tier, evaluation_scores, recommended_action, major_risks)
   · 예시:
     "T01 (High-NA EUV) 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류하여 2026 Q3 → 2027 Q1 [A2] 양산 전환을 추진한다."
@@ -1037,14 +1034,12 @@ def generate_final_report(
         for t in (tech_candidates or [])
     ]
 
-    # Agent 2 결과 — 분기 + 의존성 + 한국어 정당화
+    # Agent 2 결과 — 차년도 + 의존성
     roadmap_slim = [
         {"tech_id": r.get("tech_id"), "name": r.get("name"),
-         "phase_name": r.get("phase_name"),
-         "start_q": r.get("start_q"), "target_q": r.get("target_q"),
-         "prerequisites": r.get("prerequisites"),
-         "lead_time_quarters": r.get("lead_time_quarters"),
-         "justification": r.get("justification", "") or ""}
+         "year_idx_start": r.get("year_idx_start"),
+         "year_idx_target": r.get("year_idx_target"),
+         "prerequisites": r.get("prerequisites")}
         for r in (planned_roadmap or [])
     ]
 
@@ -1181,14 +1176,10 @@ def generate_final_report(
         a2_summary.append({
             "tech_id": tid,
             "name": full.get("name") or r.get("name"),
-            "phase_name": r.get("phase_name"),
-            "start_q": r.get("start_q"),
-            "target_q": r.get("target_q"),
             "year_idx_start": full.get("year_idx_start"),
             "year_idx_target": full.get("year_idx_target"),
             "prerequisites": r.get("prerequisites") or [],
-            "lead_time_quarters": r.get("lead_time_quarters"),
-            "reasoning": full.get("reasoning") or {},   # Designer 의 3분리 reasoning
+            "reasoning": full.get("reasoning") or {},
         })
 
     # tech_id → investment 매핑 (year × tech 매트릭스 빌드용)

@@ -311,12 +311,10 @@ Agent 3 는 **2개의 JSON 파일** 을 읽어서 3가지 데이터를 추출합
     {
       "tech_id": "T01",
       "name": "High-NA EUV 노광 장비 커스터마이징",
-      "phase_name": "1단계: 기반 R&D",       // ← stage 그룹핑 키
-      "start_q": "2025 Q1",
-      "target_q": "2026 Q2",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
       "prerequisites": [],
-      "lead_time_quarters": 6,
-      "justification": "..."
+      "reasoning": { ... }
     }
   ]
 }

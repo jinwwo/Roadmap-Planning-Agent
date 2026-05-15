@@ -85,64 +85,19 @@ def aggregate_stages(
     if not planned_roadmap:
         return []
 
-    # dropped 는 집계에서 제외
     items = [r for r in planned_roadmap if (r.get("phase_name") or "") != "DROPPED"]
-
     if not items:
         return []
 
-    # 기준점 = 가장 빠른 start_q
-    starts = [_quarter_to_int(r.get("start_q", "")) for r in items]
-    starts = [s for s in starts if s is not None]
-    ref_q_int = min(starts) if starts else None
-
-    # stage 라벨 결정
-    def stage_label_of(r: dict) -> str:
-        if use_phase_name and r.get("phase_name"):
-            return r["phase_name"]
-        return _classify_by_start_q(r.get("start_q", ""), ref_q_int)
-
-    # 그룹화
-    groups: Dict[str, List[dict]] = defaultdict(list)
-    for r in items:
-        groups[stage_label_of(r)].append(r)
-
-    # StageSummary 구성
-    stages: List[StageSummary] = []
-    for label, members in groups.items():
-        member_starts = [_quarter_to_int(m.get("start_q", "")) for m in members]
-        member_ends = [_quarter_to_int(m.get("target_q", "")) for m in members]
-        member_starts = [s for s in member_starts if s is not None]
-        member_ends = [e for e in member_ends if e is not None]
-
-        if member_starts and member_ends:
-            period = f"{_int_to_quarter(min(member_starts))} - {_int_to_quarter(max(member_ends))}"
-        else:
-            period = "N/A"
-
-        # 단계 목표 문구 — phase_name 자체를 기본 goal 로 사용,
-        # 없으면 기본 템플릿.
-        goal = (
-            label if ":" in str(label) or "단계" in str(label) or "Phase" in str(label)
-            else f"{label} 단계 목표"
-        )
-
-        stages.append({
-            "stage": label,
-            "period": period,
-            "goal": goal,
-            "technologies": [m.get("name", "") for m in members],
-            "tech_ids": [m.get("tech_id", "") for m in members],
-            "num_items": len(members),
-        })
-
-    # 시간 순서 정렬 (period 의 시작 분기 기준)
-    def _stage_sort_key(s: StageSummary):
-        period = s.get("period", "")
-        if " - " in period:
-            start = period.split(" - ")[0]
-            return _quarter_to_int(start) or 10_000_000
-        return 10_000_000
-
-    stages.sort(key=_stage_sort_key)
-    return stages
+    # 모든 기술을 단일 stage 로 묶음 — 인위적 분류 제거. Strategist 가 per-tech 단위로 판단.
+    starts = [m.get("year_idx_start") or 1 for m in items]
+    ends = [m.get("year_idx_target") or 1 for m in items]
+    period = f"{min(starts)}차년도 - {max(ends)}차년도"
+    return [{
+        "stage": "roadmap",
+        "period": period,
+        "goal": "전체 기술 로드맵",
+        "technologies": [m.get("name", "") for m in items],
+        "tech_ids": [m.get("tech_id", "") for m in items],
+        "num_items": len(items),
+    }]

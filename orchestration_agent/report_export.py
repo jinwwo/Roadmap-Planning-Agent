@@ -136,15 +136,12 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
             name = r.get("name", "")
             ys = r.get("year_idx_start", "?")
             yt = r.get("year_idx_target", "?")
-            sq = r.get("start_q", "")
-            tq = r.get("target_q", "")
             prereq = ", ".join(r.get("prerequisites") or []) or "(none)"
             reasoning = r.get("reasoning") or {}
             md.append(f"### `{tid}` · {name}")
             md.append("")
-            md.append(f"- **차년도**: {ys}차년도 → {yt}차년도 (`{sq}` → `{tq}`)")
+            md.append(f"- **차년도**: {ys}차년도 → {yt}차년도")
             md.append(f"- **Prerequisites**: {prereq}")
-            md.append(f"- **Lead time**: {r.get('lead_time_quarters', '?')} quarters")
             if reasoning.get("year_placement"):
                 md.append(f"- **📅 차년도 배치 이유**: {reasoning['year_placement']}")
             if reasoning.get("tech_execution"):
@@ -413,8 +410,7 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
             reasoning = r.get("reasoning") or {}
             parts.append(f"<div class='tech-card'>")
             parts.append(f"<h3><code>{tid}</code> · {name}</h3>")
-            parts.append(f"<div class='dim'>{r.get('year_idx_start', '?')}차년도 → {r.get('year_idx_target', '?')}차년도 "
-                         f"(<code>{_esc_html(r.get('start_q', ''))}</code> → <code>{_esc_html(r.get('target_q', ''))}</code>) · "
+            parts.append(f"<div class='dim'>{r.get('year_idx_start', '?')}차년도 → {r.get('year_idx_target', '?')}차년도 · "
                          f"prereq: {_esc_html(', '.join(r.get('prerequisites') or []) or '(none)')}</div>")
             for key, label in [("year_placement", "📅 차년도 배치 이유"),
                                ("tech_execution", "🛠️ 기술 수행 이유"),
@@ -509,26 +505,19 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
             # bar 위치 계산 (%)
             left_pct = ((ys - 1) / max_year) * 100
             width_pct = max(3, ((yt - ys + 1) / max_year) * 100)
-            # 분기 정보
-            sq = _esc_html(r.get("start_q", ""))
-            tq = _esc_html(r.get("target_q", ""))
-            period_str = f"{sq} – {tq}" if sq and tq else ""
             # 행 (3 컬럼: label / bar / 예산)
             parts.append("<div class='gantt-row'>")
             parts.append(
                 f"<div class='gantt-label'>"
                 f"<div class='id'>{tid}</div>"
                 f"<div class='name'>{name}</div>"
-                + (f"<div class='gantt-period'>{period_str}</div>" if period_str else "")
-                + f"</div>"
+                f"</div>"
             )
             parts.append(
                 f"<div class='gantt-bar-wrap'>"
-                f"<div class='gantt-bar {tcls}' style='left:{left_pct:.2f}%;width:{width_pct:.2f}%;' "
-                f"title='{period_str}'>"
-                f"{ys}차 → {yt}차"
-                + (f" <span class='gantt-bar-q'>({sq} → {tq})</span>" if period_str else "")
-                + f"</div>"
+                f"<div class='gantt-bar {tcls}' style='left:{left_pct:.2f}%;width:{width_pct:.2f}%;'>"
+                f"{ys}차년도 → {yt}차년도"
+                f"</div>"
                 f"</div>"
             )
             parts.append(

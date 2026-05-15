@@ -82,7 +82,7 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 ### Agent 2 · Roadmap Planner (roadmap_planner_agent/)
 
 **입력**: `tech_candidates.json` + `reference_year` + Company Scenario + Strategic Direction + `orchestrator_feedback` (선택)
-**출력**: `planned_roadmap.json` — 기술별 `{tech_id, name, start_q, target_q, year_idx_start, year_idx_target, prerequisites, lead_time_quarters, justification, reasoning: {year_placement, tech_execution, investment_selection}}` + `tech_selection`
+**출력**: `planned_roadmap.json` — 기술별 `{tech_id, name, year_idx_start, year_idx_target, prerequisites, reasoning: {year_placement, tech_execution, investment_selection}}` + `tech_selection`
 
 **두 가지 설계 모드** — 환경변수 `ROADMAP_DESIGN_MODE` 로 토글:
 

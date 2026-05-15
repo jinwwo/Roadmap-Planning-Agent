@@ -130,16 +130,11 @@ Tech-Analysis-Agent/
     {
       "tech_id": "T01",
       "name": "High-NA EUV 노광 장비 커스터마이징",
-      "phase_name": "",
-      "start_q": "2026 Q1",
-      "target_q": "2027 Q2",
       "year_idx_start": 1,
       "year_idx_target": 2,
       "prerequisites": [],
-      "lead_time_quarters": 6,
-      "justification": "...",
       "reasoning": {
-        "year_placement": "TRL 4 의 6 분기 lead time + 후속 공정의 prereq → 1차년도 시작 필수.",
+        "year_placement": "TRL 4 + 후속 공정의 prereq → 1차년도 시작 필수.",
         "tech_execution": "Strategic Direction #1 'AI 하드웨어 리더십 유지' 와 직결. 시장 boom 직전 양산 준비.",
         "investment_selection": "final_score 88.7 + market_score 92 로 후보 최상위. R&D 예산 $12B 의 ~15% 배정 합리적."
       }
