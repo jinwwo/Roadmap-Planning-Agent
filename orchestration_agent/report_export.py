@@ -301,7 +301,7 @@ tr:nth-child(even) { background: rgba(255,255,255,0.02); }
                       font-size: 11px; color: #d6b58c; border-left: 1px dashed #2a303c;
                       padding: 4px 2px; }
 .gantt-header > div:first-child { border-left: none; }
-.gantt-row { display: grid; grid-template-columns: 220px 1fr; gap: 10px;
+.gantt-row { display: grid; grid-template-columns: 220px 1fr 120px; gap: 10px;
              align-items: center; padding: 10px 0;
              border-bottom: 1px dashed #2a303c; }
 .gantt-label .id { color: #c08a4a; font-family: ui-monospace, monospace; font-size: 11px; }
@@ -310,7 +310,7 @@ tr:nth-child(even) { background: rgba(255,255,255,0.02); }
                 color: #9aa3b2; margin-top: 2px; letter-spacing: 0.2px; }
 .gantt-bar-q { font-size: 10px; font-weight: 400; opacity: 0.85; margin-left: 4px; }
 .gantt-bar-wrap { position: relative; height: 24px; background: #0e1014;
-                  border: 1px solid #2a303c; border-radius: 4px; overflow: visible; }
+                  border: 1px solid #2a303c; border-radius: 4px; overflow: hidden; }
 .gantt-bar { position: absolute; top: 0; bottom: 0;
              background: linear-gradient(90deg, #c08a4a 0%, #d6b58c 100%);
              border-radius: 3px; display: flex; align-items: center;
@@ -318,24 +318,18 @@ tr:nth-child(even) { background: rgba(255,255,255,0.02); }
              font-family: ui-monospace, monospace; }
 .gantt-bar.tier-2 { background: linear-gradient(90deg, #8aadd9 0%, #b0c5e0 100%); }
 .gantt-bar.tier-3 { background: linear-gradient(90deg, #9a9a9a 0%, #c0c0c0 100%); }
-.gantt-budget { position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
-                background: #0e1014; border: 1px solid #c08a4a; color: #d6b58c;
-                padding: 2px 10px; border-radius: 999px; font-family: ui-monospace, monospace;
-                font-size: 11px; font-weight: 700; white-space: nowrap; }
-.gantt-budget.tier-1 { border-color: #d79a5a; color: #d79a5a; background: rgba(215,154,90,0.12); }
-.gantt-budget.tier-2 { border-color: #8aadd9; color: #8aadd9; background: rgba(138,173,217,0.12); }
-.gantt-budget.tier-3 { border-color: #9a9a9a; color: #9a9a9a; background: rgba(154,154,154,0.12); }
-.gantt-reason-wrap { margin: 4px 0 10px 230px; }
-.gantt-reason {
-  background: #0e1014; border: 1px solid #2a303c; border-left: 2px solid #c08a4a;
-  border-radius: 6px; margin: 6px 0; padding: 0;
-}
-.gantt-reason summary { cursor: pointer; padding: 8px 12px;
-                        font-family: ui-monospace, monospace; font-size: 12px;
-                        color: #d6b58c; font-weight: 600; list-style: none; }
-.gantt-reason summary::before { content: "▶ "; font-size: 10px; }
-.gantt-reason[open] summary::before { content: "▼ "; }
-.gantt-reason .reason { margin: 0 8px 8px 8px; }
+.gantt-budget-col { text-align: center; font-family: ui-monospace, monospace;
+                    font-size: 13px; font-weight: 700; color: #d6b58c;
+                    padding: 4px 12px; border: 1px solid #c08a4a;
+                    border-radius: 6px; background: rgba(215,154,90,0.08); }
+.gantt-budget-col.tier-1 { border-color: #d79a5a; color: #d79a5a; background: rgba(215,154,90,0.12); }
+.gantt-budget-col.tier-2 { border-color: #8aadd9; color: #8aadd9; background: rgba(138,173,217,0.12); }
+.gantt-budget-col.tier-3 { border-color: #9a9a9a; color: #9a9a9a; background: rgba(154,154,154,0.12); }
+.gantt-header.has-budget-col { margin-left: 0; gap: 10px; }
+.gantt-header.has-budget-col > .gantt-budget-head {
+  text-align: center; font-family: ui-monospace, monospace;
+  font-size: 11px; color: #d6b58c; padding: 4px 12px;
+  border-left: none; }
 .tech-card { background: #161a21; border: 1px solid #2a303c; border-radius: 8px;
              padding: 12px 16px; margin: 10px 0; }
 .tech-card .head { display: flex; justify-content: space-between; align-items: center; }
@@ -492,12 +486,15 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
         max_year = year_matrix.get("max_year") or 5
         parts.append("<h2>📅 TRM Gantt — 차년도별 로드맵 + 예산</h2>")
         parts.append("<div class='gantt-wrap'>")
-        # 헤더
+        # 헤더: [label spacer] [차년도 컬럼들] [예산 컬럼]
         parts.append(
-            f"<div class='gantt-header' style='grid-template-columns: repeat({max_year}, 1fr);'>"
+            f"<div class='gantt-header has-budget-col' "
+            f"style='grid-template-columns: 220px repeat({max_year}, 1fr) 120px;'>"
         )
+        parts.append("<div></div>")  # 라벨 공간 spacer
         for y in range(1, max_year + 1):
             parts.append(f"<div>{y}차년도</div>")
+        parts.append("<div class='gantt-budget-head'>예산</div>")
         parts.append("</div>")
 
         for r in planned_roadmap:
@@ -516,7 +513,7 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
             sq = _esc_html(r.get("start_q", ""))
             tq = _esc_html(r.get("target_q", ""))
             period_str = f"{sq} – {tq}" if sq and tq else ""
-            # 행
+            # 행 (3 컬럼: label / bar / 예산)
             parts.append("<div class='gantt-row'>")
             parts.append(
                 f"<div class='gantt-label'>"
@@ -532,29 +529,12 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
                 f"{ys}차 → {yt}차"
                 + (f" <span class='gantt-bar-q'>({sq} → {tq})</span>" if period_str else "")
                 + f"</div>"
-                f"<span class='gantt-budget {tcls}'>{_fmt_usd(budget)}</span>"
                 f"</div>"
             )
+            parts.append(
+                f"<div class='gantt-budget-col {tcls}'>{_fmt_usd(budget)}</div>"
+            )
             parts.append("</div>")
-            # Reasoning 박스 (Designer + Strategist 합쳐서)
-            dr = r.get("reasoning") or {}
-            ir = inv.get("reasoning") if inv else {}
-            ir = ir or {}
-            rblocks = []
-            if dr.get("year_placement"): rblocks.append(("📅 차년도 배치 (Designer)", dr["year_placement"]))
-            if dr.get("tech_execution"): rblocks.append(("🛠️ 기술 수행 (Designer)", dr["tech_execution"]))
-            if dr.get("investment_selection"): rblocks.append(("🎯 투자 선정 (Designer)", dr["investment_selection"]))
-            if ir.get("market_evaluation"): rblocks.append(("📊 시장 평가 (Strategist)", ir["market_evaluation"]))
-            if ir.get("tech_evaluation"): rblocks.append(("⚙️ 기술 평가 (Strategist)", ir["tech_evaluation"]))
-            if ir.get("investment_decision"): rblocks.append(("💰 투자 결정 (Strategist)", ir["investment_decision"]))
-            if inv and inv.get("tech_budget_rationale"):
-                rblocks.append(("💵 예산 결정 근거", inv["tech_budget_rationale"]))
-            if rblocks:
-                parts.append("<div class='gantt-reason-wrap'><details class='gantt-reason'>")
-                parts.append("<summary>📋 Reasoning</summary>")
-                for label, txt in rblocks:
-                    parts.append(f"<div class='reason'><b>{label}:</b> {_esc_html(txt)}</div>")
-                parts.append("</details></div>")
         parts.append("</div>")  # gantt-wrap
 
     # Year × Tech matrix 표 형식 제거 — Gantt 차트 + 차년도별 활동 요약으로 대체

@@ -998,11 +998,15 @@ def generate_final_report(
     residual_feedback: list,
 ) -> dict:
     """
-    7-섹션 TRM 최종 보고서를 전용 LLM 콜로 생성.
+    최종 보고서 생성 — artifacts_summary 중심 (LLM narrative 생성 제거).
 
-    강제 ACCEPT 직후 또는 ACCEPT 지만 report 가 부실한 경우 호출.
+    HTML / Markdown export 와 JSON 의 내용을 일치시키기 위해 7-섹션 LLM 호출은 더 이상
+    하지 않는다. report 에는 코드 후처리로 채운 `artifacts_summary` 만 들어간다.
+
+    Returns: {artifacts_summary: {agent1_tech_candidates, agent2_planned_roadmap,
+             agent3_investment_strategy, year_tech_matrix, insights}}
     """
-    # ── Slim payload (보고서 본문 인용 가능하도록 풍부한 분석 신호 포함) ──
+    # ── Slim payload (artifacts_summary 구성용) ──
     def _extract_section_signal(rationale: str, section: str, limit: int = 240) -> str:
         """Agent 1 의 rationale 에서 [Market] 또는 [Patent] 섹션만 발췌"""
         if not isinstance(rationale, str):
@@ -1147,146 +1151,12 @@ def generate_final_report(
         "boom_quarter_distribution": boom_counts,
     }
 
-    user_prompt = f"""[PROBLEM FRAME]
-- Industry    : {problem_frame.get('industry')}
-- Company Type: {problem_frame.get('company_type')}
-- Time Horizon: {problem_frame.get('time_horizon')}
-- Total Budget: {problem_frame.get('total_budget')}
-- Objective   : {problem_frame.get('objective')}
-- Priorities  : {json.dumps(problem_frame.get('strategic_priorities', []), ensure_ascii=False)}
+    # ── 7-섹션 LLM narrative 생성 제거 — HTML / JSON 정렬 위해 artifacts_summary 만 채움 ──
+    # report 는 빈 dict 로 시작. 아래에서 artifacts_summary 만 추가됨.
+    _ = (residual_issues, residual_feedback)  # backward compat — 인자만 유지
+    report = {}
 
-[FUTURE TREND]
-{problem_frame.get('future_trend_summary', '')}
-
-[MARKET CONTEXT]
-{json.dumps(market_context or {}, ensure_ascii=False, indent=2)}
-
-[TECH CANDIDATES ({len(tech_slim)})] — final_score 와 market_signal 인용해 technology_strategy / trend_alignment 작성
-{json.dumps(tech_slim, ensure_ascii=False, indent=2)}
-
-[PLANNED ROADMAP ({len(roadmap_slim)})] — phase_name + 분기 + prerequisites 인용해 roadmap_structure 작성
-{json.dumps(roadmap_slim, ensure_ascii=False, indent=2)}
-
-[ROADMAP STAGES SUMMARY ({len(stages_slim)})] — phase 별 묶음 (roadmap_structure 의 큰 그림)
-{json.dumps(stages_slim, ensure_ascii=False, indent=2)}
-
-[INVESTMENT STRATEGY — {len(invest_slim)} stages] — Tier 분포 + 핵심 tech_id + per-tech rationale/risks/resource_focus 인용해 investment_strategy 작성
-{json.dumps(invest_slim, ensure_ascii=False, indent=2)}
-
-[PRE-AGGREGATED INSIGHTS] — 보고서 작성 시 직접 인용 (계산 완료된 핵심 통계)
-{json.dumps(insights, ensure_ascii=False, indent=2)}
-
-위 insights 활용 가이드:
-- executive_summary    → tier_distribution + tier1_tech_list + total_techs 인용
-- technology_strategy  → top_5_tech_by_score + category_distribution + avg_trl 인용
-- roadmap_structure    → dependency_edges + 각 phase 의 period 인용
-- investment_strategy  → tier_distribution + tier1_tech_list (key_reason) + invest_slim 의 recommended_action
-- trend_alignment      → boom_quarter_distribution + tech_slim 의 market_signal/patent_signal
-- feasibility_and_risk → tier_distribution 의 균형 평가 + invest_slim 의 major_risks + 잔여 이슈
-- expected_outcomes    → tier1_tech_list 의 시장 규모 + boom_quarter_distribution
-
-[RESIDUAL ISSUES FROM LAST REVIEW] (이 이슈는 feasibility_and_risk 섹션에 명시적으로 언급할 것)
-{json.dumps(residual_issues or [], ensure_ascii=False, indent=2)}
-
-[RESIDUAL FEEDBACK]
-{json.dumps(residual_feedback or [], ensure_ascii=False, indent=2)}
-
-위 입력을 바탕으로 7-섹션 TRM 보고서를 생성하라. 모든 섹션을 채워야 한다.
-"""
-
-    raw_text = ""
-    try:
-        # max_tokens 8192: 7 섹션 × ~500자 = ~3500자 = ~5000+ 토큰 필요
-        llm = get_llm(max_tokens=8192)
-        response = llm.invoke([
-            SystemMessage(content=FINAL_REPORT_SYSTEM_PROMPT),
-            HumanMessage(content=user_prompt),
-        ])
-        raw_text = response.content if hasattr(response, "content") else str(response)
-        print(f"[Orchestrator · Report] LLM raw 응답 {len(raw_text)}자 · 첫 300자:\n{raw_text[:300]!r}")
-        raw = _extract_json(raw_text)
-        print(f"[Orchestrator · Report] 파싱 완료 · raw keys: {list(raw.keys()) if isinstance(raw, dict) else type(raw).__name__}")
-    except Exception as e:
-        print(f"[Orchestrator · Report] ⚠️  생성/파싱 실패: {e} → 최소 폴백")
-        if raw_text:
-            print(f"    raw 응답 샘플: {raw_text[:300]!r}")
-        base = _empty_report()
-        issues_str = "; ".join(str(i) for i in (residual_issues or [])) or "(없음)"
-        base["executive_summary"] = (
-            f"보고서 생성 중 오류로 최소 보고서만 제공합니다. 잔여 이슈: {issues_str}"
-        )
-        base["feasibility_and_risk"] = f"잔여 이슈: {issues_str}"
-        return base
-
-    def _coerce_section_value(v) -> str:
-        """LLM 이 string 외 형태 (dict / list) 로 줬을 때 string 으로 강제 변환.
-        흔한 패턴:
-          - {"title": "...", "text": "..."}      → text 우선
-          - {"body": "..."}, {"content": "..."}  → body/content 추출
-          - ["문장1", "문장2"]                   → join
-        """
-        if isinstance(v, str):
-            return v
-        if isinstance(v, dict):
-            # 우선순위 키
-            for key in ("text", "body", "content", "value", "summary", "description"):
-                sub = v.get(key)
-                if isinstance(sub, str) and sub.strip():
-                    return sub
-            # title + 나머지 string 조합
-            title = v.get("title")
-            other_strs = [
-                str(x) for k2, x in v.items()
-                if k2 != "title" and isinstance(x, str) and x.strip()
-            ]
-            if title and isinstance(title, str) and other_strs:
-                return f"{title}: " + " ".join(other_strs)
-            if other_strs:
-                return " ".join(other_strs)
-            if title and isinstance(title, str):
-                return title
-            return ""
-        if isinstance(v, list):
-            return " ".join(
-                str(x) for x in v
-                if isinstance(x, (str, int, float)) and str(x).strip()
-            )
-        return ""
-
-    # 누락 섹션은 빈 문자열로 보전
-    report = _empty_report()
-    filled_count = 0
-    for k in report.keys():
-        v = raw.get(k)
-        coerced = _coerce_section_value(v)
-        report[k] = coerced
-        if coerced.strip():
-            filled_count += 1
-
-    # LLM 이 모든 섹션을 빈 string 으로 반환한 경우 경고 + insights 기반 boilerplate
-    if filled_count == 0:
-        print(
-            f"[Orchestrator · Report] ⚠️  LLM 이 7섹션 모두 빈 응답 — raw keys={list(raw.keys())}"
-        )
-        print(f"    raw 응답 샘플: {raw_text[:500]!r}")
-        # insights 기반 최소 보고서로 채움 (전부 빈 채로 두지 않게)
-        tier_dist = insights.get("tier_distribution", {})
-        top5 = insights.get("top_5_tech_by_score", [])
-        avg_trl = insights.get("avg_trl", 0)
-        report["executive_summary"] = (
-            f"본 로드맵은 {problem_frame.get('industry')} 영역에서 "
-            f"총 {insights.get('total_techs', 0)}개 후보 기술 (평균 TRL {avg_trl}) 을 "
-            f"Tier 분포 T1={tier_dist.get('Tier 1', 0)} / T2={tier_dist.get('Tier 2', 0)} / "
-            f"T3={tier_dist.get('Tier 3', 0)} 로 배분하며 "
-            f"총 예산 ${problem_frame.get('total_budget', 0):,.0f} 규모로 추진합니다."
-        )
-        if top5:
-            top_names = ", ".join(f"{t['tech_id']}({t.get('name','')[:15]})" for t in top5[:3])
-            report["technology_strategy"] = f"final_score 상위 핵심 기술: {top_names}."
-        issues_str = "; ".join(str(i) for i in (residual_issues or [])) or "(없음)"
-        report["feasibility_and_risk"] = f"잔여 이슈: {issues_str}"
-
-    # ── artifacts_summary — 보고서 narrative 의 출처 데이터 부록 ────
+    # ── artifacts_summary — 보고서의 raw 데이터 ────
     # LLM 호출 없이 코드로 채움. 사용자가 [A1]/[A2]/[A3] 마커를 따라
     # 실제 데이터를 추적할 수 있도록 각 Agent 핵심 출력을 첨부.
     a1_summary = [
@@ -2038,14 +1908,12 @@ def run_orchestrator_review(
                 f"+ feedback {len(auto_feedback)}건 추가"
             )
 
-    # ── 보고서 생성 — 최종 ACCEPT 시점에만 호출 ──
-    # review LLM 은 평가만 출력. 7-섹션 보고서는 별도 LLM 콜 (generate_final_report).
-    # REVISE 일 때는 보고서 생성 skip — 어차피 다음 iter 에서 갱신될 잠정 결과이므로
-    # 시간 (LLM 콜 1.5-2 분) + 토큰 비용 절약. 최종 ACCEPT (혹은 강제 ACCEPT) 시점에만 작성.
+    # ── 보고서 생성 — ACCEPT 시 artifacts_summary 만 채움 (LLM 호출 X) ──
+    # 7-섹션 narrative LLM 호출은 제거됨 (HTML / JSON 정렬). artifacts_summary 만 코드로 채움.
     decision_upper = (result.get("decision") or "ACCEPT").upper()
     if decision_upper == "ACCEPT":
         label = "강제 ACCEPT" if result.get("_forced_accept") else "ACCEPT 최종 보고서"
-        print(f"[Orchestrator · Review] {label} → 보고서 전용 LLM 호출")
+        print(f"[Orchestrator · Review] {label} → artifacts_summary 구성")
         try:
             final_report = generate_final_report(
                 problem_frame=problem_frame,
@@ -2058,15 +1926,18 @@ def run_orchestrator_review(
                 residual_feedback=(result.get("refinement") or {}).get("feedback") or [],
             )
             result["report"] = final_report
-            fill = _report_fill_count(final_report)
-            print(f"[Orchestrator · Review] 보고서 생성 완료 · {fill}/7 섹션 ({label})")
+            artifacts = final_report.get("artifacts_summary") or {}
+            print(f"[Orchestrator · Review] artifacts_summary 구성 완료 "
+                  f"(agent1: {len(artifacts.get('agent1_tech_candidates') or [])}, "
+                  f"agent2: {len(artifacts.get('agent2_planned_roadmap') or [])}, "
+                  f"agent3: {len(artifacts.get('agent3_investment_strategy') or [])})")
         except Exception as e:
             print(f"[Orchestrator · Review] ⚠️  보고서 생성 실패: {e}")
-            result["report"] = result.get("report") or _empty_report()
+            result["report"] = result.get("report") or {}
     else:
-        # REVISE — 보고서 생성 skip. report 는 빈 dict 로 둠 (frontend 가 sections 0/7 표시).
-        print(f"[Orchestrator · Review] REVISE iter {iteration+1} → 보고서 생성 skip (시간 절약)")
-        result["report"] = result.get("report") or _empty_report()
+        # REVISE — report 는 빈 dict 로 둠
+        print(f"[Orchestrator · Review] REVISE iter {iteration+1} → 보고서 생성 skip")
+        result["report"] = result.get("report") or {}
 
     # 로그 출력
     decision = (result.get("decision") or "ACCEPT").upper()
