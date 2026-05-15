@@ -571,11 +571,11 @@ function renderAgent2Section() {
         <div class="timeline-label">
           <div><span class="id">${escapeHtml(it.tech_id)}</span></div>
           <div class="name">${escapeHtml(it.name || "")}</div>
-          <div class="cat">${escapeHtml(it.phase_name || "")}</div>
+          ${it.start_q && it.target_q ? `<div class="cat" style="font-family:var(--mono);font-size:10px;">${escapeHtml(it.start_q)} – ${escapeHtml(it.target_q)}</div>` : (it.phase_name ? `<div class="cat">${escapeHtml(it.phase_name)}</div>` : "")}
         </div>
         <div class="timeline-bar-wrap a2-bar-wrap" style="--cols:${totalYears};">
           <div class="timeline-bar" style="left:${left}%;width:${width}%;" title="${escapeHtml(it.start_q || "")} → ${escapeHtml(it.target_q || "")}">
-            ${ys}차 → ${yt}차
+            ${ys}차 → ${yt}차${it.start_q && it.target_q ? ` <span style="font-size:10px;opacity:0.85;">(${escapeHtml(it.start_q)} → ${escapeHtml(it.target_q)})</span>` : ""}
           </div>
           ${budgetBadge ? `<div class="budget-overlay">${budgetBadge}</div>` : ""}
         </div>
@@ -923,7 +923,7 @@ function renderReviewSection(review, iteration) {
             style="padding:6px 12px;background:var(--bg-elev);color:var(--accent-soft);
                    text-decoration:none;border-radius:6px;font-weight:600;font-size:12px;
                    border:1px solid var(--border);">
-           ⬇️ Markdown (.md)
+           ⬇️ Markdown
          </a>
          <a href="${reportBase}.json" target="_blank" download
             style="padding:6px 12px;background:var(--bg-elev);color:var(--accent-soft);

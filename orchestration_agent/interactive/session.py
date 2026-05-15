@@ -373,11 +373,10 @@ Output schema (strict JSON only):
 }
 
 [Rules]
-- Each bullet is one sentence, action-oriented (e.g. "Maintain leadership in AI hardware (GPU)").
-- Tailor to the company's industry and revenue scale.
-- Cover both **continuity** (defend current strength) and **expansion** (new opportunities).
-- 3-5 bullets total. Avoid generic platitudes.
-- Output English bullets unless input is heavily Korean — then Korean OK.
+- **정확히 3개** 의 짧고 명료한 한국어 전략 방향.
+- 회사 핵심 강점 1개 + 인접 시장 확장 1개 + 기술 스택 강화 1개 패턴 권장.
+- 기술 약어 GPU/CUDA/HBM/AI 등은 영문 허용.
+- 예: "AI 하드웨어 (GPU) 리더십 유지" / "AI 플랫폼 생태계 확장" / "HW/SW 통합 스택 강화"
 """
 
 
@@ -435,7 +434,7 @@ natural-language request about building a technology roadmap. Return ONLY valid 
   "planning_horizon": "<e.g. '2026-2030 (5 years)'; '(unknown)' if absent>",
   "objective": "<one-sentence high-level objective inferred from context>",
   "strategic_direction": [
-    "<3-5 short bullets, action-oriented strategic goals>"
+    "<정확히 3개 짧은 한국어 bullet>"
   ]
 }
 
@@ -446,9 +445,10 @@ natural-language request about building a technology roadmap. Return ONLY valid 
   - If only revenue + ratio given, derive rd_budget = revenue × ratio.
 - planning_horizon: keep user-given form ("2026-2030", "2025~2030 (5 years)").
   종료 연도가 명확해야 함 (예: "2030"). "향후 5년" 형식이면 "current_year-current_year+5".
-- strategic_direction: 3-5 short action-oriented bullets tailored to the company's industry
-  and revenue scale. Cover both continuity (defend strength) and expansion (new opportunities).
-  Avoid generic platitudes. Output English unless input is heavily Korean.
+- strategic_direction: **정확히 3개** 의 짧고 명료한 한국어 전략 방향.
+  · 회사 핵심 강점 1개 + 인접 시장 확장 1개 + 기술 스택 강화 1개 패턴 권장.
+  · 기술 약어 GPU/CUDA/HBM/AI 등은 영문 허용.
+  · 예: "AI 하드웨어 (GPU) 리더십 유지" / "AI 플랫폼 생태계 확장" / "HW/SW 통합 스택 강화"
 
 [Defaults if a field is unknown]
 - company_name / industry / planning_horizon: "(unknown)"

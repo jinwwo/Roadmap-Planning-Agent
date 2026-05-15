@@ -1,0 +1,209 @@
+{
+  "market_context": {
+    "target_market": "AI / Semiconductor / GPU",
+    "expected_boom_quarter": "2026 Q4"
+  },
+  "investment_policy": {
+    "risk_appetite": "high",
+    "investment_horizon": "long",
+    "total_budget": 60000000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "short-term",
+      "period": "2026 Q1 - 2030 Q4",
+      "goal": "short-term 단계 목표",
+      "technologies": [
+        "코히어런트 GPU 인터커넥트",
+        "3D GPU 다이 스태킹",
+        "랙스케일 AI 패브릭"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "num_items": 3
+    },
+    {
+      "stage": "mid-term",
+      "period": "2028 Q3 - 2030 Q4",
+      "goal": "mid-term 단계 목표",
+      "technologies": [
+        "Backside PDN 공정",
+        "GPU 메모리 압축 기술"
+      ],
+      "tech_ids": [
+        "T05",
+        "T04"
+      ],
+      "num_items": 2
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "short-term",
+      "period": "2026 Q1 - 2030 Q4",
+      "stage_assessment": "",
+      "stage_budget_ratio": 0.7778,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "코히어런트 GPU 인터커넥트",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 20000000000.0,
+          "tech_budget_rationale": "T01 은 2027 Q2 시장 붐 직전 양산 (TRL 7) 을 목표로 하는 가장 시급한 핵심 기술로, 전체 예산의 30% 를 할당합니다. 이는 CPU/GPU 메모리 병목 해결을 위한 필수 아키텍처이며, 경쟁사 대비 선제적 특허 확보와 양산 체제 구축을 위해 대규모 자본이 필요합니다. T02 와 T03 의 선행 기술로서 전체 로드맵의 성패를 좌우하므로 가장 공격적인 투자 범위를 적용합니다.",
+          "reasoning": {
+            "market_evaluation": "2030 년까지 31.4% 의 CAGR 성장과 1,100 억 달러 이상의 거대 시장 규모를 가진 코히어런트 인터커넥트 시장은 NVIDIA 의 전략적 우선순위와 완벽하게 일치합니다. 2026 년 양산 시작과 2027 년 본격적인 확산을 고려할 때, 초기 진입이 경쟁 우위를 결정하는 시점이며, ASML 의 장비 독점 구조로 인해 진입 장벽이 높은 편입니다.",
+            "tech_evaluation": "TRL 7 로 양산 직전 단계에 있으며, NVIDIA 와 AMD 의 집중적인 특허 출원 동향은 이 기술이 이미 검증된 아키텍처임을 시사합니다. 높은 특허 점수 (92.5) 와 전략적 갭 기회 (90) 는 우리 기업이 이 분야에서 강력한 경쟁 우위를 점하고 있음을 의미하며, 기술적 불확실성은 상대적으로 낮습니다.",
+            "investment_decision": "시장 성장성 (5 점), 기술 준비도 (4 점), 경쟁 우위 (5 점), 개발 긴급도 (5 점) 가 모두 최상위권인 T01 은 Tier 1 로 분류되며, 전체 예산의 30% 를 할당하여 선제적 투자를 수행합니다. 이는 AI 하드웨어 성능 리더십 유지 전략을 실현하기 위한 필수 조건이며, T02 와 T03 의 성공적인 개발을 위한 선행 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 Q1 에 즉시 양산 라인 구축을 시작하고, 주요 파운드리와의 독점 공급 계약을 체결하여 2027 Q2 시장 붐에 대비한 대량 생산 체제를 완성해야 합니다.",
+          "rationale": [
+            "시장 성장성 5 점: 1,100 억 달러 규모의 거대 시장과 31.4% 의 높은 CAGR 성장률.",
+            "기술 준비도 4 점: TRL 7 로 양산 직전 단계이며, 검증된 아키텍처.",
+            "경쟁 우위 5 점: 높은 특허 점수 (92.5) 와 전략적 갭 기회 (90) 로 강력한 경쟁 우위 확보.",
+            "개발 긴급도 5 점: 2027 Q2 시장 붐 직전으로, 초기 진입이 경쟁 우위 결정."
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "3D GPU 다이 스태킹",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 16666666667.0,
+          "tech_budget_rationale": "T02 는 T01 의 물리적 구현을 위한 필수 패키징 기술로, 2026 Q4 시장 붐에 대응하기 위해 2027 Q3 시작을 전제로 2028 Q4 양산 준비를 완료해야 합니다. 전체 예산의 25% 를 할당하여 T01 과 병행 개발을 지원하며, 3D 스태킹 기술의 성숙도를 높이고 양산 체제를 구축합니다. 이는 AI/HPC 수요에 대응하는 핵심 기술로, T01 과의 시너지를 극대화하기 위한 필수 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "AI/HPC 수요에 의해 2030 년까지 33.1% 의 폭발적 성장이 예상되며, 1,000 억 달러 규모의 시장으로 가장 높은 성장 잠재력을 보입니다. 2024-2025 년 대규모 투자와 정책 지원이 집중되어 있어 시장 진입 시기가 매우 시급하며, TSMC, 삼성, 인텔 등 3 대 파운드리가 주도하는 집중된 경쟁 구도에서 기술 선점이 핵심입니다.",
+            "tech_evaluation": "TRL 6 단계로 프로토타입에서 양산 전 단계에 있으며, NVIDIA 의 3D 스태킹 특허와 하이브리드 본딩 특허가 결합되어 다중 칩렛 GPU 모듈의 밀도와 대역폭을 극대화하는 패키징 기술로 부상하고 있습니다. 기술적 불확실성은 중간 수준 (3 점) 이며, T01 인터커넥트 아키텍처를 물리적으로 구현하기 위한 필수 기술입니다.",
+            "investment_decision": "시장 성장성 (5 점), 기술 준비도 (3 점), 경쟁 우위 (4 점), 개발 긴급도 (4 점) 가 모두 높은 T02 는 Tier 1 로 분류되며, 전체 예산의 25% 를 할당하여 T01 과 병행 개발을 지원합니다. 이는 AI 하드웨어 성능 리더십 유지 전략을 실현하기 위한 필수 조건이며, T01 과의 시너지를 극대화하기 위한 필수 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2027 Q3 에 T01 완료 후 즉시 양산 라인 구축을 시작하고, 주요 파운드리와의 협력 체계를 강화하여 2028 Q4 양산 준비를 완료해야 합니다.",
+          "rationale": [
+            "시장 성장성 5 점: 1,000 억 달러 규모의 거대 시장과 33.1% 의 높은 CAGR 성장률.",
+            "기술 준비도 3 점: TRL 6 로 프로토타입에서 양산 전 단계.",
+            "경쟁 우위 4 점: NVIDIA 의 3D 스태킹 특허와 하이브리드 본딩 특허 결합으로 강력한 경쟁 우위 확보.",
+            "개발 긴급도 4 점: 2026 Q4 시장 붐 직전으로, 초기 진입이 경쟁 우위 결정."
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "랙스케일 AI 패브릭",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 10000000000.0,
+          "tech_budget_rationale": "T03 은 T01 완료 후 2027 Q3 에 시작하여 2030 Q4 까지 장기 R&D 를 이어가는 시스템 레벨 최적화 기술로, 전체 예산의 15% 를 할당합니다. 이는 단일 칩 성능을 넘어선 랙 단위 시스템 최적화를 통해 대규모 AI 모델 훈련의 확장성을 확보하기 위한 필수 기술이며, T01 인터커넥트 기술을 시스템 레벨로 확장하여 NVIDIA 의 HW/SW 통합 스택 전략을 실현합니다.",
+          "reasoning": {
+            "market_evaluation": "코히어런트 인터커넥트와 3D 스태킹의 상용화 이후, 시스템 수준의 확장성 요구로 인해 2028 년경에 본격적인 시장이 형성될 것으로 예상됩니다. Broadcom 과 NVIDIA 등 네트워크 및 아키텍처 강자들이 주도하는 경쟁 구도에서 높은 진입 장벽이 존재하며, AI 클러스터 규모 확대에 따른 필수 기술로 정책 및 투자 지원이 지속될 전망입니다.",
+            "tech_evaluation": "TRL 5 단계로 R&D 및 초기 프로토타입 단계에 있으며, NVIDIA 가 대규모 AI 모델 훈련을 위한 랙 단위 가속기 패브릭 특허를 출원하며 단일 칩 성능을 넘어선 시스템 레벨 최적화 전략을 보여주고 있습니다. 기술적 불확실성은 중간 수준 (3 점) 이며, T01 인터커넥트 기술을 확장한 시스템 아키텍처입니다.",
+            "investment_decision": "시장 성장성 (4 점), 기술 준비도 (3 점), 경쟁 우위 (4 점), 개발 긴급도 (3 점) 가 모두 중간 이상인 T03 은 Tier 2 로 분류되며, 전체 예산의 15% 를 할당하여 장기 R&D 를 지원합니다. 이는 AI 하드웨어 성능 리더십 유지 전략을 실현하기 위한 필수 조건이며, T01 과의 시너지를 극대화하기 위한 필수 투자입니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "2027 Q3 에 T01 완료 후 즉시 R&D 를 시작하고, 시스템 레벨 최적화를 위한 프로토타입 개발을 진행하여 2030 Q4 까지 기술 성숙도를 높여야 합니다.",
+          "rationale": [
+            "시장 성장성 4 점: 2028 년경 본격적인 시장 형성 예상.",
+            "기술 준비도 3 점: TRL 5 로 R&D 및 초기 프로토타입 단계.",
+            "경쟁 우위 4 점: NVIDIA 의 랙 단위 가속기 패브릭 특허로 강력한 경쟁 우위 확보.",
+            "개발 긴급도 3 점: 2028 년경 시장 형성으로, 초기 진입이 경쟁 우위 결정."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 46666666667.0
+    },
+    {
+      "stage": "mid-term",
+      "period": "2028 Q3 - 2030 Q4",
+      "stage_assessment": "",
+      "stage_budget_ratio": 0.2222,
+      "tech_investments": [
+        {
+          "tech_id": "T05",
+          "name": "Backside PDN 공정",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 3,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 6666666667.0,
+          "tech_budget_rationale": "T05 는 T02 의 3D 스태킹 기술이 안정화된 2028 년 이후에 본격적인 공정 개발을 시작하여 2029 Q2 에 상용화 준비를 마치는 후행 기술로, 전체 예산의 10% 를 할당합니다. 이는 고집적 패키징과 3D 스태킹으로 인한 전력 전달 문제를 해결하여 시스템의 안정성과 효율성을 높이기 위한 필수 기술이며, 주요 파운드리들의 상용화 시점 (2027 년경) 을 고려하여 우리 기업의 독자적인 공정 기술을 확보합니다.",
+          "reasoning": {
+            "market_evaluation": "고집적 패키징과 3D 스태킹의 전력 효율성 문제를 해결하기 위한 핵심 공정 기술로, 2027 년경 주요 파운드리에서 상용화될 것으로 예상됩니다. 인텔 등 경쟁사의 특허 포트폴리오와 기술적 접점이 많아 경쟁 구도가 형성되어 있으며, 미국 및 유럽의 칩 법 지원 하에 전력망 최적화 기술에 대한 투자가 활발히 진행되고 있습니다.",
+            "tech_evaluation": "TRL 5 단계로 양산 전 공정 개발 단계에 있으며, 우리 기업의 후면 전력망 (BS-PDN) 특허는 3D 스태킹 (T02) 및 고집적 칩렛 아키텍처 구현을 위한 필수 공정 기술입니다. 기술적 불확실성은 높음 (4 점) 이며, T02 의 전력 효율성 문제를 해결하기 위한 후행 기술입니다.",
+            "investment_decision": "시장 성장성 (3 점), 기술 준비도 (3 점), 경쟁 우위 (3 점), 개발 긴급도 (2 점) 가 모두 중간 이하인 T05 는 Tier 2 로 분류되며, 전체 예산의 10% 를 할당하여 후행 기술 개발을 지원합니다. 이는 AI 하드웨어 성능 리더십 유지 전략을 실현하기 위한 필수 조건이며, T02 와의 시너지를 극대화하기 위한 필수 투자입니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2028 Q3 에 T02 완료 후 즉시 공정 개발을 시작하고, 주요 파운드리와의 협력 체계를 강화하여 2029 Q2 상용화 준비를 완료해야 합니다.",
+          "rationale": [
+            "시장 성장성 3 점: 2027 년경 주요 파운드리 상용화 예상.",
+            "기술 준비도 3 점: TRL 5 로 양산 전 공정 개발 단계.",
+            "경쟁 우위 3 점: 우리 기업의 후면 전력망 (BS-PDN) 특허로 경쟁 우위 확보.",
+            "개발 긴급도 2 점: 2027 년경 상용화로, 초기 진입이 경쟁 우위 결정."
+          ]
+        },
+        {
+          "tech_id": "T04",
+          "name": "GPU 메모리 압축 기술",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 6666666667.0,
+          "tech_budget_rationale": "T04 는 하드웨어 물리적 한계에 부딪히는 2029 년 이후의 가치를 극대화하기 위해 2028 Q3 부터 시작하여 2030 Q4 까지 이어지는 장기 기술로, 전체 예산의 10% 를 할당합니다. 이는 HBM 용량 제한을 소프트웨어/하드웨어 통합으로 해결하여 AI 추론 및 그래픽 워크로드의 효율성을 높이기 위한 필수 기술이며, 물리적 메모리 확장의 한계를 넘어선 차세대 아키텍처 최적화 전략을 실현합니다.",
+          "reasoning": {
+            "market_evaluation": "메모리 대역폭 병목 해결을 위한 아키텍처 최적화 기술로, 하드웨어 성장이 물리적 한계에 부딪히는 2029 년 이후에 그 가치가 극대화될 것으로 보입니다. Qualcomm 등 저전력 아키텍처 강자들의 기술적 유사성이 있으나, 아직 명확한 시장 리더가 부재한 초기 단계이며, 소프트웨어 및 알고리즘 최적화와 결합된 독점적 기술이 경쟁 우위를 점할 것입니다.",
+            "tech_evaluation": "TRL 6 단계로 프로토타입 검증 단계에 있으며, NVIDIA 의 GPU 메모리 압축 특허는 HBM 용량 제한을 소프트웨어/하드웨어 통합으로 해결하려는 전략을 보여줍니다. 기술적 불확실성은 중간 수준 (3 점) 이며, 아키텍처 최적화에 시간이 필요합니다.",
+            "investment_decision": "시장 성장성 (3 점), 기술 준비도 (3 점), 경쟁 우위 (3 점), 개발 긴급도 (2 점) 가 모두 중간 이하인 T04 는 Tier 2 로 분류되며, 전체 예산의 10% 를 할당하여 장기 기술 개발을 지원합니다. 이는 AI 하드웨어 성능 리더십 유지 전략을 실현하기 위한 필수 조건이며, 물리적 메모리 확장의 한계를 넘어선 차세대 아키텍처 최적화 전략을 실현합니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2028 Q3 에 즉시 R&D 를 시작하고, 소프트웨어/하드웨어 통합을 위한 프로토타입 개발을 진행하여 2030 Q4 까지 기술 성숙도를 높여야 합니다.",
+          "rationale": [
+            "시장 성장성 3 점: 2029 년 이후 가치 극대화 예상.",
+            "기술 준비도 3 점: TRL 6 로 프로토타입 검증 단계.",
+            "경쟁 우위 3 점: NVIDIA 의 GPU 메모리 압축 특허로 경쟁 우위 확보.",
+            "개발 긴급도 2 점: 2029 년 이후 가치 극대화로, 초기 진입이 경쟁 우위 결정."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 13333333334.0
+    }
+  ]
+}

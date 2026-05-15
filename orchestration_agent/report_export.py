@@ -87,22 +87,22 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
     company = pf.get("company_name") or "(unknown)"
     industry = pf.get("industry") or "-"
     horizon = pf.get("time_horizon") or "-"
-    md.append(f"# Technology Roadmap Report — {company}")
+    md.append(f"# 기술 로드맵 보고서 — {company}")
     md.append("")
-    md.append(f"- **Industry**: {industry}")
-    md.append(f"- **Planning Horizon**: {horizon}")
+    md.append(f"- **산업**: {industry}")
+    md.append(f"- **계획 기간**: {horizon}")
     if pf.get("annual_revenue"):
-        md.append(f"- **Annual Revenue**: {_fmt_usd(pf.get('annual_revenue'))}")
+        md.append(f"- **연 매출**: {_fmt_usd(pf.get('annual_revenue'))}")
     if pf.get("annual_rd_budget"):
-        md.append(f"- **Annual R&D Budget**: {_fmt_usd(pf.get('annual_rd_budget'))} (ratio {_fmt_pct(pf.get('rd_budget_ratio'))})")
+        md.append(f"- **연 R&D 예산**: {_fmt_usd(pf.get('annual_rd_budget'))} (비중 {_fmt_pct(pf.get('rd_budget_ratio'))})")
     if pf.get("total_budget"):
-        md.append(f"- **Total Budget (envelope)**: {_fmt_usd(pf.get('total_budget'))}")
-    md.append(f"- **Decision**: `{review.get('decision', '?')}` (iter {report_data.get('iteration', '?')})")
+        md.append(f"- **총 예산 (5년 envelope)**: {_fmt_usd(pf.get('total_budget'))}")
+    md.append(f"- **평가 결정**: `{review.get('decision', '?')}` (iter {report_data.get('iteration', '?')})")
     md.append("")
 
     direction = pf.get("strategic_direction") or []
     if direction:
-        md.append("### Strategic Direction")
+        md.append("### 🎯 Strategic Direction")
         md.append("")
         for i, d in enumerate(direction, 1):
             md.append(f"{i}. {d}")
@@ -127,7 +127,7 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
             )
         md.append("")
 
-    # ── Agent 2 — Planned Roadmap (with reasoning) ──
+    # ── Agent 2 — Planned Roadmap ──
     if planned_roadmap:
         md.append(f"## 🛣️ Agent 2 · Planned Roadmap ({len(planned_roadmap)})")
         md.append("")
@@ -204,34 +204,6 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
                     md.append(f"  - {r}")
             md.append("")
 
-    # ── Year × Tech 매트릭스 ──
-    cells = year_matrix.get("cells") or {}
-    if cells:
-        max_year = year_matrix.get("max_year") or 5
-        md.append("## 📊 Year × Tech 매트릭스")
-        md.append("")
-        # 헤더
-        hdrs = ["기술"] + [f"{y}차년도" for y in range(1, max_year + 1)]
-        md.append("| " + " | ".join(hdrs) + " |")
-        md.append("|" + "|".join(["---"] * len(hdrs)) + "|")
-        # 각 기술마다 row
-        for r in planned_roadmap:
-            tid = r.get("tech_id", "")
-            ys = r.get("year_idx_start", 1)
-            yt = r.get("year_idx_target", ys)
-            # 해당 기술의 예산 (Agent 3)
-            inv = next((ti for ti in all_invs if ti.get("tech_id") == tid), None)
-            budget = inv.get("tech_budget_usd") if inv else 0
-            tier = inv.get("recommended_investment_tier", "") if inv else ""
-            row = [f"`{tid}` ({tier})"]
-            for y in range(1, max_year + 1):
-                if ys <= y <= yt:
-                    row.append(_fmt_usd(budget) if y == ys else "■")
-                else:
-                    row.append("")
-            md.append("| " + " | ".join(row) + " |")
-        md.append("")
-
     # ── 차년도별 활동 요약 ──
     if planned_roadmap:
         max_y = max((r.get("year_idx_target") or 0) for r in planned_roadmap) or 1
@@ -288,36 +260,14 @@ def generate_markdown_report(report_data: Dict[str, Any]) -> str:
         md.append("")
         md.append(f"> {review['diagnostic_summary']}")
 
-    # ── 7-섹션 narrative (있으면 부록) ──
-    section_keys = [
-        ("executive_summary", "Executive Summary"),
-        ("technology_strategy", "Technology Strategy"),
-        ("roadmap_structure", "Roadmap Structure"),
-        ("investment_strategy", "Investment Strategy"),
-        ("trend_alignment", "Trend Alignment"),
-        ("feasibility_and_risk", "Feasibility & Risk"),
-        ("expected_outcomes", "Expected Outcomes"),
-    ]
-    has_narrative = any((report.get(k) or "").strip() for k, _ in section_keys)
-    if has_narrative:
-        md.append("")
-        md.append("## 📝 Narrative (LLM 생성)")
-        md.append("")
-        for k, label in section_keys:
-            v = (report.get(k) or "").strip()
-            if v:
-                md.append(f"### {label}")
-                md.append("")
-                md.append(v)
-                md.append("")
-
     return "\n".join(md) + "\n"
 
 
 # ── HTML export ─────────────────────────────────────────────
 
 _HTML_CSS = """
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+body { font-family: "Noto Sans CJK KR", "Noto Sans KR", "Malgun Gothic",
+       -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
        background: #0e1014; color: #e6e8ee; max-width: 1080px; margin: 0 auto;
        padding: 24px; line-height: 1.6; }
 h1 { color: #c08a4a; border-bottom: 2px solid #c08a4a; padding-bottom: 8px; }
@@ -356,6 +306,9 @@ tr:nth-child(even) { background: rgba(255,255,255,0.02); }
              border-bottom: 1px dashed #2a303c; }
 .gantt-label .id { color: #c08a4a; font-family: ui-monospace, monospace; font-size: 11px; }
 .gantt-label .name { font-weight: 600; font-size: 13px; }
+.gantt-period { font-family: ui-monospace, monospace; font-size: 10px;
+                color: #9aa3b2; margin-top: 2px; letter-spacing: 0.2px; }
+.gantt-bar-q { font-size: 10px; font-weight: 400; opacity: 0.85; margin-left: 4px; }
 .gantt-bar-wrap { position: relative; height: 24px; background: #0e1014;
                   border: 1px solid #2a303c; border-radius: 4px; overflow: visible; }
 .gantt-bar { position: absolute; top: 0; bottom: 0;
@@ -417,17 +370,17 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
     parts.append(f"<style>{_HTML_CSS}</style></head><body>")
 
     # Header
-    parts.append(f"<h1>📋 Technology Roadmap Report — {company}</h1>")
+    parts.append(f"<h1>📋 기술 로드맵 보고서 — {company}</h1>")
     parts.append("<ul>")
-    parts.append(f"<li><b>Industry</b>: {_esc_html(pf.get('industry') or '-')}</li>")
-    parts.append(f"<li><b>Planning Horizon</b>: {_esc_html(pf.get('time_horizon') or '-')}</li>")
+    parts.append(f"<li><b>산업</b>: {_esc_html(pf.get('industry') or '-')}</li>")
+    parts.append(f"<li><b>계획 기간</b>: {_esc_html(pf.get('time_horizon') or '-')}</li>")
     if pf.get("annual_revenue"):
-        parts.append(f"<li><b>Annual Revenue</b>: <span class='budget'>{_fmt_usd(pf.get('annual_revenue'))}</span></li>")
+        parts.append(f"<li><b>연 매출</b>: <span class='budget'>{_fmt_usd(pf.get('annual_revenue'))}</span></li>")
     if pf.get("annual_rd_budget"):
-        parts.append(f"<li><b>Annual R&amp;D Budget</b>: <span class='budget'>{_fmt_usd(pf.get('annual_rd_budget'))}</span> (ratio {_fmt_pct(pf.get('rd_budget_ratio'))})</li>")
+        parts.append(f"<li><b>연 R&amp;D 예산</b>: <span class='budget'>{_fmt_usd(pf.get('annual_rd_budget'))}</span> (비중 {_fmt_pct(pf.get('rd_budget_ratio'))})</li>")
     if pf.get("total_budget"):
-        parts.append(f"<li><b>Total Budget (envelope)</b>: <span class='budget'>{_fmt_usd(pf.get('total_budget'))}</span></li>")
-    parts.append(f"<li><b>Decision</b>: <span class='{decision_cls}'>{decision}</span> (iter {report_data.get('iteration', '?')})</li>")
+        parts.append(f"<li><b>총 예산 (5년 envelope)</b>: <span class='budget'>{_fmt_usd(pf.get('total_budget'))}</span></li>")
+    parts.append(f"<li><b>평가 결정</b>: <span class='{decision_cls}'>{decision}</span> (iter {report_data.get('iteration', '?')})</li>")
     parts.append("</ul>")
 
     direction = pf.get("strategic_direction") or []
@@ -559,19 +512,26 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
             # bar 위치 계산 (%)
             left_pct = ((ys - 1) / max_year) * 100
             width_pct = max(3, ((yt - ys + 1) / max_year) * 100)
+            # 분기 정보
+            sq = _esc_html(r.get("start_q", ""))
+            tq = _esc_html(r.get("target_q", ""))
+            period_str = f"{sq} – {tq}" if sq and tq else ""
             # 행
             parts.append("<div class='gantt-row'>")
             parts.append(
                 f"<div class='gantt-label'>"
                 f"<div class='id'>{tid}</div>"
                 f"<div class='name'>{name}</div>"
-                f"</div>"
+                + (f"<div class='gantt-period'>{period_str}</div>" if period_str else "")
+                + f"</div>"
             )
             parts.append(
                 f"<div class='gantt-bar-wrap'>"
-                f"<div class='gantt-bar {tcls}' style='left:{left_pct:.2f}%;width:{width_pct:.2f}%;'>"
+                f"<div class='gantt-bar {tcls}' style='left:{left_pct:.2f}%;width:{width_pct:.2f}%;' "
+                f"title='{period_str}'>"
                 f"{ys}차 → {yt}차"
-                f"</div>"
+                + (f" <span class='gantt-bar-q'>({sq} → {tq})</span>" if period_str else "")
+                + f"</div>"
                 f"<span class='gantt-budget {tcls}'>{_fmt_usd(budget)}</span>"
                 f"</div>"
             )
@@ -597,8 +557,8 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
                 parts.append("</details></div>")
         parts.append("</div>")  # gantt-wrap
 
-    # Year × Tech matrix (보조 표 형식)
-    if cells:
+    # Year × Tech matrix 표 형식 제거 — Gantt 차트 + 차년도별 활동 요약으로 대체
+    if False and cells:
         max_year = year_matrix.get("max_year") or 5
         parts.append("<h2>📊 Year × Tech 매트릭스</h2>")
         parts.append("<table><thead><tr><th>기술</th>")
@@ -680,23 +640,10 @@ def generate_html_report(report_data: Dict[str, Any]) -> str:
     if review.get("diagnostic_summary"):
         parts.append(f"<blockquote>{_esc_html(review['diagnostic_summary'])}</blockquote>")
 
-    # Narrative
-    section_keys = [
-        ("executive_summary", "Executive Summary"),
-        ("technology_strategy", "Technology Strategy"),
-        ("roadmap_structure", "Roadmap Structure"),
-        ("investment_strategy", "Investment Strategy"),
-        ("trend_alignment", "Trend Alignment"),
-        ("feasibility_and_risk", "Feasibility & Risk"),
-        ("expected_outcomes", "Expected Outcomes"),
-    ]
-    if any((report.get(k) or "").strip() for k, _ in section_keys):
-        parts.append("<h2>📝 Narrative (LLM 생성)</h2>")
-        for k, label in section_keys:
-            v = (report.get(k) or "").strip()
-            if v:
-                parts.append(f"<h3>{label}</h3>")
-                parts.append(f"<p style='white-space:pre-wrap;'>{_esc_html(v)}</p>")
+    # Narrative 섹션 제거 — 각 에이전트의 raw 출력만 표시
 
     parts.append("</body></html>")
     return "".join(parts)
+
+
+# PDF export 는 제거 — 필요 시 브라우저에서 HTML 열고 "PDF 로 인쇄" 사용

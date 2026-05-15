@@ -198,6 +198,17 @@ def _int_to_q(n: int) -> str:
     return f"{y} Q{q}"
 
 
+def _q_int_to_year(n: int) -> int:
+    """quarter int → 실제 연도. Q4 의 경우 // 4 가 +1 오프셋 되는 문제를 보정.
+    예: 8124 (2030 Q4) → 2030 (// 4 만 하면 2031).
+    """
+    q = n % 4
+    y = n // 4
+    if q == 0:
+        y -= 1
+    return y
+
+
 def _enforce_dependency_gap(roadmap_items: list, horizon_start_year: int, reference_year: int) -> int:
     """후처리 — prereq target_q < dependent start_q (최소 1분기 gap) 보장.
     위반 시 dependent 를 push forward 하고 cascade.
@@ -243,8 +254,8 @@ def _enforce_dependency_gap(roadmap_items: list, horizon_start_year: int, refere
             r["start_q"] = _int_to_q(new_start)
             r["target_q"] = _int_to_q(new_target)
             # year_idx 재계산
-            r["year_idx_start"] = max(1, (new_start // 4) - horizon_start_year + 1)
-            r["year_idx_target"] = max(r["year_idx_start"], (new_target // 4) - horizon_start_year + 1)
+            r["year_idx_start"] = max(1, _q_int_to_year(new_start) - horizon_start_year + 1)
+            r["year_idx_target"] = max(r["year_idx_start"], _q_int_to_year(new_target) - horizon_start_year + 1)
             note = (f" [후처리: dependency 보정 — prereq {prereqs} target={_int_to_q(latest_prereq_target)} "
                     f"이후로 {delta}분기 push]")
             r["justification"] = (r.get("justification") or "") + note
@@ -387,6 +398,7 @@ def run_roadmap_designer(state: RoadmapState) -> dict:
             or ""
         )
         horizon_start_year = _parse_horizon_start_year(planning_horizon, reference_year)
+        horizon_len_target = (reference_year - horizon_start_year + 1) if reference_year else 5
 
         # 출력 schema 정규화 — RoadmapItem 형식으로 + year_idx + reasoning 자동 보강
         by_id = {t["tech_id"]: t for t in tech_candidates}
@@ -404,7 +416,8 @@ def run_roadmap_designer(state: RoadmapState) -> dict:
             yi_s_llm = item.get("year_idx_start")
             yi_t_llm = item.get("year_idx_target")
             if isinstance(yi_s_llm, int) and isinstance(yi_t_llm, int) and yi_s_llm > 0:
-                year_idx_start, year_idx_target = yi_s_llm, max(yi_s_llm, yi_t_llm)
+                year_idx_start = max(1, min(yi_s_llm, horizon_len_target))
+                year_idx_target = max(year_idx_start, min(yi_t_llm, horizon_len_target))
             else:
                 year_idx_start, year_idx_target = _derive_year_idx(start_q, target_q, horizon_start_year)
 

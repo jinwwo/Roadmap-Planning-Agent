@@ -162,20 +162,16 @@ python main.py \
 
 ## 최종 보고서 구조
 
-`review.report` 는 다음을 모두 포함:
+`review.report` 는 다음을 포함:
 
-1. **7-섹션 한국어 narrative** (executive_summary ~ expected_outcomes) — `[A1]`/`[A2]`/`[A3]` 인라인 인용 포함
-2. **`artifacts_summary` 부록 (LLM 호출 없이 코드로 채움)**:
-   - `agent1_tech_candidates` — 후보 기술 raw 표
-   - `agent2_planned_roadmap` — Designer 의 timeline + **year_idx_start/target + 3-reasoning** 풀 포함
-   - `agent3_investment_strategy` — Strategist 의 stage + tech_investments (**tech_budget_usd + 3-reasoning** 풀 포함)
-   - **`year_tech_matrix`** (신규) — Year × Tech 매트릭스:
-     - `cells: {year_idx: [{tech_id, tier, tech_budget_usd, ...}, ...]}` — 각 차년도에 active 한 기술
-     - `yearly_budget_total: {year_idx: 합계 USD}` — 차년도별 합산 예산
-     - `max_year` — horizon 길이
-   - `insights` — Tier 분포 / 카테고리 분포 / 평균 TRL / dependency edges 등 집계
+- **`artifacts_summary` (LLM 호출 없이 Python 후처리로 채움)**:
+  - `agent1_tech_candidates` — 후보 기술 raw 표
+  - `agent2_planned_roadmap` — Designer 의 timeline + **year_idx_start/target + 3-reasoning** 풀 포함
+  - `agent3_investment_strategy` — Strategist 의 stage + tech_investments (**tech_budget_usd + 3-reasoning** 풀 포함)
+  - `year_tech_matrix` — 내부 데이터 구조 (`cells`, `yearly_budget_total`, `max_year`). 보고서 렌더 시 Gantt 차트로 변환
+  - `insights` — Tier 분포 / 카테고리 분포 / 평균 TRL / dependency edges 등 집계
 
-웹 UI 의 8번째 섹션에서 매트릭스가 **차년도별 색칠된 셀 + 예산 표시 + 종합 reasoning (Designer 3 + Strategist 3 + 예산 근거)** 로 시각화됩니다.
+> 옛 7-섹션 LLM narrative (`executive_summary`, `technology_strategy` 등) 는 더 이상 생성/표시하지 않음 — 각 에이전트의 raw 출력만으로 보고서를 구성.
 
 `orchestrator_report.json` 의 `review` 구조 (ACCEPT 시):
 
@@ -211,13 +207,11 @@ python main.py \
 ```
 
 **보고서 형식 — 핵심**:
-- **7-섹션 한국어 narrative** (`executive_summary` ... `expected_outcomes`)
-- **인라인 인용**: 각 수치/판정 뒤에 `[A1]` (Tech Analyst), `[A2]` (Roadmap Planner), `[A3]` (Strategist) 마커 — 협업자가 출처 추적 가능
-- **`artifacts_summary` 8번째 섹션**: Agent 1/2/3 의 raw 데이터 + 집계 insights 자동 첨부 (LLM 호출 없이 Python 후처리). UI 에서도 표 형태로 렌더.
+- **각 Agent 의 raw 출력 위주** — narrative 없이 후보 기술 / 로드맵 / 투자 전략 데이터 직접 제시
+- **`artifacts_summary`** : Agent 1/2/3 의 출력 + 집계 insights (LLM 호출 없이 Python 후처리)
+- **3 형식 자동 export** : `.json` / `.md` / `.html` (다음 섹션 참조)
 
-**REVISE 시에도 7-섹션 보고서가 생성됩니다** (잠정 보고서). 잔여 issues / feedback 은
-`feasibility_and_risk` 섹션에 명시되며, 다음 iter 에서 갱신되어 최종 ACCEPT 시점
-보고서가 최종본이 됩니다. `review_history[]` 에 매 iter 의 review + report 가 누적 저장됨.
+`review_history[]` 에 매 iter 의 review 가 누적 저장됨.
 
 Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정된 에이전트만
 재실행되고 (파이프라인 순서상 앞 단계부터 뒤까지) `refinement.feedback` 이 자유 텍스트
