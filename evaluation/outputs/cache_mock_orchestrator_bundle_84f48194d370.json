@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI 반도체",
+    "num_technologies": 6
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 5,
+    "balance": 4,
+    "llm_structural_score": 80.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 5,
+        "balance": 4
+      }
+    },
+    "evidence": {
+      "alignment": "All six technologies target the AI semiconductor domain with market booms clustered in 2026-2029, well aligned with the 2030 reference horizon. The selection covers the full stack from materials and lithography to advanced packaging and architecture, capturing high-growth segments of the AI chip market.",
+      "sequencing": "Dependency chains are respected without violation: T03 precedes T01, T02 precedes T04, and T04 precedes T06. However, 칩렛 헤테로지니어스 통합 completes in 2029-Q2, two full years after its market boom in 2027-Q2, indicating a meaningful late-to-market risk for that node.",
+      "investment": "Strategic tier is correctly assigned to the highest-TRL, highest-urgency foundational technologies (EUV, High-k), while lower-TRL, higher-uncertainty technologies (Backside PDN, 칩렛) are placed at Medium tier. The gradient from Strategic → High → Medium maps cleanly onto declining urgency and executability scores.",
+      "coherence": "The roadmap tells a coherent process-scaling story: foundational materials and lithography enable advanced transistor architectures (GAA), which in turn enable next-generation packaging (hybrid bonding, chiplets) and power delivery (Backside PDN), forming a clear research-to-deployment progression.",
+      "balance": "The portfolio spans TRL 3 to TRL 8, distributes risk across process, material, equipment, packaging, and architecture categories, and covers near-term (2026) to long-term (2029+) horizons. Two Strategic, two High, and two Medium tiers provide reasonable tier diversity, though no Exploratory/Low tier is present."
+    },
+    "strengths": [
+      "Zero dependency violations with a logically ordered sequence from enabling materials and lithography through to advanced packaging and power delivery.",
+      "Investment tiers are well-calibrated to urgency and executability scores, with Strategic capital concentrated on mature, high-leverage foundational technologies."
+    ],
+    "weaknesses": [
+      "칩렛 헤테로지니어스 통합 is scheduled to complete two years after its market boom (2027-Q2), risking loss of first-mover advantage in a high-growth architectural segment.",
+      "No Exploratory or Low-tier technologies are included, leaving the portfolio without optionality for post-2030 disruptions or hedge positions."
+    ],
+    "missing_technologies": [
+      "3D IC 적층 메모리 통합 (HBM/3D-DRAM integration) — critical for AI accelerator memory bandwidth",
+      "광인터커넥트 / 실리콘 포토닉스 — emerging interconnect for multi-chiplet and disaggregated AI systems",
+      "저전력 SRAM / 뉴로모픽 메모리 — important for on-chip inference efficiency in AI semiconductors"
+    ],
+    "investment_issues": [
+      "칩렛 헤테로지니어스 통합은 strategic_fit=4.0으로 높지만 Medium 티어에 배치되어 있어, 2027년 붐을 선점하려면 투자 상향 또는 일정 단축이 필요함.",
+      "전체 예산 소진이 0으로 기록되어 있어 예산 배분 실행 계획의 구체성이 확인되지 않음 — 티어별 예산 상한 설정이 필요함."
+    ],
+    "timing_issues": [
+      "칩렛 헤테로지니어스 통합: 완료 시점(2029-Q2)이 시장 붐(2027-Q2)보다 2년 늦어 시장 적기 진입 실패 위험.",
+      "하이브리드 본딩: 완료 시점(2027-Q4)이 시장 붐(2027-Q1)보다 0.75년 지연되어 경쟁사 대비 후발 진입 가능성.",
+      "GAA 나노시트 공정: 완료 시점(2028-Q1)이 시장 붐(2027-Q3)보다 약 0.5년 늦어 미세한 타이밍 미스 존재."
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 하이브리드 본딩 (norm=1.000)\n  시장 성장률 기준 최저: Backside PDN 공정 (norm=0.000)\n  전체 평균: 0.498",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ EUV 리소그래피: value=0.200 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ GAA 나노시트 공정: value=0.200 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 5/5\n  카테고리 분포: Process(2개), Equipment(1개), Material(1개), Packaging(1개), Architecture(1개)\n  TRL 범위: 3~8\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 4/5\n  투자등급 분포: High(2개), Medium(2개), Strategic(2개)\n  없는 등급: Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×5 + 0.1×4 - 1) / 4 × 100 = 80.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "EUV 리소그래피",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.05
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "High-k 게이트 유전체",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.9908,
+        "market_size_norm": 0.9908,
+        "value": 0.7945,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6445
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 나노시트 공정",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.1
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "하이브리드 본딩",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.7
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "칩렛 헤테로지니어스 통합",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.75
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Backside PDN 공정",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.15
+      }
+    ],
+    "selection_quality": 49.9,
+    "cost_adjusted_return": 39.9,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 78.7,
+    "backtest_score": 59.3,
+    "description": {
+      "selection_quality": "49.9/100 — 6개 기술 평균 value=0.499\n  ▲ 하이브리드 본딩: value=0.800 (특허↑=0.50, 시장↑=1.00, 규모=1.00)\n  ▲ 칩렛 헤테로지니어스 통합: value=0.800 (특허↑=0.50, 시장↑=1.00, 규모=1.00)\n  ▲ High-k 게이트 유전체: value=0.794 (특허↑=0.50, 시장↑=0.99, 규모=0.99)\n  ▼ EUV 리소그래피: value=0.200 (특허↑=0.50, 시장↑=0.00, 규모=0.00)\n  ▼ GAA 나노시트 공정: value=0.200 (특허↑=0.50, 시장↑=0.00, 규모=0.00)\n  ▼ Backside PDN 공정: value=0.200 (특허↑=0.50, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → EUV 리소그래피: 시장 성장률 낮음 (norm=0.00)\n  → GAA 나노시트 공정: 시장 성장률 낮음 (norm=0.00)\n  → Backside PDN 공정: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "39.9/100 — 평균 return=0.399\n  칩렛 헤테로지니어스 통합: value=0.800 - 0.15×0.33(cost) = return +0.750 [Medium]\n  하이브리드 본딩: value=0.800 - 0.15×0.67(cost) = return +0.700 [High]\n  High-k 게이트 유전체: value=0.794 - 0.15×1.00(cost) = return +0.644 [Strategic]\n  Backside PDN 공정: value=0.200 - 0.15×0.33(cost) = return +0.150 [Medium]\n  GAA 나노시트 공정: value=0.200 - 0.15×0.67(cost) = return +0.100 [High] ⚠ 과다투자\n  EUV 리소그래피: value=0.200 - 0.15×1.00(cost) = return +0.050 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → EUV 리소그래피: value 0.200인데 Strategic tier\n  → GAA 나노시트 공정: value 0.200인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "78.7/100 — 평균 오차 0.71년\n  칩렛 헤테로지니어스 통합: 2.0년 늦음 ⚠\n  하이브리드 본딩: 0.8년 늦음\n  GAA 나노시트 공정: 0.5년 늦음\n  Backside PDN 공정: 0.5년 늦음\n  EUV 리소그래피: 0.2년 늦음\n  High-k 게이트 유전체: 0.2년 이름",
+      "formula": "backtest_score = 0.35×49.9 + 0.35×39.9 + 0.10×100.0 + 0.10×100.0 + 0.10×78.7 = 59.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.71,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "EUV 리소그래피",
+        "target_q": "2026-Q2",
+        "boom_q": "2026-Q1",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "High-k 게이트 유전체",
+        "target_q": "2026-Q3",
+        "boom_q": "2026-Q4",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 나노시트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "하이브리드 본딩",
+        "target_q": "2027-Q4",
+        "boom_q": "2027-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "칩렛 헤테로지니어스 통합",
+        "target_q": "2029-Q2",
+        "boom_q": "2027-Q2",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Backside PDN 공정",
+        "target_q": "2029-Q4",
+        "boom_q": "2029-Q2",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 67.6,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 67.6,
+    "description": "pre_penalty = 0.4×80.0(LLM) + 0.6×59.3(Backtest) = 67.6. 페널티 없음. 최종 = 67.6.\n  [진단] LLM(80.0)과 Backtest(59.3) 격차 20.7pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 80.0점, Backtest 경제성 평가 59.3점. 최종 Composite Score: 67.6점.",
+    "key_failure_points": [
+      "타이밍 이슈: 칩렛 헤테로지니어스 통합의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

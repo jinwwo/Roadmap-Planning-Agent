@@ -461,7 +461,7 @@ class BaseLLMClient(ABC):
 class AnthropicClient(BaseLLMClient):
     """Claude (Anthropic) — Messages API 직접 호출"""
     name = "anthropic"
-    default_model = "claude-sonnet-4-20250514"
+    default_model = "claude-sonnet-4-6"
 
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         key = api_key or os.environ.get("ANTHROPIC_API_KEY")
@@ -1654,7 +1654,7 @@ class TRMEvaluationSuite:
 
         # 모드 D: client 객체 직접 주입 (모델 세부 제어)
         suite = TRMEvaluationSuite(clients=[
-            AnthropicClient(model="claude-sonnet-4-20250514"),
+            AnthropicClient(model="claude-sonnet-4-6"),
             OpenAIClient(model="gpt-4.1"),
             GeminiClient(model="gemini-2.0-flash-001"),
         ])

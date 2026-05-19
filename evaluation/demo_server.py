@@ -92,10 +92,18 @@ if os.environ.get("GOOGLE_API_KEY"):
 def _build_extractor():
     connector = config["connector"]
     # 특허
-    if "uspto" in connector:
+    if "kipris" in connector:
+        from data_sources import KiprisConnector
+        ps = PatentDataSource(KiprisConnector())
+    elif "uspto" in connector:
         ps = PatentDataSource(USPTOConnector())
     else:
         ps = PatentDataSource(MockPatentConnector({}))
+
+
+
+
+
     # 시장
     if "tavily" in connector:
         ms = MarketDataSource(TavilyMarketConnector())
@@ -116,19 +124,18 @@ def _build_suite():
 
 def _detect_and_convert(data: dict) -> dict:
     """업로드된 JSON을 자동 감지하여 input_pack으로 변환"""
-
-    # 이미 input_pack 포맷인 경우
+    # 1) 이미 input_pack 또는 번들 포맷
     if "tech_candidates" in data and "planned_roadmap" in data and "investment_strategy" in data:
-        if "orchestrator_report" in data:
-            # evaluation_bundle
+        if "orchestrator_report" in data or "active_agents" in data:
             return adapter.convert_bundle(data)
         return data
-
-    raise ValueError(
-        "인식할 수 없는 JSON 포맷. "
-        "evaluation_bundle.json 또는 input_pack.json 형식이 필요합니다. "
-        "필수 키: tech_candidates, planned_roadmap, investment_strategy"
-    )
+    # 2) 새 스키마: orchestrator_report.json 자체에 모든 데이터 포함
+    if "problem_frame" in data and "tech_candidates" in data:
+        return adapter.convert_bundle({"orchestrator_report": data})
+    # 3) review_history가 있는 report
+    if "review" in data and ("artifact_paths" in data or "review_history" in data):
+        return adapter.convert_bundle({"orchestrator_report": data})
+    raise ValueError("인식 불가 JSON. evaluation_bundle / input_pack / orchestrator_report 필요.")
 
 
 def _run_evaluation(input_pack: dict, use_api: bool = None) -> dict:
@@ -342,14 +349,33 @@ async def delete_result(rid: str):
 import glob
 
 def scan_outputs_on_startup():
-    """서버 시작 시 outputs/ 폴더의 JSON을 자동 묶어서 평가"""
     import re
+    """서버 시작 시 outputs/ 폴더의 JSON을 자동 묶어서 평가. 캐시 있으면 재사용."""
+    import hashlib
+
+    cache_dir = os.path.join(os.path.dirname(__file__), "outputs")
+    os.makedirs(cache_dir, exist_ok=True)
 
     scan_dirs = [
         os.path.join(os.path.dirname(__file__), "..", "orchestration_agent", "outputs"),
-        os.path.join(os.path.dirname(__file__), "outputs"),
-        os.path.join(os.path.dirname(__file__), "samples"),
     ]
+
+    def _file_hash(fpath):
+        """파일 내용의 해시 → 캐시 키"""
+        with open(fpath, "rb") as f:
+            return hashlib.md5(f.read()).hexdigest()[:12]
+
+    def _load_cache(cache_path):
+        """캐시 파일 로드"""
+        if os.path.exists(cache_path):
+            with open(cache_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return None
+
+    def _save_cache(cache_path, result_data):
+        """평가 결과를 캐시로 저장"""
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(result_data, f, ensure_ascii=False, indent=2)
 
     for scan_dir in scan_dirs:
         if not os.path.isdir(scan_dir):
@@ -357,13 +383,12 @@ def scan_outputs_on_startup():
 
         files = sorted(os.listdir(scan_dir))
         json_files = [f for f in files if f.endswith(".json")]
-
         if not json_files:
             continue
 
-        print(f"  스캔 경로: {scan_dir}")
+        print(f"  스캔: {scan_dir}")
 
-        # 1) 이미 번들 형태인 파일 (tech_candidates + planned_roadmap + investment_strategy 포함)
+        # 1) 번들/input_pack 직접 로드
         for fname in json_files:
             if "result" in fname or "sample_input" in fname:
                 continue
@@ -371,33 +396,38 @@ def scan_outputs_on_startup():
             try:
                 with open(fpath, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                # 번들 또는 input_pack인지 확인
                 if "tech_candidates" in data and "planned_roadmap" in data and "investment_strategy" in data:
-                    import time
-                    pack = _detect_and_convert(data)
-                    result = _run_evaluation(pack)
-                    time.sleep(15)
-                    rid = str(uuid.uuid4())[:8]
                     rname = fname.replace(".json", "")
-                    result_store[rid] = {
-                        "id": rid, "name": rname, "result": result,
-                        "created_at": datetime.now().isoformat(),
-                    }
-                    score = result.get("composite", {}).get("final_composite_score", 0)
-                    print(f"    ✓ {rname}: {score:.1f}점 (번들)")
-            except Exception as e:
-                pass  # 번들 아닌 파일은 무시
+                    # 캐시 확인
+                    fhash = _file_hash(fpath)
+                    cache_path = os.path.join(cache_dir, f"cache_{rname}_{fhash}.json")
+                    cached = _load_cache(cache_path)
+
+                    if cached:
+                        rid = str(uuid.uuid4())[:8]
+                        result_store[rid] = {"id": rid, "name": rname, "result": cached,
+                                             "created_at": datetime.now().isoformat()}
+                        score = cached.get("composite", {}).get("final_composite_score", 0)
+                        print(f"    ✓ {rname}: {score:.1f}점 (캐시)")
+                    else:
+                        pack = _detect_and_convert(data)
+                        result = _run_evaluation(pack)
+                        rid = str(uuid.uuid4())[:8]
+                        result_store[rid] = {"id": rid, "name": rname, "result": result,
+                                             "created_at": datetime.now().isoformat()}
+                        _save_cache(cache_path, result)
+                        score = result.get("composite", {}).get("final_composite_score", 0)
+                        print(f"    ✓ {rname}: {score:.1f}점 (신규→캐시 저장)")
+            except Exception:
+                pass
 
         # 2) 개별 파일 자동 묶기 (prefix 기반)
-        # 패턴: {prefix}_tech_candidates.json, {prefix}_planned_roadmap.json, {prefix}_investment_strategy.json
-        # iter 패턴: {prefix}_iter{N}_tech_candidates.json
         prefixes = {}
         for fname in json_files:
-            # tech_candidates 파일에서 prefix 추출
             m = re.match(r"(.+?)_(iter\d+_)?tech_candidates\.json$", fname)
             if m:
                 prefix = m.group(1)
-                iter_tag = m.group(2) or ""  # "iter1_" 또는 ""
+                iter_tag = m.group(2) or ""
                 key = f"{prefix}_{iter_tag}".rstrip("_")
                 if key not in prefixes:
                     prefixes[key] = {"prefix": prefix, "iter": iter_tag.rstrip("_")}
@@ -415,15 +445,26 @@ def scan_outputs_on_startup():
             if not (os.path.exists(tech_file) and os.path.exists(roadmap_file) and os.path.exists(invest_file)):
                 continue
 
-            # 이미 평가된 번들과 중복 체크
-            label = f"{prefix.split('_')[-1]}_{iter_tag}" if iter_tag else prefix.split("_")[-1]
-            if iter_tag:
-                label = f"{iter_tag}"
-            else:
-                label = "final"
-            display_name = f"{prefix[:12]}..._{label}" if len(prefix) > 12 else f"{prefix}_{label}"
+            label = iter_tag if iter_tag else "final"
+            short_prefix = prefix[:12] + "..." if len(prefix) > 12 else prefix
+            display_name = f"{short_prefix}_{label}"
 
             if any(r["name"] == display_name for r in result_store.values()):
+                continue
+
+            # 캐시 키: 3개 파일의 해시 조합
+            combined_hash = hashlib.md5(
+                (_file_hash(tech_file) + _file_hash(roadmap_file) + _file_hash(invest_file)).encode()
+            ).hexdigest()[:12]
+            cache_path = os.path.join(cache_dir, f"cache_{display_name}_{combined_hash}.json")
+            cached = _load_cache(cache_path)
+
+            if cached:
+                rid = str(uuid.uuid4())[:8]
+                result_store[rid] = {"id": rid, "name": display_name, "result": cached,
+                                     "created_at": datetime.now().isoformat()}
+                score = cached.get("composite", {}).get("final_composite_score", 0)
+                print(f"    ✓ {display_name}: {score:.1f}점 (캐시)")
                 continue
 
             try:
@@ -433,13 +474,11 @@ def scan_outputs_on_startup():
                     roadmap_data = json.load(f)
                 with open(invest_file, "r", encoding="utf-8") as f:
                     invest_data = json.load(f)
-
                 report_data = None
                 if os.path.exists(report_file):
                     with open(report_file, "r", encoding="utf-8") as f:
                         report_data = json.load(f)
 
-                # 번들 조립
                 bundle = {
                     "orchestrator_report": report_data,
                     "tech_candidates": tech_data.get("tech_candidates", []),
@@ -449,19 +488,14 @@ def scan_outputs_on_startup():
                     "market_context": tech_data.get("market_context", {}),
                     "active_agents": report_data.get("active_agents", ["1", "2", "3"]) if report_data else ["1", "2", "3"],
                 }
-
-                import time
                 pack = _detect_and_convert(bundle)
                 result = _run_evaluation(pack)
-                time.sleep(15)  # API rate limit 방지
-
                 rid = str(uuid.uuid4())[:8]
-                result_store[rid] = {
-                    "id": rid, "name": display_name, "result": result,
-                    "created_at": datetime.now().isoformat(),
-                }
+                result_store[rid] = {"id": rid, "name": display_name, "result": result,
+                                     "created_at": datetime.now().isoformat()}
+                _save_cache(cache_path, result)
                 score = result.get("composite", {}).get("final_composite_score", 0)
-                print(f"    ✓ {display_name}: {score:.1f}점 (개별→번들)")
+                print(f"    ✓ {display_name}: {score:.1f}점 (신규→캐시 저장)")
 
             except Exception as e:
                 print(f"    ⚠ {display_name}: {e}")

@@ -139,7 +139,66 @@ class KiprisConnector(PatentConnector):
         #       source=self.name
         #   )
         # ─────────────────────────────────────────────
-        raise NotImplementedError("KIPRIS 연동 미구현. Agent 쪽 커넥터 확정 후 작성.")
+        import os
+        api_key = self.api_key or os.environ.get("KIPRIS_API_KEY", "")
+        start_date = str(int(as_of_date[:4]) - window_years) + as_of_date[4:]
+
+        if not api_key:
+            # API 키 없으면 Mock 반환
+            import hashlib
+            h = int(hashlib.md5(f"{keywords}{as_of_date}".encode()).hexdigest()[:8], 16)
+            total = 30 + (h % 300)
+            return PatentQueryResult(
+                keywords=keywords, as_of_date=as_of_date,
+                window_years=window_years, total_patents=total,
+                yearly_counts={}, top_assignees=[], source="kipris_mock"
+            )
+
+        # 실제 KIPRIS Plus API 호출
+        try:
+            import requests
+            query = " OR ".join(keywords)
+            url = "http://plus.kipris.or.kr/openapi/rest/patUtiModInfoSearchSevice/freeSearchInfo"
+            params = {
+                "word": query,
+                "ServiceKey": api_key,
+                "patent": "true",
+                "utility": "false",
+                "lastvalue": "1",
+                "listcount": "500",
+                "startDate": start_date.replace("-", ""),
+                "endDate": as_of_date.replace("-", ""),
+            }
+            resp = requests.get(url, params=params, timeout=30)
+            total = 0
+            if resp.status_code == 200:
+                import xml.etree.ElementTree as ET
+                root = ET.fromstring(resp.text)
+                # totalCount 또는 item 수로 카운트
+                tc = root.find(".//totalCount")
+                if tc is not None and tc.text:
+                    total = int(tc.text)
+                else:
+                    items = root.findall(".//{http://plus.kipris.or.kr}item") or root.findall(".//item")
+                    total = len(items)
+            else:
+                print(f"  ⚠ KIPRIS API HTTP {resp.status_code}")
+
+            return PatentQueryResult(
+                keywords=keywords, as_of_date=as_of_date,
+                window_years=window_years, total_patents=total,
+                yearly_counts={}, top_assignees=[], source="kipris"
+            )
+        except Exception as e:
+            print(f"  ⚠ KIPRIS API 에러: {e}")
+            # 실패 시 Mock
+            import hashlib
+            h = int(hashlib.md5(f"{keywords}{as_of_date}".encode()).hexdigest()[:8], 16)
+            return PatentQueryResult(
+                keywords=keywords, as_of_date=as_of_date,
+                window_years=window_years, total_patents=30 + (h % 300),
+                yearly_counts={}, top_assignees=[], source="kipris_mock_fallback"
+            )
 
 
 class GooglePatentsConnector(PatentConnector):

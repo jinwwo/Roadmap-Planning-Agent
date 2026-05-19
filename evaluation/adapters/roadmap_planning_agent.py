@@ -86,16 +86,29 @@ class AgentOutputAdapter:
         return self.convert_bundle(bundle)
 
     def convert_bundle(self, bundle: dict) -> dict:
-        """번들 dict → input_pack."""
-        tech_data = {"tech_candidates": bundle.get("tech_candidates", [])}
-        if "market_context" in bundle:
-            tech_data["market_context"] = bundle["market_context"]
-        roadmap_data = {"planned_roadmap": bundle.get("planned_roadmap", [])}
-        investment_data = {
-            "investment_strategy": bundle.get("investment_strategy", []),
-            "stages": bundle.get("stages", []),
-        }
+        """번들 dict → input_pack. 새/구 스키마 모두 지원."""
         report_data = bundle.get("orchestrator_report")
+        # 새 스키마: orchestrator_report.json 자체에 tech_candidates 등 포함
+        if report_data and "tech_candidates" in report_data:
+            tc = report_data.get("tech_candidates", [])
+            rm = report_data.get("planned_roadmap", [])
+            inv = report_data.get("investment_strategy", [])
+            mc = report_data.get("market_context", bundle.get("market_context", {}))
+            stg = report_data.get("stages", bundle.get("stages", []))
+        else:
+            tc = bundle.get("tech_candidates", [])
+            rm = bundle.get("planned_roadmap", [])
+            inv = bundle.get("investment_strategy", [])
+            mc = bundle.get("market_context", {})
+            stg = bundle.get("stages", [])
+        tech_data = {"tech_candidates": tc}
+        if mc:
+            tech_data["market_context"] = mc
+        roadmap_data = {"planned_roadmap": rm}
+        investment_data = {
+            "investment_strategy": inv,
+            "stages": stg,
+        }
         active = bundle.get("active_agents", [])
         if set(active) == {"1", "2", "3"}:
             scenario = "multi-agent (full)"
@@ -165,6 +178,13 @@ class AgentOutputAdapter:
     ) -> dict:
         """Agent 출력 dict들 → evaluation input_pack."""
 
+        # time_horizon에서 시작년도 추출 (새 스키마: "2026-2030")
+        if report_data:
+            th = report_data.get("problem_frame", {}).get("time_horizon", "")
+            import re as _re
+            years = _re.findall(r"20\d{2}", str(th))
+            if years:
+                self._base_year = int(years[0])
         metadata = self._build_metadata(report_data, scenario_label)
         tech_candidates = self._convert_tech_candidates(tech_data)
         planned_roadmap = self._convert_roadmap(roadmap_data)
@@ -296,8 +316,8 @@ class AgentOutputAdapter:
             entry = {
                 "tech_id": r.get("tech_id", ""),
                 "tech_name": r.get("name", r.get("tech_name", "")),
-                "start_q": self._norm_q(r.get("start_q", "")),
-                "target_q": self._norm_q(r.get("target_q", "")),
+                "start_q": self._resolve_quarter(r),
+                "target_q": self._resolve_target_quarter(r),
                 "prerequisites": r.get("prerequisites", []),
             }
             result.append(entry)
@@ -403,11 +423,17 @@ class AgentOutputAdapter:
                     "tech_id": tid,
                     "tech_name": self._find_name(tid, techs),
                     "investment_tier": investment_tier,
-                    "market_opportunity": float(scores.get("market_opportunity", 3)),
-                    "strategic_fit": float(scores.get("strategic_fit", 3)),
-                    "executability": float(scores.get("executability", 3)),
-                    "uncertainty": float(scores.get("uncertainty", 3)),
-                    "urgency": float(scores.get("urgency", 3)),
+                    "market_opportunity": float(scores.get("market_opportunity",
+                                               scores.get("market_size_growth", 3))),
+                    "strategic_fit": float(scores.get("strategic_fit",
+                                          scores.get("competitive_advantage", 3))),
+                    "executability": float(scores.get("executability",
+                                          scores.get("tech_readiness", 3))),
+                    "uncertainty": float(scores.get("uncertainty",
+                                        scores.get("tech_risk", 3))),
+                    "urgency": float(scores.get("urgency",
+                                    scores.get("development_urgency", 3))),
+                    "tech_budget_usd": float(ti.get("tech_budget_usd", 0)),
                 })
 
         # stage에 없는 tech → 기본값
@@ -420,6 +446,7 @@ class AgentOutputAdapter:
                     "market_opportunity": 3.0,
                     "strategic_fit": 3.0,
                     "executability": 3.0,
+                    "tech_budget_usd": 0.0,
                     "uncertainty": 3.0,
                     "urgency": 3.0,
                 })
@@ -452,6 +479,27 @@ class AgentOutputAdapter:
         for t in techs:
             if t.get("tech_id") == tech_id:
                 return t.get("tech_name", "")
+        return ""
+
+
+    def _resolve_quarter(self, r: dict) -> str:
+        """start_q 또는 year_idx_start에서 분기 문자열 생성"""
+        if r.get("start_q"):
+            return self._norm_q(r["start_q"])
+        year_idx = r.get("year_idx_start")
+        if year_idx is not None:
+            start_year = self._base_year + year_idx - 1
+            return f"{start_year}-Q1"
+        return ""
+
+    def _resolve_target_quarter(self, r: dict) -> str:
+        """target_q 또는 year_idx_target에서 분기 문자열 생성"""
+        if r.get("target_q"):
+            return self._norm_q(r["target_q"])
+        year_idx = r.get("year_idx_target")
+        if year_idx is not None:
+            target_year = self._base_year + year_idx - 1
+            return f"{target_year}-Q1"
         return ""
 
     def _norm_q(self, q: str) -> str:
