@@ -3,7 +3,7 @@ tools/mock_data.py
 ───────────────────
 오프라인 / toy 데모용 Mock 데이터 생성기.
 
-실제 USPTO / Tavily API가 불가용(키 없음 / 네트워크 차단 / 엔드포인트 장애)일 때
+실제 KIPRIS / Tavily API가 불가용(키 없음 / 네트워크 차단 / 엔드포인트 장애)일 때
 에이전트가 의미 있는 입력으로 동작하도록 합성 데이터를 반환합니다.
 
 형식은 실제 tool의 `collect_full_signal()` 반환값과 동일해야 합니다.
@@ -142,7 +142,7 @@ _ASSIGNEES = [
 
 
 def mock_patent_signal(keyword: str) -> dict:
-    """USPTOPatentTool.collect_full_signal() 모사 — 카테고리별 실제 기술 개념 기반"""
+    """Legacy keyword patent signal 모사 — 카테고리별 실제 기술 개념 기반"""
     rng = _seed_from(keyword)
     category = _detect_category(keyword)
     concepts = list(_CATEGORY_CONCEPTS[category])

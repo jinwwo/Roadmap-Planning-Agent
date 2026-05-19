@@ -4,7 +4,7 @@ main.py
 Technology Roadmap AI Agent System 진입점
 
 전체 파이프라인:
-  Agent 1: Technology Analysis  (USPTO + Tavily + Claude)
+  Agent 1: Technology Analysis  (KIPRIS + Tavily + Claude/Ollama)
   Agent 2: Roadmap Planner      (Dependency Tree + Backcasting + Claude)
   Agent 3: Investment Strategist (향후 구현)
 

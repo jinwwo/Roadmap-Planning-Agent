@@ -305,10 +305,14 @@ def _run_agent1(
         company_name = state.get("company_name")
         company_profile = state.get("company_profile")
         related_companies = state.get("related_companies")
+        use_patent_map = state.get("use_patent_map")
+        use_patent_map_env = None if use_patent_map is None else ("true" if use_patent_map else "false")
 
         snippet = f"""
 import sys, json, os
 os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
+if {use_patent_map_env!r} is not None:
+    os.environ["USE_PATENT_MAP"] = {use_patent_map_env!r}
 os.environ["AGENT_RUN_ID"] = {run_id!r}
 os.environ["PATENT_AGENT_RUN_ID"] = {run_id!r}
 os.environ["MARKET_AGENT_RUN_ID"] = {run_id!r}
@@ -337,6 +341,7 @@ graph_paths = render_patent_maps(
 )
 
 out = {{
+    "use_patent_map": result.get("patent_prompt", {{}}).get("use_patent_map"),
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
     "market_raw_data": result.get("market_raw_data") or {{}},
@@ -598,6 +603,7 @@ def run_orchestration(
     company_name: Optional[str] = None,
     company_profile: Optional[str] = None,
     related_companies: Optional[List[str]] = None,
+    use_patent_map: Optional[bool] = None,
 ) -> Dict[str, Any]:
     """
     Orchestration Agent 전체 파이프라인 실행.
@@ -642,6 +648,7 @@ def run_orchestration(
         "company_name": company_name,
         "company_profile": company_profile,
         "related_companies": related_companies,
+        "use_patent_map": use_patent_map,
         "problem_frame": problem_frame,
         "active_agents": active_agents,
         "tech_candidates": [],

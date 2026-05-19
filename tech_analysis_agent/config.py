@@ -27,18 +27,35 @@ TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 # Tavily 키가 없으면 mock 데이터를 사용 (toy/offline 데모용)
 USE_MOCK_MARKET: bool = os.getenv("USE_MOCK_MARKET", "").lower() in ("1", "true", "yes")
 
-# ── USPTO PatentsView / PatentSearch API ─────────────────────
-# Legacy `api.patentsview.org/patents/query` 는 2026년 현재 sunset 되어
-# HTML portal 로 redirect 되므로 PatentSearch API 를 사용합니다.
-USPTO_BASE_URL: str = os.getenv(
-    "USPTO_BASE_URL",
-    "https://search.patentsview.org/api/v1/patent/",
-)
-PATENTSVIEW_API_KEY: str = os.getenv("PATENTSVIEW_API_KEY", "")
-USPTO_TIMEOUT: int = 30
-USPTO_MAX_RESULTS: int = 25
-# USPTO API 장애 시 mock 데이터 사용
+# 특허 API 장애 시 mock 데이터 사용
 USE_MOCK_PATENT: bool = os.getenv("USE_MOCK_PATENT", "").lower() in ("1", "true", "yes")
+
+# Patent Agent가 actor_similarity_map을 생성하고 후속 Market Agent가 이를 사용할지 여부
+# A/B 비교 실험용: true=map 사용, false=기술 후보군만 사용
+USE_PATENT_MAP: bool = os.getenv("USE_PATENT_MAP", "true").lower() not in (
+    "0",
+    "false",
+    "no",
+    "off",
+)
+
+# ── Patent data provider ─────────────────────────────────────
+#   mock        : local example/mock data
+#   kipris      : KIPRIS Plus patent/publication API
+PATENT_DATA_PROVIDER: str = os.getenv("PATENT_DATA_PROVIDER", "mock").lower()
+PATENT_SCOPE: str = os.getenv("PATENT_SCOPE", "domestic").lower()
+KIPRIS_API_KEY: str = os.getenv("KIPRIS_API_KEY", "")
+KIPRIS_BASE_URL: str = os.getenv("KIPRIS_BASE_URL", "https://plus.kipris.or.kr")
+KIPRIS_TIMEOUT: int = int(os.getenv("KIPRIS_TIMEOUT", "30") or 30)
+KIPRIS_MAX_RESULTS: int = int(os.getenv("KIPRIS_MAX_RESULTS", "30") or 30)
+KIPRIS_FOREIGN_COUNTRIES: list[str] = [
+    item.strip().upper()
+    for item in os.getenv("KIPRIS_FOREIGN_COUNTRIES", "US,EP,JP,CN,WO").split(",")
+    if item.strip()
+]
+KIPRIS_FOREIGN_MAX_RESULTS_PER_COUNTRY: int = int(
+    os.getenv("KIPRIS_FOREIGN_MAX_RESULTS_PER_COUNTRY", "10") or 10
+)
 
 # ── Patent Agent prompt / method selection ───────────────────
 #   A_current : 기존 특허 signal 기반 후보 기술 추출 방식

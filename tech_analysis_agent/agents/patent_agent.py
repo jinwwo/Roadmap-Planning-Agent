@@ -4,25 +4,39 @@ agents/patent_agent.py
 Patent Data Agent 노드
 
 역할:
-1. USPTO PatentsView API 로 원시 특허 데이터 수집
-2. Claude 에게 분석 요청 → 구조화된 patent_analysis JSON 반환
+1. configured patent data provider(KIPRIS/mock) 로 원시 특허 데이터 수집
+2. LLM 에게 분석 요청 → 구조화된 patent_analysis JSON 반환
 3. AnalysisState 에 patent_raw_data / patent_analysis 저장
 """
 
 import json
+import os
 import re
+from datetime import datetime
+from pathlib import Path
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
-from config import PATENT_ANALYSIS_METHOD, USE_MOCK_PATENT
+from config import PATENT_ANALYSIS_METHOD, USE_MOCK_PATENT, USE_PATENT_MAP
 from prompt_loader import load_prompt
 from state import AnalysisState
-from tools.patent_tools import USPTOPatentTool
+from tools.patent_tools import PatentPortfolioTool
+
+
+_NVIDIA_KIPRIS_RELATED = [
+    "어드밴스드 마이크로 디바이시즈",
+    "인텔",
+    "구글",
+    "브로드컴",
+    "퀄컴",
+    "타이완 세미콘덕터 매뉴팩쳐링",
+    "에이알엠 리미티드",
+]
 
 
 _RELATED_COMPANY_FALLBACKS = {
-    "ai": ["AMD", "Intel", "Google", "Broadcom", "Qualcomm", "TSMC", "Arm"],
-    "gpu": ["AMD", "Intel", "Google", "Broadcom", "Qualcomm", "TSMC", "Arm"],
+    "ai": _NVIDIA_KIPRIS_RELATED,
+    "gpu": _NVIDIA_KIPRIS_RELATED,
     "semiconductor": ["TSMC", "Intel", "Samsung Electronics", "ASML", "Applied Materials", "SK hynix"],
     "반도체": ["TSMC", "Intel", "Samsung Electronics", "ASML", "Applied Materials", "SK hynix"],
     "foundry": ["TSMC", "Intel", "Samsung Electronics", "GlobalFoundries", "UMC", "ASML"],
@@ -66,37 +80,36 @@ def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     )
 
 
+def _apply_patent_map_setting(system_prompt: str, user_prompt: str) -> tuple[str, str]:
+    """Apply the experiment switch that enables/disables patent map generation."""
+    if USE_PATENT_MAP:
+        return system_prompt, user_prompt + """
+
+[Patent Map Experiment Setting]
+USE_PATENT_MAP=true 이므로 patent_maps.actor_similarity_map을 반드시 출력하세요.
+"""
+
+    override = """
+
+[Patent Map Experiment Setting — OVERRIDE]
+USE_PATENT_MAP=false 입니다.
+이번 실행은 actor_similarity_map 미사용 대조군입니다.
+이전 지시에 patent_maps 또는 actor_similarity_map 출력 요구가 있더라도 무시하세요.
+출력 JSON에는 `patent_analysis`만 포함하고, `patent_maps` 필드는 생략하거나 빈 객체로 두세요.
+actor edge, similarity, edge_weight, shared_technology_areas 산정에 토큰을 사용하지 마세요.
+"""
+    return system_prompt + override, user_prompt + override
+
+
 def _collect_patent_data(domain: str, category_hints: list) -> dict:
     """
-    USPTO API 로 도메인 + 카테고리별 특허 데이터를 수집합니다.
+    Legacy keyword-mode patent data collection is disabled for the current
+    company-centered flow. Use C_company_portfolio with KIPRIS/mock data.
     """
-    tool = USPTOPatentTool()
-
-    # 도메인 키워드 정제 (앞 2~3 단어 추출)
-    domain_keywords = " ".join(domain.split()[:4])
-
-    # 카테고리별 키워드 매핑
-    category_keywords = {
-        "Equipment": f"{domain_keywords} equipment tool",
-        "Material": f"{domain_keywords} material",
-        "Process": f"{domain_keywords} process method",
-        "Architecture": f"{domain_keywords} architecture design circuit",
-        "Packaging": f"{domain_keywords} packaging bonding stacking",
-    }
-
-    # 힌트가 있으면 해당 카테고리만, 없으면 전체
-    targets = (
-        {k: v for k, v in category_keywords.items() if k in category_hints}
-        if category_hints
-        else category_keywords
+    raise RuntimeError(
+        "Keyword patent mode is disabled. Set PATENT_ANALYSIS_METHOD=C_company_portfolio "
+        "and PATENT_DATA_PROVIDER=kipris or mock."
     )
-
-    raw_data = {"domain": domain, "categories": {}}
-    for cat, keyword in targets.items():
-        print(f"  [Patent] '{keyword}' 특허 데이터 수집 중...")
-        raw_data["categories"][cat] = tool.collect_full_signal(keyword)
-
-    return raw_data
 
 
 def _normalize_actor_name(name: str) -> str:
@@ -122,7 +135,7 @@ def _fallback_related_companies(domain: str, company_name: str) -> list:
             continue
         seen.add(key)
         output.append(company)
-    return output[:5]
+    return output[:7]
 
 
 def _discover_related_companies(
@@ -179,7 +192,7 @@ def _collect_company_patent_data(
     """
     우리 기업을 중심으로 관련 기업을 찾고, 각 기업의 특허 포트폴리오를 수집합니다.
     """
-    tool = USPTOPatentTool()
+    tool = PatentPortfolioTool()
     center = _normalize_actor_name(company_name) or "User Company"
     peers = _discover_related_companies(
         center,
@@ -206,10 +219,19 @@ def _collect_company_patent_data(
     targets = [center] + peers
     for company in targets:
         print(f"  [Patent] '{company}' 기업 특허 포트폴리오 수집 중...")
-        raw_data["company_portfolios"][company] = tool.collect_company_portfolio(
+        portfolio = tool.collect_company_portfolio(
             company,
             domain_keywords=domain_keywords,
         )
+        if company != center and not portfolio.get("recent_patents"):
+            print(f"  [Patent] '{company}' 검색 결과 0건 → 관련 기업 후보에서 제외")
+            continue
+        raw_data["company_portfolios"][company] = portfolio
+
+    raw_data["related_companies"] = [
+        company for company in peers
+        if company in raw_data["company_portfolios"]
+    ]
 
     return raw_data
 
@@ -220,19 +242,161 @@ def _is_company_portfolio_mode(state: AnalysisState) -> bool:
     return bool(state.get("company_name") or state.get("company_profile") or state.get("related_companies"))
 
 
+def _safe_filename(value: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(value or "").strip())
+    return cleaned.strip("_") or "patent_agent"
+
+
+def _patent_log_dir() -> Path:
+    run_id = os.getenv("PATENT_AGENT_RUN_ID") or os.getenv("AGENT_RUN_ID")
+    default_dir = Path(__file__).resolve().parents[2] / "orchestration_agent" / "outputs" / "patent_agent"
+    if run_id:
+        default_dir = default_dir / run_id
+    return Path(os.getenv("PATENT_AGENT_LOG_DIR", str(default_dir)))
+
+
+def _summarize_portfolios(patent_raw: dict) -> dict:
+    portfolios = patent_raw.get("company_portfolios") or {}
+    return {
+        actor: {
+            "source": data.get("_source"),
+            "mock": data.get("_mock"),
+            "error": data.get("error"),
+            "source_breakdown": data.get("source_breakdown"),
+            "num_patents": len(data.get("recent_patents") or []),
+            "first_patent": {
+                key: (data.get("recent_patents") or [{}])[0].get(key)
+                for key in ("id", "title", "date", "assignee", "jurisdiction", "source")
+            } if data.get("recent_patents") else {},
+        }
+        for actor, data in portfolios.items()
+        if isinstance(data, dict)
+    }
+
+
+def _compact_patent_raw_for_prompt(patent_raw: dict, per_actor_limit: int = 8) -> str:
+    """Build a balanced LLM input so every actor survives domestic+foreign expansion."""
+    if patent_raw.get("analysis_mode") != "company_portfolio":
+        return json.dumps(patent_raw, ensure_ascii=False, indent=2)[:30000]
+
+    compact = {
+        "analysis_mode": patent_raw.get("analysis_mode"),
+        "domain": patent_raw.get("domain"),
+        "company": patent_raw.get("company"),
+        "related_companies": patent_raw.get("related_companies"),
+        "company_portfolios": {},
+    }
+    for actor, portfolio in (patent_raw.get("company_portfolios") or {}).items():
+        patents = portfolio.get("recent_patents") or []
+        compact["company_portfolios"][actor] = {
+            "company_name": portfolio.get("company_name", actor),
+            "domain_keywords": portfolio.get("domain_keywords"),
+            "source": portfolio.get("_source"),
+            "source_breakdown": portfolio.get("source_breakdown"),
+            "filing_trend": portfolio.get("filing_trend"),
+            "citation_summary": portfolio.get("citation_summary"),
+            "recent_patents": [
+                {
+                    "id": item.get("id"),
+                    "title": item.get("title"),
+                    "abstract": (item.get("abstract") or "")[:360],
+                    "date": item.get("date"),
+                    "assignee": item.get("assignee"),
+                    "jurisdiction": item.get("jurisdiction"),
+                    "source": item.get("source") or item.get("_source"),
+                    "ipc": item.get("ipc"),
+                    "cpc": item.get("cpc"),
+                }
+                for item in patents[:per_actor_limit]
+            ],
+            "omitted_patent_count": max(0, len(patents) - per_actor_limit),
+        }
+    return json.dumps(compact, ensure_ascii=False, indent=2)
+
+
+def _write_patent_agent_log(
+    *,
+    state: AnalysisState,
+    run_id: str,
+    prompt_variant: str,
+    patent_raw: dict,
+    patent_raw_for_prompt: str,
+    system_prompt: str | None = None,
+    user_prompt: str | None = None,
+    llm_raw_response: str | None = None,
+    patent_analysis: list | None = None,
+    patent_maps: dict | None = None,
+    rendered_map_paths: dict | None = None,
+    error: str | None = None,
+) -> None:
+    """Write API/search and LLM output logs without including API keys."""
+    try:
+        output_dir = _patent_log_dir()
+        output_dir.mkdir(parents=True, exist_ok=True)
+        prefix = f"{run_id}_{_safe_filename(state.get('company_name') or state.get('domain'))}"
+        payload = {
+            "run_id": run_id,
+            "timestamp_utc": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "input": {
+                "domain": state.get("domain"),
+                "reference_year": state.get("reference_year"),
+                "category_hints": state.get("category_hints", []),
+                "company_name": state.get("company_name"),
+                "company_profile": state.get("company_profile"),
+                "related_companies": state.get("related_companies"),
+                "use_patent_map": USE_PATENT_MAP,
+            },
+            "prompt_variant": prompt_variant,
+            "provider_summary": _summarize_portfolios(patent_raw),
+            "patent_raw_data": patent_raw,
+            "patent_raw_for_prompt": patent_raw_for_prompt,
+            "llm_request": {
+                "system_prompt": system_prompt,
+                "user_prompt": user_prompt,
+            },
+            "llm_response": {
+                "raw_content": llm_raw_response,
+            },
+            "patent_analysis": patent_analysis or [],
+            "patent_maps": patent_maps or {},
+            "rendered_map_paths": rendered_map_paths or {},
+            "error": error,
+        }
+        path = output_dir / f"{prefix}_patent_agent_log.json"
+        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        latest = output_dir / "latest_patent_agent_log.json"
+        latest.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        if USE_PATENT_MAP and patent_maps:
+            (output_dir / f"{prefix}_actor_similarity_map.json").write_text(
+                json.dumps((patent_maps or {}).get("actor_similarity_map", []), ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        print(f"[Patent Agent] API/search log 저장: {path}")
+    except Exception as log_error:
+        print(f"[Patent Agent] ⚠️ log 저장 실패: {log_error}")
+
+
 # ── LangGraph 노드 함수 ───────────────────────────────────────
 
 def run_patent_agent(state: AnalysisState) -> dict:
     """
     Patent Data Agent 노드.
-    USPTO 데이터 수집 → Claude 분석 → patent_analysis 반환
+    Patent provider 데이터 수집 → LLM 분석 → patent_analysis 반환
     """
     print("\n[Patent Agent] 시작")
     messages = []
+    run_id = os.getenv("PATENT_AGENT_RUN_ID") or os.getenv("AGENT_RUN_ID") or datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    patent_raw = {}
+    patent_raw_for_prompt = ""
+    prompt_variant = PATENT_ANALYSIS_METHOD
+    system_prompt = None
+    user_prompt = None
+    llm_raw_response = None
 
     try:
-        # ① USPTO 데이터 수집
-        print("[Patent Agent] USPTO API 데이터 수집 중...")
+        # ① Patent provider 데이터 수집
+        print("[Patent Agent] Patent provider 데이터 수집 중...")
         if _is_company_portfolio_mode(state):
             patent_raw = _collect_company_patent_data(
                 company_name=state.get("company_name") or state["domain"],
@@ -251,9 +415,15 @@ def run_patent_agent(state: AnalysisState) -> dict:
         # ② Claude/Ollama 에게 분석 요청
         llm = get_llm(max_tokens=4096)
         prompt = load_prompt("patent_agent", prompt_variant)
-        patent_raw_for_prompt = json.dumps(
-            patent_raw, ensure_ascii=False, indent=2
-        )[:12000]
+        patent_raw_for_prompt = _compact_patent_raw_for_prompt(patent_raw)
+
+        _write_patent_agent_log(
+            state=state,
+            run_id=run_id,
+            prompt_variant=prompt_variant,
+            patent_raw=patent_raw,
+            patent_raw_for_prompt=patent_raw_for_prompt,
+        )
 
         user_prompt = prompt.render_user(
             domain=state["domain"],
@@ -279,6 +449,18 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
 
         # Orchestrator REVISE feedback 을 user_prompt 끝에 append
         user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+        system_prompt = prompt.system
+        system_prompt, user_prompt = _apply_patent_map_setting(system_prompt, user_prompt)
+
+        _write_patent_agent_log(
+            state=state,
+            run_id=run_id,
+            prompt_variant=prompt_variant,
+            patent_raw=patent_raw,
+            patent_raw_for_prompt=patent_raw_for_prompt,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+        )
 
         if patent_raw.get("analysis_mode") == "company_portfolio" and not USE_MOCK_PATENT:
             portfolios = patent_raw.get("company_portfolios") or {}
@@ -302,15 +484,43 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
         print("[Patent Agent] LLM 분석 요청 중...")
         response = llm.invoke(
             [
-                SystemMessage(content=prompt.system),
+                SystemMessage(content=system_prompt),
                 HumanMessage(content=user_prompt),
             ]
         )
+        llm_raw_response = response.content
 
         # ③ JSON 파싱
-        result = _extract_json(response.content)
+        result = _extract_json(llm_raw_response)
         patent_analysis = result.get("patent_analysis", [])
-        patent_maps = result.get("patent_maps", {})
+        patent_maps = result.get("patent_maps", {}) if USE_PATENT_MAP else {}
+        rendered_map_paths = {}
+        if USE_PATENT_MAP and patent_maps:
+            try:
+                from tools.patent_map_renderer import render_patent_maps
+
+                render_prefix = f"{run_id}_{_safe_filename(state.get('company_name') or state.get('domain'))}"
+                rendered_map_paths = render_patent_maps(
+                    patent_maps,
+                    str(_patent_log_dir()),
+                    render_prefix,
+                )
+            except Exception as render_error:
+                print(f"[Patent Agent] ⚠️ map 렌더링 실패: {render_error}")
+
+        _write_patent_agent_log(
+            state=state,
+            run_id=run_id,
+            prompt_variant=prompt_variant,
+            patent_raw=patent_raw,
+            patent_raw_for_prompt=patent_raw_for_prompt,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            llm_raw_response=llm_raw_response,
+            patent_analysis=patent_analysis,
+            patent_maps=patent_maps,
+            rendered_map_paths=rendered_map_paths,
+        )
 
         print(f"[Patent Agent] 완료: {len(patent_analysis)}개 기술 식별")
         messages.append(AIMessage(content=f"Patent Agent: {len(patent_analysis)}개 후보 기술 분석 완료"))
@@ -319,7 +529,7 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
             "patent_raw_data": patent_raw,
             "patent_analysis": patent_analysis,
             "patent_maps": patent_maps,
-            "patent_prompt": prompt.metadata,
+            "patent_prompt": {**prompt.metadata, "use_patent_map": USE_PATENT_MAP},
             "messages": messages,
             "error": None,
         }
@@ -327,6 +537,18 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
     except Exception as e:
         err_msg = f"Patent Agent 오류: {str(e)}"
         print(f"[Patent Agent] ❌ {err_msg}")
+        if patent_raw:
+            _write_patent_agent_log(
+                state=state,
+                run_id=run_id,
+                prompt_variant=prompt_variant,
+                patent_raw=patent_raw,
+                patent_raw_for_prompt=patent_raw_for_prompt,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                llm_raw_response=llm_raw_response,
+                error=err_msg,
+            )
         messages.append(AIMessage(content=err_msg))
         return {
             "patent_raw_data": {},

@@ -312,7 +312,7 @@ def run_orchestrator_setup(
 
     # 각 Agent 에게 전달할 지시사항 (로그용 요약)
     instructions = {
-        "1": "Technology Analyst Agent : USPTO + Tavily 신호로 후보 기술 발굴 → tech_candidates",
+        "1": "Technology Analyst Agent : KIPRIS 특허 + Tavily 신호로 후보 기술 발굴 → tech_candidates",
         "2": "Roadmap Planner Agent    : dependency tree + TRL 기반 역산 타임라인 → planned_roadmap",
         "3": "Investment Strategist    : stage 집계 + 5-지표 평가 + Tier 도출 → investment_strategy",
     }

@@ -17,6 +17,7 @@ from pathlib import Path
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
+from config import USE_PATENT_MAP
 
 from state import AnalysisState
 from tools.market_tools import MarketIntelligenceTool
@@ -159,6 +160,20 @@ Output format:
     }
   ]
 }"""
+
+
+def _market_system_prompt() -> str:
+    """Return the Market Agent prompt with the patent-map experiment switch applied."""
+    if USE_PATENT_MAP:
+        return MARKET_AGENT_SYSTEM_PROMPT
+    return MARKET_AGENT_SYSTEM_PROMPT + """
+
+[Patent Map Experiment Setting — OVERRIDE]
+USE_PATENT_MAP=false 입니다.
+이번 실행은 actor_similarity_map 미사용 대조군입니다.
+Patent Agent가 제공한 기술 후보군과 Tavily 시장 데이터만 사용하세요.
+actor_similarity_map, patent_maps, map_context_used가 비어 있어도 오류로 보지 마세요.
+"""
 
 
 # ── 헬퍼 함수 ─────────────────────────────────────────────────
@@ -377,6 +392,7 @@ def _write_market_agent_log(
                 "reference_year": state.get("reference_year"),
                 "company_name": state.get("company_name"),
                 "category_hints": state.get("category_hints", []),
+                "use_patent_map": USE_PATENT_MAP,
             },
             "tech_list": tech_list,
             "patent_maps": patent_maps,
@@ -527,20 +543,27 @@ def _collect_market_data(
 ) -> dict:
     """
     Tavily API 로 각 후보 기술의 시장 데이터를 수집합니다.
-    actor_similarity_map의 관련 actor/shared area를 검색 context로 사용합니다.
+    USE_PATENT_MAP=true이면 actor_similarity_map의 관련 actor/shared area를 검색 context로 사용합니다.
     """
     tool = MarketIntelligenceTool()
     if not tool.use_mock and not tool.client:
         raise RuntimeError(tool.init_error or "Tavily client is not initialized")
-    global_actor_context = _actor_similarity_contexts(patent_maps)
+    active_patent_maps = patent_maps if USE_PATENT_MAP else {}
+    global_actor_context = _actor_similarity_contexts(active_patent_maps)
+    research_process = [
+        "market_report_discovery",
+        "tam_sam_som_estimation",
+        "cagr_growth_outlook_collection",
+    ]
+    if USE_PATENT_MAP and active_patent_maps:
+        research_process.append("actor_similarity_map_driven_competitive_context")
+    else:
+        research_process.append("candidate_technology_based_competitive_context")
+
     market_raw = {
         "domain": domain,
-        "research_process": [
-            "market_report_discovery",
-            "tam_sam_som_estimation",
-            "cagr_growth_outlook_collection",
-            "actor_similarity_map_driven_competitive_context",
-        ],
+        "use_patent_map": USE_PATENT_MAP,
+        "research_process": research_process,
         "actor_similarity_context": global_actor_context,
         "technologies": {},
     }
@@ -548,7 +571,7 @@ def _collect_market_data(
     for tech in patent_analysis:
         tech_name = tech.get("name", "")
         tech_id = tech.get("tech_id", "")
-        actor_context = _context_for_tech(tech, patent_maps, global_actor_context)
+        actor_context = _context_for_tech(tech, active_patent_maps, global_actor_context)
         related = ", ".join(actor_context.get("related_actors") or [])
         print(f"  [Market] '{tech_name}' 시장 데이터 수집 중... (actors: {related or 'N/A'})")
         market_raw["technologies"][tech_id] = tool.collect_full_signal(
@@ -573,7 +596,10 @@ def run_market_agent(state: AnalysisState) -> dict:
     market_raw = {}
     tech_list = []
     patent_maps = state.get("patent_maps") or {}
+    if not USE_PATENT_MAP:
+        patent_maps = {}
     user_prompt = None
+    system_prompt = _market_system_prompt()
     llm_raw_response = None
 
     patent_analysis = state.get("patent_analysis") or []
@@ -608,7 +634,7 @@ def run_market_agent(state: AnalysisState) -> dict:
         # ③ Claude 에게 분석 요청
         llm = get_llm(max_tokens=4096)
         patent_maps_block = ""
-        if patent_maps:
+        if USE_PATENT_MAP and patent_maps:
             patent_maps_block = f"""
 아래 patent_maps 는 Patent Agent가 관련 기업 특허 포트폴리오 기반으로 생성한 산출물입니다.
 현재 map은 actor_similarity_map 중심입니다. 각 edge의 related_actor, similarity, shared_technology_areas를 시장 조사 범위/경쟁 구도/파트너 생태계 해석 근거로 사용하세요.
@@ -616,6 +642,20 @@ def run_market_agent(state: AnalysisState) -> dict:
 [Patent Maps]
 {json.dumps(patent_maps, ensure_ascii=False, indent=2)[:6000]}
 """
+        else:
+            patent_maps_block = """
+이번 실행은 USE_PATENT_MAP=false 또는 patent_maps 미제공 상태입니다.
+actor_similarity_map 없이 기술 후보군, source_companies, evidence_patents, Tavily 시장 데이터만 사용해 시장성을 평가하세요.
+"""
+
+        research_process_text = (
+            "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
+            "actor_similarity_map 기반 경쟁/협력 구도 탐색"
+            if USE_PATENT_MAP and patent_maps
+            else
+            "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
+            "기술 후보군 기반 경쟁/협력 구도 탐색"
+        )
 
         user_prompt = f"""
 도메인: {state['domain']}
@@ -626,7 +666,7 @@ def run_market_agent(state: AnalysisState) -> dict:
 {patent_maps_block}
 
 아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.
-수집 프로세스는 시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, actor_similarity_map 기반 경쟁/협력 구도 탐색을 포함합니다.
+수집 프로세스는 {research_process_text}을 포함합니다.
 이 데이터를 기반으로 각 기술의 시장 매력도와 시장 규모/성장 전망을 분석해주세요.
 
 [수집된 시장 데이터]
@@ -645,14 +685,14 @@ def run_market_agent(state: AnalysisState) -> dict:
             market_raw=market_raw,
             tech_list=tech_list,
             patent_maps=patent_maps,
-            system_prompt=MARKET_AGENT_SYSTEM_PROMPT,
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
         )
 
         print("[Market Agent] LLM 분석 요청 중...")
         response = llm.invoke(
             [
-                SystemMessage(content=MARKET_AGENT_SYSTEM_PROMPT),
+                SystemMessage(content=system_prompt),
                 HumanMessage(content=user_prompt),
             ]
         )
@@ -673,7 +713,7 @@ def run_market_agent(state: AnalysisState) -> dict:
             market_raw=market_raw,
             tech_list=tech_list,
             patent_maps=patent_maps,
-            system_prompt=MARKET_AGENT_SYSTEM_PROMPT,
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
             llm_raw_response=llm_raw_response,
             market_analysis=market_analysis,
@@ -698,7 +738,7 @@ def run_market_agent(state: AnalysisState) -> dict:
             market_raw=market_raw,
             tech_list=tech_list,
             patent_maps=patent_maps,
-            system_prompt=MARKET_AGENT_SYSTEM_PROMPT,
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
             llm_raw_response=llm_raw_response,
             error=err_msg,

@@ -51,14 +51,14 @@ AI/GPU roadmap:
 
 This is not a legal patent dataset. It is a compact, deterministic example set
 for validating the agent flow and the `actor_similarity_map` renderer without
-PatentsView/Tavily API access.
+KIPRIS/Tavily API access.
 
 The themes are based on public technology signals such as NVIDIA NVLink-C2C,
 Grace/Blackwell memory-coherent interconnects, Blackwell advanced packaging,
 chiplet/3D GPU packaging discussion, GPU memory compression research, Google
 TPU-style accelerator architectures, and AI cluster networking trends.
 
-Use real PatentsView/Tavily API data for production-grade claims.
+Use real KIPRIS/Tavily API data for production-grade claims.
 
 ## Quick Renderer Check
 
