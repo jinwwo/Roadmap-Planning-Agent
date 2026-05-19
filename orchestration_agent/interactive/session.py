@@ -33,6 +33,7 @@ from config import OUTPUTS_DIR, FILE_ORCHESTRATOR_REPORT
 from interactive.event_bus import EventBus, capture_stdout_to
 from llm_factory import get_llm, describe_llm
 from pipeline import run_orchestration, stream_subprocess_stdout, events_to
+from scenario_loader import load_scenario, scenario_to_prompt
 from state import ProblemFrame
 
 
@@ -278,6 +279,9 @@ class Session:
     active_agents: List[str] = field(default_factory=lambda: ["1", "2", "3"])
     total_budget: Optional[float] = None
     stage_mode: str = "phase"
+    scenario_id: Optional[str] = None
+    scenario: Optional[dict] = None
+    use_patent_map: Optional[bool] = None
     # Investment policy (Agent 3 가 사용)
     risk_appetite: Optional[str] = None
     investment_horizon: Optional[str] = None
@@ -288,6 +292,10 @@ class Session:
     reference_year: int = 2025
     category_hints: List[str] = field(default_factory=list)
     industry: Optional[str] = None
+    company_name: Optional[str] = None
+    company_type: Optional[str] = None
+    company_profile: Optional[str] = None
+    related_companies: Optional[List[str]] = None
     objective: Optional[str] = None
     time_horizon: Optional[str] = None   # 산술 도출: "{현재}-{reference_year}"
 
@@ -300,17 +308,28 @@ class Session:
               active_agents: Optional[List[str]] = None,
               total_budget: Optional[float] = None,
               stage_mode: str = "phase",
+              scenario_id: Optional[str] = None,
+              use_patent_map: Optional[bool] = None,
               risk_appetite: Optional[str] = None,
               investment_horizon: Optional[str] = None,
               strategic_priority: Optional[List[str]] = None,
               investment_policy_text: Optional[str] = None) -> None:
         self.user_request = user_request
+        self.scenario_id = scenario_id
+        self.use_patent_map = use_patent_map
+        if scenario_id:
+            self.scenario = load_scenario(scenario_id)
+            self.user_request = self.scenario.get("prompt") or scenario_to_prompt(self.scenario)
         if active_agents:
             self.active_agents = [a for a in active_agents if a in ("1", "2", "3")] or ["1", "2", "3"]
         self.stage_mode = stage_mode or "phase"
 
-        # Investment Policy: 자연어 텍스트 우선, 그 다음 구조화 입력 fallback
-        if investment_policy_text and investment_policy_text.strip():
+        # Investment Policy: predefined scenario는 구조화 값을 우선 사용하고,
+        # custom 자연어 입력은 기존처럼 LLM 추출을 사용.
+        if self.scenario:
+            self.total_budget = self.scenario.get("total_budget")
+            self.strategic_priority = self.scenario.get("strategic_priorities")
+        elif investment_policy_text and investment_policy_text.strip():
             policy = extract_investment_policy(investment_policy_text)
             self.risk_appetite = policy["risk_appetite"]
             self.investment_horizon = policy["investment_horizon"]
@@ -382,35 +401,56 @@ class Session:
 
         try:
             bus.emit("session_started", session_id=self.id, llm=describe_llm(),
-                     active_agents=self.active_agents)
+                     active_agents=self.active_agents,
+                     scenario_id=self.scenario_id,
+                     use_patent_map=self.use_patent_map)
 
             # ── Step 0: Intake ─────────────────────────────
             bus.emit("step_start", step="intake", label="요청 분석")
             bus.log(f"사용자 요청: {self.user_request}", source="session")
-            intake = extract_intake(self.user_request)
-            self.domain = intake["domain"]
-            self.reference_year = intake["reference_year"]
-            self.category_hints = intake["category_hints"]
-            self.industry = intake.get("industry")
-            self.objective = intake.get("objective")
-            # time_horizon 자동 도출 — 현재 연도부터 reference_year 까지
-            # (reference_year 는 extract_intake 에서 이미 sanity check 완료)
-            from datetime import datetime
-            current_year = datetime.now().year
-            if self.reference_year > current_year:
-                self.time_horizon = f"{current_year}-{self.reference_year}"
+            if self.scenario:
+                self.domain = self.scenario.get("domain")
+                self.reference_year = int(self.scenario.get("reference_year"))
+                self.category_hints = self.scenario.get("category_hints") or []
+                self.industry = self.scenario.get("industry")
+                self.objective = self.scenario.get("objective")
+                self.time_horizon = self.scenario.get("time_horizon")
+                self.company_name = self.scenario.get("company_name")
+                self.company_type = self.scenario.get("company_type")
+                self.company_profile = self.scenario.get("company_profile") or self.user_request
+                self.related_companies = self.scenario.get("related_companies")
+                bus.log(f"predefined scenario 사용: {self.scenario_id}", source="session")
             else:
-                # 안전망: 만약 reference_year 가 여전히 과거면 5년 horizon 으로
-                self.time_horizon = f"{current_year}-{current_year + 5}"
-                bus.log(f"⚠️ reference_year={self.reference_year} 비정상 → time_horizon={self.time_horizon} 로 보정", source="session")
+                intake = extract_intake(self.user_request)
+                self.domain = intake["domain"]
+                self.reference_year = intake["reference_year"]
+                self.category_hints = intake["category_hints"]
+                self.industry = intake.get("industry")
+                self.objective = intake.get("objective")
+                self.company_profile = self.user_request
+                # time_horizon 자동 도출 — 현재 연도부터 reference_year 까지
+                # (reference_year 는 extract_intake 에서 이미 sanity check 완료)
+                from datetime import datetime
+                current_year = datetime.now().year
+                if self.reference_year > current_year:
+                    self.time_horizon = f"{current_year}-{self.reference_year}"
+                else:
+                    # 안전망: 만약 reference_year 가 여전히 과거면 5년 horizon 으로
+                    self.time_horizon = f"{current_year}-{current_year + 5}"
+                    bus.log(f"⚠️ reference_year={self.reference_year} 비정상 → time_horizon={self.time_horizon} 로 보정", source="session")
 
             bus.emit("intake_ready",
+                     scenario_id=self.scenario_id,
                      domain=self.domain,
                      reference_year=self.reference_year,
                      category_hints=self.category_hints,
                      industry=self.industry,
+                     company_name=self.company_name,
+                     company_profile=self.company_profile,
+                     related_companies=self.related_companies,
                      objective=self.objective,
                      time_horizon=self.time_horizon,
+                     use_patent_map=self.use_patent_map,
                      # Investment Policy (자연어에서 LLM 추출됐거나 폼/기본값)
                      risk_appetite=self.risk_appetite,
                      investment_horizon=self.investment_horizon,
@@ -436,6 +476,7 @@ class Session:
                             category_hints=self.category_hints,
                             active_agents=self.active_agents,
                             industry=self.industry,
+                            company_type=self.company_type,
                             objective=self.objective,
                             time_horizon=self.time_horizon,
                             total_budget=self.total_budget,
@@ -444,6 +485,10 @@ class Session:
                             investment_horizon=self.investment_horizon,
                             out_prefix=out_prefix,
                             stage_mode=self.stage_mode,
+                            company_name=self.company_name,
+                            company_profile=self.company_profile,
+                            related_companies=self.related_companies,
+                            use_patent_map=self.use_patent_map,
                         )
 
             # Orchestrator 최종 보고서 저장 (outputs/web_<sid>_orchestrator_report.json)

@@ -59,6 +59,18 @@
 
       <!-- Agent toggle + composer -->
       <div class="composer">
+        <div class="scenario-row">
+          <label class="scenario-field">
+            <span>Scenario</span>
+            <select id="scenario-select">
+              <option value="">Custom natural-language prompt</option>
+            </select>
+          </label>
+          <label class="agent-toggle map-toggle">
+            <input type="checkbox" id="use-patent-map" checked />
+            <span class="agent-chip">Actor Similarity Map</span>
+          </label>
+        </div>
         <div class="agent-toggle-row">
           <label class="agent-toggle"><input type="checkbox" id="agent1" checked />
             <span class="agent-chip">Agent 1 · Tech Analyst</span>

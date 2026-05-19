@@ -117,6 +117,21 @@ html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: 
 .agent-toggle-row {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
 }
+.scenario-row {
+  display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 8px; align-items: end;
+}
+.scenario-field {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.scenario-field span {
+  font-size: 11px; color: var(--text-dim); font-weight: 600;
+}
+.scenario-field select {
+  background: var(--bg-elev); border: 1px solid var(--border);
+  color: var(--text); border-radius: 6px; padding: 7px 8px;
+  font-family: inherit; font-size: 12px; outline: none;
+}
+.scenario-field select:focus { border-color: var(--accent); }
 .agent-toggle { cursor: pointer; }
 .agent-toggle input { display: none; }
 .agent-chip {
@@ -133,6 +148,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: 
 }
 .agent-toggle:hover .agent-chip { color: var(--text); border-color: var(--accent-soft); }
 .toggle-hint { margin-left: auto; font-size: 11px; color: var(--text-dim); }
+.map-toggle { white-space: nowrap; }
 
 /* Investment Policy panel (collapsible) */
 .policy-row {

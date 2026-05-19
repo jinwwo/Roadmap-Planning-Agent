@@ -7,6 +7,9 @@ let currentStepBlock = null;
 const ctx = {
   intake: null,              // {domain, reference_year, category_hints, ...}
   activeAgents: [],
+  scenarios: [],
+  scenarioId: "",
+  usePatentMap: true,
   problemFrame: null,
   market_context: null,
   tech_candidates: null,
@@ -29,12 +32,22 @@ const panel = () => $("#panel");
   } catch (e) {
     $("#llm-badge").textContent = "LLM: (status unavailable)";
   }
+
+  try {
+    const r = await fetch("/api/scenarios");
+    const data = await r.json();
+    ctx.scenarios = data.scenarios || [];
+    populateScenarioSelect();
+  } catch (e) {
+    console.warn("scenario list unavailable", e);
+  }
 })();
 
 $("#send-btn").addEventListener("click", onSend);
 $("#input").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) onSend();
 });
+$("#scenario-select").addEventListener("change", onScenarioChange);
 
 // Investment Policy 는 자연어 텍스트로 받아서 서버에서 LLM 추출 (예전 라디오/드롭다운 제거됨)
 
@@ -56,10 +69,14 @@ async function onSend() {
   }
 
   // Investment Policy 는 메인 textarea 안에 자연어로 함께 들어옴 (별도 수집 X)
+  const scenarioId = $("#scenario-select").value || "";
+  const usePatentMap = $("#use-patent-map").checked;
 
   ta.value = "";
   $("#send-btn").disabled = true;
   resetCtx();
+  ctx.scenarioId = scenarioId;
+  ctx.usePatentMap = usePatentMap;
 
   addUserMessage(text);
   clearPanel();
@@ -67,7 +84,12 @@ async function onSend() {
   // 세션 생성
   let sid;
   try {
-    const payload = { request: text, active_agents: activeAgents };
+    const payload = {
+      request: text,
+      active_agents: activeAgents,
+      scenario_id: scenarioId || null,
+      use_patent_map: usePatentMap,
+    };
     // 메인 텍스트가 정책 정보를 함께 담고 있으므로 그대로 전달 (서버에서 LLM 으로 추출)
     if (text) payload.investment_policy_text = text;
 
@@ -99,10 +121,33 @@ async function onSend() {
 function resetCtx() {
   Object.assign(ctx, {
     intake: null, activeAgents: [], problemFrame: null,
+    scenarioId: "", usePatentMap: true,
     market_context: null, tech_candidates: null,
     planned_roadmap: null, stages: null, investment_strategy: null,
     iterations: { agent1: 0, agent2: 0, agent3: 0, review: 0 },
   });
+}
+
+function populateScenarioSelect() {
+  const select = $("#scenario-select");
+  if (!select) return;
+  const existing = select.value;
+  select.innerHTML = `<option value="">Custom natural-language prompt</option>`;
+  ctx.scenarios.forEach((s) => {
+    const opt = document.createElement("option");
+    opt.value = s.scenario_id;
+    opt.textContent = s.name || s.scenario_id;
+    select.appendChild(opt);
+  });
+  select.value = existing;
+}
+
+function onScenarioChange() {
+  const id = $("#scenario-select").value;
+  const scenario = ctx.scenarios.find((s) => s.scenario_id === id);
+  if (scenario && scenario.prompt) {
+    $("#input").value = scenario.prompt;
+  }
 }
 
 function connectStream(sid) {
@@ -126,9 +171,12 @@ function connectStream(sid) {
         `• 기준연도: ${p.reference_year || "-"}`,
         `• 카테고리: ${(p.category_hints || []).join(", ") || "-"}`,
       ];
+      if (p.scenario_id) techLines.unshift(`• 시나리오: <code>${escapeHtml(p.scenario_id)}</code>`);
+      if (p.company_name) techLines.push(`• 기업: <b>${escapeHtml(p.company_name)}</b>`);
       if (p.industry) techLines.push(`• 산업: ${escapeHtml(p.industry)}`);
       if (p.objective) techLines.push(`• 목표: ${escapeHtml(p.objective)}`);
       if (p.time_horizon) techLines.push(`• 시간 범위: ${escapeHtml(p.time_horizon)}`);
+      techLines.push(`• Actor Similarity Map: <b>${p.use_patent_map === false ? "OFF" : "ON"}</b>`);
 
       // 자연어에서 추출된 Investment Policy (Agent 3 가 사용)
       const policyLines = [];
