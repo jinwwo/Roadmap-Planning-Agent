@@ -97,12 +97,8 @@ cd Tech-Analysis-Agent
 uv venv --python 3.10 .venv                  # 또는 python3.10 -m venv .venv
 source .venv/bin/activate
 
-# 4개 폴더의 requirements 를 한 venv 에 설치
-cat tech_analysis_agent/requirements.txt \
-    roadmap_planner_agent/requirements.txt \
-    investment_strategist_agent/requirements.txt \
-    orchestration_agent/requirements.txt \
-  | grep -vE '^\s*$|^\s*#' | sort -u | uv pip install -r -
+# 루트의 통합 requirements.txt 한 번에 설치
+uv pip install -r requirements.txt
 ```
 
 ### 2. `.env` (공용)

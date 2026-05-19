@@ -111,6 +111,11 @@ def parse_args():
         choices=["phase", "horizon"],
         help="Investment Strategist 의 stage 집계 방식",
     )
+    p.add_argument(
+        "--patent-method", dest="patent_method", type=str, default="A_current",
+        choices=["A_current", "B_lee2009"],
+        help="Technology Analyst Patent Agent prompt/method variant",
+    )
     # 결과 저장 경로 prefix (비교 실험 시 파일 덮어쓰기 방지용)
     p.add_argument(
         "--out-prefix", dest="out_prefix", type=str, default="",
@@ -141,6 +146,7 @@ def main():
     print(f"  active_agents  : {active}")
     print(f"  budget         : {args.budget:,.0f} USD")
     print(f"  stage_mode     : {args.stage_mode}")
+    print(f"  patent_method  : {args.patent_method}")
     print(f"  out_prefix     : {args.out_prefix!r}")
     print("=" * 70)
 
@@ -159,6 +165,7 @@ def main():
         future_trend_summary=args.future_trend,
         out_prefix=args.out_prefix,
         stage_mode=args.stage_mode,
+        patent_method=args.patent_method,
     )
 
     # Orchestrator 최종 보고서 저장
@@ -167,6 +174,7 @@ def main():
         json.dump({
             "problem_frame": result["problem_frame"],
             "active_agents": result["active_agents"],
+            "patent_method": result["patent_method"],
             "iteration": result["iteration"],
             "review": result["review"],
             "artifact_paths": result["paths"],

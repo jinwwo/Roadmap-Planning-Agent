@@ -98,15 +98,18 @@ def run_technology_analysis(
     domain: str,
     reference_year: int,
     category_hints: list = None,
+    orchestrator_feedback: dict = None,
 ) -> dict:
     """
     Technology Analysis Agent 를 단독 실행합니다.
 
     Parameters
     ----------
-    domain         : 분석 대상 산업 도메인
-    reference_year : 기준 연도
-    category_hints : 집중할 기술 카테고리 (선택, 없으면 전체)
+    domain                 : 분석 대상 산업 도메인
+    reference_year         : 기준 연도
+    category_hints         : 집중할 기술 카테고리 (선택, 없으면 전체)
+    orchestrator_feedback  : Orchestrator REVISE 시 전달되는
+                             {"text": ["피드백 문장", ...]} — patent/market 분석 prompt 에 박힘
 
     Returns
     -------
@@ -121,9 +124,12 @@ def run_technology_analysis(
         "patent_raw_data": None,
         "market_raw_data": None,
         "patent_analysis": None,
+        "patent_maps": None,
+        "patent_prompt": None,
         "market_analysis": None,
         "tech_candidates": None,
         "market_context": None,
+        "orchestrator_feedback": orchestrator_feedback,
         "messages": [],
         "error": None,
         "retry_count": 0,

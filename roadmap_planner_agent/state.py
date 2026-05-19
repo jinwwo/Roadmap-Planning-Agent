@@ -66,13 +66,28 @@ class RoadmapItem(TypedDict):
 
 # ── LangGraph State ───────────────────────────────────────────
 
+class DroppedTech(TypedDict):
+    tech_id: str
+    name: str
+    reason: str   # 80자 이내 — 왜 제외됐는지
+
+
+class TechSelection(TypedDict, total=False):
+    selected_count: int
+    rationale: str                  # 전체 선별 근거 (200자 이내)
+    dropped: List[DroppedTech]
+
+
 class RoadmapState(TypedDict):
     # ① 입력 (Analyst Agent 로부터)
     tech_candidates: List[TechCandidate]
     market_context: dict          # {"target_market": ..., "expected_boom_quarter": "YYYY QX"}
+    reference_year: Optional[int]  # 사용자 명시 horizon 종료 연도 (예: 2030)
+                                    # tech_selector / roadmap_builder 의 LLM 프롬프트에서 활용
 
     # ② 중간 결과
-    dependency_tree: Optional[dict]       # {tech_id: DependencyNode}
+    tech_selection: Optional[TechSelection]   # tech_selector 산출 (선별 사유 + 제외 목록)
+    dependency_tree: Optional[dict]           # {tech_id: DependencyNode}
     timeline_draft: Optional[List[TimelineItem]]
 
     # ③ 최종 출력

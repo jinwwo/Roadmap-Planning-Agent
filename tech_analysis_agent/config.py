@@ -34,6 +34,11 @@ USPTO_MAX_RESULTS: int = 25
 # USPTO API 장애 시 mock 데이터 사용
 USE_MOCK_PATENT: bool = os.getenv("USE_MOCK_PATENT", "").lower() in ("1", "true", "yes")
 
+# ── Patent Agent prompt / method selection ───────────────────
+#   A_current : 기존 특허 signal 기반 후보 기술 추출 방식
+#   B_lee2009 : Lee et al. (2009) technology-driven roadmapping 모듈 반영 방식
+PATENT_ANALYSIS_METHOD: str = os.getenv("PATENT_ANALYSIS_METHOD", "A_current")
+
 # ── 에이전트 공통 설정 ────────────────────────────────────────
 MAX_TECH_CANDIDATES: int = 10
 MIN_FINAL_SCORE: float = 50.0

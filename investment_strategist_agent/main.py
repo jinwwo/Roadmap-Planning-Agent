@@ -10,7 +10,7 @@ Investment Strategist Agent 진입점 (Agent 3)
     --tech    ../tech_analysis_agent/output_tech_candidates.json
 
   # 투자 정책 override
-  python main.py --risk high --horizon long --budget-constraint low
+  python main.py --risk high --horizon long --total-budget 5000000000
 
 입력 포맷:
   --roadmap : Roadmap Planner 의 output_planned_roadmap.json
@@ -23,7 +23,7 @@ Investment Strategist Agent 진입점 (Agent 3)
   output_investment_strategy.json
   { "market_context": {...},
     "stages": [...],               ← aggregator 결과 (참고용)
-    "investment_strategy": [...] } ← 시언 spec 출력
+    "investment_strategy": [...] } ← strategist 최종 출력
 """
 
 import argparse
@@ -71,9 +71,8 @@ def parse_args():
     p.add_argument("--horizon", type=str, default=None,
                    choices=["short", "balanced", "long"],
                    help="investment_horizon")
-    p.add_argument("--budget-constraint", dest="budget_constraint", type=str, default=None,
-                   choices=["low", "medium", "high"],
-                   help="budget_constraint")
+    p.add_argument("--total-budget", dest="total_budget", type=float, default=None,
+                   help="total_budget (USD, 숫자)")
     p.add_argument("--priority", type=str, default=None,
                    help='strategic_priority (쉼표 구분, 예: "market entry,core capability building")')
     # Stage aggregation 방식
@@ -110,8 +109,8 @@ def _build_policy(args) -> dict:
         policy["risk_appetite"] = args.risk
     if args.horizon:
         policy["investment_horizon"] = args.horizon
-    if args.budget_constraint:
-        policy["budget_constraint"] = args.budget_constraint
+    if args.total_budget is not None:
+        policy["total_budget"] = float(args.total_budget)
     if args.priority:
         policy["strategic_priority"] = [p.strip() for p in args.priority.split(",") if p.strip()]
     return policy

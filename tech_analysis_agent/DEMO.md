@@ -27,7 +27,8 @@ bash run.sh          # 서버 기동 → http://localhost:8000
 ### 1. 설치
 
 ```bash
-cd tech_roadmap_agent
+# 의존성은 루트 requirements.txt 에 통합되어 있음
+cd Tech-Analysis-Agent
 pip install -r requirements.txt
 ```
 

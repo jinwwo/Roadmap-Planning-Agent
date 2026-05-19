@@ -113,6 +113,26 @@ def _output_path(filename: str, out_prefix: str = "") -> str:
     return os.path.join(OUTPUTS_DIR, f"{out_prefix}{filename}")
 
 
+def _backup_iter_outputs(out_prefix: str, iteration: int) -> None:
+    """REVISE 직전 — 직전 iter 의 main 산출물 (tech_candidates / planned_roadmap /
+    investment_strategy) 을 `<prefix>iter{N}_<filename>` 으로 복사 보존.
+
+    이러면 main 파일 (`<prefix><filename>`) 은 항상 마지막 iter 결과,
+    이전 iter 결과는 iter{N}_ 접두사로 추적 가능.
+    """
+    import shutil
+    iter_prefix = f"{out_prefix}iter{iteration}_"
+    for fn in (FILE_TECH_CANDIDATES, FILE_PLANNED_ROADMAP, FILE_INVESTMENT_STRATEGY):
+        src = _output_path(fn, out_prefix)
+        dst = _output_path(fn, iter_prefix)
+        if os.path.exists(src):
+            try:
+                shutil.copy2(src, dst)
+                print(f"[Pipeline] iter{iteration} 산출물 백업: {os.path.basename(dst)}")
+            except Exception as e:
+                print(f"[Pipeline] ⚠️ iter{iteration} 백업 실패 ({fn}): {e}")
+
+
 def _run_subprocess(snippet: str, cwd: str, label: str) -> None:
     """
     sibling 에이전트를 별도 Python 프로세스로 실행합니다.
@@ -264,21 +284,36 @@ def _run_agent1(
         domain = state["domain"]
         ref_year = state["reference_year"]
         hints = state.get("category_hints") or []
+        patent_method = state.get("patent_method") or "A_current"
+        graph_prefix = (out_prefix.rstrip("_") or "run")
+        feedback = state.get("orchestrator_feedback") or None
 
         snippet = f"""
 import sys, json, os
+os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
 sys.path.insert(0, os.getcwd())
 from graphs.analysis_graph import run_technology_analysis
+from tools.patent_map_renderer import render_patent_maps
 
 result = run_technology_analysis(
     domain={domain!r},
     reference_year={int(ref_year)},
     category_hints={list(hints)!r},
+    orchestrator_feedback={feedback!r},
+)
+patent_maps = result.get("patent_maps") or {{}}
+graph_paths = render_patent_maps(
+    patent_maps=patent_maps,
+    output_dir={os.path.join(OUTPUTS_DIR, "graphs")!r},
+    prefix={graph_prefix!r},
 )
 
 out = {{
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
+    "patent_maps": patent_maps,
+    "patent_map_graphs": graph_paths,
+    "patent_prompt": result.get("patent_prompt") or {{}},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
@@ -322,6 +357,7 @@ def _run_agent2(
     else:
         print("\n[Pipeline] Agent 2 (Roadmap Planner) — ✅ ON")
         feedback = state.get("orchestrator_feedback") or None
+        ref_year = state.get("reference_year")
 
         snippet = f"""
 import sys, json, os
@@ -337,16 +373,20 @@ result = run_roadmap_planner(
     tech_candidates=tech_candidates,
     market_context=market_context,
     orchestrator_feedback={feedback!r},
+    reference_year={ref_year!r},
 )
 
 out = {{
     "market_context": market_context,
     "planned_roadmap": result.get("planned_roadmap") or [],
     "dependency_tree": result.get("dependency_tree") or {{}},
+    "tech_selection": result.get("tech_selection") or {{}},
 }}
 with open({out_path!r}, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
-print(f"[Agent 2] 저장: {out_path!r} ({{len(out['planned_roadmap'])}}개 항목)")
+sel = out["tech_selection"]
+sel_count = sel.get("selected_count") if isinstance(sel, dict) else None
+print(f"[Agent 2] 저장: {out_path!r} ({{len(out['planned_roadmap'])}}개 항목, 선별 {{sel_count}})")
 """
         _run_subprocess(snippet, cwd=SIBLING_ROADMAP_PLANNER, label="Roadmap Planner")
 
@@ -384,25 +424,17 @@ def _run_agent3(
     else:
         print("\n[Pipeline] Agent 3 (Investment Strategist) — ✅ ON")
 
-        # ProblemFrame → InvestmentPolicy 유도
+        # ProblemFrame + state override → InvestmentPolicy 구성
         pf = state["problem_frame"]
-        # budget_constraint: 예산 규모에 따른 간단한 매핑 (CLI 에서 override 가능)
-        budget = float(pf.get("total_budget", 0))
-        if budget >= 5e9:
-            budget_constraint = "low"
-        elif budget >= 1e9:
-            budget_constraint = "medium"
-        else:
-            budget_constraint = "high"
-
         investment_policy = {
-            "risk_appetite": "medium",
-            "investment_horizon": "balanced",
-            "budget_constraint": budget_constraint,
+            "risk_appetite": state.get("risk_appetite") or "medium",
+            "investment_horizon": state.get("investment_horizon") or "balanced",
+            "total_budget": float(pf.get("total_budget", 0)),
             "strategic_priority": pf.get("strategic_priorities", []),
         }
 
         use_phase_name = (stage_mode == "phase")
+        feedback = state.get("orchestrator_feedback") or None
 
         snippet = f"""
 import sys, json, os
@@ -410,18 +442,22 @@ sys.path.insert(0, os.getcwd())
 from agents.stage_aggregator import aggregate_stages
 from agents.strategist import run_strategist
 
+# planned_roadmap 은 Agent 2 출력에서, market_context 와 tech_candidates 는
+# Agent 1 출력에서 직접 읽음 (single source of truth)
 with open({roadmap_path!r}, "r", encoding="utf-8") as f:
     rd = json.load(f)
 planned_roadmap = rd.get("planned_roadmap") or []
-market_context = rd.get("market_context") or {{}}
 
+market_context = {{}}
 tech_candidates = []
 try:
     with open({tech_path!r}, "r", encoding="utf-8") as f:
         tc = json.load(f)
+    market_context = tc.get("market_context") or {{}}
     tech_candidates = tc.get("tech_candidates") or []
 except FileNotFoundError:
-    pass
+    # 폴백: Agent 1 파일이 없으면 Agent 2 의 passthrough 사용
+    market_context = rd.get("market_context") or {{}}
 
 stages = aggregate_stages(
     planned_roadmap=planned_roadmap,
@@ -433,6 +469,7 @@ strategies = run_strategist(
     tech_candidates=tech_candidates,
     investment_policy={investment_policy!r},
     market_context=market_context,
+    orchestrator_feedback={feedback!r},
 )
 
 out = {{
@@ -514,9 +551,13 @@ def run_orchestration(
     objective: Optional[str] = None,
     priorities: Optional[List[str]] = None,
     future_trend_summary: Optional[str] = None,
+    # Investment policy overrides (Agent 3 가 사용)
+    risk_appetite: Optional[str] = None,        # low / medium / high
+    investment_horizon: Optional[str] = None,   # short / balanced / long
     # 내부 설정
     out_prefix: str = "",
     stage_mode: str = "phase",
+    patent_method: str = "A_current",
 ) -> Dict[str, Any]:
     """
     Orchestration Agent 전체 파이프라인 실행.
@@ -566,6 +607,10 @@ def run_orchestration(
         "investment_strategy": [],
         "stages": [],
         "orchestrator_feedback": None,
+        # Investment policy override (None 이면 _run_agent3 가 기본값 사용)
+        "risk_appetite": risk_appetite,
+        "investment_horizon": investment_horizon,
+        "patent_method": patent_method,
     }
 
     # ② 첫 실행: 세 Agent 를 순서대로 (OFF 이면 폴백)
@@ -577,6 +622,7 @@ def run_orchestration(
     previous_feedback: List[str] = []
     iteration = 0
     review = None
+    review_history: List[Dict[str, Any]] = []  # 매 iter 의 review 누적
 
     while True:
         _emit("review_start", iteration=iteration + 1,
@@ -593,6 +639,7 @@ def run_orchestration(
             active_agents=active_agents,
         )
         iteration += 1
+        review_history.append({"iteration": iteration, "review": review})
         _emit("review_done", iteration=iteration, review=review)
 
         if review["decision"] == "ACCEPT":
@@ -615,6 +662,9 @@ def run_orchestration(
         }
         previous_feedback = feedback
 
+        # 직전 iter 의 산출물을 iter{N}_ suffix 로 백업 (rerun 이 main 파일을 덮어쓰기 전)
+        _backup_iter_outputs(out_prefix=out_prefix, iteration=iteration)
+
         _emit("refine", rerun_agents=rerun, feedback=feedback, iteration=iteration)
         _rerun_from(state, rerun, out_prefix=out_prefix, stage_mode=stage_mode)
 
@@ -622,12 +672,14 @@ def run_orchestration(
     result = {
         "problem_frame": problem_frame,
         "active_agents": active_agents,
+        "patent_method": patent_method,
         "tech_candidates": state["tech_candidates"],
         "market_context": state["market_context"],
         "planned_roadmap": state["planned_roadmap"],
         "investment_strategy": state["investment_strategy"],
         "stages": state["stages"],
         "review": review,
+        "review_history": review_history,
         "iteration": iteration,
         "paths": {
             "tech_candidates": state.get("path_tech_candidates"),

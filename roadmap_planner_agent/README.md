@@ -14,29 +14,67 @@ Tech-Analysis-Agent/
 
 ## 핵심 책임
 
+- **후보 기술 큐레이션** — N개 후보 중 핵심 K개를 5축 균형으로 자율 선별 (`tech_selector`)
 - **기술 계층 구조화** — Material/Equipment (Layer 0) → Process (Layer 1) → Architecture/Packaging (Layer 2)
 - **타임라인 역산 (Backcasting)** — 목표 시장 개화 분기로부터 lead time 을 거꾸로 계산
 - **Zero-slack 검증** — 선행 기술의 완료 분기 ≤ 후행 기술의 시작 분기
 - **병목 유발 로드맵 생성** — 자원 제약 고려 없이 기술적 필요 일정 모두 배치
   (이후 Investment Strategist 가 '선택과 집중' 결정)
 
-## 파이프라인
+## 파이프라인 — 두 가지 설계 모드 (`ROADMAP_DESIGN_MODE`)
+
+### `holistic` (default — spec 의 LLM 통합)
 
 ```
   START
     │
     ▼
-  [dependency_analyzer]    ← LLM: 기술 트리 구성 + 레이어 할당
-    │                         (카테고리 계층 + dependency_hints 정밀화)
+  [tech_selector]          ← LLM: 후보 N개 → K개 선별 (5축 큐레이션)
+    │                         · 점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거
+    │                         · ROADMAP_TECH_K_MIN 보장 (default 3)
+    │                         · final_score 신뢰 (재평가 X) — 단순 큐레이션
     ▼
-  [timeline_calculator]    ← pure Python: TRL 기반 역산
-    │                         (Kahn's topological sort + backcasting)
-    ▼
-  [roadmap_builder]        ← LLM: phase_name + justification 생성
-    │
+  [roadmap_designer]       ← LLM 한 번에 통합 처리 (spec System Prompt 그대로):
+    │                         · dependency tree (mental model)
+    │                         · TRL-based lead time
+    │                         · Backcasting from market boom_quarter
+    │                         · phase_name + start_q + target_q + prerequisites + justification
+    │                         · Zero-slack 자체 검증
+    │                         · reference_year horizon stagger 분포
     ▼
   END
 ```
+
+자연스러운 horizon 분포 + 의미적 단계 흐름. 결정성은 약간 ↓ 단 LLM 이 종합 맥락으로 합리적 결정.
+
+### `hybrid` (옛 모드 — Python 알고리즘 결정성 우선)
+
+```
+  START
+    │
+    ▼
+  [tech_selector]          ← (동일)
+    │
+    ▼
+  [dependency_analyzer]    ← LLM: 기술 트리 구성 + 레이어 할당 + 양방향 정합
+    │                         (카테고리 계층 + dependency_hints 정밀화)
+    ▼
+  [timeline_calculator]    ← pure Python: TRL 기반 역산
+    │                         · Kahn's topological sort + backcasting
+    │                         · reference_year leaf 안전망 (가장 후행 기술만 horizon 끝까지)
+    ▼
+  [roadmap_builder]        ← LLM: phase_name + justification (분기 변경 X)
+    │                         · phase_name 단조 증가 룰 (시간순)
+    │                         · reference_year horizon narrative
+    ▼
+  END
+```
+
+결정성 보장 (TRL lead_time 강제, Zero-slack 검증). 단 chain 이 sparse 하면 timeline 이 한 시점에 몰리는 경향.
+
+### 모드 전환
+
+`.env` 의 `ROADMAP_DESIGN_MODE=holistic` (default) 또는 `=hybrid` 로 토글. server 재시작.
 
 ## 파일 구조
 
@@ -46,10 +84,12 @@ Tech-Analysis-Agent/
 | `config.py`                   | LLM provider, TRL 리드타임, 카테고리 레이어 | - |
 | `state.py`                    | LangGraph State TypedDict | - |
 | `llm_factory.py`              | Claude / Ollama provider 추상화 | - |
-| `agents/dependency_analyzer.py` | 기술 의존성 트리 구성 | ✅ |
-| `agents/timeline_calculator.py` | TRL 역산 알고리즘 + Zero-slack | ❌ |
-| `agents/roadmap_builder.py`     | 최종 로드맵 + Justification 생성 | ✅ |
-| `graphs/roadmap_graph.py`       | 3-단계 LangGraph 조립 + `run_roadmap_planner()` 헬퍼 | - |
+| `agents/tech_selector.py`       | 후보 K개 선별 (5축 큐레이션 + K_MIN 보장) | ✅ |
+| `agents/roadmap_designer.py`    | **(holistic 모드)** spec System Prompt 그대로 — dependency + lead_time + backcasting + phase_name + justification 한 번에 | ✅ |
+| `agents/dependency_analyzer.py` | (hybrid 모드) 기술 의존성 트리 + 양방향 정합 | ✅ |
+| `agents/timeline_calculator.py` | (hybrid 모드) TRL 역산 알고리즘 + Zero-slack + reference_year leaf 안전망 | ❌ |
+| `agents/roadmap_builder.py`     | (hybrid 모드) phase_name + Justification (분기 변경 X) | ✅ |
+| `graphs/roadmap_graph.py`       | LangGraph 조립 (`ROADMAP_DESIGN_MODE` 분기) + `run_roadmap_planner()` 헬퍼 | - |
 
 ## 입력 / 출력 포맷
 
@@ -90,27 +130,37 @@ Tech-Analysis-Agent/
       "justification": "공정 개발(T03) 을 위해 장비 셋업이 최우선되어야 함. TRL 4 기준 6개 분기 소요 예상."
     }
   ],
-  "dependency_tree": { ... }
+  "dependency_tree": { ... },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "8개 후보 중 5개 선별. GAA·BSPDN 트렌드 후보 보존 + 카테고리 균형.",
+    "dropped": [
+      {"tech_id":"T02","name":"...","reason":"T01 과 기능 중복"},
+      {"tech_id":"T08","name":"...","reason":"final_score 낮고 시점 부적합"}
+    ]
+  }
 }
 ```
 
 ## TRL 기반 리드 타임
 
-| TRL | 의미 | 리드 타임 |
+| TRL | 의미 | 리드 타임 (분기) |
 |-----|------|-----------|
-| 1–3 | 기초 연구 | 6–8+ 분기 |
-| 4–6 | 프로토타이핑 | 3–5 분기 |
-| 7–8 | 최적화 / 양산 준비 | 1–2 분기 |
-| 9   | 양산 가능 | 1 분기 |
+| 1–3 | 기초 연구 | 5 |
+| 4–6 | 프로토타이핑 | 3 |
+| 7–8 | 최적화 / 양산 준비 | 2 |
+| 9   | 양산 가능 | 1 |
 
-상세 값은 [config.py](config.py) 의 `TRL_LEAD_TIME_QUARTERS` 에서 조정.
+값은 단일 정수 (이전엔 `(min, max)` 튜플이었으나 backcasting 결정성 보장을 위해 단순화).
+[config.py](config.py) 의 `TRL_LEAD_TIME_QUARTERS` 에서 조정.
 
 ## 실행
 
 ### 설치
 
 ```bash
-cd roadmap_planner_agent
+# 의존성은 루트 requirements.txt 에 통합되어 있음
+cd Tech-Analysis-Agent
 pip install -r requirements.txt
 ```
 
@@ -162,12 +212,33 @@ from roadmap_planner_agent.graphs.roadmap_graph import run_roadmap_planner
 result = run_roadmap_planner(
     tech_candidates=tech_candidates,
     market_context=market_context,
-    orchestrator_feedback={"shift": [...], "drop": [...]},
+    orchestrator_feedback={
+        "shift": [{"tech_id": "T02", "new_start_q": "2026 Q1"}],
+        "drop":  ["T04"],
+        "text":  ["[portfolio_balance] 단기 우세 — 후기 단계로 일부 기술 미루기"],
+    },
 )
 # result["planned_roadmap"]   : List[RoadmapItem]
 # result["dependency_tree"]   : Dict[tech_id, DependencyNode]
 # result["timeline_draft"]    : 중간 산출물
 ```
+
+`orchestrator_feedback` 의 세 채널:
+
+| 채널 | 의미 | 적용 위치 |
+|------|------|---------|
+| `shift` | 특정 기술의 시작 분기 강제 변경 (cascade 자동 처리) | timeline_calculator |
+| `drop`  | 기술 제외 (dropped=True 표시) | timeline_calculator |
+| `text`  | Orchestrator REVISE 의 자유 피드백 (한국어/영문 OK) | dependency_analyzer + roadmap_builder 의 LLM 프롬프트 |
+
+`text` 는 LLM 이 시스템 프롬프트와 함께 받아 다음 iter 에서 분기 / 의존성 / phase_name 을 조정하는 데 사용합니다.
+
+## 의존성 분석 강화
+
+`dependency_analyzer` 는 카테고리 계층 (Layer 0/1/2) 간 의존성뿐 아니라
+**같은 레이어 안의 정밀한 인과관계** 도 LLM 이 추론하도록 프롬프트에서 예시를 제공
+(예: 검사 장비 T01 → 공정 T02 의 결과 검증 / ALD 장비 → ALD 공정 등).
+단, hard constraint 는 아니며 명백히 필요한 경우만 의존성 추가하라는 지침 (spec 준수).
 
 ## CLI 옵션 요약
 

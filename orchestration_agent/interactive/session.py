@@ -62,16 +62,26 @@ _INTAKE_SYSTEM = """You extract structured parameters from a user's request abou
 Return ONLY valid JSON (no prose, no markdown fences) matching this schema:
 {
   "domain": "<concise technology domain in user's language>",
-  "reference_year": <integer, the baseline year; default to 2025 if unclear>,
+  "reference_year": <integer — the TARGET/END year of the roadmap, NOT the start year>,
   "category_hints": ["Equipment","Material","Process","Architecture","Packaging"],
   "industry": "<optional short industry label>",
   "objective": "<optional one-sentence objective>"
 }
+
+IMPORTANT — reference_year extraction rules:
+- "2030년까지" / "by 2030" / "until 2030" → reference_year = 2030 (the END year)
+- "향후 5년" / "next 5 years" → reference_year = current_year + 5
+- "2030년 시장 진입" / "by 2030 market entry" → reference_year = 2030
+- If unclear, default to (current_year + 5)
+- reference_year MUST be in the FUTURE (greater than current year). Never extract a past year.
+
 Pick a reasonable subset of category_hints for the domain. If user gave none, include all five.
 industry / objective may be omitted if not inferable."""
 
 
 def _extract_json(text: str) -> dict:
+    # Qwen3 시리즈 등 thinking 모드 모델의 <think>...</think> 블록 자동 제거.
+    text = re.sub(r"<think>[\s\S]*?</think>", "", text, flags=re.IGNORECASE).strip()
     cleaned = re.sub(r"```(?:json)?\s*", "", text).replace("```", "").strip()
     try:
         return json.loads(cleaned)
@@ -82,23 +92,178 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"Intake JSON parse failed: {text[:200]}")
 
 
+def _extract_year_from_text(text: str, current_year: int) -> Optional[int]:
+    """사용자 원문에서 4자리 미래 연도를 직접 발췌 (LLM 없이).
+
+    예: '2030년까지', 'by 2030', 'until 2030', '2028 진입', '2030년 시장 개화'
+    → 2030 / 2028 / 2030
+
+    여러 연도가 있으면 가장 큰 미래 연도 (= 마감 연도) 우선.
+    """
+    if not isinstance(text, str):
+        return None
+    matches = re.findall(r"(?<!\d)(20\d{2}|21\d{2})(?!\d)", text)
+    future_years = [int(y) for y in matches if int(y) > current_year]
+    if future_years:
+        return max(future_years)
+    return None
+
+
 def extract_intake(user_request: str) -> dict:
-    """사용자 자연어를 domain / reference_year / category_hints 등으로 파싱"""
-    llm = get_llm(max_tokens=512)
-    resp = llm.invoke([
-        SystemMessage(content=_INTAKE_SYSTEM),
-        HumanMessage(content=user_request),
-    ])
-    data = _extract_json(resp.content if hasattr(resp, "content") else str(resp))
-    data.setdefault("reference_year", 2025)
-    data.setdefault("category_hints",
-                    ["Equipment", "Material", "Process", "Architecture", "Packaging"])
-    data["domain"] = data.get("domain") or user_request.strip()
+    """사용자 자연어를 domain / reference_year / category_hints 등으로 파싱.
+    LLM 응답이 빈 채로 와도 사용자 원문 기반 fallback 으로 동작 보장.
+
+    reference_year 우선순위:
+      ① 사용자 원문에서 regex 로 발췌한 미래 연도 (가장 신뢰성 높음, LLM 무관)
+      ② LLM 이 추출한 reference_year
+      ③ default = current_year + 5
+    """
+    from datetime import datetime
+    current_year = datetime.now().year
+    default_ref_year = current_year + 5  # 기본 5년 horizon
+
+    # ① 원문 regex 추출 — LLM 호출 전에 먼저 시도
+    text_year = _extract_year_from_text(user_request, current_year)
+
+    fallback = {
+        "domain": user_request.strip(),
+        "reference_year": text_year or default_ref_year,
+        "category_hints": ["Equipment", "Material", "Process", "Architecture", "Packaging"],
+    }
+
     try:
-        data["reference_year"] = int(data["reference_year"])
+        llm = get_llm(max_tokens=512)
+        resp = llm.invoke([
+            SystemMessage(content=_INTAKE_SYSTEM),
+            HumanMessage(content=user_request),
+        ])
+        raw = resp.content if hasattr(resp, "content") else str(resp)
+        if not raw or not raw.strip():
+            print(f"[Session] ⚠️ Intake LLM 빈 응답 → 사용자 입력 fallback 사용")
+            return fallback
+        data = _extract_json(raw)
+    except Exception as e:
+        print(f"[Session] ⚠️ Intake 파싱 실패 ({e}) → fallback 사용. raw 샘플: {(raw[:200] if 'raw' in dir() else '(no resp)')!r}")
+        return fallback
+
+    data.setdefault("category_hints", fallback["category_hints"])
+    data["domain"] = data.get("domain") or user_request.strip()
+
+    # reference_year — 원문 regex 결과를 LLM 결과보다 우선
+    try:
+        ry_llm = int(data.get("reference_year", default_ref_year))
     except Exception:
-        data["reference_year"] = 2025
+        ry_llm = default_ref_year
+
+    if text_year and text_year > current_year:
+        if ry_llm != text_year:
+            print(
+                f"[Session] reference_year 보정: LLM={ry_llm} → 원문 regex={text_year} "
+                f"(사용자 원문 우선)"
+            )
+        ry = text_year
+    else:
+        ry = ry_llm
+
+    if ry <= current_year:
+        print(f"[Session] ⚠️ reference_year={ry} 가 현재({current_year}) 이하 → {default_ref_year} 로 보정")
+        ry = default_ref_year
+    data["reference_year"] = ry
     return data
+
+
+# ── Investment Policy 자연어 → 4 필드 추출 ───────────────────
+
+_POLICY_SYSTEM = """You extract structured Investment Policy parameters from a user's natural-language description.
+Return ONLY valid JSON (no prose, no markdown fences) with this schema:
+{
+  "risk_appetite": "low" | "medium" | "high",
+  "investment_horizon": "short" | "balanced" | "long",
+  "total_budget": <integer USD, e.g. 5000000000 for $5B>,
+  "strategic_priority": ["<keyword 1>", "<keyword 2>", ...]
+}
+
+Rules:
+- risk_appetite: "low"=conservative/위험회피, "medium"=balanced/균형, "high"=aggressive/공격적
+- investment_horizon: "short"=1-2yr/단기, "balanced"=mixed/균형, "long"=5yr+/장기
+- total_budget: parse numeric USD. "$5B"=5000000000, "$1B"=1000000000, "10억"=1000000000 (한국어 단위 주의: "억"=10^8, "조"=10^12. 단 일반적으론 USD 표기로 가정).
+  If only currency hint ($, B, M) found, convert. If unclear, default 5000000000.
+- strategic_priority: extract 2-5 short keywords (영문 권장), e.g. ["First-mover advantage", "Cost leadership"].
+  If user said "균형/balanced" → ["Short-term commercialization", "Enabling technology", "Long-term exploratory bets"]
+  If user said "공격적/aggressive" → ["First-mover advantage", "Market expansion", "Aggressive R&D"]
+  If user said "보수적/conservative" → ["Risk minimization", "Proven technology", "Cost leadership"]
+
+Defaults if a field cannot be inferred at all:
+- risk_appetite: "medium"
+- investment_horizon: "balanced"
+- total_budget: 5000000000
+- strategic_priority: ["Short-term commercialization", "Enabling technology", "Long-term exploratory bets"]"""
+
+
+_ALLOWED_RISK = {"low", "medium", "high"}
+_ALLOWED_HORIZON = {"short", "balanced", "long"}
+
+
+def extract_investment_policy(policy_text: str) -> dict:
+    """
+    자연어 투자 정책 → {risk_appetite, investment_horizon, total_budget, strategic_priority}.
+    LLM 추출 실패 시 안전한 기본값 반환.
+    """
+    fallback = {
+        "risk_appetite": "medium",
+        "investment_horizon": "balanced",
+        "total_budget": 5_000_000_000.0,
+        "strategic_priority": [
+            "Short-term commercialization readiness",
+            "Enabling-technology foundation (materials / equipment)",
+            "Balanced long-term exploratory bets",
+        ],
+    }
+
+    if not policy_text or not policy_text.strip():
+        return fallback
+
+    try:
+        llm = get_llm(max_tokens=512)
+        resp = llm.invoke([
+            SystemMessage(content=_POLICY_SYSTEM),
+            HumanMessage(content=policy_text),
+        ])
+        data = _extract_json(resp.content if hasattr(resp, "content") else str(resp))
+    except Exception as e:
+        print(f"[Session] ⚠️ investment_policy_text 파싱 실패: {e} → 기본값 사용")
+        return fallback
+
+    # 필드 검증 + 정규화
+    risk = (data.get("risk_appetite") or "medium").strip().lower()
+    if risk not in _ALLOWED_RISK:
+        risk = "medium"
+
+    horizon = (data.get("investment_horizon") or "balanced").strip().lower()
+    if horizon not in _ALLOWED_HORIZON:
+        horizon = "balanced"
+
+    try:
+        budget = float(data.get("total_budget", fallback["total_budget"]))
+        if budget <= 0:
+            budget = fallback["total_budget"]
+    except Exception:
+        budget = fallback["total_budget"]
+
+    priorities = data.get("strategic_priority", []) or []
+    if isinstance(priorities, list):
+        priorities = [str(p).strip() for p in priorities if str(p).strip()]
+    else:
+        priorities = []
+    if not priorities:
+        priorities = fallback["strategic_priority"]
+
+    return {
+        "risk_appetite": risk,
+        "investment_horizon": horizon,
+        "total_budget": budget,
+        "strategic_priority": priorities,
+    }
 
 
 # ── Session ──────────────────────────────────────────────────
@@ -113,6 +278,10 @@ class Session:
     active_agents: List[str] = field(default_factory=lambda: ["1", "2", "3"])
     total_budget: Optional[float] = None
     stage_mode: str = "phase"
+    # Investment policy (Agent 3 가 사용)
+    risk_appetite: Optional[str] = None
+    investment_horizon: Optional[str] = None
+    strategic_priority: Optional[List[str]] = None
 
     # 파생 필드 (intake 이후 채워짐)
     domain: str = ""
@@ -120,6 +289,7 @@ class Session:
     category_hints: List[str] = field(default_factory=list)
     industry: Optional[str] = None
     objective: Optional[str] = None
+    time_horizon: Optional[str] = None   # 산술 도출: "{현재}-{reference_year}"
 
     # control
     _thread: Optional[threading.Thread] = None
@@ -129,13 +299,34 @@ class Session:
     def start(self, user_request: str,
               active_agents: Optional[List[str]] = None,
               total_budget: Optional[float] = None,
-              stage_mode: str = "phase") -> None:
+              stage_mode: str = "phase",
+              risk_appetite: Optional[str] = None,
+              investment_horizon: Optional[str] = None,
+              strategic_priority: Optional[List[str]] = None,
+              investment_policy_text: Optional[str] = None) -> None:
         self.user_request = user_request
         if active_agents:
             self.active_agents = [a for a in active_agents if a in ("1", "2", "3")] or ["1", "2", "3"]
-        if total_budget is not None:
-            self.total_budget = float(total_budget)
         self.stage_mode = stage_mode or "phase"
+
+        # Investment Policy: 자연어 텍스트 우선, 그 다음 구조화 입력 fallback
+        if investment_policy_text and investment_policy_text.strip():
+            policy = extract_investment_policy(investment_policy_text)
+            self.risk_appetite = policy["risk_appetite"]
+            self.investment_horizon = policy["investment_horizon"]
+            self.total_budget = policy["total_budget"]
+            self.strategic_priority = policy["strategic_priority"]
+        else:
+            # 하위 호환: 구조화 입력 그대로 사용
+            if total_budget is not None:
+                self.total_budget = float(total_budget)
+            if risk_appetite in ("low", "medium", "high"):
+                self.risk_appetite = risk_appetite
+            if investment_horizon in ("short", "balanced", "long"):
+                self.investment_horizon = investment_horizon
+            if strategic_priority:
+                self.strategic_priority = [p.strip() for p in strategic_priority if str(p).strip()]
+
         self._thread = threading.Thread(target=self._run, daemon=True)
         self._thread.start()
 
@@ -202,6 +393,16 @@ class Session:
             self.category_hints = intake["category_hints"]
             self.industry = intake.get("industry")
             self.objective = intake.get("objective")
+            # time_horizon 자동 도출 — 현재 연도부터 reference_year 까지
+            # (reference_year 는 extract_intake 에서 이미 sanity check 완료)
+            from datetime import datetime
+            current_year = datetime.now().year
+            if self.reference_year > current_year:
+                self.time_horizon = f"{current_year}-{self.reference_year}"
+            else:
+                # 안전망: 만약 reference_year 가 여전히 과거면 5년 horizon 으로
+                self.time_horizon = f"{current_year}-{current_year + 5}"
+                bus.log(f"⚠️ reference_year={self.reference_year} 비정상 → time_horizon={self.time_horizon} 로 보정", source="session")
 
             bus.emit("intake_ready",
                      domain=self.domain,
@@ -209,6 +410,12 @@ class Session:
                      category_hints=self.category_hints,
                      industry=self.industry,
                      objective=self.objective,
+                     time_horizon=self.time_horizon,
+                     # Investment Policy (자연어에서 LLM 추출됐거나 폼/기본값)
+                     risk_appetite=self.risk_appetite,
+                     investment_horizon=self.investment_horizon,
+                     total_budget=self.total_budget,
+                     strategic_priority=self.strategic_priority,
                      active_agents=self.active_agents)
             bus.emit("step_end", step="intake")
 
@@ -230,7 +437,11 @@ class Session:
                             active_agents=self.active_agents,
                             industry=self.industry,
                             objective=self.objective,
+                            time_horizon=self.time_horizon,
                             total_budget=self.total_budget,
+                            priorities=self.strategic_priority,
+                            risk_appetite=self.risk_appetite,
+                            investment_horizon=self.investment_horizon,
                             out_prefix=out_prefix,
                             stage_mode=self.stage_mode,
                         )
@@ -244,6 +455,7 @@ class Session:
                         "active_agents": result.get("active_agents"),
                         "iteration": result.get("iteration"),
                         "review": result.get("review"),
+                        "review_history": result.get("review_history") or [],
                         "artifact_paths": result.get("paths"),
                     }, f, ensure_ascii=False, indent=2)
                 bus.log(f"[Session] 보고서 저장: {report_path}", source="session")

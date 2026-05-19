@@ -61,17 +61,14 @@ def add_quarters(q: str, delta: int) -> str:
 
 def get_lead_time(trl: int) -> int:
     """
-    현재 TRL → 상용화까지 필요한 분기 수
+    현재 TRL → 상용화까지 필요한 분기 수 (계획서 스펙 그대로)
 
-    TRL 1–3 : 7분기 (약 2년, 원천 R&D)
-    TRL 4–6 : 4분기 (약 1년, 프로토타이핑)
-    TRL 7–8 : 2분기 (약 6개월, 최적화 / 스케일업)
-    TRL 9   : 1분기 (이미 양산 가능)
-
-    config.TRL_LEAD_TIME_QUARTERS 의 (min, max) 중앙값을 사용.
+    TRL 1-3 : 5 분기 (약 15개월, 원천 R&D)
+    TRL 4-6 : 3 분기 (약 9개월, 프로토타이핑)
+    TRL 7-8 : 2 분기 (약 6개월, 최적화 / 스케일업)
+    TRL 9   : 1 분기 (이미 양산 가능)
     """
-    lo, hi = TRL_LEAD_TIME_QUARTERS.get(trl, (4, 6))
-    return (lo + hi) // 2
+    return TRL_LEAD_TIME_QUARTERS.get(trl, 3)
 
 
 def get_phase_name(trl: int, layer: int) -> str:
@@ -129,6 +126,7 @@ def backcast_timeline(
     dependency_tree: dict,
     market_boom_q: str,
     orchestrator_feedback: dict = None,
+    reference_year: int = None,
 ) -> tuple:
     """
     시장 개화 분기를 기준으로 역산하여 각 기술의 시작/완료 분기를 결정.
@@ -163,6 +161,11 @@ def backcast_timeline(
     # ② 위상 정렬 (레이어 → 선행 기술 완료 순)
     sorted_ids = _topological_sort(active_tree)
 
+    # leaf 판정용 — 다른 기술의 prerequisites 에 등장하지 않으면 leaf (가장 후행)
+    all_prereq_ids = set()
+    for n in active_tree.values():
+        all_prereq_ids.update(n.get("prerequisites", []) or [])
+
     # ③ 각 기술의 완료 분기를 저장할 딕셔너리
     completion = {}   # {tech_id: target_q_int}
     timeline = {}     # {tech_id: {start_q, target_q, ...}}
@@ -175,9 +178,27 @@ def backcast_timeline(
         prereqs = [p for p in node.get("prerequisites", []) if p in active_tree]
 
         # ④ 역산: 이 기술이 완료되어야 하는 최후 시점 결정
-        # - 다음 기술들의 시작 시점 중 가장 빠른 것 - 1
-        # - 기본은 market_boom_q - 1 분기 (최종 통합 직전에 완료)
-        latest_needed = boom_int - 1
+        #
+        # 두 가지 경우:
+        #   (a) leaf (다른 기술의 prereq 가 아님 = 가장 후행) + reference_year 있음
+        #       → reference_year Q4 까지 timeline 활용 (horizon 끝까지)
+        #   (b) non-leaf (다른 기술의 prereq) 또는 reference_year 없음
+        #       → per-tech expected_market_boom_quarter (있으면) / market_boom_q (없으면) 직전
+        #
+        # 추후 dependents chain 처리(아래 ⑥) 로 후행 기술의 시작점 - 1 도 반영.
+        is_leaf = tid not in all_prereq_ids
+        if reference_year and is_leaf:
+            try:
+                latest_needed = quarter_to_int(f"{int(reference_year)} Q4")
+            except Exception:
+                latest_needed = boom_int - 1
+        else:
+            per_tech_boom = node.get("expected_market_boom_quarter", "")
+            if per_tech_boom:
+                tech_boom_int = quarter_to_int(per_tech_boom)
+            else:
+                tech_boom_int = boom_int
+            latest_needed = tech_boom_int - 1
 
         dependents = [
             d for d in node.get("dependents", [])
@@ -259,16 +280,19 @@ def run_timeline_calculator(state: RoadmapState) -> dict:
     market_context = state.get("market_context", {})
     market_boom_q = market_context.get("expected_boom_quarter", "2028 Q1")
     feedback = state.get("orchestrator_feedback")
+    reference_year = state.get("reference_year")
 
     if not dependency_tree:
         msg = "Timeline Calculator: dependency_tree 가 비어있습니다."
         return {"timeline_draft": [], "messages": [AIMessage(content=msg)], "error": msg}
 
     print(f"[Timeline Calculator] 역산 기준: {market_boom_q}")
+    if reference_year:
+        print(f"[Timeline Calculator] reference_year horizon: {reference_year} (leaf 기술 target_q 연장 적용)")
     if feedback:
         print(f"[Timeline Calculator] 오케스트레이터 피드백 적용: {feedback}")
 
-    _, timeline_draft = backcast_timeline(dependency_tree, market_boom_q, feedback)
+    _, timeline_draft = backcast_timeline(dependency_tree, market_boom_q, feedback, reference_year)
 
     # 결과 출력
     print(f"\n[Timeline Calculator] ✅ {len(timeline_draft)}개 기술 타임라인 산출")

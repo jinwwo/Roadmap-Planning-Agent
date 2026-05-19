@@ -24,6 +24,12 @@ MARKET_AGENT_SYSTEM_PROMPT = """You are an Industry Market Size Agent, a special
 Your role is to analyze market intelligence data and extract structured signals about market attractiveness and timing for each candidate technology.
 You do NOT make patent or technical maturity assessments.
 
+If patent maps are provided, use them as strategic context:
+- Use `technology_industry_map` to choose and justify relevant market/application angles.
+- Use `actor_similarity_map` and `actor_relations_map` to interpret competitive and partnership context.
+- Use `technology_affinity_map` to avoid evaluating each technology as an isolated item when adjacent technologies shape adoption.
+- Do not alter tech_id values. Patent maps are context, not replacement market data.
+
 ---
 [Core Responsibilities]
 
@@ -77,6 +83,16 @@ market_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)
 - Format: "YYYY QX" (e.g., "2028 Q1")
 - Default if data insufficient: 3 years from reference year, Q1
 
+[Horizon 인식 — 권장 (강제 X, 가이드)]
+사용자가 명시한 `reference_year` 는 로드맵 horizon 의 **목표 종료 연도** 이다.
+boom_quarter 는 시장 데이터 그대로 정직하게 결정하되, 다음을 고려하라:
+
+- 후보 기술 전체적으로 **boom_quarter 분포가 horizon 에 stagger** 되도록 신경 쓸 것
+  (예: reference_year=2030 → 일부는 2027, 일부는 2028, 일부는 2029-2030 으로 분포)
+- 모든 후보의 boom 이 한 시점에 몰리면 로드맵의 일부 구간이 비어 horizon 활용도 ↓
+- 시장 데이터가 명백히 한쪽 시점을 가리키면 정직한 분석 우선 — 인위적 분산 금지
+- **정직한 분석 ≫ 분포 균형** (둘이 충돌할 때만 정직성 선호, 비슷하면 분포 권장)
+
 ---
 [Language Rules — CRITICAL]
 - `name` 은 입력 리스트의 한국어 기술명을 그대로 사용하거나 동일 의미의 한국어로 유지.
@@ -120,6 +136,22 @@ def _extract_json(text: str) -> dict:
         if match:
             return json.loads(match.group())
         raise ValueError(f"유효한 JSON을 파싱할 수 없습니다:\n{text[:300]}")
+
+
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 market_agent 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "해당 트렌드/기술의 시장 매력도 평가 시 반영하라.\n"
+        f"{bullet}\n"
+    )
 
 
 def _collect_market_data(
@@ -166,15 +198,30 @@ def run_market_agent(state: AnalysisState) -> dict:
         # ① Tavily 시장 데이터 수집
         print("[Market Agent] Tavily 시장 데이터 수집 중...")
         market_raw = _collect_market_data(state["domain"], patent_analysis)
+        patent_maps = state.get("patent_maps") or {}
 
         # ② 입력 기술 목록 준비 (tech_id 고정)
         tech_list = [
-            {"tech_id": t["tech_id"], "name": t["name"]}
+            {
+                "tech_id": t["tech_id"],
+                "name": t["name"],
+                "category": t.get("category", ""),
+                "roadmapping_signals": t.get("roadmapping_signals", {}),
+            }
             for t in patent_analysis
         ]
 
         # ③ Claude 에게 분석 요청
         llm = get_llm(max_tokens=4096)
+        patent_maps_block = ""
+        if patent_maps:
+            patent_maps_block = f"""
+아래 patent_maps 는 Patent Agent가 기술 역량 기반 로드맵 관점으로 생성한 산출물입니다.
+시장 분석 시 technology_industry_map은 시장/제품 영역 선택 근거로, actor map은 경쟁/협력 구도 해석 근거로, technology_affinity_map은 인접 기술과의 동반 채택 가능성 판단 근거로 사용하세요.
+
+[Patent Maps]
+{json.dumps(patent_maps, ensure_ascii=False, indent=2)[:6000]}
+"""
 
         user_prompt = f"""
 도메인: {state['domain']}
@@ -182,6 +229,7 @@ def run_market_agent(state: AnalysisState) -> dict:
 
 분석 대상 기술 목록 (tech_id 변경 불가):
 {json.dumps(tech_list, ensure_ascii=False, indent=2)}
+{patent_maps_block}
 
 아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.
 이 데이터를 기반으로 각 기술의 시장 매력도를 분석해주세요.
@@ -192,6 +240,9 @@ def run_market_agent(state: AnalysisState) -> dict:
 위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.
 모든 tech_id는 반드시 입력 목록의 값과 동일해야 합니다.
 """
+
+        # Orchestrator REVISE feedback 을 user_prompt 끝에 append
+        user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
 
         print("[Market Agent] Claude 분석 요청 중...")
         response = llm.invoke(

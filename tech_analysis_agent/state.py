@@ -79,13 +79,19 @@ class AnalysisState(TypedDict):
 
     # ③ LLM 분석 결과
     patent_analysis: Optional[List[PatentAnalysisResult]]
+    patent_maps: Optional[dict]
+    patent_prompt: Optional[dict]
     market_analysis: Optional[List[MarketAnalysisResult]]
 
     # ④ 최종 출력
     tech_candidates: Optional[List[TechCandidate]]
     market_context: Optional[dict]
 
-    # ⑤ 제어
+    # ⑤ Orchestrator REVISE feedback (재실행 시 후보 재도출에 활용)
+    #    {"text": ["피드백 문장", ...], "shift": [...], "drop": [...]}
+    orchestrator_feedback: Optional[dict]
+
+    # ⑥ 제어
     messages: Annotated[List[BaseMessage], add_messages]
     error: Optional[str]
     retry_count: int
@@ -102,6 +108,8 @@ class GlobalState(TypedDict):
     # Agent 1 출력 → Agent 2 입력
     tech_candidates: Optional[List[TechCandidate]]
     market_context: Optional[dict]
+    patent_maps: Optional[dict]
+    patent_prompt: Optional[dict]
 
     # Agent 2 출력 → Agent 3 입력
     planned_roadmap: Optional[List[dict]]

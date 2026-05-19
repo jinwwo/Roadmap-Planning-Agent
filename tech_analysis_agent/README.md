@@ -50,8 +50,7 @@ tech_roadmap_agent/
 ├── main.py                   # 진입점 — 전체 파이프라인 실행
 ├── config.py                 # 환경변수 로드 및 전역 설정값
 ├── state.py                  # LangGraph State TypedDict 전체 정의
-├── requirements.txt          # 패키지 의존성
-├── .env.example              # 환경변수 설정 가이드
+├── .env.example              # 환경변수 설정 가이드 (의존성은 루트 requirements.txt)
 │
 ├── tools/                    # 외부 API 클라이언트 (순수 데이터 수집)
 │   ├── patent_tools.py       # USPTO PatentsView API 래퍼 (키 불필요)
@@ -125,7 +124,7 @@ bash setup.sh
 1. Ollama 설치 (없으면)
 2. Ollama 데몬 기동
 3. LLM 모델 pull (`llama3.1:8b` 기본)
-4. Python 패키지 설치 (`requirements.txt`)
+4. Python 패키지 설치 (루트 `../requirements.txt` 통합 사용)
 5. `.env` 생성 (오프라인 데모 프리셋)
 
 > 다른 모델을 사용하려면: `bash setup.sh --model qwen2.5:7b`

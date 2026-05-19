@@ -14,101 +14,10 @@ import re
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
+from config import PATENT_ANALYSIS_METHOD
+from prompt_loader import load_prompt
 from state import AnalysisState
 from tools.patent_tools import USPTOPatentTool
-
-# ── 시스템 프롬프트 ───────────────────────────────────────────
-
-PATENT_AGENT_SYSTEM_PROMPT = """You are a Patent Data Agent, a specialized sub-agent of the Technology Analysis system.
-Your role is to analyze patent data and extract structured signals about technology maturity, momentum, and white-space opportunities.
-You do NOT make investment or roadmap decisions. Your sole purpose is to convert raw patent landscape data into a structured, scoreable signal for each candidate technology.
-
----
-[Core Responsibilities]
-
-Based on the provided raw patent data, identify candidate technologies and output structured patent signal analysis.
-For each identified candidate technology, determine:
-- tech_id (assigned sequentially: T01, T02, ...)
-- name
-- category (Material / Equipment / Process / Architecture / Packaging)
-- estimated_trl (1–9, based on patent maturity signals)
-- patent_score (0–100, calculated per framework below)
-- patent_signals (sub-metric breakdown)
-- dependency_hints (list of tech_ids that likely precede this technology)
-- data_quality ("real" if based on actual API data, "estimated" if inferred)
-- rationale (2–3 sentences)
-
----
-[Patent Scoring Framework]
-
-patent_score = (filing_growth_rate × 0.30) + (citation_concentration × 0.25)
-             + (white_space_index × 0.25) + (key_assignee_concentration × 0.20)
-
-1. filing_growth_rate (0–100, weight 30%)
-   - 80–100: CAGR > 30% over last 3 years
-   - 50–79:  CAGR 10–30%
-   - 0–49:   CAGR < 10% or declining
-
-2. citation_concentration (0–100, weight 25%)
-   - 80–100: Top 10% patents hold > 60% of citations (high_citation_ratio > 60)
-   - 50–79:  Top 10% hold 30–60%
-   - 0–49:   Evenly distributed or low citation count
-
-3. white_space_index (0–100, weight 25%)
-   - 80–100: Low total_patents but high CAGR (emerging area)
-   - 50–79:  Moderate density with identifiable gaps
-   - 0–49:   Saturated area (total_patents very high, low CAGR)
-
-4. key_assignee_concentration (0–100, weight 20%)
-   - 80–100: Top assignees include Tier-1 companies (TSMC, ASML, Samsung, Intel, etc.)
-   - 50–79:  Mix of mid-tier corporate and academic
-   - 0–49:   Mostly academic/small players
-
----
-[TRL Estimation]
-- TRL 1–3: Academic/research filings dominant, high white-space, low Tier-1 assignees
-- TRL 4–6: Mix of research and corporate, moderate citation density
-- TRL 7–9: Dominant corporate filers, dense prior art, continuation filings
-
----
-[Dependency Hinting]
-- Material/Equipment → Process → Architecture/Packaging (general order)
-- If technologies are clearly co-dependent, add dependency_hints
-- Use only tech_ids defined in THIS output
-
----
-[Naming Rules — CRITICAL]
-- `name` MUST be a concise TECHNOLOGY CONCEPT in **Korean** (2–6 words). Example: "EUV 리소그래피", "3D 칩렛 스태킹", "High-k ALD 공정", "Backside 전력망".
-- DO NOT copy patent titles verbatim. ABSTRACT the underlying concept.
-- BAD (절대 이렇게 쓰지 말 것): "Method and apparatus for ...", "System for enhanced ... with improved yield", "EUV lithography process for 반도체 equipment tool".
-- GOOD: 짧고 명확한 한국어 기술 개념 명칭만.
-- `rationale` 도 반드시 **한국어 2–3문장**으로 작성.
-- `category` 는 영문 그대로 유지 (Material / Equipment / Process / Architecture / Packaging).
-
----
-[CRITICAL] Return 5–10 candidate technologies. Output ONLY valid JSON. No markdown, no explanation outside JSON.
-
-Output format:
-{
-  "patent_analysis": [
-    {
-      "tech_id": "T01",
-      "name": "...",
-      "category": "Equipment",
-      "estimated_trl": 4,
-      "patent_score": 81.5,
-      "patent_signals": {
-        "filing_growth_rate": 85,
-        "citation_concentration": 78,
-        "white_space_index": 72,
-        "key_assignee_concentration": 92
-      },
-      "dependency_hints": [],
-      "data_quality": "real",
-      "rationale": "..."
-    }
-  ]
-}"""
 
 
 # ── 헬퍼 함수 ─────────────────────────────────────────────────
@@ -125,6 +34,24 @@ def _extract_json(text: str) -> dict:
         if match:
             return json.loads(match.group())
         raise ValueError(f"유효한 JSON을 파싱할 수 없습니다:\n{text[:300]}")
+
+
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 patent_agent 프롬프트에 박을 섹션으로 포맷.
+    Agent 1 은 후보 자체를 도출하므로, 누락된 기술/카테고리 보강 지시로 작동."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "기존 후보 풀을 가능한 한 유지하되, 명시적으로 누락된 트렌드/카테고리/기술이 있으면 "
+        "후보로 추가 도출하여 final 분석에 포함하라.\n"
+        f"{bullet}\n"
+    )
 
 
 def _collect_patent_data(domain: str, category_hints: list) -> dict:
@@ -177,27 +104,40 @@ def run_patent_agent(state: AnalysisState) -> dict:
             state["domain"], state.get("category_hints", [])
         )
 
-        # ② Claude 에게 분석 요청
+        # ② Claude/Ollama 에게 분석 요청
         llm = get_llm(max_tokens=4096)
+        prompt = load_prompt("patent_agent", PATENT_ANALYSIS_METHOD)
+        patent_raw_for_prompt = json.dumps(
+            patent_raw, ensure_ascii=False, indent=2
+        )[:6000]
 
-        user_prompt = f"""
-도메인: {state['domain']}
-분석 기준 연도: {state['reference_year']}
-카테고리 힌트: {state.get('category_hints', [])}
+        user_prompt = prompt.render_user(
+            domain=state["domain"],
+            reference_year=state["reference_year"],
+            category_hints=state.get("category_hints", []),
+            patent_raw=patent_raw_for_prompt,
+        )
 
-아래는 USPTO PatentsView API에서 수집한 실제 특허 데이터입니다.
-이 데이터를 기반으로 해당 도메인의 유망 후보 기술들을 분석해주세요.
+        # Horizon 인식 가이드 — 강제 X, 참고 톤 (TRL 분포 권장)
+        user_prompt = user_prompt + f"""
 
-[수집된 특허 데이터]
-{json.dumps(patent_raw, ensure_ascii=False, indent=2)[:6000]}
-
-위 데이터를 분석하여 지정된 JSON 포맷으로 patent_analysis 를 출력하세요.
+[Horizon 인식 — 권장 (강제 X)]
+reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종료 연도** 이다.
+후보 기술 발굴 시 다음을 고려:
+- 단기 (TRL 7+, 양산 가까운) / 중기 (TRL 5-6, 프로토타입) / 장기 (TRL 3-4, R&D) 가
+  골고루 분포하도록 권장 — 모든 후보를 한 TRL 대역으로 채우지 말 것.
+- 단 도메인 특성상 한 대역에 집중되는 게 자연스러우면 그대로 — 정직한 분석 우선.
+- 즉 "정직한 분석" ≫ "TRL 분포 균형". 둘이 충돌하면 정직성 선호, 비슷하면 분포 권장.
 """
 
-        print("[Patent Agent] Claude 분석 요청 중...")
+        # Orchestrator REVISE feedback 을 user_prompt 끝에 append
+        user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+
+        print(f"[Patent Agent] prompt variant: {prompt.variant}")
+        print("[Patent Agent] LLM 분석 요청 중...")
         response = llm.invoke(
             [
-                SystemMessage(content=PATENT_AGENT_SYSTEM_PROMPT),
+                SystemMessage(content=prompt.system),
                 HumanMessage(content=user_prompt),
             ]
         )
@@ -205,6 +145,7 @@ def run_patent_agent(state: AnalysisState) -> dict:
         # ③ JSON 파싱
         result = _extract_json(response.content)
         patent_analysis = result.get("patent_analysis", [])
+        patent_maps = result.get("patent_maps", {})
 
         print(f"[Patent Agent] 완료: {len(patent_analysis)}개 기술 식별")
         messages.append(AIMessage(content=f"Patent Agent: {len(patent_analysis)}개 후보 기술 분석 완료"))
@@ -212,6 +153,8 @@ def run_patent_agent(state: AnalysisState) -> dict:
         return {
             "patent_raw_data": patent_raw,
             "patent_analysis": patent_analysis,
+            "patent_maps": patent_maps,
+            "patent_prompt": prompt.metadata,
             "messages": messages,
             "error": None,
         }
@@ -223,6 +166,12 @@ def run_patent_agent(state: AnalysisState) -> dict:
         return {
             "patent_raw_data": {},
             "patent_analysis": [],
+            "patent_maps": {},
+            "patent_prompt": {
+                "agent": "patent_agent",
+                "variant": PATENT_ANALYSIS_METHOD,
+                "error": "prompt load or analysis failed",
+            },
             "messages": messages,
             "error": err_msg,
         }

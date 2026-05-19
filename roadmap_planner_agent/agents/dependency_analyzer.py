@@ -60,11 +60,28 @@ For each technology, determine:
    A Process technology CANNOT start before its required Material or Equipment technology is complete.
 
 2. Intra-layer dependencies:
-   Within the same layer, if Technology A's function is clearly required for Technology B to work,
-   A is a prerequisite of B.
+   Within the same layer, if Technology A's function is clearly required for
+   Technology B to work, A is a prerequisite of B.
+
+   For example, within the Process layer technologies often have natural sequence:
+   - Foundation processes (e-beam inspection, basic etching, ALD precursor deposition)
+     are typically required before advanced processes (DSA patterning, GAA fabrication, ALE).
+   - Pattern definition (lithography) is typically required for pattern transfer (etching)
+     and pattern refinement (selective deposition).
+   - System verification techs (final integration, packaging-readiness) typically
+     depend on at least one foundation or intermediate process tech.
+
+   Use these examples as guidance only when functional dependency is genuine —
+   do not invent dependencies just to vary the timeline.
 
 3. Hint integration:
    Use the provided dependency_hints as strong signals, but override them if logically inconsistent.
+
+3a. Description integration:
+   Each tech may include a `description` field (Agent 1 의 시장/특허 분석 본문 발췌).
+   Use it to refine intra-layer dependencies — e.g., if description mentions
+   "EUV scanner is required for High-NA patterning", then the High-NA patterning tech
+   has the EUV scanner as prerequisite.
 
 4. Cross-layer rules:
    - A technology cannot have prerequisites from a HIGHER layer.
@@ -119,6 +136,47 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
 
 
+def _enforce_bidirectional(tree: dict) -> dict:
+    """LLM 응답에서 한쪽만 등록된 의존성을 양방향으로 강제 정합.
+
+    예) T01.dependents 에 T08 이 등록됐지만 T08.prerequisites 가 비어있으면
+        T08.prerequisites 에 T01 자동 추가. 그 반대도 동일.
+
+    이게 없으면 timeline_calculator 가 prerequisites 만 보기 때문에
+    선행 기술이 후행 기술보다 늦게 시작되는 비정상 timeline 이 발생.
+    """
+    for tid, node in list(tree.items()):
+        for prereq_id in list(node.get("prerequisites", []) or []):
+            if prereq_id in tree:
+                deps = tree[prereq_id].setdefault("dependents", []) or []
+                if tid not in deps:
+                    deps.append(tid)
+                tree[prereq_id]["dependents"] = deps
+        for dep_id in list(node.get("dependents", []) or []):
+            if dep_id in tree:
+                preqs = tree[dep_id].setdefault("prerequisites", []) or []
+                if tid not in preqs:
+                    preqs.append(tid)
+                tree[dep_id]["prerequisites"] = preqs
+    return tree
+
+
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 dependency_analyzer 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "의존성 트리 / 레이어 할당 시 반영하라 (예: 시점 지연 지적 → prerequisite 단순화).\n"
+        f"{bullet}\n"
+    )
+
+
 def _build_fallback_tree(tech_candidates: list) -> dict:
     """
     LLM 호출 없이 카테고리 계층만으로 단순 의존성 트리를 구성합니다.
@@ -141,6 +199,7 @@ def _build_fallback_tree(tech_candidates: list) -> dict:
             "prerequisites": [],
             "dependents": [],
             "layer": layer,
+            "expected_market_boom_quarter": t.get("expected_market_boom_quarter", ""),
         }
         if layer == 0:
             layer0_ids.append(tid)
@@ -183,6 +242,13 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
         llm = get_llm(max_tokens=3000)
 
         # 입력 데이터 요약 (필요 필드만)
+        # rationale 의 [Patent]/[Market] 본문은 의존성 추론에 도움이 되므로 포함
+        # (단 길면 240자 제한)
+        def _slim_rationale(r: str) -> str:
+            if not isinstance(r, str):
+                return ""
+            return r[:240] + ("…" if len(r) > 240 else "")
+
         tech_summary = [
             {
                 "tech_id": t["tech_id"],
@@ -190,9 +256,12 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
                 "category": t.get("category", "Process"),
                 "trl": t.get("trl", 3),
                 "dependency_hints": t.get("dependency_hints", []),
+                "description": _slim_rationale(t.get("rationale", "")),
             }
             for t in tech_candidates
         ]
+
+        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
 
         user_prompt = f"""
 다음 {len(tech_candidates)}개의 후보 기술에 대한 의존성 트리를 구성해주세요.
@@ -201,7 +270,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
 {json.dumps(tech_summary, ensure_ascii=False, indent=2)}
 
 시장 컨텍스트: {state.get('market_context', {}).get('target_market', '')}
-"""
+{feedback_block}"""
 
         print("[Dependency Analyzer] LLM 의존성 분석 요청 중...")
         response = llm.invoke([
@@ -217,6 +286,7 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
         # name/category/trl 를 재생성/할루시네이션 하는 경우가 있음.
         # prerequisites / dependents / layer 만 LLM 결과를 유지하고 나머지는
         # 원본 tech_candidates 값으로 강제 덮어쓰기.
+        # 추가로 expected_market_boom_quarter (per-tech) 도 함께 보존 — 역산 시 활용.
         tc_by_id = {t["tech_id"]: t for t in tech_candidates}
         for tid, node in list(dependency_tree.items()):
             src = tc_by_id.get(tid)
@@ -226,6 +296,9 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
             node["name"] = src.get("name", node.get("name", ""))
             node["category"] = src.get("category", node.get("category", ""))
             node["trl"] = src.get("trl", node.get("trl", 1))
+            # per-tech 시장 개화 시점 (Agent 1 산출) — timeline_calculator 가 활용
+            if src.get("expected_market_boom_quarter"):
+                node["expected_market_boom_quarter"] = src["expected_market_boom_quarter"]
 
         # LLM 이 tech_id 를 누락시켰을 때 원본을 fallback 노드로 보강
         for tid, src in tc_by_id.items():
@@ -238,9 +311,16 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
                     "prerequisites": [],
                     "dependents": [],
                     "layer": CATEGORY_LAYER.get(src.get("category", "Process"), 1),
+                    "expected_market_boom_quarter": src.get("expected_market_boom_quarter", ""),
                 }
 
-        print(f"[Dependency Analyzer] ✅ {len(dependency_tree)}개 노드 의존성 트리 구성 완료 (원본 필드 복구)")
+        # ── 양방향 정합 강제 ───────────────────────────────────
+        # LLM 이 한쪽 (예: T01.dependents) 만 등록하고 반대쪽 (T08.prerequisites)
+        # 을 누락하면 timeline_calculator 가 후자만 보기 때문에 후행 기술이
+        # 선행 기술보다 빨리 시작되는 비정상 timeline 발생. 강제 양방향 보강.
+        dependency_tree = _enforce_bidirectional(dependency_tree)
+
+        print(f"[Dependency Analyzer] ✅ {len(dependency_tree)}개 노드 의존성 트리 구성 완료 (원본 필드 복구 + 양방향 정합)")
 
         # 레이어별 요약 출력
         layers = {0: [], 1: [], 2: []}

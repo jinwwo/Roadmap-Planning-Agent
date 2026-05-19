@@ -36,6 +36,8 @@ $("#input").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) onSend();
 });
 
+// Investment Policy 는 자연어 텍스트로 받아서 서버에서 LLM 추출 (예전 라디오/드롭다운 제거됨)
+
 // ── Actions ───────────────────────────────────────────────────
 async function onSend() {
   const ta = $("#input");
@@ -53,6 +55,8 @@ async function onSend() {
     return;
   }
 
+  // Investment Policy 는 메인 textarea 안에 자연어로 함께 들어옴 (별도 수집 X)
+
   ta.value = "";
   $("#send-btn").disabled = true;
   resetCtx();
@@ -63,10 +67,14 @@ async function onSend() {
   // 세션 생성
   let sid;
   try {
+    const payload = { request: text, active_agents: activeAgents };
+    // 메인 텍스트가 정책 정보를 함께 담고 있으므로 그대로 전달 (서버에서 LLM 으로 추출)
+    if (text) payload.investment_policy_text = text;
+
     const resp = await fetch("/api/session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ request: text, active_agents: activeAgents }),
+      body: JSON.stringify(payload),
     });
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({ detail: "세션 생성 실패" }));
@@ -110,14 +118,35 @@ function connectStream(sid) {
       ctx.intake = d.payload;
       ctx.activeAgents = d.payload.active_agents || ctx.activeAgents;
       renderAgentsBar();
-      addAgentMessage(
-        `📥 <b>입력 해석 완료</b><br/>` +
-        `• 도메인: ${escapeHtml(d.payload.domain)}<br/>` +
-        `• 기준연도: ${d.payload.reference_year}<br/>` +
-        `• 카테고리: ${(d.payload.category_hints || []).join(", ")}` +
-        (d.payload.industry ? `<br/>• 산업: ${escapeHtml(d.payload.industry)}` : ""),
-        true
-      );
+
+      const p = d.payload;
+      // 자연어 해석 (Tech 측)
+      const techLines = [
+        `• 도메인: ${escapeHtml(p.domain || "-")}`,
+        `• 기준연도: ${p.reference_year || "-"}`,
+        `• 카테고리: ${(p.category_hints || []).join(", ") || "-"}`,
+      ];
+      if (p.industry) techLines.push(`• 산업: ${escapeHtml(p.industry)}`);
+      if (p.objective) techLines.push(`• 목표: ${escapeHtml(p.objective)}`);
+      if (p.time_horizon) techLines.push(`• 시간 범위: ${escapeHtml(p.time_horizon)}`);
+
+      // 자연어에서 추출된 Investment Policy (Agent 3 가 사용)
+      const policyLines = [];
+      if (p.risk_appetite) policyLines.push(`• Risk Appetite: <b>${escapeHtml(p.risk_appetite)}</b>`);
+      if (p.investment_horizon) policyLines.push(`• Investment Horizon: <b>${escapeHtml(p.investment_horizon)}</b>`);
+      if (p.total_budget) {
+        const budgetFmt = Number(p.total_budget).toLocaleString();
+        policyLines.push(`• Total Budget: <b>${budgetFmt} USD</b>`);
+      }
+      if (p.strategic_priority && p.strategic_priority.length) {
+        policyLines.push(`• Strategic Priority: ${p.strategic_priority.map(x => `<code>${escapeHtml(x)}</code>`).join(", ")}`);
+      }
+
+      let html = `📥 <b>입력 해석 완료</b><br/>` + techLines.join("<br/>");
+      if (policyLines.length) {
+        html += `<br/><br/><b>👤 투자 정책 (자연어에서 추출)</b><br/>` + policyLines.join("<br/>");
+      }
+      addAgentMessage(html, true);
     },
 
     setup_done: (d) => {
@@ -491,8 +520,19 @@ function renderAgent3Section() {
     panel().appendChild(sec);
   }
 
+  // 새 구조: 각 stage 의 tech_investments 안에 per-tech tier 가 있음
+  const tierSummary = (s) => {
+    const tis = s.tech_investments || [];
+    if (!tis.length) return "?";
+    const counts = { "Tier 1": 0, "Tier 2": 0, "Tier 3": 0 };
+    tis.forEach(ti => {
+      const t = ti.recommended_investment_tier || "Tier 2";
+      if (counts[t] !== undefined) counts[t]++;
+    });
+    return `T1=${counts["Tier 1"]} T2=${counts["Tier 2"]} T3=${counts["Tier 3"]}`;
+  };
   const preview = strategy.slice(0, 3).map(s =>
-    `<li>${escapeHtml(s.stage || "")} — <b>${escapeHtml(s.recommended_investment_tier || "?")}</b> · attract=${escapeHtml(s.investment_attractiveness || "-")}</li>`
+    `<li>${escapeHtml(s.stage || "")} — <b>${escapeHtml(tierSummary(s))}</b> · ${(s.tech_investments || []).length}개 기술</li>`
   ).join("");
 
   sec.innerHTML = `
@@ -519,10 +559,59 @@ function renderAgent3Section() {
   strategy.forEach((s) => wrap.appendChild(makeStageCard(s)));
 }
 
+// 새 구조: stage 컨테이너 (header + stage_assessment) + 그 안에 per-tech 카드들
 function makeStageCard(s) {
-  const tier = (s.recommended_investment_tier || "").replace(/\s+/g, "").toLowerCase(); // "Tier 1" → "tier1"
+  const techInvs = s.tech_investments || [];
+
+  // tier 분포 (stage header 에 요약 표시)
+  const tierCounts = { "Tier 1": 0, "Tier 2": 0, "Tier 3": 0 };
+  techInvs.forEach(ti => {
+    const t = ti.recommended_investment_tier || "Tier 2";
+    if (tierCounts[t] !== undefined) tierCounts[t]++;
+  });
+
+  // stage-level 예산 (ratio + 추정 USD)
+  const ratio = Number(s.stage_budget_ratio ?? 0);
+  const estUsd = Number(s.stage_estimated_usd ?? 0);
+  const fmtUsd = (n) => {
+    if (!n || isNaN(n)) return "-";
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+    return `$${Math.round(n).toLocaleString()}`;
+  };
+  const ratioPct = ratio > 0 ? `${(ratio * 100).toFixed(1)}%` : "-";
+  const stageBudgetLine = (ratio > 0 || estUsd > 0)
+    ? `<div style="font-size:12px;color:var(--accent-soft); margin:4px 0 6px 0;">
+         💰 단계 예산: <b>${ratioPct}</b> · 추정 <b>${fmtUsd(estUsd)}</b>
+       </div>`
+    : "";
+
+  const el = document.createElement("div");
+  el.className = "stage-card";
+  el.innerHTML = `
+    <div class="stage-card-header">
+      <div>
+        <div class="stage-name">${escapeHtml(s.stage || "")}</div>
+        <div class="stage-period">${escapeHtml(s.period || "")}</div>
+      </div>
+      <span style="font-size:11px;color:var(--text-dim);">
+        T1=<b>${tierCounts["Tier 1"]}</b> · T2=<b>${tierCounts["Tier 2"]}</b> · T3=<b>${tierCounts["Tier 3"]}</b>
+      </span>
+    </div>
+    ${stageBudgetLine}
+    ${s.stage_assessment ? `<div class="stage-action" style="margin-bottom:6px;"><b>Stage 통합 판단:</b> ${escapeHtml(s.stage_assessment)}</div>` : ""}
+    <div class="tech-invs"></div>
+  `;
+
+  const wrap = el.querySelector(".tech-invs");
+  techInvs.forEach(ti => wrap.appendChild(makeTechInvestmentCard(ti)));
+  return el;
+}
+
+function makeTechInvestmentCard(ti) {
+  const tier = (ti.recommended_investment_tier || "").replace(/\s+/g, "").toLowerCase();
   const tierClass = tier === "tier1" ? "t1" : tier === "tier2" ? "t2" : "t3";
-  const es = s.evaluation_scores || {};
+  const es = ti.evaluation_scores || {};
   const scoreKeys = [
     ["market_opportunity", "MO"],
     ["strategic_fit", "SF"],
@@ -547,25 +636,25 @@ function makeStageCard(s) {
   };
 
   const el = document.createElement("div");
-  el.className = "stage-card";
+  el.className = "tech-inv-card";
+  el.style.cssText = "border-left:2px solid var(--border); padding:6px 8px; margin:6px 0;";
   el.innerHTML = `
     <div class="stage-card-header">
       <div>
-        <div class="stage-name">${escapeHtml(s.stage || "")}</div>
-        <div class="stage-period">${escapeHtml(s.period || "")}</div>
+        <div class="stage-name" style="font-size:12px;">${escapeHtml(ti.tech_id || "")} · ${escapeHtml(ti.name || "")}</div>
       </div>
-      <span class="tier-badge ${tierClass}">${escapeHtml(s.recommended_investment_tier || "-")}</span>
+      <span class="tier-badge ${tierClass}">${escapeHtml(ti.recommended_investment_tier || "-")}</span>
     </div>
     <div style="font-size:11px;color:var(--text-dim);">
-      attract=<b>${escapeHtml(s.investment_attractiveness || "-")}</b> ·
-      urgency=<b>${escapeHtml(s.investment_urgency || "-")}</b> ·
-      scope=<b>${escapeHtml(s.investment_scope || "-")}</b>
+      attract=<b>${escapeHtml(ti.investment_attractiveness || "-")}</b> ·
+      urgency=<b>${escapeHtml(ti.investment_urgency || "-")}</b> ·
+      scope=<b>${escapeHtml(ti.investment_scope || "-")}</b>
     </div>
     <div class="score-bars">${bars}</div>
-    ${s.recommended_action ? `<div class="stage-action">${escapeHtml(s.recommended_action)}</div>` : ""}
-    ${listBlock("근거", s.rationale)}
-    ${listBlock("리스크", s.major_risks)}
-    ${listBlock("자원 집중", s.resource_focus)}
+    ${ti.recommended_action ? `<div class="stage-action">${escapeHtml(ti.recommended_action)}</div>` : ""}
+    ${listBlock("근거", ti.rationale)}
+    ${listBlock("리스크", ti.major_risks)}
+    ${listBlock("자원 집중", ti.resource_focus)}
   `;
   return el;
 }
@@ -594,9 +683,24 @@ function renderReviewSection(review, iteration) {
   const ir   = trm.investment_rationality || {};
   const pb   = trm.portfolio_balance || {};
 
-  const flag = (b) => b
-    ? `<span class="flag ok">OK</span>`
-    : `<span class="flag bad">FAIL</span>`;
+  // 3-state flag: true=OK / false=FAIL / undefined·null=n/a (LLM 이 값 누락)
+  const flag = (b) => {
+    if (b === true)  return `<span class="flag ok">OK</span>`;
+    if (b === false) return `<span class="flag bad">FAIL</span>`;
+    return `<span class="flag" style="border-color:var(--text-dim);color:var(--text-dim);">n/a</span>`;
+  };
+
+  // 점수 표시: undefined/null/NaN → "n/a" (LLM 이 점수 안 채운 경우)
+  const fmtScore = (v) => {
+    if (v === undefined || v === null || v === "") {
+      return `<span style="color:var(--text-dim);">n/a</span>`;
+    }
+    const n = Number(v);
+    if (Number.isNaN(n)) {
+      return `<span style="color:var(--text-dim);">n/a</span>`;
+    }
+    return n.toFixed(2);
+  };
 
   const listBlock = (title, items) => {
     if (!items || !items.length) return "";
@@ -611,16 +715,16 @@ function renderReviewSection(review, iteration) {
       `${flag(seq.dependency_valid)} dependency
        <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(seq.comment || "")}</div>`)}
     ${trmCell("alignment", "Strategic Alignment",
-      `<span class="score">fit ${Number(al.company_fit ?? 0).toFixed(2)}</span>
-       <span class="score">trend ${Number(al.future_trend_alignment ?? 0).toFixed(2)}</span>
+      `<span class="score">fit ${fmtScore(al.company_fit)}</span>
+       <span class="score">trend ${fmtScore(al.future_trend_alignment)}</span>
        <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(al.comment || "")}</div>`)}
     ${trmCell("investment", "Investment Rationality",
       `<div style="color:var(--text-dim);">${escapeHtml(ir.comment || "")}</div>
        ${listBlock("over_invested", ir.over_invested)}
        ${listBlock("under_invested", ir.under_invested)}`)}
     ${trmCell("portfolio", "Portfolio Balance",
-      `<span class="score">short/long ${Number(pb.short_long_balance ?? 0).toFixed(2)}</span>
-       <span class="score">risk ${Number(pb.risk_balance ?? 0).toFixed(2)}</span>
+      `<span class="score">short/long ${fmtScore(pb.short_long_balance)}</span>
+       <span class="score">risk ${fmtScore(pb.risk_balance)}</span>
        <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(pb.comment || "")}</div>`)}
   </div>`;
 
@@ -648,7 +752,7 @@ function renderReviewSection(review, iteration) {
             <summary>${escapeHtml(label)}</summary>
             <div class="body">${escapeHtml(report[k])}</div>
           </details>`)
-        .join("")
+        .join("") + renderArtifactsSummary(report.artifacts_summary)
     : (review.diagnostic_summary
          ? `<div class="report-section"><div class="body" style="padding:10px 12px;">${escapeHtml(review.diagnostic_summary)}</div></div>`
          : "");
@@ -686,11 +790,141 @@ function renderReviewSection(review, iteration) {
 function appendRefineBanner(rerunAgents, feedback) {
   const sec = panel().querySelector(".review-sec");
   if (!sec) return;
+
+  const wrap = document.createElement("div");
+  wrap.className = "refine-block";
+
   const banner = document.createElement("div");
   banner.className = "refine-line";
   banner.textContent = `↻ REVISE — rerun: ${(rerunAgents || []).join(", ")} | feedback: ${(feedback || []).length}건`;
-  sec.appendChild(banner);
+  wrap.appendChild(banner);
+
+  // feedback 내용 리스트 출력 — 다음 iteration 의 각 agent prompt 에 박힐 텍스트
+  const items = (feedback || []).filter(t => typeof t === "string" && t.trim());
+  if (items.length) {
+    const list = document.createElement("details");
+    list.className = "refine-feedback";
+    list.open = true;
+    list.innerHTML = `
+      <summary>피드백 ${items.length}건 — 다음 iteration 의 재실행 Agent prompt 에 전달됨</summary>
+      <ul>${items.map(t => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`;
+    wrap.appendChild(list);
+  }
+
+  sec.appendChild(wrap);
 }
+
+// ── 8. Artifacts Summary 렌더 ──────────────────────────────────
+// review.report.artifacts_summary 는 dict 형태 (string 이 아닌 raw 데이터).
+// 7개 string narrative 섹션과 다른 렌더링 — 표 형식으로 [A1]/[A2]/[A3] 출처 추적용.
+function renderArtifactsSummary(artifacts) {
+  if (!artifacts || typeof artifacts !== "object") return "";
+  const a1 = artifacts.agent1_tech_candidates || [];
+  const a2 = artifacts.agent2_planned_roadmap || [];
+  const a3 = artifacts.agent3_investment_strategy || [];
+  const insights = artifacts.insights || {};
+
+  // Agent 1 표 — tech_id / name / category / TRL / scores / boom
+  const a1Rows = a1.map(t => `
+    <tr>
+      <td><b>${escapeHtml(t.tech_id || "")}</b></td>
+      <td>${escapeHtml(t.name || "")}</td>
+      <td>${escapeHtml(t.category || "")}</td>
+      <td>${escapeHtml(String(t.trl ?? ""))}</td>
+      <td>${escapeHtml(String(t.final_score ?? ""))}</td>
+      <td>${escapeHtml(String(t.market_score ?? ""))}</td>
+      <td>${escapeHtml(String(t.patent_score ?? ""))}</td>
+      <td>${escapeHtml(t.expected_market_boom_quarter || "")}</td>
+    </tr>`).join("");
+  const a1Html = a1.length ? `
+    <details class="artifact-sub" open>
+      <summary>[A1] Agent 1 · Tech Candidates (${a1.length})</summary>
+      <div class="body">
+        <table class="artifact-table">
+          <thead><tr>
+            <th>tech_id</th><th>name</th><th>category</th><th>TRL</th>
+            <th>final</th><th>market</th><th>patent</th><th>boom</th>
+          </tr></thead>
+          <tbody>${a1Rows}</tbody>
+        </table>
+      </div>
+    </details>` : "";
+
+  // Agent 2 표 — tech_id / phase / start → target / prereq / lead
+  const a2Rows = a2.map(r => `
+    <tr>
+      <td><b>${escapeHtml(r.tech_id || "")}</b></td>
+      <td>${escapeHtml(r.phase_name || "")}</td>
+      <td>${escapeHtml(r.start_q || "")} → ${escapeHtml(r.target_q || "")}</td>
+      <td>${escapeHtml((r.prerequisites || []).join(", "))}</td>
+      <td>${escapeHtml(String(r.lead_time_quarters ?? ""))}</td>
+    </tr>`).join("");
+  const a2Html = a2.length ? `
+    <details class="artifact-sub">
+      <summary>[A2] Agent 2 · Planned Roadmap (${a2.length})</summary>
+      <div class="body">
+        <table class="artifact-table">
+          <thead><tr>
+            <th>tech_id</th><th>phase</th><th>start → target</th>
+            <th>prerequisites</th><th>lead (Q)</th>
+          </tr></thead>
+          <tbody>${a2Rows}</tbody>
+        </table>
+      </div>
+    </details>` : "";
+
+  // Agent 3 — stage 별로 그룹
+  const a3Html = a3.length ? `
+    <details class="artifact-sub">
+      <summary>[A3] Agent 3 · Investment Strategy (${a3.length} stages)</summary>
+      <div class="body">
+        ${a3.map(s => {
+          const techRows = (s.tech_investments || []).map(ti => `
+            <tr>
+              <td><b>${escapeHtml(ti.tech_id || "")}</b></td>
+              <td>${escapeHtml(ti.tier || "")}</td>
+              <td>${escapeHtml(String(ti.investment_attractiveness ?? ""))}</td>
+              <td>${escapeHtml(String(ti.investment_urgency ?? ""))}</td>
+              <td>${escapeHtml(ti.recommended_action || "")}</td>
+              <td>${escapeHtml((ti.major_risks || []).join("; "))}</td>
+            </tr>`).join("");
+          return `
+            <div class="artifact-stage">
+              <div class="artifact-stage-title">
+                <b>${escapeHtml(s.stage || "")}</b>
+                <span style="color:var(--text-dim);">· ${escapeHtml(s.period || "")}</span>
+              </div>
+              ${s.stage_assessment ? `<div class="artifact-stage-assess">${escapeHtml(s.stage_assessment)}</div>` : ""}
+              <table class="artifact-table">
+                <thead><tr>
+                  <th>tech_id</th><th>tier</th><th>attract</th><th>urgency</th>
+                  <th>action</th><th>risks</th>
+                </tr></thead>
+                <tbody>${techRows}</tbody>
+              </table>
+            </div>`;
+        }).join("")}
+      </div>
+    </details>` : "";
+
+  // Insights — tier 분포 / 카테고리 / 평균 TRL / 의존성 엣지
+  const insightsHtml = Object.keys(insights).length ? `
+    <details class="artifact-sub">
+      <summary>Insights (집계 통계)</summary>
+      <div class="body">
+        <pre class="artifact-insights">${escapeHtml(JSON.stringify(insights, null, 2))}</pre>
+      </div>
+    </details>` : "";
+
+  return `
+    <details class="report-section artifact-section">
+      <summary>8. Artifacts Summary <span style="color:var(--text-dim);font-weight:normal;">— [A1]/[A2]/[A3] 출처 데이터</span></summary>
+      <div class="body" style="padding:8px 4px;">
+        ${a1Html}${a2Html}${a3Html}${insightsHtml}
+      </div>
+    </details>`;
+}
+
 
 // ── Utils ─────────────────────────────────────────────────────
 function escapeHtml(s) {

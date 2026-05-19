@@ -5,7 +5,7 @@
 #
 # 수행 단계:
 #   1) uv 로 공용 venv 생성 (Python 3.10)
-#   2) 4개 폴더의 requirements 를 합쳐 venv 에 설치
+#   2) 루트 requirements.txt 의존성 venv 에 설치
 #   3) .env 없으면 .env.example 에서 복사 + 각 폴더 symlink 생성
 #   4) LLM provider 안내 (Ollama 자동 설치는 선택)
 #
@@ -19,6 +19,15 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$ROOT"
+
+# .env 가 있으면 셸 환경변수로 export — OLLAMA_MODEL/LLM_PROVIDER 등이
+# 아래 단계에 자동 반영되도록 (.env 가 단일 진실원).
+if [ -f .env ]; then
+  set -a
+  # shellcheck disable=SC1091
+  source .env
+  set +a
+fi
 
 PROVIDER="${LLM_PROVIDER:-ollama}"
 INSTALL_OLLAMA=1
@@ -55,16 +64,9 @@ fi
 # shellcheck disable=SC1091
 source .venv/bin/activate
 
-# ── 2. 의존성 설치 (4개 폴더 합집합) ─────────────────────────
-echo "[2/4] requirements 설치 (4개 폴더 합집합)"
-MERGED=$(mktemp)
-cat tech_analysis_agent/requirements.txt \
-    roadmap_planner_agent/requirements.txt \
-    investment_strategist_agent/requirements.txt \
-    orchestration_agent/requirements.txt \
-  | grep -vE '^\s*$|^\s*#' | sort -u > "$MERGED"
-uv pip install -r "$MERGED" >/dev/null
-rm -f "$MERGED"
+# ── 2. 의존성 설치 ───────────────────────────────────────────
+echo "[2/4] requirements 설치 (루트 통합)"
+uv pip install -r requirements.txt >/dev/null
 echo "   ✅ 설치 완료"
 
 # ── 3. .env 세팅 ──────────────────────────────────────────────

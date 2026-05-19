@@ -50,6 +50,8 @@ def technology_analysis_node(state: GlobalState) -> dict:
         "patent_raw_data": None,
         "market_raw_data": None,
         "patent_analysis": None,
+        "patent_maps": None,
+        "patent_prompt": None,
         "market_analysis": None,
         "tech_candidates": None,
         "market_context": None,
@@ -67,6 +69,8 @@ def technology_analysis_node(state: GlobalState) -> dict:
     return {
         "tech_candidates": candidates,
         "market_context": context,
+        "patent_maps": result.get("patent_maps"),
+        "patent_prompt": result.get("patent_prompt"),
         "current_step": "roadmap_planner",
         "messages": [
             AIMessage(

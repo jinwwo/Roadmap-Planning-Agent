@@ -42,6 +42,40 @@ DO NOT change start_q, target_q, prerequisites, or lead_time_quarters.
 DO NOT add or remove technologies.
 
 ---
+[phase_name 단조 증가 룰 — 필수]
+
+**phase_name 의 단계 번호는 timeline 시작 분기 순서대로 단조 증가해야 한다.**
+즉 같은 단계 안의 기술끼리는 시작 분기가 비슷하고, 단계 번호가 클수록 시작 분기가 늦어야 한다.
+
+자연스러운 단계 흐름 (시간순):
+  1 단계: 기반 R&D / 기술 탐색           ← 가장 빨리 시작 (TRL 낮음 또는 enabling tech)
+  2 단계: 기술 개발 / 프로토타입          ← 그 다음
+  3 단계: 통합 / 검증                     ← 더 후행
+  4 단계: 양산 전환 / 상용화              ← 가장 늦게 (TRL 7+ 양산 가까운 단계)
+
+금지 사항:
+- "양산 전환" 단계가 "기술 개발" 단계보다 빨리 시작되면 안 됨
+- 같은 시작 분기 ± 2 분기 이내 기술은 같은 단계로 묶어도 OK
+- 단계 번호와 시작 분기가 모순되는 라벨링 금지
+
+[입력의 timeline_draft 는 시작 분기 오름차순으로 정렬되어 전달됨] — 이 순서를 그대로 따라 단계 번호를 부여하면 안전.
+
+---
+[reference_year horizon 정합 — 필수]
+
+**입력에 reference_year (예: 2030) 가 명시되면, 로드맵의 마지막 phase 의 target_q 가
+reference_year 와 가까운 분기 (그 해 안 또는 직전 1년 이내) 까지 도달하도록 phase_name /
+justification 을 작성하라.**
+
+- 마지막 phase 의 justification 에 "reference_year={N} horizon 의 종료 시점에 양산 / 상용화 도달"
+  같은 표현을 명시할 것
+- 만약 timeline 의 마지막 target_q 가 reference_year 보다 한참 빠르면 (예: 2027 인데 reference_year=2030)
+  → justification 에 "양산 후 안정화 / 차세대 R&D 단계가 {reference_year}까지 지속됨" 같은 후속 활동을 명시
+- 단계 라벨이 "양산 전환" 으로 끝나도 reference_year 까지의 활동을 narrative 로 cover
+- timeline 분기 자체는 변경 금지 (start_q / target_q 그대로) — 단 "reference_year 까지 활용" 은
+  phase_name / justification 의 narrative 로 표현해야 함
+
+---
 [Language Rules — CRITICAL]
 - `justification` 은 반드시 **한국어 2–3 문장** 으로 작성 (영문 혼용 금지,
   기술 고유명사/약어는 허용: EUV, ALD, GAA, HBM, TRL 등).
@@ -71,6 +105,22 @@ def _extract_json(text: str) -> dict:
         if match:
             return json.loads(match.group())
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
+
+
+def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
+    """REVISE 시 전달된 feedback 을 roadmap_builder 프롬프트에 박을 섹션으로 포맷."""
+    if not orchestrator_feedback:
+        return ""
+    items = orchestrator_feedback.get("text") or []
+    items = [str(t).strip() for t in items if isinstance(t, str) and t.strip()]
+    if not items:
+        return ""
+    bullet = "\n".join(f"- {t}" for t in items)
+    return (
+        "\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. "
+        "각 기술의 justification 작성 시 반드시 언급하여 어떻게 대응했는지 명시하라.\n"
+        f"{bullet}\n"
+    )
 
 
 def _check_market_feasibility(timeline_draft: list, market_boom_q: str) -> list:
@@ -121,19 +171,29 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
         # ② LLM 에 justification 생성 요청 (Drop 된 기술 제외)
         llm = get_llm(max_tokens=4096)
         active_items = [t for t in timeline_draft if not t.get("dropped")]
+        # phase_name 단조 증가 룰을 위해 시작 분기 오름차순으로 정렬해 전달
+        active_items = sorted(active_items, key=lambda t: quarter_to_int(t.get("start_q", "9999 Q4")))
+
+        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+        ref_year = state.get("reference_year")
+        horizon_block = (
+            f"\nreference_year: {ref_year} (로드맵 horizon 의 종료 연도 — phase_name / "
+            f"justification 작성 시 이 시점까지의 활동을 고려)"
+            if ref_year else ""
+        )
 
         user_prompt = f"""
 목표 시장     : {market_context.get('target_market', '')}
-시장 개화 목표: {market_boom_q}
+시장 개화 목표: {market_boom_q}{horizon_block}
 
-아래는 역산 알고리즘으로 산출된 기술별 타임라인입니다.
+아래는 역산 알고리즘으로 산출된 기술별 타임라인입니다 (시작 분기 오름차순 정렬).
 각 항목에 대해 phase_name 과 justification 을 작성해주세요.
 
 [타임라인 초안]
 {json.dumps(active_items, ensure_ascii=False, indent=2)}
 
 {f"[주의] 다음 기술들은 시장 개화 이후 완료 예정: {warnings}" if warnings else ""}
-"""
+{feedback_block}"""
 
         print("[Roadmap Builder] LLM justification 생성 요청 중...")
         response = llm.invoke([

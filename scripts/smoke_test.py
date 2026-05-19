@@ -64,8 +64,8 @@ def test_timeline_calculator():
                     )
         print("  ✅ Zero-slack 불변량 만족 (prereq 완료 < 후행 시작)")
 
-        # TRL 리드타임 sanity
-        assert get_lead_time(2) >= 6 and get_lead_time(8) <= 2
+        # TRL 리드타임 sanity (계획서 스펙: TRL 1-3=5Q, TRL 4-6=3Q, TRL 7-8=2Q)
+        assert get_lead_time(2) == 5 and get_lead_time(5) == 3 and get_lead_time(8) == 2
         print(f"  ✅ TRL lead time: 2→{get_lead_time(2)}Q, 5→{get_lead_time(5)}Q, 8→{get_lead_time(8)}Q")
     finally:
         sys.path.remove(os.path.join(ROOT, "roadmap_planner_agent"))
