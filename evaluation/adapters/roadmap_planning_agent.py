@@ -361,12 +361,19 @@ class AgentOutputAdapter:
         for st in stages:
             sname = st.get("stage", st.get("stage_name", st.get("phase_name", "")))
             tids = st.get("tech_ids", [])
-            # tech_ids가 없으면 technologies(이름)에서 역매핑 시도
             if not tids:
                 tech_names = st.get("technologies", [])
                 name_to_id = {t["tech_name"]: t["tech_id"] for t in techs}
                 tids = [name_to_id.get(n, "") for n in tech_names if n in name_to_id]
             stage_tids[sname] = tids
+
+        # tech_investments에서 개별 기술 tier/scores 매핑 (우선순위 1)
+        tech_invest_map: Dict[str, dict] = {}
+        for s in strategies:
+            for ti in s.get("tech_investments", []):
+                tid = ti.get("tech_id", "")
+                if tid:
+                    tech_invest_map[tid] = ti
 
         # tech_id 단위로 풀어내기
         result = []
@@ -375,32 +382,32 @@ class AgentOutputAdapter:
         for stage_name, tids in stage_tids.items():
             strat = strat_by_stage.get(stage_name, {})
 
-            # evaluation_scores에서 5지표 추출 (nested 구조!)
-            scores = strat.get("evaluation_scores", {})
-            market_opp = scores.get("market_opportunity", 3)
-            strategic_fit = scores.get("strategic_fit", 3)
-            executability = scores.get("executability", 3)
-            uncertainty = scores.get("uncertainty", 3)
-            urgency = scores.get("urgency", 3)
-
-            # Tier 변환
-            tier_raw = strat.get("recommended_investment_tier",
-                                 strat.get("tier", "Tier 2"))
-            investment_tier = self.TIER_MAP.get(tier_raw, "Medium")
+            # stage 레벨 기본값
+            stage_scores = strat.get("evaluation_scores", {})
+            stage_tier_raw = strat.get("recommended_investment_tier",
+                                       strat.get("tier", "Tier 2"))
 
             for tid in tids:
                 if not tid or tid in covered:
                     continue
                 covered.add(tid)
+
+                # tech_investments에 개별 데이터가 있으면 우선 사용
+                ti = tech_invest_map.get(tid, {})
+                scores = ti.get("evaluation_scores", stage_scores)
+                tier_raw = ti.get("recommended_investment_tier",
+                             ti.get("tier", stage_tier_raw))
+                investment_tier = self.TIER_MAP.get(tier_raw, "Medium")
+
                 result.append({
                     "tech_id": tid,
                     "tech_name": self._find_name(tid, techs),
                     "investment_tier": investment_tier,
-                    "market_opportunity": float(market_opp),
-                    "strategic_fit": float(strategic_fit),
-                    "executability": float(executability),
-                    "uncertainty": float(uncertainty),
-                    "urgency": float(urgency),
+                    "market_opportunity": float(scores.get("market_opportunity", 3)),
+                    "strategic_fit": float(scores.get("strategic_fit", 3)),
+                    "executability": float(scores.get("executability", 3)),
+                    "uncertainty": float(scores.get("uncertainty", 3)),
+                    "urgency": float(scores.get("urgency", 3)),
                 })
 
         # stage에 없는 tech → 기본값

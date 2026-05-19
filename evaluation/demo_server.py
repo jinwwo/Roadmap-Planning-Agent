@@ -80,6 +80,14 @@ config = {
     "aggregation": "mean",
 }
 
+# API 키가 있으면 자동으로 provider 추가
+if os.environ.get("ANTHROPIC_API_KEY"):
+    config["llm_providers"].append("anthropic")
+if os.environ.get("OPENAI_API_KEY"):
+    config["llm_providers"].append("openai")
+if os.environ.get("GOOGLE_API_KEY"):
+    config["llm_providers"].append("gemini")
+
 
 def _build_extractor():
     connector = config["connector"]
@@ -334,37 +342,130 @@ async def delete_result(rid: str):
 import glob
 
 def scan_outputs_on_startup():
-    """서버 시작 시 outputs/ 폴더의 번들 JSON을 자동 평가"""
+    """서버 시작 시 outputs/ 폴더의 JSON을 자동 묶어서 평가"""
+    import re
+
     scan_dirs = [
         os.path.join(os.path.dirname(__file__), "..", "orchestration_agent", "outputs"),
         os.path.join(os.path.dirname(__file__), "outputs"),
         os.path.join(os.path.dirname(__file__), "samples"),
     ]
+
     for scan_dir in scan_dirs:
         if not os.path.isdir(scan_dir):
             continue
-        for fpath in sorted(glob.glob(os.path.join(scan_dir, "*.json"))):
-            fname = os.path.basename(fpath)
-            # 이미 평가 결과인 파일은 건너뛰기
+
+        files = sorted(os.listdir(scan_dir))
+        json_files = [f for f in files if f.endswith(".json")]
+
+        if not json_files:
+            continue
+
+        print(f"  스캔 경로: {scan_dir}")
+
+        # 1) 이미 번들 형태인 파일 (tech_candidates + planned_roadmap + investment_strategy 포함)
+        for fname in json_files:
             if "result" in fname or "sample_input" in fname:
                 continue
+            fpath = os.path.join(scan_dir, fname)
             try:
                 with open(fpath, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                pack = _detect_and_convert(data)
+                # 번들 또는 input_pack인지 확인
+                if "tech_candidates" in data and "planned_roadmap" in data and "investment_strategy" in data:
+                    import time
+                    pack = _detect_and_convert(data)
+                    result = _run_evaluation(pack)
+                    time.sleep(15)
+                    rid = str(uuid.uuid4())[:8]
+                    rname = fname.replace(".json", "")
+                    result_store[rid] = {
+                        "id": rid, "name": rname, "result": result,
+                        "created_at": datetime.now().isoformat(),
+                    }
+                    score = result.get("composite", {}).get("final_composite_score", 0)
+                    print(f"    ✓ {rname}: {score:.1f}점 (번들)")
+            except Exception as e:
+                pass  # 번들 아닌 파일은 무시
+
+        # 2) 개별 파일 자동 묶기 (prefix 기반)
+        # 패턴: {prefix}_tech_candidates.json, {prefix}_planned_roadmap.json, {prefix}_investment_strategy.json
+        # iter 패턴: {prefix}_iter{N}_tech_candidates.json
+        prefixes = {}
+        for fname in json_files:
+            # tech_candidates 파일에서 prefix 추출
+            m = re.match(r"(.+?)_(iter\d+_)?tech_candidates\.json$", fname)
+            if m:
+                prefix = m.group(1)
+                iter_tag = m.group(2) or ""  # "iter1_" 또는 ""
+                key = f"{prefix}_{iter_tag}".rstrip("_")
+                if key not in prefixes:
+                    prefixes[key] = {"prefix": prefix, "iter": iter_tag.rstrip("_")}
+
+        for key, info in prefixes.items():
+            prefix = info["prefix"]
+            iter_tag = info["iter"]
+            iter_prefix = f"{iter_tag}_" if iter_tag else ""
+
+            tech_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}tech_candidates.json")
+            roadmap_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}planned_roadmap.json")
+            invest_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}investment_strategy.json")
+            report_file = os.path.join(scan_dir, f"{prefix}_orchestrator_report.json")
+
+            if not (os.path.exists(tech_file) and os.path.exists(roadmap_file) and os.path.exists(invest_file)):
+                continue
+
+            # 이미 평가된 번들과 중복 체크
+            label = f"{prefix.split('_')[-1]}_{iter_tag}" if iter_tag else prefix.split("_")[-1]
+            if iter_tag:
+                label = f"{iter_tag}"
+            else:
+                label = "final"
+            display_name = f"{prefix[:12]}..._{label}" if len(prefix) > 12 else f"{prefix}_{label}"
+
+            if any(r["name"] == display_name for r in result_store.values()):
+                continue
+
+            try:
+                with open(tech_file, "r", encoding="utf-8") as f:
+                    tech_data = json.load(f)
+                with open(roadmap_file, "r", encoding="utf-8") as f:
+                    roadmap_data = json.load(f)
+                with open(invest_file, "r", encoding="utf-8") as f:
+                    invest_data = json.load(f)
+
+                report_data = None
+                if os.path.exists(report_file):
+                    with open(report_file, "r", encoding="utf-8") as f:
+                        report_data = json.load(f)
+
+                # 번들 조립
+                bundle = {
+                    "orchestrator_report": report_data,
+                    "tech_candidates": tech_data.get("tech_candidates", []),
+                    "planned_roadmap": roadmap_data.get("planned_roadmap", []),
+                    "investment_strategy": invest_data.get("investment_strategy", []),
+                    "stages": invest_data.get("stages", []),
+                    "market_context": tech_data.get("market_context", {}),
+                    "active_agents": report_data.get("active_agents", ["1", "2", "3"]) if report_data else ["1", "2", "3"],
+                }
+
+                import time
+                pack = _detect_and_convert(bundle)
                 result = _run_evaluation(pack)
+                time.sleep(15)  # API rate limit 방지
+
                 rid = str(uuid.uuid4())[:8]
-                rname = fname.replace(".json", "")
                 result_store[rid] = {
-                    "id": rid,
-                    "name": rname,
-                    "result": result,
+                    "id": rid, "name": display_name, "result": result,
                     "created_at": datetime.now().isoformat(),
                 }
                 score = result.get("composite", {}).get("final_composite_score", 0)
-                print(f"  ✓ {rname}: {score:.1f}점")
+                print(f"    ✓ {display_name}: {score:.1f}점 (개별→번들)")
+
             except Exception as e:
-                print(f"  ⚠ {fname}: {e}")
+                print(f"    ⚠ {display_name}: {e}")
+
 
 @app.on_event("startup")
 async def startup():

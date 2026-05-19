@@ -530,7 +530,7 @@ class OpenAIClient(BaseLLMClient):
 class GeminiClient(BaseLLMClient):
     """Gemini (Google) — google-genai SDK"""
     name = "gemini"
-    default_model = "gemini-2.0-flash-exp"
+    default_model = "gemini-2.0-flash-001"
 
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         if not _HAS_GEMINI:
@@ -699,7 +699,7 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
         Example:
             judge = LLMStructuralJudge.from_providers(
                 ["anthropic", "openai", "gemini"],
-                models={"openai": "gpt-4o", "gemini": "gemini-2.0-flash-exp"}
+                models={"openai": "gpt-4o", "gemini": "gemini-2.0-flash-001"}
             )
         """
         api_keys = api_keys or {}
@@ -1104,12 +1104,11 @@ class BackTestEvaluator:
 
         # ── Backtest composite (§8 가중치) ──
         bt_score = (
-            0.30 * selection_quality
-            + 0.30 * cost_adjusted_return
-            + 0.15 * investment_rationality
+            0.35 * selection_quality
+            + 0.35 * cost_adjusted_return
             + 0.10 * budget_feasibility
             + 0.10 * dependency_validity
-            + 0.05 * timing_accuracy
+            + 0.10 * timing_accuracy
         )
 
         return {
@@ -1119,7 +1118,6 @@ class BackTestEvaluator:
                 "tier_analysis": tier_details,
                 "selection_quality": round(selection_quality, 1),
                 "cost_adjusted_return": round(cost_adjusted_return, 1),
-                "investment_rationality_score": round(investment_rationality, 1),
                 "budget_feasibility_score": round(budget_feasibility, 1),
                 "dependency_validity_score": round(dependency_validity, 1),
                 "timing_accuracy_score": round(timing_accuracy, 1),
@@ -1234,7 +1232,6 @@ class BenchmarkReportGenerator:
                 "tech_details": bt["tech_details"],
                 "selection_quality": bt["selection_quality"],
                 "cost_adjusted_return": bt["cost_adjusted_return"],
-                "investment_rationality_score": bt["investment_rationality_score"],
                 "budget_feasibility_score": bt["budget_feasibility_score"],
                 "dependency_validity_score": bt["dependency_validity_score"],
                 "timing_accuracy_score": bt["timing_accuracy_score"],
@@ -1444,33 +1441,6 @@ class BenchmarkReportGenerator:
         else:
             car_detail = f"{bt['cost_adjusted_return']:.1f}/100"
 
-        # ── investment_rationality ──
-        ir_score = bt['investment_rationality_score']
-        if ir_score >= 100:
-            ir_detail = f"{ir_score:.1f}/100 — 모든 기술의 기대 tier와 실제 tier 일치."
-        else:
-            mismatch_count = 0
-            ir_lines = []
-            for t in td:
-                v = t.get("value", 0)
-                tier = t.get("investment_tier", "Medium")
-                expected = 1
-                if v > 0.5: expected += 1
-                if v > 0.7: expected += 1
-                expected = min(4, expected)
-                cost_map = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
-                actual = cost_map.get(tier, 2)
-                if abs(actual - expected) > 1:
-                    mismatch_count += 1
-                    rev = {1: "Low", 2: "Medium", 3: "High", 4: "Strategic"}
-                    ir_lines.append(
-                        f"  ⚠ {t.get('tech_name')}: value={v:.3f} → 기대 {rev[expected]}, 실제 {tier}"
-                    )
-            ir_detail = (
-                f"{ir_score:.1f}/100 — {mismatch_count}건 불일치\n"
-                + "\n".join(ir_lines)
-            )
-
         # ── budget_feasibility ──
         bvp = cr.get("budget_violation_pct", 0)
         bf_detail = (
@@ -1516,16 +1486,15 @@ class BenchmarkReportGenerator:
 
         # ── formula ──
         formula = (
-            f"backtest_score = 0.30×{bt['selection_quality']:.1f} + 0.30×{bt['cost_adjusted_return']:.1f} "
-            f"+ 0.15×{bt['investment_rationality_score']:.1f} + 0.10×{bt['budget_feasibility_score']:.1f} "
-            f"+ 0.10×{bt['dependency_validity_score']:.1f} + 0.05×{bt['timing_accuracy_score']:.1f} "
+            f"backtest_score = 0.35×{bt['selection_quality']:.1f} + 0.35×{bt['cost_adjusted_return']:.1f} "
+            f"+ 0.10×{bt['budget_feasibility_score']:.1f} "
+            f"+ 0.10×{bt['dependency_validity_score']:.1f} + 0.10×{bt['timing_accuracy_score']:.1f} "
             f"= {bt['backtest_score']:.1f}"
         )
 
         return {
             "selection_quality": sq_detail,
             "cost_adjusted_return": car_detail,
-            "investment_rationality": ir_detail,
             "budget_feasibility": bf_detail,
             "dependency_validity": dv_detail,
             "timing_accuracy": ta_detail,
@@ -1591,8 +1560,6 @@ class BenchmarkReportGenerator:
                     f"타이밍 이슈: {te['tech_name']}의 완료시점이 "
                     f"시장 개화 대비 {te['error_years']}년 차이"
                 )
-        if bt["investment_rationality_score"] < 60:
-            failures.append("투자 배분 합리성이 낮음 (기대 tier와 실제 tier 불일치)")
         return failures
 
 
@@ -1616,7 +1583,7 @@ class PairwiseComparator:
 
         bt_keys = [
             "selection_quality", "cost_adjusted_return",
-            "investment_rationality_score", "budget_feasibility_score",
+            "budget_feasibility_score",
             "dependency_validity_score", "timing_accuracy_score"
         ]
         bt_comparison = {}
@@ -1689,7 +1656,7 @@ class TRMEvaluationSuite:
         suite = TRMEvaluationSuite(clients=[
             AnthropicClient(model="claude-sonnet-4-20250514"),
             OpenAIClient(model="gpt-4.1"),
-            GeminiClient(model="gemini-2.0-flash-exp"),
+            GeminiClient(model="gemini-2.0-flash-001"),
         ])
         report = suite.evaluate(input_pack, use_api=True)
 
@@ -1779,7 +1746,6 @@ class TRMEvaluationSuite:
         print(f"  ├─ Backtest Score ────────────── {b['backtest_score']:>5.1f} / 100")
         print(f"  │   selection_quality   = {b['selection_quality']:>5.1f}")
         print(f"  │   cost_adjusted_return= {b['cost_adjusted_return']:>5.1f}")
-        print(f"  │   invest_rationality  = {b['investment_rationality_score']:>5.1f}")
         print(f"  │   budget_feasibility  = {b['budget_feasibility_score']:>5.1f}")
         print(f"  │   dependency_validity = {b['dependency_validity_score']:>5.1f}")
         print(f"  │   timing_accuracy     = {b['timing_accuracy_score']:>5.1f}")

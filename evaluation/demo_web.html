@@ -263,8 +263,8 @@ function renderDetail(raw){
   h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM Judge</h3>${badge('5축','var(--pr)')}</div>${radar(r.axes)}
     <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(r.llmScore)}">${fm(r.llmScore)}</span></div>
     ${descPanel(r.llmDesc)}</div>
-    <div class="card"><div class="hd"><h3>Back Test</h3>${badge('6지표','var(--pr)')}</div>
-    ${bar(bt.sq,'Selection Quality')}${bar(bt.car,'Cost-Adj Return')}${bar(bt.ir,'Invest Rationality')}${bar(bt.bf,'Budget Feasibility')}${bar(bt.dv,'Dep Validity')}${bar(bt.ta,'Timing Accuracy')}
+    <div class="card"><div class="hd"><h3>Back Test</h3>${badge('5지표','var(--pr)')}</div>
+    ${bar(bt.sq,'Selection Quality')}${bar(bt.car,'Cost-Adj Return')}${bar(bt.bf,'Budget Feasibility')}${bar(bt.dv,'Dep Validity')}${bar(bt.ta,'Timing Accuracy')}
     <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(bt.bt)}">${fm(bt.bt)}</span></div>
     ${descPanel(r.btDesc)}</div></div>`;
   if(r.techDetails&&r.techDetails.length){
