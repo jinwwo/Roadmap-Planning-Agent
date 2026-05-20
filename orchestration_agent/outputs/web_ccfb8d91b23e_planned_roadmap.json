@@ -1,0 +1,168 @@
+{
+  "market_context": {
+    "target_market": "AI / Semiconductor / GPU",
+    "expected_boom_quarter": "2027 Q3"
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "코히어런트 GPU 인터커넥트",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
+      "prerequisites": [],
+      "lead_time_years": 2,
+      "reasoning": {
+        "year_placement": "TRL 7 로 양산 직전 단계이므로 1 차년도에 즉시 시작하여 2 차년도 말까지 양산 준비를 완료해야 합니다. 이는 2027 Q3 시장 붐을 앞두고 선행 기술인 T02 와 T03 의 기반이 되어야 하므로 가장 먼저 배치됩니다.",
+        "tech_execution": "AI 가속기 성능의 핵심 병목인 메모리 일관성 문제를 해결하여 NVIDIA 의 하드웨어 리더십을 유지하는 데 필수적입니다. 경쟁사 대비 빠른 양산 진입을 통해 시장 점유율을 선점하고 후속 아키텍처 기술의 토대를 마련합니다.",
+        "investment_selection": "높은 시장 성장률 (CAGR 31.4%) 과 거대한 시장 규모 ($110B) 를 고려할 때, 초기 투자 대비 가장 빠른 수익 창출이 가능한 핵심 기술입니다. R&D 예산의 상당 부분을 할당하여 기술 장벽을 낮추고 경쟁 우위를 확보해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "3D GPU 다이 스태킹",
+      "year_idx_start": 2,
+      "year_idx_target": 3,
+      "prerequisites": [
+        "T01"
+      ],
+      "lead_time_years": 2,
+      "reasoning": {
+        "year_placement": "T01 의 양산 완료 (2 차년도) 를 전제로 2 차년도에 시작하여 3 차년도까지 프로토타입 검증 및 초기 양산을 진행합니다. TRL 6 단계이므로 2 년의 개발 기간이 필요하며, 2027 Q3 시장 붐 시점에 기술 성숙도를 높여야 합니다.",
+        "tech_execution": "T01 인터커넥트 아키텍처를 물리적으로 구현하여 다중 칩렛 GPU 의 밀도와 대역폭을 극대화하는 패키징 기술입니다. AI/HPC 수요 증가에 대응하여 고성능 칩의 집적도를 높이는 전략적 핵심입니다.",
+        "investment_selection": "2030 년까지 33.1% 의 폭발적 성장이 예상되는 $100B 규모 시장을 선점하기 위해 필수적인 투자 대상입니다. 하이브리드 본딩 특허와 결합하여 경쟁사 대비 차별화된 패키징 솔루션을 제공해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "랙스케일 AI 패브릭",
+      "year_idx_start": 3,
+      "year_idx_target": 4,
+      "prerequisites": [
+        "T01"
+      ],
+      "lead_time_years": 2,
+      "reasoning": {
+        "year_placement": "T01 의 성숙 이후 시스템 레벨 최적화가 가능해지는 3 차년도에 시작하여 4 차년도까지 초기 프로토타입을 완성합니다. TRL 5 단계이므로 2 년의 개발 기간이 필요하며, 2028 Q1 시장 붐을 목표로 합니다.",
+        "tech_execution": "단일 칩 성능을 넘어선 랙 단위 가속기 패브릭을 구축하여 대규모 AI 모델 훈련 효율을 극대화합니다. HW/SW 통합 스택 전략의 일환으로 시스템 전체의 확장성을 확보하는 데 기여합니다.",
+        "investment_selection": "코히어런트 인터커넥트와 3D 스태킹의 성숙 이후 나타날 시스템 레벨 확장성 요구를 선제적으로 대응하기 위한 투자입니다. 엔터프라이즈 솔루션 강화 전략과 맞물려 장기적인 경쟁 우위를 점할 수 있습니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "Backside PDN 공정",
+      "year_idx_start": 3,
+      "year_idx_target": 4,
+      "prerequisites": [
+        "T02"
+      ],
+      "lead_time_years": 2,
+      "reasoning": {
+        "year_placement": "T02 의 3D 스태킹 기술이 초기 양산 단계에 진입한 3 차년도에 시작하여 4 차년도까지 공정 최적화를 완료합니다. TRL 5 단계이므로 2 년의 개발 기간이 필요하며, 2027 Q3 이후 전력 효율성 요구에 대응합니다.",
+        "tech_execution": "고집적 3D 스태킹 환경에서 전력 전달 효율을 높이는 핵심 공정 기술로, 차세대 GPU 의 전력 문제를 해결합니다. 인텔 등 경쟁사의 기술 동향을 고려할 때 필수적인 공정 혁신입니다.",
+        "investment_selection": "고성능 GPU 의 전력 효율성 문제를 해결하여 시장 진입 장벽을 낮추고 제품 경쟁력을 높이는 데 필수적인 투자입니다. R&D 예산을 효율적으로 배분하여 공정 기술의 성숙도를 빠르게 높여야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T06",
+      "name": "2D 채널 소재 적용",
+      "year_idx_start": 4,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "lead_time_years": 2,
+      "reasoning": {
+        "year_placement": "TRL 3 의 초기 R&D 단계이므로 4 차년도에 본격적인 연구 개발을 시작하여 5 차년도 (마지막 차년도) 까지 기초 기술 확보를 목표로 합니다. 실리콘 한계 극복을 위한 장기 비전 기술로 2030 년 로드맵의 끝까지 이어져야 합니다.",
+        "tech_execution": "실리콘 기반 공정의 물리적 한계를 극복하기 위한 차세대 소재 기술로, 2030 년경 상용화를 위한 기초 연구와 프로토타입 개발을 수행합니다. 장기적인 기술 대체 가능성을 확보하는 전략적 투자입니다.",
+        "investment_selection": "2030 년 이후의 시장을 선점하기 위한 선제적 투자로, 현재는 연구 개발 단계이지만 미래의 기술 주도권을 확보하는 데 필수적입니다. R&D 예산의 일부를 장기 기술 개발에 할당하여 기술적 불확실성을 관리해야 합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "코히어런트 GPU 인터커넥트",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T02",
+        "T03"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "3D GPU 다이 스태킹",
+      "category": "Packaging",
+      "trl": 6,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [
+        "T05"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "랙스케일 AI 패브릭",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "Backside PDN 공정",
+      "category": "Process",
+      "trl": 5,
+      "prerequisites": [
+        "T02"
+      ],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T06": {
+      "tech_id": "T06",
+      "name": "2D 채널 소재 적용",
+      "category": "Material",
+      "trl": 3,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2030 Q1"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "NVIDIA 의 AI 하드웨어 리더십 및 HW/SW 통합 전략에 부합하는 T01, T02, T03 을 핵심으로 선정. 2026~2030 년 horizon 에 단기(T02), 중기(T01, T05), 장기(T03, T06) 기술이 분포되도록 구성하여 로드맵의 시간적 연속성 확보.",
+    "dropped": [
+      {
+        "tech_id": "T08",
+        "name": "TCB 본딩 기술",
+        "reason": "T02(3D 스태킹) 와 T05(BSPDN) 가 패키징/공정 핵심을 포괄하므로 중복 기능으로 제외."
+      },
+      {
+        "tech_id": "T04",
+        "name": "GPU 메모리 압축 기술",
+        "reason": "T01/T03 이 아키텍처 병목 해결을 주도하므로, 점수 낮고 시점이 늦은 T04 는 우선순위 하락."
+      },
+      {
+        "tech_id": "T07",
+        "name": "영역선택 증착 (ASD)",
+        "reason": "T05(BSPDN) 가 공정 효율성 핵심을 대표하므로, 점수 낮고 초기 단계인 T07 은 제외."
+      }
+    ]
+  }
+}
