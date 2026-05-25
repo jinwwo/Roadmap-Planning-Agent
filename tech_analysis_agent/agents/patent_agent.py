@@ -17,7 +17,7 @@ from pathlib import Path
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
-from config import PATENT_ANALYSIS_METHOD, USE_MOCK_PATENT, USE_PATENT_MAP
+from config import PATENT_ANALYSIS_METHOD, USE_MOCK_PATENT
 from prompt_loader import load_prompt
 from state import AnalysisState
 from tools.patent_tools import PatentPortfolioTool
@@ -80,25 +80,15 @@ def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     )
 
 
-def _apply_patent_map_setting(system_prompt: str, user_prompt: str) -> tuple[str, str]:
-    """Apply the experiment switch that enables/disables patent map generation."""
-    if USE_PATENT_MAP:
-        return system_prompt, user_prompt + """
+def _append_patent_map_generation_note(user_prompt: str) -> str:
+    """Keep Patent Agent output stable for downstream map-use ablation."""
+    return user_prompt + """
 
-[Patent Map Experiment Setting]
-USE_PATENT_MAP=true 이므로 patent_maps.actor_similarity_map을 반드시 출력하세요.
+[Patent Map Ablation Control]
+Patent Agent는 ablation 조건과 무관하게 항상 `patent_analysis`와
+`patent_maps.actor_similarity_map`을 모두 생성하세요.
+ON/OFF 비교는 후속 Market Agent가 이 map을 사용할지 여부로만 수행됩니다.
 """
-
-    override = """
-
-[Patent Map Experiment Setting — OVERRIDE]
-USE_PATENT_MAP=false 입니다.
-이번 실행은 actor_similarity_map 미사용 대조군입니다.
-이전 지시에 patent_maps 또는 actor_similarity_map 출력 요구가 있더라도 무시하세요.
-출력 JSON에는 `patent_analysis`만 포함하고, `patent_maps` 필드는 생략하거나 빈 객체로 두세요.
-actor edge, similarity, edge_weight, shared_technology_areas 산정에 토큰을 사용하지 마세요.
-"""
-    return system_prompt + override, user_prompt + override
 
 
 def _collect_patent_data(domain: str, category_hints: list) -> dict:
@@ -344,7 +334,7 @@ def _write_patent_agent_log(
                 "company_name": state.get("company_name"),
                 "company_profile": state.get("company_profile"),
                 "related_companies": state.get("related_companies"),
-                "use_patent_map": USE_PATENT_MAP,
+                "patent_map_generation": "always",
             },
             "prompt_variant": prompt_variant,
             "provider_summary": _summarize_portfolios(patent_raw),
@@ -367,7 +357,7 @@ def _write_patent_agent_log(
         latest = output_dir / "latest_patent_agent_log.json"
         latest.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
-        if USE_PATENT_MAP and patent_maps:
+        if patent_maps:
             (output_dir / f"{prefix}_actor_similarity_map.json").write_text(
                 json.dumps((patent_maps or {}).get("actor_similarity_map", []), ensure_ascii=False, indent=2),
                 encoding="utf-8",
@@ -450,7 +440,7 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
         # Orchestrator REVISE feedback 을 user_prompt 끝에 append
         user_prompt = user_prompt + _format_orchestrator_feedback(state.get("orchestrator_feedback"))
         system_prompt = prompt.system
-        system_prompt, user_prompt = _apply_patent_map_setting(system_prompt, user_prompt)
+        user_prompt = _append_patent_map_generation_note(user_prompt)
 
         _write_patent_agent_log(
             state=state,
@@ -493,9 +483,9 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
         # ③ JSON 파싱
         result = _extract_json(llm_raw_response)
         patent_analysis = result.get("patent_analysis", [])
-        patent_maps = result.get("patent_maps", {}) if USE_PATENT_MAP else {}
+        patent_maps = result.get("patent_maps", {})
         rendered_map_paths = {}
-        if USE_PATENT_MAP and patent_maps:
+        if patent_maps:
             try:
                 from tools.patent_map_renderer import render_patent_maps
 
@@ -529,7 +519,7 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
             "patent_raw_data": patent_raw,
             "patent_analysis": patent_analysis,
             "patent_maps": patent_maps,
-            "patent_prompt": {**prompt.metadata, "use_patent_map": USE_PATENT_MAP},
+            "patent_prompt": {**prompt.metadata, "patent_map_generation": "always"},
             "messages": messages,
             "error": None,
         }

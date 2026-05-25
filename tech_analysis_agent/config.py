@@ -30,8 +30,8 @@ USE_MOCK_MARKET: bool = os.getenv("USE_MOCK_MARKET", "").lower() in ("1", "true"
 # 특허 API 장애 시 mock 데이터 사용
 USE_MOCK_PATENT: bool = os.getenv("USE_MOCK_PATENT", "").lower() in ("1", "true", "yes")
 
-# Patent Agent가 actor_similarity_map을 생성하고 후속 Market Agent가 이를 사용할지 여부
-# A/B 비교 실험용: true=map 사용, false=기술 후보군만 사용
+# Patent Agent가 생성한 actor_similarity_map을 후속 Market Agent가 사용할지 여부
+# A/B 비교 실험용: Patent Agent는 항상 후보군+map을 만들고, true일 때만 시장조사에 map을 사용
 USE_PATENT_MAP: bool = os.getenv("USE_PATENT_MAP", "true").lower() not in (
     "0",
     "false",

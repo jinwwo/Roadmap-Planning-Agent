@@ -741,3 +741,167 @@ def run_orchestration(
     _emit("pipeline_done", iteration=iteration,
           decision=review.get("decision") if review else None)
     return result
+
+
+def run_single_agent_orchestration(
+    domain: str,
+    reference_year: int,
+    category_hints: Optional[List[str]] = None,
+    active_agents: Optional[List[str]] = None,
+    # Problem frame overrides
+    industry: Optional[str] = None,
+    company_type: Optional[str] = None,
+    time_horizon: Optional[str] = None,
+    total_budget: Optional[float] = None,
+    objective: Optional[str] = None,
+    priorities: Optional[List[str]] = None,
+    future_trend_summary: Optional[str] = None,
+    # Investment policy overrides (kept for signature parity)
+    risk_appetite: Optional[str] = None,
+    investment_horizon: Optional[str] = None,
+    # internal settings
+    out_prefix: str = "",
+    stage_mode: str = "phase",
+    patent_method: str = "C_company_portfolio",
+    company_name: Optional[str] = None,
+    company_profile: Optional[str] = None,
+    related_companies: Optional[List[str]] = None,
+    use_patent_map: Optional[bool] = None,
+) -> Dict[str, Any]:
+    """Run the single-agent baseline and write the same artifact files.
+
+    This is not a fourth specialist agent. It is a comparison baseline where one
+    LLM call performs technology discovery, market sizing, roadmap planning,
+    investment tiering, and final review.
+    """
+    del active_agents, risk_appetite, investment_horizon, stage_mode
+    category_hints = category_hints or []
+    baseline_agents = ["single"]
+
+    _emit("pipeline_start", active_agents=baseline_agents, domain=domain,
+          reference_year=reference_year, run_mode="single")
+
+    _emit("setup_start")
+    problem_frame = run_orchestrator_setup(
+        domain=domain,
+        reference_year=reference_year,
+        active_agents=["1", "2", "3"],
+        industry=industry,
+        company_type=company_type,
+        time_horizon=time_horizon,
+        total_budget=total_budget,
+        objective=objective,
+        priorities=priorities,
+        future_trend_summary=future_trend_summary,
+    )
+    print("[Single Agent] baseline mode: one LLM call will generate candidates, market context, roadmap, strategy, and review.")
+    _emit("setup_done", problem_frame=problem_frame, active_agents=baseline_agents, run_mode="single")
+
+    _emit("agent_start", agent="single", label="Single Agent · End-to-End Baseline", active=True)
+    print("\n[Single Agent] ▶ end-to-end baseline 실행")
+    baseline = run_single_agent_baseline(
+        domain=domain,
+        reference_year=reference_year,
+        category_hints=category_hints,
+        problem_frame=problem_frame,
+        company_name=company_name,
+        company_profile=company_profile,
+        related_companies=related_companies,
+        use_patent_map=use_patent_map,
+    )
+
+    tech_path = _output_path(FILE_TECH_CANDIDATES, out_prefix)
+    roadmap_path = _output_path(FILE_PLANNED_ROADMAP, out_prefix)
+    strategy_path = _output_path(FILE_INVESTMENT_STRATEGY, out_prefix)
+
+    tech_out = {
+        "run_mode": "single",
+        "baseline_mode": baseline.get("baseline_mode"),
+        "llm_data_quality": baseline.get("llm_data_quality"),
+        "use_patent_map": use_patent_map,
+        "market_context": baseline.get("market_context") or {},
+        "tech_candidates": baseline.get("tech_candidates") or [],
+        "single_agent_raw": baseline.get("raw_response") or {},
+    }
+    roadmap_out = {
+        "run_mode": "single",
+        "market_context": baseline.get("market_context") or {},
+        "planned_roadmap": baseline.get("planned_roadmap") or [],
+        "dependency_tree": {},
+        "tech_selection": {
+            "mode": "single_agent_baseline",
+            "selected_count": len(baseline.get("planned_roadmap") or []),
+        },
+    }
+    strategy_out = {
+        "run_mode": "single",
+        "market_context": baseline.get("market_context") or {},
+        "investment_policy": {
+            "total_budget": problem_frame.get("total_budget"),
+            "strategic_priority": problem_frame.get("strategic_priorities", []),
+        },
+        "stages": baseline.get("stages") or [],
+        "investment_strategy": baseline.get("investment_strategy") or [],
+    }
+
+    for path, data in (
+        (tech_path, tech_out),
+        (roadmap_path, roadmap_out),
+        (strategy_path, strategy_out),
+    ):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    tech_candidates = tech_out["tech_candidates"]
+    planned_roadmap = roadmap_out["planned_roadmap"]
+    stages = strategy_out["stages"]
+    investment_strategy = strategy_out["investment_strategy"]
+    market_context = tech_out["market_context"]
+
+    review = baseline.get("review") or {}
+    review.setdefault("decision", "ACCEPT")
+    review.setdefault("report", {})
+    review["report"].setdefault("artifacts_summary", {
+        "agent1_tech_candidates": tech_candidates,
+        "agent2_planned_roadmap": planned_roadmap,
+        "agent3_investment_strategy": investment_strategy,
+        "insights": {
+            "run_mode": "single_agent",
+            "candidate_count": len(tech_candidates),
+            "roadmap_item_count": len(planned_roadmap),
+            "stage_count": len(stages),
+            "note": "All artifacts were generated by one end-to-end LLM call.",
+        },
+    })
+
+    print(f"[Single Agent] 저장: {tech_path!r} ({len(tech_candidates)}개 후보)")
+    print(f"[Single Agent] 저장: {roadmap_path!r} ({len(planned_roadmap)}개 로드맵 항목)")
+    print(f"[Single Agent] 저장: {strategy_path!r} ({len(stages)}개 stage)")
+    _emit("agent_end", agent="single", count=len(tech_candidates))
+    _emit("candidates_ready", candidates=tech_candidates, market_context=market_context)
+    _emit("roadmap_ready", planned_roadmap=planned_roadmap)
+    _emit("strategy_ready", stages=stages, investment_strategy=investment_strategy)
+    _emit("review_start", iteration=1, max_iterations=1)
+    _emit("review_done", iteration=1, review=review)
+
+    result = {
+        "run_mode": "single",
+        "problem_frame": problem_frame,
+        "active_agents": baseline_agents,
+        "patent_method": patent_method,
+        "tech_candidates": tech_candidates,
+        "market_context": market_context,
+        "planned_roadmap": planned_roadmap,
+        "investment_strategy": investment_strategy,
+        "stages": stages,
+        "review": review,
+        "review_history": [{"iteration": 1, "review": review}],
+        "iteration": 1,
+        "paths": {
+            "tech_candidates": tech_path,
+            "planned_roadmap": roadmap_path,
+            "investment_strategy": strategy_path,
+        },
+    }
+    _emit("pipeline_done", iteration=1, decision=review.get("decision"), run_mode="single")
+    return result

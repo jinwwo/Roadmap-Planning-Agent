@@ -164,6 +164,7 @@ done
 | `PATENTSVIEW_API_KEY` | PatentsView PatentSearch API key (`USE_MOCK_PATENT=0`이면 필요) | (비어있음) |
 | `PATENT_DATA_PROVIDER` | 특허 데이터 provider (`kipris` / `patentsview` / `mock`) | `kipris` |
 | `KIPRIS_API_KEY` | KIPRIS Plus API key (`PATENT_DATA_PROVIDER=kipris`이면 필요) | (비어있음) |
+| `USE_PATENT_MAP` | Market Agent의 Patent Agent actor similarity map 사용 여부 (`false`이면 같은 Patent Agent 산출물에서 map 미사용 대조군) | `true` |
 | `USE_MOCK_PATENT` | PatentsView mock 사용 | `0` |
 | `USE_MOCK_MARKET` | Tavily mock 사용 | `0` |
 | `MAX_ORCHESTRATOR_ITERATIONS` | Review REVISE 루프 상한 | `2` |

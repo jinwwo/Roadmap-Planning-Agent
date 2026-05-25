@@ -55,9 +55,11 @@ KIPRIS_API_KEY=...
 TAVILY_API_KEY=...
 USE_MOCK_PATENT=false
 USE_MOCK_MARKET=false
+USE_PATENT_MAP=true
 ```
 
 > 실제 KIPRIS/Tavily API 를 쓰려면 `USE_MOCK_*=false` 로 두고 `KIPRIS_API_KEY`, `TAVILY_API_KEY` 를 설정.
+> `USE_PATENT_MAP=false` 로 두면 Patent Agent는 후보군+map을 그대로 만들고, Market Agent만 actor similarity map 없이 실행되어 A/B 비교가 가능.
 > Claude 를 쓰고 싶다면 `LLM_PROVIDER=anthropic`, `ANTHROPIC_API_KEY=sk-ant-...`.
 
 ### 4. 서버 실행
