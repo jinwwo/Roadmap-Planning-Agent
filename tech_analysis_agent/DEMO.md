@@ -17,7 +17,7 @@ bash setup.sh        # Ollama 설치 + 모델 pull + pip install + .env 생성
 bash run.sh          # 서버 기동 → http://localhost:8000
 ```
 
-- 다른 모델을 쓰고 싶으면: `bash setup.sh --model qwen2.5:7b-instruct`
+- 다른 모델을 쓰고 싶으면: `bash setup.sh --model qwen2.5:14b`
 - 종료: `bash stop.sh` (백그라운드로 띄운 Ollama 종료)
 
 ---
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 curl -fsSL https://ollama.com/install.sh | sh   # Linux
 # macOS: brew install ollama  또는 https://ollama.com/download
 
-ollama pull llama3.1:8b
+ollama pull gemma3:27b
 ollama serve &                                   # 백그라운드
 ```
 
@@ -49,7 +49,7 @@ ollama serve &                                   # 백그라운드
 
 ```bash
 LLM_PROVIDER=ollama
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=gemma3:27b
 PATENT_DATA_PROVIDER=kipris
 KIPRIS_API_KEY=...
 TAVILY_API_KEY=...

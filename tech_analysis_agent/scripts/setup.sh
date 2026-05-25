@@ -6,7 +6,7 @@
 # 수행 단계:
 #   1) Ollama 설치 (없으면)
 #   2) Ollama 데몬 기동 (백그라운드)
-#   3) LLM 모델 pull (기본: llama3.1:8b)
+#   3) LLM 모델 pull (기본: gemma3:27b)
 #   4) Python 패키지 설치
 #   5) .env 생성 (없으면, 오프라인 데모 프리셋)
 #
@@ -19,7 +19,7 @@
 
 set -e
 
-MODEL="${OLLAMA_MODEL:-llama3.1:8b}"
+MODEL="${OLLAMA_MODEL:-gemma3:27b}"
 PORT="${PORT:-8000}"
 
 # ── 인자 파싱 ──────────────────────────────────────────────

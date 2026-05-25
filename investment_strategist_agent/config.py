@@ -17,7 +17,7 @@ ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
 CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
 
 # ── Ollama (Local LLM) ───────────────────────────────────────
-OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "gemma3:27b")
 OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 # ── Stage 분류 경계 (start_q 기준, phase_name 이 없을 때의 폴백) ─

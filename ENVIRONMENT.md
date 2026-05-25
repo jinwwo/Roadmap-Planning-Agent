@@ -26,7 +26,7 @@ Roadmap-Planning-Agent/                ← 레포 루트 (이 폴더)
 | Python | **3.10 이상** (LangChain 0.3 최소 요건) |
 | Python 패키지 매니저 | `uv` (권장) 또는 `pip` |
 | GPU | Ollama 모드에서 권장 (CUDA 자동 감지) |
-| 디스크 | 모델별: `llama3.1:8b` ~5GB, **`qwen3.5:27b` ~17GB** |
+| 디스크 | 모델별: `llama3.1:8b` ~5GB, **`gemma3:27b` ~17GB** |
 
 ---
 
@@ -87,7 +87,8 @@ bash scripts/run.sh
 
 | 모델 | 크기 | GPU 메모리 | 적합한 경우 |
 |---|---|---|---|
-| **`qwen3.5:27b`** | ~17GB | 단일 24GB+ 또는 멀티 GPU 분산 (47GB+ 권장) | **권장** — 한국어 + 복잡한 JSON 안정 |
+| **`gemma3:27b`** | ~17GB | 단일 24GB+ 또는 멀티 GPU 분산 | **기본 권장** — 한국어 + 복잡한 JSON 안정 |
+| `qwen3:32b` | ~20GB+ | 단일 32GB+ 또는 멀티 GPU 분산 | Qwen 계열 대안 |
 | `qwen3.5:9b` | ~5GB | 12GB+ | 가벼운 GPU |
 | `qwen2.5:14b` | ~9GB | 16GB+ | non-reasoning, JSON 안정 |
 | `llama3.1:8b` | ~5GB | 8GB+ | 한국어/JSON 약함 — 기본 데모용 |
@@ -98,7 +99,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 # 데몬 + 모델 pull
 ollama serve > /tmp/ollama.log 2>&1 &
-ollama pull qwen3.5:27b   # 또는 다른 모델
+ollama pull gemma3:27b   # 또는 다른 모델
 ```
 
 ### LLM provider — Anthropic Claude (클라우드, 유료)
@@ -158,7 +159,7 @@ done
 | `LLM_PROVIDER` | `ollama` 또는 `anthropic` | `ollama` |
 | `ANTHROPIC_API_KEY` | Claude 사용 시 필수 | (비어있음) |
 | `CLAUDE_MODEL` | Claude 모델 | `claude-sonnet-4-20250514` |
-| `OLLAMA_MODEL` | 로컬 모델 | `qwen3.5:27b` (권장) |
+| `OLLAMA_MODEL` | 로컬 모델 | `gemma3:27b` (권장) |
 | `OLLAMA_BASE_URL` | Ollama 서버 주소 | `http://localhost:11434` |
 | `TAVILY_API_KEY` | Tavily 시장 검색 API key (`USE_MOCK_MARKET=0`이면 필요) | (비어있음) |
 | `PATENTSVIEW_API_KEY` | PatentsView PatentSearch API key (`USE_MOCK_PATENT=0`이면 필요) | (비어있음) |
@@ -170,7 +171,7 @@ done
 | `MAX_ORCHESTRATOR_ITERATIONS` | Review REVISE 루프 상한 | `2` |
 | `SUBPROCESS_TIMEOUT_SEC` | sibling 호출 timeout | `900` |
 
-### Ollama 고급 — Qwen3.5 사용 시 거의 필수
+### Ollama 고급 — 큰 로컬 모델 사용 시 권장
 
 | 키 | 의미 | 권장값 |
 |----|------|--------|
@@ -250,5 +251,5 @@ cd tech_analysis_agent && bash scripts/run.sh
 | GPU 1개만 쓰고 다른 GPU 가 놀음 | ollama 데몬 띄울 때 `OLLAMA_SCHED_SPREAD=1` 환경변수 필요 — `container_bootstrap.sh` 가 자동 설정 |
 | 모델이 호출마다 재로딩 (`load_duration` 매번 30s+) | 동시 호출이 GPU 메모리 한계 초과 — `OLLAMA_MAX_LOADED_MODELS=1` + `OLLAMA_NUM_PARALLEL=4` |
 | zstd 의존성 누락으로 ollama install 실패 | `apt-get install -y zstd` (`container_bootstrap.sh` 가 자동 처리) |
-| `JSONDecodeError` 다른 LLM | 작은 모델 한계 — 큰 모델 (`qwen2.5:14b`, `qwen3.5:27b`) 또는 Anthropic 전환 |
+| `JSONDecodeError` 다른 LLM | 작은 모델 한계 — 큰 모델 (`gemma3:27b`, `qwen3:32b`) 또는 Anthropic 전환 |
 | 컨테이너 재생성 시 모델 17GB 다시 받기 | `OLLAMA_MODELS=/workspace/.../.ollama_models` 으로 마운트 영역 사용 (`container_bootstrap.sh` default) |

@@ -170,7 +170,7 @@ LLM provider 는 `.env` 를 통해 설정 (tech_analysis_agent 의 `.env` 와 �
 LLM_PROVIDER=anthropic         # 또는 ollama
 ANTHROPIC_API_KEY=sk-ant-...
 # 혹은
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=gemma3:27b
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 

@@ -35,7 +35,7 @@ def _is_strong_llm() -> bool:
     현재 LLM 이 single-call 안정 처리 가능한 강한 모델인지 판정.
 
     - Anthropic Claude (sonnet/opus/haiku 4.x+) → 강함
-    - Ollama llama3.1:70b+, qwen2.5:32b+ → 강함
+    - Ollama gemma3:27b, llama3.1:70b+, qwen2.5:32b+ → 강함
     - Ollama 8b 이하 → 약함
     - 환경변수 STRATEGIST_LLM_STRATEGY 로 강제 override 가능:
         "single_call"  → 무조건 강함으로 취급
@@ -53,9 +53,10 @@ def _is_strong_llm() -> bool:
 
     # Ollama 의 경우 모델 크기로 판정
     model = (OLLAMA_MODEL or "").lower()
-    # 27B+ 는 강함으로 간주 (qwen3/qwen3.5 계열 포함)
+    # 27B+ 는 강함으로 간주 (gemma3/qwen3 계열 포함)
     strong_indicators = (
         ":70b", "70b-", ":32b", "32b-", ":34b", "34b-", ":27b", "27b-",
+        "gemma3:27b",
         "llama3.1:70b", "qwen2.5:32b", "qwen2.5:72b",
         "qwen3:27b", "qwen3:32b", "qwen3:72b",
         "qwen3.5:27b", "qwen3.5:32b", "qwen3.5:72b",

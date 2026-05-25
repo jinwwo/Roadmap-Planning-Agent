@@ -123,11 +123,11 @@ bash setup.sh
 `setup.sh`가 자동으로 수행하는 작업:
 1. Ollama 설치 (없으면)
 2. Ollama 데몬 기동
-3. LLM 모델 pull (`llama3.1:8b` 기본)
+3. LLM 모델 pull (`gemma3:27b` 기본)
 4. Python 패키지 설치 (루트 `../requirements.txt` 통합 사용)
 5. `.env` 생성 (오프라인 데모 프리셋)
 
-> 다른 모델을 사용하려면: `bash setup.sh --model qwen2.5:7b`
+> 다른 모델을 사용하려면: `bash setup.sh --model qwen2.5:14b`
 
 ### 2. 실행
 

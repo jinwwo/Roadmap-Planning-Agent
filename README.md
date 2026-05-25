@@ -133,7 +133,7 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 **Adaptive LLM 전략** ([_is_strong_llm](investment_strategist_agent/agents/strategist.py)):
 - 강한 LLM (Claude / Ollama 27B+) → **Single-call** (모든 stage 한 번에, cross-stage 추론 풍부, max_tokens=16384)
-  - 인식되는 모델: `:27b`, `:32b`, `:34b`, `:70b`, `qwen3.5:27b/32b/72b`, `qwen3:27b/32b/72b`, `llama3.1:70b`, `qwen2.5:32b/72b`
+  - 인식되는 모델: `:27b`, `:32b`, `:34b`, `:70b`, `gemma3:27b`, `qwen3:27b/32b/72b`, `llama3.1:70b`, `qwen2.5:32b/72b`
 - 작은 LLM (Ollama 8B 이하) → **Per-stage 분할** (stage 별 독립 콜 + cross-stage summary 동봉, JSON 안정성 우선)
 - Single-call 실패 시 → per-stage 자동 폴백 (self-healing)
 - 환경변수 `STRATEGIST_LLM_STRATEGY=single_call` 또는 `=per_stage` 로 강제 override 가능
@@ -438,7 +438,7 @@ REVISE 시 `report` 가 비워지고 `diagnostic_summary` 만 채워짐. 단, it
 | `LLM_PROVIDER` | `ollama` / `anthropic` | `ollama` |
 | `ANTHROPIC_API_KEY` | Claude 쓸 때 필수 | (비어있음) |
 | `CLAUDE_MODEL` | Claude 모델 | `claude-sonnet-4-20250514` |
-| `OLLAMA_MODEL` | 로컬 모델 | `llama3.1:8b` |
+| `OLLAMA_MODEL` | 로컬 모델 | `gemma3:27b` |
 | `OLLAMA_BASE_URL` | Ollama 서버 | `http://localhost:11434` |
 | `TAVILY_API_KEY` | Tavily 시장 검색 API key (`USE_MOCK_MARKET=0`이면 필요) | (비어있음) |
 | `PATENTSVIEW_API_KEY` | PatentsView PatentSearch API key (`USE_MOCK_PATENT=0`이면 필요) | (비어있음) |
