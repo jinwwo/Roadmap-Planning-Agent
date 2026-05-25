@@ -70,6 +70,7 @@ app.mount("/static", StaticFiles(directory=str(WEB_DIR)), name="static")
 class StartRequest(BaseModel):
     request: str                                  # 사용자 자연어 요청
     active_agents: Optional[List[str]] = None     # 예: ["1","2","3"] · 미지정 시 전부 ON
+    run_mode: Optional[str] = "multi"             # "multi" | "single"
     stage_mode: Optional[str] = "phase"           # "phase" | "horizon"
     scenario_id: Optional[str] = None             # predefined scenario id
     use_patent_map: Optional[bool] = None         # actor similarity map A/B toggle
@@ -106,6 +107,7 @@ def start_session(req: StartRequest):
     s.start(
         user_request=req.request,
         active_agents=req.active_agents,
+        run_mode=req.run_mode or "multi",
         total_budget=req.total_budget,
         stage_mode=req.stage_mode or "phase",
         scenario_id=req.scenario_id,
@@ -119,6 +121,7 @@ def start_session(req: StartRequest):
         "session_id": s.id,
         "llm": describe_llm(),
         "active_agents": s.active_agents,
+        "run_mode": s.run_mode,
     }
 
 

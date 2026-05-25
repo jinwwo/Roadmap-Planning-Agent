@@ -66,9 +66,16 @@
               <option value="">Custom natural-language prompt</option>
             </select>
           </label>
+          <label class="scenario-field">
+            <span>Run Mode</span>
+            <select id="run-mode">
+              <option value="multi">Multi-Agent Pipeline</option>
+              <option value="single">Single-Agent Baseline</option>
+            </select>
+          </label>
           <label class="agent-toggle map-toggle">
             <input type="checkbox" id="use-patent-map" checked />
-            <span class="agent-chip">Actor Similarity Map</span>
+            <span class="agent-chip">Use Actor Similarity Map</span>
           </label>
         </div>
         <div class="agent-toggle-row">

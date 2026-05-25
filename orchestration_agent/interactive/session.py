@@ -32,7 +32,12 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from config import OUTPUTS_DIR, FILE_ORCHESTRATOR_REPORT
 from interactive.event_bus import EventBus, capture_stdout_to
 from llm_factory import get_llm, describe_llm
-from pipeline import run_orchestration, stream_subprocess_stdout, events_to
+from pipeline import (
+    run_orchestration,
+    run_single_agent_orchestration,
+    stream_subprocess_stdout,
+    events_to,
+)
 from scenario_loader import load_scenario, scenario_to_prompt
 from state import ProblemFrame
 
@@ -277,6 +282,7 @@ class Session:
     # pipeline I/O
     user_request: str = ""
     active_agents: List[str] = field(default_factory=lambda: ["1", "2", "3"])
+    run_mode: str = "multi"
     total_budget: Optional[float] = None
     stage_mode: str = "phase"
     scenario_id: Optional[str] = None
@@ -306,6 +312,7 @@ class Session:
     # ── 파이프라인 실행 ───────────────────────────────────
     def start(self, user_request: str,
               active_agents: Optional[List[str]] = None,
+              run_mode: str = "multi",
               total_budget: Optional[float] = None,
               stage_mode: str = "phase",
               scenario_id: Optional[str] = None,
@@ -315,13 +322,16 @@ class Session:
               strategic_priority: Optional[List[str]] = None,
               investment_policy_text: Optional[str] = None) -> None:
         self.user_request = user_request
+        self.run_mode = "single" if run_mode == "single" else "multi"
         self.scenario_id = scenario_id
         self.use_patent_map = use_patent_map
         if scenario_id:
             self.scenario = load_scenario(scenario_id)
             self.user_request = self.scenario.get("prompt") or scenario_to_prompt(self.scenario)
-        if active_agents:
+        if active_agents and self.run_mode == "multi":
             self.active_agents = [a for a in active_agents if a in ("1", "2", "3")] or ["1", "2", "3"]
+        elif self.run_mode == "single":
+            self.active_agents = ["single"]
         self.stage_mode = stage_mode or "phase"
 
         # Investment Policy: predefined scenario는 구조화 값을 우선 사용하고,
@@ -402,6 +412,7 @@ class Session:
         try:
             bus.emit("session_started", session_id=self.id, llm=describe_llm(),
                      active_agents=self.active_agents,
+                     run_mode=self.run_mode,
                      scenario_id=self.scenario_id,
                      use_patent_map=self.use_patent_map)
 
@@ -451,6 +462,7 @@ class Session:
                      objective=self.objective,
                      time_horizon=self.time_horizon,
                      use_patent_map=self.use_patent_map,
+                     run_mode=self.run_mode,
                      # Investment Policy (자연어에서 LLM 추출됐거나 폼/기본값)
                      risk_appetite=self.risk_appetite,
                      investment_horizon=self.investment_horizon,
@@ -470,7 +482,12 @@ class Session:
             with events_to(self._bridge_event):
                 with stream_subprocess_stdout(_on_line):
                     with capture_stdout_to(bus):
-                        result = run_orchestration(
+                        runner = (
+                            run_single_agent_orchestration
+                            if self.run_mode == "single"
+                            else run_orchestration
+                        )
+                        result = runner(
                             domain=self.domain,
                             reference_year=self.reference_year,
                             category_hints=self.category_hints,
@@ -498,6 +515,7 @@ class Session:
                     json.dump({
                         "problem_frame": result.get("problem_frame"),
                         "active_agents": result.get("active_agents"),
+                        "run_mode": result.get("run_mode", self.run_mode),
                         "iteration": result.get("iteration"),
                         "review": result.get("review"),
                         "review_history": result.get("review_history") or [],
@@ -521,6 +539,7 @@ class Session:
 def _slim_result(result: dict) -> dict:
     """SSE 페이로드로 전달하기 위한 경량화 (대용량 필드 제외 / 최종 리포트만 포함)"""
     return {
+        "run_mode": result.get("run_mode", "multi"),
         "problem_frame": result.get("problem_frame"),
         "active_agents": result.get("active_agents"),
         "iteration": result.get("iteration"),

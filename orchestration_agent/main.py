@@ -45,7 +45,7 @@ from config import (
     OUTPUTS_DIR,
     FILE_ORCHESTRATOR_REPORT,
 )
-from pipeline import run_orchestration
+from pipeline import run_orchestration, run_single_agent_orchestration
 from scenario_loader import load_scenario
 
 
@@ -80,6 +80,14 @@ def parse_args():
         type=str,
         default="",
         help="orchestration_agent/scenarios/<id>.json 에서 구조화된 데모 시나리오 로드",
+    )
+    p.add_argument(
+        "--run-mode",
+        dest="run_mode",
+        type=str,
+        default="multi",
+        choices=["multi", "single"],
+        help="multi=기존 multi-agent 파이프라인, single=단일 LLM baseline",
     )
     p.add_argument(
         "--domain", type=str,
@@ -157,7 +165,7 @@ def parse_args():
         dest="use_patent_map",
         action=argparse.BooleanOptionalAction,
         default=None,
-        help="Patent Agent actor similarity map 생성/사용 여부. 미지정 시 .env USE_PATENT_MAP 값을 사용",
+        help="Market Agent가 Patent Agent actor similarity map을 사용할지 여부. 미지정 시 .env USE_PATENT_MAP 값을 사용",
     )
     # 결과 저장 경로 prefix (비교 실험 시 파일 덮어쓰기 방지용)
     p.add_argument(
@@ -205,6 +213,7 @@ def main():
     print(f"  domain         : {args.domain}")
     print(f"  reference_year : {args.year}")
     print(f"  active_agents  : {active}")
+    print(f"  run_mode       : {args.run_mode}")
     print(f"  budget         : {args.budget:,.0f} USD")
     print(f"  stage_mode     : {args.stage_mode}")
     print(f"  patent_method  : {args.patent_method}")
@@ -215,7 +224,8 @@ def main():
     print("=" * 70)
 
     # 파이프라인 실행
-    result = run_orchestration(
+    runner = run_single_agent_orchestration if args.run_mode == "single" else run_orchestration
+    result = runner(
         domain=args.domain,
         reference_year=args.year,
         category_hints=category_hints,
@@ -242,6 +252,7 @@ def main():
         json.dump({
             "problem_frame": result["problem_frame"],
             "active_agents": result["active_agents"],
+            "run_mode": result.get("run_mode", args.run_mode),
             "patent_method": result["patent_method"],
             "iteration": result["iteration"],
             "review": result["review"],

@@ -43,6 +43,7 @@ from contextlib import contextmanager
 from typing import List, Dict, Any, Optional, Callable
 
 from agents.orchestrator import run_orchestrator_setup, run_orchestrator_review
+from agents.single_agent_baseline import run_single_agent_baseline
 from config import (
     SIBLING_TECH_ANALYST,
     SIBLING_ROADMAP_PLANNER,
@@ -341,7 +342,7 @@ graph_paths = render_patent_maps(
 )
 
 out = {{
-    "use_patent_map": result.get("patent_prompt", {{}}).get("use_patent_map"),
+    "use_patent_map": (result.get("market_raw_data") or {{}}).get("use_patent_map"),
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
     "market_raw_data": result.get("market_raw_data") or {{}},
