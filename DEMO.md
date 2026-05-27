@@ -117,7 +117,7 @@ done
 
 ```ini
 LLM_PROVIDER=ollama
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=gemma3:27b
 OLLAMA_BASE_URL=http://localhost:11434
 
 # tech_analysis_agent 의 외부 API (없어도 mock 자동 사용)
@@ -145,7 +145,7 @@ export PATH="$HOME/.local/ollama/bin:$PATH"
 
 # 데몬 + 모델
 ollama serve > /tmp/ollama.log 2>&1 &
-ollama pull llama3.1:8b
+ollama pull gemma3:27b
 ```
 
 ### 4. 실행

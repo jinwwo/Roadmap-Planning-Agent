@@ -1,0 +1,62 @@
+[
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "AMD",
+    "similarity": 0.86,
+    "edge_weight": 0.86,
+    "shared_technology_areas": [
+      "AI hardware",
+      "GPU architecture"
+    ],
+    "basis": "... AMD와 NVIDIA는 AI 하드웨어 및 GPU 아키텍처 분야에서 많은 특허를 출원하고 있어, 두 기업 간의 기술적 유사성이 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Intel",
+    "similarity": 0.84,
+    "edge_weight": 0.84,
+    "shared_technology_areas": [
+      "AI hardware",
+      "GPU architecture"
+    ],
+    "basis": "... Intel과 NVIDIA는 AI 하드웨어 및 GPU 아키텍처 분야에서 많은 특허를 출원하고 있어, 두 기업 간의 기술적 유사성이 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Qualcomm",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "shared_technology_areas": [
+      "AI hardware",
+      "GPU architecture"
+    ],
+    "basis": "... Qualcomm과 NVIDIA는 AI 하드웨어 및 GPU 아키텍처 분야에서 많은 특허를 출원하고 있어, 두 기업 간의 기술적 유사성이 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Samsung Electronics",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_technology_areas": [
+      "Semiconductor",
+      "GPU packaging"
+    ],
+    "basis": "... Samsung Electronics과 NVIDIA는 반도체 및 GPU 패키징 분야에서 많은 특허를 출원하고 있어, 두 기업 간의 기술적 유사성이 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "TSMC",
+    "similarity": 0.76,
+    "edge_weight": 0.76,
+    "shared_technology_areas": [
+      "Semiconductor",
+      "GPU process"
+    ],
+    "basis": "... TSMC과 NVIDIA는 반도체 및 GPU 프로세스 분야에서 많은 특허를 출원하고 있어, 두 기업 간의 기술적 유사성이 높습니다.",
+    "evidence_level": "direct"
+  }
+]

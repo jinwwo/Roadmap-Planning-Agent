@@ -114,7 +114,7 @@ if [ "$PROVIDER" = "ollama" ] && [ "$INSTALL_OLLAMA" = "1" ]; then
       sleep 2
     fi
     # 모델 pull
-    MODEL="${OLLAMA_MODEL:-llama3.1:8b}"
+    MODEL="${OLLAMA_MODEL:-gemma3:27b}"
     if ! ollama list 2>/dev/null | grep -q "$MODEL"; then
       echo "   ⬇️  모델 pull: $MODEL"
       ollama pull "$MODEL"

@@ -9,7 +9,7 @@ vanilla JS) 을 그대로 확장했습니다.
 - 📡 **Server-Sent Events** — 각 에이전트 로그/진행 상황 터미널 스타일로 실시간 스트리밍
 - 🧪 **데이터 흐름 시각화** — 각 에이전트별 **IN → OUT** 카드로 입출력 표시
 - 🔁 **ACCEPT / REVISE 루프 시각화** — REVISE 시 재실행 대상을 배너로 표시, 각 iter 는 별도 블록
-- 🛰️ **완전 오프라인 모드** — USPTO / Tavily 없이도 mock 데이터로 끝까지 동작
+- 🛰️ **완전 오프라인 모드** — KIPRIS / Tavily 없이도 mock 데이터로 끝까지 동작
 
 ---
 
@@ -70,7 +70,7 @@ python server.py                               # 포트 8000
 │  ✓ Orchestrator · Problem Setup        │  └──────────────────────┘ │
 │                                        │  ┌─ Agent 1 · Tech Analyst│
 │  ▶ Agent 1 · Technology Analyst        │  │ IN: domain + categories│
-│    [Agent 1] USPTO 조회 ...            │  │ OUT: 6 후보 · 목록 … │ │
+│    [Agent 1] KIPRIS 조회 ...           │  │ OUT: 6 후보 · 목록 … │ │
 │    [Agent 1] Claude 분석 ...           │  │ (6 후보 카드 렌더)    │ │
 │  ✓ Agent 1 · 6건 완료                 │  └──────────────────────┘ │
 │                                        │  ┌─ Agent 2 · Roadmap ──┐ │

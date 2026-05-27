@@ -7,6 +7,10 @@ let currentStepBlock = null;
 const ctx = {
   intake: null,              // {domain, reference_year, category_hints, ...}
   activeAgents: [],
+  scenarios: [],
+  scenarioId: "",
+  runMode: "multi",
+  usePatentMap: true,
   problemFrame: null,
   market_context: null,
   tech_candidates: null,
@@ -29,12 +33,24 @@ const panel = () => $("#panel");
   } catch (e) {
     $("#llm-badge").textContent = "LLM: (status unavailable)";
   }
+
+  try {
+    const r = await fetch("/api/scenarios");
+    const data = await r.json();
+    ctx.scenarios = data.scenarios || [];
+    populateScenarioSelect();
+  } catch (e) {
+    console.warn("scenario list unavailable", e);
+  }
 })();
 
 $("#send-btn").addEventListener("click", onSend);
 $("#input").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) onSend();
 });
+$("#scenario-select").addEventListener("change", onScenarioChange);
+$("#run-mode").addEventListener("change", onRunModeChange);
+onRunModeChange();
 
 // Investment Policy 는 자연어 텍스트로 받아서 서버에서 LLM 추출 (예전 라디오/드롭다운 제거됨)
 
@@ -45,21 +61,33 @@ async function onSend() {
   if (!text) return;
   if (eventSource) { eventSource.close(); eventSource = null; }
 
+  const runMode = $("#run-mode").value || "multi";
+
   // active_agents 수집
   const activeAgents = [];
   if ($("#agent1").checked) activeAgents.push("1");
   if ($("#agent2").checked) activeAgents.push("2");
   if ($("#agent3").checked) activeAgents.push("3");
-  if (activeAgents.length === 0) {
+  if (runMode !== "single" && activeAgents.length === 0) {
     alert("최소 하나의 Agent 는 켜주세요.");
     return;
   }
 
   // Investment Policy 는 메인 textarea 안에 자연어로 함께 들어옴 (별도 수집 X)
+  const scenarioId = $("#scenario-select").value || "";
+  const usePatentMap = $("#use-patent-map").checked;
+
+  if (runMode === "single") {
+    activeAgents.length = 0;
+    activeAgents.push("single");
+  }
 
   ta.value = "";
   $("#send-btn").disabled = true;
   resetCtx();
+  ctx.scenarioId = scenarioId;
+  ctx.runMode = runMode;
+  ctx.usePatentMap = usePatentMap;
 
   addUserMessage(text);
   clearPanel();
@@ -67,7 +95,13 @@ async function onSend() {
   // 세션 생성
   let sid;
   try {
-    const payload = { request: text, active_agents: activeAgents };
+    const payload = {
+      request: text,
+      active_agents: activeAgents,
+      run_mode: runMode,
+      scenario_id: scenarioId || null,
+      use_patent_map: usePatentMap,
+    };
     // 메인 텍스트가 정책 정보를 함께 담고 있으므로 그대로 전달 (서버에서 LLM 으로 추출)
     if (text) payload.investment_policy_text = text;
 
@@ -86,6 +120,7 @@ async function onSend() {
     sid = data.session_id;
     sessionId = sid;
     ctx.activeAgents = data.active_agents;
+    ctx.runMode = data.run_mode || runMode;
     renderAgentsBar();
   } catch (e) {
     addAgentMessage("❌ 서버 연결 실패: " + e.message);
@@ -99,10 +134,43 @@ async function onSend() {
 function resetCtx() {
   Object.assign(ctx, {
     intake: null, activeAgents: [], problemFrame: null,
+    scenarioId: "", runMode: "multi", usePatentMap: true,
     market_context: null, tech_candidates: null,
     planned_roadmap: null, stages: null, investment_strategy: null,
     iterations: { agent1: 0, agent2: 0, agent3: 0, review: 0 },
   });
+}
+
+function populateScenarioSelect() {
+  const select = $("#scenario-select");
+  if (!select) return;
+  const existing = select.value;
+  select.innerHTML = `<option value="">Custom natural-language prompt</option>`;
+  ctx.scenarios.forEach((s) => {
+    const opt = document.createElement("option");
+    opt.value = s.scenario_id;
+    opt.textContent = s.name || s.scenario_id;
+    select.appendChild(opt);
+  });
+  select.value = existing;
+}
+
+function onScenarioChange() {
+  const id = $("#scenario-select").value;
+  const scenario = ctx.scenarios.find((s) => s.scenario_id === id);
+  if (scenario && scenario.prompt) {
+    $("#input").value = scenario.prompt;
+  }
+}
+
+function onRunModeChange() {
+  const single = ($("#run-mode").value || "multi") === "single";
+  ["#agent1", "#agent2", "#agent3"].forEach((sel) => {
+    const input = $(sel);
+    if (input) input.disabled = single;
+  });
+  const row = document.querySelector(".agent-toggle-row");
+  if (row) row.classList.toggle("disabled", single);
 }
 
 function connectStream(sid) {
@@ -117,6 +185,7 @@ function connectStream(sid) {
     intake_ready: (d) => {
       ctx.intake = d.payload;
       ctx.activeAgents = d.payload.active_agents || ctx.activeAgents;
+      ctx.runMode = d.payload.run_mode || ctx.runMode;
       renderAgentsBar();
 
       const p = d.payload;
@@ -145,6 +214,25 @@ function connectStream(sid) {
         `• 카테고리: ${(p.category_hints || []).join(", ") || "-"}`,
       ];
       if (p.objective) techLines.push(`• 목표: ${escapeHtml(p.objective)}`);
+      if (p.scenario_id) techLines.unshift(`• 시나리오: <code>${escapeHtml(p.scenario_id)}</code>`);
+      techLines.unshift(`• 실행 모드: <b>${p.run_mode === "single" ? "Single-Agent Baseline" : "Multi-Agent Pipeline"}</b>`);
+      if (p.company_name) techLines.push(`• 기업: <b>${escapeHtml(p.company_name)}</b>`);
+      if (p.industry) techLines.push(`• 산업: ${escapeHtml(p.industry)}`);
+      if (p.objective) techLines.push(`• 목표: ${escapeHtml(p.objective)}`);
+      if (p.time_horizon) techLines.push(`• 시간 범위: ${escapeHtml(p.time_horizon)}`);
+      techLines.push(`• Actor Similarity Map: <b>${p.use_patent_map === false ? "OFF" : "ON"}</b>`);
+
+      // 자연어에서 추출된 Investment Policy (Agent 3 가 사용)
+      const policyLines = [];
+      if (p.risk_appetite) policyLines.push(`• Risk Appetite: <b>${escapeHtml(p.risk_appetite)}</b>`);
+      if (p.investment_horizon) policyLines.push(`• Investment Horizon: <b>${escapeHtml(p.investment_horizon)}</b>`);
+      if (p.total_budget) {
+        const budgetFmt = Number(p.total_budget).toLocaleString();
+        policyLines.push(`• Total Budget: <b>${budgetFmt} USD</b>`);
+      }
+      if (p.strategic_priority && p.strategic_priority.length) {
+        policyLines.push(`• Strategic Priority: ${p.strategic_priority.map(x => `<code>${escapeHtml(x)}</code>`).join(", ")}`);
+      }
 
       let html = `📥 <b>입력 해석 완료</b><br/>`;
       if (companyLines.length) {
@@ -200,7 +288,7 @@ function connectStream(sid) {
     final: (d) => {
       // 마지막 요약
       const r = d.payload.result || {};
-      addAgentMessage(`✅ 파이프라인 완료 — ${r?.review?.decision || "?"} (iter=${r.iteration}, 후보 ${r.counts?.tech_candidates}, 로드맵 ${r.counts?.planned_roadmap}, stage ${r.counts?.stages})`);
+      addAgentMessage(`✅ ${r.run_mode === "single" ? "Single-Agent baseline" : "Multi-Agent pipeline"} 완료 — ${r?.review?.decision || "?"} (iter=${r.iteration}, 후보 ${r.counts?.tech_candidates}, 로드맵 ${r.counts?.planned_roadmap}, stage ${r.counts?.stages})`);
     },
 
     error: (d) => addAgentMessage("❌ 오류: " + escapeHtml(d.payload.message)),
@@ -354,6 +442,23 @@ function renderAgentsBar() {
       </div>`;
     panel().appendChild(sec);
   }
+  if (ctx.runMode === "single") {
+    sec.innerHTML = `
+      <h3>Run Mode</h3>
+      <div class="agent-status-grid single-agent-grid">
+        <div class="agent-status on" data-agent="single"><div class="num">Single Agent</div><div class="nm">End-to-End Baseline</div></div>
+      </div>`;
+    return;
+  }
+  if (!sec.querySelector('[data-agent="1"]')) {
+    sec.innerHTML = `
+      <h3>Active Agents</h3>
+      <div class="agent-status-grid">
+        <div class="agent-status" data-agent="1"><div class="num">Agent 1</div><div class="nm">Tech Analyst</div></div>
+        <div class="agent-status" data-agent="2"><div class="num">Agent 2</div><div class="nm">Roadmap Planner</div></div>
+        <div class="agent-status" data-agent="3"><div class="num">Agent 3</div><div class="nm">Investment Strategist</div></div>
+      </div>`;
+  }
   ["1","2","3"].forEach((k) => {
     const cell = sec.querySelector(`[data-agent="${k}"]`);
     cell.classList.toggle("on",  ctx.activeAgents.includes(k));
@@ -411,7 +516,7 @@ function renderAgent1Section() {
   ).join("");
 
   sec.innerHTML = `
-    <h3>Agent 1 · Technology Analyst${iter}</h3>
+    <h3>${ctx.runMode === "single" ? "Single Agent · Technology Candidates" : "Agent 1 · Technology Analyst"}${iter}</h3>
     <div class="io-card">
       <div class="io-title">Tech Candidates <span class="arrow">→</span> Agent 2 <span class="badge">${tc.length}건</span></div>
       <div class="io-row"><span class="tag in">IN</span>
@@ -499,7 +604,7 @@ function renderAgent2Section() {
   for (let y = minY; y <= maxY; y++) yearHeaders.push(`<div class="year-col-label">${y}차년도</div>`);
 
   sec.innerHTML = `
-    <h3>Agent 2 · Roadmap Planner${iter}</h3>
+    <h3>${ctx.runMode === "single" ? "Single Agent · Planned Roadmap" : "Agent 2 · Roadmap Planner"}${iter}</h3>
     <div class="io-card">
       <div class="io-title">Planned Roadmap <span class="arrow">→</span> Agent 3 <span class="badge">${rm.length}건</span></div>
       <div class="io-row"><span class="tag in">IN</span>
@@ -623,7 +728,7 @@ function renderAgent3Section() {
   ).join("");
 
   sec.innerHTML = `
-    <h3>Agent 3 · Investment Strategist${iter}</h3>
+    <h3>${ctx.runMode === "single" ? "Single Agent · Investment Strategy" : "Agent 3 · Investment Strategist"}${iter}</h3>
     <div class="io-card">
       <div class="io-title">Investment Strategy <span class="arrow">→</span> Orchestrator <span class="badge">${allTechs.length} techs</span></div>
       <div class="io-row"><span class="tag in">IN</span>
@@ -942,7 +1047,7 @@ function renderReviewSection(review, iteration) {
     : "";
 
   sec.innerHTML = `
-    <h3>Orchestrator · Review${iteration ? ` (iter ${iteration})` : ""}</h3>
+    <h3>${ctx.runMode === "single" ? "Single Agent · Self Review" : "Orchestrator · Review"}${iteration ? ` (iter ${iteration})` : ""}</h3>
     ${ioCard}
     ${banner}
     ${allChecksHtml}

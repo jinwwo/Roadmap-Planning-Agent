@@ -7,7 +7,7 @@ Technology Analysis Agent 의 Local Orchestrator 그래프
   START
     │
     ▼
-  [patent_agent]        USPTO 데이터 수집 + Claude 특허 분석
+  [patent_agent]        특허 provider 데이터 수집 + LLM 특허 분석
     │
     ▼
   [market_agent]        Tavily 데이터 수집 + Claude 시장 분석

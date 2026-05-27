@@ -39,6 +39,7 @@ from pydantic import BaseModel
 from config import validate_config
 from llm_factory import describe_llm
 from interactive.session import Session, register_session, get_session, drop_session
+from scenario_loader import list_scenarios
 
 
 ROOT = Path(__file__).parent
@@ -88,7 +89,10 @@ app.mount("/outputs", _NoCacheStaticFiles(directory=OUTPUTS_DIR), name="outputs"
 class StartRequest(BaseModel):
     request: str                                  # 사용자 자연어 요청
     active_agents: Optional[List[str]] = None     # 예: ["1","2","3"] · 미지정 시 전부 ON
+    run_mode: Optional[str] = "multi"             # "multi" | "single"
     stage_mode: Optional[str] = "phase"           # "phase" | "horizon"
+    scenario_id: Optional[str] = None             # predefined scenario id
+    use_patent_map: Optional[bool] = None         # actor similarity map A/B toggle
     # Investment policy — 자연어 한 줄 (LLM 이 4 필드로 추출)
     investment_policy_text: Optional[str] = None
     # (하위 호환) 구조화 입력도 지원 — text 가 없으면 이걸 사용
@@ -105,6 +109,11 @@ def status():
     return {"llm": describe_llm()}
 
 
+@app.get("/api/scenarios")
+def scenarios():
+    return {"scenarios": list_scenarios()}
+
+
 @app.post("/api/session")
 def start_session(req: StartRequest):
     try:
@@ -117,8 +126,11 @@ def start_session(req: StartRequest):
     s.start(
         user_request=req.request,
         active_agents=req.active_agents,
+        run_mode=req.run_mode or "multi",
         total_budget=req.total_budget,
         stage_mode=req.stage_mode or "phase",
+        scenario_id=req.scenario_id,
+        use_patent_map=req.use_patent_map,
         risk_appetite=req.risk_appetite,
         investment_horizon=req.investment_horizon,
         strategic_priority=req.strategic_priority,
@@ -128,6 +140,7 @@ def start_session(req: StartRequest):
         "session_id": s.id,
         "llm": describe_llm(),
         "active_agents": s.active_agents,
+        "run_mode": s.run_mode,
     }
 
 

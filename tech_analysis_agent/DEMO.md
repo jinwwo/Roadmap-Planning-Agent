@@ -5,7 +5,7 @@ Claude Code 스타일의 대화형 웹 데모입니다.
 - 🧠 **로컬 LLM** (Ollama) 기본값 — API 키 불필요
 - 📡 **Server-Sent Events** 로 에이전트 진행 상황 실시간 스트리밍
 - ✋ **HITL 체크포인트** — Agent 1 완료 후 후보 기술을 검토하고 drop/shift 적용 가능
-- 🛰️ **완전 오프라인 모드** — USPTO/Tavily 없어도 합성 데이터로 동작
+- 🛰️ **완전 오프라인 모드** — KIPRIS/Tavily 없어도 합성 데이터로 동작
 
 ---
 
@@ -17,7 +17,7 @@ bash setup.sh        # Ollama 설치 + 모델 pull + pip install + .env 생성
 bash run.sh          # 서버 기동 → http://localhost:8000
 ```
 
-- 다른 모델을 쓰고 싶으면: `bash setup.sh --model qwen2.5:7b-instruct`
+- 다른 모델을 쓰고 싶으면: `bash setup.sh --model qwen2.5:14b`
 - 종료: `bash stop.sh` (백그라운드로 띄운 Ollama 종료)
 
 ---
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 curl -fsSL https://ollama.com/install.sh | sh   # Linux
 # macOS: brew install ollama  또는 https://ollama.com/download
 
-ollama pull llama3.1:8b
+ollama pull gemma3:27b
 ollama serve &                                   # 백그라운드
 ```
 
@@ -49,14 +49,17 @@ ollama serve &                                   # 백그라운드
 
 ```bash
 LLM_PROVIDER=ollama
-OLLAMA_MODEL=llama3.1:8b
-PATENTSVIEW_API_KEY=...
+OLLAMA_MODEL=gemma3:27b
+PATENT_DATA_PROVIDER=kipris
+KIPRIS_API_KEY=...
 TAVILY_API_KEY=...
 USE_MOCK_PATENT=false
 USE_MOCK_MARKET=false
+USE_PATENT_MAP=true
 ```
 
-> 실제 PatentsView/Tavily API 를 쓰려면 `USE_MOCK_*=false` 로 두고 `PATENTSVIEW_API_KEY`, `TAVILY_API_KEY` 를 설정.
+> 실제 KIPRIS/Tavily API 를 쓰려면 `USE_MOCK_*=false` 로 두고 `KIPRIS_API_KEY`, `TAVILY_API_KEY` 를 설정.
+> `USE_PATENT_MAP=false` 로 두면 Patent Agent는 후보군+map을 그대로 만들고, Market Agent만 actor similarity map 없이 실행되어 A/B 비교가 가능.
 > Claude 를 쓰고 싶다면 `LLM_PROVIDER=anthropic`, `ANTHROPIC_API_KEY=sk-ant-...`.
 
 ### 4. 서버 실행
@@ -77,7 +80,7 @@ uvicorn server:app --port 8000
    - *"2030년까지의 2nm 파운드리 로드맵을 그려줘"*
    - *"차세대 AI 가속기 패키징 기술 로드맵"*
 2. 에이전트가 입력을 파싱해 `domain / reference_year / category_hints` 로 변환 → 우측 패널 표시
-3. **Agent 1** 실행 — USPTO/Tavily 로 데이터 수집 후 Claude/Ollama 분석. 진행 로그가 터미널 스타일로 실시간 표시됨
+3. **Agent 1** 실행 — KIPRIS/Tavily 로 데이터 수집 후 Claude/Ollama 분석. 진행 로그가 터미널 스타일로 실시간 표시됨
 4. **HITL 체크포인트** — 후보 기술 카드가 표시됨:
    - `drop` 버튼: 해당 기술 제외
    - `shift` 입력(예: `2026 Q1`) + 버튼: 착수 시점 조정
@@ -103,7 +106,7 @@ interactive/session.py   ← 파이프라인 orchestrator (백그라운드 스�
   └─ RoadmapGraph         ← orchestrator_feedback 적용
         │
         ├─ llm_factory.get_llm()   ← Ollama/Anthropic 공용 팩토리
-        └─ tools/ (USPTO·Tavily·mock)
+        └─ tools/ (KIPRIS·Tavily·mock)
 ```
 
 핵심 설계 결정:
@@ -122,7 +125,7 @@ interactive/session.py   ← 파이프라인 orchestrator (백그라운드 스�
 | 422 / 400 on `/api/session` | `LLM_PROVIDER=anthropic` 인데 `ANTHROPIC_API_KEY` 미설정 |
 | Ollama 연결 실패 | `ollama serve` 실행 여부, `OLLAMA_BASE_URL` 확인 |
 | JSON 파싱 에러 | 더 큰 모델로 교체 (`qwen2.5:14b-instruct`, `llama3.1:70b`) — 7B 급은 복잡한 스키마에서 실패 가능 |
-| PatentsView 인증/검색 실패 | `PATENTSVIEW_API_KEY` 확인 또는 임시로 `USE_MOCK_PATENT=true` |
+| KIPRIS 인증/검색 실패 | `KIPRIS_API_KEY` 확인 또는 임시로 `USE_MOCK_PATENT=true` |
 | SSE 끊김 | 프록시(nginx 등)의 버퍼링 — 응답 헤더에 `X-Accel-Buffering: no` 포함돼 있음 |
 
 ---

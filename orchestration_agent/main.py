@@ -45,7 +45,8 @@ from config import (
     OUTPUTS_DIR,
     FILE_ORCHESTRATOR_REPORT,
 )
-from pipeline import run_orchestration
+from pipeline import run_orchestration, run_single_agent_orchestration
+from scenario_loader import load_scenario
 
 
 # ──────────────────────────────────────────────────────────────
@@ -73,6 +74,21 @@ def parse_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     # 분석 도메인 입력
+    p.add_argument(
+        "--scenario-id",
+        dest="scenario_id",
+        type=str,
+        default="",
+        help="orchestration_agent/scenarios/<id>.json 에서 구조화된 데모 시나리오 로드",
+    )
+    p.add_argument(
+        "--run-mode",
+        dest="run_mode",
+        type=str,
+        default="multi",
+        choices=["multi", "single"],
+        help="multi=기존 multi-agent 파이프라인, single=단일 LLM baseline",
+    )
     p.add_argument(
         "--domain", type=str,
         default="AI / Semiconductor / GPU",
@@ -144,6 +160,13 @@ def parse_args():
         choices=["A_current", "B_lee2009", "C_company_portfolio"],
         help="Technology Analyst Patent Agent prompt/method variant",
     )
+    p.add_argument(
+        "--use-patent-map",
+        dest="use_patent_map",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="Market Agent가 Patent Agent actor similarity map을 사용할지 여부. 미지정 시 .env USE_PATENT_MAP 값을 사용",
+    )
     # 결과 저장 경로 prefix (비교 실험 시 파일 덮어쓰기 방지용)
     p.add_argument(
         "--out-prefix", dest="out_prefix", type=str, default="",
@@ -162,6 +185,21 @@ def main():
     # 환경/폴더 검증 (sibling 3개 폴더 존재 확인 포함)
     validate_config()
 
+    scenario = load_scenario(args.scenario_id) if args.scenario_id else None
+    if scenario:
+        args.domain = scenario.get("domain") or args.domain
+        args.year = int(scenario.get("reference_year") or args.year)
+        args.categories = ",".join(scenario.get("category_hints") or []) or args.categories
+        args.industry = scenario.get("industry") or args.industry
+        args.company_type = scenario.get("company_type") or args.company_type
+        args.company_name = scenario.get("company_name") or args.company_name
+        args.company_profile = scenario.get("company_profile") or args.company_profile
+        args.related_companies = ",".join(scenario.get("related_companies") or []) or args.related_companies
+        args.time_horizon = scenario.get("time_horizon") or args.time_horizon
+        args.budget = float(scenario.get("total_budget") or args.budget)
+        args.objective = scenario.get("objective") or args.objective
+        args.priorities = "|".join(scenario.get("strategic_priorities") or []) or args.priorities
+
     active = args.agent  # list[str]
     category_hints = [c.strip() for c in args.categories.split(",") if c.strip()]
     priorities = [p.strip() for p in args.priorities.split("|") if p.strip()]
@@ -175,15 +213,19 @@ def main():
     print(f"  domain         : {args.domain}")
     print(f"  reference_year : {args.year}")
     print(f"  active_agents  : {active}")
+    print(f"  run_mode       : {args.run_mode}")
     print(f"  budget         : {args.budget:,.0f} USD")
     print(f"  stage_mode     : {args.stage_mode}")
     print(f"  patent_method  : {args.patent_method}")
+    print(f"  use_patent_map : {args.use_patent_map if args.use_patent_map is not None else 'env/default'}")
+    print(f"  scenario_id    : {args.scenario_id or '-'}")
     print(f"  company_name   : {args.company_name}")
     print(f"  out_prefix     : {args.out_prefix!r}")
     print("=" * 70)
 
     # 파이프라인 실행
-    result = run_orchestration(
+    runner = run_single_agent_orchestration if args.run_mode == "single" else run_orchestration
+    result = runner(
         domain=args.domain,
         reference_year=args.year,
         category_hints=category_hints,
@@ -201,6 +243,7 @@ def main():
         company_name=args.company_name,
         company_profile=args.company_profile,
         related_companies=related_companies,
+        use_patent_map=args.use_patent_map,
     )
 
     # Orchestrator 최종 보고서 저장
@@ -209,6 +252,7 @@ def main():
         json.dump({
             "problem_frame": result["problem_frame"],
             "active_agents": result["active_agents"],
+            "run_mode": result.get("run_mode", args.run_mode),
             "patent_method": result["patent_method"],
             "iteration": result["iteration"],
             "review": result["review"],

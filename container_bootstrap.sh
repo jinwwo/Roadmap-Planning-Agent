@@ -119,7 +119,7 @@ echo "  ✅ ollama 데몬 응답 OK"
 
 # ── 5. 프로젝트 setup.sh ──────────────────────────────────────
 # setup.sh 안에서 .env 의 OLLAMA_MODEL 을 읽어 자동 pull 까지 진행.
-# 모델 다운로드 (qwen3.5:27b ≈ 17GB) 는 시간이 걸릴 수 있음.
+# 모델 다운로드 (gemma3:27b ≈ 17GB) 는 시간이 걸릴 수 있음.
 echo "[5/5] Roadmap-Planning-Agent/scripts/setup.sh 실행"
 bash "$PROJECT/scripts/setup.sh"
 

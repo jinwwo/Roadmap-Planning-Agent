@@ -1,0 +1,227 @@
+[
+  {
+    "tech_id": "T01",
+    "name": "GAA 기반 GPU 디자인",
+    "market_score": 84.5,
+    "market_signals": {
+      "tam_growth_rate": 90,
+      "time_to_market_urgency": 85,
+      "policy_and_investment_tailwind": 78,
+      "competitive_moat_potential": 72
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 50.0,
+      "sam_usd_b": 15.0,
+      "som_usd_b": 2.0,
+      "basis": "AI硬件市场报告和GPU市场分析"
+    },
+    "cagr_forecast": {
+      "cagr_pct": 18.5,
+      "forecast_period": "2025-2030",
+      "basis": "AI数据中心图形处理单元（GPUs）市场报告"
+    },
+    "key_market_reports": [
+      {
+        "title": "Graphics Processing Unit (GPU) Market Size & Share Analysis",
+        "url": "https://www.mordorintelligence.com/industry-reports/graphics-processing-unit-market",
+        "use": "TAM/CAGR/competition evidence"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "AMD",
+        "Intel",
+        "Qualcomm",
+        "Samsung Electronics"
+      ],
+      "shared_technology_areas": [
+        "AI hardware",
+        "GPU architecture",
+        "Semiconductor",
+        "GPU packaging",
+        "GPU process"
+      ]
+    },
+    "expected_market_boom_quarter": "2028 Q1",
+    "competitive_landscape": "Oligopoly – 1~2 dominant players",
+    "data_quality": "real",
+    "rationale": "GAA基GPU设计市场具有较高的技术增长率和时间紧迫性，政策支持和投资也较为积极。尽管竞争激烈，但目前仍处于寡头垄断阶段。"
+  },
+  {
+    "tech_id": "T02",
+    "name": "Backside PDN 구조 개선",
+    "market_score": 78.5,
+    "market_signals": {
+      "tam_growth_rate": 80,
+      "time_to_market_urgency": 65,
+      "policy_and_investment_tailwind": 72,
+      "competitive_moat_potential": 68
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 30.0,
+      "sam_usd_b": 10.0,
+      "som_usd_b": 2.5,
+      "basis": "半导体市场报告和GPU市场分析"
+    },
+    "cagr_forecast": {
+      "cagr_pct": 14.5,
+      "forecast_period": "2025-2030",
+      "basis": "$237.5 Bn Graphics Processing Unit (GPU) Markets 2025-2030"
+    },
+    "key_market_reports": [
+      {
+        "title": "$237.5 Bn Graphics Processing Unit (GPU) Markets 2025-2030 with NVIDIA, Intel Corporation, and AMD Dominating - ResearchAndMarkets.com",
+        "url": "https://www.businesswire.com/news/home/20250619747935/en/%24237.5-Bn-Graphics-Processing-Unit-GPU-Markets-2025-2030-with-NVIDIA-Intel-Corporation-and-AMD-Dominating---ResearchAndMarkets.com",
+        "use": "TAM/CAGR/competition evidence"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Intel",
+        "TSMC"
+      ],
+      "shared_technology_areas": [
+        "AI hardware",
+        "GPU architecture",
+        "Semiconductor",
+        "GPU process"
+      ]
+    },
+    "expected_market_boom_quarter": "2027 Q4",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "Backside PDN结构改进市场具有中等的技术增长率和时间紧迫性，政策支持较为积极。市场竞争相对集中，但仍有发展空间。"
+  },
+  {
+    "tech_id": "T03",
+    "name": "GPU용 고성능 메모리 패키징",
+    "market_score": 82.5,
+    "market_signals": {
+      "tam_growth_rate": 90,
+      "time_to_market_urgency": 85,
+      "policy_and_investment_tailwind": 76,
+      "competitive_moat_potential": 74
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 25.0,
+      "sam_usd_b": 10.0,
+      "som_usd_b": 3.0,
+      "basis": "高级封装市场报告和GPU市场分析"
+    },
+    "cagr_forecast": {
+      "cagr_pct": 17.5,
+      "forecast_period": "2025-2030",
+      "basis": "AI GPU Market Report: Size, Growth, Trends & Forecast (2025–2033)"
+    },
+    "key_market_reports": [
+      {
+        "title": "고급 패키징 시장 규모, 점유율 | 성장 보고서 [2034]",
+        "url": "https://www.fortunebusinessinsights.com/ko/advanced-packaging-market-110848",
+        "use": "TAM/CAGR/competition evidence"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Qualcomm",
+        "Samsung Electronics"
+      ],
+      "shared_technology_areas": [
+        "AI hardware",
+        "GPU architecture",
+        "Semiconductor",
+        "GPU packaging"
+      ]
+    },
+    "expected_market_boom_quarter": "2028 Q3",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "高性能GPU用内存封装市场具有较高的技术增长率和时间紧迫性，政策支持较为积极。市场竞争相对集中，但仍有发展空间。"
+  },
+  {
+    "tech_id": "T04",
+    "name": "AI 모델을 위한 신속한 학습 알고리즘 개선",
+    "market_score": 81.5,
+    "market_signals": {
+      "tam_growth_rate": 90,
+      "time_to_market_urgency": 85,
+      "policy_and_investment_tailwind": 74,
+      "competitive_moat_potential": 68
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 35.0,
+      "sam_usd_b": 12.0,
+      "som_usd_b": 3.5,
+      "basis": "AI芯片市场报告和GPU市场分析"
+    },
+    "cagr_forecast": {
+      "cagr_pct": 16.5,
+      "forecast_period": "2025-2030",
+      "basis": "AI Chip Market Size and Forecast | 2025–2030"
+    },
+    "key_market_reports": [
+      {
+        "title": "AI Data Center Graphics Processing Units (GPUs) Market Report 2026",
+        "url": "https://www.globenewswire.com/news-release/2026/04/14/3273676/0/en/ai-data-center-graphics-processing-units-gpus-market-report-2026-32-3-bn-opportunities-trends-competitive-landscape-strategies-and-forecasts-2020-2025-2025-2030f-2035f.html",
+        "use": "TAM/CAGR/competition evidence"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "AMD",
+        "Intel",
+        "Qualcomm"
+      ],
+      "shared_technology_areas": [
+        "AI hardware",
+        "GPU architecture"
+      ]
+    },
+    "expected_market_boom_quarter": "2028 Q4",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "快速学习算法改进市场具有较高的技术增长率和时间紧迫性，政策支持较为积极。市场竞争相对集中，但仍有发展空间。"
+  },
+  {
+    "tech_id": "T05",
+    "name": "GPU용 고성능 렌더링 아키텍처 개발",
+    "market_score": 83.5,
+    "market_signals": {
+      "tam_growth_rate": 90,
+      "time_to_market_urgency": 85,
+      "policy_and_investment_tailwind": 76,
+      "competitive_moat_potential": 72
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 40.0,
+      "sam_usd_b": 13.0,
+      "som_usd_b": 3.8,
+      "basis": "北美数据中心GPU市场报告和GPU市场分析"
+    },
+    "cagr_forecast": {
+      "cagr_pct": 17.5,
+      "forecast_period": "2025-2030",
+      "basis": "North America Data Center GPU Market Report 2025"
+    },
+    "key_market_reports": [
+      {
+        "title": "North America Data Center GPU Market Report 2025",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/north-america-data-center-gpu-market-260029845.html",
+        "use": "TAM/CAGR/competition evidence"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "AMD",
+        "Qualcomm"
+      ],
+      "shared_technology_areas": [
+        "AI hardware",
+        "GPU architecture"
+      ]
+    },
+    "expected_market_boom_quarter": "2028 Q3",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "高性能GPU渲染架构开发市场具有较高的技术增长率和时间紧迫性，政策支持较为积极。市场竞争相对集中，但仍有发展空间。"
+  }
+]

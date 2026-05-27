@@ -103,7 +103,7 @@ LLM provider 설정은 각 폴더의 `.env` 를 이용합니다 (모두 동일�
 LLM_PROVIDER=anthropic         # 또는 ollama
 ANTHROPIC_API_KEY=sk-ant-...
 # 혹은
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=gemma3:27b
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 

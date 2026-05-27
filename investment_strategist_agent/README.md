@@ -197,7 +197,7 @@ phase_name="2단계: 공정 통합"  →  stage 2 (T03, T04, T05 묶임)
 | 카테고리 | 매칭 패턴 |
 |---|---|
 | 크기 패턴 | `:27b`, `27b-`, `:32b`, `32b-`, `:34b`, `34b-`, `:70b`, `70b-` |
-| 명시적 (Qwen3 / Qwen3.5) | `qwen3:27b`, `qwen3:32b`, `qwen3:72b`, `qwen3.5:27b`, `qwen3.5:32b`, `qwen3.5:72b` |
+| 명시적 (Gemma / Qwen) | `gemma3:27b`, `qwen3:27b`, `qwen3:32b`, `qwen3:72b`, `qwen3.5:27b`, `qwen3.5:32b`, `qwen3.5:72b` |
 | 명시적 (Qwen2.5 / Llama 3.1) | `qwen2.5:32b`, `qwen2.5:72b`, `llama3.1:70b` |
 
 → 즉 27B 이상이면 자동으로 single-call. Qwen3 / Qwen3.5 는 명시적으로 등록되어 있어 모델명만 봐도 인식 가능 (단 `OLLAMA_NO_THINK=1` 권장 — 자세한 건 [ENVIRONMENT.md](../ENVIRONMENT.md) 참고).
@@ -449,7 +449,7 @@ LLM provider 는 `.env` 로 설정 (tech_analysis_agent 와 동일):
 LLM_PROVIDER=anthropic
 ANTHROPIC_API_KEY=sk-ant-...
 # 혹은
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=gemma3:27b
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 
