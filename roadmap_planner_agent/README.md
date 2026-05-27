@@ -1,8 +1,11 @@
 # Roadmap Planner Agent (Agent 2)
 
-Technology Analyst Agent (Agent 1) 가 발굴한 기술군을 입력받아,
-기술 간 인과관계와 성숙도(TRL) 를 분석하여 시장 개화 시점에 맞춘
-**연도/분기별 개발 타임라인**을 설계하는 LangGraph 기반 에이전트.
+Technology Analyst Agent (Agent 1) 가 발굴한 후보 기술군을 입력받아,
+**기술 간 종속성 + 기술/시장 정보 + Strategic Direction** 을 바탕으로
+Planning Horizon (1차년도 ~ N차년도) 안에 각 기술을 배치한 **차년도 기반 로드맵** 을
+설계하는 LangGraph 기반 에이전트.
+
+단계 분류 (1단계/2단계 등) 없이 dependency-driven 으로 자유롭게 배치.
 
 ```
 Tech-Analysis-Agent/
@@ -14,38 +17,43 @@ Tech-Analysis-Agent/
 
 ## 핵심 책임
 
-- **후보 기술 큐레이션** — N개 후보 중 핵심 K개를 5축 균형으로 자율 선별 (`tech_selector`)
-- **기술 계층 구조화** — Material/Equipment (Layer 0) → Process (Layer 1) → Architecture/Packaging (Layer 2)
-- **타임라인 역산 (Backcasting)** — 목표 시장 개화 분기로부터 lead time 을 거꾸로 계산
-- **Zero-slack 검증** — 선행 기술의 완료 분기 ≤ 후행 기술의 시작 분기
-- **병목 유발 로드맵 생성** — 자원 제약 고려 없이 기술적 필요 일정 모두 배치
-  (이후 Investment Strategist 가 '선택과 집중' 결정)
+- **후보 기술 큐레이션** — Strategic Direction 정합 최우선으로 N개 후보 중 K개 선별 (`tech_selector`, K_MIN=3)
+- **종속성 + 기술/시장 기반 timeline 설계** — phase 분류 없이 각 기술의 start_q / target_q + 차년도 (year_idx_start/target) 결정
+- **3-분리 reasoning 출력** — 각 기술마다 `year_placement` (왜 N차년도) / `tech_execution` (왜 수행) / `investment_selection` (왜 핵심 투자 후보) 별도 작성
+- **상위 컨텍스트 주입** — Company Scenario + Strategic Direction 을 모든 LLM 노드 프롬프트 상단에 주입
+- **Planning Horizon 준수** — reference_year 가 horizon 종료점. 모든 기술이 한 시점에 몰리지 않게 펼침
 
 ## 파이프라인 — 두 가지 설계 모드 (`ROADMAP_DESIGN_MODE`)
 
-### `holistic` (default — spec 의 LLM 통합)
+### `holistic` (default — 2 LLM 노드)
 
 ```
   START
     │
     ▼
-  [tech_selector]          ← LLM: 후보 N개 → K개 선별 (5축 큐레이션)
+  [tech_selector]          ← LLM: 후보 N개 → K개 선별
+    │                         · 축 #0 (최우선): Strategic Direction 정합 — 각 bullet 당 1개 이상 보존
     │                         · 점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거
     │                         · ROADMAP_TECH_K_MIN 보장 (default 3)
     │                         · final_score 신뢰 (재평가 X) — 단순 큐레이션
     ▼
-  [roadmap_designer]       ← LLM 한 번에 통합 처리 (spec System Prompt 그대로):
-    │                         · dependency tree (mental model)
-    │                         · TRL-based lead time
-    │                         · Backcasting from market boom_quarter
-    │                         · phase_name + start_q + target_q + prerequisites + justification
-    │                         · Zero-slack 자체 검증
-    │                         · reference_year horizon stagger 분포
+  [roadmap_designer]       ← LLM 통합 처리:
+    │                         · 종속성 (dependency_hints / 카테고리 / TRL) 가장 우선
+    │                         · 기술 정보 + 시장 정보 + reference_year horizon
+    │                         · 단계 분류 (1단계/2단계) 없이 자유 배치
+    │                         · 출력: start_q / target_q + year_idx_start / year_idx_target
+    │                                 + reasoning {year_placement / tech_execution / investment_selection}
+    │
+    │  [후처리 안전망 — Python]
+    │    1. _enforce_dependency_gap   : prereq target_q < dependent start_q 위반 시
+    │                                    dependent 를 push forward + cascade (최대 5 pass)
+    │    2. horizon 안전망            : max(year_idx_target) < N차년도 면 가장 후행 기술
+    │                                    (TRL ↓ + final_score ↑) 을 N차년도까지 자동 연장
     ▼
   END
 ```
 
-자연스러운 horizon 분포 + 의미적 단계 흐름. 결정성은 약간 ↓ 단 LLM 이 종합 맥락으로 합리적 결정.
+차년도 단위 자유 배치 + dependency-driven. 두 후처리로 LLM 의 dependency / horizon 누락을 자동 보정.
 
 ### `hybrid` (옛 모드 — Python 알고리즘 결정성 우선)
 
@@ -85,7 +93,7 @@ Tech-Analysis-Agent/
 | `state.py`                    | LangGraph State TypedDict | - |
 | `llm_factory.py`              | Claude / Ollama provider 추상화 | - |
 | `agents/tech_selector.py`       | 후보 K개 선별 (5축 큐레이션 + K_MIN 보장) | ✅ |
-| `agents/roadmap_designer.py`    | **(holistic 모드)** spec System Prompt 그대로 — dependency + lead_time + backcasting + phase_name + justification 한 번에 | ✅ |
+| `agents/roadmap_designer.py`    | **(holistic 모드)** dependency + lead_time + backcasting + year_idx + 3-reasoning 한 번에 LLM 통합 + **후처리 2 안전망** (dependency gap / horizon stretch) | ✅ |
 | `agents/dependency_analyzer.py` | (hybrid 모드) 기술 의존성 트리 + 양방향 정합 | ✅ |
 | `agents/timeline_calculator.py` | (hybrid 모드) TRL 역산 알고리즘 + Zero-slack + reference_year leaf 안전망 | ❌ |
 | `agents/roadmap_builder.py`     | (hybrid 모드) phase_name + Justification (분기 변경 X) | ✅ |
@@ -122,25 +130,41 @@ Tech-Analysis-Agent/
     {
       "tech_id": "T01",
       "name": "High-NA EUV 노광 장비 커스터마이징",
-      "phase_name": "1단계: 기반 R&D",
-      "start_q": "2025 Q1",
-      "target_q": "2026 Q2",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
       "prerequisites": [],
-      "lead_time_quarters": 6,
-      "justification": "공정 개발(T03) 을 위해 장비 셋업이 최우선되어야 함. TRL 4 기준 6개 분기 소요 예상."
+      "reasoning": {
+        "year_placement": "TRL 4 + 후속 공정의 prereq → 1차년도 시작 필수.",
+        "tech_execution": "Strategic Direction #1 'AI 하드웨어 리더십 유지' 와 직결. 시장 boom 직전 양산 준비.",
+        "investment_selection": "final_score 88.7 + market_score 92 로 후보 최상위. R&D 예산 $12B 의 ~15% 배정 합리적."
+      }
     }
   ],
   "dependency_tree": { ... },
   "tech_selection": {
     "selected_count": 5,
-    "rationale": "8개 후보 중 5개 선별. GAA·BSPDN 트렌드 후보 보존 + 카테고리 균형.",
+    "rationale": "10개 후보 중 5개 선별. Strategic Direction 정합 + 카테고리 균형.",
     "dropped": [
-      {"tech_id":"T02","name":"...","reason":"T01 과 기능 중복"},
-      {"tech_id":"T08","name":"...","reason":"final_score 낮고 시점 부적합"}
+      {"tech_id":"T02","name":"...","reason":"T01 과 기능 중복"}
     ]
   }
 }
 ```
+
+### `year_idx_start` / `year_idx_target` (차년도)
+
+Planning Horizon 시작 연도를 1차년도로 환산한 정수.
+- 예: `planning_horizon=2026-2030` → "2026 Q1" = 1차년도, "2030 Q4" = 5차년도
+- 웹 시각화 (1차년도 ~ N차년도 간트) 와 보고서가 이 필드 사용
+- LLM 이 직접 출력하지만 누락 시 `start_q/target_q` 에서 자동 도출 (`_derive_year_idx`)
+
+### 3-분리 `reasoning` dict
+
+| 키 | 관점 | 용도 |
+|----|------|------|
+| `year_placement` | 차년도 배치 timing 이유 | 보고서 — "왜 N차년도?" |
+| `tech_execution` | 기술 수행 정당성 | 보고서 — "왜 이 기술?" (Strategic Direction 인용) |
+| `investment_selection` | 투자 선정 1차 사유 | Strategist 의 입력 — Tier 결정 컨텍스트 |
 
 ## TRL 기반 리드 타임
 

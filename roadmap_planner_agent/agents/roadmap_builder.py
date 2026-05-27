@@ -82,6 +82,20 @@ justification 을 작성하라.**
 - `phase_name` 은 한국어 라벨 사용.
 
 ---
+[Reasoning — 3 가지 분리 필수]
+
+각 기술마다 **3가지 reasoning** 을 분리하여 작성 (보고서 시각화 + 추적성):
+
+1. **year_placement**: 이 기술의 차년도 / 분기 배치 timing 이유.
+   - 의존성 / TRL lead_time / 시장 boom 시점 / Strategic Direction 정합 등의 timing 측면
+2. **tech_execution**: 이 기술을 **왜 수행해야 하는가** (Strategic Direction + 시장/기술 분석).
+   - Strategic Direction 의 어떤 bullet 과 연결되는지 명시
+3. **investment_selection**: 이 기술을 **왜 핵심 투자 대상**으로 선정했는가.
+   - final_score / 시장 규모 / 회사 R&D 예산 대비 합리성
+
+각 reasoning 은 2-3 문장. 단순 반복 X.
+
+---
 [CRITICAL] Output ONLY valid JSON. No markdown.
 
 Output format:
@@ -90,7 +104,12 @@ Output format:
     {
       "tech_id": "T01",
       "phase_name": "1단계: 기반 R&D",
-      "justification": "..."
+      "justification": "...",
+      "reasoning": {
+        "year_placement": "...",
+        "tech_execution": "...",
+        "investment_selection": "..."
+      }
     }
   ]
 }"""
@@ -105,6 +124,30 @@ def _extract_json(text: str) -> dict:
         if match:
             return json.loads(match.group())
         raise ValueError(f"JSON 파싱 실패:\n{text[:300]}")
+
+
+def _format_upper_context(company_scenario: dict, strategic_direction: list) -> str:
+    """Orchestrator 추출 Company Scenario + Strategic Direction → 상위 컨텍스트 블록."""
+    if not company_scenario and not strategic_direction:
+        return ""
+    block = "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n"
+    if company_scenario:
+        cn = company_scenario.get("company_name", "")
+        ind = company_scenario.get("industry", "")
+        rev = company_scenario.get("annual_revenue", 0) or 0
+        ratio = company_scenario.get("rd_budget_ratio", 0) or 0
+        rd = company_scenario.get("annual_rd_budget", 0) or 0
+        horizon = company_scenario.get("planning_horizon", "")
+        block += f"- Company: {cn}\n- Industry: {ind}\n"
+        if rev: block += f"- Annual Revenue: ${rev:,.0f}\n"
+        if ratio: block += f"- R&D Budget Ratio: {ratio:.0%}\n"
+        if rd: block += f"- Annual R&D Budget: ${rd:,.0f}\n"
+        if horizon: block += f"- Planning Horizon: {horizon}\n"
+    if strategic_direction:
+        block += "\n[Strategic Direction]\n"
+        for i, d in enumerate(strategic_direction, 1):
+            block += f"  {i}. {d}\n"
+    return block + "\n"
 
 
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
@@ -175,6 +218,10 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
         active_items = sorted(active_items, key=lambda t: quarter_to_int(t.get("start_q", "9999 Q4")))
 
         feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+        upper_block = _format_upper_context(
+            state.get("company_scenario"),
+            state.get("strategic_direction"),
+        )
         ref_year = state.get("reference_year")
         horizon_block = (
             f"\nreference_year: {ref_year} (로드맵 horizon 의 종료 연도 — phase_name / "
@@ -182,7 +229,7 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
             if ref_year else ""
         )
 
-        user_prompt = f"""
+        user_prompt = f"""{upper_block}
 목표 시장     : {market_context.get('target_market', '')}
 시장 개화 목표: {market_boom_q}{horizon_block}
 
@@ -206,9 +253,27 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
             r["tech_id"]: {
                 "phase_name": r.get("phase_name", ""),
                 "justification": r.get("justification", ""),
+                "reasoning": r.get("reasoning", {}) or {},
             }
             for r in result.get("roadmap", [])
         }
+
+        # 차년도 변환을 위해 horizon 시작 연도 추출
+        ref_year = state.get("reference_year")
+        company_scenario = state.get("company_scenario") or {}
+        planning_horizon = company_scenario.get("planning_horizon", "") or ""
+        m = re.search(r"(20\d{2}|21\d{2})", planning_horizon)
+        if m:
+            horizon_start_year = int(m.group(1))
+        elif ref_year:
+            horizon_start_year = ref_year - 4
+        else:
+            from datetime import datetime
+            horizon_start_year = datetime.now().year
+
+        def _q_to_year(q: str) -> int:
+            mm = re.search(r"(20\d{2}|21\d{2})", q or "")
+            return int(mm.group(1)) if mm else 0
 
         # ③ 최종 RoadmapItem 리스트 조립
         planned_roadmap: list[RoadmapItem] = []
@@ -225,11 +290,34 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
                     "phase_name": "DROPPED",
                     "start_q": "N/A",
                     "target_q": "N/A",
+                    "year_idx_start": 0,
+                    "year_idx_target": 0,
                     "prerequisites": [],
                     "lead_time_quarters": 0,
                     "justification": "오케스트레이터 피드백으로 로드맵에서 제외됨.",
+                    "reasoning": {
+                        "year_placement": "(dropped)",
+                        "tech_execution": "(dropped)",
+                        "investment_selection": "(dropped)",
+                    },
                 })
                 continue
+
+            # 차년도 도출
+            start_q = item.get("start_q", "N/A")
+            target_q = item.get("target_q", "N/A")
+            sy, ty = _q_to_year(start_q), _q_to_year(target_q)
+            yi_s = max(1, sy - horizon_start_year + 1) if sy else 1
+            yi_t = max(yi_s, ty - horizon_start_year + 1) if ty else yi_s
+
+            # reasoning: LLM 출력 우선, 누락 필드 fallback
+            llm_reasoning = jdata.get("reasoning", {})
+            just = jdata.get("justification", "") or ""
+            reasoning = {
+                "year_placement": llm_reasoning.get("year_placement") or just,
+                "tech_execution": llm_reasoning.get("tech_execution") or "(reasoning 누락)",
+                "investment_selection": llm_reasoning.get("investment_selection") or "(reasoning 누락)",
+            }
 
             roadmap_item: RoadmapItem = {
                 "tech_id": tid,
@@ -238,15 +326,18 @@ def run_roadmap_builder(state: RoadmapState) -> dict:
                     jdata.get("phase_name")
                     or item.get("phase_name", "1단계: R&D")
                 ),
-                "start_q": item.get("start_q", "N/A"),
-                "target_q": item.get("target_q", "N/A"),
+                "start_q": start_q,
+                "target_q": target_q,
+                "year_idx_start": yi_s,
+                "year_idx_target": yi_t,
                 "prerequisites": item.get("prerequisites", []),
                 "lead_time_quarters": item.get("lead_time_quarters", 0),
                 "justification": (
-                    jdata.get("justification", "")
+                    just
                     + (f" [⚠️ 시장 개화({market_boom_q}) 이후 완료 예정]"
                        if any(tid in w for w in warnings) else "")
                 ),
+                "reasoning": reasoning,
             }
             planned_roadmap.append(roadmap_item)
 

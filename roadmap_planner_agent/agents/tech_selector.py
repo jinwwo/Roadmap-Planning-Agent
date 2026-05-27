@@ -42,18 +42,22 @@ SELECTOR_SYSTEM_PROMPT = """당신은 기술 로드맵의 후보 기술을 선�
 
 다음을 모두 만족하는 K개를 선별. 어느 한 기준이 압도적이지 않게.
 
-1. **점수**: final_score 가 명백히 낮은 후보는 제외 후보.
+0. **[Strategic Direction 정합 — 필수, 최우선]**:
+   상위 컨텍스트의 Strategic Direction (3-5 bullets) 과 관련된 후보를 **반드시 선별**.
+   - 각 Strategic Direction bullet 에 대해 그것을 직접 뒷받침하는 후보 1개 이상 보존.
+   - Direction 과 관련 없는 후보는 final_score 가 높아도 우선순위 ↓.
+   - 즉 "회사 전략 방향과 연결되는가" 가 1순위 기준.
+1. **점수**: final_score 가 명백히 낮은 후보는 제외 후보 (단 #0 룰이 우선).
 2. **트렌드 정합**: market_signal / 시장 컨텍스트의 트렌드 키워드 (예: GAA, BSPDN, HBM,
    EUV, Low-k 등) 와 관련된 후보는 final_score 가 다소 낮아도 키워드당 최소 1개 보존.
 3. **카테고리 균형**: Equipment / Material / Process / Architecture / Packaging 한쪽으로
    치우치지 않게 (시장 성격상 한 카테고리 핵심이면 비율 편중 OK).
-4. **시점 분포 [필수]**: expected_market_boom_quarter 가 reference_year 가 입력되면 그
-   horizon 안에 **반드시 stagger 분포**되도록 선별. 모든 후보가 boom 한 시점에 몰리면 안 됨.
-   - reference_year=2030 이면 boom 분포가 2026~2030 에 골고루 (예: 단기 2027, 중기 2028, 장기 2029-2030)
-   - 한 시점 집중 후보 풀밖에 없으면 — final_score 다소 낮아도 다른 boom 분기 후보를 강제 보존
+4. **시점 분포 [필수]**: expected_market_boom_quarter 가 reference_year horizon 안에
+   **반드시 stagger 분포** 되도록 선별. 모든 후보가 한 시점에 몰리면 안 됨.
 5. **중복 제거**: 비슷한 기능 후보 다수면 final_score 높은 대표 1개만.
 
-평가를 다시 매기지 말 것 (final_score 가 정답). 위 5축 trade-off 만 큐레이션.
+평가를 다시 매기지 말 것 (final_score 가 정답). 위 6축 trade-off 만 큐레이션.
+**최우선은 Strategic Direction** — 회사 전략과 정합되지 않는 후보는 다른 축이 강해도 신중히 판단.
 
 [reference_year horizon — 필수]
 - 사용자 입력의 reference_year 가 있다면 그 시점까지 timeline 이 채워지는 것이 **로드맵의 본질**
@@ -95,6 +99,30 @@ def _k_min() -> int:
         return max(1, int(os.getenv("ROADMAP_TECH_K_MIN", "3") or 3))
     except ValueError:
         return 3
+
+
+def _format_upper_context(company_scenario: dict, strategic_direction: list) -> str:
+    """Orchestrator 추출 Company Scenario + Strategic Direction → 상위 컨텍스트 블록."""
+    if not company_scenario and not strategic_direction:
+        return ""
+    block = "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n"
+    if company_scenario:
+        cn = company_scenario.get("company_name", "")
+        ind = company_scenario.get("industry", "")
+        rev = company_scenario.get("annual_revenue", 0) or 0
+        ratio = company_scenario.get("rd_budget_ratio", 0) or 0
+        rd = company_scenario.get("annual_rd_budget", 0) or 0
+        horizon = company_scenario.get("planning_horizon", "")
+        block += f"- Company: {cn}\n- Industry: {ind}\n"
+        if rev: block += f"- Annual Revenue: ${rev:,.0f}\n"
+        if ratio: block += f"- R&D Budget Ratio: {ratio:.0%}\n"
+        if rd: block += f"- Annual R&D Budget: ${rd:,.0f}\n"
+        if horizon: block += f"- Planning Horizon: {horizon}\n"
+    if strategic_direction:
+        block += "\n[Strategic Direction]\n"
+        for i, d in enumerate(strategic_direction, 1):
+            block += f"  {i}. {d}\n"
+    return block + "\n"
 
 
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
@@ -178,6 +206,10 @@ def run_tech_selector(state: RoadmapState) -> dict:
 
     market_ctx = state.get("market_context", {}) or {}
     feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+    upper_block = _format_upper_context(
+        state.get("company_scenario"),
+        state.get("strategic_direction"),
+    )
     ref_year = state.get("reference_year")
 
     # LLM 입력 — 핵심 필드만 (토큰 절약)
@@ -201,7 +233,7 @@ def run_tech_selector(state: RoadmapState) -> dict:
         f"- reference_year: {ref_year} (로드맵 horizon 의 목표 종료 연도)\n"
         if ref_year else ""
     )
-    user_prompt = f"""[후보 기술 {n_in}개]
+    user_prompt = f"""{upper_block}[후보 기술 {n_in}개]
 {json.dumps([_slim(t) for t in tech_candidates], ensure_ascii=False, indent=2)}
 
 [시장 컨텍스트]

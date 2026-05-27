@@ -19,10 +19,19 @@ Tech-Analysis-Agent/                    ← GitHub 레포 루트
 [User Input: 자연어 (예: "2030년까지의 2nm 파운드리 로드맵 그려줘. 예산 5B, 균형 위험")]
         │
         ▼
-  Orchestrator Setup          ← Problem Setup (intake/policy LLM) + Task Orchestration
-   (Phase A)                    · extract_intake()   → domain/reference_year/category_hints
-                                · extract_investment_policy() → risk/horizon/budget/priorities
+  Orchestrator Setup          ← Problem Setup (1-2 LLM 호출) + Task Orchestration
+   (Phase A)                    · extract_setup_context() — 통합 1 콜 (Company Scenario + Strategic Direction):
+                                    company_name / industry / annual_revenue /
+                                    rd_budget_ratio / annual_rd_budget /
+                                    planning_horizon / objective / strategic_direction[]
+                                  + 자동 도출 (LLM 호출 X):
+                                    domain (=industry) / reference_year (planning_horizon 파싱) /
+                                    category_hints (5종 default)
+                                · extract_investment_policy() → risk / horizon / budget / priorities
+                                  (별도 정책 textarea 가 있을 때만)
                                 → ProblemFrame 으로 통합 + active_agents 배분
+                                → Company Scenario + Strategic Direction 이 모든 Agent
+                                  1/2/3 의 LLM 프롬프트 [상위 컨텍스트] 에 주입
         │
         ▼
  ┌─ Agent 1 (subprocess) ←──┐ ← active_agents 에 따라 ON / OFF
@@ -73,7 +82,7 @@ LLM 호출이 메인 비용인 파이프라인에서는 무시할 수 있습니�
 | `state.py`                | TypedDict (ProblemFrame, ReviewResult 등) | - |
 | `llm_factory.py`          | Claude / Ollama provider 추상화 | - |
 | `agents/orchestrator.py`  | Setup (CLI 모드 LLM 없음) + Review (TRM 5축 평가) + `generate_final_report` (7-섹션 + `[A1/A2/A3]` 인용 + `artifacts_summary` 부록) | ✅ |
-| `interactive/session.py`  | 웹/대화 세션 진입점. **`extract_intake()` / `extract_investment_policy()` 가 사용자 자연어를 LLM 으로 ProblemFrame 으로 변환** | ✅ |
+| `interactive/session.py`  | 웹/대화 세션 진입점. **`extract_setup_context()` 1콜로 사용자 자연어 → intake + Company Scenario + Strategic Direction 동시 추출** (이전 3 콜 → 1 콜로 단순화). 별도 `extract_investment_policy()` 는 정책 텍스트가 따로 있을 때만 사용 | ✅ |
 | `pipeline.py`             | subprocess 기반 3-에이전트 러너 + REVISE 루프. Agent 1/2/3 모두 `orchestrator_feedback` 전달 | - |
 | `web/app.js · style.css`  | 7-섹션 보고서 + `artifacts_summary` 8번째 섹션 + REVISE feedback 내용 리스트 렌더 | - |
 | `outputs/`                | 중간/최종 JSON 산출물 | - |
@@ -147,9 +156,22 @@ python main.py \
 | 파일 | 내용 |
 |------|------|
 | `<prefix>tech_candidates.json`     | Agent 1 결과 (market_context + tech_candidates) |
-| `<prefix>planned_roadmap.json`     | Agent 2 결과 (planned_roadmap + dependency_tree) |
-| `<prefix>investment_strategy.json` | Agent 3 결과 (stages + investment_strategy) |
-| `<prefix>orchestrator_report.json` | Orchestrator 최종 (problem_frame / active_agents / iteration / review / **review_history[]** / artifact_paths) |
+| `<prefix>planned_roadmap.json`     | Agent 2 결과 (planned_roadmap with year_idx + 3-reasoning + dependency_tree) |
+| `<prefix>investment_strategy.json` | Agent 3 결과 (stages + investment_strategy with tech_budget_usd + 3-reasoning) |
+| `<prefix>orchestrator_report.json` | Orchestrator 최종 (problem_frame / active_agents / iteration / review / review_history[] / artifact_paths) |
+
+## 최종 보고서 구조
+
+`review.report` 는 다음을 포함:
+
+- **`artifacts_summary` (LLM 호출 없이 Python 후처리로 채움)**:
+  - `agent1_tech_candidates` — 후보 기술 raw 표
+  - `agent2_planned_roadmap` — Designer 의 timeline + **year_idx_start/target + 3-reasoning** 풀 포함
+  - `agent3_investment_strategy` — Strategist 의 stage + tech_investments (**tech_budget_usd + 3-reasoning** 풀 포함)
+  - `year_tech_matrix` — 내부 데이터 구조 (`cells`, `yearly_budget_total`, `max_year`). 보고서 렌더 시 Gantt 차트로 변환
+  - `insights` — Tier 분포 / 카테고리 분포 / 평균 TRL / dependency edges 등 집계
+
+> 옛 7-섹션 LLM narrative (`executive_summary`, `technology_strategy` 등) 는 더 이상 생성/표시하지 않음 — 각 에이전트의 raw 출력만으로 보고서를 구성.
 
 `orchestrator_report.json` 의 `review` 구조 (ACCEPT 시):
 
@@ -185,13 +207,11 @@ python main.py \
 ```
 
 **보고서 형식 — 핵심**:
-- **7-섹션 한국어 narrative** (`executive_summary` ... `expected_outcomes`)
-- **인라인 인용**: 각 수치/판정 뒤에 `[A1]` (Tech Analyst), `[A2]` (Roadmap Planner), `[A3]` (Strategist) 마커 — 협업자가 출처 추적 가능
-- **`artifacts_summary` 8번째 섹션**: Agent 1/2/3 의 raw 데이터 + 집계 insights 자동 첨부 (LLM 호출 없이 Python 후처리). UI 에서도 표 형태로 렌더.
+- **각 Agent 의 raw 출력 위주** — narrative 없이 후보 기술 / 로드맵 / 투자 전략 데이터 직접 제시
+- **`artifacts_summary`** : Agent 1/2/3 의 출력 + 집계 insights (LLM 호출 없이 Python 후처리)
+- **3 형식 자동 export** : `.json` / `.md` / `.html` (다음 섹션 참조)
 
-**REVISE 시에도 7-섹션 보고서가 생성됩니다** (잠정 보고서). 잔여 issues / feedback 은
-`feasibility_and_risk` 섹션에 명시되며, 다음 iter 에서 갱신되어 최종 ACCEPT 시점
-보고서가 최종본이 됩니다. `review_history[]` 에 매 iter 의 review + report 가 누적 저장됨.
+`review_history[]` 에 매 iter 의 review 가 누적 저장됨.
 
 Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정된 에이전트만
 재실행되고 (파이프라인 순서상 앞 단계부터 뒤까지) `refinement.feedback` 이 자유 텍스트
@@ -199,6 +219,106 @@ Orchestrator 가 REVISE 결정을 내리면 `refinement.rerun_agents` 에 지정
 - Agent 1: `patent_agent` / `market_agent` 의 user_prompt 끝에 feedback 블록 (누락된 후보 보강 지시)
 - Agent 2: `tech_selector` / `dependency_analyzer` / `roadmap_builder` 모두 feedback 받음
 - Agent 3: `strategist` 의 prompt 에 박혀 Tier / 예산 비율 조정
+
+## ProblemFrame 필드 (Setup 산출)
+
+웹 UI 의 "Problem Frame (Orchestrator Setup)" 카드와 모든 Agent 의 [상위 컨텍스트] 블록에 사용:
+
+| 필드 | 출처 | 비고 |
+|---|---|---|
+| `company_name` | extract_setup_context (LLM) | "NVIDIA", "Samsung" 등. 없으면 "(unknown)" |
+| `industry` | extract_setup_context (LLM) | "AI / Semiconductor / GPU" 등 짧은 라벨 |
+| `annual_revenue` | extract_setup_context (LLM) | USD 정수. "$60B" → 60_000_000_000 |
+| `rd_budget_ratio` | extract_setup_context (LLM) | 0.0-1.0. "20%" → 0.20 |
+| `annual_rd_budget` | extract_setup_context (LLM) | USD 정수. 누락 시 revenue × ratio 자동 도출 |
+| `planning_horizon` | extract_setup_context (LLM) | "2026-2030 (5 years)" 형식 |
+| `strategic_direction` | extract_setup_context (LLM) | 3-5개 bullet. 동일 LLM 콜에서 함께 생성 |
+| `domain` | **자동 도출** (= `industry`) | USPTO / Tavily 검색 query 로 사용. LLM 별도 추출 X |
+| `reference_year` | **자동 도출** (planning_horizon 의 종료 연도) | 예: "2026-2030" → 2030 |
+| `category_hints` | **default 5종** | Equipment / Material / Process / Architecture / Packaging |
+| `total_budget` | Investment Policy textarea | $5B 등. policy 미지정 시 기본 $5B |
+| `strategic_priorities` | Investment Policy textarea | First-mover 등 keyword |
+
+> 옛 3개 필드 (`domain` / `reference_year` / `category_hints`) 는 더 이상 LLM 에게 묻지 않고, Company Scenario 에서 자동 도출됩니다. 사용자는 회사 정보 + 전략 방향만 의식하면 됨.
+
+## Review 평가 우선순위 (대폭 단순화 — 두 가지만 본다)
+
+Review LLM 은 단순한 2 가지만 점검 (5축 구조는 backward-compat 유지):
+
+1. **예산 초과 (hard fail)** — `sum(tech_budget_usd) > total_budget` 시 **무조건 REVISE**.
+   미만은 OK (-25% 까지 정상, 그 이상 미달이면 "미활용" 경고).
+2. **예산 분배 (soft check)** — 한 Tier 또는 한 차년도가 **90% 초과 점유** 시만 issue.
+
+이 두 가지 명확한 결함이 없으면 **ACCEPT**. issues 최대 2개.
+
+### 3중 예산 초과 방지
+
+| 단계 | 동작 |
+|---|---|
+| **1. Strategist Prompt** | "절대 초과 금지" hard constraint 명시 |
+| **2. Strategist 후처리** | LLM 합이 초과해도 비례 축소 — `sum = total_budget` 보장 |
+| **3. Review LLM** | 후처리 후에도 초과 발견되면 hard fail |
+
+### Selector-aware Review
+
+Review LLM prompt 에 **Tech Selector 의 큐레이션 결과** 가 함께 박힙니다 — N→K 필터링이 의도적임을 알림:
+
+```
+[TECH SELECTOR CURATION — IMPORTANT]
+Out of the 8 candidates above, the tech_selector intentionally curated 5.
+The following 3 were deliberately dropped:
+  - T04 (...): final_score 낮음
+  - T06 (...): 카테고리 중복
+
+**DO NOT flag dropped candidates as `missing` / `under_invested`**.
+```
+
+→ dropped 후보 누락을 결함으로 오판하지 않음.
+→ portfolio_balance 도 K 안에서만 판단.
+
+### total_budget 자동 도출 (Setup)
+
+사용자가 `Annual R&D Budget: $12B` + `Planning Horizon: 5 years` 만 입력해도,
+`total_budget = annual_rd_budget × horizon_years = $60B` 으로 자동 계산됩니다
+(별도 Investment Policy textarea 미입력 시).
+
+→ `[Session] 💰 total_budget override (company_scenario 우선): annual $12B × 5년 = $60B`
+
+REVISE 시 `refinement.feedback` 가 Agent 1/2/3 모든 시스템 프롬프트에 박혀 다음 iter 산출물에 반영됩니다.
+
+## 최종 보고서 — 3 형식 자동 export
+
+세션 종료 시 [outputs/](outputs/) 폴더에 3 파일 동시 저장:
+
+| 파일 | 용도 |
+|---|---|
+| `web_<sid>_orchestrator_report.json` | raw 데이터 (재처리 / 연동) |
+| `web_<sid>_orchestrator_report.md` | Markdown (GitHub / Notion 붙여넣기) |
+| `web_<sid>_orchestrator_report.html` | 단일 HTML (다크 테마 인라인 CSS, 이메일 첨부) |
+
+[report_export.py](report_export.py) 가 LLM 호출 없이 코드로만 렌더.
+
+### 보고서 내용 구조 (3 형식 동일)
+
+1. **Header** — Company / Industry / Horizon / Strategic Direction
+2. **🔬 Agent 1** · Technology Candidates (표)
+3. **🛣️ Agent 2** · Planned Roadmap (per-tech 카드 + 3-reasoning)
+4. **💰 Agent 3** · Investment Strategy (per-tech tier + 예산 + 5축 + 3-reasoning + 리스크 + 자원)
+5. **📅 TRM Gantt** (HTML 만) — 차년도별 색칠된 bar + 예산 badge + Reasoning
+6. **📅 차년도별 활동 요약** — 1차년도부터 N차년도까지 활동 기술 + 시작 예산 합계
+7. **📊 Year × Tech 매트릭스** — 표 형식
+8. **✅ Final Review** — decision + issues
+9. **📝 Narrative** (LLM 생성 7-섹션, 있을 때만)
+
+### 브라우저로 보기
+
+웹 UI 의 Review 섹션에 ACCEPT 시 다음 3 버튼 자동 표시:
+
+- 📋 **HTML 보고서 새 탭에서 보기** — `/outputs/<file>.html` 직접 열기
+- ⬇️ Markdown 다운로드
+- ⬇️ JSON 다운로드
+
+server.py 가 `/outputs/` 경로를 정적 마운트해서 별도 서버 셋업 불필요.
 
 ## 자동 보정 메커니즘
 

@@ -13,9 +13,8 @@ env/
 .env
 */.env
 
-# Outputs (orchestration_agent 산출물)
-# orchestration_agent/outputs/*.json
-# (keep .gitkeep)
+# Outputs (orchestration_agent 산출물 — 세션 보고서는 협업자 공유 위해 tracking)
+# .json / .md / .html 모두 commit 함
 !orchestration_agent/outputs/.gitkeep
 
 # Per-agent standalone 실행 산출물

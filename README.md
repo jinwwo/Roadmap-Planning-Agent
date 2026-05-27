@@ -81,19 +81,26 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 ### Agent 2 · Roadmap Planner (roadmap_planner_agent/)
 
-**입력**: `tech_candidates.json` + `reference_year` + `orchestrator_feedback` (선택)
-**출력**: `planned_roadmap.json` — 기술별 `{tech_id, phase_name, start_q, target_q, prerequisites, lead_time_quarters, justification}` + `tech_selection` (선별 사유)
+**입력**: `tech_candidates.json` + `reference_year` + Company Scenario + Strategic Direction + `orchestrator_feedback` (선택)
+**출력**: `planned_roadmap.json` — 기술별 `{tech_id, name, year_idx_start, year_idx_target, prerequisites, reasoning: {year_placement, tech_execution, investment_selection}}` + `tech_selection`
 
 **두 가지 설계 모드** — 환경변수 `ROADMAP_DESIGN_MODE` 로 토글:
 
-#### `holistic` (default — spec 의 LLM 통합 모드)
-1. **`tech_selector`** — LLM 이 후보 N개 중 핵심 K개를 자율 선별. **5축 큐레이션** (점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거). final_score 신뢰 + 단일 차원 의존 금지. **`ROADMAP_TECH_K_MIN`** (default 3) 최소 보장.
-2. **`roadmap_designer`** — **LLM 한 번에 통합 처리** (spec System Prompt 그대로):
-   - dependency tree (mental model) + TRL-based lead time + Backcasting from boom_quarter
-   - `phase_name` + `start_q` + `target_q` + `prerequisites` + `justification` 모두 한 번에
-   - Zero-slack 자체 검증 + `reference_year` horizon stagger 분포
+#### `holistic` (default — 2 LLM 노드)
+1. **`tech_selector`** — LLM 이 후보 N개 중 핵심 K개를 자율 선별.
+   - **축 #0 (최우선)**: Strategic Direction 정합 — 각 bullet 당 1개 이상 보존
+   - 점수 / 트렌드 정합 / 카테고리 균형 / 시점 분포 / 중복 제거
+   - **`ROADMAP_TECH_K_MIN`** (default 3) 최소 보장
+2. **`roadmap_designer`** — LLM 통합 처리 (단계 분류 없음):
+   - 종속성 (dependency_hints / 카테고리 / TRL) 가장 우선
+   - 기술 정보 + 시장 정보 + reference_year horizon → 자유 배치
+   - 출력: `start_q` / `target_q` + `year_idx_start` / `year_idx_target` 차년도 + **3-분리 reasoning** (`year_placement` / `tech_execution` / `investment_selection`)
 
-→ 자연스러운 horizon 분포 + 의미적 단계 흐름. 결정성 약간 ↓.
+→ 차년도 단위 자유 배치 + dependency-driven. 결과는 차년도 간트 시각화 + 보고서에 그대로 사용.
+
+**후처리 안전망 (LLM 무시 자동 보정)**:
+- `_enforce_dependency_gap()` — prereq target_q < dependent start_q 위반 시 dependent push forward + cascade (최대 5 pass)
+- `horizon 안전망` — max(year_idx_target) < N차년도 시 가장 후행 기술 (TRL ↓ + final_score ↑) 자동 연장
 
 #### `hybrid` (옛 모드 — Python 결정성 우선)
 1. `tech_selector` (동일)
@@ -114,22 +121,21 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 
 ### Agent 3 · Investment Strategist (investment_strategist_agent/)
 
-**입력**: `planned_roadmap.json` + `tech_candidates.json` + `investment_policy` (선택)
+**입력**: `planned_roadmap.json` (year_idx + reasoning 포함) + `tech_candidates.json` + `market_context` + `investment_policy` + Company Scenario + Strategic Direction
 **출력**: `investment_strategy.json` — stage 당 하나의 전략 객체
 
-**핵심 원칙** : Stage 는 컨테이너 (시간/의존성 그룹), **실제 의사결정 단위는 개별 기술**.
+**핵심 원칙** : Stage 는 컨테이너 (시간/의존성 그룹), **실제 의사결정 단위는 개별 기술 + per-tech 절대 예산 (USD)**.
 
 **내부 2 단계**:
-1. `stage_aggregator` — **pure Python**. 기술 단위 로드맵을 stage 로 집계
-   - 기본 (`--stage-mode phase`): Roadmap Planner 의 `phase_name` 그대로 사용
-   - `--stage-mode horizon`: 시작 분기 기준 short-term (≤8Q) / mid-term (≤16Q) / long-term
-2. `strategist` — LLM 이 각 stage 에 대해 **두 수준** 동시 산출:
-   - **A. Stage narrative**: `stage_assessment` 1~3 문장 (timing / synergy / dependency / scale)
-   - **B. Per-tech 평가** (`tech_investments[]`): stage 안 각 기술마다
-     - 5-지표 점수 (1-5): `market_opportunity` / `strategic_fit` / `executability` / `uncertainty` / `urgency`
-     - **Tier 1 / 2 / 3** — 같은 stage 안에서도 tech 마다 다를 수 있음
-     - `investment_attractiveness`, `investment_urgency`, `investment_scope`, `recommended_action`, `rationale[]`, `major_risks[]`, `resource_focus[]`
-   - **C. Stage-level 예산 분배**: `stage_budget_ratio` (0.0~1.0, 모든 stage 합 = 1.0). 코드가 자동 정규화 + `stage_estimated_usd = total_budget × ratio` 계산.
+1. `stage_aggregator` — **pure Python**. 기술 단위 로드맵을 stage 로 집계 (phase_name 없을 시 short/mid/long-term 자동 분류)
+2. `strategist` — LLM 이 각 tech 마다 **5축 평가 + 예산** 산출:
+   - **5축 점수 (1-5)**: `market_size_growth` (TAM/CAGR) / `tech_readiness` (TRL) / `tech_risk` / `competitive_advantage` / `development_urgency`
+   - **Tier 1 / 2 / 3** — 의사결정 단위는 개별 기술
+   - **`tech_budget_usd`** (USD 정수, 절대 금액) + `tech_budget_rationale` (2-3 문장)
+   - **3-분리 reasoning (각 2-3 문장)**: `market_evaluation` / `tech_evaluation` / `investment_decision`
+   - `investment_attractiveness`, `investment_urgency`, `investment_scope`, `recommended_action`, `rationale[]`, `major_risks[]`, `resource_focus[]`
+   - 참고: `stage_assessment` 는 빈 문자열 "" (사용 X — 의사결정 단위는 tech, stage 는 timing 컨테이너)
+   - Stage-level 합산: `stage_budget_ratio` = stage 안 tech_budget_usd 합 / total_budget. LLM 누락 시 Tier weight (3:1.5:1) 자동 분배.
 
 **Adaptive LLM 전략** ([_is_strong_llm](investment_strategist_agent/agents/strategist.py)):
 - 강한 LLM (Claude / Ollama 27B+) → **Single-call** (모든 stage 한 번에, cross-stage 추론 풍부, max_tokens=16384)
@@ -151,13 +157,40 @@ Mock 데이터는 반도체 업계의 실제 기술 개념 (EUV, DSA, ALD, GAA, 
 #### Phase A · Setup (Problem Setup + Task Orchestration)
 계획서의 "Problem Setup" 단계 — 사용자 자연어 입력을 **LLM 이 해석** 하여 구조화된 문제로 변환.
 
-- **Intake LLM** ([session.py:112](orchestration_agent/interactive/session.py#L112) `extract_intake()`):
-  사용자 입력 (예: *"2030년까지의 2nm 파운드리 로드맵 그려줘"*) → `{domain, reference_year, category_hints}`
-- **Policy LLM** ([session.py:207](orchestration_agent/interactive/session.py#L207) `extract_investment_policy()`):
-  자연어 정책 (예: *"예산 5B, 균형 위험"*) → `{risk_appetite, investment_horizon, total_budget, strategic_priority}`
-- → **ProblemFrame** 으로 통합: `industry`, `company_type`, `time_horizon`, `total_budget`, `objective`, `strategic_priorities[]`, `future_trend_summary`
-- **Task Orchestration**: `active_agents` 결정 (`--agent "1 2 3"` 등) + 각 에이전트에게 역할 + 입력 + 지시사항 배분
-- (CLI 모드 `python main.py --domain ... --reference-year ...` 처럼 인자로 직접 주면 intake LLM 호출 없이 ProblemFrame 직접 구성 가능 — 이 경우만 LLM 없음)
+**입력 권장 포맷 — Company Scenario**:
+```
+[Company Scenario]
+Company: NVIDIA
+Industry: AI / Semiconductor / GPU
+
+Annual Revenue: ~60B USD
+R&D Budget Ratio: ~20%
+Annual R&D Budget: ~12B USD
+
+Planning Horizon: 2026 – 2030 (5 years)
+```
+또는 자연어 한 줄 (*"삼성의 반도체 분야의 2025-2030 예산 50B 로드맵 그려줘"*) 도 OK.
+
+**Orchestrator 가 추출/생성하는 단계 (통합 1 LLM 콜)**:
+
+1. **Setup Context LLM** (`extract_setup_context()` — 한 콜로 일괄 추출):
+   → `{company_name, industry, annual_revenue, rd_budget_ratio, annual_rd_budget, planning_horizon, objective, strategic_direction[]}`
+   → 자동 도출 (LLM 호출 X): `domain` (=industry) / `reference_year` (planning_horizon 종료 연도) / `category_hints` (5종 default)
+   - 이전 3 콜 (intake + company_scenario + strategic_direction) 을 한 콜로 단순화. Setup 단계 ~50% 단축.
+2. **Policy LLM** (`extract_investment_policy()` — 정책 텍스트가 별도일 때만):
+   자연어 정책 → `{risk_appetite, investment_horizon, total_budget, strategic_priority}`
+
+→ **ProblemFrame** 으로 통합:
+```
+{industry, company_name, company_type, time_horizon, total_budget,
+ annual_revenue, rd_budget_ratio, annual_rd_budget,
+ objective, strategic_priorities[], strategic_direction[], future_trend_summary}
+```
+
+**모든 Agent 1/2/3 의 LLM 프롬프트에 상위 컨텍스트로 박힘** — Company Scenario 5개 필드 + Strategic Direction 3-5 bullets 가 `[Company Scenario & Strategic Direction — 상위 컨텍스트]` 블록으로 user_prompt 에 자동 삽입.
+
+- **Task Orchestration**: `active_agents` 결정 + 각 에이전트에게 역할 + 입력 + 지시사항 배분
+- (CLI 모드는 인자로 직접 받으면 intake LLM 호출 없이 ProblemFrame 직접 구성)
 
 #### Phase B · Review (LLM)
 Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
@@ -171,17 +204,47 @@ Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
 | **Portfolio Balance** | 단기/장기 균형, 리스크 분산 (0-1 score) |
 
 결과 → `decision: "ACCEPT" | "REVISE"`
-- **ACCEPT** → 7-섹션 한국어 TRM 보고서 생성 → 종료
-- **REVISE** → `refinement.rerun_agents` + `feedback` 로 재실행 지시 — feedback 은 **Agent 1 / 2 / 3 모든 에이전트의 LLM 프롬프트에 자동 박힘** (각 sibling 의 `_format_orchestrator_feedback()` helper)
+- **ACCEPT** → 최종 보고서 3 형식 export (JSON / Markdown / HTML) → 종료
+- **REVISE** → `refinement.rerun_agents` + `feedback` 로 재실행 지시. feedback 은 **Agent 1 / 2 / 3 모든 에이전트의 LLM 프롬프트에 자동 박힘**.
+
+**Selector-aware Review**: Review LLM 의 prompt 에 Tech Selector 의 큐레이션 결과 (N→K, dropped 후보 + 사유) 가 함께 박힘. dropped 후보를 "missing / under_invested" 로 오인 X.
+
+**1차 게이트 (단순화)**:
+- **예산 초과 (hard fail)** — `sum(tech_budget_usd) > total_budget` 시 무조건 REVISE. 3중 방어 (prompt + post-processing 비례 축소 + Review LLM)
+- **예산 분배 (soft)** — 한 Tier 또는 한 차년도 >90% 점유 시만 issue
+
+**total_budget 자동 도출**: 사용자 입력의 `Annual R&D Budget × horizon_years` 로 자동 계산. 별도 Investment Policy textarea 불필요.
+
+### 최종 보고서 — 3 형식 자동 export
+
+- **JSON** — raw 데이터 (재처리)
+- **Markdown** — GitHub/Notion 붙여넣기
+- **HTML** — 단일 파일 + 인라인 다크 테마 CSS, 이메일 첨부
+
+ACCEPT 시 web UI Review 섹션에 다운로드 / 새 탭 보기 버튼 자동 표시. `/outputs/` 경로 정적 마운트로 즉시 접근.
+
+**보고서 구조** (각 Agent 의 raw 출력 중심 — LLM narrative 없음):
+1. Header (Company / Industry / Strategic Direction)
+2. Agent 1 후보 표
+3. Agent 2 per-tech 카드 + 3-reasoning + 분기 정보 (예: 2026 Q1 – 2027 Q2)
+4. Agent 3 per-tech tier + 예산 + 5축 + 3-reasoning
+5. TRM Gantt (HTML 만) — 차년도 bar + 예산 badge + 분기 정보 + Reasoning 펼치기
+6. 차년도별 활동 요약 (1차년도 ~ N차년도, 시작/진행/완료 + 시작 예산 합계)
+7. Final Review + issues
 
 **REVISE 루프**: `MAX_ORCHESTRATOR_ITERATIONS` (기본 2) 까지 반복.
 상한 도달 시 강제 ACCEPT + 전용 LLM 콜로 보고서 채움. 잔여 issue 는 `feasibility_and_risk` 섹션에 명시.
 
-**최종 TRM 보고서 형식** (`orchestrator_report.json` 의 `review.report`):
-- **7-섹션 한국어 narrative**: `executive_summary` / `technology_strategy` / `roadmap_structure` / `investment_strategy` / `trend_alignment` / `feasibility_and_risk` / `expected_outcomes`
-- **인라인 출처 인용**: 각 수치/판정 뒤에 `[A1]` (Tech Analyst), `[A2]` (Roadmap Planner), `[A3]` (Strategist) 마커
-  - 예: *"T01 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류, 2026 Q3 → 2027 Q1 [A2] 양산 전환"*
-- **`artifacts_summary` 부록** (8번째 섹션): Agent 1/2/3 의 핵심 출력 raw 데이터 + 집계 insights (Tier 분포, top tech, 카테고리 분포, dependency edges 등). UI 에서 `[A?]` 마커 따라 추적 가능.
+**최종 보고서 형식** (`orchestrator_report.json` 의 `review.report`):
+- 각 Agent 의 raw 출력 중심 (LLM narrative 없음 — 데이터 정직 제시)
+- **`artifacts_summary`** (LLM 호출 없이 Python 후처리):
+  - `agent1_tech_candidates` — 후보 raw 표
+  - `agent2_planned_roadmap` — Designer timeline + year_idx + **3-reasoning**
+  - `agent3_investment_strategy` — Strategist tier + **tech_budget_usd + 3-reasoning**
+  - `year_tech_matrix` — 내부 데이터 구조 (HTML 보고서에서 Gantt 차트로 렌더)
+  - `insights` — Tier 분포 / 카테고리 / 평균 TRL / dependency edges
+
+웹 UI 의 ACCEPT 시 Review 섹션에 3 형식 다운로드 버튼 표시 (HTML / Markdown / JSON).
 
 **subprocess 기반**: 각 sibling 은 자기 `config.py`/`state.py` 를 가져서 같은 프로세스에서 import 하면 네임 충돌. Orchestrator 는 `subprocess.Popen` 으로 각 에이전트를 별도 Python 프로세스로 호출해 완전 격리. 웹 데모에서는 stdout 을 PIPE 로 받아 SSE 로 스트리밍.
 
@@ -217,7 +280,7 @@ Agent 1/2/3 결과를 받아 **TRM 5-축 평가**:
         ▼
   Orchestrator Review (LLM)      ← TRM 5-축 평가 (Phase B)
         │
-        ├── ACCEPT → 7-섹션 보고서 생성 → orchestrator_report.json
+        ├── ACCEPT → 3 형식 보고서 export → orchestrator_report.{json, md, html}
         │
         └── REVISE → refinement.rerun_agents 재실행
                      │ (파이프라인 순서상 가장 앞선 agent 부터 끝까지)
@@ -334,7 +397,7 @@ bash scripts/run.sh                      # http://localhost:8000
 1. 상단에서 **Agent 1/2/3 체크박스** 로 활성화할 에이전트 선택
 2. 하단 입력창에 자연어 입력 (예: `"2030년까지의 2nm 파운드리 로드맵을 그려줘"`)
 3. **▶ 전송** 클릭
-4. 왼쪽에서 실시간 로그, 오른쪽에서 구조화된 결과 (IN/OUT 카드 · 간트 차트 · Tier 카드 · 7-섹션 보고서) 관찰
+4. 왼쪽에서 실시간 로그, 오른쪽에서 구조화된 결과 (IN/OUT 카드 · 차년도 간트 · per-tech 카드 · 최종 보고서) 관찰
 
 GPU 가 있으면 Ollama 가 자동 사용, 약 3–6분 소요.
 
@@ -410,14 +473,14 @@ python scripts/smoke_test.py
     },
     "issues": [],
     "refinement": { "rerun_agents": [], "feedback": [] },
-    "report": {                          ← 7-섹션 한국어 최종 보고서
-      "executive_summary":    "...",
-      "technology_strategy":  "...",
-      "roadmap_structure":    "...",
-      "investment_strategy":  "...",
-      "trend_alignment":      "...",
-      "feasibility_and_risk": "...",
-      "expected_outcomes":    "..."
+    "report": {                          ← artifacts_summary 중심 (LLM narrative 없음)
+      "artifacts_summary": {
+        "agent1_tech_candidates": [ ... ],
+        "agent2_planned_roadmap":  [ ... ],   // year_idx + 3-reasoning
+        "agent3_investment_strategy": [ ... ],// tier + tech_budget_usd + 3-reasoning
+        "year_tech_matrix": { ... },          // HTML 보고서에서 Gantt 로 렌더
+        "insights": { ... }
+      }
     },
     "diagnostic_summary": ""
   },
@@ -425,7 +488,7 @@ python scripts/smoke_test.py
 }
 ```
 
-REVISE 시 `report` 가 비워지고 `diagnostic_summary` 만 채워짐. 단, iteration 상한 도달 시 **강제 ACCEPT + 전용 LLM 콜** 로 report 를 채움.
+REVISE 시 `diagnostic_summary` 만 채워짐. iteration 상한 도달 시 강제 ACCEPT.
 
 ---
 
@@ -494,7 +557,7 @@ Agent 를 OFF 한 채로 실험하면 Review LLM 이 "Missing investment strateg
 2. **파이프라인 가드레일** ([run_orchestrator_review](orchestration_agent/agents/orchestrator.py))
    - LLM 이 규칙을 무시하고 OFF agent 를 rerun 지정해도 **자동 필터링**
    - 필터링 후 rerun 대상이 비어있는데 여전히 REVISE 면 **ACCEPT 로 강제 전환**
-   - ACCEPT 전환 시 `generate_final_report()` 가 7-섹션 보고서를 전용 LLM 콜로 생성
+   - ACCEPT 전환 시 `report_export` 가 3 형식 (JSON / Markdown / HTML) 자동 생성
 
 즉 `--agent "1 2"` 실험은 **반드시 유한 시간 안에 수렴**하고 보고서도 채워짐 —
 비활성 agent 로 인한 무의미한 iteration 소모 없음.

@@ -34,3 +34,6 @@ matplotlib>=3.7.0
 # ── 웹 데모 공용 (tech_analysis_agent / orchestration_agent) ─
 fastapi>=0.110.0
 uvicorn[standard]>=0.27.0
+
+# PDF export 는 제거됨 — HTML / Markdown / JSON 만 사용
+# 필요 시 브라우저에서 HTML 열고 "PDF 로 인쇄" 사용

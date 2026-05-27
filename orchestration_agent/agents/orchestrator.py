@@ -20,7 +20,7 @@ Orchestration Agent — 두 단계로 동작:
 
 import json
 import re
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from langchain_core.messages import HumanMessage, SystemMessage
 
 from llm_factory import get_llm
@@ -280,6 +280,8 @@ def run_orchestrator_setup(
     objective: Optional[str] = None,
     priorities: Optional[List[str]] = None,
     future_trend_summary: Optional[str] = None,
+    company_scenario: Optional[Dict[str, Any]] = None,
+    strategic_direction: Optional[List[str]] = None,
 ) -> ProblemFrame:
     """
     사용자 입력 → 구조화된 ProblemFrame.
@@ -289,24 +291,39 @@ def run_orchestrator_setup(
 
     pf: ProblemFrame = {
         "industry": industry or DEFAULT_INDUSTRY,
-        "company_type": company_type or DEFAULT_COMPANY_TYPE,
         "time_horizon": time_horizon or DEFAULT_TIME_HORIZON,
         "total_budget": float(total_budget) if total_budget is not None else DEFAULT_TOTAL_BUDGET,
-        "objective": objective or DEFAULT_OBJECTIVE,
-        "strategic_priorities": list(priorities) if priorities else list(DEFAULT_PRIORITIES),
         "future_trend_summary": future_trend_summary or DEFAULT_FUTURE_TREND_SUMMARY,
     }
+    # objective / strategic_priorities / company_type 는 strategic_direction +
+    # company_scenario 로 대체되었으므로 채우지 않음 (legacy 호환 위해 schema 에만 잔존)
+
+    # Company Scenario merge
+    cs = company_scenario or {}
+    pf["company_name"] = cs.get("company_name") or ""
+    pf["annual_revenue"] = float(cs.get("annual_revenue") or 0)
+    pf["rd_budget_ratio"] = float(cs.get("rd_budget_ratio") or 0)
+    pf["annual_rd_budget"] = float(cs.get("annual_rd_budget") or 0)
+    if cs.get("planning_horizon") and cs["planning_horizon"] != "(unknown)":
+        pf["time_horizon"] = cs["planning_horizon"]
+    if cs.get("industry") and cs["industry"] != "(unknown)":
+        pf["industry"] = cs["industry"]
+    pf["strategic_direction"] = list(strategic_direction or [])
 
     print("  ── Problem Frame ──────────────────────────────")
-    print(f"    industry            : {pf['industry']}")
-    print(f"    company_type        : {pf['company_type']}")
-    print(f"    time_horizon        : {pf['time_horizon']}")
-    print(f"    total_budget        : {pf['total_budget']:,.0f} USD")
-    print(f"    objective           : {pf['objective']}")
-    print(f"    strategic_priorities:")
-    for i, p in enumerate(pf["strategic_priorities"], 1):
-        print(f"      {i}. {p}")
-    print(f"    domain (raw)        : {domain}")
+    print(f"    Company             : {pf['company_name'] or '-'}")
+    print(f"    Industry            : {pf['industry']}")
+    if pf["annual_revenue"]:
+        print(f"    Annual Revenue      : ${pf['annual_revenue']:,.0f}")
+    if pf["rd_budget_ratio"]:
+        print(f"    R&D Budget Ratio    : {pf['rd_budget_ratio']*100:.0f}%")
+    if pf["annual_rd_budget"]:
+        print(f"    Annual R&D Budget   : ${pf['annual_rd_budget']:,.0f}")
+    print(f"    Planning Horizon    : {pf['time_horizon']}")
+    if pf["strategic_direction"]:
+        print(f"    Strategic Direction :")
+        for i, d in enumerate(pf["strategic_direction"], 1):
+            print(f"      {i}. {d}")
     print(f"    reference_year      : {reference_year}")
     print(f"    active_agents       : {active_agents}")
 
@@ -392,23 +409,11 @@ IMPORTANT:
 
 Evaluate in this order:
 
-1. Feasibility
-   - Budget realistic?
-   - Timeline realistic?
+**예산 초과 / 예산 분배** 두 가지만 점검:
+1. **예산 초과 (hard fail)** — tech_budget_usd 합이 total_budget **초과 시 무조건 REVISE**. 미만은 OK.
+2. **예산 분배 (soft)** — 한 Tier / 한 차년도가 90% 초과 점유 시만 issue.
 
-2. Dependency correctness
-   - Are prerequisite technologies placed first?
-
-3. Strategic alignment
-   - Matches company capability?
-   - Matches future trends?
-
-4. Economic potential
-   - High-value technologies prioritized?
-
-5. Portfolio balance
-   - Short-term vs long-term
-   - Risk distribution
+위 1 번이 통과하고 2 번도 큰 결함 없으면 ACCEPT.
 
 --------------------------------------------------
 [IMPORTANT THINKING RULES]
@@ -423,25 +428,18 @@ Evaluate in this order:
 --------------------------------------------------
 [REVIEW TASK]
 
-You MUST:
+다음 두 가지만 점검하라:
 
-1. Evaluate feasibility
-2. Check dependency validity
-3. Evaluate trend alignment
-4. Evaluate investment rationality
-5. Identify:
-   - Missing technologies
-   - Over-invested technologies
-   - Under-invested technologies
-   - Timing errors
+1. **예산 초과 — 절대 불가 (hard fail)**
+   tech_budget_usd 합이 total_budget 을 **단 1달러라도 초과하면 즉시 REVISE**.
+   issues 에 `{"axis": "feasibility", "text": "예산 초과: sum $XB > total $YB"}` 추가.
+   - 미만은 OK (예산 절약은 결함 아님 — 단 -25% 미만이면 "예산 미활용" 경고만)
 
-6. Decide:
-   - ACCEPT
-   - REVISE
+2. **예산 분배 (soft check)** — 한 Tier 또는 한 차년도가 90% 초과 점유 시 issue.
+   분포가 합리적이면 OK.
 
-If REVISE:
-- Specify agents to rerun
-- Provide actionable feedback
+위 1 번이 통과하고 2 번도 큰 결함 없으면 **ACCEPT**.
+issues 는 최대 2개까지만.
 
 Each item in `issues` MUST be an object with two keys:
 - `axis` : EXACTLY one of these five strings (case-sensitive, no variations):
@@ -461,6 +459,16 @@ STRICT axis rules — issues violating these will be silently dropped:
 - DO NOT output issues with empty `text`. If you have nothing concrete to say about
   an axis, set `trm_assessment.<axis>.comment` instead and omit from issues.
 - DO NOT output plain string issues.
+
+[SELECTOR-AWARE — IMPORTANT]
+- The TECHNOLOGY CANDIDATES section lists ALL N candidates produced by Agent 1.
+- The TECH SELECTOR CURATION section (if present) tells you which K of N were
+  intentionally curated by Roadmap Planner's tech_selector for the roadmap.
+- The roadmap and investment_strategy only cover the curated K.
+- **DO NOT raise `investment_rationality.under_invested` for dropped candidates.**
+- **DO NOT raise `portfolio_balance` issues about "lacking diversity vs N candidates"**
+  when the K subset was deliberately curated. Diversity must be judged within the K.
+- Only flag missing/over/under-invested issues for tech_ids that are IN the curated K.
 
 [CONSISTENCY RULES — trm_assessment 의 수치와 issues 의 텍스트는 반드시 일치해야 한다]
 - `portfolio_balance.short_long_balance` ≥ 0.40 이면 issues 에 "short-term dominate"
@@ -654,6 +662,7 @@ def _build_review_user_prompt(
     market_context: dict,
     previous_feedback: list,
     active_agents: list,
+    tech_selection: dict = None,
 ) -> str:
     """
     Review LLM 용 사용자 프롬프트 구성.
@@ -689,15 +698,28 @@ def _build_review_user_prompt(
     sections = []
 
     # Problem Frame — 항상 표시
-    sections.append(f"""[PROBLEM FRAME]
-- Industry    : {problem_frame.get('industry')}
-- Company Type: {problem_frame.get('company_type')}
-- Time Horizon: {problem_frame.get('time_horizon')}
-- Total Budget: {problem_frame.get('total_budget')}
-- Objective   : {problem_frame.get('objective')}
-
-Strategic Priorities:
-{json.dumps(problem_frame.get('strategic_priorities', []), ensure_ascii=False, indent=2)}""")
+    pf_lines = ["[PROBLEM FRAME]"]
+    if problem_frame.get("company_name"):
+        pf_lines.append(f"- Company         : {problem_frame.get('company_name')}")
+    pf_lines.append(f"- Industry        : {problem_frame.get('industry')}")
+    if problem_frame.get("annual_revenue"):
+        pf_lines.append(f"- Annual Revenue  : ${problem_frame.get('annual_revenue'):,.0f}")
+    if problem_frame.get("rd_budget_ratio"):
+        pf_lines.append(f"- R&D Budget Ratio: {problem_frame.get('rd_budget_ratio')*100:.0f}%")
+    if problem_frame.get("annual_rd_budget"):
+        pf_lines.append(f"- Annual R&D Budget: ${problem_frame.get('annual_rd_budget'):,.0f}")
+    pf_lines.append(f"- Planning Horizon: {problem_frame.get('time_horizon')}")
+    if problem_frame.get("total_budget"):
+        pf_lines.append(f"- Total Budget    : {problem_frame.get('total_budget')}")
+    if problem_frame.get("objective"):
+        pf_lines.append(f"- Objective       : {problem_frame.get('objective')}")
+    direction = problem_frame.get("strategic_direction") or []
+    if direction:
+        pf_lines.append("")
+        pf_lines.append("Strategic Direction:")
+        for i, d in enumerate(direction, 1):
+            pf_lines.append(f"  {i}. {d}")
+    sections.append("\n".join(pf_lines))
 
     # EXPERIMENT SCOPE — 어떤 축을 평가할지 / 하지 않을지 명시
     scope_lines = [
@@ -741,14 +763,39 @@ Strategic Priorities:
             + json.dumps(tech_slim, ensure_ascii=False, indent=2)
         )
 
+        # Tech Selector 큐레이션 결과 — 의도적으로 N→K 필터링했음을 알림
+        ts = tech_selection or {}
+        sel_count = ts.get("selected_count")
+        dropped = ts.get("dropped") or []
+        if sel_count is not None and dropped:
+            sel_lines = [
+                "[TECH SELECTOR CURATION — IMPORTANT]",
+                f"Out of the {len(tech_slim)} candidates above, the Roadmap Planner's",
+                f"`tech_selector` node **intentionally curated** {sel_count} for the roadmap.",
+                f"The following {len(dropped)} candidates were **deliberately dropped** by the",
+                "selector based on score / trend fit / category balance / Strategic Direction alignment:",
+            ]
+            for d in dropped[:20]:
+                tid = d.get("tech_id", "?")
+                nm = (d.get("name") or "")[:30]
+                reason = (d.get("reason") or "")[:80]
+                sel_lines.append(f"  - {tid} ({nm}): {reason}")
+            if ts.get("rationale"):
+                sel_lines.append("")
+                sel_lines.append(f"Selector rationale: {ts.get('rationale')}")
+            sel_lines.append("")
+            sel_lines.append("**DO NOT flag dropped candidates as `missing` / `under_invested` / `under-served`**.")
+            sel_lines.append("They were intentionally excluded — that is the curation, not a defect.")
+            sel_lines.append("Only flag issues among the SELECTED tech_ids that appear in the roadmap below.")
+            sections.append("\n".join(sel_lines))
+
     # Roadmap (A2 on 일 때만)
     if a2_on:
         roadmap_slim = [
             {"tech_id": r.get("tech_id"), "name": r.get("name"),
-             "phase_name": r.get("phase_name"),
-             "start_q": r.get("start_q"), "target_q": r.get("target_q"),
-             "prerequisites": r.get("prerequisites"),
-             "lead_time_quarters": r.get("lead_time_quarters")}
+             "year_idx_start": r.get("year_idx_start"),
+             "year_idx_target": r.get("year_idx_target"),
+             "prerequisites": r.get("prerequisites")}
             for r in (planned_roadmap or [])
         ]
         sections.append(
@@ -758,29 +805,39 @@ Strategic Priorities:
 
     # Investment Plan (A3 on 일 때만)
     if a3_on:
-        # 새 구조: stage 컨테이너 + tech_investments 안에 per-tech 평가
+        # 새 구조: stage 컨테이너 + tech_investments 안에 per-tech 평가 (예산 포함)
         invest_slim = []
+        total_alloc = 0
         for s in (investment_strategy or []):
-            tech_invs_slim = [
-                {
+            tech_invs_slim = []
+            for ti in (s.get("tech_investments") or []):
+                budget = ti.get("tech_budget_usd", 0) or 0
+                total_alloc += budget
+                tech_invs_slim.append({
                     "tech_id": ti.get("tech_id"),
                     "name": ti.get("name"),
                     "evaluation_scores": ti.get("evaluation_scores"),
                     "investment_attractiveness": ti.get("investment_attractiveness"),
                     "investment_urgency": ti.get("investment_urgency"),
                     "recommended_investment_tier": ti.get("recommended_investment_tier"),
-                    "investment_scope": ti.get("investment_scope"),
-                }
-                for ti in (s.get("tech_investments") or [])
-            ]
+                    "tech_budget_usd": budget,
+                })
             invest_slim.append({
                 "stage": s.get("stage"),
                 "period": s.get("period"),
-                "stage_assessment": s.get("stage_assessment"),
+                "stage_budget_ratio": s.get("stage_budget_ratio"),
+                "stage_estimated_usd": s.get("stage_estimated_usd"),
                 "tech_investments": tech_invs_slim,
             })
+        tb = constraints.get("total_budget") or 0
+        diff_pct = ((total_alloc - tb) / tb * 100) if tb else 0
         sections.append(
-            f"[INVESTMENT PLAN · {len(invest_slim)} stages · 각 stage 안에 per-tech tier 부여]\n"
+            f"[INVESTMENT PLAN · {len(invest_slim)} stages · per-tech tier + tech_budget_usd 부여]\n"
+            f"[BUDGET SANITY]\n"
+            f"- total_budget (예산 한도): ${tb:,.0f}\n"
+            f"- sum(tech_budget_usd) (실제 배분): ${total_alloc:,.0f}\n"
+            f"- 편차: {diff_pct:+.1f}% ({'초과' if diff_pct > 0.1 else ('미만' if diff_pct < -0.1 else '정상')})\n"
+            "- 위 sum 이 total_budget 의 ±0.1% 이내면 정상 (rounding 오차). 초과 시만 issues 추가.\n\n"
             + json.dumps(invest_slim, ensure_ascii=False, indent=2)
         )
 
@@ -851,10 +908,8 @@ residual issues as caveats inside `feasibility_and_risk` rather than refusing to
              어떤 카테고리에 우선 투자하는 논리
 
 3. roadmap_structure
-   입력 : PLANNED ROADMAP (phase_name, start_q/target_q, prerequisites) + stages
-   필수 인용 : 각 phase 의 시작/완료 분기 (예: "1단계 R&D: 2027 Q1-Q4") /
-             대표 tech_id / 핵심 의존성 (예: "T01 → T03 prereq")
-   금지 : phase 이름만 나열하고 끝내기
+   입력 : PLANNED ROADMAP (year_idx_start/target, prerequisites) + stages
+   필수 인용 : 각 기술의 시작/완료 차년도 / 대표 tech_id / 핵심 의존성 (예: "T01 → T03 prereq")
 
 4. investment_strategy
    입력 : INVESTMENT STRATEGY 의 tech_investments[] 의 Tier 분포 + investment_policy +
@@ -894,7 +949,7 @@ residual issues as caveats inside `feasibility_and_risk` rather than refusing to
 - **수치 인용** — 시장 규모 ($X B), CAGR (Y%), 분기 명시 (2028 Q1) 등 가능한 한 인용
 - **출처 표기 [필수]** — 모든 수치/판정 뒤에 출처 Agent 를 짧은 마커로 명시.
   · `[A1]` = Agent 1 (Technology Analyst — final_score, market_score, patent_score, boom_quarter, market_signal)
-  · `[A2]` = Agent 2 (Roadmap Planner — phase_name, start_q/target_q, prerequisites, lead_time)
+  · `[A2]` = Agent 2 (Roadmap Planner — year_idx_start/target, prerequisites)
   · `[A3]` = Agent 3 (Investment Strategist — Tier, evaluation_scores, recommended_action, major_risks)
   · 예시:
     "T01 (High-NA EUV) 최종점수 88.71 [A1] 을 Tier 1 [A3] 로 분류하여 2026 Q3 → 2027 Q1 [A2] 양산 전환을 추진한다."
@@ -940,11 +995,15 @@ def generate_final_report(
     residual_feedback: list,
 ) -> dict:
     """
-    7-섹션 TRM 최종 보고서를 전용 LLM 콜로 생성.
+    최종 보고서 생성 — artifacts_summary 중심 (LLM narrative 생성 제거).
 
-    강제 ACCEPT 직후 또는 ACCEPT 지만 report 가 부실한 경우 호출.
+    HTML / Markdown export 와 JSON 의 내용을 일치시키기 위해 7-섹션 LLM 호출은 더 이상
+    하지 않는다. report 에는 코드 후처리로 채운 `artifacts_summary` 만 들어간다.
+
+    Returns: {artifacts_summary: {agent1_tech_candidates, agent2_planned_roadmap,
+             agent3_investment_strategy, year_tech_matrix, insights}}
     """
-    # ── Slim payload (보고서 본문 인용 가능하도록 풍부한 분석 신호 포함) ──
+    # ── Slim payload (artifacts_summary 구성용) ──
     def _extract_section_signal(rationale: str, section: str, limit: int = 240) -> str:
         """Agent 1 의 rationale 에서 [Market] 또는 [Patent] 섹션만 발췌"""
         if not isinstance(rationale, str):
@@ -975,14 +1034,12 @@ def generate_final_report(
         for t in (tech_candidates or [])
     ]
 
-    # Agent 2 결과 — 분기 + 의존성 + 한국어 정당화
+    # Agent 2 결과 — 차년도 + 의존성
     roadmap_slim = [
         {"tech_id": r.get("tech_id"), "name": r.get("name"),
-         "phase_name": r.get("phase_name"),
-         "start_q": r.get("start_q"), "target_q": r.get("target_q"),
-         "prerequisites": r.get("prerequisites"),
-         "lead_time_quarters": r.get("lead_time_quarters"),
-         "justification": (r.get("justification", "") or "")[:280]}
+         "year_idx_start": r.get("year_idx_start"),
+         "year_idx_target": r.get("year_idx_target"),
+         "prerequisites": r.get("prerequisites")}
         for r in (planned_roadmap or [])
     ]
 
@@ -1089,146 +1146,12 @@ def generate_final_report(
         "boom_quarter_distribution": boom_counts,
     }
 
-    user_prompt = f"""[PROBLEM FRAME]
-- Industry    : {problem_frame.get('industry')}
-- Company Type: {problem_frame.get('company_type')}
-- Time Horizon: {problem_frame.get('time_horizon')}
-- Total Budget: {problem_frame.get('total_budget')}
-- Objective   : {problem_frame.get('objective')}
-- Priorities  : {json.dumps(problem_frame.get('strategic_priorities', []), ensure_ascii=False)}
+    # ── 7-섹션 LLM narrative 생성 제거 — HTML / JSON 정렬 위해 artifacts_summary 만 채움 ──
+    # report 는 빈 dict 로 시작. 아래에서 artifacts_summary 만 추가됨.
+    _ = (residual_issues, residual_feedback)  # backward compat — 인자만 유지
+    report = {}
 
-[FUTURE TREND]
-{problem_frame.get('future_trend_summary', '')}
-
-[MARKET CONTEXT]
-{json.dumps(market_context or {}, ensure_ascii=False, indent=2)}
-
-[TECH CANDIDATES ({len(tech_slim)})] — final_score 와 market_signal 인용해 technology_strategy / trend_alignment 작성
-{json.dumps(tech_slim, ensure_ascii=False, indent=2)}
-
-[PLANNED ROADMAP ({len(roadmap_slim)})] — phase_name + 분기 + prerequisites 인용해 roadmap_structure 작성
-{json.dumps(roadmap_slim, ensure_ascii=False, indent=2)}
-
-[ROADMAP STAGES SUMMARY ({len(stages_slim)})] — phase 별 묶음 (roadmap_structure 의 큰 그림)
-{json.dumps(stages_slim, ensure_ascii=False, indent=2)}
-
-[INVESTMENT STRATEGY — {len(invest_slim)} stages] — Tier 분포 + 핵심 tech_id + per-tech rationale/risks/resource_focus 인용해 investment_strategy 작성
-{json.dumps(invest_slim, ensure_ascii=False, indent=2)}
-
-[PRE-AGGREGATED INSIGHTS] — 보고서 작성 시 직접 인용 (계산 완료된 핵심 통계)
-{json.dumps(insights, ensure_ascii=False, indent=2)}
-
-위 insights 활용 가이드:
-- executive_summary    → tier_distribution + tier1_tech_list + total_techs 인용
-- technology_strategy  → top_5_tech_by_score + category_distribution + avg_trl 인용
-- roadmap_structure    → dependency_edges + 각 phase 의 period 인용
-- investment_strategy  → tier_distribution + tier1_tech_list (key_reason) + invest_slim 의 recommended_action
-- trend_alignment      → boom_quarter_distribution + tech_slim 의 market_signal/patent_signal
-- feasibility_and_risk → tier_distribution 의 균형 평가 + invest_slim 의 major_risks + 잔여 이슈
-- expected_outcomes    → tier1_tech_list 의 시장 규모 + boom_quarter_distribution
-
-[RESIDUAL ISSUES FROM LAST REVIEW] (이 이슈는 feasibility_and_risk 섹션에 명시적으로 언급할 것)
-{json.dumps(residual_issues or [], ensure_ascii=False, indent=2)}
-
-[RESIDUAL FEEDBACK]
-{json.dumps(residual_feedback or [], ensure_ascii=False, indent=2)}
-
-위 입력을 바탕으로 7-섹션 TRM 보고서를 생성하라. 모든 섹션을 채워야 한다.
-"""
-
-    raw_text = ""
-    try:
-        # max_tokens 8192: 7 섹션 × ~500자 = ~3500자 = ~5000+ 토큰 필요
-        llm = get_llm(max_tokens=8192)
-        response = llm.invoke([
-            SystemMessage(content=FINAL_REPORT_SYSTEM_PROMPT),
-            HumanMessage(content=user_prompt),
-        ])
-        raw_text = response.content if hasattr(response, "content") else str(response)
-        print(f"[Orchestrator · Report] LLM raw 응답 {len(raw_text)}자 · 첫 300자:\n{raw_text[:300]!r}")
-        raw = _extract_json(raw_text)
-        print(f"[Orchestrator · Report] 파싱 완료 · raw keys: {list(raw.keys()) if isinstance(raw, dict) else type(raw).__name__}")
-    except Exception as e:
-        print(f"[Orchestrator · Report] ⚠️  생성/파싱 실패: {e} → 최소 폴백")
-        if raw_text:
-            print(f"    raw 응답 샘플: {raw_text[:300]!r}")
-        base = _empty_report()
-        issues_str = "; ".join(str(i) for i in (residual_issues or [])) or "(없음)"
-        base["executive_summary"] = (
-            f"보고서 생성 중 오류로 최소 보고서만 제공합니다. 잔여 이슈: {issues_str}"
-        )
-        base["feasibility_and_risk"] = f"잔여 이슈: {issues_str}"
-        return base
-
-    def _coerce_section_value(v) -> str:
-        """LLM 이 string 외 형태 (dict / list) 로 줬을 때 string 으로 강제 변환.
-        흔한 패턴:
-          - {"title": "...", "text": "..."}      → text 우선
-          - {"body": "..."}, {"content": "..."}  → body/content 추출
-          - ["문장1", "문장2"]                   → join
-        """
-        if isinstance(v, str):
-            return v
-        if isinstance(v, dict):
-            # 우선순위 키
-            for key in ("text", "body", "content", "value", "summary", "description"):
-                sub = v.get(key)
-                if isinstance(sub, str) and sub.strip():
-                    return sub
-            # title + 나머지 string 조합
-            title = v.get("title")
-            other_strs = [
-                str(x) for k2, x in v.items()
-                if k2 != "title" and isinstance(x, str) and x.strip()
-            ]
-            if title and isinstance(title, str) and other_strs:
-                return f"{title}: " + " ".join(other_strs)
-            if other_strs:
-                return " ".join(other_strs)
-            if title and isinstance(title, str):
-                return title
-            return ""
-        if isinstance(v, list):
-            return " ".join(
-                str(x) for x in v
-                if isinstance(x, (str, int, float)) and str(x).strip()
-            )
-        return ""
-
-    # 누락 섹션은 빈 문자열로 보전
-    report = _empty_report()
-    filled_count = 0
-    for k in report.keys():
-        v = raw.get(k)
-        coerced = _coerce_section_value(v)
-        report[k] = coerced
-        if coerced.strip():
-            filled_count += 1
-
-    # LLM 이 모든 섹션을 빈 string 으로 반환한 경우 경고 + insights 기반 boilerplate
-    if filled_count == 0:
-        print(
-            f"[Orchestrator · Report] ⚠️  LLM 이 7섹션 모두 빈 응답 — raw keys={list(raw.keys())}"
-        )
-        print(f"    raw 응답 샘플: {raw_text[:500]!r}")
-        # insights 기반 최소 보고서로 채움 (전부 빈 채로 두지 않게)
-        tier_dist = insights.get("tier_distribution", {})
-        top5 = insights.get("top_5_tech_by_score", [])
-        avg_trl = insights.get("avg_trl", 0)
-        report["executive_summary"] = (
-            f"본 로드맵은 {problem_frame.get('industry')} 영역에서 "
-            f"총 {insights.get('total_techs', 0)}개 후보 기술 (평균 TRL {avg_trl}) 을 "
-            f"Tier 분포 T1={tier_dist.get('Tier 1', 0)} / T2={tier_dist.get('Tier 2', 0)} / "
-            f"T3={tier_dist.get('Tier 3', 0)} 로 배분하며 "
-            f"총 예산 ${problem_frame.get('total_budget', 0):,.0f} 규모로 추진합니다."
-        )
-        if top5:
-            top_names = ", ".join(f"{t['tech_id']}({t.get('name','')[:15]})" for t in top5[:3])
-            report["technology_strategy"] = f"final_score 상위 핵심 기술: {top_names}."
-        issues_str = "; ".join(str(i) for i in (residual_issues or [])) or "(없음)"
-        report["feasibility_and_risk"] = f"잔여 이슈: {issues_str}"
-
-    # ── artifacts_summary — 보고서 narrative 의 출처 데이터 부록 ────
+    # ── artifacts_summary — 보고서의 raw 데이터 ────
     # LLM 호출 없이 코드로 채움. 사용자가 [A1]/[A2]/[A3] 마커를 따라
     # 실제 데이터를 추적할 수 있도록 각 Agent 핵심 출력을 첨부.
     a1_summary = [
@@ -1244,40 +1167,100 @@ def generate_final_report(
         }
         for t in tech_slim
     ]
-    a2_summary = [
-        {
-            "tech_id": r.get("tech_id"),
-            "phase_name": r.get("phase_name"),
-            "start_q": r.get("start_q"),
-            "target_q": r.get("target_q"),
+    # planned_roadmap 의 원본 (slim 에서 잘린 reasoning/year_idx 복구)
+    pr_by_id = {r.get("tech_id"): r for r in (planned_roadmap or [])}
+    a2_summary = []
+    for r in roadmap_slim:
+        tid = r.get("tech_id")
+        full = pr_by_id.get(tid) or {}
+        a2_summary.append({
+            "tech_id": tid,
+            "name": full.get("name") or r.get("name"),
+            "year_idx_start": full.get("year_idx_start"),
+            "year_idx_target": full.get("year_idx_target"),
             "prerequisites": r.get("prerequisites") or [],
-            "lead_time_quarters": r.get("lead_time_quarters"),
-        }
-        for r in roadmap_slim
-    ]
+            "reasoning": full.get("reasoning") or {},
+        })
+
+    # tech_id → investment 매핑 (year × tech 매트릭스 빌드용)
+    inv_by_tech = {}
+    for s in (investment_strategy or []):
+        for ti in (s.get("tech_investments") or []):
+            if ti.get("tech_id"):
+                inv_by_tech[ti["tech_id"]] = ti
+
     a3_summary = []
     for s in invest_slim:
         techs_brief = []
         for ti in s.get("tech_investments", []) or []:
+            tid = ti.get("tech_id")
+            full_inv = inv_by_tech.get(tid) or {}
             techs_brief.append({
-                "tech_id": ti.get("tech_id"),
+                "tech_id": tid,
+                "name": ti.get("name"),
                 "tier": ti.get("recommended_investment_tier"),
+                "tech_budget_usd": full_inv.get("tech_budget_usd", 0),
+                "tech_budget_rationale": full_inv.get("tech_budget_rationale", ""),
+                "evaluation_scores": ti.get("evaluation_scores") or {},
                 "investment_attractiveness": ti.get("investment_attractiveness"),
                 "investment_urgency": ti.get("investment_urgency"),
-                "recommended_action": (ti.get("recommended_action") or "")[:120],
+                "recommended_action": ti.get("recommended_action") or "",
+                "reasoning": full_inv.get("reasoning") or {},  # Strategist 의 3분리 reasoning
                 "major_risks": (ti.get("major_risks") or [])[:3],
             })
         a3_summary.append({
             "stage": s.get("stage"),
             "period": s.get("period"),
-            "stage_assessment": (s.get("stage_assessment") or "")[:200],
+            "stage_assessment": s.get("stage_assessment") or "",
+            "stage_budget_ratio": next((x.get("stage_budget_ratio") for x in (investment_strategy or []) if x.get("stage") == s.get("stage")), 0),
+            "stage_estimated_usd": next((x.get("stage_estimated_usd") for x in (investment_strategy or []) if x.get("stage") == s.get("stage")), 0),
             "tech_investments": techs_brief,
         })
+
+    # ── Year × Tech 매트릭스 ────────────────────────────────────
+    # 각 차년도에 active 한 기술과 그 기술의 예산을 표 형태로 정리
+    year_matrix = {}
+    max_year = 1
+    for r in (planned_roadmap or []):
+        tid = r.get("tech_id")
+        ys = r.get("year_idx_start") or 0
+        yt = r.get("year_idx_target") or ys
+        if not (ys and yt):
+            continue
+        max_year = max(max_year, yt)
+        inv = inv_by_tech.get(tid) or {}
+        budget = inv.get("tech_budget_usd", 0) or 0
+        tier = inv.get("recommended_investment_tier", "")
+        for y in range(ys, yt + 1):
+            year_matrix.setdefault(y, []).append({
+                "tech_id": tid,
+                "name": r.get("name", ""),
+                "tier": tier,
+                "tech_budget_usd": budget,
+                "year_idx_start": ys,
+                "year_idx_target": yt,
+            })
+
+    # 차년도별 합산 예산 (같은 기술이 여러 해에 걸쳐도 중복 합산 X — 시작 차년도에만 더함)
+    yearly_budget_total = {}
+    for r in (planned_roadmap or []):
+        tid = r.get("tech_id")
+        ys = r.get("year_idx_start") or 0
+        if not ys:
+            continue
+        inv = inv_by_tech.get(tid) or {}
+        budget = inv.get("tech_budget_usd", 0) or 0
+        yearly_budget_total[ys] = yearly_budget_total.get(ys, 0) + budget
 
     report["artifacts_summary"] = {
         "agent1_tech_candidates": a1_summary,
         "agent2_planned_roadmap": a2_summary,
         "agent3_investment_strategy": a3_summary,
+        "year_tech_matrix": {
+            "max_year": max_year,
+            "cells": year_matrix,            # {year_idx: [{tech_id, name, tier, tech_budget_usd, ...}, ...]}
+            "yearly_budget_total": yearly_budget_total,  # {year_idx: total_usd_for_year}
+        },
         "insights": insights,
     }
 
@@ -1294,6 +1277,7 @@ def run_orchestrator_review(
     market_context: dict,
     previous_feedback: list,
     active_agents: list,
+    tech_selection: dict = None,
 ) -> ReviewResult:
     """
     TRM 평가 + ACCEPT/REVISE 결정 + (ACCEPT 시) 7-섹션 보고서 생성.
@@ -1312,6 +1296,7 @@ def run_orchestrator_review(
             market_context=market_context,
             previous_feedback=previous_feedback,
             active_agents=active_agents,
+            tech_selection=tech_selection or {},
         )
         response = llm.invoke([
             SystemMessage(content=REVIEW_SYSTEM_PROMPT),
@@ -1914,14 +1899,12 @@ def run_orchestrator_review(
                 f"+ feedback {len(auto_feedback)}건 추가"
             )
 
-    # ── 보고서 생성 — 최종 ACCEPT 시점에만 호출 ──
-    # review LLM 은 평가만 출력. 7-섹션 보고서는 별도 LLM 콜 (generate_final_report).
-    # REVISE 일 때는 보고서 생성 skip — 어차피 다음 iter 에서 갱신될 잠정 결과이므로
-    # 시간 (LLM 콜 1.5-2 분) + 토큰 비용 절약. 최종 ACCEPT (혹은 강제 ACCEPT) 시점에만 작성.
+    # ── 보고서 생성 — ACCEPT 시 artifacts_summary 만 채움 (LLM 호출 X) ──
+    # 7-섹션 narrative LLM 호출은 제거됨 (HTML / JSON 정렬). artifacts_summary 만 코드로 채움.
     decision_upper = (result.get("decision") or "ACCEPT").upper()
     if decision_upper == "ACCEPT":
         label = "강제 ACCEPT" if result.get("_forced_accept") else "ACCEPT 최종 보고서"
-        print(f"[Orchestrator · Review] {label} → 보고서 전용 LLM 호출")
+        print(f"[Orchestrator · Review] {label} → artifacts_summary 구성")
         try:
             final_report = generate_final_report(
                 problem_frame=problem_frame,
@@ -1934,15 +1917,18 @@ def run_orchestrator_review(
                 residual_feedback=(result.get("refinement") or {}).get("feedback") or [],
             )
             result["report"] = final_report
-            fill = _report_fill_count(final_report)
-            print(f"[Orchestrator · Review] 보고서 생성 완료 · {fill}/7 섹션 ({label})")
+            artifacts = final_report.get("artifacts_summary") or {}
+            print(f"[Orchestrator · Review] artifacts_summary 구성 완료 "
+                  f"(agent1: {len(artifacts.get('agent1_tech_candidates') or [])}, "
+                  f"agent2: {len(artifacts.get('agent2_planned_roadmap') or [])}, "
+                  f"agent3: {len(artifacts.get('agent3_investment_strategy') or [])})")
         except Exception as e:
             print(f"[Orchestrator · Review] ⚠️  보고서 생성 실패: {e}")
-            result["report"] = result.get("report") or _empty_report()
+            result["report"] = result.get("report") or {}
     else:
-        # REVISE — 보고서 생성 skip. report 는 빈 dict 로 둠 (frontend 가 sections 0/7 표시).
-        print(f"[Orchestrator · Review] REVISE iter {iteration+1} → 보고서 생성 skip (시간 절약)")
-        result["report"] = result.get("report") or _empty_report()
+        # REVISE — report 는 빈 dict 로 둠
+        print(f"[Orchestrator · Review] REVISE iter {iteration+1} → 보고서 생성 skip")
+        result["report"] = result.get("report") or {}
 
     # 로그 출력
     decision = (result.get("decision") or "ACCEPT").upper()

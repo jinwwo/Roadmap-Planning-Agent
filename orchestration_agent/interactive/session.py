@@ -272,6 +272,313 @@ def extract_investment_policy(policy_text: str) -> dict:
     }
 
 
+# ── Company Scenario + Strategic Direction 추출 ────────────────
+
+_COMPANY_SYSTEM = """You extract structured Company Scenario from user's natural-language input.
+Return ONLY valid JSON (no prose, no markdown fences) with this schema:
+{
+  "company_name": "<company name, e.g. NVIDIA, Samsung, TSMC>",
+  "industry": "<short industry label, e.g. 'AI / Semiconductor / GPU'>",
+  "annual_revenue": <integer USD, e.g. 60000000000 for $60B>,
+  "rd_budget_ratio": <float 0.0-1.0, e.g. 0.20 for 20%>,
+  "annual_rd_budget": <integer USD, e.g. 12000000000 for $12B>,
+  "planning_horizon": "<e.g. '2026-2030 (5 years)'>",
+  "objective": "<one-sentence high-level objective inferred from context>"
+}
+
+[Extraction rules]
+- company_name: explicit mention ("Company: NVIDIA", "NVIDIA의", "삼성전자의"). If missing, use "(unknown)".
+- annual_revenue / annual_rd_budget: parse "$60B" → 60_000_000_000, "12B USD" → 12_000_000_000.
+- rd_budget_ratio: parse "20%" → 0.20, "R&D Budget Ratio: ~15%" → 0.15.
+  If only revenue + rd_budget given, derive ratio = rd_budget / revenue.
+  If only revenue + ratio given, derive rd_budget = revenue × ratio.
+- planning_horizon: "2026-2030", "2025~2030 (5 years)" 모두 OK. 자연어 변환은 최소.
+- industry: 짧은 영문 라벨 또는 한국어 그대로. 예: "AI / Semiconductor / GPU", "반도체 제조", "전기차 배터리".
+
+[Defaults if any field unknown]
+- company_name: "(unknown)"
+- industry: "(unknown)"
+- annual_revenue: 0
+- rd_budget_ratio: 0.10  (default 10%)
+- annual_rd_budget: 0
+- planning_horizon: "(unknown)"
+- objective: ""
+
+Output strict JSON only.
+"""
+
+
+def extract_company_scenario(user_request: str) -> dict:
+    """사용자 자연어 → Company Scenario 추출 (company / industry / revenue /
+    rd_budget_ratio / annual_rd_budget / planning_horizon / objective).
+    """
+    fallback = {
+        "company_name": "(unknown)",
+        "industry": "(unknown)",
+        "annual_revenue": 0.0,
+        "rd_budget_ratio": 0.10,
+        "annual_rd_budget": 0.0,
+        "planning_horizon": "(unknown)",
+        "objective": "",
+    }
+
+    if not user_request or not user_request.strip():
+        return fallback
+
+    try:
+        llm = get_llm(max_tokens=1024)
+        resp = llm.invoke([
+            SystemMessage(content=_COMPANY_SYSTEM),
+            HumanMessage(content=user_request),
+        ])
+        raw = resp.content if hasattr(resp, "content") else str(resp)
+        if not raw or not raw.strip():
+            return fallback
+        data = _extract_json(raw)
+    except Exception as e:
+        print(f"[Session] ⚠️ Company scenario 파싱 실패: {e} → 기본값 사용")
+        return fallback
+
+    # 정규화
+    out = dict(fallback)
+    out["company_name"] = str(data.get("company_name") or fallback["company_name"]).strip()
+    out["industry"] = str(data.get("industry") or fallback["industry"]).strip()
+    try:
+        out["annual_revenue"] = float(data.get("annual_revenue", 0) or 0)
+    except Exception:
+        out["annual_revenue"] = 0.0
+    try:
+        ratio = float(data.get("rd_budget_ratio", 0.10) or 0.10)
+        out["rd_budget_ratio"] = max(0.0, min(1.0, ratio))
+    except Exception:
+        out["rd_budget_ratio"] = 0.10
+    try:
+        out["annual_rd_budget"] = float(data.get("annual_rd_budget", 0) or 0)
+    except Exception:
+        out["annual_rd_budget"] = 0.0
+    # 파생: rd_budget 누락 시 revenue × ratio
+    if not out["annual_rd_budget"] and out["annual_revenue"] and out["rd_budget_ratio"]:
+        out["annual_rd_budget"] = out["annual_revenue"] * out["rd_budget_ratio"]
+    out["planning_horizon"] = str(data.get("planning_horizon") or fallback["planning_horizon"]).strip()
+    out["objective"] = str(data.get("objective") or "").strip()
+    return out
+
+
+_STRATEGIC_DIRECTION_SYSTEM = """You are a strategic planning analyst.
+
+Given a company scenario (company name, industry, revenue, R&D budget, planning horizon)
+and the user's original request, produce **Strategic Direction**: 3-5 high-level strategic
+goals that this company should pursue over the planning horizon.
+
+Output schema (strict JSON only):
+{
+  "strategic_direction": [
+    "<3-5 short bullet sentences, each a strategic goal>",
+    ...
+  ]
+}
+
+[Rules]
+- **정확히 3개** 의 짧고 명료한 한국어 전략 방향.
+- 회사 핵심 강점 1개 + 인접 시장 확장 1개 + 기술 스택 강화 1개 패턴 권장.
+- 기술 약어 GPU/CUDA/HBM/AI 등은 영문 허용.
+- 예: "AI 하드웨어 (GPU) 리더십 유지" / "AI 플랫폼 생태계 확장" / "HW/SW 통합 스택 강화"
+"""
+
+
+def generate_strategic_direction(company_scenario: dict, user_request: str) -> list:
+    """Company Scenario 기반으로 Strategic Direction (3-5 bullets) 생성.
+    LLM 실패 시 generic fallback.
+    """
+    fallback = [
+        f"Maintain leadership in {company_scenario.get('industry', 'core technology')}",
+        "Expand product/platform ecosystem to adjacent markets",
+        "Strengthen end-to-end technology stack (hardware + software)",
+    ]
+
+    if not company_scenario or company_scenario.get("company_name") == "(unknown)":
+        return fallback
+
+    try:
+        llm = get_llm(max_tokens=1024)
+        user_msg = (
+            f"[Company Scenario]\n{json.dumps(company_scenario, ensure_ascii=False, indent=2)}\n\n"
+            f"[Original Request]\n{user_request}\n"
+        )
+        resp = llm.invoke([
+            SystemMessage(content=_STRATEGIC_DIRECTION_SYSTEM),
+            HumanMessage(content=user_msg),
+        ])
+        raw = resp.content if hasattr(resp, "content") else str(resp)
+        if not raw or not raw.strip():
+            return fallback
+        data = _extract_json(raw)
+        bullets = data.get("strategic_direction") or []
+        bullets = [str(b).strip() for b in bullets if isinstance(b, str) and b.strip()]
+        if not bullets:
+            return fallback
+        return bullets[:5]
+    except Exception as e:
+        print(f"[Session] ⚠️ Strategic Direction 생성 실패: {e} → fallback 사용")
+        return fallback
+
+
+# ── 통합 Setup 컨텍스트 추출 (1 LLM call) ─────────────────────
+# intake + company_scenario + strategic_direction 을 하나의 LLM 호출로 처리.
+# 같은 user_request 를 3번 굴리지 않고 1번에 끝낸다.
+
+_SETUP_SYSTEM = """You extract structured Company Scenario + Strategic Direction from a user's
+natural-language request about building a technology roadmap. Return ONLY valid JSON
+(no prose, no markdown fences) with this exact schema:
+
+{
+  "company_name": "<e.g. NVIDIA, Samsung, TSMC; '(unknown)' if absent>",
+  "industry": "<short industry label, e.g. 'AI / Semiconductor / GPU'>",
+  "annual_revenue": <integer USD, 0 if unknown>,
+  "rd_budget_ratio": <float 0.0-1.0, 0.10 if unknown>,
+  "annual_rd_budget": <integer USD, 0 if unknown>,
+  "planning_horizon": "<e.g. '2026-2030 (5 years)'; '(unknown)' if absent>",
+  "objective": "<one-sentence high-level objective inferred from context>",
+  "strategic_direction": [
+    "<정확히 3개 짧은 한국어 bullet>"
+  ]
+}
+
+[Extraction rules]
+- annual_revenue / annual_rd_budget: parse "$60B" → 60_000_000_000, "12B USD" → 12_000_000_000.
+- rd_budget_ratio: parse "20%" → 0.20.
+  - If only revenue + rd_budget given, derive ratio = rd_budget / revenue.
+  - If only revenue + ratio given, derive rd_budget = revenue × ratio.
+- planning_horizon: keep user-given form ("2026-2030", "2025~2030 (5 years)").
+  종료 연도가 명확해야 함 (예: "2030"). "향후 5년" 형식이면 "current_year-current_year+5".
+- strategic_direction: **정확히 3개** 의 짧고 명료한 한국어 전략 방향.
+  · 회사 핵심 강점 1개 + 인접 시장 확장 1개 + 기술 스택 강화 1개 패턴 권장.
+  · 기술 약어 GPU/CUDA/HBM/AI 등은 영문 허용.
+  · 예: "AI 하드웨어 (GPU) 리더십 유지" / "AI 플랫폼 생태계 확장" / "HW/SW 통합 스택 강화"
+
+[Defaults if a field is unknown]
+- company_name / industry / planning_horizon: "(unknown)"
+- annual_revenue / annual_rd_budget: 0
+- rd_budget_ratio: 0.10
+- objective: ""
+
+Output strict JSON only."""
+
+
+_ALL_CATEGORIES = ["Equipment", "Material", "Process", "Architecture", "Packaging"]
+
+
+def _derive_reference_year(planning_horizon: str, text_year: int, default_ref_year: int, current_year: int) -> int:
+    """planning_horizon ("2026-2030") 또는 원문 regex 또는 default 에서 reference_year 도출."""
+    # 1) planning_horizon 의 마지막 4자리 연도
+    if planning_horizon and planning_horizon != "(unknown)":
+        years = re.findall(r"(20\d{2}|21\d{2})", planning_horizon)
+        if years:
+            ry = max(int(y) for y in years)
+            if ry > current_year:
+                return ry
+    # 2) 원문 regex
+    if text_year and text_year > current_year:
+        return text_year
+    # 3) default
+    return default_ref_year
+
+
+def extract_setup_context(user_request: str) -> dict:
+    """user_request → {company_scenario + strategic_direction} (1 LLM call).
+
+    Returns dict with keys:
+      company_name, industry, annual_revenue, rd_budget_ratio, annual_rd_budget,
+      planning_horizon, objective, strategic_direction (list[str])
+      + 파생: domain (= industry), reference_year (planning_horizon 에서 도출),
+              category_hints (default 5종)
+    """
+    from datetime import datetime
+    current_year = datetime.now().year
+    default_ref_year = current_year + 5
+
+    text_year = _extract_year_from_text(user_request, current_year)
+
+    fallback_industry = "technology"
+    fallback = {
+        "company_name": "(unknown)",
+        "industry": fallback_industry,
+        "annual_revenue": 0.0,
+        "rd_budget_ratio": 0.10,
+        "annual_rd_budget": 0.0,
+        "planning_horizon": "(unknown)",
+        "objective": "",
+        "strategic_direction": [
+            "Maintain leadership in core technology",
+            "Expand product/platform ecosystem to adjacent markets",
+            "Strengthen end-to-end technology stack",
+        ],
+    }
+
+    if not user_request or not user_request.strip():
+        out = dict(fallback)
+        out["domain"] = fallback_industry
+        out["reference_year"] = default_ref_year
+        out["category_hints"] = list(_ALL_CATEGORIES)
+        return out
+
+    raw = ""
+    data = {}
+    try:
+        llm = get_llm(max_tokens=1536)
+        resp = llm.invoke([
+            SystemMessage(content=_SETUP_SYSTEM),
+            HumanMessage(content=user_request),
+        ])
+        raw = resp.content if hasattr(resp, "content") else str(resp)
+        if not raw or not raw.strip():
+            print("[Session] ⚠️ Setup LLM 빈 응답 → fallback 사용")
+            data = {}
+        else:
+            data = _extract_json(raw)
+    except Exception as e:
+        print(f"[Session] ⚠️ Setup 파싱 실패 ({e}) → fallback 사용. raw 샘플: {raw[:200]!r}")
+        data = {}
+
+    # 정규화
+    out = dict(fallback)
+    out["company_name"] = str(data.get("company_name") or fallback["company_name"]).strip()
+    out["industry"] = str(data.get("industry") or fallback["industry"]).strip() or fallback_industry
+    out["planning_horizon"] = str(data.get("planning_horizon") or fallback["planning_horizon"]).strip()
+    out["objective"] = str(data.get("objective") or "").strip()
+
+    # 수치 필드
+    try:
+        out["annual_revenue"] = float(data.get("annual_revenue", 0) or 0)
+    except Exception:
+        out["annual_revenue"] = 0.0
+    try:
+        ratio = float(data.get("rd_budget_ratio", 0.10) or 0.10)
+        out["rd_budget_ratio"] = max(0.0, min(1.0, ratio))
+    except Exception:
+        out["rd_budget_ratio"] = 0.10
+    try:
+        out["annual_rd_budget"] = float(data.get("annual_rd_budget", 0) or 0)
+    except Exception:
+        out["annual_rd_budget"] = 0.0
+    if not out["annual_rd_budget"] and out["annual_revenue"] and out["rd_budget_ratio"]:
+        out["annual_rd_budget"] = out["annual_revenue"] * out["rd_budget_ratio"]
+
+    # Strategic Direction
+    bullets = data.get("strategic_direction") or []
+    bullets = [str(b).strip() for b in bullets if isinstance(b, str) and b.strip()]
+    if bullets:
+        out["strategic_direction"] = bullets[:5]
+
+    # 파생 — domain / reference_year / category_hints 는 더 이상 LLM 에게 묻지 않고 자동 도출
+    out["domain"] = out["industry"]                                                # industry 그대로 검색 query
+    out["reference_year"] = _derive_reference_year(
+        out["planning_horizon"], text_year, default_ref_year, current_year)
+    out["category_hints"] = list(_ALL_CATEGORIES)                                   # 5종 전부 default
+
+    return out
+
+
 # ── Session ──────────────────────────────────────────────────
 
 @dataclass
@@ -304,6 +611,10 @@ class Session:
     related_companies: Optional[List[str]] = None
     objective: Optional[str] = None
     time_horizon: Optional[str] = None   # 산술 도출: "{현재}-{reference_year}"
+
+    # Company Scenario + Strategic Direction (intake 이후 채워짐)
+    company_scenario: Optional[dict] = None      # {company_name, annual_revenue, rd_budget_ratio, ...}
+    strategic_direction: Optional[List[str]] = None   # 3-5 bullets (LLM 생성)
 
     # control
     _thread: Optional[threading.Thread] = None
@@ -416,9 +727,46 @@ class Session:
                      scenario_id=self.scenario_id,
                      use_patent_map=self.use_patent_map)
 
-            # ── Step 0: Intake ─────────────────────────────
-            bus.emit("step_start", step="intake", label="요청 분석")
+            # ── Step 0: Setup 컨텍스트 통합 추출 (1 LLM call) ──
+            # intake + company_scenario + strategic_direction 을 한 콜로 처리.
+            bus.emit("step_start", step="intake", label="Setup 컨텍스트 추출")
             bus.log(f"사용자 요청: {self.user_request}", source="session")
+            setup = extract_setup_context(self.user_request)
+            self.domain = setup["domain"]
+            self.reference_year = setup["reference_year"]
+            self.category_hints = setup["category_hints"]
+            self.industry = setup.get("industry")
+            self.objective = setup.get("objective")
+
+            company_scenario = {
+                "company_name": setup["company_name"],
+                "industry": setup["industry"],
+                "annual_revenue": setup["annual_revenue"],
+                "rd_budget_ratio": setup["rd_budget_ratio"],
+                "annual_rd_budget": setup["annual_rd_budget"],
+                "planning_horizon": setup["planning_horizon"],
+                "objective": setup["objective"],
+            }
+            self.company_scenario = company_scenario
+            bus.log(
+                f"Company: {company_scenario['company_name']} "
+                f"({company_scenario['industry']}) "
+                f"Revenue ${company_scenario['annual_revenue']:,.0f} · "
+                f"R&D ratio {company_scenario['rd_budget_ratio']:.0%} · "
+                f"R&D ${company_scenario['annual_rd_budget']:,.0f}",
+                source="session",
+            )
+
+            strategic_direction = setup["strategic_direction"]
+            for i, d in enumerate(strategic_direction, 1):
+                bus.log(f"  Strategic Direction {i}. {d}", source="session")
+            self.strategic_direction = strategic_direction
+            # time_horizon 자동 도출 — 현재 연도부터 reference_year 까지
+            # (reference_year 는 extract_intake 에서 이미 sanity check 완료)
+            from datetime import datetime
+            current_year = datetime.now().year
+            if self.reference_year > current_year:
+                self.time_horizon = f"{current_year}-{self.reference_year}"
             if self.scenario:
                 self.domain = self.scenario.get("domain")
                 self.reference_year = int(self.scenario.get("reference_year"))
@@ -450,6 +798,24 @@ class Session:
                     self.time_horizon = f"{current_year}-{current_year + 5}"
                     bus.log(f"⚠️ reference_year={self.reference_year} 비정상 → time_horizon={self.time_horizon} 로 보정", source="session")
 
+            # ── total_budget 자동 도출 — company_scenario 우선 (always override) ──
+            # Company Scenario 의 annual_rd_budget × horizon_years 로 5년 envelope 계산.
+            # UI 가 메인 텍스트를 investment_policy_text 로도 보내서 extract_investment_policy
+            # 가 "Annual R&D Budget: 12B" 를 total_budget=$12B 로 잘못 파싱하는 경우가 있어,
+            # company_scenario 가 명시적으로 annual_rd_budget 을 제공하면 그것을 신뢰원으로 삼는다.
+            if company_scenario.get("annual_rd_budget"):
+                annual = float(company_scenario["annual_rd_budget"])
+                horizon_years = max(1, self.reference_year - current_year + 1) if self.reference_year > current_year else 5
+                derived = annual * horizon_years
+                if self.total_budget != derived:
+                    bus.log(
+                        f"💰 total_budget override (company_scenario 우선): "
+                        f"기존 ${self.total_budget or 0:,.0f} → ${derived:,.0f} "
+                        f"(annual ${annual:,.0f} × {horizon_years}년)",
+                        source="session",
+                    )
+                self.total_budget = derived
+
             bus.emit("intake_ready",
                      scenario_id=self.scenario_id,
                      domain=self.domain,
@@ -468,6 +834,9 @@ class Session:
                      investment_horizon=self.investment_horizon,
                      total_budget=self.total_budget,
                      strategic_priority=self.strategic_priority,
+                     # NEW: Company Scenario + Strategic Direction
+                     company_scenario=self.company_scenario,
+                     strategic_direction=self.strategic_direction,
                      active_agents=self.active_agents)
             bus.emit("step_end", step="intake")
 
@@ -500,6 +869,9 @@ class Session:
                             priorities=self.strategic_priority,
                             risk_appetite=self.risk_appetite,
                             investment_horizon=self.investment_horizon,
+                            # NEW: Company Scenario + Strategic Direction
+                            company_scenario=self.company_scenario,
+                            strategic_direction=self.strategic_direction,
                             out_prefix=out_prefix,
                             stage_mode=self.stage_mode,
                             company_name=self.company_name,
@@ -508,9 +880,40 @@ class Session:
                             use_patent_map=self.use_patent_map,
                         )
 
-            # Orchestrator 최종 보고서 저장 (outputs/web_<sid>_orchestrator_report.json)
-            report_path = os.path.join(OUTPUTS_DIR, f"{out_prefix}{FILE_ORCHESTRATOR_REPORT}")
+            # Orchestrator 최종 보고서 저장 (3 형식: JSON / Markdown / HTML)
+            report_path_json = os.path.join(OUTPUTS_DIR, f"{out_prefix}{FILE_ORCHESTRATOR_REPORT}")
+            report_path_md = os.path.splitext(report_path_json)[0] + ".md"
+            report_path_html = os.path.splitext(report_path_json)[0] + ".html"
+
+            report_dict = {
+                "problem_frame": result.get("problem_frame"),
+                "active_agents": result.get("active_agents"),
+                "iteration": result.get("iteration"),
+                "review": result.get("review"),
+                "review_history": result.get("review_history") or [],
+                "artifact_paths": result.get("paths"),
+                # 각 에이전트 최종 출력 (Markdown/HTML 렌더 용 — JSON 에도 포함되어 추적성 ↑)
+                "tech_candidates": result.get("tech_candidates") or [],
+                "planned_roadmap": result.get("planned_roadmap") or [],
+                "investment_strategy": result.get("investment_strategy") or [],
+            }
+
             try:
+                with open(report_path_json, "w", encoding="utf-8") as f:
+                    json.dump(report_dict, f, ensure_ascii=False, indent=2)
+                bus.log(f"[Session] 보고서 저장 (JSON): {report_path_json}", source="session")
+            except Exception as e:
+                bus.log(f"[Session] ⚠️ JSON 저장 실패: {e}", source="session")
+
+            # Markdown + HTML
+            try:
+                from report_export import generate_markdown_report, generate_html_report
+                with open(report_path_md, "w", encoding="utf-8") as f:
+                    f.write(generate_markdown_report(report_dict))
+                bus.log(f"[Session] 보고서 저장 (Markdown): {report_path_md}", source="session")
+                with open(report_path_html, "w", encoding="utf-8") as f:
+                    f.write(generate_html_report(report_dict))
+                bus.log(f"[Session] 보고서 저장 (HTML): {report_path_html}", source="session")
                 with open(report_path, "w", encoding="utf-8") as f:
                     json.dump({
                         "problem_frame": result.get("problem_frame"),
@@ -523,7 +926,7 @@ class Session:
                     }, f, ensure_ascii=False, indent=2)
                 bus.log(f"[Session] 보고서 저장: {report_path}", source="session")
             except Exception as e:
-                bus.log(f"[Session] ⚠️ 보고서 저장 실패: {e}", source="session")
+                bus.log(f"[Session] ⚠️ Markdown/HTML 저장 실패: {e}", source="session")
 
             bus.emit("final", result=_slim_result(result))
             bus.emit("done", ok=True)

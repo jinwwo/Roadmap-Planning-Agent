@@ -52,16 +52,31 @@ class TimelineItem(TypedDict, total=False):
     dropped: bool              # Orchestrator drop 피드백 시 True
 
 
-class RoadmapItem(TypedDict):
-    """Roadmap Planner 최종 출력 단위 — Investment Strategist 입력 포맷"""
+class RoadmapItem(TypedDict, total=False):
+    """Roadmap Planner 최종 출력 단위 — Investment Strategist 입력 포맷.
+
+    분기 단위 (start_q/target_q) + 차년도 단위 (year_idx_*) + 3가지 reasoning.
+    """
     tech_id: str
     name: str
     phase_name: str            # "Phase 1: Foundation R&D" 등
+    # 분기 단위 (기존 호환)
     start_q: str               # "YYYY QX"
     target_q: str              # "YYYY QX"
+    # 차년도 단위 (시각화 / 보고서용) — planning_horizon 시작 연도 기준 1, 2, ..., N
+    year_idx_start: int
+    year_idx_target: int
     prerequisites: List[str]
     lead_time_quarters: int
+    # 단일 justification (기존 호환) — reasoning.year_placement 와 동일 내용
     justification: str
+    # 3가지 reasoning (보고서 시각화 + 추적성)
+    reasoning: dict
+    # {
+    #   "year_placement":       "이 기술을 N차년도에 배치한 이유 (timing/dependency)",
+    #   "tech_execution":       "이 기술을 수행해야 하는 이유 (Strategic Direction + 시장/기술 분석)",
+    #   "investment_selection": "투자 선정 이유 (왜 이 기술이 핵심 투자 대상인가)",
+    # }
 
 
 # ── LangGraph State ───────────────────────────────────────────
@@ -98,6 +113,12 @@ class RoadmapState(TypedDict):
     #     "drop":  ["T04"],
     #     "text":  ["피드백 문장", ...]}
     orchestrator_feedback: Optional[dict]
+
+    # ④-b Company Scenario + Strategic Direction (상위 컨텍스트, Setup 추출)
+    # 모든 LLM 노드 (tech_selector / roadmap_designer / dependency_analyzer /
+    # roadmap_builder) 의 프롬프트에 박힘
+    company_scenario: Optional[dict]
+    strategic_direction: Optional[List[str]]
 
     # ⑤ 제어
     messages: Annotated[List[BaseMessage], add_messages]

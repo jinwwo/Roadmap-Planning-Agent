@@ -189,12 +189,31 @@ function connectStream(sid) {
       renderAgentsBar();
 
       const p = d.payload;
-      // 자연어 해석 (Tech 측)
+      // Company Scenario (새 형식 — 위에 표시)
+      const cs = p.company_scenario || {};
+      const companyLines = [];
+      if (cs.company_name && cs.company_name !== "(unknown)") companyLines.push(`• Company: <b>${escapeHtml(cs.company_name)}</b>`);
+      if (cs.industry && cs.industry !== "(unknown)") companyLines.push(`• Industry: ${escapeHtml(cs.industry)}`);
+      else if (p.industry) companyLines.push(`• Industry: ${escapeHtml(p.industry)}`);
+      if (cs.annual_revenue) companyLines.push(`• Annual Revenue: <b>$${Number(cs.annual_revenue).toLocaleString()}</b>`);
+      if (cs.rd_budget_ratio) companyLines.push(`• R&D Budget Ratio: <b>${(Number(cs.rd_budget_ratio) * 100).toFixed(0)}%</b>`);
+      if (cs.annual_rd_budget) companyLines.push(`• Annual R&D Budget: <b>$${Number(cs.annual_rd_budget).toLocaleString()}</b>`);
+      if (cs.planning_horizon && cs.planning_horizon !== "(unknown)") companyLines.push(`• Planning Horizon: ${escapeHtml(cs.planning_horizon)}`);
+      else if (p.time_horizon) companyLines.push(`• Planning Horizon: ${escapeHtml(p.time_horizon)}`);
+
+      // Strategic Direction (LLM 생성)
+      const direction = p.strategic_direction || [];
+      const directionHtml = direction.length
+        ? direction.map((d, i) => `  ${i + 1}. ${escapeHtml(d)}`).join("<br/>")
+        : "";
+
+      // 분석 컨텍스트 (Tech 측 추출 결과)
       const techLines = [
         `• 도메인: ${escapeHtml(p.domain || "-")}`,
         `• 기준연도: ${p.reference_year || "-"}`,
         `• 카테고리: ${(p.category_hints || []).join(", ") || "-"}`,
       ];
+      if (p.objective) techLines.push(`• 목표: ${escapeHtml(p.objective)}`);
       if (p.scenario_id) techLines.unshift(`• 시나리오: <code>${escapeHtml(p.scenario_id)}</code>`);
       techLines.unshift(`• 실행 모드: <b>${p.run_mode === "single" ? "Single-Agent Baseline" : "Multi-Agent Pipeline"}</b>`);
       if (p.company_name) techLines.push(`• 기업: <b>${escapeHtml(p.company_name)}</b>`);
@@ -215,10 +234,14 @@ function connectStream(sid) {
         policyLines.push(`• Strategic Priority: ${p.strategic_priority.map(x => `<code>${escapeHtml(x)}</code>`).join(", ")}`);
       }
 
-      let html = `📥 <b>입력 해석 완료</b><br/>` + techLines.join("<br/>");
-      if (policyLines.length) {
-        html += `<br/><br/><b>👤 투자 정책 (자연어에서 추출)</b><br/>` + policyLines.join("<br/>");
+      let html = `📥 <b>입력 해석 완료</b><br/>`;
+      if (companyLines.length) {
+        html += `<b>🏢 Company Scenario</b><br/>` + companyLines.join("<br/>");
       }
+      if (directionHtml) {
+        html += `<br/><br/><b>🎯 Strategic Direction</b><br/>` + directionHtml;
+      }
+      html += `<br/><br/><b>🔍 분석 컨텍스트</b><br/>` + techLines.join("<br/>");
       addAgentMessage(html, true);
     },
 
@@ -247,6 +270,8 @@ function connectStream(sid) {
       ctx.stages = d.payload.stages;
       ctx.investment_strategy = d.payload.investment_strategy;
       renderAgent3Section();
+      // Agent 3 결과로 Agent 2 간트도 다시 그림 (예산 badge 추가 표시)
+      renderAgent2Section();
     },
 
     review_done: (d) => {
@@ -450,18 +475,25 @@ function renderProblemFrame() {
     sec.className = "panel-section pf-sec";
     panel().appendChild(sec);
   }
+  const fmtUsd = (v) => v ? "$" + Number(v).toLocaleString() : "-";
+  const fmtPct = (v) => v ? (Number(v) * 100).toFixed(0) + "%" : "-";
+  const direction = pf.strategic_direction || [];
+  const directionHtml = direction.length
+    ? `<ol class="pf-direction">${direction.map(d => `<li>${escapeHtml(d)}</li>`).join("")}</ol>`
+    : `<span class="v">-</span>`;
+
   sec.innerHTML = `
     <h3>Problem Frame (Orchestrator Setup)</h3>
     <div class="problem-frame">
-      <div class="pf-row"><span class="k">industry</span><span class="v">${escapeHtml(pf.industry || "-")}</span></div>
-      <div class="pf-row"><span class="k">company</span><span class="v">${escapeHtml(pf.company_type || "-")}</span></div>
-      <div class="pf-row"><span class="k">horizon</span><span class="v">${escapeHtml(pf.time_horizon || "-")}</span></div>
-      <div class="pf-row"><span class="k">budget</span><span class="v">${pf.total_budget ? Number(pf.total_budget).toLocaleString() + " USD" : "-"}</span></div>
-      <div class="pf-row"><span class="k">objective</span><span class="v">${escapeHtml(pf.objective || "-")}</span></div>
-      <div class="pf-row"><span class="k">priorities</span>
-        <div class="v"><div class="pf-chips">${
-          (pf.strategic_priorities || []).map(p => `<span class="pf-chip">${escapeHtml(p)}</span>`).join("")
-        }</div></div>
+      <div class="pf-row"><span class="k">Company</span><span class="v">${escapeHtml(pf.company_name || "-")}</span></div>
+      <div class="pf-row"><span class="k">Industry</span><span class="v">${escapeHtml(pf.industry || "-")}</span></div>
+      <div class="pf-row"><span class="k">Annual Revenue</span><span class="v">${fmtUsd(pf.annual_revenue)}</span></div>
+      <div class="pf-row"><span class="k">R&D Budget Ratio</span><span class="v">${fmtPct(pf.rd_budget_ratio)}</span></div>
+      <div class="pf-row"><span class="k">Annual R&D Budget</span><span class="v">${fmtUsd(pf.annual_rd_budget)}</span></div>
+      <div class="pf-row"><span class="k">Planning Horizon</span><span class="v">${escapeHtml(pf.time_horizon || "-")}</span></div>
+      <div class="pf-row pf-row-block">
+        <span class="k">Strategic Direction</span>
+        <div class="v">${directionHtml}</div>
       </div>
     </div>`;
 }
@@ -543,16 +575,33 @@ function renderAgent2Section() {
     panel().appendChild(sec);
   }
 
+  // 차년도 단위 (1차년도, 2차년도, ...) — year_idx_start / year_idx_target 사용
+  // 분기 단위는 fallback (옛 데이터 호환)
   const toIdx = (q) => { const m = /^(\d{4})\s*Q([1-4])$/.exec((q||"").trim()); return m ? parseInt(m[1]) * 4 + (parseInt(m[2]) - 1) : null; };
   const fromIdx = (i) => `${Math.floor(i / 4)} Q${(i % 4) + 1}`;
+
+  // year_idx 범위 산정
+  let minY = Infinity, maxY = -Infinity;
+  rm.forEach((it) => {
+    const ys = it.year_idx_start, yt = it.year_idx_target;
+    if (typeof ys === "number" && ys > 0) minY = Math.min(minY, ys);
+    if (typeof yt === "number" && yt > 0) maxY = Math.max(maxY, yt);
+  });
+  if (!isFinite(minY)) { minY = 1; maxY = 5; }
+  const totalYears = Math.max(1, maxY - minY + 1);
+
+  // 분기 범위 (보조 표시용)
   let minI = Infinity, maxI = -Infinity;
   rm.forEach((it) => { const a = toIdx(it.start_q), b = toIdx(it.target_q); if (a != null) minI = Math.min(minI, a); if (b != null) maxI = Math.max(maxI, b); });
   if (!isFinite(minI)) { minI = 0; maxI = 3; }
-  const span = Math.max(1, maxI - minI);
 
   const preview = rm.slice(0, 4).map(r =>
-    `<li>${escapeHtml(r.tech_id)} · ${escapeHtml(r.phase_name || "")} — ${escapeHtml(r.start_q || "")} → ${escapeHtml(r.target_q || "")}</li>`
+    `<li>${escapeHtml(r.tech_id)} · ${escapeHtml(r.phase_name || "")} — ${r.year_idx_start || "?"}차년도 → ${r.year_idx_target || "?"}차년도</li>`
   ).join("");
+
+  // 차년도 헤더 (1차년도, 2차년도, ...)
+  const yearHeaders = [];
+  for (let y = minY; y <= maxY; y++) yearHeaders.push(`<div class="year-col-label">${y}차년도</div>`);
 
   sec.innerHTML = `
     <h3>${ctx.runMode === "single" ? "Single Agent · Planned Roadmap" : "Agent 2 · Roadmap Planner"}${iter}</h3>
@@ -567,39 +616,81 @@ function renderAgent2Section() {
       <div class="io-row"><span class="tag out">OUT</span>
         <div class="content">
           <span class="k">planned_roadmap</span> <span class="v">${rm.length}건</span> ·
-          <span class="k">range</span> <span class="v">${fromIdx(minI)} → ${fromIdx(maxI)}</span>
+          <span class="k">range</span> <span class="v">${minY}차년도 → ${maxY}차년도</span>
           ${preview ? `<ul class="preview-list">${preview}${rm.length > 4 ? `<li>… ${rm.length - 4} more</li>` : ""}</ul>` : ""}
         </div>
       </div>
     </div>
+    <div class="a2-year-header">
+      <div class="timeline-label-spacer"></div>
+      <div class="year-col-row">${yearHeaders.join("")}</div>
+    </div>
     <div class="a2-timeline"></div>`;
+
+  // Agent 3 가 끝났으면 tech_id → {budget, tier, reasoning} 매핑 빌드
+  const invByTech = {};
+  (ctx.investment_strategy || []).forEach(s => {
+    (s.tech_investments || []).forEach(t => { if (t.tech_id) invByTech[t.tech_id] = t; });
+  });
+  const fmtUsd = (v) => {
+    const n = Number(v) || 0;
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+    return `$${n.toLocaleString()}`;
+  };
 
   const tl = sec.querySelector(".a2-timeline");
   rm.forEach((it) => {
-    const a = toIdx(it.start_q) ?? minI;
-    const b = toIdx(it.target_q) ?? a;
-    const left = ((a - minI) / span) * 100;
-    const width = Math.max(3, ((b - a + 1) / span) * 100);
-    const row = document.createElement("div");
-    row.className = "timeline-row";
-    row.innerHTML = `
-      <div class="timeline-label">
-        <div><span class="id">${escapeHtml(it.tech_id)}</span></div>
-        <div class="name">${escapeHtml(it.name || "")}</div>
-        <div class="cat">${escapeHtml(it.phase_name || "")}</div>
-      </div>
-      <div class="timeline-bar-wrap">
-        <div class="timeline-bar" style="left:${left}%;width:${width}%;">
-          ${escapeHtml(it.start_q || "")} → ${escapeHtml(it.target_q || "")}
+    const ys = (typeof it.year_idx_start === "number" && it.year_idx_start > 0) ? it.year_idx_start : minY;
+    const yt = (typeof it.year_idx_target === "number" && it.year_idx_target > 0) ? it.year_idx_target : ys;
+    const left = ((ys - minY) / totalYears) * 100;
+    const width = Math.max(3, ((yt - ys + 1) / totalYears) * 100);
+
+    const reasoning = it.reasoning || {};
+    const inv = invByTech[it.tech_id];
+    const invReasoning = (inv && inv.reasoning) || {};
+
+    // Designer reasoning + Strategist reasoning 둘 다 표시
+    const reasoningParts = [];
+    if (reasoning.year_placement) reasoningParts.push(`<div class="reason-block"><b>📅 차년도 배치 이유:</b><br/>${escapeHtml(reasoning.year_placement)}</div>`);
+    if (reasoning.tech_execution) reasoningParts.push(`<div class="reason-block"><b>🛠️ 기술 수행 이유:</b><br/>${escapeHtml(reasoning.tech_execution)}</div>`);
+    if (reasoning.investment_selection) reasoningParts.push(`<div class="reason-block"><b>🎯 투자 선정 이유 (Designer):</b><br/>${escapeHtml(reasoning.investment_selection)}</div>`);
+    if (invReasoning.market_evaluation) reasoningParts.push(`<div class="reason-block strategist"><b>📊 시장 평가 (Strategist):</b><br/>${escapeHtml(invReasoning.market_evaluation)}</div>`);
+    if (invReasoning.tech_evaluation) reasoningParts.push(`<div class="reason-block strategist"><b>⚙️ 기술 평가 (Strategist):</b><br/>${escapeHtml(invReasoning.tech_evaluation)}</div>`);
+    if (invReasoning.investment_decision) reasoningParts.push(`<div class="reason-block strategist"><b>💰 투자 결정 (Strategist):</b><br/>${escapeHtml(invReasoning.investment_decision)}</div>`);
+    if (inv && inv.tech_budget_rationale) reasoningParts.push(`<div class="reason-block strategist"><b>💵 예산 결정 근거:</b><br/>${escapeHtml(inv.tech_budget_rationale)}</div>`);
+
+    const reasoningHtml = reasoningParts.length
+      ? `<details class="reasoning-box"><summary>📋 Reasoning</summary>${reasoningParts.join("")}</details>`
+      : "";
+
+    // 예산 badge — Agent 3 결과 있으면 표시
+    const budgetBadge = inv && inv.tech_budget_usd
+      ? `<span class="budget-badge tier-${(inv.recommended_investment_tier || "").replace(/[^0-9]/g, "")}" title="${escapeHtml(inv.recommended_investment_tier || "")}">${fmtUsd(inv.tech_budget_usd)}</span>`
+      : "";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "a2-row";
+    wrapper.innerHTML = `
+      <div class="timeline-row">
+        <div class="timeline-label">
+          <div><span class="id">${escapeHtml(it.tech_id)}</span></div>
+          <div class="name">${escapeHtml(it.name || "")}</div>
         </div>
-      </div>`;
-    tl.appendChild(row);
+        <div class="timeline-bar-wrap a2-bar-wrap" style="--cols:${totalYears};">
+          <div class="timeline-bar" style="left:${left}%;width:${width}%;">
+            ${ys}차년도 → ${yt}차년도
+          </div>
+          ${budgetBadge ? `<div class="budget-overlay">${budgetBadge}</div>` : ""}
+        </div>
+      </div>
+      ${reasoningHtml}`;
+    tl.appendChild(wrapper);
   });
 }
 
 // ── Agent 3 section (I/O + Stage cards) ───────────────────────
 function renderAgent3Section() {
-  const stages = ctx.stages || [];
   const strategy = ctx.investment_strategy || [];
   const iter = ctx.iterations.agent3 > 1 ? ` (iter ${ctx.iterations.agent3})` : "";
 
@@ -610,107 +701,70 @@ function renderAgent3Section() {
     panel().appendChild(sec);
   }
 
-  // 새 구조: 각 stage 의 tech_investments 안에 per-tech tier 가 있음
-  const tierSummary = (s) => {
-    const tis = s.tech_investments || [];
-    if (!tis.length) return "?";
-    const counts = { "Tier 1": 0, "Tier 2": 0, "Tier 3": 0 };
-    tis.forEach(ti => {
-      const t = ti.recommended_investment_tier || "Tier 2";
-      if (counts[t] !== undefined) counts[t]++;
-    });
-    return `T1=${counts["Tier 1"]} T2=${counts["Tier 2"]} T3=${counts["Tier 3"]}`;
-  };
-  const preview = strategy.slice(0, 3).map(s =>
-    `<li>${escapeHtml(s.stage || "")} — <b>${escapeHtml(tierSummary(s))}</b> · ${(s.tech_investments || []).length}개 기술</li>`
-  ).join("");
+  // 새 구조: stage 그룹핑 제거. 모든 tech_investments 를 flat 으로 펼침.
+  const allTechs = [];
+  strategy.forEach(s => (s.tech_investments || []).forEach(ti => allTechs.push(ti)));
 
-  sec.innerHTML = `
-    <h3>${ctx.runMode === "single" ? "Single Agent · Investment Strategy" : "Agent 3 · Investment Strategist"}${iter}</h3>
-    <div class="io-card">
-      <div class="io-title">Investment Strategy <span class="arrow">→</span> Orchestrator <span class="badge">${strategy.length} stages</span></div>
-      <div class="io-row"><span class="tag in">IN</span>
-        <div class="content">
-          <span class="k">planned_roadmap</span> <span class="v">${(ctx.planned_roadmap || []).length}건</span> ·
-          <span class="k">tech_candidates</span> <span class="v">${(ctx.tech_candidates || []).length}건</span> ·
-          <span class="k">stages(집계)</span> <span class="v">${stages.length}</span>
-        </div>
-      </div>
-      <div class="io-row"><span class="tag out">OUT</span>
-        <div class="content">
-          <span class="k">investment_strategy</span> <span class="v">${strategy.length} stages</span>
-          ${preview ? `<ul class="preview-list">${preview}</ul>` : ""}
-        </div>
-      </div>
-    </div>
-    <div class="a3-stages"></div>`;
-
-  const wrap = sec.querySelector(".a3-stages");
-  strategy.forEach((s) => wrap.appendChild(makeStageCard(s)));
-}
-
-// 새 구조: stage 컨테이너 (header + stage_assessment) + 그 안에 per-tech 카드들
-function makeStageCard(s) {
-  const techInvs = s.tech_investments || [];
-
-  // tier 분포 (stage header 에 요약 표시)
+  // Tier 분포
   const tierCounts = { "Tier 1": 0, "Tier 2": 0, "Tier 3": 0 };
-  techInvs.forEach(ti => {
+  allTechs.forEach(ti => {
     const t = ti.recommended_investment_tier || "Tier 2";
     if (tierCounts[t] !== undefined) tierCounts[t]++;
   });
 
-  // stage-level 예산 (ratio + 추정 USD)
-  const ratio = Number(s.stage_budget_ratio ?? 0);
-  const estUsd = Number(s.stage_estimated_usd ?? 0);
+  // 전체 예산 — Problem Frame 의 total_budget (예산 한도) + 실제 배분 합
+  const totalBudgetCap = Number(ctx.problemFrame?.total_budget) || 0;
+  const sumAllocated = allTechs.reduce((sum, ti) => sum + (Number(ti.tech_budget_usd) || 0), 0);
+  const totalBudget = totalBudgetCap > 0 ? totalBudgetCap : sumAllocated;  // makeTechInvestmentCard 의 % 계산용
   const fmtUsd = (n) => {
     if (!n || isNaN(n)) return "-";
     if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
     if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
     return `$${Math.round(n).toLocaleString()}`;
   };
-  const ratioPct = ratio > 0 ? `${(ratio * 100).toFixed(1)}%` : "-";
-  const stageBudgetLine = (ratio > 0 || estUsd > 0)
-    ? `<div style="font-size:12px;color:var(--accent-soft); margin:4px 0 6px 0;">
-         💰 단계 예산: <b>${ratioPct}</b> · 추정 <b>${fmtUsd(estUsd)}</b>
-       </div>`
-    : "";
 
-  const el = document.createElement("div");
-  el.className = "stage-card";
-  el.innerHTML = `
-    <div class="stage-card-header">
-      <div>
-        <div class="stage-name">${escapeHtml(s.stage || "")}</div>
-        <div class="stage-period">${escapeHtml(s.period || "")}</div>
+  const preview = allTechs.slice(0, 3).map(ti =>
+    `<li>${escapeHtml(ti.tech_id || "")} · <b>${escapeHtml(ti.recommended_investment_tier || "-")}</b> — ${fmtUsd(ti.tech_budget_usd)}</li>`
+  ).join("");
+
+  sec.innerHTML = `
+    <h3>${ctx.runMode === "single" ? "Single Agent · Investment Strategy" : "Agent 3 · Investment Strategist"}${iter}</h3>
+    <div class="io-card">
+      <div class="io-title">Investment Strategy <span class="arrow">→</span> Orchestrator <span class="badge">${allTechs.length} techs</span></div>
+      <div class="io-row"><span class="tag in">IN</span>
+        <div class="content">
+          <span class="k">planned_roadmap</span> <span class="v">${(ctx.planned_roadmap || []).length}건</span> ·
+          <span class="k">tech_candidates</span> <span class="v">${(ctx.tech_candidates || []).length}건</span>
+        </div>
       </div>
-      <span style="font-size:11px;color:var(--text-dim);">
-        T1=<b>${tierCounts["Tier 1"]}</b> · T2=<b>${tierCounts["Tier 2"]}</b> · T3=<b>${tierCounts["Tier 3"]}</b>
-      </span>
+      <div class="io-row"><span class="tag out">OUT</span>
+        <div class="content">
+          <span class="k">tier 분포</span> <span class="v">T1=${tierCounts["Tier 1"]} · T2=${tierCounts["Tier 2"]} · T3=${tierCounts["Tier 3"]}</span> ·
+          <span class="k">예산 한도</span> <span class="v">${fmtUsd(totalBudgetCap)}</span> ·
+          <span class="k">배분 합</span> <span class="v">${fmtUsd(sumAllocated)}</span>
+          ${preview ? `<ul class="preview-list">${preview}</ul>` : ""}
+        </div>
+      </div>
     </div>
-    ${stageBudgetLine}
-    ${s.stage_assessment ? `<div class="stage-action" style="margin-bottom:6px;"><b>Stage 통합 판단:</b> ${escapeHtml(s.stage_assessment)}</div>` : ""}
-    <div class="tech-invs"></div>
-  `;
+    <div class="a3-techs"></div>`;
 
-  const wrap = el.querySelector(".tech-invs");
-  techInvs.forEach(ti => wrap.appendChild(makeTechInvestmentCard(ti)));
-  return el;
+  const wrap = sec.querySelector(".a3-techs");
+  allTechs.forEach(ti => wrap.appendChild(makeTechInvestmentCard(ti, totalBudget)));
 }
 
-function makeTechInvestmentCard(ti) {
+function makeTechInvestmentCard(ti, totalBudget) {
   const tier = (ti.recommended_investment_tier || "").replace(/\s+/g, "").toLowerCase();
   const tierClass = tier === "tier1" ? "t1" : tier === "tier2" ? "t2" : "t3";
   const es = ti.evaluation_scores || {};
   const scoreKeys = [
-    ["market_opportunity", "MO"],
-    ["strategic_fit", "SF"],
-    ["executability", "EX"],
-    ["uncertainty", "UN"],
-    ["urgency", "UR"],
+    ["market_size_growth",   "TAM",  "market_opportunity"],
+    ["tech_readiness",       "TRL",  "executability"],
+    ["tech_risk",            "RISK", "uncertainty"],
+    ["competitive_advantage","COMP", "strategic_fit"],
+    ["development_urgency",  "URG",  "urgency"],
   ];
-  const bars = scoreKeys.map(([k, short]) => {
-    const v = es[k] ?? 0;
+  const bars = scoreKeys.map(([k, short, oldK]) => {
+    const v = es[k] ?? es[oldK] ?? 0;
     const pct = Math.max(0, Math.min(100, (v / 5) * 100));
     return `<div class="score-item">
       <div class="score-label">${short}</div>
@@ -719,43 +773,66 @@ function makeTechInvestmentCard(ti) {
     </div>`;
   }).join("");
 
+  const fmtUsd = (n) => {
+    if (!n || isNaN(n)) return "-";
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+    return `$${Math.round(n).toLocaleString()}`;
+  };
+  const budget = Number(ti.tech_budget_usd) || 0;
+  const budgetPct = (totalBudget > 0 && budget > 0) ? ` (${(budget / totalBudget * 100).toFixed(1)}%)` : "";
+
   const listBlock = (title, items) => {
     if (!items || !items.length) return "";
     return `<div class="stage-small-list"><b>${title}</b>
       <ul>${items.map(i => `<li>${escapeHtml(i)}</li>`).join("")}</ul></div>`;
   };
 
+  // 새 reasoning 3분리 (있을 때만)
+  const r = ti.reasoning || {};
+  const bulletsHtml = (items) =>
+    `<ul style="margin:4px 0 0 16px;padding:0;font-size:11.5px;color:var(--text);line-height:1.55;">${items.map(i => `<li>${escapeHtml(i)}</li>`).join("")}</ul>`;
+  const reasoningBlocks = [];
+  if (r.market_evaluation) reasoningBlocks.push(`<div class="reason-block strategist"><b>📊 시장 평가:</b><br/>${escapeHtml(r.market_evaluation)}</div>`);
+  if (r.tech_evaluation) reasoningBlocks.push(`<div class="reason-block strategist"><b>⚙️ 기술 평가:</b><br/>${escapeHtml(r.tech_evaluation)}</div>`);
+  if (r.investment_decision) reasoningBlocks.push(`<div class="reason-block strategist"><b>💰 투자 결정:</b><br/>${escapeHtml(r.investment_decision)}</div>`);
+  if (ti.tech_budget_rationale) reasoningBlocks.push(`<div class="reason-block strategist"><b>💵 예산 결정 근거:</b><br/>${escapeHtml(ti.tech_budget_rationale)}</div>`);
+  if (ti.major_risks && ti.major_risks.length) reasoningBlocks.push(`<div class="reason-block strategist"><b>⚠️ 리스크:</b>${bulletsHtml(ti.major_risks)}</div>`);
+  if (ti.resource_focus && ti.resource_focus.length) reasoningBlocks.push(`<div class="reason-block strategist"><b>🔧 자원 집중:</b>${bulletsHtml(ti.resource_focus)}</div>`);
+  const reasoningHtml = reasoningBlocks.length
+    ? `<details class="reasoning-box" open><summary>📋 Reasoning</summary>${reasoningBlocks.join("")}</details>`
+    : "";
+
   const el = document.createElement("div");
-  el.className = "tech-inv-card";
-  el.style.cssText = "border-left:2px solid var(--border); padding:6px 8px; margin:6px 0;";
+  el.className = "tech-inv-card stage-card";
   el.innerHTML = `
     <div class="stage-card-header">
       <div>
-        <div class="stage-name" style="font-size:12px;">${escapeHtml(ti.tech_id || "")} · ${escapeHtml(ti.name || "")}</div>
+        <div class="stage-name">${escapeHtml(ti.tech_id || "")} · ${escapeHtml(ti.name || "")}</div>
+        <div class="stage-period">attract=<b>${escapeHtml(ti.investment_attractiveness || "-")}</b> · urgency=<b>${escapeHtml(ti.investment_urgency || "-")}</b> · scope=<b>${escapeHtml(ti.investment_scope || "-")}</b></div>
       </div>
-      <span class="tier-badge ${tierClass}">${escapeHtml(ti.recommended_investment_tier || "-")}</span>
-    </div>
-    <div style="font-size:11px;color:var(--text-dim);">
-      attract=<b>${escapeHtml(ti.investment_attractiveness || "-")}</b> ·
-      urgency=<b>${escapeHtml(ti.investment_urgency || "-")}</b> ·
-      scope=<b>${escapeHtml(ti.investment_scope || "-")}</b>
+      <div style="text-align:right;">
+        <span class="tier-badge ${tierClass}">${escapeHtml(ti.recommended_investment_tier || "-")}</span>
+        <div style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent-soft);margin-top:4px;">${fmtUsd(budget)}${budgetPct}</div>
+      </div>
     </div>
     <div class="score-bars">${bars}</div>
     ${ti.recommended_action ? `<div class="stage-action">${escapeHtml(ti.recommended_action)}</div>` : ""}
-    ${listBlock("근거", ti.rationale)}
-    ${listBlock("리스크", ti.major_risks)}
-    ${listBlock("자원 집중", ti.resource_focus)}
+    ${reasoningHtml}
   `;
   return el;
 }
 
 // ── Review section (decision + TRM + report) ──────────────────
+// 각 iteration 마다 별도 섹션 (.review-sec-iterN) 생성 — 누적 표시
 function renderReviewSection(review, iteration) {
   if (!review) return;
-  let sec = panel().querySelector(".review-sec");
+  const iterN = iteration || 1;
+  const cls = `review-sec review-sec-iter${iterN}`;
+  let sec = panel().querySelector(`.review-sec-iter${iterN}`);
   if (!sec) {
     sec = document.createElement("div");
-    sec.className = "panel-section review-sec";
+    sec.className = `panel-section ${cls}`;
     panel().appendChild(sec);
   }
   const decision = (review.decision || "ACCEPT").toUpperCase();
@@ -797,26 +874,95 @@ function renderReviewSection(review, iteration) {
     return `<div style="margin-top:4px;"><b>${title}</b>: ${items.map(i => `<code>${escapeHtml(i)}</code>`).join(", ")}</div>`;
   };
 
-  const trmGrid = `<div class="trm-grid">
-    ${trmCell("feasibility", "Feasibility",
-      `${flag(feas.budget_feasible)} budget · ${flag(feas.schedule_feasible)} schedule
-       <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(feas.comment || "")}</div>`)}
-    ${trmCell("sequencing", "Sequencing",
-      `${flag(seq.dependency_valid)} dependency
-       <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(seq.comment || "")}</div>`)}
-    ${trmCell("alignment", "Strategic Alignment",
-      `<span class="score">fit ${fmtScore(al.company_fit)}</span>
-       <span class="score">trend ${fmtScore(al.future_trend_alignment)}</span>
-       <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(al.comment || "")}</div>`)}
-    ${trmCell("investment", "Investment Rationality",
-      `<div style="color:var(--text-dim);">${escapeHtml(ir.comment || "")}</div>
-       ${listBlock("over_invested", ir.over_invested)}
-       ${listBlock("under_invested", ir.under_invested)}`)}
-    ${trmCell("portfolio", "Portfolio Balance",
-      `<span class="score">short/long ${fmtScore(pb.short_long_balance)}</span>
-       <span class="score">risk ${fmtScore(pb.risk_balance)}</span>
-       <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(pb.comment || "")}</div>`)}
+  // ── 예산 & 분배 sanity 1차 점검 (UI side computed) ──
+  const strategy = ctx.investment_strategy || [];
+  const pf = ctx.problemFrame || {};
+  const totalBudget = Number(pf.total_budget) || 0;
+  const allTechs = [];
+  strategy.forEach(s => (s.tech_investments || []).forEach(ti => allTechs.push(ti)));
+  const sumBudget = allTechs.reduce((acc, ti) => acc + (Number(ti.tech_budget_usd) || 0), 0);
+  // 예산 초과는 hard fail. 단 rounding 오차 허용 (0.1%, $1M 중 큰 값)
+  const overflowTol = totalBudget > 0 ? Math.max(totalBudget * 0.001, 1_000_000) : 0;
+  const budgetOverflow = totalBudget > 0 && (sumBudget - totalBudget) > overflowTol;
+  // OK 범위: total 이하 + -25% 이내 미달
+  const budgetOk = totalBudget > 0 && !budgetOverflow && (totalBudget - sumBudget) / totalBudget <= 0.25;
+
+  const tierCounts = { "Tier 1": 0, "Tier 2": 0, "Tier 3": 0 };
+  allTechs.forEach(ti => {
+    const t = ti.recommended_investment_tier || "Tier 2";
+    if (tierCounts[t] !== undefined) tierCounts[t]++;
+  });
+  const tierTotal = tierCounts["Tier 1"] + tierCounts["Tier 2"] + tierCounts["Tier 3"];
+  const tierBalanced = tierTotal > 0 && Math.max(...Object.values(tierCounts)) / tierTotal < 0.80;
+
+  // year_idx 별 budget 분포 (각 기술의 시작 차년도에 할당)
+  const rm = ctx.planned_roadmap || [];
+  const yearMap = {};
+  let maxY = 0;
+  rm.forEach(r => {
+    const ys = r.year_idx_start || 0;
+    if (!ys) return;
+    maxY = Math.max(maxY, r.year_idx_target || ys);
+    const inv = allTechs.find(t => t.tech_id === r.tech_id);
+    yearMap[ys] = (yearMap[ys] || 0) + (Number(inv?.tech_budget_usd) || 0);
+  });
+  const yearBudgets = Object.values(yearMap);
+  const maxYearShare = yearBudgets.length && sumBudget > 0 ? Math.max(...yearBudgets) / sumBudget : 0;
+  const yearBalanced = maxYearShare < 0.80;
+
+  const fmtUsdBig = (n) => {
+    if (!n || isNaN(n)) return "-";
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+    return `$${Math.round(n).toLocaleString()}`;
+  };
+  const tierBar = `T1=<b>${tierCounts["Tier 1"]}</b> · T2=<b>${tierCounts["Tier 2"]}</b> · T3=<b>${tierCounts["Tier 3"]}</b>`;
+
+  const sanityGrid = `<div class="trm-grid" style="margin-bottom:6px;">
+    ${trmCell("budget", "💰 예산 점검",
+      `${budgetOverflow ? `<span class="flag bad">OVERFLOW</span>` : (budgetOk ? `<span class="flag ok">OK</span>` : `<span class="flag bad">UNDER</span>`)} sum vs total
+       <div style="margin-top:4px;color:var(--text-dim);">
+         ${fmtUsdBig(sumBudget)} / ${fmtUsdBig(totalBudget)}
+         ${totalBudget > 0 ? `· 편차 ${((sumBudget - totalBudget) / totalBudget * 100).toFixed(1)}%` : ""}
+         ${budgetOverflow ? "<br/><b style=\"color:var(--danger);\">⚠️ 예산 초과 — REVISE 발동</b>" : ""}
+       </div>`)}
+    ${trmCell("tier", "🎯 Tier 분포",
+      `${tierBalanced ? `<span class="flag ok">OK</span>` : `<span class="flag bad">SKEWED</span>`}
+       <div style="margin-top:4px;color:var(--text-dim);">${tierBar} (총 ${tierTotal})</div>`)}
+    ${trmCell("yearly", "📅 차년도 분포",
+      `${yearBalanced ? `<span class="flag ok">OK</span>` : `<span class="flag bad">SKEWED</span>`}
+       <div style="margin-top:4px;color:var(--text-dim);">max 단일 차년도 비중 ${(maxYearShare * 100).toFixed(0)}% · horizon 1~${maxY}차년도</div>`)}
   </div>`;
+
+  // ── TRM 5-axis 세부 (접기) ──
+  const trmGrid = `<details class="report-section" style="margin-bottom:6px;">
+    <summary>TRM 5축 세부 평가 (LLM)</summary>
+    <div class="body" style="padding:8px;">
+      <div class="trm-grid">
+        ${trmCell("feasibility", "Feasibility",
+          `${flag(feas.budget_feasible)} budget · ${flag(feas.schedule_feasible)} schedule
+           <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(feas.comment || "")}</div>`)}
+        ${trmCell("sequencing", "Sequencing",
+          `${flag(seq.dependency_valid)} dependency
+           <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(seq.comment || "")}</div>`)}
+        ${trmCell("alignment", "Strategic Alignment",
+          `<span class="score">fit ${fmtScore(al.company_fit)}</span>
+           <span class="score">trend ${fmtScore(al.future_trend_alignment)}</span>
+           <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(al.comment || "")}</div>`)}
+        ${trmCell("investment", "Investment Rationality",
+          `<div style="color:var(--text-dim);">${escapeHtml(ir.comment || "")}</div>
+           ${listBlock("over_invested", ir.over_invested)}
+           ${listBlock("under_invested", ir.under_invested)}`)}
+        ${trmCell("portfolio", "Portfolio Balance",
+          `<span class="score">short/long ${fmtScore(pb.short_long_balance)}</span>
+           <span class="score">risk ${fmtScore(pb.risk_balance)}</span>
+           <div style="margin-top:4px;color:var(--text-dim);">${escapeHtml(pb.comment || "")}</div>`)}
+      </div>
+    </div>
+  </details>`;
+
+  // 합쳐서 trmGrid 변수로 사용
+  const allChecksHtml = sanityGrid + trmGrid;
 
   const issues = review.issues || [];
   const issuesHtml = issues.length
@@ -867,12 +1013,46 @@ function renderReviewSection(review, iteration) {
     </div>
   </div>`;
 
+  // ACCEPT 일 때 — 최종 보고서임을 명확히 알리는 헤더 + 다운로드 링크
+  const isFinalAccept = (decision === "ACCEPT");
+  const reportBase = sessionId ? `/outputs/web_${sessionId}_orchestrator_report` : null;
+  const downloadButtons = reportBase
+    ? `<div style="margin:8px 0; display:flex; gap:8px; flex-wrap:wrap;">
+         <a href="${reportBase}.html" target="_blank"
+            style="padding:6px 12px;background:var(--accent);color:#1a1a1a;
+                   text-decoration:none;border-radius:6px;font-weight:600;font-size:12px;">
+           📋 HTML 보고서 새 탭에서 보기
+         </a>
+         <a href="${reportBase}.md" target="_blank" download
+            style="padding:6px 12px;background:var(--bg-elev);color:var(--accent-soft);
+                   text-decoration:none;border-radius:6px;font-weight:600;font-size:12px;
+                   border:1px solid var(--border);">
+           ⬇️ Markdown
+         </a>
+         <a href="${reportBase}.json" target="_blank" download
+            style="padding:6px 12px;background:var(--bg-elev);color:var(--accent-soft);
+                   text-decoration:none;border-radius:6px;font-weight:600;font-size:12px;
+                   border:1px solid var(--border);">
+           ⬇️ JSON
+         </a>
+       </div>`
+    : "";
+  const finalReportHeader = isFinalAccept && reportHtml
+    ? `<div style="margin:10px 0 6px 0;padding:8px 12px;background:rgba(126,194,126,0.10);
+                   border-left:3px solid var(--success);border-radius:4px;
+                   font-weight:600;color:var(--success);">
+         ✅ 최종 보고서 (Final Report) — 7-섹션 + Year × Tech 매트릭스
+       </div>
+       ${downloadButtons}`
+    : "";
+
   sec.innerHTML = `
     <h3>${ctx.runMode === "single" ? "Single Agent · Self Review" : "Orchestrator · Review"}${iteration ? ` (iter ${iteration})` : ""}</h3>
     ${ioCard}
     ${banner}
-    ${trmGrid}
+    ${allChecksHtml}
     ${issuesHtml}
+    ${finalReportHeader}
     ${reportHtml}
   `;
 }
@@ -940,14 +1120,12 @@ function renderArtifactsSummary(artifacts) {
       </div>
     </details>` : "";
 
-  // Agent 2 표 — tech_id / phase / start → target / prereq / lead
+  // Agent 2 표 — tech_id / 차년도 / prereq
   const a2Rows = a2.map(r => `
     <tr>
       <td><b>${escapeHtml(r.tech_id || "")}</b></td>
-      <td>${escapeHtml(r.phase_name || "")}</td>
-      <td>${escapeHtml(r.start_q || "")} → ${escapeHtml(r.target_q || "")}</td>
+      <td>${r.year_idx_start ?? "?"}차년도 → ${r.year_idx_target ?? "?"}차년도</td>
       <td>${escapeHtml((r.prerequisites || []).join(", "))}</td>
-      <td>${escapeHtml(String(r.lead_time_quarters ?? ""))}</td>
     </tr>`).join("");
   const a2Html = a2.length ? `
     <details class="artifact-sub">
@@ -955,8 +1133,7 @@ function renderArtifactsSummary(artifacts) {
       <div class="body">
         <table class="artifact-table">
           <thead><tr>
-            <th>tech_id</th><th>phase</th><th>start → target</th>
-            <th>prerequisites</th><th>lead (Q)</th>
+            <th>tech_id</th><th>차년도</th><th>prerequisites</th>
           </tr></thead>
           <tbody>${a2Rows}</tbody>
         </table>
@@ -1006,11 +1183,101 @@ function renderArtifactsSummary(artifacts) {
       </div>
     </details>` : "";
 
+  // Year × Tech 매트릭스 + 종합 Reasoning
+  const matrixHtml = renderYearTechMatrix(artifacts.year_tech_matrix, a2, a3);
+
   return `
     <details class="report-section artifact-section">
       <summary>8. Artifacts Summary <span style="color:var(--text-dim);font-weight:normal;">— [A1]/[A2]/[A3] 출처 데이터</span></summary>
       <div class="body" style="padding:8px 4px;">
-        ${a1Html}${a2Html}${a3Html}${insightsHtml}
+        ${matrixHtml}${a1Html}${a2Html}${a3Html}${insightsHtml}
+      </div>
+    </details>`;
+}
+
+// Year × Tech 매트릭스 — 차년도 별 기술 배치 + 예산 + 종합 reasoning
+function renderYearTechMatrix(matrix, a2, a3) {
+  if (!matrix || !matrix.cells) return "";
+  const cells = matrix.cells || {};
+  const maxYear = matrix.max_year || 5;
+  const yearlyTotal = matrix.yearly_budget_total || {};
+
+  const fmtUsd = (v) => {
+    const n = Number(v) || 0;
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+    return n ? `$${n.toLocaleString()}` : "-";
+  };
+  const tierClass = (t) => `tier-${String(t || "").replace(/[^0-9]/g, "") || "x"}`;
+
+  // 헤더: 1차년도 | 2차년도 | ... | N차년도
+  const headerCells = [];
+  for (let y = 1; y <= maxYear; y++) {
+    headerCells.push(`<th>${y}차년도<br/><span class="dim">${fmtUsd(yearlyTotal[y] || 0)}</span></th>`);
+  }
+
+  // 행: 각 기술의 매트릭스 — year_idx_start~target 동안 색칠된 셀
+  const a3ByTid = {};
+  (a3 || []).forEach(s => (s.tech_investments || []).forEach(ti => { if (ti.tech_id) a3ByTid[ti.tech_id] = ti; }));
+
+  const rows = (a2 || []).map(r => {
+    const tid = r.tech_id;
+    const inv = a3ByTid[tid] || {};
+    const ys = r.year_idx_start || 1, yt = r.year_idx_target || ys;
+    const cellsHtml = [];
+    for (let y = 1; y <= maxYear; y++) {
+      if (y >= ys && y <= yt) {
+        const isStart = y === ys;
+        cellsHtml.push(`<td class="matrix-cell active ${tierClass(inv.tier)}">${isStart ? fmtUsd(inv.tech_budget_usd) : "■"}</td>`);
+      } else {
+        cellsHtml.push(`<td class="matrix-cell"></td>`);
+      }
+    }
+    return `
+      <tr>
+        <td class="matrix-tech-label">
+          <b>${escapeHtml(tid)}</b><br/>
+          <span class="dim">${escapeHtml((r.name || "").slice(0, 25))}</span><br/>
+          <span class="badge tier ${tierClass(inv.tier)}">${escapeHtml(inv.tier || "-")}</span>
+        </td>
+        ${cellsHtml.join("")}
+      </tr>`;
+  }).join("");
+
+  // 종합 Reasoning — Designer + Strategist 모두
+  const reasoningRows = (a2 || []).map(r => {
+    const tid = r.tech_id;
+    const inv = a3ByTid[tid] || {};
+    const dr = r.reasoning || {};
+    const ir = inv.reasoning || {};
+    const blocks = [];
+    if (dr.year_placement) blocks.push(`<div class="reason-block"><b>📅 차년도 배치 (Designer):</b><br/>${escapeHtml(dr.year_placement)}</div>`);
+    if (dr.tech_execution) blocks.push(`<div class="reason-block"><b>🛠️ 기술 수행 (Designer):</b><br/>${escapeHtml(dr.tech_execution)}</div>`);
+    if (dr.investment_selection) blocks.push(`<div class="reason-block"><b>🎯 투자 선정 (Designer):</b><br/>${escapeHtml(dr.investment_selection)}</div>`);
+    if (ir.market_evaluation) blocks.push(`<div class="reason-block strategist"><b>📊 시장 평가 (Strategist):</b><br/>${escapeHtml(ir.market_evaluation)}</div>`);
+    if (ir.tech_evaluation) blocks.push(`<div class="reason-block strategist"><b>⚙️ 기술 평가 (Strategist):</b><br/>${escapeHtml(ir.tech_evaluation)}</div>`);
+    if (ir.investment_decision) blocks.push(`<div class="reason-block strategist"><b>💰 투자 결정 (Strategist):</b><br/>${escapeHtml(ir.investment_decision)}</div>`);
+    if (inv.tech_budget_rationale) blocks.push(`<div class="reason-block strategist"><b>💵 예산 근거:</b><br/>${escapeHtml(inv.tech_budget_rationale)}</div>`);
+    if (!blocks.length) return "";
+    return `
+      <details class="matrix-reasoning">
+        <summary><b>${escapeHtml(tid)}</b> · ${escapeHtml(r.name || "")} <span class="dim">(${r.year_idx_start || "?"}차 → ${r.year_idx_target || "?"}차, ${fmtUsd(inv.tech_budget_usd)})</span></summary>
+        <div class="reasoning-blocks">${blocks.join("")}</div>
+      </details>`;
+  }).join("");
+
+  return `
+    <details class="artifact-sub" open>
+      <summary>📊 Year × Tech 매트릭스 — 로드맵 + 투자 종합</summary>
+      <div class="body">
+        <table class="artifact-table matrix-table">
+          <thead><tr><th>기술</th>${headerCells.join("")}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <div style="margin-top:14px;">
+          <div style="font-weight:600;color:var(--accent-soft);margin-bottom:6px;">📋 종합 Reasoning (Designer + Strategist)</div>
+          ${reasoningRows}
+        </div>
       </div>
     </details>`;
 }

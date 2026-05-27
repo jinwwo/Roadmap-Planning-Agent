@@ -161,6 +161,30 @@ def _enforce_bidirectional(tree: dict) -> dict:
     return tree
 
 
+def _format_upper_context(company_scenario: dict, strategic_direction: list) -> str:
+    """Orchestrator 추출 Company Scenario + Strategic Direction → 상위 컨텍스트 블록."""
+    if not company_scenario and not strategic_direction:
+        return ""
+    block = "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n"
+    if company_scenario:
+        cn = company_scenario.get("company_name", "")
+        ind = company_scenario.get("industry", "")
+        rev = company_scenario.get("annual_revenue", 0) or 0
+        ratio = company_scenario.get("rd_budget_ratio", 0) or 0
+        rd = company_scenario.get("annual_rd_budget", 0) or 0
+        horizon = company_scenario.get("planning_horizon", "")
+        block += f"- Company: {cn}\n- Industry: {ind}\n"
+        if rev: block += f"- Annual Revenue: ${rev:,.0f}\n"
+        if ratio: block += f"- R&D Budget Ratio: {ratio:.0%}\n"
+        if rd: block += f"- Annual R&D Budget: ${rd:,.0f}\n"
+        if horizon: block += f"- Planning Horizon: {horizon}\n"
+    if strategic_direction:
+        block += "\n[Strategic Direction]\n"
+        for i, d in enumerate(strategic_direction, 1):
+            block += f"  {i}. {d}\n"
+    return block + "\n"
+
+
 def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     """REVISE 시 전달된 feedback 을 dependency_analyzer 프롬프트에 박을 섹션으로 포맷."""
     if not orchestrator_feedback:
@@ -262,8 +286,12 @@ def run_dependency_analyzer(state: RoadmapState) -> dict:
         ]
 
         feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+        upper_block = _format_upper_context(
+            state.get("company_scenario"),
+            state.get("strategic_direction"),
+        )
 
-        user_prompt = f"""
+        user_prompt = f"""{upper_block}
 다음 {len(tech_candidates)}개의 후보 기술에 대한 의존성 트리를 구성해주세요.
 
 [후보 기술 목록]
