@@ -1,0 +1,403 @@
+{
+  "domain": "Medical Devices / Healthcare",
+  "use_patent_map": true,
+  "research_process": [
+    "market_report_discovery",
+    "tam_sam_som_estimation",
+    "cagr_growth_outlook_collection",
+    "actor_similarity_map_driven_competitive_context"
+  ],
+  "actor_similarity_context": {
+    "center_actor": "Medtronic",
+    "related_actors": [
+      "Boston Scientific",
+      "Abbott Laboratories",
+      "Stryker",
+      "Siemens Healthineers",
+      "Philips",
+      "Johnson & Johnson"
+    ],
+    "shared_technology_areas": [],
+    "top_edges": [
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Boston Scientific",
+        "similarity": 0.92,
+        "edge_weight": 0.92,
+        "shared_domains": [
+          "Cardiovascular",
+          "Neurovascular",
+          "Surgical Robotics"
+        ],
+        "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+      },
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Abbott Laboratories",
+        "similarity": 0.88,
+        "edge_weight": 0.88,
+        "shared_domains": [
+          "Cardiovascular",
+          "Diabetes Care",
+          "Diagnostics"
+        ],
+        "rationale": "심장 박동기 및 당뇨 관리 장비, 진단 자동화 시스템 분야에서 높은 기술적 유사성을 보이며, 최근 진단 장비 관련 특허가 급증하고 있다."
+      },
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Stryker",
+        "similarity": 0.85,
+        "edge_weight": 0.85,
+        "shared_domains": [
+          "Surgical Robotics",
+          "Orthopedics",
+          "Medical Waste Management"
+        ],
+        "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+      },
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Siemens Healthineers",
+        "similarity": 0.78,
+        "edge_weight": 0.78,
+        "shared_domains": [
+          "Medical Imaging",
+          "AI in Healthcare",
+          "Diagnostic Equipment"
+        ],
+        "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+      },
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Philips",
+        "similarity": 0.75,
+        "edge_weight": 0.75,
+        "shared_domains": [
+          "Medical Imaging",
+          "Patient Monitoring",
+          "AI in Healthcare"
+        ],
+        "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+      },
+      {
+        "center_actor": "Medtronic",
+        "related_actor": "Johnson & Johnson",
+        "similarity": 0.65,
+        "edge_weight": 0.65,
+        "shared_domains": [
+          "Surgical Robotics",
+          "Ophthalmology",
+          "Wound Care"
+        ],
+        "rationale": "수술 로봇 및 안과 임플란트 분야에서 일부 기술적 교집합이 있으며, 최근 광 조절형 안과 소재 관련 특허가 주목받고 있다."
+      }
+    ]
+  },
+  "technologies": {
+    "T01": {
+      "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+      "domain": "Medical Devices / Healthcare",
+      "actor_context": {
+        "center_actor": "Medtronic",
+        "related_actors": [
+          "Boston Scientific",
+          "Siemens Healthineers",
+          "Philips"
+        ],
+        "shared_technology_areas": [],
+        "source_companies": [
+          "Philips",
+          "Siemens Healthineers",
+          "Boston Scientific"
+        ],
+        "map_edges": [
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Boston Scientific",
+            "similarity": 0.92,
+            "edge_weight": 0.92,
+            "shared_domains": [
+              "Cardiovascular",
+              "Neurovascular",
+              "Surgical Robotics"
+            ],
+            "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+          },
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Siemens Healthineers",
+            "similarity": 0.78,
+            "edge_weight": 0.78,
+            "shared_domains": [
+              "Medical Imaging",
+              "AI in Healthcare",
+              "Diagnostic Equipment"
+            ],
+            "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+          },
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Philips",
+            "similarity": 0.75,
+            "edge_weight": 0.75,
+            "shared_domains": [
+              "Medical Imaging",
+              "Patient Monitoring",
+              "AI in Healthcare"
+            ],
+            "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+          }
+        ]
+      },
+      "queries": {
+        "market_reports": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips market report industry analysis forecast TAM SAM SOM CAGR Medical Devices / Healthcare 2025 2026 2027 2028 2030",
+        "tam_sam_som": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips TAM SAM SOM serviceable obtainable market revenue opportunity Medical Devices / Healthcare billion forecast",
+        "cagr_forecast": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips CAGR growth forecast market outlook 2025 2030 Medical Devices / Healthcare",
+        "market_size": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips market size TAM CAGR forecast 2025 2026 2027 2028 Medical Devices / Healthcare billion growth rate",
+        "investment": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+        "policy": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips government policy subsidy CHIPS Act K-Chips regulation support program Medical Devices / Healthcare",
+        "competitive": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+        "timeline": "혈관 내 3D 이미징 및 워크플로우 Medtronic Boston Scientific Siemens Healthineers Philips commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+      },
+      "market_reports": [],
+      "tam_sam_som_data": [],
+      "cagr_forecast_data": [],
+      "market_size_data": [],
+      "investment_data": [],
+      "policy_data": [],
+      "competitive_data": [],
+      "timeline_data": [],
+      "_mock": false
+    },
+    "T02": {
+      "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+      "domain": "Medical Devices / Healthcare",
+      "actor_context": {
+        "center_actor": "Medtronic",
+        "related_actors": [
+          "Stryker",
+          "Siemens Healthineers",
+          "Philips"
+        ],
+        "shared_technology_areas": [],
+        "source_companies": [
+          "Siemens Healthineers",
+          "Philips",
+          "Stryker"
+        ],
+        "map_edges": [
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Stryker",
+            "similarity": 0.85,
+            "edge_weight": 0.85,
+            "shared_domains": [
+              "Surgical Robotics",
+              "Orthopedics",
+              "Medical Waste Management"
+            ],
+            "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+          },
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Siemens Healthineers",
+            "similarity": 0.78,
+            "edge_weight": 0.78,
+            "shared_domains": [
+              "Medical Imaging",
+              "AI in Healthcare",
+              "Diagnostic Equipment"
+            ],
+            "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+          },
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Philips",
+            "similarity": 0.75,
+            "edge_weight": 0.75,
+            "shared_domains": [
+              "Medical Imaging",
+              "Patient Monitoring",
+              "AI in Healthcare"
+            ],
+            "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+          }
+        ]
+      },
+      "queries": {
+        "market_reports": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips market report industry analysis forecast TAM SAM SOM CAGR Medical Devices / Healthcare 2025 2026 2027 2028 2030",
+        "tam_sam_som": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips TAM SAM SOM serviceable obtainable market revenue opportunity Medical Devices / Healthcare billion forecast",
+        "cagr_forecast": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips CAGR growth forecast market outlook 2025 2030 Medical Devices / Healthcare",
+        "market_size": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips market size TAM CAGR forecast 2025 2026 2027 2028 Medical Devices / Healthcare billion growth rate",
+        "investment": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+        "policy": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips government policy subsidy CHIPS Act K-Chips regulation support program Medical Devices / Healthcare",
+        "competitive": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+        "timeline": "수술용 AI 기반 이미지 처리 및 안내 Medtronic Stryker Siemens Healthineers Philips commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+      },
+      "market_reports": [],
+      "tam_sam_som_data": [],
+      "cagr_forecast_data": [],
+      "market_size_data": [],
+      "investment_data": [],
+      "policy_data": [],
+      "competitive_data": [],
+      "timeline_data": [],
+      "_mock": false
+    },
+    "T03": {
+      "tech_name": "고감도 진단 자동화 시스템",
+      "domain": "Medical Devices / Healthcare",
+      "actor_context": {
+        "center_actor": "Medtronic",
+        "related_actors": [
+          "Boston Scientific",
+          "Abbott Laboratories"
+        ],
+        "shared_technology_areas": [],
+        "source_companies": [
+          "Abbott Laboratories",
+          "Boston Scientific"
+        ],
+        "map_edges": [
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Boston Scientific",
+            "similarity": 0.92,
+            "edge_weight": 0.92,
+            "shared_domains": [
+              "Cardiovascular",
+              "Neurovascular",
+              "Surgical Robotics"
+            ],
+            "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+          },
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Abbott Laboratories",
+            "similarity": 0.88,
+            "edge_weight": 0.88,
+            "shared_domains": [
+              "Cardiovascular",
+              "Diabetes Care",
+              "Diagnostics"
+            ],
+            "rationale": "심장 박동기 및 당뇨 관리 장비, 진단 자동화 시스템 분야에서 높은 기술적 유사성을 보이며, 최근 진단 장비 관련 특허가 급증하고 있다."
+          }
+        ]
+      },
+      "queries": {
+        "market_reports": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories market report industry analysis forecast TAM SAM SOM CAGR Medical Devices / Healthcare 2025 2026 2027 2028 2030",
+        "tam_sam_som": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories TAM SAM SOM serviceable obtainable market revenue opportunity Medical Devices / Healthcare billion forecast",
+        "cagr_forecast": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories CAGR growth forecast market outlook 2025 2030 Medical Devices / Healthcare",
+        "market_size": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories market size TAM CAGR forecast 2025 2026 2027 2028 Medical Devices / Healthcare billion growth rate",
+        "investment": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+        "policy": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories government policy subsidy CHIPS Act K-Chips regulation support program Medical Devices / Healthcare",
+        "competitive": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+        "timeline": "고감도 진단 자동화 시스템 Medtronic Boston Scientific Abbott Laboratories commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+      },
+      "market_reports": [],
+      "tam_sam_som_data": [],
+      "cagr_forecast_data": [],
+      "market_size_data": [],
+      "investment_data": [],
+      "policy_data": [],
+      "competitive_data": [],
+      "timeline_data": [],
+      "_mock": false
+    },
+    "T04": {
+      "tech_name": "수술실 폐기물 관리 및 모니터링",
+      "domain": "Medical Devices / Healthcare",
+      "actor_context": {
+        "center_actor": "Medtronic",
+        "related_actors": [
+          "Stryker"
+        ],
+        "shared_technology_areas": [],
+        "source_companies": [
+          "Stryker"
+        ],
+        "map_edges": [
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Stryker",
+            "similarity": 0.85,
+            "edge_weight": 0.85,
+            "shared_domains": [
+              "Surgical Robotics",
+              "Orthopedics",
+              "Medical Waste Management"
+            ],
+            "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+          }
+        ]
+      },
+      "queries": {
+        "market_reports": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker market report industry analysis forecast TAM SAM SOM CAGR Medical Devices / Healthcare 2025 2026 2027 2028 2030",
+        "tam_sam_som": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker TAM SAM SOM serviceable obtainable market revenue opportunity Medical Devices / Healthcare billion forecast",
+        "cagr_forecast": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker CAGR growth forecast market outlook 2025 2030 Medical Devices / Healthcare",
+        "market_size": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker market size TAM CAGR forecast 2025 2026 2027 2028 Medical Devices / Healthcare billion growth rate",
+        "investment": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+        "policy": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker government policy subsidy CHIPS Act K-Chips regulation support program Medical Devices / Healthcare",
+        "competitive": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+        "timeline": "수술실 폐기물 관리 및 모니터링 Medtronic Stryker commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+      },
+      "market_reports": [],
+      "tam_sam_som_data": [],
+      "cagr_forecast_data": [],
+      "market_size_data": [],
+      "investment_data": [],
+      "policy_data": [],
+      "competitive_data": [],
+      "timeline_data": [],
+      "_mock": false
+    },
+    "T05": {
+      "tech_name": "광 조절형 안과 임플란트 소재",
+      "domain": "Medical Devices / Healthcare",
+      "actor_context": {
+        "center_actor": "Medtronic",
+        "related_actors": [
+          "Johnson & Johnson"
+        ],
+        "shared_technology_areas": [],
+        "source_companies": [
+          "Johnson & Johnson"
+        ],
+        "map_edges": [
+          {
+            "center_actor": "Medtronic",
+            "related_actor": "Johnson & Johnson",
+            "similarity": 0.65,
+            "edge_weight": 0.65,
+            "shared_domains": [
+              "Surgical Robotics",
+              "Ophthalmology",
+              "Wound Care"
+            ],
+            "rationale": "수술 로봇 및 안과 임플란트 분야에서 일부 기술적 교집합이 있으며, 최근 광 조절형 안과 소재 관련 특허가 주목받고 있다."
+          }
+        ]
+      },
+      "queries": {
+        "market_reports": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson market report industry analysis forecast TAM SAM SOM CAGR Medical Devices / Healthcare 2025 2026 2027 2028 2030",
+        "tam_sam_som": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson TAM SAM SOM serviceable obtainable market revenue opportunity Medical Devices / Healthcare billion forecast",
+        "cagr_forecast": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson CAGR growth forecast market outlook 2025 2030 Medical Devices / Healthcare",
+        "market_size": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson market size TAM CAGR forecast 2025 2026 2027 2028 Medical Devices / Healthcare billion growth rate",
+        "investment": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+        "policy": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson government policy subsidy CHIPS Act K-Chips regulation support program Medical Devices / Healthcare",
+        "competitive": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+        "timeline": "광 조절형 안과 임플란트 소재 Medtronic Johnson & Johnson commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+      },
+      "market_reports": [],
+      "tam_sam_som_data": [],
+      "cagr_forecast_data": [],
+      "market_size_data": [],
+      "investment_data": [],
+      "policy_data": [],
+      "competitive_data": [],
+      "timeline_data": [],
+      "_mock": false
+    }
+  }
+}

@@ -1,0 +1,1284 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T20:27:39Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 트랜지스터 게이트 공정",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 92.5,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 92,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Intel",
+          "TSMC",
+          "Samsung Electronics"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "FABRICATION OF GATE-ALL-AROUND INTEGRATED CIRCUIT STRUCTURES HAVING COMMON METAL GATES AND HAVING GATE DIELECTRICS WITH DIFFERENTIATED DIPOLE LAYERS",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DEVICE AND FORMATION METHOD THEREOF",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung Electronics",
+            "title": "SEMICONDUCTOR DEVICE WITH A FIN-SHAPED ACTIVE REGION AND A GATE ELECTRODE",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel, TSMC, Samsung 모두 2026 년 초에 GAA 구조 및 게이트 공정 관련 특허를 집중 출원하고 있어 기술 성숙도가 높음. Intel 의 IDM 2.0 전략에서 원가 우위를 확보하기 위해 검증된 GAA 공정의 최적화가 필수적이다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 88.3,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Intel",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "SELECTIVE BACKSIDE RECESSING OF SOURCE AND DRAIN REGIONS",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "METAL GATE STRUCTURE CUTTING PROCESS",
+            "date": "2026-01-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 과 TSMC 가 백사이드 소스/드레인 리세스 및 금속 게이트 커팅 공정을 통해 백사이드 전력망 구현을 경쟁적으로 개발 중. Foundry 서비스 경쟁력 강화를 위해 이 아키텍처의 상용화 속도를 높여야 함."
+      },
+      {
+        "tech_id": "T03",
+        "name": "하이브리드 본딩 패키징",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 86.7,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 84,
+          "cross_actor_recurrence": 86,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "Applied Materials",
+          "TSMC",
+          "Samsung Electronics"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Applied Materials",
+            "title": "Integrated Process Sequence for Hybrid Bonding Applications",
+            "date": "2026-01-05",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DIE STACK AND METHOD OF FORMING THE SAME",
+            "date": "2025-12-11",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung Electronics",
+            "title": "SEMICONDUCTOR PACKAGE AND METHOD OF MANUFACTURING THE SAME",
+            "date": "2025-12-04",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Applied Materials 의 하이브리드 본딩 공정 시퀀스 특허와 TSMC, Samsung 의 다중 다이 스택 특허가 2025-2026 년에 집중됨. 3D 패키징 기술은 Foundry 시장 점유율 확대를 위한 핵심 차별화 요소이다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "AI 기반 공정 제어 및 예측",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 84.1,
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "ASML",
+          "Applied Materials",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "ASML",
+            "title": "METHOD AND SYSTEM FOR ERROR DIAGNOSIS AND PREDICTIVE MAINTENANCE IN SEMICONDUCTOR MANUFACTURING USING A MULTIMODAL REASONING ENGINE",
+            "date": "2025-12-17",
+            "cited_by": 0
+          },
+          {
+            "company": "ASML",
+            "title": "DETERMINING A CORRECTION TO A PROCESS",
+            "date": "2025-12-08",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "Method and apparatus for production process control",
+            "date": "2025-12-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "ASML 과 Applied Materials 가 AI 기반의 공정 오류 진단 및 예측 유지보수 특허를 대거 출원하고 있으며, Intel 도 생산 공정 제어 관련 특허를 보유. 원가 우위 확보를 위해 설비 효율성 극대화 기술 도입이 시급함."
+      },
+      {
+        "tech_id": "T05",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 79.4,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Micron Technology",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Micron Technology",
+            "title": "ANALOG MULTIPLY AND ACCUMULATE ARCHITECTURE FOR COMPUTE-IN-MEMORY MACHINE LEARNING",
+            "date": "2025-10-29",
+            "cited_by": 0
+          },
+          {
+            "company": "Micron Technology",
+            "title": "ANALOG PROCESSING OF ACTIVATION FUNCTIONS",
+            "date": "2025-10-16",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "MEMORY ARCHITECTURES WITH AMBIPOLAR SEMICONDUCTOR CHANNELS",
+            "date": "2025-11-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Micron 과 Intel 이 메모리 내 연산 (CIM) 및 아날로그 처리 관련 특허를 2025 년 말에 집중 출원. AI 워크로드 처리 효율성을 높이는 차세대 아키텍처로, Foundry 서비스 포트폴리오 다변화를 위한 중기 기술로 적합함."
+      },
+      {
+        "tech_id": "T06",
+        "name": "저온 수증기 산화 공정",
+        "category": "Process",
+        "estimated_trl": 4,
+        "patent_score": 72.8,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 75
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Intel",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "LOW TEMPERATURE STEAM OXIDATION PROCESS FOR SEMICONDUCTOR DEVICES",
+            "date": "2025-12-11",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DEVICE AND FORMATION METHOD THEREOF",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 과 TSMC 가 저온 공정 관련 특허를 출원하고 있어, 열에 민감한 신소재 적용 시 필수적인 기술로 부상. 장기적으로 공정 유연성을 높이는 R&D 투자 대상."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 트랜지스터 게이트 공정",
+        "market_score": 92.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "GAA 는 2025 년 이후 3nm 이하 노드의 표준으로 자리 잡으며, 글로벌 파운드리 시장 (TAM) 의 핵심 성장 동력이 됨. Intel, TSMC, Samsung 의 3 대 경쟁 구도에서 Intel 의 Foundry 서비스 점유율 확대 (SAM) 가 핵심 목표."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 기술이 FinFET 를 대체하며 2025 년부터 본격적인 양산이 시작되고, AI/고성능 컴퓨팅 수요로 인해 연평균 20% 이상의 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Gate-All-Around (GAA) Transistor Market Size & Share 2025 - 2034",
+            "url": "https://www.gminsights.com/industry-analysis/gate-all-around-gaa-transistor-market",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "GAA 는 3nm 이하 공정에서 필수적인 기술로, TSMC 와 Samsung 과의 치열한 경쟁 속에서 Intel 의 IDM 2.0 성패를 가르는 핵심 요소입니다. 2027 년경 양산 성숙기에 진입하며 시장이 급격히 확대될 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "market_score": 88.2,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "Backside PDN 은 GAA 와 결합된 고급 노드 (2nm 이하) 의 필수 기술로, 전체 파운드리 시장 중 고부가가치 AI 칩 시장 (SAM) 에 집중되어 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "전력 효율과 성능 향상이 필수적인 AI 가속기 수요 증가로 인해, 2026 년 이후 주요 파운드리 업체들이 이 기술을 표준으로 채택하며 급성장할 것입니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Backside Power Supply Network (BSPDN) Technology Market - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/backside-power-supply-network-bspdn-technology-market",
+            "use": "시장 규모 및 성장률 예측 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "TSMC 와의 높은 유사성 (0.92) 은 양사가 이 기술을 최우선 과제로 삼고 있음을 시사하며, Intel 이 Foundry 시장에서 경쟁력을 확보하기 위한 필수 기술입니다. 2028 년경 2nm 공정 양산 확대와 함께 시장이 폭발할 것으로 보입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "하이브리드 본딩 패키징",
+        "market_score": 86.5,
+        "market_signals": {
+          "tam_growth_rate": 82,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "3D 패키징 및 Chiplet 시장이 급성장하며, 하이브리드 본딩은 고밀도 인터포저 및 메모리 스택의 핵심 기술로 TAM 이 크게 확대되고 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 데이터센터용 HBM 및 고성능 컴퓨팅 패키징 수요로 인해 연평균 20% 이상의 성장이 예상되며, 2026 년부터 상용화가 가속화됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Device Market Size, Share Analysis 2025 – 2030",
+            "url": "https://www.mordorintelligence.com/industry-reports/global-semiconductor-device-market",
+            "use": "패키징 시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Samsung Electronics",
+            "Applied Materials"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "TSMC, Samsung, Applied Materials 와의 기술 공유는 이 분야가 핵심 경쟁력이자 협력 생태계임을 보여줍니다. Intel 의 Foveros 기술과 결합하여 2027 년 말부터 시장 주도권을 잡을 수 있는 시점입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "AI 기반 공정 제어 및 예측",
+        "market_score": 84.0,
+        "market_signals": {
+          "tam_growth_rate": 78,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "반도체 제조 장비 및 소프트웨어 시장 중 AI 기반 최적화 솔루션이 급성장하고 있으며, Intel 의 IDM 2.0 원가 우위 확보에 직접적인 영향을 미칩니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.0,
+          "forecast_period": "2025-2030",
+          "basis": "ASML, Applied Materials 등 장비 업체들의 AI 통합 가속화로 인해, 2025 년부터 2030 년까지 지속적인 고성장세를 보일 것입니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "ASML & The Semiconductor Market In 2025 & 2030 - SemiAnalysis",
+            "url": "https://newsletter.semianalysis.com/p/asml-and-the-semiconductor-market",
+            "use": "장비 시장 동향 및 AI 도입 속도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Applied Materials",
+            "ASML"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "ASML 과 Applied Materials 와의 높은 유사도는 AI 기반 공정 제어가 장비 공급망의 표준으로 빠르게 자리 잡고 있음을 의미합니다. 2026 년 중반부터 양산 라인에 본격 도입되며 시장이 활성화됩니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "AI 추론 및 엣지 컴퓨팅 시장이 성장함에 따라, 기존 폰 노이만 병목 현상을 해결하는 CIM 기술의 잠재 시장이 확대되고 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "전통적인 메모리 시장 성장률보다 높은 CAGR 을 보일 것으로 예상되나, 초기 상용화 단계로 인해 2028 년 이후 본격적인 성장이 예상됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Micron raises forecasts as AI boosts memory chip demand",
+            "url": "https://finance.yahoo.com/news/micron-technology-raises-fourth-quarter-121044485.html",
+            "use": "메모리 시장 성장 및 AI 수요 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "Micron 과의 기술 공유는 CIM 이 아직 초기 단계이나 Intel 과 Micron 이 선두주자로 부상할 잠재력이 있음을 시사합니다. 2029 년경 AI 엣지 디바이스 수요 폭발과 함께 시장이 본격화될 것입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "저온 수증기 산화 공정",
+        "market_score": 72.0,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.6,
+          "basis": "고급 노드 공정에서 열 손상을 방지하는 필수 공정 기술로, 전체 파운드리 시장 중 특정 고부가가치 공정 라인 (SAM) 에 국한되어 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 및 Backside PDN 등 신공정 도입에 따라 저온 공정의 필요성이 증가하며, 안정적인 성장세를 보일 것으로 예상됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "파운드리 시장 내 공정 기술 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "TSMC 와의 기술 유사성은 이 공정이 최첨단 노드 양산의 필수 요소임을 나타내며, Intel 의 원가 우위 확보를 위한 핵심 공정 기술입니다. 2028 년경 신공정 라인 확충과 함께 수요가 증가할 것입니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Intel",
+          "related_actor": "TSMC",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "common_tech_areas": [
+            "GAA Transistor",
+            "Backside PDN",
+            "Hybrid Bonding",
+            "AI Process Control"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "common_tech_areas": [
+            "GAA Transistor",
+            "Hybrid Bonding",
+            "Low Temp Oxidation"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Applied Materials",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "common_tech_areas": [
+            "Hybrid Bonding",
+            "AI Process Control",
+            "Plasma Processing"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "ASML",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "common_tech_areas": [
+            "AI Process Control",
+            "Lithography Metrology"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Micron Technology",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "common_tech_areas": [
+            "Compute-in-Memory",
+            "Memory Architectures"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "GlobalFoundries",
+          "similarity": 0.7,
+          "edge_weight": 0.7,
+          "common_tech_areas": [
+            "Gate Materials",
+            "Current Sensors"
+          ]
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 트랜지스터 게이트 공정",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 92.5,
+        "market_score": 92.5,
+        "actor_map_score": 81.0,
+        "final_score": 90.2,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Intel, TSMC, Samsung 모두 2026 년 초에 GAA 구조 및 게이트 공정 관련 특허를 집중 출원하고 있어 기술 성숙도가 높음. Intel 의 IDM 2.0 전략에서 원가 우위를 확보하기 위해 검증된 GAA 공정의 최적화가 필수적이다. [Market] GAA 는 3nm 이하 공정에서 필수적인 기술로, TSMC 와 Samsung 과의 치열한 경쟁 속에서 Intel 의 IDM 2.0 성패를 가르는 핵심 요소입니다. 2027 년경 양산 성숙기에 진입하며 시장이 급격히 확대될 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "GAA 는 2025 년 이후 3nm 이하 노드의 표준으로 자리 잡으며, 글로벌 파운드리 시장 (TAM) 의 핵심 성장 동력이 됨. Intel, TSMC, Samsung 의 3 대 경쟁 구도에서 Intel 의 Foundry 서비스 점유율 확대 (SAM) 가 핵심 목표."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 기술이 FinFET 를 대체하며 2025 년부터 본격적인 양산이 시작되고, AI/고성능 컴퓨팅 수요로 인해 연평균 20% 이상의 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Gate-All-Around (GAA) Transistor Market Size & Share 2025 - 2034",
+            "url": "https://www.gminsights.com/industry-analysis/gate-all-around-gaa-transistor-market",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 92,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 88.3,
+        "market_score": 88.2,
+        "actor_map_score": 82.8,
+        "final_score": 87.16,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Intel 과 TSMC 가 백사이드 소스/드레인 리세스 및 금속 게이트 커팅 공정을 통해 백사이드 전력망 구현을 경쟁적으로 개발 중. Foundry 서비스 경쟁력 강화를 위해 이 아키텍처의 상용화 속도를 높여야 함. [Market] TSMC 와의 높은 유사성 (0.92) 은 양사가 이 기술을 최우선 과제로 삼고 있음을 시사하며, Intel 이 Foundry 시장에서 경쟁력을 확보하기 위한 필수 기술입니다. 2028 년경 2nm 공정 양산 확대와 함께 시장이 폭발할 것으로 보입니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "Backside PDN 은 GAA 와 결합된 고급 노드 (2nm 이하) 의 필수 기술로, 전체 파운드리 시장 중 고부가가치 AI 칩 시장 (SAM) 에 집중되어 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "전력 효율과 성능 향상이 필수적인 AI 가속기 수요 증가로 인해, 2026 년 이후 주요 파운드리 업체들이 이 기술을 표준으로 채택하며 급성장할 것입니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Backside Power Supply Network (BSPDN) Technology Market - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/backside-power-supply-network-bspdn-technology-market",
+            "use": "시장 규모 및 성장률 예측 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "하이브리드 본딩 패키징",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 86.7,
+        "market_score": 86.5,
+        "actor_map_score": 79.5,
+        "final_score": 85.17,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [
+          "T02"
+        ],
+        "rationale": "[Patent] Applied Materials 의 하이브리드 본딩 공정 시퀀스 특허와 TSMC, Samsung 의 다중 다이 스택 특허가 2025-2026 년에 집중됨. 3D 패키징 기술은 Foundry 시장 점유율 확대를 위한 핵심 차별화 요소이다. [Market] TSMC, Samsung, Applied Materials 와의 기술 공유는 이 분야가 핵심 경쟁력이자 협력 생태계임을 보여줍니다. Intel 의 Foveros 기술과 결합하여 2027 년 말부터 시장 주도권을 잡을 수 있는 시점입니다.",
+        "market_signals": {
+          "tam_growth_rate": 82,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "3D 패키징 및 Chiplet 시장이 급성장하며, 하이브리드 본딩은 고밀도 인터포저 및 메모리 스택의 핵심 기술로 TAM 이 크게 확대되고 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 데이터센터용 HBM 및 고성능 컴퓨팅 패키징 수요로 인해 연평균 20% 이상의 성장이 예상되며, 2026 년부터 상용화가 가속화됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Device Market Size, Share Analysis 2025 – 2030",
+            "url": "https://www.mordorintelligence.com/industry-reports/global-semiconductor-device-market",
+            "use": "패키징 시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Samsung Electronics",
+            "Applied Materials"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Applied Materials",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 84,
+          "cross_actor_recurrence": 86,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "AI 기반 공정 제어 및 예측",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 84.1,
+        "market_score": 84.0,
+        "actor_map_score": 75.15,
+        "final_score": 82.27,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] ASML 과 Applied Materials 가 AI 기반의 공정 오류 진단 및 예측 유지보수 특허를 대거 출원하고 있으며, Intel 도 생산 공정 제어 관련 특허를 보유. 원가 우위 확보를 위해 설비 효율성 극대화 기술 도입이 시급함. [Market] ASML 과 Applied Materials 와의 높은 유사도는 AI 기반 공정 제어가 장비 공급망의 표준으로 빠르게 자리 잡고 있음을 의미합니다. 2026 년 중반부터 양산 라인에 본격 도입되며 시장이 활성화됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 78,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "반도체 제조 장비 및 소프트웨어 시장 중 AI 기반 최적화 솔루션이 급성장하고 있으며, Intel 의 IDM 2.0 원가 우위 확보에 직접적인 영향을 미칩니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.0,
+          "forecast_period": "2025-2030",
+          "basis": "ASML, Applied Materials 등 장비 업체들의 AI 통합 가속화로 인해, 2025 년부터 2030 년까지 지속적인 고성장세를 보일 것입니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "ASML & The Semiconductor Market In 2025 & 2030 - SemiAnalysis",
+            "url": "https://newsletter.semianalysis.com/p/asml-and-the-semiconductor-market",
+            "use": "장비 시장 동향 및 AI 도입 속도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Applied Materials",
+            "ASML"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Applied Materials",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "ASML",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 79.4,
+        "market_score": 76.5,
+        "actor_map_score": 67.5,
+        "final_score": 75.72,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Micron 과 Intel 이 메모리 내 연산 (CIM) 및 아날로그 처리 관련 특허를 2025 년 말에 집중 출원. AI 워크로드 처리 효율성을 높이는 차세대 아키텍처로, Foundry 서비스 포트폴리오 다변화를 위한 중기 기술로 적합함. [Market] Micron 과의 기술 공유는 CIM 이 아직 초기 단계이나 Intel 과 Micron 이 선두주자로 부상할 잠재력이 있음을 시사합니다. 2029 년경 AI 엣지 디바이스 수요 폭발과 함께 시장이 본격화될 것입니다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "AI 추론 및 엣지 컴퓨팅 시장이 성장함에 따라, 기존 폰 노이만 병목 현상을 해결하는 CIM 기술의 잠재 시장이 확대되고 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "전통적인 메모리 시장 성장률보다 높은 CAGR 을 보일 것으로 예상되나, 초기 상용화 단계로 인해 2028 년 이후 본격적인 성장이 예상됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Micron raises forecasts as AI boosts memory chip demand",
+            "url": "https://finance.yahoo.com/news/micron-technology-raises-fourth-quarter-121044485.html",
+            "use": "메모리 시장 성장 및 AI 수요 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 80
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "저온 수증기 산화 공정",
+        "category": "Process",
+        "trl": 4,
+        "patent_score": 72.8,
+        "market_score": 72.0,
+        "actor_map_score": 82.8,
+        "final_score": 74.44,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Intel 과 TSMC 가 저온 공정 관련 특허를 출원하고 있어, 열에 민감한 신소재 적용 시 필수적인 기술로 부상. 장기적으로 공정 유연성을 높이는 R&D 투자 대상. [Market] TSMC 와의 기술 유사성은 이 공정이 최첨단 노드 양산의 필수 요소임을 나타내며, Intel 의 원가 우위 확보를 위한 핵심 공정 기술입니다. 2028 년경 신공정 라인 확충과 함께 수요가 증가할 것입니다.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.6,
+          "basis": "고급 노드 공정에서 열 손상을 방지하는 필수 공정 기술로, 전체 파운드리 시장 중 특정 고부가가치 공정 라인 (SAM) 에 국한되어 있습니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 및 Backside PDN 등 신공정 도입에 따라 저온 공정의 필요성이 증가하며, 안정적인 성장세를 보일 것으로 예상됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "파운드리 시장 내 공정 기술 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 75
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Semiconductor / IDM / Foundry",
+      "expected_boom_quarter": "2026 Q3",
+      "market_research_summary": {
+        "T01": {
+          "name": "GAA 트랜지스터 게이트 공정",
+          "market_score": 92.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 4.5,
+            "basis": "GAA 는 2025 년 이후 3nm 이하 노드의 표준으로 자리 잡으며, 글로벌 파운드리 시장 (TAM) 의 핵심 성장 동력이 됨. Intel, TSMC, Samsung 의 3 대 경쟁 구도에서 Intel 의 Foundry 서비스 점유율 확대 (SAM) 가 핵심 목표."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "GAA 기술이 FinFET 를 대체하며 2025 년부터 본격적인 양산이 시작되고, AI/고성능 컴퓨팅 수요로 인해 연평균 20% 이상의 고성장 예상."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Gate-All-Around (GAA) Transistor Market Size & Share 2025 - 2034",
+              "url": "https://www.gminsights.com/industry-analysis/gate-all-around-gaa-transistor-market",
+              "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC",
+              "Samsung Electronics"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "백사이드 전력망 (Backside PDN)",
+          "market_score": 88.2,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 1.2,
+            "basis": "Backside PDN 은 GAA 와 결합된 고급 노드 (2nm 이하) 의 필수 기술로, 전체 파운드리 시장 중 고부가가치 AI 칩 시장 (SAM) 에 집중되어 있습니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "전력 효율과 성능 향상이 필수적인 AI 가속기 수요 증가로 인해, 2026 년 이후 주요 파운드리 업체들이 이 기술을 표준으로 채택하며 급성장할 것입니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Backside Power Supply Network (BSPDN) Technology Market - 2035",
+              "url": "https://www.futuremarketinsights.com/reports/backside-power-supply-network-bspdn-technology-market",
+              "use": "시장 규모 및 성장률 예측 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "하이브리드 본딩 패키징",
+          "market_score": 86.5,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 35.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 3.0,
+            "basis": "3D 패키징 및 Chiplet 시장이 급성장하며, 하이브리드 본딩은 고밀도 인터포저 및 메모리 스택의 핵심 기술로 TAM 이 크게 확대되고 있습니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 21.5,
+            "forecast_period": "2025-2030",
+            "basis": "AI 데이터센터용 HBM 및 고성능 컴퓨팅 패키징 수요로 인해 연평균 20% 이상의 성장이 예상되며, 2026 년부터 상용화가 가속화됩니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Device Market Size, Share Analysis 2025 – 2030",
+              "url": "https://www.mordorintelligence.com/industry-reports/global-semiconductor-device-market",
+              "use": "패키징 시장 성장 및 경쟁 구도 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC",
+              "Samsung Electronics",
+              "Applied Materials"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "AI 기반 공정 제어 및 예측",
+          "market_score": 84.0,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 25.0,
+            "sam_usd_b": 8.0,
+            "som_usd_b": 2.0,
+            "basis": "반도체 제조 장비 및 소프트웨어 시장 중 AI 기반 최적화 솔루션이 급성장하고 있으며, Intel 의 IDM 2.0 원가 우위 확보에 직접적인 영향을 미칩니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.0,
+            "forecast_period": "2025-2030",
+            "basis": "ASML, Applied Materials 등 장비 업체들의 AI 통합 가속화로 인해, 2025 년부터 2030 년까지 지속적인 고성장세를 보일 것입니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "ASML & The Semiconductor Market In 2025 & 2030 - SemiAnalysis",
+              "url": "https://newsletter.semianalysis.com/p/asml-and-the-semiconductor-market",
+              "use": "장비 시장 동향 및 AI 도입 속도 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Applied Materials",
+              "ASML"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "메모리 내 연산 (CIM) 아키텍처",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2029 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 0.8,
+            "basis": "AI 추론 및 엣지 컴퓨팅 시장이 성장함에 따라, 기존 폰 노이만 병목 현상을 해결하는 CIM 기술의 잠재 시장이 확대되고 있습니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.5,
+            "forecast_period": "2025-2030",
+            "basis": "전통적인 메모리 시장 성장률보다 높은 CAGR 을 보일 것으로 예상되나, 초기 상용화 단계로 인해 2028 년 이후 본격적인 성장이 예상됩니다."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Micron raises forecasts as AI boosts memory chip demand",
+              "url": "https://finance.yahoo.com/news/micron-technology-raises-fourth-quarter-121044485.html",
+              "use": "메모리 시장 성장 및 AI 수요 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Micron Technology"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "저온 수증기 산화 공정",
+          "market_score": 72.0,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 8.0,
+            "sam_usd_b": 2.5,
+            "som_usd_b": 0.6,
+            "basis": "고급 노드 공정에서 열 손상을 방지하는 필수 공정 기술로, 전체 파운드리 시장 중 특정 고부가가치 공정 라인 (SAM) 에 국한되어 있습니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 15.0,
+            "forecast_period": "2025-2030",
+            "basis": "GAA 및 Backside PDN 등 신공정 도입에 따라 저온 공정의 필요성이 증가하며, 안정적인 성장세를 보일 것으로 예상됩니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+              "use": "파운드리 시장 내 공정 기술 동향 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 6,
+        "top_related_actors": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Applied Materials",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "ASML",
+            "similarity": 0.82,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 0.75,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 0.7,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Intel",
+          "related_actor": "TSMC",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "common_tech_areas": [
+            "GAA Transistor",
+            "Backside PDN",
+            "Hybrid Bonding",
+            "AI Process Control"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "common_tech_areas": [
+            "GAA Transistor",
+            "Hybrid Bonding",
+            "Low Temp Oxidation"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Applied Materials",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "common_tech_areas": [
+            "Hybrid Bonding",
+            "AI Process Control",
+            "Plasma Processing"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "ASML",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "common_tech_areas": [
+            "AI Process Control",
+            "Lithography Metrology"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "Micron Technology",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "common_tech_areas": [
+            "Compute-in-Memory",
+            "Memory Architectures"
+          ]
+        },
+        {
+          "center_actor": "Intel",
+          "related_actor": "GlobalFoundries",
+          "similarity": 0.7,
+          "edge_weight": 0.7,
+          "common_tech_areas": [
+            "Gate Materials",
+            "Current Sensors"
+          ]
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2026 Q3"
+    ]
+  }
+}

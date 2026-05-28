@@ -1,0 +1,527 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Foundry",
+    "expected_boom_quarter": "2026 Q4",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 게이트 전극 공차 최적화",
+        "market_score": 92.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 12.0,
+          "basis": "2nm 이하 GAA 공정 도입으로 인한 고가치 로직 칩 시장 (AI/모바일) 의 급성장을 반영. TSMC 와 Intel 의 독점적 경쟁 구도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semianalysis 및 주요 시장 보고서에 따르면 GAA 구조 전환기에 따른 고성장 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "GAA 공정 전환 시점 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "시장 규모 및 성장률 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        }
+      },
+      "T02": {
+        "name": "백면 전극 패터닝 및 리세스",
+        "market_score": 89.0,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 38.0,
+          "sam_usd_b": 20.0,
+          "som_usd_b": 10.0,
+          "basis": "GAA 공정과 결합된 백면 전력망 (Backside PDN) 기술은 고주파/고성능 칩의 필수 요소로, 관련 장비 및 소재 시장이 급성장 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2026-2030",
+          "basis": "Advanced Node Foundry Market Research Report 에 따른 고성장 전망."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "백면 패터닝 기술의 시장 중요성 및 성장 동력"
+          },
+          {
+            "title": "Advanced Node Foundry Market Research Report 2034",
+            "url": "https://dataintelo.com/report/advanced-node-foundry-market",
+            "use": "CAGR 및 시장 규모 예측"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        }
+      },
+      "T03": {
+        "name": "고집적 3D 스택 패키징",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 32.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 8.0,
+          "basis": "AI 가속기 및 HBM 수요 증가로 2.5D/3D 패키징 시장이 급성장하고 있으며, TSMC 와 Samsung 이 주도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2026-2030",
+          "basis": "3D Semiconductor Packaging Market Report 및 Fact.MR 데이터 기반."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "2.5D And 3D Semiconductor Packaging Market Size & Share Analysis",
+            "url": "https://www.mordorintelligence.com/industry-reports/global-25d-and-3d-semiconductor-packaging-market",
+            "use": "시장 규모 및 성장률 분석"
+          },
+          {
+            "title": "3D Stacking Market Size, Share, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/3d-stacking-market",
+            "use": "경쟁 구도 및 시장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ]
+        }
+      },
+      "T04": {
+        "name": "파인형 활성영역 게이트 구조",
+        "market_score": 65.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 3.0,
+          "basis": "FinFET 는 주류 기술로 자리 잡았으나, GAA 로의 전환기에 따라 성장률이 둔화될 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 에 따른 성숙기 시장 전망."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 성숙도 및 성장률 분석"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size to Hit USD 273.84 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-foundry-market",
+            "use": "전체 파운드리 시장 내 FinFET 비중 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        }
+      },
+      "T05": {
+        "name": "스케일링 게이트 길이 제어",
+        "market_score": 78.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 5.0,
+          "basis": "고성능 컴퓨팅 및 AI 칩의 미세 공정 요구로 게이트 길이 제어 기술이 지속적으로 수요됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Wafer Fab Equipment Market Size to Hit USD 33.01 Billion by 2034",
+            "url": "https://www.precedenceresearch.com/semiconductor-wafer-fab-equipment-market",
+            "use": "장비 및 공정 기술 시장 규모"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        }
+      },
+      "T06": {
+        "name": "반도체 제조 공정 자동화 제어",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 4.0,
+          "basis": "공정 복잡도 증가로 인한 자동화 및 AI 기반 제어 수요가 증가하고 있으나, 시장이 성숙 단계에 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 관련 자동화 시장 데이터."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Share And Forecast [2034]",
+            "url": "https://www.imarcgroup.com/semiconductor-foundry-market",
+            "use": "시장 점유율 및 자동화 기술 영향"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/semiconductor-foundry-market",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        }
+      },
+      "T07": {
+        "name": "메탈 게이트 워크함션 재료",
+        "market_score": 58.0,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.5,
+          "basis": "기존 기술이 성숙 단계에 있으며, 새로운 재료 개발은 특정 노드에서 제한적으로 적용됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          },
+          {
+            "title": "Gate-All-Around FET (GAAFET) Technology Market Research Report 2033",
+            "url": "https://dataintelo.com/report/gate-all-around-fet-gaafet-technology-market-report",
+            "use": "GAA 전환기에 따른 재료 기술 변화"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        }
+      },
+      "T08": {
+        "name": "FBAR 필터 패키징 구조",
+        "market_score": 52.0,
+        "expected_market_boom_quarter": "2030 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 5.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 1.0,
+          "basis": "RF 필터 시장은 성장 중이지만, TSMC 의 주력인 로직/패키징 시장과는 차이가 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.5,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 RF 필터 시장 데이터."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 규모 및 성장률 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 5,
+      "top_related_actors": [
+        {
+          "related_actor": "Intel",
+          "similarity": 0.92,
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        },
+        {
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ]
+        },
+        {
+          "related_actor": "GlobalFoundries",
+          "similarity": 0.75,
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        },
+        {
+          "related_actor": "SMIC",
+          "similarity": 0.65,
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        {
+          "related_actor": "UMC",
+          "similarity": 0.15,
+          "shared_technology_areas": [
+            "Biomedical Materials",
+            "Gene Therapy"
+          ]
+        }
+      ]
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 31200000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "GAA 게이트 전극 공차 최적화",
+        "백면 전극 패터닝 및 리세스",
+        "고집적 3D 스택 패키징",
+        "반도체 제조 공정 자동화 제어"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T06"
+      ],
+      "num_items": 4
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "GAA 게이트 전극 공차 최적화",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 4,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 12500000000.0,
+          "tech_budget_rationale": "T01 은 2nm 이하 공정 경쟁의 핵심인 GAA 구조 최적화로, TAM $45B 와 CAGR 24.5% 의 거대 시장 기회를 포착합니다. TSMC 의 전략적 우선순위인 '고급 공정 강화' 및 '원가 우위 유지'를 위해 Intel 과의 치열한 경쟁에서 선제적 투자를 감행해야 하므로, 전체 예산의 약 40% 를 할당하여 기술 성숙도 (TRL 6→8) 를 빠르게 높이고 양산 준비를 마칩니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $45B, SAM $25B 의 거대 시장 규모와 24.5% 의 높은 CAGR 은 AI/모바일 칩 수요 폭증에 따른 GAA 공정 전환기의 명확한 신호입니다. 2027 년 Q2 예상 시장 붐을 고려할 때, 초기 진입 시점의 기술 우위가 시장 점유율 확보에 결정적이며, TSMC 와 Intel 의 독점적 경쟁 구도에서 선점하지 않으면 기회 상실 위험이 큽니다.",
+            "tech_evaluation": "현재 TRL 6 수준으로 양산 전 단계에 있으나, 게이트 전극 공차 최적화는 기술적 불확실성이 높은 (Tech Risk 4) 영역입니다. 그러나 TSMC 는 기존 리드십과 높은 특허 점수 (88.5) 를 바탕으로 Intel 과의 유사성 (0.92) 을 극복할 수 있는 강력한 경쟁 우위 (5) 를 보유하고 있어, 집중 투자를 통해 기술적 장벽을 빠르게 낮출 수 있습니다.",
+            "investment_decision": "시장 성장성 (5), 경쟁 우위 (5), 개발 긴급도 (5) 가 모두 최상위권인 T01 은 Tier 1 로 분류되며, 전체 예산의 40% 를 할당합니다. 이는 2027 년 Q2 시장 붐에 맞춰 3 차년도까지 기술 성숙도를 높여 양산 준비를 완료하고, 후행 기술 (T02, T03) 의 선행 조건을 충족시키기 위한 필수적인 선제적 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2nm 노드 양산을 위한 GAA 게이트 전극 공차 최적화 프로젝트를 즉시 가동하고, Intel 과의 특허 경쟁을 선점하기 위해 R&D 인력 및 설비 투자를 집중해야 합니다.",
+          "rationale": [
+            "TAM $45B 와 CAGR 24.5% 의 거대 시장 성장 잠재력",
+            "2027 년 Q2 시장 붐에 따른 높은 개발 긴급도",
+            "TSMC 의 기존 리드십과 높은 특허 점수 (88.5) 기반 경쟁 우위",
+            "GAA 공정 전환기에 따른 기술적 불확실성 (TRL 6) 해소 필요"
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "백면 전극 패터닝 및 리세스",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 9300000000.0,
+          "tech_budget_rationale": "T02 는 GAA 공정과 결합된 백면 전력망 (BPDN) 기술로, TAM $38B 와 CAGR 22.0% 의 높은 성장성을 보입니다. T01 의 선행 기술 의존도가 높고 TRL 5 로 기술적 위험이 크지만, TSMC 의 원가 우위 확보를 위해 필수적이므로 전체 예산의 약 30% 를 할당하여 T01 과 병행하여 개발을 가속화합니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $38B, SAM $20B 의 시장 규모와 22.0% 의 CAGR 은 고주파/고성능 칩의 필수 요소인 백면 전력망 기술의 급성장을 반영합니다. 2027 년 Q3 예상 시장 붐을 고려할 때, GAA 공정과 결합된 BPDN 기술은 전력 효율성 문제를 해결하는 핵심 요소로 시장 진입 시기가 매우 중요합니다.",
+            "tech_evaluation": "TRL 5 수준으로 기술적 성숙도가 낮고 (Tech Risk 4), T01 의 결과물에 의존하는 선행 조건이 있어 불확실성이 높습니다. 그러나 TSMC 는 Intel 과의 높은 유사성 (0.92) 을 바탕으로 백면 패터닝 및 리세스 기술을 선점하여 경쟁 우위 (5) 를 확보할 수 있는 잠재력을 가지고 있습니다.",
+            "investment_decision": "시장 성장성 (5), 경쟁 우위 (5), 개발 긴급도 (5) 가 모두 높고, T01 과의 시너지 효과가 크므로 Tier 1 로 분류되며, 전체 예산의 30% 를 할당합니다. 이는 2027 년 Q3 시장 붐에 맞춰 T01 과 병행하여 개발을 가속화하고, BPDN 구현을 위한 핵심 기술을 선점하기 위한 필수적인 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "T01 과 병행하여 백면 전극 패터닝 및 리세스 기술 개발을 가속화하고, BPDN 구현을 위한 핵심 장비 및 소재 투자를 집중해야 합니다.",
+          "rationale": [
+            "TAM $38B 와 CAGR 22.0% 의 높은 시장 성장 잠재력",
+            "2027 년 Q3 시장 붐에 따른 높은 개발 긴급도",
+            "TSMC 의 원가 우위 확보를 위한 필수 기술",
+            "T01 과의 높은 시너지 효과 및 선행 조건 의존도"
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "고집적 3D 스택 패키징",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 6200000000.0,
+          "tech_budget_rationale": "T03 은 AI/HPC 시장에서의 3D 패키징 경쟁을 위한 핵심 기술로, TAM $32B 와 CAGR 21.5% 의 높은 성장성을 보입니다. TRL 7 로 기술적 성숙도가 높고 (Tech Risk 3), TSMC 의 CoWoS 등 기존 기술을 바탕으로 경쟁 우위 (5) 를 확보할 수 있어, 전체 예산의 약 20% 를 할당하여 고집적도 구현을 위한 최적화를 진행합니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $32B, SAM $18B 의 시장 규모와 21.5% 의 CAGR 은 AI 가속기 및 HBM 수요 증가로 인한 2.5D/3D 패키징 시장의 급성장을 반영합니다. 2028 년 Q1 예상 시장 붐을 고려할 때, CoWoS 를 넘어선 더 높은 집적도의 스택 구조를 선점하여 시장 점유율을 확대해야 합니다.",
+            "tech_evaluation": "TRL 7 수준으로 기술적 성숙도가 높고 (Tech Risk 3), TSMC 는 CoWoS 등 기존 기술을 바탕으로 Samsung 과의 경쟁에서 우위를 점할 수 있는 강력한 경쟁 우위 (5) 를 보유하고 있습니다. 그러나 고집적도 구현을 위한 추가 최적화가 필요하여 기술적 위험이 완전히 해소되지는 않았습니다.",
+            "investment_decision": "시장 성장성 (5), 경쟁 우위 (5), 기술 성숙도 (4) 가 모두 높고, T01/T02 와의 시너지 효과가 크므로 Tier 1 로 분류되며, 전체 예산의 20% 를 할당합니다. 이는 2028 년 Q1 시장 붐에 맞춰 고집적도 구현을 위한 최적화를 진행하고, Samsung 과의 경쟁에서 우위를 점하기 위한 필수적인 투자입니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "CoWoS 를 넘어선 고집적 3D 스택 패키징 기술 개발을 가속화하고, AI/HPC 시장에서의 경쟁 우위를 확보하기 위한 최적화 투자를 집중해야 합니다.",
+          "rationale": [
+            "TAM $32B 와 CAGR 21.5% 의 높은 시장 성장 잠재력",
+            "2028 년 Q1 시장 붐에 따른 개발 긴급도",
+            "TSMC 의 CoWoS 등 기존 기술을 바탕으로 한 강력한 경쟁 우위",
+            "T01/T02 와의 높은 시너지 효과"
+          ]
+        },
+        {
+          "tech_id": "T06",
+          "name": "반도체 제조 공정 자동화 제어",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 3200000000.0,
+          "tech_budget_rationale": "T06 은 생산 효율성 및 원가 절감을 위한 공정 자동화 기술로, TAM $18B 와 CAGR 14.0% 의 중등도 성장성을 보입니다. TRL 6 로 기술적 성숙도가 중간 수준이며 (Tech Risk 3), TSMC 의 Foundry 시장 점유율 유지에 필수적이지만, T01-T03 에 비해 시장 성장성과 긴급도가 낮아 전체 예산의 약 10% 를 할당하여 단계적 투자를 진행합니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $18B, SAM $10B 의 시장 규모와 14.0% 의 CAGR 은 공정 복잡도 증가로 인한 자동화 및 AI 기반 제어 수요의 증가를 반영합니다. 2029 년 Q1 예상 시장 붐을 고려할 때, AI 기반 제어 기술의 완전한 성숙을 목표로 지속적인 생산 효율성 향상을 위해 투자해야 합니다.",
+            "tech_evaluation": "TRL 6 수준으로 기술적 성숙도가 중간 수준이며 (Tech Risk 3), Intel 과 SMIC 등 경쟁사들의 자동화 특허 출원 추세를 고려할 때, AI 기반의 다중 태스크 제어 기술을 선점해야 합니다. TSMC 는 기존 생산 효율성 및 원가 절감 경험을 바탕으로 경쟁 우위 (4) 를 확보할 수 있습니다.",
+            "investment_decision": "시장 성장성 (3), 경쟁 우위 (4), 기술 성숙도 (3) 가 중등도 수준이며, T01-T03 에 비해 시장 성장성과 긴급도가 낮으므로 Tier 2 로 분류되며, 전체 예산의 10% 를 할당합니다. 이는 2029 년 Q1 시장 붐을 넘어 AI 기반 제어 기술의 완전한 성숙을 목표로 단계적 투자를 진행하기 위한 필수적인 투자입니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "생산 효율성 및 원가 절감을 위한 공정 자동화 기술 개발을 단계적으로 진행하고, AI 기반 제어 기술의 성숙을 위한 지속적인 투자를 해야 합니다.",
+          "rationale": [
+            "TAM $18B 와 CAGR 14.0% 의 중등도 시장 성장 잠재력",
+            "2029 년 Q1 시장 붐에 따른 중등도 개발 긴급도",
+            "TSMC 의 Foundry 시장 점유율 유지를 위한 필수 기술",
+            "Intel 및 SMIC 등 경쟁사들의 자동화 특허 출원 추세"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 31200000000.0
+    }
+  ]
+}

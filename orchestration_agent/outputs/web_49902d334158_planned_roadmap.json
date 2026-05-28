@@ -1,0 +1,526 @@
+{
+  "market_context": {
+    "target_market": "Automotive / Mobility / EV",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "고집적 칩렛 통합 아키텍처",
+        "market_score": 72.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "차량용 SoC 및 자율주행 칩렛 시장 성장 추정 (2030 기준)"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "SDV 및 자율주행 컴퓨팅 수요 증가에 따른 칩렛 아키텍처 채택 확대"
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Chiplet Market Outlook 2030",
+            "url": "https://mock.local/report/chiplet-auto-2030",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution",
+            "Toyota",
+            "Tesla",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "고해상도 SADP 패터닝 공정",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "차량용 반도체 공정 기술 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "고성능 차량용 반도체 수요 증가에 따른 공정 기술 발전"
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Semiconductor Process in Automotive",
+            "url": "https://mock.local/report/sadp-auto",
+            "use": "공정 기술 시장 성장 및 경쟁사 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Samsung SDI",
+            "Toyota",
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "후면 전력망 (BS-PDN) 기술",
+        "market_score": 65.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 5.5,
+          "sam_usd_b": 1.8,
+          "som_usd_b": 0.4,
+          "basis": "차량용 전력망 기술 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2025-2030",
+          "basis": "고효율 전력 관리 수요 증가에 따른 기술 채택 확대"
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Backside Power Delivery in Automotive Chips",
+            "url": "https://mock.local/report/bspdn-auto",
+            "use": "시장 규모 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution",
+            "Toyota"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "2D 소재 기반 차세대 FET",
+        "market_score": 58.0,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 3.0,
+          "sam_usd_b": 1.0,
+          "som_usd_b": 0.2,
+          "basis": "차세대 반도체 소재 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "2D 소재 기반 FET 기술의 초기 시장 진입 단계"
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "2D Material FET Market Outlook",
+            "url": "https://mock.local/report/2d-fet",
+            "use": "시장 성장 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Samsung SDI",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "고밀도 3D 적층 및 하이브리드 본딩",
+        "market_score": 75.0,
+        "expected_market_boom_quarter": "2027 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 10.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.7,
+          "basis": "3D 적층 및 하이브리드 본딩 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "고성능 차량용 반도체 수요 증가에 따른 3D 적층 기술 채택 확대"
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "3D Stacking and Hybrid Bonding in Automotive",
+            "url": "https://mock.local/report/3d-stacking-auto",
+            "use": "시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "LG Energy Solution",
+            "Samsung SDI",
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "고성능 EUV 리소그래피 소스",
+        "market_score": 55.0,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 2.5,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.15,
+          "basis": "EUV 리소그래피 소스 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.0,
+          "forecast_period": "2025-2030",
+          "basis": "EUV 기술의 초기 시장 진입 단계"
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "EUV Lithography Source Market Outlook",
+            "url": "https://mock.local/report/euv-source",
+            "use": "시장 성장 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "실리콘 포토닉스 CPO 기술",
+        "market_score": 78.0,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "실리콘 포토닉스 CPO 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "고속 데이터 전송 수요 증가에 따른 CPO 기술 채택 확대"
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Silicon Photonics CPO Market Outlook",
+            "url": "https://mock.local/report/cpo-auto",
+            "use": "시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "저전력 근접 임계값 컴퓨팅",
+        "market_score": 70.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 9.0,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.6,
+          "basis": "저전력 컴퓨팅 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "저전력 차량용 컴퓨팅 수요 증가에 따른 기술 채택 확대"
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Near-Threshold Computing in Automotive",
+            "url": "https://mock.local/report/near-threshold-auto",
+            "use": "시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Tesla",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T09": {
+        "name": "원자층 식각 (ALE) 공정",
+        "market_score": 62.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 4.0,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.25,
+          "basis": "원자층 식각 공정 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 13.0,
+          "forecast_period": "2025-2030",
+          "basis": "고정밀 공정 기술 수요 증가에 따른 ALE 기술 채택 확대"
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Atomic Layer Etching Market Outlook",
+            "url": "https://mock.local/report/ale-auto",
+            "use": "시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T10": {
+        "name": "고성능 웨이퍼 스케일 AI 가속기",
+        "market_score": 76.0,
+        "expected_market_boom_quarter": "2028 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 11.0,
+          "sam_usd_b": 3.8,
+          "som_usd_b": 0.8,
+          "basis": "웨이퍼 스케일 AI 가속기 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 및 AI 기반 차량 컴퓨팅 수요 증가에 따른 기술 채택 확대"
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Wafer-Scale AI Accelerator Market Outlook",
+            "url": "https://mock.local/report/wafer-ai-auto",
+            "use": "시장 성장 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 7,
+      "top_related_actors": [
+        {
+          "related_actor": "Kia",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Samsung SDI",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Toyota",
+          "similarity": 0.82,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Tesla",
+          "similarity": 0.78,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Volkswagen",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "BYD",
+          "similarity": 0.72,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T04",
+      "name": "2D 소재 기반 차세대 FET",
+      "year_idx_start": 1,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 4 로 가장 낮아 5 년의 장기 개발 기간이 필요하며, 2030 년 이후 차세대 반도체 플랫폼 경쟁력을 확보하기 위해 1 차년도부터 시작하여 5 차년도까지 이어져야 합니다. 시장 붐 시점 (2029 Q2) 을 고려하여 5 차년도까지 기술 성숙도를 높이는 것이 필수적입니다.",
+        "tech_execution": "실리콘 한계를 극복하는 차세대 소재 기술로, 현대차의 장기적인 EV 및 SDV 플랫폼 성능 향상을 위한 핵심 기반 기술입니다. 2030 년 이후의 기술 격차 해소를 위해 초기 단계부터 지속적인 R&D 투자가 필요합니다.",
+        "investment_selection": "시장 성숙도가 낮지만 미래 경쟁력을 결정하는 전략적 기술로, R&D 예산의 일부를 장기 투자 대상으로 선정하여 기술 선점 효과를 극대화해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "고밀도 3D 적층 및 하이브리드 본딩",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 중간 수준이며, T07 과 T01 의 선행 기술로 작용하므로 1 차년도부터 시작하여 3 차년도 (2028 년) 까지 완료해야 후행 기술 개발이 가능합니다. 시장 붐 시점 (2027 Q4) 을 고려하여 3 차년도까지 기술 안정화가 필요합니다.",
+        "tech_execution": "SDV 플랫폼의 성능 향상을 위한 고대역폭 메모리 및 AI 가속기 패키징의 핵심 기술로, 현대차의 소프트웨어 정의 차량 전략에 필수적입니다. 경쟁사들의 기술 집중도를 고려하여 빠른 시일 내에 기술 확보가 필요합니다.",
+        "investment_selection": "시장 성장률이 20% 이상으로 예상되는 핵심 패키징 기술로, R&D 예산을 집중 투자하여 기술 격차를 해소하고 경쟁 우위를 확보해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T07",
+      "name": "실리콘 포토닉스 CPO 기술",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T05"
+      ],
+      "reasoning": {
+        "year_placement": "T05 의 완료 (3 차년도) 를 전제로 하되, 병행 개발을 위해 2 차년도부터 시작하여 4 차년도 (2029 년) 까지 기술 성숙도를 높입니다. 시장 붐 시점 (2027 Q2) 을 고려하여 4 차년도까지 기술 고도화가 필요합니다. [후처리: dependency 보정 — prereq ['T05'] 완료 후로 1차년도 push]",
+        "tech_execution": "자율주행 차량의 초고속 데이터 전송을 위한 핵심 아키텍처로, 기존 전기 신호의 대역폭 한계를 극복하는 기술입니다. 현대차의 SDV 및 자율주행 전략을 위한 필수 기술로 개발이 시급합니다.",
+        "investment_selection": "시장 성장률이 25% 이상으로 예상되는 차세대 데이터 전송 기술로, R&D 예산을 효율적으로 배분하여 기술 선점 효과를 극대화해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "고집적 칩렛 통합 아키텍처",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T05"
+      ],
+      "reasoning": {
+        "year_placement": "T05 의 완료 (3 차년도) 를 전제로 하되, 병행 개발을 위해 2 차년도부터 시작하여 4 차년도 (2029 년) 까지 기술 성숙도를 높입니다. 시장 붐 시점 (2028 Q2) 을 고려하여 4 차년도까지 기술 고도화가 필요합니다. [후처리: dependency 보정 — prereq ['T05'] 완료 후로 1차년도 push]",
+        "tech_execution": "SDV 및 자율주행용 고성능 컴퓨팅 플랫폼의 핵심 기술로, 현대차의 소프트웨어 정의 차량 전략에 필수적인 기술 격차 해소 수단입니다. 경쟁사들의 특허 출원 추세를 고려하여 빠른 시일 내에 기술 확보가 필요합니다.",
+        "investment_selection": "자율주행 및 SDV 플랫폼의 컴퓨팅 성능 요구로 인해 시장이 20% 이상 성장할 것으로 예상되는 핵심 기술로, R&D 예산을 집중 투자하여 기술 격차를 해소하고 경쟁 우위를 확보해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T08",
+      "name": "저전력 근접 임계값 컴퓨팅",
+      "year_idx_start": 2,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 중간 수준이며, T02 의존성은 입력 목록에 없으므로 독립적으로 2 차년도부터 시작하여 4 차년도 (2029 년) 까지 기술 성숙도를 높입니다. 시장 붐 시점 (2028 Q3) 을 고려하여 4 차년도까지 기술 고도화가 필요합니다.",
+        "tech_execution": "EV 및 SDV 의 배터리 효율성을 극대화하는 핵심 아키텍처 기술로, 현대차의 EV 플랫폼 및 차세대 배터리 리더십 확보 전략에 부합합니다. 경쟁사들의 기술 개발 추세를 고려하여 빠른 시일 내에 기술 확보가 필요합니다.",
+        "investment_selection": "차량용 컴퓨팅 효율 향상에 필수적인 기술로 시장 성장률이 18% 이상으로 예상되며, R&D 예산을 효율적으로 배분하여 기술 선점 효과를 극대화해야 합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T04": {
+      "tech_id": "T04",
+      "name": "2D 소재 기반 차세대 FET",
+      "category": "Material",
+      "trl": 4,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2029 Q2"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "고밀도 3D 적층 및 하이브리드 본딩",
+      "category": "Packaging",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [
+        "T07",
+        "T01"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q4"
+    },
+    "T07": {
+      "tech_id": "T07",
+      "name": "실리콘 포토닉스 CPO 기술",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [
+        "T05"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "고집적 칩렛 통합 아키텍처",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [
+        "T05"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q2"
+    },
+    "T08": {
+      "tech_id": "T08",
+      "name": "저전력 근접 임계값 컴퓨팅",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q3"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "현대차의 SDV 및 자율주행 전략 (T01, T07, T05) 과 EV 효율성 (T08) 을 최우선으로 선정. 2027~2029 년 시점 분포를 확보하여 2030 로드맵 완성. 장비/공정 중심의 간접 기술은 제외.",
+    "dropped": [
+      {
+        "tech_id": "T02",
+        "name": "고해상도 SADP 패터닝 공정",
+        "reason": "SADP 는 기존 노드 기술로 SDV 핵심 아키텍처 대비 전략적 우선순위 낮음."
+      },
+      {
+        "tech_id": "T03",
+        "name": "후면 전력망 (BS-PDN) 기술",
+        "reason": "BS-PDN 은 점진적 시장 성장으로 SDV/자율주행 직접 기여도 상대적으로 낮음."
+      },
+      {
+        "tech_id": "T09",
+        "name": "원자층 식각 (ALE) 공정",
+        "reason": "ALE 공정은 HBM 제조에 특화되어 있으나 SDV 플랫폼 전략과 직접 연결성 약함."
+      },
+      {
+        "tech_id": "T06",
+        "name": "고성능 EUV 리소그래피 소스",
+        "reason": "EUV 소스는 장비 기술로 R&D 예산 대비 투자 효율성 낮고 2030 이후 시점."
+      },
+      {
+        "tech_id": "T10",
+        "name": "고성능 웨이퍼 스케일 AI 가속기",
+        "reason": "(selector 미분류 — 안전상 제외)"
+      }
+    ]
+  }
+}

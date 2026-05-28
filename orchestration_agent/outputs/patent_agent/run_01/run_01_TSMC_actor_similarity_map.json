@@ -1,0 +1,66 @@
+[
+  {
+    "center_actor": "TSMC",
+    "related_actor": "Intel",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_technology_areas": [
+      "GAA Process",
+      "Backside PDN",
+      "Metal Gate Structure"
+    ],
+    "basis": "양사 모두 GAA 구조, 백면 패터닝, 금속 게이트 공정 관련 최신 특허를 집중 출원하여 기술적 유사성이 매우 높음.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "TSMC",
+    "related_actor": "Samsung Electronics",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_technology_areas": [
+      "3D Stacking",
+      "FinFET Architecture",
+      "Semiconductor Packaging"
+    ],
+    "basis": "3D 스택 패키징 및 Fin 구조 관련 특허가 양사 모두에서 최근 활발히 출원되어 기술 경쟁이 치열함.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "TSMC",
+    "related_actor": "GlobalFoundries",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_technology_areas": [
+      "Gate Length Scaling",
+      "Metal Gate Materials",
+      "Process Control"
+    ],
+    "basis": "게이트 길이 스케일링 및 금속 게이트 재료 관련 특허를 공유하며, 공정 제어 기술에서도 유사한 접근을 보임.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "TSMC",
+    "related_actor": "SMIC",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_technology_areas": [
+      "FinFET Structure",
+      "FBAR Packaging",
+      "Process Automation"
+    ],
+    "basis": "Fin 구조 및 FBAR 패키징, 공정 자동화 관련 특허를 공유하지만, 최신 미세 공정 기술에서는 격차가 존재함.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "TSMC",
+    "related_actor": "UMC",
+    "similarity": 0.15,
+    "edge_weight": 0.15,
+    "shared_technology_areas": [
+      "Biomedical Materials",
+      "Gene Therapy"
+    ],
+    "basis": "UMC 의 특허 데이터는 반도체 공정과 무관한 바이오/의료 분야 (UMC Utrecht 등) 로 구성되어 있어 기술적 유사성이 매우 낮음.",
+    "evidence_level": "indirect"
+  }
+]

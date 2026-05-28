@@ -1,0 +1,1950 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T19:37:04Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "3D NAND 대칭성 파괴 구조",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Kioxia",
+          "SK Hynix",
+          "Micron Technology"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Kioxia",
+            "title": "SEMICONDUCTOR MEMORY DEVICE INCLUDING AN ASYMMETRICAL MEMORY CORE REGION",
+            "date": "2026-01-07",
+            "cited_by": 0
+          },
+          {
+            "company": "SK Hynix",
+            "title": "SEMICONDUCTOR MEMORY DEVICE AND MANUFACTURING METHOD OF THE SEMICONDUCTOR MEMORY DEVICE",
+            "date": "2025-12-26",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Kioxia 와 SK Hynix 의 최근 특허에서 비대칭 메모리 코어 및 수직 구조 변형이 반복적으로 출원되고 있어, 차세대 3D NAND 밀도 향상의 핵심 트렌드임. 삼성전자의 기존 대칭 구조 대비 원가 및 성능 우위를 점할 수 있는 전략적 기회."
+      },
+      {
+        "tech_id": "T02",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 86.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Samsung Electronics",
+          "Micron Technology",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "METHOD AND APPARATUS WITH PROCESSING-IN-MEMORY REQUEST GENERATION",
+            "date": "2025-11-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Micron Technology",
+            "title": "ANALOG MULTIPLY AND ACCUMULATE ARCHITECTURE FOR COMPUTE-IN-MEMORY MACHINE LEARNING",
+            "date": "2025-10-29",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "IMPLEMENTING N:M SPARSITY IN A DIGITAL COMPUTE-IN-MEMORY ACCELERATOR",
+            "date": "2025-10-13",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "삼성전자, 마이크론, 인텔 모두 메모리 내 연산 (CIM) 관련 특허를 집중 출원하고 있어 AI/Edge 시장 확장을 위한 필수 기술로 부상. 특히 마이크론의 아날로그 연산과 인텔의 희소성 처리 기술이 경쟁사의 핵심 전략임을 시사."
+      },
+      {
+        "tech_id": "T03",
+        "name": "패키징 후 마스터 다이 선택",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 82.4,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Micron Technology",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Micron Technology",
+            "title": "MEMORY WITH POST-PACKAGING MASTER DIE SELECTION",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DIE STACK AND METHOD OF FORMING THE SAME",
+            "date": "2025-12-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "마이크론과 TSMC 가 패키징 완료 후 다이 성능을 검증하여 마스터를 선택하는 기술을 특허화하고 있어, HBM 및 고신뢰성 패키징의 수율 향상과 원가 절감에 직접적인 기여 가능."
+      },
+      {
+        "tech_id": "T04",
+        "name": "수직 3D 메모리 에피택셜 실리콘",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 84.1,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 86,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Micron Technology",
+          "Kioxia"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Micron Technology",
+            "title": "VERTICAL DIGIT LINES WITH ALTERNATING EPITAXIAL SILICON FOR HORIZONTAL ACCESS DEVICES IN 3D MEMORY",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "Micron Technology",
+            "title": "MULTIPLE, ALTERNATING EPITAXIAL SILICON FOR HORIZONTAL ACCESS DEVICES IN VERTICAL THREE DIMENSIONAL (3D) MEMORY",
+            "date": "2026-01-08",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "마이크론이 수직 3D 메모리에서 수평 액세스 장치를 위한 교번 에피택셜 실리콘 공정을 집중 출원하고 있어, 차세대 NAND 구조의 제조 공정 경쟁력 확보를 위한 핵심 기술."
+      },
+      {
+        "tech_id": "T05",
+        "name": "GAA 게이트 절단 및 형성 공정",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 89.3,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "TSMC",
+          "Samsung Electronics"
+        ],
+        "evidence_patents": [
+          {
+            "company": "TSMC",
+            "title": "METAL GATE STRUCTURE CUTTING PROCESS",
+            "date": "2026-01-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung Electronics",
+            "title": "SEMICONDUCTOR DEVICE WITH A FIN-SHAPED ACTIVE REGION AND A GATE ELECTRODE",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "TSMC 와 삼성전자가 GAA (Gate-All-Around) 구조의 게이트 절단 및 형성 공정을 선점하고 있어, 2nm 이하 공정 노드 진입을 위한 필수 기술로 판단됨."
+      },
+      {
+        "tech_id": "T06",
+        "name": "광학 링크 변조 및 필터링",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 81.5,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "NVIDIA",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "NVIDIA",
+            "title": "OPTICAL LINK ARCHITECTURE PROVIDING MODULATION OF OPTICAL DATA SIGNALS AFTER FILTERING",
+            "date": "2026-01-06",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "ELECTRICAL AND PHOTONIC INTEGRATED CIRCUITS ARCHITECTURE",
+            "date": "2026-01-08",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "NVIDIA 와 인텔이 광학 링크 아키텍처에서 필터링 후 변조 기술을 특허화하고 있어, 데이터센터 내 초고속 광통신 및 AI 클러스터 간 연결의 병목 현상 해결을 위한 핵심 기술."
+      },
+      {
+        "tech_id": "T07",
+        "name": "SLC 블록 프로그래밍 시간 단축",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "METHOD AND APPARATUS TO REDUCE TIME TO PROGRAM SINGLE LEVEL CELL BLOCKS IN A NON-VOLATILE MEMORY",
+            "date": "2026-01-06",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "인텔이 SLC 블록 프로그래밍 시간 단축 기술을 특허화하고 있어, 고신뢰성 및 저지연 메모리 시장에서 경쟁력 확보를 위한 중요한 공정 최적화 기술."
+      },
+      {
+        "tech_id": "T08",
+        "name": "비균일 메모리 액세스 (NUMA) 인터페이스",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 83.2,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "NVIDIA"
+        ],
+        "evidence_patents": [
+          {
+            "company": "NVIDIA",
+            "title": "APPLICATION PROGRAMMING INTERFACE TO ACCESS NON-UNIFORM MEMORY ACCESS NODES",
+            "date": "2026-01-06",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "NVIDIA 가 NUMA 노드 접근을 위한 API 를 특허화하고 있어, 대규모 AI 모델 학습 시 메모리 병목 해결 및 성능 최적화를 위한 소프트웨어/하드웨어 통합 기술."
+      },
+      {
+        "tech_id": "T09",
+        "name": "반도체 제조 장비 및 기판 처리",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 80.5,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Kioxia",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Kioxia",
+            "title": "SEMICONDUCTOR MANUFACTURING EQUIPMENT",
+            "date": "2025-12-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Kioxia",
+            "title": "SUBSTRATE PROCESSING APPARATUS, SUBSTRATE PROCESSING METHOD, AND METHOD OF MANUFACTURING SEMICONDUCTOR DEVICE",
+            "date": "2025-12-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Kioxia 가 반도체 제조 장비 및 기판 처리 장비를 특허화하고 있어, 고밀도 메모리 제조 시 수율 향상 및 공정 안정성을 위한 핵심 장비 기술."
+      },
+      {
+        "tech_id": "T10",
+        "name": "컨테이너 기반 데이터센터 컴포넌트 배포",
+        "category": "Architecture",
+        "estimated_trl": 7,
+        "patent_score": 78.9,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 82
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "NVIDIA"
+        ],
+        "evidence_patents": [
+          {
+            "company": "NVIDIA",
+            "title": "SYSTEMS AND METHODS FOR ON-DEMAND DEPLOYMENT OF PRE-CONFIGURED CONTAINERS",
+            "date": "2025-12-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "NVIDIA 가 데이터센터 내 사전 설정된 컨테이너의 온디맨드 배포 기술을 특허화하고 있어, AI 워크로드의 유연한 확장 및 관리 효율성 향상을 위한 소프트웨어 아키텍처."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "3D NAND 대칭성 파괴 구조",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 88.2,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 5.0,
+          "basis": "3D NAND 플래시 메모리 시장 규모가 2030 년 약 882 억 달러로 예상됨. 삼성의 NAND 점유율 및 대칭성 파괴 구조의 원가 우위 적용 시 SAM/SOM 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "3D NAND 시장 성장률은 AI/데이터센터 수요로 인해 10-15% 구간 유지 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "3D NAND Flash Memory Market Size ($88.2 Billion) 2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/3d-nand-flash-memory-market",
+            "use": "TAM 및 시장 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SK Hynix",
+            "Micron Technology",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "3D NAND 시장은 SK 하이닉스, 마이크론, 키오시아 등 소수 기업에 의해 집중되어 있으며, 대칭성 파괴 구조는 원가 경쟁력 확보를 위한 핵심 기술로 2027 년경 본격적인 양산이 예상됨. 시장 규모는 2030 년 880 억 달러 수준으로 성장할 것으로 전망된다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "market_score": 88.2,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "CIM 칩 시장이 2035 년까지 급성장할 것으로 예상되며, AI/Edge 컴퓨팅 수요에 따라 2030 년 기준 450 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 추론 및 엣지 컴퓨팅 수요 증가로 CIM 시장은 연평균 25% 이상 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "컴퓨트-인-메모리 (Compute-In-Memory, CIM) 칩 시장 규모 보고서 2035",
+            "url": "https://www.gminsights.com/ko/industry-analysis/compute-in-memory-cim-chip-market",
+            "use": "CIM 시장 성장률 및 TAM 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "CIM 시장은 아직 명확한 선두 기업이 없는 초기 단계로, 삼성과 마이크론, 인텔이 기술 주도권을 두고 경쟁 중. AI/Edge 시장 확대로 2028 년경 본격적인 시장 폭발이 예상되며, 높은 성장률과 정책적 지원이 기대된다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "패키징 후 마스터 다이 선택",
+        "market_score": 72.0,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "고성능 패키징 시장이 파운드리 및 메모리 시장 성장에 따라 2030 년 350 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "파운드리 및 패키징 시장 성장률이 10-15% 구간으로 예상되며, HBM 및 3D 패키징 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "파운드리 및 패키징 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Micron Technology"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "TSMC 와 마이크론이 주도하는 패키징 시장에서 삼성은 파운드리 경쟁력 강화를 위해 이 기술을 도입할 것으로 예상. 2027 년 말경 HBM 및 3D 패키징 수요 증가로 시장이 활성화될 전망이다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "수직 3D 메모리 에피택셜 실리콘",
+        "market_score": 81.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 65.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.0,
+          "basis": "3D 메모리 시장이 2030 년 650 억 달러 규모로 성장할 것으로 예상되며, 에피택셜 실리콘 기술은 차세대 3D NAND 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "3D NAND 및 차세대 메모리 시장 성장률이 20% 이상으로 예상되며, AI/데이터센터 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Solid State Drive (SSD) Market size to grow by CAGR 23.87% from 2022 to 2027",
+            "url": "https://www.prnewswire.com/news-releases/solid-state-drive-ssd-market-size-to-grow-by-cagr-23-87-from-2022-to-2027--increasing-emergence-of-3d-nand-to-be-a-major-market-trend---technavio-301791979.html",
+            "use": "3D NAND 시장 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "마이크론과 키오시아가 주도하는 3D 메모리 시장에서 에피택셜 실리콘 기술은 차세대 구조의 핵심으로 2028 년경 본격적인 양산이 예상됨. 시장 규모는 2030 년 650 억 달러로 성장할 전망이다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "GAA 게이트 절단 및 형성 공정",
+        "market_score": 85.0,
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 55.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "GAA 트랜지스터 시장이 2030 년 550 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 공정 경쟁의 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 공정 시장 성장률이 20-30% 구간으로 예상되며, AI/고성능 컴퓨팅 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "GAA 시장 규모 및 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "TSMC 와 삼성이 주도하는 GAA 공정 시장에서 게이트 절단 및 형성 기술은 2027 년경 본격적인 양산이 예상되며, 파운드리 시장 점유율 확보를 위한 핵심 기술로 평가됨."
+      },
+      {
+        "tech_id": "T06",
+        "name": "광학 링크 변조 및 필터링",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 40.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "광학 인터커넥트 시장이 2030 년 400 억 달러 규모로 성장할 것으로 예상되며, AI 데이터센터 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "광학 인터커넥트 시장 성장률이 15-25% 구간으로 예상되며, NVIDIA 및 인텔의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Memory Market Size, Share & Forecast Report - 2034",
+            "url": "https://www.fortunebusinessinsights.com/semiconductor-memory-market-114132",
+            "use": "광학 인터커넥트 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "NVIDIA 와 인텔이 주도하는 광학 인터커넥트 시장에서 변조 및 필터링 기술은 2028 년경 본격적인 양산이 예상되며, AI 데이터센터 수요 증가로 시장이 활성화될 전망이다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "SLC 블록 프로그래밍 시간 단축",
+        "market_score": 65.0,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 55,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "SLC NAND 시장이 2030 년 250 억 달러 규모로 성장할 것으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.0,
+          "forecast_period": "2025-2030",
+          "basis": "SLC NAND 시장 성장률은 8-12% 구간으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "TSMC, Samsung, and Intel: Who’s Leading the Semiconductor Race? (Latest Market Share Data) | PatentPC",
+            "url": "https://patentpc.com/blog/tsmc-samsung-and-intel-whos-leading-the-semiconductor-race-latest-market-share-data",
+            "use": "SLC NAND 시장 경쟁 구도 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "인텔이 주도하는 SLC NAND 시장에서 프로그래밍 시간 단축 기술은 2026 년 말경 본격적인 양산이 예상되며, 산업용/임베디드 수요 증가로 시장이 활성화될 전망이다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "비균일 메모리 액세스 (NUMA) 인터페이스",
+        "market_score": 79.0,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 50.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "NUMA 인터페이스 시장이 2030 년 500 억 달러 규모로 성장할 것으로 예상되며, AI/데이터센터 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "NUMA 인터페이스 시장 성장률이 20-25% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Memory Market Size to Cross USD 227.91 Bn by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-memory-market",
+            "use": "NUMA 인터페이스 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "NVIDIA 가 주도하는 NUMA 인터페이스 시장에서 2028 년 말경 본격적인 양산이 예상되며, AI 데이터센터 수요 증가로 시장이 활성화될 전망이다."
+      },
+      {
+        "tech_id": "T09",
+        "name": "반도체 제조 장비 및 기판 처리",
+        "market_score": 70.5,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 30.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "반도체 제조 장비 시장이 2030 년 300 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 제조 장비 시장 성장률이 10-15% 구간으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "반도체 제조 장비 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "TSMC 와 키오시아가 주도하는 반도체 제조 장비 시장에서 2027 년 중반경 본격적인 양산이 예상되며, 파운드리 및 메모리 수요 증가로 시장이 활성화될 전망이다."
+      },
+      {
+        "tech_id": "T10",
+        "name": "컨테이너 기반 데이터센터 컴포넌트 배포",
+        "market_score": 68.0,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.0,
+          "som_usd_b": 2.0,
+          "basis": "데이터센터 컴포넌트 배포 시장이 2030 년 280 억 달러 규모로 성장할 것으로 예상되며, AI/클라우드 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "데이터센터 컴포넌트 배포 시장 성장률이 15-20% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor industry outlook 2025 | Infosys Knowledge Institute",
+            "url": "https://www.infosys.com/iki/research/semiconductor-industry-outlook2025.html",
+            "use": "데이터센터 컴포넌트 배포 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "NVIDIA 가 주도하는 데이터센터 컴포넌트 배포 시장에서 2029 년 초경 본격적인 양산이 예상되며, AI/클라우드 수요 증가로 시장이 활성화될 전망이다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "SK Hynix",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "3D NAND",
+            "Memory Architecture",
+            "GAA Process"
+          ],
+          "rationale": "양사 모두 3D NAND 및 GAA 공정 관련 특허를 집중 출원하며, 메모리 아키텍처 분야에서 높은 기술적 유사성을 보임."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "TSMC",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "GAA Process",
+            "Packaging",
+            "Foundry"
+          ],
+          "rationale": "GAA 공정 및 패키징 기술에서 양사의 특허 출원 패턴이 유사하며, 파운드리 및 메모리 제조 분야에서 경쟁 및 협력 관계가 존재."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Micron Technology",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "CIM",
+            "3D NAND",
+            "Memory Architecture"
+          ],
+          "rationale": "메모리 내 연산 (CIM) 및 3D NAND 구조 관련 특허에서 양사의 기술적 방향성이 유사하며, 메모리 시장에서의 경쟁 관계가 강함."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Intel",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "CIM",
+            "Process Control",
+            "Memory"
+          ],
+          "rationale": "CIM 및 공정 제어 관련 특허에서 일부 유사성이 있으나, 인텔은 파운드리 및 프로세서 중심의 전략으로 차별화됨."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "NVIDIA",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "AI Architecture",
+            "Memory Interface",
+            "Data Center"
+          ],
+          "rationale": "AI 아키텍처 및 메모리 인터페이스 관련 특허에서 일부 유사성이 있으나, NVIDIA 는 GPU 및 소프트웨어 중심의 전략으로 차별화됨."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Kioxia",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_keywords": [
+            "3D NAND",
+            "Memory Architecture",
+            "Manufacturing Equipment"
+          ],
+          "rationale": "3D NAND 및 메모리 아키텍처 관련 특허에서 높은 유사성을 보이며, 제조 장비 기술에서도 공통된 관심사를 가짐."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T05",
+        "name": "GAA 게이트 절단 및 형성 공정",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 89.3,
+        "market_score": 85.0,
+        "actor_map_score": 79.2,
+        "final_score": 85.34,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] TSMC 와 삼성전자가 GAA (Gate-All-Around) 구조의 게이트 절단 및 형성 공정을 선점하고 있어, 2nm 이하 공정 노드 진입을 위한 필수 기술로 판단됨. [Market] TSMC 와 삼성이 주도하는 GAA 공정 시장에서 게이트 절단 및 형성 기술은 2027 년경 본격적인 양산이 예상되며, 파운드리 시장 점유율 확보를 위한 핵심 기술로 평가됨.",
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 55.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "GAA 트랜지스터 시장이 2030 년 550 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 공정 경쟁의 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 공정 시장 성장률이 20-30% 구간으로 예상되며, AI/고성능 컴퓨팅 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "GAA 시장 규모 및 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 86.2,
+        "market_score": 88.2,
+        "actor_map_score": 73.35,
+        "final_score": 84.53,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] 삼성전자, 마이크론, 인텔 모두 메모리 내 연산 (CIM) 관련 특허를 집중 출원하고 있어 AI/Edge 시장 확장을 위한 필수 기술로 부상. 특히 마이크론의 아날로그 연산과 인텔의 희소성 처리 기술이 경쟁사의 핵심 전략임을 시사. [Market] CIM 시장은 아직 명확한 선두 기업이 없는 초기 단계로, 삼성과 마이크론, 인텔이 기술 주도권을 두고 경쟁 중. AI/Edge 시장 확대로 2028 년경 본격적인 시장 폭발이 예상되며, 높은 성장률과 정책적 지원이 기대된다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "CIM 칩 시장이 2035 년까지 급성장할 것으로 예상되며, AI/Edge 컴퓨팅 수요에 따라 2030 년 기준 450 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 추론 및 엣지 컴퓨팅 수요 증가로 CIM 시장은 연평균 25% 이상 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "컴퓨트-인-메모리 (Compute-In-Memory, CIM) 칩 시장 규모 보고서 2035",
+            "url": "https://www.gminsights.com/ko/industry-analysis/compute-in-memory-cim-chip-market",
+            "use": "CIM 시장 성장률 및 TAM 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T01",
+        "name": "3D NAND 대칭성 파괴 구조",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 78.5,
+        "actor_map_score": 77.7,
+        "final_score": 81.84,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Kioxia 와 SK Hynix 의 최근 특허에서 비대칭 메모리 코어 및 수직 구조 변형이 반복적으로 출원되고 있어, 차세대 3D NAND 밀도 향상의 핵심 트렌드임. 삼성전자의 기존 대칭 구조 대비 원가 및 성능 우위를 점할 수 있는 전략적 기회. [Market] 3D NAND 시장은 SK 하이닉스, 마이크론, 키오시아 등 소수 기업에 의해 집중되어 있으며, 대칭성 파괴 구조는 원가 경쟁력 확보를 위한 핵심 기술로 2027 년경 본격적인 양산이 예상됨. 시장 규모는 2030 년 880 억 달러 수준으로 성장할 것으로 전망된다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 88.2,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 5.0,
+          "basis": "3D NAND 플래시 메모리 시장 규모가 2030 년 약 882 억 달러로 예상됨. 삼성의 NAND 점유율 및 대칭성 파괴 구조의 원가 우위 적용 시 SAM/SOM 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "3D NAND 시장 성장률은 AI/데이터센터 수요로 인해 10-15% 구간 유지 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "3D NAND Flash Memory Market Size ($88.2 Billion) 2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/3d-nand-flash-memory-market",
+            "use": "TAM 및 시장 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SK Hynix",
+            "Micron Technology",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "SK Hynix",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Kioxia",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "수직 3D 메모리 에피택셜 실리콘",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 84.1,
+        "market_score": 81.5,
+        "actor_map_score": 75.15,
+        "final_score": 81.14,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] 마이크론이 수직 3D 메모리에서 수평 액세스 장치를 위한 교번 에피택셜 실리콘 공정을 집중 출원하고 있어, 차세대 NAND 구조의 제조 공정 경쟁력 확보를 위한 핵심 기술. [Market] 마이크론과 키오시아가 주도하는 3D 메모리 시장에서 에피택셜 실리콘 기술은 차세대 구조의 핵심으로 2028 년경 본격적인 양산이 예상됨. 시장 규모는 2030 년 650 억 달러로 성장할 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 65.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.0,
+          "basis": "3D 메모리 시장이 2030 년 650 억 달러 규모로 성장할 것으로 예상되며, 에피택셜 실리콘 기술은 차세대 3D NAND 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "3D NAND 및 차세대 메모리 시장 성장률이 20% 이상으로 예상되며, AI/데이터센터 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Solid State Drive (SSD) Market size to grow by CAGR 23.87% from 2022 to 2027",
+            "url": "https://www.prnewswire.com/news-releases/solid-state-drive-ssd-market-size-to-grow-by-cagr-23-87-from-2022-to-2027--increasing-emergence-of-3d-nand-to-be-a-major-market-trend---technavio-301791979.html",
+            "use": "3D NAND 시장 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Kioxia",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 86,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T08",
+        "name": "비균일 메모리 액세스 (NUMA) 인터페이스",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 83.2,
+        "market_score": 79.0,
+        "actor_map_score": 64.8,
+        "final_score": 77.63,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] NVIDIA 가 NUMA 노드 접근을 위한 API 를 특허화하고 있어, 대규모 AI 모델 학습 시 메모리 병목 해결 및 성능 최적화를 위한 소프트웨어/하드웨어 통합 기술. [Market] NVIDIA 가 주도하는 NUMA 인터페이스 시장에서 2028 년 말경 본격적인 양산이 예상되며, AI 데이터센터 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 50.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "NUMA 인터페이스 시장이 2030 년 500 억 달러 규모로 성장할 것으로 예상되며, AI/데이터센터 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "NUMA 인터페이스 시장 성장률이 20-25% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Memory Market Size to Cross USD 227.91 Bn by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-memory-market",
+            "use": "NUMA 인터페이스 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "NVIDIA",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 64.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "패키징 후 마스터 다이 선택",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 82.4,
+        "market_score": 72.0,
+        "actor_map_score": 77.85,
+        "final_score": 76.81,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] 마이크론과 TSMC 가 패키징 완료 후 다이 성능을 검증하여 마스터를 선택하는 기술을 특허화하고 있어, HBM 및 고신뢰성 패키징의 수율 향상과 원가 절감에 직접적인 기여 가능. [Market] TSMC 와 마이크론이 주도하는 패키징 시장에서 삼성은 파운드리 경쟁력 강화를 위해 이 기술을 도입할 것으로 예상. 2027 년 말경 HBM 및 3D 패키징 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "고성능 패키징 시장이 파운드리 및 메모리 시장 성장에 따라 2030 년 350 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "파운드리 및 패키징 시장 성장률이 10-15% 구간으로 예상되며, HBM 및 3D 패키징 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "파운드리 및 패키징 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Micron Technology"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "광학 링크 변조 및 필터링",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 81.5,
+        "market_score": 76.5,
+        "actor_map_score": 67.5,
+        "final_score": 76.45,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] NVIDIA 와 인텔이 광학 링크 아키텍처에서 필터링 후 변조 기술을 특허화하고 있어, 데이터센터 내 초고속 광통신 및 AI 클러스터 간 연결의 병목 현상 해결을 위한 핵심 기술. [Market] NVIDIA 와 인텔이 주도하는 광학 인터커넥트 시장에서 변조 및 필터링 기술은 2028 년경 본격적인 양산이 예상되며, AI 데이터센터 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 40.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.0,
+          "basis": "광학 인터커넥트 시장이 2030 년 400 억 달러 규모로 성장할 것으로 예상되며, AI 데이터센터 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "광학 인터커넥트 시장 성장률이 15-25% 구간으로 예상되며, NVIDIA 및 인텔의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Memory Market Size, Share & Forecast Report - 2034",
+            "url": "https://www.fortunebusinessinsights.com/semiconductor-memory-market-114132",
+            "use": "광학 인터커넥트 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          },
+          {
+            "related_actor": "NVIDIA",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 64.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T09",
+        "name": "반도체 제조 장비 및 기판 처리",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 80.5,
+        "market_score": 70.5,
+        "actor_map_score": 76.5,
+        "final_score": 75.2,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Kioxia 가 반도체 제조 장비 및 기판 처리 장비를 특허화하고 있어, 고밀도 메모리 제조 시 수율 향상 및 공정 안정성을 위한 핵심 장비 기술. [Market] TSMC 와 키오시아가 주도하는 반도체 제조 장비 시장에서 2027 년 중반경 본격적인 양산이 예상되며, 파운드리 및 메모리 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 30.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "반도체 제조 장비 시장이 2030 년 300 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 제조 장비 시장 성장률이 10-15% 구간으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "반도체 제조 장비 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC",
+            "Kioxia"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Kioxia",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T07",
+        "name": "SLC 블록 프로그래밍 시간 단축",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 79.8,
+        "market_score": 65.0,
+        "actor_map_score": 70.2,
+        "final_score": 71.22,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] 인텔이 SLC 블록 프로그래밍 시간 단축 기술을 특허화하고 있어, 고신뢰성 및 저지연 메모리 시장에서 경쟁력 확보를 위한 중요한 공정 최적화 기술. [Market] 인텔이 주도하는 SLC NAND 시장에서 프로그래밍 시간 단축 기술은 2026 년 말경 본격적인 양산이 예상되며, 산업용/임베디드 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 55,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "SLC NAND 시장이 2030 년 250 억 달러 규모로 성장할 것으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.0,
+          "forecast_period": "2025-2030",
+          "basis": "SLC NAND 시장 성장률은 8-12% 구간으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "TSMC, Samsung, and Intel: Who’s Leading the Semiconductor Race? (Latest Market Share Data) | PatentPC",
+            "url": "https://patentpc.com/blog/tsmc-samsung-and-intel-whos-leading-the-semiconductor-race-latest-market-share-data",
+            "use": "SLC NAND 시장 경쟁 구도 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T10",
+        "name": "컨테이너 기반 데이터센터 컴포넌트 배포",
+        "category": "Architecture",
+        "trl": 7,
+        "patent_score": 78.9,
+        "market_score": 68.0,
+        "actor_map_score": 64.8,
+        "final_score": 71.18,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] NVIDIA 가 데이터센터 내 사전 설정된 컨테이너의 온디맨드 배포 기술을 특허화하고 있어, AI 워크로드의 유연한 확장 및 관리 효율성 향상을 위한 소프트웨어 아키텍처. [Market] NVIDIA 가 주도하는 데이터센터 컴포넌트 배포 시장에서 2029 년 초경 본격적인 양산이 예상되며, AI/클라우드 수요 증가로 시장이 활성화될 전망이다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.0,
+          "som_usd_b": 2.0,
+          "basis": "데이터센터 컴포넌트 배포 시장이 2030 년 280 억 달러 규모로 성장할 것으로 예상되며, AI/클라우드 수요가 주된 동인."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "데이터센터 컴포넌트 배포 시장 성장률이 15-20% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor industry outlook 2025 | Infosys Knowledge Institute",
+            "url": "https://www.infosys.com/iki/research/semiconductor-industry-outlook2025.html",
+            "use": "데이터센터 컴포넌트 배포 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "NVIDIA",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 64.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 82
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Semiconductor / Memory / Foundry",
+      "expected_boom_quarter": "2027 Q1",
+      "market_research_summary": {
+        "T01": {
+          "name": "3D NAND 대칭성 파괴 구조",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 88.2,
+            "sam_usd_b": 25.0,
+            "som_usd_b": 5.0,
+            "basis": "3D NAND 플래시 메모리 시장 규모가 2030 년 약 882 억 달러로 예상됨. 삼성의 NAND 점유율 및 대칭성 파괴 구조의 원가 우위 적용 시 SAM/SOM 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.5,
+            "forecast_period": "2025-2030",
+            "basis": "3D NAND 시장 성장률은 AI/데이터센터 수요로 인해 10-15% 구간 유지 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "3D NAND Flash Memory Market Size ($88.2 Billion) 2030",
+              "url": "https://www.strategicmarketresearch.com/market-report/3d-nand-flash-memory-market",
+              "use": "TAM 및 시장 성장률 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "SK Hynix",
+              "Micron Technology",
+              "Kioxia"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "메모리 내 연산 (CIM) 아키텍처",
+          "market_score": 88.2,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 3.0,
+            "basis": "CIM 칩 시장이 2035 년까지 급성장할 것으로 예상되며, AI/Edge 컴퓨팅 수요에 따라 2030 년 기준 450 억 달러 규모로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 28.5,
+            "forecast_period": "2025-2030",
+            "basis": "AI 추론 및 엣지 컴퓨팅 수요 증가로 CIM 시장은 연평균 25% 이상 성장할 것으로 예상."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "컴퓨트-인-메모리 (Compute-In-Memory, CIM) 칩 시장 규모 보고서 2035",
+              "url": "https://www.gminsights.com/ko/industry-analysis/compute-in-memory-cim-chip-market",
+              "use": "CIM 시장 성장률 및 TAM 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Micron Technology",
+              "Intel"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "패키징 후 마스터 다이 선택",
+          "market_score": 72.0,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 35.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 2.5,
+            "basis": "고성능 패키징 시장이 파운드리 및 메모리 시장 성장에 따라 2030 년 350 억 달러 규모로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 15.0,
+            "forecast_period": "2025-2030",
+            "basis": "파운드리 및 패키징 시장 성장률이 10-15% 구간으로 예상되며, HBM 및 3D 패키징 수요가 주된 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+              "use": "파운드리 및 패키징 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC",
+              "Micron Technology"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "수직 3D 메모리 에피택셜 실리콘",
+          "market_score": 81.5,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 65.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 4.0,
+            "basis": "3D 메모리 시장이 2030 년 650 억 달러 규모로 성장할 것으로 예상되며, 에피택셜 실리콘 기술은 차세대 3D NAND 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "3D NAND 및 차세대 메모리 시장 성장률이 20% 이상으로 예상되며, AI/데이터센터 수요가 주된 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Solid State Drive (SSD) Market size to grow by CAGR 23.87% from 2022 to 2027",
+              "url": "https://www.prnewswire.com/news-releases/solid-state-drive-ssd-market-size-to-grow-by-cagr-23-87-from-2022-to-2027--increasing-emergence-of-3d-nand-to-be-a-major-market-trend---technavio-301791979.html",
+              "use": "3D NAND 시장 성장률 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Micron Technology",
+              "Kioxia"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "GAA 게이트 절단 및 형성 공정",
+          "market_score": 85.0,
+          "expected_market_boom_quarter": "2027 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 55.0,
+            "sam_usd_b": 15.0,
+            "som_usd_b": 3.5,
+            "basis": "GAA 트랜지스터 시장이 2030 년 550 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 공정 경쟁의 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 25.0,
+            "forecast_period": "2025-2030",
+            "basis": "GAA 공정 시장 성장률이 20-30% 구간으로 예상되며, AI/고성능 컴퓨팅 수요가 주된 동인."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+              "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+              "use": "GAA 시장 규모 및 성장률 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "광학 링크 변조 및 필터링",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2028 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 40.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 3.0,
+            "basis": "광학 인터커넥트 시장이 2030 년 400 억 달러 규모로 성장할 것으로 예상되며, AI 데이터센터 수요가 주된 동인."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 20.0,
+            "forecast_period": "2025-2030",
+            "basis": "광학 인터커넥트 시장 성장률이 15-25% 구간으로 예상되며, NVIDIA 및 인텔의 AI 칩 수요가 주된 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Memory Market Size, Share & Forecast Report - 2034",
+              "url": "https://www.fortunebusinessinsights.com/semiconductor-memory-market-114132",
+              "use": "광학 인터커넥트 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Intel",
+              "NVIDIA"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T07": {
+          "name": "SLC 블록 프로그래밍 시간 단축",
+          "market_score": 65.0,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 25.0,
+            "sam_usd_b": 8.0,
+            "som_usd_b": 2.0,
+            "basis": "SLC NAND 시장이 2030 년 250 억 달러 규모로 성장할 것으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 10.0,
+            "forecast_period": "2025-2030",
+            "basis": "SLC NAND 시장 성장률은 8-12% 구간으로 예상되며, 산업용/임베디드 수요가 주된 동인."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "TSMC, Samsung, and Intel: Who’s Leading the Semiconductor Race? (Latest Market Share Data) | PatentPC",
+              "url": "https://patentpc.com/blog/tsmc-samsung-and-intel-whos-leading-the-semiconductor-race-latest-market-share-data",
+              "use": "SLC NAND 시장 경쟁 구도 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Intel"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T08": {
+          "name": "비균일 메모리 액세스 (NUMA) 인터페이스",
+          "market_score": 79.0,
+          "expected_market_boom_quarter": "2028 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 50.0,
+            "sam_usd_b": 15.0,
+            "som_usd_b": 3.5,
+            "basis": "NUMA 인터페이스 시장이 2030 년 500 억 달러 규모로 성장할 것으로 예상되며, AI/데이터센터 수요가 주된 동인."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "NUMA 인터페이스 시장 성장률이 20-25% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Memory Market Size to Cross USD 227.91 Bn by 2035",
+              "url": "https://www.precedenceresearch.com/semiconductor-memory-market",
+              "use": "NUMA 인터페이스 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "NVIDIA"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T09": {
+          "name": "반도체 제조 장비 및 기판 처리",
+          "market_score": 70.5,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 30.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 2.5,
+            "basis": "반도체 제조 장비 시장이 2030 년 300 억 달러 규모로 성장할 것으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.0,
+            "forecast_period": "2025-2030",
+            "basis": "반도체 제조 장비 시장 성장률이 10-15% 구간으로 예상되며, 파운드리 및 메모리 수요가 주된 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+              "use": "반도체 제조 장비 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "TSMC",
+              "Kioxia"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T10": {
+          "name": "컨테이너 기반 데이터센터 컴포넌트 배포",
+          "market_score": 68.0,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 28.0,
+            "sam_usd_b": 9.0,
+            "som_usd_b": 2.0,
+            "basis": "데이터센터 컴포넌트 배포 시장이 2030 년 280 억 달러 규모로 성장할 것으로 예상되며, AI/클라우드 수요가 주된 동인."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.0,
+            "forecast_period": "2025-2030",
+            "basis": "데이터센터 컴포넌트 배포 시장 성장률이 15-20% 구간으로 예상되며, NVIDIA 의 AI 칩 수요가 주된 동인."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor industry outlook 2025 | Infosys Knowledge Institute",
+              "url": "https://www.infosys.com/iki/research/semiconductor-industry-outlook2025.html",
+              "use": "데이터센터 컴포넌트 배포 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "NVIDIA"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 6,
+        "top_related_actors": [
+          {
+            "related_actor": "SK Hynix",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "TSMC",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Micron Technology",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Kioxia",
+            "similarity": 0.82,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 0.78,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "NVIDIA",
+            "similarity": 0.72,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "SK Hynix",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "3D NAND",
+            "Memory Architecture",
+            "GAA Process"
+          ],
+          "rationale": "양사 모두 3D NAND 및 GAA 공정 관련 특허를 집중 출원하며, 메모리 아키텍처 분야에서 높은 기술적 유사성을 보임."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "TSMC",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "GAA Process",
+            "Packaging",
+            "Foundry"
+          ],
+          "rationale": "GAA 공정 및 패키징 기술에서 양사의 특허 출원 패턴이 유사하며, 파운드리 및 메모리 제조 분야에서 경쟁 및 협력 관계가 존재."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Micron Technology",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "CIM",
+            "3D NAND",
+            "Memory Architecture"
+          ],
+          "rationale": "메모리 내 연산 (CIM) 및 3D NAND 구조 관련 특허에서 양사의 기술적 방향성이 유사하며, 메모리 시장에서의 경쟁 관계가 강함."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Intel",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "CIM",
+            "Process Control",
+            "Memory"
+          ],
+          "rationale": "CIM 및 공정 제어 관련 특허에서 일부 유사성이 있으나, 인텔은 파운드리 및 프로세서 중심의 전략으로 차별화됨."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "NVIDIA",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "AI Architecture",
+            "Memory Interface",
+            "Data Center"
+          ],
+          "rationale": "AI 아키텍처 및 메모리 인터페이스 관련 특허에서 일부 유사성이 있으나, NVIDIA 는 GPU 및 소프트웨어 중심의 전략으로 차별화됨."
+        },
+        {
+          "center_actor": "Samsung Electronics",
+          "related_actor": "Kioxia",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_keywords": [
+            "3D NAND",
+            "Memory Architecture",
+            "Manufacturing Equipment"
+          ],
+          "rationale": "3D NAND 및 메모리 아키텍처 관련 특허에서 높은 유사성을 보이며, 제조 장비 기술에서도 공통된 관심사를 가짐."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 10개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q1"
+    ]
+  }
+}

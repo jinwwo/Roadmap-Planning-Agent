@@ -1,0 +1,30 @@
+{
+  "scenario_id": "tsmc_semi_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: TSMC\nIndustry: Semiconductor / Foundry\nAnnual Revenue: ~$124B (FY2025: NT$3.81T)\nR&D Budget Ratio: ~6.5%\nAnnual R&D Budget: ~$8.0B (FY2025: NT$246B)\nTotal 5-year R&D Budget: ~$31.2B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "TSMC",
+    "industry": "Semiconductor / Foundry",
+    "annual_revenue": 124000000000.0,
+    "rd_budget_ratio": 0.065,
+    "annual_rd_budget": 8000000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "검증된 기술 확대와 원가 우위를 통해 단기 상용화 및 매출/마진 성장을 극대화한다.",
+    "strategic_direction": [
+      "Foundry 시장 점유율 및 원가 우위 유지",
+      "AI/고성능 컴퓨팅 (HPC) 시장 확장",
+      "고급 공정 (3nm/2nm) 및 패키징 기술 강화"
+    ],
+    "domain": "Semiconductor / Foundry",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 31200000000
+}

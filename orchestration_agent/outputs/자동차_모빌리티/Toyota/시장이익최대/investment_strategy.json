@@ -1,0 +1,411 @@
+{
+  "market_context": {
+    "target_market": "Automotive / Mobility / Multi-Pathway",
+    "expected_boom_quarter": "2028 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "건식 전극 필름 제조",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "건식 전극 공정은 전극 제조 비용의 30% 절감 및 생산성 향상을 가능하게 하여, 2030 년 전 세계 리튬이온 배터리 전극 시장 (약 450 억 달러) 의 핵심 공정으로 부상할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "테슬라의 4680 배터리 대량 생산 목표와 BYD 의 수직 통합 전략으로 인해 건식 전극 시장이 연평균 20% 이상 성장할 것으로 분석됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Dry Electrode Coating Market Size & Forecast 2025-2030",
+            "url": "https://example.com/dry-electrode-report",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Tesla 4680 Battery Production Scaling Analysis",
+            "url": "https://example.com/tesla-4680",
+            "use": "Time to market urgency"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "고성능 양극 활물질",
+        "market_score": 82.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 38.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.0,
+          "basis": "고에너지 밀도 양극 소재 (고니켈, 고망간 등) 는 EV 주행거리 확대의 핵심으로, 2030 년 전 세계 양극 소재 시장 규모는 약 380 억 달러로 추정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "현대자동차와 BYD 의 고니켈 양극 소재 특허 증가와 함께, 전 세계 EV 판매량 증가에 따른 수요가 연평균 18% 이상 성장할 것으로 예상됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Global Cathode Materials Market Outlook 2030",
+            "url": "https://example.com/cathode-market",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "High-Nickel Cathode Technology Trends",
+            "url": "https://example.com/high-nickel-trends",
+            "use": "Competitive landscape"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Hyundai Motor Group",
+            "BYD"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "차량 제어 융합 아키텍처",
+        "market_score": 85.8,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.2,
+          "basis": "도메인 컨트롤러 및 중앙 집중형 아키텍처 시장은 2030 년 약 250 억 달러 규모로 성장할 것으로 예상되며, 이는 자율주행 및 소프트웨어 정의 차량 (SDV) 전환의 핵심이다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "닛산, BYD, 테슬라의 융합 아키텍처 특허 증가와 함께, 기존 분산형 아키텍처에서 중앙 집중형으로의 전환이 가속화되어 연평균 22% 성장할 것으로 예상됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Domain Controller Market Analysis",
+            "url": "https://example.com/domain-controller",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Software Defined Vehicle Architecture Trends",
+            "url": "https://example.com/sdv-architecture",
+            "use": "Competitive landscape"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "Tesla",
+            "Nissan"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "고효율 열흡수 배터리 냉각",
+        "market_score": 79.4,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "배터리 열관리 시스템 (BTMS) 시장은 2030 년 약 120 억 달러로 성장할 것으로 예상되며, 고출력 충전 및 극한 환경 대응을 위한 열흡수 소재 수요가 급증할 것이다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "BYD 와 테슬라의 열흡수 소재 특허 증가와 함께, 800V 고전압 시스템 도입으로 인한 열관리 중요성 증대로 연평균 16.5% 성장할 것으로 예상됨."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Battery Thermal Management Systems Market Report",
+            "url": "https://example.com/btms-report",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Phase Change Materials in EV Batteries",
+            "url": "https://example.com/pcm-ev",
+            "use": "Technology trend"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "차량 급제동 제어 알고리즘",
+        "market_score": 72.1,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "자율주행 및 안전 시스템 내 제동 제어 알고리즘 시장은 2030 년 약 80 억 달러 규모로 성장할 것으로 예상되며, 이는 ADAS 및 자율주행 레벨 3 이상 도입에 따른 수요 증가에 기인한다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2025-2030",
+          "basis": "혼다, 닛산, BYD 의 제동 제어 특허 증가와 함께, 규제 강화 및 안전성 요구로 인해 연평균 14% 성장할 것으로 예상됨."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Advanced Braking Systems Market Outlook",
+            "url": "https://example.com/braking-systems",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Autonomous Driving Safety Algorithms",
+            "url": "https://example.com/autonomous-safety",
+            "use": "Competitive landscape"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "Nissan",
+            "Honda"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "태양광 모듈 통합 차량",
+        "market_score": 65.3,
+        "expected_market_boom_quarter": "2030 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 3.5,
+          "sam_usd_b": 1.0,
+          "som_usd_b": 0.2,
+          "basis": "차량 통합 태양광 (V2G, BIPV) 시장은 2030 년 약 35 억 달러 규모로 성장할 것으로 예상되며, 주행거리 보조 및 에너지 자급률 향상 수요에 의해 주도된다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "현대자동차의 태양광 모듈 특허와 함께, 친환경 에너지 정책 및 EV 효율성 요구로 인해 연평균 12.5% 성장할 것으로 예상됨."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Automotive Solar Integration Market Analysis",
+            "url": "https://example.com/auto-solar",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Solar Roof Technology in EVs",
+            "url": "https://example.com/solar-roof-ev",
+            "use": "Technology trend"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Hyundai Motor Group"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "Hyundai Motor Group",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "BYD",
+          "similarity": 0.82,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Tesla",
+          "similarity": 0.78,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Nissan",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Honda",
+          "similarity": 0.72,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Volkswagen Group",
+          "similarity": 0.68,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 41700000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "건식 전극 필름 제조",
+        "고성능 양극 활물질",
+        "차량 제어 융합 아키텍처",
+        "태양광 모듈 통합 차량"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T06"
+      ],
+      "num_items": 4
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "건식 전극 필름 제조",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 14595000000.0,
+          "tech_budget_rationale": "T01 은 450 억 달러 규모의 거대 시장 (TAM) 과 24.5% 의 높은 CAGR 을 보이며, 2027 년 Q3 에 시장 붐이 예상되어 즉각적인 선점 투자가 필수적입니다. 토요타의 '원가 우위' 전략과 직접적으로 부합하는 핵심 공정 기술로, 테슬라와 BYD 의 선제적 대응을 막기 위해 전체 예산의 35% 를 할당하여 양산 준비를 완료해야 합니다.",
+          "reasoning": {
+            "market_evaluation": "건식 전극 시장은 2030 년 약 450 억 달러 (TAM) 의 거대 규모로 성장할 것으로 예상되며, 연평균 24.5% 의 높은 성장률 (CAGR) 을 기록하고 있습니다. 테슬라의 4680 배터리 대량 생산과 BYD 의 수직 통합 전략으로 인해 2027 년 Q3 에 시장 붐이 예상되어, 이 시점까지 기술 성숙을 완료하지 않으면 시장 진입 장벽이 높아질 것입니다.",
+            "tech_evaluation": "현재 TRL 6 수준으로 프로토타입 검증 단계에 있으나, 테슬라의 바인더 및 조성 기술 특허 동향을 분석하면 원가 절감 효과가 명확히 입증된 상태입니다. 토요타의 HW/SW 통합 스택 강화 전략에서 배터리 생산 비용 30% 절감은 필수 경쟁력이므로, 기술적 위험은 관리 가능한 수준 (점수 3) 으로 평가됩니다.",
+            "investment_decision": "시장 규모와 성장률, 그리고 토요타의 전략적 우선순위 (원가 우위) 가 모두 최상위권 (점수 5) 이므로 Tier 1 로 분류합니다. 2027 년 시장 붐을 선점하기 위해 1 차년도부터 3 차년도까지 집중 투자하여 양산 체계를 구축하는 것이 핵심이므로, 전체 예산의 35% 를 할당합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "테슬라 및 BYD 의 특허 포트폴리오를 분석하여 독자적인 바인더 기술을 확보하고, 2027 년 양산을 목표로 파일럿 라인 가동을 즉시 시작해야 합니다.",
+          "rationale": [
+            "TAM 450 억 달러 및 CAGR 24.5% 로 시장 성장성이 매우 높음.",
+            "2027 년 Q3 시장 붐 임박으로 개발 긴급도가 최상위 (5 점).",
+            "토요타의 원가 우위 전략과 직접적인 정합성 확보."
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "고성능 양극 활물질",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 10425000000.0,
+          "tech_budget_rationale": "T02 는 380 억 달러 규모의 시장과 18.2% 의 성장률을 보이며, TRL 7 로 기술 성숙도가 높아 상대적으로 위험이 낮습니다. T01(건식 전극) 의 성공적 도입을 전제로 하는 후행 기술로, 2028 년 Q1 시장 붐을 대비하여 공급망 안정성을 확보하기 위해 전체 예산의 25% 를 할당합니다.",
+          "reasoning": {
+            "market_evaluation": "고에너지 밀도 양극 소재 시장은 2030 년 약 380 억 달러 규모로 성장할 것으로 예상되며, 연평균 18.2% 의 성장률을 보이고 있습니다. 현대자동차와 BYD 가 주도하는 고니켈 양극 소재 시장에서 2028 년 Q1 에 주류 기술로 자리 잡을 것으로 예상되어, 이 시점까지 기술 확보가 필수적입니다.",
+            "tech_evaluation": "TRL 7 로 기술 성숙도가 높으며, 현대자동차와 BYD 의 특허 동향을 분석하면 고니켈 양극 소재의 안정성 확보 기술이 이미 검증된 상태입니다. 토요타의 다중 경로 전략에서 EV 경쟁력 강화를 위한 핵심 소재 기술로, 기술적 위험은 낮지만 (점수 2) 경쟁사 대비 차별화 전략이 필요합니다.",
+            "investment_decision": "시장 규모와 기술 성숙도가 높고, T01 과의 시너지 효과가 명확하므로 Tier 1 로 분류합니다. 2028 년 시장 붐을 선점하기 위해 3 차년도부터 4 차년도까지 집중 투자하여 공급망 안정성을 확보하는 것이 핵심이므로, 전체 예산의 25% 를 할당합니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "현대자동차 및 BYD 의 고니켈 양극 소재 특허를 분석하여 토요타만의 고유한 조성 기술을 개발하고, 2028 년 양산을 목표로 공급망 파트너십을 강화해야 합니다.",
+          "rationale": [
+            "TAM 380 억 달러 및 CAGR 18.2% 로 시장 성장성이 높음.",
+            "TRL 7 로 기술 성숙도가 높아 위험도가 낮음 (2 점).",
+            "T01(건식 전극) 과의 시너지 효과로 공급망 안정성 확보."
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "차량 제어 융합 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 10425000000.0,
+          "tech_budget_rationale": "T03 은 250 억 달러 규모의 시장과 22% 의 높은 성장률을 보이며, 2026 년 Q4 에 시장 붐이 예상되어 가장 시급한 기술입니다. 토요타의 'HW/SW 통합 스택 강화' 전략의 핵심으로, 다른 기술들의 기반이 되는 아키텍처이므로 전체 예산의 25% 를 할당하여 2026 년까지 완성을 목표로 합니다.",
+          "reasoning": {
+            "market_evaluation": "도메인 컨트롤러 및 중앙 집중형 아키텍처 시장은 2030 년 약 250 억 달러 규모로 성장할 것으로 예상되며, 연평균 22% 의 높은 성장률을 보이고 있습니다. 닛산, BYD, 테슬라의 특허 동향을 볼 때 2026 년 Q4 에 중앙 집중형 아키텍처가 주류로 부상할 것으로 예상되어, 이 시점까지 기술 확보가 필수적입니다.",
+            "tech_evaluation": "TRL 6 수준으로 프로토타입 검증 단계에 있으나, 닛산과 BYD 의 도메인 간 데이터 통신 특허를 분석하면 HW/SW 통합 스택 강화 기술이 이미 검증된 상태입니다. 토요타의 자율주행 및 EV 제어 전략에서 핵심 기술로, 기술적 위험은 관리 가능한 수준 (점수 3) 으로 평가됩니다.",
+            "investment_decision": "시장 규모와 성장률, 그리고 토요타의 전략적 우선순위 (HW/SW 통합) 가 모두 최상위권 (점수 5) 이므로 Tier 1 로 분류합니다. 2026 년 시장 붐을 선점하기 위해 1 차년도부터 2 차년도까지 집중 투자하여 아키텍처 완성을 목표로 합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "닛산 및 BYD 의 도메인 컨트롤러 특허를 분석하여 토요타만의 중앙 집중형 아키텍처를 개발하고, 2026 년 양산을 목표로 시제품 제작을 즉시 시작해야 합니다.",
+          "rationale": [
+            "TAM 250 억 달러 및 CAGR 22% 로 시장 성장성이 높음.",
+            "2026 년 Q4 시장 붐 임박으로 개발 긴급도가 최상위 (5 점).",
+            "토요타의 HW/SW 통합 전략과 직접적인 정합성 확보."
+          ]
+        },
+        {
+          "tech_id": "T06",
+          "name": "태양광 모듈 통합 차량",
+          "evaluation_scores": {
+            "market_size_growth": 2,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "low",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 3",
+          "tech_budget_usd": 6255000000.0,
+          "tech_budget_rationale": "T06 은 35 억 달러 규모의 소규모 시장과 12.5% 의 낮은 성장률을 보이며, TRL 4 로 기술 성숙도가 낮아 위험이 높습니다. 2030 년 Q2 에 시장 붐이 예상되어 장기적인 R&D 가 필요하므로, 전체 예산의 15% 를 할당하여 탐색적 투자로 진행합니다.",
+          "reasoning": {
+            "market_evaluation": "차량 통합 태양광 시장은 2030 년 약 35 억 달러 규모로 성장할 것으로 예상되며, 연평균 12.5% 의 성장률을 보이고 있습니다. 현대자동차의 특허가 있으나, 아직 초기 단계로 명확한 리더가 부재하며 2030 년 Q2 에 본격적인 시장 성장이 예상되어, 이 시점까지 기술 확보가 필수적입니다.",
+            "tech_evaluation": "TRL 4 로 기술 성숙도가 낮으며, 현대자동차의 태양광 모듈 통합 기술을 분석하면 에너지 자급률 향상 기술이 아직 검증되지 않은 상태입니다. 토요타의 다중 경로 전략 중 에너지 효율성 강화는 장기 비전과 부합하지만, 기술적 위험은 높습니다 (점수 4).",
+            "investment_decision": "시장 규모와 성장률이 낮고, 기술 성숙도가 낮아 위험이 높으므로 Tier 3 로 분류합니다. 2030 년 시장 붐을 대비하기 위해 2 차년도부터 5 차년도까지 장기적인 R&D 를 진행하며, 전체 예산의 15% 를 할당합니다."
+          },
+          "investment_scope": "exploratory",
+          "recommended_action": "현대자동차의 태양광 모듈 통합 특허를 분석하여 토요타만의 고유한 기술을 개발하고, 2030 년 양산을 목표로 파일럿 프로젝트를 진행해야 합니다.",
+          "rationale": [
+            "TAM 35 억 달러 및 CAGR 12.5% 로 시장 성장성이 낮음.",
+            "TRL 4 로 기술 성숙도가 낮아 위험도가 높음 (4 점).",
+            "2030 년 Q2 시장 붐으로 개발 긴급도가 낮음 (2 점)."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 41700000000.0
+    }
+  ]
+}

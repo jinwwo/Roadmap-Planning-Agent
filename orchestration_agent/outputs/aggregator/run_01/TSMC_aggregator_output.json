@@ -1,0 +1,1968 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T20:06:24Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 게이트 전극 공차 최적화",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Intel",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "FABRICATION OF GATE-ALL-AROUND INTEGRATED CIRCUIT STRUCTURES HAVING COMMON METAL GATES AND HAVING GATE DIELECTRICS WITH DIFFERENTIATED DIPOLE LAYERS",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "METAL GATE STRUCTURE CUTTING PROCESS",
+            "date": "2026-01-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 과 TSMC 모두 GAA 구조의 게이트 전극 및 절연막 공정에서 최근 특허를 집중 출원하고 있어, 2nm 이하 공정 경쟁의 핵심 이슈임을 시사합니다. TSMC 는 기존 리드십을 유지하기 위해 게이트 전극의 공차 최적화 및 다층 구조 제어 기술을 강화해야 합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "백면 전극 패터닝 및 리세스",
+        "category": "Process",
+        "estimated_trl": 5,
+        "patent_score": 82.3,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Intel",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "SELECTIVE BACKSIDE RECESSING OF SOURCE AND DRAIN REGIONS",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DEVICES AND METHODS OF FORMING THE SAME",
+            "date": "2026-01-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 의 'Selective Backside Recessing' 특허는 소스/드레인 영역의 백면 패터닝 기술을 구체화하고 있으며, TSMC 도 관련 구조 특허를 출원하고 있습니다. 이는 Backside Power Delivery Network(BPDN) 구현을 위한 핵심 공정 기술로, TSMC 의 원가 우위 확보에 필수적입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고집적 3D 스택 패키징",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 85.1,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "source_companies": [
+          "Samsung Electronics",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "STACK TYPE SEMICONDUCTOR DEVICE",
+            "date": "2026-01-12",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "SEMICONDUCTOR DIE STACK AND METHOD OF FORMING THE SAME",
+            "date": "2025-12-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Samsung 과 TSMC 모두 'Stack Type' 및 'Die Stack' 관련 특허를 최근 집중 출원하여, AI/HPC 시장에서의 3D 패키징 경쟁이 치열함을 보여줍니다. TSMC 는 CoWoS 등 기존 기술을 넘어 더 높은 집적도를 위한 스택 구조를 선점해야 합니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "파인형 활성영역 게이트 구조",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 79.4,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Samsung Electronics",
+          "SMIC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "SEMICONDUCTOR DEVICE WITH A FIN-SHAPED ACTIVE REGION AND A GATE ELECTRODE",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "SMIC",
+            "title": "Semiconductor device with fins",
+            "date": "2021-01-04",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Samsung 의 최근 특허는 FinFET 구조의 게이트 전극 최적화를 다루고 있으며, SMIC 도 Fin 구조 관련 특허를 보유하고 있습니다. 이는 GAA 이전의 과도기 기술이나 특정 응용 분야에서의 Fin 구조 고도화 필요성을 시사합니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "스케일링 게이트 길이 제어",
+        "category": "Process",
+        "estimated_trl": 5,
+        "patent_score": 76.8,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "GlobalFoundries",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "GlobalFoundries",
+            "title": "SEMICONDUCTOR STRUCTURE INCLUDING FIELD EFFECT TRANSISTOR WITH SCALED GATE LENGTH AND METHOD",
+            "date": "2025-11-17",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "Semiconductor Structure and Method for Forming the Same",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "GlobalFoundries 는 스케일링된 게이트 길이를 가진 FET 구조에 대한 특허를 출원하여, 미세 공정에서의 게이트 길이 제어 기술에 집중하고 있습니다. TSMC 도 유사한 구조 특허를 출원하여 이 분야의 기술 경쟁이 지속됨을 보여줍니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "반도체 제조 공정 자동화 제어",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 74.2,
+        "patent_signals": {
+          "peer_momentum": 68,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 82
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Intel",
+          "SMIC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "Method and apparatus for production process control",
+            "date": "2025-12-11",
+            "cited_by": 0
+          },
+          {
+            "company": "SMIC",
+            "title": "Automatic multi-task control method for single-thread semiconductor processing equipment",
+            "date": "2025-12-02",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 과 SMIC 모두 반도체 제조 장비의 자동화 및 다중 태스크 제어에 대한 특허를 출원하여, 생산 효율성 및 원가 절감을 위한 공정 자동화 기술의 중요성이 높아지고 있음을 보여줍니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "메탈 게이트 워크함션 재료",
+        "category": "Material",
+        "estimated_trl": 4,
+        "patent_score": 71.5,
+        "patent_signals": {
+          "peer_momentum": 60,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "GlobalFoundries"
+        ],
+        "evidence_patents": [
+          {
+            "company": "GlobalFoundries",
+            "title": "ATOMIC LAYER DEPOSITION OF HFAIC AS A METAL GATE WORKFUNCTION MATERIAL IN MOS DEVICES",
+            "date": "2014-03-11",
+            "cited_by": 0
+          },
+          {
+            "company": "GlobalFoundries",
+            "title": "REPLACEMENT GATE PFET MATERIALS HAVING IMPROVED NBTI PERFORMANCE",
+            "date": "2015-12-01",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "GlobalFoundries 는 HfAlC 등 새로운 금속 게이트 워크함션 재료 및 NBTI 성능 개선 재료를 다룬 특허를 보유하고 있습니다. 이는 차세대 공정에서 재료 혁신이 성능 향상의 핵심임을 시사하며, TSMC 도 관련 재료 연구를 강화할 필요가 있습니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "FBAR 필터 패키징 구조",
+        "category": "Packaging",
+        "estimated_trl": 5,
+        "patent_score": 68.9,
+        "patent_signals": {
+          "peer_momentum": 62,
+          "citation_impact": 60,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 55,
+          "roadmap_relevance": 78
+        },
+        "dependency_hints": [
+          "T03"
+        ],
+        "source_companies": [
+          "SMIC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "SMIC",
+            "title": "Packaging structure and packaging method of film bulk acoustic resonator",
+            "date": "2025-12-22",
+            "cited_by": 0
+          },
+          {
+            "company": "SMIC",
+            "title": "Filter, forming method thereof and electronic equipment",
+            "date": "2025-11-14",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "SMIC 는 FBAR(Film Bulk Acoustic Resonator) 필터의 패키징 구조 및 형성 방법에 대한 특허를 최근 출원하여, RF 필터 및 센서 패키징 분야에서의 기술 축적을 보여줍니다. 이는 TSMC 의 패키징 포트폴리오 다각화 기회를 제공합니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 게이트 전극 공차 최적화",
+        "market_score": 92.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 12.0,
+          "basis": "2nm 이하 GAA 공정 도입으로 인한 고가치 로직 칩 시장 (AI/모바일) 의 급성장을 반영. TSMC 와 Intel 의 독점적 경쟁 구도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semianalysis 및 주요 시장 보고서에 따르면 GAA 구조 전환기에 따른 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "GAA 공정 전환 시점 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "시장 규모 및 성장률 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "Intel 과의 높은 유사성 (0.92) 은 GAA 공정이 2nm 이하 노드에서 필수적인 경쟁 요소임을 시사하며, 시장 진입 시기가 2027 년경으로 예상됨. AI 수요 폭증으로 인해 초기 진입 시점의 기술 우위가 시장 점유율 확보에 결정적임."
+      },
+      {
+        "tech_id": "T02",
+        "name": "백면 전극 패터닝 및 리세스",
+        "market_score": 89.0,
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 38.0,
+          "sam_usd_b": 20.0,
+          "som_usd_b": 10.0,
+          "basis": "GAA 공정과 결합된 백면 전력망 (Backside PDN) 기술은 고주파/고성능 칩의 필수 요소로, 관련 장비 및 소재 시장이 급성장 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2026-2030",
+          "basis": "Advanced Node Foundry Market Research Report 에 따른 고성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "백면 패터닝 기술의 시장 중요성 및 성장 동력"
+          },
+          {
+            "title": "Advanced Node Foundry Market Research Report 2034",
+            "url": "https://dataintelo.com/report/advanced-node-foundry-market",
+            "use": "CAGR 및 시장 규모 예측"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "Intel 과의 기술적 유사성이 매우 높아 양사 간 백면 공정 경쟁이 치열하며, 이는 2027 년 이후 본격화될 것으로 예상됨. GAA 구조의 전력 효율성 문제를 해결하는 핵심 기술로 시장 진입 시기가 매우 중요함."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고집적 3D 스택 패키징",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 32.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 8.0,
+          "basis": "AI 가속기 및 HBM 수요 증가로 2.5D/3D 패키징 시장이 급성장하고 있으며, TSMC 와 Samsung 이 주도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2026-2030",
+          "basis": "3D Semiconductor Packaging Market Report 및 Fact.MR 데이터 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "2.5D And 3D Semiconductor Packaging Market Size & Share Analysis",
+            "url": "https://www.mordorintelligence.com/industry-reports/global-25d-and-3d-semiconductor-packaging-market",
+            "use": "시장 규모 및 성장률 분석"
+          },
+          {
+            "title": "3D Stacking Market Size, Share, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/3d-stacking-market",
+            "use": "경쟁 구도 및 시장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ]
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "Samsung 과의 높은 유사성 (0.88) 은 3D 패키징 분야에서 치열한 경쟁을 의미하며, AI 칩 수요 증가로 2028 년경 시장이 폭발할 것으로 예상됨. TSMC 의 CoWoS 등 독점 기술이 경쟁 우위를 점할 수 있음."
+      },
+      {
+        "tech_id": "T04",
+        "name": "파인형 활성영역 게이트 구조",
+        "market_score": 65.0,
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 45,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 3.0,
+          "basis": "FinFET 는 주류 기술로 자리 잡았으나, GAA 로의 전환기에 따라 성장률이 둔화될 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 에 따른 성숙기 시장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 성숙도 및 성장률 분석"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size to Hit USD 273.84 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-foundry-market",
+            "use": "전체 파운드리 시장 내 FinFET 비중 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "Samsung 과 SMIC 와의 유사성은 FinFET 기술이 여전히 중요하지만, GAA 로의 전환으로 인해 2026 년 이후 성장세가 둔화될 것으로 보임. 기존 노드 (7nm/5nm) 에서의 비용 효율성 경쟁이 주된 동인."
+      },
+      {
+        "tech_id": "T05",
+        "name": "스케일링 게이트 길이 제어",
+        "market_score": 78.0,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 5.0,
+          "basis": "고성능 컴퓨팅 및 AI 칩의 미세 공정 요구로 게이트 길이 제어 기술이 지속적으로 수요됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Wafer Fab Equipment Market Size to Hit USD 33.01 Billion by 2034",
+            "url": "https://www.precedenceresearch.com/semiconductor-wafer-fab-equipment-market",
+            "use": "장비 및 공정 기술 시장 규모"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "GlobalFoundries 와의 유사성은 게이트 길이 스케일링이 중급 노드에서도 중요함을 시사하며, 2028 년경에 최적화 기술이 본격화될 것으로 예상됨. TSMC 의 공정 우위를 유지하기 위한 핵심 요소."
+      },
+      {
+        "tech_id": "T06",
+        "name": "반도체 제조 공정 자동화 제어",
+        "market_score": 72.0,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 4.0,
+          "basis": "공정 복잡도 증가로 인한 자동화 및 AI 기반 제어 수요가 증가하고 있으나, 시장이 성숙 단계에 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 관련 자동화 시장 데이터."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Share And Forecast [2034]",
+            "url": "https://www.imarcgroup.com/semiconductor-foundry-market",
+            "use": "시장 점유율 및 자동화 기술 영향"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/semiconductor-foundry-market",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "Intel 과 SMIC 와의 유사성은 공정 자동화 기술이 다양한 플레이어에게 분산되어 있음을 시사하며, 2029 년경에 AI 기반 제어 기술이 본격화될 것으로 예상됨. 비용 효율성 향상을 위한 필수 기술."
+      },
+      {
+        "tech_id": "T07",
+        "name": "메탈 게이트 워크함션 재료",
+        "market_score": 58.0,
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 40,
+          "policy_and_investment_tailwind": 55,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.5,
+          "basis": "기존 기술이 성숙 단계에 있으며, 새로운 재료 개발은 특정 노드에서 제한적으로 적용됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          },
+          {
+            "title": "Gate-All-Around FET (GAAFET) Technology Market Research Report 2033",
+            "url": "https://dataintelo.com/report/gate-all-around-fet-gaafet-technology-market-report",
+            "use": "GAA 전환기에 따른 재료 기술 변화"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        },
+        "expected_market_boom_quarter": "2030 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "GlobalFoundries 와의 유사성은 메탈 게이트 재료가 성숙한 기술임을 시사하며, 2030 년경에 새로운 노드 전환기에 제한적으로 수요가 발생할 것으로 예상됨. 경쟁 우위 확보가 어려움."
+      },
+      {
+        "tech_id": "T08",
+        "name": "FBAR 필터 패키징 구조",
+        "market_score": 52.0,
+        "market_signals": {
+          "tam_growth_rate": 40,
+          "time_to_market_urgency": 35,
+          "policy_and_investment_tailwind": 50,
+          "competitive_moat_potential": 45
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 5.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 1.0,
+          "basis": "RF 필터 시장은 성장 중이지만, TSMC 의 주력인 로직/패키징 시장과는 차이가 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.5,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 RF 필터 시장 데이터."
+        },
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 규모 및 성장률 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "expected_market_boom_quarter": "2030 Q2",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "SMIC 와의 유사성은 FBAR 패키징이 특정 니치 시장에서 경쟁이 치열함을 시사하며, 2030 년경에 5G/6G 전환기에 수요가 발생할 것으로 예상됨. TSMC 의 주력 전략과는 부합하지 않음."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "TSMC",
+          "related_actor": "Intel",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ],
+          "basis": "양사 모두 GAA 구조, 백면 패터닝, 금속 게이트 공정 관련 최신 특허를 집중 출원하여 기술적 유사성이 매우 높음.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ],
+          "basis": "3D 스택 패키징 및 Fin 구조 관련 특허가 양사 모두에서 최근 활발히 출원되어 기술 경쟁이 치열함.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "GlobalFoundries",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ],
+          "basis": "게이트 길이 스케일링 및 금속 게이트 재료 관련 특허를 공유하며, 공정 제어 기술에서도 유사한 접근을 보임.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "SMIC",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ],
+          "basis": "Fin 구조 및 FBAR 패키징, 공정 자동화 관련 특허를 공유하지만, 최신 미세 공정 기술에서는 격차가 존재함.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "UMC",
+          "similarity": 0.15,
+          "edge_weight": 0.15,
+          "shared_technology_areas": [
+            "Biomedical Materials",
+            "Gene Therapy"
+          ],
+          "basis": "UMC 의 특허 데이터는 반도체 공정과 무관한 바이오/의료 분야 (UMC Utrecht 등) 로 구성되어 있어 기술적 유사성이 매우 낮음.",
+          "evidence_level": "indirect"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "GAA 게이트 전극 공차 최적화",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 92.5,
+        "actor_map_score": 75.33,
+        "final_score": 87.67,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Intel 과 TSMC 모두 GAA 구조의 게이트 전극 및 절연막 공정에서 최근 특허를 집중 출원하고 있어, 2nm 이하 공정 경쟁의 핵심 이슈임을 시사합니다. TSMC 는 기존 리드십을 유지하기 위해 게이트 전극의 공차 최적화 및 다층 구조 제어 기술을 강화해야 합니다. [Market] Intel 과의 높은 유사성 (0.92) 은 GAA 공정이 2nm 이하 노드에서 필수적인 경쟁 요소임을 시사하며, 시장 진입 시기가 2027 년경으로 예상됨. AI 수요 폭증으로 인해 초기 진입 시점의 기술 우위가 시장 점유율 확보에 결정적임.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 12.0,
+          "basis": "2nm 이하 GAA 공정 도입으로 인한 고가치 로직 칩 시장 (AI/모바일) 의 급성장을 반영. TSMC 와 Intel 의 독점적 경쟁 구도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semianalysis 및 주요 시장 보고서에 따르면 GAA 구조 전환기에 따른 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "GAA 공정 전환 시점 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "시장 규모 및 성장률 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "GAA Process",
+              "Metal Gate Structure"
+            ],
+            "score_contribution": 100.0
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials",
+              "Process Control"
+            ],
+            "score_contribution": 67.5
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 65.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "FinFET Structure",
+              "Process Automation"
+            ],
+            "score_contribution": 58.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "백면 전극 패터닝 및 리세스",
+        "category": "Process",
+        "trl": 5,
+        "patent_score": 82.3,
+        "market_score": 89.0,
+        "actor_map_score": 82.23,
+        "final_score": 85.3,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Intel 의 'Selective Backside Recessing' 특허는 소스/드레인 영역의 백면 패터닝 기술을 구체화하고 있으며, TSMC 도 관련 구조 특허를 출원하고 있습니다. 이는 Backside Power Delivery Network(BPDN) 구현을 위한 핵심 공정 기술로, TSMC 의 원가 우위 확보에 필수적입니다. [Market] Intel 과의 기술적 유사성이 매우 높아 양사 간 백면 공정 경쟁이 치열하며, 이는 2027 년 이후 본격화될 것으로 예상됨. GAA 구조의 전력 효율성 문제를 해결하는 핵심 기술로 시장 진입 시기가 매우 중요함.",
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 38.0,
+          "sam_usd_b": 20.0,
+          "som_usd_b": 10.0,
+          "basis": "GAA 공정과 결합된 백면 전력망 (Backside PDN) 기술은 고주파/고성능 칩의 필수 요소로, 관련 장비 및 소재 시장이 급성장 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2026-2030",
+          "basis": "Advanced Node Foundry Market Research Report 에 따른 고성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+            "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+            "use": "백면 패터닝 기술의 시장 중요성 및 성장 동력"
+          },
+          {
+            "title": "Advanced Node Foundry Market Research Report 2034",
+            "url": "https://dataintelo.com/report/advanced-node-foundry-market",
+            "use": "CAGR 및 시장 규모 예측"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "GAA Process",
+              "Backside PDN"
+            ],
+            "score_contribution": 100.0
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Process Control"
+            ],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "고집적 3D 스택 패키징",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 85.1,
+        "market_score": 88.5,
+        "actor_map_score": 77.65,
+        "final_score": 85.14,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "rationale": "[Patent] Samsung 과 TSMC 모두 'Stack Type' 및 'Die Stack' 관련 특허를 최근 집중 출원하여, AI/HPC 시장에서의 3D 패키징 경쟁이 치열함을 보여줍니다. TSMC 는 CoWoS 등 기존 기술을 넘어 더 높은 집적도를 위한 스택 구조를 선점해야 합니다. [Market] Samsung 과의 높은 유사성 (0.88) 은 3D 패키징 분야에서 치열한 경쟁을 의미하며, AI 칩 수요 증가로 2028 년경 시장이 폭발할 것으로 예상됨. TSMC 의 CoWoS 등 독점 기술이 경쟁 우위를 점할 수 있음.",
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 32.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 8.0,
+          "basis": "AI 가속기 및 HBM 수요 증가로 2.5D/3D 패키징 시장이 급성장하고 있으며, TSMC 와 Samsung 이 주도."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2026-2030",
+          "basis": "3D Semiconductor Packaging Market Report 및 Fact.MR 데이터 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "2.5D And 3D Semiconductor Packaging Market Size & Share Analysis",
+            "url": "https://www.mordorintelligence.com/industry-reports/global-25d-and-3d-semiconductor-packaging-market",
+            "use": "시장 규모 및 성장률 분석"
+          },
+          {
+            "title": "3D Stacking Market Size, Share, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/3d-stacking-market",
+            "use": "경쟁 구도 및 시장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "3D Stacking",
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 96.8
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 65.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "FBAR Packaging"
+            ],
+            "score_contribution": 58.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "스케일링 게이트 길이 제어",
+        "category": "Process",
+        "trl": 5,
+        "patent_score": 76.8,
+        "market_score": 78.0,
+        "actor_map_score": 81.5,
+        "final_score": 78.28,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] GlobalFoundries 는 스케일링된 게이트 길이를 가진 FET 구조에 대한 특허를 출원하여, 미세 공정에서의 게이트 길이 제어 기술에 집중하고 있습니다. TSMC 도 유사한 구조 특허를 출원하여 이 분야의 기술 경쟁이 지속됨을 보여줍니다. [Market] GlobalFoundries 와의 유사성은 게이트 길이 스케일링이 중급 노드에서도 중요함을 시사하며, 2028 년경에 최적화 기술이 본격화될 것으로 예상됨. TSMC 의 공정 우위를 유지하기 위한 핵심 요소.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 5.0,
+          "basis": "고성능 컴퓨팅 및 AI 칩의 미세 공정 요구로 게이트 길이 제어 기술이 지속적으로 수요됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Wafer Fab Equipment Market Size to Hit USD 33.01 Billion by 2034",
+            "url": "https://www.precedenceresearch.com/semiconductor-wafer-fab-equipment-market",
+            "use": "장비 및 공정 기술 시장 규모"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "GAA Process",
+              "Metal Gate Structure"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials",
+              "Process Control"
+            ],
+            "score_contribution": 82.5
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "반도체 제조 공정 자동화 제어",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 74.2,
+        "market_score": 72.0,
+        "actor_map_score": 83.57,
+        "final_score": 75.08,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Intel 과 SMIC 모두 반도체 제조 장비의 자동화 및 다중 태스크 제어에 대한 특허를 출원하여, 생산 효율성 및 원가 절감을 위한 공정 자동화 기술의 중요성이 높아지고 있음을 보여줍니다. [Market] Intel 과 SMIC 와의 유사성은 공정 자동화 기술이 다양한 플레이어에게 분산되어 있음을 시사하며, 2029 년경에 AI 기반 제어 기술이 본격화될 것으로 예상됨. 비용 효율성 향상을 위한 필수 기술.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 4.0,
+          "basis": "공정 복잡도 증가로 인한 자동화 및 AI 기반 제어 수요가 증가하고 있으나, 시장이 성숙 단계에 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 관련 자동화 시장 데이터."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Share And Forecast [2034]",
+            "url": "https://www.imarcgroup.com/semiconductor-foundry-market",
+            "use": "시장 점유율 및 자동화 기술 영향"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Growth and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/semiconductor-foundry-market",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "GAA Process"
+            ],
+            "score_contribution": 100.0
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 65.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Process Automation"
+            ],
+            "score_contribution": 71.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 68,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 82
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "파인형 활성영역 게이트 구조",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 79.4,
+        "market_score": 65.0,
+        "actor_map_score": 83.7,
+        "final_score": 73.78,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Samsung 의 최근 특허는 FinFET 구조의 게이트 전극 최적화를 다루고 있으며, SMIC 도 Fin 구조 관련 특허를 보유하고 있습니다. 이는 GAA 이전의 과도기 기술이나 특정 응용 분야에서의 Fin 구조 고도화 필요성을 시사합니다. [Market] Samsung 과 SMIC 와의 유사성은 FinFET 기술이 여전히 중요하지만, GAA 로의 전환으로 인해 2026 년 이후 성장세가 둔화될 것으로 보임. 기존 노드 (7nm/5nm) 에서의 비용 효율성 경쟁이 주된 동인.",
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 45,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 3.0,
+          "basis": "FinFET 는 주류 기술로 자리 잡았으나, GAA 로의 전환기에 따라 성장률이 둔화될 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 에 따른 성숙기 시장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 성숙도 및 성장률 분석"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size to Hit USD 273.84 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-foundry-market",
+            "use": "전체 파운드리 시장 내 FinFET 비중 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics",
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging",
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "FinFET Architecture",
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 96.8
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "GAA Process",
+              "Metal Gate Structure"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 65.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "FinFET Structure"
+            ],
+            "score_contribution": 71.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T08",
+        "name": "FBAR 필터 패키징 구조",
+        "category": "Packaging",
+        "trl": 5,
+        "patent_score": 68.9,
+        "market_score": 52.0,
+        "actor_map_score": 77.83,
+        "final_score": 63.08,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2030 Q2",
+        "dependency_hints": [
+          "T03"
+        ],
+        "rationale": "[Patent] SMIC 는 FBAR(Film Bulk Acoustic Resonator) 필터의 패키징 구조 및 형성 방법에 대한 특허를 최근 출원하여, RF 필터 및 센서 패키징 분야에서의 기술 축적을 보여줍니다. 이는 TSMC 의 패키징 포트폴리오 다각화 기회를 제공합니다. [Market] SMIC 와의 유사성은 FBAR 패키징이 특정 니치 시장에서 경쟁이 치열함을 시사하며, 2030 년경에 5G/6G 전환기에 수요가 발생할 것으로 예상됨. TSMC 의 주력 전략과는 부합하지 않음.",
+        "market_signals": {
+          "tam_growth_rate": 40,
+          "time_to_market_urgency": 35,
+          "policy_and_investment_tailwind": 50,
+          "competitive_moat_potential": 45
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 5.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 1.0,
+          "basis": "RF 필터 시장은 성장 중이지만, TSMC 의 주력인 로직/패키징 시장과는 차이가 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.5,
+          "forecast_period": "2026-2030",
+          "basis": "FinFET Technology Market Report 및 RF 필터 시장 데이터."
+        },
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+            "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+            "use": "시장 규모 및 성장률 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SMIC"
+          ],
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Metal Gate Structure"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Semiconductor Packaging"
+            ],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 65.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "FinFET Structure",
+              "FBAR Packaging"
+            ],
+            "score_contribution": 71.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 62,
+          "citation_impact": 60,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 55,
+          "roadmap_relevance": 78
+        }
+      },
+      {
+        "tech_id": "T07",
+        "name": "메탈 게이트 워크함션 재료",
+        "category": "Material",
+        "trl": 4,
+        "patent_score": 71.5,
+        "market_score": 58.0,
+        "actor_map_score": 59.35,
+        "final_score": 63.0,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2030 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] GlobalFoundries 는 HfAlC 등 새로운 금속 게이트 워크함션 재료 및 NBTI 성능 개선 재료를 다룬 특허를 보유하고 있습니다. 이는 차세대 공정에서 재료 혁신이 성능 향상의 핵심임을 시사하며, TSMC 도 관련 재료 연구를 강화할 필요가 있습니다. [Market] GlobalFoundries 와의 유사성은 메탈 게이트 재료가 성숙한 기술임을 시사하며, 2030 년경에 새로운 노드 전환기에 제한적으로 수요가 발생할 것으로 예상됨. 경쟁 우위 확보가 어려움.",
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 40,
+          "policy_and_investment_tailwind": 55,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.5,
+          "basis": "기존 기술이 성숙 단계에 있으며, 새로운 재료 개발은 특정 노드에서 제한적으로 적용됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2026-2030",
+          "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+        },
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망"
+          },
+          {
+            "title": "Gate-All-Around FET (GAAFET) Technology Market Research Report 2033",
+            "url": "https://dataintelo.com/report/gate-all-around-fet-gaafet-technology-market-report",
+            "use": "GAA 전환기에 따른 재료 기술 변화"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "GlobalFoundries"
+          ],
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Metal Gate Structure"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials"
+            ],
+            "score_contribution": 82.5
+          },
+          {
+            "related_actor": "UMC",
+            "similarity": 15.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Biomedical Materials"
+            ],
+            "score_contribution": 12.75
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 60,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 80
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Semiconductor / Foundry",
+      "expected_boom_quarter": "2026 Q4",
+      "market_research_summary": {
+        "T01": {
+          "name": "GAA 게이트 전극 공차 최적화",
+          "market_score": 92.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 25.0,
+            "som_usd_b": 12.0,
+            "basis": "2nm 이하 GAA 공정 도입으로 인한 고가치 로직 칩 시장 (AI/모바일) 의 급성장을 반영. TSMC 와 Intel 의 독점적 경쟁 구도."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2026-2030",
+            "basis": "Semianalysis 및 주요 시장 보고서에 따르면 GAA 구조 전환기에 따른 고성장 예상."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+              "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+              "use": "GAA 공정 전환 시점 및 경쟁 구도 분석 근거"
+            },
+            {
+              "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+              "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+              "use": "시장 규모 및 성장률 추정"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Intel"
+            ],
+            "shared_technology_areas": [
+              "GAA Process",
+              "Backside PDN",
+              "Metal Gate Structure"
+            ]
+          }
+        },
+        "T02": {
+          "name": "백면 전극 패터닝 및 리세스",
+          "market_score": 89.0,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 38.0,
+            "sam_usd_b": 20.0,
+            "som_usd_b": 10.0,
+            "basis": "GAA 공정과 결합된 백면 전력망 (Backside PDN) 기술은 고주파/고성능 칩의 필수 요소로, 관련 장비 및 소재 시장이 급성장 중."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2026-2030",
+            "basis": "Advanced Node Foundry Market Research Report 에 따른 고성장 전망."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Clash of the Foundries: Gate All Around + Backside Power at 2nm",
+              "url": "https://newsletter.semianalysis.com/p/clash-of-the-foundries",
+              "use": "백면 패터닝 기술의 시장 중요성 및 성장 동력"
+            },
+            {
+              "title": "Advanced Node Foundry Market Research Report 2034",
+              "url": "https://dataintelo.com/report/advanced-node-foundry-market",
+              "use": "CAGR 및 시장 규모 예측"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Intel"
+            ],
+            "shared_technology_areas": [
+              "GAA Process",
+              "Backside PDN",
+              "Metal Gate Structure"
+            ]
+          }
+        },
+        "T03": {
+          "name": "고집적 3D 스택 패키징",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 32.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 8.0,
+            "basis": "AI 가속기 및 HBM 수요 증가로 2.5D/3D 패키징 시장이 급성장하고 있으며, TSMC 와 Samsung 이 주도."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 21.5,
+            "forecast_period": "2026-2030",
+            "basis": "3D Semiconductor Packaging Market Report 및 Fact.MR 데이터 기반."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "2.5D And 3D Semiconductor Packaging Market Size & Share Analysis",
+              "url": "https://www.mordorintelligence.com/industry-reports/global-25d-and-3d-semiconductor-packaging-market",
+              "use": "시장 규모 및 성장률 분석"
+            },
+            {
+              "title": "3D Stacking Market Size, Share, Growth and Forecast 2032",
+              "url": "https://www.credenceresearch.com/report/3d-stacking-market",
+              "use": "경쟁 구도 및 시장 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Samsung Electronics"
+            ],
+            "shared_technology_areas": [
+              "3D Stacking",
+              "FinFET Architecture",
+              "Semiconductor Packaging"
+            ]
+          }
+        },
+        "T04": {
+          "name": "파인형 활성영역 게이트 구조",
+          "market_score": 65.0,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 8.0,
+            "som_usd_b": 3.0,
+            "basis": "FinFET 는 주류 기술로 자리 잡았으나, GAA 로의 전환기에 따라 성장률이 둔화될 것으로 예상됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.0,
+            "forecast_period": "2026-2030",
+            "basis": "FinFET Technology Market Report 에 따른 성숙기 시장 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+              "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+              "use": "시장 성숙도 및 성장률 분석"
+            },
+            {
+              "title": "Semiconductor Foundry Market Size to Hit USD 273.84 Billion by 2035",
+              "url": "https://www.precedenceresearch.com/semiconductor-foundry-market",
+              "use": "전체 파운드리 시장 내 FinFET 비중 추정"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Samsung Electronics",
+              "SMIC"
+            ],
+            "shared_technology_areas": [
+              "3D Stacking",
+              "FinFET Architecture",
+              "Semiconductor Packaging",
+              "FinFET Structure",
+              "FBAR Packaging",
+              "Process Automation"
+            ]
+          }
+        },
+        "T05": {
+          "name": "스케일링 게이트 길이 제어",
+          "market_score": 78.0,
+          "expected_market_boom_quarter": "2028 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 22.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 5.0,
+            "basis": "고성능 컴퓨팅 및 AI 칩의 미세 공정 요구로 게이트 길이 제어 기술이 지속적으로 수요됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.5,
+            "forecast_period": "2026-2030",
+            "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Wafer Fab Equipment Market Size to Hit USD 33.01 Billion by 2034",
+              "url": "https://www.precedenceresearch.com/semiconductor-wafer-fab-equipment-market",
+              "use": "장비 및 공정 기술 시장 규모"
+            },
+            {
+              "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+              "use": "시장 성장률 및 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "GlobalFoundries"
+            ],
+            "shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials",
+              "Process Control"
+            ]
+          }
+        },
+        "T06": {
+          "name": "반도체 제조 공정 자동화 제어",
+          "market_score": 72.0,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 18.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 4.0,
+            "basis": "공정 복잡도 증가로 인한 자동화 및 AI 기반 제어 수요가 증가하고 있으나, 시장이 성숙 단계에 있음."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.0,
+            "forecast_period": "2026-2030",
+            "basis": "FinFET Technology Market Report 및 관련 자동화 시장 데이터."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Foundry Market Share And Forecast [2034]",
+              "url": "https://www.imarcgroup.com/semiconductor-foundry-market",
+              "use": "시장 점유율 및 자동화 기술 영향"
+            },
+            {
+              "title": "Semiconductor Foundry Market Size, Growth and Forecast 2032",
+              "url": "https://www.credenceresearch.com/report/semiconductor-foundry-market",
+              "use": "시장 규모 및 성장 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Intel",
+              "SMIC"
+            ],
+            "shared_technology_areas": [
+              "GAA Process",
+              "Backside PDN",
+              "Metal Gate Structure",
+              "FinFET Structure",
+              "FBAR Packaging",
+              "Process Automation"
+            ]
+          }
+        },
+        "T07": {
+          "name": "메탈 게이트 워크함션 재료",
+          "market_score": 58.0,
+          "expected_market_boom_quarter": "2030 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 8.0,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 1.5,
+            "basis": "기존 기술이 성숙 단계에 있으며, 새로운 재료 개발은 특정 노드에서 제한적으로 적용됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 9.5,
+            "forecast_period": "2026-2030",
+            "basis": "Semiconductor Foundry Market Size, Trends & Growth 2031 보고서 기반."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+              "use": "시장 성장률 및 전망"
+            },
+            {
+              "title": "Gate-All-Around FET (GAAFET) Technology Market Research Report 2033",
+              "url": "https://dataintelo.com/report/gate-all-around-fet-gaafet-technology-market-report",
+              "use": "GAA 전환기에 따른 재료 기술 변화"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "GlobalFoundries"
+            ],
+            "shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials",
+              "Process Control"
+            ]
+          }
+        },
+        "T08": {
+          "name": "FBAR 필터 패키징 구조",
+          "market_score": 52.0,
+          "expected_market_boom_quarter": "2030 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 5.0,
+            "sam_usd_b": 2.5,
+            "som_usd_b": 1.0,
+            "basis": "RF 필터 시장은 성장 중이지만, TSMC 의 주력인 로직/패키징 시장과는 차이가 있음."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 8.5,
+            "forecast_period": "2026-2030",
+            "basis": "FinFET Technology Market Report 및 RF 필터 시장 데이터."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "FinFET Technology Market Size, Share & Growth Report 2035",
+              "url": "https://www.snsinsider.com/reports/finfet-technology-market-7620",
+              "use": "시장 규모 및 성장률 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "SMIC"
+            ],
+            "shared_technology_areas": [
+              "FinFET Structure",
+              "FBAR Packaging",
+              "Process Automation"
+            ]
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "Intel",
+            "similarity": 0.92,
+            "shared_technology_areas": [
+              "GAA Process",
+              "Backside PDN",
+              "Metal Gate Structure"
+            ]
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 0.88,
+            "shared_technology_areas": [
+              "3D Stacking",
+              "FinFET Architecture",
+              "Semiconductor Packaging"
+            ]
+          },
+          {
+            "related_actor": "GlobalFoundries",
+            "similarity": 0.75,
+            "shared_technology_areas": [
+              "Gate Length Scaling",
+              "Metal Gate Materials",
+              "Process Control"
+            ]
+          },
+          {
+            "related_actor": "SMIC",
+            "similarity": 0.65,
+            "shared_technology_areas": [
+              "FinFET Structure",
+              "FBAR Packaging",
+              "Process Automation"
+            ]
+          },
+          {
+            "related_actor": "UMC",
+            "similarity": 0.15,
+            "shared_technology_areas": [
+              "Biomedical Materials",
+              "Gene Therapy"
+            ]
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "TSMC",
+          "related_actor": "Intel",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_technology_areas": [
+            "GAA Process",
+            "Backside PDN",
+            "Metal Gate Structure"
+          ],
+          "basis": "양사 모두 GAA 구조, 백면 패터닝, 금속 게이트 공정 관련 최신 특허를 집중 출원하여 기술적 유사성이 매우 높음.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "3D Stacking",
+            "FinFET Architecture",
+            "Semiconductor Packaging"
+          ],
+          "basis": "3D 스택 패키징 및 Fin 구조 관련 특허가 양사 모두에서 최근 활발히 출원되어 기술 경쟁이 치열함.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "GlobalFoundries",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_technology_areas": [
+            "Gate Length Scaling",
+            "Metal Gate Materials",
+            "Process Control"
+          ],
+          "basis": "게이트 길이 스케일링 및 금속 게이트 재료 관련 특허를 공유하며, 공정 제어 기술에서도 유사한 접근을 보임.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "SMIC",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "FinFET Structure",
+            "FBAR Packaging",
+            "Process Automation"
+          ],
+          "basis": "Fin 구조 및 FBAR 패키징, 공정 자동화 관련 특허를 공유하지만, 최신 미세 공정 기술에서는 격차가 존재함.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "TSMC",
+          "related_actor": "UMC",
+          "similarity": 0.15,
+          "edge_weight": 0.15,
+          "shared_technology_areas": [
+            "Biomedical Materials",
+            "Gene Therapy"
+          ],
+          "basis": "UMC 의 특허 데이터는 반도체 공정과 무관한 바이오/의료 분야 (UMC Utrecht 등) 로 구성되어 있어 기술적 유사성이 매우 낮음.",
+          "evidence_level": "indirect"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 8개 기술 선정 완료. 시장 개화 예상 시점: 2026 Q4"
+    ]
+  }
+}

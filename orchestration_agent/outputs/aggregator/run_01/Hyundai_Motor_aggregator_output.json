@@ -1,0 +1,1810 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T20:56:32Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고성능 양극재 리튬 보충제",
+        "category": "Material",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "BYD Company",
+          "Toyota Motor Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "BYD Company",
+            "title": "POSITIVE ELECTRODE LITHIUM-SUPPLEMENTING AGENT, PREPARATION METHOD THEREFOR, POSITIVE ELECTRODE SHEET, BATTERY, AND ELECTRICAL DEVICE",
+            "date": "2025-10-31",
+            "cited_by": 0
+          },
+          {
+            "company": "BYD Company",
+            "title": "POSITIVE ELECTRODE ACTIVE MATERIAL, POSITIVE ELECTRODE, SECONDARY BATTERY, AND ELECTRIC DEVICE",
+            "date": "2025-03-28",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "BYD 는 양극재의 수명 및 성능 향상을 위한 리튬 보충제 및 활성 물질 특허를 집중 출원하고 있어, 배터리 원가 경쟁력 확보에 핵심이다. 현대자동차는 배터리 소재 자체 개발보다는 시스템 통합에 집중하고 있어, 이 분야의 기술 격차 해소가 원가 우위 전략에 필수적이다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "배터리 열흡수 복합재",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 82.3,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "BYD Company"
+        ],
+        "evidence_patents": [
+          {
+            "company": "BYD Company",
+            "title": "HEAT-ABSORBING COMPOSITE MATERIAL, HEAT ABSORBER, BATTERY ASSEMBLY, AND ELECTRICAL DEVICE",
+            "date": "2025-03-28",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "BYD 는 배터리 열관리를 위한 흡열 복합재 특허를 보유하여 안전성과 충전 속도 향상을 동시에 달성하고 있다. 이는 EV 의 핵심 리스크인 열폭주 방지를 위한 차세대 소재 기술로, 현대자동차의 안전성 강화 로드맵에 직접적으로 기여할 수 있다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "자동화 충전 도킹 시스템",
+        "category": "Equipment",
+        "estimated_trl": 7,
+        "patent_score": 91.2,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 98
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Hyundai Motor",
+          "Toyota Motor Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Hyundai Motor",
+            "title": "METHOD FOR CONTROLLING DOCKING AND UNDOCKING OF EV AND METHOD FOR CONTROLLING DOCKING AND UNDOCKING OF AEVSE",
+            "date": "2025-11-04",
+            "cited_by": 0
+          },
+          {
+            "company": "Hyundai Motor",
+            "title": "LOCALIZATION METHOD AND APPARATUS FOR GUIDING MOBILITY ENTITY PARKING IN AUTOMATED ELECTRIC VEHICLE SUPPLY EQUIPMENT",
+            "date": "2025-11-04",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "현대자동차는 이미 자동화 충전 도킹 및 정밀 위치 인식 관련 특허를 다수 출원하여 기술 선점 상태를 보이고 있다. 이는 자율주행과 EV 충전 인프라를 결합한 서비스 모델의 핵심 장비로, 단기 상용화 및 수익성 극대화 전략과 완벽하게 부합한다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [
+          "T03"
+        ],
+        "source_companies": [
+          "Volkswagen Group"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Volkswagen Group",
+            "title": "ASYMMETRICAL AUTONOMOUS VEHICLE COMPUTING ARCHITECTURE",
+            "date": "2023-06-29",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Volkswagen 은 자율주행 컴퓨팅 자원의 효율적 배분을 위한 비대칭 아키텍처 특허를 보유하고 있어, 하드웨어 비용 절감과 성능 최적화를 동시에 달성하고 있다. 이는 현대자동차의 원가 우위 전략과 자율주행 검증 기술 확대 방향에 중요한 시사점을 제공한다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "레이저 가공 및 접합 기술",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 76.5,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 82
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Toyota Motor Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Toyota Motor Corporation",
+            "title": "LASER IRRADIATION DEVICE, LASER PROCESSING APPARATUS INCLUDING SAME, AND LASER PROCESSING METHOD",
+            "date": "2025-01-23",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Toyota 는 정밀 레이저 가공 및 접합 장비를 위한 특허를 출원하여, 차체 및 부품 제조 공정의 정밀도와 생산성을 높이고 있다. 이는 현대자동차의 제조 원가 절감 및 품질 향상을 위한 공정 기술 도입의 유력한 후보가 된다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "배터리 셀 통합 쉘 어셈블리",
+        "category": "Packaging",
+        "estimated_trl": 6,
+        "patent_score": 84.1,
+        "patent_signals": {
+          "peer_momentum": 86,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "source_companies": [
+          "BYD Company"
+        ],
+        "evidence_patents": [
+          {
+            "company": "BYD Company",
+            "title": "SHELL ASSEMBLY FOR BATTERY AND POWER DEVICE",
+            "date": "2025-11-12",
+            "cited_by": 0
+          },
+          {
+            "company": "BYD Company",
+            "title": "DISTRIBUTION BOX AND BATTERY DEVICE",
+            "date": "2025-11-05",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "BYD 는 배터리 셀과 쉘을 일체화하는 패키징 기술 특허를 통해 공간 효율성과 구조 강성을 동시에 확보하고 있다. 이는 EV 의 주행거리 향상과 차량 경량화에 직결되는 기술로, 현대자동차의 배터리 팩 설계 최적화에 필수적이다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "차량용 열발생 소재",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 73.4,
+        "patent_signals": {
+          "peer_momentum": 68,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Nissan Motor Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Nissan Motor Corporation",
+            "title": "HEAT-GENERATING MATERIAL, AND HEAT-GENERATING SYSTEM AND METHOD OF SUPPLYING HEAT USING THE SAME",
+            "date": "2025-01-17",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Nissan 은 EV 의 겨울철 주행거리 확보를 위한 차체 난방용 열발생 소재 특허를 보유하고 있다. 이는 배터리 효율 저하를 최소화하면서 승객 편의성을 높이는 기술로, 현대자동차의 EV 성능 최적화 전략에 부합한다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "다중 링크 서스펜션 장치",
+        "category": "Equipment",
+        "estimated_trl": 7,
+        "patent_score": 71.2,
+        "patent_signals": {
+          "peer_momentum": 65,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 78
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "General Motors"
+        ],
+        "evidence_patents": [
+          {
+            "company": "General Motors",
+            "title": "Multi-link suspension device and vehicle",
+            "date": "2026-01-05",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "General Motors 는 주행 안정성과 승차감을 동시에 개선하는 다중 링크 서스펜션 장치를 특허로 보호하고 있다. 이는 EV 의 무거운 배터리 무게를 고려한 차체 제어 기술로, 현대자동차의 고급 EV 모델 경쟁력 강화에 기여할 수 있다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고성능 양극재 리튬 보충제",
+        "market_score": 82.4,
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 78,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 8.5,
+          "basis": "전 세계 EV 배터리 시장 규모 (TAM) 는 2030 년 약 1,200 억 달러로 추정되며, 고성능 양극재 소재는 이 중 핵심 구성 요소로 10-15% 의 시장 점유율을 차지할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "EV 배터리 수요 급증 및 고용량 양극재 기술 전환에 따른 연평균 20% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle Battery Market Size | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/electric-vehicle-battery-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "MarketsandMarkets EV Battery Market Report",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/electric-vehicle-battery-market-246265460.html",
+            "use": "시장 세분화 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company",
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management",
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "BYD 와 Toyota 의 특허 활동이 활발한 배터리 소재 분야로, EV 시장 성장에 따라 2027 년경 기술 상용화 가속이 예상됨. 원가 우위 전략과 맞물려 고성능 양극재는 핵심 경쟁력이 될 것으로 판단."
+      },
+      {
+        "tech_id": "T02",
+        "name": "배터리 열흡수 복합재",
+        "market_score": 79.6,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "EV 배터리 열관리 시스템 시장이 2030 년 약 350 억 달러 규모로 성장할 것으로 예상되며, 열흡수 복합재는 안전성 강화 수요로 인해 핵심 소재로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 안전 규제 강화 및 고출력 배터리 도입으로 열관리 솔루션 수요가 연평균 20% 이상 증가할 것으로 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Battery Thermal Management System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Automotive Battery Thermal Management System Market Size, Share Forecast 2035",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ]
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "BYD 의 열관리 특허가 강세인 만큼, 안전성 요구가 높아지는 2028 년경 시장이 본격화될 것으로 예상. 열흡수 복합재는 배터리 화재 예방을 위한 필수 기술로 부상."
+      },
+      {
+        "tech_id": "T03",
+        "name": "자동화 충전 도킹 시스템",
+        "market_score": 76.8,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 68
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.5,
+          "basis": "자율주행 및 자동화 충전 인프라 시장이 2030 년 약 250 억 달러 규모로 성장할 것으로 예상되며, 도킹 시스템은 핵심 구성 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 차량 보급 확대 및 충전 편의성 요구 증가로 연평균 19% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle (EV) Market Analysis, Size, and Forecast 2026-2030",
+            "url": "https://www.technavio.com/report/electric-vehicle-market-size-industry-analysis",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Electric Vehicle Market Size, Share, Trends & Growth - 2030",
+            "url": "https://www.alliedmarketresearch.com/electric-vehicle-market",
+            "use": "인프라 및 충전 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "현대자동차와 Toyota 의 특허가 겹치는 자동화 충전 분야로, 2027 년 말경 자율주행 차량 상용화와 함께 시장이 급성장할 것으로 예상. 초기 진입 시점 확보가 중요."
+      },
+      {
+        "tech_id": "T04",
+        "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+        "market_score": 85.2,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 80.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 5.0,
+          "basis": "자율주행 차량 컴퓨팅 시장이 2030 년 약 800 억 달러 규모로 성장할 것으로 예상되며, 비대칭 아키텍처는 효율성 및 성능 최적화 핵심 기술."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 3 이상 차량 보급 확대 및 컴퓨팅 성능 요구 증가로 연평균 24% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Next-Generation Automotive Computing Market 2026: Nvidia Leads ...",
+            "url": "https://finance.yahoo.com/news/next-generation-automotive-computing-market-090200195.html",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Volkswagen Group"
+          ],
+          "shared_technology_areas": [
+            "Autonomous Computing Architecture",
+            "Sensor Systems"
+          ]
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "Volkswagen 의 특허가 강세인 자율주행 컴퓨팅 분야로, 2026 년 하반기부터 레벨 3 자율주행 차량 상용화와 함께 시장이 급성장할 것으로 예상. 기술 선점이 경쟁력 확보의 핵심."
+      },
+      {
+        "tech_id": "T05",
+        "name": "레이저 가공 및 접합 기술",
+        "market_score": 72.5,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "자동차 제조 공정 자동화 시장이 2030 년 약 150 억 달러 규모로 성장할 것으로 예상되며, 레이저 가공 기술은 배터리 및 차체 제조 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "제조 효율성 요구 증가 및 정밀 가공 기술 수요로 연평균 16% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle Battery Market Trends and Size 2035",
+            "url": "https://www.towardsautomotive.com/insights/electric-vehicle-battery-market-sizing",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Global Automotive Industry Overview",
+            "url": "https://www.joyson.com/en/web/bocupload/2025/10/28/17616085449142emr5v.pdf",
+            "use": "제조 공정 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "Toyota 의 레이저 가공 특허가 강세인 제조 공정 분야로, 2028 년경 배터리 생산량 증가와 함께 수요가 급증할 것으로 예상. 원가 우위 전략과 맞물려 효율성 개선 기술이 중요."
+      },
+      {
+        "tech_id": "T06",
+        "name": "배터리 셀 통합 쉘 어셈블리",
+        "market_score": 80.1,
+        "market_signals": {
+          "tam_growth_rate": 86,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 76,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.0,
+          "basis": "Cell-to-Pack 배터리 시장이 2030 년 약 450 억 달러 규모로 성장할 것으로 예상되며, 통합 쉘 어셈블리는 공간 효율성 및 원가 절감 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 23.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 밀도 향상 및 제조 공정 간소화 요구로 연평균 23% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle (EV) Battery Cell and Pack Materials Market",
+            "url": "https://finance.yahoo.com/news/electric-vehicle-ev-battery-cell-162400895.html",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Cell To Pack Battery Market Report, Industry and Market Size & Revenue, Share, Forecast 2024–2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/cell-to-pack-battery-market",
+            "use": "기술 트렌드 및 경쟁 구도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ]
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "BYD 의 Cell-to-Pack 기술이 강세인 배터리 패키징 분야로, 2027 년 하반기부터 시장이 급성장할 것으로 예상. 원가 우위 전략과 맞물려 통합 쉘 어셈블리는 핵심 경쟁력."
+      },
+      {
+        "tech_id": "T07",
+        "name": "차량용 열발생 소재",
+        "market_score": 65.4,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 55
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "EV 열관리 소재 시장이 2030 년 약 80 억 달러 규모로 성장할 것으로 예상되며, 열발생 소재는 겨울철 주행 거리 확보를 위한 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "EV 보급 확대 및 극한 기후 대응 요구로 연평균 15% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Battery Thermal Management System Market",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Nissan Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Thermal Materials",
+            "Power Conversion",
+            "Door Mechanisms"
+          ]
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "estimated",
+        "rationale": "Nissan 의 열발생 소재 특허가 강세인 열관리 분야로, 2029 년경 극한 기후 대응 수요 증가와 함께 시장이 성장할 것으로 예상. 단기 상용화 중심 전략과 맞물려 중요도 상승."
+      },
+      {
+        "tech_id": "T08",
+        "name": "다중 링크 서스펜션 장치",
+        "market_score": 62.8,
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "자동차 서스펜션 시장이 2030 년 약 120 억 달러 규모로 성장할 것으로 예상되며, 다중 링크 서스펜션은 주행 성능 및 안전성 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "고급 차량 수요 증가 및 주행 성능 요구로 연평균 12% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Suspension System Market Size, Share & Forecast",
+            "url": "https://www.factmr.com/report/automotive-suspension-system-market",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "General Motors"
+          ],
+          "shared_technology_areas": [
+            "Suspension Systems",
+            "Circuit Protection",
+            "Target Detection"
+          ]
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "estimated",
+        "rationale": "General Motors 의 서스펜션 특허가 강세인 주행 성능 분야로, 2029 년경 고급 차량 수요 증가와 함께 시장이 성장할 것으로 예상. 단기 상용화 중심 전략과 맞물려 중요도 상승."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "BYD Company",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ],
+          "basis": "BYD 는 배터리 소재 및 패키징 분야에서 현대자동차보다 더 공격적인 특허 출원 활동을 보이고 있으며, 이는 현대자동차의 원가 우위 전략에 직접적인 시사점을 제공한다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Toyota Motor Corporation",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ],
+          "basis": "Toyota 는 제조 공정 (레이저) 및 배터리 장치 관련 특허를 보유하고 있어, 현대자동차의 제조 효율성 및 배터리 기술 보완에 유사한 기술 테마를 공유한다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Volkswagen Group",
+          "similarity": 0.68,
+          "edge_weight": 0.68,
+          "shared_technology_areas": [
+            "Autonomous Computing Architecture",
+            "Sensor Systems"
+          ],
+          "basis": "Volkswagen 은 자율주행 컴퓨팅 아키텍처와 센서 시스템 관련 특허를 보유하고 있어, 현대자동차의 자율주행 검증 기술 확대 방향과 기술적 유사성을 보인다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Nissan Motor Corporation",
+          "similarity": 0.62,
+          "edge_weight": 0.62,
+          "shared_technology_areas": [
+            "Thermal Materials",
+            "Power Conversion",
+            "Door Mechanisms"
+          ],
+          "basis": "Nissan 은 열발생 소재 및 전력 변환 장치 관련 특허를 보유하고 있어, EV 의 열관리 및 전력 효율성 측면에서 현대자동차와 기술적 접점을 가진다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "General Motors",
+          "similarity": 0.58,
+          "edge_weight": 0.58,
+          "shared_technology_areas": [
+            "Suspension Systems",
+            "Circuit Protection",
+            "Target Detection"
+          ],
+          "basis": "General Motors 는 서스펜션 및 회로 보호 장치 관련 특허를 보유하고 있어, 차량 주행 성능 및 안전성 측면에서 현대자동차와 부분적인 기술 유사성을 보인다.",
+          "evidence_level": "direct"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "고성능 양극재 리튬 보충제",
+        "category": "Material",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 82.4,
+        "actor_map_score": 86.35,
+        "final_score": 85.33,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] BYD 는 양극재의 수명 및 성능 향상을 위한 리튬 보충제 및 활성 물질 특허를 집중 출원하고 있어, 배터리 원가 경쟁력 확보에 핵심이다. 현대자동차는 배터리 소재 자체 개발보다는 시스템 통합에 집중하고 있어, 이 분야의 기술 격차 해소가 원가 우위 전략에 필수적이다. [Market] BYD 와 Toyota 의 특허 활동이 활발한 배터리 소재 분야로, EV 시장 성장에 따라 2027 년경 기술 상용화 가속이 예상됨. 원가 우위 전략과 맞물려 고성능 양극재는 핵심 경쟁력이 될 것으로 판단.",
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 78,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 8.5,
+          "basis": "전 세계 EV 배터리 시장 규모 (TAM) 는 2030 년 약 1,200 억 달러로 추정되며, 고성능 양극재 소재는 이 중 핵심 구성 요소로 10-15% 의 시장 점유율을 차지할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "EV 배터리 수요 급증 및 고용량 양극재 기술 전환에 따른 연평균 20% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle Battery Market Size | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/electric-vehicle-battery-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "MarketsandMarkets EV Battery Market Report",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/electric-vehicle-battery-market-246265460.html",
+            "use": "시장 세분화 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company",
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management",
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "BYD Company",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging"
+            ],
+            "score_contribution": 90.2
+          },
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Battery Device"
+            ],
+            "score_contribution": 82.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "자동화 충전 도킹 시스템",
+        "category": "Equipment",
+        "trl": 7,
+        "patent_score": 91.2,
+        "market_score": 76.8,
+        "actor_map_score": 82.5,
+        "final_score": 82.98,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] 현대자동차는 이미 자동화 충전 도킹 및 정밀 위치 인식 관련 특허를 다수 출원하여 기술 선점 상태를 보이고 있다. 이는 자율주행과 EV 충전 인프라를 결합한 서비스 모델의 핵심 장비로, 단기 상용화 및 수익성 극대화 전략과 완벽하게 부합한다. [Market] 현대자동차와 Toyota 의 특허가 겹치는 자동화 충전 분야로, 2027 년 말경 자율주행 차량 상용화와 함께 시장이 급성장할 것으로 예상. 초기 진입 시점 확보가 중요.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 68
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.5,
+          "basis": "자율주행 및 자동화 충전 인프라 시장이 2030 년 약 250 억 달러 규모로 성장할 것으로 예상되며, 도킹 시스템은 핵심 구성 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 차량 보급 확대 및 충전 편의성 요구 증가로 연평균 19% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle (EV) Market Analysis, Size, and Forecast 2026-2030",
+            "url": "https://www.technavio.com/report/electric-vehicle-market-size-industry-analysis",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Electric Vehicle Market Size, Share, Trends & Growth - 2030",
+            "url": "https://www.alliedmarketresearch.com/electric-vehicle-market",
+            "use": "인프라 및 충전 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Vehicle Control"
+            ],
+            "score_contribution": 82.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 98
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 79.8,
+        "market_score": 85.2,
+        "actor_map_score": 71.15,
+        "final_score": 80.5,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [
+          "T03"
+        ],
+        "rationale": "[Patent] Volkswagen 은 자율주행 컴퓨팅 자원의 효율적 배분을 위한 비대칭 아키텍처 특허를 보유하고 있어, 하드웨어 비용 절감과 성능 최적화를 동시에 달성하고 있다. 이는 현대자동차의 원가 우위 전략과 자율주행 검증 기술 확대 방향에 중요한 시사점을 제공한다. [Market] Volkswagen 의 특허가 강세인 자율주행 컴퓨팅 분야로, 2026 년 하반기부터 레벨 3 자율주행 차량 상용화와 함께 시장이 급성장할 것으로 예상. 기술 선점이 경쟁력 확보의 핵심.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 80.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 5.0,
+          "basis": "자율주행 차량 컴퓨팅 시장이 2030 년 약 800 억 달러 규모로 성장할 것으로 예상되며, 비대칭 아키텍처는 효율성 및 성능 최적화 핵심 기술."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 3 이상 차량 보급 확대 및 컴퓨팅 성능 요구 증가로 연평균 24% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Next-Generation Automotive Computing Market 2026: Nvidia Leads ...",
+            "url": "https://finance.yahoo.com/news/next-generation-automotive-computing-market-090200195.html",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Volkswagen Group"
+          ],
+          "shared_technology_areas": [
+            "Autonomous Computing Architecture",
+            "Sensor Systems"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Volkswagen Group",
+            "similarity": 68.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Autonomous Computing Architecture"
+            ],
+            "score_contribution": 74.8
+          },
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Vehicle Control"
+            ],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "배터리 열흡수 복합재",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 82.3,
+        "market_score": 79.6,
+        "actor_map_score": 78.85,
+        "final_score": 80.39,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] BYD 는 배터리 열관리를 위한 흡열 복합재 특허를 보유하여 안전성과 충전 속도 향상을 동시에 달성하고 있다. 이는 EV 의 핵심 리스크인 열폭주 방지를 위한 차세대 소재 기술로, 현대자동차의 안전성 강화 로드맵에 직접적으로 기여할 수 있다. [Market] BYD 의 열관리 특허가 강세인 만큼, 안전성 요구가 높아지는 2028 년경 시장이 본격화될 것으로 예상. 열흡수 복합재는 배터리 화재 예방을 위한 필수 기술로 부상.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "EV 배터리 열관리 시스템 시장이 2030 년 약 350 억 달러 규모로 성장할 것으로 예상되며, 열흡수 복합재는 안전성 강화 수요로 인해 핵심 소재로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 안전 규제 강화 및 고출력 배터리 도입으로 열관리 솔루션 수요가 연평균 20% 이상 증가할 것으로 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Battery Thermal Management System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Automotive Battery Thermal Management System Market Size, Share Forecast 2035",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "BYD Company",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging"
+            ],
+            "score_contribution": 90.2
+          },
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Battery Device"
+            ],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "배터리 셀 통합 쉘 어셈블리",
+        "category": "Packaging",
+        "trl": 6,
+        "patent_score": 84.1,
+        "market_score": 80.1,
+        "actor_map_score": 71.17,
+        "final_score": 79.71,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "rationale": "[Patent] BYD 는 배터리 셀과 쉘을 일체화하는 패키징 기술 특허를 통해 공간 효율성과 구조 강성을 동시에 확보하고 있다. 이는 EV 의 주행거리 향상과 차량 경량화에 직결되는 기술로, 현대자동차의 배터리 팩 설계 최적화에 필수적이다. [Market] BYD 의 Cell-to-Pack 기술이 강세인 배터리 패키징 분야로, 2027 년 하반기부터 시장이 급성장할 것으로 예상. 원가 우위 전략과 맞물려 통합 쉘 어셈블리는 핵심 경쟁력.",
+        "market_signals": {
+          "tam_growth_rate": 86,
+          "time_to_market_urgency": 82,
+          "policy_and_investment_tailwind": 76,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.0,
+          "basis": "Cell-to-Pack 배터리 시장이 2030 년 약 450 억 달러 규모로 성장할 것으로 예상되며, 통합 쉘 어셈블리는 공간 효율성 및 원가 절감 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 23.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 밀도 향상 및 제조 공정 간소화 요구로 연평균 23% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle (EV) Battery Cell and Pack Materials Market",
+            "url": "https://finance.yahoo.com/news/electric-vehicle-ev-battery-cell-162400895.html",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Cell To Pack Battery Market Report, Industry and Market Size & Revenue, Share, Forecast 2024–2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/cell-to-pack-battery-market",
+            "use": "기술 트렌드 및 경쟁 구도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD Company"
+          ],
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "BYD Company",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging"
+            ],
+            "score_contribution": 90.2
+          },
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Battery Device"
+            ],
+            "score_contribution": 67.5
+          },
+          {
+            "related_actor": "Nissan Motor Corporation",
+            "similarity": 62.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Power Conversion"
+            ],
+            "score_contribution": 55.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 86,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "레이저 가공 및 접합 기술",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 76.5,
+        "market_score": 72.5,
+        "actor_map_score": 82.5,
+        "final_score": 75.9,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Toyota 는 정밀 레이저 가공 및 접합 장비를 위한 특허를 출원하여, 차체 및 부품 제조 공정의 정밀도와 생산성을 높이고 있다. 이는 현대자동차의 제조 원가 절감 및 품질 향상을 위한 공정 기술 도입의 유력한 후보가 된다. [Market] Toyota 의 레이저 가공 특허가 강세인 제조 공정 분야로, 2028 년경 배터리 생산량 증가와 함께 수요가 급증할 것으로 예상. 원가 우위 전략과 맞물려 효율성 개선 기술이 중요.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "자동차 제조 공정 자동화 시장이 2030 년 약 150 억 달러 규모로 성장할 것으로 예상되며, 레이저 가공 기술은 배터리 및 차체 제조 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "제조 효율성 요구 증가 및 정밀 가공 기술 수요로 연평균 16% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle Battery Market Trends and Size 2035",
+            "url": "https://www.towardsautomotive.com/insights/electric-vehicle-battery-market-sizing",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Global Automotive Industry Overview",
+            "url": "https://www.joyson.com/en/web/bocupload/2025/10/28/17616085449142emr5v.pdf",
+            "use": "제조 공정 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Toyota Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Laser Processing",
+              "Battery Device"
+            ],
+            "score_contribution": 82.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 82
+        }
+      },
+      {
+        "tech_id": "T07",
+        "name": "차량용 열발생 소재",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 73.4,
+        "market_score": 65.4,
+        "actor_map_score": 66.35,
+        "final_score": 68.39,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Nissan 은 EV 의 겨울철 주행거리 확보를 위한 차체 난방용 열발생 소재 특허를 보유하고 있다. 이는 배터리 효율 저하를 최소화하면서 승객 편의성을 높이는 기술로, 현대자동차의 EV 성능 최적화 전략에 부합한다. [Market] Nissan 의 열발생 소재 특허가 강세인 열관리 분야로, 2029 년경 극한 기후 대응 수요 증가와 함께 시장이 성장할 것으로 예상. 단기 상용화 중심 전략과 맞물려 중요도 상승.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 55
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "EV 열관리 소재 시장이 2030 년 약 80 억 달러 규모로 성장할 것으로 예상되며, 열발생 소재는 겨울철 주행 거리 확보를 위한 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "EV 보급 확대 및 극한 기후 대응 요구로 연평균 15% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Battery Thermal Management System Market",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Nissan Motor Corporation"
+          ],
+          "shared_technology_areas": [
+            "Thermal Materials",
+            "Power Conversion",
+            "Door Mechanisms"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "BYD Company",
+            "similarity": 82.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Battery Material"
+            ],
+            "score_contribution": 73.8
+          },
+          {
+            "related_actor": "Nissan Motor Corporation",
+            "similarity": 62.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 58.9
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 68,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 80
+        }
+      },
+      {
+        "tech_id": "T08",
+        "name": "다중 링크 서스펜션 장치",
+        "category": "Equipment",
+        "trl": 7,
+        "patent_score": 71.2,
+        "market_score": 62.8,
+        "actor_map_score": 65.65,
+        "final_score": 66.31,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] General Motors 는 주행 안정성과 승차감을 동시에 개선하는 다중 링크 서스펜션 장치를 특허로 보호하고 있다. 이는 EV 의 무거운 배터리 무게를 고려한 차체 제어 기술로, 현대자동차의 고급 EV 모델 경쟁력 강화에 기여할 수 있다. [Market] General Motors 의 서스펜션 특허가 강세인 주행 성능 분야로, 2029 년경 고급 차량 수요 증가와 함께 시장이 성장할 것으로 예상. 단기 상용화 중심 전략과 맞물려 중요도 상승.",
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "자동차 서스펜션 시장이 2030 년 약 120 억 달러 규모로 성장할 것으로 예상되며, 다중 링크 서스펜션은 주행 성능 및 안전성 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "고급 차량 수요 증가 및 주행 성능 요구로 연평균 12% 이상의 성장률 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Suspension System Market Size, Share & Forecast",
+            "url": "https://www.factmr.com/report/automotive-suspension-system-market",
+            "use": "시장 규모 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "General Motors"
+          ],
+          "shared_technology_areas": [
+            "Suspension Systems",
+            "Circuit Protection",
+            "Target Detection"
+          ]
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 75.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Battery Device",
+              "Vehicle Control"
+            ],
+            "score_contribution": 67.5
+          },
+          {
+            "related_actor": "General Motors",
+            "similarity": 58.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Suspension Systems"
+            ],
+            "score_contribution": 63.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 65,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 78
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Automotive / Mobility / EV",
+      "expected_boom_quarter": "2029 Q3",
+      "market_research_summary": {
+        "T01": {
+          "name": "고성능 양극재 리튬 보충제",
+          "market_score": 82.4,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 120.0,
+            "sam_usd_b": 45.0,
+            "som_usd_b": 8.5,
+            "basis": "전 세계 EV 배터리 시장 규모 (TAM) 는 2030 년 약 1,200 억 달러로 추정되며, 고성능 양극재 소재는 이 중 핵심 구성 요소로 10-15% 의 시장 점유율을 차지할 것으로 예상됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.5,
+            "forecast_period": "2025-2030",
+            "basis": "EV 배터리 수요 급증 및 고용량 양극재 기술 전환에 따른 연평균 20% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Electric Vehicle Battery Market Size | Industry Report, 2030",
+              "url": "https://www.grandviewresearch.com/industry-analysis/electric-vehicle-battery-market",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "MarketsandMarkets EV Battery Market Report",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/electric-vehicle-battery-market-246265460.html",
+              "use": "시장 세분화 및 경쟁 구도 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "BYD Company",
+              "Toyota Motor Corporation"
+            ],
+            "shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging",
+              "Thermal Management",
+              "Laser Processing",
+              "Battery Device",
+              "Vehicle Control"
+            ]
+          }
+        },
+        "T02": {
+          "name": "배터리 열흡수 복합재",
+          "market_score": 79.6,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 35.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 2.5,
+            "basis": "EV 배터리 열관리 시스템 시장이 2030 년 약 350 억 달러 규모로 성장할 것으로 예상되며, 열흡수 복합재는 안전성 강화 수요로 인해 핵심 소재로 부상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 21.0,
+            "forecast_period": "2025-2030",
+            "basis": "배터리 안전 규제 강화 및 고출력 배터리 도입으로 열관리 솔루션 수요가 연평균 20% 이상 증가할 것으로 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Battery Thermal Management System Market [2034]",
+              "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+              "use": "TAM 및 성장률 근거"
+            },
+            {
+              "title": "Automotive Battery Thermal Management System Market Size, Share Forecast 2035",
+              "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "BYD Company"
+            ],
+            "shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging",
+              "Thermal Management"
+            ]
+          }
+        },
+        "T03": {
+          "name": "자동화 충전 도킹 시스템",
+          "market_score": 76.8,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 25.0,
+            "sam_usd_b": 8.0,
+            "som_usd_b": 1.5,
+            "basis": "자율주행 및 자동화 충전 인프라 시장이 2030 년 약 250 억 달러 규모로 성장할 것으로 예상되며, 도킹 시스템은 핵심 구성 요소."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.5,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 차량 보급 확대 및 충전 편의성 요구 증가로 연평균 19% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Electric Vehicle (EV) Market Analysis, Size, and Forecast 2026-2030",
+              "url": "https://www.technavio.com/report/electric-vehicle-market-size-industry-analysis",
+              "use": "시장 규모 및 성장 전망"
+            },
+            {
+              "title": "Electric Vehicle Market Size, Share, Trends & Growth - 2030",
+              "url": "https://www.alliedmarketresearch.com/electric-vehicle-market",
+              "use": "인프라 및 충전 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Toyota Motor Corporation"
+            ],
+            "shared_technology_areas": [
+              "Laser Processing",
+              "Battery Device",
+              "Vehicle Control"
+            ]
+          }
+        },
+        "T04": {
+          "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+          "market_score": 85.2,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 80.0,
+            "sam_usd_b": 25.0,
+            "som_usd_b": 5.0,
+            "basis": "자율주행 차량 컴퓨팅 시장이 2030 년 약 800 억 달러 규모로 성장할 것으로 예상되며, 비대칭 아키텍처는 효율성 및 성능 최적화 핵심 기술."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.0,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 레벨 3 이상 차량 보급 확대 및 컴퓨팅 성능 요구 증가로 연평균 24% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
+              "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
+              "use": "TAM 및 성장률 근거"
+            },
+            {
+              "title": "Next-Generation Automotive Computing Market 2026: Nvidia Leads ...",
+              "url": "https://finance.yahoo.com/news/next-generation-automotive-computing-market-090200195.html",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Volkswagen Group"
+            ],
+            "shared_technology_areas": [
+              "Autonomous Computing Architecture",
+              "Sensor Systems"
+            ]
+          }
+        },
+        "T05": {
+          "name": "레이저 가공 및 접합 기술",
+          "market_score": 72.5,
+          "expected_market_boom_quarter": "2028 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 1.0,
+            "basis": "자동차 제조 공정 자동화 시장이 2030 년 약 150 억 달러 규모로 성장할 것으로 예상되며, 레이저 가공 기술은 배터리 및 차체 제조 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.5,
+            "forecast_period": "2025-2030",
+            "basis": "제조 효율성 요구 증가 및 정밀 가공 기술 수요로 연평균 16% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Electric Vehicle Battery Market Trends and Size 2035",
+              "url": "https://www.towardsautomotive.com/insights/electric-vehicle-battery-market-sizing",
+              "use": "시장 규모 및 성장 전망"
+            },
+            {
+              "title": "Global Automotive Industry Overview",
+              "url": "https://www.joyson.com/en/web/bocupload/2025/10/28/17616085449142emr5v.pdf",
+              "use": "제조 공정 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Toyota Motor Corporation"
+            ],
+            "shared_technology_areas": [
+              "Laser Processing",
+              "Battery Device",
+              "Vehicle Control"
+            ]
+          }
+        },
+        "T06": {
+          "name": "배터리 셀 통합 쉘 어셈블리",
+          "market_score": 80.1,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 15.0,
+            "som_usd_b": 3.0,
+            "basis": "Cell-to-Pack 배터리 시장이 2030 년 약 450 억 달러 규모로 성장할 것으로 예상되며, 통합 쉘 어셈블리는 공간 효율성 및 원가 절감 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 23.0,
+            "forecast_period": "2025-2030",
+            "basis": "배터리 밀도 향상 및 제조 공정 간소화 요구로 연평균 23% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Electric Vehicle (EV) Battery Cell and Pack Materials Market",
+              "url": "https://finance.yahoo.com/news/electric-vehicle-ev-battery-cell-162400895.html",
+              "use": "TAM 및 성장률 근거"
+            },
+            {
+              "title": "Cell To Pack Battery Market Report, Industry and Market Size & Revenue, Share, Forecast 2024–2030",
+              "url": "https://www.strategicmarketresearch.com/market-report/cell-to-pack-battery-market",
+              "use": "기술 트렌드 및 경쟁 구도"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "BYD Company"
+            ],
+            "shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging",
+              "Thermal Management"
+            ]
+          }
+        },
+        "T07": {
+          "name": "차량용 열발생 소재",
+          "market_score": 65.4,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 8.0,
+            "sam_usd_b": 2.5,
+            "som_usd_b": 0.5,
+            "basis": "EV 열관리 소재 시장이 2030 년 약 80 억 달러 규모로 성장할 것으로 예상되며, 열발생 소재는 겨울철 주행 거리 확보를 위한 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 15.0,
+            "forecast_period": "2025-2030",
+            "basis": "EV 보급 확대 및 극한 기후 대응 요구로 연평균 15% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Automotive Battery Thermal Management System Market",
+              "url": "https://www.marketresearchfuture.com/reports/automotive-battery-thermal-management-system-market-5728",
+              "use": "시장 규모 및 성장 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Nissan Motor Corporation"
+            ],
+            "shared_technology_areas": [
+              "Thermal Materials",
+              "Power Conversion",
+              "Door Mechanisms"
+            ]
+          }
+        },
+        "T08": {
+          "name": "다중 링크 서스펜션 장치",
+          "market_score": 62.8,
+          "expected_market_boom_quarter": "2029 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 0.8,
+            "basis": "자동차 서스펜션 시장이 2030 년 약 120 억 달러 규모로 성장할 것으로 예상되며, 다중 링크 서스펜션은 주행 성능 및 안전성 핵심."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.0,
+            "forecast_period": "2025-2030",
+            "basis": "고급 차량 수요 증가 및 주행 성능 요구로 연평균 12% 이상의 성장률 예상."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Automotive Suspension System Market Size, Share & Forecast",
+              "url": "https://www.factmr.com/report/automotive-suspension-system-market",
+              "use": "시장 규모 및 성장 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "General Motors"
+            ],
+            "shared_technology_areas": [
+              "Suspension Systems",
+              "Circuit Protection",
+              "Target Detection"
+            ]
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "BYD Company",
+            "similarity": 0.82,
+            "shared_technology_areas": [
+              "Battery Material",
+              "Battery Packaging",
+              "Thermal Management"
+            ]
+          },
+          {
+            "related_actor": "Toyota Motor Corporation",
+            "similarity": 0.75,
+            "shared_technology_areas": [
+              "Laser Processing",
+              "Battery Device",
+              "Vehicle Control"
+            ]
+          },
+          {
+            "related_actor": "Volkswagen Group",
+            "similarity": 0.68,
+            "shared_technology_areas": [
+              "Autonomous Computing Architecture",
+              "Sensor Systems"
+            ]
+          },
+          {
+            "related_actor": "Nissan Motor Corporation",
+            "similarity": 0.62,
+            "shared_technology_areas": [
+              "Thermal Materials",
+              "Power Conversion",
+              "Door Mechanisms"
+            ]
+          },
+          {
+            "related_actor": "General Motors",
+            "similarity": 0.58,
+            "shared_technology_areas": [
+              "Suspension Systems",
+              "Circuit Protection",
+              "Target Detection"
+            ]
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "BYD Company",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_technology_areas": [
+            "Battery Material",
+            "Battery Packaging",
+            "Thermal Management"
+          ],
+          "basis": "BYD 는 배터리 소재 및 패키징 분야에서 현대자동차보다 더 공격적인 특허 출원 활동을 보이고 있으며, 이는 현대자동차의 원가 우위 전략에 직접적인 시사점을 제공한다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Toyota Motor Corporation",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_technology_areas": [
+            "Laser Processing",
+            "Battery Device",
+            "Vehicle Control"
+          ],
+          "basis": "Toyota 는 제조 공정 (레이저) 및 배터리 장치 관련 특허를 보유하고 있어, 현대자동차의 제조 효율성 및 배터리 기술 보완에 유사한 기술 테마를 공유한다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Volkswagen Group",
+          "similarity": 0.68,
+          "edge_weight": 0.68,
+          "shared_technology_areas": [
+            "Autonomous Computing Architecture",
+            "Sensor Systems"
+          ],
+          "basis": "Volkswagen 은 자율주행 컴퓨팅 아키텍처와 센서 시스템 관련 특허를 보유하고 있어, 현대자동차의 자율주행 검증 기술 확대 방향과 기술적 유사성을 보인다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "Nissan Motor Corporation",
+          "similarity": 0.62,
+          "edge_weight": 0.62,
+          "shared_technology_areas": [
+            "Thermal Materials",
+            "Power Conversion",
+            "Door Mechanisms"
+          ],
+          "basis": "Nissan 은 열발생 소재 및 전력 변환 장치 관련 특허를 보유하고 있어, EV 의 열관리 및 전력 효율성 측면에서 현대자동차와 기술적 접점을 가진다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Hyundai Motor",
+          "related_actor": "General Motors",
+          "similarity": 0.58,
+          "edge_weight": 0.58,
+          "shared_technology_areas": [
+            "Suspension Systems",
+            "Circuit Protection",
+            "Target Detection"
+          ],
+          "basis": "General Motors 는 서스펜션 및 회로 보호 장치 관련 특허를 보유하고 있어, 차량 주행 성능 및 안전성 측면에서 현대자동차와 부분적인 기술 유사성을 보인다.",
+          "evidence_level": "direct"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 8개 기술 선정 완료. 시장 개화 예상 시점: 2029 Q3"
+    ]
+  }
+}

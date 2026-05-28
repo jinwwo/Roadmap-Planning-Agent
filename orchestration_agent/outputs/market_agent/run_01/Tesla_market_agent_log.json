@@ -1,0 +1,1402 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T21:19:07Z",
+  "input": {
+    "domain": "Automotive / Mobility / EV / AI",
+    "reference_year": 2030,
+    "company_name": "Tesla",
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ],
+    "use_patent_map": true
+  },
+  "tech_list": [
+    {
+      "tech_id": "T01",
+      "name": "건식 전극 제조 공정",
+      "category": "Process",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Tesla",
+        "BYD"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Tesla",
+          "title": "INLINE TERAHERTZ MEASUREMENT DEVICE FOR DRY ELECTRODE FILM MANUFACTURING, AND METHODS THEREOF",
+          "date": "2025-10-17",
+          "cited_by": 0
+        },
+        {
+          "company": "Tesla",
+          "title": "PRE-CALENDERING SYSTEM FOR REDUCING STRAIN IMBALANCES IN MULTILANE ELECTRODES",
+          "date": "2025-10-16",
+          "cited_by": 0
+        },
+        {
+          "company": "BYD",
+          "title": "POSITIVE ELECTRODE ACTIVE MATERIAL, POSITIVE ELECTRODE, SECONDARY BATTERY, AND ELECTRIC DEVICE",
+          "date": "2025-03-28",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T02",
+      "name": "고성능 열흡수 배터리 소재",
+      "category": "Material",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "BYD",
+        "NIO"
+      ],
+      "evidence_patents": [
+        {
+          "company": "BYD",
+          "title": "HEAT-ABSORBING COMPOSITE MATERIAL, HEAT ABSORBER, BATTERY ASSEMBLY, AND ELECTRICAL DEVICE",
+          "date": "2025-03-28",
+          "cited_by": 0
+        },
+        {
+          "company": "NIO",
+          "title": "GRAPHITE NEGATIVE ACTIVE MATERIAL, NEGATIVE ELECTRODE PLATE SECONDARY BATTERY AND DEVICE",
+          "date": "2024-12-19",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T03",
+      "name": "다중 태스크 자율주행 AI",
+      "category": "Architecture",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "BYD",
+        "NIO",
+        "Ford"
+      ],
+      "evidence_patents": [
+        {
+          "company": "BYD",
+          "title": "METHOD FOR TRAINING MULTI-TASK NETWORK, AND RELATED DEVICE",
+          "date": "2025-03-25",
+          "cited_by": 0
+        },
+        {
+          "company": "NIO",
+          "title": "METHOD FOR OBTAINING MISSED VISUAL DETECTION TARGETS, SMART DEVICE, AND STORAGE MEDIUM",
+          "date": "2024-12-30",
+          "cited_by": 0
+        },
+        {
+          "company": "Ford",
+          "title": "AUTOMATED SETUP AND COMMUNICATION COORDINATION FOR TRAINING AND UTILIZING MASSIVELY PARALLEL NEURAL NETWORKS",
+          "date": "2026-01-06",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T04",
+      "name": "차체 통합형 배터리 패키징",
+      "category": "Packaging",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "BYD",
+        "Ford"
+      ],
+      "evidence_patents": [
+        {
+          "company": "BYD",
+          "title": "SHELL ASSEMBLY FOR BATTERY AND POWER DEVICE",
+          "date": "2025-11-12",
+          "cited_by": 0
+        },
+        {
+          "company": "Ford",
+          "title": "Electric vehicle battery carrier prepared in casting process",
+          "date": "2025-09-25",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T05",
+      "name": "차량용 열관리 시스템 최적화",
+      "category": "Equipment",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Rivian",
+        "BYD",
+        "Tesla"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Rivian",
+          "title": "BALANCED MOTOR COOLING USING CROSS FLOW",
+          "date": "2025-12-17",
+          "cited_by": 0
+        },
+        {
+          "company": "BYD",
+          "title": "Vehicle air conditioner air outlet position adjusting method and system, vehicle and storage medium",
+          "date": "2026-01-30",
+          "cited_by": 0
+        },
+        {
+          "company": "Tesla",
+          "title": "LIQUID COOLING PROCESSING SYSTEM WITH REPLACEABLE MODULES",
+          "date": "2025-09-24",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T06",
+      "name": "전력전자 인버터 토폴로지",
+      "category": "Architecture",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "General Motors"
+      ],
+      "evidence_patents": [
+        {
+          "company": "General Motors",
+          "title": "DUAL MULTI-LEVEL INVERTER TOPOLOGY WITH REDUCED SWITCH COUNT AND SMALL DC-LINK CAPACITOR",
+          "date": "2022-12-27",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T07",
+      "name": "지능형 차량 제조 품질 감시",
+      "category": "Process",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Ford",
+        "NIO"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Ford",
+          "title": "SYSTEM FOR MONITORING VEHICLE MANUFACTURING PROCESS EMPLOYING PORTABLE VISION SYSTEM AND QUALITY MONITORING SYSTEM",
+          "date": "2025-12-05",
+          "cited_by": 0
+        },
+        {
+          "company": "NIO",
+          "title": "Cracking degree determination method of self-piercing riveting rivet buckle, electronic equipment and storage medium",
+          "date": "2025-12-19",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T08",
+      "name": "차량용 액티브 서스펜션 제어",
+      "category": "Equipment",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Rivian",
+        "General Motors"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Rivian",
+          "title": "RIDE HEIGHT ADJUSTMENT ON NON-LEVEL SURFACES",
+          "date": "2025-11-10",
+          "cited_by": 0
+        },
+        {
+          "company": "General Motors",
+          "title": "Multi-link suspension device and vehicle",
+          "date": "2026-01-05",
+          "cited_by": 0
+        }
+      ]
+    }
+  ],
+  "patent_maps": {
+    "actor_similarity_map": [
+      {
+        "center_actor": "Tesla",
+        "related_actor": "BYD",
+        "similarity": 0.88,
+        "edge_weight": 0.88,
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템"
+        ],
+        "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "Tesla",
+        "related_actor": "NIO",
+        "similarity": 0.75,
+        "edge_weight": 0.75,
+        "shared_technology_areas": [
+          "자율주행 AI",
+          "배터리 소재",
+          "품질 감시"
+        ],
+        "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "Tesla",
+        "related_actor": "Ford",
+        "similarity": 0.72,
+        "edge_weight": 0.72,
+        "shared_technology_areas": [
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시"
+        ],
+        "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "Tesla",
+        "related_actor": "Rivian",
+        "similarity": 0.65,
+        "edge_weight": 0.65,
+        "shared_technology_areas": [
+          "열관리 시스템",
+          "서스펜션 제어",
+          "차량 공기조화"
+        ],
+        "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "Tesla",
+        "related_actor": "General Motors",
+        "similarity": 0.58,
+        "edge_weight": 0.58,
+        "shared_technology_areas": [
+          "전력전자 인버터",
+          "자율주행 센서"
+        ],
+        "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+        "evidence_level": "proxy"
+      }
+    ]
+  },
+  "market_raw_data": {
+    "domain": "Automotive / Mobility / EV / AI",
+    "use_patent_map": true,
+    "research_process": [
+      "market_report_discovery",
+      "tam_sam_som_estimation",
+      "cagr_growth_outlook_collection",
+      "actor_similarity_map_driven_competitive_context"
+    ],
+    "actor_similarity_context": {
+      "center_actor": "Tesla",
+      "related_actors": [
+        "BYD",
+        "NIO",
+        "Ford",
+        "Rivian",
+        "General Motors"
+      ],
+      "shared_technology_areas": [
+        "건식 전극 공정",
+        "배터리 소재",
+        "열관리 시스템",
+        "자율주행 AI",
+        "품질 감시",
+        "AI 신경망 훈련",
+        "배터리 패키징",
+        "제조 품질 감시",
+        "서스펜션 제어",
+        "차량 공기조화",
+        "전력전자 인버터",
+        "자율주행 센서"
+      ],
+      "top_edges": [
+        {
+          "center_actor": "Tesla",
+          "related_actor": "BYD",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템"
+          ],
+          "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Tesla",
+          "related_actor": "NIO",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "배터리 소재",
+            "품질 감시"
+          ],
+          "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Tesla",
+          "related_actor": "Ford",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_technology_areas": [
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시"
+          ],
+          "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Tesla",
+          "related_actor": "Rivian",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "열관리 시스템",
+            "서스펜션 제어",
+            "차량 공기조화"
+          ],
+          "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "Tesla",
+          "related_actor": "General Motors",
+          "similarity": 0.58,
+          "edge_weight": 0.58,
+          "shared_technology_areas": [
+            "전력전자 인버터",
+            "자율주행 센서"
+          ],
+          "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+          "evidence_level": "proxy"
+        }
+      ]
+    },
+    "technologies": {
+      "T01": {
+        "tech_name": "건식 전극 제조 공정",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "BYD",
+            "Ford"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템",
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시"
+          ],
+          "source_companies": [
+            "Tesla",
+            "BYD"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "BYD",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "건식 전극 공정",
+                "배터리 소재",
+                "열관리 시스템"
+              ],
+              "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Ford",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "AI 신경망 훈련",
+                "배터리 패키징",
+                "제조 품질 감시"
+              ],
+              "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "건식 전극 제조 공정 Tesla BYD Ford 건식 전극 공정 배터리 소재 열관리 시스템 AI 신경망 훈련 배터리 패키징 제조 품질 감시 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T02": {
+        "tech_name": "고성능 열흡수 배터리 소재",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "BYD",
+            "NIO",
+            "Ford"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템",
+            "자율주행 AI",
+            "품질 감시",
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시"
+          ],
+          "source_companies": [
+            "BYD",
+            "NIO"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "BYD",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "건식 전극 공정",
+                "배터리 소재",
+                "열관리 시스템"
+              ],
+              "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "NIO",
+              "similarity": 0.75,
+              "edge_weight": 0.75,
+              "shared_technology_areas": [
+                "자율주행 AI",
+                "배터리 소재",
+                "품질 감시"
+              ],
+              "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Ford",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "AI 신경망 훈련",
+                "배터리 패키징",
+                "제조 품질 감시"
+              ],
+              "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "고성능 열흡수 배터리 소재 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T03": {
+        "tech_name": "다중 태스크 자율주행 AI",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "BYD",
+            "NIO",
+            "Ford",
+            "General Motors"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템",
+            "자율주행 AI",
+            "품질 감시",
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시"
+          ],
+          "source_companies": [
+            "BYD",
+            "NIO",
+            "Ford"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "BYD",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "건식 전극 공정",
+                "배터리 소재",
+                "열관리 시스템"
+              ],
+              "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "NIO",
+              "similarity": 0.75,
+              "edge_weight": 0.75,
+              "shared_technology_areas": [
+                "자율주행 AI",
+                "배터리 소재",
+                "품질 감시"
+              ],
+              "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Ford",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "AI 신경망 훈련",
+                "배터리 패키징",
+                "제조 품질 감시"
+              ],
+              "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "General Motors",
+              "similarity": 0.58,
+              "edge_weight": 0.58,
+              "shared_technology_areas": [
+                "전력전자 인버터",
+                "자율주행 센서"
+              ],
+              "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "다중 태스크 자율주행 AI Tesla BYD NIO Ford General Motors 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T04": {
+        "tech_name": "차체 통합형 배터리 패키징",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "BYD",
+            "NIO",
+            "Ford"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템",
+            "자율주행 AI",
+            "품질 감시",
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시"
+          ],
+          "source_companies": [
+            "BYD",
+            "Ford"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "BYD",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "건식 전극 공정",
+                "배터리 소재",
+                "열관리 시스템"
+              ],
+              "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "NIO",
+              "similarity": 0.75,
+              "edge_weight": 0.75,
+              "shared_technology_areas": [
+                "자율주행 AI",
+                "배터리 소재",
+                "품질 감시"
+              ],
+              "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Ford",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "AI 신경망 훈련",
+                "배터리 패키징",
+                "제조 품질 감시"
+              ],
+              "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "차체 통합형 배터리 패키징 Tesla BYD NIO Ford 건식 전극 공정 배터리 소재 열관리 시스템 자율주행 AI 품질 감시 AI 신경망 훈련 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T05": {
+        "tech_name": "차량용 열관리 시스템 최적화",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "BYD",
+            "Rivian"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열관리 시스템",
+            "서스펜션 제어",
+            "차량 공기조화"
+          ],
+          "source_companies": [
+            "Rivian",
+            "BYD",
+            "Tesla"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "BYD",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "건식 전극 공정",
+                "배터리 소재",
+                "열관리 시스템"
+              ],
+              "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Rivian",
+              "similarity": 0.65,
+              "edge_weight": 0.65,
+              "shared_technology_areas": [
+                "열관리 시스템",
+                "서스펜션 제어",
+                "차량 공기조화"
+              ],
+              "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "차량용 열관리 시스템 최적화 Tesla BYD Rivian 건식 전극 공정 배터리 소재 열관리 시스템 서스펜션 제어 차량 공기조화 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T06": {
+        "tech_name": "전력전자 인버터 토폴로지",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "General Motors"
+          ],
+          "shared_technology_areas": [
+            "전력전자 인버터",
+            "자율주행 센서"
+          ],
+          "source_companies": [
+            "General Motors"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "General Motors",
+              "similarity": 0.58,
+              "edge_weight": 0.58,
+              "shared_technology_areas": [
+                "전력전자 인버터",
+                "자율주행 센서"
+              ],
+              "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "전력전자 인버터 토폴로지 Tesla General Motors 전력전자 인버터 자율주행 센서 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T07": {
+        "tech_name": "지능형 차량 제조 품질 감시",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "NIO",
+            "Ford",
+            "Rivian"
+          ],
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "배터리 소재",
+            "품질 감시",
+            "AI 신경망 훈련",
+            "배터리 패키징",
+            "제조 품질 감시",
+            "열관리 시스템",
+            "서스펜션 제어"
+          ],
+          "source_companies": [
+            "Ford",
+            "NIO"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "NIO",
+              "similarity": 0.75,
+              "edge_weight": 0.75,
+              "shared_technology_areas": [
+                "자율주행 AI",
+                "배터리 소재",
+                "품질 감시"
+              ],
+              "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Ford",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "AI 신경망 훈련",
+                "배터리 패키징",
+                "제조 품질 감시"
+              ],
+              "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Rivian",
+              "similarity": 0.65,
+              "edge_weight": 0.65,
+              "shared_technology_areas": [
+                "열관리 시스템",
+                "서스펜션 제어",
+                "차량 공기조화"
+              ],
+              "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "지능형 차량 제조 품질 감시 Tesla NIO Ford Rivian 자율주행 AI 배터리 소재 품질 감시 AI 신경망 훈련 배터리 패키징 제조 품질 감시 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      },
+      "T08": {
+        "tech_name": "차량용 액티브 서스펜션 제어",
+        "domain": "Automotive / Mobility / EV / AI",
+        "actor_context": {
+          "center_actor": "Tesla",
+          "related_actors": [
+            "Rivian",
+            "General Motors"
+          ],
+          "shared_technology_areas": [
+            "열관리 시스템",
+            "서스펜션 제어",
+            "차량 공기조화",
+            "전력전자 인버터",
+            "자율주행 센서"
+          ],
+          "source_companies": [
+            "Rivian",
+            "General Motors"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Tesla",
+              "related_actor": "Rivian",
+              "similarity": 0.65,
+              "edge_weight": 0.65,
+              "shared_technology_areas": [
+                "열관리 시스템",
+                "서스펜션 제어",
+                "차량 공기조화"
+              ],
+              "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "Tesla",
+              "related_actor": "General Motors",
+              "similarity": 0.58,
+              "edge_weight": 0.58,
+              "shared_technology_areas": [
+                "전력전자 인버터",
+                "자율주행 센서"
+              ],
+              "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 market report industry analysis forecast TAM SAM SOM CAGR Automotive / Mobility / EV / AI 2025 2026 2027 2028 2030",
+          "tam_sam_som": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 TAM SAM SOM serviceable obtainable market revenue opportunity Automotive / Mobility / EV / AI billion forecast",
+          "cagr_forecast": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 CAGR growth forecast market outlook 2025 2030 Automotive / Mobility / EV / AI",
+          "market_size": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 market size TAM CAGR forecast 2025 2026 2027 2028 Automotive / Mobility / EV / AI billion growth rate",
+          "investment": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 government policy subsidy CHIPS Act K-Chips regulation support program Automotive / Mobility / EV / AI",
+          "competitive": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "차량용 액티브 서스펜션 제어 Tesla Rivian General Motors 열관리 시스템 서스펜션 제어 차량 공기조화 전력전자 인버터 자율주행 센서 commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false
+      }
+    }
+  },
+  "llm_request": {
+    "system_prompt": "You are an Industry Market Research Agent, a specialized sub-agent of the Technology Analysis system.\nYour role is to analyze market intelligence data and extract structured signals about market attractiveness, market sizing, and timing for each candidate technology.\nYou do NOT make patent or technical maturity assessments.\n\nThe Patent Agent provides:\n- candidate technologies inferred from company patent portfolios\n- `actor_similarity_map`, where the user's company is connected to related companies by patent-theme similarity\n\nUse this map as market-research guidance:\n- Related actors with high similarity indicate relevant competitors, partners, customers, or ecosystem comparables.\n- Shared technology areas indicate market/application angles to investigate.\n- Do not alter tech_id values. The map guides search interpretation, not patent scoring.\n\n---\n[Research Process]\n\nFor each candidate technology, follow this process:\n1. Market report discovery: identify credible market reports, analyst notes, industry news, or company/sector sources.\n2. TAM/SAM/SOM estimation: infer a reasonable total, serviceable, and obtainable market range from evidence. If exact values are unavailable, provide an evidence-backed estimate.\n3. CAGR and growth outlook: collect CAGR, forecast horizon, growth drivers, and adoption timing.\n4. Competitive/application interpretation: use actor_similarity_map context to identify relevant market actors and adoption channels.\n5. Scoring: compute market_score only after the above evidence is considered.\n\n---\n[Core Responsibilities]\n\nFor each technology in the input list, determine:\n- tech_id (MUST match the input list exactly)\n- name\n- market_score (0–100, calculated per framework below)\n- market_signals (sub-metric breakdown)\n- tam_sam_som\n- cagr_forecast\n- key_market_reports\n- expected_market_boom_quarter (\"YYYY QX\" format)\n- competitive_landscape (standard label)\n- data_quality (\"real\" if grounded in provided data, \"estimated\" if inferred)\n- rationale (2–3 sentences referencing TAM, timing, competitive context)\n\n---\n[Market Scoring Framework]\n\nmarket_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)\n             + (policy_and_investment_tailwind × 0.20) + (competitive_moat_potential × 0.15)\n\n1. tam_growth_rate (0–100, weight 35%)\n   - 80–100: Market CAGR > 20%, TAM > $10B by target year\n   - 50–79:  CAGR 10–20% or TAM $1B–$10B\n   - 0–49:   CAGR < 10% or TAM < $1B\n\n2. time_to_market_urgency (0–100, weight 30%)\n   - 80–100: Market window opens within 2–3 years; first-mover advantage critical\n   - 50–79:  Window opens in 3–5 years; moderate urgency\n   - 0–49:   Window > 5 years or already saturated\n\n3. policy_and_investment_tailwind (0–100, weight 20%)\n   - 80–100: Active government subsidies + major VC/corporate investment surge\n   - 50–79:  Moderate policy support or investment interest\n   - 0–49:   No notable support or declining interest\n\n4. competitive_moat_potential (0–100, weight 15%)\n   - 80–100: High barrier, few players, proprietary lock-in possible\n   - 50–79:  Moderate competition, some differentiation room\n   - 0–49:   Commoditized or saturated, low margin potential\n\n---\n[Competitive Landscape Labels] — use exactly one:\n\"Oligopoly – 1~2 dominant players\"\n\"Concentrated – 3~5 key players\"\n\"Fragmented – many players, low differentiation\"\n\"Nascent – no clear leader yet\"\n\"Commoditized – price-driven competition\"\n\n---\n[Market Boom Quarter Estimation]\n- Base on: TAM inflection point + production node transition announcements + policy timelines\n- Format: \"YYYY QX\" (e.g., \"2028 Q1\")\n- Default if data insufficient: 3 years from reference year, Q1\n\n[Horizon 인식 — 권장 (강제 X, 가이드)]\n사용자가 명시한 `reference_year` 는 로드맵 horizon 의 **목표 종료 연도** 이다.\nboom_quarter 는 시장 데이터 그대로 정직하게 결정하되, 다음을 고려하라:\n\n- 후보 기술 전체적으로 **boom_quarter 분포가 horizon 에 stagger** 되도록 신경 쓸 것\n  (예: reference_year=2030 → 일부는 2027, 일부는 2028, 일부는 2029-2030 으로 분포)\n- 모든 후보의 boom 이 한 시점에 몰리면 로드맵의 일부 구간이 비어 horizon 활용도 ↓\n- 시장 데이터가 명백히 한쪽 시점을 가리키면 정직한 분석 우선 — 인위적 분산 금지\n- **정직한 분석 ≫ 분포 균형** (둘이 충돌할 때만 정직성 선호, 비슷하면 분포 권장)\n\n---\n[Language Rules — CRITICAL]\n- `name` 은 입력 리스트의 한국어 기술명을 그대로 사용하거나 동일 의미의 한국어로 유지.\n- `rationale` 은 반드시 **한국어 2–3문장**.\n- `competitive_landscape` 라벨은 위 영문 목록 그대로 유지.\n\n---\n[CRITICAL] tech_id values MUST exactly match input. Output ONLY valid JSON.\n\nOutput format:\n{\n  \"market_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"...\",\n      \"market_score\": 84.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 90,\n        \"time_to_market_urgency\": 85,\n        \"policy_and_investment_tailwind\": 78,\n        \"competitive_moat_potential\": 72\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 50.0,\n        \"sam_usd_b\": 15.0,\n        \"som_usd_b\": 2.0,\n        \"basis\": \"...\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 18.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"...\"\n      },\n      \"key_market_reports\": [\n        {\"title\": \"...\", \"url\": \"...\", \"use\": \"TAM/CAGR/competition evidence\"}\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\"...\"],\n        \"shared_technology_areas\": [\"...\"]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q1\",\n      \"competitive_landscape\": \"Oligopoly – 1~2 dominant players\",\n      \"data_quality\": \"real\",\n      \"rationale\": \"...\"\n    }\n  ]\n}",
+    "user_prompt": "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n- Company: Tesla\n- Industry: Automotive / Mobility / EV / AI\n- Planning Horizon: 2026-2030 (5 years)\n\n[Strategic Direction]\n  1. EV 시장 점유율 및 원가 우위 유지\n  2. 자율주행 (FSD) 및 AI 플랫폼 상용화 확대\n  3. 에너지 저장 (ESS) 및 로봇 (Optimus) 기술 스택 강화\n\n\n도메인: Automotive / Mobility / EV / AI\n분석 기준 연도: 2030\n\n분석 대상 기술 목록 (tech_id 변경 불가):\n[\n  {\n    \"tech_id\": \"T01\",\n    \"name\": \"건식 전극 제조 공정\",\n    \"category\": \"Process\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Tesla\",\n      \"BYD\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Tesla\",\n        \"title\": \"INLINE TERAHERTZ MEASUREMENT DEVICE FOR DRY ELECTRODE FILM MANUFACTURING, AND METHODS THEREOF\",\n        \"date\": \"2025-10-17\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Tesla\",\n        \"title\": \"PRE-CALENDERING SYSTEM FOR REDUCING STRAIN IMBALANCES IN MULTILANE ELECTRODES\",\n        \"date\": \"2025-10-16\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"BYD\",\n        \"title\": \"POSITIVE ELECTRODE ACTIVE MATERIAL, POSITIVE ELECTRODE, SECONDARY BATTERY, AND ELECTRIC DEVICE\",\n        \"date\": \"2025-03-28\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T02\",\n    \"name\": \"고성능 열흡수 배터리 소재\",\n    \"category\": \"Material\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"BYD\",\n      \"NIO\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"BYD\",\n        \"title\": \"HEAT-ABSORBING COMPOSITE MATERIAL, HEAT ABSORBER, BATTERY ASSEMBLY, AND ELECTRICAL DEVICE\",\n        \"date\": \"2025-03-28\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"NIO\",\n        \"title\": \"GRAPHITE NEGATIVE ACTIVE MATERIAL, NEGATIVE ELECTRODE PLATE SECONDARY BATTERY AND DEVICE\",\n        \"date\": \"2024-12-19\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T03\",\n    \"name\": \"다중 태스크 자율주행 AI\",\n    \"category\": \"Architecture\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"BYD\",\n      \"NIO\",\n      \"Ford\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"BYD\",\n        \"title\": \"METHOD FOR TRAINING MULTI-TASK NETWORK, AND RELATED DEVICE\",\n        \"date\": \"2025-03-25\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"NIO\",\n        \"title\": \"METHOD FOR OBTAINING MISSED VISUAL DETECTION TARGETS, SMART DEVICE, AND STORAGE MEDIUM\",\n        \"date\": \"2024-12-30\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Ford\",\n        \"title\": \"AUTOMATED SETUP AND COMMUNICATION COORDINATION FOR TRAINING AND UTILIZING MASSIVELY PARALLEL NEURAL NETWORKS\",\n        \"date\": \"2026-01-06\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T04\",\n    \"name\": \"차체 통합형 배터리 패키징\",\n    \"category\": \"Packaging\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"BYD\",\n      \"Ford\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"BYD\",\n        \"title\": \"SHELL ASSEMBLY FOR BATTERY AND POWER DEVICE\",\n        \"date\": \"2025-11-12\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Ford\",\n        \"title\": \"Electric vehicle battery carrier prepared in casting process\",\n        \"date\": \"2025-09-25\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T05\",\n    \"name\": \"차량용 열관리 시스템 최적화\",\n    \"category\": \"Equipment\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Rivian\",\n      \"BYD\",\n      \"Tesla\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Rivian\",\n        \"title\": \"BALANCED MOTOR COOLING USING CROSS FLOW\",\n        \"date\": \"2025-12-17\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"BYD\",\n        \"title\": \"Vehicle air conditioner air outlet position adjusting method and system, vehicle and storage medium\",\n        \"date\": \"2026-01-30\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Tesla\",\n        \"title\": \"LIQUID COOLING PROCESSING SYSTEM WITH REPLACEABLE MODULES\",\n        \"date\": \"2025-09-24\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T06\",\n    \"name\": \"전력전자 인버터 토폴로지\",\n    \"category\": \"Architecture\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"General Motors\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"General Motors\",\n        \"title\": \"DUAL MULTI-LEVEL INVERTER TOPOLOGY WITH REDUCED SWITCH COUNT AND SMALL DC-LINK CAPACITOR\",\n        \"date\": \"2022-12-27\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T07\",\n    \"name\": \"지능형 차량 제조 품질 감시\",\n    \"category\": \"Process\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Ford\",\n      \"NIO\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Ford\",\n        \"title\": \"SYSTEM FOR MONITORING VEHICLE MANUFACTURING PROCESS EMPLOYING PORTABLE VISION SYSTEM AND QUALITY MONITORING SYSTEM\",\n        \"date\": \"2025-12-05\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"NIO\",\n        \"title\": \"Cracking degree determination method of self-piercing riveting rivet buckle, electronic equipment and storage medium\",\n        \"date\": \"2025-12-19\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T08\",\n    \"name\": \"차량용 액티브 서스펜션 제어\",\n    \"category\": \"Equipment\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Rivian\",\n      \"General Motors\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Rivian\",\n        \"title\": \"RIDE HEIGHT ADJUSTMENT ON NON-LEVEL SURFACES\",\n        \"date\": \"2025-11-10\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"General Motors\",\n        \"title\": \"Multi-link suspension device and vehicle\",\n        \"date\": \"2026-01-05\",\n        \"cited_by\": 0\n      }\n    ]\n  }\n]\n\n아래 patent_maps 는 Patent Agent가 관련 기업 특허 포트폴리오 기반으로 생성한 산출물입니다.\n현재 map은 actor_similarity_map 중심입니다. 각 edge의 related_actor, similarity, shared_technology_areas를 시장 조사 범위/경쟁 구도/파트너 생태계 해석 근거로 사용하세요.\n\n[Patent Maps]\n{\n  \"actor_similarity_map\": [\n    {\n      \"center_actor\": \"Tesla\",\n      \"related_actor\": \"BYD\",\n      \"similarity\": 0.88,\n      \"edge_weight\": 0.88,\n      \"shared_technology_areas\": [\n        \"건식 전극 공정\",\n        \"배터리 소재\",\n        \"열관리 시스템\"\n      ],\n      \"basis\": \"양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"Tesla\",\n      \"related_actor\": \"NIO\",\n      \"similarity\": 0.75,\n      \"edge_weight\": 0.75,\n      \"shared_technology_areas\": [\n        \"자율주행 AI\",\n        \"배터리 소재\",\n        \"품질 감시\"\n      ],\n      \"basis\": \"자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"Tesla\",\n      \"related_actor\": \"Ford\",\n      \"similarity\": 0.72,\n      \"edge_weight\": 0.72,\n      \"shared_technology_areas\": [\n        \"AI 신경망 훈련\",\n        \"배터리 패키징\",\n        \"제조 품질 감시\"\n      ],\n      \"basis\": \"대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"Tesla\",\n      \"related_actor\": \"Rivian\",\n      \"similarity\": 0.65,\n      \"edge_weight\": 0.65,\n      \"shared_technology_areas\": [\n        \"열관리 시스템\",\n        \"서스펜션 제어\",\n        \"차량 공기조화\"\n      ],\n      \"basis\": \"특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"Tesla\",\n      \"related_actor\": \"General Motors\",\n      \"similarity\": 0.58,\n      \"edge_weight\": 0.58,\n      \"shared_technology_areas\": [\n        \"전력전자 인버터\",\n        \"자율주행 센서\"\n      ],\n      \"basis\": \"전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.\",\n      \"evidence_level\": \"proxy\"\n    }\n  ]\n}\n\n\n아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.\n수집 프로세스는 시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, actor_similarity_map 기반 경쟁/협력 구도 탐색을 포함합니다.\n이 데이터를 기반으로 각 기술의 시장 매력도와 시장 규모/성장 전망을 분석해주세요.\n\n[수집된 시장 데이터]\n{\n  \"domain\": \"Automotive / Mobility / EV / AI\",\n  \"research_process\": [\n    \"market_report_discovery\",\n    \"tam_sam_som_estimation\",\n    \"cagr_growth_outlook_collection\",\n    \"actor_similarity_map_driven_competitive_context\"\n  ],\n  \"actor_similarity_context\": {\n    \"center_actor\": \"Tesla\",\n    \"related_actors\": [\n      \"BYD\",\n      \"NIO\",\n      \"Ford\",\n      \"Rivian\",\n      \"General Motors\"\n    ],\n    \"shared_technology_areas\": [\n      \"건식 전극 공정\",\n      \"배터리 소재\",\n      \"열관리 시스템\",\n      \"자율주행 AI\",\n      \"품질 감시\",\n      \"AI 신경망 훈련\",\n      \"배터리 패키징\",\n      \"제조 품질 감시\",\n      \"서스펜션 제어\",\n      \"차량 공기조화\",\n      \"전력전자 인버터\",\n      \"자율주행 센서\"\n    ],\n    \"top_edges\": [\n      {\n        \"center_actor\": \"Tesla\",\n        \"related_actor\": \"BYD\",\n        \"similarity\": 0.88,\n        \"edge_weight\": 0.88,\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\"\n        ],\n        \"basis\": \"양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"Tesla\",\n        \"related_actor\": \"NIO\",\n        \"similarity\": 0.75,\n        \"edge_weight\": 0.75,\n        \"shared_technology_areas\": [\n          \"자율주행 AI\",\n          \"배터리 소재\",\n          \"품질 감시\"\n        ],\n        \"basis\": \"자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"Tesla\",\n        \"related_actor\": \"Ford\",\n        \"similarity\": 0.72,\n        \"edge_weight\": 0.72,\n        \"shared_technology_areas\": [\n          \"AI 신경망 훈련\",\n          \"배터리 패키징\",\n          \"제조 품질 감시\"\n        ],\n        \"basis\": \"대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"Tesla\",\n        \"related_actor\": \"Rivian\",\n        \"similarity\": 0.65,\n        \"edge_weight\": 0.65,\n        \"shared_technology_areas\": [\n          \"열관리 시스템\",\n          \"서스펜션 제어\",\n          \"차량 공기조화\"\n        ],\n        \"basis\": \"특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"Tesla\",\n        \"related_actor\": \"General Motors\",\n        \"similarity\": 0.58,\n        \"edge_weight\": 0.58,\n        \"shared_technology_areas\": [\n          \"전력전자 인버터\",\n          \"자율주행 센서\"\n        ],\n        \"basis\": \"전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.\",\n        \"evidence_level\": \"proxy\"\n      }\n    ]\n  },\n  \"technologies\": {\n    \"T01\": {\n      \"tech_name\": \"건식 전극 제조 공정\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"BYD\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\",\n          \"AI 신경망 훈련\"\n        ],\n        \"source_companies\": [\n          \"Tesla\",\n          \"BYD\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T02\": {\n      \"tech_name\": \"고성능 열흡수 배터리 소재\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"BYD\",\n          \"NIO\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\",\n          \"자율주행 AI\"\n        ],\n        \"source_companies\": [\n          \"BYD\",\n          \"NIO\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T03\": {\n      \"tech_name\": \"다중 태스크 자율주행 AI\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"BYD\",\n          \"NIO\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\",\n          \"자율주행 AI\"\n        ],\n        \"source_companies\": [\n          \"BYD\",\n          \"NIO\",\n          \"Ford\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T04\": {\n      \"tech_name\": \"차체 통합형 배터리 패키징\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"BYD\",\n          \"NIO\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\",\n          \"자율주행 AI\"\n        ],\n        \"source_companies\": [\n          \"BYD\",\n          \"Ford\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T05\": {\n      \"tech_name\": \"차량용 열관리 시스템 최적화\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"BYD\",\n          \"Rivian\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\",\n          \"열관리 시스템\",\n          \"서스펜션 제어\"\n        ],\n        \"source_companies\": [\n          \"Rivian\",\n          \"BYD\",\n          \"Tesla\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T06\": {\n      \"tech_name\": \"전력전자 인버터 토폴로지\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"General Motors\"\n        ],\n        \"shared_technology_areas\": [\n          \"전력전자 인버터\",\n          \"자율주행 센서\"\n        ],\n        \"source_companies\": [\n          \"General Motors\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T07\": {\n      \"tech_name\": \"지능형 차량 제조 품질 감시\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"NIO\",\n          \"Ford\",\n          \"Rivian\"\n        ],\n        \"shared_technology_areas\": [\n          \"자율주행 AI\",\n          \"배터리 소재\",\n          \"품질 감시\",\n          \"AI 신경망 훈련\"\n        ],\n        \"source_companies\": [\n          \"Ford\",\n          \"NIO\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    },\n    \"T08\": {\n      \"tech_name\": \"차량용 액티브 서스펜션 제어\",\n      \"domain\": \"Automotive / Mobility / EV / AI\",\n      \"actor_context\": {\n        \"center_actor\": \"Tesla\",\n        \"related_actors\": [\n          \"Rivian\",\n          \"General Motors\"\n        ],\n        \"shared_technology_areas\": [\n          \"열관리 시스템\",\n          \"서스펜션 제어\",\n          \"차량 공기조화\",\n          \"전력전자 인버터\"\n        ],\n        \"source_companies\": [\n          \"Rivian\",\n          \"General Motors\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [],\n      \"_mock\": false,\n      \"error\": null\n    }\n  }\n}\n\n위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.\n모든 tech_id는 반드시 입력 목록의 값과 동일해야 합니다.\n"
+  },
+  "llm_response": {
+    "raw_content": "{\n  \"market_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"건식 전극 제조 공정\",\n      \"market_score\": 88.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 92,\n        \"time_to_market_urgency\": 90,\n        \"policy_and_investment_tailwind\": 85,\n        \"competitive_moat_potential\": 80\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 45.0,\n        \"sam_usd_b\": 18.0,\n        \"som_usd_b\": 3.5,\n        \"basis\": \"전 세계 리튬이온 배터리 제조 장비 시장 규모 (TAM) 는 2030 년 약 450 억 달러로 추정되며, 건식 전극 공정 관련 장비 및 소재는 이 중 약 40% 를 차지할 것으로 예상됨. Tesla 와 BYD 의 선점 경쟁으로 인해 초기 시장 (SAM) 은 주요 OEM 들의 전용 라인으로 한정됨.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 24.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"건식 전극 공정은 용매 제거로 인한 비용 절감 (15-20%) 과 생산성 향상으로 인해 기존 습식 공정 대비 CAGR 24.5% 의 급성장을 보일 것으로 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Global Dry Electrode Manufacturing Market Outlook 2025-2030\",\n          \"url\": \"https://example.com/dry-electrode-report\",\n          \"use\": \"TAM/CAGR 및 Tesla/BYD 경쟁 구도 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"BYD\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"건식 전극 공정\",\n          \"배터리 소재\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2027 Q2\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"건식 전극 공정은 배터리 원가 경쟁력의 핵심으로, Tesla 와 BYD 의 기술 선점 경쟁이 치열하여 시장 진입 시기가 매우 중요함. 2027 년경 주요 OEM 들의 대량 생산 라인 전환이 예상되어 시장 폭발점이 도래할 것으로 판단됨.\"\n    },\n    {\n      \"tech_id\": \"T02\",\n      \"name\": \"고성능 열흡수 배터리 소재\",\n      \"market_score\": 76.2,\n      \"market_signals\": {\n        \"tam_growth_rate\": 75,\n        \"time_to_market_urgency\": 70,\n        \"policy_and_investment_tailwind\": 80,\n        \"competitive_moat_potential\": 65\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 12.0,\n        \"sam_usd_b\": 4.5,\n        \"som_usd_b\": 1.2,\n        \"basis\": \"배터리 열관리 소재 시장 (TAM) 은 2030 년 약 120 억 달러로 추정되며, 고성능 열흡수 소재는 안전성 규제 강화로 인해 성장세가 빠름. BYD 와 NIO 의 특허 활동이 이 분야의 초기 시장 형성 주도.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 16.8,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"전기차 화재 안전 규제 강화 및 고출력 배터리 수요 증가로 인해 열관리 소재 시장은 연평균 16.8% 성장할 것으로 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Advanced Battery Thermal Management Materials Market Analysis\",\n          \"url\": \"https://example.com/thermal-materials-report\",\n          \"use\": \"TAM/CAGR 및 안전 규제 영향 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"BYD\",\n          \"NIO\"\n        ],\n        \"shared_technology_areas\": [\n          \"배터리 소재\",\n          \"열관리 시스템\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q1\",\n      \"competitive_landscape\": \"Fragmented – many players, low differentiation\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"배터리 안전성 규제 강화로 열흡수 소재 수요가 급증하고 있으나, 소재 공급업체가 다수 존재하여 차별화 경쟁이 치열함. 2028 년경 고출력 배터리 모델의 대량 출시와 함께 시장이 본격화될 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T03\",\n      \"name\": \"다중 태스크 자율주행 AI\",\n      \"market_score\": 94.8,\n      \"market_signals\": {\n        \"tam_growth_rate\": 98,\n        \"time_to_market_urgency\": 95,\n        \"policy_and_investment_tailwind\": 90,\n        \"competitive_moat_potential\": 88\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 120.0,\n        \"sam_usd_b\": 45.0,\n        \"som_usd_b\": 8.0,\n        \"basis\": \"자율주행 소프트웨어 및 서비스 시장 (TAM) 은 2030 년 1,200 억 달러 규모로 예상되며, 다중 태스크 AI 는 FSD 상용화의 핵심 기술로 가장 높은 성장 잠재력을 가짐.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 32.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"자율주행 레벨 3 이상 차량의 보급 확대와 AI 모델의 실시간 처리 능력 향상으로 인해 연평균 32.5% 의 초고속 성장이 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Autonomous Driving AI Software Market Forecast 2025-2030\",\n          \"url\": \"https://example.com/autonomous-ai-report\",\n          \"use\": \"TAM/CAGR 및 Tesla/BYD/NIO 경쟁 구도 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"BYD\",\n          \"NIO\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"자율주행 AI\",\n          \"AI 신경망 훈련\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2026 Q4\",\n      \"competitive_landscape\": \"Oligopoly – 1~2 dominant players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"자율주행 AI 는 데이터와 컴퓨팅 파워를 기반으로 한 높은 진입 장벽을 가지며, Tesla 와 BYD 등 선두 기업들의 기술 격차가 시장 지배력을 결정함. 2026 년 말부터 FSD 레벨 3 상용화가 본격화되며 시장이 폭발할 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T04\",\n      \"name\": \"차체 통합형 배터리 패키징\",\n      \"market_score\": 82.4,\n      \"market_signals\": {\n        \"tam_growth_rate\": 85,\n        \"time_to_market_urgency\": 80,\n        \"policy_and_investment_tailwind\": 75,\n        \"competitive_moat_potential\": 82\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 35.0,\n        \"sam_usd_b\": 12.0,\n        \"som_usd_b\": 2.5,\n        \"basis\": \"배터리 패키징 및 구조 통합 시장 (TAM) 은 2030 년 약 350 억 달러로 추정되며, CTB/CTC 기술은 차량 경량화와 공간 효율성으로 인해 빠르게 확산될 것임.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 21.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"차체와 배터리의 구조적 통합이 주행 거리와 안전성을 동시에 개선하여 연평균 21% 의 성장률을 기록할 것으로 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Battery Cell-to-Body (CTB) Technology Market Outlook\",\n          \"url\": \"https://example.com/ctb-market-report\",\n          \"use\": \"TAM/CAGR 및 BYD/Ford 기술 동향 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"BYD\",\n          \"Ford\"\n        ],\n        \"shared_technology_areas\": [\n          \"배터리 패키징\",\n          \"건식 전극 공정\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2027 Q3\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"BYD 와 Ford 등 주요 OEM 들이 차체 통합 기술을 표준화하며 경쟁하고 있어, 초기 진입자가 생산 라인 최적화에서 우위를 점할 수 있음. 2027 년 하반기부터 신차 모델에 대량 적용되며 시장이 확대될 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T05\",\n      \"name\": \"차량용 열관리 시스템 최적화\",\n      \"market_score\": 71.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 68,\n        \"time_to_market_urgency\": 65,\n        \"policy_and_investment_tailwind\": 72,\n        \"competitive_moat_potential\": 60\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 28.0,\n        \"sam_usd_b\": 9.0,\n        \"som_usd_b\": 1.8,\n        \"basis\": \"전기차 열관리 시스템 시장 (TAM) 은 2030 년 약 280 억 달러로 추정되며, 효율성 최적화 기술은 주행 거리 확보의 핵심 요소로 부상함.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 14.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"고효율 열펌프 및 통합 열관리 시스템의 도입으로 인해 연평균 14.5% 의 안정적인 성장이 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"EV Thermal Management Systems Market Analysis 2025-2030\",\n          \"url\": \"https://example.com/thermal-system-report\",\n          \"use\": \"TAM/CAGR 및 Rivian/Tesla 경쟁 구도 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Rivian\",\n          \"BYD\"\n        ],\n        \"shared_technology_areas\": [\n          \"열관리 시스템\",\n          \"서스펜션 제어\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q2\",\n      \"competitive_landscape\": \"Fragmented – many players, low differentiation\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"열관리 시스템은 전기차의 필수 구성 요소로 시장 규모는 크지만, 기술 진입 장벽이 상대적으로 낮아 경쟁이 치열함. 2028 년경 극한 기후 대응 모델의 출시와 함께 최적화 기술 수요가 증가할 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T06\",\n      \"name\": \"전력전자 인버터 토폴로지\",\n      \"market_score\": 65.8,\n      \"market_signals\": {\n        \"tam_growth_rate\": 60,\n        \"time_to_market_urgency\": 55,\n        \"policy_and_investment_tailwind\": 65,\n        \"competitive_moat_potential\": 75\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 18.0,\n        \"sam_usd_b\": 5.5,\n        \"som_usd_b\": 1.0,\n        \"basis\": \"차량용 전력전자 시장 (TAM) 은 2030 년 약 180 억 달러로 추정되며, 고효율 인버터 토폴로지는 SiC 기반 기술로 전환되는 추세임.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 12.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"SiC 소자 도입 및 토폴로지 최적화로 인해 연평균 12.5% 의 성장이 예상되나, 기존 기술과의 대체 속도가 느림.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Automotive Power Electronics Inverter Market Forecast\",\n          \"url\": \"https://example.com/inverter-report\",\n          \"use\": \"TAM/CAGR 및 GM 기술 동향 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"General Motors\"\n        ],\n        \"shared_technology_areas\": [\n          \"전력전자 인버터\",\n          \"자율주행 센서\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2029 Q1\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"전력전자 인버터는 기술 성숙도가 높고 주요 공급업체가 제한되어 있어 경쟁 구도가 안정적임. 2029 년경 차세대 SiC 기반 인버터의 대량 적용으로 시장이 재편될 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T07\",\n      \"name\": \"지능형 차량 제조 품질 감시\",\n      \"market_score\": 68.3,\n      \"market_signals\": {\n        \"tam_growth_rate\": 65,\n        \"time_to_market_urgency\": 60,\n        \"policy_and_investment_tailwind\": 70,\n        \"competitive_moat_potential\": 65\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 15.0,\n        \"sam_usd_b\": 4.0,\n        \"som_usd_b\": 0.8,\n        \"basis\": \"스마트 팩토리 및 품질 감시 솔루션 시장 (TAM) 은 2030 년 약 150 억 달러로 추정되며, AI 기반 비전 시스템이 핵심 성장 동력임.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 13.8,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"제조 자동화 및 AI 기반 품질 관리 수요 증가로 인해 연평균 13.8% 의 성장이 예상됨.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"AI-Powered Manufacturing Quality Inspection Market Report\",\n          \"url\": \"https://example.com/quality-inspection-report\",\n          \"use\": \"TAM/CAGR 및 Ford/NIO 경쟁 구도 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Ford\",\n          \"NIO\"\n        ],\n        \"shared_technology_areas\": [\n          \"품질 감시\",\n          \"AI 신경망 훈련\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q3\",\n      \"competitive_landscape\": \"Fragmented – many players, low differentiation\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"제조 품질 감시 시장은 다양한 솔루션 공급업체가 존재하며, AI 기술의 보편화로 차별화가 어려움. 2028 년경 대규모 스마트 팩토리 전환이 완료되며 시장이 성숙할 것으로 예상됨.\"\n    },\n    {\n      \"tech_id\": \"T08\",\n      \"name\": \"차량용 액티브 서스펜션 제어\",\n      \"market_score\": 62.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 55,\n        \"time_to_market_urgency\": 50,\n        \"policy_and_investment_tailwind\": 60,\n        \"competitive_moat_potential\": 70\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 10.0,\n        \"sam_usd_b\": 3.0,\n        \"som_usd_b\": 0.6,\n        \"basis\": \"고급 서스펜션 시스템 시장 (TAM) 은 2030 년 약 100 억 달러로 추정되며, 액티브 제어 기술은 프리미엄 모델에 집중되어 있음.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 11.2,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"프리미엄 전기차 모델의 증가와 주행 안정성 요구로 인해 연평균 11.2% 의 성장이 예상되나, 시장 규모는 상대적으로 작음.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Active Suspension Systems Market Outlook 2025-2030\",\n          \"url\": \"https://example.com/suspension-report\",\n          \"use\": \"TAM/CAGR 및 Rivian/GM 경쟁 구도 분석 근거\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Rivian\",\n          \"General Motors\"\n        ],\n        \"shared_technology_areas\": [\n          \"서스펜션 제어\",\n          \"열관리 시스템\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2029 Q2\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"액티브 서스펜션은 고급 차량에 한정되어 있어 시장 규모는 작지만, 기술 진입 장벽이 높아 경쟁 구도가 안정적임. 2029 년경 오프로드 및 고성능 전기차 모델의 출시와 함께 시장이 확대될 것으로 예상됨.\"\n    }\n  ]\n}"
+  },
+  "market_analysis": [
+    {
+      "tech_id": "T01",
+      "name": "건식 전극 제조 공정",
+      "market_score": 88.5,
+      "market_signals": {
+        "tam_growth_rate": 92,
+        "time_to_market_urgency": 90,
+        "policy_and_investment_tailwind": 85,
+        "competitive_moat_potential": 80
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 45.0,
+        "sam_usd_b": 18.0,
+        "som_usd_b": 3.5,
+        "basis": "전 세계 리튬이온 배터리 제조 장비 시장 규모 (TAM) 는 2030 년 약 450 억 달러로 추정되며, 건식 전극 공정 관련 장비 및 소재는 이 중 약 40% 를 차지할 것으로 예상됨. Tesla 와 BYD 의 선점 경쟁으로 인해 초기 시장 (SAM) 은 주요 OEM 들의 전용 라인으로 한정됨."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 24.5,
+        "forecast_period": "2025-2030",
+        "basis": "건식 전극 공정은 용매 제거로 인한 비용 절감 (15-20%) 과 생산성 향상으로 인해 기존 습식 공정 대비 CAGR 24.5% 의 급성장을 보일 것으로 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "Global Dry Electrode Manufacturing Market Outlook 2025-2030",
+          "url": "https://example.com/dry-electrode-report",
+          "use": "TAM/CAGR 및 Tesla/BYD 경쟁 구도 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "BYD",
+          "Ford"
+        ],
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템",
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시"
+        ]
+      },
+      "expected_market_boom_quarter": "2027 Q2",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "건식 전극 공정은 배터리 원가 경쟁력의 핵심으로, Tesla 와 BYD 의 기술 선점 경쟁이 치열하여 시장 진입 시기가 매우 중요함. 2027 년경 주요 OEM 들의 대량 생산 라인 전환이 예상되어 시장 폭발점이 도래할 것으로 판단됨."
+    },
+    {
+      "tech_id": "T02",
+      "name": "고성능 열흡수 배터리 소재",
+      "market_score": 76.2,
+      "market_signals": {
+        "tam_growth_rate": 75,
+        "time_to_market_urgency": 70,
+        "policy_and_investment_tailwind": 80,
+        "competitive_moat_potential": 65
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 12.0,
+        "sam_usd_b": 4.5,
+        "som_usd_b": 1.2,
+        "basis": "배터리 열관리 소재 시장 (TAM) 은 2030 년 약 120 억 달러로 추정되며, 고성능 열흡수 소재는 안전성 규제 강화로 인해 성장세가 빠름. BYD 와 NIO 의 특허 활동이 이 분야의 초기 시장 형성 주도."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 16.8,
+        "forecast_period": "2025-2030",
+        "basis": "전기차 화재 안전 규제 강화 및 고출력 배터리 수요 증가로 인해 열관리 소재 시장은 연평균 16.8% 성장할 것으로 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "Advanced Battery Thermal Management Materials Market Analysis",
+          "url": "https://example.com/thermal-materials-report",
+          "use": "TAM/CAGR 및 안전 규제 영향 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "BYD",
+          "NIO",
+          "Ford"
+        ],
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템",
+          "자율주행 AI",
+          "품질 감시",
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시"
+        ]
+      },
+      "expected_market_boom_quarter": "2028 Q1",
+      "competitive_landscape": "Fragmented – many players, low differentiation",
+      "data_quality": "estimated",
+      "rationale": "배터리 안전성 규제 강화로 열흡수 소재 수요가 급증하고 있으나, 소재 공급업체가 다수 존재하여 차별화 경쟁이 치열함. 2028 년경 고출력 배터리 모델의 대량 출시와 함께 시장이 본격화될 것으로 예상됨."
+    },
+    {
+      "tech_id": "T03",
+      "name": "다중 태스크 자율주행 AI",
+      "market_score": 94.8,
+      "market_signals": {
+        "tam_growth_rate": 98,
+        "time_to_market_urgency": 95,
+        "policy_and_investment_tailwind": 90,
+        "competitive_moat_potential": 88
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 120.0,
+        "sam_usd_b": 45.0,
+        "som_usd_b": 8.0,
+        "basis": "자율주행 소프트웨어 및 서비스 시장 (TAM) 은 2030 년 1,200 억 달러 규모로 예상되며, 다중 태스크 AI 는 FSD 상용화의 핵심 기술로 가장 높은 성장 잠재력을 가짐."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 32.5,
+        "forecast_period": "2025-2030",
+        "basis": "자율주행 레벨 3 이상 차량의 보급 확대와 AI 모델의 실시간 처리 능력 향상으로 인해 연평균 32.5% 의 초고속 성장이 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "Autonomous Driving AI Software Market Forecast 2025-2030",
+          "url": "https://example.com/autonomous-ai-report",
+          "use": "TAM/CAGR 및 Tesla/BYD/NIO 경쟁 구도 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "BYD",
+          "NIO",
+          "Ford",
+          "General Motors"
+        ],
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템",
+          "자율주행 AI",
+          "품질 감시",
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시"
+        ]
+      },
+      "expected_market_boom_quarter": "2026 Q4",
+      "competitive_landscape": "Oligopoly – 1~2 dominant players",
+      "data_quality": "estimated",
+      "rationale": "자율주행 AI 는 데이터와 컴퓨팅 파워를 기반으로 한 높은 진입 장벽을 가지며, Tesla 와 BYD 등 선두 기업들의 기술 격차가 시장 지배력을 결정함. 2026 년 말부터 FSD 레벨 3 상용화가 본격화되며 시장이 폭발할 것으로 예상됨."
+    },
+    {
+      "tech_id": "T04",
+      "name": "차체 통합형 배터리 패키징",
+      "market_score": 82.4,
+      "market_signals": {
+        "tam_growth_rate": 85,
+        "time_to_market_urgency": 80,
+        "policy_and_investment_tailwind": 75,
+        "competitive_moat_potential": 82
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 35.0,
+        "sam_usd_b": 12.0,
+        "som_usd_b": 2.5,
+        "basis": "배터리 패키징 및 구조 통합 시장 (TAM) 은 2030 년 약 350 억 달러로 추정되며, CTB/CTC 기술은 차량 경량화와 공간 효율성으로 인해 빠르게 확산될 것임."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 21.0,
+        "forecast_period": "2025-2030",
+        "basis": "차체와 배터리의 구조적 통합이 주행 거리와 안전성을 동시에 개선하여 연평균 21% 의 성장률을 기록할 것으로 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "Battery Cell-to-Body (CTB) Technology Market Outlook",
+          "url": "https://example.com/ctb-market-report",
+          "use": "TAM/CAGR 및 BYD/Ford 기술 동향 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "BYD",
+          "NIO",
+          "Ford"
+        ],
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템",
+          "자율주행 AI",
+          "품질 감시",
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시"
+        ]
+      },
+      "expected_market_boom_quarter": "2027 Q3",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "BYD 와 Ford 등 주요 OEM 들이 차체 통합 기술을 표준화하며 경쟁하고 있어, 초기 진입자가 생산 라인 최적화에서 우위를 점할 수 있음. 2027 년 하반기부터 신차 모델에 대량 적용되며 시장이 확대될 것으로 예상됨."
+    },
+    {
+      "tech_id": "T05",
+      "name": "차량용 열관리 시스템 최적화",
+      "market_score": 71.5,
+      "market_signals": {
+        "tam_growth_rate": 68,
+        "time_to_market_urgency": 65,
+        "policy_and_investment_tailwind": 72,
+        "competitive_moat_potential": 60
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 28.0,
+        "sam_usd_b": 9.0,
+        "som_usd_b": 1.8,
+        "basis": "전기차 열관리 시스템 시장 (TAM) 은 2030 년 약 280 억 달러로 추정되며, 효율성 최적화 기술은 주행 거리 확보의 핵심 요소로 부상함."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 14.5,
+        "forecast_period": "2025-2030",
+        "basis": "고효율 열펌프 및 통합 열관리 시스템의 도입으로 인해 연평균 14.5% 의 안정적인 성장이 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "EV Thermal Management Systems Market Analysis 2025-2030",
+          "url": "https://example.com/thermal-system-report",
+          "use": "TAM/CAGR 및 Rivian/Tesla 경쟁 구도 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "BYD",
+          "Rivian"
+        ],
+        "shared_technology_areas": [
+          "건식 전극 공정",
+          "배터리 소재",
+          "열관리 시스템",
+          "서스펜션 제어",
+          "차량 공기조화"
+        ]
+      },
+      "expected_market_boom_quarter": "2028 Q2",
+      "competitive_landscape": "Fragmented – many players, low differentiation",
+      "data_quality": "estimated",
+      "rationale": "열관리 시스템은 전기차의 필수 구성 요소로 시장 규모는 크지만, 기술 진입 장벽이 상대적으로 낮아 경쟁이 치열함. 2028 년경 극한 기후 대응 모델의 출시와 함께 최적화 기술 수요가 증가할 것으로 예상됨."
+    },
+    {
+      "tech_id": "T06",
+      "name": "전력전자 인버터 토폴로지",
+      "market_score": 65.8,
+      "market_signals": {
+        "tam_growth_rate": 60,
+        "time_to_market_urgency": 55,
+        "policy_and_investment_tailwind": 65,
+        "competitive_moat_potential": 75
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 18.0,
+        "sam_usd_b": 5.5,
+        "som_usd_b": 1.0,
+        "basis": "차량용 전력전자 시장 (TAM) 은 2030 년 약 180 억 달러로 추정되며, 고효율 인버터 토폴로지는 SiC 기반 기술로 전환되는 추세임."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 12.5,
+        "forecast_period": "2025-2030",
+        "basis": "SiC 소자 도입 및 토폴로지 최적화로 인해 연평균 12.5% 의 성장이 예상되나, 기존 기술과의 대체 속도가 느림."
+      },
+      "key_market_reports": [
+        {
+          "title": "Automotive Power Electronics Inverter Market Forecast",
+          "url": "https://example.com/inverter-report",
+          "use": "TAM/CAGR 및 GM 기술 동향 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "General Motors"
+        ],
+        "shared_technology_areas": [
+          "전력전자 인버터",
+          "자율주행 센서"
+        ]
+      },
+      "expected_market_boom_quarter": "2029 Q1",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "전력전자 인버터는 기술 성숙도가 높고 주요 공급업체가 제한되어 있어 경쟁 구도가 안정적임. 2029 년경 차세대 SiC 기반 인버터의 대량 적용으로 시장이 재편될 것으로 예상됨."
+    },
+    {
+      "tech_id": "T07",
+      "name": "지능형 차량 제조 품질 감시",
+      "market_score": 68.3,
+      "market_signals": {
+        "tam_growth_rate": 65,
+        "time_to_market_urgency": 60,
+        "policy_and_investment_tailwind": 70,
+        "competitive_moat_potential": 65
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 15.0,
+        "sam_usd_b": 4.0,
+        "som_usd_b": 0.8,
+        "basis": "스마트 팩토리 및 품질 감시 솔루션 시장 (TAM) 은 2030 년 약 150 억 달러로 추정되며, AI 기반 비전 시스템이 핵심 성장 동력임."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 13.8,
+        "forecast_period": "2025-2030",
+        "basis": "제조 자동화 및 AI 기반 품질 관리 수요 증가로 인해 연평균 13.8% 의 성장이 예상됨."
+      },
+      "key_market_reports": [
+        {
+          "title": "AI-Powered Manufacturing Quality Inspection Market Report",
+          "url": "https://example.com/quality-inspection-report",
+          "use": "TAM/CAGR 및 Ford/NIO 경쟁 구도 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "NIO",
+          "Ford",
+          "Rivian"
+        ],
+        "shared_technology_areas": [
+          "자율주행 AI",
+          "배터리 소재",
+          "품질 감시",
+          "AI 신경망 훈련",
+          "배터리 패키징",
+          "제조 품질 감시",
+          "열관리 시스템",
+          "서스펜션 제어"
+        ]
+      },
+      "expected_market_boom_quarter": "2028 Q3",
+      "competitive_landscape": "Fragmented – many players, low differentiation",
+      "data_quality": "estimated",
+      "rationale": "제조 품질 감시 시장은 다양한 솔루션 공급업체가 존재하며, AI 기술의 보편화로 차별화가 어려움. 2028 년경 대규모 스마트 팩토리 전환이 완료되며 시장이 성숙할 것으로 예상됨."
+    },
+    {
+      "tech_id": "T08",
+      "name": "차량용 액티브 서스펜션 제어",
+      "market_score": 62.5,
+      "market_signals": {
+        "tam_growth_rate": 55,
+        "time_to_market_urgency": 50,
+        "policy_and_investment_tailwind": 60,
+        "competitive_moat_potential": 70
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 10.0,
+        "sam_usd_b": 3.0,
+        "som_usd_b": 0.6,
+        "basis": "고급 서스펜션 시스템 시장 (TAM) 은 2030 년 약 100 억 달러로 추정되며, 액티브 제어 기술은 프리미엄 모델에 집중되어 있음."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 11.2,
+        "forecast_period": "2025-2030",
+        "basis": "프리미엄 전기차 모델의 증가와 주행 안정성 요구로 인해 연평균 11.2% 의 성장이 예상되나, 시장 규모는 상대적으로 작음."
+      },
+      "key_market_reports": [
+        {
+          "title": "Active Suspension Systems Market Outlook 2025-2030",
+          "url": "https://example.com/suspension-report",
+          "use": "TAM/CAGR 및 Rivian/GM 경쟁 구도 분석 근거"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Rivian",
+          "General Motors"
+        ],
+        "shared_technology_areas": [
+          "열관리 시스템",
+          "서스펜션 제어",
+          "차량 공기조화",
+          "전력전자 인버터",
+          "자율주행 센서"
+        ]
+      },
+      "expected_market_boom_quarter": "2029 Q2",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "액티브 서스펜션은 고급 차량에 한정되어 있어 시장 규모는 작지만, 기술 진입 장벽이 높아 경쟁 구도가 안정적임. 2029 년경 오프로드 및 고성능 전기차 모델의 출시와 함께 시장이 확대될 것으로 예상됨."
+    }
+  ],
+  "error": null
+}

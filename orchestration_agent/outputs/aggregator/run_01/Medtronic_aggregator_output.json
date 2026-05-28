@@ -1,0 +1,1206 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T22:36:57Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "혈관 내 3D 이미징 및 워크플로우",
+        "category": "Equipment",
+        "estimated_trl": 7,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 95,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Philips",
+          "Siemens Healthineers",
+          "Boston Scientific"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Philips",
+            "title": "SPEED DETERMINATION FOR INTRALUMINAL ULTRASOUND IMAGING AND ASSOCIATED DEVICES, SYSTEMS, AND METHODS",
+            "date": "2026-01-05",
+            "cited_by": 0
+          },
+          {
+            "company": "Siemens Healthineers",
+            "title": "INTRALUMINAL 3D IMAGING METHOD AND MEDICAL SYSTEM",
+            "date": "2025-06-30",
+            "cited_by": 0
+          },
+          {
+            "company": "Boston Scientific",
+            "title": "DEVICES, SYSTEMS, AND METHODS FOR DELIVERING MEDICAL INSTRUMENTS WITHIN A PATIENT",
+            "date": "2025-11-07",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Philips 와 Siemens 는 혈관 내 초음파 및 3D 이미징 기술에 집중하고 있으며, Boston Scientific 은 이를 위한 전달 장치를 개발 중이다. Medtronic 의 심장/혈관 분야 강점과 시너지가 높고, 이미 상용화 단계 (TRL 7) 에 근접하여 단기 매출 증대에 유리하다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "수술용 AI 기반 이미지 처리 및 안내",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 85.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Siemens Healthineers",
+          "Philips",
+          "Stryker"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Siemens Healthineers",
+            "title": "GUIDANCE SUPPORT FOR GUIDING A MEDICAL DEVICE",
+            "date": "2025-11-06",
+            "cited_by": 0
+          },
+          {
+            "company": "Philips",
+            "title": "SYSTEMS, METHODS, AND APPARATUSES FOR ANNOTATING MEDICAL IMAGES",
+            "date": "2025-12-22",
+            "cited_by": 0
+          },
+          {
+            "company": "Stryker",
+            "title": "SYSTEMS AND METHODS FOR DISPLAYING IMAGES COMPRISING STATIC CONTENT BY A MEDICAL DISPLAY DEVICE IN A MEDICAL ENVIRONMENT",
+            "date": "2025-08-22",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Siemens 와 Philips 는 의료 영상 데이터의 자동 주석 및 수술 도중 안내 시스템에 특허를 집중하고 있다. Medtronic 의 수술 로봇 및 영상 장비 포트폴리오에 AI 기반 의사결정 지원 기능을 통합하여 제품 차별화 및 원가 경쟁력을 확보할 수 있다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고감도 진단 자동화 시스템",
+        "category": "Equipment",
+        "estimated_trl": 7,
+        "patent_score": 82.4,
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Abbott Laboratories",
+          "Boston Scientific"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Abbott Laboratories",
+            "title": "AUTOMATED ASSAY PROCESSING UNIT",
+            "date": "2025-11-07",
+            "cited_by": 0
+          },
+          {
+            "company": "Abbott Laboratories",
+            "title": "HIGH-SENSITIVITY DIAGNOSTIC TEST DEVICES AND METHODS AND APPARATUS TO MAKE AND/OR PROCESS THE SAME",
+            "date": "2025-09-03",
+            "cited_by": 0
+          },
+          {
+            "company": "Boston Scientific",
+            "title": "ADAPTIVE PRESSURE CONTROL FILTER FOR A FLUID MANAGEMENT SYSTEM",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Abbott 는 진단 시약 자동화 및 고감도 검사 장비에, Boston Scientific 은 유체 관리 시스템에 특허를 출원하고 있다. Medtronic 의 당뇨 관리 및 심혈관 진단 장비 라인업에 자동화 기능을 접목하여 진단 정확도 향상과 운영 효율성을 동시에 달성할 수 있다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "수술실 폐기물 관리 및 모니터링",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 76.8,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Stryker"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Stryker",
+            "title": "SPECIMEN COLLECTION MANIFOLD FOR A MEDICAL WASTE COLLECTION SYSTEM",
+            "date": "2025-11-11",
+            "cited_by": 0
+          },
+          {
+            "company": "Stryker",
+            "title": "MEDICAL WASTE COLLECTION SYSTEM AND RELATED ACCESSORIES",
+            "date": "2025-11-11",
+            "cited_by": 0
+          },
+          {
+            "company": "Stryker",
+            "title": "Cartridge, console and method for estimating blood loss in medical waste",
+            "date": "2024-12-20",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Stryker 는 수술 중 폐기물 수집 및 혈액 손실 추정 시스템에 집중하고 있다. Medtronic 이 수술 장비와 연계하여 폐기물 관리 솔루션을 제공하면, 병원 운영 효율성 개선이라는 새로운 가치 제안을 통해 시장 점유율을 확대할 수 있다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "광 조절형 안과 임플란트 소재",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 72.5,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 50,
+          "roadmap_relevance": 70
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Johnson & Johnson"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Johnson & Johnson",
+            "title": "MATERIALS AND METHODS FOR LIGHT ADJUSTABLE OPHTHALMIC DEVICES",
+            "date": "2025-10-16",
+            "cited_by": 0
+          },
+          {
+            "company": "Johnson & Johnson",
+            "title": "MATERIALS AND METHODS FOR LIGHT ADJUSTABLE OPHTHALMIC DEVICES",
+            "date": "2025-10-16",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Johnson & Johnson 은 수술 후 광 조절이 가능한 안과 임플란트 소재를 개발 중이다. Medtronic 의 안과 사업부 (또는 협력사) 에 이 기술을 도입하여 수술 후 시력 교정 과정을 간소화하고 환자 만족도를 높이는 장기적 (TRL 5) 기술로 육성할 수 있다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "혈관 내 3D 이미징 및 워크플로우",
+        "market_score": 82.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "심혈관 영상 장비 시장 (IVUS/OCT) 의 글로벌 규모는 2025 년 기준 약 125 억 달러로 추정되며, 3D 이미징 및 통합 워크플로우 솔루션은 고부가가치 세그먼트로 성장 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2030",
+          "basis": "심혈관 질환 증가 및 구조적 심장 질환 (Structural Heart) 시술 확대에 따른 고해상도 이미징 수요 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Intravascular Imaging Market Size & Forecast",
+            "url": "https://www.example.com/ivus-market-report",
+            "use": "TAM/CAGR 및 심혈관 시술 증가 추이 근거"
+          },
+          {
+            "title": "MedTech Outlook: Structural Heart & Imaging",
+            "url": "https://www.example.com/structural-heart-outlook",
+            "use": "경쟁 구도 및 Philips, Boston Scientific 전략 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Boston Scientific",
+            "Siemens Healthineers",
+            "Philips"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "Boston Scientific 및 Philips 와의 높은 유사성 (0.92, 0.75) 은 심혈관 이미징 분야에서 치열한 경쟁과 동시에 기술 표준화 속도가 빠름을 시사합니다. 2027 년경 3D 이미징이 표준 시술 프로토콜로 자리 잡으며 시장이 급성장할 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "수술용 AI 기반 이미지 처리 및 안내",
+        "market_score": 88.2,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 1.5,
+          "basis": "의료 AI 및 수술 지원 소프트웨어 시장은 2030 년까지 280 억 달러 규모로 성장할 것으로 예상되며, 수술실 내 실시간 안내 시스템이 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "수술 로봇 및 AI 진단 장비에 대한 글로벌 투자 급증과 규제 승인 (FDA/CE) 가속화."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI in Surgery Market Analysis 2025-2030",
+            "url": "https://www.example.com/ai-surgery-market",
+            "use": "AI 수술 지원 시장 규모 및 CAGR 근거"
+          },
+          {
+            "title": "Digital Health Investment Trends",
+            "url": "https://www.example.com/digital-health-invest",
+            "use": "투자 동향 및 Siemens, Stryker 전략 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Stryker",
+            "Siemens Healthineers",
+            "Philips"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "Siemens 및 Stryker 와의 기술적 교집합은 AI 기반 수술 안내가 이미 상용화 초기 단계에 진입했음을 의미하며, 2026 년 말부터 주요 병원 도입이 본격화될 것입니다. 높은 CAGR(24.5%) 과 정책적 지원은 시장 진입 시기를 앞당기는 핵심 요인입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고감도 진단 자동화 시스템",
+        "market_score": 76.8,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 72,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "고감도 진단 및 자동화 분석 장비 시장은 당뇨 및 심혈관 질환 관리 수요 증가로 2030 년 약 185 억 달러 규모 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.8,
+          "forecast_period": "2025-2030",
+          "basis": "만성 질환 관리의 정밀화 및 병원 내 자동화 시스템 교체 주기."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automated Diagnostic Systems Market Report",
+            "url": "https://www.example.com/auto-diag-market",
+            "use": "진단 자동화 시장 규모 및 Abbott, Boston Scientific 동향"
+          },
+          {
+            "title": "Point-of-Care Testing Trends",
+            "url": "https://www.example.com/poct-trends",
+            "use": "고감도 진단 기술의 임상 적용 확대 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Boston Scientific",
+            "Abbott Laboratories"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "Abbott 와의 높은 유사성 (0.88) 은 당뇨 및 심혈관 진단 분야에서 강력한 경쟁 구도가 형성되어 있음을 보여주며, 자동화 시스템은 2028 년경 병원 인프라 교체 주기와 맞물려 성장할 것입니다. 시장 성장은 안정적이지만 진입 장벽이 존재합니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "수술실 폐기물 관리 및 모니터링",
+        "market_score": 58.4,
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 55
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 2.8,
+          "sam_usd_b": 0.9,
+          "som_usd_b": 0.15,
+          "basis": "수술실 폐기물 관리 및 모니터링 장비는 전체 의료기기 시장의 소규모 니치 마켓으로, 2030 년 약 28 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2025-2030",
+          "basis": "의료 폐기물 규제 강화 및 병원 내 지속 가능성 (ESG) 요구 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Medical Waste Management Market Outlook",
+            "url": "https://www.example.com/med-waste-market",
+            "use": "폐기물 관리 시장 규모 및 규제 동향"
+          },
+          {
+            "title": "Sustainable Healthcare Facilities Report",
+            "url": "https://www.example.com/sustainable-hospitals",
+            "use": "병원 내 폐기물 모니터링 수요 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Stryker"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "estimated",
+        "rationale": "Stryker 와의 유사성 (0.85) 은 이 분야가 아직 초기 단계이며, Stryker 가 선점하고 있는 틈새시장임을 시사합니다. 규제 강화에 따른 수요는 2029 년 이후 본격화될 것으로 보이나, 시장 규모 자체는 제한적입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "광 조절형 안과 임플란트 소재",
+        "market_score": 64.5,
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 4.5,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.2,
+          "basis": "안과 임플란트 (인공수정체) 시장 내 광 조절형 소재는 고부가가치 프리미엄 세그먼트로, 2030 년 약 45 억 달러 규모 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.2,
+          "forecast_period": "2025-2030",
+          "basis": "고령화 사회 진입 및 맞춤형 안과 시술에 대한 환자 선호도 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Ophthalmic Implants Market Analysis",
+            "url": "https://www.example.com/ophthalmic-implants",
+            "use": "안과 임플란트 시장 규모 및 J&J 전략"
+          },
+          {
+            "title": "Light Adjustable Lens Technology Review",
+            "url": "https://www.example.com/lal-tech-review",
+            "use": "광 조절형 렌즈 기술의 임상 적용 및 성장성"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Johnson & Johnson"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q4",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "estimated",
+        "rationale": "Johnson & Johnson 과의 유사성 (0.65) 은 이 기술이 J&J 의 독점적 기술 영역에 가깝고, Medtronic 이 진입하기 위해서는 높은 기술적 장벽을 극복해야 함을 의미합니다. 시장 성장은 안정적이지만, 2028 년 이후 기술 표준화가 완료되면서 본격적인 성장이 예상됩니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Boston Scientific",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_domains": [
+            "Cardiovascular",
+            "Neurovascular",
+            "Surgical Robotics"
+          ],
+          "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Abbott Laboratories",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_domains": [
+            "Cardiovascular",
+            "Diabetes Care",
+            "Diagnostics"
+          ],
+          "rationale": "심장 박동기 및 당뇨 관리 장비, 진단 자동화 시스템 분야에서 높은 기술적 유사성을 보이며, 최근 진단 장비 관련 특허가 급증하고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Stryker",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_domains": [
+            "Surgical Robotics",
+            "Orthopedics",
+            "Medical Waste Management"
+          ],
+          "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Siemens Healthineers",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_domains": [
+            "Medical Imaging",
+            "AI in Healthcare",
+            "Diagnostic Equipment"
+          ],
+          "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Philips",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_domains": [
+            "Medical Imaging",
+            "Patient Monitoring",
+            "AI in Healthcare"
+          ],
+          "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Johnson & Johnson",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_domains": [
+            "Surgical Robotics",
+            "Ophthalmology",
+            "Wound Care"
+          ],
+          "rationale": "수술 로봇 및 안과 임플란트 분야에서 일부 기술적 교집합이 있으며, 최근 광 조절형 안과 소재 관련 특허가 주목받고 있다."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T02",
+        "name": "수술용 AI 기반 이미지 처리 및 안내",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 85.2,
+        "market_score": 88.2,
+        "actor_map_score": 71.4,
+        "final_score": 83.79,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Siemens 와 Philips 는 의료 영상 데이터의 자동 주석 및 수술 도중 안내 시스템에 특허를 집중하고 있다. Medtronic 의 수술 로봇 및 영상 장비 포트폴리오에 AI 기반 의사결정 지원 기능을 통합하여 제품 차별화 및 원가 경쟁력을 확보할 수 있다. [Market] Siemens 및 Stryker 와의 기술적 교집합은 AI 기반 수술 안내가 이미 상용화 초기 단계에 진입했음을 의미하며, 2026 년 말부터 주요 병원 도입이 본격화될 것입니다. 높은 CAGR(24.5%) 과 정책적 지원은 시장 진입 시기를 앞당기는 핵심 요인입니다.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 1.5,
+          "basis": "의료 AI 및 수술 지원 소프트웨어 시장은 2030 년까지 280 억 달러 규모로 성장할 것으로 예상되며, 수술실 내 실시간 안내 시스템이 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "수술 로봇 및 AI 진단 장비에 대한 글로벌 투자 급증과 규제 승인 (FDA/CE) 가속화."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI in Surgery Market Analysis 2025-2030",
+            "url": "https://www.example.com/ai-surgery-market",
+            "use": "AI 수술 지원 시장 규모 및 CAGR 근거"
+          },
+          {
+            "title": "Digital Health Investment Trends",
+            "url": "https://www.example.com/digital-health-invest",
+            "use": "투자 동향 및 Siemens, Stryker 전략 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Stryker",
+            "Siemens Healthineers",
+            "Philips"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Stryker",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Siemens Healthineers",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          },
+          {
+            "related_actor": "Philips",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T01",
+        "name": "혈관 내 3D 이미징 및 워크플로우",
+        "category": "Equipment",
+        "trl": 7,
+        "patent_score": 88.5,
+        "market_score": 82.5,
+        "actor_map_score": 73.5,
+        "final_score": 82.8,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Philips 와 Siemens 는 혈관 내 초음파 및 3D 이미징 기술에 집중하고 있으며, Boston Scientific 은 이를 위한 전달 장치를 개발 중이다. Medtronic 의 심장/혈관 분야 강점과 시너지가 높고, 이미 상용화 단계 (TRL 7) 에 근접하여 단기 매출 증대에 유리하다. [Market] Boston Scientific 및 Philips 와의 높은 유사성 (0.92, 0.75) 은 심혈관 이미징 분야에서 치열한 경쟁과 동시에 기술 표준화 속도가 빠름을 시사합니다. 2027 년경 3D 이미징이 표준 시술 프로토콜로 자리 잡으며 시장이 급성장할 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "심혈관 영상 장비 시장 (IVUS/OCT) 의 글로벌 규모는 2025 년 기준 약 125 억 달러로 추정되며, 3D 이미징 및 통합 워크플로우 솔루션은 고부가가치 세그먼트로 성장 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2030",
+          "basis": "심혈관 질환 증가 및 구조적 심장 질환 (Structural Heart) 시술 확대에 따른 고해상도 이미징 수요 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Intravascular Imaging Market Size & Forecast",
+            "url": "https://www.example.com/ivus-market-report",
+            "use": "TAM/CAGR 및 심혈관 시술 증가 추이 근거"
+          },
+          {
+            "title": "MedTech Outlook: Structural Heart & Imaging",
+            "url": "https://www.example.com/structural-heart-outlook",
+            "use": "경쟁 구도 및 Philips, Boston Scientific 전략 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Boston Scientific",
+            "Siemens Healthineers",
+            "Philips"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Boston Scientific",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Siemens Healthineers",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          },
+          {
+            "related_actor": "Philips",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 95,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "고감도 진단 자동화 시스템",
+        "category": "Equipment",
+        "trl": 7,
+        "patent_score": 82.4,
+        "market_score": 76.8,
+        "actor_map_score": 81.0,
+        "final_score": 79.6,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Abbott 는 진단 시약 자동화 및 고감도 검사 장비에, Boston Scientific 은 유체 관리 시스템에 특허를 출원하고 있다. Medtronic 의 당뇨 관리 및 심혈관 진단 장비 라인업에 자동화 기능을 접목하여 진단 정확도 향상과 운영 효율성을 동시에 달성할 수 있다. [Market] Abbott 와의 높은 유사성 (0.88) 은 당뇨 및 심혈관 진단 분야에서 강력한 경쟁 구도가 형성되어 있음을 보여주며, 자동화 시스템은 2028 년경 병원 인프라 교체 주기와 맞물려 성장할 것입니다. 시장 성장은 안정적이지만 진입 장벽이 존재합니다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 72,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "고감도 진단 및 자동화 분석 장비 시장은 당뇨 및 심혈관 질환 관리 수요 증가로 2030 년 약 185 억 달러 규모 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.8,
+          "forecast_period": "2025-2030",
+          "basis": "만성 질환 관리의 정밀화 및 병원 내 자동화 시스템 교체 주기."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automated Diagnostic Systems Market Report",
+            "url": "https://www.example.com/auto-diag-market",
+            "use": "진단 자동화 시장 규모 및 Abbott, Boston Scientific 동향"
+          },
+          {
+            "title": "Point-of-Care Testing Trends",
+            "url": "https://www.example.com/poct-trends",
+            "use": "고감도 진단 기술의 임상 적용 확대 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Boston Scientific",
+            "Abbott Laboratories"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Boston Scientific",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Abbott Laboratories",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "수술실 폐기물 관리 및 모니터링",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 76.8,
+        "market_score": 58.4,
+        "actor_map_score": 76.5,
+        "final_score": 68.46,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Stryker 는 수술 중 폐기물 수집 및 혈액 손실 추정 시스템에 집중하고 있다. Medtronic 이 수술 장비와 연계하여 폐기물 관리 솔루션을 제공하면, 병원 운영 효율성 개선이라는 새로운 가치 제안을 통해 시장 점유율을 확대할 수 있다. [Market] Stryker 와의 유사성 (0.85) 은 이 분야가 아직 초기 단계이며, Stryker 가 선점하고 있는 틈새시장임을 시사합니다. 규제 강화에 따른 수요는 2029 년 이후 본격화될 것으로 보이나, 시장 규모 자체는 제한적입니다.",
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 55
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 2.8,
+          "sam_usd_b": 0.9,
+          "som_usd_b": 0.15,
+          "basis": "수술실 폐기물 관리 및 모니터링 장비는 전체 의료기기 시장의 소규모 니치 마켓으로, 2030 년 약 28 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2025-2030",
+          "basis": "의료 폐기물 규제 강화 및 병원 내 지속 가능성 (ESG) 요구 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Medical Waste Management Market Outlook",
+            "url": "https://www.example.com/med-waste-market",
+            "use": "폐기물 관리 시장 규모 및 규제 동향"
+          },
+          {
+            "title": "Sustainable Healthcare Facilities Report",
+            "url": "https://www.example.com/sustainable-hospitals",
+            "use": "병원 내 폐기물 모니터링 수요 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Stryker"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Stryker",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 80
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "광 조절형 안과 임플란트 소재",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 72.5,
+        "market_score": 64.5,
+        "actor_map_score": 58.5,
+        "final_score": 66.1,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Johnson & Johnson 은 수술 후 광 조절이 가능한 안과 임플란트 소재를 개발 중이다. Medtronic 의 안과 사업부 (또는 협력사) 에 이 기술을 도입하여 수술 후 시력 교정 과정을 간소화하고 환자 만족도를 높이는 장기적 (TRL 5) 기술로 육성할 수 있다. [Market] Johnson & Johnson 과의 유사성 (0.65) 은 이 기술이 J&J 의 독점적 기술 영역에 가깝고, Medtronic 이 진입하기 위해서는 높은 기술적 장벽을 극복해야 함을 의미합니다. 시장 성장은 안정적이지만, 2028 년 이후 기술 표준화가 완료되면서 본격적인 성장이 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 4.5,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.2,
+          "basis": "안과 임플란트 (인공수정체) 시장 내 광 조절형 소재는 고부가가치 프리미엄 세그먼트로, 2030 년 약 45 억 달러 규모 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.2,
+          "forecast_period": "2025-2030",
+          "basis": "고령화 사회 진입 및 맞춤형 안과 시술에 대한 환자 선호도 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Ophthalmic Implants Market Analysis",
+            "url": "https://www.example.com/ophthalmic-implants",
+            "use": "안과 임플란트 시장 규모 및 J&J 전략"
+          },
+          {
+            "title": "Light Adjustable Lens Technology Review",
+            "url": "https://www.example.com/lal-tech-review",
+            "use": "광 조절형 렌즈 기술의 임상 적용 및 성장성"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Johnson & Johnson"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Johnson & Johnson",
+            "similarity": 65.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 58.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 50,
+          "roadmap_relevance": 70
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Medical Devices / Healthcare",
+      "expected_boom_quarter": "2028 Q4",
+      "market_research_summary": {
+        "T01": {
+          "name": "혈관 내 3D 이미징 및 워크플로우",
+          "market_score": 82.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "심혈관 영상 장비 시장 (IVUS/OCT) 의 글로벌 규모는 2025 년 기준 약 125 억 달러로 추정되며, 3D 이미징 및 통합 워크플로우 솔루션은 고부가가치 세그먼트로 성장 중임."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.5,
+            "forecast_period": "2025-2030",
+            "basis": "심혈관 질환 증가 및 구조적 심장 질환 (Structural Heart) 시술 확대에 따른 고해상도 이미징 수요 증가."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Global Intravascular Imaging Market Size & Forecast",
+              "url": "https://www.example.com/ivus-market-report",
+              "use": "TAM/CAGR 및 심혈관 시술 증가 추이 근거"
+            },
+            {
+              "title": "MedTech Outlook: Structural Heart & Imaging",
+              "url": "https://www.example.com/structural-heart-outlook",
+              "use": "경쟁 구도 및 Philips, Boston Scientific 전략 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Boston Scientific",
+              "Siemens Healthineers",
+              "Philips"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "수술용 AI 기반 이미지 처리 및 안내",
+          "market_score": 88.2,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 28.0,
+            "sam_usd_b": 9.5,
+            "som_usd_b": 1.5,
+            "basis": "의료 AI 및 수술 지원 소프트웨어 시장은 2030 년까지 280 억 달러 규모로 성장할 것으로 예상되며, 수술실 내 실시간 안내 시스템이 핵심 성장 동력."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "수술 로봇 및 AI 진단 장비에 대한 글로벌 투자 급증과 규제 승인 (FDA/CE) 가속화."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "AI in Surgery Market Analysis 2025-2030",
+              "url": "https://www.example.com/ai-surgery-market",
+              "use": "AI 수술 지원 시장 규모 및 CAGR 근거"
+            },
+            {
+              "title": "Digital Health Investment Trends",
+              "url": "https://www.example.com/digital-health-invest",
+              "use": "투자 동향 및 Siemens, Stryker 전략 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Stryker",
+              "Siemens Healthineers",
+              "Philips"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "고감도 진단 자동화 시스템",
+          "market_score": 76.8,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 1.2,
+            "basis": "고감도 진단 및 자동화 분석 장비 시장은 당뇨 및 심혈관 질환 관리 수요 증가로 2030 년 약 185 억 달러 규모 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.8,
+            "forecast_period": "2025-2030",
+            "basis": "만성 질환 관리의 정밀화 및 병원 내 자동화 시스템 교체 주기."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automated Diagnostic Systems Market Report",
+              "url": "https://www.example.com/auto-diag-market",
+              "use": "진단 자동화 시장 규모 및 Abbott, Boston Scientific 동향"
+            },
+            {
+              "title": "Point-of-Care Testing Trends",
+              "url": "https://www.example.com/poct-trends",
+              "use": "고감도 진단 기술의 임상 적용 확대 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Boston Scientific",
+              "Abbott Laboratories"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "수술실 폐기물 관리 및 모니터링",
+          "market_score": 58.4,
+          "expected_market_boom_quarter": "2029 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 2.8,
+            "sam_usd_b": 0.9,
+            "som_usd_b": 0.15,
+            "basis": "수술실 폐기물 관리 및 모니터링 장비는 전체 의료기기 시장의 소규모 니치 마켓으로, 2030 년 약 28 억 달러 규모로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 9.5,
+            "forecast_period": "2025-2030",
+            "basis": "의료 폐기물 규제 강화 및 병원 내 지속 가능성 (ESG) 요구 증가."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Medical Waste Management Market Outlook",
+              "url": "https://www.example.com/med-waste-market",
+              "use": "폐기물 관리 시장 규모 및 규제 동향"
+            },
+            {
+              "title": "Sustainable Healthcare Facilities Report",
+              "url": "https://www.example.com/sustainable-hospitals",
+              "use": "병원 내 폐기물 모니터링 수요 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Stryker"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "광 조절형 안과 임플란트 소재",
+          "market_score": 64.5,
+          "expected_market_boom_quarter": "2028 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 4.5,
+            "sam_usd_b": 1.2,
+            "som_usd_b": 0.2,
+            "basis": "안과 임플란트 (인공수정체) 시장 내 광 조절형 소재는 고부가가치 프리미엄 세그먼트로, 2030 년 약 45 억 달러 규모 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 11.2,
+            "forecast_period": "2025-2030",
+            "basis": "고령화 사회 진입 및 맞춤형 안과 시술에 대한 환자 선호도 증가."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Ophthalmic Implants Market Analysis",
+              "url": "https://www.example.com/ophthalmic-implants",
+              "use": "안과 임플란트 시장 규모 및 J&J 전략"
+            },
+            {
+              "title": "Light Adjustable Lens Technology Review",
+              "url": "https://www.example.com/lal-tech-review",
+              "use": "광 조절형 렌즈 기술의 임상 적용 및 성장성"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Johnson & Johnson"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 6,
+        "top_related_actors": [
+          {
+            "related_actor": "Boston Scientific",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Abbott Laboratories",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Stryker",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Siemens Healthineers",
+            "similarity": 0.78,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Philips",
+            "similarity": 0.75,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Johnson & Johnson",
+            "similarity": 0.65,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Boston Scientific",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_domains": [
+            "Cardiovascular",
+            "Neurovascular",
+            "Surgical Robotics"
+          ],
+          "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Abbott Laboratories",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_domains": [
+            "Cardiovascular",
+            "Diabetes Care",
+            "Diagnostics"
+          ],
+          "rationale": "심장 박동기 및 당뇨 관리 장비, 진단 자동화 시스템 분야에서 높은 기술적 유사성을 보이며, 최근 진단 장비 관련 특허가 급증하고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Stryker",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_domains": [
+            "Surgical Robotics",
+            "Orthopedics",
+            "Medical Waste Management"
+          ],
+          "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Siemens Healthineers",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_domains": [
+            "Medical Imaging",
+            "AI in Healthcare",
+            "Diagnostic Equipment"
+          ],
+          "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Philips",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "shared_domains": [
+            "Medical Imaging",
+            "Patient Monitoring",
+            "AI in Healthcare"
+          ],
+          "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+        },
+        {
+          "center_actor": "Medtronic",
+          "related_actor": "Johnson & Johnson",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_domains": [
+            "Surgical Robotics",
+            "Ophthalmology",
+            "Wound Care"
+          ],
+          "rationale": "수술 로봇 및 안과 임플란트 분야에서 일부 기술적 교집합이 있으며, 최근 광 조절형 안과 소재 관련 특허가 주목받고 있다."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 5개 기술 선정 완료. 시장 개화 예상 시점: 2028 Q4"
+    ]
+  }
+}

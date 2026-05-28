@@ -1,0 +1,492 @@
+{
+  "market_context": {
+    "target_market": "Biopharmaceutical / Healthcare",
+    "expected_boom_quarter": "2028 Q3",
+    "market_research_summary": {
+      "T01": {
+        "name": "항체-약물 접합체 (ADC) 플랫폼",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 28.5,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "글로벌 ADC 시장 규모는 2030 년 약 285 억 달러로 추정되며, 암 치료제 중 가장 빠른 성장률을 보임. Pfizer 의 경쟁사 (Merck, AbbVie, BMS) 가 활발히 파이프라인을 확장하고 있어 서비스 가능 시장 (SAM) 은 120 억 달러 수준으로 설정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "ADC 기술은 기존 화학요법 대비 표적 치료 효율성으로 인해 연평균 20% 이상의 고성장 예상. 주요 제약사들의 M&A 및 라이선스 거래가 시장 확대를 주도."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Global Antibody-Drug Conjugate (ADC) Market Size & Forecast 2025-2030",
+            "url": "https://www.example.com/adc-market-report",
+            "use": "TAM/CAGR 및 경쟁사 파이프라인 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co.",
+            "AbbVie",
+            "Bristol Myers Squibb"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "실시간 공정 분석 기술 (PAT)",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 8.2,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.8,
+          "basis": "제약 공정 자동화 및 PAT 시장 규모는 2030 년 약 82 억 달러로 추정. Merck 와의 높은 유사도는 이 기술이 Pfizer 의 생산 효율성 향상에 핵심임을 시사."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "FDA 의 연속 제조 (Continuous Manufacturing) 권고 및 Industry 4.0 도입으로 인해 연평균 14% 성장 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Pharmaceutical Process Analytical Technology (PAT) Market Analysis",
+            "url": "https://www.example.com/pat-market-report",
+            "use": "시장 규모 및 규제 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co."
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "AI 기반 임상 데이터 예측 모델",
+        "market_score": 85.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.5,
+          "basis": "헬스케어 AI 시장 중 임상 데이터 분석 분야는 2030 년 약 150 억 달러 규모로 성장할 것으로 예상. Roche 와의 높은 유사도는 데이터 기반 R&D 효율화의 중요성을 강조."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "생물학적 데이터의 폭발적 증가와 생성형 AI 기술의 접목으로 인해 연평균 28% 이상의 초고속 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "AI in Clinical Trials and Healthcare Data Analytics Market Report",
+            "url": "https://www.example.com/ai-clinical-report",
+            "use": "AI 시장 성장률 및 Roche 등 경쟁사 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "IL-17 표적 자가면역 질환 치료제",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.2,
+          "basis": "자가면역 질환 치료제 시장은 2030 년 약 120 억 달러 규모로, IL-17 억제제는 건선 및 강직성 척추염 치료에서 핵심 지위를 차지함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "기존 치료제 대비 우수한 효능으로 인해 연평균 16% 성장 예상. Novartis 등 경쟁사의 특허 출시는 시장 경쟁 심화 신호."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Global Autoimmune Disease Therapeutics Market Outlook",
+            "url": "https://www.example.com/autoimmune-market",
+            "use": "IL-17 표적 시장 규모 및 경쟁 구도 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "PCSK9 저감을 통한 심혈관 질환 예방",
+        "market_score": 70.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 10.5,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 1.0,
+          "basis": "심혈관 질환 치료제 시장은 2030 년 약 105 억 달러 규모로, PCSK9 억제제는 고지혈증 치료의 표준으로 자리 잡음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "노인 인구 증가 및 심혈관 질환 유병률 상승으로 연평균 12% 성장 예상. Novartis 의 특허는 시장 진입 장벽을 시사."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Cardiovascular Disease Therapeutics Market Analysis",
+            "url": "https://www.example.com/cvd-market",
+            "use": "PCSK9 시장 규모 및 성장 동력 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "다발성 경화증 (MS) 치료용 항체 조성물",
+        "market_score": 74.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 9.0,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.9,
+          "basis": "다발성 경화증 치료제 시장은 2030 년 약 90 억 달러 규모로, 항체 기반 치료제가 주류로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "Roche 의 특허 출시는 새로운 항체 조성물 개발이 활발함을 의미하며, 연평균 15% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Multiple Sclerosis Therapeutics Market Forecast",
+            "url": "https://www.example.com/ms-market",
+            "use": "MS 치료제 시장 규모 및 Roche 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.8,
+          "basis": "연속 혈당 모니터링 (CGM) 및 인슐린 펌프 시장은 2030 년 약 180 억 달러 규모로, 당뇨 관리의 디지털 전환이 가속화됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "Roche 의 특허는 AI 기반 인슐린 계산 기술의 중요성을 시사하며, 연평균 22% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Diabetes Management and CGM Market Report",
+            "url": "https://www.example.com/diabetes-market",
+            "use": "CGM 시장 규모 및 Roche 기술 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "TYK2 억제제 제형 기술",
+        "market_score": 78.0,
+        "expected_market_boom_quarter": "2027 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 11.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 1.1,
+          "basis": "자가면역 질환 치료제 중 TYK2 억제제 시장은 2030 년 약 110 억 달러 규모로, 경구형 치료제 수요가 급증함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "Bristol Myers Squibb 의 특허는 제형 기술의 중요성을 시사하며, 연평균 18% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "TYK2 Inhibitors Market Analysis",
+            "url": "https://www.example.com/tyk2-market",
+            "use": "TYK2 시장 규모 및 BMS 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Bristol Myers Squibb"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T09": {
+        "name": "유비쿼틴 특이적 프로테아제 1 (USP1) 매크로사이클",
+        "market_score": 65.0,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 5.0,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.5,
+          "basis": "USP1 억제제는 암 치료의 새로운 표적으로 주목받으며, 2030 년 약 50 억 달러 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.0,
+          "forecast_period": "2025-2030",
+          "basis": "Bristol Myers Squibb 의 특허는 초기 연구 단계임을 시사하며, 연평균 10% 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Emerging Cancer Therapeutics: USP1 Inhibitors",
+            "url": "https://www.example.com/usp1-market",
+            "use": "USP1 시장 규모 및 BMS 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Bristol Myers Squibb"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T10": {
+        "name": "항체 기반 B 형 간염 치료제",
+        "market_score": 73.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 13.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.2,
+          "basis": "B 형 간염 치료제 시장은 2030 년 약 130 억 달러 규모로, 항체 기반 치료제가 완치 가능성을 제시하며 주목받음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 17.0,
+          "forecast_period": "2025-2030",
+          "basis": "Novartis 의 특허는 항체 기반 치료제 개발이 활발함을 의미하며, 연평균 17% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Hepatitis B Therapeutics Market Outlook",
+            "url": "https://www.example.com/hepb-market",
+            "use": "B 형 간염 시장 규모 및 Novartis 동향 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 5,
+      "top_related_actors": [
+        {
+          "related_actor": "Merck & Co.",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Roche",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Novartis",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "AbbVie",
+          "similarity": 0.82,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Bristol Myers Squibb",
+          "similarity": 0.8,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T02",
+      "name": "실시간 공정 분석 기술 (PAT)",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 수준으로 기술 성숙도가 높고, 2026 년 말 (1 차년도 말) 에 시장이 폭발할 것으로 예상되어 1 차년도부터 즉시 도입 및 최적화를 시작해야 합니다. 2 차년도까지 제조 라인에 완전히 통합되어 품질 관리 효율을 극대화하는 것을 목표로 합니다.",
+        "tech_execution": "Pfizer 의 디지털 헬스케어 및 R&D 확장 전략에 부합하는 스마트 제조 인프라를 구축하여, Merck 등 경쟁사 대비 제조 효율성과 규제 준수성을 선점하기 위해 필수적입니다. 이는 향후 고부가가치 신약 생산의 기반이 되는 핵심 공정 기술입니다.",
+        "investment_selection": "규제 당국의 권고와 시장 트렌드가 2026 년부터 본격화되므로, 초기 투자 시기를 놓치지 않고 선제적으로 도입해야 경쟁 우위를 확보할 수 있습니다. 상대적으로 짧은 개발 기간으로 빠른 ROI 를 기대할 수 있어 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T07",
+      "name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 성숙한 기술이지만, 2027 년 Q1 시장 폭발을 대비하여 1 차년도부터 프로토타입 개발과 임상 데이터 수집을 병행해야 합니다. 3 차년도까지 기술 고도화와 시장 출시 준비를 완료하여 디지털 헬스케어 포트폴리오를 강화합니다.",
+        "tech_execution": "Roche 의 특허 동향을 분석하여 당뇨 치료제와 연계된 디지털 헬스케어 솔루션을 개발함으로써, Pfizer 의 만성 질환 관리 전략을 구체화하는 데 기여합니다. 이는 단순한 장비 개발을 넘어 데이터 기반의 맞춤형 치료로 이어지는 중요한 단계입니다.",
+        "investment_selection": "당뇨 치료 시장의 디지털 전환 트렌드가 2027 년에 가속화되므로, 이 시점에 맞춰 기술력을 확보해야 시장 점유율을 선점할 수 있습니다. 경쟁사 대비 차별화된 데이터 분석 기능을 탑재한 시스템을 개발하여 장기적인 수익원을 확보합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "항체 - 약물 접합체 (ADC) 플랫폼",
+      "year_idx_start": 2,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 높은 성숙도를 보이지만, 경쟁사들의 특허 선점 경쟁이 치열하여 2 차년도부터 본격적인 플랫폼 구축과 파이프라인 확장을 시작해야 합니다. 2027 년 Q2 시장 폭발을 고려하여 4 차년도까지 핵심 신약 후보물질의 임상 진행을 완료하는 것을 목표로 합니다.",
+        "tech_execution": "Pfizer 의 신약 파이프라인 선점 전략의 핵심인 ADC 기술을 통해 기존 면역항암제와의 시너지를 극대화하고, 암 치료제 시장에서 경쟁 우위를 점하기 위해 필수적입니다. 이는 고성장 시장에서의 기술적 차별화를 위한 핵심 동력입니다.",
+        "investment_selection": "ADC 시장이 연 20% 이상의 고성장률을 보이며 주요 경쟁사들이 집중하고 있으므로, 초기 투자 시기를 늦추지 않고 2 차년도부터 집중 투자해야 합니다. 높은 시장 규모와 기술 장벽을 고려할 때, Pfizer 의 R&D 예산을 효율적으로 배분할 수 있는 최적의 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "AI 기반 임상 데이터 예측 모델",
+      "year_idx_start": 2,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 중간 성숙도이며, 2028 년 Q1 시장 폭발을 대비하여 2 차년도부터 데이터 인프라 구축과 모델 학습을 시작해야 합니다. 5 차년도까지 기술이 진화하여 개인 맞춤형 치료의 핵심 인프라로 자리 잡도록 장기적인 R&D 를 지속합니다.",
+        "tech_execution": "Pfizer 의 디지털 전환 전략과 글로벌 임상 네트워크 강화에 필수적인 기술로, 데이터 기반 의사결정을 통해 임상 개발 효율성을 극대화합니다. 이는 Roche 등 경쟁사의 특허 동향을 분석하여 Pfizer 고유의 AI 모델을 개발하는 데 중요한 역할을 합니다.",
+        "investment_selection": "AI 기반 임상 데이터 분석 시장은 2028 년 이후 폭발적 성장이 예상되므로, 초기 데이터 축적과 모델 개발에 선제적으로 투자해야 합니다. 장기적인 기술 진화와 시장 변화를 고려할 때, 5 차년도까지 이어지는 지속적인 투자가 경쟁 우위를 보장합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "PCSK9 저감을 통한 심혈관 질환 예방",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 이지만, 2029 년 Q1 시장 재편을 고려하여 3 차년도부터 새로운 적응증 확장과 제네릭 대응 전략을 위한 R&D 를 시작해야 합니다. 5 차년도까지 기술이 진화하여 심혈관 질환 예방 의학 분야에서 Pfizer 의 시장 지위를 공고히 합니다.",
+        "tech_execution": "Novartis 등 선두 기업들이 장악한 과점 구조에서 Pfizer 가 차별화된 기술로 진입하기 위해, PCSK9 저감 기술을 기반으로 한 새로운 치료 전략을 개발해야 합니다. 이는 만성 질환 관리 및 예방 의학 분야에서 중요한 기회를 제공합니다.",
+        "investment_selection": "2029 년경 제네릭 출시 및 시장 재편을 앞두고, 새로운 적응증 확장을 위한 기술 개발에 집중 투자해야 합니다. 장기적인 시장 변화와 경쟁 구도를 고려할 때, 5 차년도까지 이어지는 R&D 가 Pfizer 의 심혈관 질환 포트폴리오를 강화하는 핵심입니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T02": {
+      "tech_id": "T02",
+      "name": "실시간 공정 분석 기술 (PAT)",
+      "category": "Equipment",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T07": {
+      "tech_id": "T07",
+      "name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+      "category": "Equipment",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2027 Q1"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "항체 - 약물 접합체 (ADC) 플랫폼",
+      "category": "Material",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "AI 기반 임상 데이터 예측 모델",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "PCSK9 저감을 통한 심혈관 질환 예방",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2029 Q1"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "Pfizer 의 신약 파이프라인 (T01), AI 기반 R&D(T03), 디지털 헬스케어 (T07), 스마트 제조 (T02), 장기 예방의학 (T05) 전략을 2026-2029 년 시점에 골고루 분포시켜 로드맵 완성.",
+    "dropped": [
+      {
+        "tech_id": "T04",
+        "name": "IL-17 표적 자가면역 질환 치료제",
+        "reason": "자가면역 치료제 (IL-17) 는 T08(TYK2) 와 중복성이 높고 전략적 차별성 부족."
+      },
+      {
+        "tech_id": "T06",
+        "name": "다발성 경화증 (MS) 치료용 항체 조성물",
+        "reason": "MS 치료제는 T01(ADC) 등 핵심 파이프라인 대비 전략적 우선순위 낮음."
+      },
+      {
+        "tech_id": "T08",
+        "name": "TYK2 억제제 제형 기술",
+        "reason": "TYK2 억제제는 T04 와 유사한 자가면역 영역으로 중복 제거."
+      },
+      {
+        "tech_id": "T10",
+        "name": "항체 기반 B 형 간염 치료제",
+        "reason": "B 형 간염 치료제는 전략 방향성 정합도 및 점수 측면에서 상대적으로 낮음."
+      },
+      {
+        "tech_id": "T09",
+        "name": "유비쿼틴 특이적 프로테아제 1 (USP1) 매크로사이클",
+        "reason": "USP1 기술은 TRL 낮고 점수가 최하위이며 전략적 시급성 부족."
+      }
+    ]
+  }
+}

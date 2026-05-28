@@ -1,0 +1,76 @@
+[
+  {
+    "center_actor": "Toyota",
+    "related_actor": "Hyundai Motor Group",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_keywords": [
+      "Lithium Secondary Battery",
+      "Cathode Material",
+      "Solar Cell Module",
+      "Vehicle Control"
+    ],
+    "rationale": "현대자동차그룹은 토요타와 유사하게 배터리 소재, 태양광 통합, 차량 제어 등 다양한 분야에서 특허를 보유하고 있으며, 특히 양극 활물질 및 태양광 모듈 기술에서 높은 유사성을 보입니다."
+  },
+  {
+    "center_actor": "Toyota",
+    "related_actor": "BYD",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "shared_keywords": [
+      "Battery Assembly",
+      "Heat Absorbing Material",
+      "Vehicle Control",
+      "Braking Control"
+    ],
+    "rationale": "BYD는 배터리 팩, 열 관리, 차량 제어 및 제동 제어 등 토요타의 핵심 관심 분야와 높은 유사성을 보이는 특허를 다수 보유하고 있습니다."
+  },
+  {
+    "center_actor": "Toyota",
+    "related_actor": "Tesla",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_keywords": [
+      "Dry Electrode Film",
+      "Liquid Cooling",
+      "Vehicle Suspension",
+      "Autonomous Driving"
+    ],
+    "rationale": "테슬라는 건식 전극, 액체 냉각, 차량 서스펜션, 자율주행 등 토요타의 HW/SW 통합 스택 강화 목표와 부합하는 기술 분야에서 특허를 보유하고 있습니다."
+  },
+  {
+    "center_actor": "Toyota",
+    "related_actor": "Nissan",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_keywords": [
+      "Fusion Domain",
+      "Vehicle Control",
+      "Braking Control"
+    ],
+    "rationale": "닛산은 도메인 융합, 차량 제어, 제동 제어 등 토요타의 자율주행 및 제어 아키텍처 강화 목표와 유사한 특허를 보유하고 있습니다."
+  },
+  {
+    "center_actor": "Toyota",
+    "related_actor": "Honda",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_keywords": [
+      "Braking Control",
+      "Vehicle Control"
+    ],
+    "rationale": "혼다는 차량 제어 및 제동 제어 분야에서 토요타와 유사한 특허를 보유하고 있으며, 안전성 및 제어 기술에서 높은 유사성을 보입니다."
+  },
+  {
+    "center_actor": "Toyota",
+    "related_actor": "Volkswagen Group",
+    "similarity": 0.68,
+    "edge_weight": 0.68,
+    "shared_keywords": [
+      "Autonomous Vehicle",
+      "Computing Architecture",
+      "Ride Hailing"
+    ],
+    "rationale": "볼크스바겐 그룹은 자율주행 차량, 컴퓨팅 아키텍처, 라이드 헤일링 등 토요타의 미래 모빌리티 전략과 유사한 특허를 보유하고 있습니다."
+  }
+]

@@ -1,0 +1,499 @@
+{
+  "problem_frame": {
+    "industry": "Medical Devices / Healthcare",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 13500000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Medtronic",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "선도 기술 확보 및 프론티어 선점",
+      "공격적 R&D 투자로 장기 해자 구축",
+      "기술 리더십 기반 시장 확장"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $13.5B 내에서 정확히 배분 완료. 5 년 차년도 범위 내 스케줄링 정상."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(2026-2028) → T02(2028-2030) 의존성 및 시점 순서 논리적."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "AI/이미징 중심의 Medtronic 전략 및 의료 AI 트렌드와 높은 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1/2/3 배분이 기술 난이도 및 시장 시점과 적절히 정합."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기(T01/T03)와 장기(T04) 투자 균형 유지. T02 중기 연결."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T02",
+            "name": "수술용 AI 기반 이미지 처리 및 안내",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 84.14,
+            "market_score": 88.2,
+            "patent_score": 86.2,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T01",
+            "name": "혈관 내 3D 이미징 및 워크플로우",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 82.8,
+            "market_score": 82.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "고감도 진단 자동화 시스템",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 80.44,
+            "market_score": 76.8,
+            "patent_score": 84.8,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T06",
+            "name": "전기수술 장비의 시각화 및 제어",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 79.85,
+            "market_score": 79.6,
+            "patent_score": 82.1,
+            "expected_market_boom_quarter": "2027 Q1"
+          },
+          {
+            "tech_id": "T04",
+            "name": "광 조절 가능 안과 임플란트 소재",
+            "category": "Material",
+            "trl": 4,
+            "final_score": 68.95,
+            "market_score": 65.4,
+            "patent_score": 79.5,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "수술실 의료 폐기물 자동 수집 및 분석",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 65.54,
+            "market_score": 52.3,
+            "patent_score": 76.3,
+            "expected_market_boom_quarter": "2029 Q3"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "혈관 내 3D 이미징 및 워크플로우",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 기술 성숙도가 높고 선행 의존성이 없어 1 차년도부터 즉시 착수 가능하며, 2027 년 Q3 시장 붐을 대비하여 3 차년도까지 핵심 기능 완성 및 상용화 준비를 완료한다.",
+              "tech_execution": "경쟁사 대비 실시간 3D 이미징 격차 해소가 시급하므로, 혈관 개입 분야의 핵심 경쟁력을 확보하기 위해 초기 단계에서 집중 투자해야 한다.",
+              "investment_selection": "이미 검증된 기술 기반을 바탕으로 빠른 시장 진입이 가능하여, 초기 R&D 예산을 효율적으로 활용하여 기술 리더십을 선점할 수 있다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "수술용 AI 기반 이미지 처리 및 안내",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01(혈관 내 3D 이미징) 의 데이터 및 워크플로우가 3 차년도까지 완성되어야 하므로, 선행 기술의 안정화 이후인 2 차년도에 착수하여 4 차년도까지 AI 알고리즘 최적화를 진행한다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "Siemens 와 Philips 의 동향을 선제적으로 대응하기 위해, 고도화된 이미징 데이터를 기반으로 한 지능형 수술 안내 시스템을 구축하여 수술 정밀도를 극대화해야 한다.",
+              "investment_selection": "AI 기반 아키텍처는 장기적인 기술 해자를 형성하는 핵심 요소이므로, 중기 R&D 예산을 집중 투입하여 차별화된 소프트웨어 플랫폼을 확보한다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "고감도 진단 자동화 시스템",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 상용화 직전 단계이므로 1 차년도부터 시작하여 2028 년 Q2 시장 붐을 정확히 타격하기 위해 3 차년도까지 규제 승인 및 양산 준비를 완료한다.",
+              "tech_execution": "Abbott 와의 경쟁에서 당뇨 및 심혈관 진단 분야의 자동화 수준을 높여야 하므로, 기존 라인업의 고도화를 통해 즉각적인 시장 점유율 확대를 도모한다.",
+              "investment_selection": "높은 기술 성숙도로 인해 투자 대비 효과가 빠르고 확실하므로, 초기 자본을 투입하여 시장 진입 장벽을 낮추고 안정적인 수익원을 확보한다."
+            }
+          },
+          {
+            "tech_id": "T04",
+            "name": "광 조절 가능 안과 임플란트 소재",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 4 로 기초 연구 단계이므로 5 년 계획 전체에 걸친 장기 개발이 필요하며, 2029 년 Q1 붐 이후에도 차세대 소재 연구가 5 차년도까지 이어져야 한다.",
+              "tech_execution": "J&J 의 독점적 지위를 우회하거나 새로운 안과/신경 자극기 분야를 개척하기 위해, 프론티어 소재 기술을 선점하는 공격적인 R&D 전략이 필요하다.",
+              "investment_selection": "장기적인 기술 해자 구축을 위해 초기부터 지속적인 투자를 수행하며, Horizon 종료 시점까지 이어지는 기술은 미래 성장 동력으로 핵심 투자 대상이다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 13500000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "혈관 내 3D 이미징 및 워크플로우",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4500000000.0,
+                "tech_budget_rationale": "T01 은 2027 년 Q3 시장 붐을 앞두고 TRL 6 의 높은 성숙도를 바탕으로 즉시 상용화 가능한 핵심 기술입니다. 125 억 달러 규모의 TAM 과 14.5% 의 CAGR 을 고려할 때, 경쟁사 (Boston Scientific, Siemens) 대비 실시간 3D 이미징 격차 해소를 위한 선제적 투자 (45 억 달러) 가 필수적입니다. 이 예산은 프로토타입 완성, 규제 승인 (FDA/CE), 그리고 초기 양산 라인 구축을 위한 충분한 자금을 확보합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 말까지 프로토타입을 완성하고 규제 승인을 위한 임상 시험을 즉시 시작하여 2027 년 Q3 시장 붐에 맞춰 상용화합니다.",
+                "reasoning": {
+                  "market_evaluation": "심혈관 영상 시장 (IVUS/OCT) 은 2030 년까지 125 억 달러 (TAM) 의 규모로 성장하며, 연평균 14.5% 의 높은 성장률을 기록할 것으로 예상됩니다. 특히 2027 년 Q3 에 예상되는 시장 붐을 고려할 때, 3D 재구성 및 워크플로우 통합 기술은 고부가가치 서비스로 빠르게 자리 잡을 것입니다. Boston Scientific 과 Siemens 와의 높은 유사성 (0.92, 0.78) 은 이 분야에서의 치열한 경쟁과 빠른 기술 도입이 필수적임을 시사합니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도가 높으며, 특허 점수 (88.5) 와 시장 점수 (82.5) 가 모두 우수하여 기술적 위험은 중간 수준 (3 점) 으로 평가됩니다. Medtronic 은 혈관 개입 분야에서 기존 강점을 보유하고 있으나, 실시간 3D 이미징과 워크플로우 자동화 측면에서 경쟁사 대비 기술 격차를 해소해야 하는 전략적 필요성이 큽니다. 이는 회사의 핵심 경쟁력을 강화하는 데 직접적으로 기여합니다.",
+                  "investment_decision": "높은 시장 성장성 (4 점) 과 개발 긴급도 (5 점), 그리고 강력한 경쟁 우위 (5 점) 를 고려하여 Tier 1 로 선정합니다. 총 예산의 약 33% 를 할당하여 2027 년 시장 진입을 위한 선제적 투자를 수행하고, T02(AI 기반 이미지 처리) 의 선행 기술로서 데이터 및 워크플로우 기반을 확고히 합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "수술용 AI 기반 이미지 처리 및 안내",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4200000000.0,
+                "tech_budget_rationale": "T02 는 280 억 달러 규모의 거대 시장 (TAM) 과 24% 의 초고속 성장률 (CAGR) 을 가진 가장 유망한 기술입니다. T01 의 데이터 기반 위에서 2026 년 Q4 부터 시작되는 시장 붐을 선점하기 위해, T01 과 병행하여 42 억 달러의 공격적 투자를 집행합니다. 이는 AI 알고리즘 최적화, 데이터 파이프라인 구축, 그리고 규제 승인 준비를 위한 핵심 자금입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "T01 의 데이터 수집과 병행하여 AI 알고리즘 개발을 즉시 시작하고, 2026 년 말까지 초기 프로토타입을 완성하여 규제 승인을 준비합니다.",
+                "reasoning": {
+                  "market_evaluation": "의료 AI 시장은 2030 년 280 억 달러 (TAM) 로 성장할 것으로 예상되며, 수술용 AI 는 그 중 가장 빠른 성장률 (CAGR 24%) 을 보일 것입니다. 2026 년 Q4 에 예상되는 시장 붐은 규제 승인 가속화와 투자 증가에 의해 주도될 것으로 보입니다. Siemens 와 Philips 와의 높은 유사성은 AI 기반 수술 안내 시스템이 이미 주요 플레이어들의 핵심 전략임을 보여줍니다.",
+                  "tech_evaluation": "TRL 5 로 기술 성숙도는 중간 수준이며, T01 에 대한 의존성으로 인해 기술적 위험은 다소 높습니다 (4 점). 그러나 특허 점수 (86.2) 와 시장 점수 (88.2) 가 매우 높아, Medtronic 이 수술 로봇 및 영상 유도 치료 분야에서 지능형 아키텍처를 도입하여 수술 정밀도를 높일 수 있는 강력한 기회를 제공합니다.",
+                  "investment_decision": "가장 높은 시장 성장성 (5 점) 과 개발 긴급도 (5 점) 를 고려하여 Tier 1 로 선정합니다. 총 예산의 약 31% 를 할당하여 T01 과의 시너지를 극대화하고, 2026 년 말부터 시작되는 시장 붐에 대비한 선제적 투자를 수행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "고감도 진단 자동화 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2800000000.0,
+                "tech_budget_rationale": "T03 은 TRL 7 로 상용화 직전 단계이며, 180 억 달러 규모의 시장과 12.5% 의 성장률을 가지고 있습니다. 2028 년 Q2 시장 붐을 정확히 타격하기 위해 28 억 달러의 선택적 투자를 집행하여 규제 승인 및 양산 준비를 완료합니다. 이는 기존 라인업의 고도화를 통해 즉각적인 시장 점유율 확대를 도모하는 데 중점을 둡니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년까지 규제 승인 절차를 완료하고, 2028 년 Q2 시장 붐에 맞춰 양산 라인을 가동하여 시장 진입을 가속화합니다.",
+                "reasoning": {
+                  "market_evaluation": "고감도 진단 및 자동화 시장은 2030 년 180 억 달러 (TAM) 로 성장할 것으로 예상되며, 당뇨 및 심혈관 진단 분야에서 수요가 집중됩니다. 연평균 12.5% 의 성장률은 안정적인 시장 성장을 시사하며, 2028 년 Q2 에 예상되는 시장 붐은 규제 승인 및 병원 도입의 본격화로 인해 발생할 것입니다. Abbott 와의 높은 유사성 (0.88) 은 이 분야에서 자동화 시스템이 핵심 경쟁 요소임을 보여줍니다.",
+                  "tech_evaluation": "TRL 7 로 기술 성숙도가 매우 높으며, 기술적 위험은 낮습니다 (2 점). 특허 점수 (84.8) 와 시장 점수 (76.8) 가 모두 우수하여, Medtronic 이 당뇨 관리 및 진단 장비 라인업의 자동화 수준을 높이는 데 유리한 조건을 갖추고 있습니다. 이는 기존 강점을 활용하여 경쟁 우위를 확보할 수 있는 기회입니다.",
+                  "investment_decision": "높은 시장 성장성 (4 점) 과 기술 성숙도 (4 점) 를 고려하여 Tier 2 로 선정합니다. 총 예산의 약 21% 를 할당하여 2028 년 시장 진입을 위한 규제 승인 및 양산 준비를 완료하고, 기존 라인업의 고도화를 통해 시장 점유율을 확대합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "tech_budget_rationale": "T04 는 45 억 달러 규모의 니치 마켓이며, TRL 4 로 기초 연구 단계에 있어 기술적 위험이 매우 높습니다 (5 점). 2029 년 Q1 이후의 장기적인 시장 기회를 선점하기 위해 20 억 달러의 탐색적 투자를 집행하여 프론티어 소재 기술을 연구합니다. 이는 J&J 의 독점적 지위를 우회하거나 새로운 안과/신경 자극기 분야를 개척하기 위한 전략적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 2,
+                  "tech_readiness": 2,
+                  "tech_risk": 5,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "low",
+                "recommended_action": "기초 연구 및 프로토타입 개발에 집중하여 2029 년 Q1 이후 시장 진입을 위한 기술적 기반을 마련합니다.",
+                "reasoning": {
+                  "market_evaluation": "안과 임플란트 시장 중 광 조절 가능 소재는 2030 년 45 억 달러 (TAM) 의 니치 마켓으로 추정되며, 연평균 11% 의 성장률을 보입니다. 시장 규모는 상대적으로 작지만, 고부가가치 특성을 가지고 있으며, 2029 년 Q1 에 예상되는 시장 붐은 기술 성숙과 함께 발생할 것입니다. Johnson & Johnson 과의 유사성 (0.65) 은 안과 분야에서 J&J 의 독점적 지위를 시사하며, 진입 장벽이 높습니다.",
+                  "tech_evaluation": "TRL 4 로 기술 성숙도가 낮으며, 기술적 위험은 매우 높습니다 (5 점). 특허 점수 (79.5) 와 시장 점수 (65.4) 는 중간 수준으로, Medtronic 이 안과 분야 진출을 고려하거나 유사한 광반응성 소재를 다른 임플란트에 적용하는 프론티어 기술을 선점할 수 있는 기회를 제공합니다. 이는 장기적인 기술 리더십을 구축하는 데 기여합니다.",
+                  "investment_decision": "낮은 시장 성장성 (2 점) 과 높은 기술적 위험 (5 점) 을 고려하여 Tier 3 로 선정합니다. 총 예산의 약 15% 를 할당하여 5 년 계획 전체에 걸친 장기 개발을 수행하고, 프론티어 소재 기술을 선점하는 공격적인 R&D 전략을 추진합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "혈관 내 3D 이미징 및 워크플로우",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4500000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T03",
+                "name": "고감도 진단 자동화 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "혈관 내 3D 이미징 및 워크플로우",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4500000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T03",
+                "name": "고감도 진단 자동화 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "혈관 내 3D 이미징 및 워크플로우",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4500000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T02",
+                "name": "수술용 AI 기반 이미지 처리 및 안내",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "고감도 진단 자동화 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T02",
+                "name": "수술용 AI 기반 이미지 처리 및 안내",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "수술용 AI 기반 이미지 처리 및 안내",
+                "tier": "Tier 1",
+                "tech_budget_usd": 4200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T04",
+                "name": "광 조절 가능 안과 임플란트 소재",
+                "tier": "Tier 3",
+                "tech_budget_usd": 2000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 9300000000.0,
+            "3": 4200000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 1
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T02",
+              "name": "수술용 AI 기반 이미지 처리 및 안내",
+              "category": "Architecture",
+              "final_score": 84.14,
+              "market_score": 88.2,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T01",
+              "name": "혈관 내 3D 이미징 및 워크플로우",
+              "category": "Equipment",
+              "final_score": 82.8,
+              "market_score": 82.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T03",
+              "name": "고감도 진단 자동화 시스템",
+              "category": "Equipment",
+              "final_score": 80.44,
+              "market_score": 76.8,
+              "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T06",
+              "name": "전기수술 장비의 시각화 및 제어",
+              "category": "Equipment",
+              "final_score": 79.85,
+              "market_score": 79.6,
+              "boom": "2027 Q1"
+            },
+            {
+              "tech_id": "T04",
+              "name": "광 조절 가능 안과 임플란트 소재",
+              "category": "Material",
+              "final_score": 68.95,
+              "market_score": 65.4,
+              "boom": "2029 Q1"
+            }
+          ],
+          "category_distribution": {
+            "Architecture": 1,
+            "Equipment": 3,
+            "Material": 1,
+            "Process": 1
+          },
+          "avg_trl": 5.8,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "혈관 내 3D 이미징 및 워크플로우",
+              "stage": "roadmap",
+              "key_reason": "TAM 125 억 달러 및 CAGR 14.5% 의 높은 시장 성장 잠재력"
+            },
+            {
+              "tech_id": "T02",
+              "name": "수술용 AI 기반 이미지 처리 및 안내",
+              "stage": "roadmap",
+              "key_reason": "TAM 280 억 달러 및 CAGR 24% 의 압도적인 시장 성장 잠재력"
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T02"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 1,
+            "2027 Q3": 1,
+            "2028 Q2": 1,
+            "2027 Q1": 1,
+            "2029 Q1": 1,
+            "2029 Q3": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 시점 논리 정상, 포트폴리오 균형 적절. 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_medtronic_biohealth_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_medtronic_biohealth_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_medtronic_biohealth_2026_2030__기술선도__investment_strategy.json"
+  }
+}

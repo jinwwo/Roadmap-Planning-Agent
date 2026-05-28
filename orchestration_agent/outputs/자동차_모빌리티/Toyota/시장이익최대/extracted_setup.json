@@ -1,0 +1,30 @@
+{
+  "scenario_id": "toyota_mobility_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: Toyota\nIndustry: Automotive / Mobility / Multi-Pathway\nAnnual Revenue: ~$338B (FY2025: JPY 50.7T)\nR&D Budget Ratio: ~2.7%\nAnnual R&D Budget: ~$9.1B (FY2025: JPY 1.37T)\nTotal 5-year R&D Budget: ~$41.7B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "Toyota",
+    "industry": "Automotive / Mobility / Multi-Pathway",
+    "annual_revenue": 338000000000.0,
+    "rd_budget_ratio": 0.027,
+    "annual_rd_budget": 9100000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "다양한 이동성 솔루션을 통한 시장 이익 극대화 및 단기 상용화 가속",
+    "strategic_direction": [
+      "검증된 하이브리드/수소 기술 리더십 유지",
+      "EV 및 자율주행 인접 시장 확장",
+      "원가 우위 기반 HW/SW 통합 스택 강화"
+    ],
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 41700000000
+}

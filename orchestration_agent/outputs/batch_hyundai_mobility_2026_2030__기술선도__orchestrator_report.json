@@ -1,0 +1,521 @@
+{
+  "problem_frame": {
+    "industry": "Automotive / Mobility / EV",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 18400000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Hyundai Motor",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "EV 및 자율주행 핵심 기술 리더십 확보",
+      "모빌리티 서비스 및 소프트웨어 생태계 확장",
+      "차세대 배터리 및 AI 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $18.4B 내에서 정확히 배분됨. 2026-2030 기간 내 기술 개발 일정도 타당함."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(2026-2028) → T04(2028-2030) 의 의존성 관계가 시간적 순서와 일치함."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "현대차의 EV/AI 전략과 정합하며, 배터리 안전 및 자율주행 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "선정된 4 기술에 대한 예산 배분이 투자 등급 (Tier 1/2) 과 위험도/중요도에 적절히 비례함."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기 (T01) 와 중장기 (T04, T05, T06) 기술이 균형 있게 분포되어 있음."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T04",
+            "name": "고정밀 배터리 관리 시스템 (BMS)",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 84.09,
+            "market_score": 86.5,
+            "patent_score": 82.5,
+            "expected_market_boom_quarter": "2026 Q3"
+          },
+          {
+            "tech_id": "T01",
+            "name": "고안전성 배터리 셀 분리막",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 84.06,
+            "market_score": 82.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "고용량 양극 활물질 합성",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 83.93,
+            "market_score": 84.0,
+            "patent_score": 86.2,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T03",
+            "name": "배터리 화재 전파 차단 구조",
+            "category": "Packaging",
+            "trl": 7,
+            "final_score": 81.39,
+            "market_score": 79.5,
+            "patent_score": 84.8,
+            "expected_market_boom_quarter": "2027 Q1"
+          },
+          {
+            "tech_id": "T08",
+            "name": "배터리 셀 이송 및 적층 자동화",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 76.22,
+            "market_score": 76.5,
+            "patent_score": 72.1,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T05",
+            "name": "자율주행 차량 자동 충전 도킹",
+            "category": "Process",
+            "trl": 5,
+            "final_score": 75.55,
+            "market_score": 75.0,
+            "patent_score": 79.3,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T10",
+            "name": "배터리 분배함 및 전장기 통합",
+            "category": "Packaging",
+            "trl": 6,
+            "final_score": 72.49,
+            "market_score": 73.5,
+            "patent_score": 68.9,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T06",
+            "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+            "category": "Architecture",
+            "trl": 4,
+            "final_score": 72.24,
+            "market_score": 72.0,
+            "patent_score": 76.8,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T07",
+            "name": "레이저 기반 차체 가공 기술",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 70.72,
+            "market_score": 68.0,
+            "patent_score": 74.5,
+            "expected_market_boom_quarter": "2028 Q3"
+          },
+          {
+            "tech_id": "T09",
+            "name": "차량 조향감 시뮬레이션 저항 장치",
+            "category": "Equipment",
+            "trl": 5,
+            "final_score": 69.19,
+            "market_score": 65.0,
+            "patent_score": 70.4,
+            "expected_market_boom_quarter": "2029 Q2"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "고안전성 배터리 셀 분리막",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "의존성 없이 독립적으로 시작 가능한 기초 소재 기술로, TRL 6 수준이므로 1 차년도부터 즉시 개발을 시작하여 2027 년 시장 급성장기 (boom) 전인 3 차년도까지 안정화 및 공급망 확보를 완료합니다.",
+              "tech_execution": "현대자동차의 배터리 화재 규제 대응 및 고에너지 밀도 배터리 수요 충족을 위해, 자체 개발보다는 핵심 소재 공급망 선점 및 통합 전략을 수립하는 데 필수적입니다.",
+              "investment_selection": "2027 년경 본격화될 시장 확대에 대비하여 초기 투자 시점을 앞당겨 경쟁사 대비 기술 격차를 줄이고, 차세대 배터리 시스템의 안전성 기준을 주도하기 위해 핵심 투자 대상으로 선정했습니다."
+            }
+          },
+          {
+            "tech_id": "T04",
+            "name": "고정밀 배터리 관리 시스템 (BMS)",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술인 T01(고안전성 분리막) 의 개발이 어느 정도 진전된 2 차년도에 시작하여, T01 의 종료 시점과 겹치거나 직후에 시스템 통합을 진행하며 4 차년도까지 고도화합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "소프트웨어 정의 차량 (SDV) 전략의 핵심인 배터리 상태 추정 및 단락 감지 알고리즘을 고도화하여, 차세대 배터리 성능 극대화와 안전성 확보를 동시에 달성해야 합니다.",
+              "investment_selection": "2026 년 하반기부터 급성장할 BMS 시장 선점을 위해, 경쟁사 (삼성 SDI, LG 에너지솔루션) 의 특허 동향을 분석하며 차별화된 알고리즘 개발에 집중 투자해야 합니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "자율주행 차량 자동 충전 도킹",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 5 로 초기 단계이므로 3 차년도부터 본격적인 프로세스 개발을 시작하여, 2028 년 시장 급성장기 이후인 5 차년도까지 기술 성숙도를 높이고 상용화 준비를 완료합니다.",
+              "tech_execution": "모빌리티 서비스 생태계 확장을 위한 핵심 프로세스로, 자율주행 차량의 보급이 본격화되는 시점에 맞춰 정밀 위치 추정 및 충전 제어 기술을 완성해야 합니다.",
+              "investment_selection": "토요타 등 경쟁사의 특허 출원 동향을 고려하여 기술 격차 유지를 위해, 2028 년 이후 시장 확대에 대비한 장기적인 R&D 투자 계획이 필요합니다."
+            }
+          },
+          {
+            "tech_id": "T06",
+            "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+            "year_idx_start": 4,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 4 로 가장 낮은 기술 성숙도를 가지며, 2029 년경 시장이 본격화되므로 4 차년도부터 집중 개발하여 5 차년도 (마지막 차년도) 까지 이어지는 장기 R&D 로 설정합니다.",
+              "tech_execution": "AI 스택 강화 전략 하에 볼크스바겐의 비대칭 구조를 벤치마킹하거나 차별화하여, 레벨 4 자율주행 상용화에 필요한 효율성과 성능 균형을 갖춘 아키텍처를 구축해야 합니다.",
+              "investment_selection": "차세대 자율주행 기술의 핵심인 컴퓨팅 아키텍처 선점을 위해, 2030 년까지 이어지는 기술 진화 과정을 고려하여 장기적인 투자 우선순위를 부여합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 18400000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "고안전성 배터리 셀 분리막",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "tech_budget_rationale": "2027 년 Q2 시장 급성장기 직전인 2026 년까지 기술 성숙도를 높여 공급망 선점을 확보해야 하므로, 전체 예산의 30% 를 할당합니다. TRL 6 수준으로 상용화 직전 단계이므로, 대량 생산 라인 구축 및 LG 에너지솔루션 등 주요 파트너와의 공동 개발 비용이 집중적으로 소요됩니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 말까지 LG 에너지솔루션 및 삼성 SDI 와의 공동 개발 계약을 체결하고, 2027 년 Q1 에 양산 라인 가동을 목표로 즉시 투자 집행.",
+                "reasoning": {
+                  "market_evaluation": "2030 년 $38B 의 거대 시장 (TAM) 과 22.5% 의 높은 CAGR 을 보이며, 2027 년 Q2 에 시장 붐이 예상되어 시의적절성이 매우 높습니다. EV 화재 규제 강화와 고에너지 밀도 배터리 수요가 이 소재의 필수성을 높이고 있으며, LG/Samsung/BYD 중심의 공급망 집중화 속에서 선점 전략이 필수적입니다.",
+                  "tech_evaluation": "TRL 6 으로 프로토타입 검증 단계에 있어 기술적 위험은 낮으나 (Risk 2), LG 에너지솔루션과 BYD 의 강력한 특허 포트폴리오 (Patent Score 88.5) 로 인해 경쟁 우위 확보를 위한 기술 격차 해소 노력이 필요합니다. 현대자동차의 시스템 통합 전략과 부합하는 핵심 소재 기술로, 자체 개발보다는 공급망 통합 전략이 핵심입니다.",
+                  "investment_decision": "시장 규모와 성장률, 그리고 2027 년 시장 붐에 대한 높은 긴급도로 Tier 1 로 선정하여 가장 많은 예산을 배분합니다. 55 억 2 천만 달러의 투자는 초기 R&D 완료 및 양산 라인 확보를 위한 선제적 투자로, 배터리 안전성 리더십 확보의 핵심 동력이 될 것입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T04",
+                "name": "고정밀 배터리 관리 시스템 (BMS)",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "tech_budget_rationale": "2026 년 Q3 시장 붐에 대응하기 위해 T01 과 병행하여 즉시 개발을 시작해야 하므로, 전체 예산의 30% 를 할당합니다. SDV 전략의 핵심인 소프트웨어 및 알고리즘 고도화에 집중하여, 하드웨어 의존도를 낮추고 소프트웨어 정의 차량의 경쟁력을 극대화합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 Q1 에 AI 기반 BMS 알고리즘 개발 팀을 즉시 구성하고, T01 과의 연동 테스트를 병행하여 2026 년 Q3 시장 진입을 준비.",
+                "reasoning": {
+                  "market_evaluation": "2030 년 $13.76B 시장 규모와 25% 의 CAGR 을 기록하며, 2026 년 Q3 에 시장 붐이 예상되어 가장 시급한 기술 중 하나입니다. EV 배터리 효율 및 안전성 관리의 핵심으로, AI 기반 최적화 기술 도입이 시장 진입의 핵심 열쇠가 될 것입니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도가 높고, 삼성 SDI 와 LG 의 특허 동향을 분석하여 현대자동차의 SDV 전략과 높은 정합성 (Competitive Advantage 5) 을 보입니다. 배터리 상태 추정 및 단락 감지 알고리즘 고도화는 소프트웨어 정의 차량의 핵심 경쟁력이므로 기술적 위험은 낮습니다.",
+                  "investment_decision": "시장 성장률과 SDV 전략 정합성이 매우 높아 Tier 1 로 선정하며, T01 과 동등한 예산을 배분합니다. 55 억 2 천만 달러의 투자는 AI 기반 BMS 알고리즘 개발 및 소프트웨어 플랫폼 구축에 집중되어, 차세대 배터리 성능 극대화를 실현합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "자율주행 차량 자동 충전 도킹",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "tech_budget_rationale": "2028 년 Q2 시장 붐을 대비하여 2027 년부터 본격적인 개발을 시작해야 하므로, 전체 예산의 20% 를 할당합니다. TRL 5 로 초기 단계이므로, PoC 및 파일럿 테스트에 집중하여 기술 성숙도를 높이는 선택적 투자 전략을 취합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 2,
+                  "tech_risk": 3,
+                  "competitive_advantage": 3,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년 Q1 에 자동 충전 도킹 PoC 를 시작하고, 2028 년 Q1 에 파일럿 테스트를 완료하여 시장 진입을 준비.",
+                "reasoning": {
+                  "market_evaluation": "2030 년 $8B 시장 규모와 16.5% 의 CAGR 을 보이며, 2028 년 Q2 에 시장 붐이 예상되어 중기적 시의적절성을 가집니다. 자율주행 차량 보급 증가에 따른 충전 인프라 자동화 수요가 핵심 성장 동력이 될 것입니다.",
+                  "tech_evaluation": "TRL 5 로 초기 단계이므로 기술적 위험 (Risk 3) 이 존재하며, 토요타 등 경쟁사의 특허 동향을 고려하여 기술 격차 해소가 필요합니다. 현대자동차의 모빌리티 서비스 생태계 확장을 위한 핵심 프로세스로, 정밀 위치 추정 및 충전 제어 기술 개발이 필수적입니다.",
+                  "investment_decision": "시장 규모와 성장률이 Tier 1 에 비해 낮고, 기술 성숙도가 낮아 Tier 2 로 선정하여 36 억 8 천만 달러를 배분합니다. 2028 년 시장 진입을 위한 PoC 및 파일럿 테스트에 집중하여, 기술 성숙도를 높이는 선택적 투자 전략을 취합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T06",
+                "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "tech_budget_rationale": "2029 년 Q1 시장 붐을 대비하여 2028 년부터 집중 개발을 시작해야 하므로, 전체 예산의 20% 를 할당합니다. TRL 4 로 가장 낮은 기술 성숙도를 가지므로, 장기 R&D 및 기술 검증에 집중하는 탐색적 투자 전략을 취합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "low",
+                "recommended_action": "2028 년 Q1 에 비대칭 컴퓨팅 아키텍처 R&D 를 시작하고, 2029 년 Q1 에 기술 검증 및 프로토타입 개발을 완료하여 시장 진입을 준비.",
+                "reasoning": {
+                  "market_evaluation": "2030 년 $15B 시장 규모와 15% 의 CAGR 을 보이며, 2029 년 Q1 에 시장 붐이 예상되어 장기적 시의적절성을 가집니다. 자율주행 레벨 3~4 차량 보급 증가에 따른 컴퓨팅 성능 요구가 핵심 성장 동력이 될 것입니다.",
+                  "tech_evaluation": "TRL 4 로 가장 낮은 기술 성숙도를 가지며, 볼크스바겐의 비대칭 구조를 벤치마킹하거나 차별화해야 하므로 기술적 위험 (Risk 4) 이 높습니다. AI 스택 강화 전략 하에 효율성과 성능 균형을 갖춘 아키텍처 구축이 필수적입니다.",
+                  "investment_decision": "시장 규모와 성장률이 Tier 1 에 비해 낮고, 기술 성숙도가 낮아 Tier 2 로 선정하여 36 억 8 천만 달러를 배분합니다. 2029 년 시장 진입을 위한 장기 R&D 및 기술 검증에 집중하여, 기술 성숙도를 높이는 탐색적 투자 전략을 취합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "고안전성 배터리 셀 분리막",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "고안전성 배터리 셀 분리막",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "고안전성 배터리 셀 분리막",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "고정밀 배터리 관리 시스템 (BMS)",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "자율주행 차량 자동 충전 도킹",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T04",
+                "name": "고정밀 배터리 관리 시스템 (BMS)",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "자율주행 차량 자동 충전 도킹",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T06",
+                "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T04",
+                "name": "고정밀 배터리 관리 시스템 (BMS)",
+                "tier": "Tier 1",
+                "tech_budget_usd": 5520000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "자율주행 차량 자동 충전 도킹",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T06",
+                "name": "비대칭 자율주행 컴퓨팅 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 3680000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 5520000000.0,
+            "3": 9200000000.0,
+            "4": 3680000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 2,
+            "Tier 3": 0
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T04",
+              "name": "고정밀 배터리 관리 시스템 (BMS)",
+              "category": "Equipment",
+              "final_score": 84.09,
+              "market_score": 86.5,
+              "boom": "2026 Q3"
+            },
+            {
+              "tech_id": "T01",
+              "name": "고안전성 배터리 셀 분리막",
+              "category": "Material",
+              "final_score": 84.06,
+              "market_score": 82.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "고용량 양극 활물질 합성",
+              "category": "Material",
+              "final_score": 83.93,
+              "market_score": 84.0,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T03",
+              "name": "배터리 화재 전파 차단 구조",
+              "category": "Packaging",
+              "final_score": 81.39,
+              "market_score": 79.5,
+              "boom": "2027 Q1"
+            },
+            {
+              "tech_id": "T08",
+              "name": "배터리 셀 이송 및 적층 자동화",
+              "category": "Equipment",
+              "final_score": 76.22,
+              "market_score": 76.5,
+              "boom": "2027 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Equipment": 3,
+            "Material": 2,
+            "Packaging": 2,
+            "Process": 2,
+            "Architecture": 1
+          },
+          "avg_trl": 5.7,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "고안전성 배터리 셀 분리막",
+              "stage": "roadmap",
+              "key_reason": "TAM $38B 및 CAGR 22.5% 로 시장 성장성이 매우 높음."
+            },
+            {
+              "tech_id": "T04",
+              "name": "고정밀 배터리 관리 시스템 (BMS)",
+              "stage": "roadmap",
+              "key_reason": "TAM $13.76B 및 CAGR 25% 로 시장 성장성이 매우 높음."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T04"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q3": 1,
+            "2027 Q2": 1,
+            "2026 Q4": 1,
+            "2027 Q1": 1,
+            "2027 Q3": 1,
+            "2028 Q2": 1,
+            "2028 Q1": 1,
+            "2029 Q1": 1,
+            "2028 Q3": 1,
+            "2029 Q2": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 양호하여 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobility_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobility_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobility_2026_2030__기술선도__investment_strategy.json"
+  }
+}

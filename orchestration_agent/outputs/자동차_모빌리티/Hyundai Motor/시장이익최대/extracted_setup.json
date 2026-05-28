@@ -1,0 +1,30 @@
+{
+  "scenario_id": "hyundai_mobility_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: Hyundai Motor\nIndustry: Automotive / Mobility / EV\nAnnual Revenue: ~$128B (FY2025: KRW 186.3T)\nR&D Budget Ratio: ~3.6%\nAnnual R&D Budget: ~$4.6B (FY2025: KRW 6.7T)\nTotal 5-year R&D Budget: ~$18.4B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "Hyundai Motor",
+    "industry": "Automotive / Mobility / EV",
+    "annual_revenue": 128000000000.0,
+    "rd_budget_ratio": 0.036,
+    "annual_rd_budget": 4600000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Short-term commercialization and cost leadership to maximize market profit and margin growth.",
+    "strategic_direction": [
+      "EV 및 자율주행 검증 기술 확대",
+      "원가 우위를 통한 시장 점유율 확장",
+      "단기 상용화 중심의 수익성 극대화"
+    ],
+    "domain": "Automotive / Mobility / EV",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 18400000000
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "center_actor": "Tesla",
+    "related_actor": "BYD",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_technology_areas": [
+      "건식 전극 공정",
+      "배터리 소재",
+      "열관리 시스템"
+    ],
+    "basis": "양사 모두 배터리 소재 및 제조 공정 (건식 전극, 열흡수 소재) 관련 특허를 활발히 출원하고 있으며, EV 시장 점유율 경쟁에서 직접적인 기술 경쟁 관계에 있습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Tesla",
+    "related_actor": "NIO",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_technology_areas": [
+      "자율주행 AI",
+      "배터리 소재",
+      "품질 감시"
+    ],
+    "basis": "자율주행 AI 아키텍처 및 배터리 소재 분야에서 유사한 기술 트렌드를 보이며, 중국 시장에서의 경쟁과 기술 교류 가능성이 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Tesla",
+    "related_actor": "Ford",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_technology_areas": [
+      "AI 신경망 훈련",
+      "배터리 패키징",
+      "제조 품질 감시"
+    ],
+    "basis": "대규모 신경망 훈련 및 배터리 캐스터 주조 공정, 제조 품질 관리 시스템에서 공통된 기술적 접근을 보이고 있습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Tesla",
+    "related_actor": "Rivian",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_technology_areas": [
+      "열관리 시스템",
+      "서스펜션 제어",
+      "차량 공기조화"
+    ],
+    "basis": "특히 열관리 및 서스펜션 제어 등 차량 성능 최적화 장비 분야에서 유사한 특허 활동을 보이고 있습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Tesla",
+    "related_actor": "General Motors",
+    "similarity": 0.58,
+    "edge_weight": 0.58,
+    "shared_technology_areas": [
+      "전력전자 인버터",
+      "자율주행 센서"
+    ],
+    "basis": "전력전자 토폴로지와 자율주행 센서 기술에서 일부 겹치는 특허를 보유하고 있으나, 전체 포트폴리오 유사도는 상대적으로 낮습니다.",
+    "evidence_level": "proxy"
+  }
+]
