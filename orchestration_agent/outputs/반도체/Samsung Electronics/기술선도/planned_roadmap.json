@@ -1,0 +1,424 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Memory / Foundry",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "3D NAND 수직 에피택셜 실리콘",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 1.1,
+          "basis": "3D NAND 시장 규모는 2030 년대 중반까지 연평균 10% 이상 성장하며, 수직 에피택셜 실리콘 기술은 고밀도 3D NAND(200 레이어 이상) 의 핵심 공정으로 추정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2026-2030",
+          "basis": "SNS Insider 등 보고서에 따른 3D NAND 시장 성장률 및 고밀도화 추세 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "3D NAND Flash Memory Market Size & Growth Forecast, 2035",
+            "url": "https://www.snsinsider.com/reports/3d-nand-flash-memory-market-4709",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Applied Materials"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "하이브리드 본딩 통합 공정",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 3.5,
+          "basis": "HBM 및 고성능 컴퓨팅 패키징 시장이 AI 수요로 급성장하며, 하이브리드 본딩은 2028 년 이후 표준 패키징 기술로 자리 잡을 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2026-2030",
+          "basis": "AI 반도체 및 HBM 시장 성장률 (20% 이상) 과 패키징 기술 전환 속도 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "South Korea Semiconductor Foundry Market Size & Share Analysis",
+            "url": "https://www.mordorintelligence.com/industry-reports/south-korea-semiconductor-foundry-market",
+            "use": "파운드리 및 패키징 시장 성장성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SK Hynix",
+            "TSMC",
+            "Applied Materials"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.8,
+          "basis": "CIM 시장은 초기 단계이나 AI 추론 가속화 수요로 인해 2030 년까지 급성장할 것으로 예상되며, 초기 시장 규모는 10 억 달러 수준에서 시작해 2030 년 80 억 달러 이상으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2026-2030",
+          "basis": "AI 추론 시장 성장 및 메모리 병목 해결 기술로서의 CIM 수요 증가 반영."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "컴퓨트-인-메모리 (Compute-In-Memory, CIM) 칩 시장 규모 보고서 2035",
+            "url": "https://www.gminsights.com/ko/industry-analysis/compute-in-memory-cim-chip-market",
+            "use": "CIM 시장 성장률 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Micron Technology",
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "GAA 트랜지스터 금속 게이트 절단",
+        "market_score": 85.5,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 5.0,
+          "basis": "GAA 트랜지스터는 3nm 이하 공정에서 필수 기술로, 2026 년 이후 파운드리 및 시스템 반도체 시장에서 주류로 전환될 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2026-2030",
+          "basis": "고성능 로직 반도체 시장 성장 및 GAA 공정 전환 속도 반영."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "What is the Gate-All-Around (GAA) Transistor Market Size?",
+            "url": "https://www.precedenceresearch.com/gate-all-around-transistor-market",
+            "use": "GAA 시장 규모 및 성장 전망 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "TSMC"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "플라즈마 증착 챔버 배치 처리",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.5,
+          "basis": "반도체 장비 시장은 3D NAND 및 GAA 공정 확대로 인해 성장할 것으로 예상되며, 배치 처리 기술은 생산성 향상의 핵심 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.5,
+          "forecast_period": "2026-2030",
+          "basis": "반도체 장비 시장 평균 성장률 및 공정 복잡도 증가 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Insights on the Semiconductor Memory Global Market to 2026",
+            "url": "https://www.prnewswire.com/news-releases/insights-on-the-semiconductor-memory-global-market-to-2026---featuring-samsung-electronics-taiwan-semiconductor-and-micron-technology-among-others-301285579.html",
+            "use": "메모리 시장 및 장비 수요 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Applied Materials"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "광학 링크 아키텍처",
+        "market_score": 79.5,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 10.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 1.0,
+          "basis": "AI 데이터센터 및 고대역폭 통신 수요로 인해 광학 링크 시장은 2030 년까지 급성장할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2026-2030",
+          "basis": "AI 인프라 및 광통신 시장 성장률 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Market Size, Share, Growth & Forecast [2034]",
+            "url": "https://www.fortunebusinessinsights.com/semiconductor-market-102365",
+            "use": "광학 링크 및 반도체 시장 성장성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "비휘발성 메모리 프로그래밍 최적화",
+        "market_score": 74.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.8,
+          "basis": "비휘발성 메모리 시장은 IoT 및 엣지 컴퓨팅 수요로 인해 성장할 것으로 예상되며, 프로그래밍 최적화 기술은 성능 향상의 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2026-2030",
+          "basis": "비휘발성 메모리 시장 성장률 및 기술 최적화 수요 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Memory Market Size, Share & Forecast Report - 2034",
+            "url": "https://www.fortunebusinessinsights.com/semiconductor-memory-market-114132",
+            "use": "메모리 시장 규모 및 성장 전망 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "AI 기반 객체 검출 및 추적",
+        "market_score": 81.0,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 20.0,
+          "sam_usd_b": 7.0,
+          "som_usd_b": 2.0,
+          "basis": "AI 기반 객체 검출 및 추적 시장은 자율주행 및 보안 수요로 인해 2030 년까지 급성장할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2026-2030",
+          "basis": "AI 및 엣지 컴퓨팅 시장 성장률 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Artificial Intelligence in Semiconductor Market Size & Share",
+            "url": "https://www.snsinsider.com/reports/artificial-intelligence-in-semiconductor-market-5641",
+            "use": "AI 반도체 시장 성장성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "SK Hynix",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "TSMC",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Micron Technology",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Applied Materials",
+          "similarity": 0.78,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Intel",
+          "similarity": 0.72,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "3D NAND 수직 에피택셜 실리콘",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 수준으로 2-3 년의 개발 기간이 필요하며, T02 와 T03 의 선행 기술이므로 1 차년도부터 시작하여 3 차년도 (2028 년) 에 핵심 기술 완성 및 양산 준비를 마쳐야 합니다. 이는 2027 Q3 예상 시장 폭발 시점과 맞물려 초기 시장 진입을 보장합니다.",
+        "tech_execution": "3D NAND 고밀도화 경쟁에서 Micron 과의 기술 격차를 해소하고 선점하기 위해 수직 에피택셜 실리콘 공정을 확립하는 것이 필수적입니다. 이는 차세대 메모리 제조 공정의 핵심 트렌드로, 삼성의 메모리 리더십 유지를 위한 기반 기술입니다.",
+        "investment_selection": "고밀도 메모리 시장의 성장 잠재력이 크며, 이 기술을 확보하지 않으면 경쟁사 대비 기술적 열세에 처할 수 있어 핵심 투자 대상입니다. R&D 예산을 집중 투입하여 공정 안정성을 확보함으로써 장기적인 시장 점유율 방어에 기여합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T04",
+      "name": "GAA 트랜지스터 금속 게이트 절단",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "독립적인 선행 기술로 TRL 6 수준이며, 2027 Q1 예상 시장 폭발 시점을 고려하여 1 차년도부터 개발을 시작하고 3 차년도 (2028 년) 까지 양산 준비를 완료해야 합니다. 이는 Foundry 경쟁력 강화를 위한 초기 핵심 마일스톤입니다.",
+        "tech_execution": "TSMC 와의 경쟁에서 미세 공정 게이트 제어 기술을 선점하여 Foundry 및 시스템 반도체 스택을 강화해야 합니다. GAA 구조의 금속 게이트 절단 공정은 2027 년경 양산 경쟁의 핵심 요소로, 시장 진입 시기가 매우 중요합니다.",
+        "investment_selection": "고성장 시장이지만 진입 장벽이 높아 경쟁 구도가 집중될 것으로 예상되므로, 초기 투자로 기술 장벽을 구축하는 것이 경쟁 우위를 확보하는 길입니다. R&D 예산을 효율적으로 배분하여 공정 수율과 성능을 극대화해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "하이브리드 본딩 통합 공정",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "T01 의 완료 (3 차년도) 를 전제로 하되, 병행 개발을 위해 2 차년도부터 시작하여 4 차년도 (2029 년) 까지 기술 성숙도를 높입니다. 2028 Q1 시장 폭발 시점을 중반 마일스톤으로 삼아 양산 체계를 구축합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+        "tech_execution": "HBM 및 고밀도 패키징 시장 확장을 위해 SK Hynix 와 TSMC 의 동향을 반영한 하이브리드 본딩 기술이 필수적입니다. 이는 삼성의 AI 및 HBM 시장 확장 전략을 실현하기 위한 핵심 패키징 기술입니다.",
+        "investment_selection": "HBM 시장의 폭발적 성장은 하이브리드 본딩 기술의 상용화 속도에 달려 있으며, 이 기술을 선점하면 시장 규모와 경쟁 우위를 동시에 확보할 수 있습니다. R&D 예산을 집중하여 공정 통합성을 높이는 것이 투자 효율성을 극대화합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "메모리 내 연산 (CIM) 아키텍처",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "T01 의 기술 완성을 기반으로 3 차년도부터 본격적인 아키텍처 개발을 시작하며, TRL 5 로 인해 더 긴 개발 기간이 필요합니다. 2029 Q2 시장 폭발 시점을 넘어 5 차년도 (2030 년) 까지 차세대 기술로 진화시켜 Horizon 을 채웁니다.",
+        "tech_execution": "AI 시장 확장을 위해 Micron 과 Intel 의 CIM 아키텍처 동향을 따라잡고 상용화 속도를 높여야 합니다. 이는 메모리 내 연산 기술을 통해 AI 가속화 성능을 극대화하는 차세대 아키텍처입니다.",
+        "investment_selection": "높은 성장률과 진입 장벽으로 인해 초기 경쟁 구도에서 우위를 점하기 위해 장기적인 R&D 투자가 필요합니다. 2030 년까지 이어지는 기술 진화를 통해 차세대 AI 반도체 시장에서 삼성의 기술 리더십을 공고히 합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "3D NAND 수직 에피택셜 실리콘",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [
+        "T02",
+        "T03"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T04": {
+      "tech_id": "T04",
+      "name": "GAA 트랜지스터 금속 게이트 절단",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q1"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "하이브리드 본딩 통합 공정",
+      "category": "Packaging",
+      "trl": 7,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "메모리 내 연산 (CIM) 아키텍처",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2029 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 4,
+    "rationale": "HBM 시장 확장(T02), Foundry 미세공정(T04), 메모리 리더십(T01), AI 아키텍처(T03) 등 3 대 전략 방향을 모두 커버하며 2027~2029 년 시점 분포를 확보함.",
+    "dropped": [
+      {
+        "tech_id": "T06",
+        "name": "광학 링크 아키텍처",
+        "reason": "AI 전략 정합성 있으나 T03(CIM) 과 중복 기능으로 점수 우위 T03 선별"
+      },
+      {
+        "tech_id": "T08",
+        "name": "AI 기반 객체 검출 및 추적",
+        "reason": "자율주행 등 응용 분야로 메모리/Foundry 핵심 전략과 직접 연관성 약함"
+      },
+      {
+        "tech_id": "T05",
+        "name": "플라즈마 증착 챔버 배치 처리",
+        "reason": "장비 최적화 기술로 전략 방향성 직접 지원도 낮고 점수 하위권"
+      },
+      {
+        "tech_id": "T07",
+        "name": "비휘발성 메모리 프로그래밍 최적화",
+        "reason": "기존 메모리 성능 개선으로 차세대 기술 리더십 확보에 기여도 제한적"
+      }
+    ]
+  }
+}

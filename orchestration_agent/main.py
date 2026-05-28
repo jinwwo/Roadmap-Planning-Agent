@@ -223,6 +223,14 @@ def main():
     print(f"  out_prefix     : {args.out_prefix!r}")
     print("=" * 70)
 
+    # company_scenario / strategic_direction 구성 — problem_frame 의 company_name 등이 채워지도록
+    company_scenario = {
+        "company_name": args.company_name,
+        "industry": args.industry,
+        "planning_horizon": args.time_horizon,
+    } if args.company_name else None
+    strategic_direction_list = priorities or None  # priorities = extracted strategic_direction
+
     # 파이프라인 실행
     runner = run_single_agent_orchestration if args.run_mode == "single" else run_orchestration
     result = runner(
@@ -244,6 +252,8 @@ def main():
         company_profile=args.company_profile,
         related_companies=related_companies,
         use_patent_map=args.use_patent_map,
+        company_scenario=company_scenario,
+        strategic_direction=strategic_direction_list,
     )
 
     # Orchestrator 최종 보고서 저장

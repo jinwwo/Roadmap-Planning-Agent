@@ -1,0 +1,74 @@
+[
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "SK Hynix",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_keywords": [
+      "3D NAND",
+      "Memory Architecture",
+      "GAA Process"
+    ],
+    "rationale": "양사 모두 3D NAND 및 GAA 공정 관련 특허를 집중 출원하며, 메모리 아키텍처 분야에서 높은 기술적 유사성을 보임."
+  },
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "TSMC",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_keywords": [
+      "GAA Process",
+      "Packaging",
+      "Foundry"
+    ],
+    "rationale": "GAA 공정 및 패키징 기술에서 양사의 특허 출원 패턴이 유사하며, 파운드리 및 메모리 제조 분야에서 경쟁 및 협력 관계가 존재."
+  },
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "Micron Technology",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_keywords": [
+      "CIM",
+      "3D NAND",
+      "Memory Architecture"
+    ],
+    "rationale": "메모리 내 연산 (CIM) 및 3D NAND 구조 관련 특허에서 양사의 기술적 방향성이 유사하며, 메모리 시장에서의 경쟁 관계가 강함."
+  },
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "Intel",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_keywords": [
+      "CIM",
+      "Process Control",
+      "Memory"
+    ],
+    "rationale": "CIM 및 공정 제어 관련 특허에서 일부 유사성이 있으나, 인텔은 파운드리 및 프로세서 중심의 전략으로 차별화됨."
+  },
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "NVIDIA",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_keywords": [
+      "AI Architecture",
+      "Memory Interface",
+      "Data Center"
+    ],
+    "rationale": "AI 아키텍처 및 메모리 인터페이스 관련 특허에서 일부 유사성이 있으나, NVIDIA 는 GPU 및 소프트웨어 중심의 전략으로 차별화됨."
+  },
+  {
+    "center_actor": "Samsung Electronics",
+    "related_actor": "Kioxia",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "shared_keywords": [
+      "3D NAND",
+      "Memory Architecture",
+      "Manufacturing Equipment"
+    ],
+    "rationale": "3D NAND 및 메모리 아키텍처 관련 특허에서 높은 유사성을 보이며, 제조 장비 기술에서도 공통된 관심사를 가짐."
+  }
+]

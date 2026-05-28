@@ -1,0 +1,1151 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T22:01:53Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "항체-약물 접합체 (ADC) 플랫폼",
+        "category": "Material",
+        "estimated_trl": 7,
+        "patent_score": 92.5,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 95,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Merck & Co.",
+          "AbbVie",
+          "Bristol Myers Squibb"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Merck & Co.",
+            "title": "USE OF CONJUGATE IN TREATING TUMOR DISEASE AND METHOD",
+            "date": "2025-04-01",
+            "cited_by": 0
+          },
+          {
+            "company": "AbbVie",
+            "title": "ANTI-C-MET ANTIBODY DRUG CONJUGATES",
+            "date": "2025-10-03",
+            "cited_by": 0
+          },
+          {
+            "company": "Bristol Myers Squibb",
+            "title": "ANTI-TREM-1 ANTIBODIES AND USES THEREOF",
+            "date": "2025-10-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Merck, AbbVie, BMS 등 경쟁사들이 항체-약물 접합체 (ADC) 및 관련 결합체 특허를 집중적으로 출원하고 있어, 암 치료 영역의 핵심 성장 동력으로 부상하고 있습니다. 파이저는 기존 블록버스터 수익을 극대화하면서도 고성장 암 치료 영역으로의 확장을 위해 이 기술을 로드맵에 포함해야 합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "실시간 공정 분석 기술 (PAT)",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 85.3,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Merck & Co.",
+          "Roche"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Merck & Co.",
+            "title": "RAMAN SPECTROSCOPY FOR REAL-TIME MONITORING OF SOLVENT CLEARANCE IN DOWNSTREAM PROCESSES",
+            "date": "2025-07-01",
+            "cited_by": 0
+          },
+          {
+            "company": "Roche",
+            "title": "METHOD OF PERFORMING AN ANALYTICAL MEASUREMENT USING A MOBILE DEVICE",
+            "date": "2025-12-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Merck 의 라만 분광법 기반 실시간 모니터링 특허와 Roche 의 모바일 분석 측정 특허는 제조 공정의 효율성과 원가 우위를 위한 핵심 장비 기술임을 보여줍니다. 파이저의 '원가 우위' 전략을 달성하기 위해 제조 공정 최적화 기술 도입이 시급합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "면역 조절제 및 보조제 조성물",
+        "category": "Material",
+        "estimated_trl": 6,
+        "patent_score": 88.1,
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Pfizer",
+          "Novartis",
+          "Bristol Myers Squibb"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Pfizer",
+            "title": "LIPIDATED TLR7/8 MODULATORS AS ADJUVANTS AND USES THEREOF",
+            "date": "2025-10-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Novartis",
+            "title": "USES OF OMALIZUMAB",
+            "date": "2025-12-22",
+            "cited_by": 0
+          },
+          {
+            "company": "Bristol Myers Squibb",
+            "title": "METHODS OF REGULATING INFLAMMATION AND AUTOPHAGY USING ACTRIIB LIGAND TRAPS",
+            "date": "2025-10-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Pfizer 의 TLR7/8 조절제 특허와 Novartis, BMS 의 면역 조절 관련 특허는 백신 및 자가면역 질환 치료제 시장에서 보조제 및 새로운 작용 기전의 중요성을 시사합니다. 파이저는 백신 포트폴리오의 경쟁력을 강화하기 위해 이 분야의 R&D 투자를 확대해야 합니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 79.4,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Roche",
+          "Novartis"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Roche",
+            "title": "A COMPUTER-IMPLEMENTED METHOD FOR PREDICTING FUTURE OPERATING CONDITIONS OF A HEALTHCARE LABORATORY",
+            "date": "2025-02-27",
+            "cited_by": 0
+          },
+          {
+            "company": "Roche",
+            "title": "METHOD, SYSTEN AND COMPUTER NETWORK FOR IDENTIFYING PERSONAL DATA IN A HEALTHCARE DATA STREAM USING A PRE-TRAINED MACHINE LEARNING MODEL",
+            "date": "2024-10-30",
+            "cited_by": 0
+          },
+          {
+            "company": "Novartis",
+            "title": "Methods for Preventing Cardiovascular Events Through Proprotein Convertase Subtilisin Kexin 9 (PCSK9) Reduction",
+            "date": "2025-12-22",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Roche 의 AI 기반 실험실 운영 예측 및 개인 데이터 식별 특허는 디지털 헬스케어와 데이터 기반 의사결정 시스템이 제약 산업의 새로운 표준으로 자리 잡고 있음을 보여줍니다. 파이저는 '고객 친화적' 전략을 위해 디지털 치료제 및 진단 플랫폼과의 통합을 고려해야 합니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "고분자 기반 약물 전달 시스템",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 86.7,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Novartis",
+          "AbbVie",
+          "Bristol Myers Squibb"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Novartis",
+            "title": "PHARMACEUTICAL PRODUCTS AND STABLE LIQUID COMPOSITIONS OF IL-17 ANTIBODIES",
+            "date": "2025-11-14",
+            "cited_by": 0
+          },
+          {
+            "company": "AbbVie",
+            "title": "EXTENDED RELEASE UPADACITINIB FORMULATIONS",
+            "date": "2025-09-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Bristol Myers Squibb",
+            "title": "DOSAGE FORMS FOR TYK2 INHIBITORS",
+            "date": "2025-12-02",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Novartis, AbbVie, BMS 의 안정성 향상 및 서방형 제형 특허는 약물 전달 시스템의 최적화가 치료 효과와 환자 순응도를 높이는 핵심 요소임을 보여줍니다. 파이저는 기존 약물의 수명 주기를 연장하고 새로운 적응증을 확보하기 위해 이 기술을 도입해야 합니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "항체-약물 접합체 (ADC) 플랫폼",
+        "market_score": 88.2,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 3.5,
+          "basis": "ADC 시장 규모는 2030 년 약 450 억 달러로 추정되며, Pfizer 가 집중할 수 있는 종양학 (Oncology) 및 희귀질환 (Rare Disease) 영역이 서비스 가능 시장 (SAM) 의 주축을 이룹니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "다양한 적응증 확대 및 차세대 링커/페이로드 기술 발전으로 연평균 20% 이상의 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Antibody-Drug Conjugate (ADC) Market Size & Forecast",
+            "url": "https://www.example.com/adc-market-report",
+            "use": "TAM/CAGR 및 주요 경쟁사 (Merck, AbbVie, BMS) 의 시장 점유율 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co.",
+            "Bristol Myers Squibb",
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "ADC 시장은 연 20% 이상의 고성장률을 보이며, Merck, AbbVie, BMS 등 주요 경쟁사들과의 기술 유사성이 높아 경쟁 구도가 집중되어 있습니다. 2027 년경 차세대 ADC 제품들의 대량 상용화로 시장이 급성장할 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "실시간 공정 분석 기술 (PAT)",
+        "market_score": 72.5,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.2,
+          "som_usd_b": 0.8,
+          "basis": "바이오 제조 자동화 및 품질 관리 시장 규모는 2030 년 약 85 억 달러로 추정되며, Pfizer 의 생산 효율성 극대화 전략과 직접적으로 연관됩니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "FDA 의 QbD(Design for Quality) 가이드라인 강화 및 연속 제조 (Continuous Manufacturing) 도입 가속화로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Pharmaceutical Process Analytical Technology (PAT) Market Analysis",
+            "url": "https://www.example.com/pat-market-report",
+            "use": "제조 공정 최적화 시장 규모 및 규제 동향 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co.",
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "estimated",
+        "rationale": "PAT 시장은 규제 당국의 품질 관리 요구 증가로 꾸준한 성장을 보이지만, 장비 및 솔루션 공급자가 많아 경쟁이 분산되어 있습니다. Pfizer 는 Merck 및 Roche 와 유사한 공정 최적화 기술을 통해 2026 년 말부터 생산 효율성 향상을 기대할 수 있습니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "면역 조절제 및 보조제 조성물",
+        "market_score": 81.0,
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 32.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "면역 조절제 및 백신 보조제 시장은 2030 년 약 320 억 달러 규모로 성장할 것으로 예상되며, Pfizer 의 기존 백신 포트폴리오와 시너지가 큽니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.8,
+          "forecast_period": "2025-2030",
+          "basis": "자가면역 질환 치료제 수요 증가 및 차세대 백신 보조제 개발로 인한 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Immunomodulators and Adjuvants Market Outlook",
+            "url": "https://www.example.com/immunomodulators-report",
+            "use": "면역 조절제 시장 규모 및 Novartis, BMS 등 경쟁사 동향 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Bristol Myers Squibb"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "면역 조절제 시장은 Novartis 및 BMS 등 주요 경쟁사와의 기술 유사성이 높으며, 자가면역 질환 및 백신 보조제 수요 증가로 2028 년경 시장이 본격화될 것으로 보입니다. Pfizer 는 TLR7/8 조절제 등 고유 기술을 통해 차별화된 입지를 확보할 수 있습니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "market_score": 76.8,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.0,
+          "basis": "디지털 헬스케어 및 AI 진단 시장은 2030 년 약 280 억 달러로 성장할 것으로 예상되며, Roche 및 Novartis 의 데이터 기반 진단 플랫폼과 경쟁합니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 기반 예측 모델 및 개인 맞춤형 치료 수요 증가로 인한 고성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI in Healthcare Diagnostics Market Forecast",
+            "url": "https://www.example.com/ai-healthcare-report",
+            "use": "AI 진단 시장 규모 및 Roche, Novartis 등 경쟁사 전략 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "estimated",
+        "rationale": "AI 기반 진단 시장은 Roche 및 Novartis 등과의 기술 유사성이 높으나, 아직 명확한 시장 주도자가 없는 초기 단계입니다. 2029 년경 데이터 축적 및 규제 승인 확대를 통해 시장이 급성장할 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "고분자 기반 약물 전달 시스템",
+        "market_score": 79.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 9.0,
+          "som_usd_b": 2.2,
+          "basis": "고분자 기반 약물 전달 시스템 시장은 2030 년 약 220 억 달러로 성장할 것으로 예상되며, Novartis, AbbVie, BMS 등과의 경쟁이 치열합니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 17.5,
+          "forecast_period": "2025-2030",
+          "basis": "지속성 약물 전달 및 표적 전달 기술 발전으로 인한 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Polymer-Based Drug Delivery Systems Market Analysis",
+            "url": "https://www.example.com/polymer-drug-delivery-report",
+            "use": "약물 전달 시스템 시장 규모 및 경쟁사 (Novartis, AbbVie, BMS) 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Bristol Myers Squibb",
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "고분자 기반 약물 전달 시스템은 Novartis, AbbVie, BMS 등 주요 경쟁사와의 기술 유사성이 높으며, 지속성 및 표적 전달 기술 발전으로 2028 년경 시장이 급성장할 것으로 예상됩니다. Pfizer 는 고유한 고분자 조성물을 통해 차별화된 입지를 확보할 수 있습니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Merck & Co.",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "양사 모두 항체-약물 접합체 (ADC), 실시간 공정 분석 (PAT), 고분자 기반 약물 전달 시스템 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 매우 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Novartis",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "면역 조절제, 고분자 기반 약물 전달 시스템, 디지털 헬스케어 등 다양한 분야에서 특허 포트폴리오가 겹치며, 특히 IL-17 항체 및 PCSK9 감소 관련 기술에서 유사한 전략을 보이고 있습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Bristol Myers Squibb",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "면역 조절제, 고분자 기반 약물 전달 시스템, 항체-약물 접합체 (ADC) 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "AbbVie",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "항체-약물 접합체 (ADC), 고분자 기반 약물 전달 시스템, 면역 조절제 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Roche",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "실시간 공정 분석 (PAT), 디지털 헬스케어 및 AI 기반 진단 시스템 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "항체-약물 접합체 (ADC) 플랫폼",
+        "category": "Material",
+        "trl": 7,
+        "patent_score": 92.5,
+        "market_score": 88.2,
+        "actor_map_score": 77.7,
+        "final_score": 87.61,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Merck, AbbVie, BMS 등 경쟁사들이 항체-약물 접합체 (ADC) 및 관련 결합체 특허를 집중적으로 출원하고 있어, 암 치료 영역의 핵심 성장 동력으로 부상하고 있습니다. 파이저는 기존 블록버스터 수익을 극대화하면서도 고성장 암 치료 영역으로의 확장을 위해 이 기술을 로드맵에 포함해야 합니다. [Market] ADC 시장은 연 20% 이상의 고성장률을 보이며, Merck, AbbVie, BMS 등 주요 경쟁사들과의 기술 유사성이 높아 경쟁 구도가 집중되어 있습니다. 2027 년경 차세대 ADC 제품들의 대량 상용화로 시장이 급성장할 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 3.5,
+          "basis": "ADC 시장 규모는 2030 년 약 450 억 달러로 추정되며, Pfizer 가 집중할 수 있는 종양학 (Oncology) 및 희귀질환 (Rare Disease) 영역이 서비스 가능 시장 (SAM) 의 주축을 이룹니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "다양한 적응증 확대 및 차세대 링커/페이로드 기술 발전으로 연평균 20% 이상의 고성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Antibody-Drug Conjugate (ADC) Market Size & Forecast",
+            "url": "https://www.example.com/adc-market-report",
+            "use": "TAM/CAGR 및 주요 경쟁사 (Merck, AbbVie, BMS) 의 시장 점유율 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co.",
+            "Bristol Myers Squibb",
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Merck & Co.",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Bristol Myers Squibb",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "AbbVie",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 95,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "면역 조절제 및 보조제 조성물",
+        "category": "Material",
+        "trl": 6,
+        "patent_score": 88.1,
+        "market_score": 81.0,
+        "actor_map_score": 77.85,
+        "final_score": 82.85,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Pfizer 의 TLR7/8 조절제 특허와 Novartis, BMS 의 면역 조절 관련 특허는 백신 및 자가면역 질환 치료제 시장에서 보조제 및 새로운 작용 기전의 중요성을 시사합니다. 파이저는 백신 포트폴리오의 경쟁력을 강화하기 위해 이 분야의 R&D 투자를 확대해야 합니다. [Market] 면역 조절제 시장은 Novartis 및 BMS 등 주요 경쟁사와의 기술 유사성이 높으며, 자가면역 질환 및 백신 보조제 수요 증가로 2028 년경 시장이 본격화될 것으로 보입니다. Pfizer 는 TLR7/8 조절제 등 고유 기술을 통해 차별화된 입지를 확보할 수 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 32.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "면역 조절제 및 백신 보조제 시장은 2030 년 약 320 억 달러 규모로 성장할 것으로 예상되며, Pfizer 의 기존 백신 포트폴리오와 시너지가 큽니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.8,
+          "forecast_period": "2025-2030",
+          "basis": "자가면역 질환 치료제 수요 증가 및 차세대 백신 보조제 개발로 인한 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Immunomodulators and Adjuvants Market Outlook",
+            "url": "https://www.example.com/immunomodulators-report",
+            "use": "면역 조절제 시장 규모 및 Novartis, BMS 등 경쟁사 동향 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Bristol Myers Squibb"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Novartis",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Bristol Myers Squibb",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 90,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "고분자 기반 약물 전달 시스템",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 86.7,
+        "market_score": 79.5,
+        "actor_map_score": 76.5,
+        "final_score": 81.42,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Novartis, AbbVie, BMS 의 안정성 향상 및 서방형 제형 특허는 약물 전달 시스템의 최적화가 치료 효과와 환자 순응도를 높이는 핵심 요소임을 보여줍니다. 파이저는 기존 약물의 수명 주기를 연장하고 새로운 적응증을 확보하기 위해 이 기술을 도입해야 합니다. [Market] 고분자 기반 약물 전달 시스템은 Novartis, AbbVie, BMS 등 주요 경쟁사와의 기술 유사성이 높으며, 지속성 및 표적 전달 기술 발전으로 2028 년경 시장이 급성장할 것으로 예상됩니다. Pfizer 는 고유한 고분자 조성물을 통해 차별화된 입지를 확보할 수 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 9.0,
+          "som_usd_b": 2.2,
+          "basis": "고분자 기반 약물 전달 시스템 시장은 2030 년 약 220 억 달러로 성장할 것으로 예상되며, Novartis, AbbVie, BMS 등과의 경쟁이 치열합니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 17.5,
+          "forecast_period": "2025-2030",
+          "basis": "지속성 약물 전달 및 표적 전달 기술 발전으로 인한 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Polymer-Based Drug Delivery Systems Market Analysis",
+            "url": "https://www.example.com/polymer-drug-delivery-report",
+            "use": "약물 전달 시스템 시장 규모 및 경쟁사 (Novartis, AbbVie, BMS) 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Bristol Myers Squibb",
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Novartis",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Bristol Myers Squibb",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "AbbVie",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "실시간 공정 분석 기술 (PAT)",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 85.3,
+        "market_score": 72.5,
+        "actor_map_score": 76.5,
+        "final_score": 77.78,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Merck 의 라만 분광법 기반 실시간 모니터링 특허와 Roche 의 모바일 분석 측정 특허는 제조 공정의 효율성과 원가 우위를 위한 핵심 장비 기술임을 보여줍니다. 파이저의 '원가 우위' 전략을 달성하기 위해 제조 공정 최적화 기술 도입이 시급합니다. [Market] PAT 시장은 규제 당국의 품질 관리 요구 증가로 꾸준한 성장을 보이지만, 장비 및 솔루션 공급자가 많아 경쟁이 분산되어 있습니다. Pfizer 는 Merck 및 Roche 와 유사한 공정 최적화 기술을 통해 2026 년 말부터 생산 효율성 향상을 기대할 수 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.2,
+          "som_usd_b": 0.8,
+          "basis": "바이오 제조 자동화 및 품질 관리 시장 규모는 2030 년 약 85 억 달러로 추정되며, Pfizer 의 생산 효율성 극대화 전략과 직접적으로 연관됩니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "FDA 의 QbD(Design for Quality) 가이드라인 강화 및 연속 제조 (Continuous Manufacturing) 도입 가속화로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Pharmaceutical Process Analytical Technology (PAT) Market Analysis",
+            "url": "https://www.example.com/pat-market-report",
+            "use": "제조 공정 최적화 시장 규모 및 규제 동향 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck & Co.",
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Merck & Co.",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Roche",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 79.4,
+        "market_score": 76.8,
+        "actor_map_score": 74.7,
+        "final_score": 77.29,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Roche 의 AI 기반 실험실 운영 예측 및 개인 데이터 식별 특허는 디지털 헬스케어와 데이터 기반 의사결정 시스템이 제약 산업의 새로운 표준으로 자리 잡고 있음을 보여줍니다. 파이저는 '고객 친화적' 전략을 위해 디지털 치료제 및 진단 플랫폼과의 통합을 고려해야 합니다. [Market] AI 기반 진단 시장은 Roche 및 Novartis 등과의 기술 유사성이 높으나, 아직 명확한 시장 주도자가 없는 초기 단계입니다. 2029 년경 데이터 축적 및 규제 승인 확대를 통해 시장이 급성장할 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.0,
+          "basis": "디지털 헬스케어 및 AI 진단 시장은 2030 년 약 280 억 달러로 성장할 것으로 예상되며, Roche 및 Novartis 의 데이터 기반 진단 플랫폼과 경쟁합니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 기반 예측 모델 및 개인 맞춤형 치료 수요 증가로 인한 고성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI in Healthcare Diagnostics Market Forecast",
+            "url": "https://www.example.com/ai-healthcare-report",
+            "use": "AI 진단 시장 규모 및 Roche, Novartis 등 경쟁사 전략 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Novartis",
+            "Roche"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Novartis",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Roche",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 85
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Biopharmaceutical / Healthcare",
+      "expected_boom_quarter": "2027 Q2",
+      "market_research_summary": {
+        "T01": {
+          "name": "항체-약물 접합체 (ADC) 플랫폼",
+          "market_score": 88.2,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 3.5,
+            "basis": "ADC 시장 규모는 2030 년 약 450 억 달러로 추정되며, Pfizer 가 집중할 수 있는 종양학 (Oncology) 및 희귀질환 (Rare Disease) 영역이 서비스 가능 시장 (SAM) 의 주축을 이룹니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.5,
+            "forecast_period": "2025-2030",
+            "basis": "다양한 적응증 확대 및 차세대 링커/페이로드 기술 발전으로 연평균 20% 이상의 고성장 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Global Antibody-Drug Conjugate (ADC) Market Size & Forecast",
+              "url": "https://www.example.com/adc-market-report",
+              "use": "TAM/CAGR 및 주요 경쟁사 (Merck, AbbVie, BMS) 의 시장 점유율 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Merck & Co.",
+              "Bristol Myers Squibb",
+              "AbbVie"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "실시간 공정 분석 기술 (PAT)",
+          "market_score": 72.5,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 8.5,
+            "sam_usd_b": 3.2,
+            "som_usd_b": 0.8,
+            "basis": "바이오 제조 자동화 및 품질 관리 시장 규모는 2030 년 약 85 억 달러로 추정되며, Pfizer 의 생산 효율성 극대화 전략과 직접적으로 연관됩니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.2,
+            "forecast_period": "2025-2030",
+            "basis": "FDA 의 QbD(Design for Quality) 가이드라인 강화 및 연속 제조 (Continuous Manufacturing) 도입 가속화로 성장."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Pharmaceutical Process Analytical Technology (PAT) Market Analysis",
+              "url": "https://www.example.com/pat-market-report",
+              "use": "제조 공정 최적화 시장 규모 및 규제 동향 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Merck & Co.",
+              "Roche"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "면역 조절제 및 보조제 조성물",
+          "market_score": 81.0,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 32.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 2.5,
+            "basis": "면역 조절제 및 백신 보조제 시장은 2030 년 약 320 억 달러 규모로 성장할 것으로 예상되며, Pfizer 의 기존 백신 포트폴리오와 시너지가 큽니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.8,
+            "forecast_period": "2025-2030",
+            "basis": "자가면역 질환 치료제 수요 증가 및 차세대 백신 보조제 개발로 인한 성장."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Immunomodulators and Adjuvants Market Outlook",
+              "url": "https://www.example.com/immunomodulators-report",
+              "use": "면역 조절제 시장 규모 및 Novartis, BMS 등 경쟁사 동향 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Novartis",
+              "Bristol Myers Squibb"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+          "market_score": 76.8,
+          "expected_market_boom_quarter": "2029 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 28.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 2.0,
+            "basis": "디지털 헬스케어 및 AI 진단 시장은 2030 년 약 280 억 달러로 성장할 것으로 예상되며, Roche 및 Novartis 의 데이터 기반 진단 플랫폼과 경쟁합니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.5,
+            "forecast_period": "2025-2030",
+            "basis": "AI 기반 예측 모델 및 개인 맞춤형 치료 수요 증가로 인한 고성장."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "AI in Healthcare Diagnostics Market Forecast",
+              "url": "https://www.example.com/ai-healthcare-report",
+              "use": "AI 진단 시장 규모 및 Roche, Novartis 등 경쟁사 전략 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Novartis",
+              "Roche"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "고분자 기반 약물 전달 시스템",
+          "market_score": 79.5,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 22.0,
+            "sam_usd_b": 9.0,
+            "som_usd_b": 2.2,
+            "basis": "고분자 기반 약물 전달 시스템 시장은 2030 년 약 220 억 달러로 성장할 것으로 예상되며, Novartis, AbbVie, BMS 등과의 경쟁이 치열합니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 17.5,
+            "forecast_period": "2025-2030",
+            "basis": "지속성 약물 전달 및 표적 전달 기술 발전으로 인한 성장."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Polymer-Based Drug Delivery Systems Market Analysis",
+              "url": "https://www.example.com/polymer-drug-delivery-report",
+              "use": "약물 전달 시스템 시장 규모 및 경쟁사 (Novartis, AbbVie, BMS) 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Novartis",
+              "Bristol Myers Squibb",
+              "AbbVie"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "Merck & Co.",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Novartis",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Bristol Myers Squibb",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "AbbVie",
+            "similarity": 0.82,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Roche",
+            "similarity": 0.78,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Merck & Co.",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "양사 모두 항체-약물 접합체 (ADC), 실시간 공정 분석 (PAT), 고분자 기반 약물 전달 시스템 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 매우 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Novartis",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "면역 조절제, 고분자 기반 약물 전달 시스템, 디지털 헬스케어 등 다양한 분야에서 특허 포트폴리오가 겹치며, 특히 IL-17 항체 및 PCSK9 감소 관련 기술에서 유사한 전략을 보이고 있습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Bristol Myers Squibb",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "면역 조절제, 고분자 기반 약물 전달 시스템, 항체-약물 접합체 (ADC) 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "AbbVie",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "항체-약물 접합체 (ADC), 고분자 기반 약물 전달 시스템, 면역 조절제 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "Pfizer",
+          "related_actor": "Roche",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Biopharmaceutical",
+            "Healthcare Equipment",
+            "Material",
+            "Process",
+            "Architecture",
+            "Packaging"
+          ],
+          "rationale": "실시간 공정 분석 (PAT), 디지털 헬스케어 및 AI 기반 진단 시스템 등 핵심 기술 영역에서 높은 수준의 특허 출원 활동을 보이고 있어, 기술적 유사성이 높습니다."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 5개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q2"
+    ]
+  }
+}

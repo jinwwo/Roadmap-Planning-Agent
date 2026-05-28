@@ -1,0 +1,463 @@
+{
+  "problem_frame": {
+    "industry": "Semiconductor / IDM / Foundry",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 82800000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Intel",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "반도체 공정 및 IDM 리더십 강화",
+      "AI 및 데이터센터 시장 확장",
+      "고성능 컴퓨팅 (HPC) 기술 스택 선점"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $82.8B 내에서 정확히 배분됨. T01~T03 의 시기가 2026-2030 범위 내로 적절."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(공정) → T02/T05(패키징/전력망) → T03(아키텍처) 의 의존성 논리 정상."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "Intel 의 IDM 리더십(GAA) 과 AI/HPC 트렌드(패키징, 메모리 내 연산) 와 높은 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T02) 에 집중 투자하고 Tier 3(T03) 은 장기 베팅으로 적절."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.65,
+        "risk_balance": 0.55,
+        "comment": "단기(2026-2028) 와 장기(2029-2030) 기술이 균형 있게 분포."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "GAA 트랜지스터 게이트 공정",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 90.83,
+            "market_score": 92.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "하이브리드 본딩 패키징",
+            "category": "Packaging",
+            "trl": 6,
+            "final_score": 87.09,
+            "market_score": 88.2,
+            "patent_score": 88.3,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T05",
+            "name": "백사이드 전력망 (Backside PDN)",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 84.45,
+            "market_score": 85.8,
+            "patent_score": 82.9,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T04",
+            "name": "AI 기반 공정 제어 및 예측",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 81.91,
+            "market_score": 82.0,
+            "patent_score": 84.1,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "메모리 내 연산 아키텍처",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 79.18,
+            "market_score": 76.5,
+            "patent_score": 85.7,
+            "expected_market_boom_quarter": "2029 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "GAA 트랜지스터 게이트 공정",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 성숙도가 높아 1 차년도 (2026) 에 즉시 양산 준비를 시작하며, 2027 Q2 시장 붐을 대비해 3 차년도 (2028) 까지 최적화 및 대량 생산 체계를 완성합니다. 이는 후행 기술인 T02 와 T05 의 선행 조건이므로 가장 먼저 배치되어야 합니다.",
+              "tech_execution": "GAA 공정은 2nm 이하 노드 진입의 필수 기술로, Intel 의 IDM 리더십을 TSMC 와 Samsung 과 경쟁하는 핵심 경쟁력을 확보하기 위해 반드시 수행해야 합니다. 공정 기술의 선점을 통해 차세대 패키징 및 전력망 기술의 기반을 마련합니다.",
+              "investment_selection": "반도체 공정 리더십 강화 전략의 핵심으로, 초기 투자 대비 시장 점유율 확보 효과가 가장 큽니다. 2028 년 이전까지 기술 장벽을 확립하여 경쟁사 대비 우위를 점할 수 있는 최적의 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "하이브리드 본딩 패키징",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술 T01(GAA) 의 초기 양산이 안정화된 2 차년도 (2027) 에 시작하여, 2026 Q4 시장 붐을 반영한 초기 적용과 2028 Q1 이후 본격적인 AI 데이터센터 수요를 충족시키기 위해 4 차년도 (2029) 까지 확장합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "AI 데이터센터 칩의 성능 병목 해결을 위한 핵심 패키징 기술로, Foundry 서비스 확장을 위해 TSMC 와 경쟁할 수 있는 기술력을 확보해야 합니다. GAA 공정과 결합된 3D 스택 패키징은 고성능 컴퓨팅 스택 선점의 필수 요소입니다.",
+              "investment_selection": "고대역폭 메모리 및 칩렛 아키텍처 시장이 급성장하는 시점에 맞춰, 패키징 기술 선점을 통해 Intel 의 Foundry 서비스 경쟁력을 높이는 전략적 투자입니다. T01 의 성공을 기반으로 한 파급 효과가 가장 큰 기술입니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "백사이드 전력망 (Backside PDN)",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01(GAA) 의 성숙을 전제로 2 차년도 (2027) 에 연구 개발을 시작하며, 2028 Q1 시장 붐을 중간 마일스톤으로 삼아 5 차년도 (2030) 까지 고집적도 전력 효율 최적화를 지속합니다. 이는 로드맵의 마지막 해까지 이어지는 핵심 기술입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "GAA 공정과 결합되어 고성능 칩의 전력 효율을 극대화하는 필수 공정으로, 2030 년 로드맵의 핵심 요소입니다. 신호 무결성 향상과 전력 손실 감소를 통해 차세대 HPC 기술 스택을 선점하기 위해 장기적인 R&D 가 필요합니다.",
+              "investment_selection": "2028 년 이후에도 경쟁이 치열해질 전력 효율성 시장에서 Intel 의 차별화된 기술 우위를 확보하기 위한 핵심 투자입니다. 5 차년도까지 이어지는 기술 진화를 통해 장기적인 시장 리더십을 유지할 수 있습니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "메모리 내 연산 아키텍처",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T02"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술 T02(하이브리드 본딩) 의 초기 적용이 완료된 3 차년도 (2028) 에 시작하여, 2029 Q1 시장 붐을 반영한 초기 상용화와 5 차년도 (2030) 까지 아키텍처 최적화를 진행합니다. TRL 5 로 성숙도가 낮아 긴 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['T02'] 완료 후로 2차년도 push]",
+              "tech_execution": "AI 추론 성능 향상을 위한 차세대 아키텍처로, 데이터센터 시장 확장을 위해 메모리 대역폭 병목 해결 기술인 CIM 에 대한 전략적 투자가 필수적입니다. Micron 과의 기술 교집합을 통해 Intel 이 데이터센터 AI 추론 시장에서 차별화된 우위를 점할 수 있습니다.",
+              "investment_selection": "초기 단계이지만 미래 AI 시장에서의 파괴적 혁신을 주도할 수 있는 기술로, 장기적인 R&D 예산을 투입하여 기술 장벽을 높이는 것이 합리적입니다. 5 차년도까지 이어지는 기술 개발을 통해 차세대 시장 선점 기회를 확보합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 82800000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "GAA 트랜지스터 게이트 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 39807692308.0,
+                "tech_budget_rationale": "GAA 공정은 Intel 의 IDM 리더십 회복과 2nm 이하 노드 진입을 위한 절대적 선행 조건으로, 총 예산의 42% 에 해당하는 350 억 달러를 배정합니다. 이는 2027 Q2 시장 붐을 선점하기 위한 양산 라인 구축, 설비 투자, 그리고 TSMC 와 Samsung 과의 치열한 경쟁에서 기술 우위를 확보하기 위한 공격적 투자입니다. 높은 TRL(7) 과 거대 시장 규모 (TAM $45B) 를 고려할 때, 초기 투자 실패 시 전체 로드맵이 붕괴될 수 있으므로 가장 높은 우선순위를 부여합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 즉시 양산 라인 확장을 위한 설비 투자 (CapEx) 를 가속화하고, 2027 Q2 시장 붐 대비 수율 최적화 프로젝트를 최우선 과제로 추진하십시오.",
+                "reasoning": {
+                  "market_evaluation": "GAA 트랜지스터 시장은 2025-2030 년간 연평균 24.5% 의 높은 성장률 (CAGR) 을 보이며, TAM 이 450 억 달러에 달하는 거대 시장입니다. 2027 Q2 에 예상되는 시장 붐은 AI 칩 수요 폭발과 맞물려 있으며, Intel 이 이 시점에 양산 체계를 완성하지 못하면 시장 점유율을 TSMC 와 Samsung 에 완전히 내줄 위험이 큽니다. 따라서 시장 진입 타이밍이 성패를 가르는 핵심 요소입니다.",
+                  "tech_evaluation": "TRL 7 로 기술 성숙도가 높으며, Intel 은 이미 쌍극자층 기술 등 차별화된 특허 포트폴리오를 보유하고 있어 경쟁 우위 (Score 5) 가 명확합니다. 기술적 위험은 상대적으로 낮지만 (Score 2), 양산 수율 확보와 공정 최적화 과정에서 발생할 수 있는 미세한 변수가 전체 비즈니스에 치명적일 수 있으므로 철저한 검증이 필요합니다.",
+                  "investment_decision": "시장 규모, 기술 성숙도, 그리고 전략적 중요도가 모두 최상위권인 T01 은 Tier 1 로 분류되며, 총 예산의 42% 를 할당하여 선제적 투자를 결정합니다. 이는 Intel 의 '반도체 공정 및 IDM 리더십 강화' 전략 방향과 완벽하게 부합하며, 후행 기술인 T02 와 T05 의 성공을 위한 필수 기반을 마련하는 것입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 패키징",
+                "tier": "Tier 1",
+                "tech_budget_usd": 25021978022.0,
+                "tech_budget_rationale": "AI 데이터센터 칩의 성능 병목 해결을 위한 핵심 기술인 하이브리드 본딩은 2026 Q4 시장 붐을 앞두고 T01(GAA) 과의 시너지를 극대화해야 하므로 Tier 1 로 선정하고 220 억 달러 (총 예산 26.6%) 를 배정합니다. 이는 3D 스택 및 Chiplet 아키텍처의 표준 기술로 부상하는 시점에 Intel 의 Foundry 서비스 경쟁력을 확보하기 위한 필수 투자입니다. TRL 6 의 중간 성숙도를 고려하여 양산 전 검증 및 장비 통합에 집중된 예산 배분입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "T01(GAA) 양산 라인과의 통합 테스트를 즉시 시작하고, 2026 Q4 시장 진입을 위한 양산 라인 설비 투자를 가속화하십시오.",
+                "reasoning": {
+                  "market_evaluation": "하이브리드 본딩 시장은 Chiplet 및 HBM 수요 증가로 인해 2025-2030 년간 연평균 22% 성장할 것으로 예상되며, TAM 은 320 억 달러입니다. 2026 Q4 에 예상되는 시장 붐은 AI 가속기 수요와 맞물려 있어, 이 시점에 기술이 상용화되지 않으면 Intel 이 데이터센터 시장에서 뒤처질 위험이 큽니다.",
+                  "tech_evaluation": "TRL 6 으로 프로토타입 단계에서 양산 전 단계로 진입 중이며, TSMC 와 Samsung 과의 경쟁이 치열합니다. Intel 은 Applied Materials 와의 협력을 통해 장비 및 공정 기술 우위를 점할 수 있는 잠재력이 있으나, 기술적 불확실성 (Score 3) 이 존재하여 신중한 접근이 필요합니다.",
+                  "investment_decision": "시장 성장성과 전략적 중요도가 매우 높으므로 Tier 1 로 분류하며, T01 과의 연동성을 고려하여 220 억 달러를 투자합니다. 이는 'AI 및 데이터센터 시장 확장' 전략을 실현하기 위한 핵심 패키징 기술 선점을 위한 공격적 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "백사이드 전력망 (Backside PDN)",
+                "tier": "Tier 2",
+                "tech_budget_usd": 17060439560.0,
+                "tech_budget_rationale": "GAA 공정과 결합된 백사이드 전력망은 2028 Q1 시장 붐을 앞두고 고집적도 칩의 전력 효율을 극대화하는 필수 기술로, Tier 2 로 선정하여 150 억 달러 (총 예산 18.1%) 를 배정합니다. T01 과 T02 에 비해 즉각적인 양산 압박은 다소 낮지만, 2030 년까지의 장기 로드맵에서 HPC 기술 스택 선점을 위해 지속적인 R&D 투자가 필요합니다. 기술적 위험 (Score 3) 을 고려하여 마일스톤 기반의 단계적 투자를 권장합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "T01(GAA) 공정과의 통합 R&D 를 지속하며, 2028 Q1 시장 진입을 위한 양산 전 검증 마일스톤을 설정하고 단계적 투자를 진행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "백사이드 전력망 시장은 GAA 공정과 결합되어 2025-2030 년간 연평균 26% 의 높은 성장률을 보이며, TAM 은 220 억 달러입니다. 2028 Q1 에 예상되는 시장 붐은 고주파 및 저전력 칩 수요와 맞물려 있어, 이 시점에 기술이 성숙되지 않으면 Intel 이 HPC 시장에서 뒤처질 위험이 있습니다.",
+                  "tech_evaluation": "TRL 6 으로 프로토타입 단계에서 양산 전 단계로 진입 중이며, TSMC 와 Samsung 과의 경쟁이 치열합니다. Intel 은 GAA 공정과의 통합을 통해 차별화된 전력 효율을 달성할 수 있는 잠재력이 있으나, 기술적 불확실성 (Score 3) 이 존재하여 신중한 접근이 필요합니다.",
+                  "investment_decision": "시장 성장성과 전략적 중요도가 높지만, T01 과 T02 에 비해 즉각적인 양산 압박은 다소 낮으므로 Tier 2 로 분류하며 150 억 달러를 투자합니다. 이는 '고성능 컴퓨팅 (HPC) 기술 스택 선점' 전략을 실현하기 위한 핵심 기술 선점을 위한 단계적 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 아키텍처",
+                "tier": "Tier 3",
+                "tech_budget_usd": 909890110.0,
+                "tech_budget_rationale": "메모리 내 연산 (CIM) 은 2029 Q1 시장 붐을 앞두고 AI 추론 성능 향상을 위한 차세대 아키텍처로, Tier 3 로 선정하여 8 억 달러 (총 예산 1.0%) 를 배정합니다. TRL 5 로 기술 성숙도가 낮고 시장 규모 (TAM $12B) 가 상대적으로 작아, 즉각적인 대규모 투자보다는 소규모 파일럿 및 R&D 를 통한 기술 검증과 옵션 확보에 집중합니다. 이는 'AI 및 데이터센터 시장 확장' 전략의 장기적 관점에서 미래 기술 선점을 위한 탐색적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "low",
+                "recommended_action": "Micron 과의 기술 협력 및 소규모 파일럿 프로젝트를 통해 기술 검증과 옵션 확보에 집중하십시오.",
+                "reasoning": {
+                  "market_evaluation": "메모리 내 연산 시장은 AI 추론 효율성 요구로 인해 2025-2030 년간 연평균 28% 의 높은 성장률을 보이지만, TAM 은 120 억 달러로 상대적으로 작습니다. 2029 Q1 에 예상되는 시장 붐은 초기 상용화 단계로, 이 시점에 기술이 성숙되지 않으면 Intel 이 AI 추론 시장에서 뒤처질 위험이 있습니다.",
+                  "tech_evaluation": "TRL 5 로 기술 성숙도가 낮으며, Micron 과의 기술 교집합을 통해 차별화된 아키텍처를 선점할 수 있는 잠재력이 있습니다. 그러나 기술적 불확실성 (Score 4) 이 높고, 경쟁 우위 (Score 3) 가 명확하지 않아 신중한 접근이 필요합니다.",
+                  "investment_decision": "시장 성장성은 높지만 기술 성숙도와 시장 규모가 상대적으로 낮으므로 Tier 3 로 분류하며 8 억 달러를 투자합니다. 이는 'AI 및 데이터센터 시장 확장' 전략의 장기적 관점에서 미래 기술 선점을 위한 탐색적 투자입니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "GAA 트랜지스터 게이트 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 39807692308.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "GAA 트랜지스터 게이트 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 39807692308.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "GAA 트랜지스터 게이트 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 39807692308.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 패키징",
+                "tier": "Tier 1",
+                "tech_budget_usd": 25021978022.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "백사이드 전력망 (Backside PDN)",
+                "tier": "Tier 2",
+                "tech_budget_usd": 17060439560.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 패키징",
+                "tier": "Tier 1",
+                "tech_budget_usd": 25021978022.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "백사이드 전력망 (Backside PDN)",
+                "tier": "Tier 2",
+                "tech_budget_usd": 17060439560.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 패키징",
+                "tier": "Tier 1",
+                "tech_budget_usd": 25021978022.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "백사이드 전력망 (Backside PDN)",
+                "tier": "Tier 2",
+                "tech_budget_usd": 17060439560.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 아키텍처",
+                "tier": "Tier 3",
+                "tech_budget_usd": 909890110.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 39807692308.0,
+            "3": 42082417582.0,
+            "5": 909890110.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 1
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "GAA 트랜지스터 게이트 공정",
+              "category": "Process",
+              "final_score": 90.83,
+              "market_score": 92.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "하이브리드 본딩 패키징",
+              "category": "Packaging",
+              "final_score": 87.09,
+              "market_score": 88.2,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T05",
+              "name": "백사이드 전력망 (Backside PDN)",
+              "category": "Process",
+              "final_score": 84.45,
+              "market_score": 85.8,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T04",
+              "name": "AI 기반 공정 제어 및 예측",
+              "category": "Equipment",
+              "final_score": 81.91,
+              "market_score": 82.0,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T03",
+              "name": "메모리 내 연산 아키텍처",
+              "category": "Architecture",
+              "final_score": 79.18,
+              "market_score": 76.5,
+              "boom": "2029 Q1"
+            }
+          ],
+          "category_distribution": {
+            "Process": 2,
+            "Packaging": 1,
+            "Equipment": 1,
+            "Architecture": 1
+          },
+          "avg_trl": 6.0,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "GAA 트랜지스터 게이트 공정",
+              "stage": "roadmap",
+              "key_reason": "TAM $45B 및 CAGR 24.5% 의 거대 시장 성장세와 2027 Q2 시장 붐 임박으로 개발 긴급도 (5) 가 매우 높음."
+            },
+            {
+              "tech_id": "T02",
+              "name": "하이브리드 본딩 패키징",
+              "stage": "roadmap",
+              "key_reason": "TAM $32B 및 CAGR 22% 의 높은 성장성과 2026 Q4 시장 붐으로 개발 긴급도 (5) 가 매우 높음."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T02",
+            "T01 → T05",
+            "T02 → T03"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2026 Q4": 1,
+            "2028 Q1": 1,
+            "2027 Q3": 1,
+            "2029 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 양호. 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_intel_semi_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_intel_semi_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_intel_semi_2026_2030__기술선도__investment_strategy.json"
+  }
+}

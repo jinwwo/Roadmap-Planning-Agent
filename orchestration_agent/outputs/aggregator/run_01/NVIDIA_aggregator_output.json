@@ -1,0 +1,976 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T14:21:14Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Intel",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Intel",
+            "title": "Backside power delivery for high-current accelerator logic",
+            "date": "2025-01-07",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "Thermal management structure for high-power AI accelerator package",
+            "date": "2025-04-01",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Intel 과 TSMC 의 최근 특허는 고전류 AI 가속기용 백사이드 전력 공급 네트워크에 집중되어 있으며, 이는 차세대 노드에서 IR drop 문제를 해결하는 핵심 기술입니다. NVIDIA 는 현재 프론트사이드 전력망에 의존하므로, 이 기술 격차를 해소하기 위해 백사이드 PDN 공정을 로드맵에 선점해야 합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "로컬 실리콘 브리지 패키징",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 86.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "TSMC",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "TSMC",
+            "title": "Local silicon bridge package for high-bandwidth accelerator modules",
+            "date": "2024-09-24",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "Embedded bridge interconnect for heterogeneous accelerator package",
+            "date": "2024-11-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "TSMC 와 Intel 은 GPU 로직과 HBM 스택을 연결하는 로컬 실리콘 브리지 기술을 통해 대역폭 밀도를 극대화하는 특허를 출원했습니다. 이는 NVIDIA 의 Face-to-face 스택 기술보다 더 높은 집적도를 가능하게 하는 차세대 패키징 아키텍처입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "하이브리드 본딩 3D 적층",
+        "category": "Packaging",
+        "estimated_trl": 6,
+        "patent_score": 84.8,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Samsung Electronics",
+          "TSMC"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "Hybrid bonding for 3D IC wafer stacking",
+            "date": "2024-09-11",
+            "cited_by": 0
+          },
+          {
+            "company": "TSMC",
+            "title": "Local silicon bridge package for high-bandwidth accelerator modules",
+            "date": "2024-09-24",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "삼성전자와 TSMC 는 3D IC 웨이퍼 적층을 위한 하이브리드 본딩 기술에 대한 강력한 특허 포트폴리오를 보유하고 있습니다. 이는 TSV 기반 기존 기술보다 더 미세한 피치와 높은 대역폭을 제공하여 AI 가속기 성능 향상에 필수적입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "고해상도 EUV 리소그래피",
+        "category": "Equipment",
+        "estimated_trl": 5,
+        "patent_score": 82.1,
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 90,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Samsung Electronics"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "High-NA EUV scanner optics assembly",
+            "date": "2024-11-22",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung Electronics",
+            "title": "Atomic layer deposition reactor for sub-3nm nodes",
+            "date": "2024-11-03",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "삼성전자는 High-NA EUV 스캐너 광학 조립체 및 sub-3nm 노드용 ALD 반응기에 대한 특허를 통해 차세대 공정 장비 기술을 선점하고 있습니다. NVIDIA 는 파운드리 의존도를 낮추고 공정 주기를 단축하기 위해 이 장비 기술의 공급망 확보를 고려해야 합니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "이종 칩렛 텐서 스케줄링",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 81.5,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "AMD",
+          "Intel"
+        ],
+        "evidence_patents": [
+          {
+            "company": "AMD",
+            "title": "AI tensor execution scheduling across heterogeneous accelerator chiplets",
+            "date": "2025-06-24",
+            "cited_by": 0
+          },
+          {
+            "company": "Intel",
+            "title": "Tile-level accelerator fabric for AI training processors",
+            "date": "2024-05-28",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "AMD 와 Intel 은 이종 칩렛 간 텐서 연산 스케줄링 및 타일 레벨 가속기 패브릭에 대한 특허를 통해 칩렛 아키텍처의 효율성을 극대화하고 있습니다. NVIDIA 는 단일 다이 중심에서 칩렛 기반 아키텍처로 전환 시 이 소프트웨어/하드웨어 통합 기술을 확보해야 합니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "공포장 광 인터페이스",
+        "category": "Packaging",
+        "estimated_trl": 5,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "Broadcom"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Broadcom",
+            "title": "Co-packaged optical interface for accelerator clusters",
+            "date": "2024-08-13",
+            "cited_by": 0
+          },
+          {
+            "company": "Broadcom",
+            "title": "High-speed SerDes link for accelerator scale-out fabrics",
+            "date": "2025-05-06",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Broadcom 은 AI 클러스터의 대역폭 밀도를 높이기 위한 스위치 실리콘과 공 포장된 광 인터페이스 특허를 보유하고 있습니다. 이는 NVIDIA 의 랙 스케일 가속기 패브릭 확장 시 전기적 인터커넥트 병목 현상을 해결하는 핵심 기술입니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "면 선택적 유전체 증착",
+        "category": "Material",
+        "estimated_trl": 4,
+        "patent_score": 77.3,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [
+          "T04"
+        ],
+        "source_companies": [
+          "Samsung Electronics"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung Electronics",
+            "title": "Area-selective deposition of dielectrics",
+            "date": "2024-05-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung Electronics",
+            "title": "Low-k porous dielectric for advanced nodes",
+            "date": "2024-04-26",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "삼성전자는 차세대 노드에서 공정 단계를 줄이고 수율을 높이기 위한 면 선택적 증착 (ASD) 및 저유전체 (Low-k) 소재 특허를 보유하고 있습니다. 이는 NVIDIA 가 파운드리 파트너와 협력하여 공정 효율성을 높이는 데 중요한 소재 기술입니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "메모리 인지 에지 AI 실행",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 75.6,
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Qualcomm"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Qualcomm",
+            "title": "Memory-aware model execution on edge AI accelerators",
+            "date": "2025-02-18",
+            "cited_by": 0
+          },
+          {
+            "company": "Qualcomm",
+            "title": "Low-power neural processing accelerator with shared memory hierarchy",
+            "date": "2024-07-30",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Qualcomm 은 메모리 압력과 대역폭에 따라 신경망 실행을 분할하는 메모리 인지 컴파일러 기술을 특허로 보호하고 있습니다. 이는 NVIDIA 가 데이터센터뿐만 아니라 에지 AI 시장에서도 저전력 고효율 추론을 위해 고려해야 할 아키텍처입니다."
+      }
+    ],
+    "market_analysis": [],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "AMD",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_technology_areas": [
+            "Chiplet Architecture",
+            "Heterogeneous Accelerator",
+            "High-Bandwidth Interconnect"
+          ],
+          "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Intel",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect"
+          ],
+          "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "TSMC",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_technology_areas": [
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management"
+          ],
+          "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Broadcom",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_technology_areas": [
+            "Scale-out Fabric",
+            "Co-packaged Optics",
+            "High-speed SerDes"
+          ],
+          "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_technology_areas": [
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+          "evidence_level": "proxy"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Qualcomm",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "Memory-aware Execution",
+            "Edge AI Acceleration",
+            "Shared Memory Hierarchy"
+          ],
+          "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+          "evidence_level": "proxy"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 0.0,
+        "actor_map_score": 91.03,
+        "final_score": 71.43,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Intel 과 TSMC 의 최근 특허는 고전류 AI 가속기용 백사이드 전력 공급 네트워크에 집중되어 있으며, 이는 차세대 노드에서 IR drop 문제를 해결하는 핵심 기술입니다. NVIDIA 는 현재 프론트사이드 전력망에 의존하므로, 이 기술 격차를 해소하기 위해 백사이드 PDN 공정을 로드맵에 선점해야 합니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Backside PDN"
+            ],
+            "score_contribution": 96.8
+          },
+          {
+            "related_actor": "TSMC",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Thermal Management"
+            ],
+            "score_contribution": 93.5
+          },
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Heterogeneous Accelerator",
+              "High-Bandwidth Interconnect"
+            ],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "로컬 실리콘 브리지 패키징",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 86.2,
+        "market_score": 0.0,
+        "actor_map_score": 91.03,
+        "final_score": 70.17,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] TSMC 와 Intel 은 GPU 로직과 HBM 스택을 연결하는 로컬 실리콘 브리지 기술을 통해 대역폭 밀도를 극대화하는 특허를 출원했습니다. 이는 NVIDIA 의 Face-to-face 스택 기술보다 더 높은 집적도를 가능하게 하는 차세대 패키징 아키텍처입니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "Intel",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Embedded Bridge Interconnect"
+            ],
+            "score_contribution": 96.8
+          },
+          {
+            "related_actor": "TSMC",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "CoWoS-like Packaging",
+              "Local Silicon Bridge"
+            ],
+            "score_contribution": 93.5
+          },
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Heterogeneous Accelerator",
+              "High-Bandwidth Interconnect"
+            ],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "하이브리드 본딩 3D 적층",
+        "category": "Packaging",
+        "trl": 6,
+        "patent_score": 84.8,
+        "market_score": 0.0,
+        "actor_map_score": 85.17,
+        "final_score": 67.93,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] 삼성전자와 TSMC 는 3D IC 웨이퍼 적층을 위한 하이브리드 본딩 기술에 대한 강력한 특허 포트폴리오를 보유하고 있습니다. 이는 TSV 기반 기존 기술보다 더 미세한 피치와 높은 대역폭을 제공하여 AI 가속기 성능 향상에 필수적입니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "TSMC",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "CoWoS-like Packaging",
+              "Local Silicon Bridge"
+            ],
+            "score_contribution": 93.5
+          },
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Heterogeneous Accelerator",
+              "High-Bandwidth Interconnect"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Embedded Bridge Interconnect"
+            ],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "이종 칩렛 텐서 스케줄링",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 81.5,
+        "market_score": 0.0,
+        "actor_map_score": 89.0,
+        "final_score": 67.08,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T02"
+        ],
+        "rationale": "[Patent] AMD 와 Intel 은 이종 칩렛 간 텐서 연산 스케줄링 및 타일 레벨 가속기 패브릭에 대한 특허를 통해 칩렛 아키텍처의 효율성을 극대화하고 있습니다. NVIDIA 는 단일 다이 중심에서 칩렛 기반 아키텍처로 전환 시 이 소프트웨어/하드웨어 통합 기술을 확보해야 합니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Chiplet Architecture",
+              "Heterogeneous Accelerator"
+            ],
+            "score_contribution": 100.0
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Tile-level Fabric"
+            ],
+            "score_contribution": 96.8
+          },
+          {
+            "related_actor": "Broadcom",
+            "similarity": 78.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Scale-out Fabric"
+            ],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "공포장 광 인터페이스",
+        "category": "Packaging",
+        "trl": 5,
+        "patent_score": 79.8,
+        "market_score": 0.0,
+        "actor_map_score": 82.6,
+        "final_score": 64.54,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T02"
+        ],
+        "rationale": "[Patent] Broadcom 은 AI 클러스터의 대역폭 밀도를 높이기 위한 스위치 실리콘과 공 포장된 광 인터페이스 특허를 보유하고 있습니다. 이는 NVIDIA 의 랙 스케일 가속기 패브릭 확장 시 전기적 인터커넥트 병목 현상을 해결하는 핵심 기술입니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "Broadcom",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Scale-out Fabric",
+              "Co-packaged Optics",
+              "High-speed SerDes"
+            ],
+            "score_contribution": 85.8
+          },
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Heterogeneous Accelerator",
+              "High-Bandwidth Interconnect"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 88.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Tile-level Fabric"
+            ],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "고해상도 EUV 리소그래피",
+        "category": "Equipment",
+        "trl": 5,
+        "patent_score": 82.1,
+        "market_score": 0.0,
+        "actor_map_score": 72.6,
+        "final_score": 63.3,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] 삼성전자는 High-NA EUV 스캐너 광학 조립체 및 sub-3nm 노드용 ALD 반응기에 대한 특허를 통해 차세대 공정 장비 기술을 선점하고 있습니다. NVIDIA 는 파운드리 의존도를 낮추고 공정 주기를 단축하기 위해 이 장비 기술의 공급망 확보를 고려해야 합니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "High-Bandwidth Interconnect"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Broadcom",
+            "similarity": 78.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Co-packaged Optics",
+              "High-speed SerDes"
+            ],
+            "score_contribution": 70.2
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 64.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 90,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T07",
+        "name": "면 선택적 유전체 증착",
+        "category": "Material",
+        "trl": 4,
+        "patent_score": 77.3,
+        "market_score": 0.0,
+        "actor_map_score": 75.6,
+        "final_score": 61.41,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T04"
+        ],
+        "rationale": "[Patent] 삼성전자는 차세대 노드에서 공정 단계를 줄이고 수율을 높이기 위한 면 선택적 증착 (ASD) 및 저유전체 (Low-k) 소재 특허를 보유하고 있습니다. 이는 NVIDIA 가 파운드리 파트너와 협력하여 공정 효율성을 높이는 데 중요한 소재 기술입니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Advanced Packaging"
+            ],
+            "score_contribution": 75.6
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 80
+        }
+      },
+      {
+        "tech_id": "T08",
+        "name": "메모리 인지 에지 AI 실행",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 75.6,
+        "market_score": 0.0,
+        "actor_map_score": 73.75,
+        "final_score": 60.02,
+        "scoring_weights": {
+          "patent_score": 0.55,
+          "market_score": 0.0,
+          "actor_map_score": 0.25,
+          "market_missing_penalty": true
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Qualcomm 은 메모리 압력과 대역폭에 따라 신경망 실행을 분할하는 메모리 인지 컴파일러 기술을 특허로 보호하고 있습니다. 이는 NVIDIA 가 데이터센터뿐만 아니라 에지 AI 시장에서도 저전력 고효율 추론을 위해 고려해야 할 아키텍처입니다. [Market]",
+        "actor_map_context": [
+          {
+            "related_actor": "AMD",
+            "similarity": 92.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Chiplet Architecture",
+              "Heterogeneous Accelerator"
+            ],
+            "score_contribution": 82.8
+          },
+          {
+            "related_actor": "Broadcom",
+            "similarity": 78.0,
+            "matched_by_actor": false,
+            "matched_shared_technology_areas": [
+              "Co-packaged Optics"
+            ],
+            "score_contribution": 70.2
+          },
+          {
+            "related_actor": "Qualcomm",
+            "similarity": 65.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [
+              "Memory-aware Execution",
+              "Edge AI Acceleration",
+              "Shared Memory Hierarchy"
+            ],
+            "score_contribution": 68.25
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "AI Infrastructure / Semiconductor / GPU",
+      "expected_boom_quarter": "2028 Q1",
+      "market_research_summary": {},
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 6,
+        "top_related_actors": [
+          {
+            "related_actor": "AMD",
+            "similarity": 0.92,
+            "shared_technology_areas": [
+              "Chiplet Architecture",
+              "Heterogeneous Accelerator",
+              "High-Bandwidth Interconnect"
+            ]
+          },
+          {
+            "related_actor": "Intel",
+            "similarity": 0.88,
+            "shared_technology_areas": [
+              "Backside PDN",
+              "Tile-level Fabric",
+              "Embedded Bridge Interconnect"
+            ]
+          },
+          {
+            "related_actor": "TSMC",
+            "similarity": 0.85,
+            "shared_technology_areas": [
+              "CoWoS-like Packaging",
+              "Local Silicon Bridge",
+              "Thermal Management"
+            ]
+          },
+          {
+            "related_actor": "Broadcom",
+            "similarity": 0.78,
+            "shared_technology_areas": [
+              "Scale-out Fabric",
+              "Co-packaged Optics",
+              "High-speed SerDes"
+            ]
+          },
+          {
+            "related_actor": "Samsung Electronics",
+            "similarity": 0.72,
+            "shared_technology_areas": [
+              "Advanced Packaging",
+              "GAA Process",
+              "Hybrid Bonding"
+            ]
+          },
+          {
+            "related_actor": "Qualcomm",
+            "similarity": 0.65,
+            "shared_technology_areas": [
+              "Memory-aware Execution",
+              "Edge AI Acceleration",
+              "Shared Memory Hierarchy"
+            ]
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "AMD",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_technology_areas": [
+            "Chiplet Architecture",
+            "Heterogeneous Accelerator",
+            "High-Bandwidth Interconnect"
+          ],
+          "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Intel",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect"
+          ],
+          "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "TSMC",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_technology_areas": [
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management"
+          ],
+          "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Broadcom",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_technology_areas": [
+            "Scale-out Fabric",
+            "Co-packaged Optics",
+            "High-speed SerDes"
+          ],
+          "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_technology_areas": [
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+          "evidence_level": "proxy"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Qualcomm",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "Memory-aware Execution",
+            "Edge AI Acceleration",
+            "Shared Memory Hierarchy"
+          ],
+          "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+          "evidence_level": "proxy"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 8개 기술 선정 완료. 시장 개화 예상 시점: 2028 Q1"
+    ]
+  }
+}

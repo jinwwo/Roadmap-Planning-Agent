@@ -1,0 +1,66 @@
+[
+  {
+    "center_actor": "Intel",
+    "related_actor": "TSMC",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "common_tech_areas": [
+      "GAA Transistor",
+      "Backside PDN",
+      "Hybrid Bonding",
+      "AI Process Control"
+    ]
+  },
+  {
+    "center_actor": "Intel",
+    "related_actor": "Samsung Electronics",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "common_tech_areas": [
+      "GAA Transistor",
+      "Hybrid Bonding",
+      "Low Temp Oxidation"
+    ]
+  },
+  {
+    "center_actor": "Intel",
+    "related_actor": "Applied Materials",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "common_tech_areas": [
+      "Hybrid Bonding",
+      "AI Process Control",
+      "Plasma Processing"
+    ]
+  },
+  {
+    "center_actor": "Intel",
+    "related_actor": "ASML",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "common_tech_areas": [
+      "AI Process Control",
+      "Lithography Metrology"
+    ]
+  },
+  {
+    "center_actor": "Intel",
+    "related_actor": "Micron Technology",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "common_tech_areas": [
+      "Compute-in-Memory",
+      "Memory Architectures"
+    ]
+  },
+  {
+    "center_actor": "Intel",
+    "related_actor": "GlobalFoundries",
+    "similarity": 0.7,
+    "edge_weight": 0.7,
+    "common_tech_areas": [
+      "Gate Materials",
+      "Current Sensors"
+    ]
+  }
+]

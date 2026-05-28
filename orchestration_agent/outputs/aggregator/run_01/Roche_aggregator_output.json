@@ -1,0 +1,1053 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T22:18:20Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고해상도 질량분석기 이온 광학",
+        "category": "Equipment",
+        "estimated_trl": 7,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Thermo Fisher Scientific"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Thermo Fisher Scientific",
+            "title": "High resolution multi-reflection time-of-flight mass analyser",
+            "date": "2025-09-11",
+            "cited_by": 0
+          },
+          {
+            "company": "Thermo Fisher Scientific",
+            "title": "Ion Routing Device",
+            "date": "2025-10-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Thermo Fisher Scientific",
+            "title": "QUADRUPOLE MASS FILTER",
+            "date": "2025-10-24",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Thermo Fisher Scientific 은 2025 년에 고해상도 질량분석기 및 이온 라우팅 장치 관련 특허를 집중 출원하여 진단 장비의 정밀도 향상을 주도하고 있습니다. Roche 가 진단 부문의 시장 리더십을 유지하기 위해 이러한 고도화된 분석 장비 기술을 확보하거나 협력해야 할 전략적 기회입니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "항체-약물 접합체 (ADC) 제조공정",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 86.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T03"
+        ],
+        "source_companies": [
+          "AbbVie",
+          "Pfizer"
+        ],
+        "evidence_patents": [
+          {
+            "company": "AbbVie",
+            "title": "ANTI-C-MET ANTIBODY DRUG CONJUGATES",
+            "date": "2025-10-03",
+            "cited_by": 0
+          },
+          {
+            "company": "Pfizer",
+            "title": "COMBINATION OF A PD-1 ANTAGONIST AND A VEGFR INHIBITOR FOR TREATING CANCER",
+            "date": "2025-12-29",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "AbbVie 와 Pfizer 는 항체-약물 접합체 (ADC) 및 면역항암제 조합 치료 관련 특허를 활발히 출원하고 있어, 이 분야의 상용화 속도가 빨라지고 있습니다. Roche 는 기존 항체 기술 기반을 활용하여 ADC 제조 공정 최적화를 통해 원가 우위를 점할 수 있습니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "신경독소 건조 및 안정화 기술",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 79.4,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "AbbVie"
+        ],
+        "evidence_patents": [
+          {
+            "company": "AbbVie",
+            "title": "NEUROTOXIN SEROTYPE A COMPOSITIONS AND IMPROVED DRYING PROCESSES",
+            "date": "2025-01-17",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "AbbVie 는 보툴리눔 독소 (Neurotoxin) 의 건조 공정 및 안정성 향상을 위한 특허를 출원하여 제형 기술의 고도화를 시도하고 있습니다. 이는 Roche 의 신경계 질환 치료제 포트폴리오 확장 및 원가 효율성 개선에 중요한 재료 기술입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "지질화 TLR7/8 면역조절제",
+        "category": "Material",
+        "estimated_trl": 4,
+        "patent_score": 76.8,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Merck KGaA"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Merck KGaA",
+            "title": "TLR7/8 ANTAGONISTS FOR THE TREATMENT OF CORONAVIRUS INFECTIONS",
+            "date": "2021-05-14",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Merck KGaA 는 TLR7/8 길항제를 활용한 감염병 치료제 개발에 집중하고 있습니다. 이는 면역 조절 메커니즘을 기반으로 한 신약 개발의 새로운 트렌드로, Roche 의 면역항암제 파이프라인과 시너지를 낼 수 있는 장기적 R&D 후보입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "초저온 냉각 시스템 및 제어",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 74.5,
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 82
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Danaher"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Danaher",
+            "title": "INTEGRATED AND DISTRIBUTED COOLING SYSTEM",
+            "date": "2024-08-15",
+            "cited_by": 0
+          },
+          {
+            "company": "Danaher",
+            "title": "VACUUM CANISTER CLAMP SYSTEM AND METHODS",
+            "date": "2024-09-17",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Danaher 는 초저온 냉각 시스템 및 진공 용기 제어 기술에 대한 특허를 출원하여 진단 및 연구 장비의 신뢰성을 높이고 있습니다. 이는 Roche 의 진단 키트 보관 및 운송 인프라 개선에 필요한 핵심 장비 기술입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고해상도 질량분석기 이온 광학",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전 세계 질량분석기 시장 규모는 2024 년 기준 약 120 억 달러로 추정되며, 고해상도 (HRMS) 및 이온 광학 기술은 진단 및 신약개발 분야에서 핵심 장비로 성장 중임. Roche 의 진단 부문과 Thermo Fisher 의 장비 시장 지배력을 고려한 서비스 가능 시장 (SAM) 및 획득 가능 시장 (SOM) 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "단백체학 및 대사체학 연구 확대, 개인 맞춤 진단 수요 증가로 인해 고해상도 질량분석기 시장은 연평균 14% 이상의 성장을 예상함."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Mass Spectrometry Market Size, Share & Trends Analysis Report",
+            "url": "https://www.grandviewresearch.com/industry-analysis/mass-spectrometry-market",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "Thermo Fisher Scientific Annual Report 2024",
+            "url": "https://www.thermofisher.com",
+            "use": "주요 경쟁사 (Thermo Fisher) 의 시장 점유율 및 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Thermo Fisher Scientific"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "estimated",
+        "rationale": "Thermo Fisher 와의 높은 유사성 (0.92) 은 Roche 가 진단 장비 시장에서 강력한 경쟁 구도에 있음을 시사하며, 고해상도 기술은 2027 년경 임상 적용 확대와 함께 시장이 급성장할 것으로 예상됩니다. 장비 시장의 높은 진입 장벽과 특허 보호로 인해 소수 기업 중심의 과점 구조가 유지될 것입니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "항체-약물 접합체 (ADC) 제조공정",
+        "market_score": 88.2,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 5.5,
+          "basis": "ADC 시장 규모는 2024 년 약 100 억 달러에서 2030 년 450 억 달러 이상으로 성장할 것으로 전망되며, 제조공정 최적화는 공급 병목 해소를 위한 핵심 요소임. Roche 의 허셉틴 기반 ADC 포트폴리오와 AbbVie, Pfizer 의 경쟁을 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "항암제 시장에서 ADC 의 급부상과 다중 표적 ADC 개발로 인해 연평균 24% 이상의 높은 성장률을 기록할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Antibody-Drug Conjugates (ADC) Market Size, Share & Industry Analysis",
+            "url": "https://www.fortunebusinessinsights.com/antibody-drug-conjugates-market",
+            "use": "ADC 시장 규모 및 성장률 (CAGR) 근거"
+          },
+          {
+            "title": "AbbVie & Pfizer Oncology Pipeline Reports",
+            "url": "https://www.abbvie.com",
+            "use": "경쟁사 (AbbVie, Pfizer) 의 ADC 파이프라인 및 제조 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "AbbVie",
+            "Pfizer"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "AbbVie 와 Pfizer 와의 높은 기술 유사성 (0.88, 0.85) 은 ADC 제조공정 분야에서 치열한 경쟁과 동시에 기술 표준화 필요성을 시사하며, 2026 년 중반부터 상용화 가속화로 시장이 폭발할 것으로 보입니다. 제조 효율성과 안정성은 Roche 가 경쟁 우위를 점할 수 있는 핵심 요인이 될 것입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "신경독소 건조 및 안정화 기술",
+        "market_score": 68.4,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.9,
+          "basis": "보톡스 및 신경독소 기반 치료제 시장은 2024 년 약 85 억 달러 규모로, 건조 및 안정화 기술은 제품 수명 연장 및 운송 효율성 향상에 필수적임. AbbVie 의 관련 특허를 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.8,
+          "forecast_period": "2025-2030",
+          "basis": "미용 및 치료용 신경독소 시장이 꾸준히 성장하고 있으나, 기술적 진입 장벽이 높아 연평균 12% 내외의 성장이 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Botulinum Toxin Market Size, Share & Trends Analysis",
+            "url": "https://www.grandviewresearch.com/industry-analysis/botulinum-toxin-market",
+            "use": "신경독소 시장 규모 및 성장 동향"
+          },
+          {
+            "title": "AbbVie Neurotoxin Patent Portfolio Analysis",
+            "url": "https://www.abbvie.com",
+            "use": "경쟁사 (AbbVie) 의 건조 공정 특허 및 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "AbbVie 와의 높은 유사성 (0.88) 은 신경독소 분야에서 Roche 가 경쟁사 대비 제조 공정 최적화를 통해 차별화할 수 있음을 시사하며, 2028 년경 안정화 기술의 임상 적용 확대가 예상됩니다. 시장이 성숙 단계에 접어들어 있으나, 공정 효율성 향상을 통한 원가 경쟁력이 핵심입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "지질화 TLR7/8 면역조절제",
+        "market_score": 54.3,
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 55,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 5.2,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.4,
+          "basis": "면역조절제 시장은 감염병 및 자가면역 질환 치료로 성장 중이나, TLR7/8 표적은 아직 초기 단계로 시장 규모가 제한적임. Merck KGaA 의 관련 특허를 고려한 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2025-2030",
+          "basis": "감염병 대응 수요가 있으나, 임상 성공률이 낮아 연평균 9% 내외의 완만한 성장이 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Toll-like Receptor (TLR) Agonists and Antagonists Market Analysis",
+            "url": "https://www.mordorintelligence.com",
+            "use": "TLR 표적 치료제 시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Merck KGaA Infectious Disease Pipeline",
+            "url": "https://www.merckgroup.com",
+            "use": "경쟁사 (Merck KGaA) 의 TLR7/8 관련 연구 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck KGaA"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q4",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "estimated",
+        "rationale": "Merck KGaA 와의 중간 수준 유사성 (0.78) 은 TLR7/8 분야에서 기술적 연관성이 있으나, 아직 명확한 시장 리더가 부재한 초기 단계임을 시사하며, 2029 년 말경 임상 성공에 따라 시장이 형성될 것으로 보입니다. 감염병 대응 정책 지원이 있으나, 기술적 불확실성으로 인해 성장 속도가 제한적입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "초저온 냉각 시스템 및 제어",
+        "market_score": 62.1,
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 50,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.2,
+          "basis": "의료용 초저온 냉각 시스템 시장은 진단 장비 및 생물학적 샘플 보관 수요 증가로 2024 년 약 180 억 달러 규모로 추정됨. Danaher 의 관련 특허를 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.5,
+          "forecast_period": "2025-2030",
+          "basis": "진단 장비 및 연구 시설의 냉각 수요 증가로 연평균 11% 내외의 성장이 예상되나, 기술적 진입 장벽은 상대적으로 낮음."
+        },
+        "key_market_reports": [
+          {
+            "title": "Medical Cryogenic Cooling Systems Market Size & Forecast",
+            "url": "https://www.alliedmarketresearch.com",
+            "use": "초저온 냉각 시스템 시장 규모 및 성장 동향"
+          },
+          {
+            "title": "Danaher Corporation Annual Report 2024",
+            "url": "https://www.danaher.com",
+            "use": "경쟁사 (Danaher) 의 냉각 시스템 기술 및 시장 점유율"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Danaher"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "estimated",
+        "rationale": "Danaher 와의 중간 수준 유사성 (0.72) 은 초저온 냉각 시스템 분야에서 협력 가능성이 있으나, 시장이 다수 기업으로 분산되어 있어 차별화가 어렵다는 점을 시사하며, 2027 년 말경 진단 장비 수요 증가로 시장이 확대될 것으로 예상됩니다. 기술적 진입 장벽이 낮아 가격 경쟁이 치열할 수 있습니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Roche",
+          "related_actor": "Thermo Fisher Scientific",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "진단 장비 및 분석 기술 (질량분석기) 에서 높은 기술적 유사성과 시장 경쟁 관계"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "AbbVie",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "항체 기반 치료제 (ADC, 신경독소) 및 면역항암제 분야에서 강력한 기술적 겹침"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Pfizer",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "면역항암제 조합 치료 및 신약 개발 전략에서 유사한 기술 포트폴리오"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Merck KGaA",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "면역 조절제 (TLR7/8) 및 감염병 치료제 개발에서의 기술적 연관성"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Danaher",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "reason": "진단 장비의 냉각 및 제어 시스템 등 하드웨어 기술에서의 협력 가능성"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T02",
+        "name": "항체-약물 접합체 (ADC) 제조공정",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 86.2,
+        "market_score": 88.2,
+        "actor_map_score": 77.85,
+        "final_score": 85.43,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [
+          "T03"
+        ],
+        "rationale": "[Patent] AbbVie 와 Pfizer 는 항체-약물 접합체 (ADC) 및 면역항암제 조합 치료 관련 특허를 활발히 출원하고 있어, 이 분야의 상용화 속도가 빨라지고 있습니다. Roche 는 기존 항체 기술 기반을 활용하여 ADC 제조 공정 최적화를 통해 원가 우위를 점할 수 있습니다. [Market] AbbVie 와 Pfizer 와의 높은 기술 유사성 (0.88, 0.85) 은 ADC 제조공정 분야에서 치열한 경쟁과 동시에 기술 표준화 필요성을 시사하며, 2026 년 중반부터 상용화 가속화로 시장이 폭발할 것으로 보입니다. 제조 효율성과 안정성은 Roche 가 경쟁 우위를 점할 수 있는 핵심 요인이 될 것입니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 5.5,
+          "basis": "ADC 시장 규모는 2024 년 약 100 억 달러에서 2030 년 450 억 달러 이상으로 성장할 것으로 전망되며, 제조공정 최적화는 공급 병목 해소를 위한 핵심 요소임. Roche 의 허셉틴 기반 ADC 포트폴리오와 AbbVie, Pfizer 의 경쟁을 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "항암제 시장에서 ADC 의 급부상과 다중 표적 ADC 개발로 인해 연평균 24% 이상의 높은 성장률을 기록할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Antibody-Drug Conjugates (ADC) Market Size, Share & Industry Analysis",
+            "url": "https://www.fortunebusinessinsights.com/antibody-drug-conjugates-market",
+            "use": "ADC 시장 규모 및 성장률 (CAGR) 근거"
+          },
+          {
+            "title": "AbbVie & Pfizer Oncology Pipeline Reports",
+            "url": "https://www.abbvie.com",
+            "use": "경쟁사 (AbbVie, Pfizer) 의 ADC 파이프라인 및 제조 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "AbbVie",
+            "Pfizer"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "AbbVie",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "Pfizer",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T01",
+        "name": "고해상도 질량분석기 이온 광학",
+        "category": "Equipment",
+        "trl": 7,
+        "patent_score": 88.5,
+        "market_score": 76.5,
+        "actor_map_score": 82.8,
+        "final_score": 81.96,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Thermo Fisher Scientific 은 2025 년에 고해상도 질량분석기 및 이온 라우팅 장치 관련 특허를 집중 출원하여 진단 장비의 정밀도 향상을 주도하고 있습니다. Roche 가 진단 부문의 시장 리더십을 유지하기 위해 이러한 고도화된 분석 장비 기술을 확보하거나 협력해야 할 전략적 기회입니다. [Market] Thermo Fisher 와의 높은 유사성 (0.92) 은 Roche 가 진단 장비 시장에서 강력한 경쟁 구도에 있음을 시사하며, 고해상도 기술은 2027 년경 임상 적용 확대와 함께 시장이 급성장할 것으로 예상됩니다. 장비 시장의 높은 진입 장벽과 특허 보호로 인해 소수 기업 중심의 과점 구조가 유지될 것입니다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전 세계 질량분석기 시장 규모는 2024 년 기준 약 120 억 달러로 추정되며, 고해상도 (HRMS) 및 이온 광학 기술은 진단 및 신약개발 분야에서 핵심 장비로 성장 중임. Roche 의 진단 부문과 Thermo Fisher 의 장비 시장 지배력을 고려한 서비스 가능 시장 (SAM) 및 획득 가능 시장 (SOM) 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "단백체학 및 대사체학 연구 확대, 개인 맞춤 진단 수요 증가로 인해 고해상도 질량분석기 시장은 연평균 14% 이상의 성장을 예상함."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Mass Spectrometry Market Size, Share & Trends Analysis Report",
+            "url": "https://www.grandviewresearch.com/industry-analysis/mass-spectrometry-market",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "Thermo Fisher Scientific Annual Report 2024",
+            "url": "https://www.thermofisher.com",
+            "use": "주요 경쟁사 (Thermo Fisher) 의 시장 점유율 및 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Thermo Fisher Scientific"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Thermo Fisher Scientific",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "신경독소 건조 및 안정화 기술",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 79.4,
+        "market_score": 68.4,
+        "actor_map_score": 79.2,
+        "final_score": 74.41,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] AbbVie 는 보툴리눔 독소 (Neurotoxin) 의 건조 공정 및 안정성 향상을 위한 특허를 출원하여 제형 기술의 고도화를 시도하고 있습니다. 이는 Roche 의 신경계 질환 치료제 포트폴리오 확장 및 원가 효율성 개선에 중요한 재료 기술입니다. [Market] AbbVie 와의 높은 유사성 (0.88) 은 신경독소 분야에서 Roche 가 경쟁사 대비 제조 공정 최적화를 통해 차별화할 수 있음을 시사하며, 2028 년경 안정화 기술의 임상 적용 확대가 예상됩니다. 시장이 성숙 단계에 접어들어 있으나, 공정 효율성 향상을 통한 원가 경쟁력이 핵심입니다.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.9,
+          "basis": "보톡스 및 신경독소 기반 치료제 시장은 2024 년 약 85 억 달러 규모로, 건조 및 안정화 기술은 제품 수명 연장 및 운송 효율성 향상에 필수적임. AbbVie 의 관련 특허를 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.8,
+          "forecast_period": "2025-2030",
+          "basis": "미용 및 치료용 신경독소 시장이 꾸준히 성장하고 있으나, 기술적 진입 장벽이 높아 연평균 12% 내외의 성장이 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Botulinum Toxin Market Size, Share & Trends Analysis",
+            "url": "https://www.grandviewresearch.com/industry-analysis/botulinum-toxin-market",
+            "use": "신경독소 시장 규모 및 성장 동향"
+          },
+          {
+            "title": "AbbVie Neurotoxin Patent Portfolio Analysis",
+            "url": "https://www.abbvie.com",
+            "use": "경쟁사 (AbbVie) 의 건조 공정 특허 및 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "AbbVie"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "AbbVie",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "초저온 냉각 시스템 및 제어",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 74.5,
+        "market_score": 62.1,
+        "actor_map_score": 64.8,
+        "final_score": 66.98,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Danaher 는 초저온 냉각 시스템 및 진공 용기 제어 기술에 대한 특허를 출원하여 진단 및 연구 장비의 신뢰성을 높이고 있습니다. 이는 Roche 의 진단 키트 보관 및 운송 인프라 개선에 필요한 핵심 장비 기술입니다. [Market] Danaher 와의 중간 수준 유사성 (0.72) 은 초저온 냉각 시스템 분야에서 협력 가능성이 있으나, 시장이 다수 기업으로 분산되어 있어 차별화가 어렵다는 점을 시사하며, 2027 년 말경 진단 장비 수요 증가로 시장이 확대될 것으로 예상됩니다. 기술적 진입 장벽이 낮아 가격 경쟁이 치열할 수 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 50,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.2,
+          "basis": "의료용 초저온 냉각 시스템 시장은 진단 장비 및 생물학적 샘플 보관 수요 증가로 2024 년 약 180 억 달러 규모로 추정됨. Danaher 의 관련 특허를 고려한 시장 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.5,
+          "forecast_period": "2025-2030",
+          "basis": "진단 장비 및 연구 시설의 냉각 수요 증가로 연평균 11% 내외의 성장이 예상되나, 기술적 진입 장벽은 상대적으로 낮음."
+        },
+        "key_market_reports": [
+          {
+            "title": "Medical Cryogenic Cooling Systems Market Size & Forecast",
+            "url": "https://www.alliedmarketresearch.com",
+            "use": "초저온 냉각 시스템 시장 규모 및 성장 동향"
+          },
+          {
+            "title": "Danaher Corporation Annual Report 2024",
+            "url": "https://www.danaher.com",
+            "use": "경쟁사 (Danaher) 의 냉각 시스템 기술 및 시장 점유율"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Danaher"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Danaher",
+            "similarity": 72.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 64.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 82
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "지질화 TLR7/8 면역조절제",
+        "category": "Material",
+        "trl": 4,
+        "patent_score": 76.8,
+        "market_score": 54.3,
+        "actor_map_score": 70.2,
+        "final_score": 65.36,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2029 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Merck KGaA 는 TLR7/8 길항제를 활용한 감염병 치료제 개발에 집중하고 있습니다. 이는 면역 조절 메커니즘을 기반으로 한 신약 개발의 새로운 트렌드로, Roche 의 면역항암제 파이프라인과 시너지를 낼 수 있는 장기적 R&D 후보입니다. [Market] Merck KGaA 와의 중간 수준 유사성 (0.78) 은 TLR7/8 분야에서 기술적 연관성이 있으나, 아직 명확한 시장 리더가 부재한 초기 단계임을 시사하며, 2029 년 말경 임상 성공에 따라 시장이 형성될 것으로 보입니다. 감염병 대응 정책 지원이 있으나, 기술적 불확실성으로 인해 성장 속도가 제한적입니다.",
+        "market_signals": {
+          "tam_growth_rate": 45,
+          "time_to_market_urgency": 55,
+          "policy_and_investment_tailwind": 60,
+          "competitive_moat_potential": 50
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 5.2,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.4,
+          "basis": "면역조절제 시장은 감염병 및 자가면역 질환 치료로 성장 중이나, TLR7/8 표적은 아직 초기 단계로 시장 규모가 제한적임. Merck KGaA 의 관련 특허를 고려한 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 9.5,
+          "forecast_period": "2025-2030",
+          "basis": "감염병 대응 수요가 있으나, 임상 성공률이 낮아 연평균 9% 내외의 완만한 성장이 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Toll-like Receptor (TLR) Agonists and Antagonists Market Analysis",
+            "url": "https://www.mordorintelligence.com",
+            "use": "TLR 표적 치료제 시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Merck KGaA Infectious Disease Pipeline",
+            "url": "https://www.merckgroup.com",
+            "use": "경쟁사 (Merck KGaA) 의 TLR7/8 관련 연구 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Merck KGaA"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Merck KGaA",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Biopharmaceutical / Diagnostics / Healthcare",
+      "expected_boom_quarter": "2026 Q3",
+      "market_research_summary": {
+        "T01": {
+          "name": "고해상도 질량분석기 이온 광학",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "전 세계 질량분석기 시장 규모는 2024 년 기준 약 120 억 달러로 추정되며, 고해상도 (HRMS) 및 이온 광학 기술은 진단 및 신약개발 분야에서 핵심 장비로 성장 중임. Roche 의 진단 부문과 Thermo Fisher 의 장비 시장 지배력을 고려한 서비스 가능 시장 (SAM) 및 획득 가능 시장 (SOM) 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.2,
+            "forecast_period": "2025-2030",
+            "basis": "단백체학 및 대사체학 연구 확대, 개인 맞춤 진단 수요 증가로 인해 고해상도 질량분석기 시장은 연평균 14% 이상의 성장을 예상함."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Global Mass Spectrometry Market Size, Share & Trends Analysis Report",
+              "url": "https://www.grandviewresearch.com/industry-analysis/mass-spectrometry-market",
+              "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+            },
+            {
+              "title": "Thermo Fisher Scientific Annual Report 2024",
+              "url": "https://www.thermofisher.com",
+              "use": "주요 경쟁사 (Thermo Fisher) 의 시장 점유율 및 기술 동향"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Thermo Fisher Scientific"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "항체-약물 접합체 (ADC) 제조공정",
+          "market_score": 88.2,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 5.5,
+            "basis": "ADC 시장 규모는 2024 년 약 100 억 달러에서 2030 년 450 억 달러 이상으로 성장할 것으로 전망되며, 제조공정 최적화는 공급 병목 해소를 위한 핵심 요소임. Roche 의 허셉틴 기반 ADC 포트폴리오와 AbbVie, Pfizer 의 경쟁을 고려한 시장 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "항암제 시장에서 ADC 의 급부상과 다중 표적 ADC 개발로 인해 연평균 24% 이상의 높은 성장률을 기록할 것으로 예상됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Antibody-Drug Conjugates (ADC) Market Size, Share & Industry Analysis",
+              "url": "https://www.fortunebusinessinsights.com/antibody-drug-conjugates-market",
+              "use": "ADC 시장 규모 및 성장률 (CAGR) 근거"
+            },
+            {
+              "title": "AbbVie & Pfizer Oncology Pipeline Reports",
+              "url": "https://www.abbvie.com",
+              "use": "경쟁사 (AbbVie, Pfizer) 의 ADC 파이프라인 및 제조 기술 동향"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "AbbVie",
+              "Pfizer"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "신경독소 건조 및 안정화 기술",
+          "market_score": 68.4,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 8.5,
+            "sam_usd_b": 3.0,
+            "som_usd_b": 0.9,
+            "basis": "보톡스 및 신경독소 기반 치료제 시장은 2024 년 약 85 억 달러 규모로, 건조 및 안정화 기술은 제품 수명 연장 및 운송 효율성 향상에 필수적임. AbbVie 의 관련 특허를 고려한 시장 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.8,
+            "forecast_period": "2025-2030",
+            "basis": "미용 및 치료용 신경독소 시장이 꾸준히 성장하고 있으나, 기술적 진입 장벽이 높아 연평균 12% 내외의 성장이 예상됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Botulinum Toxin Market Size, Share & Trends Analysis",
+              "url": "https://www.grandviewresearch.com/industry-analysis/botulinum-toxin-market",
+              "use": "신경독소 시장 규모 및 성장 동향"
+            },
+            {
+              "title": "AbbVie Neurotoxin Patent Portfolio Analysis",
+              "url": "https://www.abbvie.com",
+              "use": "경쟁사 (AbbVie) 의 건조 공정 특허 및 기술 동향"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "AbbVie"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "지질화 TLR7/8 면역조절제",
+          "market_score": 54.3,
+          "expected_market_boom_quarter": "2029 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 5.2,
+            "sam_usd_b": 1.5,
+            "som_usd_b": 0.4,
+            "basis": "면역조절제 시장은 감염병 및 자가면역 질환 치료로 성장 중이나, TLR7/8 표적은 아직 초기 단계로 시장 규모가 제한적임. Merck KGaA 의 관련 특허를 고려한 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 9.5,
+            "forecast_period": "2025-2030",
+            "basis": "감염병 대응 수요가 있으나, 임상 성공률이 낮아 연평균 9% 내외의 완만한 성장이 예상됨."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Toll-like Receptor (TLR) Agonists and Antagonists Market Analysis",
+              "url": "https://www.mordorintelligence.com",
+              "use": "TLR 표적 치료제 시장 규모 및 성장 전망"
+            },
+            {
+              "title": "Merck KGaA Infectious Disease Pipeline",
+              "url": "https://www.merckgroup.com",
+              "use": "경쟁사 (Merck KGaA) 의 TLR7/8 관련 연구 동향"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Merck KGaA"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "초저온 냉각 시스템 및 제어",
+          "market_score": 62.1,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 18.0,
+            "sam_usd_b": 6.5,
+            "som_usd_b": 1.2,
+            "basis": "의료용 초저온 냉각 시스템 시장은 진단 장비 및 생물학적 샘플 보관 수요 증가로 2024 년 약 180 억 달러 규모로 추정됨. Danaher 의 관련 특허를 고려한 시장 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 11.5,
+            "forecast_period": "2025-2030",
+            "basis": "진단 장비 및 연구 시설의 냉각 수요 증가로 연평균 11% 내외의 성장이 예상되나, 기술적 진입 장벽은 상대적으로 낮음."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Medical Cryogenic Cooling Systems Market Size & Forecast",
+              "url": "https://www.alliedmarketresearch.com",
+              "use": "초저온 냉각 시스템 시장 규모 및 성장 동향"
+            },
+            {
+              "title": "Danaher Corporation Annual Report 2024",
+              "url": "https://www.danaher.com",
+              "use": "경쟁사 (Danaher) 의 냉각 시스템 기술 및 시장 점유율"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Danaher"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "Thermo Fisher Scientific",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "AbbVie",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Pfizer",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Merck KGaA",
+            "similarity": 0.78,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Danaher",
+            "similarity": 0.72,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Roche",
+          "related_actor": "Thermo Fisher Scientific",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "진단 장비 및 분석 기술 (질량분석기) 에서 높은 기술적 유사성과 시장 경쟁 관계"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "AbbVie",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "항체 기반 치료제 (ADC, 신경독소) 및 면역항암제 분야에서 강력한 기술적 겹침"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Pfizer",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "면역항암제 조합 치료 및 신약 개발 전략에서 유사한 기술 포트폴리오"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Merck KGaA",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "면역 조절제 (TLR7/8) 및 감염병 치료제 개발에서의 기술적 연관성"
+        },
+        {
+          "center_actor": "Roche",
+          "related_actor": "Danaher",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "reason": "진단 장비의 냉각 및 제어 시스템 등 하드웨어 기술에서의 협력 가능성"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 5개 기술 선정 완료. 시장 개화 예상 시점: 2026 Q3"
+    ]
+  }
+}

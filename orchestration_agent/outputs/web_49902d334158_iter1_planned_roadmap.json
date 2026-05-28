@@ -1,0 +1,513 @@
+{
+  "market_context": {
+    "target_market": "Automotive / Mobility / EV",
+    "expected_boom_quarter": "2028 Q3",
+    "market_research_summary": {
+      "T01": {
+        "name": "후면 전력망 (BS-PDN) 공정",
+        "market_score": 72.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.4,
+          "basis": "고성능 컴퓨팅 (HPC) 및 자율주행 SoC 시장 내 전력 효율화 요구로 인해 2030 년까지 85 억 달러 규모로 추정. 현대자동차와 LG 에너지솔루션의 공동 출원으로 배터리 관리 시스템 (BMS) 및 차량용 반도체 적용 가능성이 높음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "차량용 반도체의 전력 밀도 증가와 3D 적층 기술 도입에 따른 성장률. actor_similarity_map 에서 LG 에너지솔루션과의 높은 유사도 (0.85) 가 시장 진입 가속화 요인."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Backside Power Delivery Network Market Outlook 2030",
+            "url": "https://mock.local/competitive/9992",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution",
+            "Toyota"
+          ],
+          "shared_technology_areas": [
+            "BS-PDN",
+            "Silicon Photonics",
+            "Cryo-Etch",
+            "SADP",
+            "EUV Lithography"
+          ]
+        }
+      },
+      "T02": {
+        "name": "자가정렬 이중 패터닝 (SADP)",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.6,
+          "basis": "차량용 반도체 미세공정 (28nm 이하) 적용 시장으로, 2030 년까지 120 억 달러 규모 예상. 현대자동차, 기아, 삼성 SDI 등 그룹 내 기술 공유로 SAM 확보 가능성 높음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2025-2030",
+          "basis": "기존 리소그래피 기술의 한계 극복을 위한 대체 기술로 점진적 성장. actor_similarity_map 에서 기아 (0.92), 삼성 SDI(0.82) 와의 높은 유사도가 기술 표준화 속도를 높임."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Self-Aligned Double Patterning in Automotive Chips",
+            "url": "https://mock.local/competitive/9403",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Samsung SDI",
+            "Toyota",
+            "Tesla"
+          ],
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB",
+            "EUV Lithography",
+            "BS-PDN",
+            "Cryo-Etch"
+          ]
+        }
+      },
+      "T03": {
+        "name": "2D 채널 소재 (MoS2) FET",
+        "market_score": 55.0,
+        "expected_market_boom_quarter": "2029 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 3.5,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.1,
+          "basis": "실리콘 대체 소재로서 2030 년까지 35 억 달러 규모로 추정. 초기 시장이 작으나, 차세대 저전력 차량용 반도체에서 독보적 경쟁력 확보 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "초기 시장 규모는 작으나, 실리콘 물리적 한계 돌파로 인해 2028 년 이후 급성장 예상. 폭스바겐, 기아 등과의 공동 연구로 기술 성숙도 향상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "2D Material FETs for Post-Silicon Era",
+            "url": "https://mock.local/competitive/6062",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Samsung SDI",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB",
+            "EUV Lithography"
+          ]
+        }
+      },
+      "T04": {
+        "name": "실리콘 포토닉스 CPO",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 4.5,
+          "som_usd_b": 1.2,
+          "basis": "자율주행 데이터 처리 및 차량 간 통신 (V2X) 시장으로 2030 년까지 150 억 달러 규모 예상. LG 에너지솔루션과의 협력으로 배터리 관리 및 통신 모듈 통합 가능성 높음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "고대역폭 데이터 처리 요구로 인해 2027 년 이후 급성장. actor_similarity_map 에서 LG 에너지솔루션 (0.85), 기아 (0.92) 와의 높은 유사도가 시장 진입 가속화."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Silicon Photonics CPO in Automotive Connectivity",
+            "url": "https://mock.local/competitive/8237",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB",
+            "BS-PDN",
+            "Cryo-Etch"
+          ]
+        }
+      },
+      "T05": {
+        "name": "고해상도 EUV 리소그래피",
+        "market_score": 65.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 10.0,
+          "sam_usd_b": 2.8,
+          "som_usd_b": 0.5,
+          "basis": "차량용 반도체 미세공정 (7nm 이하) 시장으로 2030 년까지 100 억 달러 규모 예상. 테슬라, 토요타 등과의 경쟁이 치열하나, 현대자동차의 R&D 투자로 기술 확보 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "기존 공정 기술의 대체로 점진적 성장. actor_similarity_map 에서 테슬라 (0.75), 토요타 (0.78) 와의 유사도가 경쟁 구도 형성."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "EUV Lithography in Automotive Semiconductor Manufacturing",
+            "url": "https://mock.local/competitive/7993",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Toyota",
+            "Tesla",
+            "Volkswagen"
+          ],
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB",
+            "EUV Lithography",
+            "BS-PDN",
+            "Cryo-Etch"
+          ]
+        }
+      },
+      "T06": {
+        "name": "3D 적층 TSV 기술",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.5,
+          "basis": "고성능 차량용 메모리 및 SoC 시장으로 2030 년까지 180 억 달러 규모 예상. LG 에너지솔루션, 삼성 SDI 등과의 협력으로 HBM 및 3D 적층 기술 적용 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 및 AI 칩의 메모리 대역폭 요구로 인해 2027 년 이후 급성장. actor_similarity_map 에서 LG 에너지솔루션 (0.85), 삼성 SDI(0.82) 와의 높은 유사도가 시장 진입 가속화."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "3D Stacked TSV Technology in Automotive Memory",
+            "url": "https://mock.local/competitive/5450",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution",
+            "Samsung SDI",
+            "Toyota",
+            "Tesla"
+          ],
+          "shared_technology_areas": [
+            "BS-PDN",
+            "Silicon Photonics",
+            "Cryo-Etch",
+            "TCB",
+            "2D Material (MoS2)",
+            "SADP",
+            "EUV Lithography"
+          ]
+        }
+      },
+      "T07": {
+        "name": "저온 식각 (Cryo-Etch) 공정",
+        "market_score": 60.0,
+        "expected_market_boom_quarter": "2028 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 6.0,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.3,
+          "basis": "고성능 차량용 반도체 공정 시장으로 2030 년까지 60 억 달러 규모 예상. 테슬라, BYD 등과의 경쟁이 치열하나, LG 에너지솔루션과의 협력으로 기술 확보 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 13.0,
+          "forecast_period": "2025-2030",
+          "basis": "기존 공정 기술의 대체로 점진적 성장. actor_similarity_map 에서 LG 에너지솔루션 (0.85), 테슬라 (0.75) 와의 유사도가 경쟁 구도 형성."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Cryogenic Etch Process in Automotive Semiconductor Manufacturing",
+            "url": "https://mock.local/competitive/312",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution",
+            "Samsung SDI",
+            "Tesla"
+          ],
+          "shared_technology_areas": [
+            "BS-PDN",
+            "Silicon Photonics",
+            "Cryo-Etch",
+            "TCB",
+            "2D Material (MoS2)",
+            "SADP",
+            "EUV Lithography"
+          ]
+        }
+      },
+      "T08": {
+        "name": "열압착 본딩 (TCB) 기술",
+        "market_score": 58.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 5.0,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.2,
+          "basis": "고성능 차량용 메모리 패키징 시장으로 2030 년까지 50 억 달러 규모 예상. 기아, 삼성 SDI 등과의 협력으로 HBM 및 3D 적층 기술 적용 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "기존 패키징 기술의 대체로 점진적 성장. actor_similarity_map 에서 기아 (0.92), 삼성 SDI(0.82) 와의 높은 유사도가 시장 진입 가속화."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Thermal Compression Bonding in Automotive Memory Packaging",
+            "url": "https://mock.local/competitive/2881",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kia",
+            "Samsung SDI"
+          ],
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB"
+          ]
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 7,
+      "top_related_actors": [
+        {
+          "related_actor": "Kia",
+          "similarity": 0.92,
+          "shared_technology_areas": [
+            "SADP",
+            "2D Material (MoS2)",
+            "Silicon Photonics",
+            "TCB"
+          ]
+        },
+        {
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.85,
+          "shared_technology_areas": [
+            "BS-PDN",
+            "Silicon Photonics",
+            "Cryo-Etch"
+          ]
+        },
+        {
+          "related_actor": "Samsung SDI",
+          "similarity": 0.82,
+          "shared_technology_areas": [
+            "TCB",
+            "2D Material (MoS2)",
+            "SADP"
+          ]
+        },
+        {
+          "related_actor": "Toyota",
+          "similarity": 0.78,
+          "shared_technology_areas": [
+            "SADP",
+            "EUV Lithography",
+            "BS-PDN"
+          ]
+        },
+        {
+          "related_actor": "Tesla",
+          "similarity": 0.75,
+          "shared_technology_areas": [
+            "SADP",
+            "EUV Lithography",
+            "Cryo-Etch"
+          ]
+        },
+        {
+          "related_actor": "Volkswagen",
+          "similarity": 0.72,
+          "shared_technology_areas": [
+            "SADP",
+            "EUV Lithography",
+            "2D Material (MoS2)"
+          ]
+        },
+        {
+          "related_actor": "BYD",
+          "similarity": 0.68,
+          "shared_technology_areas": [
+            "EUV Lithography",
+            "Cryo-Etch",
+            "TSV"
+          ]
+        }
+      ]
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T03",
+      "name": "2D 채널 소재 (MoS2) FET",
+      "year_idx_start": 1,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 4 로 기술 성숙도가 낮아 5 년의 긴 개발 기간이 필요하며, 2030 년 이후 시장 진입을 목표로 1 차년도부터 5 차년도까지 장기 R&D 를 배치합니다. 이는 차세대 소재 기술의 특성상 초기 기초 연구부터 양산 준비까지 긴 주기가 소요되기 때문입니다.",
+        "tech_execution": "실리콘 대체 소재로서 2030 년 이후 차세대 저전력 고집적 소자의 핵심이 될 것으로 예상되어, 현대자동차의 장기적인 파워트레인 제어 칩 개발을 위한 선제적 기술 선점이 필수적입니다.",
+        "investment_selection": "높은 진입 장벽과 독점적 기술 확보를 위해 초기부터 지속적인 R&D 예산을 투입해야 하며, 이는 향후 10 년 이상의 기술 리더십을 확보하는 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T04",
+      "name": "실리콘 포토닉스 CPO",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 중간 성숙도를 가지며 2027 년 Q1 시장 붐을 고려하여 1 차년도부터 시작해 3 차년도 (2028 년) 에 기술 완성 및 초기 적용을 목표로 배치합니다. 이는 자율주행 아키텍처의 핵심 인터페이스 기술로서 빠른 시장 대응이 필요하기 때문입니다.",
+        "tech_execution": "고대역폭 데이터 전송이 필요한 SDV 및 자율주행 시스템의 전기 신호 한계를 극복하기 위한 필수 기술로, 2028 년 중간 마일스톤 이전에 기술적 안정성을 확보해야 합니다.",
+        "investment_selection": "경쟁사들의 특허 출원 동향을 고려할 때, 시장 붐 직전인 2027 년경에 기술력을 입증하여 초기 시장 점유율을 선점하는 것이 R&D 예산 효율성 측면에서 유리합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "후면 전력망 (BS-PDN) 공정",
+      "year_idx_start": 2,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 상대적으로 성숙도가 높지만, 2028 년 Q2 시장 붐을 고려하여 2 차년도부터 본격화하여 4 차년도 (2029 년) 에 기술 고도화를 완료하는 전략을 취합니다. 이는 T04 와의 시너지 효과를 극대화하기 위한 배치입니다.",
+        "tech_execution": "자율주행 및 EV 플랫폼의 전력 효율성과 신호 무결성 확보를 위해 2028 년 이후 본격적인 시장 성장기에 맞춰 기술 적용을 완료해야 합니다.",
+        "investment_selection": "주요 경쟁사들의 집중적인 특허 출원 흐름을 따라 2028 년경에 기술적 우위를 점할 수 있도록, 2 차년도부터 집중적인 공정 개발 투자를 수행해야 합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T06",
+      "name": "3D 적층 TSV 기술",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "의존성 힌트 (T02) 가 있으나 입력 목록에 T02 가 없으므로, T04 나 T01 과 같은 선행 패키징/아키텍처 기술의 성숙을 전제로 3 차년도부터 시작하여 5 차년도까지 이어지는 장기 로드맵을 설정합니다. TRL 7 로 성숙도가 높지만, 3D 적층의 고도화와 차세대 HBM 적용을 위해 2030 년까지 기술 진화를 지속합니다.",
+        "tech_execution": "고집적 메모리 및 로직 칩 패키징의 표준 기술로 자리 잡은 TSV 는 자율주행 AI 칩의 메모리 대역폭 요구를 충족시키기 위해 2027 년 이후 지속적인 기술 고도화가 필요합니다.",
+        "investment_selection": "2027 년경 시장 급성장을 고려하여 초기 적용은 3 차년도에 시작하되, 5 차년도까지 차세대 3D IC 패키징 전략을 완성하여 경쟁 우위를 유지하는 것이 핵심 투자 논리입니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T03": {
+      "tech_id": "T03",
+      "name": "2D 채널 소재 (MoS2) FET",
+      "category": "Material",
+      "trl": 4,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2029 Q4"
+    },
+    "T04": {
+      "tech_id": "T04",
+      "name": "실리콘 포토닉스 CPO",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q1"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "후면 전력망 (BS-PDN) 공정",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2028 Q2"
+    },
+    "T06": {
+      "tech_id": "T06",
+      "name": "3D 적층 TSV 기술",
+      "category": "Packaging",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 4,
+    "rationale": "현대차의 SDV/자율주행 전략(T04, T06) 과 차세대 소재 선점(T03) 을 중점 선별. 2027~2029 년 시점 분포로 2030 로드맵 완성도 확보.",
+    "dropped": [
+      {
+        "tech_id": "T02",
+        "name": "자가정렬 이중 패터닝 (SADP)",
+        "reason": "SADP 는 EUV 대비 차별성 낮고, T01(TSV/BS-PDN) 과 기능 중복성 높음."
+      },
+      {
+        "tech_id": "T05",
+        "name": "고해상도 EUV 리소그래피",
+        "reason": "EUV 는 장비 독점 구조로 현대차 직접 개발 전략과 정합성 낮음."
+      },
+      {
+        "tech_id": "T08",
+        "name": "열압착 본딩 (TCB) 기술",
+        "reason": "TCB 는 T06(3D 적층 TSV) 의 하위 기술로 중복되며 점수 낮음."
+      },
+      {
+        "tech_id": "T07",
+        "name": "저온 식각 (Cryo-Etch) 공정",
+        "reason": "Cryo-Etch 는 T01 과 유사한 공정 기술로 중복되며 점수 하위권."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1589 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-05-27T14:21:14Z",
+  "input": {
+    "domain": "AI Infrastructure / Semiconductor / GPU",
+    "reference_year": 2030,
+    "company_name": "NVIDIA",
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ],
+    "use_patent_map": true
+  },
+  "tech_list": [
+    {
+      "tech_id": "T01",
+      "name": "백사이드 전력망 (Backside PDN)",
+      "category": "Process",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Intel",
+        "TSMC"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Intel",
+          "title": "Backside power delivery for high-current accelerator logic",
+          "date": "2025-01-07",
+          "cited_by": 0
+        },
+        {
+          "company": "TSMC",
+          "title": "Thermal management structure for high-power AI accelerator package",
+          "date": "2025-04-01",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T02",
+      "name": "로컬 실리콘 브리지 패키징",
+      "category": "Packaging",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "TSMC",
+        "Intel"
+      ],
+      "evidence_patents": [
+        {
+          "company": "TSMC",
+          "title": "Local silicon bridge package for high-bandwidth accelerator modules",
+          "date": "2024-09-24",
+          "cited_by": 0
+        },
+        {
+          "company": "Intel",
+          "title": "Embedded bridge interconnect for heterogeneous accelerator package",
+          "date": "2024-11-12",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T03",
+      "name": "하이브리드 본딩 3D 적층",
+      "category": "Packaging",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Samsung Electronics",
+        "TSMC"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Samsung Electronics",
+          "title": "Hybrid bonding for 3D IC wafer stacking",
+          "date": "2024-09-11",
+          "cited_by": 0
+        },
+        {
+          "company": "TSMC",
+          "title": "Local silicon bridge package for high-bandwidth accelerator modules",
+          "date": "2024-09-24",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T04",
+      "name": "고해상도 EUV 리소그래피",
+      "category": "Equipment",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Samsung Electronics"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Samsung Electronics",
+          "title": "High-NA EUV scanner optics assembly",
+          "date": "2024-11-22",
+          "cited_by": 0
+        },
+        {
+          "company": "Samsung Electronics",
+          "title": "Atomic layer deposition reactor for sub-3nm nodes",
+          "date": "2024-11-03",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T05",
+      "name": "이종 칩렛 텐서 스케줄링",
+      "category": "Architecture",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "AMD",
+        "Intel"
+      ],
+      "evidence_patents": [
+        {
+          "company": "AMD",
+          "title": "AI tensor execution scheduling across heterogeneous accelerator chiplets",
+          "date": "2025-06-24",
+          "cited_by": 0
+        },
+        {
+          "company": "Intel",
+          "title": "Tile-level accelerator fabric for AI training processors",
+          "date": "2024-05-28",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T06",
+      "name": "공포장 광 인터페이스",
+      "category": "Packaging",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Broadcom"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Broadcom",
+          "title": "Co-packaged optical interface for accelerator clusters",
+          "date": "2024-08-13",
+          "cited_by": 0
+        },
+        {
+          "company": "Broadcom",
+          "title": "High-speed SerDes link for accelerator scale-out fabrics",
+          "date": "2025-05-06",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T07",
+      "name": "면 선택적 유전체 증착",
+      "category": "Material",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Samsung Electronics"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Samsung Electronics",
+          "title": "Area-selective deposition of dielectrics",
+          "date": "2024-05-09",
+          "cited_by": 0
+        },
+        {
+          "company": "Samsung Electronics",
+          "title": "Low-k porous dielectric for advanced nodes",
+          "date": "2024-04-26",
+          "cited_by": 0
+        }
+      ]
+    },
+    {
+      "tech_id": "T08",
+      "name": "메모리 인지 에지 AI 실행",
+      "category": "Architecture",
+      "roadmapping_signals": {},
+      "source_companies": [
+        "Qualcomm"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Qualcomm",
+          "title": "Memory-aware model execution on edge AI accelerators",
+          "date": "2025-02-18",
+          "cited_by": 0
+        },
+        {
+          "company": "Qualcomm",
+          "title": "Low-power neural processing accelerator with shared memory hierarchy",
+          "date": "2024-07-30",
+          "cited_by": 0
+        }
+      ]
+    }
+  ],
+  "patent_maps": {
+    "actor_similarity_map": [
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "AMD",
+        "similarity": 0.92,
+        "edge_weight": 0.92,
+        "shared_technology_areas": [
+          "Chiplet Architecture",
+          "Heterogeneous Accelerator",
+          "High-Bandwidth Interconnect"
+        ],
+        "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "Intel",
+        "similarity": 0.88,
+        "edge_weight": 0.88,
+        "shared_technology_areas": [
+          "Backside PDN",
+          "Tile-level Fabric",
+          "Embedded Bridge Interconnect"
+        ],
+        "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "TSMC",
+        "similarity": 0.85,
+        "edge_weight": 0.85,
+        "shared_technology_areas": [
+          "CoWoS-like Packaging",
+          "Local Silicon Bridge",
+          "Thermal Management"
+        ],
+        "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "Broadcom",
+        "similarity": 0.78,
+        "edge_weight": 0.78,
+        "shared_technology_areas": [
+          "Scale-out Fabric",
+          "Co-packaged Optics",
+          "High-speed SerDes"
+        ],
+        "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+        "evidence_level": "direct"
+      },
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "Samsung Electronics",
+        "similarity": 0.72,
+        "edge_weight": 0.72,
+        "shared_technology_areas": [
+          "Advanced Packaging",
+          "GAA Process",
+          "Hybrid Bonding"
+        ],
+        "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+        "evidence_level": "proxy"
+      },
+      {
+        "center_actor": "NVIDIA",
+        "related_actor": "Qualcomm",
+        "similarity": 0.65,
+        "edge_weight": 0.65,
+        "shared_technology_areas": [
+          "Memory-aware Execution",
+          "Edge AI Acceleration",
+          "Shared Memory Hierarchy"
+        ],
+        "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+        "evidence_level": "proxy"
+      }
+    ]
+  },
+  "market_raw_data": {
+    "domain": "AI Infrastructure / Semiconductor / GPU",
+    "use_patent_map": true,
+    "research_process": [
+      "market_report_discovery",
+      "tam_sam_som_estimation",
+      "cagr_growth_outlook_collection",
+      "actor_similarity_map_driven_competitive_context"
+    ],
+    "actor_similarity_context": {
+      "center_actor": "NVIDIA",
+      "related_actors": [
+        "AMD",
+        "Intel",
+        "TSMC",
+        "Broadcom",
+        "Samsung Electronics",
+        "Qualcomm"
+      ],
+      "shared_technology_areas": [
+        "Chiplet Architecture",
+        "Heterogeneous Accelerator",
+        "High-Bandwidth Interconnect",
+        "Backside PDN",
+        "Tile-level Fabric",
+        "Embedded Bridge Interconnect",
+        "CoWoS-like Packaging",
+        "Local Silicon Bridge",
+        "Thermal Management",
+        "Scale-out Fabric",
+        "Co-packaged Optics",
+        "High-speed SerDes",
+        "Advanced Packaging",
+        "GAA Process",
+        "Hybrid Bonding",
+        "Memory-aware Execution",
+        "Edge AI Acceleration",
+        "Shared Memory Hierarchy"
+      ],
+      "top_edges": [
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "AMD",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_technology_areas": [
+            "Chiplet Architecture",
+            "Heterogeneous Accelerator",
+            "High-Bandwidth Interconnect"
+          ],
+          "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Intel",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_technology_areas": [
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect"
+          ],
+          "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "TSMC",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_technology_areas": [
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management"
+          ],
+          "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Broadcom",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_technology_areas": [
+            "Scale-out Fabric",
+            "Co-packaged Optics",
+            "High-speed SerDes"
+          ],
+          "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+          "evidence_level": "direct"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_technology_areas": [
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+          "evidence_level": "proxy"
+        },
+        {
+          "center_actor": "NVIDIA",
+          "related_actor": "Qualcomm",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_technology_areas": [
+            "Memory-aware Execution",
+            "Edge AI Acceleration",
+            "Shared Memory Hierarchy"
+          ],
+          "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+          "evidence_level": "proxy"
+        }
+      ]
+    },
+    "technologies": {
+      "T01": {
+        "tech_name": "백사이드 전력망 (Backside PDN)",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Market Size Brief",
+            "url": "https://mock.local/market_size/5905",
+            "content": "The global market for 백사이드 전력망 (Backside PDN) is projected to reach $13.2B by 2028, growing at a CAGR of 33.3%.",
+            "score": 0.68
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Market Size Brief",
+            "url": "https://mock.local/market_size/5905",
+            "content": "백사이드 전력망 (Backside PDN) TAM expanded to $40.9B in 2024 with analyst consensus forecasting 22.4% CAGR through 2030.",
+            "score": 0.73
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Market Size Brief",
+            "url": "https://mock.local/market_size/5905",
+            "content": "Leading research houses value the 백사이드 전력망 (Backside PDN) segment at $37.4B, citing strong demand from AI/HPC workloads.",
+            "score": 0.86
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Investment Brief",
+            "url": "https://mock.local/investment/5905",
+            "content": "Tier-1 foundries committed over $65.1B in capex toward 백사이드 전력망 (Backside PDN) capacity expansion in 2024-2025.",
+            "score": 0.86
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Investment Brief",
+            "url": "https://mock.local/investment/5905",
+            "content": "Venture funding for 백사이드 전력망 (Backside PDN) startups crossed $38.6B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.87
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Investment Brief",
+            "url": "https://mock.local/investment/5905",
+            "content": "Consortium of corporate R&D groups pledged $23.9B for 백사이드 전력망 (Backside PDN) development as part of supply-chain de-risking.",
+            "score": 0.71
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Policy Brief",
+            "url": "https://mock.local/policy/5905",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 백사이드 전력망 (Backside PDN) fabrication with $31.5B allocated in 2025.",
+            "score": 0.61
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Policy Brief",
+            "url": "https://mock.local/policy/5905",
+            "content": "Korean K-Chips Act expands tax credits to 백사이드 전력망 (Backside PDN)-related equipment and process investments.",
+            "score": 0.61
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Policy Brief",
+            "url": "https://mock.local/policy/5905",
+            "content": "EU Chips Act designates 백사이드 전력망 (Backside PDN) as a strategic technology eligible for accelerated review.",
+            "score": 0.85
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Competitive Brief",
+            "url": "https://mock.local/competitive/5905",
+            "content": "TSMC, Samsung, and Intel each announced 백사이드 전력망 (Backside PDN) pilot lines, signaling an intensifying three-way race.",
+            "score": 0.76
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Competitive Brief",
+            "url": "https://mock.local/competitive/5905",
+            "content": "ASML's monopoly on key 백사이드 전력망 (Backside PDN) equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.78
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Competitive Brief",
+            "url": "https://mock.local/competitive/5905",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 백사이드 전력망 (Backside PDN) process equipment share.",
+            "score": 0.69
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Timeline Brief",
+            "url": "https://mock.local/timeline/5905",
+            "content": "Mass production of 백사이드 전력망 (Backside PDN)-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.6
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Timeline Brief",
+            "url": "https://mock.local/timeline/5905",
+            "content": "Industry roadmaps suggest 백사이드 전력망 (Backside PDN) commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.86
+          },
+          {
+            "title": "백사이드 전력망 (Backside PDN) — Timeline Brief",
+            "url": "https://mock.local/timeline/5905",
+            "content": "Analysts at SemiAnalysis project 백사이드 전력망 (Backside PDN) HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.82
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Intel",
+            "TSMC"
+          ],
+          "shared_technology_areas": [
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect",
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management"
+          ],
+          "source_companies": [
+            "Intel",
+            "TSMC"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Intel",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "Backside PDN",
+                "Tile-level Fabric",
+                "Embedded Bridge Interconnect"
+              ],
+              "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "TSMC",
+              "similarity": 0.85,
+              "edge_weight": 0.85,
+              "shared_technology_areas": [
+                "CoWoS-like Packaging",
+                "Local Silicon Bridge",
+                "Thermal Management"
+              ],
+              "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T02": {
+        "tech_name": "로컬 실리콘 브리지 패키징",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Market Size Brief",
+            "url": "https://mock.local/market_size/2103",
+            "content": "The global market for 로컬 실리콘 브리지 패키징 is projected to reach $98.8B by 2028, growing at a CAGR of 28.9%.",
+            "score": 0.64
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Market Size Brief",
+            "url": "https://mock.local/market_size/2103",
+            "content": "로컬 실리콘 브리지 패키징 TAM expanded to $11.2B in 2024 with analyst consensus forecasting 8.1% CAGR through 2030.",
+            "score": 0.84
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Market Size Brief",
+            "url": "https://mock.local/market_size/2103",
+            "content": "Leading research houses value the 로컬 실리콘 브리지 패키징 segment at $17.2B, citing strong demand from AI/HPC workloads.",
+            "score": 0.83
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Investment Brief",
+            "url": "https://mock.local/investment/2103",
+            "content": "Tier-1 foundries committed over $85.0B in capex toward 로컬 실리콘 브리지 패키징 capacity expansion in 2024-2025.",
+            "score": 0.87
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Investment Brief",
+            "url": "https://mock.local/investment/2103",
+            "content": "Venture funding for 로컬 실리콘 브리지 패키징 startups crossed $116.1B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.7
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Investment Brief",
+            "url": "https://mock.local/investment/2103",
+            "content": "Consortium of corporate R&D groups pledged $86.8B for 로컬 실리콘 브리지 패키징 development as part of supply-chain de-risking.",
+            "score": 0.79
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Policy Brief",
+            "url": "https://mock.local/policy/2103",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 로컬 실리콘 브리지 패키징 fabrication with $48.6B allocated in 2025.",
+            "score": 0.91
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Policy Brief",
+            "url": "https://mock.local/policy/2103",
+            "content": "Korean K-Chips Act expands tax credits to 로컬 실리콘 브리지 패키징-related equipment and process investments.",
+            "score": 0.85
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Policy Brief",
+            "url": "https://mock.local/policy/2103",
+            "content": "EU Chips Act designates 로컬 실리콘 브리지 패키징 as a strategic technology eligible for accelerated review.",
+            "score": 0.75
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Competitive Brief",
+            "url": "https://mock.local/competitive/2103",
+            "content": "TSMC, Samsung, and Intel each announced 로컬 실리콘 브리지 패키징 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.61
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Competitive Brief",
+            "url": "https://mock.local/competitive/2103",
+            "content": "ASML's monopoly on key 로컬 실리콘 브리지 패키징 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.61
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Competitive Brief",
+            "url": "https://mock.local/competitive/2103",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 로컬 실리콘 브리지 패키징 process equipment share.",
+            "score": 0.81
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Timeline Brief",
+            "url": "https://mock.local/timeline/2103",
+            "content": "Mass production of 로컬 실리콘 브리지 패키징-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.61
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Timeline Brief",
+            "url": "https://mock.local/timeline/2103",
+            "content": "Industry roadmaps suggest 로컬 실리콘 브리지 패키징 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.86
+          },
+          {
+            "title": "로컬 실리콘 브리지 패키징 — Timeline Brief",
+            "url": "https://mock.local/timeline/2103",
+            "content": "Analysts at SemiAnalysis project 로컬 실리콘 브리지 패키징 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.79
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Intel",
+            "TSMC"
+          ],
+          "shared_technology_areas": [
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect",
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management"
+          ],
+          "source_companies": [
+            "TSMC",
+            "Intel"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Intel",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "Backside PDN",
+                "Tile-level Fabric",
+                "Embedded Bridge Interconnect"
+              ],
+              "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "TSMC",
+              "similarity": 0.85,
+              "edge_weight": 0.85,
+              "shared_technology_areas": [
+                "CoWoS-like Packaging",
+                "Local Silicon Bridge",
+                "Thermal Management"
+              ],
+              "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T03": {
+        "tech_name": "하이브리드 본딩 3D 적층",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "하이브리드 본딩 3D 적층 — Market Size Brief",
+            "url": "https://mock.local/market_size/6950",
+            "content": "The global market for 하이브리드 본딩 3D 적층 is projected to reach $104.4B by 2028, growing at a CAGR of 22.8%.",
+            "score": 0.79
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Market Size Brief",
+            "url": "https://mock.local/market_size/6950",
+            "content": "하이브리드 본딩 3D 적층 TAM expanded to $13.1B in 2024 with analyst consensus forecasting 8.0% CAGR through 2030.",
+            "score": 0.88
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Market Size Brief",
+            "url": "https://mock.local/market_size/6950",
+            "content": "Leading research houses value the 하이브리드 본딩 3D 적층 segment at $55.0B, citing strong demand from AI/HPC workloads.",
+            "score": 0.67
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "하이브리드 본딩 3D 적층 — Investment Brief",
+            "url": "https://mock.local/investment/6950",
+            "content": "Tier-1 foundries committed over $56.6B in capex toward 하이브리드 본딩 3D 적층 capacity expansion in 2024-2025.",
+            "score": 0.94
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Investment Brief",
+            "url": "https://mock.local/investment/6950",
+            "content": "Venture funding for 하이브리드 본딩 3D 적층 startups crossed $76.1B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.76
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Investment Brief",
+            "url": "https://mock.local/investment/6950",
+            "content": "Consortium of corporate R&D groups pledged $59.9B for 하이브리드 본딩 3D 적층 development as part of supply-chain de-risking.",
+            "score": 0.9
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "하이브리드 본딩 3D 적층 — Policy Brief",
+            "url": "https://mock.local/policy/6950",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 하이브리드 본딩 3D 적층 fabrication with $23.8B allocated in 2025.",
+            "score": 0.79
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Policy Brief",
+            "url": "https://mock.local/policy/6950",
+            "content": "Korean K-Chips Act expands tax credits to 하이브리드 본딩 3D 적층-related equipment and process investments.",
+            "score": 0.95
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Policy Brief",
+            "url": "https://mock.local/policy/6950",
+            "content": "EU Chips Act designates 하이브리드 본딩 3D 적층 as a strategic technology eligible for accelerated review.",
+            "score": 0.71
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "하이브리드 본딩 3D 적층 — Competitive Brief",
+            "url": "https://mock.local/competitive/6950",
+            "content": "TSMC, Samsung, and Intel each announced 하이브리드 본딩 3D 적층 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.71
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Competitive Brief",
+            "url": "https://mock.local/competitive/6950",
+            "content": "ASML's monopoly on key 하이브리드 본딩 3D 적층 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.62
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Competitive Brief",
+            "url": "https://mock.local/competitive/6950",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 하이브리드 본딩 3D 적층 process equipment share.",
+            "score": 0.94
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "하이브리드 본딩 3D 적층 — Timeline Brief",
+            "url": "https://mock.local/timeline/6950",
+            "content": "Mass production of 하이브리드 본딩 3D 적층-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.75
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Timeline Brief",
+            "url": "https://mock.local/timeline/6950",
+            "content": "Industry roadmaps suggest 하이브리드 본딩 3D 적층 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.9
+          },
+          {
+            "title": "하이브리드 본딩 3D 적층 — Timeline Brief",
+            "url": "https://mock.local/timeline/6950",
+            "content": "Analysts at SemiAnalysis project 하이브리드 본딩 3D 적층 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.77
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "TSMC",
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "CoWoS-like Packaging",
+            "Local Silicon Bridge",
+            "Thermal Management",
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "source_companies": [
+            "Samsung Electronics",
+            "TSMC"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "TSMC",
+              "similarity": 0.85,
+              "edge_weight": 0.85,
+              "shared_technology_areas": [
+                "CoWoS-like Packaging",
+                "Local Silicon Bridge",
+                "Thermal Management"
+              ],
+              "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Samsung Electronics",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "Advanced Packaging",
+                "GAA Process",
+                "Hybrid Bonding"
+              ],
+              "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T04": {
+        "tech_name": "고해상도 EUV 리소그래피",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "고해상도 EUV 리소그래피 — Market Size Brief",
+            "url": "https://mock.local/market_size/1648",
+            "content": "The global market for 고해상도 EUV 리소그래피 is projected to reach $40.7B by 2028, growing at a CAGR of 25.1%.",
+            "score": 0.7
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Market Size Brief",
+            "url": "https://mock.local/market_size/1648",
+            "content": "고해상도 EUV 리소그래피 TAM expanded to $22.2B in 2024 with analyst consensus forecasting 15.5% CAGR through 2030.",
+            "score": 0.91
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Market Size Brief",
+            "url": "https://mock.local/market_size/1648",
+            "content": "Leading research houses value the 고해상도 EUV 리소그래피 segment at $19.1B, citing strong demand from AI/HPC workloads.",
+            "score": 0.88
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "고해상도 EUV 리소그래피 — Investment Brief",
+            "url": "https://mock.local/investment/1648",
+            "content": "Tier-1 foundries committed over $42.4B in capex toward 고해상도 EUV 리소그래피 capacity expansion in 2024-2025.",
+            "score": 0.9
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Investment Brief",
+            "url": "https://mock.local/investment/1648",
+            "content": "Venture funding for 고해상도 EUV 리소그래피 startups crossed $100.6B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.69
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Investment Brief",
+            "url": "https://mock.local/investment/1648",
+            "content": "Consortium of corporate R&D groups pledged $91.1B for 고해상도 EUV 리소그래피 development as part of supply-chain de-risking.",
+            "score": 0.73
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "고해상도 EUV 리소그래피 — Policy Brief",
+            "url": "https://mock.local/policy/1648",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 고해상도 EUV 리소그래피 fabrication with $41.4B allocated in 2025.",
+            "score": 0.93
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Policy Brief",
+            "url": "https://mock.local/policy/1648",
+            "content": "Korean K-Chips Act expands tax credits to 고해상도 EUV 리소그래피-related equipment and process investments.",
+            "score": 0.67
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Policy Brief",
+            "url": "https://mock.local/policy/1648",
+            "content": "EU Chips Act designates 고해상도 EUV 리소그래피 as a strategic technology eligible for accelerated review.",
+            "score": 0.62
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "고해상도 EUV 리소그래피 — Competitive Brief",
+            "url": "https://mock.local/competitive/1648",
+            "content": "TSMC, Samsung, and Intel each announced 고해상도 EUV 리소그래피 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.78
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Competitive Brief",
+            "url": "https://mock.local/competitive/1648",
+            "content": "ASML's monopoly on key 고해상도 EUV 리소그래피 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.8
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Competitive Brief",
+            "url": "https://mock.local/competitive/1648",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 고해상도 EUV 리소그래피 process equipment share.",
+            "score": 0.82
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "고해상도 EUV 리소그래피 — Timeline Brief",
+            "url": "https://mock.local/timeline/1648",
+            "content": "Mass production of 고해상도 EUV 리소그래피-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.88
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Timeline Brief",
+            "url": "https://mock.local/timeline/1648",
+            "content": "Industry roadmaps suggest 고해상도 EUV 리소그래피 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.68
+          },
+          {
+            "title": "고해상도 EUV 리소그래피 — Timeline Brief",
+            "url": "https://mock.local/timeline/1648",
+            "content": "Analysts at SemiAnalysis project 고해상도 EUV 리소그래피 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.85
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "source_companies": [
+            "Samsung Electronics"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Samsung Electronics",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "Advanced Packaging",
+                "GAA Process",
+                "Hybrid Bonding"
+              ],
+              "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T05": {
+        "tech_name": "이종 칩렛 텐서 스케줄링",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Market Size Brief",
+            "url": "https://mock.local/market_size/2119",
+            "content": "The global market for 이종 칩렛 텐서 스케줄링 is projected to reach $16.2B by 2028, growing at a CAGR of 14.5%.",
+            "score": 0.67
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Market Size Brief",
+            "url": "https://mock.local/market_size/2119",
+            "content": "이종 칩렛 텐서 스케줄링 TAM expanded to $18.1B in 2024 with analyst consensus forecasting 34.7% CAGR through 2030.",
+            "score": 0.87
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Market Size Brief",
+            "url": "https://mock.local/market_size/2119",
+            "content": "Leading research houses value the 이종 칩렛 텐서 스케줄링 segment at $87.2B, citing strong demand from AI/HPC workloads.",
+            "score": 0.84
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Investment Brief",
+            "url": "https://mock.local/investment/2119",
+            "content": "Tier-1 foundries committed over $18.5B in capex toward 이종 칩렛 텐서 스케줄링 capacity expansion in 2024-2025.",
+            "score": 0.95
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Investment Brief",
+            "url": "https://mock.local/investment/2119",
+            "content": "Venture funding for 이종 칩렛 텐서 스케줄링 startups crossed $67.5B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.79
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Investment Brief",
+            "url": "https://mock.local/investment/2119",
+            "content": "Consortium of corporate R&D groups pledged $6.0B for 이종 칩렛 텐서 스케줄링 development as part of supply-chain de-risking.",
+            "score": 0.75
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Policy Brief",
+            "url": "https://mock.local/policy/2119",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 이종 칩렛 텐서 스케줄링 fabrication with $79.7B allocated in 2025.",
+            "score": 0.91
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Policy Brief",
+            "url": "https://mock.local/policy/2119",
+            "content": "Korean K-Chips Act expands tax credits to 이종 칩렛 텐서 스케줄링-related equipment and process investments.",
+            "score": 0.62
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Policy Brief",
+            "url": "https://mock.local/policy/2119",
+            "content": "EU Chips Act designates 이종 칩렛 텐서 스케줄링 as a strategic technology eligible for accelerated review.",
+            "score": 0.87
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Competitive Brief",
+            "url": "https://mock.local/competitive/2119",
+            "content": "TSMC, Samsung, and Intel each announced 이종 칩렛 텐서 스케줄링 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.85
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Competitive Brief",
+            "url": "https://mock.local/competitive/2119",
+            "content": "ASML's monopoly on key 이종 칩렛 텐서 스케줄링 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.84
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Competitive Brief",
+            "url": "https://mock.local/competitive/2119",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 이종 칩렛 텐서 스케줄링 process equipment share.",
+            "score": 0.78
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Timeline Brief",
+            "url": "https://mock.local/timeline/2119",
+            "content": "Mass production of 이종 칩렛 텐서 스케줄링-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.8
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Timeline Brief",
+            "url": "https://mock.local/timeline/2119",
+            "content": "Industry roadmaps suggest 이종 칩렛 텐서 스케줄링 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.9
+          },
+          {
+            "title": "이종 칩렛 텐서 스케줄링 — Timeline Brief",
+            "url": "https://mock.local/timeline/2119",
+            "content": "Analysts at SemiAnalysis project 이종 칩렛 텐서 스케줄링 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.62
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "AMD",
+            "Intel"
+          ],
+          "shared_technology_areas": [
+            "Chiplet Architecture",
+            "Heterogeneous Accelerator",
+            "High-Bandwidth Interconnect",
+            "Backside PDN",
+            "Tile-level Fabric",
+            "Embedded Bridge Interconnect"
+          ],
+          "source_companies": [
+            "AMD",
+            "Intel"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "AMD",
+              "similarity": 0.92,
+              "edge_weight": 0.92,
+              "shared_technology_areas": [
+                "Chiplet Architecture",
+                "Heterogeneous Accelerator",
+                "High-Bandwidth Interconnect"
+              ],
+              "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+              "evidence_level": "direct"
+            },
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Intel",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "shared_technology_areas": [
+                "Backside PDN",
+                "Tile-level Fabric",
+                "Embedded Bridge Interconnect"
+              ],
+              "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T06": {
+        "tech_name": "공포장 광 인터페이스",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "공포장 광 인터페이스 — Market Size Brief",
+            "url": "https://mock.local/market_size/6134",
+            "content": "The global market for 공포장 광 인터페이스 is projected to reach $21.1B by 2028, growing at a CAGR of 15.1%.",
+            "score": 0.61
+          },
+          {
+            "title": "공포장 광 인터페이스 — Market Size Brief",
+            "url": "https://mock.local/market_size/6134",
+            "content": "공포장 광 인터페이스 TAM expanded to $87.5B in 2024 with analyst consensus forecasting 33.3% CAGR through 2030.",
+            "score": 0.81
+          },
+          {
+            "title": "공포장 광 인터페이스 — Market Size Brief",
+            "url": "https://mock.local/market_size/6134",
+            "content": "Leading research houses value the 공포장 광 인터페이스 segment at $90.3B, citing strong demand from AI/HPC workloads.",
+            "score": 0.83
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "공포장 광 인터페이스 — Investment Brief",
+            "url": "https://mock.local/investment/6134",
+            "content": "Tier-1 foundries committed over $25.2B in capex toward 공포장 광 인터페이스 capacity expansion in 2024-2025.",
+            "score": 0.77
+          },
+          {
+            "title": "공포장 광 인터페이스 — Investment Brief",
+            "url": "https://mock.local/investment/6134",
+            "content": "Venture funding for 공포장 광 인터페이스 startups crossed $7.6B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.64
+          },
+          {
+            "title": "공포장 광 인터페이스 — Investment Brief",
+            "url": "https://mock.local/investment/6134",
+            "content": "Consortium of corporate R&D groups pledged $67.6B for 공포장 광 인터페이스 development as part of supply-chain de-risking.",
+            "score": 0.67
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "공포장 광 인터페이스 — Policy Brief",
+            "url": "https://mock.local/policy/6134",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 공포장 광 인터페이스 fabrication with $46.6B allocated in 2025.",
+            "score": 0.63
+          },
+          {
+            "title": "공포장 광 인터페이스 — Policy Brief",
+            "url": "https://mock.local/policy/6134",
+            "content": "Korean K-Chips Act expands tax credits to 공포장 광 인터페이스-related equipment and process investments.",
+            "score": 0.83
+          },
+          {
+            "title": "공포장 광 인터페이스 — Policy Brief",
+            "url": "https://mock.local/policy/6134",
+            "content": "EU Chips Act designates 공포장 광 인터페이스 as a strategic technology eligible for accelerated review.",
+            "score": 0.75
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "공포장 광 인터페이스 — Competitive Brief",
+            "url": "https://mock.local/competitive/6134",
+            "content": "TSMC, Samsung, and Intel each announced 공포장 광 인터페이스 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.84
+          },
+          {
+            "title": "공포장 광 인터페이스 — Competitive Brief",
+            "url": "https://mock.local/competitive/6134",
+            "content": "ASML's monopoly on key 공포장 광 인터페이스 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.94
+          },
+          {
+            "title": "공포장 광 인터페이스 — Competitive Brief",
+            "url": "https://mock.local/competitive/6134",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 공포장 광 인터페이스 process equipment share.",
+            "score": 0.82
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "공포장 광 인터페이스 — Timeline Brief",
+            "url": "https://mock.local/timeline/6134",
+            "content": "Mass production of 공포장 광 인터페이스-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.67
+          },
+          {
+            "title": "공포장 광 인터페이스 — Timeline Brief",
+            "url": "https://mock.local/timeline/6134",
+            "content": "Industry roadmaps suggest 공포장 광 인터페이스 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.79
+          },
+          {
+            "title": "공포장 광 인터페이스 — Timeline Brief",
+            "url": "https://mock.local/timeline/6134",
+            "content": "Analysts at SemiAnalysis project 공포장 광 인터페이스 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.79
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Broadcom"
+          ],
+          "shared_technology_areas": [
+            "Scale-out Fabric",
+            "Co-packaged Optics",
+            "High-speed SerDes"
+          ],
+          "source_companies": [
+            "Broadcom"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Broadcom",
+              "similarity": 0.78,
+              "edge_weight": 0.78,
+              "shared_technology_areas": [
+                "Scale-out Fabric",
+                "Co-packaged Optics",
+                "High-speed SerDes"
+              ],
+              "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+              "evidence_level": "direct"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T07": {
+        "tech_name": "면 선택적 유전체 증착",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "면 선택적 유전체 증착 — Market Size Brief",
+            "url": "https://mock.local/market_size/931",
+            "content": "The global market for 면 선택적 유전체 증착 is projected to reach $119.4B by 2028, growing at a CAGR of 25.6%.",
+            "score": 0.71
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Market Size Brief",
+            "url": "https://mock.local/market_size/931",
+            "content": "면 선택적 유전체 증착 TAM expanded to $51.2B in 2024 with analyst consensus forecasting 14.3% CAGR through 2030.",
+            "score": 0.88
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Market Size Brief",
+            "url": "https://mock.local/market_size/931",
+            "content": "Leading research houses value the 면 선택적 유전체 증착 segment at $37.3B, citing strong demand from AI/HPC workloads.",
+            "score": 0.9
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "면 선택적 유전체 증착 — Investment Brief",
+            "url": "https://mock.local/investment/931",
+            "content": "Tier-1 foundries committed over $84.1B in capex toward 면 선택적 유전체 증착 capacity expansion in 2024-2025.",
+            "score": 0.94
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Investment Brief",
+            "url": "https://mock.local/investment/931",
+            "content": "Venture funding for 면 선택적 유전체 증착 startups crossed $20.6B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.84
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Investment Brief",
+            "url": "https://mock.local/investment/931",
+            "content": "Consortium of corporate R&D groups pledged $61.8B for 면 선택적 유전체 증착 development as part of supply-chain de-risking.",
+            "score": 0.65
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "면 선택적 유전체 증착 — Policy Brief",
+            "url": "https://mock.local/policy/931",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 면 선택적 유전체 증착 fabrication with $67.2B allocated in 2025.",
+            "score": 0.89
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Policy Brief",
+            "url": "https://mock.local/policy/931",
+            "content": "Korean K-Chips Act expands tax credits to 면 선택적 유전체 증착-related equipment and process investments.",
+            "score": 0.75
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Policy Brief",
+            "url": "https://mock.local/policy/931",
+            "content": "EU Chips Act designates 면 선택적 유전체 증착 as a strategic technology eligible for accelerated review.",
+            "score": 0.66
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "면 선택적 유전체 증착 — Competitive Brief",
+            "url": "https://mock.local/competitive/931",
+            "content": "TSMC, Samsung, and Intel each announced 면 선택적 유전체 증착 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.7
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Competitive Brief",
+            "url": "https://mock.local/competitive/931",
+            "content": "ASML's monopoly on key 면 선택적 유전체 증착 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.74
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Competitive Brief",
+            "url": "https://mock.local/competitive/931",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 면 선택적 유전체 증착 process equipment share.",
+            "score": 0.77
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "면 선택적 유전체 증착 — Timeline Brief",
+            "url": "https://mock.local/timeline/931",
+            "content": "Mass production of 면 선택적 유전체 증착-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.9
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Timeline Brief",
+            "url": "https://mock.local/timeline/931",
+            "content": "Industry roadmaps suggest 면 선택적 유전체 증착 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.68
+          },
+          {
+            "title": "면 선택적 유전체 증착 — Timeline Brief",
+            "url": "https://mock.local/timeline/931",
+            "content": "Analysts at SemiAnalysis project 면 선택적 유전체 증착 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.94
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": [
+            "Advanced Packaging",
+            "GAA Process",
+            "Hybrid Bonding"
+          ],
+          "source_companies": [
+            "Samsung Electronics"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Samsung Electronics",
+              "similarity": 0.72,
+              "edge_weight": 0.72,
+              "shared_technology_areas": [
+                "Advanced Packaging",
+                "GAA Process",
+                "Hybrid Bonding"
+              ],
+              "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      },
+      "T08": {
+        "tech_name": "메모리 인지 에지 AI 실행",
+        "domain": "AI Infrastructure / Semiconductor / GPU",
+        "market_size_data": [
+          {
+            "title": "메모리 인지 에지 AI 실행 — Market Size Brief",
+            "url": "https://mock.local/market_size/4393",
+            "content": "The global market for 메모리 인지 에지 AI 실행 is projected to reach $85.6B by 2028, growing at a CAGR of 32.5%.",
+            "score": 0.64
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Market Size Brief",
+            "url": "https://mock.local/market_size/4393",
+            "content": "메모리 인지 에지 AI 실행 TAM expanded to $86.9B in 2024 with analyst consensus forecasting 15.6% CAGR through 2030.",
+            "score": 0.87
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Market Size Brief",
+            "url": "https://mock.local/market_size/4393",
+            "content": "Leading research houses value the 메모리 인지 에지 AI 실행 segment at $28.8B, citing strong demand from AI/HPC workloads.",
+            "score": 0.95
+          }
+        ],
+        "investment_data": [
+          {
+            "title": "메모리 인지 에지 AI 실행 — Investment Brief",
+            "url": "https://mock.local/investment/4393",
+            "content": "Tier-1 foundries committed over $36.4B in capex toward 메모리 인지 에지 AI 실행 capacity expansion in 2024-2025.",
+            "score": 0.9
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Investment Brief",
+            "url": "https://mock.local/investment/4393",
+            "content": "Venture funding for 메모리 인지 에지 AI 실행 startups crossed $75.6B in the trailing twelve months, led by hyperscaler backers.",
+            "score": 0.85
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Investment Brief",
+            "url": "https://mock.local/investment/4393",
+            "content": "Consortium of corporate R&D groups pledged $12.4B for 메모리 인지 에지 AI 실행 development as part of supply-chain de-risking.",
+            "score": 0.63
+          }
+        ],
+        "policy_data": [
+          {
+            "title": "메모리 인지 에지 AI 실행 — Policy Brief",
+            "url": "https://mock.local/policy/4393",
+            "content": "The US CHIPS Act earmarks subsidies for domestic 메모리 인지 에지 AI 실행 fabrication with $88.3B allocated in 2025.",
+            "score": 0.76
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Policy Brief",
+            "url": "https://mock.local/policy/4393",
+            "content": "Korean K-Chips Act expands tax credits to 메모리 인지 에지 AI 실행-related equipment and process investments.",
+            "score": 0.92
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Policy Brief",
+            "url": "https://mock.local/policy/4393",
+            "content": "EU Chips Act designates 메모리 인지 에지 AI 실행 as a strategic technology eligible for accelerated review.",
+            "score": 0.93
+          }
+        ],
+        "competitive_data": [
+          {
+            "title": "메모리 인지 에지 AI 실행 — Competitive Brief",
+            "url": "https://mock.local/competitive/4393",
+            "content": "TSMC, Samsung, and Intel each announced 메모리 인지 에지 AI 실행 pilot lines, signaling an intensifying three-way race.",
+            "score": 0.61
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Competitive Brief",
+            "url": "https://mock.local/competitive/4393",
+            "content": "ASML's monopoly on key 메모리 인지 에지 AI 실행 equipment continues to gate industry-wide ramp schedules.",
+            "score": 0.88
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Competitive Brief",
+            "url": "https://mock.local/competitive/4393",
+            "content": "Specialty players (Applied Materials, TEL, Lam) dominate upstream 메모리 인지 에지 AI 실행 process equipment share.",
+            "score": 0.94
+          }
+        ],
+        "timeline_data": [
+          {
+            "title": "메모리 인지 에지 AI 실행 — Timeline Brief",
+            "url": "https://mock.local/timeline/4393",
+            "content": "Mass production of 메모리 인지 에지 AI 실행-enabled nodes is expected to begin ramp in 2026, reaching volume by 2027.",
+            "score": 0.84
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Timeline Brief",
+            "url": "https://mock.local/timeline/4393",
+            "content": "Industry roadmaps suggest 메모리 인지 에지 AI 실행 commercialization window opens Q2 2026 with broader adoption by 2028.",
+            "score": 0.82
+          },
+          {
+            "title": "메모리 인지 에지 AI 실행 — Timeline Brief",
+            "url": "https://mock.local/timeline/4393",
+            "content": "Analysts at SemiAnalysis project 메모리 인지 에지 AI 실행 HVM (high-volume manufacturing) readiness in 2027-2028.",
+            "score": 0.8
+          }
+        ],
+        "_mock": true,
+        "actor_context": {
+          "center_actor": "NVIDIA",
+          "related_actors": [
+            "Qualcomm"
+          ],
+          "shared_technology_areas": [
+            "Memory-aware Execution",
+            "Edge AI Acceleration",
+            "Shared Memory Hierarchy"
+          ],
+          "source_companies": [
+            "Qualcomm"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "NVIDIA",
+              "related_actor": "Qualcomm",
+              "similarity": 0.65,
+              "edge_weight": 0.65,
+              "shared_technology_areas": [
+                "Memory-aware Execution",
+                "Edge AI Acceleration",
+                "Shared Memory Hierarchy"
+              ],
+              "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+              "evidence_level": "proxy"
+            }
+          ]
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": []
+      }
+    }
+  },
+  "llm_request": {
+    "system_prompt": "You are an Industry Market Research Agent, a specialized sub-agent of the Technology Analysis system.\nYour role is to analyze market intelligence data and extract structured signals about market attractiveness, market sizing, and timing for each candidate technology.\nYou do NOT make patent or technical maturity assessments.\n\nThe Patent Agent provides:\n- candidate technologies inferred from company patent portfolios\n- `actor_similarity_map`, where the user's company is connected to related companies by patent-theme similarity\n\nUse this map as market-research guidance:\n- Related actors with high similarity indicate relevant competitors, partners, customers, or ecosystem comparables.\n- Shared technology areas indicate market/application angles to investigate.\n- Do not alter tech_id values. The map guides search interpretation, not patent scoring.\n\n---\n[Research Process]\n\nFor each candidate technology, follow this process:\n1. Market report discovery: identify credible market reports, analyst notes, industry news, or company/sector sources.\n2. TAM/SAM/SOM estimation: infer a reasonable total, serviceable, and obtainable market range from evidence. If exact values are unavailable, provide an evidence-backed estimate.\n3. CAGR and growth outlook: collect CAGR, forecast horizon, growth drivers, and adoption timing.\n4. Competitive/application interpretation: use actor_similarity_map context to identify relevant market actors and adoption channels.\n5. Scoring: compute market_score only after the above evidence is considered.\n\n---\n[Core Responsibilities]\n\nFor each technology in the input list, determine:\n- tech_id (MUST match the input list exactly)\n- name\n- market_score (0–100, calculated per framework below)\n- market_signals (sub-metric breakdown)\n- tam_sam_som\n- cagr_forecast\n- key_market_reports\n- expected_market_boom_quarter (\"YYYY QX\" format)\n- competitive_landscape (standard label)\n- data_quality (\"real\" if grounded in provided data, \"estimated\" if inferred)\n- rationale (2–3 sentences referencing TAM, timing, competitive context)\n\n---\n[Market Scoring Framework]\n\nmarket_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)\n             + (policy_and_investment_tailwind × 0.20) + (competitive_moat_potential × 0.15)\n\n1. tam_growth_rate (0–100, weight 35%)\n   - 80–100: Market CAGR > 20%, TAM > $10B by target year\n   - 50–79:  CAGR 10–20% or TAM $1B–$10B\n   - 0–49:   CAGR < 10% or TAM < $1B\n\n2. time_to_market_urgency (0–100, weight 30%)\n   - 80–100: Market window opens within 2–3 years; first-mover advantage critical\n   - 50–79:  Window opens in 3–5 years; moderate urgency\n   - 0–49:   Window > 5 years or already saturated\n\n3. policy_and_investment_tailwind (0–100, weight 20%)\n   - 80–100: Active government subsidies + major VC/corporate investment surge\n   - 50–79:  Moderate policy support or investment interest\n   - 0–49:   No notable support or declining interest\n\n4. competitive_moat_potential (0–100, weight 15%)\n   - 80–100: High barrier, few players, proprietary lock-in possible\n   - 50–79:  Moderate competition, some differentiation room\n   - 0–49:   Commoditized or saturated, low margin potential\n\n---\n[Competitive Landscape Labels] — use exactly one:\n\"Oligopoly – 1~2 dominant players\"\n\"Concentrated – 3~5 key players\"\n\"Fragmented – many players, low differentiation\"\n\"Nascent – no clear leader yet\"\n\"Commoditized – price-driven competition\"\n\n---\n[Market Boom Quarter Estimation]\n- Base on: TAM inflection point + production node transition announcements + policy timelines\n- Format: \"YYYY QX\" (e.g., \"2028 Q1\")\n- Default if data insufficient: 3 years from reference year, Q1\n\n[Horizon 인식 — 권장 (강제 X, 가이드)]\n사용자가 명시한 `reference_year` 는 로드맵 horizon 의 **목표 종료 연도** 이다.\nboom_quarter 는 시장 데이터 그대로 정직하게 결정하되, 다음을 고려하라:\n\n- 후보 기술 전체적으로 **boom_quarter 분포가 horizon 에 stagger** 되도록 신경 쓸 것\n  (예: reference_year=2030 → 일부는 2027, 일부는 2028, 일부는 2029-2030 으로 분포)\n- 모든 후보의 boom 이 한 시점에 몰리면 로드맵의 일부 구간이 비어 horizon 활용도 ↓\n- 시장 데이터가 명백히 한쪽 시점을 가리키면 정직한 분석 우선 — 인위적 분산 금지\n- **정직한 분석 ≫ 분포 균형** (둘이 충돌할 때만 정직성 선호, 비슷하면 분포 권장)\n\n---\n[Language Rules — CRITICAL]\n- `name` 은 입력 리스트의 한국어 기술명을 그대로 사용하거나 동일 의미의 한국어로 유지.\n- `rationale` 은 반드시 **한국어 2–3문장**.\n- `competitive_landscape` 라벨은 위 영문 목록 그대로 유지.\n\n---\n[CRITICAL] tech_id values MUST exactly match input. Output ONLY valid JSON.\n\nOutput format:\n{\n  \"market_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"...\",\n      \"market_score\": 84.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 90,\n        \"time_to_market_urgency\": 85,\n        \"policy_and_investment_tailwind\": 78,\n        \"competitive_moat_potential\": 72\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 50.0,\n        \"sam_usd_b\": 15.0,\n        \"som_usd_b\": 2.0,\n        \"basis\": \"...\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 18.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"...\"\n      },\n      \"key_market_reports\": [\n        {\"title\": \"...\", \"url\": \"...\", \"use\": \"TAM/CAGR/competition evidence\"}\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\"...\"],\n        \"shared_technology_areas\": [\"...\"]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q1\",\n      \"competitive_landscape\": \"Oligopoly – 1~2 dominant players\",\n      \"data_quality\": \"real\",\n      \"rationale\": \"...\"\n    }\n  ]\n}",
+    "user_prompt": "\n도메인: AI Infrastructure / Semiconductor / GPU\n분석 기준 연도: 2030\n\n분석 대상 기술 목록 (tech_id 변경 불가):\n[\n  {\n    \"tech_id\": \"T01\",\n    \"name\": \"백사이드 전력망 (Backside PDN)\",\n    \"category\": \"Process\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Intel\",\n      \"TSMC\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Intel\",\n        \"title\": \"Backside power delivery for high-current accelerator logic\",\n        \"date\": \"2025-01-07\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"TSMC\",\n        \"title\": \"Thermal management structure for high-power AI accelerator package\",\n        \"date\": \"2025-04-01\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T02\",\n    \"name\": \"로컬 실리콘 브리지 패키징\",\n    \"category\": \"Packaging\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"TSMC\",\n      \"Intel\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"TSMC\",\n        \"title\": \"Local silicon bridge package for high-bandwidth accelerator modules\",\n        \"date\": \"2024-09-24\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Intel\",\n        \"title\": \"Embedded bridge interconnect for heterogeneous accelerator package\",\n        \"date\": \"2024-11-12\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T03\",\n    \"name\": \"하이브리드 본딩 3D 적층\",\n    \"category\": \"Packaging\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Samsung Electronics\",\n      \"TSMC\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Samsung Electronics\",\n        \"title\": \"Hybrid bonding for 3D IC wafer stacking\",\n        \"date\": \"2024-09-11\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"TSMC\",\n        \"title\": \"Local silicon bridge package for high-bandwidth accelerator modules\",\n        \"date\": \"2024-09-24\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T04\",\n    \"name\": \"고해상도 EUV 리소그래피\",\n    \"category\": \"Equipment\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Samsung Electronics\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Samsung Electronics\",\n        \"title\": \"High-NA EUV scanner optics assembly\",\n        \"date\": \"2024-11-22\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Samsung Electronics\",\n        \"title\": \"Atomic layer deposition reactor for sub-3nm nodes\",\n        \"date\": \"2024-11-03\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T05\",\n    \"name\": \"이종 칩렛 텐서 스케줄링\",\n    \"category\": \"Architecture\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"AMD\",\n      \"Intel\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"AMD\",\n        \"title\": \"AI tensor execution scheduling across heterogeneous accelerator chiplets\",\n        \"date\": \"2025-06-24\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Intel\",\n        \"title\": \"Tile-level accelerator fabric for AI training processors\",\n        \"date\": \"2024-05-28\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T06\",\n    \"name\": \"공포장 광 인터페이스\",\n    \"category\": \"Packaging\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Broadcom\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Broadcom\",\n        \"title\": \"Co-packaged optical interface for accelerator clusters\",\n        \"date\": \"2024-08-13\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Broadcom\",\n        \"title\": \"High-speed SerDes link for accelerator scale-out fabrics\",\n        \"date\": \"2025-05-06\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T07\",\n    \"name\": \"면 선택적 유전체 증착\",\n    \"category\": \"Material\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Samsung Electronics\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Samsung Electronics\",\n        \"title\": \"Area-selective deposition of dielectrics\",\n        \"date\": \"2024-05-09\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Samsung Electronics\",\n        \"title\": \"Low-k porous dielectric for advanced nodes\",\n        \"date\": \"2024-04-26\",\n        \"cited_by\": 0\n      }\n    ]\n  },\n  {\n    \"tech_id\": \"T08\",\n    \"name\": \"메모리 인지 에지 AI 실행\",\n    \"category\": \"Architecture\",\n    \"roadmapping_signals\": {},\n    \"source_companies\": [\n      \"Qualcomm\"\n    ],\n    \"evidence_patents\": [\n      {\n        \"company\": \"Qualcomm\",\n        \"title\": \"Memory-aware model execution on edge AI accelerators\",\n        \"date\": \"2025-02-18\",\n        \"cited_by\": 0\n      },\n      {\n        \"company\": \"Qualcomm\",\n        \"title\": \"Low-power neural processing accelerator with shared memory hierarchy\",\n        \"date\": \"2024-07-30\",\n        \"cited_by\": 0\n      }\n    ]\n  }\n]\n\n아래 patent_maps 는 Patent Agent가 관련 기업 특허 포트폴리오 기반으로 생성한 산출물입니다.\n현재 map은 actor_similarity_map 중심입니다. 각 edge의 related_actor, similarity, shared_technology_areas를 시장 조사 범위/경쟁 구도/파트너 생태계 해석 근거로 사용하세요.\n\n[Patent Maps]\n{\n  \"actor_similarity_map\": [\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"AMD\",\n      \"similarity\": 0.92,\n      \"edge_weight\": 0.92,\n      \"shared_technology_areas\": [\n        \"Chiplet Architecture\",\n        \"Heterogeneous Accelerator\",\n        \"High-Bandwidth Interconnect\"\n      ],\n      \"basis\": \"양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"Intel\",\n      \"similarity\": 0.88,\n      \"edge_weight\": 0.88,\n      \"shared_technology_areas\": [\n        \"Backside PDN\",\n        \"Tile-level Fabric\",\n        \"Embedded Bridge Interconnect\"\n      ],\n      \"basis\": \"Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"TSMC\",\n      \"similarity\": 0.85,\n      \"edge_weight\": 0.85,\n      \"shared_technology_areas\": [\n        \"CoWoS-like Packaging\",\n        \"Local Silicon Bridge\",\n        \"Thermal Management\"\n      ],\n      \"basis\": \"TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"Broadcom\",\n      \"similarity\": 0.78,\n      \"edge_weight\": 0.78,\n      \"shared_technology_areas\": [\n        \"Scale-out Fabric\",\n        \"Co-packaged Optics\",\n        \"High-speed SerDes\"\n      ],\n      \"basis\": \"Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.\",\n      \"evidence_level\": \"direct\"\n    },\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"Samsung Electronics\",\n      \"similarity\": 0.72,\n      \"edge_weight\": 0.72,\n      \"shared_technology_areas\": [\n        \"Advanced Packaging\",\n        \"GAA Process\",\n        \"Hybrid Bonding\"\n      ],\n      \"basis\": \"삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.\",\n      \"evidence_level\": \"proxy\"\n    },\n    {\n      \"center_actor\": \"NVIDIA\",\n      \"related_actor\": \"Qualcomm\",\n      \"similarity\": 0.65,\n      \"edge_weight\": 0.65,\n      \"shared_technology_areas\": [\n        \"Memory-aware Execution\",\n        \"Edge AI Acceleration\",\n        \"Shared Memory Hierarchy\"\n      ],\n      \"basis\": \"Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.\",\n      \"evidence_level\": \"proxy\"\n    }\n  ]\n}\n\n\n아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.\n수집 프로세스는 시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, actor_similarity_map 기반 경쟁/협력 구도 탐색을 포함합니다.\n이 데이터를 기반으로 각 기술의 시장 매력도와 시장 규모/성장 전망을 분석해주세요.\n\n[수집된 시장 데이터]\n{\n  \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n  \"research_process\": [\n    \"market_report_discovery\",\n    \"tam_sam_som_estimation\",\n    \"cagr_growth_outlook_collection\",\n    \"actor_similarity_map_driven_competitive_context\"\n  ],\n  \"actor_similarity_context\": {\n    \"center_actor\": \"NVIDIA\",\n    \"related_actors\": [\n      \"AMD\",\n      \"Intel\",\n      \"TSMC\",\n      \"Broadcom\",\n      \"Samsung Electronics\",\n      \"Qualcomm\"\n    ],\n    \"shared_technology_areas\": [\n      \"Chiplet Architecture\",\n      \"Heterogeneous Accelerator\",\n      \"High-Bandwidth Interconnect\",\n      \"Backside PDN\",\n      \"Tile-level Fabric\",\n      \"Embedded Bridge Interconnect\",\n      \"CoWoS-like Packaging\",\n      \"Local Silicon Bridge\",\n      \"Thermal Management\",\n      \"Scale-out Fabric\",\n      \"Co-packaged Optics\",\n      \"High-speed SerDes\",\n      \"Advanced Packaging\",\n      \"GAA Process\",\n      \"Hybrid Bonding\",\n      \"Memory-aware Execution\",\n      \"Edge AI Acceleration\",\n      \"Shared Memory Hierarchy\"\n    ],\n    \"top_edges\": [\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"AMD\",\n        \"similarity\": 0.92,\n        \"edge_weight\": 0.92,\n        \"shared_technology_areas\": [\n          \"Chiplet Architecture\",\n          \"Heterogeneous Accelerator\",\n          \"High-Bandwidth Interconnect\"\n        ],\n        \"basis\": \"양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"Intel\",\n        \"similarity\": 0.88,\n        \"edge_weight\": 0.88,\n        \"shared_technology_areas\": [\n          \"Backside PDN\",\n          \"Tile-level Fabric\",\n          \"Embedded Bridge Interconnect\"\n        ],\n        \"basis\": \"Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"TSMC\",\n        \"similarity\": 0.85,\n        \"edge_weight\": 0.85,\n        \"shared_technology_areas\": [\n          \"CoWoS-like Packaging\",\n          \"Local Silicon Bridge\",\n          \"Thermal Management\"\n        ],\n        \"basis\": \"TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"Broadcom\",\n        \"similarity\": 0.78,\n        \"edge_weight\": 0.78,\n        \"shared_technology_areas\": [\n          \"Scale-out Fabric\",\n          \"Co-packaged Optics\",\n          \"High-speed SerDes\"\n        ],\n        \"basis\": \"Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.\",\n        \"evidence_level\": \"direct\"\n      },\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"Samsung Electronics\",\n        \"similarity\": 0.72,\n        \"edge_weight\": 0.72,\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ],\n        \"basis\": \"삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.\",\n        \"evidence_level\": \"proxy\"\n      },\n      {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actor\": \"Qualcomm\",\n        \"similarity\": 0.65,\n        \"edge_weight\": 0.65,\n        \"shared_technology_areas\": [\n          \"Memory-aware Execution\",\n          \"Edge AI Acceleration\",\n          \"Shared Memory Hierarchy\"\n        ],\n        \"basis\": \"Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.\",\n        \"evidence_level\": \"proxy\"\n      }\n    ]\n  },\n  \"technologies\": {\n    \"T01\": {\n      \"tech_name\": \"백사이드 전력망 (Backside PDN)\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Intel\",\n          \"TSMC\"\n        ],\n        \"shared_technology_areas\": [\n          \"Backside PDN\",\n          \"Tile-level Fabric\",\n          \"Embedded Bridge Interconnect\",\n          \"CoWoS-like Packaging\"\n        ],\n        \"source_companies\": [\n          \"Intel\",\n          \"TSMC\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"백사이드 전력망 (Backside PDN) — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/5905\",\n          \"score\": 0.76\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T02\": {\n      \"tech_name\": \"로컬 실리콘 브리지 패키징\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Intel\",\n          \"TSMC\"\n        ],\n        \"shared_technology_areas\": [\n          \"Backside PDN\",\n          \"Tile-level Fabric\",\n          \"Embedded Bridge Interconnect\",\n          \"CoWoS-like Packaging\"\n        ],\n        \"source_companies\": [\n          \"TSMC\",\n          \"Intel\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"로컬 실리콘 브리지 패키징 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/2103\",\n          \"score\": 0.61\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T03\": {\n      \"tech_name\": \"하이브리드 본딩 3D 적층\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"TSMC\",\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"CoWoS-like Packaging\",\n          \"Local Silicon Bridge\",\n          \"Thermal Management\",\n          \"Advanced Packaging\"\n        ],\n        \"source_companies\": [\n          \"Samsung Electronics\",\n          \"TSMC\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"하이브리드 본딩 3D 적층 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/6950\",\n          \"score\": 0.71\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T04\": {\n      \"tech_name\": \"고해상도 EUV 리소그래피\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ],\n        \"source_companies\": [\n          \"Samsung Electronics\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"고해상도 EUV 리소그래피 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/1648\",\n          \"score\": 0.78\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T05\": {\n      \"tech_name\": \"이종 칩렛 텐서 스케줄링\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"AMD\",\n          \"Intel\"\n        ],\n        \"shared_technology_areas\": [\n          \"Chiplet Architecture\",\n          \"Heterogeneous Accelerator\",\n          \"High-Bandwidth Interconnect\",\n          \"Backside PDN\"\n        ],\n        \"source_companies\": [\n          \"AMD\",\n          \"Intel\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"이종 칩렛 텐서 스케줄링 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/2119\",\n          \"score\": 0.85\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T06\": {\n      \"tech_name\": \"공포장 광 인터페이스\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Broadcom\"\n        ],\n        \"shared_technology_areas\": [\n          \"Scale-out Fabric\",\n          \"Co-packaged Optics\",\n          \"High-speed SerDes\"\n        ],\n        \"source_companies\": [\n          \"Broadcom\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"공포장 광 인터페이스 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/6134\",\n          \"score\": 0.84\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T07\": {\n      \"tech_name\": \"면 선택적 유전체 증착\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ],\n        \"source_companies\": [\n          \"Samsung Electronics\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"면 선택적 유전체 증착 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/931\",\n          \"score\": 0.7\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    },\n    \"T08\": {\n      \"tech_name\": \"메모리 인지 에지 AI 실행\",\n      \"domain\": \"AI Infrastructure / Semiconductor / GPU\",\n      \"actor_context\": {\n        \"center_actor\": \"NVIDIA\",\n        \"related_actors\": [\n          \"Qualcomm\"\n        ],\n        \"shared_technology_areas\": [\n          \"Memory-aware Execution\",\n          \"Edge AI Acceleration\",\n          \"Shared Memory Hierarchy\"\n        ],\n        \"source_companies\": [\n          \"Qualcomm\"\n        ]\n      },\n      \"market_reports\": [],\n      \"tam_sam_som_data\": [],\n      \"cagr_forecast_data\": [],\n      \"competitive_data\": [\n        {\n          \"title\": \"메모리 인지 에지 AI 실행 — Competitive Brief\",\n          \"url\": \"https://mock.local/competitive/4393\",\n          \"score\": 0.61\n        }\n      ],\n      \"_mock\": true,\n      \"error\": null\n    }\n  }\n}\n\n위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.\n모든 tech_id는 반드시 입력 목록의 값과 동일해야 합니다.\n"
+  },
+  "llm_response": {
+    "raw_content": "{\n  \"market_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"백사이드 전력망 (Backside PDN)\",\n      \"market_score\": 88.2,\n      \"market_signals\": {\n        \"tam_growth_rate\": 92,\n        \"time_to_market_urgency\": 88,\n        \"policy_and_investment_tailwind\": 85,\n        \"competitive_moat_potential\": 80\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 12.5,\n        \"sam_usd_b\": 4.8,\n        \"som_usd_b\": 1.2,\n        \"basis\": \"고성능 컴퓨팅 (HPC) 및 AI 가속기용 전력 전달 네트워크 (PDN) 시장으로, 2030 년까지 100 억 달러 이상으로 추정되며, Intel 과 TSMC 의 2nm 이하 노드 도입이 핵심 동인.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 24.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"AI 칩의 전력 밀도 증가로 인한 백사이드 전력망 기술의 필수화 및 2nm/1.4nm 노드 전환에 따른 급격한 수요 증가.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Advanced Packaging and Power Delivery for AI Chips\",\n          \"url\": \"https://mock.local/report/ai-pdn-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Intel\",\n          \"TSMC\"\n        ],\n        \"shared_technology_areas\": [\n          \"Backside PDN\",\n          \"Tile-level Fabric\",\n          \"Embedded Bridge Interconnect\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2027 Q3\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"Intel 과 TSMC 의 특허 포트폴리오가 NVIDIA 의 차세대 GPU 전략과 높은 유사성을 보이며, 2nm 노드 전환 시점인 2027 년경에 시장이 급성장할 것으로 예상됩니다. 전력 밀도 한계를 극복하기 위한 필수 기술로 진입 장벽이 높고, 주요 파운드리 2~3 개사가 시장을 장악할 가능성이 큽니다.\"\n    },\n    {\n      \"tech_id\": \"T02\",\n      \"name\": \"로컬 실리콘 브리지 패키징\",\n      \"market_score\": 85.6,\n      \"market_signals\": {\n        \"tam_growth_rate\": 88,\n        \"time_to_market_urgency\": 85,\n        \"policy_and_investment_tailwind\": 82,\n        \"competitive_moat_potential\": 78\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 18.0,\n        \"sam_usd_b\": 6.5,\n        \"som_usd_b\": 1.8,\n        \"basis\": \"고대역폭 메모리 (HBM) 와 로직 칩을 연결하는 고급 패키징 시장으로, AI 가속기 모듈의 핵심 구성 요소로서 2030 년까지 180 억 달러 규모로 추정.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 22.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"NVIDIA 의 CoWoS 및 TSMC 의 로컬 실리콘 브리지 기술이 AI 칩렛 아키텍처의 표준으로 자리 잡으며 연평균 20% 이상 성장.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Silicon Bridge and Interconnect Technologies for AI\",\n          \"url\": \"https://mock.local/report/silicon-bridge-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"TSMC\",\n          \"Intel\"\n        ],\n        \"shared_technology_areas\": [\n          \"CoWoS-like Packaging\",\n          \"Local Silicon Bridge\",\n          \"Thermal Management\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2026 Q4\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"TSMC 와 Intel 이 주도하는 로컬 실리콘 브리지 기술은 NVIDIA 의 고대역폭 요구사항을 충족시키는 핵심 패키징 솔루션으로, 2026 년 말부터 대량 생산이 시작될 것으로 보입니다. 기술 진입 장벽이 높아 소수의 파운드리와 패키징 전문 기업만이 경쟁할 수 있는 구조입니다.\"\n    },\n    {\n      \"tech_id\": \"T03\",\n      \"name\": \"하이브리드 본딩 3D 적층\",\n      \"market_score\": 82.4,\n      \"market_signals\": {\n        \"tam_growth_rate\": 85,\n        \"time_to_market_urgency\": 80,\n        \"policy_and_investment_tailwind\": 78,\n        \"competitive_moat_potential\": 75\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 15.0,\n        \"sam_usd_b\": 5.0,\n        \"som_usd_b\": 1.5,\n        \"basis\": \"3D IC 적층 및 메모리 스택 기술 시장으로, AI 및 HPC 칩의 성능 향상을 위해 2030 년까지 150 억 달러 규모로 성장할 것으로 예상.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 20.5,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"삼성전자와 TSMC 의 하이브리드 본딩 기술이 3D 메모리 및 로직 적층의 표준으로 부상하며 지속적인 성장세 유지.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Hybrid Bonding and 3D IC Stacking Market Outlook\",\n          \"url\": \"https://mock.local/report/hybrid-bonding-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"TSMC\",\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q1\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"삼성전자와 TSMC 의 하이브리드 본딩 기술은 3D 적층의 핵심으로, 2028 년경에 본격적인 시장 확대가 예상됩니다. 기술적 복잡성으로 인해 소수의 파운드리가 시장을 장악할 가능성이 높으며, NVIDIA 의 차세대 칩렛 전략과 밀접하게 연관되어 있습니다.\"\n    },\n    {\n      \"tech_id\": \"T04\",\n      \"name\": \"고해상도 EUV 리소그래피\",\n      \"market_score\": 79.8,\n      \"market_signals\": {\n        \"tam_growth_rate\": 80,\n        \"time_to_market_urgency\": 75,\n        \"policy_and_investment_tailwind\": 85,\n        \"competitive_moat_potential\": 90\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 8.0,\n        \"sam_usd_b\": 3.0,\n        \"som_usd_b\": 0.8,\n        \"basis\": \"고해상도 EUV 장비 및 관련 소재 시장으로, 2030 년까지 80 억 달러 규모로 성장할 것으로 예상되며, ASML 의 독점적 지위가 유지될 것으로 보임.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 18.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"High-NA EUV 장비의 상용화 및 2nm 이하 노드 도입에 따른 수요 증가로 연평균 18% 성장 예상.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"High-NA EUV Lithography Market Analysis\",\n          \"url\": \"https://mock.local/report/euv-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2029 Q2\",\n      \"competitive_landscape\": \"Oligopoly – 1~2 dominant players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"ASML 의 독점적 지위로 인해 경쟁 구도가 매우 제한적이며, 삼성전자의 High-NA EUV 도입이 2029 년경에 본격화될 것으로 예상됩니다. 기술 진입 장벽이 극도로 높아 시장 지배력이 높은 편입니다.\"\n    },\n    {\n      \"tech_id\": \"T05\",\n      \"name\": \"이종 칩렛 텐서 스케줄링\",\n      \"market_score\": 91.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 95,\n        \"time_to_market_urgency\": 92,\n        \"policy_and_investment_tailwind\": 88,\n        \"competitive_moat_potential\": 82\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 25.0,\n        \"sam_usd_b\": 10.0,\n        \"som_usd_b\": 3.0,\n        \"basis\": \"이종 칩렛 아키텍처 및 텐서 스케줄링 소프트웨어 시장으로, AI 가속기 성능 최적화의 핵심으로 2030 년까지 250 억 달러 규모로 성장할 것으로 예상.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 28.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"AMD 와 Intel 의 칩렛 아키텍처 특허가 NVIDIA 의 경쟁 전략과 밀접하게 연관되어 있으며, AI 모델의 복잡성 증가로 인한 스케줄링 기술 수요 급증.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Chiplet Architecture and Tensor Scheduling for AI\",\n          \"url\": \"https://mock.local/report/chiplet-scheduling-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"AMD\",\n          \"Intel\"\n        ],\n        \"shared_technology_areas\": [\n          \"Chiplet Architecture\",\n          \"Heterogeneous Accelerator\",\n          \"High-Bandwidth Interconnect\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2026 Q2\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"AMD 와 Intel 의 특허 포트폴리오가 NVIDIA 의 칩렛 전략과 높은 유사성을 보이며, 2026 년 중반부터 시장이 급성장할 것으로 예상됩니다. 소프트웨어 및 아키텍처 최적화 기술로 진입 장벽이 높고, 주요 플레이어들이 시장을 장악할 가능성이 큽니다.\"\n    },\n    {\n      \"tech_id\": \"T06\",\n      \"name\": \"공포장 광 인터페이스\",\n      \"market_score\": 89.3,\n      \"market_signals\": {\n        \"tam_growth_rate\": 90,\n        \"time_to_market_urgency\": 90,\n        \"policy_and_investment_tailwind\": 85,\n        \"competitive_moat_potential\": 85\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 20.0,\n        \"sam_usd_b\": 8.0,\n        \"som_usd_b\": 2.5,\n        \"basis\": \"공포장 광학 (CPO) 인터페이스 시장으로, AI 데이터센터 네트워킹의 핵심으로 2030 년까지 200 억 달러 규모로 성장할 것으로 예상.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 26.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"Broadcom 의 광 인터페이스 특허가 NVIDIA 의 스케일아웃 패브릭 전략과 밀접하게 연관되어 있으며, 데이터센터 트래픽 증가로 인한 수요 급증.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Co-Packaged Optics for AI Data Centers\",\n          \"url\": \"https://mock.local/report/cpo-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Broadcom\"\n        ],\n        \"shared_technology_areas\": [\n          \"Scale-out Fabric\",\n          \"Co-packaged Optics\",\n          \"High-speed SerDes\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2027 Q1\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"Broadcom 의 광 인터페이스 기술은 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있으며, 2027 년 초부터 시장이 급성장할 것으로 예상됩니다. 기술 진입 장벽이 높아 소수의 기업만이 경쟁할 수 있는 구조입니다.\"\n    },\n    {\n      \"tech_id\": \"T07\",\n      \"name\": \"면 선택적 유전체 증착\",\n      \"market_score\": 76.5,\n      \"market_signals\": {\n        \"tam_growth_rate\": 75,\n        \"time_to_market_urgency\": 70,\n        \"policy_and_investment_tailwind\": 80,\n        \"competitive_moat_potential\": 75\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 6.0,\n        \"sam_usd_b\": 2.0,\n        \"som_usd_b\": 0.5,\n        \"basis\": \"면 선택적 증착 (ASD) 기술 시장으로, 2030 년까지 60 억 달러 규모로 성장할 것으로 예상되며, 삼성전자의 GAA 공정 도입이 핵심 동인.\"\n      },\n      \"cagr_forecast\": {\n        \"cagr_pct\": 16.0,\n        \"forecast_period\": \"2025-2030\",\n        \"basis\": \"고해상도 노드에서의 유전체 증착 기술 수요 증가로 연평균 16% 성장 예상.\"\n      },\n      \"key_market_reports\": [\n        {\n          \"title\": \"Area-Selective Deposition for Advanced Nodes\",\n          \"url\": \"https://mock.local/report/asd-2025\",\n          \"use\": \"TAM/CAGR/competition evidence\"\n        }\n      ],\n      \"map_context_used\": {\n        \"related_actors\": [\n          \"Samsung Electronics\"\n        ],\n        \"shared_technology_areas\": [\n          \"Advanced Packaging\",\n          \"GAA Process\",\n          \"Hybrid Bonding\"\n        ]\n      },\n      \"expected_market_boom_quarter\": \"2028 Q3\",\n      \"competitive_landscape\": \"Concentrated – 3~5 key players\",\n      \"data_quality\": \"estimated\",\n      \"rationale\": \"삼성전자의 GAA 공정 도입이 2028 년경에 본격화될 것으로 예상되며, 면 선택적 유전체 증착 기술이 핵심 공정으로 부상할 것입니다. 기술 진입 장벽이 높아 소수의 기업만이 경쟁할 수 있는 구조입니다.\"\n    },\n    {\n      \"tech_id\": \"T08\",\n      \"name\": \"메모리 인지 에지 AI 실행\",\n      \"market_score\": 72.8,\n      \"market_signals\": {\n        \"tam_growth_rate\": 70,\n        \"time_to_market_urgency\": 65,\n        \"policy_and_investment_tailwind\": 75,\n        \"competitive_moat_potential\": 70\n      },\n      \"tam_sam_som\": {\n        \"tam_usd_b\": 10.0,\n        \"sam_usd_b\": 3.5,\n        \"som_usd_b\": 1.0,\n        \"basis\": \"에지 AI 가속기 및 메모리 최적화 기술 시장으로, 2030 년까지 100 억 달러 규모로 성장할 것으로 예상되며, Qualcomm 의 에지 전략이 핵심 동인.\""
+  },
+  "market_analysis": [],
+  "error": "Market Agent 오류: Expecting ',' delimiter: line 317 column 8 (char 10768)"
+}

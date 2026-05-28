@@ -1,0 +1,489 @@
+{
+  "market_context": {
+    "target_market": "Automotive / Mobility / EV / AI",
+    "expected_boom_quarter": "2027 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "건식 전극 제조 공정",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "전 세계 리튬이온 배터리 시장 (2030 년 기준 약 1,500 억 달러) 중 건식 전극 공정 적용 가능 비율 (약 30%) 을 반영하여 추정. Tesla 와 BYD 의 선점 경쟁으로 초기 시장 점유율 확보가 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "건식 전극 기술이 습식 공정의 비용 및 환경 부담을 해결하며, 2027 년 이후 대량 생산 전환이 예상됨에 따라 고성장 구간 진입."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Dry Electrode Battery Manufacturing Market Outlook 2025-2030",
+            "url": "https://example.com/dry-electrode-report",
+            "use": "TAM/CAGR 및 Tesla/BYD 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "NIO"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열 관리",
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어"
+          ]
+        }
+      },
+      "T02": {
+        "name": "고성능 열흡수 배터리 소재",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "고성능 배터리 소재 시장 중 열 관리 특화 소재 (Phase Change Materials 등) 의 2030 년 예상 규모. 전기차 안전 규제 강화로 필수 부품화 추세."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.0,
+          "forecast_period": "2025-2030",
+          "basis": "고출력 배터리 수요 증가와 열 폭주 (Thermal Runaway) 방지 규제 강화로 인해 연평균 19% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Battery Thermal Management Materials Market Analysis",
+            "url": "https://example.com/thermal-materials-report",
+            "use": "TAM 및 안전 규제 기반 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열 관리"
+          ]
+        }
+      },
+      "T03": {
+        "name": "다중 태스크 자율주행 AI",
+        "market_score": 91.5,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 40.0,
+          "som_usd_b": 8.0,
+          "basis": "자율주행 소프트웨어 및 서비스 시장 (2030 년 기준) 의 급격한 확장. 다중 태스크 처리 능력은 L3 이상 자율주행 상용화의 필수 조건."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 상향과 데이터 중심 AI 학습 모델의 확산으로 인해 연평균 28% 이상의 초고속 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Autonomous Driving AI Software Market Forecast 2025-2030",
+            "url": "https://example.com/autonomous-ai-report",
+            "use": "TAM/CAGR 및 NIO/BYD 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "BYD",
+            "NIO"
+          ],
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열 관리",
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어"
+          ]
+        }
+      },
+      "T04": {
+        "name": "차량용 HVAC 모듈화 시스템",
+        "market_score": 74.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.8,
+          "basis": "전기차 전용 HVAC 시장 규모. 모듈화 및 열펌프 기술 적용으로 에너지 효율 향상이 주요 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2030",
+          "basis": "전기차 보급률 증가와 에너지 효율 규제 강화로 인해 연평균 14.5% 성장 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "EV HVAC Systems and Thermal Management Market Report",
+            "url": "https://example.com/ev-hvac-report",
+            "use": "TAM 및 Rivian/Mercedes 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Rivian",
+            "Mercedes-Benz",
+            "BMW"
+          ],
+          "shared_technology_areas": [
+            "HVAC 시스템",
+            "충전 인프라",
+            "내장 모듈",
+            "HVAC 제어",
+            "충전 매칭",
+            "인포테인먼트",
+            "내장 공간 모듈",
+            "시트 시스템"
+          ]
+        }
+      },
+      "T05": {
+        "name": "차량용 충전 인프라 매칭",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2027 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "스마트 충전 인프라 및 V2G (Vehicle-to-Grid) 서비스 시장. 충전 매칭 알고리즘은 충전 효율과 사용자 경험 향상의 핵심."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "전기차 충전 인프라 확충과 스마트 그리드 연동 정책으로 인해 연평균 21% 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Smart Charging Infrastructure and V2G Market Outlook",
+            "url": "https://example.com/smart-charging-report",
+            "use": "TAM/CAGR 및 충전 매칭 기술 경쟁 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Rivian",
+            "Mercedes-Benz"
+          ],
+          "shared_technology_areas": [
+            "HVAC 시스템",
+            "충전 인프라",
+            "내장 모듈",
+            "HVAC 제어",
+            "충전 매칭",
+            "인포테인먼트"
+          ]
+        }
+      },
+      "T06": {
+        "name": "차체 구조용 접합 검사",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 4.5,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.4,
+          "basis": "자동차 제조 공정 내 비파괴 검사 (NDT) 및 자동화 검사 장비 시장. 접합부 결함 검출은 안전성 확보의 필수 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "제조 자동화 및 품질 관리 요구 증가로 인해 연평균 12% 성장 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive Manufacturing Quality Inspection Market Analysis",
+            "url": "https://example.com/inspection-report",
+            "use": "TAM 및 NIO/Tesla 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NIO"
+          ],
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어"
+          ]
+        }
+      },
+      "T07": {
+        "name": "차량 내장 공간 모듈화",
+        "market_score": 71.5,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 9.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 1.0,
+          "basis": "차량 내장 부품 및 모듈화 시스템 시장. 사용자 경험 (UX) 중심의 커스터마이징 수요 증가로 성장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 13.5,
+          "forecast_period": "2025-2030",
+          "basis": "전기차 플랫폼의 유연성과 내장 공간 활용도 증대로 인해 연평균 13.5% 성장 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive Interior Modularization and UX Market Report",
+            "url": "https://example.com/interior-mod-report",
+            "use": "TAM 및 BMW/Rivian/NIO 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NIO",
+            "Rivian",
+            "BMW"
+          ],
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어",
+            "HVAC 시스템",
+            "충전 인프라",
+            "내장 모듈",
+            "내장 공간 모듈",
+            "시트 시스템"
+          ]
+        }
+      },
+      "T08": {
+        "name": "차량용 전장 제어보드",
+        "market_score": 76.0,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 7.0,
+          "som_usd_b": 2.0,
+          "basis": "차량용 전장 제어 장치 (ECU) 및 통합 제어보드 시장. 소프트웨어 정의 차량 (SDV) 전환으로 통합화 및 고성능화 추세."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "SDV 전환과 전장 시스템 통합화로 인해 연평균 16.5% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Electronic Control Units (ECU) Market Forecast",
+            "url": "https://example.com/ecu-report",
+            "use": "TAM/CAGR 및 NIO/Mercedes 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NIO",
+            "Mercedes-Benz"
+          ],
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어",
+            "HVAC 제어",
+            "충전 매칭",
+            "인포테인먼트"
+          ]
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 5,
+      "top_related_actors": [
+        {
+          "related_actor": "BYD",
+          "similarity": 0.88,
+          "shared_technology_areas": [
+            "건식 전극 공정",
+            "배터리 소재",
+            "열 관리"
+          ]
+        },
+        {
+          "related_actor": "NIO",
+          "similarity": 0.76,
+          "shared_technology_areas": [
+            "자율주행 AI",
+            "제조 공정 검사",
+            "전장 제어"
+          ]
+        },
+        {
+          "related_actor": "Rivian",
+          "similarity": 0.68,
+          "shared_technology_areas": [
+            "HVAC 시스템",
+            "충전 인프라",
+            "내장 모듈"
+          ]
+        },
+        {
+          "related_actor": "Mercedes-Benz",
+          "similarity": 0.62,
+          "shared_technology_areas": [
+            "HVAC 제어",
+            "충전 매칭",
+            "인포테인먼트"
+          ]
+        },
+        {
+          "related_actor": "BMW",
+          "similarity": 0.54,
+          "shared_technology_areas": [
+            "내장 공간 모듈",
+            "시트 시스템"
+          ]
+        }
+      ]
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T03",
+      "name": "다중 태스크 자율주행 AI",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 상대적으로 성숙한 기술이지만, T08 의 선행 기술로서 2026 년 (1 차년도) 즉시 시작하여 2028 년 (3 차년도) 까지 아키텍처 고도화를 완료해야 합니다. 이는 2027 년 Q2 시장 붐을 앞두고 핵심 알고리즘을 안정화시키기 위함입니다.",
+        "tech_execution": "BYD 와 NIO 의 경쟁 심화에 대응하여 테슬라의 FSD 경쟁력을 유지하기 위해 다중 태스크 네트워크 학습을 강화해야 합니다. 이는 자율주행 신뢰성 향상을 위한 필수적인 AI 아키텍처 진화 과정입니다.",
+        "investment_selection": "자율주행 시장에서의 기술 리더십을 확보하고, 후행 하드웨어 기술인 전장 제어보드의 성능을 극대화하기 위한 핵심 투자 대상입니다. 초기 투자 효율성이 높으며 시장 진입 장벽을 높이는 데 기여합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T08",
+      "name": "차량용 전장 제어보드",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T03"
+      ],
+      "reasoning": {
+        "year_placement": "T03 의 아키텍처 완성 (3 차년도) 을 전제로 하되, TRL 6 의 특성상 2027 년 (2 차년도) 부터 하드웨어 개발을 병행하여 2030 년 (5 차년도) 까지 차세대 통합 제어 시스템으로 진화시킵니다. 이는 Planning Horizon 의 마지막 연도까지 기술이 이어지도록 배치한 것입니다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+        "tech_execution": "AI 아키텍처 구현을 위한 필수 하드웨어 기반으로, NIO 와 메르세데스의 통합화 경향에 대응하여 테슬라의 SDV 전환을 주도해야 합니다. 전장 제어보드의 고성능화는 자율주행 성능을 물리적으로 뒷받침하는 핵심 요소입니다.",
+        "investment_selection": "차량 전자 제어 시스템의 통합 및 고도화는 장기적인 경쟁 우위를 확보하는 데 필수적이며, 2030 년까지의 지속적인 R&D 를 통해 차세대 플랫폼을 선점할 수 있습니다. 이는 HW/SW 통합 스택 강화 전략의 핵심입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "건식 전극 제조 공정",
+      "year_idx_start": 1,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 양산화를 위한 핵심 장비 및 소재 개발이 필요하므로 2026 년 (1 차년도) 부터 시작하여 2029 년 (4 차년도) 까지 공정 최적화와 원가 절감 효과를 극대화합니다. 2027 년 Q3 시장 붐을 앞두고 양산 준비를 완료해야 합니다.",
+        "tech_execution": "테슬라의 생산성 향상과 원가 절감을 위해 건식 전극 공정의 표준화를 선점해야 하며, BYD 와의 기술 유사성 경쟁에서 우위를 점해야 합니다. 이는 배터리 성능과 경제성을 동시에 개선하는 필수 공정입니다.",
+        "investment_selection": "배터리 제조 비용 절감은 전기차 시장에서의 가격 경쟁력을 결정짓는 핵심 요소이며, 시장 진입 장벽을 높이는 데 기여합니다. 장기적인 생산 효율성 개선을 위한 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "차량용 충전 인프라 매칭",
+      "year_idx_start": 2,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "2027 년 Q4 시장 붐을 앞두고 2027 년 (2 차년도) 부터 지능형 상호작용 알고리즘 개발을 시작하여 2030 년 (5 차년도) 까지 에너지 생태계 확장을 완성합니다. 이는 테슬라의 슈퍼차저 네트워크와 통합된 장기 비전을 실현하기 위함입니다.",
+        "tech_execution": "메르세데스와 리비안의 초기 특허 동향을 분석하여, 차량과 외부 에너지 인프라 간의 지능형 매칭 기술을 선도해야 합니다. 이는 테슬라의 에너지 생태계 확장을 위한 필수적인 아키텍처입니다.",
+        "investment_selection": "충전 인프라와 차량 간 지능형 매칭 기술은 아직 명확한 시장 리더가 부재한 블루오션으로, 초기 투자로 시장 주도권을 확보할 수 있습니다. 에너지 생태계 확장을 통한 새로운 수익 모델 창출이 가능합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T03": {
+      "tech_id": "T03",
+      "name": "다중 태스크 자율주행 AI",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T08"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T08": {
+      "tech_id": "T08",
+      "name": "차량용 전장 제어보드",
+      "category": "Equipment",
+      "trl": 6,
+      "prerequisites": [
+        "T03"
+      ],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "건식 전극 제조 공정",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "차량용 충전 인프라 매칭",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q4"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 4,
+    "rationale": "자율주행 AI(T03), 건식전극(T01), 충전인프라(T05), 전장제어(T08) 를 선별하여 전략 방향성 3 가지 (AI 리더십, 에너지 생태계, HW/SW 통합) 를 모두 커버. 2026~2027 년 시점 분포로 로드맵 초기 단계 확보.",
+    "dropped": [
+      {
+        "tech_id": "T02",
+        "name": "고성능 열흡수 배터리 소재",
+        "reason": "T01(건식전극) 과 중복성 높음. 전략적 핵심인 HW/SW 통합 및 AI 리더십과 직접 연결성 약함."
+      },
+      {
+        "tech_id": "T04",
+        "name": "차량용 HVAC 모듈화 시스템",
+        "reason": "HVAC 모듈화는 전략 방향성 (AI, 자율주행, 에너지 생태계) 과 직접적 정합성 부족. 점수 낮음."
+      },
+      {
+        "tech_id": "T06",
+        "name": "차체 구조용 접합 검사",
+        "reason": "제조 공정 보조 기술로 전략적 핵심 (AI, 에너지, HW/SW 통합) 과 거리가 멀어 제외."
+      },
+      {
+        "tech_id": "T07",
+        "name": "차량 내장 공간 모듈화",
+        "reason": "내장 모듈화는 UX 개선 수준으로 전략적 방향성 (AI 리더십, 에너지 생태계) 과 직접 연결성 약함."
+      }
+    ]
+  }
+}

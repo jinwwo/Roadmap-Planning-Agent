@@ -1,0 +1,30 @@
+{
+  "scenario_id": "toyota_mobility_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: Toyota\nIndustry: Automotive / Mobility / Multi-Pathway\nAnnual Revenue: ~$338B (FY2025: JPY 50.7T)\nR&D Budget Ratio: ~2.7%\nAnnual R&D Budget: ~$9.1B (FY2025: JPY 1.37T)\nTotal 5-year R&D Budget: ~$41.7B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Toyota",
+    "industry": "Automotive / Mobility / Multi-Pathway",
+    "annual_revenue": 338000000000.0,
+    "rd_budget_ratio": 0.027,
+    "annual_rd_budget": 9100000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "다양한 이동성 솔루션을 위한 프론티어 기술 선점 및 장기 기술 해자 구축",
+    "strategic_direction": [
+      "EV/H2/HEV 다중 경로 기술 리더십 확보",
+      "자율주행 및 모빌리티 서비스 생태계 확장",
+      "차세대 배터리 및 AI 통합 스택 강화"
+    ],
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 41700000000
+}

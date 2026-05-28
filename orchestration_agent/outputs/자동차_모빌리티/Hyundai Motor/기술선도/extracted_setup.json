@@ -1,0 +1,30 @@
+{
+  "scenario_id": "hyundai_mobility_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: Hyundai Motor\nIndustry: Automotive / Mobility / EV\nAnnual Revenue: ~$128B (FY2025: KRW 186.3T)\nR&D Budget Ratio: ~3.6%\nAnnual R&D Budget: ~$4.6B (FY2025: KRW 6.7T)\nTotal 5-year R&D Budget: ~$18.4B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Hyundai Motor",
+    "industry": "Automotive / Mobility / EV",
+    "annual_revenue": 128000000000.0,
+    "rd_budget_ratio": 0.036,
+    "annual_rd_budget": 4600000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 기술을 선점하고 장기적인 기술 해자를 구축하여 기술 선도 기업으로 도약",
+    "strategic_direction": [
+      "EV 및 자율주행 핵심 기술 리더십 확보",
+      "모빌리티 서비스 및 소프트웨어 생태계 확장",
+      "차세대 배터리 및 AI 스택 강화"
+    ],
+    "domain": "Automotive / Mobility / EV",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 18400000000
+}

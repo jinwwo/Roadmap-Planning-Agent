@@ -1,0 +1,74 @@
+[
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Boston Scientific",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_domains": [
+      "Cardiovascular",
+      "Neurovascular",
+      "Surgical Robotics"
+    ],
+    "rationale": "심혈관 및 신경혈관 분야에서의 특허 포트폴리오가 매우 유사하며, 최근 혈관 내 이미징 및 전달 시스템 관련 특허가 중복되어 출원되고 있다."
+  },
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Abbott Laboratories",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_domains": [
+      "Cardiovascular",
+      "Diabetes Care",
+      "Diagnostics"
+    ],
+    "rationale": "심장 박동기 및 당뇨 관리 장비, 진단 자동화 시스템 분야에서 높은 기술적 유사성을 보이며, 최근 진단 장비 관련 특허가 급증하고 있다."
+  },
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Stryker",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_domains": [
+      "Surgical Robotics",
+      "Orthopedics",
+      "Medical Waste Management"
+    ],
+    "rationale": "수술 로봇 및 정형외과 장비 분야에서 경쟁 관계에 있으며, 최근 수술실 폐기물 관리 및 영상 처리 기술에서 유사한 특허 출원 경향을 보인다."
+  },
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Siemens Healthineers",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_domains": [
+      "Medical Imaging",
+      "AI in Healthcare",
+      "Diagnostic Equipment"
+    ],
+    "rationale": "의료 영상 및 AI 기반 진단 장비 분야에서 기술적 교집합이 크며, 최근 MRI 및 초음파 이미징 처리 알고리즘 관련 특허가 공통적으로 출원되고 있다."
+  },
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Philips",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_domains": [
+      "Medical Imaging",
+      "Patient Monitoring",
+      "AI in Healthcare"
+    ],
+    "rationale": "의료 영상 및 환자 모니터링 시스템 분야에서 기술적 유사성이 높으며, 최근 혈관 내 이미징 및 AI 기반 이미지 주석 기술에서 특허가 중복되고 있다."
+  },
+  {
+    "center_actor": "Medtronic",
+    "related_actor": "Johnson & Johnson",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_domains": [
+      "Surgical Robotics",
+      "Ophthalmology",
+      "Wound Care"
+    ],
+    "rationale": "수술 로봇 및 안과 임플란트 분야에서 일부 기술적 교집합이 있으며, 최근 광 조절형 안과 소재 관련 특허가 주목받고 있다."
+  }
+]

@@ -435,7 +435,7 @@ def run_patent_agent(state: AnalysisState) -> dict:
             prompt_variant = PATENT_ANALYSIS_METHOD
 
         # ② Claude/Ollama 에게 분석 요청
-        llm = get_llm(max_tokens=4096)
+        llm = get_llm(max_tokens=16384)  # patent_map cross-actor 응답이 길어 짤림 → 4096 → 16384
         prompt = load_prompt("patent_agent", prompt_variant)
         patent_raw_for_prompt = _compact_patent_raw_for_prompt(patent_raw)
 

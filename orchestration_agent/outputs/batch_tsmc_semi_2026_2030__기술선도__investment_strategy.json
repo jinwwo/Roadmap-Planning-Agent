@@ -1,0 +1,334 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Foundry",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 공통 금속 게이트 공정",
+        "market_score": 92.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 273.84,
+          "sam_usd_b": 120.0,
+          "som_usd_b": 45.0,
+          "basis": "2035 년 반도체 파운드리 시장 규모 $2738 억 (Precedence Research) 중, 3nm/2nm 이하 최첨단 공정 시장이 차지하는 비중 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 및 HPC 수요 증가로 인한 파운드리 시장 성장률 (IDC, Precedence Research)."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size to Hit USD 273.84 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/semiconductor-foundry-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Samsung vs. TSMC vs. Intel: Who's Winning the Foundry ...",
+            "url": "https://patentpc.com/blog/samsung-vs-tsmc-vs-intel-whos-winning-the-foundry-market-latest-numbers",
+            "use": "경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "백사이드 소스/드레인 리세스 기술",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 150.0,
+          "sam_usd_b": 60.0,
+          "som_usd_b": 15.0,
+          "basis": "GAA 공정과 연계된 2nm 이하 고성능 로직 칩 시장 규모 추정 (전체 파운드리 시장의 고부가가치 세그먼트)."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "고성능 컴퓨팅 (HPC) 및 AI 가속기 시장 성장에 따른 파운드리 기술 수요 증가."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Foundry Market Size, Trends & Growth 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/semiconductor-foundry-market",
+            "use": "시장 성장률 및 전망 근거"
+          },
+          {
+            "title": "TSMC Widens Lead Over Samsung and Intel in Chip Market",
+            "url": "https://www.linkedin.com/posts/zachary-patterson-a67905101_can-samsung-and-intel-take-market-share-away-activity-7427456683456712704-F5zV",
+            "use": "경쟁 구도 및 시장 점유율 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "고밀도 3D 스택형 반도체 패키지",
+        "market_score": 94.8,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 85.0,
+          "sam_usd_b": 40.0,
+          "som_usd_b": 12.0,
+          "basis": "3D 반도체 패키징 시장 규모 (SNS Insider 등 보고서 기반) 및 AI/Chiplet 시장 성장 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Chiplet 및 3D 패키징 시장이 기존 패키징보다 빠른 속도로 성장하는 추세 (Yahoo Finance, SNS Insider)."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "3D Semiconductor Packaging Market Size, Share & Trends, 2035",
+            "url": "https://www.snsinsider.com/reports/3d-semiconductor-packaging-market-8439",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "3D Semiconductor Packaging Market Report 2026",
+            "url": "https://finance.yahoo.com/news/3d-semiconductor-packaging-market-report-151600786.html",
+            "use": "시장 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung Electronics"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "메모리 내 연산 아키텍처",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.0,
+          "basis": "Compute-in-Memory (CIM) 및 AI 메모리 시장 규모 추정 (전체 메모리 시장의 고성장 세그먼트)."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 추론 및 에지 컴퓨팅 수요 증가에 따른 메모리 내 연산 기술 성장률."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Gartner Says Worldwide Semiconductor Revenue Grew 21% in 2025",
+            "url": "https://www.gartner.com/en/newsroom/press-releases/2026-01-12-gartner-says-worldwide-semiconductor-revenue-grew-21-percent-in-2025",
+            "use": "시장 성장 동력 및 AI 관련 수요 분석"
+          },
+          {
+            "title": "Semiconductor Foundry Market Size, Share | CAGR of 8.5%",
+            "url": "https://market.us/report/semiconductor-foundry-market",
+            "use": "전체 시장 맥락 제공"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Intel",
+            "Micron Technology"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "고성능 필터 및 공진기 패키징",
+        "market_score": 68.4,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.5,
+          "basis": "RF 필터 및 공진기 패키징 시장 규모 (5G/6G 통신 및 IoT 기기 수요 기반)."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2030",
+          "basis": "RF 필터 시장 성장률 (DataIntelo 등 보고서 기반)."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Filter Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-semiconductor-filter-market",
+            "use": "시장 규모 및 성장률 근거"
+          },
+          {
+            "title": "TSMC, Samsung, and Intel: Who's Leading the Semiconductor Race?",
+            "url": "https://patentpc.com/blog/tsmc-samsung-and-intel-whos-leading-the-semiconductor-race-latest-market-share-data",
+            "use": "경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SMIC"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 4,
+      "top_related_actors": [
+        {
+          "related_actor": "Intel",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Samsung Electronics",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Micron Technology",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "SMIC",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 31200000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "GAA 공통 금속 게이트 공정",
+        "고밀도 3D 스택형 반도체 패키지",
+        "백사이드 소스/드레인 리세스 기술"
+      ],
+      "tech_ids": [
+        "T01",
+        "T03",
+        "T02"
+      ],
+      "num_items": 3
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "GAA 공통 금속 게이트 공정",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 13866666667.0,
+          "tech_budget_rationale": "T01 은 TSMC 의 2nm/3nm 공정 리더십을 유지하는 핵심 기술로, 2027 Q2 시장 붐을 앞두고 양산 안정화가 시급합니다. 전체 예산의 40% 를 할당하여, TRL 6 에서 8 로의 성숙도 향상과 대량 생산 라인 최적화에 집중 투자합니다. 이는 후행 기술인 T02 의 선행 조건이므로, 초기 투자 실패 시 전체 로드맵이 지연되는 리스크를 방지하기 위한 선제적 배분입니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $2738 억, CAGR 18.5% 의 거대 시장으로, AI 및 HPC 수요 증가로 인해 2027 Q2 에 시장 붐이 예상됩니다. 3nm/2nm 이하 최첨단 공정 시장은 전체 파운드리 시장의 고부가가치 세그먼트를 차지하며, 초기 진입 장벽이 매우 높아 선점 효과가 큽니다. 경쟁 구도가 Oligopoly(1~2 개 주력 기업) 로 형성되어 있어, TSMC 가 기술적 우위를 확보하지 못할 경우 시장 점유율 손실 위험이 큽니다.",
+            "tech_evaluation": "TRL 6 수준으로 양산 준비가 가능한 상태이나, 2nm 이하 노드에서의 미세 공정 최적화와 수율 향상을 위해 추가 R&D 가 필요합니다. Intel 과 삼성과의 치열한 특허 경쟁 (Patent Score 92.5) 에서 TSMC 의 기존 강점을 활용하여 기술적 우위를 확보해야 합니다. GAA 구조의 공통 금속 게이트 공정은 2nm 이하 노드 진입의 필수 기술로, 기술적 불확실성은 중간 수준이나 실패 비용이 매우 높습니다.",
+            "investment_decision": "시장 성장률 (5 점) 과 경쟁 우위 (5 점), 개발 긴급도 (5 점) 가 모두 최상위권이며, TSMC 의 전략적 우선순위와 완벽하게 정합합니다. Tier 1 로 분류하여 전체 예산의 40% 를 할당하고, 2026 년부터 2028 년까지 집중 투자하여 2027 Q2 시장 붐에 대비한 양산 안정화를 목표로 합니다. 이는 T02 기술의 성공적 도입을 위한 선행 조건이므로, 투자 우선순위를 최상위로 설정합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 년 즉시 양산 라인 최적화 프로젝트 착수 및 2027 Q2 시장 붐 대비 수율 향상 프로그램 가동.",
+          "rationale": [
+            "TAM $2738 억, CAGR 18.5% 의 거대 시장과 2027 Q2 시장 붐 임박으로 개발 긴급도 5 점 부여.",
+            "TRL 6 수준으로 양산 준비 가능하나, 2nm 이하 노드 최적화를 위한 추가 투자 필요.",
+            "Intel 과 삼성과의 치열한 경쟁 구도에서 TSMC 의 기술적 우위 확보가 필수적.",
+            "T02 기술의 선행 조건으로, 초기 투자 실패 시 전체 로드맵 지연 리스크 존재."
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "고밀도 3D 스택형 반도체 패키지",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 4,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 10400000000.0,
+          "tech_budget_rationale": "T03 은 AI 칩 성능 한계 극복을 위한 Chiplet 및 3D 패키징 수요가 폭발하는 2026 Q4 시장 붐에 대응해야 하므로, TRL 7 에서 9 로의 성숙도 향상을 위한 집중 투자가 필요합니다. 전체 예산의 30% 를 할당하여, CoWoS 기술 확장 및 차세대 3D 패키징 표준 선점을 위한 R&D 와 양산 준비를 병행합니다. 이는 TSMC 의 전략적 우선순위인 'Chiplet 및 3D 패키징 스택 강화'와 직접적으로 연결되는 핵심 기술입니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $850 억, CAGR 24.5% 의 고성장 시장으로, AI 및 Chiplet 수요 증가로 인해 2026 Q4 에 시장 붐이 예상됩니다. 3D 반도체 패키징 시장은 기존 패키징보다 빠른 속도로 성장하며, TSMC 와 삼성이 주도권을 두고 경쟁 중입니다. 시장 진입 장벽이 높고 초기 선점 효과가 크므로, 2026 년 말부터 대량 생산 단계로 진입해야 합니다.",
+            "tech_evaluation": "TRL 7 수준으로 양산 준비가 가능한 상태이며, 기술적 불확실성은 낮습니다. Samsung 과 TSMC 모두 2025 년 말~2026 년 초에 관련 특허를 다수 출원하여 경쟁이 치열함을 보여줍니다. TSMC 의 CoWoS 기술 확장 및 차세대 3D 패키징 표준 선점을 위한 핵심 영역으로, 기존 강점을 활용하여 기술적 우위를 확보해야 합니다.",
+            "investment_decision": "시장 성장률 (5 점) 과 개발 긴급도 (5 점) 가 최상위권이며, 기술적 위험 (2 점) 이 낮아 투자 매력도가 매우 높습니다. Tier 1 로 분류하여 전체 예산의 30% 를 할당하고, 2026 년부터 2028 년까지 집중 투자하여 2026 Q4 시장 붐에 대비한 양산 안정화를 목표로 합니다. 이는 TSMC 의 전략적 우선순위와 완벽하게 정합하며, AI 칩 시장 확장의 핵심 동력이 됩니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "2026 년 즉시 CoWoS 기술 확장 프로젝트 착수 및 2026 Q4 시장 붐 대비 양산 라인 최적화.",
+          "rationale": [
+            "TAM $850 억, CAGR 24.5% 의 고성장 시장과 2026 Q4 시장 붐 임박으로 개발 긴급도 5 점 부여.",
+            "TRL 7 수준으로 양산 준비 가능하고, 기술적 불확실성 낮음.",
+            "Samsung 과 TSMC 의 치열한 경쟁 구도에서 TSMC 의 기술적 우위 확보가 필수적.",
+            "AI 칩 성능 한계 극복을 위한 Chiplet 및 3D 패키징 수요 폭발로 시장 기회 큼."
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "백사이드 소스/드레인 리세스 기술",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 6933333333.0,
+          "tech_budget_rationale": "T02 는 T01(GAA 공정) 의 완료 후인 2028 년부터 본격화되는 기술로, 2028 Q1 시장 붐을 대비한 기술 성숙이 필요합니다. 전체 예산의 20% 를 할당하여, TRL 5 에서 7 로의 성숙도 향상과 2028 년 대량 생산 준비를 위한 R&D 에 집중 투자합니다. 이는 T01 의 선행 조건이므로, T01 의 성공적 완료 후 단계적 투자를 통해 리스크를 관리합니다.",
+          "reasoning": {
+            "market_evaluation": "TAM $1500 억, CAGR 22.0% 의 고성장 시장으로, 2028 Q1 에 시장 붐이 예상됩니다. GAA 공정과 연계된 2nm 이하 고성능 로직 칩 시장으로, Intel 과 TSMC 만이 선두주자로 부상하고 있는 독점적 경쟁 구도입니다. 2028 년경 2nm/1.4nm 노드 대량 생산이 시작되면서 시장이 본격화될 것으로 보입니다.",
+            "tech_evaluation": "TRL 5 수준으로 기술적 불확실성이 높으며, GAA 공정의 성능 극대화를 위한 필수 기술입니다. Intel 의 'Selective Backside Recessing' 특허와 TSMC 의 최근 출원들은 백사이드 전력망 (Backside PDN) 구현을 위한 핵심 소스/드레인 형성 기술을 보여줍니다. 기술적 위험이 높지만, T01 의 성공적 완료 후 단계적 투자를 통해 리스크를 관리할 수 있습니다.",
+            "investment_decision": "시장 성장률 (4 점) 과 경쟁 우위 (4 점) 가 높지만, 기술적 위험 (4 점) 이 높고 개발 긴급도 (4 점) 가 중간 수준입니다. Tier 2 로 분류하여 전체 예산의 20% 를 할당하고, 2028 년부터 2030 년까지 단계적 투자를 통해 2028 Q1 시장 붐에 대비한 기술 성숙을 목표로 합니다. 이는 T01 의 선행 조건이므로, T01 의 성공적 완료 후 단계적 투자를 통해 리스크를 관리합니다."
+          },
+          "investment_scope": "milestone-based",
+          "recommended_action": "2028 년 T01 완료 후 백사이드 기술 R&D 프로젝트 착수 및 2028 Q1 시장 붐 대비 기술 성숙화.",
+          "rationale": [
+            "TAM $1500 억, CAGR 22.0% 의 고성장 시장과 2028 Q1 시장 붐 임박으로 개발 긴급도 4 점 부여.",
+            "TRL 5 수준으로 기술적 불확실성 높음.",
+            "Intel 과 TSMC 의 독점적 경쟁 구도에서 TSMC 의 기술적 우위 확보가 필수적.",
+            "T01 의 선행 조건으로, T01 완료 후 단계적 투자로 리스크 관리."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 31200000000.0
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "AMD",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_technology_areas": [
+      "Chiplet Architecture",
+      "Heterogeneous Accelerator",
+      "High-Bandwidth Interconnect"
+    ],
+    "basis": "양사 모두 GPU 가속기, 칩렛 아키텍처, 그리고 이종 컴퓨팅 리소스 스케줄링에 대한 유사한 특허 포트폴리오를 보유하고 있으며, 직접적인 경쟁 관계에 있습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Intel",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_technology_areas": [
+      "Backside PDN",
+      "Tile-level Fabric",
+      "Embedded Bridge Interconnect"
+    ],
+    "basis": "Intel 의 백사이드 전력망 및 타일 레벨 패브릭 특허는 NVIDIA 의 차세대 GPU 아키텍처 및 패키징 전략과 높은 기술적 유사성과 전략적 경쟁성을 보입니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "TSMC",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_technology_areas": [
+      "CoWoS-like Packaging",
+      "Local Silicon Bridge",
+      "Thermal Management"
+    ],
+    "basis": "TSMC 의 로컬 실리콘 브리지 및 열 관리 특허는 NVIDIA 의 고급 패키징 요구사항과 직접적으로 연관되어 있으며, 공급망 파트너이자 기술적 공생 관계에 있습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Broadcom",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_technology_areas": [
+      "Scale-out Fabric",
+      "Co-packaged Optics",
+      "High-speed SerDes"
+    ],
+    "basis": "Broadcom 의 광 인터페이스 및 스케일아웃 패브릭 특허는 NVIDIA 의 데이터센터 네트워킹 전략과 밀접하게 연관되어 있어 기술적 시너지가 높습니다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Samsung Electronics",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_technology_areas": [
+      "Advanced Packaging",
+      "GAA Process",
+      "Hybrid Bonding"
+    ],
+    "basis": "삼성전자의 하이브리드 본딩 및 GAA 공정 특허는 NVIDIA 의 차세대 칩 제조 및 패키징 기술 선택에 있어 중요한 대안 및 협력 가능성이 있습니다.",
+    "evidence_level": "proxy"
+  },
+  {
+    "center_actor": "NVIDIA",
+    "related_actor": "Qualcomm",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_technology_areas": [
+      "Memory-aware Execution",
+      "Edge AI Acceleration",
+      "Shared Memory Hierarchy"
+    ],
+    "basis": "Qualcomm 의 에지 AI 및 메모리 최적화 특허는 NVIDIA 의 데이터센터 중심 전략과는 차이가 있으나, 에지 시장 확장을 위한 기술적 참고 가치가 있습니다.",
+    "evidence_level": "proxy"
+  }
+]

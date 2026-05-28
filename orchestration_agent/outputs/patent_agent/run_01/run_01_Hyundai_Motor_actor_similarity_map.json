@@ -1,0 +1,66 @@
+[
+  {
+    "center_actor": "Hyundai Motor",
+    "related_actor": "BYD Company",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "shared_technology_areas": [
+      "Battery Material",
+      "Battery Packaging",
+      "Thermal Management"
+    ],
+    "basis": "BYD 는 배터리 소재 및 패키징 분야에서 현대자동차보다 더 공격적인 특허 출원 활동을 보이고 있으며, 이는 현대자동차의 원가 우위 전략에 직접적인 시사점을 제공한다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Hyundai Motor",
+    "related_actor": "Toyota Motor Corporation",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_technology_areas": [
+      "Laser Processing",
+      "Battery Device",
+      "Vehicle Control"
+    ],
+    "basis": "Toyota 는 제조 공정 (레이저) 및 배터리 장치 관련 특허를 보유하고 있어, 현대자동차의 제조 효율성 및 배터리 기술 보완에 유사한 기술 테마를 공유한다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Hyundai Motor",
+    "related_actor": "Volkswagen Group",
+    "similarity": 0.68,
+    "edge_weight": 0.68,
+    "shared_technology_areas": [
+      "Autonomous Computing Architecture",
+      "Sensor Systems"
+    ],
+    "basis": "Volkswagen 은 자율주행 컴퓨팅 아키텍처와 센서 시스템 관련 특허를 보유하고 있어, 현대자동차의 자율주행 검증 기술 확대 방향과 기술적 유사성을 보인다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Hyundai Motor",
+    "related_actor": "Nissan Motor Corporation",
+    "similarity": 0.62,
+    "edge_weight": 0.62,
+    "shared_technology_areas": [
+      "Thermal Materials",
+      "Power Conversion",
+      "Door Mechanisms"
+    ],
+    "basis": "Nissan 은 열발생 소재 및 전력 변환 장치 관련 특허를 보유하고 있어, EV 의 열관리 및 전력 효율성 측면에서 현대자동차와 기술적 접점을 가진다.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Hyundai Motor",
+    "related_actor": "General Motors",
+    "similarity": 0.58,
+    "edge_weight": 0.58,
+    "shared_technology_areas": [
+      "Suspension Systems",
+      "Circuit Protection",
+      "Target Detection"
+    ],
+    "basis": "General Motors 는 서스펜션 및 회로 보호 장치 관련 특허를 보유하고 있어, 차량 주행 성능 및 안전성 측면에서 현대자동차와 부분적인 기술 유사성을 보인다.",
+    "evidence_level": "direct"
+  }
+]
