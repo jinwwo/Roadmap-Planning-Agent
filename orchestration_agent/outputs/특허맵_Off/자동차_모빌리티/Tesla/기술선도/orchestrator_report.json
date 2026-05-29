@@ -1,0 +1,522 @@
+{
+  "problem_frame": {
+    "industry": "Automotive / Mobility / EV / AI",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 22700000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Tesla",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "EV 및 AI 기술 리더십 유지",
+      "자율주행 및 에너지 생태계 확장",
+      "HW/SW 통합 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $22.7B 내에서 정확히 배분됨. 2026-2030 기간 내 기술 개발 일정도 타당함."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T03(자율주행 AI) 가 T08(전장 제어보드) 의 선행 조건으로 설정되어 논리적 의존성 충족."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "Tesla 의 AI/자율주행 및 HW/SW 통합 전략과 높은 정합성. EV 생태계 확장 방향성 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T03, T01) 에 집중 투자하고 Tier 2(T08, T05) 에 보조 투자하는 구조가 합리적."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.55,
+        "risk_balance": 0.6,
+        "comment": "단기(T03, T01) 와 중장기(T08, T05) 기술이 균형 있게 분포되어 있음."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T03",
+            "name": "다중 태스크 자율주행 AI",
+            "category": "Architecture",
+            "trl": 7,
+            "final_score": 90.0,
+            "market_score": 94.0,
+            "patent_score": 85.1,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T01",
+            "name": "건식 전극 제조 공정",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 88.5,
+            "market_score": 88.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "고성능 열흡수 배터리 소재",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 78.94,
+            "market_score": 76.2,
+            "patent_score": 82.3,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "차량용 충전 인프라 매칭",
+            "category": "Architecture",
+            "trl": 7,
+            "final_score": 75.51,
+            "market_score": 72.0,
+            "patent_score": 79.8,
+            "expected_market_boom_quarter": "2028 Q3"
+          },
+          {
+            "tech_id": "T08",
+            "name": "차량용 전장 제어보드",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 74.19,
+            "market_score": 74.5,
+            "patent_score": 73.8,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T04",
+            "name": "차량용 HVAC 모듈화 시스템",
+            "category": "Equipment",
+            "trl": 8,
+            "final_score": 72.06,
+            "market_score": 68.5,
+            "patent_score": 76.4,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T07",
+            "name": "차량 내장 공간 모듈화",
+            "category": "Packaging",
+            "trl": 7,
+            "final_score": 70.68,
+            "market_score": 70.0,
+            "patent_score": 71.5,
+            "expected_market_boom_quarter": "2029 Q2"
+          },
+          {
+            "tech_id": "T06",
+            "name": "차체 구조용 접합 검사",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 67.77,
+            "market_score": 62.5,
+            "patent_score": 74.2,
+            "expected_market_boom_quarter": "2030 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T03",
+            "name": "다중 태스크 자율주행 AI",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 상대적으로 성숙한 기술이지만, 2026 Q4 시장 붐을 앞두고 1 차년도부터 즉시 최적화 및 아키텍처 고도화를 시작해야 합니다. 3 차년도까지 완료하여 후행 기술인 전장 제어보드 (T08) 의 하드웨어 구현을 위한 소프트웨어 기반을 먼저 확립합니다.",
+              "tech_execution": "BYD 와 NIO 등 경쟁사의 빠른 추격을 막기 위해 테슬라의 FSD 경쟁력을 유지하는 핵심 아키텍처 진화가 필수적입니다. 다중 태스크 학습을 통한 신뢰성 향상은 자율주행 리더십을 공고히 하는 전략적 방향과 직결됩니다.",
+              "investment_selection": "자율주행 소프트웨어는 테슬라의 가장 큰 진입 장벽이자 시장 가치의 핵심 동인이므로, 초기 R&D 예산을 집중 투자하여 기술 격차를 유지해야 합니다. 데이터와 컴퓨팅 파워를 기반으로 한 선점 전략이 경쟁 우위를 결정합니다."
+            }
+          },
+          {
+            "tech_id": "T08",
+            "name": "차량용 전장 제어보드",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T03"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술인 T03(다중 태스크 AI) 의 아키텍처가 2 차년도에 안정화되어야 하므로, 2 차년도부터 하드웨어 설계 및 프로토타이핑을 시작합니다. TRL 6 수준이므로 2 차년도부터 4 차년도까지 3 년간 개발하여 2027 Q3 시장 붐에 맞춰 양산 준비를 완료합니다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+              "tech_execution": "고성능 AI 아키텍처를 실제 차량에 구현하기 위한 필수 하드웨어 기반으로, L3 자율주행 상용화를 위한 고집적화 및 고성능화가 요구됩니다. 전장 제어보드의 고도화는 HW/SW 통합 스택 강화 전략의 핵심 요소입니다.",
+              "investment_selection": "자율주행과 커넥티드 기능의 핵심인 전장 제어보드 시장은 소수 기업이 주도하므로, 테슬라의 독자적인 제어보드 기술 확보가 비용 효율성과 성능 차별화에 필수적입니다. 2027 년경 시장 붐을 선점하기 위한 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T01",
+            "name": "건식 전극 제조 공정",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 양산화를 위한 핵심 장비 및 소재 개발이 필요하므로 1 차년도부터 즉시 시작합니다. 2027 Q2 시장 붐을 중간 마일스톤으로 삼아 초기 양산을 시작하되, 공정 최적화와 원가 절감 효과를 극대화하기 위해 5 차년도 (2030 년) 까지 지속적인 R&D 를 이어갑니다.",
+              "tech_execution": "배터리 제조 비용을 획기적으로 낮추는 핵심 기술로, 테슬라의 생산성 향상과 원가 경쟁력 확보를 위해 선점해야 할 필수 공정입니다. 테라헤르츠 측정 및 캘린더링 특허 등 관련 기술의 진화를 반영한 지속적인 공정 고도화가 필요합니다.",
+              "investment_selection": "배터리 비용은 EV 가격 경쟁력의 핵심이므로, 건식 전극 공정의 완전한 성숙과 대량 생산 체제 구축을 위한 장기 투자가 시장 규모 확보에 필수적입니다. 2030 년까지 이어지는 기술 진화는 테슬라의 에너지 생태계 확장을 뒷받침합니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "차량용 충전 인프라 매칭",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "충전 표준 정립이 예상되는 2028 Q3 시장 붐을 고려하여, 3 차년도부터 알고리즘 개발 및 네트워크 통합 테스트를 시작합니다. 에너지 생태계 확장을 위한 장기적인 기술이므로 5 차년도 (2030 년) 까지 표준화 및 글로벌 확장 R&D 를 지속합니다.",
+              "tech_execution": "테슬라의 슈퍼차저 네트워크와 통합된 지능형 상호작용은 EV 보급 확대에 필수적이며, 분산된 충전소 네트워크를 효율적으로 관리하는 소프트웨어 아키텍처가 필요합니다. 메르세데스 및 리비안의 특허 동향을 반영한 기술 선점이 경쟁 우위를 가져옵니다.",
+              "investment_selection": "충전 인프라 매칭은 하드웨어 중심의 경쟁에서 소프트웨어 기반의 서비스 경쟁으로 전환되는 시점의 핵심 가치 창출 요소입니다. 2030 년까지 이어지는 기술 개발은 테슬라의 에너지 생태계 확장 전략을 완성하는 데 필수적인 투자입니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 22700000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T03",
+                "name": "다중 태스크 자율주행 AI",
+                "tier": "Tier 1",
+                "tech_budget_usd": 9080000000.0,
+                "tech_budget_rationale": "T03 는 테슬라의 핵심 전략인 '자율주행 및 에너지 생태계 확장'의 최우선 과제로, 450 억 달러의 거대 시장 (TAM) 과 32.5% 의 폭발적 성장률 (CAGR) 을 보유하고 있습니다. 2026 Q4 시장 붐을 앞두고 TRL 7 의 성숙도를 바탕으로 즉시 대규모 투자를 통해 FSD 아키텍처를 고도화하고 경쟁사 (BYD, NIO) 의 추격을 차단해야 하므로, 전체 예산의 약 40% 를 할당하여 선제적 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 Q4 시장 붐을 대비하여 즉시 대규모 컴퓨팅 클러스터 확장 및 AI 연구 인력 증원을 통해 FSD 아키텍처의 다중 태스크 학습 능력을 극대화해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "다중 태스크 자율주행 AI 는 450 억 달러의 거대 시장 (TAM) 을 형성하며, 2025-2030 년간 32.5% 의 연평균 성장률 (CAGR) 을 기록할 것으로 예상됩니다. 이는 L3/L4 자율주행 상용화와 로보택시 서비스 확대에 따른 폭발적 수요 증가에 기인하며, 2026 Q4 에 예상되는 시장 붐은 테슬라에게 즉각적인 시장 점유율 확보의 결정적 시점입니다. 경쟁 구도가 1~2 개의 독점적 기업 (Oligopoly) 으로 형성될 것으로 예상되어, 초기 선점이 장기적인 시장 지배력을 결정짓는 핵심 요소입니다.",
+                  "tech_evaluation": "현재 TRL 7 로 기술 성숙도가 높으며, 테슬라의 기존 FSD 데이터와 컴퓨팅 파워를 기반으로 한 강력한 진입 장벽이 존재합니다. BYD 와 NIO 등 경쟁사의 다중 태스크 네트워크 학습 기술 추격이 가속화되고 있어, 테슬라의 AI 아키텍처 진화는 경쟁 우위를 유지하기 위한 필수 조건입니다. 특허 포트폴리오와 기술적 모멘텀이 매우 높아 기술적 실패 위험은 상대적으로 낮지만, 알고리즘 최적화와 데이터 처리 속도의 한계를 극복하는 것이 핵심 과제입니다.",
+                  "investment_decision": "시장 규모와 성장률, 경쟁 우위, 개발 긴급도 모두 최상위권 (5 점) 을 기록하여 Tier 1 로 분류되며, 전체 예산의 40% 를 할당하여 공격적인 투자를 결정합니다. 이는 테슬라의 'EV 및 AI 기술 리더십 유지' 전략과 완벽하게 정합하며, 2026 년 말 시장 붐에 맞춰 소프트웨어 기반을 확고히 함으로써 후행 기술인 전장 제어보드 (T08) 의 하드웨어 구현을 위한 필수 전제 조건을 마련합니다. 대규모 컴퓨팅 자원과 AI 인재 확보에 집중하여 기술적 우위를 공고히 해야 합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T08",
+                "name": "차량용 전장 제어보드",
+                "tier": "Tier 2",
+                "tech_budget_usd": 4540000000.0,
+                "tech_budget_rationale": "T08 은 T03(자율주행 AI) 의 하드웨어 구현을 위한 필수 기반으로, 100 억 달러의 시장 규모와 19% 의 성장률을 보유하고 있습니다. TRL 6 수준으로 2027 Q3 시장 붐에 맞춰 양산 준비를 완료해야 하므로, 선행 기술인 T03 의 안정화 이후 2 차년도부터 집중 투자하여 전체 예산의 약 20% 를 할당합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "high",
+                "recommended_action": "T03(자율주행 AI) 의 아키텍처 안정화 마일스톤 달성을 전제로 2 차년도부터 고집적 제어보드 설계 및 양산 라인 구축에 집중 투자해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "차량용 전장 제어보드는 전 세계 자동차 전장 제어 시스템 시장의 100 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 19.0% 의 CAGR 을 기록할 것으로 예상됩니다. 이는 자율주행 및 커넥티드 카 기능 확대에 따른 고성능 제어보드 수요 급증에 기인하며, 2027 Q3 에 예상되는 시장 붐은 L3 자율주행 상용화와 맞물려 핵심 시장 진입 시점입니다. 소수 기업들이 시장을 주도하는 집중된 경쟁 구도 (Concentrated) 로, 기술적 고집적화와 고성능화가 경쟁력의 핵심입니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 하드웨어 설계 및 프로토타이핑이 필요한 단계이며, 선행 기술인 T03(다중 태스크 AI) 의 아키텍처가 안정화되어야 하므로 2 차년도부터 본격적인 개발이 시작됩니다. NIO 와 메르세데스의 특허 동향을 반영한 고집적화 및 고성능화가 요구되며, 테슬라의 HW/SW 통합 스택 강화 전략의 핵심 요소입니다. 기술적 불확실성은 중간 수준이지만, AI 아키텍처와의 호환성 및 성능 최적화가 주요 과제입니다.",
+                  "investment_decision": "시장 규모와 경쟁 우위가 높고, 개발 긴급도가 높은 (4 점) 기술로 Tier 2 로 분류되며, 전체 예산의 20% 를 할당하여 선택적 투자를 결정합니다. 이는 T03 의 성공적 구현을 전제로 하므로, T03 의 마일스톤 달성 후 본격적인 하드웨어 개발에 집중하는 단계적 투자 전략이 적합합니다. 고집적 제어보드 설계 및 양산 라인 구축에 집중해야 합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "tech_budget_rationale": "건식 전극 공정은 배터리 제조 비용을 20-30% 절감하는 핵심 기술로, 125 억 달러의 시장 규모와 24.5% 의 성장률을 보유하고 있어 테슬라의 원가 경쟁력 확보에 필수적입니다. TRL 6 수준으로 양산화를 위한 핵심 장비 및 소재 개발이 시급하며, 2027 Q2 시장 붐을 앞두고 1 차년도부터 즉시 시작해야 하므로 전체 예산의 약 30% 를 할당합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2027 Q2 시장 붐을 대비하여 1 차년도부터 건식 전극 제조 핵심 장비 개발 및 소재 공급망 확보를 위한 대규모 투자를 시작해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "건식 전극 제조 공정은 전 세계 리튬이온 배터리 전극 시장의 125 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 24.5% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 이는 테슬라의 4680 배터리 대량 생산 목표와 BYD 의 기술 확장으로 인한 시장 급성장에 기인하며, 공정 도입으로 인한 20-30% 의 비용 절감 효과는 테슬라의 가격 경쟁력을 결정짓는 핵심 요소입니다. 2027 Q2 에 예상되는 시장 붐은 초기 양산 체제 구축을 위한 결정적 시점입니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 양산화를 위한 핵심 장비 및 소재 개발이 필요한 단계이며, 테슬라의 테라헤르츠 측정 및 캘린더링 특허 등 관련 기술 포트폴리오가 경쟁 우위를 제공합니다. BYD 등 경쟁사의 기술 확장 속도가 빨라 기술 선점이 중요하며, 공정 최적화와 원가 절감 효과를 극대화하기 위한 지속적인 R&D 가 필요합니다. 기술적 불확실성은 중간 수준이지만, 양산 공정 안정화 시점의 지연이 큰 리스크가 될 수 있습니다.",
+                  "investment_decision": "시장 규모와 경쟁 우위가 매우 높고, 개발 긴급도가 높은 (4 점) 기술로 Tier 1 로 분류되며, 전체 예산의 30% 를 할당하여 선제적 투자를 결정합니다. 이는 테슬라의 'HW/SW 통합 스택 강화' 및 '생산성 향상' 전략과 직결되며, 2027 년 시장 붐에 맞춰 초기 양산을 시작하고 2030 년까지 공정 최적화를 지속하기 위한 장기적 투자 계획입니다. 핵심 장비 개발 및 소재 공급망 확보에 집중해야 합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "차량용 충전 인프라 매칭",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2270000000.0,
+                "tech_budget_rationale": "T05 는 테슬라의 에너지 생태계 확장을 위한 장기적 기술로, 90 억 달러의 시장 규모와 20% 의 성장률을 보유하고 있습니다. TRL 7 로 기술 성숙도가 높지만, 2028 Q3 시장 붐을 앞두고 3 차년도부터 알고리즘 개발 및 네트워크 통합 테스트를 시작하므로 전체 예산의 약 10% 를 할당합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2028 Q3 시장 붐을 대비하여 3 차년도부터 충전 인프라 매칭 알고리즘 개발 및 네트워크 통합 테스트를 위한 선택적 투자를 시작해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "차량용 충전 인프라 매칭은 전 세계 EV 충전 인프라 및 소프트웨어 매칭 서비스 시장의 90 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 20.0% 의 CAGR 을 기록할 것으로 예상됩니다. 이는 충전소 네트워크 확장과 V2G(차량 - 그리드) 기술 도입에 따른 소프트웨어 매칭 수요 증가에 기인하며, 2028 Q3 에 예상되는 시장 붐은 충전 표준 정립과 맞물려 본격적인 시장 진입 시점입니다. 분산된 경쟁 구도 (Fragmented) 로, 표준화 및 글로벌 확장 능력이 경쟁력의 핵심입니다.",
+                  "tech_evaluation": "현재 TRL 7 로 기술 성숙도가 높으며, 메르세데스 및 리비안의 특허 동향을 반영한 알고리즘 개발 및 네트워크 통합 테스트가 필요합니다. 테슬라의 슈퍼차저 네트워크와 통합된 지능형 상호작용은 EV 보급 확대에 필수적이며, 분산된 충전소 네트워크를 효율적으로 관리하는 소프트웨어 아키텍처가 핵심입니다. 기술적 불확실성은 낮지만, 표준화 및 글로벌 확장 과정에서의 규제 및 파트너십 문제가 주요 과제입니다.",
+                  "investment_decision": "시장 규모와 기술 성숙도가 높고, 개발 긴급도가 중간 (3 점) 인 기술로 Tier 2 로 분류되며, 전체 예산의 10% 를 할당하여 선택적 투자를 결정합니다. 이는 테슬라의 '에너지 생태계 확장' 전략과 정합하며, 2028 년 시장 붐을 앞두고 3 차년도부터 알고리즘 개발 및 네트워크 통합 테스트를 시작하는 장기적 투자 계획입니다. 표준화 및 글로벌 확장 R&D 에 집중해야 합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T03",
+                "name": "다중 태스크 자율주행 AI",
+                "tier": "Tier 1",
+                "tech_budget_usd": 9080000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T03",
+                "name": "다중 태스크 자율주행 AI",
+                "tier": "Tier 1",
+                "tech_budget_usd": 9080000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T03",
+                "name": "다중 태스크 자율주행 AI",
+                "tier": "Tier 1",
+                "tech_budget_usd": 9080000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T08",
+                "name": "차량용 전장 제어보드",
+                "tier": "Tier 2",
+                "tech_budget_usd": 4540000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "차량용 충전 인프라 매칭",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2270000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T08",
+                "name": "차량용 전장 제어보드",
+                "tier": "Tier 2",
+                "tech_budget_usd": 4540000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "차량용 충전 인프라 매칭",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2270000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T08",
+                "name": "차량용 전장 제어보드",
+                "tier": "Tier 2",
+                "tech_budget_usd": 4540000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 제조 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 6810000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "차량용 충전 인프라 매칭",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2270000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 15890000000.0,
+            "3": 6810000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 2,
+            "Tier 3": 0
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T03",
+              "name": "다중 태스크 자율주행 AI",
+              "category": "Architecture",
+              "final_score": 90.0,
+              "market_score": 94.0,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T01",
+              "name": "건식 전극 제조 공정",
+              "category": "Process",
+              "final_score": 88.5,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "고성능 열흡수 배터리 소재",
+              "category": "Material",
+              "final_score": 78.94,
+              "market_score": 76.2,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T05",
+              "name": "차량용 충전 인프라 매칭",
+              "category": "Architecture",
+              "final_score": 75.51,
+              "market_score": 72.0,
+              "boom": "2028 Q3"
+            },
+            {
+              "tech_id": "T08",
+              "name": "차량용 전장 제어보드",
+              "category": "Equipment",
+              "final_score": 74.19,
+              "market_score": 74.5,
+              "boom": "2027 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Architecture": 2,
+            "Process": 2,
+            "Material": 1,
+            "Equipment": 2,
+            "Packaging": 1
+          },
+          "avg_trl": 6.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T03",
+              "name": "다중 태스크 자율주행 AI",
+              "stage": "roadmap",
+              "key_reason": "TAM 450 억 달러 및 CAGR 32.5% 로 시장 성장 잠재력이 매우 큼."
+            },
+            {
+              "tech_id": "T01",
+              "name": "건식 전극 제조 공정",
+              "stage": "roadmap",
+              "key_reason": "TAM 125 억 달러 및 CAGR 24.5% 로 시장 성장 잠재력이 매우 큼."
+            }
+          ],
+          "dependency_edges": [
+            "T03 → T08"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 1,
+            "2027 Q2": 1,
+            "2028 Q1": 1,
+            "2028 Q3": 1,
+            "2027 Q3": 1,
+            "2029 Q1": 1,
+            "2029 Q2": 1,
+            "2030 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 의존성 및 전략 정합성 모두 충족. 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_tesla_mobility_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_tesla_mobility_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_tesla_mobility_2026_2030__기술선도__investment_strategy.json"
+  }
+}

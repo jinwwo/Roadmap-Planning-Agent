@@ -1,0 +1,326 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / IDM / Foundry",
+    "expected_boom_quarter": "2026 Q3",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 트랜지스터 게이트 공정",
+        "market_score": 92.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 12.0,
+          "basis": "2030 년 기준 글로벌 반도체 시장 중 3nm 이하 최첨단 노드 (GAA 적용) 시장 규모 추정. Intel, TSMC, Samsung 의 2026-2030 년 로드맵 상 GAA 전환이 필수적임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "FinFET 에서 GAA 로의 전환 가속화 및 AI 칩 수요 증가에 따른 고성능 컴퓨팅 (HPC) 시장 성장 반영."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Advanced Logic Process Technology Market Outlook 2025-2030",
+            "url": "https://example.com/advanced-logic-outlook",
+            "use": "GAA 전환 시점 및 시장 규모 추정 근거"
+          },
+          {
+            "title": "Semiconductor Manufacturing Equipment Market Analysis",
+            "url": "https://example.com/sme-market",
+            "use": "설비 투자 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "Backside 전력망 형성 기술",
+        "market_score": 88.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "GAA 공정과 결합된 Backside Power Delivery Network (PDN) 기술이 적용되는 최첨단 로직 칩 시장 규모."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "전력 효율성 요구 증가 및 GAA 구조 최적화를 위한 필수 기술로, 2026 년 이후 노드에서 급성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Packaging and Interconnect Technologies Report",
+            "url": "https://example.com/advanced-packaging",
+            "use": "Backside PDN 기술의 시장 침투율 및 성장률 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "하이브리드 본딩 패키징",
+        "market_score": 86.5,
+        "expected_market_boom_quarter": "2027 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "3D IC 및 Chiplet 기반 패키징 시장 중 하이브리드 본딩 기술이 적용되는 고부가가치 세그먼트."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "Chiplet 아키텍처의 대중화와 AI 가속기 수요 증가로 인해 3D 적층 기술 시장이 급성장할 것으로 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "3D IC and Hybrid Bonding Market Forecast",
+            "url": "https://example.com/3d-ic-forecast",
+            "use": "하이브리드 본딩 시장 규모 및 주요 플레이어 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "AI 기반 공정 제어 및 예측",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2026 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "반도체 제조 설비 (Equipment) 및 공정 최적화 소프트웨어 시장 중 AI 기반 솔루션이 차지하는 규모."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 제조의 복잡도 증가와 수율 향상을 위한 AI 도입이 가속화되며, 2026 년 이후 본격적인 상용화 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "AI in Semiconductor Manufacturing Market Analysis",
+            "url": "https://example.com/ai-semi-manufacturing",
+            "use": "AI 기반 공정 제어 시장 성장률 및 주요 벤더 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "Compute-in-Memory 아키텍처",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "AI 추론 및 저전력 엣지 컴퓨팅을 위한 CIM 메모리 시장 규모. 2030 년까지 니치 마켓에서 성장할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 워크로드의 메모리 병목 현상 해결을 위한 CIM 기술에 대한 투자 증가 및 초기 상용화 제품 출시."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Emerging Memory Architectures for AI Workloads",
+            "url": "https://example.com/emerging-memory-ai",
+            "use": "CIM 아키텍처의 시장 잠재력 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "저온 금속 제거 및 세정 공정",
+        "market_score": 45.0,
+        "expected_market_boom_quarter": "2026 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 2.5,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.1,
+          "basis": "특정 노드 (예: 28nm 이상) 에 국한된 세정 공정 시장. 최신 노드에서는 대체 기술로 전환됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 5.0,
+          "forecast_period": "2025-2030",
+          "basis": "기술이 성숙하고 대체 공정이 등장하여 시장 성장이 둔화될 것으로 예상."
+        },
+        "competitive_landscape": "Commoditized – price-driven competition",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Wet Cleaning Process Market Review",
+            "url": "https://example.com/wet-cleaning-review",
+            "use": "기존 세정 공정의 시장 축소 및 대체 기술 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "GAA 트랜지스터 게이트 공정",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 성숙도가 높아 1 차년도 (2026) 에 즉시 최적화 및 양산 준비를 시작하며, 2027 년 중반 예상되는 시장 붐을 대비해 3 차년도 (2028) 까지 안정화 단계를 완료합니다. 이는 후행 기술인 T02 의 선행 조건이므로 3 차년도까지 확보되어야 합니다.",
+        "tech_execution": "Intel 의 IDM 2.0 전략에서 원가 우위를 확보하기 위해 검증된 GAA 공정의 최적화가 필수적이며, 3nm 이하 노드 표준화를 통해 AI 및 HPC 수요에 대응해야 합니다.",
+        "investment_selection": "GAA 공정은 2026 년 이후 반도체 시장의 표준이 될 예정이므로, 초기 투자 시점부터 집중하여 경쟁사 대비 수율과 원가 경쟁력을 확보하는 것이 핵심입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "Backside 전력망 형성 기술",
+      "year_idx_start": 3,
+      "year_idx_target": 4,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "선행 기술 T01(GAA) 이 3 차년도에 완료되어야 하므로, T02 는 3 차년도 (2028) 에 시작하여 2028 년 초 예상되는 시장 붐을 반영해 4 차년도 (2029) 까지 양산 안정화를 목표로 합니다.",
+        "tech_execution": "GAA 트랜지스터의 성능을 극대화하기 위한 필수 기술로, Foundry 서비스 확대를 위해 이 공정의 양산 안정성을 확보해야 합니다.",
+        "investment_selection": "2028 년경 주요 파운드리에서 표준화될 것으로 예상되므로, T01 의 성공적 이행을 바탕으로 차세대 노드 경쟁력을 확보하기 위한 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "하이브리드 본딩 패키징",
+      "year_idx_start": 4,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T02"
+      ],
+      "reasoning": {
+        "year_placement": "선행 기술 T02(Backside) 가 4 차년도에 완료되어야 하므로, T03 은 4 차년도 (2029) 에 시작하여 2027 년 말부터 대량 생산이 예상되는 시점을 고려해 5 차년도 (2030) 까지 기술 고도화를 진행합니다.",
+        "tech_execution": "Chiplet 전략의 핵심인 하이브리드 본딩은 3D 적층 기술을 통해 Foundry 시장 점유율 확대를 위한 핵심 차별화 요소로 작용해야 합니다.",
+        "investment_selection": "2030 년까지 급성장할 것으로 예상되는 시장에서 선점하기 위해, T02 와의 연계를 통해 5 차년도까지 기술 완성도를 높이는 투자가 필요합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T04",
+      "name": "AI 기반 공정 제어 및 예측",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 이며 2026 년 Q3 에 시장 붐이 예상되므로, 1 차년도 (2026) 에 즉시 도입하여 2 차년도 (2027) 까지 전 공정에 적용하고 수율 향상을 달성합니다.",
+        "tech_execution": "원가 우위 확보를 위한 스마트 팩토리 기술 도입이 시급하며, 수율 향상과 원가 절감을 위해 2026 년 하반기부터 빠르게 도입되어야 합니다.",
+        "investment_selection": "장비사와 IDM 이 경쟁하는 분산된 시장에서 소프트웨어 기반의 공정 제어를 통해 초기 단계에서 경쟁 우위를 점할 수 있는 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "Compute-in-Memory 아키텍처",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 성숙도가 낮아 3 차년도 (2028) 부터 본격적인 R&D 를 시작하며, 2029 년경 시장 진입을 고려해 5 차년도 (2030) 까지 기술 고도화와 프로토타입 완성을 목표로 합니다.",
+        "tech_execution": "AI 워크로드 처리를 위한 차세대 메모리 솔루션 개발이 필요하며, AI 추론 효율성을 극대화할 수 있는 기술로 장기적인 경쟁력을 확보해야 합니다.",
+        "investment_selection": "아직 명확한 시장 리더가 없는 초기 단계이므로, 2030 년까지 이어지는 R&D 를 통해 선점 전략을 수립하고 차세대 시장에서의 주도권을 잡아야 합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "GAA 트랜지스터 게이트 공정",
+      "category": "Process",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T02"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "Backside 전력망 형성 기술",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [
+        "T03"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "하이브리드 본딩 패키징",
+      "category": "Packaging",
+      "trl": 7,
+      "prerequisites": [
+        "T02"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q4"
+    },
+    "T04": {
+      "tech_id": "T04",
+      "name": "AI 기반 공정 제어 및 예측",
+      "category": "Equipment",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2026 Q3"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "Compute-in-Memory 아키텍처",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2029 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "IDM 2.0 원가 우위와 Foundry 점유율 확대 전략에 부합하는 GAA, Backside, 하이브리드 본딩 등 핵심 기술을 선별. 2026 년부터 2029 년까지 시점 분포를 확보하여 2030 년 로드맵 완성도를 높임.",
+    "dropped": [
+      {
+        "tech_id": "T06",
+        "name": "저온 금속 제거 및 세정 공정",
+        "reason": "최신 노드 주류 기술로 사용되지 않을 가능성이 높고, final_score 가 낮아 전략적 우선순위에서 제외됨."
+      }
+    ]
+  }
+}

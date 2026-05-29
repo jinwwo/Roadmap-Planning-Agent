@@ -1,0 +1,298 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Memory / Foundry",
+    "expected_boom_quarter": "2026 Q4",
+    "market_research_summary": {
+      "T01": {
+        "name": "3D NAND 수직 에피택셜 실리콘",
+        "market_score": 72.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 85.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 3.5,
+          "basis": "전 세계 NAND 플래시 메모리 시장 규모 (2025-2030) 를 기반으로, 수직 에피택셜 실리콘 기술이 적용되는 고밀도 3D NAND (200 레이어 이상) 세그먼트를 SAM 으로 추정. SOM 은 삼성의 점유율 목표 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "전통적인 NAND 시장 성장은 둔화되나, AI 데이터센터용 고용량 SSD 수요로 인해 고밀도 3D NAND 세그먼트는 평균 이상의 성장률 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global NAND Flash Market Size & Forecast 2025-2030",
+            "url": "https://example.com/nand-market-report",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "3D NAND Scaling Challenges and Solutions",
+            "url": "https://example.com/3dnand-scaling",
+            "use": "기술적 필요성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "하이브리드 본딩 통합 공정",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "고성능 컴퓨팅 (HPC) 및 AI 칩을 위한 2.5D/3D 패키징 시장 규모를 TAM 으로 설정. HBM 및 CoWoS 와 같은 하이브리드 본딩 적용 세그먼트를 SAM 으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 가속기 및 HBM 수요 급증으로 인해 하이브리드 본딩 기술 시장은 연평균 20% 이상의 고성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Packaging Market Outlook 2025-2030",
+            "url": "https://example.com/advanced-packaging",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Hybrid Bonding in HBM and AI Chips",
+            "url": "https://example.com/hybrid-bonding-ai",
+            "use": "기술 적용 범위 및 경쟁사 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "market_score": 76.8,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 30.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.5,
+          "basis": "전 세계 AI 추론 및 엣지 컴퓨팅 시장 중 메모리 내 연산 (CIM) 기술이 적용될 수 있는 세그먼트를 SAM 으로 추정. 초기 상용화 단계이므로 SOM 은 제한적."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "전통적 폰 노이만 병목 해결을 위한 CIM 기술은 AI 추론 시장 성장에 따라 2028 년 이후 본격적인 상용화 및 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Compute-in-Memory Market Analysis 2025-2030",
+            "url": "https://example.com/cim-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "AI Inference Hardware Trends",
+            "url": "https://example.com/ai-inference-hardware",
+            "use": "기술적 필요성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "플라즈마 증착 공정 최적화",
+        "market_score": 64.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.0,
+          "basis": "반도체 제조 장비 시장 중 플라즈마 증착 (PECVD/ALD) 관련 세그먼트를 TAM 으로 설정. 고집적 공정 최적화 수요를 SAM 으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 10.5,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 장비 시장은 성숙 단계이나, 고집적 공정 (3nm 이하) 에 필요한 정밀 증착 기술 수요로 인해 꾸준한 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Equipment Market Outlook 2025-2030",
+            "url": "https://example.com/semiconductor-equipment",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Plasma Deposition Technologies in Advanced Nodes",
+            "url": "https://example.com/plasma-deposition",
+            "use": "기술적 필요성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "메모리 오류 수정 및 관리",
+        "market_score": 58.0,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "전 세계 메모리 시장 중 오류 수정 코드 (ECC) 및 관리 소프트웨어/하드웨어 세그먼트를 TAM 으로 설정. 고신뢰성 메모리 수요를 SAM 으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.5,
+          "forecast_period": "2025-2030",
+          "basis": "메모리 밀도 증가로 인한 오류율 상승에 따라 오류 수정 기술 수요는 꾸준히 증가하나, 시장 성장은 전체 메모리 시장 성장률과 유사할 것으로 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Memory Error Correction Market Analysis 2025-2030",
+            "url": "https://example.com/memory-error-correction",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Reliability Challenges in High-Density Memory",
+            "url": "https://example.com/memory-reliability",
+            "use": "기술적 필요성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 116200000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "3D NAND 수직 에피택셜 실리콘",
+        "하이브리드 본딩 통합 공정",
+        "메모리 내 연산 (CIM) 아키텍처"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "num_items": 3
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "3D NAND 수직 에피택셜 실리콘",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 45000000000.0,
+          "tech_budget_rationale": "T01 은 삼성의 메모리 리더십을 유지하는 핵심 기반 기술로, 2027 년 Q3 시장 폭발에 대비하여 2026 년까지 양산 준비를 완료해야 하므로 가장 높은 우선순위를 부여합니다. 총 예산의 약 38.7% 인 450 억 달러를 배정하여, TRL 6 에서 8 로의 성숙도 향상과 200 레이어 이상 고밀도 공정 확립에 집중 투자합니다. 이는 후행 기술인 T02 와 T03 의 선행 조건을 충족시키는 동시에, AI 데이터센터용 고용량 SSD 시장에서의 점유율 방어 및 확장을 위한 필수적인 선제적 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "전 세계 NAND 플래시 메모리 시장 중 고밀도 3D NAND 세그먼트는 TAM 850 억 달러, SAM 250 억 달러 규모로 추정되며, AI 데이터센터 수요로 인해 2025-2030 년간 연평균 12.5% 의 성장률을 보일 것으로 예상됩니다. 2027 년 Q3 에 예상되는 시장 폭발 시점을 고려할 때, 현재 시점에서의 기술 선점과 양산 준비는 삼성이 시장 주도권을 유지하는 데 결정적입니다. 특히 수직 에피택셜 실리콘 기술은 200 레이어 이상 고밀도 메모리 제조의 핵심 병목 기술로, 이 영역에서의 기술 격차 해소는 경쟁사 대비 우위를 점하는 데 필수적입니다.",
+            "tech_evaluation": "현재 TRL 6 수준으로, 프로토타입 검증 단계에서 양산 준비 단계로 전환되는 중요한 시점에 있으며, 기술적 불확실성은 중간 수준 (점수 3) 으로 평가됩니다. 삼성은 이미 관련 특허 포트폴리오를 보유하고 있으나, Micron 과 Applied Materials 의 공격적인 특허 출원 동향을 고려할 때, 기술적 완성도와 공정 안정성을 높이는 데 집중해야 합니다. 이 기술은 T02(하이브리드 본딩) 와 T03(CIM) 의 선행 조건이므로, 기술적 성숙도 확보가 전체 로드맵의 성패를 좌우합니다.",
+            "investment_decision": "높은 시장 성장성 (점수 4) 과 높은 경쟁 우위 (점수 5), 그리고 개발 긴급도 (점수 4) 를 종합하여 Tier 1 로 선정합니다. 총 예산 1,162 억 달러 중 가장 큰 비중인 450 억 달러를 할당하여, 2026 년까지 양산 라인 구축과 공정 최적화를 완료하는 것을 목표로 합니다. 이는 삼성의 '반도체 및 메모리 기술 리더십 유지' 전략과 직접적으로 부합하며, 장기적인 수익 창출의 기반을 마련하는 핵심 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "즉시 양산 라인 확장 및 공정 최적화 프로젝트 착수하여 2026 년 말까지 TRL 8 달성 및 2027 년 Q3 시장 진입 준비 완료.",
+          "rationale": [
+            "TAM 850 억 달러 및 CAGR 12.5% 의 높은 시장 성장 잠재력",
+            "TRL 6 에서 8 로의 성숙도 향상을 위한 선제적 투자 필요",
+            "T02 및 T03 의 선행 기술로서 전체 로드맵의 핵심 기반 역할",
+            "경쟁사 대비 기술 격차 해소 및 선점을 위한 높은 경쟁 우위 확보"
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "하이브리드 본딩 통합 공정",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 42000000000.0,
+          "tech_budget_rationale": "T02 는 2026 년 Q4 에 예상되는 HBM 및 AI 칩 시장 폭발에 직접적으로 대응하는 핵심 패키징 기술로, 가장 높은 개발 긴급도 (점수 5) 와 시장 성장성 (점수 5) 을 보입니다. 총 예산의 약 36.1% 인 420 억 달러를 배정하여, TRL 7 에서 9 로의 성숙도 향상과 양산 능력을 확보하는 데 집중합니다. 이는 TSMC 와 SK 하이닉스와의 경쟁에서 우위를 점하고, 삼성의 'AI 및 HBM 시장 확장' 전략을 실현하기 위한 필수적인 선제적 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "고성능 컴퓨팅 (HPC) 및 AI 칩을 위한 2.5D/3D 패키징 시장은 TAM 450 억 달러, SAM 180 억 달러 규모로, AI 가속기 및 HBM 수요 급증으로 인해 2025-2030 년간 연평균 24.5% 의 고성장률을 보일 것으로 예상됩니다. 2026 년 Q4 에 예상되는 시장 폭발 시점은 매우 가깝기 때문에, 기술 성숙도 확보와 양산 준비가 시급합니다. 하이브리드 본딩 기술은 HBM 및 CoWoS 와 같은 고급 패키징의 핵심 병목 기술로, 이 영역에서의 기술 선점은 시장 주도권 확보에 결정적입니다.",
+            "tech_evaluation": "현재 TRL 7 수준으로, 양산 준비 단계에 가까우며 기술적 불확실성은 낮음 (점수 2) 으로 평가됩니다. 삼성은 관련 특허 포트폴리오를 보유하고 있으나, TSMC 와 SK 하이닉스의 공격적인 특허 출원 동향을 고려할 때, 기술적 완성도와 양산 능력을 높이는 데 집중해야 합니다. 이 기술은 T01 의 기반 위에서 발전하며, AI 칩 시장에서의 경쟁력을 확보하는 데 필수적입니다.",
+            "investment_decision": "매우 높은 시장 성장성 (점수 5) 과 높은 경쟁 우위 (점수 5), 그리고 매우 높은 개발 긴급도 (점수 5) 를 종합하여 Tier 1 로 선정합니다. 총 예산 1,162 억 달러 중 두 번째로 큰 비중인 420 억 달러를 할당하여, 2026 년 말까지 양산 라인 구축과 공정 최적화를 완료하는 것을 목표로 합니다. 이는 삼성의 'AI 및 HBM 시장 확장' 전략과 직접적으로 부합하며, 단기적인 수익 창출과 장기적인 시장 주도권 확보를 위한 핵심 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "즉시 HBM 및 AI 칩용 하이브리드 본딩 양산 라인 구축 프로젝트 착수하여 2026 년 Q4 시장 진입 준비 완료.",
+          "rationale": [
+            "TAM 450 억 달러 및 CAGR 24.5% 의 매우 높은 시장 성장 잠재력",
+            "2026 년 Q4 시장 폭발에 대비한 매우 높은 개발 긴급도",
+            "HBM 및 AI 칩 시장에서의 경쟁 우위 확보를 위한 핵심 기술",
+            "TRL 7 에서 9 로의 성숙도 향상을 위한 선제적 투자 필요"
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "메모리 내 연산 (CIM) 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 29200000000.0,
+          "tech_budget_rationale": "T03 은 2029 년 Q2 이후 상용화가 예상되는 차세대 아키텍처로, 높은 시장 성장성 (점수 4) 과 경쟁 우위 (점수 4) 를 보이지만, 기술적 불확실성 (점수 4) 과 낮은 성숙도 (TRL 5) 로 인해 Tier 2 로 선정합니다. 총 예산의 약 25.1% 인 292 억 달러를 배정하여, 2026 년부터 2030 년까지 장기적인 R&D 와 PoC 개발에 집중합니다. 이는 삼성의 'Foundry 및 시스템 반도체 스택 강화' 전략을 실현하고, 2029 년 이후 시장 진입을 준비하기 위한 선택적 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "전 세계 AI 추론 및 엣지 컴퓨팅 시장 중 CIM 기술이 적용될 수 있는 세그먼트는 TAM 300 억 달러, SAM 80 억 달러 규모로, AI 추론 시장 성장에 따라 2025-2030 년간 연평균 28.0% 의 고성장률을 보일 것으로 예상됩니다. 2029 년 Q2 이후 상용화가 예상되므로, 현재 시점에서의 기술 개발은 장기적인 시장 진입을 위한 준비 단계입니다. CIM 기술은 폰 노이만 병목 해결을 위한 차세대 아키텍처로, 이 영역에서의 기술 선점은 미래 시장 주도권 확보에 중요합니다.",
+            "tech_evaluation": "현재 TRL 5 수준으로, 기술적 불확실성이 높음 (점수 4) 으로 평가되며, 상용화까지의 시간이 길어 개발 리스크가 존재합니다. 삼성은 관련 특허 포트폴리오를 보유하고 있으나, Micron 과 Intel 의 공격적인 R&D 동향을 고려할 때, 기술적 완성도와 상용화 속도를 높이는 데 집중해야 합니다. 이 기술은 T01 의 기반 위에서 발전하며, AI 추론 효율성 향상을 위한 차세대 아키텍처로 주목받고 있습니다.",
+            "investment_decision": "높은 시장 성장성 (점수 4) 과 높은 경쟁 우위 (점수 4) 를 보이지만, 높은 기술적 불확실성 (점수 4) 과 낮은 성숙도 (TRL 5) 로 인해 Tier 2 로 선정합니다. 총 예산 1,162 억 달러 중 292 억 달러를 할당하여, 2026 년부터 2030 년까지 장기적인 R&D 와 PoC 개발에 집중합니다. 이는 삼성의 'Foundry 및 시스템 반도체 스택 강화' 전략과 부합하며, 장기적인 시장 진입을 위한 선택적 투자입니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2026 년부터 CIM 아키텍처 R&D 프로젝트 착수하여 2029 년까지 PoC 개발 및 상용화 준비 완료.",
+          "rationale": [
+            "TAM 300 억 달러 및 CAGR 28.0% 의 높은 시장 성장 잠재력",
+            "2029 년 이후 상용화를 위한 장기적인 R&D 필요",
+            "AI 추론 효율성 향상을 위한 차세대 아키텍처 선점",
+            "TRL 5 에서 8 로의 성숙도 향상을 위한 단계적 투자"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 116200000000.0
+    }
+  ]
+}

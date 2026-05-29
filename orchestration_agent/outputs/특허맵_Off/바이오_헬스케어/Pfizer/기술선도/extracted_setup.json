@@ -1,0 +1,30 @@
+{
+  "scenario_id": "pfizer_biohealth_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: Pfizer\nIndustry: Biopharmaceutical / Healthcare\nAnnual Revenue: ~$62B (FY2025)\nR&D Budget Ratio: ~17%\nAnnual R&D Budget: ~$10.5B (FY2025)\nTotal 5-year R&D Budget: ~$52.0B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Pfizer",
+    "industry": "Biopharmaceutical / Healthcare",
+    "annual_revenue": 62000000000.0,
+    "rd_budget_ratio": 0.17,
+    "annual_rd_budget": 10500000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "선도 기술 확보와 공격적 R&D 투자를 통해 장기 경쟁 우위와 프론티어 기술 선점 달성",
+    "strategic_direction": [
+      "신약 파이프라인 및 프론티어 기술 선점",
+      "디지털 헬스케어 및 AI 기반 R&D 확장",
+      "글로벌 임상 네트워크 및 데이터 스택 강화"
+    ],
+    "domain": "Biopharmaceutical / Healthcare",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 52000000000
+}

@@ -1,0 +1,454 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Foundry",
+    "expected_boom_quarter": "2025 Q3",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 게이트 전극 공차 최적화",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 12.0,
+          "basis": "2030 년 기준 글로벌 파운드리 시장 중 2nm 이하 GAA 공정 적용 칩 (AI, 모바일 SoC) 의 예상 규모. TSMC N2/N3 및 Intel 18A 노드 도입에 따른 고부가가치 시장 집중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 구조가 3nm 이하 노드의 표준으로 자리 잡으며, AI 가속기 및 고성능 모바일 칩 수요 증가에 따른 급성장 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Advanced Logic Foundry Market Outlook 2025-2030",
+            "url": "https://example.com/advanced-logic-foundry",
+            "use": "GAA 공정 전환 시점 및 시장 규모 추정 근거"
+          },
+          {
+            "title": "TSMC N2 Technology Node Roadmap Analysis",
+            "url": "https://example.com/tsmc-n2-roadmap",
+            "use": "2nm 노드 양산 시점 및 GAA 기술 채택률 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "백면 전극 패터닝 및 리세스",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "GAA 구조와 결합된 백면 접합 (Backside Power Delivery) 기술이 적용되는 고밀도 로직 칩 시장. 2028 년 이후 2nm 이하 노드에서 본격화 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "전력 효율 향상을 위한 백면 전극 기술이 2nm 이하 노드에서 표준화되며, AI 칩의 전력 밀도 요구사항 증가에 따라 성장."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Backside Power Delivery Network (BSPDN) Market Trends",
+            "url": "https://example.com/bspdn-trends",
+            "use": "백면 전극 기술의 시장 침투율 및 성장률 분석"
+          },
+          {
+            "title": "Intel 18A and TSMC N2 Process Comparison",
+            "url": "https://example.com/intel-tsmc-comparison",
+            "use": "백면 리세스 기술의 경쟁사별 도입 현황"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "고밀도 3D 스택 패키징",
+        "market_score": 91.5,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 85.0,
+          "sam_usd_b": 30.0,
+          "som_usd_b": 8.0,
+          "basis": "2030 년 기준 3D 패키징 (CoWoS, HBM, SoIC 등) 시장 규모. AI 가속기 및 HBM 메모리 수요 폭발로 인한 급성장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 데이터센터용 HBM 및 3D 스택 칩셋 수요가 연평균 28% 이상 성장하며, 패키징 시장이 로직 공정 시장보다 빠르게 확대."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Packaging Market Forecast 2025-2030",
+            "url": "https://example.com/advanced-packaging-forecast",
+            "use": "3D 스택 및 HBM 시장 규모 및 CAGR 근거"
+          },
+          {
+            "title": "TSMC CoWoS Capacity Expansion Strategy",
+            "url": "https://example.com/tsmc-cowos",
+            "use": "TSMC 의 3D 패키징 생산 능력 확장 계획"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "FinFET 게이트 구조 최적화",
+        "market_score": 45.0,
+        "expected_market_boom_quarter": "2025 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 40.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 4.0,
+          "basis": "2030 년 기준 5nm/7nm FinFET 기반의 성숙한 로직 칩 시장. GAA 로의 전환으로 인해 성장세 둔화 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.0,
+          "forecast_period": "2025-2030",
+          "basis": "FinFET는 2025 년 이후 GAA 로 대체되는 과도기 기술로, 저전력 IoT 및 중급 모바일 칩 시장에서만 제한적 성장."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "FinFET Technology Lifecycle Analysis",
+            "url": "https://example.com/finfet-lifecycle",
+            "use": "FinFET 기술의 수명 주기 및 시장 축소 전망"
+          },
+          {
+            "title": "GlobalFoundries and Samsung FinFET Node Strategy",
+            "url": "https://example.com/gf-samsung-finfet",
+            "use": "성숙 노드에서의 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "반도체 제조 공정 자동화 제어",
+        "market_score": 76.0,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "2030 년 기준 반도체 제조 장비 및 공정 자동화 소프트웨어 시장. AI 기반 공정 제어 (APC) 수요 증가."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "공정 복잡도 증가와 수율 향상을 위한 AI 기반 자동화 솔루션 도입이 가속화되며, 연평균 15% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Manufacturing Automation Market 2025-2030",
+            "url": "https://example.com/semiconductor-automation",
+            "use": "공정 자동화 시장 규모 및 성장 동력 분석"
+          },
+          {
+            "title": "AI in Semiconductor Manufacturing: Trends and Opportunities",
+            "url": "https://example.com/ai-semi-manufacturing",
+            "use": "AI 기반 공정 제어 기술의 시장 침투율"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "메탈 게이트 워크함션 재료",
+        "market_score": 55.0,
+        "expected_market_boom_quarter": "2026 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.5,
+          "basis": "고급 노드용 특수 금속 재료 시장. GAA 및 FinFET 공정에서 소량 사용되지만, 전체 공정 비용 대비 비중은 낮음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "고성능 노드에서의 재료 최적화 수요가 있으나, 전체 시장 규모는 제한적이며 성숙한 공급망에 의존."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Materials for Semiconductor Manufacturing",
+            "url": "https://example.com/semi-materials",
+            "use": "메탈 게이트 재료 시장 규모 및 공급망 분석"
+          },
+          {
+            "title": "TSMC and GlobalFoundries Material Supply Chain",
+            "url": "https://example.com/material-supply-chain",
+            "use": "주요 파운드리사의 재료 조달 전략"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "RF 필터 및 공진기 패키징",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.8,
+          "basis": "2030 년 기준 5G/6G 모바일 및 IoT 기기용 RF 필터 및 공진기 시장. 고주파 대역 확장으로 인한 수요 증가."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.0,
+          "forecast_period": "2025-2030",
+          "basis": "5G/6G 통신 표준 확대 및 IoT 기기 증가로 RF 필터 시장이 연평균 16% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "RF Filter and Resonator Market Outlook 2025-2030",
+            "url": "https://example.com/rf-filter-market",
+            "use": "RF 필터 시장 규모 및 성장 동력 분석"
+          },
+          {
+            "title": "5G/6G Impact on Semiconductor Packaging",
+            "url": "https://example.com/5g-6g-packaging",
+            "use": "통신 기술 발전에 따른 패키징 수요 변화"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "광전자 통합 회로 아키텍처",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "2030 년 기준 광전자 통합 (Silicon Photonics) 시장. 데이터센터 및 AI 가속기 간 고속 통신 수요 증가."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "데이터센터 내 광통신 모듈 수요 증가로 광전자 통합 기술이 연평균 20% 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Silicon Photonics Market Forecast 2025-2030",
+            "url": "https://example.com/silicon-photonics",
+            "use": "광전자 통합 시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Intel and TSMC Optical Interconnect Strategy",
+            "url": "https://example.com/optical-interconnect",
+            "use": "주요 기업의 광전자 기술 도입 계획"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 31200000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "GAA 게이트 전극 공차 최적화",
+        "백면 전극 패터닝 및 리세스",
+        "고밀도 3D 스택 패키징",
+        "반도체 제조 공정 자동화 제어",
+        "광전자 통합 회로 아키텍처"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T05",
+        "T08"
+      ],
+      "num_items": 5
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "GAA 게이트 전극 공차 최적화",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 10510105871.0,
+          "tech_budget_rationale": "T01 은 TSMC 의 2nm 노드 경쟁력을 결정짓는 핵심 선행 기술로, 2027 년 시장 붐에 맞춰 양산 준비를 완료해야 하므로 전체 예산의 33.7% 에 해당하는 105 억 달러를 배분합니다. 이는 거대 시장 (TAM $120B) 과 높은 성장률 (CAGR 24.5%) 에 대응하여 Intel 과의 기술 격차를 벌리기 위한 선제적 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "GAA 공정은 2030 년 기준 $120B 의 거대 시장 (TAM) 을 형성하며, 연평균 24.5% 의 높은 성장률을 보입니다. 2027 년 Q2 에 예상되는 시장 붐은 AI 가속기 및 고성능 모바일 칩 수요에 의해 주도되며, TSMC 가 이 시점에 기술적 우위를 점해야 합니다.",
+            "tech_evaluation": "TRL 6 수준으로 양산 직전 단계이나, 게이트 전극 공차 최적화는 미세 공정 제어의 핵심으로 기술적 불확실성이 여전히 존재합니다. TSMC 의 기존 특허 포트폴리오와 공정 노하우를 활용하여 경쟁사 대비 우위를 확보할 수 있는 전략적 핵심 영역입니다.",
+            "investment_decision": "시장 규모와 성장성, 그리고 TSMC 의 전략적 우선순위 (2nm/3nm 강화) 를 고려하여 Tier 1 로 선정하고, 전체 예산의 가장 큰 비중을 할당합니다. 이는 2027 년 시장 진입 시점을 놓치지 않기 위한 필수적인 선제적 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2nm 노드 양산을 위한 GAA 공정 최적화 라인 확충 및 수율 향상을 위한 대규모 R&D 투자 즉시 착수.",
+          "rationale": [
+            "TAM $120B 및 CAGR 24.5% 로 시장 성장성이 매우 높음.",
+            "TRL 6 수준으로 양산 준비가 시급하며, 2027 년 Q2 시장 붐에 맞춰야 함.",
+            "TSMC 의 2nm 노드 경쟁력 유지를 위한 핵심 선행 기술임."
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "백면 전극 패터닝 및 리세스",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 6246005775.0,
+          "tech_budget_rationale": "T02 는 T01 의 성숙을 전제로 하는 백면 전력망 기술로, 2028 년 Q1 시장 붐에 맞춰 2nm 노드 양산 준비를 완료해야 하므로 62.4 억 달러를 배분합니다. AI 칩의 전력 효율 향상을 위한 필수 기술이지만, T01 에 비해 시장 진입 시점이 늦어 Tier 2 로 선정합니다.",
+          "reasoning": {
+            "market_evaluation": "백면 전극 기술은 2030 년 기준 $35B 의 시장 규모로 성장하며, 연평균 22% 의 성장률을 보입니다. 2028 년 Q1 에 예상되는 시장 붐은 AI 칩의 전력 밀도 요구사항 증가에 의해 주도될 것입니다.",
+            "tech_evaluation": "TRL 5 수준으로 개발 단계에 있으며, T01 과의 시너지를 통해 전력 효율을 극대화해야 합니다. TSMC 는 백면 리세스 기술을 통해 경쟁사 대비 우위를 확보할 수 있는 잠재력을 가지고 있습니다.",
+            "investment_decision": "시장 성장성과 TSMC 의 전략적 우선순위 (고급 공정 강화) 를 고려하여 Tier 2 로 선정하고, T01 과 T03 에 비해 낮은 예산을 할당합니다. 이는 2028 년 시장 진입 시점을 놓치지 않기 위한 선택적 투자입니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "T01 기술 성숙과 병행하여 백면 전극 패터닝 기술 개발을 가속화하고, 2nm 노드 양산을 위한 시제품 제작.",
+          "rationale": [
+            "TAM $35B 및 CAGR 22% 로 시장 성장성이 높음.",
+            "TRL 5 수준으로 개발 기간이 필요하며, 2028 년 Q1 시장 붐에 맞춰야 함.",
+            "T01 과의 시너지를 통한 전력 효율 향상이 핵심임."
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "고밀도 3D 스택 패키징",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 9369008662.0,
+          "tech_budget_rationale": "T03 은 AI/HPC 시장 (TAM $85B, CAGR 28%) 의 폭발적 성장에 대응하기 위한 핵심 패키징 기술로, 2026 년 Q4 시장 붐에 맞춰 CoWoS 등 생산 능력을 확충해야 하므로 93.6 억 달러를 배분합니다. TSMC 의 기존 강점인 패키징 기술을 바탕으로 시장 점유율을 방어하고 확장하기 위한 필수 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "3D 스택 패키징 시장은 2030 년 기준 $85B 의 규모로 성장하며, 연평균 28% 의 가장 높은 성장률을 보입니다. 2026 년 Q4 에 예상되는 HBM 및 AI 칩 수요 폭발은 TSMC 의 CoWoS 기술에 대한 의존도를 높일 것입니다.",
+            "tech_evaluation": "TRL 7 로 상대적으로 성숙한 기술이지만, 고밀도 스택 구조의 열 관리 및 신호 무결성 문제는 여전히 해결해야 할 과제로 남아있습니다. TSMC 는 CoWoS 기술을 통해 경쟁사 대비 강력한 경쟁 우위를 확보하고 있습니다.",
+            "investment_decision": "시장 성장성과 TSMC 의 전략적 우선순위 (AI/HPC 시장 확장) 를 고려하여 Tier 1 로 선정하고, T01 다음으로 높은 예산을 할당합니다. 이는 2026 년 시장 진입 시점을 놓치지 않기 위한 선제적 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "CoWoS 및 HBM 생산 라인 확충과 고밀도 스택 패키징 기술 고도화를 위한 대규모 설비 투자.",
+          "rationale": [
+            "TAM $85B 및 CAGR 28% 로 시장 성장성이 매우 높음.",
+            "TRL 7 수준으로 양산 준비가 시급하며, 2026 년 Q4 시장 붐에 맞춰야 함.",
+            "TSMC 의 CoWoS 기술을 통한 경쟁 우위 확보가 핵심임."
+          ]
+        },
+        {
+          "tech_id": "T05",
+          "name": "반도체 제조 공정 자동화 제어",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 3,
+            "tech_risk": 2,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 3123002887.0,
+          "tech_budget_rationale": "T05 는 공정 수율 향상과 원가 절감을 위한 AI 기반 자동화 기술로, 2027 년 Q3 시장 붐에 맞춰 도입을 완료해야 하므로 31.2 억 달러를 배분합니다. TSMC 의 Foundry 시장 점유율 유지 전략에 부합하지만, T01/T03 에 비해 시장 규모가 작아 Tier 2 로 선정합니다.",
+          "reasoning": {
+            "market_evaluation": "공정 자동화 시장은 2030 년 기준 $25B 의 규모로 성장하며, 연평균 15% 의 성장률을 보입니다. 2027 년 Q3 에 예상되는 시장 붐은 공정 복잡도 증가와 수율 향상 요구에 의해 주도될 것입니다.",
+            "tech_evaluation": "TRL 6 수준으로 개발 단계에 있으며, AI 기반 공정 제어 기술을 통해 생산 효율성을 높일 수 있습니다. TSMC 는 기존 공정 노하우를 활용하여 경쟁사 대비 우위를 확보할 수 있는 잠재력을 가지고 있습니다.",
+            "investment_decision": "시장 성장성과 TSMC 의 전략적 우선순위 (원가 우위 유지) 를 고려하여 Tier 2 로 선정하고, T01/T03/T02 에 비해 낮은 예산을 할당합니다. 이는 2027 년 시장 진입 시점을 놓치지 않기 위한 선택적 투자입니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "AI 기반 공정 제어 알고리즘 개발 및 장비 자동화 시스템 도입을 위한 R&D 투자.",
+          "rationale": [
+            "TAM $25B 및 CAGR 15% 로 시장 성장성이 중간 수준임.",
+            "TRL 6 수준으로 개발 기간이 필요하며, 2027 년 Q3 시장 붐에 맞춰야 함.",
+            "공정 수율 향상 및 원가 절감을 위한 핵심 기술임."
+          ]
+        },
+        {
+          "tech_id": "T08",
+          "name": "광전자 통합 회로 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 3",
+          "tech_budget_usd": 1951876805.0,
+          "tech_budget_rationale": "T08 은 차세대 HPC 시장의 핵심 기술이지만, TRL 4 로 개발 초기 단계이며 2028 년 Q3 이후 시장 붐이 예상되어 19.5 억 달러의 제한적 예산을 배분합니다. 장기적인 기술 선점을 위한 탐색적 투자로 Tier 3 로 선정합니다.",
+          "reasoning": {
+            "market_evaluation": "광전자 통합 시장은 2030 년 기준 $22B 의 규모로 성장하며, 연평균 20% 의 성장률을 보입니다. 2028 년 Q3 에 예상되는 시장 붐은 데이터센터 및 AI 가속기 간 고속 통신 수요 증가에 의해 주도될 것입니다.",
+            "tech_evaluation": "TRL 4 로 개발 초기 단계이며, 기술적 불확실성이 높습니다. TSMC 는 광전자 통합 기술을 조기에 확보하여 차세대 HPC 시장에서 선점해야 하지만, 현재는 명확한 시장 리더가 부재한 상태입니다.",
+            "investment_decision": "시장 성장성과 TSMC 의 전략적 우선순위 (장기 역량 확보) 를 고려하여 Tier 3 로 선정하고, 가장 낮은 예산을 할당합니다. 이는 2028 년 이후 시장 진입을 위한 탐색적 투자입니다."
+          },
+          "investment_scope": "exploratory",
+          "recommended_action": "광전자 통합 아키텍처 연구 및 PoC 개발을 위한 소규모 R&D 투자.",
+          "rationale": [
+            "TAM $22B 및 CAGR 20% 로 시장 성장성이 중간 수준임.",
+            "TRL 4 수준으로 개발 기간이 길며, 2028 년 Q3 이후 시장 붐에 맞춰야 함.",
+            "차세대 HPC 시장 선점을 위한 장기적 기술 확보가 핵심임."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 31200000000.0
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Memory / Foundry",
+    "expected_boom_quarter": "2028 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "3D NAND 대칭성 최적화",
+        "market_score": 68.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전 세계 NAND 플래시 메모리 시장 규모 (2025-2030) 를 기반으로, 대칭성 최적화 기술이 적용되는 고밀도 3D NAND (200 레이어 이상) 세그먼트를 SAM 으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "전통적인 NAND 시장 성장은 둔화되나, AI 데이터센터 및 엔터프라이즈 스토리지 수요로 인해 고밀도 세그먼트는 10% 이상의 CAGR 유지 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Global NAND Flash Market Size & Forecast 2025-2030",
+            "url": "https://example.com/nand-market-report",
+            "use": "TAM 및 CAGR 추정 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "메모리 내 연산 (PIM) 가속화",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "AI 추론 및 HPC 시장 내 메모리 병목 해결 솔루션 시장으로, 2030 년까지 PIM 시장이 급성장할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 워크로드 증가로 인한 메모리 월 (Memory Wall) 문제 해결을 위한 PIM 기술에 대한 투자 및 수요가 폭발적으로 증가할 것으로 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Processing-in-Memory (PIM) Market Analysis 2025-2030",
+            "url": "https://example.com/pim-market-report",
+            "use": "고성장 CAGR 및 시장 기회 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "고집적 패키징 마크 프레임",
+        "market_score": 76.4,
+        "expected_market_boom_quarter": "2027 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 2.2,
+          "basis": "고급 패키징 (HBM, CoWoS 등) 시장 규모를 기반으로, 정밀 정렬을 위한 마크 프레임 기술이 필수적인 세그먼트를 SAM 으로 설정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "HBM 및 3D 패키징 수요 증가로 인해 고집적 패키징 시장이 연평균 15% 이상 성장할 것으로 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Semiconductor Packaging Market Outlook",
+            "url": "https://example.com/packaging-market-report",
+            "use": "패키징 시장 성장 및 HBM 관련성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "GAA 트랜지스터 게이트 절단",
+        "market_score": 82.1,
+        "expected_market_boom_quarter": "2026 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "3nm 이하 공정 노드 (GAA 기반) 의 파운드리 및 IDM 시장 규모를 기반으로, 게이트 절단 공정이 적용되는 고부가가치 세그먼트를 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "GAA 구조가 주류 공정으로 전환되는 시기로, AI GPU 및 고성능 CPU 수요로 인해 관련 공정 기술 시장이 급성장할 것으로 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "GAA Transistor Technology Adoption & Market Forecast",
+            "url": "https://example.com/gaa-market-report",
+            "use": "공정 전환 시점 및 시장 규모 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "메모리 오류 정정 지연 최소화",
+        "market_score": 71.8,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "고신뢰성 메모리 (HBM, DDR5) 시장 내 오류 정정 (ECC) 기술이 적용되는 세그먼트를 기반으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "메모리 밀도 증가로 인한 오류율 상승과 AI 워크로드의 저지연 요구로 인해 ECC 최적화 기술 수요가 증가할 것으로 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Memory Error Correction & Reliability Market Trends",
+            "url": "https://example.com/ecc-market-report",
+            "use": "메모리 신뢰성 기술 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "광학 링크 변조 필터링",
+        "market_score": 79.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 7.5,
+          "som_usd_b": 1.8,
+          "basis": "데이터센터 광통신 모듈 및 실리콘 포토닉스 시장 규모를 기반으로, 변조 필터링 기술이 적용되는 고대역폭 세그먼트를 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 클러스터 간 초고속 데이터 전송 수요로 인해 광학 인터커넥트 시장이 연평균 20% 이상 성장할 것으로 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Optical Interconnects for AI Data Centers Market Report",
+            "url": "https://example.com/optical-link-report",
+            "use": "광학 링크 시장 성장 및 AI 관련성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "반도체 제조 장비 진공 제어",
+        "market_score": 64.2,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "반도체 제조 장비 (Equipment) 시장 내 진공 제어 시스템이 적용되는 세그먼트를 기반으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 설비 투자 지속으로 장비 시장이 안정적으로 성장하나, 진공 제어는 하위 부품 기술로 성장률은 전체 장비 시장과 유사할 것으로 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Semiconductor Manufacturing Equipment Market Analysis",
+            "url": "https://example.com/equipment-market-report",
+            "use": "장비 시장 규모 및 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "AI 기반 컨테이너 배포",
+        "market_score": 58.5,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 10.0,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.8,
+          "basis": "반도체 설계 및 제조 프로세스 자동화 소프트웨어 시장 내 AI 컨테이너 배포 기술이 적용되는 세그먼트를 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 설계 자동화 (EDA) 및 제조 운영 효율화 수요로 인해 관련 소프트웨어 시장이 성장할 것으로 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "AI in Semiconductor Manufacturing Software Market",
+            "url": "https://example.com/ai-software-report",
+            "use": "반도체 AI 소프트웨어 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T04",
+      "name": "GAA 트랜지스터 게이트 절단",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "2026 Q3 시장 붐을 앞두고 TRL 6의 핵심 공정 기술을 1차년도부터 즉시 착수하여 3차년도까지 양산 준비를 완료해야 한다. 이는 2nm 이하 공정 경쟁에서 수율과 성능을 확보하기 위한 선행 조건으로, 다른 아키텍처 기술의 기반이 된다.",
+        "tech_execution": "GAA 구조의 금속 게이트 절단 공정은 삼성전자가 TSMC 와의 양강 구도에서 원가 우위를 점하기 위한 필수 기술로, 고성능 컴퓨팅 칩의 물리적 기반을 마련한다.",
+        "investment_selection": "초기 투자 집중이 필요한 공정 기술로, 시장 진입 시기를 놓치면 경쟁사 대비 기술 격차가 벌어질 수 있어 1 차년도부터 핵심 투자 대상으로 선정한다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "3D NAND 대칭성 최적화",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "2027 Q2 시장 붐을 대비하여 TRL 7의 성숙한 기술을 1 차년도부터 최적화 작업을 시작하고 3 차년도까지 완료한다. 이는 메모리 시장 점유율 확보를 위한 원가 경쟁력 강화의 핵심이다.",
+        "tech_execution": "3D NAND 의 비대칭 코어 구조 최적화는 AI 데이터센터 확대로 지속 성장하는 고밀도 NAND 수요에 대응하여 수율과 원가 우위를 동시에 확보하기 위해 수행해야 한다.",
+        "investment_selection": "성숙 단계인 NAND 시장에서 고밀도 기술 선점을 통해 경쟁사 대비 원가 우위를 점할 수 있어, R&D 예산의 효율적인 배분을 위한 핵심 투자 대상이다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "고집적 패키징 마크 프레임",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T04",
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "GAA 공정 (T04) 과 3D NAND 최적화 (T01) 가 어느 정도 진전된 2 차년도부터 시작하여 2027 Q4 붐을 지나 4 차년도까지 고도화한다. 이는 HBM/GPU 기술 스택 강화를 위한 필수 패키징 인프라이다. [후처리: dependency 보정 — prereq ['T04', 'T01'] 완료 후로 1차년도 push]",
+        "tech_execution": "고집적 패키징의 정렬 및 검사 효율을 높이는 마크 프레임 기술은 HBM 및 AI 칩 수요 증가에 대응하여 정밀도를 극대화하고 수율을 높이기 위해 수행해야 한다.",
+        "investment_selection": "소수 기업이 주도하는 고집적 패키징 시장에서 기술 선점을 통해 경쟁 우위를 확보할 수 있어, 장기적인 시장 점유율 확대를 위한 핵심 투자 대상이다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "메모리 내 연산 (PIM) 가속화",
+      "year_idx_start": 5,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T03"
+      ],
+      "reasoning": {
+        "year_placement": "고집적 패키징 (T03) 기술이 확보된 2 차년도부터 시작하여 2028 Q1 붐을 지나 5 차년도까지 차세대 아키텍처로 진화시킨다. 이는 AI/Edge 시장 확장을 위한 데이터 병목 해결 기술로 장기 R&D 가 필요하다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 3차년도 push]",
+        "tech_execution": "메모리 내 연산 아키텍처는 AI 워크로드 처리 시 데이터 이동 병목을 해결하고 에너지 효율성을 극대화하여 삼성전자의 인접 시장 확장을 위한 핵심 전략 기술이다.",
+        "investment_selection": "AI 및 HPC 수요 폭발로 가장 높은 성장 잠재력을 보이는 기술로, 표준화 및 상용화 과정에서 기술 선점을 통해 시장 주도권을 확보하기 위한 핵심 투자 대상이다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T06",
+      "name": "광학 링크 변조 필터링",
+      "year_idx_start": 5,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T02"
+      ],
+      "reasoning": {
+        "year_placement": "PIM 아키텍처 (T02) 가 초기 성과를 낸 3 차년도부터 시작하여 2028 Q2 붐을 지나 5 차년도까지 차세대 장비 기술로 완성한다. 이는 AI 클러스터 간 초고속 통신을 위한 필수 인프라로 장기 개발이 필요하다. [후처리: dependency 보정 — prereq ['T02'] 완료 후로 2차년도 push]",
+        "tech_execution": "광학 링크의 변조 및 필터링 기술은 AI 데이터센터의 대역폭 요구를 충족시키고 신호 무결성을 개선하여 차세대 컴퓨팅 환경의 통신 병목을 해결하기 위해 수행해야 한다.",
+        "investment_selection": "아직 표준이 정립되지 않은 급성장 시장에서 기술 선점을 통해 엔비디아, 인텔 등과의 경쟁에서 우위를 점할 수 있어, 차세대 시장 진입을 위한 핵심 투자 대상이다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T04": {
+      "tech_id": "T04",
+      "name": "GAA 트랜지스터 게이트 절단",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [
+        "T03"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2026 Q3"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "3D NAND 대칭성 최적화",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T03"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "고집적 패키징 마크 프레임",
+      "category": "Packaging",
+      "trl": 7,
+      "prerequisites": [
+        "T04",
+        "T01"
+      ],
+      "dependents": [
+        "T02"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q4"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "메모리 내 연산 (PIM) 가속화",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [
+        "T03"
+      ],
+      "dependents": [
+        "T06"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T06": {
+      "tech_id": "T06",
+      "name": "광학 링크 변조 필터링",
+      "category": "Equipment",
+      "trl": 5,
+      "prerequisites": [
+        "T02"
+      ],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2028 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 5,
+    "rationale": "Strategic Direction(원가우위, AI/Edge 확장, HBM 강화) 에 정합된 T02, T04, T03, T01, T06 선별. 2026~2028 분기별 시점 분포 확보 및 카테고리 균형 유지.",
+    "dropped": [
+      {
+        "tech_id": "T05",
+        "name": "메모리 오류 정정 지연 최소화",
+        "reason": "T02(PIM) 와 T03(HBM) 이 메모리 성능/신뢰성 전략을 더 포괄적으로 커버하여 중복성 높음."
+      },
+      {
+        "tech_id": "T07",
+        "name": "반도체 제조 장비 진공 제어",
+        "reason": "final_score(68.6) 가 낮고, GAA(T04) 등 핵심 공정 기술에 비해 전략적 우선순위 떨어짐."
+      },
+      {
+        "tech_id": "T08",
+        "name": "AI 기반 컨테이너 배포",
+        "reason": "소프트웨어 아키텍처로 하드웨어 중심 전략과 정합성 낮고 점수(64.3) 가 가장 낮음."
+      }
+    ]
+  }
+}

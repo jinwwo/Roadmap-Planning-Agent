@@ -1,0 +1,433 @@
+{
+  "problem_frame": {
+    "industry": "Biopharmaceutical / Healthcare",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 52000000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Pfizer",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "기존 블록버스터 약물 포트폴리오 수익성 극대화",
+      "고성장 치료 영역 (Oncology, Rare Disease) 시장 확장",
+      "AI 기반 신약개발 파이프라인 효율성 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $52B 내에서 정확히 배분됨. 2026-2030 기간 내 기술 개발 주기가 타당함."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "선정된 3 개 기술 간 의존성 명시 없음. 병렬 진행 가능한 구조로 타당함."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "Pfizer 의 Oncology/AI 전략과 높은 정합. ADC 와 AI 진단이 핵심 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T04) 에 집중 투자하여 고성장 영역 확보. Tier 2(T05) 로 포트폴리오 안정화."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.65,
+        "risk_balance": 0.7,
+        "comment": "단기 (T01) 와 장기 (T04, T05) 기술이 적절히 분포. 위험 분산 효과 기대."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "항체-약물 접합체 (ADC) 플랫폼",
+            "category": "Material",
+            "trl": 7,
+            "final_score": 90.3,
+            "market_score": 88.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T03",
+            "name": "면역 조절제 및 보조제 조성물",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 83.37,
+            "market_score": 79.5,
+            "patent_score": 88.1,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T04",
+            "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 82.48,
+            "market_score": 85.0,
+            "patent_score": 79.4,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T05",
+            "name": "고분자 기반 약물 전달 시스템",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 81.09,
+            "market_score": 76.5,
+            "patent_score": 86.7,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T02",
+            "name": "실시간 공정 분석 기술 (PAT)",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 77.98,
+            "market_score": 72.0,
+            "patent_score": 85.3,
+            "expected_market_boom_quarter": "2026 Q4"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "항체-약물 접합체 (ADC) 플랫폼",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 상용화 직전 단계이므로 1 차년도부터 즉시 실행하여 2027 년 Q2 예상 시장 붐을 맞출 수 있도록 3 차년도까지 집중 투자한다. 경쟁사들의 특허 출원이 활발한 만큼 빠른 시장 진입이 핵심 전략이다.",
+              "tech_execution": "기존 블록버스터 수익을 극대화하면서도 고성장 암 치료 영역으로의 확장을 위해 ADC 플랫폼을 핵심 성장 동력으로 육성해야 한다. 이는 Pfizer 의 전략적 방향성인 고성장 치료 영역 시장 확장에 직접적으로 부합한다.",
+              "investment_selection": "연평균 24% 이상의 고성장률을 보이는 ADC 시장 규모가 2030 년 280 억 달러에 달할 것으로 예상되어, 초기 투자 대비 높은 수익성을 기대할 수 있는 핵심 투자 대상이다."
+            }
+          },
+          {
+            "tech_id": "T04",
+            "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 5 로 중간 개발 단계이므로 1 차년도부터 기초 연구와 프로토타입 개발을 시작하여 2027 년 Q3 시장 붐을 거치며 5 차년도까지 지속적인 기술 진화와 상용화를 이어간다. AI 기술의 빠른 발전 속도를 반영하여 장기적인 로드맵이 필요하다.",
+              "tech_execution": "Roche 등 경쟁사의 AI 기반 시스템 표준화 추세를 따라 Pfizer 의 '고객 친화적' 전략을 실현하기 위해 디지털 치료제 및 진단 플랫폼과의 통합을 필수적으로 수행해야 한다. 이는 신약개발 파이프라인의 효율성을 강화하는 데 기여한다.",
+              "investment_selection": "2030 년 1,200 억 달러 규모의 거대 시장으로 성장할 것으로 예상되어, 장기적인 R&D 투자를 통해 경쟁 우위를 확보하고 데이터 기반 의사결정 시스템을 구축하는 것이 합리적이다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "고분자 기반 약물 전달 시스템",
+            "year_idx_start": 2,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 이지만 2029 년 Q1 에 예상되는 시장 붐을 고려하여 2 차년도부터 본격적인 최적화 및 임상 준비를 시작하고 5 차년도까지 기술 성숙도를 높여 차세대 약물 전달 솔루션으로 완성한다. T01 과는 다른 시간축의 시장 진입을 고려한다.",
+              "tech_execution": "Novartis 등 경쟁사의 안정성 향상 특허 추세를 반영하여 기존 약물의 수명 주기를 연장하고 새로운 적응증을 확보하기 위해 이 기술을 도입해야 한다. 이는 고성장 치료 영역에서의 경쟁력을 강화하는 데 필수적이다.",
+              "investment_selection": "2030 년 350 억 달러 규모로 성장할 것으로 예상되는 시장에서, 환자 순응도를 높이는 최적화된 전달 시스템을 통해 차별화된 가치를 창출할 수 있어 핵심 투자 대상이다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 52000000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "항체 - 약물 접합체 (ADC) 플랫폼",
+                "tier": "Tier 1",
+                "tech_budget_usd": 26000000000.0,
+                "tech_budget_rationale": "T01 은 2027 년 Q2 에 예상되는 시장 붐을 맞출 수 있는 TRL 7 의 성숙한 기술로, 280 억 달러 규모의 거대 시장과 24.5% 의 높은 CAGR 을 보유하고 있어 전체 예산의 50% 를 할당합니다. 이는 Pfizer 의 고성장 치료 영역 (Oncology) 확장 전략과 완벽히 부합하며, 경쟁사들의 특허 출원이 활발한 상황에서 선제적 시장 진입을 위한 대규모 임상 및 상용화 자금이 필수적입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년부터 대규모 임상 3 상 및 규제 승인 준비를 위한 전담 조직을 즉시 구성하고, 경쟁사 대비 빠른 시장 진입을 위한 글로벌 파트너십을 확대하십시오.",
+                "reasoning": {
+                  "market_evaluation": "ADC 시장은 2030 년까지 285 억 달러의 TAM 을 형성하며 연평균 24.5% 의 초고속 성장을 보이고 있습니다. 2027 년 Q2 에 예상되는 시장 붐은 기존 화학요법의 한계를 극복하는 ADC 기술의 상용화 가속화와 맞물려 있으며, 이는 Pfizer 의 전략적 우선순위인 종양학 영역 확장에 직접적인 기회를 제공합니다. 경쟁 구도가 집중되어 있어 (Concentrated) 빠른 시장 진입이 점유율 확보의 핵심 열쇠입니다.",
+                  "tech_evaluation": "TRL 7 로 상용화 직전 단계에 도달해 있어 기술적 불확실성은 낮지만 (Tech Risk 2), Merck, AbbVie 등 경쟁사들의 특허 출원이 활발하여 경쟁 우위 확보를 위한 신속한 실행이 요구됩니다. Pfizer 의 기존 블록버스터 포트폴리오와 ADC 플랫폼을 결합하여 시너지를 극대화할 수 있는 높은 경쟁 우위 (Score 5) 를 보유하고 있습니다.",
+                  "investment_decision": "시장 성장성, 기술 성숙도, 개발 긴급도 모두 최상위권 (5 점) 을 기록하여 Tier 1 로 분류되며, 전체 예산의 50% 를 할당하여 선제적 투자를 결정합니다. 이는 2027 년 시장 붐을 놓치지 않고 Pfizer 의 핵심 성장 동력으로 육성하기 위한 필수적인 자원 배분입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "tech_budget_rationale": "T04 는 1,200 억 달러 규모의 거대 시장 잠재력을 지니고 있으나 TRL 5 로 중간 개발 단계에 있어 기술 성숙도 확보를 위한 장기적 투자가 필요합니다. 2027 년 Q3 시장 붐을 대비하여 AI 모델의 임상 적용 및 데이터 기반 의사결정 시스템 구축을 위한 예산을 전체의 30% 로 배정합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "AI 기반 진단 모델의 임상 데이터 수집 및 검증 프로세스를 즉시 시작하고, 디지털 치료제 플랫폼과의 통합을 위한 전략적 제휴를 모색하십시오.",
+                "reasoning": {
+                  "market_evaluation": "디지털 헬스케어 및 AI 진단 시장은 2030 년 1,200 억 달러의 거대 TAM 을 형성하며 연평균 22% 의 성장을 예상하고 있습니다. 데이터 기반 의사결정 및 개인화 의료 수요 증가가 주요 동인이며, 2027 년 Q3 에 예상되는 시장 붐은 AI 모델의 임상 적용 확대와 규제 승인 가속화와 맞물려 있습니다. 이는 Pfizer 의 AI 기반 신약개발 파이프라인 효율성 강화 전략과 직접적으로 연결됩니다.",
+                  "tech_evaluation": "TRL 5 로 기초 연구 및 프로토타입 개발 단계에 있어 기술적 불확실성이 존재하지만 (Tech Risk 3), Roche 등 경쟁사의 표준화 추세를 따라 Pfizer 의 '고객 친화적' 전략을 실현하기 위한 필수 기술입니다. 높은 특허 점수 (79.4) 와 시장 점수 (85.0) 는 기술의 잠재력을 입증하며, 기존 데이터 인프라와의 통합을 통해 경쟁 우위를 확보할 수 있습니다.",
+                  "investment_decision": "시장 규모와 성장성이 매우 높고 (Score 5), 개발 긴급도도 높지만 (Score 4) 기술 성숙도가 낮아 (TRL 5) Tier 1 로 분류되되, T01 보다 상대적으로 낮은 예산 (30%) 을 할당하여 장기적 기술 진화와 상용화를 위한 단계적 투자를 결정합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "고분자 기반 약물 전달 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10400000000.0,
+                "tech_budget_rationale": "T05 는 350 억 달러 규모의 시장과 16.5% 의 성장률을 보이며 TRL 7 로 성숙한 기술이지만, 2029 년 Q1 에 예상되는 시장 붐으로 인해 개발 긴급도가 상대적으로 낮습니다. 따라서 전체 예산의 20% 를 할당하여 2 차년도부터 본격적인 최적화 및 임상 준비를 위한 선택적 투자를 결정합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년부터 고분자 나노입자 및 마이크로캡슐 기술의 최적화 및 임상 준비를 시작하고, 기존 약물과의 시너지를 극대화하기 위한 적응증 확장을 위한 연구를 진행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "고분자 기반 약물 전달 시스템 시장은 2030 년 350 억 달러 규모로 성장할 것으로 예상되며, 연평균 16.5% 의 성장률을 보이고 있습니다. 지속성 방출 및 표적 전달 기술 수요 증가가 주요 동인이며, 2029 년 Q1 에 예상되는 시장 붐은 차세대 전달 시스템의 상용화 가속화와 맞물려 있습니다. 이는 Pfizer 의 고성장 치료 영역 확장 전략을 위한 핵심 기술로 평가됩니다.",
+                  "tech_evaluation": "TRL 7 로 상용화 직전 단계에 도달해 있어 기술적 불확실성은 낮지만 (Tech Risk 2), Novartis 등 경쟁사의 안정성 향상 특허 추세를 반영하여 기존 약물의 수명 주기를 연장하고 새로운 적응증을 확보하기 위한 최적화가 필요합니다. 높은 특허 점수 (86.7) 는 기술의 경쟁력을 입증하며, Pfizer 의 기존 포트폴리오와의 시너지를 극대화할 수 있습니다.",
+                  "investment_decision": "시장 성장성과 기술 성숙도가 높지만 (Score 4), 개발 긴급도가 상대적으로 낮아 (Score 3) Tier 2 로 분류되며, 전체 예산의 20% 를 할당하여 2 차년도부터 본격적인 최적화 및 임상 준비를 위한 선택적 투자를 결정합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "항체-약물 접합체 (ADC) 플랫폼",
+                "tier": "Tier 1",
+                "tech_budget_usd": 26000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "항체-약물 접합체 (ADC) 플랫폼",
+                "tier": "Tier 1",
+                "tech_budget_usd": 26000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "고분자 기반 약물 전달 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10400000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "항체-약물 접합체 (ADC) 플랫폼",
+                "tier": "Tier 1",
+                "tech_budget_usd": 26000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "고분자 기반 약물 전달 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10400000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "고분자 기반 약물 전달 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10400000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T04",
+                "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15600000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "고분자 기반 약물 전달 시스템",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10400000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 41600000000.0,
+            "2": 10400000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "항체-약물 접합체 (ADC) 플랫폼",
+              "category": "Material",
+              "final_score": 90.3,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T03",
+              "name": "면역 조절제 및 보조제 조성물",
+              "category": "Material",
+              "final_score": 83.37,
+              "market_score": 79.5,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T04",
+              "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+              "category": "Architecture",
+              "final_score": 82.48,
+              "market_score": 85.0,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T05",
+              "name": "고분자 기반 약물 전달 시스템",
+              "category": "Process",
+              "final_score": 81.09,
+              "market_score": 76.5,
+              "boom": "2029 Q1"
+            },
+            {
+              "tech_id": "T02",
+              "name": "실시간 공정 분석 기술 (PAT)",
+              "category": "Equipment",
+              "final_score": 77.98,
+              "market_score": 72.0,
+              "boom": "2026 Q4"
+            }
+          ],
+          "category_distribution": {
+            "Material": 2,
+            "Architecture": 1,
+            "Process": 1,
+            "Equipment": 1
+          },
+          "avg_trl": 6.2,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "항체 - 약물 접합체 (ADC) 플랫폼",
+              "stage": "roadmap",
+              "key_reason": "TAM 285 억 달러 및 CAGR 24.5% 로 시장 성장성이 매우 높음."
+            },
+            {
+              "tech_id": "T04",
+              "name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+              "stage": "roadmap",
+              "key_reason": "TAM 1,200 억 달러로 가장 큰 시장 잠재력을 보유."
+            }
+          ],
+          "dependency_edges": [],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2028 Q1": 1,
+            "2027 Q3": 1,
+            "2029 Q1": 1,
+            "2026 Q4": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 선정된 기술의 전략 정합성 및 포트폴리오 균형이 양호하여 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_pfizer_biohealth_2026_2030__시장이익최대__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_pfizer_biohealth_2026_2030__시장이익최대__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_pfizer_biohealth_2026_2030__시장이익최대__investment_strategy.json"
+  }
+}

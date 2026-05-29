@@ -1,0 +1,398 @@
+{
+  "market_context": {
+    "target_market": "Automotive / Mobility / EV / AI",
+    "expected_boom_quarter": "2026 Q4",
+    "market_research_summary": {
+      "T01": {
+        "name": "건식 전극 제조 공정",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 1.5,
+          "basis": "전 세계 리튬이온 배터리 전극 시장 규모와 건식 공정 도입으로 인한 비용 절감 효과 (약 20-30%) 를 반영한 추정치."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Tesla 의 4680 배터리 대량 생산 목표와 BYD 의 기술 확장으로 인한 건식 전극 시장 급성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Global Dry Electrode Manufacturing Market Outlook 2025-2030",
+            "url": "https://example.com/dry-electrode-report",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Tesla 4680 Battery Production Scaling Analysis",
+            "url": "https://example.com/tesla-4680",
+            "use": "시장 진입 시점 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "고성능 열흡수 배터리 소재",
+        "market_score": 76.2,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.8,
+          "basis": "배터리 안전성 규제 강화 및 고출력 EV 수요 증가에 따른 열관리 소재 시장 규모 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 화재 사고 예방을 위한 글로벌 규제 강화와 고에너지 밀도 배터리 채택 증가에 따른 성장."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Advanced Battery Thermal Management Materials Market",
+            "url": "https://example.com/thermal-materials",
+            "use": "TAM 및 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "다중 태스크 자율주행 AI",
+        "market_score": 94.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 5.0,
+          "basis": "자율주행 소프트웨어 및 로보택시 시장 규모와 AI 모델 라이선스 수익을 합산한 추정치."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.5,
+          "forecast_period": "2025-2030",
+          "basis": "L3/L4 자율주행 상용화 가속화 및 로보택시 서비스 확대에 따른 폭발적 성장 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Autonomous Driving Software Market Forecast 2025-2030",
+            "url": "https://example.com/autonomous-ai",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Multi-Task Learning in Autonomous Vehicles",
+            "url": "https://example.com/multi-task-ai",
+            "use": "기술 성숙도 및 경쟁 구도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "차량용 HVAC 모듈화 시스템",
+        "market_score": 68.5,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 6.5,
+          "sam_usd_b": 2.0,
+          "som_usd_b": 0.6,
+          "basis": "전 세계 EV HVAC 시장 규모와 모듈화 설계 도입으로 인한 효율성 개선 효과 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2030",
+          "basis": "EV 전용 열관리 시스템 수요 증가 및 모듈화 설계의 생산성 향상 효과."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "EV HVAC Systems Market Analysis",
+            "url": "https://example.com/ev-hvac",
+            "use": "시장 규모 및 성장률"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "차량용 충전 인프라 매칭",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 9.0,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 1.0,
+          "basis": "전 세계 EV 충전 인프라 시장과 소프트웨어 매칭 서비스 시장 규모 합산."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "충전소 네트워크 확장과 V2G(차량-그리드) 기술 도입에 따른 소프트웨어 매칭 수요 증가."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "EV Charging Infrastructure and Software Market",
+            "url": "https://example.com/charging-infrastructure",
+            "use": "시장 규모 및 성장 동력"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "차체 구조용 접합 검사",
+        "market_score": 62.5,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 4.5,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.5,
+          "basis": "자동차 제조 공정 자동화 및 비파괴 검사 시장 규모 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "고강도 강판 및 알루미늄 차체 사용 증가에 따른 정밀 검사 수요 확대."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive Manufacturing Inspection Technology Market",
+            "url": "https://example.com/inspection-tech",
+            "use": "시장 규모 및 기술 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "차량 내장 공간 모듈화",
+        "market_score": 70.0,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 7.0,
+          "sam_usd_b": 2.2,
+          "som_usd_b": 0.7,
+          "basis": "자동차 내장재 시장 규모와 모듈화 설계 도입으로 인한 비용 절감 효과 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "EV 플랫폼의 유연한 내장 설계 요구와 맞춤형 옵션 확대에 따른 성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Interior Modularization Market",
+            "url": "https://example.com/interior-modular",
+            "use": "시장 규모 및 성장 동력"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "차량용 전장 제어보드",
+        "market_score": 74.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 10.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 1.2,
+          "basis": "전 세계 자동차 전장 제어 시스템 시장 규모와 고집적 제어보드 수요 증가 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 및 커넥티드 카 기능 확대에 따른 고성능 제어보드 수요 급증."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Electronic Control Units (ECU) Market",
+            "url": "https://example.com/ecu-market",
+            "use": "시장 규모 및 성장률"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 22700000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "다중 태스크 자율주행 AI",
+        "차량용 전장 제어보드",
+        "건식 전극 제조 공정",
+        "차량용 충전 인프라 매칭"
+      ],
+      "tech_ids": [
+        "T03",
+        "T08",
+        "T01",
+        "T05"
+      ],
+      "num_items": 4
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T03",
+          "name": "다중 태스크 자율주행 AI",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 9080000000.0,
+          "tech_budget_rationale": "T03 는 테슬라의 핵심 전략인 '자율주행 및 에너지 생태계 확장'의 최우선 과제로, 450 억 달러의 거대 시장 (TAM) 과 32.5% 의 폭발적 성장률 (CAGR) 을 보유하고 있습니다. 2026 Q4 시장 붐을 앞두고 TRL 7 의 성숙도를 바탕으로 즉시 대규모 투자를 통해 FSD 아키텍처를 고도화하고 경쟁사 (BYD, NIO) 의 추격을 차단해야 하므로, 전체 예산의 약 40% 를 할당하여 선제적 투자를 수행합니다.",
+          "reasoning": {
+            "market_evaluation": "다중 태스크 자율주행 AI 는 450 억 달러의 거대 시장 (TAM) 을 형성하며, 2025-2030 년간 32.5% 의 연평균 성장률 (CAGR) 을 기록할 것으로 예상됩니다. 이는 L3/L4 자율주행 상용화와 로보택시 서비스 확대에 따른 폭발적 수요 증가에 기인하며, 2026 Q4 에 예상되는 시장 붐은 테슬라에게 즉각적인 시장 점유율 확보의 결정적 시점입니다. 경쟁 구도가 1~2 개의 독점적 기업 (Oligopoly) 으로 형성될 것으로 예상되어, 초기 선점이 장기적인 시장 지배력을 결정짓는 핵심 요소입니다.",
+            "tech_evaluation": "현재 TRL 7 로 기술 성숙도가 높으며, 테슬라의 기존 FSD 데이터와 컴퓨팅 파워를 기반으로 한 강력한 진입 장벽이 존재합니다. BYD 와 NIO 등 경쟁사의 다중 태스크 네트워크 학습 기술 추격이 가속화되고 있어, 테슬라의 AI 아키텍처 진화는 경쟁 우위를 유지하기 위한 필수 조건입니다. 특허 포트폴리오와 기술적 모멘텀이 매우 높아 기술적 실패 위험은 상대적으로 낮지만, 알고리즘 최적화와 데이터 처리 속도의 한계를 극복하는 것이 핵심 과제입니다.",
+            "investment_decision": "시장 규모와 성장률, 경쟁 우위, 개발 긴급도 모두 최상위권 (5 점) 을 기록하여 Tier 1 로 분류되며, 전체 예산의 40% 를 할당하여 공격적인 투자를 결정합니다. 이는 테슬라의 'EV 및 AI 기술 리더십 유지' 전략과 완벽하게 정합하며, 2026 년 말 시장 붐에 맞춰 소프트웨어 기반을 확고히 함으로써 후행 기술인 전장 제어보드 (T08) 의 하드웨어 구현을 위한 필수 전제 조건을 마련합니다. 대규모 컴퓨팅 자원과 AI 인재 확보에 집중하여 기술적 우위를 공고히 해야 합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 Q4 시장 붐을 대비하여 즉시 대규모 컴퓨팅 클러스터 확장 및 AI 연구 인력 증원을 통해 FSD 아키텍처의 다중 태스크 학습 능력을 극대화해야 합니다.",
+          "rationale": [
+            "TAM 450 억 달러 및 CAGR 32.5% 로 시장 성장 잠재력이 매우 큼.",
+            "2026 Q4 시장 붐 임박으로 개발 긴급도가 최상위 (5 점).",
+            "TRL 7 로 기술 성숙도가 높고 테슬라의 기존 데이터 우위가 경쟁 우위를 보장함.",
+            "경쟁사 (BYD, NIO) 의 빠른 추격으로 선제적 투자 필요성 대두."
+          ]
+        },
+        {
+          "tech_id": "T08",
+          "name": "차량용 전장 제어보드",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 4540000000.0,
+          "tech_budget_rationale": "T08 은 T03(자율주행 AI) 의 하드웨어 구현을 위한 필수 기반으로, 100 억 달러의 시장 규모와 19% 의 성장률을 보유하고 있습니다. TRL 6 수준으로 2027 Q3 시장 붐에 맞춰 양산 준비를 완료해야 하므로, 선행 기술인 T03 의 안정화 이후 2 차년도부터 집중 투자하여 전체 예산의 약 20% 를 할당합니다.",
+          "reasoning": {
+            "market_evaluation": "차량용 전장 제어보드는 전 세계 자동차 전장 제어 시스템 시장의 100 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 19.0% 의 CAGR 을 기록할 것으로 예상됩니다. 이는 자율주행 및 커넥티드 카 기능 확대에 따른 고성능 제어보드 수요 급증에 기인하며, 2027 Q3 에 예상되는 시장 붐은 L3 자율주행 상용화와 맞물려 핵심 시장 진입 시점입니다. 소수 기업들이 시장을 주도하는 집중된 경쟁 구도 (Concentrated) 로, 기술적 고집적화와 고성능화가 경쟁력의 핵심입니다.",
+            "tech_evaluation": "현재 TRL 6 으로 하드웨어 설계 및 프로토타이핑이 필요한 단계이며, 선행 기술인 T03(다중 태스크 AI) 의 아키텍처가 안정화되어야 하므로 2 차년도부터 본격적인 개발이 시작됩니다. NIO 와 메르세데스의 특허 동향을 반영한 고집적화 및 고성능화가 요구되며, 테슬라의 HW/SW 통합 스택 강화 전략의 핵심 요소입니다. 기술적 불확실성은 중간 수준이지만, AI 아키텍처와의 호환성 및 성능 최적화가 주요 과제입니다.",
+            "investment_decision": "시장 규모와 경쟁 우위가 높고, 개발 긴급도가 높은 (4 점) 기술로 Tier 2 로 분류되며, 전체 예산의 20% 를 할당하여 선택적 투자를 결정합니다. 이는 T03 의 성공적 구현을 전제로 하므로, T03 의 마일스톤 달성 후 본격적인 하드웨어 개발에 집중하는 단계적 투자 전략이 적합합니다. 고집적 제어보드 설계 및 양산 라인 구축에 집중해야 합니다."
+          },
+          "investment_scope": "milestone-based",
+          "recommended_action": "T03(자율주행 AI) 의 아키텍처 안정화 마일스톤 달성을 전제로 2 차년도부터 고집적 제어보드 설계 및 양산 라인 구축에 집중 투자해야 합니다.",
+          "rationale": [
+            "TAM 100 억 달러 및 CAGR 19.0% 로 시장 성장 잠재력이 높음.",
+            "2027 Q3 시장 붐을 앞두고 T03 의존성으로 인해 개발 시점이 중요함.",
+            "HW/SW 통합 스택 강화 전략의 핵심 요소로 경쟁 우위 확보 필요.",
+            "소수 기업 중심의 경쟁 구도로 기술적 고집적화가 필수."
+          ]
+        },
+        {
+          "tech_id": "T01",
+          "name": "건식 전극 제조 공정",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 6810000000.0,
+          "tech_budget_rationale": "건식 전극 공정은 배터리 제조 비용을 20-30% 절감하는 핵심 기술로, 125 억 달러의 시장 규모와 24.5% 의 성장률을 보유하고 있어 테슬라의 원가 경쟁력 확보에 필수적입니다. TRL 6 수준으로 양산화를 위한 핵심 장비 및 소재 개발이 시급하며, 2027 Q2 시장 붐을 앞두고 1 차년도부터 즉시 시작해야 하므로 전체 예산의 약 30% 를 할당합니다.",
+          "reasoning": {
+            "market_evaluation": "건식 전극 제조 공정은 전 세계 리튬이온 배터리 전극 시장의 125 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 24.5% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 이는 테슬라의 4680 배터리 대량 생산 목표와 BYD 의 기술 확장으로 인한 시장 급성장에 기인하며, 공정 도입으로 인한 20-30% 의 비용 절감 효과는 테슬라의 가격 경쟁력을 결정짓는 핵심 요소입니다. 2027 Q2 에 예상되는 시장 붐은 초기 양산 체제 구축을 위한 결정적 시점입니다.",
+            "tech_evaluation": "현재 TRL 6 으로 양산화를 위한 핵심 장비 및 소재 개발이 필요한 단계이며, 테슬라의 테라헤르츠 측정 및 캘린더링 특허 등 관련 기술 포트폴리오가 경쟁 우위를 제공합니다. BYD 등 경쟁사의 기술 확장 속도가 빨라 기술 선점이 중요하며, 공정 최적화와 원가 절감 효과를 극대화하기 위한 지속적인 R&D 가 필요합니다. 기술적 불확실성은 중간 수준이지만, 양산 공정 안정화 시점의 지연이 큰 리스크가 될 수 있습니다.",
+            "investment_decision": "시장 규모와 경쟁 우위가 매우 높고, 개발 긴급도가 높은 (4 점) 기술로 Tier 1 로 분류되며, 전체 예산의 30% 를 할당하여 선제적 투자를 결정합니다. 이는 테슬라의 'HW/SW 통합 스택 강화' 및 '생산성 향상' 전략과 직결되며, 2027 년 시장 붐에 맞춰 초기 양산을 시작하고 2030 년까지 공정 최적화를 지속하기 위한 장기적 투자 계획입니다. 핵심 장비 개발 및 소재 공급망 확보에 집중해야 합니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "2027 Q2 시장 붐을 대비하여 1 차년도부터 건식 전극 제조 핵심 장비 개발 및 소재 공급망 확보를 위한 대규모 투자를 시작해야 합니다.",
+          "rationale": [
+            "TAM 125 억 달러 및 CAGR 24.5% 로 시장 성장 잠재력이 매우 큼.",
+            "2027 Q2 시장 붐을 앞두고 1 차년도부터 즉시 시작해야 하는 개발 긴급도 높음.",
+            "테슬라의 특허 포트폴리오가 경쟁 우위를 보장하며, 비용 절감 효과가 큼.",
+            "BYD 등 경쟁사의 기술 확장으로 선점 필요성 대두."
+          ]
+        },
+        {
+          "tech_id": "T05",
+          "name": "차량용 충전 인프라 매칭",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 3,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 2270000000.0,
+          "tech_budget_rationale": "T05 는 테슬라의 에너지 생태계 확장을 위한 장기적 기술로, 90 억 달러의 시장 규모와 20% 의 성장률을 보유하고 있습니다. TRL 7 로 기술 성숙도가 높지만, 2028 Q3 시장 붐을 앞두고 3 차년도부터 알고리즘 개발 및 네트워크 통합 테스트를 시작하므로 전체 예산의 약 10% 를 할당합니다.",
+          "reasoning": {
+            "market_evaluation": "차량용 충전 인프라 매칭은 전 세계 EV 충전 인프라 및 소프트웨어 매칭 서비스 시장의 90 억 달러 (TAM) 규모를 형성하며, 2025-2030 년간 20.0% 의 CAGR 을 기록할 것으로 예상됩니다. 이는 충전소 네트워크 확장과 V2G(차량 - 그리드) 기술 도입에 따른 소프트웨어 매칭 수요 증가에 기인하며, 2028 Q3 에 예상되는 시장 붐은 충전 표준 정립과 맞물려 본격적인 시장 진입 시점입니다. 분산된 경쟁 구도 (Fragmented) 로, 표준화 및 글로벌 확장 능력이 경쟁력의 핵심입니다.",
+            "tech_evaluation": "현재 TRL 7 로 기술 성숙도가 높으며, 메르세데스 및 리비안의 특허 동향을 반영한 알고리즘 개발 및 네트워크 통합 테스트가 필요합니다. 테슬라의 슈퍼차저 네트워크와 통합된 지능형 상호작용은 EV 보급 확대에 필수적이며, 분산된 충전소 네트워크를 효율적으로 관리하는 소프트웨어 아키텍처가 핵심입니다. 기술적 불확실성은 낮지만, 표준화 및 글로벌 확장 과정에서의 규제 및 파트너십 문제가 주요 과제입니다.",
+            "investment_decision": "시장 규모와 기술 성숙도가 높고, 개발 긴급도가 중간 (3 점) 인 기술로 Tier 2 로 분류되며, 전체 예산의 10% 를 할당하여 선택적 투자를 결정합니다. 이는 테슬라의 '에너지 생태계 확장' 전략과 정합하며, 2028 년 시장 붐을 앞두고 3 차년도부터 알고리즘 개발 및 네트워크 통합 테스트를 시작하는 장기적 투자 계획입니다. 표준화 및 글로벌 확장 R&D 에 집중해야 합니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2028 Q3 시장 붐을 대비하여 3 차년도부터 충전 인프라 매칭 알고리즘 개발 및 네트워크 통합 테스트를 위한 선택적 투자를 시작해야 합니다.",
+          "rationale": [
+            "TAM 90 억 달러 및 CAGR 20.0% 로 시장 성장 잠재력이 높음.",
+            "2028 Q3 시장 붐을 앞두고 3 차년도부터 시작해야 하는 개발 시점.",
+            "테슬라의 슈퍼차저 네트워크와 통합된 에너지 생태계 확장 필요.",
+            "분산된 경쟁 구도로 표준화 및 글로벌 확장 능력이 경쟁력 핵심."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 22700000000.0
+    }
+  ]
+}

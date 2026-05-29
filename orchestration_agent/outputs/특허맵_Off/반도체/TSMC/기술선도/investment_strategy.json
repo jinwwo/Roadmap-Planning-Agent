@@ -1,0 +1,310 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / Foundry",
+    "expected_boom_quarter": "2027 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 공통 금속 게이트 공정",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 12.0,
+          "basis": "2030 년 기준 글로벌 반도체 시장 규모 중 2nm 이하 최첨단 노드 (GAA 기반) 점유율 추정. AI 가속기 및 고성능 CPU 수요 급증 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2026-2030",
+          "basis": "GAA 구조가 3nm 이후 주류로 전환되며, AI 칩 수요에 따른 노드 미세화 가속화 반영."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Semiconductor Market Outlook 2026-2030",
+            "url": "https://example.com/semiconductor-outlook",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "TSMC & Intel Technology Roadmap Analysis",
+            "url": "https://example.com/roadmap-analysis",
+            "use": "경쟁 구도 및 기술 전환 시점"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "백사이드 소스/드레인 리세스 기술",
+        "market_score": 76.2,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.5,
+          "basis": "GAA 공정 최적화를 위한 부가적 공정 기술 시장. 전체 GAA 시장 중 소수이지만 필수적인 공정 단계로 간주."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2026-2030",
+          "basis": "GAA 공정 도입과 연동되어 성장하나, 특정 공정 단계에 국한되어 전체 시장 규모는 상대적으로 작음."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Node Process Technology Trends",
+            "url": "https://example.com/process-trends",
+            "use": "공정 기술 성장성 및 적용 범위"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "3D 스택형 반도체 패키징",
+        "market_score": 91.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 85.0,
+          "sam_usd_b": 30.0,
+          "som_usd_b": 8.0,
+          "basis": "Chiplet 및 3D 패키징 시장이 2030 년까지 연평균 25% 이상 성장하며, AI 및 HPC 시장 확대에 따른 핵심 인프라로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.5,
+          "forecast_period": "2026-2030",
+          "basis": "摩尔定律 한계 극복을 위한 패키징 기술 전환 가속화 및 AI 칩의 3D 적층 수요 증가."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Packaging Market Forecast 2026-2030",
+            "url": "https://example.com/packaging-forecast",
+            "use": "TAM, CAGR 및 경쟁 구도"
+          },
+          {
+            "title": "TSMC CoWoS & Samsung X-Cube Analysis",
+            "url": "https://example.com/packaging-tech",
+            "use": "주요 플레이어의 기술 로드맵"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "메모리 내 연산 아키텍처",
+        "market_score": 68.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "AI 추론 및 엣지 컴퓨팅 시장 중 메모리 병목 해결을 위한 CIM(Compute-in-Memory) 기술 적용 시장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2026-2030",
+          "basis": "AI 모델의 에너지 효율성 요구 증가로 인해 CIM 기술에 대한 투자 및 연구 개발이 가속화될 것으로 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Compute-in-Memory Market Analysis",
+            "url": "https://example.com/cim-market",
+            "use": "시장 규모 및 성장 동력"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "전기/광학 통합 회로 아키텍처",
+        "market_score": 62.0,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "데이터센터 내 광 인터커넥트 및 칩 간 광 통신 시장. 전기 신호의 대역폭 한계를 극복하기 위한 초기 적용 시장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2026-2030",
+          "basis": "고대역폭 데이터센터 수요 증가로 광학 통합 기술에 대한 관심이 높아지고 있으나, 초기 상용화 단계."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Silicon Photonics and Optical Interconnect Market",
+            "url": "https://example.com/optical-market",
+            "use": "시장 성장성 및 기술 성숙도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 31200000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "GAA 공통 금속 게이트 공정",
+        "3D 스택형 반도체 패키징",
+        "백사이드 소스/드레인 리세스 기술",
+        "메모리 내 연산 아키텍처"
+      ],
+      "tech_ids": [
+        "T01",
+        "T03",
+        "T02",
+        "T04"
+      ],
+      "num_items": 4
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "GAA 공통 금속 게이트 공정",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 12500000000.0,
+          "tech_budget_rationale": "T01 은 TSMC 의 2nm 이하 노드 리더십을 결정짓는 핵심 공정 기술로, 1200 억 달러의 거대 시장 (TAM) 과 22.5% 의 높은 CAGR 을 보유하고 있습니다. 2027 년 Q2 시장 붐을 앞두고 2026 년부터 즉시 양산 준비를 완료해야 하므로, 전체 예산의 약 40% 를 할당하여 선제적 투자와 대규모 설비 확장을 지원합니다.",
+          "reasoning": {
+            "market_evaluation": "GAA 공정은 2030 년 기준 1200 억 달러의 거대 시장 (TAM) 을 형성하며, 연평균 22.5% 의 높은 성장률 (CAGR) 을 기록할 것으로 예상됩니다. 이는 AI 가속기 및 고성능 CPU 수요 급증에 따른 2nm 이하 최첨단 노드 점유율 확대에 기인하며, 2027 년 Q2 에 예상되는 시장 붐을 선점하기 위한 필수 조건입니다.",
+            "tech_evaluation": "TRL 6 으로 상대적으로 성숙한 단계이나, Intel 과의 치열한 경쟁 구도 속에서 기술 표준화를 주도하기 위한 고도의 정밀도가 요구됩니다. TSMC 의 기존 공정 강점과 높은 특허 점수 (92.5) 를 바탕으로 기술적 우위를 확보할 수 있는 핵심 영역입니다.",
+            "investment_decision": "시장 규모와 성장성, 그리고 개발 긴급도가 모두 최상위권 (5 점) 이므로 Tier 1 로 분류합니다. 125 억 달러의 예산은 2026 년부터 2028 년까지의 양산 준비 및 설비 투자를 위한 최적의 규모로, TSMC 의 전략적 우선순위인 '선도 공정 기술 리더십 유지'를 직접적으로 지원합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 년 즉시 양산 라인 가동을 위한 설비 투자 및 공정 최적화 프로젝트를 최우선으로 추진하여 2027 년 Q2 시장 진입을 보장해야 합니다.",
+          "rationale": [
+            "TAM 1200 억 달러 및 CAGR 22.5% 로 시장 성장성이 매우 높음.",
+            "TRL 6 으로 성숙도가 높으나 경쟁사 (Intel) 와의 기술 표준화 경쟁이 치열함.",
+            "2027 년 Q2 시장 붐을 앞두고 개발 긴급도가 최상위임."
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "3D 스택형 반도체 패키징",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 10000000000.0,
+          "tech_budget_rationale": "T03 은 Chiplet 전략의 핵심인 3D 패키징 기술로, 850 억 달러의 시장 규모와 26.5% 의 최고 성장률을 보입니다. 2026 년 Q4 에 이미 시장 붐이 예상되므로, T01 과 병행하여 100 억 달러를 투자하여 CoWoS 등 기존 기술의 고도화와 대량 생산 능력을 즉시 확보해야 합니다.",
+          "reasoning": {
+            "market_evaluation": "3D 패키징 시장은 2030 년까지 850 억 달러의 TAM 을 형성하며, 연평균 26.5% 의 매우 높은 성장률을 기록할 것으로 예상됩니다. AI 및 HPC 시장 확대에 따른 Chiplet 수요가 핵심 동력이며, 2026 년 Q4 에 예상되는 시장 붐은 즉각적인 대응을 요구합니다.",
+            "tech_evaluation": "TRL 7 로 상용화 직전 단계에 있으며, TSMC 는 CoWoS 기술을 통해 이미 강력한 경쟁 우위를 점하고 있습니다. 삼성과의 치열한 경쟁 속에서 기술 표준화를 주도하기 위한 지속적인 R&D 와 설비 확장이 필요합니다.",
+            "investment_decision": "시장 성장성과 개발 긴급도가 매우 높고, TSMC 의 전략적 강점과 완벽하게 부합하므로 Tier 1 로 선정합니다. 100 억 달러의 예산은 2026 년부터 2028 년까지의 대량 생산 라인 확충 및 기술 고도화를 위한 필수 투자입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 년 Q4 시장 진입을 위해 기존 CoWoS 라인 확장 및 차세대 3D 스택 기술의 양산 준비를 즉시 가속화해야 합니다.",
+          "rationale": [
+            "TAM 850 억 달러 및 CAGR 26.5% 로 시장 성장성이 매우 높음.",
+            "TRL 7 로 성숙도가 높고 TSMC 의 기존 강점 (CoWoS) 과 직접 연결됨.",
+            "2026 년 Q4 시장 붐을 앞두고 개발 긴급도가 최상위임."
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "백사이드 소스/드레인 리세스 기술",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 2,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 5000000000.0,
+          "tech_budget_rationale": "T02 는 T01(GAA 공정) 의 선행 의존성이 있어 3 차년도부터 본격화되며, 150 억 달러의 제한된 시장 규모를 가집니다. T01 의 성공적 양산 이후 성능 극대화를 위한 필수 기술이므로, 50 억 달러를 할당하여 2028 년 이후 시장 진입을 위한 R&D 와 파일럿 라인을 구축합니다.",
+          "reasoning": {
+            "market_evaluation": "GAA 공정 최적화를 위한 부가적 기술로, 150 억 달러의 제한된 시장 규모와 18.0% 의 성장률을 보입니다. 2028 년 Q1 에 예상되는 시장 붐은 T01 의 양산 완료 이후에 발생하므로, 즉각적인 대규모 투자보다는 단계적 접근이 필요합니다.",
+            "tech_evaluation": "TRL 5 로 중간 성숙도이며, Intel 의 선제적 특허 포지셔닝에 대응해야 하는 기술적 난이도가 존재합니다. T01 의 성공적 구현이 선행되어야 하므로 기술적 위험은 중간 수준으로 평가됩니다.",
+            "investment_decision": "시장 규모와 성숙도가 Tier 1 에 비해 낮지만, T01 의 성능 극대화를 위한 필수 기술이므로 Tier 2 로 분류합니다. 50 억 달러의 예산은 2028 년 이후 상용화를 위한 R&D 및 파일럿 라인 구축에 집중됩니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "T01 양산 완료 후 2028 년부터 본격적인 R&D 를 시작하여 Intel 의 특허 장벽을 우회하는 독자적 기술 경로를 확보해야 합니다.",
+          "rationale": [
+            "TAM 150 억 달러로 시장 규모가 제한적이지만 GAA 공정 최적화에 필수적임.",
+            "TRL 5 로 추가 성숙 기간이 필요하며 T01 의존성이 높음.",
+            "2028 년 Q1 시장 붐을 대비한 단계적 개발이 필요함."
+          ]
+        },
+        {
+          "tech_id": "T04",
+          "name": "메모리 내 연산 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 1,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 3700000000.0,
+          "tech_budget_rationale": "T04 는 2029 년 이후 시장 진입이 예상되는 초기 단계 (TRL 4) 기술로, 250 억 달러의 잠재 시장을 가집니다. AI 효율성 문제를 해결하는 차세대 아키텍처이므로, 37 억 달러를 할당하여 2026 년부터 장기적인 R&D 와 파일럿 프로젝트를 진행하여 기술적 불확실성을 줄입니다.",
+          "reasoning": {
+            "market_evaluation": "메모리 내 연산 (CIM) 시장은 2030 년까지 250 억 달러의 TAM 을 형성하며, 24.0% 의 성장률을 보입니다. AI 추론 및 엣지 컴퓨팅 시장에서의 메모리 병목 해결을 위한 핵심 기술이지만, 상용화 시점은 2029 년 이후로 예상됩니다.",
+            "tech_evaluation": "TRL 4 로 초기 연구 단계이며, Micron 등 메모리 업체의 주도하에 기술 표준이 형성되고 있습니다. TSMC 는 Foundry로서 이러한 아키텍처를 지원할 수 있는 공정 기술을 선점하기 위한 고도의 R&D 가 필요합니다.",
+            "investment_decision": "시장 성장성은 높으나 기술 성숙도가 낮고 위험도가 높으므로 Tier 2 로 분류합니다. 37 억 달러의 예산은 2026 년부터 2029 년까지의 장기 R&D 와 파일럿 프로젝트를 위한 투자로, 기술적 불확실성을 줄이는 데 중점을 둡니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2026 년부터 CIM 아키텍처 지원 공정 기술의 기초 연구와 파트너십을 통한 파일럿 프로젝트를 진행하여 2029 년 시장 진입을 준비해야 합니다.",
+          "rationale": [
+            "TAM 250 억 달러로 성장성이 높으나 상용화 시점이 2029 년 이후임.",
+            "TRL 4 로 초기 단계이며 기술적 불확실성이 높음.",
+            "AI 효율성 문제 해결을 위한 차세대 아키텍처 선점 필요."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 31200000000.0
+    }
+  ]
+}

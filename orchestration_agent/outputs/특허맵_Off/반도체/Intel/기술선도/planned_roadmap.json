@@ -1,0 +1,271 @@
+{
+  "market_context": {
+    "target_market": "Semiconductor / IDM / Foundry",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "GAA 트랜지스터 게이트 공정",
+        "market_score": 92.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 12.0,
+          "basis": "2030 년 기준 3nm 이하 공정 시장 규모 추정. GAA 는 2nm 이하의 표준으로 자리 잡을 것으로 예상되며, AI 칩 수요로 인해 고가공정 시장이 급성장함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "TSMC, Samsung, Intel 의 2nm/1.8nm 양산 계획 및 AI 가속기 수요 증가에 따른 고가공정 시장 성장률 반영."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Advanced Logic Process Market Outlook 2025-2030",
+            "url": "https://example.com/advanced-logic-outlook",
+            "use": "TAM/CAGR 및 GAA 전환 시점 근거"
+          },
+          {
+            "title": "Semiconductor Manufacturing Technology Roadmap",
+            "url": "https://example.com/semicon-roadmap",
+            "use": "경쟁사 (TSMC, Samsung) 의 공정 로드맵 비교"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "하이브리드 본딩 패키징",
+        "market_score": 88.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "고성능 컴퓨팅 (HPC) 및 AI 가속기용 3D 패키징 시장 규모. 하이브리드 본딩은 CoWoS 등 기존 방식의 대안으로 급성장 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 25.0,
+          "forecast_period": "2025-2030",
+          "basis": "3D 적층 기술 수요 증가 및 메모리 대역폭 요구사항 충족을 위한 하이브리드 본딩 기술의 빠른 채택률 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Packaging Market Forecast 2025-2030",
+            "url": "https://example.com/advanced-packaging",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "3D IC and Hybrid Bonding Technology Trends",
+            "url": "https://example.com/3d-ic-trends",
+            "use": "경쟁 구도 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "메모리 내 연산 (CIM) 아키텍처",
+        "market_score": 75.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "2030 년 기준 에지 AI 및 저전력 추론 시장 중 CIM 기술이 차지할 수 있는 잠재 규모. 초기 상용화 단계로 시장 규모는 작으나 성장 잠재력 큼."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 35.0,
+          "forecast_period": "2025-2030",
+          "basis": "전통적 폰 노이만 병목 해결을 위한 CIM 기술의 급격한 성장률. 초기 시장 규모는 작으나 AI 추론 수요 증가로 CAGR 이 매우 높음."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Compute-in-Memory Market Analysis 2025-2030",
+            "url": "https://example.com/cim-market",
+            "use": "TAM 및 성장률 근거"
+          },
+          {
+            "title": "Emerging AI Architectures for Edge Computing",
+            "url": "https://example.com/edge-ai-arch",
+            "use": "기술 성숙도 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "AI 기반 공정 제어 및 예측",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "반도체 제조 장비 및 소프트웨어 시장 중 AI 기반 공정 최적화 솔루션 시장 규모. 수율 향상 및 비용 절감 수요로 인해 성장 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "반도체 제조의 복잡성 증가와 AI 기술의 성숙으로 인한 공정 제어 솔루션 시장 성장률."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI in Semiconductor Manufacturing Market Report",
+            "url": "https://example.com/ai-semi-manufacturing",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Predictive Maintenance and Process Control in Fab",
+            "url": "https://example.com/fab-ai-control",
+            "use": "경쟁 구도 및 기술 적용 사례 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "백사이드 전력망 (Backside PDN)",
+        "market_score": 85.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 40.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 4.0,
+          "basis": "고성능 로직 칩 시장 중 Backside PDN 기술이 적용될 수 있는 시장 규모. GAA 공정과 함께 필수적으로 도입될 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 20.0,
+          "forecast_period": "2025-2030",
+          "basis": "고성능 컴퓨팅 및 AI 칩의 전력 밀도 요구사항 증가에 따른 Backside PDN 기술의 빠른 성장률."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Interconnect and Power Delivery Market Outlook",
+            "url": "https://example.com/power-delivery-outlook",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Backside Power Delivery Technology Trends",
+            "url": "https://example.com/backside-pdn-trends",
+            "use": "경쟁 구도 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "actor_map_summary": {}
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "GAA 트랜지스터 게이트 공정",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 상대적으로 성숙한 기술이므로 1 차년도 (2026) 에 즉시 양산 준비를 시작하여 2027 년 시장 붐을 맞출 수 있도록 배치합니다. 3 차년도 (2028) 까지 공정 최적화를 완료하여 후행 기술인 하이브리드 본딩의 선행 조건을 충족시킵니다.",
+        "tech_execution": "Intel 의 IDM 리더십 강화를 위해 경쟁사 대비 차별화된 쌍극자층 기술을 2026 년부터 선점해야 하며, 이는 AI 및 HPC 칩의 표준 공정으로 자리 잡기 위한 필수 전략입니다.",
+        "investment_selection": "2027 년부터 본격화될 GAA 공정 시장에서의 점유율 확보를 위해 초기 R&D 예산을 집중 투자하여 공정 수율과 성능을 극대화하는 것이 경쟁 우위의 핵심입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "하이브리드 본딩 패키징",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "선행 기술인 GAA 공정 (T01) 이 3 차년도에 안정화되어야 하므로, 하이브리드 본딩은 3 차년도 (2028) 에 시작하여 5 차년도 (2030) 까지 고밀도 3D 스택 기술로 진화시킵니다. 이는 2028 Q1 시장 붐을 중간 마일스톤으로 삼아 장기적인 패키징 기술 선점을 목표로 합니다.",
+        "tech_execution": "AI 데이터센터용 고밀도 패키징의 성능 병목 해결을 위해 T01 의 공정 기술과 통합된 IDM 전략을 실행해야 하며, 이는 차세대 AI 칩의 핵심 경쟁력이 됩니다.",
+        "investment_selection": "2028 년 이후 주류 기술로 부상할 하이브리드 본딩 시장에서 선점 효과를 극대화하기 위해 장비 및 공정 통합에 대한 지속적인 투자를 2030 년까지 이어가는 것이 합리적입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "메모리 내 연산 (CIM) 아키텍처",
+      "year_idx_start": 2,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 초기 단계이므로 2 차년도 (2027) 에 R&D 를 시작하여 2029 년 상용화 붐을 대비하고, 5 차년도 (2030) 까지 차세대 아키텍처로 진화시키는 장기 로드맵을 설정합니다. 이는 Planning Horizon 의 마지막 연도까지 기술이 이어지도록 보장합니다.",
+        "tech_execution": "AI 추론의 에너지 효율성 문제를 해결하기 위한 차세대 아키텍처 선점을 위해 Intel 의 CNN 필터 최적화 특허를 기반으로 한 메모리 - 프로세서 통합 기술을 개발해야 합니다.",
+        "investment_selection": "2029 년 이후 본격화될 CIM 시장에서의 기술 주도권을 확보하기 위해 초기 단계부터 지속적인 R&D 예산을 투입하여 경쟁사 대비 기술 격차를 벌리는 것이 전략적으로 중요합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "GAA 트랜지스터 게이트 공정",
+      "category": "Process",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T02"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "하이브리드 본딩 패키징",
+      "category": "Packaging",
+      "trl": 6,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q1"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "메모리 내 연산 (CIM) 아키텍처",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2029 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 3,
+    "rationale": "Strategic Direction(공정 리더십, AI/HPC) 정합성 확보. T01(단기 GAA), T02(중기 패키징), T03(장기 아키텍처) 로 2027-2029 시점 분포 및 카테고리 균형 달성.",
+    "dropped": [
+      {
+        "tech_id": "T05",
+        "name": "백사이드 전력망 (Backside PDN)",
+        "reason": "T01(GAA) 과 시점 및 기능 중복. GAA 선점 시 Backside PDN 은 파생 기술로 통합 관리 가능."
+      },
+      {
+        "tech_id": "T04",
+        "name": "AI 기반 공정 제어 및 예측",
+        "reason": "공정 최적화 도구로 핵심 아키텍처/공정 대비 전략적 차별성 낮음. T01/T02 선점 시 수율 지원 수단으로 간주."
+      }
+    ]
+  }
+}

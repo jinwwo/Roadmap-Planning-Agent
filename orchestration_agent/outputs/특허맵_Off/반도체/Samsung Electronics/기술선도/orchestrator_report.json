@@ -1,0 +1,416 @@
+{
+  "problem_frame": {
+    "industry": "Semiconductor / Memory / Foundry",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 116200000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Samsung Electronics",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "반도체 및 메모리 기술 리더십 유지",
+      "AI 및 HBM 시장 확장",
+      "Foundry 및 시스템 반도체 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $116.2B 내에서 정확히 배분됨. T01(2026-2028) → T02/T03(2028-2030) 의존성 및 시점 정상."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(공정)이 T02(패키징), T03(아키텍처)의 선행 조건으로 설정되어 기술적 의존성 충족."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "HBM/AI 시장(T02), 메모리 리더십(T01), 차세대 아키텍처(T03)로 삼성 전략 방향과 높은 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T02)에 집중 투자하고 Tier 2(T03)에 장기 베팅으로 투자 우선순위 합리적."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.65,
+        "comment": "단기(T01)와 장기(T02, T03) 투자 비율이 균형 잡혀 있으며, 고위험(T03)과 중위험(T01, T02) 분산."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T02",
+            "name": "하이브리드 본딩 통합 공정",
+            "category": "Packaging",
+            "trl": 7,
+            "final_score": 87.3,
+            "market_score": 88.2,
+            "patent_score": 86.2,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T03",
+            "name": "메모리 내 연산 (CIM) 아키텍처",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 80.4,
+            "market_score": 76.8,
+            "patent_score": 84.8,
+            "expected_market_boom_quarter": "2029 Q2"
+          },
+          {
+            "tech_id": "T01",
+            "name": "3D NAND 수직 에피택셜 실리콘",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 79.7,
+            "market_score": 72.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T04",
+            "name": "플라즈마 증착 공정 최적화",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 72.42,
+            "market_score": 64.5,
+            "patent_score": 82.1,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "메모리 오류 수정 및 관리",
+            "category": "Process",
+            "trl": 8,
+            "final_score": 67.67,
+            "market_score": 58.0,
+            "patent_score": 79.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "3D NAND 수직 에피택셜 실리콘",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "의존성 없는 기초 공정 기술로 1 차년도부터 즉시 착수하며, TRL 6 수준이므로 2027 년 Q3 시장 폭발 시점 전인 3 차년도까지 상용화 준비를 완료하는 것이 적절합니다. 이는 후행 기술인 T02 와 T03 의 선행 조건을 충족시키기 위한 핵심 일정입니다.",
+              "tech_execution": "AI 데이터센터 수요 증가에 대응하여 고밀도 3D NAND 제조 공정의 기술 격차를 해소하고 선점하기 위해 필수적인 기술입니다. 수직 에피택셜 실리콘 기술을 통해 차세대 메모리 성능과 집적도를 극대화하여 삼성의 메모리 리더십을 공고히 합니다.",
+              "investment_selection": "전체 NAND 시장 성장은 둔화되지만 고밀도 세그먼트는 성장하므로, 이 기술에 대한 투자는 경쟁사 대비 기술 우위를 확보하고 R&D 예산을 효율적으로 배분하는 전략적 선택입니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "하이브리드 본딩 통합 공정",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술 T01 의 개발이 어느 정도 진전된 2 차년도에 시작하여, 2026 년 Q4 예상 시장 폭발 시점을 고려해 4 차년도까지 기술 성숙도를 높이는 일정으로 배치했습니다. TRL 7 수준이므로 상대적으로 짧은 개발 기간이 필요하지만, T01 의존성을 고려해 1 차년도 시작은 피했습니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "HBM 및 고성능 컴퓨팅 패키징의 핵심 병목 기술을 해결하여 AI 칩 시장에서의 경쟁력을 확보하기 위해 반드시 수행해야 합니다. TSMC 와 SK 하이닉스의 특허 동향을 선제적으로 대응하여 삼성의 HBM 시장 확장을 주도합니다.",
+              "investment_selection": "AI 시장 폭발로 인한 하이브리드 본딩 기술의 필수성으로 인해, 이 기술에 대한 투자는 시장 규모가 큰 HBM 세그먼트에서 경쟁 우위를 점하는 데 결정적입니다. R&D 예산을 집중 투자하여 기술 장벽을 낮추고 양산 체계를 구축하는 것이 합리적입니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "메모리 내 연산 (CIM) 아키텍처",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술 T01 의 기반 위에서 3 차년도에 착수하며, TRL 5 로 상대적으로 낮은 성숙도를 고려해 5 차년도 (2030 년) 까지 장기적인 R&D 를 이어가는 것으로 배치했습니다. 이는 2029 년 Q2 이후 예상되는 상용화 시점과 맞물려 차세대 기술 리더십을 확보하기 위함입니다.",
+              "tech_execution": "AI 추론 효율성 향상을 위한 차세대 아키텍처인 CIM 기술을 상용화 속도를 높여, 2029 년 이후 시장 진입을 준비해야 합니다. Micron 과 Intel 의 동향을 앞서가며 삼성만의 차별화된 아날로그 및 디지털 아키텍처를 완성하는 것이 목표입니다.",
+              "investment_selection": "장기적인 AI 시장 성장을 선점하기 위해 차세대 아키텍처에 대한 투자는 필수적이며, 이는 삼성의 Foundry 및 시스템 반도체 스택 강화 전략과 직접적으로 연결됩니다. 5 차년도까지 이어지는 투자는 미래 기술 표준을 선점하는 데 있어 가장 합리적인 R&D 전략입니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 116200000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "3D NAND 수직 에피택셜 실리콘",
+                "tier": "Tier 1",
+                "tech_budget_usd": 45000000000.0,
+                "tech_budget_rationale": "T01 은 삼성의 메모리 리더십을 유지하는 핵심 기반 기술로, 2027 년 Q3 시장 폭발에 대비하여 2026 년까지 양산 준비를 완료해야 하므로 가장 높은 우선순위를 부여합니다. 총 예산의 약 38.7% 인 450 억 달러를 배정하여, TRL 6 에서 8 로의 성숙도 향상과 200 레이어 이상 고밀도 공정 확립에 집중 투자합니다. 이는 후행 기술인 T02 와 T03 의 선행 조건을 충족시키는 동시에, AI 데이터센터용 고용량 SSD 시장에서의 점유율 방어 및 확장을 위한 필수적인 선제적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "즉시 양산 라인 확장 및 공정 최적화 프로젝트 착수하여 2026 년 말까지 TRL 8 달성 및 2027 년 Q3 시장 진입 준비 완료.",
+                "reasoning": {
+                  "market_evaluation": "전 세계 NAND 플래시 메모리 시장 중 고밀도 3D NAND 세그먼트는 TAM 850 억 달러, SAM 250 억 달러 규모로 추정되며, AI 데이터센터 수요로 인해 2025-2030 년간 연평균 12.5% 의 성장률을 보일 것으로 예상됩니다. 2027 년 Q3 에 예상되는 시장 폭발 시점을 고려할 때, 현재 시점에서의 기술 선점과 양산 준비는 삼성이 시장 주도권을 유지하는 데 결정적입니다. 특히 수직 에피택셜 실리콘 기술은 200 레이어 이상 고밀도 메모리 제조의 핵심 병목 기술로, 이 영역에서의 기술 격차 해소는 경쟁사 대비 우위를 점하는 데 필수적입니다.",
+                  "tech_evaluation": "현재 TRL 6 수준으로, 프로토타입 검증 단계에서 양산 준비 단계로 전환되는 중요한 시점에 있으며, 기술적 불확실성은 중간 수준 (점수 3) 으로 평가됩니다. 삼성은 이미 관련 특허 포트폴리오를 보유하고 있으나, Micron 과 Applied Materials 의 공격적인 특허 출원 동향을 고려할 때, 기술적 완성도와 공정 안정성을 높이는 데 집중해야 합니다. 이 기술은 T02(하이브리드 본딩) 와 T03(CIM) 의 선행 조건이므로, 기술적 성숙도 확보가 전체 로드맵의 성패를 좌우합니다.",
+                  "investment_decision": "높은 시장 성장성 (점수 4) 과 높은 경쟁 우위 (점수 5), 그리고 개발 긴급도 (점수 4) 를 종합하여 Tier 1 로 선정합니다. 총 예산 1,162 억 달러 중 가장 큰 비중인 450 억 달러를 할당하여, 2026 년까지 양산 라인 구축과 공정 최적화를 완료하는 것을 목표로 합니다. 이는 삼성의 '반도체 및 메모리 기술 리더십 유지' 전략과 직접적으로 부합하며, 장기적인 수익 창출의 기반을 마련하는 핵심 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 통합 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 42000000000.0,
+                "tech_budget_rationale": "T02 는 2026 년 Q4 에 예상되는 HBM 및 AI 칩 시장 폭발에 직접적으로 대응하는 핵심 패키징 기술로, 가장 높은 개발 긴급도 (점수 5) 와 시장 성장성 (점수 5) 을 보입니다. 총 예산의 약 36.1% 인 420 억 달러를 배정하여, TRL 7 에서 9 로의 성숙도 향상과 양산 능력을 확보하는 데 집중합니다. 이는 TSMC 와 SK 하이닉스와의 경쟁에서 우위를 점하고, 삼성의 'AI 및 HBM 시장 확장' 전략을 실현하기 위한 필수적인 선제적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "즉시 HBM 및 AI 칩용 하이브리드 본딩 양산 라인 구축 프로젝트 착수하여 2026 년 Q4 시장 진입 준비 완료.",
+                "reasoning": {
+                  "market_evaluation": "고성능 컴퓨팅 (HPC) 및 AI 칩을 위한 2.5D/3D 패키징 시장은 TAM 450 억 달러, SAM 180 억 달러 규모로, AI 가속기 및 HBM 수요 급증으로 인해 2025-2030 년간 연평균 24.5% 의 고성장률을 보일 것으로 예상됩니다. 2026 년 Q4 에 예상되는 시장 폭발 시점은 매우 가깝기 때문에, 기술 성숙도 확보와 양산 준비가 시급합니다. 하이브리드 본딩 기술은 HBM 및 CoWoS 와 같은 고급 패키징의 핵심 병목 기술로, 이 영역에서의 기술 선점은 시장 주도권 확보에 결정적입니다.",
+                  "tech_evaluation": "현재 TRL 7 수준으로, 양산 준비 단계에 가까우며 기술적 불확실성은 낮음 (점수 2) 으로 평가됩니다. 삼성은 관련 특허 포트폴리오를 보유하고 있으나, TSMC 와 SK 하이닉스의 공격적인 특허 출원 동향을 고려할 때, 기술적 완성도와 양산 능력을 높이는 데 집중해야 합니다. 이 기술은 T01 의 기반 위에서 발전하며, AI 칩 시장에서의 경쟁력을 확보하는 데 필수적입니다.",
+                  "investment_decision": "매우 높은 시장 성장성 (점수 5) 과 높은 경쟁 우위 (점수 5), 그리고 매우 높은 개발 긴급도 (점수 5) 를 종합하여 Tier 1 로 선정합니다. 총 예산 1,162 억 달러 중 두 번째로 큰 비중인 420 억 달러를 할당하여, 2026 년 말까지 양산 라인 구축과 공정 최적화를 완료하는 것을 목표로 합니다. 이는 삼성의 'AI 및 HBM 시장 확장' 전략과 직접적으로 부합하며, 단기적인 수익 창출과 장기적인 시장 주도권 확보를 위한 핵심 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 (CIM) 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 29200000000.0,
+                "tech_budget_rationale": "T03 은 2029 년 Q2 이후 상용화가 예상되는 차세대 아키텍처로, 높은 시장 성장성 (점수 4) 과 경쟁 우위 (점수 4) 를 보이지만, 기술적 불확실성 (점수 4) 과 낮은 성숙도 (TRL 5) 로 인해 Tier 2 로 선정합니다. 총 예산의 약 25.1% 인 292 억 달러를 배정하여, 2026 년부터 2030 년까지 장기적인 R&D 와 PoC 개발에 집중합니다. 이는 삼성의 'Foundry 및 시스템 반도체 스택 강화' 전략을 실현하고, 2029 년 이후 시장 진입을 준비하기 위한 선택적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2026 년부터 CIM 아키텍처 R&D 프로젝트 착수하여 2029 년까지 PoC 개발 및 상용화 준비 완료.",
+                "reasoning": {
+                  "market_evaluation": "전 세계 AI 추론 및 엣지 컴퓨팅 시장 중 CIM 기술이 적용될 수 있는 세그먼트는 TAM 300 억 달러, SAM 80 억 달러 규모로, AI 추론 시장 성장에 따라 2025-2030 년간 연평균 28.0% 의 고성장률을 보일 것으로 예상됩니다. 2029 년 Q2 이후 상용화가 예상되므로, 현재 시점에서의 기술 개발은 장기적인 시장 진입을 위한 준비 단계입니다. CIM 기술은 폰 노이만 병목 해결을 위한 차세대 아키텍처로, 이 영역에서의 기술 선점은 미래 시장 주도권 확보에 중요합니다.",
+                  "tech_evaluation": "현재 TRL 5 수준으로, 기술적 불확실성이 높음 (점수 4) 으로 평가되며, 상용화까지의 시간이 길어 개발 리스크가 존재합니다. 삼성은 관련 특허 포트폴리오를 보유하고 있으나, Micron 과 Intel 의 공격적인 R&D 동향을 고려할 때, 기술적 완성도와 상용화 속도를 높이는 데 집중해야 합니다. 이 기술은 T01 의 기반 위에서 발전하며, AI 추론 효율성 향상을 위한 차세대 아키텍처로 주목받고 있습니다.",
+                  "investment_decision": "높은 시장 성장성 (점수 4) 과 높은 경쟁 우위 (점수 4) 를 보이지만, 높은 기술적 불확실성 (점수 4) 과 낮은 성숙도 (TRL 5) 로 인해 Tier 2 로 선정합니다. 총 예산 1,162 억 달러 중 292 억 달러를 할당하여, 2026 년부터 2030 년까지 장기적인 R&D 와 PoC 개발에 집중합니다. 이는 삼성의 'Foundry 및 시스템 반도체 스택 강화' 전략과 부합하며, 장기적인 시장 진입을 위한 선택적 투자입니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "3D NAND 수직 에피택셜 실리콘",
+                "tier": "Tier 1",
+                "tech_budget_usd": 45000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "3D NAND 수직 에피택셜 실리콘",
+                "tier": "Tier 1",
+                "tech_budget_usd": 45000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "3D NAND 수직 에피택셜 실리콘",
+                "tier": "Tier 1",
+                "tech_budget_usd": 45000000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 통합 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 42000000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 (CIM) 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 29200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 통합 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 42000000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 (CIM) 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 29200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "하이브리드 본딩 통합 공정",
+                "tier": "Tier 1",
+                "tech_budget_usd": 42000000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "메모리 내 연산 (CIM) 아키텍처",
+                "tier": "Tier 2",
+                "tech_budget_usd": 29200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 45000000000.0,
+            "3": 71200000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T02",
+              "name": "하이브리드 본딩 통합 공정",
+              "category": "Packaging",
+              "final_score": 87.3,
+              "market_score": 88.2,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T03",
+              "name": "메모리 내 연산 (CIM) 아키텍처",
+              "category": "Architecture",
+              "final_score": 80.4,
+              "market_score": 76.8,
+              "boom": "2029 Q2"
+            },
+            {
+              "tech_id": "T01",
+              "name": "3D NAND 수직 에피택셜 실리콘",
+              "category": "Process",
+              "final_score": 79.7,
+              "market_score": 72.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T04",
+              "name": "플라즈마 증착 공정 최적화",
+              "category": "Equipment",
+              "final_score": 72.42,
+              "market_score": 64.5,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T05",
+              "name": "메모리 오류 수정 및 관리",
+              "category": "Process",
+              "final_score": 67.67,
+              "market_score": 58.0,
+              "boom": "2027 Q2"
+            }
+          ],
+          "category_distribution": {
+            "Packaging": 1,
+            "Architecture": 1,
+            "Process": 2,
+            "Equipment": 1
+          },
+          "avg_trl": 6.6,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "3D NAND 수직 에피택셜 실리콘",
+              "stage": "roadmap",
+              "key_reason": "TAM 850 억 달러 및 CAGR 12.5% 의 높은 시장 성장 잠재력"
+            },
+            {
+              "tech_id": "T02",
+              "name": "하이브리드 본딩 통합 공정",
+              "stage": "roadmap",
+              "key_reason": "TAM 450 억 달러 및 CAGR 24.5% 의 매우 높은 시장 성장 잠재력"
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T02",
+            "T01 → T03"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 1,
+            "2029 Q2": 1,
+            "2027 Q3": 1,
+            "2028 Q1": 1,
+            "2027 Q2": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 의존성 및 시점 배정이 타당하며, 삼성의 AI/HBM 전략과 높은 정합성을 보임. 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_samsung_semi_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_samsung_semi_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_samsung_semi_2026_2030__기술선도__investment_strategy.json"
+  }
+}

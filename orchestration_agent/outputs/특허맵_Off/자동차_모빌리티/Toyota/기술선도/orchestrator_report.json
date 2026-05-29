@@ -1,0 +1,515 @@
+{
+  "problem_frame": {
+    "industry": "Automotive / Mobility / Multi-Pathway",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 41700000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Toyota",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "EV/H2/HEV 다중 경로 기술 리더십 확보",
+      "자율주행 및 모빌리티 서비스 생태계 확장",
+      "차세대 배터리 및 AI 통합 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 2,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 배분 예산 $41.7B 가 한도 $41.7B 와 정확히 일치하여 예산 초과 없음."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T08(2026) → T01(2030) → T02(2030) 의 의존성 순서가 시간적 제약 내에서 논리적."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "Toyota 의 다중 경로 전략과 배터리/자율주행 핵심 기술이 잘 정합됨."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "선정된 4 개 기술에 대한 투자 배분이 전략적 우선순위와 일치함."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.55,
+        "risk_balance": 0.6,
+        "comment": "단기 (T08, T05) 와 장기 (T01, T02) 기술이 적절히 분포되어 있음."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "건식 전극 필름 제조",
+            "category": "Process",
+            "trl": 5,
+            "final_score": 88.34,
+            "market_score": 88.2,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T05",
+            "name": "비상상황 협력 제어 시스템",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 84.92,
+            "market_score": 85.6,
+            "patent_score": 84.1,
+            "expected_market_boom_quarter": "2026 Q3"
+          },
+          {
+            "tech_id": "T08",
+            "name": "무수 전해액 조성",
+            "category": "Material",
+            "trl": 4,
+            "final_score": 84.24,
+            "market_score": 86.4,
+            "patent_score": 81.6,
+            "expected_market_boom_quarter": "2027 Q1"
+          },
+          {
+            "tech_id": "T02",
+            "name": "대형 주조 배터리 하우징",
+            "category": "Packaging",
+            "trl": 6,
+            "final_score": 82.41,
+            "market_score": 82.5,
+            "patent_score": 82.3,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T04",
+            "name": "리튬 이차전지 양극재 첨가제",
+            "category": "Material",
+            "trl": 4,
+            "final_score": 78.04,
+            "market_score": 79.3,
+            "patent_score": 76.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "차량용 열흡수 복합소재",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 77.05,
+            "market_score": 74.8,
+            "patent_score": 79.8,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T06",
+            "name": "고전압 커넥터 및 연결 구조",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 74.67,
+            "market_score": 71.2,
+            "patent_score": 78.9,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T07",
+            "name": "태양광 모듈 통합 차체",
+            "category": "Packaging",
+            "trl": 5,
+            "final_score": 68.22,
+            "market_score": 62.5,
+            "patent_score": 75.2,
+            "expected_market_boom_quarter": "2029 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T08",
+            "name": "무수 전해액 조성",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 4 로 가장 낮은 성숙도를 가지므로 1 차년도부터 5 차년도까지 장기적인 R&D 가 필요합니다. 2027 년 시장 급성장을 위한 초기 기술 확보와 2030 년 차세대 배터리 상용화를 위한 지속적인 최적화가 동시에 요구됩니다.",
+              "tech_execution": "고전압 배터리 성능 향상의 핵심 소재 기술로, 토요타의 차세대 배터리 스택 강화 전략을 실현하기 위해 필수적입니다. 경쟁사 대비 기술 장벽을 높이고 에너지 밀도 우위를 점하기 위한 선제적 투자 대상입니다.",
+              "investment_selection": "시장 규모가 크고 기술 진입 장벽이 높아 초기 투자 대비 장기적인 경쟁 우위를 확보할 수 있습니다. R&D 예산을 장기 프로젝트에 집중하여 기술 독점성을 확보하는 전략적 선택입니다."
+            }
+          },
+          {
+            "tech_id": "T01",
+            "name": "건식 전극 필름 제조",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T08"
+            ],
+            "reasoning": {
+              "year_placement": "TRL 5 로 중간 성숙도를 가지며, T08(무수 전해액) 의 소재 기술이 안정화된 후 공정 적용이 효율적이므로 1 차년도 시작하여 4 차년도까지 완료합니다. 2027 년 시장 급성장을 대비하여 2029 년까지 양산 준비를 마쳐야 합니다. [후처리: dependency 보정 — prereq ['T08'] 완료 후로 4차년도 push]",
+              "tech_execution": "배터리 제조 비용 절감과 에너지 효율 향상을 위한 핵심 공정으로, 토요타의 EV 경쟁력 강화를 위해 선점 또는 라이선스 확보가 시급합니다. 테슬라 및 BYD 의 기술 추격 및 자체화 전략을 위한 필수 단계입니다.",
+              "investment_selection": "대량 생산 시점인 2027 년 이후 시장 성장이 예상되므로, 4 차년도까지의 투자로 생산 설비 최적화 및 비용 경쟁력을 확보할 수 있습니다. R&D 예산을 효율적으로 배분하여 빠른 상용화를 도모하는 전략입니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "대형 주조 배터리 하우징",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 성숙도가 높으나, T01(건식 전극) 공정과 연계된 차세대 플랫폼 개발이 필요하므로 2 차년도부터 시작하여 4 차년도까지 완료합니다. 2026 년 말 시장 도입을 고려하여 초기 설비 투자 및 검증 기간을 확보합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 3차년도 push]",
+              "tech_execution": "차체 구조와 배터리 팩 통합을 통한 경량화 및 생산성 극대화를 위해 필수적입니다. 토요타의 차세대 플랫폼 개발 시 구조적 효율성과 비용 경쟁력 확보를 위한 핵심 기술입니다.",
+              "investment_selection": "초기 설비 투자 비용이 크지만, 2026 년 말부터 주요 OEM 들이 도입할 것으로 예상되어 시장 선점 효과를 극대화할 수 있습니다. 생산 효율성 향상을 통한 장기적인 비용 절감 효과를 기대할 수 있습니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "비상상황 협력 제어 시스템",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 성숙도가 높지만, L4/L5 자율주행 상용화를 위한 지속적인 알고리즘 고도화와 규제 대응이 필요하여 1 차년도부터 5 차년도까지 이어집니다. 2026 년 중반 시장 급성장을 위한 초기 표준화 참여와 장기적인 기술 진화가 병행됩니다.",
+              "tech_execution": "자율주행 안전성의 핵심으로, 토요타의 모빌리티 서비스 생태계 확장을 위해 안전 및 제어 아키텍처 기술을 선점해야 합니다. 초기 표준화 주도권을 확보하여 시장 지배력을 강화하는 전략적 목표입니다.",
+              "investment_selection": "아직 명확한 선두 기업이 없는 초기 시장으로, 초기 투자로 표준화 주도권을 확보할 수 있습니다. 규제와 기술 성숙도가 맞물려 시장이 급성장할 것으로 예상되어 장기적인 투자 대비 높은 수익성을 기대할 수 있습니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 41700000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "tech_budget_rationale": "TRL 4 로 기술 성숙도가 낮아 장기적인 R&D 투자가 필수적이지만, 2027 년 시장 급성장을 앞두고 차세대 배터리 스택의 핵심 소재로서 전략적 우선순위가 가장 높습니다. 총 예산의 약 30% 를 할당하여 초기 연구 개발부터 양산 전 최적화까지 전 주기를 커버하며, 경쟁사 대비 기술 장벽을 선점하기 위한 선제적 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "TRL 4 에서 7 로 상향하기 위한 대규모 R&D 센터 설립 및 핵심 인력 확보를 즉시 시작하고, 2027 년 양산 준비를 위한 파일럿 라인 구축을 병행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "무수 전해액 시장은 2030 년까지 95 억 달러 (TAM) 의 규모로 성장하며 연평균 23.5% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 2027 년 1 분기에 시장 급성장이 예상되므로, 토요타의 고전압 배터리 전략을 실현하기 위한 시급한 시장 진입이 요구됩니다. 이 기술은 배터리 에너지 밀도 향상의 핵심으로, 시장 점유율 확보를 위한 초기 투자 타이밍이 매우 중요합니다.",
+                  "tech_evaluation": "현재 TRL 4 로 기술 성숙도가 낮아 상용화까지의 불확실성이 크지만, 특허 포트폴리오 (81.6 점) 와 전략적 갭 기회 (88 점) 가 높아 토요타의 기술적 우위를 점할 수 있는 잠재력이 큽니다. 고전압 배터리 성능 향상을 위한 필수 기술로, 경쟁사 대비 기술 장벽을 높이는 데 있어 가장 중요한 요소입니다.",
+                  "investment_decision": "높은 시장 성장성과 전략적 중요성, 그리고 낮은 TRL 로 인한 높은 위험을 고려하여 Tier 1 로 분류하고 총 예산의 30% 를 할당합니다. 이는 장기적인 R&D 투자와 초기 기술 확보를 동시에 수행하기 위한 선제적 투자 전략으로, 토요타의 차세대 배터리 스택 강화 목표에 부합합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 필름 제조",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "tech_budget_rationale": "건식 전극 공정은 배터리 제조 비용 30% 절감 및 생산성 향상의 핵심으로, 2027 년 시장 급성장을 앞두고 테슬라 및 BYD 와의 경쟁에서 선점해야 할 필수 기술입니다. 총 예산의 약 25% 를 할당하여 TRL 5 에서 양산 단계 (TRL 8-9) 로의 신속한 상향과 공정 최적화를 위한 대규모 설비 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "TRL 5 에서 8 로 상향하기 위한 파일럿 라인 확장 및 양산 설비 투자를 즉시 시작하고, 2027 년 양산 준비를 위한 공정 최적화 및 공급망 확보를 병행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "건식 전극 시장은 2030 년까지 125 억 달러 (TAM) 의 규모로 성장하며 연평균 24.5% 의 CAGR 을 기록할 것으로 예상됩니다. 2027 년 2 분기에 시장 급성장이 예상되므로, 토요타의 EV 경쟁력 강화를 위한 시급한 시장 진입이 요구됩니다. 이 기술은 배터리 제조 비용 절감의 핵심으로, 시장 점유율 확보를 위한 초기 투자 타이밍이 매우 중요합니다.",
+                  "tech_evaluation": "현재 TRL 5 로 중간 성숙도를 가지며, 특허 포트폴리오 (88.5 점) 와 전략적 갭 기회 (90 점) 가 높아 토요타의 기술적 우위를 점할 수 있는 잠재력이 큽니다. 건식 전극 공정은 배터리 제조 비용 절감과 에너지 효율 향상을 위한 핵심 기술로, 경쟁사 대비 기술 장벽을 높이는 데 있어 중요한 요소입니다.",
+                  "investment_decision": "높은 시장 성장성과 전략적 중요성, 그리고 중간 수준의 기술 위험을 고려하여 Tier 1 로 분류하고 총 예산의 25% 를 할당합니다. 이는 TRL 5 에서 양산 단계로의 신속한 상향과 공정 최적화를 위한 선제적 투자 전략으로, 토요타의 EV 경쟁력 강화 목표에 부합합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "대형 주조 배터리 하우징",
+                "tier": "Tier 2",
+                "tech_budget_usd": 8340000000.0,
+                "tech_budget_rationale": "대형 주조 하우징은 배터리 팩 구조 단순화와 경량화를 주도하는 핵심 기술로, 2026 년 말 시장 도입을 고려하여 초기 설비 투자 및 검증 기간을 확보해야 합니다. 총 예산의 약 20% 를 할당하여 TRL 6 에서 양산 단계로의 신속한 상향과 플랫폼 개발 연계를 위한 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "TRL 6 에서 8 로 상향하기 위한 파일럿 라인 확장 및 양산 설비 투자를 시작하고, 2026 년 말 시장 도입을 위한 플랫폼 개발 연계 및 검증 기간을 확보하십시오.",
+                "reasoning": {
+                  "market_evaluation": "대형 주조 하우징 시장은 2030 년까지 82 억 달러 (TAM) 의 규모로 성장하며 연평균 21.0% 의 CAGR 을 기록할 것으로 예상됩니다. 2026 년 4 분기에 시장 급성장이 예상되므로, 토요타의 차세대 플랫폼 개발을 위한 시급한 시장 진입이 요구됩니다. 이 기술은 배터리 팩의 구조적 강도와 생산 효율성을 동시에 높이는 핵심으로, 시장 점유율 확보를 위한 초기 투자 타이밍이 중요합니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 성숙도가 높으며, 특허 포트폴리오 (82.3 점) 와 전략적 갭 기회 (85 점) 가 높아 토요타의 기술적 우위를 점할 수 있는 잠재력이 큽니다. 대형 주조 하우징은 차체 구조와 배터리 팩 통합을 통한 경량화 및 생산성 극대화를 위한 핵심 기술로, 경쟁사 대비 기술 장벽을 높이는 데 있어 중요한 요소입니다.",
+                  "investment_decision": "높은 시장 성장성과 전략적 중요성, 그리고 낮은 기술 위험을 고려하여 Tier 2 로 분류하고 총 예산의 20% 를 할당합니다. 이는 TRL 6 에서 양산 단계로의 신속한 상향과 플랫폼 개발 연계를 위한 선택적 투자 전략으로, 토요타의 차세대 플랫폼 개발 목표에 부합합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "tech_budget_rationale": "비상상황 협력 제어 시스템은 자율주행 안전성의 핵심으로, 2026 년 중반 시장 급성장을 앞두고 초기 표준화 참여와 기술 선점이 필수적입니다. 총 예산의 약 25% 를 할당하여 TRL 6 에서 상용화 단계로의 신속한 상향과 알고리즘 고도화를 위한 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "TRL 6 에서 8 로 상향하기 위한 알고리즘 고도화 및 시뮬레이션 테스트를 즉시 시작하고, 2026 년 중반 시장 급성장을 위한 초기 표준화 참여 및 규제 대응을 병행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "비상상황 협력 제어 시스템 시장은 2030 년까지 150 억 달러 (TAM) 의 규모로 성장하며 연평균 26.0% 의 CAGR 을 기록할 것으로 예상됩니다. 2026 년 3 분기에 시장 급성장이 예상되므로, 토요타의 모빌리티 서비스 생태계 확장을 위한 시급한 시장 진입이 요구됩니다. 이 기술은 자율주행 안전성의 핵심으로, 시장 점유율 확보를 위한 초기 투자 타이밍이 매우 중요합니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 성숙도가 높으며, 특허 포트폴리오 (84.1 점) 와 전략적 갭 기회 (88 점) 가 높아 토요타의 기술적 우위를 점할 수 있는 잠재력이 큽니다. 비상상황 협력 제어 시스템은 자율주행 안전성의 핵심으로, 경쟁사 대비 기술 장벽을 높이는 데 있어 중요한 요소입니다.",
+                  "investment_decision": "높은 시장 성장성과 전략적 중요성, 그리고 중간 수준의 기술 위험을 고려하여 Tier 1 로 분류하고 총 예산의 25% 를 할당합니다. 이는 TRL 6 에서 상용화 단계로의 신속한 상향과 알고리즘 고도화를 위한 선제적 투자 전략으로, 토요타의 모빌리티 서비스 생태계 확장 목표에 부합합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T08",
+                "name": "무수 전해액 조성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12510000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T01",
+                "name": "건식 전극 필름 제조",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T02",
+                "name": "대형 주조 배터리 하우징",
+                "tier": "Tier 2",
+                "tech_budget_usd": 8340000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T05",
+                "name": "비상상황 협력 제어 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 10425000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 22935000000.0,
+            "5": 18765000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 3,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "건식 전극 필름 제조",
+              "category": "Process",
+              "final_score": 88.34,
+              "market_score": 88.2,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T05",
+              "name": "비상상황 협력 제어 시스템",
+              "category": "Architecture",
+              "final_score": 84.92,
+              "market_score": 85.6,
+              "boom": "2026 Q3"
+            },
+            {
+              "tech_id": "T08",
+              "name": "무수 전해액 조성",
+              "category": "Material",
+              "final_score": 84.24,
+              "market_score": 86.4,
+              "boom": "2027 Q1"
+            },
+            {
+              "tech_id": "T02",
+              "name": "대형 주조 배터리 하우징",
+              "category": "Packaging",
+              "final_score": 82.41,
+              "market_score": 82.5,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T04",
+              "name": "리튬 이차전지 양극재 첨가제",
+              "category": "Material",
+              "final_score": 78.04,
+              "market_score": 79.3,
+              "boom": "2027 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Process": 1,
+            "Architecture": 1,
+            "Material": 3,
+            "Packaging": 2,
+            "Equipment": 1
+          },
+          "avg_trl": 5.2,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T08",
+              "name": "무수 전해액 조성",
+              "stage": "roadmap",
+              "key_reason": "시장 성장률 23.5% 와 95 억 달러 TAM 으로 높은 시장 매력도 확보"
+            },
+            {
+              "tech_id": "T01",
+              "name": "건식 전극 필름 제조",
+              "stage": "roadmap",
+              "key_reason": "시장 성장률 24.5% 와 125 억 달러 TAM 으로 높은 시장 매력도 확보"
+            },
+            {
+              "tech_id": "T05",
+              "name": "비상상황 협력 제어 시스템",
+              "stage": "roadmap",
+              "key_reason": "시장 성장률 26.0% 와 150 억 달러 TAM 으로 높은 시장 매력도 확보"
+            }
+          ],
+          "dependency_edges": [
+            "T08 → T01",
+            "T01 → T02"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2026 Q3": 1,
+            "2027 Q1": 1,
+            "2026 Q4": 1,
+            "2027 Q3": 1,
+            "2028 Q1": 1,
+            "2028 Q2": 1,
+            "2029 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 문제가 해결되어 총 배분 예산이 한도 내로 정확히 조정됨. 기술 의존성과 투자 분포도 합리적 수준으로 평가되어 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_toyota_mobility_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_toyota_mobility_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_toyota_mobility_2026_2030__기술선도__investment_strategy.json"
+  }
+}
