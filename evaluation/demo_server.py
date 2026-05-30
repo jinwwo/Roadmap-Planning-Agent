@@ -349,156 +349,141 @@ async def delete_result(rid: str):
 import glob
 
 def scan_outputs_on_startup():
-    import re
     """서버 시작 시 outputs/ 폴더의 JSON을 자동 묶어서 평가. 캐시 있으면 재사용."""
+    import re
     import hashlib
 
     cache_dir = os.path.join(os.path.dirname(__file__), "outputs")
     os.makedirs(cache_dir, exist_ok=True)
 
-    scan_dirs = [
-        os.path.join(os.path.dirname(__file__), "..", "orchestration_agent", "outputs"),
-    ]
+    base_output_dir = os.path.join(os.path.dirname(__file__), "..", "orchestration_agent", "outputs")
+    if not os.path.isdir(base_output_dir):
+        print(f"  ⚠ outputs 폴더 없음: {base_output_dir}")
+        return
 
     def _file_hash(fpath):
-        """파일 내용의 해시 → 캐시 키"""
         with open(fpath, "rb") as f:
             return hashlib.md5(f.read()).hexdigest()[:12]
 
     def _load_cache(cache_path):
-        """캐시 파일 로드"""
         if os.path.exists(cache_path):
             with open(cache_path, "r", encoding="utf-8") as f:
                 return json.load(f)
         return None
 
     def _save_cache(cache_path, result_data):
-        """평가 결과를 캐시로 저장"""
         with open(cache_path, "w", encoding="utf-8") as f:
             json.dump(result_data, f, ensure_ascii=False, indent=2)
 
-    for scan_dir in scan_dirs:
-        if not os.path.isdir(scan_dir):
+    def _scan_leaf_dir(leaf_dir, display_name):
+        """leaf 디렉토리에서 3개 JSON을 묶어서 평가"""
+        tech_file = os.path.join(leaf_dir, "tech_candidates.json")
+        roadmap_file = os.path.join(leaf_dir, "planned_roadmap.json")
+        invest_file = os.path.join(leaf_dir, "investment_strategy.json")
+        report_file = os.path.join(leaf_dir, "orchestrator_report.json")
+
+        if not (os.path.exists(tech_file) and os.path.exists(roadmap_file) and os.path.exists(invest_file)):
+            return
+
+        # 이미 로드된 이름이면 스킵
+        if any(r["name"] == display_name for r in result_store.values()):
+            return
+
+        # 캐시 확인
+        combined_hash = hashlib.md5(
+            (_file_hash(tech_file) + _file_hash(roadmap_file) + _file_hash(invest_file)).encode()
+        ).hexdigest()[:12]
+        cache_path = os.path.join(cache_dir, f"cache_{display_name}_{combined_hash}.json")
+        cached = _load_cache(cache_path)
+
+        if cached:
+            rid = str(uuid.uuid4())[:8]
+            result_store[rid] = {"id": rid, "name": display_name, "result": cached,
+                                 "created_at": datetime.now().isoformat()}
+            score = cached.get("composite", {}).get("final_composite_score", 0)
+            print(f"    ✓ {display_name}: {score:.1f}점 (캐시)")
+            return
+
+        try:
+            with open(tech_file, "r", encoding="utf-8") as f:
+                tech_data = json.load(f)
+            with open(roadmap_file, "r", encoding="utf-8") as f:
+                roadmap_data = json.load(f)
+            with open(invest_file, "r", encoding="utf-8") as f:
+                invest_data = json.load(f)
+            report_data = None
+            if os.path.exists(report_file):
+                with open(report_file, "r", encoding="utf-8") as f:
+                    report_data = json.load(f)
+
+            bundle = {
+                "orchestrator_report": report_data,
+                "tech_candidates": tech_data.get("tech_candidates", []),
+                "planned_roadmap": roadmap_data.get("planned_roadmap", []),
+                "investment_strategy": invest_data.get("investment_strategy", []),
+                "stages": invest_data.get("stages", []),
+                "market_context": tech_data.get("market_context", {}),
+                "active_agents": report_data.get("active_agents", ["1", "2", "3"]) if report_data else ["1", "2", "3"],
+            }
+            pack = _detect_and_convert(bundle)
+            result = _run_evaluation(pack)
+            rid = str(uuid.uuid4())[:8]
+            result_store[rid] = {"id": rid, "name": display_name, "result": result,
+                                 "created_at": datetime.now().isoformat()}
+            _save_cache(cache_path, result)
+            score = result.get("composite", {}).get("final_composite_score", 0)
+            print(f"    ✓ {display_name}: {score:.1f}점 (신규→캐시 저장)")
+            import time; time.sleep(2)  # API rate limit 방지
+
+        except Exception as e:
+            print(f"    ⚠ {display_name}: {e}")
+
+    # ═══════════════════════════════════════
+    # 1) 특허맵 ON: outputs/{industry}/{company}/{strategy}/
+    # 2) 특허맵 OFF: outputs/특허맵_Off/{industry}/{company}/{strategy}/
+    # ═══════════════════════════════════════
+
+    print(f"  스캔: {base_output_dir}")
+
+    for entry in sorted(os.listdir(base_output_dir)):
+        entry_path = os.path.join(base_output_dir, entry)
+        if not os.path.isdir(entry_path):
             continue
 
-        files = sorted(os.listdir(scan_dir))
-        json_files = [f for f in files if f.endswith(".json")]
-        if not json_files:
-            continue
-
-        print(f"  스캔: {scan_dir}")
-
-        # 1) 번들/input_pack 직접 로드
-        for fname in json_files:
-            if "result" in fname or "sample_input" in fname:
-                continue
-            fpath = os.path.join(scan_dir, fname)
-            try:
-                with open(fpath, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                if "tech_candidates" in data and "planned_roadmap" in data and "investment_strategy" in data:
-                    rname = fname.replace(".json", "")
-                    # 캐시 확인
-                    fhash = _file_hash(fpath)
-                    cache_path = os.path.join(cache_dir, f"cache_{rname}_{fhash}.json")
-                    cached = _load_cache(cache_path)
-
-                    if cached:
-                        rid = str(uuid.uuid4())[:8]
-                        result_store[rid] = {"id": rid, "name": rname, "result": cached,
-                                             "created_at": datetime.now().isoformat()}
-                        score = cached.get("composite", {}).get("final_composite_score", 0)
-                        print(f"    ✓ {rname}: {score:.1f}점 (캐시)")
-                    else:
-                        pack = _detect_and_convert(data)
-                        result = _run_evaluation(pack)
-                        rid = str(uuid.uuid4())[:8]
-                        result_store[rid] = {"id": rid, "name": rname, "result": result,
-                                             "created_at": datetime.now().isoformat()}
-                        _save_cache(cache_path, result)
-                        score = result.get("composite", {}).get("final_composite_score", 0)
-                        print(f"    ✓ {rname}: {score:.1f}점 (신규→캐시 저장)")
-            except Exception:
-                pass
-
-        # 2) 개별 파일 자동 묶기 (prefix 기반)
-        prefixes = {}
-        for fname in json_files:
-            m = re.match(r"(.+?)_(iter\d+_)?tech_candidates\.json$", fname)
-            if m:
-                prefix = m.group(1)
-                iter_tag = m.group(2) or ""
-                key = f"{prefix}_{iter_tag}".rstrip("_")
-                if key not in prefixes:
-                    prefixes[key] = {"prefix": prefix, "iter": iter_tag.rstrip("_")}
-
-        for key, info in prefixes.items():
-            prefix = info["prefix"]
-            iter_tag = info["iter"]
-            iter_prefix = f"{iter_tag}_" if iter_tag else ""
-
-            tech_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}tech_candidates.json")
-            roadmap_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}planned_roadmap.json")
-            invest_file = os.path.join(scan_dir, f"{prefix}_{iter_prefix}investment_strategy.json")
-            report_file = os.path.join(scan_dir, f"{prefix}_orchestrator_report.json")
-
-            if not (os.path.exists(tech_file) and os.path.exists(roadmap_file) and os.path.exists(invest_file)):
+        if entry == "특허맵_Off":
+            # 특허맵 OFF 구조: 특허맵_Off/{industry}/{company}/{strategy}/
+            for industry in sorted(os.listdir(entry_path)):
+                ind_path = os.path.join(entry_path, industry)
+                if not os.path.isdir(ind_path):
+                    continue
+                for company in sorted(os.listdir(ind_path)):
+                    comp_path = os.path.join(ind_path, company)
+                    if not os.path.isdir(comp_path):
+                        continue
+                    for strategy in sorted(os.listdir(comp_path)):
+                        strat_path = os.path.join(comp_path, strategy)
+                        if not os.path.isdir(strat_path):
+                            continue
+                        display_name = f"특허맵_off_{industry}_{company}_{strategy}"
+                        _scan_leaf_dir(strat_path, display_name)
+        else:
+            # 특허맵 ON 구조: {industry}/{company}/{strategy}/
+            # entry가 industry인지 확인 (하위에 company 폴더가 있어야 함)
+            sub_entries = [e for e in os.listdir(entry_path) if os.path.isdir(os.path.join(entry_path, e))]
+            if not sub_entries:
                 continue
 
-            label = iter_tag if iter_tag else "final"
-            short_prefix = prefix[:12] + "..." if len(prefix) > 12 else prefix
-            display_name = f"{short_prefix}_{label}"
-
-            if any(r["name"] == display_name for r in result_store.values()):
-                continue
-
-            # 캐시 키: 3개 파일의 해시 조합
-            combined_hash = hashlib.md5(
-                (_file_hash(tech_file) + _file_hash(roadmap_file) + _file_hash(invest_file)).encode()
-            ).hexdigest()[:12]
-            cache_path = os.path.join(cache_dir, f"cache_{display_name}_{combined_hash}.json")
-            cached = _load_cache(cache_path)
-
-            if cached:
-                rid = str(uuid.uuid4())[:8]
-                result_store[rid] = {"id": rid, "name": display_name, "result": cached,
-                                     "created_at": datetime.now().isoformat()}
-                score = cached.get("composite", {}).get("final_composite_score", 0)
-                print(f"    ✓ {display_name}: {score:.1f}점 (캐시)")
-                continue
-
-            try:
-                with open(tech_file, "r", encoding="utf-8") as f:
-                    tech_data = json.load(f)
-                with open(roadmap_file, "r", encoding="utf-8") as f:
-                    roadmap_data = json.load(f)
-                with open(invest_file, "r", encoding="utf-8") as f:
-                    invest_data = json.load(f)
-                report_data = None
-                if os.path.exists(report_file):
-                    with open(report_file, "r", encoding="utf-8") as f:
-                        report_data = json.load(f)
-
-                bundle = {
-                    "orchestrator_report": report_data,
-                    "tech_candidates": tech_data.get("tech_candidates", []),
-                    "planned_roadmap": roadmap_data.get("planned_roadmap", []),
-                    "investment_strategy": invest_data.get("investment_strategy", []),
-                    "stages": invest_data.get("stages", []),
-                    "market_context": tech_data.get("market_context", {}),
-                    "active_agents": report_data.get("active_agents", ["1", "2", "3"]) if report_data else ["1", "2", "3"],
-                }
-                pack = _detect_and_convert(bundle)
-                result = _run_evaluation(pack)
-                rid = str(uuid.uuid4())[:8]
-                result_store[rid] = {"id": rid, "name": display_name, "result": result,
-                                     "created_at": datetime.now().isoformat()}
-                _save_cache(cache_path, result)
-                score = result.get("composite", {}).get("final_composite_score", 0)
-                print(f"    ✓ {display_name}: {score:.1f}점 (신규→캐시 저장)")
-
-            except Exception as e:
-                print(f"    ⚠ {display_name}: {e}")
+            industry = entry
+            for company in sorted(sub_entries):
+                comp_path = os.path.join(entry_path, company)
+                if not os.path.isdir(comp_path):
+                    continue
+                for strategy in sorted(os.listdir(comp_path)):
+                    strat_path = os.path.join(comp_path, strategy)
+                    if not os.path.isdir(strat_path):
+                        continue
+                    display_name = f"특허맵_on_{industry}_{company}_{strategy}"
+                    _scan_leaf_dir(strat_path, display_name)
 
 
 @app.on_event("startup")

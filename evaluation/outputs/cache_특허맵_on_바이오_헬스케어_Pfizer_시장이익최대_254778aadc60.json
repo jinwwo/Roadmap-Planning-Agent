@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 3,
+    "balance": 2,
+    "llm_structural_score": 65.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 3,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "All three technologies target high-growth biopharmaceutical segments (ADC, PAT, digital health/AI diagnostics) with strong market momentum toward 2030, and none are in saturated or declining markets. Market timing awareness is demonstrated by boom-year targeting, though ADC and digital health both miss their boom windows by 0.75 years.",
+      "sequencing": "No dependency violations exist and TRL-based lead times are broadly realistic (TRL 7 ADC gets 2 years, TRL 5 digital health gets 3 years). The sequential start of digital health after PAT is logical, but all three starting simultaneously in 2026-Q1 without phasing could strain execution capacity.",
+      "investment": "ADC at Strategic tier with scores of 5/5/4 for market/strategic/executability is well justified as the highest-value asset. PAT and digital health both at High tier is reasonable given their scores, though digital health's lower strategic fit (3.0) and higher uncertainty (3.0) versus PAT's stronger profile suggests a possible tier differentiation opportunity.",
+      "coherence": "The three technologies cover manufacturing analytics (PAT), therapeutic platforms (ADC), and digital diagnostics, forming a plausible biopharma value chain narrative. However, the strategic linkage between PAT and ADC manufacturing optimization is implicit rather than explicit, and digital health feels loosely connected without a unifying platform thesis.",
+      "balance": "The portfolio contains only 3 technologies with no Low or Medium tier investments, creating heavy concentration at Strategic/High tiers with no exploratory or early-stage bets. There is limited short-term vs. long-term diversification and no coverage of adjacent areas such as genomics, biologics manufacturing, or regulatory tech that would distribute risk."
+    },
+    "strengths": [
+      "Zero dependency violations with a clean, feasible sequencing structure that respects TRL maturity levels",
+      "ADC platform correctly identified as the highest-priority asset with Strategic tier investment matching its exceptional market opportunity and urgency scores"
+    ],
+    "weaknesses": [
+      "Portfolio is extremely narrow with only 3 technologies and no Low/Medium tier exploratory investments, creating concentration risk",
+      "All three technologies launch simultaneously in 2026-Q1 without phased entry, which may overstretch organizational execution capacity"
+    ],
+    "missing_technologies": [
+      "mRNA/LNP delivery platform technology (emerging, high-growth adjacent to ADC)",
+      "Continuous bioprocessing / single-use bioreactor systems (complements PAT naturally)",
+      "AI-driven drug discovery / computational biology platform (bridges digital health and ADC R&D)",
+      "Cell and gene therapy manufacturing technology (major 2030 growth vector in biopharma)"
+    ],
+    "investment_issues": [
+      "Zero budget spent against a 52B budget envelope suggests the investment strategy is directional only with no concrete capital allocation, reducing actionability",
+      "Digital health (strategic_fit=3.0, uncertainty=3.0) and PAT (strategic_fit=4.0, uncertainty=2.0) are both assigned High tier despite meaningfully different risk-return profiles; PAT may warrant Strategic co-elevation or digital health a Medium tier",
+      "No Low or Medium tier investments leave no budget headroom for opportunistic or exploratory technologies, reducing strategic flexibility"
+    ],
+    "timing_issues": [
+      "ADC platform completion target (2028-Q1) is 0.75 years after the market boom (2027-Q2), risking missing first-mover advantage in the peak demand window",
+      "Digital health & AI diagnostics completion (2030-Q1) trails its boom by 0.75 years; earlier initiation or faster execution path should be considered",
+      "Simultaneous 2026-Q1 start for all three programs with no phased ramp creates potential resource contention and execution risk"
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 실시간 공정 분석 기술 (PAT) (norm=1.000)\n  시장 성장률 기준 최저: 디지털 헬스케어 및 AI 기반 진단 시스템 (norm=0.000)\n  전체 평균: 0.377",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ 항체-약물 접합체 (ADC) 플랫폼: value=0.515 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 3/5\n  카테고리 분포: Material(1개), Equipment(1개), Architecture(1개)\n  TRL 범위: 5~7\n  카테고리 편중 또는 TRL 범위 좁음",
+      "balance": "점수 2/5\n  투자등급 분포: High(2개), Strategic(1개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×3 + 0.1×2 - 1) / 4 × 100 = 65.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "patent_growth_norm": 0.6529,
+        "market_growth_norm": 0.131,
+        "market_size_norm": 0.7165,
+        "value": 0.5154,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.3654
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "실시간 공정 분석 기술 (PAT)",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "patent_growth_norm": 0.6636,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2654,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.1654
+      }
+    ],
+    "selection_quality": 46.0,
+    "cost_adjusted_return": 34.4,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 82.6,
+    "backtest_score": 56.4,
+    "description": {
+      "selection_quality": "46.0/100 — 3개 기술 평균 value=0.460\n  ▲ 실시간 공정 분석 기술 (PAT): value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▲ 항체-약물 접합체 (ADC) 플랫폼: value=0.515 (특허↑=0.65, 시장↑=0.13, 규모=0.72)\n  ▼ 디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 (특허↑=0.66, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 디지털 헬스케어 및 AI 기반 진단 시스템: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "34.4/100 — 평균 return=0.344\n  실시간 공정 분석 기술 (PAT): value=0.600 - 0.15×0.67(cost) = return +0.500 [High]\n  항체-약물 접합체 (ADC) 플랫폼: value=0.515 - 0.15×1.00(cost) = return +0.365 [Strategic]\n  디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 - 0.15×0.67(cost) = return +0.165 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 디지털 헬스케어 및 AI 기반 진단 시스템: value 0.265인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "82.6/100 — 평균 오차 0.58년\n  항체-약물 접합체 (ADC) 플랫폼: 0.8년 늦음\n  디지털 헬스케어 및 AI 기반 진단 시스템: 0.8년 늦음\n  실시간 공정 분석 기술 (PAT): 0.2년 늦음",
+      "formula": "backtest_score = 0.35×46.0 + 0.35×34.4 + 0.10×100.0 + 0.10×100.0 + 0.10×82.6 = 56.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.58,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "실시간 공정 분석 기술 (PAT)",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.8,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 59.8,
+    "description": "pre_penalty = 0.4×65.0(LLM) + 0.6×56.4(Backtest) = 59.8. 페널티 없음. 최종 = 59.8."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 65.0점, Backtest 경제성 평가 56.4점. 최종 Composite Score: 59.8점.",
+    "key_failure_points": [],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}
