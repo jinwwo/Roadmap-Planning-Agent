@@ -17,7 +17,11 @@ from pathlib import Path
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from llm_factory import get_llm
-from config import USE_PATENT_MAP
+from config import (
+    USE_PATENT_MAP,
+    MARKET_ANALYSIS_BATCH_SIZE,
+    MARKET_ANALYSIS_MAX_TOKENS,
+)
 
 from state import AnalysisState
 from tools.market_tools import MarketIntelligenceTool
@@ -256,6 +260,107 @@ def _score_from_cagr_tam(cagr_pct: float, tam_usd_b: float) -> float:
     return round((cagr_component * 0.6) + (tam_component * 0.4), 1)
 
 
+def _score_from_search_results(items: list) -> float:
+    scores = [
+        _to_float(item.get("score"), 0.0)
+        for item in items or []
+        if isinstance(item, dict)
+    ]
+    if not scores:
+        return 0.0
+    avg = sum(scores) / len(scores)
+    return max(0.0, min(100.0, avg * 100 if avg <= 1 else avg))
+
+
+def _fallback_market_analysis_from_raw(
+    tech_list: list,
+    market_raw: dict,
+    reference_year: int,
+    error_note: str | None = None,
+) -> list:
+    """Build conservative market_analysis from Tavily metadata if an LLM batch fails."""
+    raw_by_id = (market_raw.get("technologies") or {}) if isinstance(market_raw, dict) else {}
+    fallback = []
+    boom_year = min(reference_year or 2030, 2028)
+
+    for tech in tech_list or []:
+        tech_id = tech.get("tech_id")
+        raw = raw_by_id.get(tech_id) or {}
+        market_reports = raw.get("market_reports") or []
+        tam_items = raw.get("tam_sam_som_data") or []
+        cagr_items = raw.get("cagr_forecast_data") or []
+        competitive_items = raw.get("competitive_data") or []
+        actor_context = raw.get("actor_context") or {}
+
+        report_score = _score_from_search_results(market_reports)
+        tam_score = _score_from_search_results(tam_items)
+        cagr_score = _score_from_search_results(cagr_items)
+        competitive_score = _score_from_search_results(competitive_items)
+
+        evidence_count = sum(
+            1 for section in (market_reports, tam_items, cagr_items, competitive_items)
+            if section
+        )
+        cagr_pct = round(8.0 + min(18.0, (cagr_score / 100.0) * 16.0 + len(cagr_items) * 2.0), 1)
+        tam_usd_b = round(1.0 + min(30.0, (tam_score / 100.0) * 18.0 + len(tam_items) * 3.0), 2)
+
+        market_signals = {
+            "tam_growth_rate": round(min(92.0, 35.0 + tam_score * 0.35 + cagr_score * 0.25 + evidence_count * 4.0), 1),
+            "time_to_market_urgency": round(min(90.0, 45.0 + cagr_score * 0.30 + report_score * 0.10), 1),
+            "policy_and_investment_tailwind": round(min(88.0, 42.0 + report_score * 0.25 + evidence_count * 3.0), 1),
+            "competitive_moat_potential": round(min(90.0, 45.0 + competitive_score * 0.30 + len(actor_context.get("related_actors", []) or []) * 2.0), 1),
+        }
+        market_score = round(
+            market_signals["tam_growth_rate"] * 0.20
+            + market_signals["time_to_market_urgency"] * 0.30
+            + market_signals["policy_and_investment_tailwind"] * 0.25
+            + market_signals["competitive_moat_potential"] * 0.25,
+            1,
+        )
+
+        reports = [
+            {"title": item.get("title", ""), "url": item.get("url", ""), "use": "fallback market evidence"}
+            for item in (market_reports + tam_items + cagr_items + competitive_items)[:4]
+            if isinstance(item, dict)
+        ]
+
+        fallback.append({
+            "tech_id": tech_id,
+            "name": tech.get("name") or raw.get("tech_name") or "",
+            "market_score": market_score,
+            "market_signals": market_signals,
+            "tam_sam_som": {
+                "tam_usd_b": tam_usd_b,
+                "sam_usd_b": round(tam_usd_b * 0.30, 2),
+                "som_usd_b": round(tam_usd_b * 0.05, 2),
+                "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed.",
+            },
+            "cagr_forecast": {
+                "cagr_pct": cagr_pct,
+                "forecast_period": f"2025-{reference_year or 2030}",
+                "basis": "Estimated from CAGR/growth outlook search-result relevance metadata.",
+            },
+            "key_market_reports": reports,
+            "map_context_used": {
+                "related_actors": actor_context.get("related_actors", []),
+                "shared_technology_areas": actor_context.get("shared_technology_areas", []),
+            },
+            "expected_market_boom_quarter": f"{boom_year} Q1",
+            "competitive_landscape": (
+                "Concentrated – 3~5 key players"
+                if competitive_items
+                else "Nascent – no clear leader yet"
+            ),
+            "data_quality": "estimated",
+            "rationale": (
+                "시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 "
+                "relevance score를 보수적으로 환산했습니다. "
+                f"{error_note or ''}".strip()
+            ),
+        })
+    return fallback
+
+
 def _normalize_market_analysis(
     market_analysis: list,
     tech_list: list,
@@ -405,6 +510,7 @@ def _write_market_agent_log(
     system_prompt: str | None = None,
     user_prompt: str | None = None,
     llm_raw_response: str | None = None,
+    llm_batches: list | None = None,
     market_analysis: list | None = None,
     error: str | None = None,
 ) -> None:
@@ -431,6 +537,7 @@ def _write_market_agent_log(
             },
             "llm_response": {
                 "raw_content": llm_raw_response,
+                "batches": llm_batches or [],
             },
             "market_analysis": market_analysis or [],
             "error": error,
@@ -562,6 +669,83 @@ def _compact_market_raw_for_prompt(market_raw: dict, per_section_limit: int = 1)
             "error": data.get("error"),
         }
     return json.dumps(compact, ensure_ascii=False, indent=2)
+
+
+def _batch_items(items: list, batch_size: int) -> list[list]:
+    size = max(1, batch_size)
+    return [items[i:i + size] for i in range(0, len(items), size)]
+
+
+def _subset_market_raw(market_raw: dict, tech_ids: set[str]) -> dict:
+    """Keep only the current batch's technology records while preserving global context."""
+    subset = {
+        "domain": market_raw.get("domain"),
+        "use_patent_map": market_raw.get("use_patent_map"),
+        "research_process": market_raw.get("research_process", []),
+        "actor_similarity_context": market_raw.get("actor_similarity_context", {}),
+        "technologies": {},
+    }
+    for tech_id, data in (market_raw.get("technologies") or {}).items():
+        if tech_id in tech_ids:
+            subset["technologies"][tech_id] = data
+    return subset
+
+
+def _build_market_user_prompt(
+    *,
+    state: AnalysisState,
+    tech_list: list,
+    patent_maps: dict,
+    market_raw: dict,
+) -> str:
+    patent_maps_block = ""
+    if USE_PATENT_MAP and patent_maps:
+        patent_maps_block = f"""
+아래 patent_maps 는 Patent Agent가 관련 기업 특허 포트폴리오 기반으로 생성한 산출물입니다.
+현재 map은 actor_similarity_map 중심입니다. 각 edge의 related_actor, similarity, shared_technology_areas를 시장 조사 범위/경쟁 구도/파트너 생태계 해석 근거로 사용하세요.
+
+[Patent Maps]
+{json.dumps(patent_maps, ensure_ascii=False, indent=2)[:6000]}
+"""
+    else:
+        patent_maps_block = """
+이번 실행은 USE_PATENT_MAP=false 또는 patent_maps 미제공 상태입니다.
+actor_similarity_map 없이 기술 후보군, source_companies, evidence_patents, Tavily 시장 데이터만 사용해 시장성을 평가하세요.
+"""
+
+    research_process_text = (
+        "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
+        "actor_similarity_map 기반 경쟁/협력 구도 탐색"
+        if USE_PATENT_MAP and patent_maps
+        else
+        "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
+        "기술 후보군 기반 경쟁/협력 구도 탐색"
+    )
+
+    prompt = f"""
+도메인: {state['domain']}
+분석 기준 연도: {state['reference_year']}
+
+분석 대상 기술 목록 (tech_id 변경 불가):
+{json.dumps(tech_list, ensure_ascii=False, indent=2)}
+{patent_maps_block}
+
+아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.
+수집 프로세스는 {research_process_text}을 포함합니다.
+이 데이터를 기반으로 각 기술의 시장 매력도와 시장 규모/성장 전망을 분석해주세요.
+
+[수집된 시장 데이터]
+{_compact_market_raw_for_prompt(market_raw)}
+
+위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.
+이번 배치에 포함된 모든 tech_id를 반드시 하나씩 포함하고, tech_id는 입력 목록의 값과 동일해야 합니다.
+"""
+    upper_block = _format_upper_context(
+        state.get("company_scenario"),
+        state.get("strategic_direction"),
+    )
+    feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
+    return upper_block + prompt + feedback_block
 
 
 _TRANSLATE_SYSTEM = """You translate Korean technology names to concise English search keywords.
@@ -705,87 +889,90 @@ def run_market_agent(state: AnalysisState) -> dict:
             for t in patent_analysis
         ]
 
-        # ③ Claude 에게 분석 요청
-        llm = get_llm(max_tokens=4096)
-        patent_maps_block = ""
-        if USE_PATENT_MAP and patent_maps:
-            patent_maps_block = f"""
-아래 patent_maps 는 Patent Agent가 관련 기업 특허 포트폴리오 기반으로 생성한 산출물입니다.
-현재 map은 actor_similarity_map 중심입니다. 각 edge의 related_actor, similarity, shared_technology_areas를 시장 조사 범위/경쟁 구도/파트너 생태계 해석 근거로 사용하세요.
+        # ③ LLM 에게 배치 분석 요청. 후보가 많으면 local LLM JSON 응답이
+        # 잘리는 문제가 있어 3~4개 단위로 나눠 분석한다.
+        llm = get_llm(max_tokens=MARKET_ANALYSIS_MAX_TOKENS)
+        market_analysis = []
+        llm_batches = []
+        batch_size = max(1, MARKET_ANALYSIS_BATCH_SIZE)
 
-[Patent Maps]
-{json.dumps(patent_maps, ensure_ascii=False, indent=2)[:6000]}
-"""
-        else:
-            patent_maps_block = """
-이번 실행은 USE_PATENT_MAP=false 또는 patent_maps 미제공 상태입니다.
-actor_similarity_map 없이 기술 후보군, source_companies, evidence_patents, Tavily 시장 데이터만 사용해 시장성을 평가하세요.
-"""
+        print(f"[Market Agent] LLM 배치 분석 요청 중... (batch_size={batch_size})")
+        for batch_index, batch in enumerate(_batch_items(tech_list, batch_size), 1):
+            batch_ids = {item["tech_id"] for item in batch}
+            batch_raw = _subset_market_raw(market_raw, batch_ids)
+            batch_prompt = _build_market_user_prompt(
+                state=state,
+                tech_list=batch,
+                patent_maps=patent_maps,
+                market_raw=batch_raw,
+            )
+            batch_record = {
+                "batch_index": batch_index,
+                "tech_ids": sorted(batch_ids),
+                "user_prompt": batch_prompt,
+                "raw_content": None,
+                "error": None,
+                "fallback_used": False,
+            }
+            try:
+                response = llm.invoke(
+                    [
+                        SystemMessage(content=system_prompt),
+                        HumanMessage(content=batch_prompt),
+                    ]
+                )
+                raw_content = response.content
+                batch_record["raw_content"] = raw_content
+                result = _extract_json(raw_content)
+                normalized = _normalize_market_analysis(
+                    result.get("market_analysis", []),
+                    batch,
+                    batch_raw,
+                    state.get("reference_year"),
+                )
 
-        research_process_text = (
-            "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
-            "actor_similarity_map 기반 경쟁/협력 구도 탐색"
-            if USE_PATENT_MAP and patent_maps
-            else
-            "시장 보고서 탐색, TAM/SAM/SOM 근거 탐색, CAGR/성장 전망 수집, "
-            "기술 후보군 기반 경쟁/협력 구도 탐색"
-        )
+                found_ids = {item.get("tech_id") for item in normalized}
+                missing = [item for item in batch if item.get("tech_id") not in found_ids]
+                if missing:
+                    batch_record["fallback_used"] = True
+                    normalized.extend(
+                        _fallback_market_analysis_from_raw(
+                            missing,
+                            batch_raw,
+                            state.get("reference_year"),
+                            "LLM batch omitted one or more tech_id values.",
+                        )
+                    )
+                market_analysis.extend(normalized)
+            except Exception as batch_error:
+                err_text = str(batch_error)
+                batch_record["error"] = err_text
+                batch_record["fallback_used"] = True
+                print(f"[Market Agent] ⚠️ batch {batch_index} 실패 → Tavily fallback 사용: {err_text}")
+                market_analysis.extend(
+                    _fallback_market_analysis_from_raw(
+                        batch,
+                        batch_raw,
+                        state.get("reference_year"),
+                        err_text,
+                    )
+                )
+            llm_batches.append(batch_record)
 
-        user_prompt = f"""
-도메인: {state['domain']}
-분석 기준 연도: {state['reference_year']}
-
-분석 대상 기술 목록 (tech_id 변경 불가):
-{json.dumps(tech_list, ensure_ascii=False, indent=2)}
-{patent_maps_block}
-
-아래는 Tavily Search API 로 수집한 실제 시장 인텔리전스 데이터입니다.
-수집 프로세스는 {research_process_text}을 포함합니다.
-이 데이터를 기반으로 각 기술의 시장 매력도와 시장 규모/성장 전망을 분석해주세요.
-
-[수집된 시장 데이터]
-{_compact_market_raw_for_prompt(market_raw)}
-
-위 데이터를 분석하여 지정된 JSON 포맷으로 market_analysis 를 출력하세요.
-모든 tech_id는 반드시 입력 목록의 값과 동일해야 합니다.
-"""
-
-        # Company Scenario + Strategic Direction (상위 컨텍스트) — prompt 맨 앞으로
-        upper_block = _format_upper_context(
-            state.get("company_scenario"),
-            state.get("strategic_direction"),
-        )
-        feedback_block = _format_orchestrator_feedback(state.get("orchestrator_feedback"))
-        # 최종 user_prompt: [상위 컨텍스트] → [본문] → [feedback]
-        user_prompt = upper_block + user_prompt + feedback_block
-
-        _write_market_agent_log(
-            state=state,
-            run_id=run_id,
-            market_raw=market_raw,
-            tech_list=tech_list,
-            patent_maps=patent_maps,
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-        )
-
-        print("[Market Agent] LLM 분석 요청 중...")
-        response = llm.invoke(
+        # 로그 호환성을 위해 전체 batch response 요약을 raw_content에도 남긴다.
+        llm_raw_response = json.dumps(
             [
-                SystemMessage(content=system_prompt),
-                HumanMessage(content=user_prompt),
-            ]
+                {
+                    "batch_index": item["batch_index"],
+                    "tech_ids": item["tech_ids"],
+                    "error": item["error"],
+                    "fallback_used": item["fallback_used"],
+                }
+                for item in llm_batches
+            ],
+            ensure_ascii=False,
         )
-        llm_raw_response = response.content
-
-        # ④ JSON 파싱
-        result = _extract_json(llm_raw_response)
-        market_analysis = _normalize_market_analysis(
-            result.get("market_analysis", []),
-            tech_list,
-            market_raw,
-            state.get("reference_year"),
-        )
+        user_prompt = "Market Agent used batched prompts. See llm_response.batches[].user_prompt in this log."
 
         _write_market_agent_log(
             state=state,
@@ -796,6 +983,7 @@ actor_similarity_map 없이 기술 후보군, source_companies, evidence_patents
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             llm_raw_response=llm_raw_response,
+            llm_batches=llm_batches,
             market_analysis=market_analysis,
         )
 
@@ -821,9 +1009,35 @@ actor_similarity_map 없이 기술 후보군, source_companies, evidence_patents
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             llm_raw_response=llm_raw_response,
+            llm_batches=None,
             error=err_msg,
         )
         messages.append(AIMessage(content=err_msg))
+        if market_raw and tech_list:
+            fallback_analysis = _fallback_market_analysis_from_raw(
+                tech_list,
+                market_raw,
+                state.get("reference_year"),
+                str(e),
+            )
+            _write_market_agent_log(
+                state=state,
+                run_id=run_id,
+                market_raw=market_raw,
+                tech_list=tech_list,
+                patent_maps=patent_maps,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                llm_raw_response=llm_raw_response,
+                market_analysis=fallback_analysis,
+                error=err_msg,
+            )
+            return {
+                "market_raw_data": market_raw,
+                "market_analysis": fallback_analysis,
+                "messages": messages,
+                "error": err_msg,
+            }
         return {
             "market_raw_data": {},
             "market_analysis": [],

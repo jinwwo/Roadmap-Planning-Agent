@@ -13,7 +13,7 @@ Given:
 - filing/citation signals for each company,
 
 produce:
-1. `patent_analysis`: 5-10 candidate technologies inferred from the compared companies' patent data.
+1. `patent_analysis`: an 8-12 item candidate technology pool inferred from the compared companies' patent data.
 2. `patent_maps.actor_similarity_map`: a center-company actor similarity map only.
 
 Do NOT output actor_relations_map, technology_industry_map, or technology_affinity_map.
@@ -37,6 +37,7 @@ For each candidate technology, determine:
 - rationale: Korean 2-3 sentences
 
 Candidate technologies should be derived primarily from related companies' patent portfolios, then interpreted relative to the user's company profile.
+Create a broad candidate pool rather than only the final roadmap shortlist. Downstream selection will narrow the pool.
 
 ---
 [Patent Scoring Framework]
