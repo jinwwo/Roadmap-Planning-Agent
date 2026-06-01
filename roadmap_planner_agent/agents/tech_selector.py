@@ -38,26 +38,27 @@ SELECTOR_SYSTEM_PROMPT = """당신은 기술 로드맵의 후보 기술을 선�
   expected_market_boom_quarter, rationale 일부)
 - 목표 시장 컨텍스트 (target_market, expected_boom_quarter)
 
-[큐레이션 원칙 — Agent 1 의 final_score 를 신뢰하되 단일 차원 의존 금지]
+[큐레이션 원칙 — Strategic Direction 정합을 정답으로, 점수는 참고만]
 
-다음을 모두 만족하는 K개를 선별. 어느 한 기준이 압도적이지 않게.
+다음을 모두 만족하는 K개를 선별. 시장 크기 / final_score 에 편향되지 않도록 주의.
 
-0. **[Strategic Direction 정합 — 필수, 최우선]**:
+0. **[Strategic Direction 정합 — 필수, 정답]**:
    상위 컨텍스트의 Strategic Direction (3-5 bullets) 과 관련된 후보를 **반드시 선별**.
    - 각 Strategic Direction bullet 에 대해 그것을 직접 뒷받침하는 후보 1개 이상 보존.
-   - Direction 과 관련 없는 후보는 final_score 가 높아도 우선순위 ↓.
-   - 즉 "회사 전략 방향과 연결되는가" 가 1순위 기준.
-1. **점수**: final_score 가 명백히 낮은 후보는 제외 후보 (단 #0 룰이 우선).
-2. **트렌드 정합**: market_signal / 시장 컨텍스트의 트렌드 키워드 (예: GAA, BSPDN, HBM,
-   EUV, Low-k 등) 와 관련된 후보는 final_score 가 다소 낮아도 키워드당 최소 1개 보존.
-3. **카테고리 균형**: Equipment / Material / Process / Architecture / Packaging 한쪽으로
+   - Direction 과 관련 없는 후보는 final_score 가 높아도 제외.
+   - 즉 "회사 전략 방향과 연결되는가" 가 절대 기준.
+1. **트렌드 정합**: 시장 컨텍스트의 트렌드 키워드 (예: GAA, BSPDN, HBM, EUV, Low-k 등)
+   와 관련된 후보는 키워드당 최소 1개 보존.
+2. **카테고리 균형**: Equipment / Material / Process / Architecture / Packaging 한쪽으로
    치우치지 않게 (시장 성격상 한 카테고리 핵심이면 비율 편중 OK).
-4. **시점 분포 [필수]**: expected_market_boom_quarter 가 reference_year horizon 안에
+3. **시점 분포 [필수]**: expected_market_boom_quarter 가 reference_year horizon 안에
    **반드시 stagger 분포** 되도록 선별. 모든 후보가 한 시점에 몰리면 안 됨.
-5. **중복 제거**: 비슷한 기능 후보 다수면 final_score 높은 대표 1개만.
+4. **중복 제거**: 비슷한 기능 후보 다수면 **Strategic Direction 정합이 가장 강한 대표 1개**만
+   (final_score 가 아니라 SD 매칭 강도로 판단).
 
-평가를 다시 매기지 말 것 (final_score 가 정답). 위 6축 trade-off 만 큐레이션.
-**최우선은 Strategic Direction** — 회사 전략과 정합되지 않는 후보는 다른 축이 강해도 신중히 판단.
+**시장 크기 / final_score 는 참고용 정보** — Agent 1 점수에 끌려서 시장 큰 기술을 자동 선호하지 말 것.
+점수가 낮아도 Strategic Direction 에 정합되면 보존, 점수가 높아도 SD 정합되지 않으면 제외.
+**최우선은 Strategic Direction** — 모든 trade-off 의 절대 기준.
 
 [reference_year horizon — 필수]
 - 사용자 입력의 reference_year 가 있다면 그 시점까지 timeline 이 채워지는 것이 **로드맵의 본질**
@@ -141,26 +142,45 @@ def _format_orchestrator_feedback(orchestrator_feedback: dict) -> str:
     )
 
 
+def _sd_match_score(tech: dict, strategic_direction: list) -> int:
+    """후보 기술이 Strategic Direction bullet 들과 얼마나 정합되는지 단순 키워드 매칭으로 점수화.
+    SD 텍스트와 tech (name/category/rationale) 간 공통 토큰 수 합산.
+    """
+    if not strategic_direction:
+        return 0
+    blob = " ".join(str(tech.get(k, "") or "") for k in ("name", "category", "rationale")).lower()
+    if not blob:
+        return 0
+    score = 0
+    for d in strategic_direction:
+        for tok in re.findall(r"[가-힣A-Za-z0-9]{2,}", str(d or "").lower()):
+            if tok in blob:
+                score += 1
+    return score
+
+
 def _fill_to_min(
     selected_ids: list,
     tech_candidates: list,
     k_min: int,
+    strategic_direction: list = None,
 ) -> tuple:
     """
-    selected_ids 가 K_MIN 미만이면 final_score 상위로 보강.
+    selected_ids 가 K_MIN 미만이면 Strategic Direction 매칭 강도가 강한 후보로 보강.
+    (final_score 대신 SD 정합도 기준 — 시장 크기 편향 제거)
     반환: (보강된_selected_ids, 자동보강된_id_list)
     """
     selected_set = set(selected_ids)
     if len(selected_set) >= k_min:
         return list(selected_ids), []
 
-    by_score = sorted(
+    by_sd = sorted(
         tech_candidates,
-        key=lambda t: float(t.get("final_score", 0) or 0),
+        key=lambda t: _sd_match_score(t, strategic_direction or []),
         reverse=True,
     )
     auto_added = []
-    for t in by_score:
+    for t in by_sd:
         if len(selected_set) >= k_min:
             break
         tid = t["tech_id"]
@@ -281,8 +301,11 @@ def run_tech_selector(state: RoadmapState) -> dict:
             "messages": [AIMessage(content=msg)],
         }
 
-    # 하한 보장 — K_MIN 미만이면 final_score 상위로 채움
-    selected_ids, auto_added = _fill_to_min(selected_ids, tech_candidates, k_min)
+    # 하한 보장 — K_MIN 미만이면 Strategic Direction 매칭 강한 후보로 채움 (final_score 대신)
+    selected_ids, auto_added = _fill_to_min(
+        selected_ids, tech_candidates, k_min,
+        strategic_direction=state.get("strategic_direction"),
+    )
 
     # tech_candidates 를 in-place 필터링
     selected_set = set(selected_ids)

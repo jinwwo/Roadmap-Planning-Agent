@@ -1,0 +1,44 @@
+[
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "NVIDIA",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "reason": "비전 기반 자율주행 아키텍처, 합성 데이터 생성, 레이더/카메라 융합 기술에서 높은 유사성"
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Mobileye",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "reason": "ADAS 안전 아키텍처, 운전자 모니터링, V2X 통신 기술에서 높은 유사성"
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Waymo",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "reason": "엔드투엔드 처리, 비전 데이터 처리, 자율주행 시스템 아키텍처에서 높은 유사성"
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Luminar",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "reason": "레이더/라이다 융합, 센서 보정, 신호 처리 기술에서 부분적 유사성"
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Hesai",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "reason": "라이다 신호 처리 및 데이터 획득 기술에서 부분적 유사성"
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Blackmore",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "reason": "적응형 스캐닝 및 광학 거리 측정 기술에서 부분적 유사성"
+  }
+]

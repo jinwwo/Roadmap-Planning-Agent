@@ -1,0 +1,1096 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-06-01T12:33:08Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Magna International",
+          "Aptiv"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Magna International",
+            "title": "AUTOMOTIVE CAMERA WITH INTEGRATED ULTRASONIC TRANSMITTER/RECEIVER ARRAY",
+            "date": "2025-10-20",
+            "cited_by": 0
+          },
+          {
+            "company": "Aptiv",
+            "title": "Camera System, Manufacturing Method Thereof And Optical Element Mountable To A Circuit Platform",
+            "date": "2025-10-03",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Magna 와 Aptiv 는 카메라와 초음파 센서를 통합한 하드웨어 아키텍처에 집중하고 있어, 센서 퓨전의 물리적 통합 트렌드가 뚜렷합니다. 현대모비스는 소프트웨어 중심의 퓨전 알고리즘에 강점이 있으나, 하드웨어 통합 기술은 경쟁사 대비 약점이므로 선점 필요성이 높습니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "변형상 물질 배터리 냉각",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 82.3,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Magna International"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Magna International",
+            "title": "BATTERY PACK WITH PHASE CHANGE MATERIAL (PCM) COMPOSITE",
+            "date": "2025-07-15",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Magna 는 배터리 팩 내 변형상 물질 (PCM) 을 활용한 열관리 소재 기술을 최근 집중 출원하고 있습니다. 고출력 자율주행 플랫폼의 열안정성 확보를 위해 소재 기반의 수동 냉각 기술은 필수적인 경쟁력이 될 것입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고전압 커넥터 신뢰성",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Aptiv"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Aptiv",
+            "title": "HIGH VOLTAGE CONNECTOR FOR AN ALUMINUM CABLE WITH A COPPER TERMINAL",
+            "date": "2025-11-05",
+            "cited_by": 0
+          },
+          {
+            "company": "Aptiv",
+            "title": "ELECTRICAL CONNECTOR WITH CAVITY PLUGS",
+            "date": "2025-12-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Aptiv 는 알루미늄 케이블과 구리 터미널의 접합, 공동 플러그 등 고전압 커넥터의 신뢰성 및 제조 공정 특허를 다수 보유하고 있습니다. 전기차 및 자율주행 차량의 고전압 시스템 안정성을 위한 패키징 기술은 핵심 인프라입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "스태어 바이 와이어 제어",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 85.1,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Bosch"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Bosch",
+            "title": "Multi-mode control method of steer-by-wire system under driving assistance system",
+            "date": "2026-01-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Bosch",
+            "title": "Motor rotation angle limiting mechanism of steering system and hand feeling simulation device",
+            "date": "2026-01-26",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Bosch 는 자율주행 모드와 수동 모드 간 전환, 핸들링 감시 시뮬레이션 등 스타어 바이 와이어 (SBW) 의 제어 로직과 안전 메커니즘에 대한 특허를 활발히 출원하고 있습니다. 이는 자율주행 플랫폼의 핵심 제어 프로세스입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "SiC 반도체 제조 공정",
+        "category": "Process",
+        "estimated_trl": 5,
+        "patent_score": 81.4,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Denso Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Denso Corporation",
+            "title": "METHOD FOR MANUFACTURING SILICON CARBIDE SEMICONDUCTOR DEVICE",
+            "date": "2026-01-15",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Denso 는 SiC 반도체 제조 공정에 대한 특허를 출원하여 고효율 전력 변환 장치의 핵심 소자 생산 기술을 확보하고 있습니다. 자율주행 차량의 전력 효율 향상을 위한 소재 및 공정 기술은 장기적인 경쟁력 확보에 필수적입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "모듈형 DC 버스 테스트",
+        "category": "Architecture",
+        "estimated_trl": 4,
+        "patent_score": 76.2,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "ZF Friedrichshafen"
+        ],
+        "evidence_patents": [
+          {
+            "company": "ZF Friedrichshafen",
+            "title": "TEST FIELD WITH MODULAR DC BUS",
+            "date": "2025-11-19",
+            "cited_by": 0
+          },
+          {
+            "company": "ZF Friedrichshafen",
+            "title": "TEST FIELD WITH SAFE ACTIVATION OF A DC VOLTAGE CONNECTION",
+            "date": "2025-11-19",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "ZF 는 모듈형 DC 버스와 안전한 전압 연결 활성화 테스트 필드 관련 특허를 출원하여, 차세대 전력 아키텍처의 검증 및 안전성 확보에 집중하고 있습니다. 이는 자율주행 플랫폼의 전력 시스템 아키텍처 표준화에 기여할 수 있는 기술입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 26.1,
+          "sam_usd_b": 12.5,
+          "som_usd_b": 2.8,
+          "basis": "Automotive Camera Module Market $14.5B (2024) to $26.1B (2030) forecast. SAM focuses on L2+/L3 ADAS sensor fusion segments."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.4,
+          "forecast_period": "2024-2030",
+          "basis": "Strategic Market Research report indicates 8.4% CAGR for automotive camera modules, driven by ADAS adoption."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Camera Module Market Size, Share, Trends & Forecast 2024–2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/automotive-camera-module-market",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Sensor Fusion Market Size, Competitors & Forecast to 2033",
+            "url": "https://www.researchandmarkets.com/report/sensor-fusion",
+            "use": "Competitive landscape and fusion trends"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "자동차 카메라 모듈 시장은 2030 년까지 261 억 달러 규모로 성장할 것으로 예상되며, ADAS 필수 요소로 시장 진입 시기가 시급합니다. 경쟁은 Magna, Aptiv 등 주요 부품사 중심으로 집중되어 있으나, 센서 퓨전 알고리즘을 통한 차별화 가능성이 존재합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "변형상 물질 배터리 냉각",
+        "market_score": 68.2,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 1.64,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.15,
+          "basis": "Phase Change Materials (PCM) market projected at $1.64B by 2030. SAM targets EV thermal management applications specifically."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "Inferred from PCM market growth and EV thermal management demand surge."
+        },
+        "key_market_reports": [
+          {
+            "title": "Phase Change Materials Market worth $1,639.71 million by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/advanced-phase-change-material-pcm.asp",
+            "use": "TAM and growth rate evidence"
+          },
+          {
+            "title": "Phase Change Materials in Thermal Management Market - Global Forecast 2025-2034",
+            "url": "https://www.gminsights.com/industry-analysis/phase-change-materials-in-thermal-management-market",
+            "use": "Application specific market sizing"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "PCM 시장은 2030 년 약 16 억 달러 규모로 성장할 것으로 보이며, 전기차 배터리 열관리 수요 증가로 정책적 지원이 활발합니다. 다만 소재 기반 기술로 진입 장벽이 상대적으로 낮아 경쟁이 분산되어 있는 상태입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고전압 커넥터 신뢰성",
+        "market_score": 72.4,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 8.2,
+          "som_usd_b": 1.5,
+          "basis": "Automotive High Voltage Connector market growing with EV adoption. Estimated TAM based on global EV connector market trends."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.2,
+          "forecast_period": "2025-2030",
+          "basis": "Automotive Connector Market driven by 8.19% CAGR as per industry reports."
+        },
+        "key_market_reports": [
+          {
+            "title": "EV Connector Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/ev-connector-market",
+            "use": "TAM and growth trends"
+          },
+          {
+            "title": "Automotive High Voltage Connector Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-automotive-high-voltage-connector-market",
+            "use": "Specific HV connector market sizing"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "전기차 고전압 커넥터 시장은 8.2% 의 연평균 성장률을 보이며, Aptiv 등 주요 업체가 시장을 주도하고 있습니다. 신뢰성 확보가 필수적인 만큼 초기 시장 진입이 중요하며, 기술적 차별화가 가능한 영역입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "스태어 바이 와이어 제어",
+        "market_score": 82.6,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.8,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.2,
+          "basis": "Drive-by-wire market expanding rapidly with autonomous driving adoption. Steer-by-wire is a critical subset."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "High growth expected due to regulatory push for autonomous driving and safety standards."
+        },
+        "key_market_reports": [
+          {
+            "title": "Drive by wire market report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/drive-by-wire-market-64127606.html",
+            "use": "TAM and CAGR evidence"
+          },
+          {
+            "title": "Automotive Steer-by-Wire System Market Report (2026)",
+            "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
+            "use": "Specific steer-by-wire market analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "자율주행 규제 강화와 안전성 요구로 인해 스태어 바이 와이어 시장은 20% 이상의 높은 성장률을 보이며, Bosch 등 선두 기업의 독점적 지위가 강화되고 있습니다. 시장 진입 시기가 매우 시급하며, 기술적 진입 장벽이 높은 영역입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "SiC 반도체 제조 공정",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 90,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 14.7,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "North America SiC market $1.47B by 2030, global market significantly larger. Automotive is the primary growth driver."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "SiC adoption in EVs and power electronics driving exponential growth."
+        },
+        "key_market_reports": [
+          {
+            "title": "North America Silicon Carbide (SiC) Market worth $1.47 billion by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/north-america-silicon-carbide-sic.asp",
+            "use": "TAM and regional growth evidence"
+          },
+          {
+            "title": "Americas Semiconductor Market Size, Trends & Forecast 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/americas-semiconductor-device-market",
+            "use": "Semiconductor industry trends"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "SiC 반도체는 전기차 효율성 향상의 핵심으로 28% 의 높은 성장률을 기록하며, Denso 등 주요 업체가 제조 공정 기술을 선점하고 있습니다. 정부 지원과 투자 유입이 활발하여 시장 진입 시기가 매우 중요하며, 높은 기술 장벽이 존재합니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "모듈형 DC 버스 테스트",
+        "market_score": 65.8,
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 9.1,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.8,
+          "basis": "ADAS Simulation market reaching $9.1B by 2032. DC bus testing is a niche within this broader simulation and validation market."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "Inferred from ADAS simulation market growth and increasing complexity of EV powertrain validation."
+        },
+        "key_market_reports": [
+          {
+            "title": "ADAS Simulation Market to Reach USD 9.1 Billion by 2032",
+            "url": "https://finance.yahoo.com/sectors/technology/articles/adas-simulation-market-reach-usd-080100948.html",
+            "use": "TAM for simulation and testing market"
+          },
+          {
+            "title": "Common DC Bus Power Supply Market Outlook 2025-2032",
+            "url": "https://www.intelmarketresearch.com/common-dc-bus-power-supply-market-6901",
+            "use": "DC bus specific market context"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "ADAS 시뮬레이션 및 검증 시장이 2032 년 91 억 달러로 성장할 것으로 예상되며, 모듈형 DC 버스 테스트는 이 중 니치 마켓으로 부상하고 있습니다. 아직 명확한 시장 리더가 부재하여 초기 진입이 유리하나, 시장 성숙도는 2029 년 이후로 예상됩니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "자율주행 제어 알고리즘, 스타어 바이 와이어, ADAS 플랫폼 아키텍처에서 높은 기술적 유사성 및 경쟁 관계."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "전력 전자 장치, 구동 시스템, 모듈형 아키텍처 및 테스트 인프라에서 기술적 교집합이 큼."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Denso Corporation",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "전력 변환 장치, SiC 반도체, 배터리 관리 시스템 (BMS) 및 차량 제어 시스템에서 유사한 기술 포트폴리오."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Aptiv",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "고전압 커넥터, 센서 퓨전 하드웨어, 차량 네트워크 및 패키징 기술에서 경쟁 및 협력 가능성."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Magna International",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "배터리 팩 열관리 소재, 카메라 및 센서 통합, 차량 구조 및 모듈화 아키텍처에서 기술적 유사성."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T05",
+        "name": "SiC 반도체 제조 공정",
+        "category": "Process",
+        "trl": 5,
+        "patent_score": 81.4,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "final_score": 85.31,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Denso 는 SiC 반도체 제조 공정에 대한 특허를 출원하여 고효율 전력 변환 장치의 핵심 소자 생산 기술을 확보하고 있습니다. 자율주행 차량의 전력 효율 향상을 위한 소재 및 공정 기술은 장기적인 경쟁력 확보에 필수적입니다. [Market] SiC 반도체는 전기차 효율성 향상의 핵심으로 28% 의 높은 성장률을 기록하며, Denso 등 주요 업체가 제조 공정 기술을 선점하고 있습니다. 정부 지원과 투자 유입이 활발하여 시장 진입 시기가 매우 중요하며, 높은 기술 장벽이 존재합니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 90,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 14.7,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "North America SiC market $1.47B by 2030, global market significantly larger. Automotive is the primary growth driver."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "SiC adoption in EVs and power electronics driving exponential growth."
+        },
+        "key_market_reports": [
+          {
+            "title": "North America Silicon Carbide (SiC) Market worth $1.47 billion by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/north-america-silicon-carbide-sic.asp",
+            "use": "TAM and regional growth evidence"
+          },
+          {
+            "title": "Americas Semiconductor Market Size, Trends & Forecast 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/americas-semiconductor-device-market",
+            "use": "Semiconductor industry trends"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "스태어 바이 와이어 제어",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 85.1,
+        "market_score": 82.6,
+        "actor_map_score": 0.0,
+        "final_score": 83.72,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Bosch 는 자율주행 모드와 수동 모드 간 전환, 핸들링 감시 시뮬레이션 등 스타어 바이 와이어 (SBW) 의 제어 로직과 안전 메커니즘에 대한 특허를 활발히 출원하고 있습니다. 이는 자율주행 플랫폼의 핵심 제어 프로세스입니다. [Market] 자율주행 규제 강화와 안전성 요구로 인해 스태어 바이 와이어 시장은 20% 이상의 높은 성장률을 보이며, Bosch 등 선두 기업의 독점적 지위가 강화되고 있습니다. 시장 진입 시기가 매우 시급하며, 기술적 진입 장벽이 높은 영역입니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.8,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.2,
+          "basis": "Drive-by-wire market expanding rapidly with autonomous driving adoption. Steer-by-wire is a critical subset."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "High growth expected due to regulatory push for autonomous driving and safety standards."
+        },
+        "key_market_reports": [
+          {
+            "title": "Drive by wire market report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/drive-by-wire-market-64127606.html",
+            "use": "TAM and CAGR evidence"
+          },
+          {
+            "title": "Automotive Steer-by-Wire System Market Report (2026)",
+            "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
+            "use": "Specific steer-by-wire market analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        }
+      },
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 78.5,
+        "actor_map_score": 0.0,
+        "final_score": 83.0,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Magna 와 Aptiv 는 카메라와 초음파 센서를 통합한 하드웨어 아키텍처에 집중하고 있어, 센서 퓨전의 물리적 통합 트렌드가 뚜렷합니다. 현대모비스는 소프트웨어 중심의 퓨전 알고리즘에 강점이 있으나, 하드웨어 통합 기술은 경쟁사 대비 약점이므로 선점 필요성이 높습니다. [Market] 자동차 카메라 모듈 시장은 2030 년까지 261 억 달러 규모로 성장할 것으로 예상되며, ADAS 필수 요소로 시장 진입 시기가 시급합니다. 경쟁은 Magna, Aptiv 등 주요 부품사 중심으로 집중되어 있으나, 센서 퓨전 알고리즘을 통한 차별화 가능성이 존재합니다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 26.1,
+          "sam_usd_b": 12.5,
+          "som_usd_b": 2.8,
+          "basis": "Automotive Camera Module Market $14.5B (2024) to $26.1B (2030) forecast. SAM focuses on L2+/L3 ADAS sensor fusion segments."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.4,
+          "forecast_period": "2024-2030",
+          "basis": "Strategic Market Research report indicates 8.4% CAGR for automotive camera modules, driven by ADAS adoption."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Camera Module Market Size, Share, Trends & Forecast 2024–2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/automotive-camera-module-market",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Sensor Fusion Market Size, Competitors & Forecast to 2033",
+            "url": "https://www.researchandmarkets.com/report/sensor-fusion",
+            "use": "Competitive landscape and fusion trends"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "고전압 커넥터 신뢰성",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 79.8,
+        "market_score": 72.4,
+        "actor_map_score": 0.0,
+        "final_score": 75.73,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Aptiv 는 알루미늄 케이블과 구리 터미널의 접합, 공동 플러그 등 고전압 커넥터의 신뢰성 및 제조 공정 특허를 다수 보유하고 있습니다. 전기차 및 자율주행 차량의 고전압 시스템 안정성을 위한 패키징 기술은 핵심 인프라입니다. [Market] 전기차 고전압 커넥터 시장은 8.2% 의 연평균 성장률을 보이며, Aptiv 등 주요 업체가 시장을 주도하고 있습니다. 신뢰성 확보가 필수적인 만큼 초기 시장 진입이 중요하며, 기술적 차별화가 가능한 영역입니다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 8.2,
+          "som_usd_b": 1.5,
+          "basis": "Automotive High Voltage Connector market growing with EV adoption. Estimated TAM based on global EV connector market trends."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 8.2,
+          "forecast_period": "2025-2030",
+          "basis": "Automotive Connector Market driven by 8.19% CAGR as per industry reports."
+        },
+        "key_market_reports": [
+          {
+            "title": "EV Connector Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/ev-connector-market",
+            "use": "TAM and growth trends"
+          },
+          {
+            "title": "Automotive High Voltage Connector Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-automotive-high-voltage-connector-market",
+            "use": "Specific HV connector market sizing"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T02",
+        "name": "변형상 물질 배터리 냉각",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 82.3,
+        "market_score": 68.2,
+        "actor_map_score": 0.0,
+        "final_score": 74.55,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Magna 는 배터리 팩 내 변형상 물질 (PCM) 을 활용한 열관리 소재 기술을 최근 집중 출원하고 있습니다. 고출력 자율주행 플랫폼의 열안정성 확보를 위해 소재 기반의 수동 냉각 기술은 필수적인 경쟁력이 될 것입니다. [Market] PCM 시장은 2030 년 약 16 억 달러 규모로 성장할 것으로 보이며, 전기차 배터리 열관리 수요 증가로 정책적 지원이 활발합니다. 다만 소재 기반 기술로 진입 장벽이 상대적으로 낮아 경쟁이 분산되어 있는 상태입니다.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 1.64,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.15,
+          "basis": "Phase Change Materials (PCM) market projected at $1.64B by 2030. SAM targets EV thermal management applications specifically."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.5,
+          "forecast_period": "2025-2030",
+          "basis": "Inferred from PCM market growth and EV thermal management demand surge."
+        },
+        "key_market_reports": [
+          {
+            "title": "Phase Change Materials Market worth $1,639.71 million by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/advanced-phase-change-material-pcm.asp",
+            "use": "TAM and growth rate evidence"
+          },
+          {
+            "title": "Phase Change Materials in Thermal Management Market - Global Forecast 2025-2034",
+            "url": "https://www.gminsights.com/industry-analysis/phase-change-materials-in-thermal-management-market",
+            "use": "Application specific market sizing"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T06",
+        "name": "모듈형 DC 버스 테스트",
+        "category": "Architecture",
+        "trl": 4,
+        "patent_score": 76.2,
+        "market_score": 65.8,
+        "actor_map_score": 0.0,
+        "final_score": 70.48,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] ZF 는 모듈형 DC 버스와 안전한 전압 연결 활성화 테스트 필드 관련 특허를 출원하여, 차세대 전력 아키텍처의 검증 및 안전성 확보에 집중하고 있습니다. 이는 자율주행 플랫폼의 전력 시스템 아키텍처 표준화에 기여할 수 있는 기술입니다. [Market] ADAS 시뮬레이션 및 검증 시장이 2032 년 91 억 달러로 성장할 것으로 예상되며, 모듈형 DC 버스 테스트는 이 중 니치 마켓으로 부상하고 있습니다. 아직 명확한 시장 리더가 부재하여 초기 진입이 유리하나, 시장 성숙도는 2029 년 이후로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 55,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 9.1,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.8,
+          "basis": "ADAS Simulation market reaching $9.1B by 2032. DC bus testing is a niche within this broader simulation and validation market."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "Inferred from ADAS simulation market growth and increasing complexity of EV powertrain validation."
+        },
+        "key_market_reports": [
+          {
+            "title": "ADAS Simulation Market to Reach USD 9.1 Billion by 2032",
+            "url": "https://finance.yahoo.com/sectors/technology/articles/adas-simulation-market-reach-usd-080100948.html",
+            "use": "TAM for simulation and testing market"
+          },
+          {
+            "title": "Common DC Bus Power Supply Market Outlook 2025-2032",
+            "url": "https://www.intelmarketresearch.com/common-dc-bus-power-supply-market-6901",
+            "use": "DC bus specific market context"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 80
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+      "expected_boom_quarter": "2029 Q1",
+      "market_research_summary": {
+        "T01": {
+          "name": "다중 센서 퓨전 카메라",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 26.1,
+            "sam_usd_b": 12.5,
+            "som_usd_b": 2.8,
+            "basis": "Automotive Camera Module Market $14.5B (2024) to $26.1B (2030) forecast. SAM focuses on L2+/L3 ADAS sensor fusion segments."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 8.4,
+            "forecast_period": "2024-2030",
+            "basis": "Strategic Market Research report indicates 8.4% CAGR for automotive camera modules, driven by ADAS adoption."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Camera Module Market Size, Share, Trends & Forecast 2024–2030",
+              "url": "https://www.strategicmarketresearch.com/market-report/automotive-camera-module-market",
+              "use": "TAM/CAGR evidence"
+            },
+            {
+              "title": "Sensor Fusion Market Size, Competitors & Forecast to 2033",
+              "url": "https://www.researchandmarkets.com/report/sensor-fusion",
+              "use": "Competitive landscape and fusion trends"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "변형상 물질 배터리 냉각",
+          "market_score": 68.2,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 1.64,
+            "sam_usd_b": 0.8,
+            "som_usd_b": 0.15,
+            "basis": "Phase Change Materials (PCM) market projected at $1.64B by 2030. SAM targets EV thermal management applications specifically."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 12.5,
+            "forecast_period": "2025-2030",
+            "basis": "Inferred from PCM market growth and EV thermal management demand surge."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Phase Change Materials Market worth $1,639.71 million by 2030",
+              "url": "https://www.marketsandmarkets.com/PressReleases/advanced-phase-change-material-pcm.asp",
+              "use": "TAM and growth rate evidence"
+            },
+            {
+              "title": "Phase Change Materials in Thermal Management Market - Global Forecast 2025-2034",
+              "url": "https://www.gminsights.com/industry-analysis/phase-change-materials-in-thermal-management-market",
+              "use": "Application specific market sizing"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "고전압 커넥터 신뢰성",
+          "market_score": 72.4,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 8.2,
+            "som_usd_b": 1.5,
+            "basis": "Automotive High Voltage Connector market growing with EV adoption. Estimated TAM based on global EV connector market trends."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 8.2,
+            "forecast_period": "2025-2030",
+            "basis": "Automotive Connector Market driven by 8.19% CAGR as per industry reports."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "EV Connector Market Size, Share & 2030 Growth Trends Report",
+              "url": "https://www.mordorintelligence.com/industry-reports/ev-connector-market",
+              "use": "TAM and growth trends"
+            },
+            {
+              "title": "Automotive High Voltage Connector Market Research Report 2034",
+              "url": "https://dataintelo.com/report/global-automotive-high-voltage-connector-market",
+              "use": "Specific HV connector market sizing"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "스태어 바이 와이어 제어",
+          "market_score": 82.6,
+          "expected_market_boom_quarter": "2027 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 12.8,
+            "sam_usd_b": 5.5,
+            "som_usd_b": 1.2,
+            "basis": "Drive-by-wire market expanding rapidly with autonomous driving adoption. Steer-by-wire is a critical subset."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.5,
+            "forecast_period": "2025-2030",
+            "basis": "High growth expected due to regulatory push for autonomous driving and safety standards."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Drive by wire market report 2025-2032",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/drive-by-wire-market-64127606.html",
+              "use": "TAM and CAGR evidence"
+            },
+            {
+              "title": "Automotive Steer-by-Wire System Market Report (2026)",
+              "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
+              "use": "Specific steer-by-wire market analysis"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "SiC 반도체 제조 공정",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 14.7,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 1.5,
+            "basis": "North America SiC market $1.47B by 2030, global market significantly larger. Automotive is the primary growth driver."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 28.0,
+            "forecast_period": "2025-2030",
+            "basis": "SiC adoption in EVs and power electronics driving exponential growth."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "North America Silicon Carbide (SiC) Market worth $1.47 billion by 2030",
+              "url": "https://www.marketsandmarkets.com/PressReleases/north-america-silicon-carbide-sic.asp",
+              "use": "TAM and regional growth evidence"
+            },
+            {
+              "title": "Americas Semiconductor Market Size, Trends & Forecast 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/americas-semiconductor-device-market",
+              "use": "Semiconductor industry trends"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "모듈형 DC 버스 테스트",
+          "market_score": 65.8,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 9.1,
+            "sam_usd_b": 3.5,
+            "som_usd_b": 0.8,
+            "basis": "ADAS Simulation market reaching $9.1B by 2032. DC bus testing is a niche within this broader simulation and validation market."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 15.0,
+            "forecast_period": "2025-2030",
+            "basis": "Inferred from ADAS simulation market growth and increasing complexity of EV powertrain validation."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "ADAS Simulation Market to Reach USD 9.1 Billion by 2032",
+              "url": "https://finance.yahoo.com/sectors/technology/articles/adas-simulation-market-reach-usd-080100948.html",
+              "use": "TAM for simulation and testing market"
+            },
+            {
+              "title": "Common DC Bus Power Supply Market Outlook 2025-2032",
+              "url": "https://www.intelmarketresearch.com/common-dc-bus-power-supply-market-6901",
+              "use": "DC bus specific market context"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "actor_map_summary": {}
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "자율주행 제어 알고리즘, 스타어 바이 와이어, ADAS 플랫폼 아키텍처에서 높은 기술적 유사성 및 경쟁 관계."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "전력 전자 장치, 구동 시스템, 모듈형 아키텍처 및 테스트 인프라에서 기술적 교집합이 큼."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Denso Corporation",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "전력 변환 장치, SiC 반도체, 배터리 관리 시스템 (BMS) 및 차량 제어 시스템에서 유사한 기술 포트폴리오."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Aptiv",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "고전압 커넥터, 센서 퓨전 하드웨어, 차량 네트워크 및 패키징 기술에서 경쟁 및 협력 가능성."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Magna International",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "배터리 팩 열관리 소재, 카메라 및 센서 통합, 차량 구조 및 모듈화 아키텍처에서 기술적 유사성."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2029 Q1"
+    ]
+  }
+}

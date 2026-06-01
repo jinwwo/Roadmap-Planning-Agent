@@ -47,6 +47,24 @@ KIPRIS_APPLICANT_ALIASES = {
     "taiwan semiconductor manufacturing": "타이완 세미콘덕터 매뉴팩쳐링",
     "arm": "에이알엠 리미티드",
     "arm limited": "에이알엠 리미티드",
+    # ── 자율주행 플랫폼 ──
+    "hyundai mobis": "현대모비스",
+    "hl mando": "만도",
+    "mando": "만도",
+    "stradvision": "스트라드비젼",
+    # ── 이차전지 양극재 ──
+    "lg chem": "엘지화학",
+    "lg chemical": "엘지화학",
+    "ecopro bm": "에코프로비엠",
+    "ecopro": "에코프로비엠",
+    "cosmo am&t": "코스모신소재",
+    "cosmo amt": "코스모신소재",
+    "cosmo new material": "코스모신소재",
+    # ── AI LLM ──
+    "naver": "네이버",
+    "naver corporation": "네이버",
+    "saltlux": "솔트룩스",
+    "upstage": "업스테이지",
 }
 
 
@@ -78,6 +96,28 @@ KIPRIS_FOREIGN_APPLICANT_ALIASES = {
     "에이알엠 리미티드": "ARM",
     "samsung electronics": "Samsung Electronics",
     "삼성전자": "Samsung Electronics",
+    # ── 자율주행 ──
+    "hyundai mobis": "Hyundai Mobis",
+    "현대모비스": "Hyundai Mobis",
+    "hl mando": "HL Mando",
+    "mando": "HL Mando",
+    "HL만도": "HL Mando",
+    "stradvision": "STRADVISION",
+    "스트라드비젼": "STRADVISION",
+    # ── 이차전지 ──
+    "lg chem": "LG Chem",
+    "LG화학": "LG Chem",
+    "ecopro bm": "EcoPro BM",
+    "에코프로비엠": "EcoPro BM",
+    "cosmo am&t": "Cosmo AM&T",
+    "코스모신소재": "Cosmo AM&T",
+    # ── AI LLM ──
+    "naver": "NAVER",
+    "네이버": "NAVER",
+    "saltlux": "Saltlux",
+    "솔트룩스": "Saltlux",
+    "upstage": "Upstage",
+    "업스테이지": "Upstage",
 }
 
 

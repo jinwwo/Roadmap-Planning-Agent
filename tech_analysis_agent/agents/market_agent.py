@@ -66,10 +66,10 @@ For each technology in the input list, determine:
 ---
 [Market Scoring Framework]
 
-market_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)
-             + (policy_and_investment_tailwind × 0.20) + (competitive_moat_potential × 0.15)
+market_score = (tam_growth_rate × 0.20) + (time_to_market_urgency × 0.30)
+             + (policy_and_investment_tailwind × 0.25) + (competitive_moat_potential × 0.25)
 
-1. tam_growth_rate (0–100, weight 35%)
+1. tam_growth_rate (0–100, weight 20%)
    - 80–100: Market CAGR > 20%, TAM > $10B by target year
    - 50–79:  CAGR 10–20% or TAM $1B–$10B
    - 0–49:   CAGR < 10% or TAM < $1B
@@ -79,12 +79,12 @@ market_score = (tam_growth_rate × 0.35) + (time_to_market_urgency × 0.30)
    - 50–79:  Window opens in 3–5 years; moderate urgency
    - 0–49:   Window > 5 years or already saturated
 
-3. policy_and_investment_tailwind (0–100, weight 20%)
+3. policy_and_investment_tailwind (0–100, weight 25%)
    - 80–100: Active government subsidies + major VC/corporate investment surge
    - 50–79:  Moderate policy support or investment interest
    - 0–49:   No notable support or declining interest
 
-4. competitive_moat_potential (0–100, weight 15%)
+4. competitive_moat_potential (0–100, weight 25%)
    - 80–100: High barrier, few players, proprietary lock-in possible
    - 50–79:  Moderate competition, some differentiation room
    - 0–49:   Commoditized or saturated, low margin potential
@@ -312,10 +312,10 @@ def _normalize_market_analysis(
         market_score = _to_float(item.get("market_score"), 0.0)
         if not market_score:
             market_score = round(
-                float(market_signals.get("tam_growth_rate", 0)) * 0.35
+                float(market_signals.get("tam_growth_rate", 0)) * 0.20
                 + float(market_signals.get("time_to_market_urgency", 0)) * 0.30
-                + float(market_signals.get("policy_and_investment_tailwind", 0)) * 0.20
-                + float(market_signals.get("competitive_moat_potential", 0)) * 0.15,
+                + float(market_signals.get("policy_and_investment_tailwind", 0)) * 0.25
+                + float(market_signals.get("competitive_moat_potential", 0)) * 0.25,
                 1,
             )
 
@@ -564,6 +564,43 @@ def _compact_market_raw_for_prompt(market_raw: dict, per_section_limit: int = 1)
     return json.dumps(compact, ensure_ascii=False, indent=2)
 
 
+_TRANSLATE_SYSTEM = """You translate Korean technology names to concise English search keywords.
+Return ONLY the English translation as a single line — no quotes, no explanation, no Korean.
+Preserve technical acronyms (BS-PDN, HBM, EUV, GAA, ALD, CFET, NCM, LFP, mRNA, OCR, RAG, LLM, etc.).
+Keep it ≤ 10 words. Output English only.
+
+Examples:
+- "후면 전력망 (BS-PDN)" → "Backside Power Delivery Network BS-PDN"
+- "고대역폭 인터포저 패키징" → "High-Bandwidth Interposer Packaging"
+- "AI 기반 의료 데이터 스트림 분석" → "AI medical data stream analysis"
+"""
+
+
+def _translate_tech_name_to_english(tech_name: str) -> str:
+    """한국어 tech_name → Tavily 검색용 영문 키워드. ASCII 만 있으면 그대로 반환."""
+    if not tech_name:
+        return tech_name
+    # 이미 ASCII 만이면 번역 불필요
+    try:
+        tech_name.encode("ascii")
+        return tech_name
+    except UnicodeEncodeError:
+        pass
+    try:
+        llm = get_llm(max_tokens=128, json_mode=False)
+        resp = llm.invoke([
+            SystemMessage(content=_TRANSLATE_SYSTEM),
+            HumanMessage(content=tech_name),
+        ])
+        out = (resp.content if hasattr(resp, "content") else str(resp)).strip()
+        # 단일 라인, 따옴표 제거
+        out = out.splitlines()[0].strip().strip('"').strip("'")
+        return out or tech_name
+    except Exception as e:
+        print(f"  [Market] ⚠️ 영문 번역 실패 ('{tech_name}'): {e} — 원본 사용")
+        return tech_name
+
+
 def _collect_market_data(
     domain: str,
     patent_analysis: list,
@@ -572,6 +609,7 @@ def _collect_market_data(
     """
     Tavily API 로 각 후보 기술의 시장 데이터를 수집합니다.
     USE_PATENT_MAP=true이면 actor_similarity_map의 관련 actor/shared area를 검색 context로 사용합니다.
+    한국어 tech_name 은 Tavily 검색 직전 영문 번역 (검색 품질 ↑).
     """
     tool = MarketIntelligenceTool()
     if not tool.use_mock and not tool.client:
@@ -599,14 +637,22 @@ def _collect_market_data(
     for tech in patent_analysis:
         tech_name = tech.get("name", "")
         tech_id = tech.get("tech_id", "")
+        # 한국어 → 영문 번역 (Tavily 검색용)
+        tech_name_en = _translate_tech_name_to_english(tech_name)
         actor_context = _context_for_tech(tech, active_patent_maps, global_actor_context)
         related = ", ".join(actor_context.get("related_actors") or [])
-        print(f"  [Market] '{tech_name}' 시장 데이터 수집 중... (actors: {related or 'N/A'})")
+        if tech_name_en != tech_name:
+            print(f"  [Market] '{tech_name}' → '{tech_name_en}' (영문 검색 키워드)  (actors: {related or 'N/A'})")
+        else:
+            print(f"  [Market] '{tech_name}' 시장 데이터 수집 중... (actors: {related or 'N/A'})")
         market_raw["technologies"][tech_id] = tool.collect_full_signal(
-            tech_name,
+            tech_name_en,
             domain,
             actor_context=actor_context,
         )
+        # 원본 한국어 이름도 보존 (downstream LLM 이 보고 받을 때 일관성)
+        market_raw["technologies"][tech_id]["tech_name"] = tech_name
+        market_raw["technologies"][tech_id]["tech_name_en"] = tech_name_en
 
     return market_raw
 

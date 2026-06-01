@@ -1,0 +1,144 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-06-01T06:17:36Z",
+  "input": {
+    "domain": "Cathode Materials / Functional Materials",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ],
+    "company_name": "Cosmo AM&T",
+    "company_profile": "Company: Cosmo AM&T\nIndustry: Cathode Materials / Functional Materials\nAnnual Revenue: ~$326M\nR&D Budget Ratio: ~1.2%\nAnnual R&D Budget: ~$3.9M\nTotal 5-year R&D Budget: ~$11.7M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+    "related_companies": null,
+    "patent_map_generation": "always"
+  },
+  "prompt_variant": "C_company_portfolio",
+  "provider_summary": {
+    "Cosmo AM&T": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": {
+        "domestic": "SERVICE_KEY_IS_NOT_REGISTERED_ERROR | SERVICE_KEY_IS_NOT_REGISTERED_ERROR",
+        "foreign:US": "AccessKey Is Not Registerd Error",
+        "foreign:EP": "AccessKey Is Not Registerd Error",
+        "foreign:JP": "AccessKey Is Not Registerd Error",
+        "foreign:CN": "AccessKey Is Not Registerd Error",
+        "foreign:WO": "AccessKey Is Not Registerd Error"
+      },
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": "AccessKey Is Not Registerd Error"
+          },
+          "EP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": "AccessKey Is Not Registerd Error"
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": "AccessKey Is Not Registerd Error"
+          },
+          "CN": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": "AccessKey Is Not Registerd Error"
+          },
+          "WO": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": "AccessKey Is Not Registerd Error"
+          }
+        }
+      },
+      "num_patents": 0,
+      "first_patent": {}
+    }
+  },
+  "patent_raw_data": {
+    "analysis_mode": "company_portfolio",
+    "domain": "Cathode Materials / Functional Materials",
+    "company": {
+      "name": "Cosmo AM&T",
+      "profile": "Company: Cosmo AM&T\nIndustry: Cathode Materials / Functional Materials\nAnnual Revenue: ~$326M\nR&D Budget Ratio: ~1.2%\nAnnual R&D Budget: ~$3.9M\nTotal 5-year R&D Budget: ~$11.7M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점"
+    },
+    "related_companies": [],
+    "company_portfolios": {
+      "Cosmo AM&T": {
+        "company_name": "Cosmo AM&T",
+        "domain_keywords": "Cathode Materials / Functional Materials Equipment Material Process Architecture Packaging",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "SERVICE_KEY_IS_NOT_REGISTERED_ERROR | SERVICE_KEY_IS_NOT_REGISTERED_ERROR",
+          "foreign:US": "AccessKey Is Not Registerd Error",
+          "foreign:EP": "AccessKey Is Not Registerd Error",
+          "foreign:JP": "AccessKey Is Not Registerd Error",
+          "foreign:CN": "AccessKey Is Not Registerd Error",
+          "foreign:WO": "AccessKey Is Not Registerd Error"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "AccessKey Is Not Registerd Error"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "AccessKey Is Not Registerd Error"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "AccessKey Is Not Registerd Error"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "AccessKey Is Not Registerd Error"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "AccessKey Is Not Registerd Error"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      }
+    }
+  },
+  "patent_raw_for_prompt": "{\n  \"analysis_mode\": \"company_portfolio\",\n  \"domain\": \"Cathode Materials / Functional Materials\",\n  \"company\": {\n    \"name\": \"Cosmo AM&T\",\n    \"profile\": \"Company: Cosmo AM&T\\nIndustry: Cathode Materials / Functional Materials\\nAnnual Revenue: ~$326M\\nR&D Budget Ratio: ~1.2%\\nAnnual R&D Budget: ~$3.9M\\nTotal 5-year R&D Budget: ~$11.7M\\nPlanning Horizon: 2026-2030 (5 years)\\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\"\n  },\n  \"related_companies\": [],\n  \"company_portfolios\": {\n    \"Cosmo AM&T\": {\n      \"company_name\": \"Cosmo AM&T\",\n      \"domain_keywords\": \"Cathode Materials / Functional Materials Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"WO\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          }\n        }\n      },\n      \"filing_trend\": {},\n      \"citation_summary\": {},\n      \"recent_patents\": [],\n      \"omitted_patent_count\": 0\n    }\n  }\n}",
+  "llm_request": {
+    "system_prompt": "You are a Company-Centered Patent Analysis Agent for technology-driven roadmapping.\nYour role is to analyze patent portfolios of the user's company and related companies, then derive candidate technologies for the user's roadmap.\n\nYou do NOT invent candidates from the domain alone. Candidate technologies must be grounded in the provided company patent portfolios, especially the patents of related companies.\n\n---\n[Core Task]\n\nGiven:\n- the user's company name and profile,\n- related companies selected for patent comparison,\n- patent portfolios collected for the user company and related companies,\n- filing/citation signals for each company,\n\nproduce:\n1. `patent_analysis`: 5-10 candidate technologies inferred from the compared companies' patent data.\n2. `patent_maps.actor_similarity_map`: a center-company actor similarity map only.\n\nDo NOT output actor_relations_map, technology_industry_map, or technology_affinity_map.\n\n---\n[Candidate Technology Requirements]\n\nEach candidate must be a concise technology concept that the user's company should consider for its roadmap because related companies' patents show meaningful activity, momentum, citation visibility, or strategic capability.\n\nFor each candidate technology, determine:\n- tech_id (T01, T02, ...)\n- name: concise Korean technology concept, 2-6 words\n- category: one of Material / Equipment / Process / Architecture / Packaging\n- estimated_trl: 1-9\n- patent_score: 0-100\n- patent_signals\n- dependency_hints: valid tech_ids from this output only\n- source_companies: companies whose patents support this candidate\n- evidence_patents: 1-4 representative patent snippets from the provided data\n- data_quality: \"real\" or \"estimated\"\n- rationale: Korean 2-3 sentences\n\nCandidate technologies should be derived primarily from related companies' patent portfolios, then interpreted relative to the user's company profile.\n\n---\n[Patent Scoring Framework]\n\npatent_score = (peer_momentum * 0.25)\n             + (citation_impact * 0.20)\n             + (strategic_gap_opportunity * 0.25)\n             + (cross_actor_recurrence * 0.20)\n             + (roadmap_relevance * 0.10)\n\n1. peer_momentum (0-100)\n   Filing growth, recency, and repeated patent activity among related companies.\n\n2. citation_impact (0-100)\n   Citation visibility, max citations, and concentrated high-impact patents.\n\n3. strategic_gap_opportunity (0-100)\n   Higher if related companies are active and the user's company should close or exploit a capability gap.\n\n4. cross_actor_recurrence (0-100)\n   Higher if multiple related companies show similar technology themes.\n\n5. roadmap_relevance (0-100)\n   Fit with the user's company profile, domain, and category hints.\n\n---\n[Actor Similarity Map]\n\nOutput only `actor_similarity_map`.\nIt must place the user's company at the center and connect it to related companies.\n\nEach edge item:\n- center_actor: user's company name\n- related_actor: related company name\n- similarity: 0.0-1.0\n- edge_weight: same as similarity unless there is a reason to differ\n- shared_technology_areas: technology keywords or concepts shared between portfolios\n- basis: Korean evidence summary\n- evidence_level: \"direct\" if based on patents from both actors, \"proxy\" if inferred mainly from related-company patents/domain fit\n\nSimilarity should reflect overlap or strategic adjacency in patent themes. Stronger similarity means a thicker edge in the rendered map.\n\n---\n[TRL Estimation]\n\n- TRL 1-3: mostly exploratory patents, weak industrialization, few repeated actors\n- TRL 4-6: active corporate R&D, prototypes/process modules, moderate citations\n- TRL 7-9: dense corporate portfolios, production-oriented claims, high citation visibility\n\n---\n[Dependency Hinting]\n\nUse roadmapping logic:\nMaterial/Equipment -> Process -> Architecture/Packaging.\nUse only tech_ids defined in THIS output.\n\n---\n[Language Rules]\n\n- `name` must be Korean technology concept, not copied patent title.\n- `rationale` and map `basis` must be Korean.\n- Company names may remain English.\n- Categories must remain English.\n\n---\n[CRITICAL]\n\nOutput ONLY valid JSON. No markdown, no prose outside JSON.\n\nOutput schema:\n{\n  \"patent_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"Backside 전력망\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 5,\n      \"patent_score\": 84.2,\n      \"patent_signals\": {\n        \"peer_momentum\": 86,\n        \"citation_impact\": 78,\n        \"strategic_gap_opportunity\": 88,\n        \"cross_actor_recurrence\": 84,\n        \"roadmap_relevance\": 90\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Intel\", \"TSMC\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Intel\",\n          \"title\": \"Representative patent title\",\n          \"date\": \"2024-01-01\",\n          \"cited_by\": 42\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"...\"\n    }\n  ],\n  \"patent_maps\": {\n    \"actor_similarity_map\": [\n      {\n        \"center_actor\": \"User Company\",\n        \"related_actor\": \"TSMC\",\n        \"similarity\": 0.86,\n        \"edge_weight\": 0.86,\n        \"shared_technology_areas\": [\"GAA\", \"Backside PDN\"],\n        \"basis\": \"...\",\n        \"evidence_level\": \"direct\"\n      }\n    ]\n  }\n}",
+    "user_prompt": "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n- Company: Cosmo AM&T\n- Industry: Cathode Materials / Functional Materials\n- Planning Horizon: 2026-2030 (5 years)\n\n[Strategic Direction]\n  1. 차세대 양극재 및 기능성 소재 기술 선도\n  2. 에너지 저장 및 신소재 인접 시장 확장\n  3. 프론티어 기술 R&D 스택 강화\n\n도메인: Cathode Materials / Functional Materials\n분석 기준 연도: 2030\n카테고리 힌트: ['Equipment', 'Material', 'Process', 'Architecture', 'Packaging']\n\n[우리 기업]\n기업명: Cosmo AM&T\n기업 정보: Company: Cosmo AM&T\nIndustry: Cathode Materials / Functional Materials\nAnnual Revenue: ~$326M\nR&D Budget Ratio: ~1.2%\nAnnual R&D Budget: ~$3.9M\nTotal 5-year R&D Budget: ~$11.7M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\n\n[관련 기업 후보]\n[]\n\n아래는 우리 기업과 관련 기업들의 특허 포트폴리오 데이터입니다.\n반드시 이 데이터, 특히 관련 기업들의 특허 데이터에서 반복적으로 관찰되는 기술 테마를 근거로 후보 기술을 도출하세요.\n특허 데이터에는 국내(KR)와 해외(US/EP/JP/CN/WO 등) 관할 데이터가 함께 포함될 수 있습니다.\n각 특허의 `source`, `jurisdiction`, `assignee`를 확인하여 국내 출원과 해외 출원을 구분해 해석하세요.\n\n[수집된 기업별 특허 데이터]\n{\n  \"analysis_mode\": \"company_portfolio\",\n  \"domain\": \"Cathode Materials / Functional Materials\",\n  \"company\": {\n    \"name\": \"Cosmo AM&T\",\n    \"profile\": \"Company: Cosmo AM&T\\nIndustry: Cathode Materials / Functional Materials\\nAnnual Revenue: ~$326M\\nR&D Budget Ratio: ~1.2%\\nAnnual R&D Budget: ~$3.9M\\nTotal 5-year R&D Budget: ~$11.7M\\nPlanning Horizon: 2026-2030 (5 years)\\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\"\n  },\n  \"related_companies\": [],\n  \"company_portfolios\": {\n    \"Cosmo AM&T\": {\n      \"company_name\": \"Cosmo AM&T\",\n      \"domain_keywords\": \"Cathode Materials / Functional Materials Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          },\n          \"WO\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": \"AccessKey Is Not Registerd Error\"\n          }\n        }\n      },\n      \"filing_trend\": {},\n      \"citation_summary\": {},\n      \"recent_patents\": [],\n      \"omitted_patent_count\": 0\n    }\n  }\n}\n\n위 데이터를 분석하여 지정된 JSON 포맷으로 출력하세요.\n\n중요:\n- 기술 후보군은 \"조사한 다른 기업들의 특허 데이터\"를 분석해 만들어야 합니다.\n- patent_maps에는 actor_similarity_map만 포함하세요.\n- actor_similarity_map은 우리 기업을 center_actor로 두고 관련 기업을 related_actor로 연결하는 edge 리스트여야 합니다.\n- similarity/edge_weight가 높을수록 렌더링에서 edge가 두껍게 표현됩니다.\n\n[Horizon 인식 — 권장 (강제 X)]\nreference_year=2030 는 로드맵 horizon 의 **목표 종료 연도** 이다.\n후보 기술 발굴 시 다음을 고려:\n- 단기 (TRL 7+, 양산 가까운) / 중기 (TRL 5-6, 프로토타입) / 장기 (TRL 3-4, R&D) 가\n  골고루 분포하도록 권장 — 모든 후보를 한 TRL 대역으로 채우지 말 것.\n- 단 도메인 특성상 한 대역에 집중되는 게 자연스러우면 그대로 — 정직한 분석 우선.\n- 즉 \"정직한 분석\" ≫ \"TRL 분포 균형\". 둘이 충돌하면 정직성 선호, 비슷하면 분포 권장.\n\n\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. 기존 후보 풀을 가능한 한 유지하되, 명시적으로 누락된 트렌드/카테고리/기술이 있으면 후보로 추가 도출하여 final 분석에 포함하라.\n- Technology Analyst: Cosmo AM&T 의 양극재 및 기능성 소재 산업 특성에 맞는 구체적인 기술 후보 (최소 5 개 이상) 를 생성하라.\n- Roadmap Planner: 생성된 기술 후보를 기반으로 2026-2030 년 기간의 의존성 및 타임라인을 포함한 로드맵을 작성하라.\n- Investment Strategist: 총 예산 $11,700,000 내에서 기술별 투자 등급 및 금액을 배분하라.\n- [Feasibility/Schedule] 기술 후보 및 로드맵이 비어 있어 실행 불가능. — 타임라인 현실성 재검토 필요.\n- [Sequencing] 기술 후보가 없어 의존성 검증 불가. — 선행 기술 완료 → 후행 기술 시작 순서 재조정.\n\n\n[ORCHESTRATOR REVISE FEEDBACK] — 직전 review 가 지적한 사항. 기존 후보 풀을 가능한 한 유지하되, 명시적으로 누락된 트렌드/카테고리/기술이 있으면 후보로 추가 도출하여 final 분석에 포함하라.\n- Technology Analyst: Cosmo AM&T 의 양극재 및 기능성 소재 산업 특성에 맞는 구체적인 기술 후보 (최소 5 개 이상) 를 생성하라.\n- Roadmap Planner: 생성된 기술 후보를 기반으로 2026-2030 년 기간의 의존성 및 타임라인을 포함한 로드맵을 작성하라.\n- Investment Strategist: 총 예산 $11,700,000 내에서 기술별 투자 등급 및 금액을 배분하라.\n- [Feasibility/Schedule] 기술 후보 및 로드맵이 비어 있어 실행 불가능. — 타임라인 현실성 재검토 필요.\n- [Sequencing] 기술 후보가 없어 의존성 검증 불가. — 선행 기술 완료 → 후행 기술 시작 순서 재조정.\n\n\n[Patent Map Ablation Control]\nPatent Agent는 ablation 조건과 무관하게 항상 `patent_analysis`와\n`patent_maps.actor_similarity_map`을 모두 생성하세요.\nON/OFF 비교는 후속 Market Agent가 이 map을 사용할지 여부로만 수행됩니다.\n"
+  },
+  "llm_response": {
+    "raw_content": null
+  },
+  "patent_analysis": [],
+  "patent_maps": {},
+  "rendered_map_paths": {},
+  "error": "Patent Agent 오류: Company portfolio mode requires real patent data, but no real patents were collected. Errors: {'Cosmo AM&T': {'domestic': 'SERVICE_KEY_IS_NOT_REGISTERED_ERROR | SERVICE_KEY_IS_NOT_REGISTERED_ERROR', 'foreign:US': 'AccessKey Is Not Registerd Error', 'foreign:EP': 'AccessKey Is Not Registerd Error', 'foreign:JP': 'AccessKey Is Not Registerd Error', 'foreign:CN': 'AccessKey Is Not Registerd Error', 'foreign:WO': 'AccessKey Is Not Registerd Error'}}"
+}

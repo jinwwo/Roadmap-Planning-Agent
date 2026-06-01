@@ -47,101 +47,103 @@ from interactive.session import extract_setup_context  # noqa: E402
 # ─────────────────────────────────────────────────────────────
 
 SCENARIOS = {
-    "samsung_semi_2026_2030": {
-        "sector": "반도체",
-        "company": "Samsung Electronics",
-        "prompt": """Company: Samsung Electronics
-Industry: Semiconductor / Memory / Foundry
-Annual Revenue: ~$242B (FY2025: KRW 333.6T)
-R&D Budget Ratio: ~11.3%
-Annual R&D Budget: ~$27.3B (FY2025: KRW 37.7T)
-Total 5-year R&D Budget: ~$116.2B
+    "hyundai_mobis_autonomous_2026_2030": {
+        "sector": "자율주행 플랫폼",
+        "company": "Hyundai Mobis",
+        "prompt": """Company: Hyundai Mobis
+Industry: Autonomous Driving Platform / ADAS / Automotive Electronics
+Annual Revenue: ~$43.7B
+R&D Budget Ratio: ~4.3%
+Annual R&D Budget: ~$1.88B
+Total 5-year R&D Budget: ~$5.55B
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "tsmc_semi_2026_2030": {
-        "sector": "반도체",
-        "company": "TSMC",
-        "prompt": """Company: TSMC
-Industry: Semiconductor / Foundry
-Annual Revenue: ~$124B (FY2025: NT$3.81T)
-R&D Budget Ratio: ~6.5%
-Annual R&D Budget: ~$8.0B (FY2025: NT$246B)
-Total 5-year R&D Budget: ~$31.2B
+    "hl_mando_autonomous_2026_2030": {
+        "sector": "자율주행 플랫폼",
+        "company": "HL Mando",
+        "prompt": """Company: HL Mando
+Industry: ADAS / Autonomous Driving / Chassis Control / Steer-by-Wire
+Annual Revenue: ~$6.8B
+R&D Budget Ratio: ~7.1%
+Annual R&D Budget: ~$478M
+Total 5-year R&D Budget: ~$1.48B
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "intel_semi_2026_2030": {
-        "sector": "반도체",
-        "company": "Intel",
-        "prompt": """Company: Intel
-Industry: Semiconductor / IDM / Foundry
-Annual Revenue: ~$52.9B (FY2025)
-Total 5-year R&D Budget: ~$82.8B
+    "stradvision_autonomous_2026_2030": {
+        "sector": "자율주행 플랫폼",
+        "company": "STRADVISION",
+        "prompt": """Company: STRADVISION
+Industry: AI Vision Perception / ADAS Perception Software / Computer Vision
+Annual Revenue: ~$13M
+R&D Budget Ratio: ~66.3%
+Annual R&D Budget: ~$8.6M
+Total 5-year R&D Budget: ~$43M
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "hyundai_mobility_2026_2030": {
-        "sector": "자동차_모빌리티",
-        "company": "Hyundai Motor",
-        "prompt": """Company: Hyundai Motor
-Industry: Automotive / Mobility / EV
-Annual Revenue: ~$128B (FY2025: KRW 186.3T)
-R&D Budget Ratio: ~3.6%
-Annual R&D Budget: ~$4.6B (FY2025: KRW 6.7T)
-Total 5-year R&D Budget: ~$18.4B
+    "lg_chem_battery_2026_2030": {
+        "sector": "이차전지 양극재",
+        "company": "LG Chem",
+        "prompt": """Company: LG Chem
+Industry: Cathode Materials / Advanced Materials / Battery Materials
+Annual Revenue: ~$32.8B
+R&D Budget Ratio: ~3.4%
+Annual R&D Budget: ~$1.10B
+Total 5-year R&D Budget: ~$3.63B
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "tesla_mobility_2026_2030": {
-        "sector": "자동차_모빌리티",
-        "company": "Tesla",
-        "prompt": """Company: Tesla
-Industry: Automotive / Mobility / EV / AI
-Annual Revenue: ~$94.8B (FY2025)
-R&D Budget Ratio: ~6.8%
-Annual R&D Budget: ~$6.4B (FY2025)
-Total 5-year R&D Budget: ~$22.7B
+    "ecopro_bm_battery_2026_2030": {
+        "sector": "이차전지 양극재",
+        "company": "EcoPro BM",
+        "prompt": """Company: EcoPro BM
+Industry: High-Nickel Cathode Materials / Secondary Battery Materials
+Annual Revenue: ~$1.81B
+R&D Budget Ratio: ~2.3%
+Annual R&D Budget: ~$41.6M
+Total 5-year R&D Budget: ~$153M
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "toyota_mobility_2026_2030": {
-        "sector": "자동차_모빌리티",
-        "company": "Toyota",
-        "prompt": """Company: Toyota
-Industry: Automotive / Mobility / Multi-Pathway
-Annual Revenue: ~$338B (FY2025: JPY 50.7T)
-R&D Budget Ratio: ~2.7%
-Annual R&D Budget: ~$9.1B (FY2025: JPY 1.37T)
-Total 5-year R&D Budget: ~$41.7B
+    "cosmo_amt_battery_2026_2030": {
+        "sector": "이차전지 양극재",
+        "company": "Cosmo AM&T",
+        "prompt": """Company: Cosmo AM&T
+Industry: Cathode Materials / Functional Materials
+Annual Revenue: ~$326M
+R&D Budget Ratio: ~1.2%
+Annual R&D Budget: ~$3.9M
+Total 5-year R&D Budget: ~$11.7M
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "pfizer_biohealth_2026_2030": {
-        "sector": "바이오_헬스케어",
-        "company": "Pfizer",
-        "prompt": """Company: Pfizer
-Industry: Biopharmaceutical / Healthcare
-Annual Revenue: ~$62B (FY2025)
-R&D Budget Ratio: ~17%
-Annual R&D Budget: ~$10.5B (FY2025)
-Total 5-year R&D Budget: ~$52.0B
+    "naver_ai_llm_2026_2030": {
+        "sector": "AI LLM",
+        "company": "NAVER",
+        "prompt": """Company: NAVER
+Industry: Large Language Model / Foundation Model / AI Platform
+Annual Revenue: ~$8.6B
+R&D Budget Ratio: ~25.8%
+Annual R&D Budget: ~$2.22B
+Total 5-year R&D Budget: ~$6.81B
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "roche_biohealth_2026_2030": {
-        "sector": "바이오_헬스케어",
-        "company": "Roche",
-        "prompt": """Company: Roche
-Industry: Biopharmaceutical / Diagnostics / Healthcare
-Annual Revenue: ~$72B (FY2025: CHF 61.5B)
-R&D Budget Ratio: ~22%
-Annual R&D Budget: ~$16.1B (FY2025)
-Total 5-year R&D Budget: ~$82.7B
+    "saltlux_ai_llm_2026_2030": {
+        "sector": "AI LLM",
+        "company": "Saltlux",
+        "prompt": """Company: Saltlux
+Industry: Conversational AI / LLM / Knowledge Graph
+Annual Revenue: ~$29.7M
+R&D Budget Ratio: ~27.3%
+Annual R&D Budget: ~$8.1M
+Total 5-year R&D Budget: ~$27M
 Planning Horizon: 2026-2030 (5 years)""",
     },
-    "medtronic_biohealth_2026_2030": {
-        "sector": "바이오_헬스케어",
-        "company": "Medtronic",
-        "prompt": """Company: Medtronic
-Industry: Medical Devices / Healthcare
-Annual Revenue: ~$24.6B (FY2025, ending Apr 2025)
-R&D Budget Ratio: ~8.3%
-Annual R&D Budget: ~$2.05B (FY2025)
-Total 5-year R&D Budget: ~$13.5B
+    "upstage_ai_llm_2026_2030": {
+        "sector": "AI LLM",
+        "company": "Upstage",
+        "prompt": """Company: Upstage
+Industry: Foundation Model / Document AI / LLM
+Annual Revenue: ~$17.7M
+R&D Budget Ratio: ~60.1%
+Annual R&D Budget: ~$14.9M
+Total 5-year R&D Budget: ~$54M
 Planning Horizon: 2026-2030 (5 years)""",
     },
 }
@@ -194,9 +196,17 @@ def total_budget_from_prompt(prompt: str, fallback_annual_rd: float) -> int:
     return 0
 
 
+# 전역 patent_map 모드 — main() 에서 CLI flag 로 세팅
+PATENT_MAP_MODE = "on"   # "on" or "off"
+
+
+def patent_map_folder() -> str:
+    return "특허맵_On" if PATENT_MAP_MODE == "on" else "특허맵_Off"
+
+
 def target_dir(scenario_id: str, strategy_key: str) -> Path:
     s = SCENARIOS[scenario_id]
-    return OUTPUTS_DIR / s["sector"] / s["company"] / strategy_key
+    return OUTPUTS_DIR / patent_map_folder() / s["sector"] / s["company"] / strategy_key
 
 
 def is_completed(scenario_id: str, strategy_key: str) -> bool:
@@ -270,7 +280,7 @@ def run_one(scenario_id: str, strategy_key: str, *,
         "--budget", str(float(total_budget)),
         "--priorities", priorities,
         "--out-prefix", prefix,
-        "--use-patent-map",
+        "--use-patent-map" if PATENT_MAP_MODE == "on" else "--no-use-patent-map",
     ]
     print(f"  ├─ subprocess:")
     for arg in cmd:
@@ -361,6 +371,7 @@ def run_one(scenario_id: str, strategy_key: str, *,
 # ─────────────────────────────────────────────────────────────
 
 def main():
+    global PATENT_MAP_MODE
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true",
                     help="추출 + 명령만 출력 (서브프로세스 실행 안 함)")
@@ -368,9 +379,12 @@ def main():
                     help="시나리오 ID 부분일치 필터")
     ap.add_argument("--strategy", choices=list(STRATEGIES.keys()), default=None,
                     help="한 전략만 실행")
+    ap.add_argument("--patent-map", choices=["on", "off"], default="on",
+                    help="patent map 사용 여부. on=특허맵_On/ 폴더에 저장, off=특허맵_Off/")
     ap.add_argument("--force", action="store_true",
                     help="완료된 실험도 재실행")
     args = ap.parse_args()
+    PATENT_MAP_MODE = args.patent_map
 
     runs = []
     for sid in SCENARIOS.keys():
