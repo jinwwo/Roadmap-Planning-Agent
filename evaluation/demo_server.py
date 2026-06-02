@@ -479,24 +479,25 @@ def scan_outputs_on_startup():
                             continue
                         display_name = f"특허맵_off_{industry}_{company}_{strategy}"
                         _scan_leaf_dir(strat_path, display_name)
-        else:
-            # 특허맵 ON 구조: {industry}/{company}/{strategy}/
-            # entry가 industry인지 확인 (하위에 company 폴더가 있어야 함)
-            sub_entries = [e for e in os.listdir(entry_path) if os.path.isdir(os.path.join(entry_path, e))]
-            if not sub_entries:
-                continue
-
-            industry = entry
-            for company in sorted(sub_entries):
-                comp_path = os.path.join(entry_path, company)
-                if not os.path.isdir(comp_path):
+        elif entry == "특허맵_On":
+            # 특허맵 ON 구조: 특허맵_On/{industry}/{company}/{strategy}/
+            for industry in sorted(os.listdir(entry_path)):
+                ind_path = os.path.join(entry_path, industry)
+                if not os.path.isdir(ind_path):
                     continue
-                for strategy in sorted(os.listdir(comp_path)):
-                    strat_path = os.path.join(comp_path, strategy)
-                    if not os.path.isdir(strat_path):
+                for company in sorted(os.listdir(ind_path)):
+                    comp_path = os.path.join(ind_path, company)
+                    if not os.path.isdir(comp_path):
                         continue
-                    display_name = f"특허맵_on_{industry}_{company}_{strategy}"
-                    _scan_leaf_dir(strat_path, display_name)
+                    for strategy in sorted(os.listdir(comp_path)):
+                        strat_path = os.path.join(comp_path, strategy)
+                        if not os.path.isdir(strat_path):
+                            continue
+                        display_name = f"특허맵_on_{industry}_{company}_{strategy}"
+                        _scan_leaf_dir(strat_path, display_name)
+        else:
+            # past, past_0601 등 기타 디렉토리는 스캔 안 함
+            continue
 
 
 @app.on_event("startup")
