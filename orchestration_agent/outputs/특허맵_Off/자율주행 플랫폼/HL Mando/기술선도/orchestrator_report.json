@@ -28,26 +28,26 @@
       "feasibility": {
         "budget_feasible": true,
         "schedule_feasible": true,
-        "comment": "총 예산 $1.48B 내에서 정확히 배분됨. 2026-2030 기간 내 기술 개발 일정도 타당함."
+        "comment": "총 예산 $1.48B 내에서 정확히 배분됨. 2027~2028 년 시장 붐 시점과 개발 기간 정합."
       },
       "sequencing": {
         "dependency_valid": true,
-        "comment": "T02(HMI) 가 T01(스티어바이와이어) 에 의존하는 구조가 논리적으로 정합적임."
+        "comment": "T03(구동계) → T05(통신) 의존성 논리적. T01(스티어) 독립 진행 가능."
       },
       "strategic_alignment": {
         "company_fit": 0.92,
         "future_trend_alignment": 0.88,
-        "comment": "차체 제어 리더십 및 ADAS 확장 전략과 높은 정합성을 보임."
+        "comment": "HL Mando 의 스티어바이와이어 리더십 및 HW/SW 통합 전략과 높은 정합."
       },
       "investment_rationality": {
         "over_invested": [],
         "under_invested": [],
-        "comment": "Tier 1(T01, T03) 과 Tier 2(T02, T08) 의 투자 비중이 기술 난이도와 시장 중요도에 적절히 반영됨."
+        "comment": "Tier 1(T01, T03) 에 집중 투자, Tier 2(T05) 에 보조 투자로 균형 적절."
       },
       "portfolio_balance": {
         "short_long_balance": 0.65,
-        "risk_balance": 0.6,
-        "comment": "단기(2026-2027) 와 중장기(2028-2030) 기술이 균형 있게 분포되어 있음."
+        "risk_balance": 0.7,
+        "comment": "단기 (T01, T03) 와 중장기 (T05) 가 조화롭게 분포. 리스크 관리 적절."
       }
     },
     "issues": [],
@@ -60,7 +60,7 @@
         "agent1_tech_candidates": [
           {
             "tech_id": "T01",
-            "name": "다중모드 스티어바이와이어 제어",
+            "name": "다중 모드 스티어바이와이어 제어",
             "category": "Architecture",
             "trl": 6,
             "final_score": 88.5,
@@ -70,37 +70,17 @@
           },
           {
             "tech_id": "T03",
-            "name": "전기구동계 토크 제어 및 슬립 감지",
-            "category": "Equipment",
-            "trl": 6,
+            "name": "전기 구동계 통합 제어",
+            "category": "Architecture",
+            "trl": 5,
             "final_score": 81.23,
             "market_score": 82.4,
             "patent_score": 79.8,
             "expected_market_boom_quarter": "2027 Q1"
           },
           {
-            "tech_id": "T05",
-            "name": "차량 통신 게이트웨이 및 네트워크",
-            "category": "Architecture",
-            "trl": 6,
-            "final_score": 80.42,
-            "market_score": 85.6,
-            "patent_score": 74.1,
-            "expected_market_boom_quarter": "2027 Q2"
-          },
-          {
-            "tech_id": "T07",
-            "name": "배터리 관리 및 충전 제어",
-            "category": "Equipment",
-            "trl": 7,
-            "final_score": 79.06,
-            "market_score": 86.3,
-            "patent_score": 70.2,
-            "expected_market_boom_quarter": "2026 Q3"
-          },
-          {
             "tech_id": "T02",
-            "name": "차체 제어 시각화 및 HMI",
+            "name": "차assis 제어 시각화 및 HMI",
             "category": "Process",
             "trl": 7,
             "final_score": 78.94,
@@ -109,85 +89,73 @@
             "expected_market_boom_quarter": "2028 Q2"
           },
           {
+            "tech_id": "T06",
+            "name": "자율주행 센서 자동 보정",
+            "category": "Process",
+            "trl": 4,
+            "final_score": 75.35,
+            "market_score": 78.5,
+            "patent_score": 71.5,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "차량 통신 게이트웨이 및 네트워크",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 75.25,
+            "market_score": 76.2,
+            "patent_score": 74.1,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
             "tech_id": "T04",
             "name": "고전압 커넥터 및 배선 자동화",
-            "category": "Packaging",
-            "trl": 5,
-            "final_score": 78.27,
-            "market_score": 79.8,
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 73.87,
+            "market_score": 71.8,
             "patent_score": 76.4,
-            "expected_market_boom_quarter": "2026 Q4"
-          },
-          {
-            "tech_id": "T08",
-            "name": "3D 포즈 추정 및 센서 퓨전",
-            "category": "Process",
-            "trl": 5,
-            "final_score": 75.56,
-            "market_score": 81.0,
-            "patent_score": 68.9,
-            "expected_market_boom_quarter": "2028 Q4"
-          },
-          {
-            "tech_id": "T06",
-            "name": "레드던던트 인포테인먼트 제어",
-            "category": "Architecture",
-            "trl": 4,
-            "final_score": 72.05,
-            "market_score": 72.5,
-            "patent_score": 71.5,
             "expected_market_boom_quarter": "2029 Q1"
           }
         ],
         "agent2_planned_roadmap": [
           {
-            "tech_id": "T01",
-            "name": "다중모드 스티어바이와이어 제어",
-            "year_idx_start": 1,
-            "year_idx_target": 3,
-            "prerequisites": [],
-            "reasoning": {
-              "year_placement": "TRL 6 수준으로 2027 년 시장 급성장을 대비하여 1 차년도부터 즉시 개발을 시작하며, 3 차년도까지 핵심 아키텍처 완성 및 양산 준비를 완료합니다. 이는 2027 Q3 예상 시장 붐을 정확히 타격하기 위한 최적의 타이밍입니다.",
-              "tech_execution": "보쉬 등 경쟁사의 특허 동향을 선제적으로 분석하여 HL 만도의 스티어바이와이어 리더십을 확보하고, 레벨 3 이상 자율주행 상용화에 필수적인 다중모드 제어 능력을 구축해야 합니다.",
-              "investment_selection": "차체 제어의 핵심인 스티어바이와이어는 고부가가치 시장으로, 초기 투자 시점의 선점 경쟁이 치열하므로 R&D 예산의 상당 부분을 집중 투자하여 기술 격차를 해소해야 합니다."
-            }
-          },
-          {
             "tech_id": "T03",
-            "name": "전기구동계 토크 제어 및 슬립 감지",
+            "name": "전기 구동계 통합 제어",
             "year_idx_start": 1,
             "year_idx_target": 3,
             "prerequisites": [],
             "reasoning": {
-              "year_placement": "TRL 6 으로 2027 Q1 시장 붐을 목표로 1 차년도부터 개발을 시작하여 3 차년도까지 알고리즘 최적화 및 통합 제어 검증 단계를 마칩니다. 전기구동계와의 연동은 차체 제어 리더십 강화의 필수 조건입니다.",
-              "tech_execution": "ZF 와 덴소의 특허 동향을 분석하여 고부가가치인 슬립 감지 및 토크 제어 알고리즘을 확보함으로써, HL 만도의 차체 제어 솔루션 경쟁력을 높여야 합니다.",
-              "investment_selection": "전기차 시장 성장에 따라 구동계 제어 기술은 핵심 투자 대상이며, 초기 단계에서의 기술 선점을 통해 향후 차세대 플랫폼에서의 표준 기술로 자리매김해야 합니다."
+              "year_placement": "TRL 5 수준으로 2-3 년의 개발 기간이 필요하며, T05 의 선행 기술이므로 1 차년도부터 시작하여 3 차년도 (2028 년) 에 핵심 기능을 완성해야 한다. 이는 2027 년 예상 시장 붐을 대비하여 2028 년 초까지 기술 성숙도를 높이는 전략적 배치이다.",
+              "tech_execution": "HL 만도가 차체 제어 범위를 구동계까지 확장하여 통합 솔루션을 제공하기 위해 필수적인 기술로, ZF 및 덴소 등 경쟁사의 선점을 막기 위해 초기부터 집중 투자해야 한다. 전기차 시장 성장과 ADAS 통합 트렌드에 맞춰 2028 년까지 상용화 가능한 수준으로 기술력을 확보한다.",
+              "investment_selection": "전기 구동계 통합 제어는 차세대 EV 플랫폼의 핵심 경쟁력이므로, 시장 규모가 급격히 확대될 2027 년 이전에 기술적 우위를 점하기 위한 핵심 투자 대상이다. R&D 예산을 초기 단계에 집중하여 기술 장벽을 높이고, 후속 게이트웨이 기술의 기반을 마련한다."
             }
           },
           {
-            "tech_id": "T02",
-            "name": "차체 제어 시각화 및 HMI",
+            "tech_id": "T01",
+            "name": "다중 모드 스티어바이와이어 제어",
+            "year_idx_start": 1,
+            "year_idx_target": 4,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 비교적 성숙도가 높지만, 보쉬 등 경쟁사의 선점과 2027 년 시장 붐을 고려하여 1 차년도부터 즉시 개발을 시작한다. 2028 년 이후 차세대 자율주행 레벨 3 이상 상용화를 대비하여 4 차년도 (2029 년) 까지 고도화된 제어 아키텍처를 완성한다.",
+              "tech_execution": "HL 만도의 스티어바이와이어 리더십 강화를 위해 ADAS 환경에서의 다중 모드 제어 및 진단 기술을 선점해야 하며, 이는 자율주행 레벨 3 이상 상용화 시점인 2027 년경에 급격히 확대될 시장을 선점하기 위함이다. 경쟁 구도가 형성된 시장에서 기술적 차별화를 통해 시장 점유율을 확보한다.",
+              "investment_selection": "스티어바이와이어는 HL 만도의 핵심 사업 영역이므로, 시장 붐 직전인 2027 년까지 기술적 완성도를 높이고 2029 년까지 차세대 기술로 진화시키는 장기 투자 전략이 필요하다. R&D 예산을 효율적으로 배분하여 경쟁사 대비 빠른 상용화와 기술 우위를 동시에 달성한다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "차량 통신 게이트웨이 및 네트워크",
             "year_idx_start": 3,
             "year_idx_target": 5,
             "prerequisites": [
-              "T01"
+              "T03"
             ],
             "reasoning": {
-              "year_placement": "선행 기술인 T01(스티어바이와이어) 의 3 차년도 완료를 전제로 하여 3 차년도부터 시작하며, 5 차년도까지 HMI 경험 고도화 및 소프트웨어 스택 통합을 완료합니다. 이는 2028 Q2 이후 시장 성숙기에 맞춰 차세대 기술을 준비하는 전략입니다.",
-              "tech_execution": "기존 하드웨어 제어 능력을 소프트웨어 및 HMI 경험으로 확장하여 자율주행 시나리오에서 운전자 신뢰도를 확보하고, HL 만도의 특허 포트폴리오를 강화해야 합니다.",
-              "investment_selection": "HMI 시장은 분산되어 있으나 차체 제어 특화 시각화는 HL 만도의 차별화 포인트이므로, 장기적인 R&D 투자를 통해 소프트웨어 스택 선점을 도모해야 합니다."
-            }
-          },
-          {
-            "tech_id": "T08",
-            "name": "3D 포즈 추정 및 센서 퓨전",
-            "year_idx_start": 2,
-            "year_idx_target": 5,
-            "prerequisites": [],
-            "reasoning": {
-              "year_placement": "TRL 5 로 상대적으로 낮아 2 차년도부터 본격적인 R&D 를 시작하며, 5 차년도까지 고해상도 센서 퓨전 알고리즘 개발 및 자율주행 레벨 4/5 대응 기술을 완성합니다. 이는 2028 Q4 이후 시장 급성장을 대비한 장기 투자입니다.",
-              "tech_execution": "Aptiv 등 경쟁사와의 기술 격차를 줄이고, 정밀한 위치 인식 및 제어에 필수적인 3D 포즈 추정 기술을 확보하여 HL 만도의 자율주행 솔루션 경쟁력을 강화해야 합니다.",
-              "investment_selection": "센서 퓨전 기술은 자율주행의 핵심으로, 초기 단계에서의 공격적인 R&D 투자를 통해 고부가가치 알고리즘을 선점하고 시장 진입 장벽을 높여야 합니다."
+              "year_placement": "T03(전기 구동계 통합 제어) 의 완료 후인 3 차년도 (2028 년) 에 시작하여 5 차년도 (2030 년) 까지 이어지는 장기 개발 계획을 수립한다. 이는 2028 년 Q1 예상 시장 붐을 중간 마일스톤으로 삼아, 2030 년까지 차세대 아키텍처의 핵심 요소인 게이트웨이 기술을 완성하기 위함이다.",
+              "tech_execution": "분산된 차체 제어기를 통합하고 외부 통신을 처리하는 차세대 아키텍처의 핵심 요소로, T03 의 기반 위에서 2028 년 이후 본격적인 개발을 시작한다. 콘티넨탈과 덴소 등 경쟁사의 특허 집중을 고려하여 2030 년까지 기술적 우위를 점하고 시장 진입 장벽을 높인다.",
+              "investment_selection": "차량 통신 게이트웨이 및 네트워크는 자율주행과 전기차 통합 솔루션의 핵심 인프라이므로, 2030 년까지 이어지는 장기 R&D 투자를 통해 기술적 선점과 시장 주도권을 확보해야 한다. 2028 년 시장 붐 이후에도 지속되는 기술 진화를 대비하여 5 차년도까지 개발을 연장한다."
             }
           }
         ],
@@ -200,94 +168,71 @@
             "stage_estimated_usd": 1480000000.0,
             "tech_investments": [
               {
-                "tech_id": "T01",
-                "name": "다중모드 스티어바이와이어 제어",
+                "tech_id": "T03",
+                "name": "전기 구동계 통합 제어",
                 "tier": "Tier 1",
-                "tech_budget_usd": 592000000.0,
-                "tech_budget_rationale": "T01 은 HL 만도의 핵심 전략인 스티어바이와이어 리더십 강화의 중심축으로, 2027 Q3 시장 붐을 선점하기 위한 선제적 투자가 필수적입니다. 전체 예산의 40% 를 할당하여 TRL 6 에서 양산 가능한 TRL 8-9 수준으로 신속히 격상시키고, 보쉬 등 경쟁사의 특허 장벽을 우회할 수 있는 독자적 아키텍처를 완성하기 위함입니다.",
+                "tech_budget_usd": 550000000.0,
+                "tech_budget_rationale": "T03 은 EV 시장 성장 (19.2% CAGR) 과 ADAS 통합 트렌드에 따라 2030 년까지 $25B 규모로 성장할 거대 시장이며, HL 만도의 '차체 제어 범위 확장' 전략의 핵심입니다. TRL 5 로 기술적 불확실성이 T01 보다 높지만, ZF 및 덴소 등 경쟁사의 선점을 막기 위해 2027 년 Q1 시장 붐을 대비한 초기 집중 투자가 필수적입니다.",
                 "evaluation_scores": {
                   "market_size_growth": 5,
                   "tech_readiness": 3,
                   "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년부터 통합 제어 알고리즘 개발을 시작하고, 2027 년 Q1 시장 붐을 대비하여 시제품 검증 및 파트너십 확대를 병행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "전기 구동계 통합 시장은 EV 보급 확대와 ADAS 통합 트렌드로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상되며, 19.2% 의 높은 CAGR 을 기록하고 있습니다. 2027 년 Q1 에 예상되는 시장 붐을 고려할 때, 이 시점까지 기술 성숙도를 높이지 않으면 경쟁사 (ZF, 덴소) 에 의해 시장 진입 장벽이 높아질 수 있습니다.",
+                  "tech_evaluation": "TRL 5 수준으로 기술적 위험이 중간 (점수 3) 이며, 통합 제어 알고리즘 개발과 에너지 효율성 최적화를 위한 추가 검증이 필요합니다. HL 만도의 기존 차체 제어 역량을 구동계로 확장하여 차별화된 경쟁 우위 (점수 4) 를 확보할 수 있는 잠재력이 큽니다.",
+                  "investment_decision": "시장 규모 (5 점) 와 성장률 (5 점) 이 매우 높으며, 개발 긴급도 (4 점) 가 높아 Tier 1 로 분류합니다. 전체 예산의 약 37% 인 $5.5 억을 할당하여 T01 과 병행하여 2027 년까지 핵심 기능 완성을 목표로 합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "다중 모드 스티어바이와이어 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 650000000.0,
+                "tech_budget_rationale": "T01 은 HL 만도의 핵심 전략인 '스티어바이와이어 리더십 강화'와 직접적으로 부합하며, 2027 년 Q3 시장 붐을 앞두고 24.5% 의 높은 CAGR 을 보이는 거대 시장 ($12.5B TAM) 입니다. TRL 6 의 비교적 높은 성숙도와 보쉬 등 경쟁사의 선점 위협을 고려할 때, 시장 진입 장벽을 높이고 기술적 우위를 선점하기 위해 전체 예산의 약 44% 를 할당하는 공격적 투자가 필요합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
                   "competitive_advantage": 5,
                   "development_urgency": 5
                 },
                 "investment_attractiveness": "high",
                 "investment_urgency": "high",
-                "recommended_action": "1 차년도 즉시 대규모 R&D 팀을 편성하여 다중모드 제어 알고리즘 개발을 시작하고, 2027 년 양산을 위한 시제품 검증 단계를 가속화해야 합니다.",
+                "recommended_action": "2026 년 즉시 대규모 R&D 팀을 투입하여 다중 모드 제어 알고리즘 개발을 가속화하고, 2027 년 Q3 시장 붐을 대비한 양산 라인 구축을 병행하십시오.",
                 "reasoning": {
-                  "market_evaluation": "TAM 125 억 달러, CAGR 24.5% 의 고성장 시장으로 2027 년 Q3 에 시장 붐이 예상되어 시의적절성이 매우 높습니다. ADAS 통합 제어 솔루션은 고부가가치 SAM(42 억 달러) 으로 분류되며, 레벨 3 이상 자율주행 상용화 시점과 정확히 맞물려 있습니다.",
-                  "tech_evaluation": "현재 TRL 6 수준으로 프로토타입 검증 단계에 있으나, 보쉬의 다중모드 제어 특허 동향을 선제적으로 분석하여 HL 만도의 경쟁 우위를 확보해야 합니다. 기술 위험은 중간 수준이나, 전략적 중요도가 매우 높아 적극적인 R&D 투자로 불확실성을 해소해야 합니다.",
-                  "investment_decision": "시장 성장률 (5 점) 과 개발 긴급도 (5 점), 경쟁 우위 (5 점) 가 모두 최상위권으로 Tier 1 로 선정되었습니다. 전체 예산의 40% 를 할당하여 1 차년도부터 즉시 개발을 시작하고 3 차년도까지 핵심 아키텍처 완성을 목표로 합니다."
+                  "market_evaluation": "스티어바이와이어 시장은 2031 년까지 급성장할 것으로 예상되며, 특히 자율주행 레벨 3 이상 차량의 필수 구성 요소로 부상하고 있습니다. Mordor Intelligence 및 GMI 리포트에 따르면 Drive-by-Wire 시장 CAGR 은 20% 이상이며, 스티어바이와이어는 그 중 가장 빠른 성장률 (24.5%) 을 보이고 있습니다. 2027 년 Q3 에 예상되는 시장 붐을 고려할 때, 이 시점까지 기술 상용화를 완료하지 않으면 시장 기회를 상실할 위험이 매우 큽니다.",
+                  "tech_evaluation": "현재 TRL 6 수준으로 프로토타입 검증 단계에 있어 기술적 위험은 상대적으로 낮지만 (점수 2), 보쉬 등 경쟁사의 다중 모드 제어 및 진단 기술 특허 선점을 막기 위한 경쟁 우위 확보가 시급합니다. HL 만도의 기존 차체 제어 강점과 결합하여 차별화된 제어 아키텍처를 구축할 수 있는 전략적 기회 (점수 5) 가 명확히 존재합니다.",
+                  "investment_decision": "시장 성장률 (5 점), 경쟁 우위 (5 점), 개발 긴급도 (5 점) 가 모두 최상위권이며, 기술 위험은 낮아 Tier 1 로 분류합니다. 전체 예산 $14.8 억 중 가장 큰 비중인 $6.5 억을 할당하여 2027 년 시장 진입을 위한 선제적 R&D 와 양산 준비를 동시에 추진해야 합니다."
                 },
                 "major_risks": []
               },
               {
-                "tech_id": "T03",
-                "name": "전기구동계 토크 제어 및 슬립 감지",
-                "tier": "Tier 1",
-                "tech_budget_usd": 444000000.0,
-                "tech_budget_rationale": "T03 은 T01(스티어바이와이어) 과의 연동이 필수적인 차체 제어 리더십의 핵심 요소로, 2027 Q1 시장 붐을 대비한 선제적 투자가 필요합니다. 전체 예산의 30% 를 할당하여 TRL 6 에서 알고리즘 최적화 및 통합 제어 검증 단계를 3 차년도까지 완료하고, ZF 와 덴소의 기술 격차를 해소하기 위함입니다.",
+                "tech_id": "T05",
+                "name": "차량 통신 게이트웨이 및 네트워크",
+                "tier": "Tier 2",
+                "tech_budget_usd": 280000000.0,
+                "tech_budget_rationale": "T05 는 $31B 의 거대 시장 (26% CAGR) 을 보유하고 있으나, T03 의 완료 후인 2028 년부터 본격적인 개발이 시작되므로 당장의 긴급도는 낮습니다. TRL 5 로 기술적 위험이 높고, 콘티넨탈 등 경쟁사의 특허 집중으로 인해 경쟁 우위 확보가 어렵기 때문에, 마일스톤 기반의 선택적 투자 (Tier 2) 가 적합합니다.",
                 "evaluation_scores": {
-                  "market_size_growth": 4,
+                  "market_size_growth": 5,
                   "tech_readiness": 3,
-                  "tech_risk": 3,
-                  "competitive_advantage": 4,
-                  "development_urgency": 5
-                },
-                "investment_attractiveness": "high",
-                "investment_urgency": "high",
-                "recommended_action": "1 차년도부터 T01 과 병행하여 토크 제어 알고리즘 개발을 시작하고, 전기차 구동계와의 연동 테스트를 통해 통합 제어 능력을 검증해야 합니다.",
-                "reasoning": {
-                  "market_evaluation": "TAM 185 억 달러, CAGR 19.2% 의 시장으로 전기차 구동계 제어 기술은 핵심 성장 동력입니다. 2027 년 Q1 에 시장 붐이 예상되어 T01 과 함께 가장 시급한 투자 대상입니다.",
-                  "tech_evaluation": "TRL 6 수준으로 ZF 와 덴소의 특허 동향을 분석하여 고부가가치인 슬립 감지 및 토크 제어 알고리즘을 확보해야 합니다. 기술 위험은 중간 수준이나, 차체 제어 솔루션 경쟁력 강화를 위해 필수적입니다.",
-                  "investment_decision": "시장 성장률 (4 점) 과 개발 긴급도 (5 점), 경쟁 우위 (4 점) 가 높아 Tier 1 로 선정되었습니다. 전체 예산의 30% 를 할당하여 1 차년도부터 개발을 시작하고 3 차년도까지 알고리즘 최적화 및 통합 제어 검증을 완료합니다."
-                },
-                "major_risks": []
-              },
-              {
-                "tech_id": "T02",
-                "name": "차체 제어 시각화 및 HMI",
-                "tier": "Tier 2",
-                "tech_budget_usd": 296000000.0,
-                "tech_budget_rationale": "T02 는 T01 의 완료를 전제로 하는 후속 기술로, 2028 Q2 이후 시장 성숙기에 맞춰 차세대 기술을 준비하는 전략적 투자 대상입니다. 전체 예산의 20% 를 할당하여 3 차년도부터 시작하여 5 차년도까지 HMI 경험 고도화 및 소프트웨어 스택 통합을 완료하고, HL 만도의 특허 포트폴리오를 강화하기 위함입니다.",
-                "evaluation_scores": {
-                  "market_size_growth": 4,
-                  "tech_readiness": 4,
-                  "tech_risk": 2,
-                  "competitive_advantage": 4,
-                  "development_urgency": 3
-                },
-                "investment_attractiveness": "medium",
-                "investment_urgency": "medium",
-                "recommended_action": "3 차년도부터 T01 의 완료와 병행하여 HMI 프로토타입 개발을 시작하고, 5 차년도까지 소프트웨어 스택 통합을 완료하여 시장 출시를 준비해야 합니다.",
-                "reasoning": {
-                  "market_evaluation": "TAM 280 억 달러, CAGR 14.8% 의 시장으로 HMI 시장은 안정적 성장을 보이며, 차체 제어 특화 시각화는 니치 SAM(85 억 달러) 으로 분류됩니다. 2028 년 Q2 이후 시장 성숙기에 맞춰 투자 시점이 적절합니다.",
-                  "tech_evaluation": "TRL 7 수준으로 상대적으로 기술 준비도가 높고, HL 만도 및 만도 코퍼레이션의 기존 특허 기반으로 차별화 가능성이 높습니다. 기술 위험은 낮으나, T01 의존성으로 인해 개발 시점이 제한적입니다.",
-                  "investment_decision": "시장 성장률 (4 점) 과 기술 준비도 (4 점), 경쟁 우위 (4 점) 가 높으나 개발 긴급도 (3 점) 가 상대적으로 낮아 Tier 2 로 선정되었습니다. 전체 예산의 20% 를 할당하여 3 차년도부터 시작하여 5 차년도까지 HMI 경험 고도화 및 소프트웨어 스택 통합을 완료합니다."
-                },
-                "major_risks": []
-              },
-              {
-                "tech_id": "T08",
-                "name": "3D 포즈 추정 및 센서 퓨전",
-                "tier": "Tier 2",
-                "tech_budget_usd": 148000000.0,
-                "tech_budget_rationale": "T08 은 TRL 5 로 상대적으로 낮아 2 차년도부터 본격적인 R&D 를 시작하며, 2028 Q4 이후 시장 급성장을 대비한 장기 투자 대상입니다. 전체 예산의 10% 를 할당하여 5 차년도까지 고해상도 센서 퓨전 알고리즘 개발 및 자율주행 레벨 4/5 대응 기술을 완성하고, Aptiv 등 경쟁사와의 기술 격차를 줄이기 위함입니다.",
-                "evaluation_scores": {
-                  "market_size_growth": 4,
-                  "tech_readiness": 2,
                   "tech_risk": 4,
                   "competitive_advantage": 3,
                   "development_urgency": 3
                 },
                 "investment_attractiveness": "medium",
                 "investment_urgency": "medium",
-                "recommended_action": "2 차년도부터 3D 포즈 추정 및 센서 퓨전 알고리즘 개발을 시작하고, 5 차년도까지 고해상도 센서 퓨전 알고리즘 개발 및 자율주행 레벨 4/5 대응 기술을 완성해야 합니다.",
+                "recommended_action": "2028 년 T03 완료 후 게이트웨이 아키텍처 개발을 시작하고, 2029 년까지 핵심 기능 검증 및 파트너십 확대를 통해 2030 년 시장 진입을 준비하십시오.",
                 "reasoning": {
-                  "market_evaluation": "TAM 97 억 달러, CAGR 20.5% 의 시장으로 3D 센서 및 ADAS 시뮬레이션 시장은 고성장 잠재력을 가집니다. 2028 년 Q4 이후 시장 급성장을 대비한 장기 투자가 필요합니다.",
-                  "tech_evaluation": "TRL 5 로 기술 준비도가 낮아 기술 위험이 높고, Aptiv 등 경쟁사와의 기술 격차를 줄이기 위해 지속적인 R&D 투자가 필요합니다. 기술 위험은 높으나, 장기적인 관점에서 전략적 가치가 큽니다.",
-                  "investment_decision": "시장 성장률 (4 점) 과 기술 위험 (4 점) 이 높으나 기술 준비도 (2 점) 가 낮아 Tier 2 로 선정되었습니다. 전체 예산의 10% 를 할당하여 2 차년도부터 시작하여 5 차년도까지 고해상도 센서 퓨전 알고리즘 개발 및 자율주행 레벨 4/5 대응 기술을 완성합니다."
+                  "market_evaluation": "차량 통신 게이트웨이 시장은 2030 년까지 310 억 달러 규모로 성장할 것으로 예상되며, 26% 의 높은 CAGR 을 보이고 있습니다. 2028 년 Q1 에 예상되는 시장 붐을 고려할 때, 2028 년 이후 본격적인 개발을 시작하여 2030 년까지 기술 성숙도를 높이는 전략이 필요합니다.",
+                  "tech_evaluation": "TRL 5 로 기술적 위험이 높으며 (점수 4), 분산된 차체 제어기를 통합하고 외부 통신을 처리하는 차세대 아키텍처의 핵심 요소로 기술적 복잡성이 큽니다. 콘티넨탈과 덴소의 특허 집중으로 인해 경쟁 우위 확보가 어렵지만 (점수 3), HL 만도의 기존 네트워크 역량을 활용하여 차별화된 솔루션을 개발할 수 있습니다.",
+                  "investment_decision": "시장 규모 (5 점) 는 크지만, 기술 위험 (4 점) 과 개발 긴급도 (3 점) 가 높아 Tier 2 로 분류합니다. 전체 예산의 약 19% 인 $2.8 억을 할당하여 T03 완료 후인 2028 년부터 단계적 개발을 추진하고, 마일스톤 달성 시 추가 투자를 고려합니다."
                 },
                 "major_risks": []
               }
@@ -299,136 +244,111 @@
           "cells": {
             "1": [
               {
-                "tech_id": "T01",
-                "name": "다중모드 스티어바이와이어 제어",
+                "tech_id": "T03",
+                "name": "전기 구동계 통합 제어",
                 "tier": "Tier 1",
-                "tech_budget_usd": 592000000.0,
+                "tech_budget_usd": 550000000.0,
                 "year_idx_start": 1,
                 "year_idx_target": 3
               },
               {
-                "tech_id": "T03",
-                "name": "전기구동계 토크 제어 및 슬립 감지",
+                "tech_id": "T01",
+                "name": "다중 모드 스티어바이와이어 제어",
                 "tier": "Tier 1",
-                "tech_budget_usd": 444000000.0,
+                "tech_budget_usd": 650000000.0,
                 "year_idx_start": 1,
-                "year_idx_target": 3
+                "year_idx_target": 4
               }
             ],
             "2": [
               {
-                "tech_id": "T01",
-                "name": "다중모드 스티어바이와이어 제어",
-                "tier": "Tier 1",
-                "tech_budget_usd": 592000000.0,
-                "year_idx_start": 1,
-                "year_idx_target": 3
-              },
-              {
                 "tech_id": "T03",
-                "name": "전기구동계 토크 제어 및 슬립 감지",
+                "name": "전기 구동계 통합 제어",
                 "tier": "Tier 1",
-                "tech_budget_usd": 444000000.0,
+                "tech_budget_usd": 550000000.0,
                 "year_idx_start": 1,
                 "year_idx_target": 3
               },
               {
-                "tech_id": "T08",
-                "name": "3D 포즈 추정 및 센서 퓨전",
-                "tier": "Tier 2",
-                "tech_budget_usd": 148000000.0,
-                "year_idx_start": 2,
-                "year_idx_target": 5
+                "tech_id": "T01",
+                "name": "다중 모드 스티어바이와이어 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 650000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
               }
             ],
             "3": [
               {
-                "tech_id": "T01",
-                "name": "다중모드 스티어바이와이어 제어",
-                "tier": "Tier 1",
-                "tech_budget_usd": 592000000.0,
-                "year_idx_start": 1,
-                "year_idx_target": 3
-              },
-              {
                 "tech_id": "T03",
-                "name": "전기구동계 토크 제어 및 슬립 감지",
+                "name": "전기 구동계 통합 제어",
                 "tier": "Tier 1",
-                "tech_budget_usd": 444000000.0,
+                "tech_budget_usd": 550000000.0,
                 "year_idx_start": 1,
                 "year_idx_target": 3
               },
               {
-                "tech_id": "T02",
-                "name": "차체 제어 시각화 및 HMI",
-                "tier": "Tier 2",
-                "tech_budget_usd": 296000000.0,
-                "year_idx_start": 3,
-                "year_idx_target": 5
+                "tech_id": "T01",
+                "name": "다중 모드 스티어바이와이어 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 650000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
               },
               {
-                "tech_id": "T08",
-                "name": "3D 포즈 추정 및 센서 퓨전",
+                "tech_id": "T05",
+                "name": "차량 통신 게이트웨이 및 네트워크",
                 "tier": "Tier 2",
-                "tech_budget_usd": 148000000.0,
-                "year_idx_start": 2,
+                "tech_budget_usd": 280000000.0,
+                "year_idx_start": 3,
                 "year_idx_target": 5
               }
             ],
             "4": [
               {
-                "tech_id": "T02",
-                "name": "차체 제어 시각화 및 HMI",
-                "tier": "Tier 2",
-                "tech_budget_usd": 296000000.0,
-                "year_idx_start": 3,
-                "year_idx_target": 5
+                "tech_id": "T01",
+                "name": "다중 모드 스티어바이와이어 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 650000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
               },
               {
-                "tech_id": "T08",
-                "name": "3D 포즈 추정 및 센서 퓨전",
+                "tech_id": "T05",
+                "name": "차량 통신 게이트웨이 및 네트워크",
                 "tier": "Tier 2",
-                "tech_budget_usd": 148000000.0,
-                "year_idx_start": 2,
+                "tech_budget_usd": 280000000.0,
+                "year_idx_start": 3,
                 "year_idx_target": 5
               }
             ],
             "5": [
               {
-                "tech_id": "T02",
-                "name": "차체 제어 시각화 및 HMI",
+                "tech_id": "T05",
+                "name": "차량 통신 게이트웨이 및 네트워크",
                 "tier": "Tier 2",
-                "tech_budget_usd": 296000000.0,
+                "tech_budget_usd": 280000000.0,
                 "year_idx_start": 3,
-                "year_idx_target": 5
-              },
-              {
-                "tech_id": "T08",
-                "name": "3D 포즈 추정 및 센서 퓨전",
-                "tier": "Tier 2",
-                "tech_budget_usd": 148000000.0,
-                "year_idx_start": 2,
                 "year_idx_target": 5
               }
             ]
           },
           "yearly_budget_total": {
-            "1": 1036000000.0,
-            "3": 296000000.0,
-            "2": 148000000.0
+            "1": 1200000000.0,
+            "3": 280000000.0
           }
         },
         "insights": {
           "tier_distribution": {
             "Tier 1": 2,
-            "Tier 2": 2,
+            "Tier 2": 1,
             "Tier 3": 0
           },
-          "total_techs": 4,
+          "total_techs": 3,
           "top_5_tech_by_score": [
             {
               "tech_id": "T01",
-              "name": "다중모드 스티어바이와이어 제어",
+              "name": "다중 모드 스티어바이와이어 제어",
               "category": "Architecture",
               "final_score": 88.5,
               "market_score": 88.5,
@@ -436,75 +356,71 @@
             },
             {
               "tech_id": "T03",
-              "name": "전기구동계 토크 제어 및 슬립 감지",
-              "category": "Equipment",
+              "name": "전기 구동계 통합 제어",
+              "category": "Architecture",
               "final_score": 81.23,
               "market_score": 82.4,
               "boom": "2027 Q1"
             },
             {
-              "tech_id": "T05",
-              "name": "차량 통신 게이트웨이 및 네트워크",
-              "category": "Architecture",
-              "final_score": 80.42,
-              "market_score": 85.6,
-              "boom": "2027 Q2"
-            },
-            {
-              "tech_id": "T07",
-              "name": "배터리 관리 및 충전 제어",
-              "category": "Equipment",
-              "final_score": 79.06,
-              "market_score": 86.3,
-              "boom": "2026 Q3"
-            },
-            {
               "tech_id": "T02",
-              "name": "차체 제어 시각화 및 HMI",
+              "name": "차assis 제어 시각화 및 HMI",
               "category": "Process",
               "final_score": 78.94,
               "market_score": 76.2,
               "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T06",
+              "name": "자율주행 센서 자동 보정",
+              "category": "Process",
+              "final_score": 75.35,
+              "market_score": 78.5,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T05",
+              "name": "차량 통신 게이트웨이 및 네트워크",
+              "category": "Architecture",
+              "final_score": 75.25,
+              "market_score": 76.2,
+              "boom": "2028 Q1"
             }
           ],
           "category_distribution": {
             "Architecture": 3,
-            "Equipment": 2,
             "Process": 2,
-            "Packaging": 1
+            "Equipment": 1
           },
-          "avg_trl": 5.8,
+          "avg_trl": 5.5,
           "tier1_tech_list": [
             {
-              "tech_id": "T01",
-              "name": "다중모드 스티어바이와이어 제어",
+              "tech_id": "T03",
+              "name": "전기 구동계 통합 제어",
               "stage": "roadmap",
-              "key_reason": "TAM 125 억 달러 및 CAGR 24.5% 의 거대 시장 성장 잠재력"
+              "key_reason": "$25B TAM 과 19.2% CAGR 으로 거대 시장 성장 기회 확보"
             },
             {
-              "tech_id": "T03",
-              "name": "전기구동계 토크 제어 및 슬립 감지",
+              "tech_id": "T01",
+              "name": "다중 모드 스티어바이와이어 제어",
               "stage": "roadmap",
-              "key_reason": "TAM 185 억 달러 및 CAGR 19.2% 의 시장 성장 잠재력"
+              "key_reason": "시장 성장률 24.5% 와 $12.5B TAM 으로 거대 시장 진입 기회 확보"
             }
           ],
           "dependency_edges": [
-            "T01 → T02"
+            "T03 → T05"
           ],
           "boom_quarter_distribution": {
             "2027 Q3": 1,
             "2027 Q1": 1,
-            "2027 Q2": 1,
-            "2026 Q3": 1,
             "2028 Q2": 1,
-            "2026 Q4": 1,
-            "2028 Q4": 1,
+            "2028 Q1": 2,
             "2029 Q1": 1
           }
         }
       }
     },
-    "diagnostic_summary": "예산 배분이 한도 내로 정확히 충족되었으며, 기술 선정과 로드맵 시퀀싱이 전략 방향과 잘 정합되어 있음. 추가 수정 불필요."
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 양호. 최종 승인."
   },
   "artifact_paths": {
     "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hl_mando_autonomous_2026_2030__기술선도__tech_candidates.json",

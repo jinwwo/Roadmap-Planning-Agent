@@ -1,0 +1,348 @@
+{
+  "market_context": {
+    "target_market": "AI Vision Perception / ADAS / Computer Vision",
+    "expected_boom_quarter": "2027 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "시각-레이더 융합 센서 아키텍처",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "ADAS 및 자율주행 센서 시장이 2030 년까지 450 억 달러 규모로 성장할 것으로 예상되며, 융합 아키텍처는 고가 라이다 의존도를 낮추는 핵심 솔루션으로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2026-2030",
+          "basis": "자동차 컴퓨터 비전 및 센서 융합 기술의 CAGR 은 20% 이상으로, 규제 강화와 L2+ 급증에 따른 수요 증가가 주된 동인."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Next-Generation Automotive Computing Market 2026-2036",
+            "url": "https://www.businesswire.com/news/home/20251120703304/en/Next-Generation-Automotive-Computing-Market-2026-2036-ADAS-AI-In-Cabin-Monitoring-Centralization-and-Connected-Vehicles-Reaches-Critical-Inflection-Point-as-Vehicles-Evolve-Into-AI-Supercomputers---ResearchAndMarkets.com",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+            "use": "CAGR 및 시장 성장 동인 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Waymo",
+            "Luminar"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "market_score": 91.2,
+        "expected_market_boom_quarter": "2026 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.0,
+          "basis": "생성형 AI 및 합성 데이터 시장은 2030 년까지 350 억 달러 규모로 성장할 것으로 보이며, 자율주행 학습 데이터 부족 문제를 해결하는 핵심 인프라로 평가받음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2026-2030",
+          "basis": "생성형 AI 기술의 급속한 발전과 자율주행 모델 학습에 대한 데이터 수요 폭증으로 인해 CAGR 28% 이상의 초고속 성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Generative AI Market Report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/generative-ai-market-142870584.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "AI in Computer Vision Market Report 2025",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ai-in-computer-vision-market-141658064.html",
+            "use": "컴퓨터 비전 내 생성형 AI 적용 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Waymo"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "고해상도 레이저 라이다 신호 처리",
+        "market_score": 76.8,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "자동차 라이다 시장은 2030 년까지 180 억 달러 규모로 성장할 것으로 예상되며, 고해상도 신호 처리 기술은 성능 차별화의 핵심 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2026-2030",
+          "basis": "라이다 시장 성장률은 18% 내외로, 고해상도 및 저비용화 트렌드가 주된 성장 동인."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive LiDAR 2025 - Yole Group",
+            "url": "https://www.yolegroup.com/product/report/automotive-lidar-2025",
+            "use": "시장 규모 및 경쟁 구도 분석"
+          },
+          {
+            "title": "LiDAR Market Size Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+            "use": "CAGR 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Luminar",
+            "Hesai",
+            "Blackmore"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "운전자 시선 기반 안전 제어 시스템",
+        "market_score": 82.4,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.2,
+          "basis": "운전자 모니터링 시스템 (DMS) 시장은 규제 의무화로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2026-2030",
+          "basis": "ADAS 시장 전체 성장률 16.5% 중 DMS 및 시선 기반 안전 기술이 규제 준수 요구로 인해 더 빠른 성장세."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Advanced Driver Assistance Systems (ADAS) Market Forecast",
+            "url": "https://www.globenewswire.com/news-release/2025/02/06/3022138/28124/en/advanced-driver-assistance-systems-adas-market-forecast-report-2025-adas-market-set-for-16-5-cagr-reaching-91-37-billion-by-2029-with-regulatory-mandates-and-ai-integration-leading.html",
+            "use": "TAM 및 규제 동인 분석"
+          },
+          {
+            "title": "Driver Safety Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/driver-safety-market",
+            "use": "운전자 안전 시장 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "차량 간 통신 (V2X) 기반 협력 인지",
+        "market_score": 73.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.5,
+          "basis": "V2X 시장은 인프라 구축 속도에 따라 2030 년까지 120 억 달러 규모로 성장할 것으로 예상되며, 협력 인지 기술은 핵심 소프트웨어 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2026-2030",
+          "basis": "V2X 시장 성장률은 15% 내외로, 인프라 표준화 및 정책 지원이 주된 성장 동인."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive V2X Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-v2x-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Connected Vehicle & V2X Digital Twin Market, 2035 Report",
+            "url": "https://www.gminsights.com/industry-analysis/connected-vehicle-v2x-digital-twin-market",
+            "use": "협력 인지 및 디지털 트윈 동향"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Mobileye",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Waymo",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Luminar",
+          "similarity": 0.78,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Hesai",
+          "similarity": 0.72,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Blackmore",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        }
+      ]
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 43000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "시각-레이더 융합 센서 아키텍처",
+        "생성형 AI 기반 합성 데이터 파이프라인",
+        "차량 간 통신 (V2X) 기반 협력 인지"
+      ],
+      "tech_ids": [
+        "T01",
+        "T02",
+        "T05"
+      ],
+      "num_items": 3
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T01",
+          "name": "시각-레이더 융합 센서 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 21500000.0,
+          "tech_budget_rationale": "T01 은 2027 년 Q2 시장 폭발 직전인 2026 년부터 즉시 착수해야 하는 핵심 아키텍처 기술로, 전체 예산의 50% 를 할당하여 선점 전략을 실행합니다. TAM 450 억 달러와 CAGR 22.5% 의 거대 시장 규모와 NVIDIA, Luminar 등 경쟁사의 특허 선점 속도를 고려할 때, 초기 R&D 및 프로토타입 검증에 집중적인 자원 투입이 필수적입니다. TRL 6 수준에서 TRL 8 이상으로 상향하여 2027 년 시장 진입 시점에 검증된 솔루션을 확보하기 위한 공격적 투자입니다.",
+          "reasoning": {
+            "market_evaluation": "시각-레이더 융합 아키텍처 시장은 2030 년까지 450 억 달러 (TAM) 규모로 성장할 것으로 예상되며, 연평균 성장률 (CAGR) 은 22.5% 로 매우 높은 수준입니다. 2027 년 Q2 를 기점으로 L2+ 자율주행 차량의 대량 양산이 시작되면서 고가 라이다 의존도를 낮추는 핵심 솔루션으로서의 수요가 폭발할 것입니다. STRADVISION 이 이 시점에 기술적 해자를 구축하지 못할 경우, NVIDIA 와 Luminar 등 경쟁사에 의해 시장 진입 장벽이 높아질 위험이 큽니다.",
+            "tech_evaluation": "현재 TRL 6 수준으로 프로토타입 검증 단계에 있으며, 하드웨어 저수준 융합 아키텍처에 대한 기술적 불확실성은 중간 수준 (Risk 3) 입니다. 그러나 STRADVISION 의 기존 비전 소프트웨어 강점을 하드웨어 융합으로 확장하는 전략적 정합성이 매우 높으며, 경쟁사 대비 특허 포트폴리오를 선점할 수 있는 기회 (Competitive Advantage 5) 가 명확합니다. 기술적 위험은 존재하지만, 시장 진입 시점 (2027 Q2) 을 고려할 때 개발 주기를 단축시키는 것이 최우선 과제입니다.",
+            "investment_decision": "T01 은 시장 규모와 성장률이 가장 크고, 개발 긴급도가 가장 높은 기술이므로 Tier 1 로 분류하여 전체 예산의 50% 를 할당합니다. 이는 2027 년 시장 폭발 직전까지 핵심 아키텍처를 정립하고 초기 검증을 완료하기 위한 선제적 투자입니다. 높은 경쟁 우위 점수와 전략적 우선순위를 반영하여, 다른 기술들의 기반이 되는 이 기술에 집중적인 자원을 투입하는 것이 합리적입니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 년 1 분기부터 즉시 프로토타입 개발을 시작하여 2027 년 Q2 이전까지 TRL 8 수준으로 상향하고, 주요 OEM 과의 초기 검증 파트너십을 체결하십시오.",
+          "rationale": [
+            "TAM 450 억 달러와 CAGR 22.5% 의 거대 시장 성장 잠재력",
+            "2027 Q2 시장 폭발 시점 대비 개발 긴급도 (Urgency 5) 최상위",
+            "NVIDIA, Luminar 등 경쟁사의 특허 선점 속도에 대응한 경쟁 우위 확보 필요",
+            "TRL 6 에서 TRL 8 로의 상향을 위한 초기 검증 자원 집중"
+          ]
+        },
+        {
+          "tech_id": "T02",
+          "name": "생성형 AI 기반 합성 데이터 파이프라인",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 4,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 15000000.0,
+          "tech_budget_rationale": "T02 는 2026 년 Q3 에 시장이 폭발할 것으로 예상되는 생성형 AI 및 합성 데이터 분야로, T01 의 아키텍처와 연동되어 모델 학습 효율성을 극대화하는 핵심 인프라입니다. 전체 예산의 약 35% 를 할당하여, T01 과 병행하여 2026 년 하반기부터 데이터 파이프라인 구축을 시작하고 2027 년까지 고도화하는 전략을 취합니다. TAM 350 억 달러와 CAGR 28% 의 초고속 성장률을 고려할 때, 데이터 부족 문제를 해결하는 이 기술은 STRADVISION 의 장기 경쟁력을 결정짓는 핵심 요소입니다.",
+          "reasoning": {
+            "market_evaluation": "생성형 AI 기반 합성 데이터 시장은 2030 년까지 350 억 달러 (TAM) 규모로 성장할 것으로 예상되며, CAGR 은 28% 로 모든 기술 중 가장 높은 성장률을 보입니다. 2026 년 Q3 를 기점으로 실제 주행 데이터 부족 문제를 해결하기 위한 수요가 급증할 것이며, 이는 자율주행 모델 학습의 병목 현상을 해결하는 핵심 인프라가 될 것입니다. NVIDIA 와 Waymo 의 선점 동향을 고려할 때, 이 시기에 기술적 해자를 구축하지 않으면 추격이 매우 어려울 것입니다.",
+            "tech_evaluation": "현재 TRL 5 수준으로 개념 증명 단계에 있으며, 기술적 불확실성은 중간 수준 (Risk 3) 입니다. STRADVISION 의 '온 - 비클 액티브 러닝' 특허를 생성형 AI 기술과 결합하여 차별화된 파이프라인을 구축할 수 있는 경쟁 우위 (Advantage 4) 가 존재합니다. T01 의 아키텍처 정립과 병행하여 개발해야 하므로, 기술적 의존성을 고려한 병렬 개발 전략이 필요합니다.",
+            "investment_decision": "T02 는 시장 성장률과 개발 긴급도가 매우 높으며, T01 과의 시너지를 극대화할 수 있는 핵심 기술이므로 Tier 1 로 분류합니다. 전체 예산의 35% 를 할당하여, 2026 년 Q3 시장 폭발 직전까지 파이프라인 구축을 완료하고 대규모 데이터 생성 체계를 완성하는 것을 목표로 합니다. 이는 모델 학습 주기를 단축시키고 개발 비용을 절감하는 데 필수적인 투자입니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "T01 개발과 병행하여 2026 년 1 분기부터 합성 데이터 생성 엔진 개발을 시작하고, 2026 년 Q3 까지 초기 파이프라인을 가동하여 실제 데이터와 비교 검증하십시오.",
+          "rationale": [
+            "CAGR 28% 의 초고속 시장 성장과 2026 Q3 시장 폭발 시점",
+            "T01 아키텍처와의 시너지를 통한 모델 학습 효율성 극대화",
+            "NVIDIA, Waymo 등 경쟁사의 선점 동향에 대응한 기술 해자 구축 필요",
+            "실제 주행 데이터 부족 문제 해결을 위한 핵심 인프라 역할"
+          ]
+        },
+        {
+          "tech_id": "T05",
+          "name": "차량 간 통신 (V2X) 기반 협력 인지",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 3,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 6500000.0,
+          "tech_budget_rationale": "T05 는 2029 년 Q2 에 시장이 폭발할 것으로 예상되는 장기 기술로, 인프라 구축 속도에 따라 성장이 지연될 수 있는 불확실성이 존재합니다. 전체 예산의 약 15% 를 할당하여, T01 과 T02 가 완료된 후인 2027 년부터 본격적인 개발을 시작하고 2030 년까지 기술적 준비를 완료하는 단계적 투자 전략을 취합니다. 이는 V2X 시장의 성숙도를 고려한 선택적 투자로, 초기에는 소규모 파일럿과 표준화 모니터링에 집중합니다.",
+          "reasoning": {
+            "market_evaluation": "V2X 시장은 2030 년까지 120 억 달러 (TAM) 규모로 성장할 것으로 예상되며, CAGR 은 15% 로 다른 기술에 비해 상대적으로 낮습니다. 2029 년 Q2 를 기점으로 인프라 구축이 완료되면서 본격적인 시장 폭발이 예상되지만, 인프라 표준화 및 정책 지원에 따라 성장이 지연될 수 있는 불확실성이 존재합니다. 따라서 단기적인 시장 기회보다는 장기적인 기술 선점에 초점을 맞춰야 합니다.",
+            "tech_evaluation": "현재 TRL 5 수준으로 개념 증명 단계에 있으며, 기술적 불확실성은 높음 (Risk 4) 입니다. Mobileye 와 NVIDIA 등 주요 플레이어들이 참여하고 있으나, 표준화 미비로 인해 경쟁 구도가 분산되어 있어 경쟁 우위 (Advantage 3) 를 확보하기는 어렵습니다. T01 과 T02 의 아키텍처가 완료된 후 협력 인지 기능을 추가하는 것이 기술적 의존성 측면에서 합리적입니다.",
+            "investment_decision": "T05 는 시장 성장률과 개발 긴급도가 상대적으로 낮고, 기술적 불확실성이 높으므로 Tier 2 로 분류합니다. 전체 예산의 15% 를 할당하여, 2027 년부터 시작하여 2030 년까지 기술적 준비를 완료하는 단계적 투자 전략을 취합니다. 이는 V2X 시장의 성숙도를 고려한 선택적 투자로, 초기에는 소규모 파일럿과 표준화 모니터링에 집중합니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2027 년부터 T01 과 T02 의 아키텍처가 완료된 후 V2X 프로토타입 개발을 시작하고, 인프라 표준화 동향을 모니터링하며 2029 년 시장 진입을 위한 기술적 준비를 완료하십시오.",
+          "rationale": [
+            "2029 Q2 시장 폭발 시점 대비 개발 긴급도 (Urgency 2) 낮음",
+            "인프라 구축 속도에 따른 시장 성장 지연 가능성 (Risk 4)",
+            "T01, T02 완료 후 협력 인지 기능 추가의 기술적 의존성",
+            "표준화 미비로 인한 경쟁 구도 분산 및 경쟁 우위 확보 어려움"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 43000000.0
+    }
+  ]
+}

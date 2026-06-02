@@ -1,0 +1,40 @@
+{
+  "center_actor": "HL Mando",
+  "edges": [
+    {
+      "source": "HL Mando",
+      "target": "Bosch",
+      "similarity": 0.92,
+      "edge_weight": 0.92,
+      "reason": "스티어바이와이어 및 차assis 제어 아키텍처에서 높은 기술적 유사성과 경쟁 관계"
+    },
+    {
+      "source": "HL Mando",
+      "target": "ZF Friedrichshafen",
+      "similarity": 0.85,
+      "edge_weight": 0.85,
+      "reason": "구동계 통합 제어 및 차assis 시스템의 광범위한 특허 포트폴리오 공유"
+    },
+    {
+      "source": "HL Mando",
+      "target": "Continental",
+      "similarity": 0.78,
+      "edge_weight": 0.78,
+      "reason": "자율주행 센서 보정 및 차량 통신 게이트웨이 기술에서의 교차"
+    },
+    {
+      "source": "HL Mando",
+      "target": "Denso",
+      "similarity": 0.75,
+      "edge_weight": 0.75,
+      "reason": "전기 구동계 제어 및 차량 네트워크 시스템에서의 기술적 겹침"
+    },
+    {
+      "source": "HL Mando",
+      "target": "Aptiv",
+      "similarity": 0.65,
+      "edge_weight": 0.65,
+      "reason": "고전압 커넥터 및 배선 하네스 자동화 등 장비 및 공정 기술에서의 부분적 유사성"
+    }
+  ]
+}

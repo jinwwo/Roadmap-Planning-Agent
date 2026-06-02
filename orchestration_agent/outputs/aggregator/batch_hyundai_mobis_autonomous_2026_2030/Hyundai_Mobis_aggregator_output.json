@@ -1,0 +1,1520 @@
+{
+  "run_id": "batch_hyundai_mobis_autonomous_2026_2030",
+  "timestamp_utc": "2026-06-02T05:48:10Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Magna International",
+          "Aptiv"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Magna International",
+            "title": "AUTOMOTIVE CAMERA WITH INTEGRATED ULTRASONIC TRANSMITTER/RECEIVER ARRAY",
+            "date": "2025-10-20",
+            "cited_by": 0
+          },
+          {
+            "company": "Aptiv",
+            "title": "Camera System, Manufacturing Method Thereof And Optical Element Mountable To A Circuit Platform",
+            "date": "2025-10-03",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Magna 와 Aptiv 는 카메라와 초음파 센서를 통합한 하드웨어 아키텍처에 집중하고 있어, 센서 퓨전의 물리적 통합 트렌드가 뚜렷합니다. 현대모비스는 소프트웨어 중심의 퓨전 알고리즘에 강점이 있으나, 하드웨어 통합 기술은 경쟁사 대비 갭이 있어 선점 필요성이 높습니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "고성능 SiC 반도체 제조",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 82.3,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Denso Corporation"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Denso Corporation",
+            "title": "METHOD FOR MANUFACTURING SILICON CARBIDE SEMICONDUCTOR DEVICE",
+            "date": "2026-01-15",
+            "cited_by": 0
+          },
+          {
+            "company": "Denso Corporation",
+            "title": "SEMICONDUCTOR DEVICE AND MANUFACTURING METHOD OF SEMICONDUCTOR DEVICE",
+            "date": "2026-01-13",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Denso 는 SiC 반도체 제조 공정 및 소자 구조에 대한 최근 특허를 다수 출원하여 전력전자 분야의 핵심 소재 기술을 확보하고 있습니다. 자율주행 플랫폼의 고전압 시스템 효율 향상을 위해 SiC 기반 전력변환기 기술은 필수적입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "스테어 바이 와이어 제어",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 85.1,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Bosch"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Bosch",
+            "title": "Multi-mode control method of steer-by-wire system under driving assistance system",
+            "date": "2026-01-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Bosch",
+            "title": "Motor rotation angle limiting mechanism of steering system and hand feeling simulation device",
+            "date": "2026-01-26",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Bosch 는 자율주행 모드와 수동 모드 간 전환이 가능한 스테어 바이 와이어 제어 알고리즘 및 햅틱 피드백 기술에 집중하고 있습니다. 이는 SDV 환경에서 차량 제어의 핵심 프로세스 기술로, 현대모비스의 조향 시스템 포트폴리오 고도화에 필수적입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "PCM 기반 배터리 열관리",
+        "category": "Material",
+        "estimated_trl": 6,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Magna International"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Magna International",
+            "title": "BATTERY PACK WITH PHASE CHANGE MATERIAL (PCM) COMPOSITE",
+            "date": "2025-07-15",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Magna 는 상변화 물질 (PCM) 을 활용한 배터리 팩 열관리 소재 기술을 개발 중입니다. 자율주행 차량의 고출력 배터리 시스템 안정성을 위해 수동적 열관리 소재 기술은 중요한 경쟁력이 될 수 있습니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "고전압 커넥터 모듈화",
+        "category": "Packaging",
+        "estimated_trl": 7,
+        "patent_score": 81.4,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Aptiv"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Aptiv",
+            "title": "HIGH VOLTAGE CONNECTOR FOR AN ALUMINUM CABLE WITH A COPPER TERMINAL",
+            "date": "2025-11-05",
+            "cited_by": 0
+          },
+          {
+            "company": "Aptiv",
+            "title": "ELECTRICAL CONNECTOR WITH CAVITY PLUGS",
+            "date": "2025-12-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Aptiv 는 알루미늄 케이블과 구리 터미널을 결합한 고전압 커넥터 및 모듈화된 커넥터 어셈블리 기술에 집중하고 있습니다. 전기차 및 자율주행 차량의 고전압 배선 시스템 경량화 및 신뢰성 향상을 위한 핵심 패키징 기술입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "전력전자 모듈 통합 아키텍처",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 83.6,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Magna International",
+          "ZF Friedrichshafen"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Magna International",
+            "title": "BATTERY INTEGRATED MODULAR POWER ELECTRONIC ARCHITECTURES AND CONTROLS",
+            "date": "2025-01-16",
+            "cited_by": 0
+          },
+          {
+            "company": "ZF Friedrichshafen",
+            "title": "Power electronics unit for vehicle",
+            "date": "2025-09-18",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Magna 와 ZF 는 배터리와 전력전자 장치를 통합한 모듈형 아키텍처를 개발 중입니다. 이는 차량 공간 효율성과 시스템 효율성을 극대화하는 차세대 전기차 플랫폼의 핵심 설계 개념입니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "전기 구동장치 슬립 제어",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 77.2,
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "ZF Friedrichshafen"
+        ],
+        "evidence_patents": [
+          {
+            "company": "ZF Friedrichshafen",
+            "title": "Slip identification and torque control method, related device and electric vehicle",
+            "date": "2025-11-14",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "ZF 는 전기 구동 장치의 슬립 식별 및 토크 제어 알고리즘을 통해 주행 안정성을 높이는 기술을 보유하고 있습니다. 자율주행 차량의 정밀한 구동 제어를 위한 핵심 프로세스 기술입니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "3D 포즈 추정 시스템",
+        "category": "Equipment",
+        "estimated_trl": 5,
+        "patent_score": 80.5,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Aptiv"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Aptiv",
+            "title": "System and Method for Determination of 3D Pose in a Vehicle",
+            "date": "2025-10-30",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Aptiv 는 차량 내 3D 포즈 (위치 및 자세) 를 추정하는 시스템에 대한 특허를 출원했습니다. 이는 자율주행 차량의 정밀한 위치 인식 및 주변 환경 이해를 위한 핵심 장비 기술입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 3.3,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.3,
+          "basis": "MarketsandMarkets 보고서에 따르면 2030 년 자동차 센서 퓨전 시장 규모는 33 억 달러로 추정되며, 카메라 기반 퓨전 솔루션이 주요 부분을 차지함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 2+ 및 레벨 3 상용화 가속화로 인해 센서 퓨전 기술에 대한 수요가 연평균 18% 이상 성장할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Sensor Fusion Market for Automotive worth $3.3 billion by 2030",
+            "url": "https://www.prnewswire.com/news-releases/sensor-fusion-market-for-automotive-worth-3-3-billion-by-2030---exclusive-report-by-marketsandmarkets-302002951.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Multi Sensor Fusion Solutions Market Report | Global Forecast From 2025 To 2033",
+            "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+            "use": "경쟁 구도 및 기술 트렌드 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "2030 년 33 억 달러 규모의 시장으로 성장할 것으로 예상되며, 레벨 3 자율주행 상용화 시점인 2027 년경에 시장이 급성장할 것으로 보입니다. Magna 와 Aptiv 등 주요 부품사들이 특허를 통해 기술 선점을 시도하고 있어 경쟁 구도가 형성되고 있습니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "고성능 SiC 반도체 제조",
+        "market_score": 92.0,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 95,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 133.05,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 8.0,
+          "basis": "자동차 반도체 시장 전체가 2030 년 1,330 억 달러에 달할 것으로 예상되며, SiC 기반 파워 반도체는 EV 및 하이브리드 차량의 핵심 부품으로 급성장 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "EV 전환 가속화 및 800V 고전압 아키텍처 도입으로 SiC 수요가 연평균 24% 이상 성장할 것으로 전망됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Semiconductor Industry worth $133.05 billion by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/automotive-semiconductor.asp",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "SiC Ingots Industry Research Report 2024-2025 and 2030",
+            "url": "https://www.globenewswire.com/news-release/2024/11/04/2973805/0/en/sic-ingots-industry-research-report-2024-2025-and-2030-expanding-ev-and-renewable-energy-sectors-drive-demand-unlocking-growth-opportunities-in-power-electronics.html",
+            "use": "SiC 소재 및 제조 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "SiC 반도체는 EV 효율성 향상의 핵심으로 2030 년 1,330 억 달러 시장 중 가장 높은 성장률을 보이며, 2026 년부터 대량 생산이 본격화될 것으로 예상됩니다. Denso 등 주요 기업들이 제조 공정 특허를 확보하며 높은 진입 장벽을 형성하고 있습니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "스테어 바이 와이어 제어",
+        "market_score": 81.5,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.0,
+          "basis": "전체 자동차 조향 시스템 시장이 2030 년 이후 급성장할 것으로 예상되며, 스테어 바이 와이어는 자율주행 필수 기술로 시장 점유율이 빠르게 확대될 것임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 3 이상 차량의 의무화 및 소프트웨어 정의 차량 (SDV) 트렌드로 인해 연평균 22% 성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Steering System Market Size, Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-steering-market",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Automotive Steer-by-wire System Market - Metastat Insights",
+            "url": "https://metastatinsight.com/report/automotive-steer-by-wire-system-market",
+            "use": "기술별 세부 시장 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "자율주행 레벨 3 상용화 시점인 2028 년경에 스테어 바이 와이어 기술이 대량 적용될 것으로 예상되며, Bosch 등 선두 기업들이 기술 표준을 장악하고 있습니다. 규제 강화와 SDV 트렌드가 시장 성장을 견인할 것입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "PCM 기반 배터리 열관리",
+        "market_score": 74.0,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 30.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.5,
+          "basis": "전체 자동차 열관리 시장이 2030 년 300 억 달러에 달할 것으로 예상되며, PCM 기반 솔루션은 고출력 배터리 열관리 수요 증가로 성장세 유지."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "EV 배터리 용량 증가 및 충전 속도 향상 요구로 인해 열관리 기술에 대한 수요가 연평균 16.5% 성장할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global Market for Thermal Management Technologies Projected to Hit $30 Billion by 2030",
+            "url": "https://finance.yahoo.com/news/global-market-thermal-management-technologies-110500399.html",
+            "use": "TAM 및 시장 성장 전망"
+          },
+          {
+            "title": "Automotive Battery Thermal Management System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+            "use": "배터리 열관리 세부 시장 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "2030 년 300 억 달러 규모의 열관리 시장에서 PCM 기술은 배터리 효율성 향상을 위해 중요하지만, 아직 표준화되지 않아 경쟁이 분산된 상태입니다. 2029 년경 고출력 배터리 대량 생산과 함께 시장이 본격화될 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "고전압 커넥터 모듈화",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.8,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.8,
+          "basis": "EV 커넥터 시장이 2032 년까지 88 억 달러에 달할 것으로 예상되며, 고전압 모듈화 기술은 800V 시스템 전환에 필수적입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2032",
+          "basis": "전기차 보급 확대 및 고전압 아키텍처 (800V) 로의 전환이 시장 성장을 주도합니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "EV Connector Market worth $8.80 billion by 2032",
+            "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "High Voltage Connector Market Report: Trends, Forecast and Competitive Analysis to 2030",
+            "url": "https://www.researchandmarkets.com/reports/6008027/high-voltage-connector-market-report-trends",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고전압 커넥터 시장은 전기차 800V 플랫폼 전환으로 인해 2027 년경 급성장할 것으로 예상됩니다. Aptiv 등 주요 업체가 선점하고 있으나, 모듈화 기술은 여전히 차별화 가능성이 있는 경쟁 구도입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "전력전자 모듈 통합 아키텍처",
+        "market_score": 82.0,
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "자동차 전자부품 및 통합 전력 모듈 시장이 2035 년까지 수백억 달러 규모로 성장할 것으로 전망되며, 통합 아키텍처는 핵심 성장 동력입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.8,
+          "forecast_period": "2025-2035",
+          "basis": "SDV(소프트웨어 정의 차량) 및 전기차 효율성 요구로 인해 통합 전력 모듈 수요가 급증하고 있습니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Integrated Power Module Market | Global Market Analysis Report - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/automotive-integrated-power-module-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Power Electronics Market Size, Share & Trends Forecast, 2035",
+            "url": "https://www.snsinsider.com/reports/power-electronics-market-1246",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "전력전자 모듈 통합은 전기차 효율성과 공간 최적화를 위해 2028 년경 본격적인 시장 폭발이 예상됩니다. Magna, ZF 등 주요 업체가 주도하지만, 아키텍처 최적화 기술은 높은 진입 장벽을 가집니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "전기 구동장치 슬립 제어",
+        "market_score": 68.5,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 65,
+          "competitive_moat_potential": 55
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.5,
+          "som_usd_b": 1.0,
+          "basis": "ADAS 및 자율주행 부품 시장 내 구동 제어 기술은 전체 시장의 일부이나, 전기차 구동 효율성 요구로 인해 성장 중입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 11.2,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 2+ 및 레벨 3 차량의 증가로 정밀한 슬립 제어 기술 수요가 점진적으로 확대됩니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global ADAS & Autonomous Driving Components Market (2025-30)",
+            "url": "https://www.marknteladvisors.com/research-library/global-adas-autonomous-driving-components-market.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "슬립 제어 기술은 전기차 구동 효율성 향상을 위해 중요하지만, 경쟁이 치열하고 차별화가 어려운 편입니다. 2029 년경 자율주행 레벨 상향과 함께 시장이 본격화될 것으로 보입니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "3D 포즈 추정 시스템",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "LiDAR 및 ADAS 센서 퓨전 시장이 급성장하며, 3D 포즈 추정 기술은 자율주행 레벨 3 이상 구현의 핵심 요소입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 차량의 센서 퓨전 및 환경 인식 기술 수요가 폭발적으로 증가하고 있습니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "LiDAR Market Size Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "ADAS and Autonomous Driving Components Market Size, Share",
+            "url": "https://www.businessresearchinsights.com/market-reports/adas-and-autonomous-driving-components-market-112538",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "3D 포즈 추정 시스템은 자율주행 레벨 3 이상 구현을 위해 2027 년 말부터 급성장할 것으로 예상되며, 아직 명확한 시장 리더가 없는 초기 단계입니다. Aptiv 등 선두 업체가 기술 장벽을 구축 중입니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "자율주행 플랫폼의 핵심 제어 기술 (스테어 바이 와이어, 브레이크 바이 와이어) 및 ADAS 알고리즘 분야에서 높은 기술적 유사성과 경쟁 관계를 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Denso Corporation",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "전력전자 (SiC), 모터 제어, 배터리 관리 시스템 (BMS) 등 전기차 및 자율주행 차량의 핵심 구동 및 에너지 관리 기술에서 높은 유사성을 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "구동계 (전동기, 변속기), 조향 시스템, 그리고 전력전자 모듈 통합 아키텍처 분야에서 기술적 교집합이 큽니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Aptiv",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "고전압 커넥터, 배선 시스템, 센서 퓨전 하드웨어 등 차량 전자 장비 및 패키징 기술에서 유사한 기술 트렌드를 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Magna International",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "배터리 팩 열관리 (PCM), 카메라 및 센서 통합, 모듈형 전력전자 아키텍처 등 하드웨어 통합 및 소재 기술에서 유사성을 보입니다."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T02",
+        "name": "고성능 SiC 반도체 제조",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 82.3,
+        "market_score": 92.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 87.63,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Denso 는 SiC 반도체 제조 공정 및 소자 구조에 대한 최근 특허를 다수 출원하여 전력전자 분야의 핵심 소재 기술을 확보하고 있습니다. 자율주행 플랫폼의 고전압 시스템 효율 향상을 위해 SiC 기반 전력변환기 기술은 필수적입니다. [Market] SiC 반도체는 EV 효율성 향상의 핵심으로 2030 년 1,330 억 달러 시장 중 가장 높은 성장률을 보이며, 2026 년부터 대량 생산이 본격화될 것으로 예상됩니다. Denso 등 주요 기업들이 제조 공정 특허를 확보하며 높은 진입 장벽을 형성하고 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 95,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 133.05,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 8.0,
+          "basis": "자동차 반도체 시장 전체가 2030 년 1,330 억 달러에 달할 것으로 예상되며, SiC 기반 파워 반도체는 EV 및 하이브리드 차량의 핵심 부품으로 급성장 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "EV 전환 가속화 및 800V 고전압 아키텍처 도입으로 SiC 수요가 연평균 24% 이상 성장할 것으로 전망됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Semiconductor Industry worth $133.05 billion by 2030",
+            "url": "https://www.marketsandmarkets.com/PressReleases/automotive-semiconductor.asp",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "SiC Ingots Industry Research Report 2024-2025 and 2030",
+            "url": "https://www.globenewswire.com/news-release/2024/11/04/2973805/0/en/sic-ingots-industry-research-report-2024-2025-and-2030-expanding-ev-and-renewable-energy-sectors-drive-demand-unlocking-growth-opportunities-in-power-electronics.html",
+            "use": "SiC 소재 및 제조 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "selection_score": 87.17,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 1
+      },
+      {
+        "tech_id": "T08",
+        "name": "3D 포즈 추정 시스템",
+        "category": "Equipment",
+        "trl": 5,
+        "patent_score": 80.5,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 84.9,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Aptiv 는 차량 내 3D 포즈 (위치 및 자세) 를 추정하는 시스템에 대한 특허를 출원했습니다. 이는 자율주행 차량의 정밀한 위치 인식 및 주변 환경 이해를 위한 핵심 장비 기술입니다. [Market] 3D 포즈 추정 시스템은 자율주행 레벨 3 이상 구현을 위해 2027 년 말부터 급성장할 것으로 예상되며, 아직 명확한 시장 리더가 없는 초기 단계입니다. Aptiv 등 선두 업체가 기술 장벽을 구축 중입니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "LiDAR 및 ADAS 센서 퓨전 시장이 급성장하며, 3D 포즈 추정 기술은 자율주행 레벨 3 이상 구현의 핵심 요소입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 차량의 센서 퓨전 및 환경 인식 기술 수요가 폭발적으로 증가하고 있습니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "LiDAR Market Size Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "ADAS and Autonomous Driving Components Market Size, Share",
+            "url": "https://www.businessresearchinsights.com/market-reports/adas-and-autonomous-driving-components-market-112538",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "selection_score": 84.52,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T03",
+        "name": "스테어 바이 와이어 제어",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 85.1,
+        "market_score": 81.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 83.12,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Bosch 는 자율주행 모드와 수동 모드 간 전환이 가능한 스테어 바이 와이어 제어 알고리즘 및 햅틱 피드백 기술에 집중하고 있습니다. 이는 SDV 환경에서 차량 제어의 핵심 프로세스 기술로, 현대모비스의 조향 시스템 포트폴리오 고도화에 필수적입니다. [Market] 자율주행 레벨 3 상용화 시점인 2028 년경에 스테어 바이 와이어 기술이 대량 적용될 것으로 예상되며, Bosch 등 선두 기업들이 기술 표준을 장악하고 있습니다. 규제 강화와 SDV 트렌드가 시장 성장을 견인할 것입니다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.0,
+          "basis": "전체 자동차 조향 시스템 시장이 2030 년 이후 급성장할 것으로 예상되며, 스테어 바이 와이어는 자율주행 필수 기술로 시장 점유율이 빠르게 확대될 것임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 3 이상 차량의 의무화 및 소프트웨어 정의 차량 (SDV) 트렌드로 인해 연평균 22% 성장 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Steering System Market Size, Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-steering-market",
+            "use": "시장 규모 및 성장 전망"
+          },
+          {
+            "title": "Automotive Steer-by-wire System Market - Metastat Insights",
+            "url": "https://metastatinsight.com/report/automotive-steer-by-wire-system-market",
+            "use": "기술별 세부 시장 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 83.29,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T01",
+        "name": "다중 센서 퓨전 카메라",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 78.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 83.0,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Magna 와 Aptiv 는 카메라와 초음파 센서를 통합한 하드웨어 아키텍처에 집중하고 있어, 센서 퓨전의 물리적 통합 트렌드가 뚜렷합니다. 현대모비스는 소프트웨어 중심의 퓨전 알고리즘에 강점이 있으나, 하드웨어 통합 기술은 경쟁사 대비 갭이 있어 선점 필요성이 높습니다. [Market] 2030 년 33 억 달러 규모의 시장으로 성장할 것으로 예상되며, 레벨 3 자율주행 상용화 시점인 2027 년경에 시장이 급성장할 것으로 보입니다. Magna 와 Aptiv 등 주요 부품사들이 특허를 통해 기술 선점을 시도하고 있어 경쟁 구도가 형성되고 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 3.3,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.3,
+          "basis": "MarketsandMarkets 보고서에 따르면 2030 년 자동차 센서 퓨전 시장 규모는 33 억 달러로 추정되며, 카메라 기반 퓨전 솔루션이 주요 부분을 차지함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 2+ 및 레벨 3 상용화 가속화로 인해 센서 퓨전 기술에 대한 수요가 연평균 18% 이상 성장할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Sensor Fusion Market for Automotive worth $3.3 billion by 2030",
+            "url": "https://www.prnewswire.com/news-releases/sensor-fusion-market-for-automotive-worth-3-3-billion-by-2030---exclusive-report-by-marketsandmarkets-302002951.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Multi Sensor Fusion Solutions Market Report | Global Forecast From 2025 To 2033",
+            "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+            "use": "경쟁 구도 및 기술 트렌드 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 83.48,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 4
+      },
+      {
+        "tech_id": "T06",
+        "name": "전력전자 모듈 통합 아키텍처",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 83.6,
+        "market_score": 82.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 82.72,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Magna 와 ZF 는 배터리와 전력전자 장치를 통합한 모듈형 아키텍처를 개발 중입니다. 이는 차량 공간 효율성과 시스템 효율성을 극대화하는 차세대 전기차 플랫폼의 핵심 설계 개념입니다. [Market] 전력전자 모듈 통합은 전기차 효율성과 공간 최적화를 위해 2028 년경 본격적인 시장 폭발이 예상됩니다. Magna, ZF 등 주요 업체가 주도하지만, 아키텍처 최적화 기술은 높은 진입 장벽을 가집니다.",
+        "market_signals": {
+          "tam_growth_rate": 90,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 4.5,
+          "basis": "자동차 전자부품 및 통합 전력 모듈 시장이 2035 년까지 수백억 달러 규모로 성장할 것으로 전망되며, 통합 아키텍처는 핵심 성장 동력입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.8,
+          "forecast_period": "2025-2035",
+          "basis": "SDV(소프트웨어 정의 차량) 및 전기차 효율성 요구로 인해 통합 전력 모듈 수요가 급증하고 있습니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Integrated Power Module Market | Global Market Analysis Report - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/automotive-integrated-power-module-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Power Electronics Market Size, Share & Trends Forecast, 2035",
+            "url": "https://www.snsinsider.com/reports/power-electronics-market-1246",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "selection_score": 82.8,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 5
+      },
+      {
+        "tech_id": "T05",
+        "name": "고전압 커넥터 모듈화",
+        "category": "Packaging",
+        "trl": 7,
+        "patent_score": 81.4,
+        "market_score": 76.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 78.71,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Aptiv 는 알루미늄 케이블과 구리 터미널을 결합한 고전압 커넥터 및 모듈화된 커넥터 어셈블리 기술에 집중하고 있습니다. 전기차 및 자율주행 차량의 고전압 배선 시스템 경량화 및 신뢰성 향상을 위한 핵심 패키징 기술입니다. [Market] 고전압 커넥터 시장은 전기차 800V 플랫폼 전환으로 인해 2027 년경 급성장할 것으로 예상됩니다. Aptiv 등 주요 업체가 선점하고 있으나, 모듈화 기술은 여전히 차별화 가능성이 있는 경쟁 구도입니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.8,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.8,
+          "basis": "EV 커넥터 시장이 2032 년까지 88 억 달러에 달할 것으로 예상되며, 고전압 모듈화 기술은 800V 시스템 전환에 필수적입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.5,
+          "forecast_period": "2025-2032",
+          "basis": "전기차 보급 확대 및 고전압 아키텍처 (800V) 로의 전환이 시장 성장을 주도합니다."
+        },
+        "key_market_reports": [
+          {
+            "title": "EV Connector Market worth $8.80 billion by 2032",
+            "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "High Voltage Connector Market Report: Trends, Forecast and Competitive Analysis to 2030",
+            "url": "https://www.researchandmarkets.com/reports/6008027/high-voltage-connector-market-report-trends",
+            "use": "경쟁 구도 및 기술 트렌드"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 88
+        },
+        "selection_score": 78.94,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 6
+      }
+    ],
+    "market_context": {
+      "target_market": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+      "expected_boom_quarter": "2027 Q2",
+      "market_research_summary": {
+        "T01": {
+          "name": "다중 센서 퓨전 카메라",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 3.3,
+            "sam_usd_b": 1.2,
+            "som_usd_b": 0.3,
+            "basis": "MarketsandMarkets 보고서에 따르면 2030 년 자동차 센서 퓨전 시장 규모는 33 억 달러로 추정되며, 카메라 기반 퓨전 솔루션이 주요 부분을 차지함."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.5,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 레벨 2+ 및 레벨 3 상용화 가속화로 인해 센서 퓨전 기술에 대한 수요가 연평균 18% 이상 성장할 것으로 예상됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Sensor Fusion Market for Automotive worth $3.3 billion by 2030",
+              "url": "https://www.prnewswire.com/news-releases/sensor-fusion-market-for-automotive-worth-3-3-billion-by-2030---exclusive-report-by-marketsandmarkets-302002951.html",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "Multi Sensor Fusion Solutions Market Report | Global Forecast From 2025 To 2033",
+              "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+              "use": "경쟁 구도 및 기술 트렌드 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "고성능 SiC 반도체 제조",
+          "market_score": 92.0,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 133.05,
+            "sam_usd_b": 45.0,
+            "som_usd_b": 8.0,
+            "basis": "자동차 반도체 시장 전체가 2030 년 1,330 억 달러에 달할 것으로 예상되며, SiC 기반 파워 반도체는 EV 및 하이브리드 차량의 핵심 부품으로 급성장 중임."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.0,
+            "forecast_period": "2025-2030",
+            "basis": "EV 전환 가속화 및 800V 고전압 아키텍처 도입으로 SiC 수요가 연평균 24% 이상 성장할 것으로 전망됨."
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Semiconductor Industry worth $133.05 billion by 2030",
+              "url": "https://www.marketsandmarkets.com/PressReleases/automotive-semiconductor.asp",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "SiC Ingots Industry Research Report 2024-2025 and 2030",
+              "url": "https://www.globenewswire.com/news-release/2024/11/04/2973805/0/en/sic-ingots-industry-research-report-2024-2025-and-2030-expanding-ev-and-renewable-energy-sectors-drive-demand-unlocking-growth-opportunities-in-power-electronics.html",
+              "use": "SiC 소재 및 제조 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "스테어 바이 와이어 제어",
+          "market_score": 81.5,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 1.0,
+            "basis": "전체 자동차 조향 시스템 시장이 2030 년 이후 급성장할 것으로 예상되며, 스테어 바이 와이어는 자율주행 필수 기술로 시장 점유율이 빠르게 확대될 것임."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 레벨 3 이상 차량의 의무화 및 소프트웨어 정의 차량 (SDV) 트렌드로 인해 연평균 22% 성장 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Steering System Market Size, Report 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/automotive-steering-market",
+              "use": "시장 규모 및 성장 전망"
+            },
+            {
+              "title": "Automotive Steer-by-wire System Market - Metastat Insights",
+              "url": "https://metastatinsight.com/report/automotive-steer-by-wire-system-market",
+              "use": "기술별 세부 시장 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "PCM 기반 배터리 열관리",
+          "market_score": 74.0,
+          "expected_market_boom_quarter": "2029 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 30.0,
+            "sam_usd_b": 8.0,
+            "som_usd_b": 1.5,
+            "basis": "전체 자동차 열관리 시장이 2030 년 300 억 달러에 달할 것으로 예상되며, PCM 기반 솔루션은 고출력 배터리 열관리 수요 증가로 성장세 유지."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.5,
+            "forecast_period": "2025-2030",
+            "basis": "EV 배터리 용량 증가 및 충전 속도 향상 요구로 인해 열관리 기술에 대한 수요가 연평균 16.5% 성장할 것으로 예상됨."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Global Market for Thermal Management Technologies Projected to Hit $30 Billion by 2030",
+              "url": "https://finance.yahoo.com/news/global-market-thermal-management-technologies-110500399.html",
+              "use": "TAM 및 시장 성장 전망"
+            },
+            {
+              "title": "Automotive Battery Thermal Management System Market [2034]",
+              "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+              "use": "배터리 열관리 세부 시장 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "고전압 커넥터 모듈화",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 8.8,
+            "sam_usd_b": 3.5,
+            "som_usd_b": 0.8,
+            "basis": "EV 커넥터 시장이 2032 년까지 88 억 달러에 달할 것으로 예상되며, 고전압 모듈화 기술은 800V 시스템 전환에 필수적입니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.5,
+            "forecast_period": "2025-2032",
+            "basis": "전기차 보급 확대 및 고전압 아키텍처 (800V) 로의 전환이 시장 성장을 주도합니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "EV Connector Market worth $8.80 billion by 2032",
+              "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "High Voltage Connector Market Report: Trends, Forecast and Competitive Analysis to 2030",
+              "url": "https://www.researchandmarkets.com/reports/6008027/high-voltage-connector-market-report-trends",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "전력전자 모듈 통합 아키텍처",
+          "market_score": 82.0,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 18.0,
+            "som_usd_b": 4.5,
+            "basis": "자동차 전자부품 및 통합 전력 모듈 시장이 2035 년까지 수백억 달러 규모로 성장할 것으로 전망되며, 통합 아키텍처는 핵심 성장 동력입니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.8,
+            "forecast_period": "2025-2035",
+            "basis": "SDV(소프트웨어 정의 차량) 및 전기차 효율성 요구로 인해 통합 전력 모듈 수요가 급증하고 있습니다."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Integrated Power Module Market | Global Market Analysis Report - 2035",
+              "url": "https://www.futuremarketinsights.com/reports/automotive-integrated-power-module-market",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "Power Electronics Market Size, Share & Trends Forecast, 2035",
+              "url": "https://www.snsinsider.com/reports/power-electronics-market-1246",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T07": {
+          "name": "전기 구동장치 슬립 제어",
+          "market_score": 68.5,
+          "expected_market_boom_quarter": "2029 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 4.5,
+            "som_usd_b": 1.0,
+            "basis": "ADAS 및 자율주행 부품 시장 내 구동 제어 기술은 전체 시장의 일부이나, 전기차 구동 효율성 요구로 인해 성장 중입니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 11.2,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 레벨 2+ 및 레벨 3 차량의 증가로 정밀한 슬립 제어 기술 수요가 점진적으로 확대됩니다."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Global ADAS & Autonomous Driving Components Market (2025-30)",
+              "url": "https://www.marknteladvisors.com/research-library/global-adas-autonomous-driving-components-market.html",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
+              "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T08": {
+          "name": "3D 포즈 추정 시스템",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 25.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 2.5,
+            "basis": "LiDAR 및 ADAS 센서 퓨전 시장이 급성장하며, 3D 포즈 추정 기술은 자율주행 레벨 3 이상 구현의 핵심 요소입니다."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "자율주행 차량의 센서 퓨전 및 환경 인식 기술 수요가 폭발적으로 증가하고 있습니다."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "LiDAR Market Size Report 2025-2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "ADAS and Autonomous Driving Components Market Size, Share",
+              "url": "https://www.businessresearchinsights.com/market-reports/adas-and-autonomous-driving-components-market-112538",
+              "use": "경쟁 구도 및 기술 트렌드"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "use_patent_map_context": false,
+      "actor_map_summary": {},
+      "candidate_selection": {
+        "use_patent_map": false,
+        "use_actor_map_score": false,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "pool_count": 8,
+        "target_k": 6,
+        "selected_count": 6,
+        "selected_tech_ids": [
+          "T02",
+          "T08",
+          "T03",
+          "T01",
+          "T06",
+          "T05"
+        ],
+        "map_anchor_tech_ids": [],
+        "dropped_candidates": [
+          {
+            "tech_id": "T04",
+            "name": "PCM 기반 배터리 열관리",
+            "final_score": 76.61,
+            "selection_score": 76.89,
+            "actor_map_score": 0.0,
+            "reason": "시장 성장률 (CAGR 16.5%) 과 시장 폭발 시점 (2029 Q2) 이 상위 후보군에 비해 낮아, 2026-2030 년 전략적 로드맵의 선점 효과와 시급성이 상대적으로 떨어집니다."
+          },
+          {
+            "tech_id": "T07",
+            "name": "전기 구동장치 슬립 제어",
+            "final_score": 72.42,
+            "selection_score": 72.83,
+            "actor_map_score": 0.0,
+            "reason": "최종 점수 (72.42) 와 시장 신호 (CAGR 11.2%) 가 후보군 중 가장 낮으며, 경쟁 구도에서의 진입 장벽 (Moat) 이 낮아 포트폴리오의 핵심 성장 동력으로 선정하기에는 우선순위가 낮습니다."
+          }
+        ],
+        "selection_metrics": {
+          "avg_final_score": 83.35,
+          "avg_market_score": 83.17,
+          "avg_patent_score": 83.57,
+          "avg_actor_map_score": 0.0,
+          "map_supported_count": 0
+        },
+        "selection_weights": {
+          "final_score": 0.55,
+          "patent_score": 0.25,
+          "market_score": 0.2,
+          "actor_map_score": 0.0
+        },
+        "selector": {
+          "method": "llm_fair_contextual_selector",
+          "used": true,
+          "selection_rationale": "현대모비스의 2026-2030 년 자율주행 플랫폼 및 SDV 전략에 부합하는 고성장 (CAGR 20% 이상) 과 높은 시장 시급성을 가진 기술들을 우선 선정했습니다. SiC 반도체 (T02), 3D 포즈 추정 (T08), 스테어 바이 와이어 (T03) 는 자율주행 레벨 3 이상 구현을 위한 핵심 인프라 및 제어 기술로 특허와 시장 데이터가 강력합니다. 또한, 센서 퓨전 (T01), 전력전자 통합 (T06), 고전압 커넥터 (T05) 는 하드웨어 아키텍처 고도화와 전기차 효율성 향상을 위한 필수 요소로 포트폴리오의 다양성을 확보합니다.",
+          "evidence_used": {
+            "T02": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T08": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T03": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T01": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T06": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T05": [
+              "patent",
+              "market",
+              "strategy"
+            ]
+          },
+          "fairness_note": "No numeric patent-map bonus was applied."
+        },
+        "fairness_controls": {
+          "same_final_score_formula": true,
+          "same_selection_score_formula_available_as_fallback": true,
+          "actor_map_score_is_diagnostic_only": true,
+          "map_anchor_slots": 0,
+          "llm_selector_uses_map_as_context_only": false
+        }
+      }
+    },
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 8,
+      "target_k": 6,
+      "selected_count": 6,
+      "selected_tech_ids": [
+        "T02",
+        "T08",
+        "T03",
+        "T01",
+        "T06",
+        "T05"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T04",
+          "name": "PCM 기반 배터리 열관리",
+          "final_score": 76.61,
+          "selection_score": 76.89,
+          "actor_map_score": 0.0,
+          "reason": "시장 성장률 (CAGR 16.5%) 과 시장 폭발 시점 (2029 Q2) 이 상위 후보군에 비해 낮아, 2026-2030 년 전략적 로드맵의 선점 효과와 시급성이 상대적으로 떨어집니다."
+        },
+        {
+          "tech_id": "T07",
+          "name": "전기 구동장치 슬립 제어",
+          "final_score": 72.42,
+          "selection_score": 72.83,
+          "actor_map_score": 0.0,
+          "reason": "최종 점수 (72.42) 와 시장 신호 (CAGR 11.2%) 가 후보군 중 가장 낮으며, 경쟁 구도에서의 진입 장벽 (Moat) 이 낮아 포트폴리오의 핵심 성장 동력으로 선정하기에는 우선순위가 낮습니다."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 83.35,
+        "avg_market_score": 83.17,
+        "avg_patent_score": 83.57,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "현대모비스의 2026-2030 년 자율주행 플랫폼 및 SDV 전략에 부합하는 고성장 (CAGR 20% 이상) 과 높은 시장 시급성을 가진 기술들을 우선 선정했습니다. SiC 반도체 (T02), 3D 포즈 추정 (T08), 스테어 바이 와이어 (T03) 는 자율주행 레벨 3 이상 구현을 위한 핵심 인프라 및 제어 기술로 특허와 시장 데이터가 강력합니다. 또한, 센서 퓨전 (T01), 전력전자 통합 (T06), 고전압 커넥터 (T05) 는 하드웨어 아키텍처 고도화와 전기차 효율성 향상을 위한 필수 요소로 포트폴리오의 다양성을 확보합니다.",
+        "evidence_used": {
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T08": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T01": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "자율주행 플랫폼의 핵심 제어 기술 (스테어 바이 와이어, 브레이크 바이 와이어) 및 ADAS 알고리즘 분야에서 높은 기술적 유사성과 경쟁 관계를 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Denso Corporation",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "전력전자 (SiC), 모터 제어, 배터리 관리 시스템 (BMS) 등 전기차 및 자율주행 차량의 핵심 구동 및 에너지 관리 기술에서 높은 유사성을 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "구동계 (전동기, 변속기), 조향 시스템, 그리고 전력전자 모듈 통합 아키텍처 분야에서 기술적 교집합이 큽니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Aptiv",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "고전압 커넥터, 배선 시스템, 센서 퓨전 하드웨어 등 차량 전자 장비 및 패키징 기술에서 유사한 기술 트렌드를 보입니다."
+        },
+        {
+          "center_actor": "Hyundai Mobis",
+          "related_actor": "Magna International",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "배터리 팩 열관리 (PCM), 카메라 및 센서 통합, 모듈형 전력전자 아키텍처 등 하드웨어 통합 및 소재 기술에서 유사성을 보입니다."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q2"
+    ]
+  }
+}

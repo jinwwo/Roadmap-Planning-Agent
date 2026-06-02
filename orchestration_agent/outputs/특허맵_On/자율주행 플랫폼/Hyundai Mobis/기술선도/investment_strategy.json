@@ -1,34 +1,34 @@
 {
   "market_context": {
     "target_market": "Autonomous Driving Platform / ADAS / Automotive Electronics",
-    "expected_boom_quarter": "2027 Q2",
+    "expected_boom_quarter": "2028 Q1",
     "market_research_summary": {
       "T01": {
         "name": "다중 센서 퓨전 카메라",
-        "market_score": 82.5,
+        "market_score": 78.5,
         "expected_market_boom_quarter": "2027 Q2",
         "tam_sam_som": {
           "tam_usd_b": 12.5,
           "sam_usd_b": 4.2,
           "som_usd_b": 0.8,
-          "basis": "ADAS 시장 규모 2033 년 5 억 8,260 만 대 (단위) 에 기반, 카메라 및 센서 퓨전 하드웨어 시장 추정."
+          "basis": "전 세계 자동차 카메라 시장 규모는 2025 년 기준 약 100 억 달러 수준이며, 센서 퓨전 및 고해상도 카메라 수요 증가로 2030 년까지 125 억 달러 (TAM) 로 추정됨. Mobis 의 서비스 가능 시장 (SAM) 은 ADAS 플랫폼 통합을 통한 42 억 달러, 초기 획득 가능 시장 (SOM) 은 8 억 달러로 산정."
         },
         "cagr_forecast": {
-          "cagr_pct": 18.5,
-          "forecast_period": "2026-2033",
-          "basis": "MarketsandMarkets 및 Mordor Intelligence 보고서에 따른 ADAS 및 컴퓨터 비전 시장 성장률."
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 및 MarketsandMarkets 보고서에 따르면, 자율주행 레벨 2+ 및 레벨 3 차량의 확산으로 주변 시야 (Surround View) 및 센서 퓨전 카메라 시장이 연평균 14% 이상 성장할 것으로 예상됨."
         },
         "competitive_landscape": "Concentrated – 3~5 key players",
         "key_market_reports": [
           {
-            "title": "Automotive Camera Market Report 2026-2033",
+            "title": "Automotive Camera Market Size, Share & Analysis",
             "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-camera-market-125124333.html",
             "use": "TAM 및 CAGR 근거"
           },
           {
-            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
-            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
-            "use": "경쟁 구도 및 기술 트렌드"
+            "title": "Automotive Surround View System Market Size, Forecasts 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-surround-view-system-market",
+            "use": "성장 동력 및 시장 전망"
           }
         ],
         "map_context_used": {
@@ -40,136 +40,31 @@
         }
       },
       "T02": {
-        "name": "변형상 물질 배터리 냉각",
-        "market_score": 74.0,
+        "name": "고성능 SiC 반도체 제조",
+        "market_score": 88.2,
         "expected_market_boom_quarter": "2028 Q3",
         "tam_sam_som": {
-          "tam_usd_b": 9.7,
-          "sam_usd_b": 3.5,
-          "som_usd_b": 0.6,
-          "basis": "2033 년 자동차 열관리 시스템 시장 970 억 달러 중 배터리 냉각 부문 추정."
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "전 세계 자동차용 SiC 반도체 시장은 2030 년까지 450 억 달러 (TAM) 로 성장할 것으로 전망되며, 전기차 고전압 플랫폼 전환이 주요 동인. Mobis 의 SAM 은 전력전자 모듈 통합을 통한 120 억 달러, SOM 은 25 억 달러로 추정."
         },
         "cagr_forecast": {
-          "cagr_pct": 14.2,
-          "forecast_period": "2026-2033",
-          "basis": "EV 배터리 냉각 혁신에 따른 열관리 시장 성장률 (GlobeNewswire)."
-        },
-        "competitive_landscape": "Fragmented – many players, low differentiation",
-        "key_market_reports": [
-          {
-            "title": "Automotive Battery Thermal Management System Market [2034]",
-            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
-            "use": "TAM 및 시장 성장 근거"
-          },
-          {
-            "title": "Automotive Thermal Management Systems Market to Reach USD 97.0 Billion by 2033",
-            "url": "https://www.globenewswire.com/news-release/2026/02/16/3238577/0/en/automotive-thermal-management-systems-market-to-reach-usd-97-0-billion-by-2033-driven-by-ev-battery-cooling-innovation.html",
-            "use": "CAGR 및 성장 동인"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [
-            "Magna International"
-          ],
-          "shared_technology_areas": []
-        }
-      },
-      "T03": {
-        "name": "고전압 커넥터 신뢰성",
-        "market_score": 78.5,
-        "expected_market_boom_quarter": "2027 Q1",
-        "tam_sam_som": {
-          "tam_usd_b": 8.2,
-          "sam_usd_b": 2.8,
-          "som_usd_b": 0.5,
-          "basis": "EV 커넥터 시장 2032 년까지 성장 전망 및 고전압 부품 비중 추정."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 16.8,
-          "forecast_period": "2025-2032",
-          "basis": "MarketsandMarkets 및 Zion Market Research 보고서에 따른 EV 커넥터 시장 성장률."
-        },
-        "competitive_landscape": "Concentrated – 3~5 key players",
-        "key_market_reports": [
-          {
-            "title": "EV Connector Market Report 2025-2032",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
-            "use": "TAM 및 CAGR 근거"
-          },
-          {
-            "title": "High Voltage Connectors Market Size, Share, Trends, Growth 2034",
-            "url": "https://www.zionmarketresearch.com/report/high-voltage-connectors-market",
-            "use": "경쟁 구도 및 기술 트렌드"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [
-            "Aptiv"
-          ],
-          "shared_technology_areas": []
-        }
-      },
-      "T04": {
-        "name": "스태어 바이 와이어 제어",
-        "market_score": 88.0,
-        "expected_market_boom_quarter": "2026 Q4",
-        "tam_sam_som": {
-          "tam_usd_b": 15.0,
-          "sam_usd_b": 5.5,
-          "som_usd_b": 1.2,
-          "basis": "자율주행 및 SDV 전환에 따른 스타어 바이 와이어 시스템 시장 2034 년까지 급성장 예상."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 22.5,
-          "forecast_period": "2026-2034",
-          "basis": "Fortune Business Insights 및 Mordor Intelligence 보고서에 따른 SBW 시장 성장률."
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Strategic Market Research 및 MarketsandMarkets 데이터에 따르면, SiC 반도체 시장은 전기차 효율성 요구로 인해 연평균 24% 이상의 높은 성장률을 보일 것으로 예상됨."
         },
         "competitive_landscape": "Oligopoly – 1~2 dominant players",
         "key_market_reports": [
           {
-            "title": "Automotive Steer by Wire System Market Size, Share, Growth, Forecast, 2034",
-            "url": "https://www.fortunebusinessinsights.com/industry-reports/automotive-steer-by-wire-system-sbw-market-101835",
-            "use": "TAM 및 CAGR 근거"
+            "title": "Automotive Semiconductor Market 2026: Human-Curated Insights",
+            "url": "https://www.strategicmarketresearch.com/market-report/automotive-semiconductor-market",
+            "use": "TAM 및 성장률 근거"
           },
           {
-            "title": "Active Power Steering Market Size, Share, 2025-2030 Outlook",
-            "url": "https://www.mordorintelligence.com/industry-reports/active-power-steering-market",
-            "use": "경쟁 구도 및 기술 트렌드"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [
-            "Bosch"
-          ],
-          "shared_technology_areas": []
-        }
-      },
-      "T05": {
-        "name": "SiC 반도체 제조 공정",
-        "market_score": 85.5,
-        "expected_market_boom_quarter": "2029 Q2",
-        "tam_sam_som": {
-          "tam_usd_b": 13.3,
-          "sam_usd_b": 4.5,
-          "som_usd_b": 0.9,
-          "basis": "2030 년 자동차 반도체 시장 1,330 억 달러 중 SiC 부문 추정."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 24.0,
-          "forecast_period": "2026-2030",
-          "basis": "자동차 반도체 시장 8.1% 성장률 중 SiC 고성장 부문 추정."
-        },
-        "competitive_landscape": "Concentrated – 3~5 key players",
-        "key_market_reports": [
-          {
-            "title": "Automotive Semiconductor Market worth $133.05 billion by 2030",
-            "url": "https://www.prnewswire.com/news-releases/automotive-semiconductor-market-worth-133-05-billion-by-2030---exclusive-report-by-marketsandmarkets-302603574.html",
-            "use": "TAM 및 시장 규모 근거"
-          },
-          {
-            "title": "Automotive Semiconductor Market Size, Share | CAGR of 8.1%",
-            "url": "https://market.us/report/automotive-semiconductor-market",
-            "use": "CAGR 및 성장 동인"
+            "title": "Automotive Semiconductor Market Size, Share & Trends",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-semiconductor-195.html",
+            "use": "CAGR 및 시장 동향"
           }
         ],
         "map_context_used": {
@@ -179,32 +74,203 @@
           "shared_technology_areas": []
         }
       },
-      "T06": {
-        "name": "모듈형 DC 버스 테스트",
-        "market_score": 71.0,
-        "expected_market_boom_quarter": "2030 Q1",
+      "T03": {
+        "name": "스테어 바이 와이어 제어",
+        "market_score": 82.4,
+        "expected_market_boom_quarter": "2026 Q4",
         "tam_sam_som": {
-          "tam_usd_b": 5.5,
-          "sam_usd_b": 1.8,
-          "som_usd_b": 0.3,
-          "basis": "자율주행 및 SDV 검증 시장 중 모듈형 DC 버스 테스트 인프라 부문 추정."
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 3.0,
+          "som_usd_b": 0.6,
+          "basis": "전 세계 스테어 바이 와이어 (SBW) 시장은 2030 년까지 85 억 달러 (TAM) 로 성장할 것으로 예상되며, 자율주행 레벨 3 이상 차량의 필수 구성 요소로 부상 중. Mobis 의 SAM 은 30 억 달러, SOM 은 6 억 달러로 산정."
         },
         "cagr_forecast": {
-          "cagr_pct": 15.5,
-          "forecast_period": "2026-2035",
-          "basis": "ADAS 및 자율주행 차량 시장 성장에 따른 테스트 인프라 수요 추정."
+          "cagr_pct": 19.8,
+          "forecast_period": "2025-2030",
+          "basis": "Fortune Business Insights 및 Data Bridge Market Research 보고서에 따르면, SBW 시장은 자율주행 규제 완화 및 차량 아키텍처 변화로 연평균 19.8% 성장할 것으로 전망됨."
         },
-        "competitive_landscape": "Nascent – no clear leader yet",
+        "competitive_landscape": "Concentrated – 3~5 key players",
         "key_market_reports": [
           {
-            "title": "Self Driving Cars Market Report 2024-2035",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/near-autonomous-passenger-car-market-1220.html",
-            "use": "TAM 및 시장 성장 근거"
+            "title": "Automotive Steer by Wire System Market Size, Share, Growth, Forecast, 2034",
+            "url": "https://www.fortunebusinessinsights.com/industry-reports/automotive-steer-by-wire-system-sbw-market-101835",
+            "use": "TAM 및 CAGR 근거"
           },
           {
-            "title": "Automotive Domain Control Unit (DCU) Market Research Report 2034",
-            "url": "https://dataintelo.com/report/global-automotive-domain-control-unit-dcu-market",
-            "use": "경쟁 구도 및 기술 트렌드"
+            "title": "Automotive Steer-by-Wire System Market Size, Share, and Analysis Report 2032",
+            "url": "https://www.databridgemarketresearch.com/reports/global-automotive-steer-by-wire-system-market",
+            "use": "시장 성장 동력"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Bosch"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "PCM 기반 배터리 열관리",
+        "market_score": 74.6,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.2,
+          "basis": "전 세계 자동차 배터리 열관리 시스템 시장은 2030 년까지 180 억 달러 (TAM) 로 성장할 것으로 예상되며, 고출력 배터리 팩의 열 안정성 요구가 주요 동인. Mobis 의 SAM 은 55 억 달러, SOM 은 12 억 달러로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "Mordor Intelligence 및 Fortune Business Insights 보고서에 따르면, 전기차 배터리 수명 및 안전성 확보를 위한 PCM 기술 도입으로 연평균 16.5% 성장할 것으로 전망됨."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive Thermal Management Market - Share, Analysis & Growth",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-thermal-management-market",
+            "use": "TAM 및 시장 동향"
+          },
+          {
+            "title": "Automotive Battery Thermal Management System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+            "use": "CAGR 및 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Magna International"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "고전압 커넥터 모듈화",
+        "market_score": 77.4,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.1,
+          "sam_usd_b": 7.53,
+          "som_usd_b": 1.26,
+          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.0,
+          "forecast_period": "2025-2030",
+          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Future Of E-Powertrain Market Size, Share & Analysis",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/future-of-e-powertrain-market-103969317.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Automotive High Voltage Wiring and Connector System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-high-voltage-wiring-and-connector-system-market-115285",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "EV Connector Market Size, Competitors & Forecast to 2032",
+            "url": "https://www.researchandmarkets.com/report/ev-connectors",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Automotive Data Connectors Market to Reach USD 14.84 Billion by 2036 as ADAS, Infotainment, and EV Architectures Accelerate High-Speed Vehicle Data Transmission Demand | Morningstar",
+            "url": "https://www.morningstar.com/news/accesswire/1165328msn/automotive-data-connectors-market-to-reach-usd-1484-billion-by-2036-as-adas-infotainment-and-ev-architectures-accelerate-high-speed-vehicle-data-transmission-demand",
+            "use": "fallback market evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Aptiv"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "전력전자 모듈 통합 아키텍처",
+        "market_score": 83.3,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.77,
+          "sam_usd_b": 7.73,
+          "som_usd_b": 1.29,
+          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.0,
+          "forecast_period": "2025-2030",
+          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Electronics Market Size, Share 2030 Outlook",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-electronics-market",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Automotive All-wheel-drive Market Size, Growth & Share Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-all-wheel-drive-market",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Embedded Systems In Automobiles Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/embedded-systems-in-automobiles-market",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Electronic Parking Brake System Market Size & Share Report, 2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/electronic-parking-brake-system-market-222079148.html",
+            "use": "fallback market evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Magna International"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "전기 구동장치 슬립 제어",
+        "market_score": 78.3,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 31.0,
+          "sam_usd_b": 9.3,
+          "som_usd_b": 1.55,
+          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.0,
+          "forecast_period": "2025-2030",
+          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Self Driving Cars Market Report 2024- 2035 [299 Pages & 307 Tables]",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/near-autonomous-passenger-car-market-1220.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Electronic Parking Brake System Market Size & Share Report, 2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/electronic-parking-brake-system-market-222079148.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Advanced Technologies Market Research Reports & Consulting",
+            "url": "https://www.marketsandmarkets.com/advance-technologies-227.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Automotive Sensor Fusion Market Size, Share | Industry Growth 2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-sensor-fusion-market-260287840.html",
+            "use": "fallback market evidence"
           }
         ],
         "map_context_used": {
@@ -213,10 +279,56 @@
           ],
           "shared_technology_areas": []
         }
+      },
+      "T08": {
+        "name": "3D 포즈 추정 시스템",
+        "market_score": 77.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 31.0,
+          "sam_usd_b": 9.3,
+          "som_usd_b": 1.55,
+          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.0,
+          "forecast_period": "2025-2030",
+          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Self Driving Cars Market Report 2024- 2035 [299 Pages & 307 Tables]",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/near-autonomous-passenger-car-market-1220.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Sensor Fusion Market Opportunities | Global Report [2034]",
+            "url": "https://www.fortunebusinessinsights.com/sensor-fusion-market-107822",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "EV Connector Market Report 2025- 2032 [305 Pages & 307 Tables]",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
+            "use": "fallback market evidence"
+          },
+          {
+            "title": "Automotive RADAR Market Size, Share, Trends | Forecast [2034]",
+            "url": "https://www.fortunebusinessinsights.com/industry-reports/automotive-radar-market-101688",
+            "use": "fallback market evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Aptiv"
+          ],
+          "shared_technology_areas": []
+        }
       }
     },
     "use_patent_map": true,
-    "use_actor_map_score": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
     "actor_map_summary": {
       "edge_count": 5,
       "top_related_actors": [
@@ -246,6 +358,105 @@
           "shared_technology_areas": []
         }
       ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 8,
+      "target_k": 6,
+      "selected_count": 6,
+      "selected_tech_ids": [
+        "T02",
+        "T03",
+        "T06",
+        "T01",
+        "T05",
+        "T04"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T08",
+          "name": "3D 포즈 추정 시스템",
+          "final_score": 78.85,
+          "selection_score": 78.99,
+          "actor_map_score": 73.8,
+          "reason": "시장 데이터가 추정치 (fallback) 에 의존하여 신뢰도가 낮고, 경쟁 우위 (Moat) 가 상대적으로 약해 포트폴리오 우선순위에서 밀림."
+        },
+        {
+          "tech_id": "T07",
+          "name": "전기 구동장치 슬립 제어",
+          "final_score": 77.81,
+          "selection_score": 77.76,
+          "actor_map_score": 79.2,
+          "reason": "시장 데이터가 추정치에 의존하며, T03(스테어 바이 와이어) 및 T06(전력전자 아키텍처) 에 비해 핵심 플랫폼 기술로서의 전략적 파급력이 제한적임."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 81.96,
+        "avg_market_score": 80.73,
+        "avg_patent_score": 83.45,
+        "avg_actor_map_score": 75.0,
+        "map_supported_count": 6
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "선정된 6 개 기술은 현대모비스의 '자율주행 플랫폼 리더십' 및 'SDV 시장 확장' 전략과 직접적으로 부합하며, T02(SiC), T03(스테어 바이 와이어), T06(전력전자 아키텍처) 는 2026-2030 년 기간 중 시장 폭발기 (Boom) 와 높은 성장률 (CAGR) 을 보이는 핵심 동력입니다. T01(센서 퓨전) 과 T05(고전압 커넥터) 는 하드웨어 통합 트렌드를 반영하여 경쟁사 (Aptiv, Magna) 와의 기술 격차 해소에 필수적이며, T04(PCM 열관리) 는 배터리 안정성 확보를 위한 필수 소재 기술로 선정되었습니다. 제외된 T07 과 T08 은 시장 데이터의 신뢰도 (추정치 의존) 와 경쟁 우위 확보 가능성이 상대적으로 낮아 우선순위가 낮게 평가되었습니다.",
+        "evidence_used": {
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
     }
   },
   "investment_policy": {
@@ -260,18 +471,16 @@
       "period": "1차년도 - 5차년도",
       "goal": "전체 기술 로드맵",
       "technologies": [
-        "스태어 바이 와이어 제어",
+        "스테어 바이 와이어 제어",
         "다중 센서 퓨전 카메라",
-        "SiC 반도체 제조 공정",
-        "모듈형 DC 버스 테스트"
+        "고성능 SiC 반도체 제조"
       ],
       "tech_ids": [
-        "T04",
+        "T03",
         "T01",
-        "T05",
-        "T06"
+        "T02"
       ],
-      "num_items": 4
+      "num_items": 3
     }
   ],
   "investment_strategy": [
@@ -282,115 +491,87 @@
       "stage_budget_ratio": 1.0,
       "tech_investments": [
         {
-          "tech_id": "T04",
-          "name": "스태어 바이 와이어 제어",
+          "tech_id": "T03",
+          "name": "스테어 바이 와이어 제어",
           "evaluation_scores": {
-            "market_size_growth": 5,
-            "tech_readiness": 3,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
             "tech_risk": 2,
-            "competitive_advantage": 4,
+            "competitive_advantage": 5,
             "development_urgency": 5
           },
           "investment_attractiveness": "high",
           "investment_urgency": "high",
           "recommended_investment_tier": "Tier 1",
-          "tech_budget_usd": 2220000000.0,
-          "tech_budget_rationale": "T04 는 2026 Q4 에 시장 붐이 예상되는 가장 시급한 기술로, 자율주행 레벨 3 상용화의 핵심 제어 기술입니다. 전체 예산의 40% 를 할당하여 Bosch 등 경쟁사의 진입 장벽을 극복하고, 2027 년까지 상용화 가능한 프로토타입을 완성하는 선제적 투자를 수행합니다.",
+          "tech_budget_usd": 2200000000.0,
+          "tech_budget_rationale": "T03 은 2026 년 말 시장 붐이 임박하여 즉각적인 상용화 준비가 필요하며, TRL 7 의 높은 성숙도로 인해 개발 리스크가 낮아 대규모 예산을 투입해도 ROI 가 빠르게 실현됩니다. 현대모비스의 조향 시스템 포트폴리오 고도화를 위한 핵심 전략 기술이므로, 경쟁사 Bosch 와의 기술 격차 해소를 위한 선제적 투자 (Aggressive) 가 필수적입니다. 전체 예산의 약 40% 를 할당하여 2028 년까지 초기 양산 체계를 완성하고 시장 선점 효과를 극대화합니다.",
           "reasoning": {
-            "market_evaluation": "TAM $150 억, CAGR 22.5% 로 가장 높은 시장 성장 잠재력을 보이며, 2026 Q4 에 시장 붐이 예상되어 즉각적인 대응이 필요합니다. 자율주행 및 SDV 전환에 따른 핵심 수요로, 초기 시장 진입 시점 (2026-2027) 을 놓칠 경우 경쟁사 (Bosch) 에 의해 시장이 잠식될 위험이 큽니다.",
-            "tech_evaluation": "TRL 6 수준으로 상용화 직전 단계에 있어 기술적 불확실성은 낮으나 (Risk 2), Bosch 와의 높은 유사성 (92%) 으로 인해 특허 선점과 제어 로직 고도화가 필수적입니다. 현대모비스의 기존 제어 기술 강점을 활용하여 안전 메커니즘과 전환 로직에서 차별화된 경쟁 우위를 확보해야 합니다.",
-            "investment_decision": "시장 성장성 (5 점) 과 긴급도 (5 점) 가 최상위권이며, 기술 준비도 (3 점) 도 상용화 가능한 수준이므로 Tier 1 로 선정합니다. 전체 예산의 40% 를 투입하여 2026 년 즉시 시작하여 2027 년 Q2 시장 붐을 선점하는 'aggressive' 전략을 수립합니다."
+            "market_evaluation": "전 세계 스테어 바이 와이어 (SBW) 시장은 2030 년까지 85 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 19.8% 의 높은 CAGR 을 기록하고 있습니다. 특히 2026 년 말부터 자율주행 레벨 3 상용화가 본격화되면서 시장 붐이 예상되어, 초기 진입 시점이 경쟁 우위를 결정하는 핵심 요소입니다. 현대모비스의 서비스 가능 시장 (SAM) 은 30 억 달러로 산정되어, 이 기술이 단기 내 실질적인 매출 기여도가 높음을 시사합니다.",
+            "tech_evaluation": "TRL 7 로 기술 성숙도가 높아 프로토타입 검증 단계 이후로, 상용화까지의 기술적 불확실성 (Risk) 이 상대적으로 낮습니다. 경쟁사 Bosch 와의 기술 유사성이 높지만, 현대모비스는 기존 조향 시스템의 하드웨어 강점과 SDV 환경에서의 제어 알고리즘을 결합하여 경쟁 우위를 확보할 수 있는 잠재력이 큽니다. 특허 포트폴리오 분석 결과, 자율주행 모드 전환 및 햅틱 피드백 기술에 대한 전략적 갭이 존재하여 이를 선점해야 합니다.",
+            "investment_decision": "높은 시장 성장률 (CAGR 19.8%) 과 임박한 시장 붐 (2026 Q4), 그리고 높은 기술 성숙도 (TRL 7) 를 고려하여 Tier 1 로 선정합니다. 전체 예산의 40% 에 해당하는 22 억 달러를 할당하여, 2026 년 즉시 개발 착수 후 2028 년까지 양산 준비를 완료하는 '선제적 투자' 전략을 실행합니다. 이는 회사의 '자율주행 플랫폼 리더십 강화' 전략과 직접적으로 부합하는 핵심 동력입니다."
           },
           "investment_scope": "aggressive",
-          "recommended_action": "2026 년 1 분기부터 제어 로직 및 안전 메커니즘 특허 출원을 집중적으로 진행하며, 2027 년 상반기까지 실차 검증용 프로토타입을 완성해야 합니다.",
+          "recommended_action": "2026 년 즉시 양산 라인 구축을 위한 설비 투자 및 핵심 인력 확보를 시작하고, 2027 년 말까지 레벨 3 차량 적용을 위한 최종 검증 (Validation) 을 완료하십시오.",
           "rationale": [
-            "TAM $150 억 및 CAGR 22.5% 로 시장 규모와 성장률이 가장 높음.",
-            "2026 Q4 시장 붐 임박으로 개발 지연 시 기회 상실 위험이 큼.",
-            "TRL 6 수준으로 상용화 가능성이 높으나 경쟁사 (Bosch) 대비 특허 선점이 시급함."
+            "시장 붐이 2026 년 말로 임박하여 개발 긴급도 (Urgency) 가 5 점으로 가장 높음.",
+            "TRL 7 로 기술 위험도가 낮아 (Risk 2 점) 대규모 예산 투입 시 실패 확률이 낮음.",
+            "경쟁사 Bosch 와의 기술 유사성이 높으나, 기존 조향 시스템 강점 활용으로 경쟁 우위 (Advantage 5 점) 확보 가능."
           ]
         },
         {
           "tech_id": "T01",
           "name": "다중 센서 퓨전 카메라",
           "evaluation_scores": {
-            "market_size_growth": 5,
+            "market_size_growth": 4,
             "tech_readiness": 3,
             "tech_risk": 3,
             "competitive_advantage": 4,
             "development_urgency": 4
           },
-          "investment_attractiveness": "high",
+          "investment_attractiveness": "medium",
           "investment_urgency": "high",
-          "recommended_investment_tier": "Tier 1",
-          "tech_budget_usd": 1665000000.0,
-          "tech_budget_rationale": "T01 은 T04 와의 시너지를 극대화하기 위한 핵심 하드웨어 기술로, 2027 Q2 시장 붐을 목표로 합니다. 전체 예산의 30% 를 할당하여 Aptiv, Magna 등 경쟁사와의 격차를 줄이고 센서 퓨전 하드웨어 아키텍처를 선점하는 데 집중합니다.",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 1550000000.0,
+          "tech_budget_rationale": "T01 은 125 억 달러 규모의 시장과 14.2% 의 성장률을 보이며, 2027 년 시장 붐을 앞두고 하드웨어 통합 기술 갭 해소가 시급합니다. TRL 6 으로 중간 성숙도를 가지지만, 하드웨어 통합의 복잡성으로 인해 기술적 불확실성이 존재하여, 2029 년까지 기술 고도화 및 안정화를 위한 선택적 투자 (Selective) 가 적합합니다. 전체 예산의 약 28% 를 할당하여, 소프트웨어 중심의 퓨전 알고리즘 강점과 하드웨어 통합 기술을 결합한 차별화된 솔루션을 개발합니다.",
           "reasoning": {
-            "market_evaluation": "TAM $125 억, CAGR 18.5% 로 ADAS 시장의 핵심 성장 동력이며, 2027 Q2 에 시장 붐이 예상됩니다. Aptiv 와 Magna 등 경쟁사가 하드웨어 통합 트렌드를 주도하고 있어, 현대모비스의 소프트웨어 강점을 하드웨어로 확장하지 않으면 시장 점유율 확보가 어렵습니다.",
-            "tech_evaluation": "TRL 6 수준으로 기술적 기반은 갖췄으나, 하드웨어 통합 (센서 퓨전) 측면에서 경쟁사 대비 약점이 있어 기술 위험 (3 점) 이 존재합니다. 특허 점수 (88.5) 가 높아 알고리즘과 하드웨어 통합 아키텍처에 대한 특허 포트폴리오를 강화해야 합니다.",
-            "investment_decision": "시장 성장성 (5 점) 과 경쟁 우위 확보 필요성 (4 점) 이 높으며, T04 와의 의존성으로 인해 개발 시기가 시급하므로 Tier 1 로 선정합니다. 전체 예산의 30% 를 투입하여 2027 년까지 하드웨어 아키텍처 완성도를 높이는 'proactive' 전략을 수립합니다."
+            "market_evaluation": "전 세계 자동차 카메라 시장은 2030 년까지 125 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 14.2% 의 CAGR 을 기록하고 있습니다. 자율주행 레벨 2+ 차량의 대량 보급으로 2027 년 2 분기에 시장 붐이 예상되어, 초기 진입 시점이 중요합니다. 현대모비스의 SAM 은 42 억 달러로 산정되어, 이 기술이 ADAS 플랫폼 통합을 통한 핵심 수익원이 될 것입니다.",
+            "tech_evaluation": "TRL 6 으로 기술 성숙도가 중간 수준이며, 하드웨어 통합의 복잡성으로 인해 기술적 불확실성 (Risk) 이 존재합니다. 경쟁사 Aptiv 와 Magna 는 하드웨어 통합 아키텍처에 강점이 있으나, 현대모비스는 소프트웨어 중심의 퓨전 알고리즘 강점을 활용하여 차별화된 경쟁 우위를 확보할 수 있습니다. 특허 포트폴리오 분석 결과, 센서 퓨전의 물리적 통합 트렌드가 뚜렷하여 이를 선점해야 합니다.",
+            "investment_decision": "높은 시장 성장률 (CAGR 14.2%) 과 임박한 시장 붐 (2027 Q2) 을 고려하여 Tier 2 로 선정합니다. 전체 예산의 28% 에 해당하는 15.5 억 달러를 할당하여, 2026 년부터 개발을 시작하고 2029 년까지 기술 고도화 및 안정화를 완료하는 '선택적 투자' 전략을 실행합니다. 이는 '모빌리티 서비스 및 SDV 시장 확장' 전략과 직접적으로 부합하는 핵심 기술입니다."
           },
-          "investment_scope": "proactive",
-          "recommended_action": "T04 개발과 병행하여 2026 년 중 센서 퓨전 하드웨어 통합 프로토타입을 개발하고, 2027 년 Q2 전까지 양산 준비를 완료해야 합니다.",
+          "investment_scope": "selective",
+          "recommended_action": "2026 년부터 하드웨어 통합 아키텍처 개발을 시작하고, 2027 년까지 소프트웨어 퓨전 알고리즘과의 통합 검증을 완료하십시오.",
           "rationale": [
-            "TAM $125 억 및 CAGR 18.5% 로 ADAS 시장 성장의 핵심.",
-            "경쟁사 (Aptiv, Magna) 의 하드웨어 통합 트렌드 선점 필요.",
-            "T04 와의 시너지로 인해 개발 시기가 시급함."
+            "시장 붐이 2027 년으로 임박하여 개발 긴급도 (Urgency) 가 4 점으로 높음.",
+            "TRL 6 으로 기술 위험도 (Risk) 가 3 점으로 중간 수준이며, 하드웨어 통합 기술 갭 해소가 시급함.",
+            "소프트웨어 퓨전 알고리즘 강점 활용으로 경쟁 우위 (Advantage 4 점) 확보 가능."
           ]
         },
         {
-          "tech_id": "T05",
-          "name": "SiC 반도체 제조 공정",
+          "tech_id": "T02",
+          "name": "고성능 SiC 반도체 제조",
           "evaluation_scores": {
             "market_size_growth": 5,
-            "tech_readiness": 2,
+            "tech_readiness": 3,
             "tech_risk": 4,
-            "competitive_advantage": 3,
-            "development_urgency": 3
+            "competitive_advantage": 4,
+            "development_urgency": 4
           },
-          "investment_attractiveness": "medium",
+          "investment_attractiveness": "high",
           "investment_urgency": "medium",
-          "recommended_investment_tier": "Tier 2",
-          "tech_budget_usd": 1110000000.0,
-          "tech_budget_rationale": "T05 는 2029 Q2 시장 붐을 목표로 하는 장기 R&D 기술로, 높은 성장 잠재력 (CAGR 24%) 을 지녔으나 TRL 5 로 기술 위험이 높습니다. 전체 예산의 20% 를 할당하여 Denso 등 경쟁사와의 기술 격차를 줄이는 'milestone-based' 투자를 수행합니다.",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 1800000000.0,
+          "tech_budget_rationale": "T02 는 450 억 달러 규모의 거대 시장 (TAM) 과 24.5% 의 높은 성장률을 보이며, 전기차 고전압 플랫폼 전환의 핵심 기술로 장기적 전략 가치가 매우 높습니다. TRL 5 로 기술 성숙도가 중간 수준이므로 제조 공정 최적화 및 양산 기술 확보에 긴 주기와 높은 자본이 필요하여, 2027 년부터 본격적인 R&D 를 시작하는 단계적 투자 (Proactive) 가 적합합니다. 전체 예산의 약 32% 를 할당하여 2030 년까지 기술 장벽을 극복하고 Denso 등 경쟁사와의 기술 격차를 해소합니다.",
           "reasoning": {
-            "market_evaluation": "TAM $133 억, CAGR 24% 로 가장 높은 성장률을 보이며, 2029 년 대량 생산 노드 전환 시점까지 시장이 폭발할 것으로 예상됩니다. SiC 는 EV 효율성 향상의 핵심 소자로, 장기적인 경쟁력 확보를 위해 필수적인 기술입니다.",
-            "tech_evaluation": "TRL 5 수준으로 기술적 불확실성이 높고 (Risk 4), Denso 등 경쟁사의 특허 장벽이 존재합니다. 제조 공정 기술 확보를 위한 장기적인 R&D 투자와 파트너십 구축이 필요하며, 단기적인 성과보다는 기술적 모멘텀 확보에 중점을 둡니다.",
-            "investment_decision": "시장 성장성 (5 점) 은 높으나 기술 준비도 (2 점) 와 위험 (4 점) 이 높아 Tier 2 로 선정합니다. 전체 예산의 20% 를 투입하여 2027 년부터 시작하여 2029 년까지 마일스톤 기반의 'selective' 투자를 수행합니다."
+            "market_evaluation": "전 세계 자동차용 SiC 반도체 시장은 2030 년까지 450 억 달러 (TAM) 로 성장할 것으로 전망되며, 연평균 24.5% 의 매우 높은 CAGR 을 기록하고 있습니다. 전기차 효율성 요구로 인한 고전압 플랫폼 전환이 주요 동인이며, 2028 년 3 분기에 시장 붐이 예상되어 중장기적 관점에서의 선점 전략이 필수적입니다. 현대모비스의 SAM 은 120 억 달러로 추정되어, 이 기술이 미래 수익 구조의 핵심이 될 것입니다.",
+            "tech_evaluation": "TRL 5 로 기술 성숙도가 중간 수준이며, 제조 공정 및 소자 구조에 대한 기술적 불확실성 (Risk) 이 존재합니다. 경쟁사 Denso 가 최근 특허를 다수 출원하여 기술 장벽이 높지만, 현대모비스는 전력전자 모듈 통합 아키텍처와의 시너지를 통해 차별화된 경쟁 우위를 확보할 수 있습니다. 소재 기술의 특성상 초기 R&D 투자 대비 장기적 수익성이 높지만, 기술 개발 실패 리스크도 함께 고려해야 합니다.",
+            "investment_decision": "거대 시장 규모 (TAM $45B) 와 높은 성장률 (CAGR 24.5%) 을 고려하여 Tier 1 로 선정하지만, TRL 5 의 낮은 성숙도로 인해 즉각적인 양산보다는 R&D 중심의 단계적 투자를 권장합니다. 전체 예산의 32% 에 해당하는 18 억 달러를 할당하여, 2027 년부터 본격적인 공정 개발을 시작하고 2030 년까지 양산 기술을 확보하는 '선제적 투자' 전략을 실행합니다. 이는 'AI 및 센서 퓨전 기술 스택 고도화' 전략과 맞물려 전력전자 분야의 핵심 역량을 강화합니다."
           },
-          "investment_scope": "milestone-based",
-          "recommended_action": "2027 년부터 SiC 제조 공정 R&D 를 시작하여 2028 년까지 핵심 공정 기술을 검증하고, 2029 년 양산 준비를 위한 파트너십을 강화해야 합니다.",
+          "investment_scope": "proactive",
+          "recommended_action": "2027 년부터 SiC 웨이퍼 제조 공정 개발 및 파트너십 구축을 시작하고, 2028 년까지 소규모 파일럿 라인을 가동하여 기술 검증에 집중하십시오.",
           "rationale": [
-            "TAM $133 억 및 CAGR 24% 로 장기 성장 잠재력이 매우 높음.",
-            "TRL 5 로 기술 위험이 높고 Denso 등 경쟁사의 특허 장벽 존재.",
-            "2029 년 시장 붐을 목표로 한 장기 R&D 전략 필요."
-          ]
-        },
-        {
-          "tech_id": "T06",
-          "name": "모듈형 DC 버스 테스트",
-          "evaluation_scores": {
-            "market_size_growth": 3,
-            "tech_readiness": 2,
-            "tech_risk": 4,
-            "competitive_advantage": 3,
-            "development_urgency": 2
-          },
-          "investment_attractiveness": "low",
-          "investment_urgency": "low",
-          "recommended_investment_tier": "Tier 3",
-          "tech_budget_usd": 555000000.0,
-          "tech_budget_rationale": "T06 은 2030 Q1 시장 붐을 목표로 하는 초기 단계 기술로, 시장 규모 (TAM $55 억) 와 성장률 (CAGR 15.5%) 이 상대적으로 낮습니다. 전체 예산의 10% 를 할당하여 ZF 등 경쟁사의 동향을 모니터링하며 소규모 파일럿을 수행하는 'exploratory' 투자를 수행합니다.",
-          "reasoning": {
-            "market_evaluation": "TAM $55 억, CAGR 15.5% 로 시장 규모와 성장률이 상대적으로 낮으며, 2030 년까지 시장 성숙이 예상됩니다. 모듈형 DC 버스 테스트 인프라는 아직 명확한 시장 리더가 없는 초기 단계로, 표준화 시점까지 기다리는 전략이 유효합니다.",
-            "tech_evaluation": "TRL 4 수준으로 기술적 불확실성이 높고 (Risk 4), ZF 등 경쟁사의 특허 동향을 분석해야 합니다. 테스트 인프라 구축은 장기적인 프로젝트로, 단기적인 성과보다는 기술적 교집합 확보와 표준화 기여에 중점을 둡니다.",
-            "investment_decision": "시장 성장성 (3 점) 과 기술 준비도 (2 점) 가 낮고 위험 (4 점) 이 높아 Tier 3 로 선정합니다. 전체 예산의 10% 를 투입하여 2028 년부터 시작하여 2030 년까지 모니터링 및 소규모 파일럿을 수행하는 'watchful' 전략을 수립합니다."
-          },
-          "investment_scope": "exploratory",
-          "recommended_action": "2028 년부터 모듈형 DC 버스 테스트 인프라에 대한 소규모 파일럿을 시작하고, ZF 등 경쟁사의 특허 동향을 지속적으로 모니터링해야 합니다.",
-          "rationale": [
-            "TAM $55 억 및 CAGR 15.5% 로 시장 규모와 성장률이 상대적으로 낮음.",
-            "TRL 4 로 기술 위험이 높고 초기 단계 시장.",
-            "2030 년 시장 성숙을 목표로 한 장기 모니터링 전략 필요."
+            "시장 규모 (TAM $45B) 와 성장률 (CAGR 24.5%) 이 매우 높아 장기적 투자 매력도 (Attractiveness) 가 5 점.",
+            "TRL 5 로 기술 위험도 (Risk) 가 4 점으로 높지만, 전력전자 모듈 통합과의 시너지로 경쟁 우위 (Advantage 4 점) 확보 가능.",
+            "2028 년 시장 붐을 대비하여 2027 년부터 개발을 시작하는 것이 적시성 (Urgency 4 점) 확보에 중요."
           ]
         }
       ],

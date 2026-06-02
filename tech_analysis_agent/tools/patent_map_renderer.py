@@ -84,7 +84,9 @@ def _add_node(graph, node_id: str, label: str, kind: str) -> None:
 
 
 def _top_items(items: Iterable[dict], key: str, limit: int = 20) -> list:
-    return sorted(items or [], key=lambda x: _to_float(x.get(key)), reverse=True)[:limit]
+    # LLM 이 가끔 dict 가 아닌 str 을 섞어 출력 → 방어적으로 dict 만 필터
+    safe = [x for x in (items or []) if isinstance(x, dict)]
+    return sorted(safe, key=lambda x: _to_float(x.get(key)), reverse=True)[:limit]
 
 
 def _component_layout(graph, nx):

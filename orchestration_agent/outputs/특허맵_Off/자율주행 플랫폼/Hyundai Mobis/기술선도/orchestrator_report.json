@@ -28,26 +28,26 @@
       "feasibility": {
         "budget_feasible": true,
         "schedule_feasible": true,
-        "comment": "총 예산 $5.55B 내에서 정확히 배분됨. T06 의 4 차년도 시작은 T01/T04 완료 시점과 논리적 정합."
+        "comment": "총 예산 $5.55B 내에서 정확히 배분됨. 5 년 차까지의 로드맵 일정이 타당함."
       },
       "sequencing": {
         "dependency_valid": true,
-        "comment": "T06 이 T01, T04 를 전제조건으로 설정하여 의존성 순서 정상."
+        "comment": "T01(센서) → T08(알고리즘) → T03(제어) 의 의존성 순서가 논리적으로 정합함."
       },
       "strategic_alignment": {
         "company_fit": 0.85,
         "future_trend_alignment": 0.82,
-        "comment": "자율주행 플랫폼 및 SDV 전략과 정합된 T04, T01, T06 선별. AI/센서 퓨전 트렌드 반영."
+        "comment": "자율주행 플랫폼 및 SDV 전략과 높은 정합성. AI/센서 퓨전 트렌드 반영."
       },
       "investment_rationality": {
         "over_invested": [],
         "under_invested": [],
-        "comment": "Tier 1(T04, T01) 에 집중 투자, Tier 2(T06) 에 장기 투자 배분. 비율 합리적."
+        "comment": "선정된 3 기술에 대한 투자 배분이 전략적 우선순위와 일치함."
       },
       "portfolio_balance": {
-        "short_long_balance": 0.65,
-        "risk_balance": 0.6,
-        "comment": "단기 (T04, T01) 와 장기 (T06) 투자 균형 유지. 위험 분산 적절."
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기 (T01) 와 중장기 (T08, T03) 투자가 적절히 분산됨."
       }
     },
     "issues": [],
@@ -59,24 +59,34 @@
       "artifacts_summary": {
         "agent1_tech_candidates": [
           {
-            "tech_id": "T05",
-            "name": "SiC 반도체 제조 공정",
-            "category": "Process",
+            "tech_id": "T02",
+            "name": "고성능 SiC 반도체 제조",
+            "category": "Material",
             "trl": 5,
-            "final_score": 85.31,
-            "market_score": 88.5,
-            "patent_score": 81.4,
+            "final_score": 87.63,
+            "market_score": 92.0,
+            "patent_score": 82.3,
             "expected_market_boom_quarter": "2026 Q3"
           },
           {
-            "tech_id": "T04",
-            "name": "스태어 바이 와이어 제어",
+            "tech_id": "T08",
+            "name": "3D 포즈 추정 시스템",
+            "category": "Equipment",
+            "trl": 5,
+            "final_score": 84.9,
+            "market_score": 88.5,
+            "patent_score": 80.5,
+            "expected_market_boom_quarter": "2027 Q4"
+          },
+          {
+            "tech_id": "T03",
+            "name": "스테어 바이 와이어 제어",
             "category": "Process",
-            "trl": 6,
-            "final_score": 83.72,
-            "market_score": 82.6,
+            "trl": 7,
+            "final_score": 83.12,
+            "market_score": 81.5,
             "patent_score": 85.1,
-            "expected_market_boom_quarter": "2027 Q1"
+            "expected_market_boom_quarter": "2028 Q1"
           },
           {
             "tech_id": "T01",
@@ -89,74 +99,65 @@
             "expected_market_boom_quarter": "2027 Q2"
           },
           {
-            "tech_id": "T03",
-            "name": "고전압 커넥터 신뢰성",
+            "tech_id": "T06",
+            "name": "전력전자 모듈 통합 아키텍처",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 82.72,
+            "market_score": 82.0,
+            "patent_score": 83.6,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "고전압 커넥터 모듈화",
             "category": "Packaging",
             "trl": 7,
-            "final_score": 75.73,
-            "market_score": 72.4,
-            "patent_score": 79.8,
-            "expected_market_boom_quarter": "2026 Q4"
-          },
-          {
-            "tech_id": "T02",
-            "name": "변형상 물질 배터리 냉각",
-            "category": "Material",
-            "trl": 5,
-            "final_score": 74.55,
-            "market_score": 68.2,
-            "patent_score": 82.3,
-            "expected_market_boom_quarter": "2028 Q3"
-          },
-          {
-            "tech_id": "T06",
-            "name": "모듈형 DC 버스 테스트",
-            "category": "Architecture",
-            "trl": 4,
-            "final_score": 70.48,
-            "market_score": 65.8,
-            "patent_score": 76.2,
-            "expected_market_boom_quarter": "2029 Q1"
+            "final_score": 78.71,
+            "market_score": 76.5,
+            "patent_score": 81.4,
+            "expected_market_boom_quarter": "2027 Q2"
           }
         ],
         "agent2_planned_roadmap": [
           {
-            "tech_id": "T04",
-            "name": "스태어 바이 와이어 제어",
+            "tech_id": "T01",
+            "name": "다중 센서 퓨전 카메라",
             "year_idx_start": 1,
             "year_idx_target": 3,
             "prerequisites": [],
             "reasoning": {
-              "year_placement": "TRL 6 수준으로 상용화 직전 단계이므로 1 차년도부터 즉시 개발을 시작하여 2027 년 Q1 시장 붐을 맞출 수 있도록 3 차년도까지 완료하는 것이 적절합니다. 의존성이 없으므로 초기 단계에서 독립적으로 진행할 수 있습니다.",
-              "tech_execution": "자율주행 플랫폼의 핵심 제어 프로세스인 스타어 바이 와이어는 안전성 규제 강화에 대응하기 위해 선점해야 할 필수 기술입니다. Bosch 등 경쟁사의 독점적 지위를 견제하고 현대모비스의 제어 로직 경쟁력을 확보하기 위해 조기 완성도가 필요합니다.",
-              "investment_selection": "20% 이상의 높은 성장률을 보이는 시장 진입을 위해 초기 투자 효율이 높은 기술로 선정되었습니다. 3 차년도까지의 집중 투자는 2027 년 시장 붐 시점의 제품 출시를 보장하여 빠른 ROI 를 기대할 수 있습니다."
+              "year_placement": "TRL 6 수준으로 2027 년 Q2 시장 붐을 앞두고 2026 년 (1 차년도) 에 즉시 개발을 시작하여 2028 년 (3 차년도) 까지 양산 준비를 완료하는 것이 적절합니다. 이는 하드웨어 통합 기술의 경쟁사 대비 갭을 줄이고 초기 시장 진입을 위한 핵심 시점입니다.",
+              "tech_execution": "소프트웨어 중심의 퓨전 알고리즘 강점을 바탕으로 하드웨어 통합 아키텍처를 선점하여 레벨 3 자율주행 상용화 시점에 필수적인 센서 스택을 완성해야 합니다. 이는 현대모비스의 SDV 전략에서 센서 데이터의 신뢰성을 확보하는 기반이 됩니다.",
+              "investment_selection": "2030 년 33 억 달러 규모의 시장 성장과 2027 년 급성장 시점을 고려할 때, 초기 투자로 기술 장벽을 구축하는 것이 경쟁 우위를 확보하는 가장 합리적인 전략입니다."
             }
           },
           {
-            "tech_id": "T01",
-            "name": "다중 센서 퓨전 카메라",
-            "year_idx_start": 1,
-            "year_idx_target": 4,
-            "prerequisites": [],
-            "reasoning": {
-              "year_placement": "TRL 6 이지만 하드웨어 통합의 복잡성으로 인해 1 차년도부터 시작하여 2027 년 Q2 시장 붐을 대비하고, 이후 알고리즘 고도화를 위해 4 차년도까지 연장합니다. T04 와는 병행 진행되지만, 하드웨어 표준화 작업이 더 오래 걸립니다.",
-              "tech_execution": "경쟁사 대비 약점인 하드웨어 통합 기술을 선점하여 소프트웨어 중심의 퓨전 알고리즘 강점과 시너지를 내기 위해 수행해야 합니다. 2030 년까지 성장할 것으로 예상되는 카메라 모듈 시장에서 필수적인 진입 장벽을 구축하는 데 목적이 있습니다.",
-              "investment_selection": "261 억 달러 규모의 거대 시장 진입을 위해 초기부터 지속적인 R&D 예산을 투입해야 합니다. 4 차년도까지의 투자는 단순 하드웨어 개발을 넘어 차세대 센서 아키텍처 표준화를 위한 선제적 투자로 평가됩니다."
-            }
-          },
-          {
-            "tech_id": "T06",
-            "name": "모듈형 DC 버스 테스트",
-            "year_idx_start": 4,
+            "tech_id": "T08",
+            "name": "3D 포즈 추정 시스템",
+            "year_idx_start": 3,
             "year_idx_target": 5,
             "prerequisites": [
-              "T01",
-              "T04"
+              "T01"
             ],
             "reasoning": {
-              "year_placement": "TRL 4 로 상대적으로 낮아 2 차년도부터 본격적인 개발을 시작하며, T01(센서) 과 T04(제어) 의 기술 성숙을 전제로 전력 아키텍처 검증이 가능하므로 후행 배치합니다. 2029 년 Q1 시장 붐을 넘어 5 차년도까지 이어지는 장기 R&D 로 설정합니다. [후처리: dependency 보정 — prereq ['T01', 'T04'] 완료 후로 2차년도 push]",
-              "tech_execution": "자율주행 플랫폼의 전력 시스템 아키텍처 표준화와 안전성 확보를 위해 ZF 등의 특허 트렌드를 따라야 합니다. T01 과 T04 가 완성된 이후에 통합 검증이 가능한 차세대 전력 아키텍처를 구축하는 것이 핵심 목표입니다.",
-              "investment_selection": "2032 년까지 성장할 시뮬레이션 및 검증 시장의 니치 마켓 선점을 위해 5 차년도까지 장기 투자를 계획합니다. 이는 단기 수익보다는 차세대 SDV 플랫폼의 핵심 인프라를 선점하여 경쟁 우위를 확보하는 전략적 투자입니다."
+              "year_placement": "다중 센서 퓨전 카메라 (T01) 의 데이터 처리를 전제로 하므로 2027 년 (2 차년도) 부터 시작하여 2030 년 (5 차년도) 까지 장기적인 고도화를 진행합니다. TRL 5 수준으로 초기 기술이므로 2027 년 Q4 시장 붐 이후에도 차세대 정밀 위치 인식 기술 개발이 필요합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "자율주행 레벨 3 이상 구현을 위한 정밀한 위치 인식 및 환경 이해 능력을 확보하여, 하드웨어 센서 데이터를 소프트웨어적으로 최적화하는 핵심 스택을 완성해야 합니다. 이는 Aptiv 등 선두 업체의 기술 장벽을 극복하는 데 필수적입니다.",
+              "investment_selection": "아직 명확한 시장 리더가 없는 초기 단계이므로, 2030 년까지 이어지는 R&D 투자를 통해 기술 표준을 선점하고 차세대 자율주행 플랫폼의 핵심 경쟁력을 확보할 수 있습니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "스테어 바이 와이어 제어",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T08"
+            ],
+            "reasoning": {
+              "year_placement": "정밀한 위치 추정 (T08) 이 확보된 2028 년 (3 차년도) 부터 제어 알고리즘 개발을 본격화하여 2030 년 (5 차년도) 까지 상용화 및 고도화를 완료합니다. TRL 7 로 성숙도가 높지만, 자율주행 모드 전환 및 햅틱 피드백 등 SDV 환경에 특화된 최적화가 필요합니다. [후처리: dependency 보정 — prereq ['T08'] 완료 후로 2차년도 push]",
+              "tech_execution": "자율주행과 수동 모드 간 원활한 전환을 위한 제어 알고리즘을 완성하여 현대모비스의 조향 시스템 포트폴리오를 SDV 시대에 맞게 고도화해야 합니다. 이는 Bosch 등 경쟁사의 기술 표준을 따라잡거나 앞서는 데 필수적입니다.",
+              "investment_selection": "2028 년경 대량 적용이 예상되는 시장 붐을 대비하여, 2030 년까지 이어지는 기술 진화를 통해 차세대 조향 시스템의 시장 지배력을 확보하는 것이 R&D 예산 측면에서 가장 효율적입니다."
             }
           }
         ],
@@ -169,71 +170,71 @@
             "stage_estimated_usd": 5550000000.0,
             "tech_investments": [
               {
-                "tech_id": "T04",
-                "name": "스태어 바이 와이어 제어",
-                "tier": "Tier 1",
-                "tech_budget_usd": 2707912088.0,
-                "tech_budget_rationale": "T04 는 22.5% 의 높은 CAGR 과 2027 년 Q1 시장 붐을 앞두고 있으며, TRL 6 수준으로 상용화 직전 단계에 있어 즉각적인 대규모 투자가 필요합니다. Bosch 등 경쟁사의 독점적 지위를 견제하고 현대모비스의 자율주행 플랫폼 리더십을 확보하기 위해 전체 예산의 40% 를 할당하여 선제적 시장 진입을 도모합니다.",
-                "evaluation_scores": {
-                  "market_size_growth": 5,
-                  "tech_readiness": 3,
-                  "tech_risk": 2,
-                  "competitive_advantage": 5,
-                  "development_urgency": 5
-                },
-                "investment_attractiveness": "high",
-                "investment_urgency": "high",
-                "recommended_action": "2026 년 Q1 까지 핵심 제어 알고리즘 및 안전 메커니즘에 대한 대규모 R&D 투자를 완료하고, 2027 년 Q1 시장 붐 직전 시점에 양산 준비를 마쳐야 합니다.",
-                "reasoning": {
-                  "market_evaluation": "스태어 바이 와이어 시장은 자율주행 규제 강화와 안전성 요구로 인해 2025-2030 년간 22.5% 의 높은 CAGR 을 기록하며 TAM $12.8B 규모로 급성장할 것으로 예상됩니다. 2027 년 Q1 에 예상되는 시장 붐을 고려할 때, 현재 시점에서의 투자 시기는 기회 상실 위험이 매우 높은 상태입니다.",
-                  "tech_evaluation": "TRL 6 수준으로 프로토타입 검증 단계에 있어 기술적 불확실성은 낮으나 (tech_risk 2), Bosch 등 선두 기업의 강력한 특허 포트폴리오 (patent_score 85.1) 로 인해 경쟁 우위 확보를 위한 기술적 진입 장벽이 높습니다. 현대모비스의 제어 로직 강점을 활용하여 하드웨어 표준화를 빠르게 달성해야 합니다.",
-                  "investment_decision": "높은 시장 성장률 (5 점) 과 시급성 (5 점), 그리고 전략적 중요성 (5 점) 을 고려하여 Tier 1 로 분류하고, 전체 예산의 40% 인 $22.2 억을 할당합니다. 이는 2027 년 시장 진입을 위한 선제적 투자 (Aggressive) 로, 경쟁사 대비 기술 격차를 최소화하고 시장 점유율을 선점하는 데 집중됩니다."
-                },
-                "major_risks": []
-              },
-              {
                 "tech_id": "T01",
                 "name": "다중 센서 퓨전 카메라",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2030934066.0,
-                "tech_budget_rationale": "T01 은 TAM $26.1B 의 거대 시장을 보유하고 있으며, 2027 년 Q2 시장 붐을 앞두고 하드웨어 통합 기술의 약점을 보완해야 합니다. 전체 예산의 30% 를 할당하여 센서 퓨전 알고리즘 강점과 하드웨어 표준화를 병행하며, T04 와의 시너지를 극대화하는 선제적 투자를 수행합니다.",
+                "tech_budget_usd": 2200000000.0,
+                "tech_budget_rationale": "2027 년 Q2 시장 붐을 앞두고 TRL 6 에서 양산 준비 (TRL 8-9) 로 신속히 전환해야 하므로, 전체 예산의 40% 를 할당합니다. 이는 하드웨어 통합 아키텍처 선점을 위한 대규모 R&D 및 초기 양산 라인 구축 비용이 필요하기 때문입니다.",
                 "evaluation_scores": {
                   "market_size_growth": 4,
                   "tech_readiness": 3,
                   "tech_risk": 3,
                   "competitive_advantage": 4,
-                  "development_urgency": 4
+                  "development_urgency": 5
                 },
                 "investment_attractiveness": "high",
                 "investment_urgency": "high",
-                "recommended_action": "2026 년 말까지 하드웨어 통합 프로토타입을 완성하고, 2027 년 Q2 시장 붐 직전 시점에 양산 준비를 마쳐야 합니다.",
+                "recommended_action": "2026 년 즉시 양산 라인 설계를 시작하고, 2027 년 Q2 시장 진입을 위한 시제품 양산 및 고객사 검증 프로그램을 가속화해야 합니다.",
                 "reasoning": {
-                  "market_evaluation": "자동차 카메라 모듈 시장은 2030 년까지 $26.1B 규모로 성장할 것으로 예상되며, 8.4% 의 CAGR 을 보이고 있습니다. 2027 년 Q2 에 예상되는 시장 붐을 고려할 때, 하드웨어 통합 기술의 선점이 필수적이며, ADAS 필수 요소로서의 시장 진입 시기가 매우 시급합니다.",
-                  "tech_evaluation": "TRL 6 수준으로 기술적 성숙도는 높으나, 하드웨어 통합의 복잡성으로 인해 기술 위험 (tech_risk 3) 이 존재합니다. 현대모비스는 소프트웨어 중심의 퓨전 알고리즘에 강점이 있으나, Magna, Aptiv 등 경쟁사의 하드웨어 통합 트렌드를 따라잡기 위한 기술적 보완이 필요합니다.",
-                  "investment_decision": "거대 시장 규모 (4 점) 와 높은 경쟁 우위 확보 필요성 (4 점) 을 고려하여 Tier 1 로 분류하고, 전체 예산의 30% 인 $16.65 억을 할당합니다. 이는 하드웨어 표준화와 알고리즘 고도화를 병행하는 전략적 투자 (Proactive) 로, 2027 년 시장 진입을 위한 기술적 기반을 마련하는 데 집중됩니다."
+                  "market_evaluation": "2030 년 33 억 달러 규모의 시장으로 성장할 것으로 예상되며, 연평균 18.5% 의 높은 CAGR 을 보이고 있습니다. 2027 년 Q2 에 예상되는 시장 붐은 레벨 3 자율주행 상용화와 맞물려 있어, 이 시점 전까지 기술 성숙도를 높이는 것이 시장 점유율 확보의 핵심입니다.",
+                  "tech_evaluation": "현재 TRL 6 수준으로 프로토타입 검증 단계에 있으나, 경쟁사 (Magna, Aptiv) 대비 하드웨어 통합 기술 갭이 존재합니다. 현대모비스의 소프트웨어 퓨전 알고리즘 강점을 하드웨어에 접목하여 경쟁 우위를 확보해야 하는 시점입니다.",
+                  "investment_decision": "시장 시급성 (Urgency 5) 과 높은 성장 잠재력 (Growth 4) 을 고려하여 Tier 1 로 선정합니다. 22 억 달러의 예산은 초기 양산 라인 구축과 경쟁사 대비 기술 격차 해소를 위한 선제적 투자를 반영한 것입니다."
                 },
                 "major_risks": []
               },
               {
-                "tech_id": "T06",
-                "name": "모듈형 DC 버스 테스트",
-                "tier": "Tier 2",
-                "tech_budget_usd": 811153846.0,
-                "tech_budget_rationale": "T06 은 TRL 4 로 기술적 성숙도가 낮고, 2029 년 Q1 이후 시장 붐이 예상되어 즉각적인 대규모 투자보다는 단계적 투자가 적합합니다. 전체 예산의 12% 를 할당하여 T01 과 T04 의 기술 성숙을 전제로 한 전력 아키텍처 검증 및 표준화 R&D 를 수행합니다.",
+                "tech_id": "T08",
+                "name": "3D 포즈 추정 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "tech_budget_rationale": "2027 년 Q4 시장 붐을 앞두고 TRL 5 에서 고도화해야 하므로, 전체 예산의 32.6% 를 할당합니다. 이는 AI 알고리즘 개발, 대용량 데이터셋 구축, 그리고 T01 과의 연동 테스트를 위한 핵심 투자입니다.",
                 "evaluation_scores": {
-                  "market_size_growth": 3,
-                  "tech_readiness": 2,
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
                   "tech_risk": 4,
-                  "competitive_advantage": 3,
-                  "development_urgency": 2
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "T01 센서 데이터 연동 테스트를 병행하며, 2027 년 Q4 시장 진입을 위한 알고리즘 최적화 및 특허 포트폴리오 강화에 집중해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "2030 년 250 억 달러 규모의 시장으로 성장할 것으로 예상되며, 연평균 24.5% 의 매우 높은 CAGR 을 기록하고 있습니다. 자율주행 레벨 3 이상 구현을 위한 핵심 기술로, 2027 년 말부터 시장이 급성장할 것으로 보입니다.",
+                  "tech_evaluation": "현재 TRL 5 수준으로 초기 기술 단계에 있으며, 명확한 시장 리더가 없는 초기 시장 (Nascent) 입니다. Aptiv 등 선두 업체의 특허 장벽을 극복하기 위한 독자적인 알고리즘 개발이 시급합니다.",
+                  "investment_decision": "가장 높은 시장 성장률 (Growth 5) 과 높은 전략적 중요도를 고려하여 Tier 1 로 선정합니다. 18 억 달러의 예산은 AI 모델 학습, 데이터 인프라 구축, 그리고 T01 센서 데이터와의 연동 최적화를 위한 필수 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "스테어 바이 와이어 제어",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "tech_budget_rationale": "TRL 7 로 성숙도가 높지만, SDV 환경에 특화된 최적화와 T08 의존성으로 인해 2028 년 이후 본격화되므로, 전체 예산의 27.9% 를 할당합니다. 이는 알고리즘 고도화 및 양산 준비를 위한 선택적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
                 },
                 "investment_attractiveness": "medium",
-                "investment_urgency": "low",
-                "recommended_action": "2027 년까지 T01 과 T04 의 기술 성숙을 모니터링하며, 2028 년부터 본격적인 전력 아키텍처 검증 R&D 를 시작해야 합니다.",
+                "investment_urgency": "medium",
+                "recommended_action": "T08 기술 성숙도 확보 후 2028 년부터 양산 준비를 가속화하며, SDV 환경에 특화된 제어 알고리즘 최적화에 집중해야 합니다.",
                 "reasoning": {
-                  "market_evaluation": "ADAS 시뮬레이션 및 검증 시장은 2032 년 $9.1B 규모로 성장할 것으로 예상되며, 모듈형 DC 버스 테스트는 이 중 니치 마켓으로 부상하고 있습니다. 2029 년 Q1 이후 시장 붐이 예상되어 현재 시점에서의 투자 시기는 상대적으로 여유가 있습니다.",
-                  "tech_evaluation": "TRL 4 수준으로 기술적 성숙도가 낮아 기술 위험 (tech_risk 4) 이 높습니다. ZF 등 경쟁사의 특허 트렌드를 따라야 하며, T01 과 T04 의 기술 성숙을 전제로 한 통합 검증이 필요하여 기술적 의존성이 높습니다.",
-                  "investment_decision": "중간 시장 규모 (3 점) 와 높은 기술 위험 (4 점) 을 고려하여 Tier 2 로 분류하고, 전체 예산의 12% 인 $6.65 억을 할당합니다. 이는 마일스톤 기반 투자 (Milestone-based) 로, T01 과 T04 의 기술 성숙을 전제로 한 단계적 R&D 를 수행하여 기술적 불확실성을 관리합니다."
+                  "market_evaluation": "2030 년 125 억 달러 규모의 시장으로 성장할 것으로 예상되며, 연평균 22% 의 높은 CAGR 을 보이고 있습니다. 2028 년 Q1 에 예상되는 시장 붐은 자율주행 레벨 3 상용화와 맞물려 있어, 이 시점 전까지 기술 최적화가 필요합니다.",
+                  "tech_evaluation": "현재 TRL 7 수준으로 성숙도가 높지만, Bosch 등 경쟁사의 기술 표준 장악으로 인해 SDV 환경에 특화된 최적화가 필요합니다. T08(3D 포즈 추정) 의 데이터 처리를 전제로 하므로 의존성 관리가 중요합니다.",
+                  "investment_decision": "높은 기술 성숙도 (Readiness 4) 와 낮은 위험 (Risk 2) 을 고려하여 Tier 2 로 선정합니다. 15.5 억 달러의 예산은 알고리즘 고도화, 햅틱 피드백 기술 개발, 그리고 양산 준비를 위한 단계적 투자를 반영한 것입니다."
                 },
                 "major_risks": []
               }
@@ -245,90 +246,75 @@
           "cells": {
             "1": [
               {
-                "tech_id": "T04",
-                "name": "스태어 바이 와이어 제어",
-                "tier": "Tier 1",
-                "tech_budget_usd": 2707912088.0,
-                "year_idx_start": 1,
-                "year_idx_target": 3
-              },
-              {
                 "tech_id": "T01",
                 "name": "다중 센서 퓨전 카메라",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2030934066.0,
+                "tech_budget_usd": 2200000000.0,
                 "year_idx_start": 1,
-                "year_idx_target": 4
+                "year_idx_target": 3
               }
             ],
             "2": [
               {
-                "tech_id": "T04",
-                "name": "스태어 바이 와이어 제어",
-                "tier": "Tier 1",
-                "tech_budget_usd": 2707912088.0,
-                "year_idx_start": 1,
-                "year_idx_target": 3
-              },
-              {
                 "tech_id": "T01",
                 "name": "다중 센서 퓨전 카메라",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2030934066.0,
+                "tech_budget_usd": 2200000000.0,
                 "year_idx_start": 1,
-                "year_idx_target": 4
+                "year_idx_target": 3
               }
             ],
             "3": [
               {
-                "tech_id": "T04",
-                "name": "스태어 바이 와이어 제어",
+                "tech_id": "T01",
+                "name": "다중 센서 퓨전 카메라",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2707912088.0,
+                "tech_budget_usd": 2200000000.0,
                 "year_idx_start": 1,
                 "year_idx_target": 3
               },
               {
-                "tech_id": "T01",
-                "name": "다중 센서 퓨전 카메라",
+                "tech_id": "T08",
+                "name": "3D 포즈 추정 시스템",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2030934066.0,
-                "year_idx_start": 1,
-                "year_idx_target": 4
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
               }
             ],
             "4": [
               {
-                "tech_id": "T01",
-                "name": "다중 센서 퓨전 카메라",
+                "tech_id": "T08",
+                "name": "3D 포즈 추정 시스템",
                 "tier": "Tier 1",
-                "tech_budget_usd": 2030934066.0,
-                "year_idx_start": 1,
-                "year_idx_target": 4
-              },
-              {
-                "tech_id": "T06",
-                "name": "모듈형 DC 버스 테스트",
-                "tier": "Tier 2",
-                "tech_budget_usd": 811153846.0,
-                "year_idx_start": 4,
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 3,
                 "year_idx_target": 5
               }
             ],
             "5": [
               {
-                "tech_id": "T06",
-                "name": "모듈형 DC 버스 테스트",
+                "tech_id": "T08",
+                "name": "3D 포즈 추정 시스템",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "스테어 바이 와이어 제어",
                 "tier": "Tier 2",
-                "tech_budget_usd": 811153846.0,
-                "year_idx_start": 4,
+                "tech_budget_usd": 1550000000.0,
+                "year_idx_start": 5,
                 "year_idx_target": 5
               }
             ]
           },
           "yearly_budget_total": {
-            "1": 4738846154.0,
-            "4": 811153846.0
+            "1": 2200000000.0,
+            "3": 1800000000.0,
+            "5": 1550000000.0
           }
         },
         "insights": {
@@ -340,20 +326,28 @@
           "total_techs": 3,
           "top_5_tech_by_score": [
             {
-              "tech_id": "T05",
-              "name": "SiC 반도체 제조 공정",
-              "category": "Process",
-              "final_score": 85.31,
-              "market_score": 88.5,
+              "tech_id": "T02",
+              "name": "고성능 SiC 반도체 제조",
+              "category": "Material",
+              "final_score": 87.63,
+              "market_score": 92.0,
               "boom": "2026 Q3"
             },
             {
-              "tech_id": "T04",
-              "name": "스태어 바이 와이어 제어",
+              "tech_id": "T08",
+              "name": "3D 포즈 추정 시스템",
+              "category": "Equipment",
+              "final_score": 84.9,
+              "market_score": 88.5,
+              "boom": "2027 Q4"
+            },
+            {
+              "tech_id": "T03",
+              "name": "스테어 바이 와이어 제어",
               "category": "Process",
-              "final_score": 83.72,
-              "market_score": 82.6,
-              "boom": "2027 Q1"
+              "final_score": 83.12,
+              "market_score": 81.5,
+              "boom": "2028 Q1"
             },
             {
               "tech_id": "T01",
@@ -364,60 +358,50 @@
               "boom": "2027 Q2"
             },
             {
-              "tech_id": "T03",
-              "name": "고전압 커넥터 신뢰성",
-              "category": "Packaging",
-              "final_score": 75.73,
-              "market_score": 72.4,
-              "boom": "2026 Q4"
-            },
-            {
-              "tech_id": "T02",
-              "name": "변형상 물질 배터리 냉각",
-              "category": "Material",
-              "final_score": 74.55,
-              "market_score": 68.2,
-              "boom": "2028 Q3"
+              "tech_id": "T06",
+              "name": "전력전자 모듈 통합 아키텍처",
+              "category": "Architecture",
+              "final_score": 82.72,
+              "market_score": 82.0,
+              "boom": "2028 Q1"
             }
           ],
           "category_distribution": {
-            "Process": 2,
-            "Equipment": 1,
-            "Packaging": 1,
             "Material": 1,
-            "Architecture": 1
+            "Equipment": 2,
+            "Process": 1,
+            "Architecture": 1,
+            "Packaging": 1
           },
-          "avg_trl": 5.5,
+          "avg_trl": 5.8,
           "tier1_tech_list": [
-            {
-              "tech_id": "T04",
-              "name": "스태어 바이 와이어 제어",
-              "stage": "roadmap",
-              "key_reason": "시장 성장률 22.5% 와 2027 년 Q1 시장 붐으로 인한 개발 긴급도 5 점 부여."
-            },
             {
               "tech_id": "T01",
               "name": "다중 센서 퓨전 카메라",
               "stage": "roadmap",
-              "key_reason": "TAM $26.1B 의 거대 시장과 8.4% CAGR 으로 인한 시장 성장도 4 점 부여."
+              "key_reason": "시장 붐 (2027 Q2) 이 임박하여 개발 지연 시 기회 상실 위험이 큽니다."
+            },
+            {
+              "tech_id": "T08",
+              "name": "3D 포즈 추정 시스템",
+              "stage": "roadmap",
+              "key_reason": "가장 높은 CAGR(24.5%) 과 TAM(250 억 달러) 을 가진 핵심 성장 동력입니다."
             }
           ],
           "dependency_edges": [
-            "T01 → T06",
-            "T04 → T06"
+            "T01 → T08",
+            "T08 → T03"
           ],
           "boom_quarter_distribution": {
             "2026 Q3": 1,
-            "2027 Q1": 1,
-            "2027 Q2": 1,
-            "2026 Q4": 1,
-            "2028 Q3": 1,
-            "2029 Q1": 1
+            "2027 Q4": 1,
+            "2028 Q1": 2,
+            "2027 Q2": 2
           }
         }
       }
     },
-    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 정상. 최종 승인."
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 양호하여 최종 승인."
   },
   "artifact_paths": {
     "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobis_autonomous_2026_2030__기술선도__tech_candidates.json",
