@@ -69,6 +69,25 @@ MIN_FINAL_SCORE: float = 50.0
 PATENT_WEIGHT: float = 0.45
 MARKET_WEIGHT: float = 0.55
 
+# Final candidate selection after patent/market aggregation.
+# 0 means auto: keep roughly 75% of the pool, with at least 3 candidates.
+TECH_CANDIDATE_TARGET_K: int = int(os.getenv("TECH_CANDIDATE_TARGET_K", "0") or 0)
+TECH_CANDIDATE_KEEP_RATIO: float = float(os.getenv("TECH_CANDIDATE_KEEP_RATIO", "0.75") or 0.75)
+
+# LLM based shortlist selector. The selector may use actor_similarity_map as
+# evidence context when USE_PATENT_MAP=true, but it must not add numeric map
+# bonuses. If it fails, Aggregator falls back to the common deterministic ranker.
+USE_LLM_CANDIDATE_SELECTOR: bool = os.getenv("USE_LLM_CANDIDATE_SELECTOR", "true").lower() not in (
+    "0",
+    "false",
+    "no",
+    "off",
+)
+
+# Market Agent LLM batching. Smaller batches reduce JSON truncation with local LLMs.
+MARKET_ANALYSIS_BATCH_SIZE: int = int(os.getenv("MARKET_ANALYSIS_BATCH_SIZE", "4") or 4)
+MARKET_ANALYSIS_MAX_TOKENS: int = int(os.getenv("MARKET_ANALYSIS_MAX_TOKENS", "4096") or 4096)
+
 # ── 오류 처리 ─────────────────────────────────────────────────
 MAX_RETRY: int = 2
 

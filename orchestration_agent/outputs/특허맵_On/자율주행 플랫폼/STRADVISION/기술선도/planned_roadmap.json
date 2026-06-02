@@ -1,0 +1,448 @@
+{
+  "market_context": {
+    "target_market": "AI Vision Perception / ADAS / Computer Vision",
+    "expected_boom_quarter": "2029 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "시각-레이더 융합 센서 아키텍처",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "자율주행 센서 융합 시장이 2030 년까지 급성장할 것으로 예상되며, L2+ 및 L3 급 ADAS 시스템의 표준화 추세 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 및 MarketsandMarkets 보고서에 따르면 자동차 컴퓨터 비전 및 센서 융합 시장은 연평균 20% 이상 성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Sensor Fusion Market Size, Share | Industry Growth 2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-sensor-fusion-market-260287840.html",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+            "use": "성장률 및 시장 전망 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Luminar",
+            "Waymo"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "market_score": 91.2,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "합성 데이터 생성 시장이 2030 년까지 97 억 달러 규모로 성장할 것으로 예상되며, 자율주행 모델 학습의 필수 인프라로 자리 잡음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.0,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 보고서에 따르면 자동차 AI 시뮬레이션 및 합성 데이터 시장은 연평균 30% 이상의 초고속 성장세."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Automotive AI Simulation & Synthetic Data Generation Market, 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-ai-simulation-and-synthetic-data-generation-market",
+            "use": "CAGR 및 시장 규모 근거"
+          },
+          {
+            "title": "Synthetic Data Generation Market Size ($9.7 Billion) 2030",
+            "url": "https://www.strategicmarketresearch.com/market-report/synthetic-data-generation-market",
+            "use": "경쟁 구도 및 시장 성장성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "고해상도 라이다 신호 처리 알고리즘",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 6.5,
+          "sam_usd_b": 2.0,
+          "som_usd_b": 0.4,
+          "basis": "자동차 라이다 시장이 2033 년까지 64 억 달러 규모로 성장할 것으로 예상되며, 고해상도 신호 처리 알고리즘은 핵심 부가가치 요소."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 31.3,
+          "forecast_period": "2025-2033",
+          "basis": "PR Newswire 및 MarketsandMarkets 보고서에 따르면 자동차 라이다 시장은 연평균 31.3% 성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive LiDAR Market to Grow at 31.3% CAGR Reaching USD 6,464.4 Million by 2033",
+            "url": "https://www.prnewswire.co.uk/news-releases/automotive-lidar-market-to-grow-at-31-3-cagr-reaching-usd-6-464-4-million-by-2033--accelerates-autonomous-mobility-with-smart-sensing-innovation-302769637.html",
+            "use": "CAGR 및 시장 규모 근거"
+          },
+          {
+            "title": "LiDAR Market Size Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+            "use": "경쟁 구도 및 시장 성장성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Luminar",
+            "Hesai",
+            "Blackmore"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "시선 추적 기반 운전자 상태 인지",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.6,
+          "basis": "운전자 모니터링 시스템 (DMS) 시장이 규제 강화와 함께 성장하고 있으며, 시선 추적 기술은 핵심 기능으로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "Market Data Forecast 보고서에 따르면 시선 추적 시장은 연평균 18% 이상 성장할 것으로 예상."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Eye Tracking Market Size, Share & Growth Report, 2034",
+            "url": "https://www.marketdataforecast.com/market-reports/eye-tracking-market",
+            "use": "CAGR 및 시장 성장성 근거"
+          },
+          {
+            "title": "Automotive AI Market Size, Share & Trends",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-artificial-intelligence-market-248804391.html",
+            "use": "시장 규모 및 경쟁 구도 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "다중 카메라 HDR 블렌딩 및 보정",
+        "market_score": 82.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "AI 카메라 및 자동차 컴퓨터 비전 시장이 2030 년까지 100 억 달러 이상으로 성장할 것으로 예상되며, HDR 및 센서 융합 기술은 고급 ADAS 및 자율주행의 필수 전처리 단계로 포함됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 비전 시장이 연평균 20% 이상 성장하고 있으며, 특히 다중 센서 융합 및 HDR 처리 기술은 L2+ 이상 자율주행 차량의 표준화 추세에 따라 더 빠른 성장을 보임."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI Camera Market Size, Forecast & Report Analysis 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/ai-camera-market",
+            "use": "TAM 및 CAGR 추정 근거"
+          },
+          {
+            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+            "use": "자동차 분야 SAM/SOM 추정 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "차량 간 통신 (V2X) 기반 협력 인지",
+        "market_score": 76.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "V2X 시장이 2030 년까지 수천억 달러 규모로 성장할 것으로 예상되나, 협력 인지 (Collaborative Perception) 는 전체 V2X 시장 중 초기 단계의 고부가가치 세그먼트로 한정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "V2X 시장이 연평균 25% 이상의 높은 성장률을 보이며, 특히 5G-V2X 및 C-V2X 표준화 정책과 인프라 구축이 2028 년 이후 본격화될 것으로 예상됨."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Automotive V2X Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-v2x-market",
+            "use": "V2X 시장 규모 및 성장 전망 근거"
+          },
+          {
+            "title": "Computer Vision-Based V2X Collaborative Perception - Technical Paper",
+            "url": "https://saemobilus.sae.org/papers/computer-vision-based-v2x-collaborative-perception-2022-01-0073",
+            "use": "협력 인지 기술의 기술적 성숙도 및 적용 가능성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Mobileye",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Luminar",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Hesai",
+          "similarity": 0.72,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Waymo",
+          "similarity": 0.68,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Blackmore",
+          "similarity": 0.6,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 6,
+      "target_k": 5,
+      "selected_count": 5,
+      "selected_tech_ids": [
+        "T02",
+        "T01",
+        "T03",
+        "T05",
+        "T04"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T06",
+          "name": "차량 간 통신 (V2X) 기반 협력 인지",
+          "final_score": 76.59,
+          "selection_score": 76.65,
+          "actor_map_score": 81.0,
+          "reason": "V2X 협력 인지 기술은 인프라 의존도가 높고 시장 폭발 시점 (2029 Q1) 이 2030 년 계획의 말기로 늦어, 단기 로드맵의 핵심 선점 기술로서의 우선순위가 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 84.18,
+        "avg_market_score": 84.14,
+        "avg_patent_score": 84.22,
+        "avg_actor_map_score": 74.76,
+        "map_supported_count": 5
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "STRADVISION 의 2026-2030 년 전략인 'AI 비전 리더십 강화'와 '프론티어 기술 선점'을 위해, 가장 높은 시장 성장률과 시급성을 가진 T02(합성 데이터) 와 T01(센서 융합) 을 최우선으로 선정했습니다. T03(라이다 알고리즘) 은 T01 의 필수 의존 기술로 포트폴리오 완성도를 높이며, T05(HDR) 와 T04(시선 추적) 는 L2+ 상용화 시기에 맞춰 즉각적인 시장 진입과 규제 대응을 가능하게 합니다. actor_map 은 NVIDIA 와 Mobileye 와의 경쟁 구도 분석에 활용되었으나, 점수 보너스로는 적용되지 않았습니다.",
+        "evidence_used": {
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T02",
+      "name": "생성형 AI 기반 합성 데이터 파이프라인",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 초기 단계이므로 1 차년도부터 즉시 착수하여 3 차년도까지 핵심 파이프라인을 완성해야 합니다. 이는 2026 년 Q4 예상 시장 붐에 맞춰 초기 데이터 인프라를 구축하고, 후행 기술인 센서 융합 아키텍처의 훈련 데이터 공급을 확보하기 위함입니다.",
+        "tech_execution": "실제 데이터 부족 문제를 해결하고 모델 일반화 성능을 높이는 'Active Learning' 특허와 결합하여, NVIDIA 와 Mobileye 가 주도하는 생성형 AI 데이터 생태계에서 STRADVISION 의 독자적인 해자를 구축해야 합니다.",
+        "investment_selection": "아직 명확한 시장 지배자가 없는 초기 단계이므로, 선점 투자를 통해 데이터 품질과 양에서 경쟁 우위를 점하고, 향후 자율주행 모델의 학습 효율성을 극대화하는 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "시각-레이더 융합 센서 아키텍처",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T02"
+      ],
+      "reasoning": {
+        "year_placement": "T02 의 합성 데이터 파이프라인이 초기 안정화되는 2 차년도부터 시작하여, 2027 년 Q3 시장 붐을 거치며 5 차년도까지 진화하는 장기 로드맵을 설정합니다. 이는 L3 자율주행 상용화 시점과 맞물려 기술 성숙도를 높이고 차세대 아키텍처로 확장하기 위함입니다. [후처리: dependency 보정 — prereq ['T02'] 완료 후로 1차년도 push]",
+        "tech_execution": "STRADVISION 의 비전 중심 한계를 극복하고, NVIDIA 와 Waymo 등 주요 플레이어들과 경쟁하기 위해 다중 센서 융합 아키텍처를 필수적으로 선점해야 합니다. 이를 통해 기술 격차를 해소하고 경쟁력을 강화하는 전략적 핵심입니다.",
+        "investment_selection": "센서 융합 기술 선점 경쟁이 치열한 시장에서, 초기 투자로 아키텍처 표준을 주도하고 장기적인 R&D 를 통해 2030 년까지 기술 리더십을 유지하는 것이 예산 효율성과 시장 점유율 확보에 가장 유리합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T04",
+      "name": "시선 추적 기반 운전자 상태 인지",
+      "year_idx_start": 5,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "T01 의 센서 융합 아키텍처가 기반이 된 3 차년도부터 시작하여, 2029 년 Q1 시장 붐을 거치며 5 차년도까지 규제 대응 및 UX 고도화를 위한 R&D 를 지속합니다. 이는 글로벌 규제 강화 시점과 맞물려 기술의 완성도를 높이는 최적의 타이밍입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 2차년도 push]",
+        "tech_execution": "Mobileye 가 주도하는 과점 구조에서 차별화된 안전성 및 사용자 경험 (UX) 을 제공하기 위해, 시선 추적 기술을 기반으로 한 차선 유지 보조 및 카메라 보정 기술을 적극적으로 개발해야 합니다.",
+        "investment_selection": "2029 년경까지 성숙될 것으로 예상되는 시장에서, 초기 진입 장벽을 낮추고 규제 준수 및 고부가가치 기능으로 경쟁 우위를 점하기 위한 핵심 투자 대상입니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T02": {
+      "tech_id": "T02",
+      "name": "생성형 AI 기반 합성 데이터 파이프라인",
+      "category": "Process",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [
+        "T01"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "시각-레이더 융합 센서 아키텍처",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [
+        "T02"
+      ],
+      "dependents": [
+        "T04"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T04": {
+      "tech_id": "T04",
+      "name": "시선 추적 기반 운전자 상태 인지",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2029 Q1"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 3,
+    "rationale": "SD1(리더십) 을 위한 T02(합성데이터), SD2(모빌리티 확장) 를 위한 T01(센서융합), SD3(프론티어 선점) 을 위한 T04(운전자인지) 를 선정. 2026~2029 분기별 시점 분포를 확보하여 2030 로드맵 완성.",
+    "dropped": [
+      {
+        "tech_id": "T03",
+        "name": "고해상도 라이다 신호 처리 알고리즘",
+        "reason": "T01(센서융합) 이 라이다 처리를 포괄하므로 중복. SD 정합도 T01이 더 강함."
+      },
+      {
+        "tech_id": "T05",
+        "name": "다중 카메라 HDR 블렌딩 및 보정",
+        "reason": "기존 비전 기술의 연장선으로 SD3(프론티어 선점) 와의 정합도가 상대적으로 낮음."
+      }
+    ]
+  }
+}

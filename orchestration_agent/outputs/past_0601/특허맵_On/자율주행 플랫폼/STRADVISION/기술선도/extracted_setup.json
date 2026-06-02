@@ -1,0 +1,30 @@
+{
+  "scenario_id": "stradvision_autonomous_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: STRADVISION\nIndustry: AI Vision Perception / ADAS Perception Software / Computer Vision\nAnnual Revenue: ~$13M\nR&D Budget Ratio: ~66.3%\nAnnual R&D Budget: ~$8.6M\nTotal 5-year R&D Budget: ~$43M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "STRADVISION",
+    "industry": "AI Vision Perception / ADAS / Computer Vision",
+    "annual_revenue": 13000000.0,
+    "rd_budget_ratio": 0.663,
+    "annual_rd_budget": 8600000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 기술을 선점하고 장기적인 기술 해자를 구축하여 AI 비전 및 ADAS 분야에서의 기술 리더십을 확보한다.",
+    "strategic_direction": [
+      "ADAS 및 AI 비전 기술 리더십 강화",
+      "자율주행 및 모빌리티 인접 시장 확장",
+      "프론티어 기술 스택 선점 및 해자 구축"
+    ],
+    "domain": "AI Vision Perception / ADAS / Computer Vision",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 43000000
+}

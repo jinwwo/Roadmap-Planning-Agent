@@ -1,0 +1,30 @@
+{
+  "scenario_id": "hl_mando_autonomous_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: HL Mando\nIndustry: ADAS / Autonomous Driving / Chassis Control / Steer-by-Wire\nAnnual Revenue: ~$6.8B\nR&D Budget Ratio: ~7.1%\nAnnual R&D Budget: ~$478M\nTotal 5-year R&D Budget: ~$1.48B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "HL Mando",
+    "industry": "ADAS / Autonomous Driving / Chassis Control",
+    "annual_revenue": 6800000000.0,
+    "rd_budget_ratio": 0.071,
+    "annual_rd_budget": 478000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "차량 제어 및 자율주행 분야에서 프론티어 기술을 선점하여 기술 리더십과 장기 경쟁 우위를 확보한다.",
+    "strategic_direction": [
+      "Steer-by-Wire 및 Chassis Control 기술 리더십 강화",
+      "자율주행 (ADAS) 인접 시장 확장 및 솔루션 다각화",
+      "공격적 R&D 투자를 통한 HW/SW 통합 스택 선점"
+    ],
+    "domain": "ADAS / Autonomous Driving / Chassis Control",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 1480000000
+}

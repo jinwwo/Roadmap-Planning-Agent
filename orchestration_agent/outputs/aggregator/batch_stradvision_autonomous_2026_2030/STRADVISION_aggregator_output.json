@@ -1,0 +1,1092 @@
+{
+  "run_id": "batch_stradvision_autonomous_2026_2030",
+  "timestamp_utc": "2026-06-02T06:10:50Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 92.5,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 92,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "NVIDIA",
+          "Waymo"
+        ],
+        "evidence_patents": [
+          {
+            "company": "NVIDIA",
+            "title": "LARGE SCALE SYNTHETIC DATA GENERATION FOR ROBOTIC PERCEPTION APPLICATIONS",
+            "date": "2025-04-10",
+            "cited_by": 0
+          },
+          {
+            "company": "NVIDIA",
+            "title": "생성된 이미지들을 이용한 객체 검출 시스템 훈련",
+            "date": "2026-04-27",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "NVIDIA 와 Waymo 가 대규모 합성 데이터 생성 및 훈련에 집중하고 있어, 실제 데이터 수집의 한계를 극복하는 핵심 기술로 부상하고 있습니다. STRADVISION 의 Active Learning 전략을 보완하기 위해 시뮬레이션 환경에서의 데이터 증강 기술 선점이 필수적입니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "다중 센서 퓨전 아키텍처",
+        "category": "Architecture",
+        "estimated_trl": 7,
+        "patent_score": 89.8,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 95,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Waymo",
+          "Luminar",
+          "NVIDIA"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Waymo",
+            "title": "END-TO-END PROCESSING IN AUTOMATED DRIVING SYSTEMS",
+            "date": "2023-02-15",
+            "cited_by": 0
+          },
+          {
+            "company": "Luminar",
+            "title": "INTEGRATED LIDAR AND RADAR SYSTEM",
+            "date": "2024-12-11",
+            "cited_by": 0
+          },
+          {
+            "company": "NVIDIA",
+            "title": "SAMPLING RADAR SIGNALS FOR AUTOMOTIVE RADAR PERCEPTION",
+            "date": "2026-01-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Waymo, Luminar, NVIDIA 등 주요 경쟁사들이 라이다, 레이더, 카메라 데이터를 통합하는 엔드투엔드 아키텍처를 특허로 보호하고 있습니다. 비전 중심의 STRADVISION 이 센서 퓨전 역량을 강화하여 시스템 신뢰도를 높여야 합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고해상도 라이다 신호 처리",
+        "category": "Equipment",
+        "estimated_trl": 6,
+        "patent_score": 86.4,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "Luminar",
+          "Hesai",
+          "Blackmore"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Luminar",
+            "title": "LIDAR RECEIVER OPTICAL LIMITER",
+            "date": "2024-11-26",
+            "cited_by": 0
+          },
+          {
+            "company": "Hesai",
+            "title": "LIDAR, AND SIGNAL PROCESSING METHOD AND SIGNAL PROCESSOR APPARATUS THEREOF",
+            "date": "2025-12-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Blackmore",
+            "title": "METHOD AND SYSTEM FOR AUTOMATIC REAL-TIME ADAPTIVE SCANNING WITH OPTICAL RANGING SYSTEMS",
+            "date": "2023-11-14",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Luminar, Hesai, Blackmore 가 라이다 수신기 최적화 및 신호 처리 알고리즘에 집중하고 있어, 비전 센서와 라이다의 성능 격차를 줄이기 위한 하드웨어/신호 처리 기술 이해가 필요합니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "운전자 시선 기반 안전 시스템",
+        "category": "Process",
+        "estimated_trl": 5,
+        "patent_score": 82.1,
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Mobileye"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Mobileye",
+            "title": "ALTERING LANE KEEP ASSIST BEHAVIOR BASED ON WHETHER A DRIVER IS GAZING AT A TARGET LANE",
+            "date": "2025-11-21",
+            "cited_by": 0
+          },
+          {
+            "company": "Mobileye",
+            "title": "CALIBRATION OF CAMERA ORIENTATION BASED ON GAZE TRACKING AND OBJECT DETECTION",
+            "date": "2025-11-21",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Mobileye 가 운전자 시선 추적과 객체 감지 연동 기술을 특허화하고 있어, ADAS 시스템의 상황 인식 및 안전성 향상을 위한 인간-기계 상호작용 기술이 중요한 차별화 요소입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "블러 제거 및 HDR 이미지 처리",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 80.5,
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Mobileye",
+          "Waymo",
+          "NVIDIA"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Mobileye",
+            "title": "IMAGE POSITION DEPENDENT BLUR CONTROL WITHIN HDR BLENDING SCHEME",
+            "date": "2025-12-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Waymo",
+            "title": "STACKED IMAGE PROCESSING TO REDUCE BLUR FOR AUTONOMOUS DRIVING",
+            "date": "2024-11-19",
+            "cited_by": 0
+          },
+          {
+            "company": "NVIDIA",
+            "title": "IMAGE PROCESSING FOR AUTOMOTIVE APPLICATIONS",
+            "date": "2025-04-10",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Mobileye, Waymo, NVIDIA 가 HDR 및 블러 제거 기술에 집중하고 있어, 저조도 및 고속 주행 환경에서의 비전 인식 성능을 극대화하기 위한 이미지 처리 기술이 필수적입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "2035 년 자동차 AI 시뮬레이션 및 합성 데이터 시장 규모 추정치 (GMI Insights) 및 산업용 비전 시장 성장률 반영"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 및 GMI Insights 보고서를 기반으로 한 산업용 비전 및 자동차 시뮬레이션 시장 CAGR"
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive AI Simulation & Synthetic Data Generation Market, 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-ai-simulation-and-synthetic-data-generation-market",
+            "use": "TAM 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "Synthetic Data Generation for Industrial Vision Market Forecast",
+            "url": "https://www.factmr.com/report/synthetic-data-generation-for-industrial-vision-market",
+            "use": "CAGR 및 성장 동력 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "자율주행 레벨 3 이상 상용화에 필수적인 합성 데이터 시장이 2027 년경 급성장할 것으로 예상되며, NVIDIA 와 Waymo 등 핵심 플레이어의 선점 경쟁이 치열합니다. 고성장률 (CAGR 24% 이상) 과 규제 준수 필요성으로 인해 초기 진입 시 해자 구축이 가능합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "다중 센서 퓨전 아키텍처",
+        "market_score": 82.0,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 10.5,
+          "som_usd_b": 2.5,
+          "basis": "글로벌 센서 퓨전 시장 (Future Market Insights) 및 자동차 컴퓨터 비전 AI 시장 규모 종합"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.2,
+          "forecast_period": "2025-2030",
+          "basis": "Market Research Future 및 Future Market Insights 보고서를 기반으로 한 자율주행 센서 퓨전 시장 성장률"
+        },
+        "key_market_reports": [
+          {
+            "title": "Sensor Fusion Market | Global Market Analysis Report - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/sensor-fusion-market",
+            "use": "시장 규모 및 성장 전망 근거"
+          },
+          {
+            "title": "Multi Sensor Fusion Solutions Market Report",
+            "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+            "use": "경쟁 구도 및 솔루션 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "라이다, 레이더, 카메라의 통합 처리가 자율주행 안전성 확보의 핵심이 되며, 2028 년경 레벨 4 상용화 시점에 시장이 폭발할 것으로 보입니다. NVIDIA, Waymo, Luminar 등 주요 기업들이 아키텍처 표준을 선점하려는 경쟁이 치열합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고해상도 라이다 신호 처리",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 78,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "Research Nester 및 MarketsandMarkets 보고서를 기반으로 한 글로벌 라이다 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.8,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 리포트에 따른 라이다 시장 연평균 성장률"
+        },
+        "key_market_reports": [
+          {
+            "title": "LiDAR Market Size & Share, Growth Analysis 2035",
+            "url": "https://www.researchnester.com/reports/lidar-market/5264",
+            "use": "시장 규모 및 성장 동력 분석 근거"
+          },
+          {
+            "title": "North America LiDAR Market Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/north-america-lidar-market-2472587.html",
+            "use": "지역별 시장 동향 및 경쟁사 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고해상도 라이다는 자율주행의 핵심 센서로 성장 중이나, 하드웨어 제조 및 신호 처리 알고리즘의 진입 장벽이 높아 Luminar, Hesai 등 소수 기업이 시장을 주도하고 있습니다. 2029 년경 대량 생산 노드 전환과 함께 시장이 본격화될 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "운전자 시선 기반 안전 시스템",
+        "market_score": 71.0,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.2,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.9,
+          "basis": "Fortune Business Insights 및 GMI Insights 보고서를 기반으로 한 운전자 모니터링 시스템 (DMS) 시장 규모"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 및 Mordor Intelligence 보고서를 기반으로 한 DMS 시장 성장률"
+        },
+        "key_market_reports": [
+          {
+            "title": "Driver Monitoring System Market Size, Share | Growth [2034]",
+            "url": "https://www.fortunebusinessinsights.com/driver-monitoring-system-market-114884",
+            "use": "시장 규모 및 성장 전망 근거"
+          },
+          {
+            "title": "Driver Safety Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/driver-safety-market",
+            "use": "규제 및 안전 기준 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "data_quality": "real",
+        "rationale": "유럽 및 글로벌 규제 (GSR 등) 로 인해 DMS 도입이 의무화되면서 시장이 빠르게 성장하고 있으나, Mobileye 등 선두 기업의 독점적 지위가 강합니다. 2026 년 말부터 규제 준수 차원에서 시장이 급증할 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "블러 제거 및 HDR 이미지 처리",
+        "market_score": 76.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전체 자동차 컴퓨터 비전 시장 (TAM) 의 하위 세그먼트로, 고해상도 센서 및 야간/고속 주행 시나리오 필수 기술로 추정. 2030 년 기준 자동차 AI 비전 시장 전체가 100 억 달러 이상으로 성장할 것으로 예상되며, 이미지 전처리 (블러/HDR) 는 핵심 필수 요소로 10-15% 점유."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 등 보고서에 따르면 자동차 컴퓨터 비전 AI 시장은 2035 년까지 연평균 18% 이상의 성장을 보일 것으로 예상. L3 이상 자율주행 상용화 및 고해상도 카메라 센서 보급 확대가 주된 성장 동력."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+            "use": "CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "AI in Computer Vision Market Report 2025",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ai-in-computer-vision-market-141658064.html",
+            "use": "TAM 규모 및 기술 적용 범위 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "Mobileye, NVIDIA, Waymo 등 주요 플레이어들의 특허 활동이 활발하여 L3 이상 자율주행 상용화 시점인 2027 년경에 시장이 급성장할 것으로 예상됨. 고해상도 센서와 AI 기반 이미지 처리의 결합은 필수적이지만, 알고리즘 최적화 및 칩셋 통합 능력에 따라 차별화 가능성이 존재하는 집중된 경쟁 구도임."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Mobileye",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "ADAS 및 컴퓨터 비전 도메인에서 높은 기술적 유사성. 운전자 시선 추적 및 이미지 처리 기술 공유."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "NVIDIA",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "합성 데이터 생성 및 엔드투엔드 아키텍처 개발에서 높은 기술적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Waymo",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "자율주행 시스템 및 이미지 처리 기술에서 높은 기술적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Luminar",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "reason": "라이다 및 센서 퓨전 기술에서 부분적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Hesai",
+          "similarity": 0.7,
+          "edge_weight": 0.7,
+          "reason": "라이다 신호 처리 기술에서 부분적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Blackmore",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "reason": "라이다 및 광학 센싱 기술에서 부분적 유사성."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 92.5,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 90.3,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] NVIDIA 와 Waymo 가 대규모 합성 데이터 생성 및 훈련에 집중하고 있어, 실제 데이터 수집의 한계를 극복하는 핵심 기술로 부상하고 있습니다. STRADVISION 의 Active Learning 전략을 보완하기 위해 시뮬레이션 환경에서의 데이터 증강 기술 선점이 필수적입니다. [Market] 자율주행 레벨 3 이상 상용화에 필수적인 합성 데이터 시장이 2027 년경 급성장할 것으로 예상되며, NVIDIA 와 Waymo 등 핵심 플레이어의 선점 경쟁이 치열합니다. 고성장률 (CAGR 24% 이상) 과 규제 준수 필요성으로 인해 초기 진입 시 해자 구축이 가능합니다.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "2035 년 자동차 AI 시뮬레이션 및 합성 데이터 시장 규모 추정치 (GMI Insights) 및 산업용 비전 시장 성장률 반영"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 및 GMI Insights 보고서를 기반으로 한 산업용 비전 및 자동차 시뮬레이션 시장 CAGR"
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive AI Simulation & Synthetic Data Generation Market, 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-ai-simulation-and-synthetic-data-generation-market",
+            "use": "TAM 및 경쟁 구도 분석 근거"
+          },
+          {
+            "title": "Synthetic Data Generation for Industrial Vision Market Forecast",
+            "url": "https://www.factmr.com/report/synthetic-data-generation-for-industrial-vision-market",
+            "use": "CAGR 및 성장 동력 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 92,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 90.49,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 1
+      },
+      {
+        "tech_id": "T02",
+        "name": "다중 센서 퓨전 아키텍처",
+        "category": "Architecture",
+        "trl": 7,
+        "patent_score": 89.8,
+        "market_score": 82.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 85.51,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Waymo, Luminar, NVIDIA 등 주요 경쟁사들이 라이다, 레이더, 카메라 데이터를 통합하는 엔드투엔드 아키텍처를 특허로 보호하고 있습니다. 비전 중심의 STRADVISION 이 센서 퓨전 역량을 강화하여 시스템 신뢰도를 높여야 합니다. [Market] 라이다, 레이더, 카메라의 통합 처리가 자율주행 안전성 확보의 핵심이 되며, 2028 년경 레벨 4 상용화 시점에 시장이 폭발할 것으로 보입니다. NVIDIA, Waymo, Luminar 등 주요 기업들이 아키텍처 표준을 선점하려는 경쟁이 치열합니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 10.5,
+          "som_usd_b": 2.5,
+          "basis": "글로벌 센서 퓨전 시장 (Future Market Insights) 및 자동차 컴퓨터 비전 AI 시장 규모 종합"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.2,
+          "forecast_period": "2025-2030",
+          "basis": "Market Research Future 및 Future Market Insights 보고서를 기반으로 한 자율주행 센서 퓨전 시장 성장률"
+        },
+        "key_market_reports": [
+          {
+            "title": "Sensor Fusion Market | Global Market Analysis Report - 2035",
+            "url": "https://www.futuremarketinsights.com/reports/sensor-fusion-market",
+            "use": "시장 규모 및 성장 전망 근거"
+          },
+          {
+            "title": "Multi Sensor Fusion Solutions Market Report",
+            "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+            "use": "경쟁 구도 및 솔루션 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 95,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 85.88,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T03",
+        "name": "고해상도 라이다 신호 처리",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 86.4,
+        "market_score": 76.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 80.96,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q3",
+        "dependency_hints": [
+          "T02"
+        ],
+        "rationale": "[Patent] Luminar, Hesai, Blackmore 가 라이다 수신기 최적화 및 신호 처리 알고리즘에 집중하고 있어, 비전 센서와 라이다의 성능 격차를 줄이기 위한 하드웨어/신호 처리 기술 이해가 필요합니다. [Market] 고해상도 라이다는 자율주행의 핵심 센서로 성장 중이나, 하드웨어 제조 및 신호 처리 알고리즘의 진입 장벽이 높아 Luminar, Hesai 등 소수 기업이 시장을 주도하고 있습니다. 2029 년경 대량 생산 노드 전환과 함께 시장이 본격화될 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 78,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "Research Nester 및 MarketsandMarkets 보고서를 기반으로 한 글로벌 라이다 시장 규모 추정"
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.8,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 리포트에 따른 라이다 시장 연평균 성장률"
+        },
+        "key_market_reports": [
+          {
+            "title": "LiDAR Market Size & Share, Growth Analysis 2035",
+            "url": "https://www.researchnester.com/reports/lidar-market/5264",
+            "use": "시장 규모 및 성장 동력 분석 근거"
+          },
+          {
+            "title": "North America LiDAR Market Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/north-america-lidar-market-2472587.html",
+            "use": "지역별 시장 동향 및 경쟁사 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 81.43,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T05",
+        "name": "블러 제거 및 HDR 이미지 처리",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 80.5,
+        "market_score": 76.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 78.3,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Mobileye, Waymo, NVIDIA 가 HDR 및 블러 제거 기술에 집중하고 있어, 저조도 및 고속 주행 환경에서의 비전 인식 성능을 극대화하기 위한 이미지 처리 기술이 필수적입니다. [Market] Mobileye, NVIDIA, Waymo 등 주요 플레이어들의 특허 활동이 활발하여 L3 이상 자율주행 상용화 시점인 2027 년경에 시장이 급성장할 것으로 예상됨. 고해상도 센서와 AI 기반 이미지 처리의 결합은 필수적이지만, 알고리즘 최적화 및 칩셋 통합 능력에 따라 차별화 가능성이 존재하는 집중된 경쟁 구도임.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전체 자동차 컴퓨터 비전 시장 (TAM) 의 하위 세그먼트로, 고해상도 센서 및 야간/고속 주행 시나리오 필수 기술로 추정. 2030 년 기준 자동차 AI 비전 시장 전체가 100 억 달러 이상으로 성장할 것으로 예상되며, 이미지 전처리 (블러/HDR) 는 핵심 필수 요소로 10-15% 점유."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "GMI Insights 등 보고서에 따르면 자동차 컴퓨터 비전 AI 시장은 2035 년까지 연평균 18% 이상의 성장을 보일 것으로 예상. L3 이상 자율주행 상용화 및 고해상도 카메라 센서 보급 확대가 주된 성장 동력."
+        },
+        "key_market_reports": [
+          {
+            "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+            "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+            "use": "CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "AI in Computer Vision Market Report 2025",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ai-in-computer-vision-market-141658064.html",
+            "use": "TAM 규모 및 기술 적용 범위 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 82,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "selection_score": 78.49,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 4
+      }
+    ],
+    "market_context": {
+      "target_market": "AI Vision Perception / ADAS / Computer Vision",
+      "expected_boom_quarter": "2028 Q1",
+      "market_research_summary": {
+        "T01": {
+          "name": "시뮬레이션 기반 합성 데이터 생성",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "2035 년 자동차 AI 시뮬레이션 및 합성 데이터 시장 규모 추정치 (GMI Insights) 및 산업용 비전 시장 성장률 반영"
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "FactMR 및 GMI Insights 보고서를 기반으로 한 산업용 비전 및 자동차 시뮬레이션 시장 CAGR"
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive AI Simulation & Synthetic Data Generation Market, 2035",
+              "url": "https://www.gminsights.com/industry-analysis/automotive-ai-simulation-and-synthetic-data-generation-market",
+              "use": "TAM 및 경쟁 구도 분석 근거"
+            },
+            {
+              "title": "Synthetic Data Generation for Industrial Vision Market Forecast",
+              "url": "https://www.factmr.com/report/synthetic-data-generation-for-industrial-vision-market",
+              "use": "CAGR 및 성장 동력 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "다중 센서 퓨전 아키텍처",
+          "market_score": 82.0,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 28.0,
+            "sam_usd_b": 10.5,
+            "som_usd_b": 2.5,
+            "basis": "글로벌 센서 퓨전 시장 (Future Market Insights) 및 자동차 컴퓨터 비전 AI 시장 규모 종합"
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.2,
+            "forecast_period": "2025-2030",
+            "basis": "Market Research Future 및 Future Market Insights 보고서를 기반으로 한 자율주행 센서 퓨전 시장 성장률"
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Sensor Fusion Market | Global Market Analysis Report - 2035",
+              "url": "https://www.futuremarketinsights.com/reports/sensor-fusion-market",
+              "use": "시장 규모 및 성장 전망 근거"
+            },
+            {
+              "title": "Multi Sensor Fusion Solutions Market Report",
+              "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
+              "use": "경쟁 구도 및 솔루션 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "고해상도 라이다 신호 처리",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2029 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 1.2,
+            "basis": "Research Nester 및 MarketsandMarkets 보고서를 기반으로 한 글로벌 라이다 시장 규모 추정"
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.8,
+            "forecast_period": "2025-2030",
+            "basis": "MarketsandMarkets 리포트에 따른 라이다 시장 연평균 성장률"
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "LiDAR Market Size & Share, Growth Analysis 2035",
+              "url": "https://www.researchnester.com/reports/lidar-market/5264",
+              "use": "시장 규모 및 성장 동력 분석 근거"
+            },
+            {
+              "title": "North America LiDAR Market Report 2025-2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/north-america-lidar-market-2472587.html",
+              "use": "지역별 시장 동향 및 경쟁사 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "운전자 시선 기반 안전 시스템",
+          "market_score": 71.0,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 8.2,
+            "sam_usd_b": 3.5,
+            "som_usd_b": 0.9,
+            "basis": "Fortune Business Insights 및 GMI Insights 보고서를 기반으로 한 운전자 모니터링 시스템 (DMS) 시장 규모"
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.5,
+            "forecast_period": "2025-2030",
+            "basis": "GMI Insights 및 Mordor Intelligence 보고서를 기반으로 한 DMS 시장 성장률"
+          },
+          "competitive_landscape": "Oligopoly – 1~2 dominant players",
+          "key_market_reports": [
+            {
+              "title": "Driver Monitoring System Market Size, Share | Growth [2034]",
+              "url": "https://www.fortunebusinessinsights.com/driver-monitoring-system-market-114884",
+              "use": "시장 규모 및 성장 전망 근거"
+            },
+            {
+              "title": "Driver Safety Market Size, Share & 2030 Growth Trends Report",
+              "url": "https://www.mordorintelligence.com/industry-reports/driver-safety-market",
+              "use": "규제 및 안전 기준 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "블러 제거 및 HDR 이미지 처리",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "전체 자동차 컴퓨터 비전 시장 (TAM) 의 하위 세그먼트로, 고해상도 센서 및 야간/고속 주행 시나리오 필수 기술로 추정. 2030 년 기준 자동차 AI 비전 시장 전체가 100 억 달러 이상으로 성장할 것으로 예상되며, 이미지 전처리 (블러/HDR) 는 핵심 필수 요소로 10-15% 점유."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.2,
+            "forecast_period": "2025-2030",
+            "basis": "GMI Insights 등 보고서에 따르면 자동차 컴퓨터 비전 AI 시장은 2035 년까지 연평균 18% 이상의 성장을 보일 것으로 예상. L3 이상 자율주행 상용화 및 고해상도 카메라 센서 보급 확대가 주된 성장 동력."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+              "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+              "use": "CAGR 및 시장 성장 동력 근거"
+            },
+            {
+              "title": "AI in Computer Vision Market Report 2025",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/ai-in-computer-vision-market-141658064.html",
+              "use": "TAM 규모 및 기술 적용 범위 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "use_patent_map_context": false,
+      "actor_map_summary": {},
+      "candidate_selection": {
+        "use_patent_map": false,
+        "use_actor_map_score": false,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "pool_count": 5,
+        "target_k": 4,
+        "selected_count": 4,
+        "selected_tech_ids": [
+          "T01",
+          "T02",
+          "T03",
+          "T05"
+        ],
+        "map_anchor_tech_ids": [],
+        "dropped_candidates": [
+          {
+            "tech_id": "T04",
+            "name": "운전자 시선 기반 안전 시스템",
+            "final_score": 76.0,
+            "selection_score": 76.53,
+            "actor_map_score": 0.0,
+            "reason": "운전자 모니터링 (DMS) 은 규제 준수형 시장으로 성장률 (CAGR 16.5%) 과 시장 규모가 상대적으로 낮으며, STRADVISION 의 '프론티어 기술 선점' 전략과 자율주행 핵심 비전/센서 퓨전 기술 스택과의 시너지가 T01~T05 에 비해 낮아 제외됨."
+          }
+        ],
+        "selection_metrics": {
+          "avg_final_score": 83.77,
+          "avg_market_score": 80.88,
+          "avg_patent_score": 87.3,
+          "avg_actor_map_score": 0.0,
+          "map_supported_count": 0
+        },
+        "selection_weights": {
+          "final_score": 0.55,
+          "patent_score": 0.25,
+          "market_score": 0.2,
+          "actor_map_score": 0.0
+        },
+        "selector": {
+          "method": "llm_fair_contextual_selector",
+          "used": true,
+          "selection_rationale": "STRADVISION 의 2026-2030 년 자율주행 및 모빌리티 확장 전략에 부합하는 핵심 기술 스택을 선별했습니다. T01(합성 데이터) 과 T02(센서 퓨전) 은 자율주행 시스템의 데이터 효율성과 신뢰성을 높이는 가장 높은 점수 (Selection Score 90.49, 85.88) 를 기록한 핵심 기술입니다. T03(라이다 신호 처리) 은 T02 와의 의존성 (Dependency) 을 통해 하드웨어/알고리즘 통합 역량을 강화하고, T05(HDR/블러 제거) 는 비전 센서의 환경 적응성을 높여 L3 이상 상용화 시점 (2027 년) 에 대응하는 필수 전처리 기술로 선정되었습니다. 반면 T04 는 시장 성장성과 전략적 해자 구축 측면에서 상대적으로 낮아 제외되었습니다.",
+          "evidence_used": {
+            "T01": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T02": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T03": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T05": [
+              "patent",
+              "market",
+              "strategy"
+            ]
+          },
+          "fairness_note": "No numeric patent-map bonus was applied."
+        },
+        "fairness_controls": {
+          "same_final_score_formula": true,
+          "same_selection_score_formula_available_as_fallback": true,
+          "actor_map_score_is_diagnostic_only": true,
+          "map_anchor_slots": 0,
+          "llm_selector_uses_map_as_context_only": false
+        }
+      }
+    },
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T05"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T04",
+          "name": "운전자 시선 기반 안전 시스템",
+          "final_score": 76.0,
+          "selection_score": 76.53,
+          "actor_map_score": 0.0,
+          "reason": "운전자 모니터링 (DMS) 은 규제 준수형 시장으로 성장률 (CAGR 16.5%) 과 시장 규모가 상대적으로 낮으며, STRADVISION 의 '프론티어 기술 선점' 전략과 자율주행 핵심 비전/센서 퓨전 기술 스택과의 시너지가 T01~T05 에 비해 낮아 제외됨."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 83.77,
+        "avg_market_score": 80.88,
+        "avg_patent_score": 87.3,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "STRADVISION 의 2026-2030 년 자율주행 및 모빌리티 확장 전략에 부합하는 핵심 기술 스택을 선별했습니다. T01(합성 데이터) 과 T02(센서 퓨전) 은 자율주행 시스템의 데이터 효율성과 신뢰성을 높이는 가장 높은 점수 (Selection Score 90.49, 85.88) 를 기록한 핵심 기술입니다. T03(라이다 신호 처리) 은 T02 와의 의존성 (Dependency) 을 통해 하드웨어/알고리즘 통합 역량을 강화하고, T05(HDR/블러 제거) 는 비전 센서의 환경 적응성을 높여 L3 이상 상용화 시점 (2027 년) 에 대응하는 필수 전처리 기술로 선정되었습니다. 반면 T04 는 시장 성장성과 전략적 해자 구축 측면에서 상대적으로 낮아 제외되었습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Mobileye",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "ADAS 및 컴퓨터 비전 도메인에서 높은 기술적 유사성. 운전자 시선 추적 및 이미지 처리 기술 공유."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "NVIDIA",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "합성 데이터 생성 및 엔드투엔드 아키텍처 개발에서 높은 기술적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Waymo",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "자율주행 시스템 및 이미지 처리 기술에서 높은 기술적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Luminar",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "reason": "라이다 및 센서 퓨전 기술에서 부분적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Hesai",
+          "similarity": 0.7,
+          "edge_weight": 0.7,
+          "reason": "라이다 신호 처리 기술에서 부분적 유사성."
+        },
+        {
+          "center_actor": "STRADVISION",
+          "related_actor": "Blackmore",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "reason": "라이다 및 광학 센싱 기술에서 부분적 유사성."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 4개 기술 선정 완료. 시장 개화 예상 시점: 2028 Q1"
+    ]
+  }
+}

@@ -137,6 +137,7 @@ def run_technology_analysis(
         "market_analysis": None,
         "tech_candidates": None,
         "market_context": None,
+        "candidate_selection": None,
         "orchestrator_feedback": orchestrator_feedback,
         "company_scenario": company_scenario,
         "strategic_direction": strategic_direction,

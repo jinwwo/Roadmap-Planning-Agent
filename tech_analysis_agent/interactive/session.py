@@ -168,6 +168,7 @@ class Session:
                 "market_analysis": None,
                 "tech_candidates": None,
                 "market_context": None,
+                "candidate_selection": None,
                 "messages": [],
                 "error": None,
                 "retry_count": 0,

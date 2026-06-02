@@ -58,6 +58,7 @@ def technology_analysis_node(state: GlobalState) -> dict:
         "market_analysis": None,
         "tech_candidates": None,
         "market_context": None,
+        "candidate_selection": None,
         "messages": [],
         "error": None,
         "retry_count": 0,
@@ -66,12 +67,14 @@ def technology_analysis_node(state: GlobalState) -> dict:
     result = analysis_graph.invoke(sub_state)
     candidates = result.get("tech_candidates") or []
     context = result.get("market_context") or {}
+    candidate_selection = result.get("candidate_selection") or {}
 
     print(f"\n[Global Orchestrator] Agent 1 완료: {len(candidates)}개 후보 기술 확보")
 
     return {
         "tech_candidates": candidates,
         "market_context": context,
+        "candidate_selection": candidate_selection,
         "patent_maps": result.get("patent_maps"),
         "patent_prompt": result.get("patent_prompt"),
         "current_step": "roadmap_planner",

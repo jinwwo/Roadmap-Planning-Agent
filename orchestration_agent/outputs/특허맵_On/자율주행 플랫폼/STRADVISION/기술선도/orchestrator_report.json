@@ -1,0 +1,399 @@
+{
+  "problem_frame": {
+    "industry": "AI Vision Perception / ADAS / Computer Vision",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 43000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "STRADVISION",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "ADAS 및 AI 비전 기술 리더십 강화",
+      "자율주행 및 모빌리티 인접 시장 확장",
+      "프론티어 기술 스택 선점 및 해자 구축"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $43M 정확히 배분. 5년 차내 완료 가능."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T02(2026-2028) → T01(2028-2030) → T04(2030) 순서 정상."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "ADAS/자율주행 트렌드 및 SD1~3 전략과 높은 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1/2 배분 및 금액이 기술 난이도와 시장 시점과 일치."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.55,
+        "comment": "단기(2026-2028)와 장기(2029-2030) 투자 균형 적절."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T02",
+            "name": "생성형 AI 기반 합성 데이터 파이프라인",
+            "category": "Process",
+            "trl": 5,
+            "final_score": 88.95,
+            "market_score": 91.2,
+            "patent_score": 86.2,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T01",
+            "name": "시각-레이더 융합 센서 아키텍처",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 88.5,
+            "market_score": 88.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "고해상도 라이다 신호 처리 알고리즘",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 83.26,
+            "market_score": 82.0,
+            "patent_score": 84.8,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T05",
+            "name": "다중 카메라 HDR 블렌딩 및 보정",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 81.15,
+            "market_score": 82.5,
+            "patent_score": 79.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T04",
+            "name": "시선 추적 기반 운전자 상태 인지",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 79.02,
+            "market_score": 76.5,
+            "patent_score": 82.1,
+            "expected_market_boom_quarter": "2029 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T02",
+            "name": "생성형 AI 기반 합성 데이터 파이프라인",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 5 로 초기 단계이므로 1 차년도부터 즉시 착수하여 3 차년도까지 핵심 파이프라인을 완성해야 합니다. 이는 2026 년 Q4 예상 시장 붐에 맞춰 초기 데이터 인프라를 구축하고, 후행 기술인 센서 융합 아키텍처의 훈련 데이터 공급을 확보하기 위함입니다.",
+              "tech_execution": "실제 데이터 부족 문제를 해결하고 모델 일반화 성능을 높이는 'Active Learning' 특허와 결합하여, NVIDIA 와 Mobileye 가 주도하는 생성형 AI 데이터 생태계에서 STRADVISION 의 독자적인 해자를 구축해야 합니다.",
+              "investment_selection": "아직 명확한 시장 지배자가 없는 초기 단계이므로, 선점 투자를 통해 데이터 품질과 양에서 경쟁 우위를 점하고, 향후 자율주행 모델의 학습 효율성을 극대화하는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T01",
+            "name": "시각-레이더 융합 센서 아키텍처",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T02"
+            ],
+            "reasoning": {
+              "year_placement": "T02 의 합성 데이터 파이프라인이 초기 안정화되는 2 차년도부터 시작하여, 2027 년 Q3 시장 붐을 거치며 5 차년도까지 진화하는 장기 로드맵을 설정합니다. 이는 L3 자율주행 상용화 시점과 맞물려 기술 성숙도를 높이고 차세대 아키텍처로 확장하기 위함입니다. [후처리: dependency 보정 — prereq ['T02'] 완료 후로 1차년도 push]",
+              "tech_execution": "STRADVISION 의 비전 중심 한계를 극복하고, NVIDIA 와 Waymo 등 주요 플레이어들과 경쟁하기 위해 다중 센서 융합 아키텍처를 필수적으로 선점해야 합니다. 이를 통해 기술 격차를 해소하고 경쟁력을 강화하는 전략적 핵심입니다.",
+              "investment_selection": "센서 융합 기술 선점 경쟁이 치열한 시장에서, 초기 투자로 아키텍처 표준을 주도하고 장기적인 R&D 를 통해 2030 년까지 기술 리더십을 유지하는 것이 예산 효율성과 시장 점유율 확보에 가장 유리합니다."
+            }
+          },
+          {
+            "tech_id": "T04",
+            "name": "시선 추적 기반 운전자 상태 인지",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01 의 센서 융합 아키텍처가 기반이 된 3 차년도부터 시작하여, 2029 년 Q1 시장 붐을 거치며 5 차년도까지 규제 대응 및 UX 고도화를 위한 R&D 를 지속합니다. 이는 글로벌 규제 강화 시점과 맞물려 기술의 완성도를 높이는 최적의 타이밍입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 2차년도 push]",
+              "tech_execution": "Mobileye 가 주도하는 과점 구조에서 차별화된 안전성 및 사용자 경험 (UX) 을 제공하기 위해, 시선 추적 기술을 기반으로 한 차선 유지 보조 및 카메라 보정 기술을 적극적으로 개발해야 합니다.",
+              "investment_selection": "2029 년경까지 성숙될 것으로 예상되는 시장에서, 초기 진입 장벽을 낮추고 규제 준수 및 고부가가치 기능으로 경쟁 우위를 점하기 위한 핵심 투자 대상입니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 43000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 합성 데이터 파이프라인",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "tech_budget_rationale": "T02 는 2026 년 Q4 시장 붐에 맞춰 초기 인프라를 구축해야 하는 가장 시급한 기술로, 전체 예산의 약 42% 를 할당합니다. 이는 T01(센서 융합) 과 T04(시선 추적) 의 성공적인 훈련을 위한 필수 선행 조건이므로, 초기 단계에서 충분한 자원을 투입하여 NVIDIA 와 Mobileye 와의 경쟁에서 선점 우위를 확보해야 합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 Q4 시장 붐에 대비하여 즉시 합성 데이터 생성 파이프라인의 프로토타입을 완성하고, Active Learning 특허를 기반으로 한 초기 데이터셋을 확보해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "합성 데이터 시장은 2030 년까지 97 억 달러 규모로 성장할 것으로 예상되며, 연평균 32% 의 초고속 성장률을 보이고 있습니다. 2026 년 Q4 에 예상되는 시장 붐은 자율주행 모델 학습을 위한 필수 인프라 수요가 폭발할 시점으로, 이 시기를 놓치면 후발 주자로 전락할 위험이 큽니다. STRADVISION 은 이 초기 단계에서 데이터 품질과 효율성 측면에서 강력한 경쟁 우위를 확보해야 합니다.",
+                  "tech_evaluation": "현재 TRL 5 로 초기 단계에 있으나, 'Active Learning' 특허와 결합하여 실제 데이터 부족 문제를 해결하고 모델 일반화 성능을 높이는 핵심 프로세스 기술입니다. NVIDIA 와 Mobileye 가 주도하는 생성형 AI 데이터 생태계에서 독자적인 해자를 구축하기 위해서는 기술적 불확실성을 감수하고도 선제적인 R&D 투자가 필수적입니다.",
+                  "investment_decision": "시장 성장률 (CAGR 32%) 과 개발 긴급도 (2026 Q4 붐) 가 모두 최상위권이며, 경쟁 우위 확보를 위한 전략적 핵심 기술이므로 Tier 1 로 선정합니다. 전체 예산의 42% 를 할당하여 파이프라인 구축, 시뮬레이션 환경 조성, 그리고 초기 데이터셋 생성을 위한 대규모 인력과 인프라를 즉시 투입합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "시각-레이더 융합 센서 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "tech_budget_rationale": "T01 은 $45B 의 거대 시장을 가진 핵심 아키텍처 기술로, 전체 예산의 약 35% 를 할당합니다. T02 의 데이터 파이프라인이 안정화된 2 차년도부터 본격적인 개발을 시작하여 2027 년 Q3 시장 붐을 타기 위한 선제적 투자입니다. 이는 STRADVISION 의 비전 중심 한계를 극복하고 L3 자율주행 상용화에 대비한 필수 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "T02 의 데이터 파이프라인과 연동하여 2027 년 Q3 시장 붐에 맞춰 센서 융합 아키텍처의 프로토타입을 완성하고, 실제 도로 테스트를 통해 기술 성숙도를 높여야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "자율주행 센서 융합 시장은 2030 년까지 $45B 규모로 성장할 것으로 예상되며, 연평균 24.5% 의 높은 성장률을 보이고 있습니다. 2027 년 Q3 에 예상되는 시장 붐은 L3 자율주행 상용화 시점과 맞물려 다중 센서 융합 아키텍처의 표준화 추세가 가속화될 시점입니다. 이 시기를 놓치면 NVIDIA 와 Waymo 등 주요 플레이어들에게 기술 격차가 벌어질 수 있습니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 초기 상용화 단계에 있으나, 레이더와 비전 센서의 통합 아키텍처는 기술적 복잡도가 높아 불확실성이 존재합니다. STRADVISION 이 현재 비전 중심인 점을 고려할 때, 다중 센서 융합 아키텍처는 필수적인 기술 격차 해소 및 경쟁력 강화의 핵심입니다.",
+                  "investment_decision": "시장 규모와 성장률이 매우 크고, 2027 년 Q3 시장 붐에 맞춰 개발이 시급하므로 Tier 1 로 선정합니다. 전체 예산의 35% 를 할당하여 센서 하드웨어 통합, 융합 알고리즘 개발, 그리고 실제 도로 테스트를 위한 시범 프로젝트를 진행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T04",
+                "name": "시선 추적 기반 운전자 상태 인지",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10000000.0,
+                "tech_budget_rationale": "T04 는 $8B 규모의 시장으로 성장 잠재력이 있으나, Mobileye 가 주도하는 과점 구조로 인해 경쟁 우위 확보가 어렵습니다. 전체 예산의 약 23% 를 할당하여 2029 년 Q1 시장 붐에 맞춰 규제 대응 및 UX 고도화를 위한 R&D 를 진행합니다. 이는 T01 의 센서 융합 아키텍처가 기반이 된 후행 기술로, 단계적 투자가 적합합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2029 년 Q1 시장 붐에 맞춰 규제 대응 및 UX 고도화를 위한 R&D 를 진행하며, 특정 OEM 에게 맞춤형 솔루션을 제공하여 틈새시장을 공략해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "운전자 모니터링 시스템 (DMS) 시장은 2030 년까지 $8B 규모로 성장할 것으로 예상되며, 연평균 18.5% 의 성장률을 보이고 있습니다. 2029 년 Q1 에 예상되는 시장 붐은 글로벌 규제 강화와 맞물려 시선 추적 기술의 수요가 급증할 시점입니다. 그러나 Mobileye 가 시장을 주도하는 과점 구조로 인해 틈새시장 공략이 필요합니다.",
+                  "tech_evaluation": "현재 TRL 6 으로 초기 상용화 단계에 있으나, Mobileye 의 기술적 유사성을 바탕으로 특정 OEM 에게 맞춤형 솔루션을 제공하여 차별화된 안전성 및 사용자 경험 (UX) 을 제공할 수 있습니다. 이는 ADAS 시스템의 안전성 및 사용자 경험을 높이는 차별화된 아키텍처 요소입니다.",
+                  "investment_decision": "시장 성장률과 개발 긴급도가 중간 수준이며, 경쟁 우위 확보가 어렵기 때문에 Tier 2 로 선정합니다. 전체 예산의 23% 를 할당하여 규제 대응 및 UX 고도화를 위한 R&D 를 진행하며, 마일스톤 기반의 조건부 투자를 고려합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 합성 데이터 파이프라인",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 합성 데이터 파이프라인",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 합성 데이터 파이프라인",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T01",
+                "name": "시각-레이더 융합 센서 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T01",
+                "name": "시각-레이더 융합 센서 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T01",
+                "name": "시각-레이더 융합 센서 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T04",
+                "name": "시선 추적 기반 운전자 상태 인지",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 18000000.0,
+            "3": 15000000.0,
+            "5": 10000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T02",
+              "name": "생성형 AI 기반 합성 데이터 파이프라인",
+              "category": "Process",
+              "final_score": 88.95,
+              "market_score": 91.2,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T01",
+              "name": "시각-레이더 융합 센서 아키텍처",
+              "category": "Architecture",
+              "final_score": 88.5,
+              "market_score": 88.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T03",
+              "name": "고해상도 라이다 신호 처리 알고리즘",
+              "category": "Process",
+              "final_score": 83.26,
+              "market_score": 82.0,
+              "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T05",
+              "name": "다중 카메라 HDR 블렌딩 및 보정",
+              "category": "Process",
+              "final_score": 81.15,
+              "market_score": 82.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T04",
+              "name": "시선 추적 기반 운전자 상태 인지",
+              "category": "Architecture",
+              "final_score": 79.02,
+              "market_score": 76.5,
+              "boom": "2029 Q1"
+            }
+          ],
+          "category_distribution": {
+            "Process": 3,
+            "Architecture": 2
+          },
+          "avg_trl": 6.2,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T02",
+              "name": "생성형 AI 기반 합성 데이터 파이프라인",
+              "stage": "roadmap",
+              "key_reason": "시장 성장률 (CAGR 32%) 과 시장 규모 ($15B TAM) 가 매우 높아 선점 효과가 큽니다."
+            },
+            {
+              "tech_id": "T01",
+              "name": "시각-레이더 융합 센서 아키텍처",
+              "stage": "roadmap",
+              "key_reason": "시장 규모 ($45B TAM) 와 성장률 (CAGR 24.5%) 이 매우 높아 전략적 중요도가 높습니다."
+            }
+          ],
+          "dependency_edges": [
+            "T02 → T01",
+            "T01 → T04"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 1,
+            "2027 Q3": 1,
+            "2028 Q2": 1,
+            "2027 Q2": 1,
+            "2029 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 분포 정상. 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__기술선도__investment_strategy.json"
+  }
+}

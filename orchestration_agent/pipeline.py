@@ -37,6 +37,7 @@ sibling 에이전트들은 각자 자기 config/state/llm_factory 를 갖고 있
 
 import json
 import os
+import re
 import subprocess
 import sys
 from contextlib import contextmanager
@@ -116,7 +117,10 @@ def _output_path(filename: str, out_prefix: str = "") -> str:
 
 def _agent_run_id(out_prefix: str = "") -> str:
     """중간 산출물 run 디렉터리명. 기본은 사용자가 요청한 run_01 패턴."""
-    return os.getenv("AGENT_RUN_ID") or "run_01"
+    if os.getenv("AGENT_RUN_ID"):
+        return os.getenv("AGENT_RUN_ID")
+    cleaned = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(out_prefix or "").strip().rstrip("_"))
+    return cleaned.strip("_") or "run_01"
 
 
 def _agent_output_dir(agent_name: str, run_id: str) -> str:
@@ -314,8 +318,9 @@ def _run_agent1(
         snippet = f"""
 import sys, json, os
 os.environ["PATENT_ANALYSIS_METHOD"] = {patent_method!r}
-if {use_patent_map_env!r} is not None:
-    os.environ["USE_PATENT_MAP"] = {use_patent_map_env!r}
+use_patent_map_env = {use_patent_map_env!r}
+if use_patent_map_env is not None:
+    os.environ["USE_PATENT_MAP"] = use_patent_map_env
 os.environ["AGENT_RUN_ID"] = {run_id!r}
 os.environ["PATENT_AGENT_RUN_ID"] = {run_id!r}
 os.environ["MARKET_AGENT_RUN_ID"] = {run_id!r}
@@ -349,6 +354,7 @@ out = {{
     "use_patent_map": (result.get("market_raw_data") or {{}}).get("use_patent_map"),
     "market_context": result.get("market_context") or {{}},
     "tech_candidates": result.get("tech_candidates") or [],
+    "candidate_selection": result.get("candidate_selection") or {{}},
     "market_raw_data": result.get("market_raw_data") or {{}},
     "market_analysis": result.get("market_analysis") or [],
     "patent_raw_data": result.get("patent_raw_data") or {{}},
@@ -372,6 +378,7 @@ print(f"[Agent 1] 저장: {out_path!r} ({{len(out['tech_candidates'])}}개 후�
     data = _safe_load(out_path)
     state["tech_candidates"] = data.get("tech_candidates", [])
     state["market_context"] = data.get("market_context", {})
+    state["candidate_selection"] = data.get("candidate_selection", {})
     print(f"[Pipeline] Agent 1 결과 로드: {len(state['tech_candidates'])}개 후보")
     _emit("agent_end", agent="1", count=len(state["tech_candidates"]))
     _emit("candidates_ready",
@@ -678,6 +685,7 @@ def run_orchestration(
         "active_agents": active_agents,
         "tech_candidates": [],
         "market_context": {},
+        "candidate_selection": {},
         "planned_roadmap": [],
         "investment_strategy": [],
         "stages": [],
@@ -754,6 +762,7 @@ def run_orchestration(
         "patent_method": patent_method,
         "tech_candidates": state["tech_candidates"],
         "market_context": state["market_context"],
+        "candidate_selection": state.get("candidate_selection", {}),
         "planned_roadmap": state["planned_roadmap"],
         "investment_strategy": state["investment_strategy"],
         "stages": state["stages"],

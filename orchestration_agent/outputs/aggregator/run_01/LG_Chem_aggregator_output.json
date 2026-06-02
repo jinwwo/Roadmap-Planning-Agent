@@ -1,0 +1,979 @@
+{
+  "run_id": "run_01",
+  "timestamp_utc": "2026-06-01T07:20:46Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고농축 LiFSI 전해질 합성",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "CATL"
+        ],
+        "evidence_patents": [
+          {
+            "company": "CATL",
+            "title": "LITHIUM BIS(FLUOROSULFONYL)IMIDE AND PREPARATION METHOD THEREOF, ELECTROLYTIC SOLUTION AND SECONDARY BATTERY",
+            "date": "2023-08-08",
+            "cited_by": 0
+          },
+          {
+            "company": "CATL",
+            "title": "Method for recovering raw and auxiliary materials in the production of lithium bis(fluorosulfonyl)imide",
+            "date": "2023-08-03",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "CATL 은 LiFSI(이소플루오로설폰이미드 리튬) 전해질 염의 합성 및 원료 회수 공정에 집중된 특허를 다수 출원하고 있어 차세대 고전도 전해질 기술의 선점 의도를 보여줍니다. LG Chem 은 양극재 중심의 포트폴리오를 가지고 있으나, 전해질 소재까지 확장하여 시스템 효율을 극대화하는 전략적 갭을 메울 필요가 있습니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "고체전지용 복합 양극재",
+        "category": "Material",
+        "estimated_trl": 4,
+        "patent_score": 86.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Samsung SDI",
+          "SK On"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung SDI",
+            "title": "Positive electrode active material for all-solid-state rechargeable battery, method for preparing same, and all-solid-state rechargeable battery",
+            "date": "2025-09-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung SDI",
+            "title": "COMPOSITE CATHODE ACTIVE MATERIAL, CATHODE AND LITHIUM BATTERY EACH CONTAINING COMPOSITE CATHODE ACTIVE MATERIAL",
+            "date": "2026-01-13",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "삼성 SDI 와 SK On 은 고체전지 전용 양극재 및 복합 양극재에 대한 최근 특허 출원이 활발하여, 고체전지 상용화를 위한 소재 기술 경쟁이 치열함을 시사합니다. LG Chem 은 양극재 리더십을 유지하기 위해 고체전지 환경에 최적화된 복합 양극재 기술을 선점해야 합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "양극재 전구체 균질화 공정",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 82.4,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Tesla"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Tesla",
+            "title": "METHODS OF PREPARING ELECTRODE ACTIVE MATERIALS BY HOMOGENIZATION OF PRECURSOR MIXTURES, AND PRODUCTS THEREOF",
+            "date": "2025-10-23",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "테슬라는 양극재 전구체 혼합물의 균질화 (Homogenization) 공정을 통해 소재의 균일성과 성능을 극대화하는 특허를 출원했습니다. 이는 기존 양극재 제조 공정의 한계를 극복하고 대량 생산 효율을 높이는 핵심 기술로, LG Chem 이 공정 혁신을 통해 경쟁력을 강화할 수 있는 분야입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "실리콘 기반 음극재 및 배터리 모듈",
+        "category": "Material",
+        "estimated_trl": 7,
+        "patent_score": 84.1,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 83,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Energy Solution",
+          "SK On"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Energy Solution",
+            "title": "LITHIUM SECONDARY BATTERY INCLUDING Si-BASED ANODE ACTIVE MATERIAL",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "SK On",
+            "title": "ANODE ACTIVE MATERIAL FOR LITHIUM SECONDARY BATTERY AND LITHIUM SECONDARY BATTERY INCLUDING THE SAME",
+            "date": "2025-11-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "LG 에너지솔루션과 SK 온은 실리콘 기반 음극재를 활용한 고에너지 밀도 배터리 및 모듈 기술에 집중하고 있습니다. 이는 전기차 주행거리 연장을 위한 필수 기술로, LG Chem 이 음극재 소재 및 모듈 설계 기술을 강화하여 시스템 수준의 경쟁력을 확보해야 합니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "배터리 모듈 화재 전파 방지 구조",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 81.5,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Energy Solution",
+            "title": "BATTERY MODULE HAVING FIRE TRANSITION PREVENTION STRUCTURE AND BATTERY PACK INCLUDING THE SAME",
+            "date": "2026-01-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "LG 에너지솔루션은 배터리 모듈 내 화재 전파를 방지하는 구조 설계에 대한 특허를 출원하여 안전성 강화에 주력하고 있습니다. 이는 배터리 시스템의 신뢰성을 높이는 핵심 요소로, LG Chem 이 소재 및 모듈 설계 기술을 통합하여 안전성 우위를 점할 수 있는 기회입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고농축 LiFSI 전해질 합성",
+        "market_score": 82.4,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 3.1,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.3,
+          "basis": "LiFSI 전해질 시장 규모는 2035 년 약 31 억 달러로 추정되며, 고농축 전해질은 고성능 배터리 수요 증가로 2027 년 이후 본격적인 상용화 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "LiFSI 시장이 2035 년까지 연평균 24.5% 성장할 것으로 예상되며, 고농축 전해질은 차세대 배터리 필수 소재로 급성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "LiFSI for Lithium-Battery Electrolyte Market Size to Hit USD 3,139.80 Million by 2035",
+            "url": "https://www.precedenceresearch.com/lifsi-for-lithium-battery-electrolyte-market",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "CATL"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "CATL 과의 높은 유사성 (0.92) 은 LiFSI 전해질 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2027 년 이후 고농축 전해질 상용화 가속화로 시장 진입 시기가 중요함. TAM 은 2035 년 31 억 달러로 추정되며, CAGR 24.5% 의 높은 성장률을 보여 시장 매력도가 높음."
+      },
+      {
+        "tech_id": "T02",
+        "name": "고체전지용 복합 양극재",
+        "market_score": 88.6,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 200.0,
+          "sam_usd_b": 60.0,
+          "som_usd_b": 15.0,
+          "basis": "고체전지 시장 규모는 2032 년 약 2000 억 달러로 예상되며, 복합 양극재는 고체전지 상용화의 핵심 소재로 2028 년 이후 본격적인 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 35.0,
+          "forecast_period": "2025-2030",
+          "basis": "고체전지 시장이 2032 년까지 연평균 35% 성장할 것으로 예상되며, 복합 양극재는 고체전지 성능 향상의 핵심 요소로 급성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "All-Solid-State Battery Market Forecast to Reach $200 Billion by 2032",
+            "url": "https://finance.biggo.com/news/H637ZJwBEjg5DZ3vs9OW",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung SDI",
+            "SK On"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "Samsung SDI 와 SK On 과의 높은 유사성 (0.88, 0.85) 은 고체전지용 복합 양극재 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2028 년 이후 고체전지 상용화 가속화로 시장 진입 시기가 중요함. TAM 은 2032 년 2000 억 달러로 추정되며, CAGR 35% 의 매우 높은 성장률을 보여 시장 매력도가 매우 높음."
+      },
+      {
+        "tech_id": "T03",
+        "name": "양극재 전구체 균질화 공정",
+        "market_score": 72.5,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 68,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "양극재 전구체 시장 규모는 2030 년 약 150 억 달러로 추정되며, 균질화 공정은 생산 효율성 향상을 위한 핵심 기술로 2026 년 이후 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "양극재 전구체 시장이 2030 년까지 연평균 18% 성장할 것으로 예상되며, 균질화 공정은 생산 비용 절감 및 품질 향상을 위한 핵심 기술로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://www.globenewswire.com/news-release/2025/11/20/3191787/28124/en/cathode-materials-market-research-report-2025-2030-opportunities-in-solid-state-and-next-gen-cathode-breakthroughs-plus-supply-chain-localization-incentivizing-new-cathode-plants.html",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "Tesla 와의 유사성 (0.75) 은 양극재 전구체 균질화 공정에서 LG Chem 의 전략적 차이를 시사하며, 2026 년 이후 생산 효율성 향상 수요 증가로 시장 진입 시기가 중요함. TAM 은 2030 년 150 억 달러로 추정되며, CAGR 18% 의 성장률을 보여 시장 매력도가 높음."
+      },
+      {
+        "tech_id": "T04",
+        "name": "실리콘 기반 음극재 및 배터리 모듈",
+        "market_score": 79.8,
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 76
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "실리콘 기반 음극재 시장 규모는 2030 년 약 450 억 달러로 추정되며, 배터리 모듈과 결합된 솔루션은 2027 년 이후 본격적인 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "실리콘 기반 음극재 시장이 2030 년까지 연평균 22% 성장할 것으로 예상되며, 배터리 모듈과 결합된 솔루션은 에너지 밀도 향상을 위한 핵심 기술로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "S Korea's LG Chem to up battery material sales by 2030 - Argus Media",
+            "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2450235-s-korea-s-lg-chem-to-up-battery-material-sales-by-2030",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SK On",
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "SK On 과 LG Energy Solution 과의 높은 유사성 (0.85, 0.82) 은 실리콘 기반 음극재 및 배터리 모듈 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2027 년 이후 에너지 밀도 향상 수요 증가로 시장 진입 시기가 중요함. TAM 은 2030 년 450 억 달러로 추정되며, CAGR 22% 의 높은 성장률을 보여 시장 매력도가 높음."
+      },
+      {
+        "tech_id": "T05",
+        "name": "배터리 모듈 화재 전파 방지 구조",
+        "market_score": 68.2,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "배터리 모듈 안전성 시장 규모는 2030 년 약 120 억 달러로 추정되며, 화재 전파 방지 구조는 안전성 규제 강화로 2026 년 이후 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 모듈 안전성 시장이 2030 년까지 연평균 16.5% 성장할 것으로 예상되며, 화재 전파 방지 구조는 안전성 규제 강화로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global EV battery market share in 2025: Full rankings and key ...",
+            "url": "https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "LG Energy Solution 과의 유사성 (0.82) 은 배터리 모듈 화재 전파 방지 구조에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2026 년 이후 안전성 규제 강화로 시장 진입 시기가 중요함. TAM 은 2030 년 120 억 달러로 추정되며, CAGR 16.5% 의 성장률을 보여 시장 매력도가 높음."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "CATL",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "고농축 전해질 및 양극재 소재 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Samsung SDI",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "고체전지용 복합 양극재 및 소재 기술 경쟁"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "SK On",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "실리콘 기반 음극재 및 양극재 소재 기술 공유"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "실리콘 음극재 및 배터리 모듈 안전성 기술 유사성"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Tesla",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "reason": "양극재 전구체 균질화 공정 기술의 전략적 차이 및 기회"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T02",
+        "name": "고체전지용 복합 양극재",
+        "category": "Material",
+        "trl": 4,
+        "patent_score": 86.2,
+        "market_score": 88.6,
+        "actor_map_score": 77.85,
+        "final_score": 85.61,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] 삼성 SDI 와 SK On 은 고체전지 전용 양극재 및 복합 양극재에 대한 최근 특허 출원이 활발하여, 고체전지 상용화를 위한 소재 기술 경쟁이 치열함을 시사합니다. LG Chem 은 양극재 리더십을 유지하기 위해 고체전지 환경에 최적화된 복합 양극재 기술을 선점해야 합니다. [Market] Samsung SDI 와 SK On 과의 높은 유사성 (0.88, 0.85) 은 고체전지용 복합 양극재 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2028 년 이후 고체전지 상용화 가속화로 시장 진입 시기가 중요함. TAM 은 2032 년 2000 억 달러로 추정되며, CAGR 35% 의 매우 높은 성장률을 보여 시장 매력도가 매우 높음.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 88,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 200.0,
+          "sam_usd_b": 60.0,
+          "som_usd_b": 15.0,
+          "basis": "고체전지 시장 규모는 2032 년 약 2000 억 달러로 예상되며, 복합 양극재는 고체전지 상용화의 핵심 소재로 2028 년 이후 본격적인 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 35.0,
+          "forecast_period": "2025-2030",
+          "basis": "고체전지 시장이 2032 년까지 연평균 35% 성장할 것으로 예상되며, 복합 양극재는 고체전지 성능 향상의 핵심 요소로 급성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "All-Solid-State Battery Market Forecast to Reach $200 Billion by 2032",
+            "url": "https://finance.biggo.com/news/H637ZJwBEjg5DZ3vs9OW",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Samsung SDI",
+            "SK On"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Samsung SDI",
+            "similarity": 88.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 79.2
+          },
+          {
+            "related_actor": "SK On",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        }
+      },
+      {
+        "tech_id": "T01",
+        "name": "고농축 LiFSI 전해질 합성",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 88.5,
+        "market_score": 82.4,
+        "actor_map_score": 82.8,
+        "final_score": 84.62,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] CATL 은 LiFSI(이소플루오로설폰이미드 리튬) 전해질 염의 합성 및 원료 회수 공정에 집중된 특허를 다수 출원하고 있어 차세대 고전도 전해질 기술의 선점 의도를 보여줍니다. LG Chem 은 양극재 중심의 포트폴리오를 가지고 있으나, 전해질 소재까지 확장하여 시스템 효율을 극대화하는 전략적 갭을 메울 필요가 있습니다. [Market] CATL 과의 높은 유사성 (0.92) 은 LiFSI 전해질 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2027 년 이후 고농축 전해질 상용화 가속화로 시장 진입 시기가 중요함. TAM 은 2035 년 31 억 달러로 추정되며, CAGR 24.5% 의 높은 성장률을 보여 시장 매력도가 높음.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 3.1,
+          "sam_usd_b": 1.2,
+          "som_usd_b": 0.3,
+          "basis": "LiFSI 전해질 시장 규모는 2035 년 약 31 억 달러로 추정되며, 고농축 전해질은 고성능 배터리 수요 증가로 2027 년 이후 본격적인 상용화 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "LiFSI 시장이 2035 년까지 연평균 24.5% 성장할 것으로 예상되며, 고농축 전해질은 차세대 배터리 필수 소재로 급성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "LiFSI for Lithium-Battery Electrolyte Market Size to Hit USD 3,139.80 Million by 2035",
+            "url": "https://www.precedenceresearch.com/lifsi-for-lithium-battery-electrolyte-market",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "CATL"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "CATL",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 95
+        }
+      },
+      {
+        "tech_id": "T04",
+        "name": "실리콘 기반 음극재 및 배터리 모듈",
+        "category": "Material",
+        "trl": 7,
+        "patent_score": 84.1,
+        "market_score": 79.8,
+        "actor_map_score": 75.15,
+        "final_score": 80.38,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2027 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] LG 에너지솔루션과 SK 온은 실리콘 기반 음극재를 활용한 고에너지 밀도 배터리 및 모듈 기술에 집중하고 있습니다. 이는 전기차 주행거리 연장을 위한 필수 기술로, LG Chem 이 음극재 소재 및 모듈 설계 기술을 강화하여 시스템 수준의 경쟁력을 확보해야 합니다. [Market] SK On 과 LG Energy Solution 과의 높은 유사성 (0.85, 0.82) 은 실리콘 기반 음극재 및 배터리 모듈 시장에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2027 년 이후 에너지 밀도 향상 수요 증가로 시장 진입 시기가 중요함. TAM 은 2030 년 450 억 달러로 추정되며, CAGR 22% 의 높은 성장률을 보여 시장 매력도가 높음.",
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 76
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 3.5,
+          "basis": "실리콘 기반 음극재 시장 규모는 2030 년 약 450 억 달러로 추정되며, 배터리 모듈과 결합된 솔루션은 2027 년 이후 본격적인 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "실리콘 기반 음극재 시장이 2030 년까지 연평균 22% 성장할 것으로 예상되며, 배터리 모듈과 결합된 솔루션은 에너지 밀도 향상을 위한 핵심 기술로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "S Korea's LG Chem to up battery material sales by 2030 - Argus Media",
+            "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2450235-s-korea-s-lg-chem-to-up-battery-material-sales-by-2030",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "SK On",
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "SK On",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "LG Energy Solution",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 83,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 88
+        }
+      },
+      {
+        "tech_id": "T03",
+        "name": "양극재 전구체 균질화 공정",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 82.4,
+        "market_score": 72.5,
+        "actor_map_score": 67.5,
+        "final_score": 74.97,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] 테슬라는 양극재 전구체 혼합물의 균질화 (Homogenization) 공정을 통해 소재의 균일성과 성능을 극대화하는 특허를 출원했습니다. 이는 기존 양극재 제조 공정의 한계를 극복하고 대량 생산 효율을 높이는 핵심 기술로, LG Chem 이 공정 혁신을 통해 경쟁력을 강화할 수 있는 분야입니다. [Market] Tesla 와의 유사성 (0.75) 은 양극재 전구체 균질화 공정에서 LG Chem 의 전략적 차이를 시사하며, 2026 년 이후 생산 효율성 향상 수요 증가로 시장 진입 시기가 중요함. TAM 은 2030 년 150 억 달러로 추정되며, CAGR 18% 의 성장률을 보여 시장 매력도가 높음.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 68,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.0,
+          "basis": "양극재 전구체 시장 규모는 2030 년 약 150 억 달러로 추정되며, 균질화 공정은 생산 효율성 향상을 위한 핵심 기술로 2026 년 이후 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "양극재 전구체 시장이 2030 년까지 연평균 18% 성장할 것으로 예상되며, 균질화 공정은 생산 비용 절감 및 품질 향상을 위한 핵심 기술로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://www.globenewswire.com/news-release/2025/11/20/3191787/28124/en/cathode-materials-market-research-report-2025-2030-opportunities-in-solid-state-and-next-gen-cathode-breakthroughs-plus-supply-chain-localization-incentivizing-new-cathode-plants.html",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Tesla"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Tesla",
+            "similarity": 75.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 67.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 85
+        }
+      },
+      {
+        "tech_id": "T05",
+        "name": "배터리 모듈 화재 전파 방지 구조",
+        "category": "Architecture",
+        "trl": 6,
+        "patent_score": 81.5,
+        "market_score": 68.2,
+        "actor_map_score": 73.8,
+        "final_score": 73.98,
+        "scoring_weights": {
+          "patent_score": 0.35,
+          "market_score": 0.45,
+          "actor_map_score": 0.2
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] LG 에너지솔루션은 배터리 모듈 내 화재 전파를 방지하는 구조 설계에 대한 특허를 출원하여 안전성 강화에 주력하고 있습니다. 이는 배터리 시스템의 신뢰성을 높이는 핵심 요소로, LG Chem 이 소재 및 모듈 설계 기술을 통합하여 안전성 우위를 점할 수 있는 기회입니다. [Market] LG Energy Solution 과의 유사성 (0.82) 은 배터리 모듈 화재 전파 방지 구조에서 LG Chem 의 경쟁력 있는 입지를 시사하며, 2026 년 이후 안전성 규제 강화로 시장 진입 시기가 중요함. TAM 은 2030 년 120 억 달러로 추정되며, CAGR 16.5% 의 성장률을 보여 시장 매력도가 높음.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "배터리 모듈 안전성 시장 규모는 2030 년 약 120 억 달러로 추정되며, 화재 전파 방지 구조는 안전성 규제 강화로 2026 년 이후 수요 증가 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.5,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 모듈 안전성 시장이 2030 년까지 연평균 16.5% 성장할 것으로 예상되며, 화재 전파 방지 구조는 안전성 규제 강화로 성장."
+        },
+        "key_market_reports": [
+          {
+            "title": "Global EV battery market share in 2025: Full rankings and key ...",
+            "url": "https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "LG Energy Solution"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "LG Energy Solution",
+            "similarity": 82.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 73.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 90
+        }
+      }
+    ],
+    "market_context": {
+      "target_market": "Cathode Materials / Advanced Materials / Battery Materials",
+      "expected_boom_quarter": "2027 Q1",
+      "market_research_summary": {
+        "T01": {
+          "name": "고농축 LiFSI 전해질 합성",
+          "market_score": 82.4,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 3.1,
+            "sam_usd_b": 1.2,
+            "som_usd_b": 0.3,
+            "basis": "LiFSI 전해질 시장 규모는 2035 년 약 31 억 달러로 추정되며, 고농축 전해질은 고성능 배터리 수요 증가로 2027 년 이후 본격적인 상용화 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "LiFSI 시장이 2035 년까지 연평균 24.5% 성장할 것으로 예상되며, 고농축 전해질은 차세대 배터리 필수 소재로 급성장."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "LiFSI for Lithium-Battery Electrolyte Market Size to Hit USD 3,139.80 Million by 2035",
+              "url": "https://www.precedenceresearch.com/lifsi-for-lithium-battery-electrolyte-market",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "CATL"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "고체전지용 복합 양극재",
+          "market_score": 88.6,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 200.0,
+            "sam_usd_b": 60.0,
+            "som_usd_b": 15.0,
+            "basis": "고체전지 시장 규모는 2032 년 약 2000 억 달러로 예상되며, 복합 양극재는 고체전지 상용화의 핵심 소재로 2028 년 이후 본격적인 수요 증가 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 35.0,
+            "forecast_period": "2025-2030",
+            "basis": "고체전지 시장이 2032 년까지 연평균 35% 성장할 것으로 예상되며, 복합 양극재는 고체전지 성능 향상의 핵심 요소로 급성장."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "All-Solid-State Battery Market Forecast to Reach $200 Billion by 2032",
+              "url": "https://finance.biggo.com/news/H637ZJwBEjg5DZ3vs9OW",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Samsung SDI",
+              "SK On"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "양극재 전구체 균질화 공정",
+          "market_score": 72.5,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 1.0,
+            "basis": "양극재 전구체 시장 규모는 2030 년 약 150 억 달러로 추정되며, 균질화 공정은 생산 효율성 향상을 위한 핵심 기술로 2026 년 이후 수요 증가 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.0,
+            "forecast_period": "2025-2030",
+            "basis": "양극재 전구체 시장이 2030 년까지 연평균 18% 성장할 것으로 예상되며, 균질화 공정은 생산 비용 절감 및 품질 향상을 위한 핵심 기술로 성장."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Cathode Materials Market Research Report 2025-2030",
+              "url": "https://www.globenewswire.com/news-release/2025/11/20/3191787/28124/en/cathode-materials-market-research-report-2025-2030-opportunities-in-solid-state-and-next-gen-cathode-breakthroughs-plus-supply-chain-localization-incentivizing-new-cathode-plants.html",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "Tesla"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "실리콘 기반 음극재 및 배터리 모듈",
+          "market_score": 79.8,
+          "expected_market_boom_quarter": "2027 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 15.0,
+            "som_usd_b": 3.5,
+            "basis": "실리콘 기반 음극재 시장 규모는 2030 년 약 450 억 달러로 추정되며, 배터리 모듈과 결합된 솔루션은 2027 년 이후 본격적인 수요 증가 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "실리콘 기반 음극재 시장이 2030 년까지 연평균 22% 성장할 것으로 예상되며, 배터리 모듈과 결합된 솔루션은 에너지 밀도 향상을 위한 핵심 기술로 성장."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "S Korea's LG Chem to up battery material sales by 2030 - Argus Media",
+              "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2450235-s-korea-s-lg-chem-to-up-battery-material-sales-by-2030",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "SK On",
+              "LG Energy Solution"
+            ],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "배터리 모듈 화재 전파 방지 구조",
+          "market_score": 68.2,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 0.8,
+            "basis": "배터리 모듈 안전성 시장 규모는 2030 년 약 120 억 달러로 추정되며, 화재 전파 방지 구조는 안전성 규제 강화로 2026 년 이후 수요 증가 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 16.5,
+            "forecast_period": "2025-2030",
+            "basis": "배터리 모듈 안전성 시장이 2030 년까지 연평균 16.5% 성장할 것으로 예상되며, 화재 전파 방지 구조는 안전성 규제 강화로 성장."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Global EV battery market share in 2025: Full rankings and key ...",
+              "url": "https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [
+              "LG Energy Solution"
+            ],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": true,
+      "use_actor_map_score": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "CATL",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Samsung SDI",
+            "similarity": 0.88,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "SK On",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "LG Energy Solution",
+            "similarity": 0.82,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Tesla",
+            "similarity": 0.75,
+            "shared_technology_areas": []
+          }
+        ]
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "CATL",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "고농축 전해질 및 양극재 소재 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Samsung SDI",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "고체전지용 복합 양극재 및 소재 기술 경쟁"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "SK On",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "실리콘 기반 음극재 및 양극재 소재 기술 공유"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.82,
+          "edge_weight": 0.82,
+          "reason": "실리콘 음극재 및 배터리 모듈 안전성 기술 유사성"
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Tesla",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "reason": "양극재 전구체 균질화 공정 기술의 전략적 차이 및 기회"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 5개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q1"
+    ]
+  }
+}

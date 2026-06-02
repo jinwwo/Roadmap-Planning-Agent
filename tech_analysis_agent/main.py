@@ -62,6 +62,7 @@ def main():
         "related_companies": None,
         "tech_candidates": None,
         "market_context": None,
+        "candidate_selection": None,
         "patent_maps": None,
         "patent_prompt": None,
         "planned_roadmap": None,
@@ -87,6 +88,7 @@ def main():
     agent1_output = {
         "market_context": final_state.get("market_context", {}),
         "tech_candidates": final_state.get("tech_candidates", []),
+        "candidate_selection": final_state.get("candidate_selection", {}),
         "patent_maps": final_state.get("patent_maps", {}),
         "patent_prompt": final_state.get("patent_prompt", {}),
     }
