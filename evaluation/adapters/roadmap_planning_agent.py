@@ -229,6 +229,8 @@ class AgentOutputAdapter:
             meta["company_type"] = pf.get("company_type", "")
             meta["objective"] = pf.get("objective", "")
             meta["strategic_priorities"] = pf.get("strategic_priorities", [])
+            meta["strategic_direction"] = pf.get("strategic_direction", [])
+            meta["company_name"] = pf.get("company_name", "")
         return meta
 
     # ─────────────────────────────────────────

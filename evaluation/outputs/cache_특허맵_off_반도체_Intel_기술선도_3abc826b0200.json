@@ -7,64 +7,68 @@
     "num_technologies": 3
   },
   "llm_judge": {
-    "alignment": 4,
-    "sequencing": 4,
-    "investment": 4,
-    "coherence": 4,
-    "balance": 2,
-    "llm_structural_score": 70.0,
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 3,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 4,
-        "sequencing": 4,
-        "investment": 4,
-        "coherence": 4,
-        "balance": 2
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 3,
+        "market_timing": 3,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "All three technologies (GAA transistors, hybrid bonding packaging, CIM architecture) target high-growth semiconductor segments with strong market boom expectations between 2027-2029, well-aligned with the 2030 reference horizon. However, the portfolio is narrow with only three technologies covering a limited slice of the semiconductor domain.",
-      "sequencing": "Dependency chains are correctly respected: GAA (T01) completes by 2028-Q1 before Hybrid Bonding (T02) begins its scheduled start at 2028-Q1, satisfying the prerequisite. TRL-based lead times are generally realistic (TRL 7 for GAA, TRL 6 for hybrid bonding, TRL 5 for CIM), though hybrid bonding's 2-year timing error relative to its market boom is a concern.",
-      "investment": "GAA receives Strategic tier with the highest scores (market_opp=5, urgency=5), which is well-justified. Hybrid Bonding at Strategic tier is reasonable given strong market opportunity. CIM at High tier reflects appropriate caution given higher uncertainty (4.0) and lower urgency (3.0). Budget spend of zero raises questions about capital deployment planning.",
-      "coherence": "The three technologies form a logical progression from foundational process (GAA) to advanced packaging (hybrid bonding) to compute architecture (CIM), spanning TRL 5-7 and covering development-to-deployment stages. The narrative connecting process innovation to system-level integration is coherent for an IDM/foundry strategy.",
-      "balance": "The portfolio contains only 3 technologies, all concentrated in the high-investment tiers (2 Strategic, 1 High), with no Low or Medium tier exploratory bets, no early-TRL research investments, and no diversification into adjacent areas. Risk is concentrated rather than distributed, and there are no short-term quick-win technologies."
+      "trl_pathway": "GAA at TRL 7 completing in 2 years and CIM at TRL 5 completing in 3 years are both plausible given semiconductor industry norms, though CIM's jump to deployment-ready in 3 years is moderately optimistic for an architecture-level technology. Hybrid bonding at TRL 6 over 2 years is reasonable given its dependency on GAA completion.",
+      "strategic_fidelity": "While the portfolio includes technologies at moderate-to-high TRL (5-7), which is somewhat appropriate for technology leadership, the declared 기술선도 strategy would ideally include lower-TRL exploratory technologies (TRL 3-5) or emerging paradigms to establish frontier leadership; all three selections are relatively near-market, resembling a commercialization portfolio more than a pure technology leadership one.",
+      "competitive_awareness": "The selection of GAA, hybrid bonding, and CIM reflects awareness of major semiconductor battlegrounds (TSMC, Samsung, Intel competition areas), but the roadmap lacks explicit differentiation rationale or timing designed around competitor gaps; the choices appear driven by technology importance rather than competitive positioning intelligence.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before the market boom to establish preemptive leadership. GAA completes 0.5yr after boom (slight miss), CIM completes 0.75yr after boom (adequate), but hybrid bonding completes 2.0 years after its boom window (significant miss), undermining the preemption logic.",
+      "patent_market_convergence": "All three technologies (GAA, hybrid bonding, CIM) are in active patent filing zones and growing markets, suggesting general convergence awareness, but the roadmap does not articulate deliberate convergence-zone targeting — the selections appear motivated by strategic importance rather than explicit patent-market signal intersection analysis."
     },
     "strengths": [
-      "Dependency sequencing is correctly implemented with zero violations, ensuring GAA process maturity precedes hybrid bonding packaging development",
-      "Investment tier assignments are well-calibrated to quantitative scores, with Strategic tier reserved for technologies with highest market opportunity and urgency ratings"
+      "TRL progression timelines are broadly realistic with no egregious jumps, and dependency sequencing (T01→T02) is correctly structured",
+      "All three technologies represent high-impact semiconductor domains with genuine long-term strategic value aligned with IDM/Foundry context"
     ],
     "weaknesses": [
-      "Portfolio is critically under-diversified with only 3 technologies and no representation in Low/Medium investment tiers, creating high concentration risk",
-      "Hybrid bonding packaging has a 2.0-year timing gap relative to its market boom (2028-Q1), risking missed market window and competitive disadvantage"
+      "Hybrid bonding completion in 2030-Q1 misses its 2028-Q1 boom window by 2 full years, severely undermining both technology leadership and market relevance for this technology",
+      "For a declared 기술선도 strategy, the portfolio is too near-market (TRL 5-7 only) and lacks exploratory or frontier technologies at TRL 3-4 that would establish genuine future leadership"
     ],
     "missing_technologies": [
-      "Advanced EUV / High-NA EUV lithography (foundational enabler for sub-2nm nodes)",
-      "3D NAND / next-generation memory (complements CIM architecture)",
-      "Chiplet interconnect standards (UCIe) to complement hybrid bonding packaging",
-      "Power delivery network innovations (backside power delivery) for advanced nodes",
-      "AI accelerator ASICs / NPU architectures (key demand driver for all three selected technologies)"
+      "2nm 이하 리소그래피 (EUV/High-NA EUV) — frontier process technology essential for true technology leadership",
+      "뉴로모픽 컴퓨팅 아키텍처 (TRL 3-4) — lower-TRL exploratory technology that would strengthen 기술선도 posture",
+      "실리콘 포토닉스 인터커넥트 — complementary to hybrid bonding and represents an emerging differentiation opportunity"
     ],
     "investment_issues": [
-      "No budget has been allocated or spent despite substantial total budget (82.8B), indicating the investment strategy exists only at tier-classification level without concrete capital deployment",
-      "Absence of any Low or Medium tier investments eliminates the exploratory pipeline needed to replenish the portfolio beyond 2030",
-      "All Strategic-tier designations with no graduated risk tiers means the portfolio lacks a hedge against execution failures in any single technology"
+      "Budget utilization shows 0 spent against 82.8B budget — investment allocation appears unexecuted or untracked, making it impossible to assess resource adequacy per technology",
+      "CIM architecture is rated Tier=High rather than Strategic despite being a key differentiator for AI-era semiconductor leadership; underinvestment risk for the highest-uncertainty, highest-upside technology"
     ],
     "timing_issues": [
-      "Hybrid Bonding Packaging completion target (2030-Q1) is 2 years behind its market boom (2028-Q1), meaning the technology may be deployed into a maturing rather than peak-growth market",
-      "CIM Architecture completion (2030-Q1) is approximately 0.75 years after its market boom (2029-Q2), reducing first-mover advantage",
-      "Budget spend of zero despite a planned roadmap spanning 2026-2030 suggests capital deployment has not been operationalized"
+      "하이브리드 본딩 패키징 completes in 2030-Q1 but market boom is 2028-Q1 — a 2-year lag means the technology arrives after competitors have already captured the market window",
+      "GAA 트랜지스터 completes 0.5 years after its boom; for 기술선도, completion should precede the boom by 1-2 years to establish IP and production precedence"
     ],
     "description": {
-      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 메모리 내 연산 (CIM) 아키텍처 (norm=1.000)\n  시장 성장률 기준 최저: 하이브리드 본딩 패키징 (norm=0.000)\n  전체 평균: 0.333",
-      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ GAA 트랜지스터 게이트 공정: value=0.061 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 하이브리드 본딩 패키징: value=0.400 → 기대 Low, 실제 Strategic (차이 3단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Process(1개), Packaging(1개), Architecture(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 70.0"
+      "trl_pathway": "score 4/5 - GAA at TRL 7 completing in 2 years and CIM at TRL 5 completing in 3 years are both plausible given semiconductor industry norms, though CIM's jump to deployment-ready in 3 years is moderately optimistic for an architecture-level technology. Hybrid bonding at TRL 6 over 2 years is reasonable given its dependency on GAA completion.",
+      "strategic_fidelity": "score 3/5 - While the portfolio includes technologies at moderate-to-high TRL (5-7), which is somewhat appropriate for technology leadership, the declared 기술선도 strategy would ideally include lower-TRL exploratory technologies (TRL 3-5) or emerging paradigms to establish frontier leadership; all three selections are relatively near-market, resembling a commercialization portfolio more than a pure technology leadership one.",
+      "competitive_awareness": "score 3/5 - The selection of GAA, hybrid bonding, and CIM reflects awareness of major semiconductor battlegrounds (TSMC, Samsung, Intel competition areas), but the roadmap lacks explicit differentiation rationale or timing designed around competitor gaps; the choices appear driven by technology importance rather than competitive positioning intelligence.",
+      "market_timing": "score 3/5 - For 기술선도 strategy, technologies should complete 1-2 years before the market boom to establish preemptive leadership. GAA completes 0.5yr after boom (slight miss), CIM completes 0.75yr after boom (adequate), but hybrid bonding completes 2.0 years after its boom window (significant miss), undermining the preemption logic.",
+      "patent_market_convergence": "score 3/5 - All three technologies (GAA, hybrid bonding, CIM) are in active patent filing zones and growing markets, suggesting general convergence awareness, but the roadmap does not articulate deliberate convergence-zone targeting — the selections appear motivated by strategic importance rather than explicit patent-market signal intersection analysis.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×3 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 70.0
     }
   },
   "backtest": {
@@ -73,52 +77,53 @@
         "tech_id": "T01",
         "tech_name": "GAA 트랜지스터 게이트 공정",
         "patent_growth_norm": 0.1515,
-        "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.0606,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6606,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": -0.0894
+        "cost_adjusted_return": 0.5106
       },
       {
         "tech_id": "T02",
         "tech_name": "하이브리드 본딩 패키징",
         "patent_growth_norm": 1.0,
-        "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.4,
+        "market_growth_norm": 0.5064,
+        "market_size_norm": 0.894,
+        "value": 0.8201,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.25
+        "cost_adjusted_return": 0.6701
       },
       {
         "tech_id": "T03",
         "tech_name": "메모리 내 연산 (CIM) 아키텍처",
         "patent_growth_norm": 0.0,
-        "market_growth_norm": 1.0,
-        "market_size_norm": 1.0,
-        "value": 0.6,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.3021,
+        "value": 0.0906,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.5
+        "cost_adjusted_return": -0.0094
       }
     ],
-    "selection_quality": 35.4,
-    "cost_adjusted_return": 22.0,
+    "selection_quality": 52.4,
+    "cost_adjusted_return": 39.0,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 67.6,
-    "backtest_score": 46.8,
+    "backtest_score": 64.8,
+    "backtest_score_v1": 58.8,
     "description": {
-      "selection_quality": "35.4/100 — 3개 기술 평균 value=0.354\n  ▲ 메모리 내 연산 (CIM) 아키텍처: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▲ 하이브리드 본딩 패키징: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)\n  ▼ GAA 트랜지스터 게이트 공정: value=0.061 (특허↑=0.15, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → GAA 트랜지스터 게이트 공정: 특허 성장률 낮음 (norm=0.15)\n  → GAA 트랜지스터 게이트 공정: 시장 성장률 낮음 (norm=0.00)",
-      "cost_adjusted_return": "22.0/100 — 평균 return=0.220\n  메모리 내 연산 (CIM) 아키텍처: value=0.600 - 0.15×0.67(cost) = return +0.500 [High]\n  하이브리드 본딩 패키징: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]\n  GAA 트랜지스터 게이트 공정: value=0.061 - 0.15×1.00(cost) = return -0.089 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → GAA 트랜지스터 게이트 공정: value 0.061인데 Strategic tier",
+      "selection_quality": "52.4/100 — 3개 기술 평균 value=0.524\n  ▲ 하이브리드 본딩 패키징: value=0.820 (특허↑=1.00, 시장↑=0.51, 규모=0.89)\n  ▲ GAA 트랜지스터 게이트 공정: value=0.661 (특허↑=0.15, 시장↑=1.00, 규모=1.00)\n  ▼ 메모리 내 연산 (CIM) 아키텍처: value=0.091 (특허↑=0.00, 시장↑=0.00, 규모=0.30)\n  [낮은 원인]\n  → 메모리 내 연산 (CIM) 아키텍처: 특허 성장률 낮음 (norm=0.00)\n  → 메모리 내 연산 (CIM) 아키텍처: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "39.0/100 — 평균 return=0.390\n  하이브리드 본딩 패키징: value=0.820 - 0.15×1.00(cost) = return +0.670 [Strategic]\n  GAA 트랜지스터 게이트 공정: value=0.661 - 0.15×1.00(cost) = return +0.511 [Strategic]\n  메모리 내 연산 (CIM) 아키텍처: value=0.091 - 0.15×0.67(cost) = return -0.009 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 메모리 내 연산 (CIM) 아키텍처: value 0.091인데 High tier",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "67.6/100 — 평균 오차 1.08년\n  하이브리드 본딩 패키징: 2.0년 늦음 ⚠\n  메모리 내 연산 (CIM) 아키텍처: 0.8년 늦음\n  GAA 트랜지스터 게이트 공정: 0.5년 늦음",
-      "formula": "backtest_score = 0.35×35.4 + 0.35×22.0 + 0.10×100.0 + 0.10×100.0 + 0.10×67.6 = 46.8"
+      "formula": "backtest_score = 0.35×52.4 + 0.35×39.0 + 0.05×100.0 + 0.05×100.0 + 0.10×67.6 = 64.8"
     }
   },
   "constraints": {
@@ -151,7 +156,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 56.1,
+    "pre_penalty_score": 61.4,
     "penalties": [
       {
         "type": "timing_error",
@@ -159,11 +164,11 @@
       }
     ],
     "total_penalty": 0.4,
-    "final_composite_score": 55.7,
-    "description": "pre_penalty = 0.4×70.0(LLM) + 0.6×46.8(Backtest) = 56.1. Penalty: timing_error: -0.4pt. 총 -0.4pt. 최종 = 55.7.\n  [진단] Backtest 점수(46.8)가 낮음 → 기술 선택 또는 투자 배분 재검토.\n  [진단] LLM(70.0)과 Backtest(46.8) 격차 23.2pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+    "final_composite_score": 61.0,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×64.8(Backtest) = 61.4. Penalty: timing_error: -0.4pt. 총 -0.4pt. 최종 = 61.0."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 70.0점, Backtest 경제성 평가 46.8점. 제약 위반으로 0.4점 차감. 최종 Composite Score: 55.7점.",
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 64.8점. 제약 위반으로 0.4점 차감. 최종 Composite Score: 61.0점.",
     "key_failure_points": [
       "타이밍 이슈: 하이브리드 본딩 패키징의 완료시점이 시장 개화 대비 2.0년 차이"
     ],

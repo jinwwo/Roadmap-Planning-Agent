@@ -30,6 +30,7 @@ data_sources.py
     )
 """
 
+import json
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -387,6 +388,80 @@ class MockMarketConnector(MarketConnector):
         )
 
 
+class AgentMarketConnector(MarketConnector):
+    """Agent가 LLM으로 정제한 market_analysis(객관 수치만)를 holdout으로 재사용.
+    Tavily/regex 미사용. tam_usd_b/cagr_pct만 사용(market_score 등 판단치는 제외)."""
+    name = "agent_market"
+    AGENT_DIR = "/root/Roadmap-Planning-Agent/orchestration_agent/outputs/market_agent/run_01"
+
+    def __init__(self, company: str = "", eval_year: int = 2030):
+        self.company = company or ""
+        self.eval_year = int(eval_year)
+        self._index = {}  # {frozenset(tokens): {"tam_m": float, "cagr": float|None}}
+        self._load()
+
+    @staticmethod
+    def _tok(name: str):
+        import re
+        toks = re.sub(r"[^a-zA-Z0-9\uac00-\ud7a3\s]", " ", (name or "").lower()).split()
+        return frozenset(w for w in toks if len(w) > 1)
+
+    def _load(self):
+        import os
+        if not self.company:
+            return
+        fn = os.path.join(self.AGENT_DIR, self.company.replace(" ", "_") + "_market_agent_log.json")
+        try:
+            with open(fn, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except Exception:
+            return  # 파일 없음 → 빈 인덱스 → 전부 결측
+        for m in d.get("market_analysis", []):
+            toks = self._tok(m.get("name", ""))
+            if not toks:
+                continue
+            t = m.get("tam_sam_som", {}) or {}
+            c = m.get("cagr_forecast", {}) or {}
+            tam_b = t.get("tam_usd_b")
+            cagr_pct = c.get("cagr_pct")
+            rec = {
+                "tam_m": float(tam_b) * 1000.0 if tam_b else 0.0,  # 십억$ → 백만$
+                "cagr": (float(cagr_pct) / 100.0) if cagr_pct else None,
+            }
+            self._index[toks] = rec
+
+    def _match(self, keywords):
+        q = frozenset(keywords or [])
+        best, best_ov = None, 0
+        for toks, rec in self._index.items():
+            ov = len(q & toks)
+            if ov > best_ov:
+                best, best_ov = rec, ov
+        return best
+
+    def fetch_market_size(self, keywords, as_of_date, window_years=5):
+        rec = self._match(keywords)
+        if not rec or rec["tam_m"] <= 0:
+            # 결측: past=future=0 → mg=0, ms=0 → min-max 최하단
+            return MarketQueryResult(
+                keywords=keywords, as_of_date=as_of_date, window_years=window_years,
+                market_size_m=0.0, cagr=None, yearly_sizes={}, source=self.name + "_miss")
+        tam_m = rec["tam_m"]
+        cagr = rec["cagr"]
+        try:
+            yr = int(str(as_of_date)[:4])
+        except Exception:
+            yr = self.eval_year
+        # eval_year의 TAM을 기준으로 cagr 역산 → 과거 시점은 작게
+        if cagr and cagr > -1:
+            size_at = tam_m / ((1.0 + cagr) ** max(0, self.eval_year - yr))
+        else:
+            size_at = tam_m
+        return MarketQueryResult(
+            keywords=keywords, as_of_date=as_of_date, window_years=window_years,
+            market_size_m=size_at, cagr=cagr, yearly_sizes={yr: size_at}, source=self.name)
+
+
 class CSVMarketConnector(MarketConnector):
     """CSV 파일 기반 시장 데이터 커넥터. as_of_date 시점 필터 지원."""
     name = "csv_market"
@@ -560,20 +635,27 @@ class TavilyMarketConnector(MarketConnector):
         tech_name = " ".join(keywords[:3])
 
         # Agent 1과 동일한 쿼리 패턴
-        query = (
-            f"{tech_name} market size TAM CAGR forecast "
-            f"{cutoff_year-1} {cutoff_year} {cutoff_year+1} "
-            f"billion growth rate semiconductor"
-        )
+        _queries = [
+            f"{tech_name} market size TAM {cutoff_year} billion USD",
+            f"{tech_name} market CAGR forecast {cutoff_year-1} {cutoff_year+1}",
+            f"{tech_name} industry revenue market value billion",
+        ]
 
         try:
             client = self._get_client()
-            result = client.search(
-                query=query,
-                max_results=5,
-                search_depth="advanced",
-                include_domains=self.TRUSTED_DOMAINS,
-            )
+            _snips = []
+            for _q in _queries:
+                try:
+                    _r = client.search(
+                        query=_q,
+                        max_results=4,
+                        search_depth="advanced",
+                        include_domains=self.TRUSTED_DOMAINS,
+                    )
+                    _snips.extend(_r.get("results", []))
+                except Exception:
+                    continue
+            result = {"results": _snips}
         except Exception as e:
             print(f"  ⚠ Tavily 검색 실패: {e}")
             return MarketQueryResult(

@@ -7,62 +7,70 @@
     "num_technologies": 4
   },
   "llm_judge": {
-    "alignment": 4,
-    "sequencing": 4,
-    "investment": 3,
-    "coherence": 4,
-    "balance": 2,
-    "llm_structural_score": 65.0,
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 4,
-        "sequencing": 4,
-        "investment": 3,
-        "coherence": 4,
-        "balance": 2
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "All four technologies target high-growth semiconductor segments (GAA process, advanced packaging, backside power delivery, fab automation) with market booms clustered in 2027-2029, showing solid market awareness. However, the persistent timing gaps suggest incomplete market timing execution.",
-      "sequencing": "Dependency chains are correctly ordered: T01 precedes T02, and both T01/T02 precede T03, with zero dependency violations reported. TRL-based lead times are plausible (TRL 5-7 range with 2-4 year development windows), though T03's zero-duration end-to-end schedule (2030-Q1 to 2030-Q1) is a structural anomaly.",
-      "investment": "T01, T02, and T03 are all assigned Strategic tier which is justified by their high market_opp (5.0) and strategic_fit (5.0) scores; T06 correctly sits at High tier with lower market_opp (3.0). However, all three process technologies receiving identical Strategic designation ignores meaningful executability differences (T02 executability=2.0 vs T03=4.0), and the full budget remains unspent (0 of 31.2B), raising questions about allocation actioning.",
-      "coherence": "The four technologies form a logical foundry progression: GAA gate optimization → backside patterning → 3D stacked packaging → automated process control, covering process innovation through advanced packaging and operational efficiency. The strategic narrative is coherent and TRL coverage spans mid-development (TRL 5) to near-deployment (TRL 7).",
-      "balance": "The portfolio is heavily skewed: three of four technologies are Strategic tier with no Low or Medium tier investments, creating concentration risk. Short-term coverage is weak—mean timing error of 1.56 years means most technologies miss their boom windows, and there are no exploratory (early TRL) bets to balance the mid-to-late TRL concentration."
+      "trl_pathway": "TRL progressions are generally plausible: T01 (TRL6) over 8 quarters, T02 (TRL5) over 8 quarters, T03 (TRL7) with near-zero development window (2030-Q1 to 2030-Q1) is unrealistic for a packaging technology requiring integration of T01 and T02. T06 (TRL6) over 16 quarters is conservative and achievable.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (Market Profit Maximization), which calls for higher-TRL near-market technologies and tight boom-window alignment; while TRL levels are moderately high (5-7), the portfolio systematically misses market boom windows by 0.75-2.5 years, undermining commercialization focus and ROI maximization.",
+      "competitive_awareness": "The roadmap selects mainstream semiconductor scaling technologies (GAA, backside patterning, 3D stacking) that reflect industry trends, but there is no explicit evidence of differentiation strategy, competitor gap analysis, or timing designed to preempt or outflank specific rivals.",
+      "market_timing": "For 시장이익최대, completion should be within ±0.5 years of boom windows; instead, mean timing error is 1.56 years with T02 missing by 2.5 years and T03 by 2.0 years post-boom, meaning the portfolio largely completes after peak market demand has passed, significantly reducing revenue potential.",
+      "patent_market_convergence": "All four selected technologies are in active patent filing areas (GAA, advanced packaging, process automation) with confirmed market growth signals, suggesting some convergence awareness, but the selection appears driven more by technology trend following than deliberate patent-market intersection targeting."
     },
     "strengths": [
-      "Zero dependency violations with a well-structured T01→T02→T03 prerequisite chain that mirrors realistic foundry process development logic",
-      "Strong technology-market alignment with all selections targeting proven high-growth semiconductor segments (GAA, 3D packaging, backside power, fab automation)"
+      "All dependency constraints are respected with zero violations, and the sequential T01→T02→T03 chain is logically structured",
+      "TRL starting points are relatively mature (TRL 5-7), appropriate for a market-profit strategy and reducing fundamental R&D risk"
     ],
     "weaknesses": [
-      "Mean timing error of 1.56 years means the roadmap systematically misses market boom windows, especially T02 (2.5yr late) and T03 (2.0yr late), reducing first-mover advantage",
-      "Portfolio lacks balance with 3 of 4 technologies at Strategic tier, no Low/Medium exploratory investments, and a zero-duration T03 schedule entry indicating a planning error"
+      "Systematic late completion across all technologies means the portfolio misses peak market boom windows, critically undermining the 시장이익최대 strategic objective",
+      "T03 (고집적 3D 스택 패키징) has a zero-duration development window (2030-Q1 to 2030-Q1), which is technically infeasible for a TRL7 packaging technology dependent on two upstream technologies"
     ],
     "missing_technologies": [
-      "EUV High-NA lithography process development (critical enabler for sub-2nm GAA manufacturing not represented)",
-      "Advanced thermal management / buried power rail integration (complementary to backside patterning T02)",
-      "AI-driven yield prediction and defect classification (complements T06 automation with data intelligence layer)"
+      "EUV lithography process optimization (higher TRL, near-term market boom alignment for 2026-2027)",
+      "Advanced wafer bonding / hybrid bonding technology to support 3D stacking with better timing",
+      "AI-driven yield enhancement / predictive process control (near-boom, high market opportunity in 2027-2028)"
     ],
     "investment_issues": [
-      "Budget utilization is reported as 0 spent against 31.2B total, suggesting investment tiers are declared but not financially operationalized in the plan",
-      "T02 and T03 both receive Strategic tier despite T02 having executability score of 2.0 (very low), warranting differentiated risk-adjusted funding rather than equal tier assignment",
-      "No Low or Medium tier technologies exist in the portfolio, creating an all-or-nothing risk profile with no hedging investments"
+      "Allocating Strategic tier to T02 (executability score 2.0) signals high investment priority for a technology with low execution confidence and a 2.5-year timing miss",
+      "Budget utilization shows 0 spent against 31.2B budget, suggesting the investment plan has not been operationalized or cost estimates are missing",
+      "T03 receiving Strategic tier investment despite a zero-duration development window and 2-year post-boom completion represents misallocated capital"
     ],
     "timing_issues": [
-      "T02 (백면 전극 패터닝 및 리세스) completes in 2030-Q1 but market boom is 2027-Q3, a 2.5-year miss that forfeits peak demand capture",
-      "T03 (고집적 3D 스택 패키징) has identical start and end date (2030-Q1 → 2030-Q1), indicating a scheduling placeholder error with zero development duration",
-      "T03 depends on T02 completing in 2030-Q1 but its own scheduled end is also 2030-Q1, leaving no integration or validation time before deployment"
+      "백면 전극 패터닝 및 리세스 completes 2.5 years after its 2027-Q3 boom, wasting the primary market opportunity window",
+      "고집적 3D 스택 패키징 has a zero-duration execution window at 2030-Q1 while its boom peaks at 2028-Q1, making both timing and execution infeasible",
+      "The dependency chain T01→T02→T03 creates a sequential bottleneck that pushes T03 far past its market window regardless of individual technology pace"
     ],
     "description": {
-      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 반도체 제조 공정 자동화 제어 (norm=0.859)\n  시장 성장률 기준 최저: 백면 전극 패터닝 및 리세스 (norm=0.000)\n  전체 평균: 0.394",
-      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 3/5 — tier 불일치 3건:\n  ⚠ GAA 게이트 전극 공차 최적화: value=0.116 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 백면 전극 패터닝 및 리세스: value=0.200 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 고집적 3D 스택 패키징: value=0.431 → 기대 Low, 실제 Strategic (차이 3단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Process(2개), Packaging(1개), Equipment(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(3개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×3 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 65.0"
+      "trl_pathway": "score 4/5 - TRL progressions are generally plausible: T01 (TRL6) over 8 quarters, T02 (TRL5) over 8 quarters, T03 (TRL7) with near-zero development window (2030-Q1 to 2030-Q1) is unrealistic for a packaging technology requiring integration of T01 and T02. T06 (TRL6) over 16 quarters is conservative and achievable.",
+      "strategic_fidelity": "score 3/5 - The declared strategy is 시장이익최대 (Market Profit Maximization), which calls for higher-TRL near-market technologies and tight boom-window alignment; while TRL levels are moderately high (5-7), the portfolio systematically misses market boom windows by 0.75-2.5 years, undermining commercialization focus and ROI maximization.",
+      "competitive_awareness": "score 2/5 - The roadmap selects mainstream semiconductor scaling technologies (GAA, backside patterning, 3D stacking) that reflect industry trends, but there is no explicit evidence of differentiation strategy, competitor gap analysis, or timing designed to preempt or outflank specific rivals.",
+      "market_timing": "score 2/5 - For 시장이익최대, completion should be within ±0.5 years of boom windows; instead, mean timing error is 1.56 years with T02 missing by 2.5 years and T03 by 2.0 years post-boom, meaning the portfolio largely completes after peak market demand has passed, significantly reducing revenue potential.",
+      "patent_market_convergence": "score 3/5 - All four selected technologies are in active patent filing areas (GAA, advanced packaging, process automation) with confirmed market growth signals, suggesting some convergence awareness, but the selection appears driven more by technology trend following than deliberate patent-market intersection targeting.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 82.5
     }
   },
   "backtest": {
@@ -71,64 +79,65 @@
         "tech_id": "T01",
         "tech_name": "GAA 게이트 전극 공차 최적화",
         "patent_growth_norm": 0.291,
-        "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.1164,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.7164,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": -0.0336
+        "cost_adjusted_return": 0.5664
       },
       {
         "tech_id": "T02",
         "tech_name": "백면 전극 패터닝 및 리세스",
         "patent_growth_norm": 0.4992,
-        "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.1997,
+        "market_growth_norm": 0.8526,
+        "market_size_norm": 0.9552,
+        "value": 0.742,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.0497
+        "cost_adjusted_return": 0.592
       },
       {
         "tech_id": "T03",
         "tech_name": "고집적 3D 스택 패키징",
         "patent_growth_norm": 0.0,
-        "market_growth_norm": 0.7182,
-        "market_size_norm": 0.7182,
-        "value": 0.4309,
+        "market_growth_norm": 0.8227,
+        "market_size_norm": 0.8549,
+        "value": 0.5033,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.2809
+        "cost_adjusted_return": 0.3533
       },
       {
         "tech_id": "T06",
         "tech_name": "반도체 제조 공정 자동화 제어",
         "patent_growth_norm": 0.7082,
-        "market_growth_norm": 0.8585,
-        "market_size_norm": 0.8585,
-        "value": 0.7984,
+        "market_growth_norm": 0.3595,
+        "market_size_norm": 0.6848,
+        "value": 0.5966,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.6984
+        "cost_adjusted_return": 0.4966
       }
     ],
-    "selection_quality": 38.6,
-    "cost_adjusted_return": 24.9,
+    "selection_quality": 64.0,
+    "cost_adjusted_return": 50.2,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 53.2,
-    "backtest_score": 47.6,
+    "backtest_score": 63.1,
+    "backtest_score_v1": 65.3,
     "description": {
-      "selection_quality": "38.6/100 — 4개 기술 평균 value=0.386\n  ▲ 반도체 제조 공정 자동화 제어: value=0.798 (특허↑=0.71, 시장↑=0.86, 규모=0.86)\n  ▲ 고집적 3D 스택 패키징: value=0.431 (특허↑=0.00, 시장↑=0.72, 규모=0.72)\n  ▼ 백면 전극 패터닝 및 리세스: value=0.200 (특허↑=0.50, 시장↑=0.00, 규모=0.00)\n  ▼ GAA 게이트 전극 공차 최적화: value=0.116 (특허↑=0.29, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → GAA 게이트 전극 공차 최적화: 특허 성장률 낮음 (norm=0.29)\n  → GAA 게이트 전극 공차 최적화: 시장 성장률 낮음 (norm=0.00)\n  → 백면 전극 패터닝 및 리세스: 시장 성장률 낮음 (norm=0.00)",
-      "cost_adjusted_return": "24.9/100 — 평균 return=0.249\n  반도체 제조 공정 자동화 제어: value=0.798 - 0.15×0.67(cost) = return +0.698 [High]\n  고집적 3D 스택 패키징: value=0.431 - 0.15×1.00(cost) = return +0.281 [Strategic]\n  백면 전극 패터닝 및 리세스: value=0.200 - 0.15×1.00(cost) = return +0.050 [Strategic] ⚠ 과다투자\n  GAA 게이트 전극 공차 최적화: value=0.116 - 0.15×1.00(cost) = return -0.034 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → GAA 게이트 전극 공차 최적화: value 0.116인데 Strategic tier\n  → 백면 전극 패터닝 및 리세스: value 0.200인데 Strategic tier",
+      "selection_quality": "64.0/100 — 4개 기술 평균 value=0.640\n  ▲ 백면 전극 패터닝 및 리세스: value=0.742 (특허↑=0.50, 시장↑=0.85, 규모=0.96)\n  ▲ GAA 게이트 전극 공차 최적화: value=0.716 (특허↑=0.29, 시장↑=1.00, 규모=1.00)\n  ▼ 반도체 제조 공정 자동화 제어: value=0.597 (특허↑=0.71, 시장↑=0.36, 규모=0.68)\n  ▼ 고집적 3D 스택 패키징: value=0.503 (특허↑=0.00, 시장↑=0.82, 규모=0.85)",
+      "cost_adjusted_return": "50.2/100 — 평균 return=0.502\n  백면 전극 패터닝 및 리세스: value=0.742 - 0.15×1.00(cost) = return +0.592 [Strategic]\n  GAA 게이트 전극 공차 최적화: value=0.716 - 0.15×1.00(cost) = return +0.566 [Strategic]\n  반도체 제조 공정 자동화 제어: value=0.597 - 0.15×0.67(cost) = return +0.497 [High]\n  고집적 3D 스택 패키징: value=0.503 - 0.15×1.00(cost) = return +0.353 [Strategic]",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "53.2/100 — 평균 오차 1.56년\n  백면 전극 패터닝 및 리세스: 2.5년 늦음 ⚠\n  고집적 3D 스택 패키징: 2.0년 늦음 ⚠\n  반도체 제조 공정 자동화 제어: 1.0년 늦음\n  GAA 게이트 전극 공차 최적화: 0.8년 늦음",
-      "formula": "backtest_score = 0.35×38.6 + 0.35×24.9 + 0.10×100.0 + 0.10×100.0 + 0.10×53.2 = 47.6"
+      "formula": "backtest_score = 0.35×64.0 + 0.35×50.2 + 0.05×100.0 + 0.05×100.0 + 0.10×53.2 = 63.1"
     }
   },
   "constraints": {
@@ -168,7 +177,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 54.6,
+    "pre_penalty_score": 56.3,
     "penalties": [
       {
         "type": "timing_error",
@@ -176,11 +185,11 @@
       }
     ],
     "total_penalty": 2.8,
-    "final_composite_score": 51.8,
-    "description": "pre_penalty = 0.4×65.0(LLM) + 0.6×47.6(Backtest) = 54.6. Penalty: timing_error: -2.8pt. 총 -2.8pt. 최종 = 51.8.\n  [진단] Backtest 점수(47.6)가 낮음 → 기술 선택 또는 투자 배분 재검토."
+    "final_composite_score": 53.5,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×63.1(Backtest) = 56.3. Penalty: timing_error: -2.8pt. 총 -2.8pt. 최종 = 53.5.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 65.0점, Backtest 경제성 평가 47.6점. 제약 위반으로 2.8점 차감. 최종 Composite Score: 51.8점.",
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 63.1점. 제약 위반으로 2.8점 차감. 최종 Composite Score: 53.5점.",
     "key_failure_points": [
       "타이밍 이슈: 백면 전극 패터닝 및 리세스의 완료시점이 시장 개화 대비 2.5년 차이",
       "타이밍 이슈: 고집적 3D 스택 패키징의 완료시점이 시장 개화 대비 2.0년 차이"

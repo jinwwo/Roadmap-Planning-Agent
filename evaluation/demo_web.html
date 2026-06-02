@@ -205,7 +205,7 @@ function bar(v,label){const w=cl(v),c=sc(v);
   return`<div class="bar-r"><span class="bar-l">${label}</span><div class="bar-t"><div class="bar-f" style="width:${w}%;background:${c}"></div></div><span class="bar-v" style="color:${c}">${fm(v)}</span></div>`}
 
 function radar(ax,sz=190){
-  const ks=['alignment','sequencing','investment','coherence','balance'],ls=['Align','Seq','Invest','Coher','Bal'];
+  const ks=['trl_pathway','strategic_fidelity','competitive_awareness','market_timing','patent_market_convergence'],ls=['TRL','\uc804\ub7b5','\uacbd\uc7c1','\ud0c0\uc774\ubc0d','\uc218\ub834'];
   const cx=sz/2,cy=sz/2,mr=sz*.36,st=2*Math.PI/5;
   const pt=(i,r)=>{const a=-Math.PI/2+i*st;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};
   let s=`<svg width="${sz}" height="${sz}" style="display:block;margin:0 auto">`;
@@ -234,7 +234,7 @@ function N(r){
   if(r.llmScore!==undefined&&r.backtest?.bt!==undefined)return r;
   const lj=r.llm_judge||{},bt=r.backtest||{},co=r.composite||{},cr=r.constraints||{};
   return{metadata:r.metadata||{},
-    axes:{alignment:lj.alignment||3,sequencing:lj.sequencing||3,investment:lj.investment||3,coherence:lj.coherence||3,balance:lj.balance||3},
+    axes:{trl_pathway:lj.trl_pathway||3,strategic_fidelity:lj.strategic_fidelity||3,competitive_awareness:lj.competitive_awareness||3,market_timing:lj.market_timing||3,patent_market_convergence:lj.patent_market_convergence||3},
     llmScore:lj.llm_structural_score||0,
     backtest:{sq:bt.selection_quality||0,car:bt.cost_adjusted_return||0,ir:bt.investment_rationality_score||0,
       bf:bt.budget_feasibility_score||0,dv:bt.dependency_validity_score||0,ta:bt.timing_accuracy_score||0,bt:bt.backtest_score||0},
@@ -300,11 +300,12 @@ function renderPairwise(idxA,idxB){
         <div style="font-size:16px;font-weight:700;color:${wc}">${w==='A'?results[idxA].name:w==='B'?results[idxB].name:'Tie'}</div></div>
       <div style="margin-top:4px;font-size:11px;color:var(--mut)">Δ ${fm(Math.abs(fa-fb))}</div></div>
     <div style="text-align:center">${badge('B·'+results[idxB].name,'var(--pr)')}<div style="margin-top:10px">${ring(fb,100,'Final')}</div></div></div>`;
-  const axk=['alignment','sequencing','investment','coherence','balance'];
+  const axk=['trl_pathway','strategic_fidelity','competitive_awareness','market_timing','patent_market_convergence'];
+  const axL={trl_pathway:'TRL \uacbd\ub85c',strategic_fidelity:'\uc804\ub7b5 \ubd80\ud569',competitive_awareness:'\uacbd\uc7c1 \uc778\uc2dd',market_timing:'\uc2dc\uc7a5 \ud0c0\uc774\ubc0d',patent_market_convergence:'\ud2b9\ud5c8\u00b7\uc2dc\uc7a5 \uc218\ub834'};
   h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM 축별</h3></div>`;
   axk.forEach(k=>{const va=a.axes[k],vb=b.axes[k],aw=va>vb?'◀':vb>va?'▶':'=';
     h+=`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #232e4a12">
-      <span style="font-size:12px;color:var(--dim);flex:1">${k}</span>
+      <span style="font-size:12px;color:var(--dim);flex:1">${axL[k]||k}</span>
       <span class="m b" style="color:var(--ac);width:24px;text-align:center">${va}</span>
       <span style="margin:0 8px;font-size:11px;font-weight:700;color:${va>vb?'var(--ac)':vb>va?'var(--pr)':'var(--mut)'}">${aw}</span>
       <span class="m b" style="color:var(--pr);width:24px;text-align:center">${vb}</span></div>`});

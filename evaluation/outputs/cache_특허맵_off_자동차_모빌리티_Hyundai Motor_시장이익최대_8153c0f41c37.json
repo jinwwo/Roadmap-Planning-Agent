@@ -7,62 +7,68 @@
     "num_technologies": 4
   },
   "llm_judge": {
-    "alignment": 4,
-    "sequencing": 3,
-    "investment": 4,
-    "coherence": 4,
-    "balance": 3,
-    "llm_structural_score": 67.5,
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 4,
-        "sequencing": 3,
-        "investment": 4,
-        "coherence": 4,
-        "balance": 3
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "All four technologies target high-growth EV/autonomous mobility segments with market boom windows between 2026-2029, well within the 2030 reference horizon. However, the mean timing error of 1.75 years suggests deployment lags behind market peaks, reducing first-mover advantage.",
-      "sequencing": "Dependency chains are respected (T02 before T06, T03 before T04) with zero violations, but the autonomous computing architecture (T04) is scheduled with a zero-duration window (2030-Q1 to 2030-Q1), indicating a degenerate or placeholder timeline that lacks realistic development buffer.",
-      "investment": "High market-opportunity technologies (T06: 5.0, T04: 5.0) receive Strategic and High tiers respectively, which is broadly rational. However, T04 has high uncertainty (4.0) and low urgency (2.0) yet receives a High tier, and T03 with lower market opportunity (3.0) also receives High tier, creating mild misalignment.",
-      "coherence": "The portfolio forms a logical EV value chain progression from thermal materials → integrated packaging → charging infrastructure → autonomous computing, covering TRL 5-7 and spanning research-to-deployment stages with a coherent strategic narrative.",
-      "balance": "The roadmap is skewed toward Strategic and High tiers with no Medium or Low tier investments, concentrating risk and leaving no exploratory bets. Short-term (2026) and longer-term (2029-2030) technologies are both represented, but tier diversity is insufficient."
+      "trl_pathway": "Most TRL progressions are reasonable (T02 TRL5→completion in 2 years, T06 TRL6→2 years, T03 TRL7→4 years), but T04 shows a zero-duration development window (2030-Q1 → 2030-Q1) which is physically infeasible for a TRL6 architecture technology.",
+      "strategic_fidelity": "The strategy declares 시장이익최대 which demands near-market technologies and tight market-window alignment, but the portfolio includes T04 (TRL6, high uncertainty=4.0) with low urgency and completes at the same quarter it starts — suggesting misaligned prioritization; higher-TRL, faster-to-market selections would better serve profit maximization.",
+      "competitive_awareness": "There is no discernible evidence of competitor positioning, differentiation rationale, or timing strategy designed around competitive threats; technology selections appear made on internal metrics without reference to how competitors are positioned in autonomous computing or battery thermal management.",
+      "market_timing": "For 시장이익최대, technologies should complete within ±0.5 years of market boom; the mean timing error is 1.75 years, with T06 missing its boom by 3.0 years and T03 by 2.0 years — systematic late completion across the portfolio undermines the profit-maximization objective.",
+      "patent_market_convergence": "T06 and T04 show high market_opp scores (5.0) suggesting market signal alignment, and battery-related technologies are a known patent-active domain, but there is no explicit evidence of deliberate convergence-zone targeting; the alignment appears partially coincidental."
     },
     "strengths": [
-      "Zero dependency violations with a well-structured prerequisite chain from materials through packaging to infrastructure and autonomy.",
-      "Technologies span a coherent EV ecosystem narrative from battery thermal management to autonomous driving, covering multiple TRL levels and timelines."
+      "Dependency chain is properly respected (T02→T06, T03→T04) with zero dependency violations, indicating sound logical sequencing.",
+      "Battery thermal management and cell integration technologies are well-chosen for the EV domain with high market opportunity scores reflecting genuine market relevance."
     ],
     "weaknesses": [
-      "Mean timing error of 1.75 years means most technologies complete after their market boom windows, significantly reducing competitive and economic impact.",
-      "The autonomous computing architecture (T04) has a zero-duration development window (2030-Q1 to 2030-Q1), which is technically infeasible and suggests a planning oversight."
+      "Systematic late market timing across all four technologies (mean error 1.75 years) directly undermines the 시장이익최대 strategy by missing peak revenue windows.",
+      "T04 (비대칭 자율주행 컴퓨팅 아키텍처) has a zero-duration development schedule (2030-Q1 to 2030-Q1) which is technically infeasible and suggests a planning error."
     ],
     "missing_technologies": [
-      "Solid-state battery technology (higher energy density, natural complement to thermal composites)",
-      "V2G (Vehicle-to-Grid) integration technology (complements charging dock systems)",
-      "Edge AI inference hardware for autonomous vehicles (supports asymmetric computing architecture)"
+      "High-TRL solid-state battery interface technology (TRL 7+) that could reach market before the 2026-2027 EV battery boom",
+      "Fast-charging power electronics / bidirectional charging (V2G) to complement the automated docking system with a shorter time-to-market"
     ],
     "investment_issues": [
-      "T04 (비대칭 자율주행 컴퓨팅 아키텍처) has urgency=2.0 and uncertainty=4.0 but receives a High investment tier, which may over-invest in a risky, low-urgency asset.",
-      "No technologies are assigned Medium or Low tiers, resulting in a top-heavy portfolio with no hedge positions or exploratory investments.",
-      "Budget utilization is reported as 0 spent against 18.4B allocation, suggesting the financial model may not be fully operationalized or tracked."
+      "자동화 충전 도킹 시스템 is classified as 'High' tier despite having strategic_fit=5.0, yet receives less priority investment than lower-urgency items — underinvestment may explain the unnecessarily long development timeline.",
+      "비대칭 자율주행 컴퓨팅 아키텍처 carries high uncertainty (4.0) and low urgency (2.0) but is still allocated 'High' tier investment, which conflicts with 시장이익최대 capital efficiency principles."
     ],
     "timing_issues": [
-      "배터리 셀 통합 쉘 어셈블리 completes in 2030-Q1 but market boom is 2027-Q1, a 3-year lag that misses the primary commercial window.",
-      "자동화 충전 도킹 시스템 completes in 2030-Q1 but market boom is 2028-Q1, a 2-year lag reducing first-mover advantage.",
-      "비대칭 자율주행 컴퓨팅 아키텍처 has a zero-duration timeline (2030-Q1 to 2030-Q1), which is not a valid development schedule."
+      "배터리 셀 통합 쉘 어셈블리 completes in 2030-Q1 but its market boom peaks in 2027-Q1 — a 3-year miss that forfeits the highest-value commercialization window.",
+      "자동화 충전 도킹 시스템 takes 4 years (2026-Q1 to 2030-Q1) despite starting at TRL7, delaying a near-ready technology 2 years past its 2028-Q1 boom.",
+      "비대칭 자율주행 컴퓨팅 아키텍처 is scheduled to start and end in the same quarter (2030-Q1), rendering the development plan incoherent."
     ],
     "description": {
-      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 자동화 충전 도킹 시스템 (norm=1.000)\n  시장 성장률 기준 최저: 비대칭 자율주행 컴퓨팅 아키텍처 (norm=0.418)\n  전체 평균: 0.764",
-      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ 배터리 열흡수 복합재: value=0.516 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 → 기대 Low, 실제 High (차이 2단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Material(1개), Packaging(1개), Equipment(1개), Architecture(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 3/5\n  투자등급 분포: High(2개), Strategic(2개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×4 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 67.5"
+      "trl_pathway": "score 3/5 - Most TRL progressions are reasonable (T02 TRL5→completion in 2 years, T06 TRL6→2 years, T03 TRL7→4 years), but T04 shows a zero-duration development window (2030-Q1 → 2030-Q1) which is physically infeasible for a TRL6 architecture technology.",
+      "strategic_fidelity": "score 3/5 - The strategy declares 시장이익최대 which demands near-market technologies and tight market-window alignment, but the portfolio includes T04 (TRL6, high uncertainty=4.0) with low urgency and completes at the same quarter it starts — suggesting misaligned prioritization; higher-TRL, faster-to-market selections would better serve profit maximization.",
+      "competitive_awareness": "score 2/5 - There is no discernible evidence of competitor positioning, differentiation rationale, or timing strategy designed around competitive threats; technology selections appear made on internal metrics without reference to how competitors are positioned in autonomous computing or battery thermal management.",
+      "market_timing": "score 2/5 - For 시장이익최대, technologies should complete within ±0.5 years of market boom; the mean timing error is 1.75 years, with T06 missing its boom by 3.0 years and T03 by 2.0 years — systematic late completion across the portfolio undermines the profit-maximization objective.",
+      "patent_market_convergence": "score 3/5 - T06 and T04 show high market_opp scores (5.0) suggesting market signal alignment, and battery-related technologies are a known patent-active domain, but there is no explicit evidence of deliberate convergence-zone targeting; the alignment appears partially coincidental.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
     }
   },
   "backtest": {
@@ -71,64 +77,65 @@
         "tech_id": "T02",
         "tech_name": "배터리 열흡수 복합재",
         "patent_growth_norm": 0.1894,
-        "market_growth_norm": 0.8043,
-        "market_size_norm": 0.6639,
-        "value": 0.5162,
+        "market_growth_norm": 0.7593,
+        "market_size_norm": 0.5106,
+        "value": 0.4568,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.3662
+        "cost_adjusted_return": 0.3068
       },
       {
         "tech_id": "T06",
         "tech_name": "배터리 셀 통합 쉘 어셈블리",
         "patent_growth_norm": 0.8935,
-        "market_growth_norm": 0.8337,
-        "market_size_norm": 0.7143,
-        "value": 0.8218,
+        "market_growth_norm": 0.9204,
+        "market_size_norm": 0.5814,
+        "value": 0.808,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.6718
+        "cost_adjusted_return": 0.658
       },
       {
         "tech_id": "T03",
         "tech_name": "자동화 충전 도킹 시스템",
         "patent_growth_norm": 0.7957,
-        "market_growth_norm": 1.0,
-        "market_size_norm": 1.0,
-        "value": 0.9183,
+        "market_growth_norm": 0.6367,
+        "market_size_norm": 0.3961,
+        "value": 0.6281,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.8183
+        "cost_adjusted_return": 0.5281
       },
       {
         "tech_id": "T04",
         "tech_name": "비대칭 자율주행 컴퓨팅 아키텍처",
         "patent_growth_norm": 0.0,
-        "market_growth_norm": 0.4178,
-        "market_size_norm": 0.0,
-        "value": 0.1253,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.8051,
+        "value": 0.5415,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.0253
+        "cost_adjusted_return": 0.4415
       }
     ],
-    "selection_quality": 59.5,
-    "cost_adjusted_return": 47.0,
+    "selection_quality": 60.9,
+    "cost_adjusted_return": 48.4,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 47.5,
-    "backtest_score": 62.1,
+    "backtest_score": 64.2,
+    "backtest_score_v1": 63.0,
     "description": {
-      "selection_quality": "59.5/100 — 4개 기술 평균 value=0.595\n  ▲ 자동화 충전 도킹 시스템: value=0.918 (특허↑=0.80, 시장↑=1.00, 규모=1.00)\n  ▲ 배터리 셀 통합 쉘 어셈블리: value=0.822 (특허↑=0.89, 시장↑=0.83, 규모=0.71)\n  ▼ 배터리 열흡수 복합재: value=0.516 (특허↑=0.19, 시장↑=0.80, 규모=0.66)\n  ▼ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 (특허↑=0.00, 시장↑=0.42, 규모=0.00)\n  [낮은 원인]\n  → 비대칭 자율주행 컴퓨팅 아키텍처: 특허 성장률 낮음 (norm=0.00)",
-      "cost_adjusted_return": "47.0/100 — 평균 return=0.470\n  자동화 충전 도킹 시스템: value=0.918 - 0.15×0.67(cost) = return +0.818 [High]\n  배터리 셀 통합 쉘 어셈블리: value=0.822 - 0.15×1.00(cost) = return +0.672 [Strategic]\n  배터리 열흡수 복합재: value=0.516 - 0.15×1.00(cost) = return +0.366 [Strategic]\n  비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 - 0.15×0.67(cost) = return +0.025 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 비대칭 자율주행 컴퓨팅 아키텍처: value 0.125인데 High tier",
+      "selection_quality": "60.9/100 — 4개 기술 평균 value=0.609\n  ▲ 배터리 셀 통합 쉘 어셈블리: value=0.808 (특허↑=0.89, 시장↑=0.92, 규모=0.58)\n  ▲ 자동화 충전 도킹 시스템: value=0.628 (특허↑=0.80, 시장↑=0.64, 규모=0.40)\n  ▼ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.541 (특허↑=0.00, 시장↑=1.00, 규모=0.81)\n  ▼ 배터리 열흡수 복합재: value=0.457 (특허↑=0.19, 시장↑=0.76, 규모=0.51)",
+      "cost_adjusted_return": "48.4/100 — 평균 return=0.484\n  배터리 셀 통합 쉘 어셈블리: value=0.808 - 0.15×1.00(cost) = return +0.658 [Strategic]\n  자동화 충전 도킹 시스템: value=0.628 - 0.15×0.67(cost) = return +0.528 [High]\n  비대칭 자율주행 컴퓨팅 아키텍처: value=0.541 - 0.15×0.67(cost) = return +0.442 [High]\n  배터리 열흡수 복합재: value=0.457 - 0.15×1.00(cost) = return +0.307 [Strategic]",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "47.5/100 — 평균 오차 1.75년\n  배터리 셀 통합 쉘 어셈블리: 3.0년 늦음 ⚠\n  자동화 충전 도킹 시스템: 2.0년 늦음 ⚠\n  배터리 열흡수 복합재: 1.2년 늦음 ⚠\n  비대칭 자율주행 컴퓨팅 아키텍처: 0.8년 늦음",
-      "formula": "backtest_score = 0.35×59.5 + 0.35×47.0 + 0.10×100.0 + 0.10×100.0 + 0.10×47.5 = 62.1"
+      "formula": "backtest_score = 0.35×60.9 + 0.35×48.4 + 0.05×100.0 + 0.05×100.0 + 0.10×47.5 = 64.2"
     }
   },
   "constraints": {
@@ -168,7 +175,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 64.3,
+    "pre_penalty_score": 54.5,
     "penalties": [
       {
         "type": "timing_error",
@@ -176,11 +183,11 @@
       }
     ],
     "total_penalty": 3.8,
-    "final_composite_score": 60.5,
-    "description": "pre_penalty = 0.4×67.5(LLM) + 0.6×62.1(Backtest) = 64.3. Penalty: timing_error: -3.8pt. 총 -3.8pt. 최종 = 60.5."
+    "final_composite_score": 50.7,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×64.2(Backtest) = 54.5. Penalty: timing_error: -3.8pt. 총 -3.8pt. 최종 = 50.7.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(64.2)가 LLM(40.0)보다 24.2pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 67.5점, Backtest 경제성 평가 62.1점. 제약 위반으로 3.8점 차감. 최종 Composite Score: 60.5점.",
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 64.2점. 제약 위반으로 3.8점 차감. 최종 Composite Score: 50.7점.",
     "key_failure_points": [
       "타이밍 이슈: 배터리 열흡수 복합재의 완료시점이 시장 개화 대비 1.25년 차이",
       "타이밍 이슈: 배터리 셀 통합 쉘 어셈블리의 완료시점이 시장 개화 대비 3.0년 차이",

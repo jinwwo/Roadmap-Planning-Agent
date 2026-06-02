@@ -7,61 +7,67 @@
     "num_technologies": 5
   },
   "llm_judge": {
-    "alignment": 4,
-    "sequencing": 3,
-    "investment": 4,
-    "coherence": 4,
-    "balance": 3,
-    "llm_structural_score": 67.5,
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 3,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 4,
-        "sequencing": 3,
-        "investment": 4,
-        "coherence": 4,
-        "balance": 3
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 3,
+        "market_timing": 2,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "Selected technologies span high-growth semiconductor domains (GAA process, 3D NAND, CIM) that align well with 2026-2030 market boom windows, though the mean timing error of 1.15 years suggests some misalignment between development completion and market peaks.",
-      "sequencing": "Dependency chains are respected (T05/T01 before T03, T01/T03 before T02), but the CIM architecture has a zero-duration scheduled development window (2030-Q1 to 2030-Q1) which is unrealistic for a TRL-5 technology, and packaging master die selection completes 2+ years after its market boom.",
-      "investment": "GAA and 3D NAND correctly receive Strategic tier given their high market opportunity and strategic fit scores of 5.0; CIM receiving only High tier despite market_opp=5.0 is slightly underweighted given its transformative potential, while SLC at High tier is reasonably calibrated.",
-      "coherence": "The roadmap follows a logical progression from process foundation (GAA, SLC) through architectural innovation (3D NAND) to advanced packaging and compute-in-memory, forming a coherent narrative from process enablement to system-level differentiation in semiconductor.",
-      "balance": "The portfolio is heavily weighted toward Strategic and High tiers with no Low/Medium tier diversification, limiting risk distribution; short-term bets (SLC, GAA starting 2026) and long-term plays (CIM 2030) are represented but the concentration in premium tiers reduces portfolio balance."
+      "trl_pathway": "Most TRL progressions are reasonable: TRL 7 technologies (T07, T05, T03) with 1-2 year timelines are achievable, and TRL 6 (T01) over 2 years is adequate. However, CIM (T02, TRL 5) completing in 0 quarters (2030-Q1 to 2030-Q1) is effectively zero development time, which is infeasible regardless of prerequisites.",
+      "strategic_fidelity": "The strategy is 시장이익최대, which demands near-market, high-TRL technologies with tight commercialization timing. The portfolio includes appropriate TRL 7 technologies, but CIM (TRL 5, high uncertainty) and the 3D NAND architecture (TRL 6) introduce exploratory elements inconsistent with profit maximization, and the overall timing errors are too large for market capture.",
+      "competitive_awareness": "Technology selections (GAA, 3D NAND, CIM) are directionally aligned with known competitive battlegrounds in the semiconductor space, suggesting some landscape awareness. However, there is no explicit differentiation rationale or timing advantage logic relative to competitors like TSMC, Samsung, or SK Hynix embedded in the roadmap structure.",
+      "market_timing": "For 시장이익최대, completion within ±0.5 years of market boom is ideal. Only T07 (SLC, 0.25yr error) meets this criterion. GAA misses by 1 year, 3D NAND by 0.75 years, T03 (패키징) misses by 2.25 years, and CIM by 1.5 years. The mean timing error of 1.15 years reflects systematic late completion, severely undermining market profit maximization.",
+      "patent_market_convergence": "GAA and 3D NAND are technologies with known high patent activity and strong market growth signals, suggesting some convergence-zone awareness. CIM also sits in a convergence zone for AI memory. However, the selection appears driven more by technology trend following than deliberate convergence targeting, and T07 (SLC programming) shows weaker convergence signals."
     },
     "strengths": [
-      "Zero dependency violations confirm a technically valid sequencing structure with proper prerequisite ordering across all five technologies",
-      "Strong strategic coherence forming a complete semiconductor value chain from foundry process (GAA) through memory architecture (3D NAND) to advanced packaging and in-memory compute"
+      "High-TRL anchor technologies (T05, T07, T03 at TRL 7) provide a strong executability foundation appropriate for profit-focused strategy",
+      "Dependency chain is logically structured with no violations, ensuring T03 and T02 build on validated predecessors"
     ],
     "weaknesses": [
-      "Mean timing error of 1.15 years with packaging master die selection arriving 2.25 years late relative to its market boom risks missing the commercialization window entirely",
-      "CIM architecture scheduled with a zero-duration development phase at TRL-5 is operationally infeasible and represents a critical planning failure for the most complex technology in the portfolio"
+      "Systematic late completion across most technologies means the portfolio will consistently miss peak market windows, directly contradicting the 시장이익최대 objective",
+      "CIM architecture (T02) has a zero-duration development phase (2030-Q1 to 2030-Q1), making it practically unexecutable as a development milestone"
     ],
     "missing_technologies": [
-      "HBM (High Bandwidth Memory) integration technology to complement CIM architecture for AI/HPC workloads",
-      "EUV lithography process optimization as a foundational enabler for sub-3nm GAA node scaling",
-      "Chiplet interconnect standards (UCIe) to support the advanced packaging and master die selection strategy"
+      "HBM (High Bandwidth Memory) process technology — high market urgency and strong patent activity convergence zone for 2026-2028 boom",
+      "Advanced packaging interconnect (e.g., hybrid bonding) — critical enabler for memory profit maximization in the 2027-2028 window"
     ],
     "investment_issues": [
-      "메모리 내 연산 (CIM) 아키텍처 with market_opp=5.0 and high transformative potential is allocated only High tier while lower-urgency packaging technology receives Strategic tier — potential underinvestment in the highest-value long-term asset",
-      "No Low or Medium tier technologies exist in the portfolio, meaning the budget distribution lacks a risk-graduated structure and all investments are concentrated in premium tiers"
+      "CIM (T02) is designated Tier=High despite having the lowest executability score (3.0), highest uncertainty (4.0), and a zero-duration timeline — investment tier does not match development readiness",
+      "Budget utilization is reported at 0 spent against 116.2B total, suggesting investment allocation has not been concretely operationalized, undermining roadmap credibility"
     ],
     "timing_issues": [
-      "패키징 후 마스터 다이 선택 completes in 2030-Q1 but market boom is 2027-Q4, a 2.25-year delay that likely means missed first-mover advantage",
-      "메모리 내 연산 (CIM) 아키텍처 has identical start and end date (2030-Q1) indicating a planning error — a TRL-5 technology requires substantial development duration",
-      "GAA 게이트 절단 및 형성 공정 misses its 2027-Q1 boom by a full year, potentially ceding foundry process leadership to competitors"
+      "패키징 후 마스터 다이 선택 (T03) completes 2.25 years after its market boom (2027-Q4), the largest timing miss in the portfolio and a critical failure for market profit capture",
+      "CIM (T02) is scheduled with zero development duration in 2030-Q1, making it non-functional as a roadmap milestone and missing its 2028-Q3 boom by 1.5 years"
     ],
     "description": {
-      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 패키징 후 마스터 다이 선택 (norm=1.000)\n  시장 성장률 기준 최저: SLC 블록 프로그래밍 시간 단축 (norm=0.000)\n  전체 평균: 0.571",
-      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ SLC 블록 프로그래밍 시간 단축: value=0.341 → 기대 Low, 실제 High (차이 2단계)\n  ⚠ GAA 게이트 절단 및 형성 공정: value=0.386 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 3D NAND 대칭성 파괴 구조: value=0.379 → 기대 Low, 실제 Strategic (차이 3단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Process(2개), Architecture(2개), Packaging(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 3/5\n  투자등급 분포: High(2개), Strategic(3개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×4 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 67.5"
+      "trl_pathway": "score 4/5 - Most TRL progressions are reasonable: TRL 7 technologies (T07, T05, T03) with 1-2 year timelines are achievable, and TRL 6 (T01) over 2 years is adequate. However, CIM (T02, TRL 5) completing in 0 quarters (2030-Q1 to 2030-Q1) is effectively zero development time, which is infeasible regardless of prerequisites.",
+      "strategic_fidelity": "score 3/5 - The strategy is 시장이익최대, which demands near-market, high-TRL technologies with tight commercialization timing. The portfolio includes appropriate TRL 7 technologies, but CIM (TRL 5, high uncertainty) and the 3D NAND architecture (TRL 6) introduce exploratory elements inconsistent with profit maximization, and the overall timing errors are too large for market capture.",
+      "competitive_awareness": "score 3/5 - Technology selections (GAA, 3D NAND, CIM) are directionally aligned with known competitive battlegrounds in the semiconductor space, suggesting some landscape awareness. However, there is no explicit differentiation rationale or timing advantage logic relative to competitors like TSMC, Samsung, or SK Hynix embedded in the roadmap structure.",
+      "market_timing": "score 2/5 - For 시장이익최대, completion within ±0.5 years of market boom is ideal. Only T07 (SLC, 0.25yr error) meets this criterion. GAA misses by 1 year, 3D NAND by 0.75 years, T03 (패키징) misses by 2.25 years, and CIM by 1.5 years. The mean timing error of 1.15 years reflects systematic late completion, severely undermining market profit maximization.",
+      "patent_market_convergence": "score 3/5 - GAA and 3D NAND are technologies with known high patent activity and strong market growth signals, suggesting some convergence-zone awareness. CIM also sits in a convergence zone for AI memory. However, the selection appears driven more by technology trend following than deliberate convergence targeting, and T07 (SLC programming) shows weaker convergence signals.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×3 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 70.0
     }
   },
   "backtest": {
@@ -71,75 +77,76 @@
         "tech_name": "SLC 블록 프로그래밍 시간 단축",
         "patent_growth_norm": 0.852,
         "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.3408,
+        "market_size_norm": 0.1715,
+        "value": 0.3923,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.2408
+        "cost_adjusted_return": 0.2923
       },
       {
         "tech_id": "T05",
         "tech_name": "GAA 게이트 절단 및 형성 공정",
         "patent_growth_norm": 0.6107,
-        "market_growth_norm": 0.4733,
-        "market_size_norm": 0.0,
-        "value": 0.3863,
+        "market_growth_norm": 0.8224,
+        "market_size_norm": 0.2792,
+        "value": 0.5748,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.2363
+        "cost_adjusted_return": 0.4248
       },
       {
         "tech_id": "T01",
         "tech_name": "3D NAND 대칭성 파괴 구조",
         "patent_growth_norm": 0.5914,
-        "market_growth_norm": 0.4733,
-        "market_size_norm": 0.0,
-        "value": 0.3785,
+        "market_growth_norm": 0.1446,
+        "market_size_norm": 1.0,
+        "value": 0.5799,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.2285
+        "cost_adjusted_return": 0.4299
       },
       {
         "tech_id": "T03",
         "tech_name": "패키징 후 마스터 다이 선택",
         "patent_growth_norm": 0.8174,
-        "market_growth_norm": 1.0,
-        "market_size_norm": 1.0,
-        "value": 0.927,
+        "market_growth_norm": 0.286,
+        "market_size_norm": 0.2539,
+        "value": 0.4889,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.777
+        "cost_adjusted_return": 0.3389
       },
       {
         "tech_id": "T02",
         "tech_name": "메모리 내 연산 (CIM) 아키텍처",
         "patent_growth_norm": 0.1751,
-        "market_growth_norm": 0.9101,
-        "market_size_norm": 0.8292,
-        "value": 0.5918,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.0348,
+        "value": 0.3805,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.4918
+        "cost_adjusted_return": 0.2805
       }
     ],
-    "selection_quality": 52.5,
-    "cost_adjusted_return": 39.5,
+    "selection_quality": 48.3,
+    "cost_adjusted_return": 35.3,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 65.5,
-    "backtest_score": 58.7,
+    "backtest_score": 59.3,
+    "backtest_score_v1": 55.8,
     "description": {
-      "selection_quality": "52.5/100 — 5개 기술 평균 value=0.525\n  ▲ 패키징 후 마스터 다이 선택: value=0.927 (특허↑=0.82, 시장↑=1.00, 규모=1.00)\n  ▲ 메모리 내 연산 (CIM) 아키텍처: value=0.592 (특허↑=0.18, 시장↑=0.91, 규모=0.83)\n  ▼ GAA 게이트 절단 및 형성 공정: value=0.386 (특허↑=0.61, 시장↑=0.47, 규모=0.00)\n  ▼ 3D NAND 대칭성 파괴 구조: value=0.379 (특허↑=0.59, 시장↑=0.47, 규모=0.00)\n  ▼ SLC 블록 프로그래밍 시간 단축: value=0.341 (특허↑=0.85, 시장↑=0.00, 규모=0.00)",
-      "cost_adjusted_return": "39.5/100 — 평균 return=0.395\n  패키징 후 마스터 다이 선택: value=0.927 - 0.15×1.00(cost) = return +0.777 [Strategic]\n  메모리 내 연산 (CIM) 아키텍처: value=0.592 - 0.15×0.67(cost) = return +0.492 [High]\n  SLC 블록 프로그래밍 시간 단축: value=0.341 - 0.15×0.67(cost) = return +0.241 [High] ⚠ 과다투자\n  GAA 게이트 절단 및 형성 공정: value=0.386 - 0.15×1.00(cost) = return +0.236 [Strategic] ⚠ 과다투자\n  3D NAND 대칭성 파괴 구조: value=0.379 - 0.15×1.00(cost) = return +0.229 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → SLC 블록 프로그래밍 시간 단축: value 0.341인데 High tier\n  → GAA 게이트 절단 및 형성 공정: value 0.386인데 Strategic tier\n  → 3D NAND 대칭성 파괴 구조: value 0.379인데 Strategic tier",
+      "selection_quality": "48.3/100 — 5개 기술 평균 value=0.483\n  ▲ 3D NAND 대칭성 파괴 구조: value=0.580 (특허↑=0.59, 시장↑=0.14, 규모=1.00)\n  ▲ GAA 게이트 절단 및 형성 공정: value=0.575 (특허↑=0.61, 시장↑=0.82, 규모=0.28)\n  ▲ 패키징 후 마스터 다이 선택: value=0.489 (특허↑=0.82, 시장↑=0.29, 규모=0.25)\n  ▼ SLC 블록 프로그래밍 시간 단축: value=0.392 (특허↑=0.85, 시장↑=0.00, 규모=0.17)\n  ▼ 메모리 내 연산 (CIM) 아키텍처: value=0.381 (특허↑=0.18, 시장↑=1.00, 규모=0.03)",
+      "cost_adjusted_return": "35.3/100 — 평균 return=0.353\n  3D NAND 대칭성 파괴 구조: value=0.580 - 0.15×1.00(cost) = return +0.430 [Strategic]\n  GAA 게이트 절단 및 형성 공정: value=0.575 - 0.15×1.00(cost) = return +0.425 [Strategic]\n  패키징 후 마스터 다이 선택: value=0.489 - 0.15×1.00(cost) = return +0.339 [Strategic]\n  SLC 블록 프로그래밍 시간 단축: value=0.392 - 0.15×0.67(cost) = return +0.292 [High] ⚠ 과다투자\n  메모리 내 연산 (CIM) 아키텍처: value=0.381 - 0.15×0.67(cost) = return +0.281 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → SLC 블록 프로그래밍 시간 단축: value 0.392인데 High tier\n  → 메모리 내 연산 (CIM) 아키텍처: value 0.381인데 High tier",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "65.5/100 — 평균 오차 1.15년\n  패키징 후 마스터 다이 선택: 2.2년 늦음 ⚠\n  메모리 내 연산 (CIM) 아키텍처: 1.5년 늦음 ⚠\n  GAA 게이트 절단 및 형성 공정: 1.0년 늦음\n  3D NAND 대칭성 파괴 구조: 0.8년 늦음\n  SLC 블록 프로그래밍 시간 단축: 0.2년 늦음",
-      "formula": "backtest_score = 0.35×52.5 + 0.35×39.5 + 0.10×100.0 + 0.10×100.0 + 0.10×65.5 = 58.7"
+      "formula": "backtest_score = 0.35×48.3 + 0.35×35.3 + 0.05×100.0 + 0.05×100.0 + 0.10×65.5 = 59.3"
     }
   },
   "constraints": {
@@ -186,7 +193,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 62.2,
+    "pre_penalty_score": 56.1,
     "penalties": [
       {
         "type": "timing_error",
@@ -194,11 +201,11 @@
       }
     ],
     "total_penalty": 0.7,
-    "final_composite_score": 61.5,
-    "description": "pre_penalty = 0.4×67.5(LLM) + 0.6×58.7(Backtest) = 62.2. Penalty: timing_error: -0.7pt. 총 -0.7pt. 최종 = 61.5."
+    "final_composite_score": 55.4,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×59.3(Backtest) = 56.1. Penalty: timing_error: -0.7pt. 총 -0.7pt. 최종 = 55.4."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 67.5점, Backtest 경제성 평가 58.7점. 제약 위반으로 0.7점 차감. 최종 Composite Score: 61.5점.",
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 59.3점. 제약 위반으로 0.7점 차감. 최종 Composite Score: 55.4점.",
     "key_failure_points": [
       "타이밍 이슈: 패키징 후 마스터 다이 선택의 완료시점이 시장 개화 대비 2.25년 차이",
       "타이밍 이슈: 메모리 내 연산 (CIM) 아키텍처의 완료시점이 시장 개화 대비 1.5년 차이"

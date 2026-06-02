@@ -7,61 +7,68 @@
     "num_technologies": 3
   },
   "llm_judge": {
-    "alignment": 3,
-    "sequencing": 3,
-    "investment": 4,
-    "coherence": 4,
-    "balance": 2,
-    "llm_structural_score": 57.5,
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 3,
-        "sequencing": 3,
-        "investment": 4,
-        "coherence": 4,
-        "balance": 2
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "All three technologies target high-growth areas in biopharmaceuticals and healthcare AI, and declining markets are avoided; however, all technologies are scheduled to complete deployment at or after their market boom windows, meaning the roadmap misses peak market timing by 2-3.75 years on average.",
-      "sequencing": "Dependency chains are structurally respected (T02 precedes T03 and T01 with no violations), but ADC and mass spectrometry are both planned to start and complete in 2030-Q1 with zero development duration, which is unrealistic given their TRL levels and complexity.",
-      "investment": "The highest-urgency, highest-market-opportunity technology (T02) is correctly assigned Strategic tier, and ADC (T03) is also Strategic given strong market and fit scores; mass spectrometry at High tier is proportionally appropriate, and the budget remains unspent suggesting under-allocation or planning incompleteness.",
-      "coherence": "The three technologies form a coherent narrative: AI data analytics enables downstream drug delivery optimization (ADC) and precision measurement (mass spectrometry), reflecting a logical research-to-deployment arc within the biopharma/diagnostics domain.",
-      "balance": "The portfolio is heavily skewed toward a single reference endpoint (2030-Q1) for all technologies, with no short-term deliverables and zero budget utilization, resulting in concentrated temporal and financial risk with no early-stage or exploratory bets to diversify the portfolio."
+      "trl_pathway": "T02 starts at TRL 6 and spans 4 years to completion, which is reasonable, but T03 and T01 (both TRL 7) are scheduled to start and complete in the same quarter (2030-Q1), implying zero development time for near-market technologies that still require advancement — this is unrealistic.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but all three selected technologies are at TRL 6-7 (near-market), which is more characteristic of a market-profit strategy; the portfolio lacks early-stage exploratory bets typical of technology leadership.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selections or timing decisions; choices appear made on internal scoring without referencing the competitive landscape.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom; all three technologies complete at 2030-Q1, which is 3.75, 2.0, and 2.5 years AFTER their respective boom windows — systematic post-boom completion across the entire portfolio is a serious timing failure.",
+      "patent_market_convergence": "Technologies selected (AI medical data, ADC delivery, mass spectrometry) do represent active patent and market growth areas in biopharmaceuticals, suggesting some convergence awareness, but the selection rationale does not demonstrate deliberate targeting of convergence zones versus simply following well-known trends."
     },
     "strengths": [
-      "Dependency structure is correctly enforced with zero violations, ensuring T02 foundational AI capability precedes dependent technologies T03 and T01.",
-      "Investment tier assignments are rationally calibrated to market opportunity and strategic fit scores, with the highest-scoring technology receiving the highest tier."
+      "Dependency structure is correctly enforced with zero violations — T03 and T01 properly wait for T02 completion",
+      "T02 (AI-based medical data stream analysis) receives appropriately high urgency and strategic fit scores, reflecting its foundational enabling role"
     ],
     "weaknesses": [
-      "All technologies are scheduled to complete at 2030-Q1, well after their respective market boom windows (2026-Q2, 2027-Q3, 2028-Q1), resulting in a mean timing error of 2.75 years and likely missed first-mover advantages.",
-      "Zero budget has been allocated or spent despite a substantial total budget, and the portfolio contains only 3 technologies all converging on a single timeline point, reflecting poor portfolio breadth and financial planning."
+      "All technologies complete after their market boom windows (mean error 2.75 years), meaning the portfolio systematically misses peak market entry opportunities",
+      "T03 and T01 are both scheduled with zero development duration (start=end=2030-Q1), which is operationally impossible and suggests a planning artifact rather than a real roadmap"
     ],
     "missing_technologies": [
-      "Next-generation sequencing (NGS) platforms for genomic diagnostics to complement ADC targeting",
-      "Digital biomarker and wearable sensor integration to feed the AI data stream analytics pipeline",
-      "Bioinformatics / multi-omics data integration middleware bridging mass spectrometry outputs to AI analytics"
+      "Early-stage (TRL 3-5) platform technologies such as next-generation gene editing or novel biomarker discovery platforms that would genuinely reflect a 기술선도 strategy",
+      "mRNA therapeutic delivery platforms, which represent a high-patent, high-growth convergence zone in biopharmaceuticals currently at exploratory TRL stages"
     ],
     "investment_issues": [
-      "Total budget spend is 0, indicating no investment has been committed or modeled, rendering the budget constraint meaningless and the strategy incomplete.",
-      "With only two tiers used (Strategic and High) across three technologies, there is no exploratory or low-tier investment to hedge against uncertainty or fund early-stage research."
+      "Budget utilization shows 0 spent against 82.7B budget — no actual investment allocation has been executed, making the tier designations (Strategic/High) nominal rather than operational",
+      "Both T02 and T03 are classified as Strategic tier despite T02 having significantly lower executability (3.0 vs 4.0), warranting differentiated investment pacing rather than identical tier treatment"
     ],
     "timing_issues": [
-      "T02 (AI 기반 의료 데이터 스트림 분석) has a 3.75-year lag behind its 2026-Q2 boom, meaning the roadmap enters the market well past peak opportunity.",
-      "T01 and T03 both have zero planned development duration (2030-Q1 to 2030-Q1), which is infeasible for TRL 7 technologies requiring validation and scale-up.",
-      "No technology in the portfolio has an early deployment window before 2030, leaving the organization with no near-term market presence or revenue generation."
+      "T02 completion at 2030-Q1 is 3.75 years after the 2026-Q2 boom — the foundational enabling technology misses the earliest and most critical market window by a wide margin",
+      "T03 and T01 have identical start and end dates (2030-Q1), implying instantaneous development which is not credible for TRL 7 technologies requiring validation and scale-up",
+      "The entire portfolio is back-loaded to 2030-Q1, creating a single point of failure with no staggered market entry to capture different boom windows"
     ],
     "description": {
-      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 항체-약물 접합체 (ADC) 표적 전달 (norm=0.317)\n  시장 성장률 기준 최저: AI 기반 의료 데이터 스트림 분석 (norm=0.000)\n  전체 평균: 0.167",
-      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ AI 기반 의료 데이터 스트림 분석: value=0.689 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 항체-약물 접합체 (ADC) 표적 전달: value=0.563 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 고해상도 질량분석기 이온 광학: value=0.234 → 기대 Low, 실제 High (차이 2단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Architecture(1개), Material(1개), Equipment(1개)\n  TRL 범위: 6~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×3 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 57.5"
+      "trl_pathway": "score 3/5 - T02 starts at TRL 6 and spans 4 years to completion, which is reasonable, but T03 and T01 (both TRL 7) are scheduled to start and complete in the same quarter (2030-Q1), implying zero development time for near-market technologies that still require advancement — this is unrealistic.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but all three selected technologies are at TRL 6-7 (near-market), which is more characteristic of a market-profit strategy; the portfolio lacks early-stage exploratory bets typical of technology leadership.",
+      "competitive_awareness": "score 2/5 - There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selections or timing decisions; choices appear made on internal scoring without referencing the competitive landscape.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years before market boom; all three technologies complete at 2030-Q1, which is 3.75, 2.0, and 2.5 years AFTER their respective boom windows — systematic post-boom completion across the entire portfolio is a serious timing failure.",
+      "patent_market_convergence": "score 3/5 - Technologies selected (AI medical data, ADC delivery, mass spectrometry) do represent active patent and market growth areas in biopharmaceuticals, suggesting some convergence awareness, but the selection rationale does not demonstrate deliberate targeting of convergence zones versus simply following well-known trends.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 70.0
     }
   },
   "backtest": {
@@ -71,51 +78,52 @@
         "tech_name": "AI 기반 의료 데이터 스트림 분석",
         "patent_growth_norm": 1.0,
         "market_growth_norm": 0.0,
-        "market_size_norm": 0.9647,
-        "value": 0.6894,
+        "market_size_norm": 0.0,
+        "value": 0.4,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.5394
+        "cost_adjusted_return": 0.25
       },
       {
         "tech_id": "T03",
         "tech_name": "항체-약물 접합체 (ADC) 표적 전달",
         "patent_growth_norm": 0.4995,
-        "market_growth_norm": 0.3166,
-        "market_size_norm": 0.8932,
-        "value": 0.5627,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.7998,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.4127
+        "cost_adjusted_return": 0.6498
       },
       {
         "tech_id": "T01",
         "tech_name": "고해상도 질량분석기 이온 광학",
         "patent_growth_norm": 0.447,
-        "market_growth_norm": 0.1832,
-        "market_size_norm": 0.0,
-        "value": 0.2338,
+        "market_growth_norm": 0.6059,
+        "market_size_norm": 0.9117,
+        "value": 0.6341,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.1338
+        "cost_adjusted_return": 0.5341
       }
     ],
-    "selection_quality": 49.5,
-    "cost_adjusted_return": 36.2,
+    "selection_quality": 61.1,
+    "cost_adjusted_return": 47.8,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 17.5,
-    "backtest_score": 51.8,
+    "backtest_score": 51.6,
+    "backtest_score_v1": 59.9,
     "description": {
-      "selection_quality": "49.5/100 — 3개 기술 평균 value=0.495\n  ▲ AI 기반 의료 데이터 스트림 분석: value=0.689 (특허↑=1.00, 시장↑=0.00, 규모=0.96)\n  ▲ 항체-약물 접합체 (ADC) 표적 전달: value=0.563 (특허↑=0.50, 시장↑=0.32, 규모=0.89)\n  ▼ 고해상도 질량분석기 이온 광학: value=0.234 (특허↑=0.45, 시장↑=0.18, 규모=0.00)\n  [낮은 원인]\n  → 고해상도 질량분석기 이온 광학: 시장 성장률 낮음 (norm=0.18)",
-      "cost_adjusted_return": "36.2/100 — 평균 return=0.362\n  AI 기반 의료 데이터 스트림 분석: value=0.689 - 0.15×1.00(cost) = return +0.539 [Strategic]\n  항체-약물 접합체 (ADC) 표적 전달: value=0.563 - 0.15×1.00(cost) = return +0.413 [Strategic]\n  고해상도 질량분석기 이온 광학: value=0.234 - 0.15×0.67(cost) = return +0.134 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 고해상도 질량분석기 이온 광학: value 0.234인데 High tier",
+      "selection_quality": "61.1/100 — 3개 기술 평균 value=0.611\n  ▲ 항체-약물 접합체 (ADC) 표적 전달: value=0.800 (특허↑=0.50, 시장↑=1.00, 규모=1.00)\n  ▲ 고해상도 질량분석기 이온 광학: value=0.634 (특허↑=0.45, 시장↑=0.61, 규모=0.91)\n  ▼ AI 기반 의료 데이터 스트림 분석: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)",
+      "cost_adjusted_return": "47.8/100 — 평균 return=0.478\n  항체-약물 접합체 (ADC) 표적 전달: value=0.800 - 0.15×1.00(cost) = return +0.650 [Strategic]\n  고해상도 질량분석기 이온 광학: value=0.634 - 0.15×0.67(cost) = return +0.534 [High]\n  AI 기반 의료 데이터 스트림 분석: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "17.5/100 — 평균 오차 2.75년\n  AI 기반 의료 데이터 스트림 분석: 3.8년 늦음 ⚠\n  고해상도 질량분석기 이온 광학: 2.5년 늦음 ⚠\n  항체-약물 접합체 (ADC) 표적 전달: 2.0년 늦음 ⚠",
-      "formula": "backtest_score = 0.35×49.5 + 0.35×36.2 + 0.10×100.0 + 0.10×100.0 + 0.10×17.5 = 51.8"
+      "formula": "backtest_score = 0.35×61.1 + 0.35×47.8 + 0.05×100.0 + 0.05×100.0 + 0.10×17.5 = 51.6"
     }
   },
   "constraints": {
@@ -148,7 +156,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 54.1,
+    "pre_penalty_score": 47.0,
     "penalties": [
       {
         "type": "timing_error",
@@ -156,11 +164,11 @@
       }
     ],
     "total_penalty": 8.8,
-    "final_composite_score": 45.3,
-    "description": "pre_penalty = 0.4×57.5(LLM) + 0.6×51.8(Backtest) = 54.1. Penalty: timing_error: -8.8pt. 총 -8.8pt. 최종 = 45.3."
+    "final_composite_score": 38.2,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×51.6(Backtest) = 47.0. Penalty: timing_error: -8.8pt. 총 -8.8pt. 최종 = 38.2.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 57.5점, Backtest 경제성 평가 51.8점. 제약 위반으로 8.8점 차감. 최종 Composite Score: 45.3점.",
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 51.6점. 제약 위반으로 8.8점 차감. 최종 Composite Score: 38.2점.",
     "key_failure_points": [
       "타이밍 이슈: AI 기반 의료 데이터 스트림 분석의 완료시점이 시장 개화 대비 3.75년 차이",
       "타이밍 이슈: 항체-약물 접합체 (ADC) 표적 전달의 완료시점이 시장 개화 대비 2.0년 차이",

@@ -89,7 +89,7 @@ if os.environ.get("GOOGLE_API_KEY"):
     config["llm_providers"].append("gemini")
 
 
-def _build_extractor():
+def _build_extractor(company: str = "", eval_year: int = 2030):
     connector = config["connector"]
     # 특허
     if "kipris" in connector:
@@ -105,7 +105,10 @@ def _build_extractor():
 
 
     # 시장
-    if "tavily" in connector:
+    if "agent" in connector:
+        from data_sources import AgentMarketConnector
+        ms = MarketDataSource(AgentMarketConnector(company, eval_year))
+    elif "tavily" in connector:
         ms = MarketDataSource(TavilyMarketConnector())
     elif "csv" in connector:
         ms = MarketDataSource(CSVMarketConnector())
@@ -144,7 +147,10 @@ def _run_evaluation(input_pack: dict, use_api: bool = None) -> dict:
     # holdout 추출
     if "holdout_data" not in input_pack or not input_pack["holdout_data"]:
         try:
-            extractor = _build_extractor()
+            _md = input_pack.get("metadata") or {}
+            _comp = _md.get("company_name", "")
+            _yr = int(_md.get("reference_year", 2030) or 2030)
+            extractor = _build_extractor(_comp, _yr)
             input_pack = extractor.extract_and_assemble(input_pack)
         except Exception as e:
             print(f"  ⚠ Holdout 추출 실패: {e}")
@@ -260,7 +266,8 @@ async def compare_endpoint(
         raise HTTPException(400, str(e))
 
     # holdout 추출
-    extractor = _build_extractor()
+    _md = pack_a.get("metadata") or {}
+    extractor = _build_extractor(_md.get("company_name", ""), int(_md.get("reference_year", 2030) or 2030))
     try:
         if "holdout_data" not in pack_a or not pack_a["holdout_data"]:
             pack_a = extractor.extract_and_assemble(pack_a)
@@ -426,6 +433,12 @@ def scan_outputs_on_startup():
                 "active_agents": report_data.get("active_agents", ["1", "2", "3"]) if report_data else ["1", "2", "3"],
             }
             pack = _detect_and_convert(bundle)
+            dn = display_name
+            md = pack.setdefault("metadata", {})
+            if "시장이익최대" in dn:
+                md["strategy_type"] = "시장이익최대"
+            elif "기술선도" in dn:
+                md["strategy_type"] = "기술선도"
             result = _run_evaluation(pack)
             rid = str(uuid.uuid4())[:8]
             result_store[rid] = {"id": rid, "name": display_name, "result": result,

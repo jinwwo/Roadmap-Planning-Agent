@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Medical Devices / Healthcare",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 3,
+    "balance": 3,
+    "llm_structural_score": 67.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 3,
+        "balance": 3
+      }
+    },
+    "evidence": {
+      "alignment": "Technologies are well-chosen for high-growth healthcare segments (vascular imaging, surgical AI, diagnostics automation, ophthalmic materials), all with market booms expected in the 2026-2030 window. However, T04 has a notably low market opportunity score (2.0), which slightly undermines overall alignment quality.",
+      "sequencing": "The critical dependency chain (T01 → T02) is correctly sequenced with T01 completing in 2028-Q1 before T02 begins, and there are zero reported dependency violations. The main sequencing concern is T02's 3.25-year timing error—its market boom peaks in 2026-Q4 but completion is planned for 2030-Q1, meaning deployment arrives well after the market window opens.",
+      "investment": "Strategic tier for T01 and T02 (both with urgency=5, high strategic fit) is justified. High tier for T03 with strong executability and low uncertainty is appropriate. Medium tier for T04 with low market opportunity and high uncertainty is rational. The budget is entirely unspent, which raises questions about whether allocations are operationally real.",
+      "coherence": "The portfolio covers vascular imaging, surgical AI guidance, diagnostic automation, and ophthalmic materials—these are related but span somewhat different clinical domains, weakening the strategic narrative. There is a logical TRL progression from early-stage (T04 at TRL4) through mid (T02 at TRL5) to near-deployment (T03 at TRL7), which is a positive sign.",
+      "balance": "All four technologies are assigned Strategic or High tiers, with only one Medium tier entry (T04), resulting in a top-heavy portfolio with limited low-risk baseline coverage. Short-term (T01, T02) and longer-term (T04) bets are represented, but the small portfolio size of only four technologies limits true diversification across risk levels and timelines."
+    },
+    "strengths": [
+      "Dependency chain between T01 and T02 is correctly structured with zero violations, ensuring prerequisite vascular imaging infrastructure is in place before surgical AI guidance deployment.",
+      "Investment tiers are well-calibrated to technology scores: Strategic for high-urgency/high-fit technologies, Medium for the high-uncertainty low-market-opportunity ophthalmic material."
+    ],
+    "weaknesses": [
+      "T02 (Surgical AI Image Processing) has a critical 3.25-year timing error—market boom expected in 2026-Q4 but deployment is planned for 2030-Q1, meaning the technology will likely miss the primary market window.",
+      "The portfolio is very small (4 technologies) and concentrated in imaging/diagnostics with insufficient diversification across clinical application areas and risk profiles."
+    ],
+    "missing_technologies": [
+      "Minimally invasive robotic surgery platforms to complement surgical AI guidance (T02)",
+      "AI-driven clinical decision support systems for broader diagnostic applications",
+      "Wearable continuous patient monitoring devices for real-time data integration",
+      "Digital pathology and computational histology tools aligned with the diagnostic automation theme"
+    ],
+    "investment_issues": [
+      "Budget shows 0 spent out of 13.5B, suggesting the financial allocations are nominal or unexecuted, making it impossible to validate actual resource distribution.",
+      "With two Strategic-tier and one High-tier investment among only four technologies, the portfolio lacks lower-commitment exploratory investments to hedge against uncertainty.",
+      "T04's Medium tier with TRL4 and 4-year development timeline may be underfunded relative to the technical risk and duration required to reach deployment."
+    ],
+    "timing_issues": [
+      "T02 (수술용 AI 기반 이미지 처리 및 안내): Market boom at 2026-Q4 but roadmap completion not until 2030-Q1, a 3.25-year delay that risks missing the primary adoption curve.",
+      "T01 (혈관 내 3D 이미징): Completes 2028-Q1 but market boom is 2027-Q3, arriving ~0.5 years after peak—minor but could be accelerated.",
+      "T04 (광 조절 가능 안과 임플란트): Completes 2030-Q1 while boom is 2029-Q1, a 1-year delay that may reduce first-mover advantage."
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 혈관 내 3D 이미징 및 워크플로우 (norm=0.500)\n  시장 성장률 기준 최저: 광 조절 가능 안과 임플란트 소재 (norm=0.500)\n  전체 평균: 0.500",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ 혈관 내 3D 이미징 및 워크플로우: value=0.300 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 수술용 AI 기반 이미지 처리 및 안내: value=0.692 → 기대 Medium, 실제 Strategic (차이 2단계)",
+      "coherence": "점수 3/5\n  카테고리 분포: Equipment(2개), Architecture(1개), Material(1개)\n  TRL 범위: 4~7\n  카테고리 편중 또는 TRL 범위 좁음",
+      "balance": "점수 3/5\n  투자등급 분포: High(1개), Medium(1개), Strategic(2개)\n  없는 등급: Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 67.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.3,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.15
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "patent_growth_norm": 0.9807,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6923,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5423
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고감도 진단 자동화 시스템",
+        "patent_growth_norm": 0.9766,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6906,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5906
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "광 조절 가능 안과 임플란트 소재",
+        "patent_growth_norm": 0.3622,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.4449,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.3949
+      }
+    ],
+    "selection_quality": 53.2,
+    "cost_adjusted_return": 41.9,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 62.5,
+    "backtest_score": 59.5,
+    "description": {
+      "selection_quality": "53.2/100 — 4개 기술 평균 value=0.532\n  ▲ 수술용 AI 기반 이미지 처리 및 안내: value=0.692 (특허↑=0.98, 시장↑=0.50, 규모=0.50)\n  ▲ 고감도 진단 자동화 시스템: value=0.691 (특허↑=0.98, 시장↑=0.50, 규모=0.50)\n  ▼ 광 조절 가능 안과 임플란트 소재: value=0.445 (특허↑=0.36, 시장↑=0.50, 규모=0.50)\n  ▼ 혈관 내 3D 이미징 및 워크플로우: value=0.300 (특허↑=0.00, 시장↑=0.50, 규모=0.50)",
+      "cost_adjusted_return": "41.9/100 — 평균 return=0.419\n  고감도 진단 자동화 시스템: value=0.691 - 0.15×0.67(cost) = return +0.591 [High]\n  수술용 AI 기반 이미지 처리 및 안내: value=0.692 - 0.15×1.00(cost) = return +0.542 [Strategic]\n  광 조절 가능 안과 임플란트 소재: value=0.445 - 0.15×0.33(cost) = return +0.395 [Medium]\n  혈관 내 3D 이미징 및 워크플로우: value=0.300 - 0.15×1.00(cost) = return +0.150 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 혈관 내 3D 이미징 및 워크플로우: value 0.300인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "62.5/100 — 평균 오차 1.25년\n  수술용 AI 기반 이미지 처리 및 안내: 3.2년 늦음 ⚠\n  광 조절 가능 안과 임플란트 소재: 1.0년 늦음\n  혈관 내 3D 이미징 및 워크플로우: 0.5년 늦음\n  고감도 진단 자동화 시스템: 0.2년 이름",
+      "formula": "backtest_score = 0.35×53.2 + 0.35×41.9 + 0.10×100.0 + 0.10×100.0 + 0.10×62.5 = 59.5"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.25,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고감도 진단 자동화 시스템",
+        "target_q": "2028-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "광 조절 가능 안과 임플란트 소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 62.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 1.2
+      }
+    ],
+    "total_penalty": 1.2,
+    "final_composite_score": 61.5,
+    "description": "pre_penalty = 0.4×67.5(LLM) + 0.6×59.5(Backtest) = 62.7. Penalty: timing_error: -1.2pt. 총 -1.2pt. 최종 = 61.5."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 67.5점, Backtest 경제성 평가 59.5점. 제약 위반으로 1.2점 차감. 최종 Composite Score: 61.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: 수술용 AI 기반 이미지 처리 및 안내의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

@@ -7,62 +7,69 @@
     "num_technologies": 5
   },
   "llm_judge": {
-    "alignment": 4,
-    "sequencing": 4,
-    "investment": 4,
-    "coherence": 4,
-    "balance": 3,
-    "llm_structural_score": 72.5,
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
     "aggregation": "single",
     "models_used": [
       "anthropic:claude-sonnet-4-6"
     ],
     "per_model_scores": {
       "anthropic:claude-sonnet-4-6": {
-        "alignment": 4,
-        "sequencing": 4,
-        "investment": 4,
-        "coherence": 4,
-        "balance": 3
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
       }
     },
     "evidence": {
-      "alignment": "Selected technologies (advanced cathode materials, automated charging, autonomous computing, battery integration, laser processing) are well-aligned with EV and mobility growth markets expected to boom in 2026-2028, demonstrating clear market timing awareness for the 2030 horizon.",
-      "sequencing": "Dependency chains are correctly respected: T03 completes (2027-Q1) before T04 starts (2027-Q1), and T01 completes (2028-Q1) before T06 starts (2028-Q1); however, T04 and T06 completions significantly lag their market boom windows, indicating timeline optimization issues.",
-      "investment": "Strategic tier is appropriately assigned to high market opportunity and urgency technologies (T01, T03, T04), while T06 and T05 are correctly placed at High tier with lower scores; the allocation logic is rational and proportional to expected returns.",
-      "coherence": "The portfolio forms a coherent EV ecosystem narrative spanning materials (T01), packaging (T06), charging infrastructure (T03), autonomous computing (T04), and manufacturing process (T05), with TRL progression from 6 to 7 indicating a mid-to-late development stage focus.",
-      "balance": "All five technologies are concentrated in Strategic or High tiers with no Low/Medium exploratory bets, creating a top-heavy portfolio; short-term coverage is adequate but long-term diversity and risk distribution are limited by the absence of early-TRL or speculative technologies."
+      "trl_pathway": "TRL progressions are mostly reasonable — TRL 6→target over 2 years and TRL 7→target over 1-2 years are within industry norms for EV/automotive sectors. The T04 (TRL 6, 2-year window) and T06 (TRL 6, 2-year window) are slightly aggressive but not implausible.",
+      "strategic_fidelity": "The declared 시장이익최대 strategy calls for near-market, commercially-focused technologies, but the portfolio includes TRL 6 architectures and packaging technologies with completion dates 2-2.5 years after their market boom windows, undermining commercialization focus. Only T03 and partially T01 fit the profit-maximization archetype.",
+      "competitive_awareness": "There is no explicit evidence in technology selection or timing of competitor positioning, differentiation strategies, or gap exploitation — selections appear driven by internal scores rather than competitive landscape intelligence. No timing preemption or fast-follower rationale is visible.",
+      "market_timing": "For 시장이익최대, technologies should complete within ±0.5 years of boom, but three out of five technologies miss significantly: T04 completes 2.5 years late, T06 completes 2.5 years late, and T05 completes 1.75 years late. T03 completes 0.75 years early (acceptable) and T01 completes 0.75 years late (marginal).",
+      "patent_market_convergence": "Technologies like T01 (양극재) and T06 (배터리 어셈블리) sit in areas with documented patent and market activity convergence in EV battery space. However, T05 (레이저 가공) shows weaker market opportunity scores (3.0), suggesting selection may be process-capability driven rather than deliberate convergence targeting."
     },
     "strengths": [
-      "Zero dependency violations with correct prerequisite sequencing across all technology chains",
-      "Strong strategic coherence forming an integrated EV ecosystem covering materials, packaging, charging, computing, and manufacturing"
+      "TRL progression rates are generally feasible within the planned timelines, avoiding overambitious development assumptions",
+      "Dependency chain is properly ordered (T01→T06, T03→T04) with no violations, ensuring logical sequential development"
     ],
     "weaknesses": [
-      "Mean timing error of 1.65 years is significant, with T04 and T06 completing 2.5 years after their respective market boom windows, risking missed market entry opportunities",
-      "Portfolio lacks tier diversity with no Low or Medium tier investments, concentrating all risk in Strategic and High tiers without exploratory or hedge positions"
+      "Systematic late-completion problem: three of five technologies finish 1.75–2.5 years after their market boom, directly contradicting the 시장이익최대 strategy's need for peak-timing commercialization",
+      "No evidence of competitive landscape analysis embedded in technology selection or timing decisions, making the portfolio strategically opaque"
     ],
     "missing_technologies": [
-      "Solid-state battery electrolyte (early-TRL exploratory bet for post-2030 differentiation)",
-      "Vehicle-to-grid (V2G) integration technology to complement the charging infrastructure stack",
-      "AI-based battery management system (BMS) to bridge cathode materials and cell assembly investments"
+      "고체 전지 (Solid-State Battery) — high market convergence in 2027-2028 window with strong patent activity, fitting profit-maximization portfolio",
+      "V2G(Vehicle-to-Grid) 인터페이스 기술 — near-market TRL with 2027 boom alignment, complements charging infrastructure (T03)"
     ],
     "investment_issues": [
-      "T05 (레이저 가공 및 접합 기술) is assigned High tier despite relatively low market opportunity (3.0) and strategic fit (3.0) scores; Medium tier may be more appropriate",
-      "No budget allocation details are provided despite a large total budget of 18.4B, making it impossible to verify proportional spend across tiers",
-      "All Strategic-tier technologies share identical urgency scores (5.0) without differentiation, suggesting insufficient granularity in prioritization within the top tier"
+      "T04 is rated Strategic tier with urgency=5 despite completing 2.5 years after its market boom — high investment in a late-market asset misaligns with profit-maximization logic",
+      "T05 (레이저 가공) receives High tier investment despite low market_opp (3.0) and strategic_fit (3.0), suggesting over-investment relative to its commercial return potential",
+      "Budget utilization is reported as 0 spent against 18.4B budget — if literal, this indicates the investment strategy is planned but not yet executed, creating execution risk"
     ],
     "timing_issues": [
-      "T04 (비대칭 자율주행 컴퓨팅 아키텍처): completion in 2029-Q1 is 2.5 years after market boom at 2026-Q3, likely missing the primary adoption wave",
-      "T06 (배터리 셀 통합 쉘 어셈블리): completion in 2030-Q1 is 2.5 years after market boom at 2027-Q3, reducing competitive advantage",
-      "T05 (레이저 가공 및 접합 기술): completion in 2030-Q1 is 1.75 years after boom at 2028-Q2, though lower urgency score mitigates this concern"
+      "T04 (비대칭 자율주행 컴퓨팅 아키텍처): completes 2029-Q1 but market boom is 2026-Q3 — a 2.5-year delay that misses the entire market window",
+      "T06 (배터리 셀 통합 쉘 어셈블리): completes 2030-Q1 but market boom is 2027-Q3 — also 2.5 years late, wasting the early-start dependency on T01",
+      "T05 (레이저 가공 및 접합 기술): 2028-Q1 start for a TRL 7 technology pushing to 2030-Q1 completion misses the 2028-Q2 boom by 1.75 years despite high executability"
     ],
     "description": {
-      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 자동화 충전 도킹 시스템 (norm=1.000)\n  시장 성장률 기준 최저: 레이저 가공 및 접합 기술 (norm=0.000)\n  전체 평균: 0.534",
-      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
-      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ 고성능 양극재 리튬 보충제: value=0.187 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 레이저 가공 및 접합 기술: value=0.134 → 기대 Low, 실제 High (차이 2단계)",
-      "coherence": "점수 4/5\n  카테고리 분포: Material(1개), Equipment(1개), Architecture(1개), Packaging(1개), Process(1개)\n  TRL 범위: 6~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
-      "balance": "점수 3/5\n  투자등급 분포: High(2개), Strategic(3개)\n  없는 등급: Medium, Low",
-      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 72.5"
+      "trl_pathway": "score 4/5 - TRL progressions are mostly reasonable — TRL 6→target over 2 years and TRL 7→target over 1-2 years are within industry norms for EV/automotive sectors. The T04 (TRL 6, 2-year window) and T06 (TRL 6, 2-year window) are slightly aggressive but not implausible.",
+      "strategic_fidelity": "score 3/5 - The declared 시장이익최대 strategy calls for near-market, commercially-focused technologies, but the portfolio includes TRL 6 architectures and packaging technologies with completion dates 2-2.5 years after their market boom windows, undermining commercialization focus. Only T03 and partially T01 fit the profit-maximization archetype.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence in technology selection or timing of competitor positioning, differentiation strategies, or gap exploitation — selections appear driven by internal scores rather than competitive landscape intelligence. No timing preemption or fast-follower rationale is visible.",
+      "market_timing": "score 2/5 - For 시장이익최대, technologies should complete within ±0.5 years of boom, but three out of five technologies miss significantly: T04 completes 2.5 years late, T06 completes 2.5 years late, and T05 completes 1.75 years late. T03 completes 0.75 years early (acceptable) and T01 completes 0.75 years late (marginal).",
+      "patent_market_convergence": "score 3/5 - Technologies like T01 (양극재) and T06 (배터리 어셈블리) sit in areas with documented patent and market activity convergence in EV battery space. However, T05 (레이저 가공) shows weaker market opportunity scores (3.0), suggesting selection may be process-capability driven rather than deliberate convergence targeting.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 82.5
     }
   },
   "backtest": {
@@ -71,76 +78,77 @@
         "tech_id": "T01",
         "tech_name": "고성능 양극재 리튬 보충제",
         "patent_growth_norm": 0.1544,
-        "market_growth_norm": 0.4178,
-        "market_size_norm": 0.0,
-        "value": 0.1871,
+        "market_growth_norm": 0.8805,
+        "market_size_norm": 1.0,
+        "value": 0.6259,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.0371
+        "cost_adjusted_return": 0.4759
       },
       {
         "tech_id": "T03",
         "tech_name": "자동화 충전 도킹 시스템",
         "patent_growth_norm": 0.7957,
-        "market_growth_norm": 1.0,
-        "market_size_norm": 1.0,
-        "value": 0.9183,
+        "market_growth_norm": 0.6367,
+        "market_size_norm": 0.3961,
+        "value": 0.6281,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": 0.7683
+        "cost_adjusted_return": 0.4781
       },
       {
         "tech_id": "T04",
         "tech_name": "비대칭 자율주행 컴퓨팅 아키텍처",
         "patent_growth_norm": 0.0,
-        "market_growth_norm": 0.4178,
-        "market_size_norm": 0.0,
-        "value": 0.1253,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.8051,
+        "value": 0.5415,
         "investment_tier": "Strategic",
         "cost_proxy": 4,
         "cost_norm": 1.0,
-        "cost_adjusted_return": -0.0247
+        "cost_adjusted_return": 0.3915
       },
       {
         "tech_id": "T06",
         "tech_name": "배터리 셀 통합 쉘 어셈블리",
         "patent_growth_norm": 0.8935,
-        "market_growth_norm": 0.8337,
-        "market_size_norm": 0.7143,
-        "value": 0.8218,
+        "market_growth_norm": 0.9204,
+        "market_size_norm": 0.5814,
+        "value": 0.808,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.7218
+        "cost_adjusted_return": 0.708
       },
       {
         "tech_id": "T05",
         "tech_name": "레이저 가공 및 접합 기술",
         "patent_growth_norm": 0.3339,
-        "market_growth_norm": 0.0,
-        "market_size_norm": 0.0,
-        "value": 0.1336,
+        "market_growth_norm": 0.3869,
+        "market_size_norm": 0.2357,
+        "value": 0.3203,
         "investment_tier": "High",
         "cost_proxy": 3,
         "cost_norm": 0.6667,
-        "cost_adjusted_return": 0.0336
+        "cost_adjusted_return": 0.2203
       }
     ],
-    "selection_quality": 43.7,
-    "cost_adjusted_return": 30.7,
+    "selection_quality": 58.5,
+    "cost_adjusted_return": 45.5,
     "budget_feasibility_score": 100.0,
     "dependency_validity_score": 100,
     "timing_accuracy_score": 50.5,
-    "backtest_score": 51.1,
+    "backtest_score": 60.6,
+    "backtest_score_v1": 61.4,
     "description": {
-      "selection_quality": "43.7/100 — 5개 기술 평균 value=0.437\n  ▲ 자동화 충전 도킹 시스템: value=0.918 (특허↑=0.80, 시장↑=1.00, 규모=1.00)\n  ▲ 배터리 셀 통합 쉘 어셈블리: value=0.822 (특허↑=0.89, 시장↑=0.83, 규모=0.71)\n  ▼ 고성능 양극재 리튬 보충제: value=0.187 (특허↑=0.15, 시장↑=0.42, 규모=0.00)\n  ▼ 레이저 가공 및 접합 기술: value=0.134 (특허↑=0.33, 시장↑=0.00, 규모=0.00)\n  ▼ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 (특허↑=0.00, 시장↑=0.42, 규모=0.00)\n  [낮은 원인]\n  → 고성능 양극재 리튬 보충제: 특허 성장률 낮음 (norm=0.15)\n  → 비대칭 자율주행 컴퓨팅 아키텍처: 특허 성장률 낮음 (norm=0.00)\n  → 레이저 가공 및 접합 기술: 시장 성장률 낮음 (norm=0.00)",
-      "cost_adjusted_return": "30.7/100 — 평균 return=0.307\n  자동화 충전 도킹 시스템: value=0.918 - 0.15×1.00(cost) = return +0.768 [Strategic]\n  배터리 셀 통합 쉘 어셈블리: value=0.822 - 0.15×0.67(cost) = return +0.722 [High]\n  고성능 양극재 리튬 보충제: value=0.187 - 0.15×1.00(cost) = return +0.037 [Strategic] ⚠ 과다투자\n  레이저 가공 및 접합 기술: value=0.134 - 0.15×0.67(cost) = return +0.034 [High] ⚠ 과다투자\n  비대칭 자율주행 컴퓨팅 아키텍처: value=0.125 - 0.15×1.00(cost) = return -0.025 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 고성능 양극재 리튬 보충제: value 0.187인데 Strategic tier\n  → 비대칭 자율주행 컴퓨팅 아키텍처: value 0.125인데 Strategic tier\n  → 레이저 가공 및 접합 기술: value 0.134인데 High tier",
+      "selection_quality": "58.5/100 — 5개 기술 평균 value=0.585\n  ▲ 배터리 셀 통합 쉘 어셈블리: value=0.808 (특허↑=0.89, 시장↑=0.92, 규모=0.58)\n  ▲ 자동화 충전 도킹 시스템: value=0.628 (특허↑=0.80, 시장↑=0.64, 규모=0.40)\n  ▲ 고성능 양극재 리튬 보충제: value=0.626 (특허↑=0.15, 시장↑=0.88, 규모=1.00)\n  ▼ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.541 (특허↑=0.00, 시장↑=1.00, 규모=0.81)\n  ▼ 레이저 가공 및 접합 기술: value=0.320 (특허↑=0.33, 시장↑=0.39, 규모=0.24)",
+      "cost_adjusted_return": "45.5/100 — 평균 return=0.455\n  배터리 셀 통합 쉘 어셈블리: value=0.808 - 0.15×0.67(cost) = return +0.708 [High]\n  자동화 충전 도킹 시스템: value=0.628 - 0.15×1.00(cost) = return +0.478 [Strategic]\n  고성능 양극재 리튬 보충제: value=0.626 - 0.15×1.00(cost) = return +0.476 [Strategic]\n  비대칭 자율주행 컴퓨팅 아키텍처: value=0.541 - 0.15×1.00(cost) = return +0.392 [Strategic]\n  레이저 가공 및 접합 기술: value=0.320 - 0.15×0.67(cost) = return +0.220 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 레이저 가공 및 접합 기술: value 0.320인데 High tier",
       "budget_feasibility": "100.0/100 — 예산 내 집행.",
       "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
       "timing_accuracy": "50.5/100 — 평균 오차 1.65년\n  비대칭 자율주행 컴퓨팅 아키텍처: 2.5년 늦음 ⚠\n  배터리 셀 통합 쉘 어셈블리: 2.5년 늦음 ⚠\n  레이저 가공 및 접합 기술: 1.8년 늦음 ⚠\n  고성능 양극재 리튬 보충제: 0.8년 늦음\n  자동화 충전 도킹 시스템: 0.8년 이름",
-      "formula": "backtest_score = 0.35×43.7 + 0.35×30.7 + 0.10×100.0 + 0.10×100.0 + 0.10×50.5 = 51.1"
+      "formula": "backtest_score = 0.35×58.5 + 0.35×45.5 + 0.05×100.0 + 0.05×100.0 + 0.10×50.5 = 60.6"
     }
   },
   "constraints": {
@@ -187,7 +195,7 @@
     ]
   },
   "composite": {
-    "pre_penalty_score": 59.7,
+    "pre_penalty_score": 54.8,
     "penalties": [
       {
         "type": "timing_error",
@@ -195,11 +203,11 @@
       }
     ],
     "total_penalty": 3.2,
-    "final_composite_score": 56.5,
-    "description": "pre_penalty = 0.4×72.5(LLM) + 0.6×51.1(Backtest) = 59.7. Penalty: timing_error: -3.2pt. 총 -3.2pt. 최종 = 56.5.\n  [진단] LLM(72.5)과 Backtest(51.1) 격차 21.4pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+    "final_composite_score": 51.6,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×60.6(Backtest) = 54.8. Penalty: timing_error: -3.2pt. 총 -3.2pt. 최종 = 51.6.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요."
   },
   "diagnostics": {
-    "summary": "LLM 구조 평가 72.5점, Backtest 경제성 평가 51.1점. 제약 위반으로 3.2점 차감. 최종 Composite Score: 56.5점.",
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 60.6점. 제약 위반으로 3.2점 차감. 최종 Composite Score: 51.6점.",
     "key_failure_points": [
       "타이밍 이슈: 비대칭 자율주행 컴퓨팅 아키텍처의 완료시점이 시장 개화 대비 2.5년 차이",
       "타이밍 이슈: 배터리 셀 통합 쉘 어셈블리의 완료시점이 시장 개화 대비 2.5년 차이",

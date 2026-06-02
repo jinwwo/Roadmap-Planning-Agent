@@ -290,7 +290,13 @@ class AgentOutputNormalizer:
         all_ms = [f["market_size_raw"] for f in raw_features.values()]
 
         def minmax(val, vals):
-            lo, hi = min(vals), max(vals)
+            # V2: None 처리 — 결측 시 중앙값 0.5
+            if val is None:
+                return 0.5
+            valid = [v for v in vals if v is not None]
+            if not valid:
+                return 0.5
+            lo, hi = min(valid), max(valid)
             if hi == lo:
                 return 0.5
             return (val - lo) / (hi - lo)
@@ -600,7 +606,8 @@ class LLMStructuralJudge:
         judge = LLMStructuralJudge.from_providers(["anthropic", "openai"])
     """
 
-    WEIGHTS = {
+    # ── V1 weights (preserved for backward compatibility) ──
+    WEIGHTS_V1 = {
         "alignment": 0.3,
         "sequencing": 0.2,
         "investment": 0.2,
@@ -608,7 +615,17 @@ class LLMStructuralJudge:
         "balance": 0.1
     }
 
-    JUDGE_SYSTEM_PROMPT = """You are a Technology Roadmap (TRM) expert evaluator.
+    # ── V2 weights (new primary) ──
+    WEIGHTS = {
+        "trl_pathway": 0.25,
+        "strategic_fidelity": 0.25,
+        "competitive_awareness": 0.20,
+        "market_timing": 0.20,
+        "patent_market_convergence": 0.10,
+    }
+
+    # ── V1 prompt (preserved) ──
+    JUDGE_SYSTEM_PROMPT_V1 = """You are a Technology Roadmap (TRM) expert evaluator.
 You will receive a complete technology roadmap package including:
 - Technology candidates with their characteristics
 - A planned development roadmap with timelines and dependencies
@@ -664,6 +681,102 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
     "investment": "<1-2 sentence justification>",
     "coherence": "<1-2 sentence justification>",
     "balance": "<1-2 sentence justification>"
+  },
+  "key_strengths": ["<strength 1>", "<strength 2>"],
+  "key_weaknesses": ["<weakness 1>", "<weakness 2>"],
+  "missing_technologies": ["<tech that should have been included>"],
+  "timing_issues": ["<timing problem description>"],
+  "investment_issues": ["<investment allocation problem>"]
+}"""
+
+    # ── V2 prompt (new primary — blind to patent map ON/OFF) ──
+    JUDGE_SYSTEM_PROMPT = """You are a Technology Roadmap (TRM) expert evaluator.
+You will receive a complete technology roadmap package including:
+- Technology candidates with their characteristics
+- A planned development roadmap with timelines and dependencies
+- An investment strategy with tier allocations
+- Constraint information (budget, dependencies, timing)
+- The declared strategic direction (기술선도 or 시장이익최대)
+
+Your task is to evaluate the roadmap's structural quality on exactly 5 axes.
+Each axis is scored 1-5 (1=very poor, 2=poor, 3=adequate, 4=good, 5=excellent).
+
+## Evaluation Axes
+
+1. **TRL Pathway Realism** (trl_pathway)
+   Is the TRL progression from current to target achievable within the given timeline?
+   - 5: All TRL jumps are realistic given industry norms (e.g., TRL 4→6 in 3+ years)
+   - 4: Most pathways are realistic with minor aggressive assumptions
+   - 3: Some pathways require optimistic assumptions (e.g., TRL 4→7 in 2 years)
+   - 2: Multiple pathways are unrealistic given standard development cycles
+   - 1: Most pathways are infeasible within the stated timelines
+   Consider: industry-specific TRL maturation rates, technology complexity, historical precedents.
+
+2. **Strategic Direction Fidelity** (strategic_fidelity)
+   Does the roadmap actually execute the declared strategic direction?
+   - For 기술선도 (Technology Leadership): expect lower-TRL exploratory technologies,
+     patent-trend-aligned selections, longer timelines, R&D-heavy portfolio
+   - For 시장이익최대 (Market Profit Maximization): expect higher-TRL near-market technologies,
+     market-size-aligned selections, shorter timelines, commercialization-focused portfolio
+   - 5: Portfolio perfectly embodies the declared strategy
+   - 4: Mostly aligned with minor deviations
+   - 3: Mixed signals — some selections contradict the strategy
+   - 2: Significant mismatch between declaration and execution
+   - 1: Portfolio contradicts the declared strategy entirely
+
+3. **Competitive Landscape Awareness** (competitive_awareness)
+   Does the roadmap demonstrate understanding of the competitive technology landscape?
+   - Is there evidence of competitor technology positioning awareness?
+   - Are technology gaps or differentiation opportunities being exploited?
+   - Is there timing advantage design relative to competitors?
+   - 5: Rich competitive intelligence embedded in technology selection and timing
+   - 4: Good competitive awareness with clear differentiation rationale
+   - 3: Some competitive context but shallow
+   - 2: Little evidence of competitive landscape consideration
+   - 1: No competitive awareness, selections appear made in isolation
+
+4. **Market Timing Precision** (market_timing)
+   Are technology completion times strategically aligned with market boom windows?
+   - For 기술선도: completing 1-2 years BEFORE market boom is ideal (preemption)
+   - For 시장이익최대: completing within ±0.5 years of boom is ideal (maximum ROI)
+   - Both strategies: completing 2+ years AFTER boom is penalized
+   - 5: All technologies hit their strategy-optimal timing windows
+   - 4: Most technologies are well-timed for their strategy
+   - 3: Timing is adequate but not strategy-optimized
+   - 2: Multiple technologies miss their windows
+   - 1: Systematic timing misalignment across the portfolio
+
+5. **Patent-Market Convergence** (patent_market_convergence)
+   Were technologies selected where patent activity AND market growth converge?
+   - Is there intentional selection of technologies in convergence zones?
+   - Or are selections skewed toward patent-only or market-only signals?
+   - 5: Clear evidence of deliberate convergence-zone targeting
+   - 4: Most selections show patent-market alignment
+   - 3: Some convergence, but appears coincidental rather than intentional
+   - 2: Selections lean heavily on one signal (patent or market only)
+   - 1: No evidence of convergence awareness
+
+## Important Notes
+- Evaluate based ONLY on the roadmap content provided. Do not infer data sources.
+- Consider the declared strategic direction when scoring axes 2 and 4.
+- Evaluate competitive awareness from what is visible in the roadmap's technology choices,
+  not from metadata about data sources.
+
+## Output Format
+Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
+
+{
+  "trl_pathway": <1-5>,
+  "strategic_fidelity": <1-5>,
+  "competitive_awareness": <1-5>,
+  "market_timing": <1-5>,
+  "patent_market_convergence": <1-5>,
+  "evidence": {
+    "trl_pathway": "<1-2 sentence justification>",
+    "strategic_fidelity": "<1-2 sentence justification>",
+    "competitive_awareness": "<1-2 sentence justification>",
+    "market_timing": "<1-2 sentence justification>",
+    "patent_market_convergence": "<1-2 sentence justification>"
   },
   "key_strengths": ["<strength 1>", "<strength 2>"],
   "key_weaknesses": ["<weakness 1>", "<weakness 2>"],
@@ -756,9 +869,14 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
             # 모드 4: rule-based fallback
             scores = self._rule_based_proxy(checked_output)
 
-        # 가중합 → 0~100 변환
-        raw = sum(self.WEIGHTS[k] * scores[k] for k in self.WEIGHTS)
+        # 가중합 → 0~100 변환 (V2)
+        raw = sum(self.WEIGHTS[k] * scores.get(k, 3) for k in self.WEIGHTS)
         structural_score = (raw - 1) / 4 * 100
+
+        # V1 점수도 보존: rule-based proxy로 v1 축 계산
+        v1_proxy = self._rule_based_proxy_v1(checked_output)
+        raw_v1 = sum(self.WEIGHTS_V1[k] * v1_proxy.get(k, 3) for k in self.WEIGHTS_V1)
+        structural_score_v1 = (raw_v1 - 1) / 4 * 100
 
         # 진단 정보
         if diagnostics_from_llm:
@@ -770,12 +888,14 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
             **checked_output,
             "llm_judge": {
                 "axis_scores": scores,
-                "per_model_scores": per_model_scores,  # 앙상블 시 각 모델의 원본
+                "axis_scores_v1": v1_proxy,
+                "per_model_scores": per_model_scores,
                 "aggregation": self.aggregation if len(per_model_scores) > 1 else "single",
                 "models_used": list(per_model_scores.keys()),
                 "evidence": evidence,
                 "llm_raw": round(raw, 3),
                 "llm_structural_score": round(structural_score, 1),
+                "llm_structural_score_v1": round(structural_score_v1, 1),
                 **diagnostics,
             },
         }
@@ -851,7 +971,7 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
         }
 
     def _build_user_prompt(self, data: dict) -> str:
-        """Constraint Checker 출력에서 LLM judge에게 보낼 프롬프트 조립"""
+        """Constraint Checker 출력에서 LLM judge에게 보낼 프롬프트 조립 (V2: blind to patent map)"""
         techs = data["merged_techs"]
         cr = data["constraint_results"]
         meta = data["metadata"]
@@ -861,6 +981,11 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
         lines.append(f"Domain: {meta['domain']}")
         lines.append(f"Reference Year: {meta['evaluation_cutoff_year']}")
         lines.append(f"Scenario: {meta['scenario_label']}")
+
+        # V2: Include strategic direction for Strategy Fidelity & Market Timing axes
+        strategic_dir = meta.get("strategy_type", "") or meta.get("strategic_direction", "")
+        if strategic_dir:
+            lines.append(f"Strategic Direction: {strategic_dir}")
         lines.append("")
 
         # 기술 후보 정보
@@ -911,8 +1036,8 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
     def _format_fallback(self) -> dict:
         """API 실패 시 기본값 반환 (전부 3점)"""
         return {
-            "alignment": 3, "sequencing": 3, "investment": 3,
-            "coherence": 3, "balance": 3,
+            "trl_pathway": 3, "strategic_fidelity": 3, "competitive_awareness": 3,
+            "market_timing": 3, "patent_market_convergence": 3,
             "evidence": {k: "API call failed, fallback score" for k in self.WEIGHTS},
             "key_strengths": [], "key_weaknesses": [],
             "missing_technologies": [], "timing_issues": [],
@@ -921,21 +1046,105 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
 
     def _rule_based_proxy(self, data: dict) -> dict:
         """
-        LLM 호출 없이 구조적 특성으로 점수를 근사.
-        실제 실험에서는 이 부분을 LLM API 호출로 교체.
+        V2 rule-based fallback: 새 5축에 대한 구조적 근사.
+        LLM 호출 실패 시 사용.
         """
         techs = data["merged_techs"]
         cr = data["constraint_results"]
+        meta = data.get("metadata", {})
+        strategic_dir = meta.get("strategy_type", "") or meta.get("strategic_direction", "")
 
-        # alignment: 기술-시장 정합성 (시장 성장 높은 기술을 선택했는가)
+        # 1) trl_pathway: TRL gap / timeline 비율
+        trl_scores = []
+        for t in techs:
+            try:
+                s_year = int(t["start_q"].split("-")[0])
+                t_year = int(t["target_q"].split("-")[0])
+                years = max(1, t_year - s_year)
+                trl = t.get("TRL", 5)
+                gap = max(0, 7 - trl)  # target TRL ~7 가정
+                ratio = gap / years
+                if ratio <= 0.8:
+                    trl_scores.append(5)
+                elif ratio <= 1.2:
+                    trl_scores.append(4)
+                elif ratio <= 1.5:
+                    trl_scores.append(3)
+                elif ratio <= 2.0:
+                    trl_scores.append(2)
+                else:
+                    trl_scores.append(1)
+            except:
+                trl_scores.append(3)
+        trl_pathway = round(sum(trl_scores) / max(len(trl_scores), 1))
+
+        # 2) strategic_fidelity: 전략 프로파일 매치
+        is_tech_lead = "기술선도" in strategic_dir or "technology" in strategic_dir.lower()
+        low_trl_count = sum(1 for t in techs if t.get("TRL", 5) <= 5)
+        high_trl_count = sum(1 for t in techs if t.get("TRL", 5) >= 6)
+        total = max(len(techs), 1)
+        if is_tech_lead:
+            match_rate = low_trl_count / total
+        else:
+            match_rate = high_trl_count / total
+        strategic_fidelity = min(5, max(1, round(1 + match_rate * 4)))
+
+        # 3) competitive_awareness: 기본 3점 (rule-based로는 판단 어려움)
+        competitive_awareness = 3
+
+        # 4) market_timing: 전략별 기준 적용
+        timing_scores = []
+        for te in cr.get("timing_errors", []):
+            err = te.get("error_years", 0)
+            if is_tech_lead:
+                if err <= -0.5:
+                    timing_scores.append(5)
+                elif err <= 0.5:
+                    timing_scores.append(4)
+                elif err <= 1.5:
+                    timing_scores.append(3)
+                else:
+                    timing_scores.append(max(1, 5 - int(err)))
+            else:
+                if abs(err) <= 0.5:
+                    timing_scores.append(5)
+                elif abs(err) <= 1.0:
+                    timing_scores.append(4)
+                elif abs(err) <= 2.0:
+                    timing_scores.append(3)
+                else:
+                    timing_scores.append(max(1, 5 - int(abs(err))))
+        market_timing = round(sum(timing_scores) / max(len(timing_scores), 1)) if timing_scores else 3
+
+        # 5) patent_market_convergence: patent_norm × market_norm 곱 기반
+        conv_scores = []
+        for t in techs:
+            pn = t.get("patent_growth_norm", 0.5)
+            mn = t.get("market_growth_norm", 0.5)
+            conv = pn * mn
+            conv_scores.append(conv)
+        avg_conv = sum(conv_scores) / max(len(conv_scores), 1)
+        patent_market_convergence = min(5, max(1, round(1 + avg_conv * 4)))
+
+        return {
+            "trl_pathway": max(1, min(5, trl_pathway)),
+            "strategic_fidelity": max(1, min(5, strategic_fidelity)),
+            "competitive_awareness": max(1, min(5, competitive_awareness)),
+            "market_timing": max(1, min(5, market_timing)),
+            "patent_market_convergence": max(1, min(5, patent_market_convergence)),
+        }
+
+    def _rule_based_proxy_v1(self, data: dict) -> dict:
+        """V1 rule-based proxy for backward-compatible v1 scores."""
+        techs = data["merged_techs"]
+        cr = data["constraint_results"]
+
         avg_market_growth = sum(t["market_growth_norm"] for t in techs) / len(techs) if techs else 0
         alignment = min(5, max(1, round(1 + avg_market_growth * 4)))
 
-        # sequencing: 의존성 위반이 없으면 높음
         dep_penalty = cr["dependency_violation_count"]
         sequencing = max(1, 5 - dep_penalty)
 
-        # investment: 투자 배분 합리성 (가치 높은 기술에 높은 투자를 했는가)
         tier_match_count = 0
         for t in techs:
             value = 0.4 * t["patent_growth_norm"] + 0.3 * t["market_growth_norm"] + 0.3 * t["market_size_norm"]
@@ -946,22 +1155,17 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
                 tier_match_count += 1
         investment = min(5, max(1, round(1 + (tier_match_count / max(len(techs), 1)) * 4)))
 
-        # coherence: 카테고리 다양성 + TRL 분포
         categories = set(t["category"] for t in techs)
         trl_spread = max(t["TRL"] for t in techs) - min(t["TRL"] for t in techs) if techs else 0
         coherence_raw = min(1, len(categories) / 3) * 0.5 + min(1, trl_spread / 4) * 0.5
         coherence = min(5, max(1, round(1 + coherence_raw * 4)))
 
-        # balance: tier 다양성
         tiers = set(t["investment_tier"] for t in techs)
         balance = min(5, max(1, round(1 + (len(tiers) / 4) * 4)))
 
         return {
-            "alignment": alignment,
-            "sequencing": sequencing,
-            "investment": investment,
-            "coherence": coherence,
-            "balance": balance
+            "alignment": alignment, "sequencing": sequencing,
+            "investment": investment, "coherence": coherence, "balance": balance,
         }
 
     def _generate_diagnostics(self, data: dict, scores: dict) -> dict:
@@ -971,17 +1175,21 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
         strengths, weaknesses = [], []
         missing_techs, investment_issues, timing_issues = [], [], []
 
-        if scores["sequencing"] >= 4:
-            strengths.append("선행관계가 올바르게 구성됨")
-        if scores["alignment"] >= 4:
-            strengths.append("시장 성장성이 높은 기술 중심으로 선택됨")
+        if scores.get("trl_pathway", 3) >= 4:
+            strengths.append("TRL progression pathways are realistic for the given timelines")
+        if scores.get("strategic_fidelity", 3) >= 4:
+            strengths.append("Roadmap faithfully executes the declared strategic direction")
+        if scores.get("competitive_awareness", 3) >= 4:
+            strengths.append("Strong competitive landscape awareness in technology selection")
 
-        if scores["sequencing"] <= 2:
-            weaknesses.append(f"의존성 위반 {cr['dependency_violation_count']}건 발견")
-        if scores["investment"] <= 2:
-            weaknesses.append("투자 배분이 기술 가치와 불일치")
-        if scores["balance"] <= 2:
-            weaknesses.append("포트폴리오 투자등급 편중")
+        if scores.get("trl_pathway", 3) <= 2:
+            weaknesses.append("Multiple TRL pathways are unrealistic for the stated timelines")
+        if scores.get("strategic_fidelity", 3) <= 2:
+            weaknesses.append("Significant mismatch between declared strategy and actual portfolio")
+        if scores.get("market_timing", 3) <= 2:
+            weaknesses.append("Systematic market timing misalignment across the portfolio")
+        if scores.get("patent_market_convergence", 3) <= 2:
+            weaknesses.append("Technology selections lack patent-market convergence")
 
         for err in cr["timing_errors"]:
             if err["error_years"] > 0.5:
@@ -1102,8 +1310,18 @@ class BackTestEvaluator:
         mean_err = cr["mean_timing_error_years"]
         timing_accuracy = max(0, 100 - mean_err * 30)
 
-        # ── Backtest composite (§8 가중치) ──
+        # ── Backtest composite (V2 가중치) ──
         bt_score = (
+            0.25 * selection_quality
+            + 0.25 * cost_adjusted_return
+            + 0.15 * investment_rationality
+            + 0.05 * budget_feasibility
+            + 0.05 * dependency_validity
+            + 0.25 * timing_accuracy
+        )
+
+        # ── V1 점수도 보존 ──
+        bt_score_v1 = (
             0.35 * selection_quality
             + 0.35 * cost_adjusted_return
             + 0.10 * budget_feasibility
@@ -1121,7 +1339,8 @@ class BackTestEvaluator:
                 "budget_feasibility_score": round(budget_feasibility, 1),
                 "dependency_validity_score": round(dependency_validity, 1),
                 "timing_accuracy_score": round(timing_accuracy, 1),
-                "backtest_score": round(bt_score, 1)
+                "backtest_score": round(bt_score, 1),
+                "backtest_score_v1": round(bt_score_v1, 1),
             }
         }
 
@@ -1227,6 +1446,10 @@ class BenchmarkReportGenerator:
                 "investment_issues": llm["investment_issues"],
                 "timing_issues": llm["timing_issues"],
                 "description": self._describe_llm(llm, techs, cr),
+                "v1_scores": {
+                    **llm.get("axis_scores_v1", {}),
+                    "llm_structural_score_v1": llm.get("llm_structural_score_v1", 0),
+                },
             },
             "backtest": {
                 "tech_details": bt["tech_details"],
@@ -1236,6 +1459,7 @@ class BenchmarkReportGenerator:
                 "dependency_validity_score": bt["dependency_validity_score"],
                 "timing_accuracy_score": bt["timing_accuracy_score"],
                 "backtest_score": bt["backtest_score"],
+                "backtest_score_v1": bt.get("backtest_score_v1", 0),
                 "description": self._describe_backtest(bt, cr, techs),
             },
             "constraints": {
@@ -1261,6 +1485,17 @@ class BenchmarkReportGenerator:
     def _describe_llm(self, llm, techs, cr) -> dict:
         """LLM Judge 각 축 점수의 XAI 분석"""
         axes = llm["axis_scores"]
+        # V2 분기: 새 5축이면 evidence 기반 description 반환
+        if "trl_pathway" in axes:
+            ev = llm.get("evidence", {})
+            w = LLMStructuralJudge.WEIGHTS
+            d = {}
+            for k in w:
+                d[k] = f"score {axes.get(k, 3)}/5 - " + ev.get(k, "")
+            mul = chr(0x00D7)
+            fp = " + ".join(f"{w[k]}{mul}{axes.get(k, 3)}" for k in w)
+            d["formula"] = f"llm_structural_score = ({fp} - 1) / 4 {mul} 100 = {llm.get(chr(108)+chr(108)+chr(109)+chr(95)+chr(115)+chr(116)+chr(114)+chr(117)+chr(99)+chr(116)+chr(117)+chr(114)+chr(97)+chr(108)+chr(95)+chr(115)+chr(99)+chr(111)+chr(114)+chr(101), 0)}"
+            return d
         categories = {}
         for t in techs:
             cat = t.get("category", "Unknown")
@@ -1487,8 +1722,8 @@ class BenchmarkReportGenerator:
         # ── formula ──
         formula = (
             f"backtest_score = 0.35×{bt['selection_quality']:.1f} + 0.35×{bt['cost_adjusted_return']:.1f} "
-            f"+ 0.10×{bt['budget_feasibility_score']:.1f} "
-            f"+ 0.10×{bt['dependency_validity_score']:.1f} + 0.10×{bt['timing_accuracy_score']:.1f} "
+            f"+ 0.05×{bt['budget_feasibility_score']:.1f} "
+            f"+ 0.05×{bt['dependency_validity_score']:.1f} + 0.10×{bt['timing_accuracy_score']:.1f} "
             f"= {bt['backtest_score']:.1f}"
         )
 
@@ -1571,7 +1806,8 @@ class PairwiseComparator:
     """§10: 두 시나리오를 나란히 비교"""
 
     def compare(self, report_a: dict, report_b: dict) -> dict:
-        axes = ["alignment", "sequencing", "investment", "coherence", "balance"]
+        axes = ["trl_pathway", "strategic_fidelity", "competitive_awareness",
+                "market_timing", "patent_market_convergence"]
         axis_comparison = {}
         for ax in axes:
             va = report_a["llm_judge"].get(ax, 0)
