@@ -1,0 +1,491 @@
+{
+  "problem_frame": {
+    "industry": "Cathode Materials / Functional Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 11700000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Cosmo AM&T",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "차세대 양극재 및 기능성 소재 기술 선도",
+      "에너지 저장 및 신소재 인접 시장 확장",
+      "프론티어 기술 R&D 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $11.7M 을 정확히 배분하여 예산 초과 없음. 5 년 차까지의 일정도 시장 붐 시점과 정합."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "TECH-007 → TECH-001 → TECH-011/TECH-002 의 의존성 순서가 논리적으로 타당함."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "양극재 및 기능성 소재 중심의 Cosmo 전략과 높은 정합성. 에너지 저장 시장 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1 과 Tier 2 의 예산 배분이 기술 난이도와 시장 중요도에 적절히 반영됨."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기 (2026-2028) 와 장기 (2029-2030) 투자가 균형 있게 분포되어 있음."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "TECH-003",
+            "name": "Silicon-Based Negative Electro",
+            "category": "Anode Materials",
+            "trl": 1,
+            "final_score": 88.0,
+            "market_score": 88.0,
+            "patent_score": 88.0,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "TECH-001",
+            "name": "High-Nickel Polycrystalline Ca",
+            "category": "Cathode Materials",
+            "trl": 1,
+            "final_score": 86.78,
+            "market_score": 82.5,
+            "patent_score": 92.0,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "TECH-011",
+            "name": "Next-Gen Positive Electrode Ac",
+            "category": "Cathode Materials",
+            "trl": 1,
+            "final_score": 86.48,
+            "market_score": 88.5,
+            "patent_score": 84.0,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "TECH-007",
+            "name": "Advanced Binder Compositions f",
+            "category": "Functional Materials",
+            "trl": 1,
+            "final_score": 84.62,
+            "market_score": 88.4,
+            "patent_score": 80.0,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "TECH-002",
+            "name": "Lithium Bis(fluorosulfonyl)imi",
+            "category": "Functional Materials",
+            "trl": 1,
+            "final_score": 80.05,
+            "market_score": 76.0,
+            "patent_score": 85.0,
+            "expected_market_boom_quarter": "2028 Q3"
+          },
+          {
+            "tech_id": "TECH-010",
+            "name": "Tandem Formation and Capacity ",
+            "category": "Equipment",
+            "trl": 1,
+            "final_score": 79.3,
+            "market_score": 82.0,
+            "patent_score": 76.0,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "TECH-009",
+            "name": "Cathode Slurry Composition Opt",
+            "category": "Process",
+            "trl": 1,
+            "final_score": 77.62,
+            "market_score": 76.5,
+            "patent_score": 79.0,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "TECH-005",
+            "name": "Eco-Friendly Battery Module Pa",
+            "category": "Packaging",
+            "trl": 1,
+            "final_score": 75.83,
+            "market_score": 76.5,
+            "patent_score": 75.0,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "TECH-004",
+            "name": "Automated Battery Module Assem",
+            "category": "Equipment",
+            "trl": 1,
+            "final_score": 74.7,
+            "market_score": 72.0,
+            "patent_score": 78.0,
+            "expected_market_boom_quarter": "2029 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "TECH-007",
+            "name": "Advanced Binder Compositions for Electrodes",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "2026 년 말 (1 차년도 말) 에 시장 폭발이 예상되므로 1 차년도부터 즉시 R&D 를 시작하여 3 차년도까지 상용화 및 초기 양산 기술을 완성해야 합니다. TRL 1 단계이므로 3 년의 개발 기간이 필요하며, 이는 다른 양극재 기술의 전제 조건이 될 수 있습니다.",
+              "tech_execution": "고성능 양극재 및 고체전지 상용화에 필수적인 바인더 조성 기술을 확보하여 Cosmo AM&T 의 기능성 소재 포트폴리오를 강화해야 합니다. 이는 차세대 배터리 성능 향상에 직접적인 기여를 하며, 특허 기반의 진입 장벽을 형성하는 핵심 전략입니다.",
+              "investment_selection": "2026 년 말부터 급성장할 시장 선점을 위해 초기 투자 집중이 필요하며, 상대적으로 짧은 개발 주기로 빠른 ROI 를 기대할 수 있습니다. 기능성 소재 시장 확장의敲门석 역할을 하여 향후 고부가가치 기술로 확장하는 데 필수적입니다."
+            }
+          },
+          {
+            "tech_id": "TECH-001",
+            "name": "High-Nickel Polycrystalline Cathode Materials",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "TECH-007"
+            ],
+            "reasoning": {
+              "year_placement": "고니켈 양극재는 2027 년 Q2 시장 폭발을 앞두고 1 차년도부터 개발을 시작해야 하며, 바인더 기술 (TECH-007) 의 초기 성과와 병행하여 4 차년도까지 품질 안정화 및 원가 경쟁력 확보를 완료합니다. TRL 1 단계이므로 4 년의 긴 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['TECH-007'] 완료 후로 2차년도 push]",
+              "tech_execution": "EV 주행거리 요구 증가에 대응하는 고니켈 양극재 기술을 선도하여 CATL, LG 에너지솔루션 등 주요 플레이어들과 경쟁할 수 있는 기술적 우위를 확보해야 합니다. 이는 Cosmo AM&T 의 차세대 양극재 기술 선도 전략의 핵심입니다.",
+              "investment_selection": "집중화된 시장 구조에서 선점하기 위해 초기부터 지속적인 R&D 예산 투입이 필요하며, 기술 진입 장벽을 극복하는 데 핵심 투자 대상입니다. 시장 규모가 크고 경쟁 우위를 점할 경우 장기적인 수익 창출이 기대됩니다."
+            }
+          },
+          {
+            "tech_id": "TECH-011",
+            "name": "Next-Gen Positive Electrode Active Material Synthesis",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "TECH-001"
+            ],
+            "reasoning": {
+              "year_placement": "고니켈 양극재 (TECH-001) 의 초기 개발 성과 (2 차년도) 를 바탕으로 차세대 합성 기술을 2 차년도부터 시작하여 5 차년도 (2030 년) 까지 프론티어 기술로 완성합니다. TRL 1 단계이므로 4 년의 개발 기간이 필요하며, 2028 년 Q1 시장 폭발을 대비합니다. [후처리: dependency 보정 — prereq ['TECH-001'] 완료 후로 3차년도 push]",
+              "tech_execution": "2028 년경 본격화될 차세대 양극재 시장 선점을 위해 합성 기술을 고도화하여 Cosmo AM&T 의 핵심 성장 동력을 확보해야 합니다. 이는 기술 진입 장벽이 높은 시장에서 지배력을 확보하는 데 필수적입니다.",
+              "investment_selection": "장기적인 시장 지배력을 확보하기 위해 5 차년도까지 이어지는 R&D 투자가 필요하며, 프론티어 기술 스택 강화를 위한 핵심 투자 대상입니다. 초기 기술 (TECH-001) 의 성공을 바탕으로 확장 가능한 고부가가치 기술입니다."
+            }
+          },
+          {
+            "tech_id": "TECH-002",
+            "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "TECH-001",
+              "TECH-011"
+            ],
+            "reasoning": {
+              "year_placement": "고에너지 밀도 배터리 수요 증가에 따른 2028 년 Q3 시장 폭발을 대비하여, 양극재 기술 (TECH-001, TECH-011) 의 초기 성과 (3 차년도) 를 바탕으로 3 차년도부터 재활용 기술을 시작하여 5 차년도까지 완성합니다. TRL 1 단계이므로 3 년의 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['TECH-001', 'TECH-011'] 완료 후로 2차년도 push]",
+              "tech_execution": "LiFSI 전해질 재활용 기술을 통해 원가 절감 및 지속가능성 측면에서 부가 가치를 창출하며, 고에너지 밀도 배터리 시장의 프론티어 기술을 선점해야 합니다. 이는 Cosmo AM&T 의 에너지 저장 및 신소재 인접 시장 확장 전략에 부합합니다.",
+              "investment_selection": "아직 초기 단계인 재활용 기술 시장에서 선점 가능성을 높이기 위해 5 차년도까지 이어지는 R&D 투자가 필요하며, 지속가능성 트렌드에 부합하는 핵심 투자 대상입니다. 시장 규모가 커지고 경쟁 우위를 점할 경우 장기적인 수익 창출이 기대됩니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 11700000.0,
+            "tech_investments": [
+              {
+                "tech_id": "TECH-007",
+                "name": "Advanced Binder Compositions for Electrodes",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3500000.0,
+                "tech_budget_rationale": "TECH-007 은 2026 년 Q4 시장 폭발을 앞두고 있으며, 다른 핵심 양극재 기술 (TECH-001, TECH-011) 의 전제 조건인 필수 기술입니다. TRL 1 단계에서 시작하여 3 년 내 상용화 기술을 확보해야 하므로, 초기 R&D 및 특허 포트폴리오 구축에 집중된 예산을 배정합니다. 전체 예산의 약 30% 를 할당하여 기술적 진입 장벽을 빠르게 형성하고 시장 선점 효과를 극대화합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 1,
+                  "tech_risk": 5,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "즉시 R&D 팀을 구성하여 바인더 조성 최적화 연구를 시작하고, 핵심 특허 출원을 위한 IP 전략을 수립하십시오.",
+                "reasoning": {
+                  "market_evaluation": "고성능 양극재 및 고체전지 상용화에 필수적인 바인더 시장은 2025-2030 년간 연평균 17.4% 의 높은 성장률 (CAGR) 을 보이며, TAM 은 85 억 달러에 달합니다. 2026 년 Q4 에 예상되는 시장 폭발은 기존 PVDF 대체 수요와 신규 고분자 바인더 시장의 합산 효과로, Cosmo AM&T 의 전략적 우선순위와 완벽하게 일치합니다. 시장 진입 시기가 늦어질 경우 경쟁사 (3~5 개 주요 플레이어) 에 의해 진입 장벽이 높아질 위험이 큽니다.",
+                  "tech_evaluation": "현재 TRL 1 단계로 기술적 불확실성이 매우 높지만 (tech_risk 5 점), 특허 점수 80 점과 높은 시장 점수 (88.4) 는 강력한 경쟁 우위 (competitive_advantage 5 점) 를 시사합니다. 이 기술은 차세대 배터리 성능 향상의 핵심이며, Cosmo AM&T 의 기능성 소재 포트폴리오 강화에 직접적으로 기여합니다. 3 년의 개발 기간이 필요하므로 초기 단계에서의 집중 투자가 성공의 열쇠입니다.",
+                  "investment_decision": "높은 시장 성장률과 전략적 중요성, 그리고 다른 기술들의 전제 조건이라는 점을 고려하여 Tier 1 로 선정합니다. 350 만 달러의 예산은 초기 연구, 시제품 제작, 그리고 핵심 특허 출원을 위한 자금을 확보하기 위해 할당되었습니다. 이는 2026 년 말 시장 진입을 위한 가장 시급한 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "TECH-001",
+                "name": "High-Nickel Polycrystalline Cathode Materials",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3200000.0,
+                "tech_budget_rationale": "TECH-001 은 2027 년 Q2 시장 폭발을 앞두고 있으며, 전 세계 양극재 시장의 60% 이상을 차지할 것으로 예상되는 거대 시장 (TAM 125 억 달러) 입니다. TRL 1 단계에서 시작하여 4 년의 긴 개발 기간이 필요하므로, 초기 연구 및 품질 안정화 기술 확보에 집중된 예산을 배정합니다. 전체 예산의 약 27% 를 할당하여 CATL, LG 에너지솔루션 등 주요 플레이어들과 경쟁할 수 있는 기술적 우위를 확보합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 1,
+                  "tech_risk": 5,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "고니켈 양극재 합성 공정 연구 및 품질 안정화 기술을 위한 R&D 팀을 즉시 구성하십시오.",
+                "reasoning": {
+                  "market_evaluation": "고니켈 양극재 시장은 2025-2030 년간 연평균 16.8% 의 성장률을 보이며, TAM 은 125 억 달러에 달하는 거대 시장입니다. EV 주행거리 요구 증가로 인해 NCM811 및 NCA 계열 수요가 급증하고 있으며, 2027 년 Q2 에 예상되는 시장 폭발은 Cosmo AM&T 의 핵심 성장 동력이 될 것입니다. 시장 진입 시기가 늦어질 경우 경쟁사 (3~5 개 주요 플레이어) 에 의해 시장 점유율이 제한될 위험이 큽니다.",
+                  "tech_evaluation": "현재 TRL 1 단계로 기술적 불확실성이 매우 높지만 (tech_risk 5 점), 특허 점수 92 점과 높은 시장 점수 (82.5) 는 강력한 경쟁 우위 (competitive_advantage 4 점) 를 시사합니다. 이 기술은 Cosmo AM&T 의 차세대 양극재 기술 선도 전략의 핵심이며, 품질 안정화와 원가 경쟁력이 성공의 핵심 요인입니다. 4 년의 개발 기간이 필요하므로 초기 단계에서의 집중 투자가 필수적입니다.",
+                  "investment_decision": "거대 시장 규모와 높은 성장률, 그리고 전략적 중요성을 고려하여 Tier 1 로 선정합니다. 320 만 달러의 예산은 초기 연구, 시제품 제작, 그리고 품질 안정화 기술 확보를 위한 자금을 확보하기 위해 할당되었습니다. 이는 2027 년 Q2 시장 진입을 위한 가장 시급한 투자입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "TECH-011",
+                "name": "Next-Gen Positive Electrode Active Material Synthesis",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2500000.0,
+                "tech_budget_rationale": "TECH-011 은 2028 년 Q1 시장 폭발을 앞두고 있으며, TAM 450 억 달러의 거대 시장입니다. 그러나 TECH-001 의 초기 개발 성과 (2 차년도) 를 바탕으로 시작되므로, TECH-001 보다 개발 시점이 늦어집니다. TRL 1 단계에서 시작하여 4 년의 개발 기간이 필요하므로, 초기 연구 및 프론티어 기술 확보에 집중된 예산을 배정합니다. 전체 예산의 약 21% 를 할당하여 2028 년 시장 선점을 위한 기술적 우위를 확보합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 1,
+                  "tech_risk": 5,
+                  "competitive_advantage": 5,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "TECH-001 의 초기 개발 성과를 바탕으로 차세대 양극재 합성 기술 연구를 시작하고, 핵심 특허 출원을 위한 IP 전략을 수립하십시오.",
+                "reasoning": {
+                  "market_evaluation": "차세대 양극재 합성 기술 시장은 2025-2030 년간 연평균 24.5% 의 매우 높은 성장률을 보이며, TAM 은 450 억 달러에 달하는 거대 시장입니다. 2028 년 Q1 에 예상되는 시장 폭발은 전기차 주행거리 요구사항 증가 및 에너지 밀도 향상 필요성으로 인해 발생할 것으로 예상됩니다. 시장 진입 시기가 늦어질 경우 경쟁사 (1~2 개 지배적 플레이어) 에 의해 시장 지배력이 제한될 위험이 큽니다.",
+                  "tech_evaluation": "현재 TRL 1 단계로 기술적 불확실성이 매우 높지만 (tech_risk 5 점), 특허 점수 84 점과 높은 시장 점수 (88.5) 는 강력한 경쟁 우위 (competitive_advantage 5 점) 를 시사합니다. 이 기술은 Cosmo AM&T 의 핵심 성장 동력이 될 것이며, 기술 진입 장벽이 높아 선점한 기업이 시장 지배력을 확보할 가능성이 큽니다. 4 년의 개발 기간이 필요하므로 초기 단계에서의 집중 투자가 필수적입니다.",
+                  "investment_decision": "거대 시장 규모와 높은 성장률, 그리고 전략적 중요성을 고려하여 Tier 2 로 선정합니다. TECH-001 의 개발 성과에 의존하므로 개발 시점이 늦어지지만, 2028 년 시장 선점을 위한 기술적 우위 확보가 중요합니다. 250 만 달러의 예산은 초기 연구 및 프론티어 기술 확보를 위한 자금을 확보하기 위해 할당되었습니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "TECH-002",
+                "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2500000.0,
+                "tech_budget_rationale": "TECH-002 는 2028 년 Q3 시장 폭발을 앞두고 있으며, TAM 38 억 달러의 시장입니다. 그러나 TECH-001 및 TECH-011 의 초기 개발 성과 (3 차년도) 를 바탕으로 시작되므로, 개발 시점이 더 늦어집니다. TRL 1 단계에서 시작하여 3 년의 개발 기간이 필요하므로, 초기 연구 및 재활용 기술 확보에 집중된 예산을 배정합니다. 전체 예산의 약 21% 를 할당하여 2028 년 시장 선점을 위한 기술적 우위를 확보합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 1,
+                  "tech_risk": 5,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "TECH-001 및 TECH-011 의 초기 개발 성과를 바탕으로 LiFSI 전해질 재활용 기술 연구를 시작하고, 핵심 특허 출원을 위한 IP 전략을 수립하십시오.",
+                "reasoning": {
+                  "market_evaluation": "LiFSI 전해질 시장은 2025-2032 년간 연평균 24.5% 의 매우 높은 성장률을 보이며, TAM 은 38 억 달러에 달합니다. 2028 년 Q3 에 예상되는 시장 폭발은 고에너지 밀도 배터리 수요 증가로 인해 발생할 것으로 예상됩니다. 재활용 기술은 원가 절감 및 지속가능성 측면에서 부가 가치를 창출할 수 있는 프론티어 기술입니다. 시장 진입 시기가 늦어질 경우 경쟁사 (1~2 개 지배적 플레이어) 에 의해 시장 지배력이 제한될 위험이 큽니다.",
+                  "tech_evaluation": "현재 TRL 1 단계로 기술적 불확실성이 매우 높지만 (tech_risk 5 점), 특허 점수 85 점과 높은 시장 점수 (76.0) 는 강력한 경쟁 우위 (competitive_advantage 4 점) 를 시사합니다. 이 기술은 Cosmo AM&T 의 에너지 저장 및 신소재 인접 시장 확장 전략에 부합하며, 기술 진입 장벽이 높아 선점한 기업이 시장 지배력을 확보할 가능성이 큽니다. 3 년의 개발 기간이 필요하므로 초기 단계에서의 집중 투자가 필수적입니다.",
+                  "investment_decision": "높은 성장률과 전략적 중요성을 고려하여 Tier 2 로 선정합니다. TECH-001 및 TECH-011 의 개발 성과에 의존하므로 개발 시점이 늦어지지만, 2028 년 시장 선점을 위한 기술적 우위 확보가 중요합니다. 250 만 달러의 예산은 초기 연구 및 재활용 기술 확보를 위한 자금을 확보하기 위해 할당되었습니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "TECH-007",
+                "name": "Advanced Binder Compositions for Electrodes",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3500000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "TECH-007",
+                "name": "Advanced Binder Compositions for Electrodes",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3500000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "TECH-007",
+                "name": "Advanced Binder Compositions for Electrodes",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3500000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "TECH-001",
+                "name": "High-Nickel Polycrystalline Cathode Materials",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3200000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "TECH-001",
+                "name": "High-Nickel Polycrystalline Cathode Materials",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3200000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "TECH-001",
+                "name": "High-Nickel Polycrystalline Cathode Materials",
+                "tier": "Tier 1",
+                "tech_budget_usd": 3200000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "TECH-011",
+                "name": "Next-Gen Positive Electrode Active Material Synthesis",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2500000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "TECH-002",
+                "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+                "tier": "Tier 2",
+                "tech_budget_usd": 2500000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 3500000.0,
+            "3": 3200000.0,
+            "5": 5000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 2,
+            "Tier 3": 0
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "TECH-003",
+              "name": "Silicon-Based Negative Electrode Materials",
+              "category": "Anode Materials",
+              "final_score": 88.0,
+              "market_score": 88.0,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "TECH-001",
+              "name": "High-Nickel Polycrystalline Cathode Materials",
+              "category": "Cathode Materials",
+              "final_score": 86.78,
+              "market_score": 82.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "TECH-011",
+              "name": "Next-Gen Positive Electrode Active Material Synthesis",
+              "category": "Cathode Materials",
+              "final_score": 86.48,
+              "market_score": 88.5,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "TECH-007",
+              "name": "Advanced Binder Compositions for Electrodes",
+              "category": "Functional Materials",
+              "final_score": 84.62,
+              "market_score": 88.4,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "TECH-002",
+              "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+              "category": "Functional Materials",
+              "final_score": 80.05,
+              "market_score": 76.0,
+              "boom": "2028 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Anode Materials": 1,
+            "Cathode Materials": 2,
+            "Functional Materials": 2,
+            "Equipment": 2,
+            "Process": 1,
+            "Packaging": 1
+          },
+          "avg_trl": 1.0,
+          "tier1_tech_list": [
+            {
+              "tech_id": "TECH-007",
+              "name": "Advanced Binder Compositions for Electrodes",
+              "stage": "roadmap",
+              "key_reason": "2026 년 Q4 시장 폭발 임박으로 개발 긴급도 (5 점) 가 매우 높음."
+            },
+            {
+              "tech_id": "TECH-001",
+              "name": "High-Nickel Polycrystalline Cathode Materials",
+              "stage": "roadmap",
+              "key_reason": "2027 년 Q2 시장 폭발 임박으로 개발 긴급도 (5 점) 가 매우 높음."
+            }
+          ],
+          "dependency_edges": [
+            "TECH-007 → TECH-001",
+            "TECH-001 → TECH-011",
+            "TECH-001 → TECH-002",
+            "TECH-011 → TECH-002"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 3,
+            "2027 Q2": 3,
+            "2028 Q1": 1,
+            "2028 Q3": 1,
+            "2029 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 배분과 기술 의존성, 전략 정합성 모두 정상 범위 내로 평가됨. 추가 수정 불필요."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_cosmo_amt_battery_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_cosmo_amt_battery_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_cosmo_amt_battery_2026_2030__기술선도__investment_strategy.json"
+  }
+}

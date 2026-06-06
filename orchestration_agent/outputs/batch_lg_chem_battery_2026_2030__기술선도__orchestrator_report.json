@@ -1,0 +1,403 @@
+{
+  "problem_frame": {
+    "industry": "Cathode Materials / Advanced Materials / Battery Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 3630000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "LG Chem",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "배터리 소재 (Cathode) 기술 리더십 강화",
+      "차세대 에너지 및 인접 소재 시장 확장",
+      "프론티어 기술 R&D 스택 고도화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $3.63B 내에서 정확히 배분됨. 2026-2030 기간 내 시장 붐 시점과 개발 기간이 적절히 정렬됨."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "선정된 3 기술 간 명시적 의존성 없음. 각 기술이 독립적으로 진행 가능한 구조로 설계됨."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "LG Chem 의 양극 소재 리더십 (T01), 차세대 고체전지 (T02), 나트륨이온 확장 (T05) 전략과 완벽 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "T01(50%), T05(30%), T02(20%) 배분은 기술 성숙도 (TRL) 와 시장 시급성을 고려한 합리적 분포."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.65,
+        "risk_balance": 0.55,
+        "comment": "단기 (T01) 와 중장기 (T02, T05) 투자 균형이 적절하며, 리스크 분산 효과도 확보됨."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T02",
+            "name": "전체 고체전지 양극 소재",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 84.84,
+            "market_score": 82.0,
+            "patent_score": 88.3,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T01",
+            "name": "고니켈 양극 표면 코팅",
+            "category": "Material",
+            "trl": 7,
+            "final_score": 84.8,
+            "market_score": 78.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T05",
+            "name": "나트륨 이온 배터리 음극",
+            "category": "Material",
+            "trl": 4,
+            "final_score": 80.7,
+            "market_score": 82.5,
+            "patent_score": 78.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "실리콘 기반 음극 소재",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 80.37,
+            "market_score": 76.0,
+            "patent_score": 85.7,
+            "expected_market_boom_quarter": "2028 Q3"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "고니켈 양극 표면 코팅",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026 년) 즉시 양산 최적화 및 상용화 준비를 시작하며, 2027 년 Q3 시장 폭발 시점을 고려하여 3 차년도 (2028 년) 까지 기술 고도화 및 대량 생산 안정화를 완료합니다.",
+              "tech_execution": "고니켈 양극 소재의 표면 안정화는 고에너지 밀도 배터리 양산의 핵심 장벽으로, LG Chem 의 기술 리더십 강화 전략을 실현하기 위해 가장 먼저 확보해야 할 필수 기술입니다.",
+              "investment_selection": "2030 년 220 억 달러 규모의 시장 성장과 코팅 기술의 필수화 추세를 반영하여, 단기적인 시장 점유율 확보와 경쟁사 대비 기술 우위를 점하기 위한 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "나트륨 이온 배터리 음극",
+            "year_idx_start": 1,
+            "year_idx_target": 4,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 4 로 기초 연구 및 프로토타입 단계이므로 1 차년도 (2026 년) 부터 R&D 를 시작하며, 2027 년 Q3 시장 폭발을 대비한 초기 상용화 준비를 4 차년도 (2029 년) 까지 연장하여 기술 성숙도를 높입니다.",
+              "tech_execution": "리튬 자원의 공급 불안정성을 해소하기 위한 저비용 대안 기술로서, LG Chem 의 차세대 에너지 시장 확장 전략을 위한 기술 다각화의 핵심 축입니다.",
+              "investment_selection": "2025 년 이후 상용화 가속화되는 나트륨 이온 배터리 시장에서 선점 효과를 극대화하고, 장기적인 원가 경쟁력을 확보하기 위해 중장기 R&D 예산을 집중 투자해야 합니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "전체 고체전지 양극 소재",
+            "year_idx_start": 2,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 5 로 중간 성숙도이나 고체전지 특유의 계면 안정성 확보에 시간이 필요하므로 2 차년도 (2027 년) 에 본격적인 개발을 시작하여 5 차년도 (2030 년) 까지 프론티어 기술 고도화를 완료합니다.",
+              "tech_execution": "차세대 에너지 시장의 핵심인 고체전지 양극 소재는 삼성 SDI 등 경쟁사의 특허 출원이 활발한 분야로, LG Chem 이 기술 선점과 차세대 시장 확장을 위해 반드시 수행해야 할 전략적 과제입니다.",
+              "investment_selection": "2029 년경 본격적인 상용화 예상과 명확한 시장 선두주자가 부재한 초기 단계임을 고려하여, 장기적인 기술 우위 확보와 차세대 배터리 시장에서의 주도권 장악을 위해 5 차년도까지 지속 투자합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 3630000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "tech_budget_rationale": "T01 은 2027 년 Q2 시장 폭발을 앞두고 TRL 7 의 높은 성숙도를 가진 핵심 기술로, LG Chem 의 양극 소재 리더십을 즉시 확보하기 위한 선제적 투자가 필요합니다. 전체 예산의 50% 를 할당하여 대량 양산 최적화 및 공정 안정화를 가속화하고, 2028 년까지 기술 고도화를 완료하여 시장 점유율을 선점하는 전략적 목적을 달성합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 즉시 양산 라인 최적화 프로젝트를 착수하고, 2027 년 Q2 시장 진입을 위한 대량 생산 설비 확충을 완료하십시오.",
+                "reasoning": {
+                  "market_evaluation": "고니켈 양극 소재 시장은 2030 년까지 222 억 6 천만 달러 (TAM) 규모로 성장하며, 연평균 18.5% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 2027 년 Q2 에 예상되는 시장 폭발 시점은 고에너지 밀도 배터리 양산의 핵심 장벽인 표면 안정화 기술에 대한 수요를 급증시킬 것이며, 이는 LG Chem 의 핵심 타겟 시장과 완벽하게 일치합니다.",
+                  "tech_evaluation": "TRL 7 로 기술 성숙도가 높아 양산 단계에 진입할 준비가 되었으며, 기술 위험은 상대적으로 낮습니다. LG Chem 은 이미 이 분야에서 강력한 특허 포트폴리오 (Patent Score 92.5) 를 보유하고 있어, 경쟁사 대비 명확한 경쟁 우위를 점할 수 있는 상태입니다.",
+                  "investment_decision": "시장 성장성 (5 점), 기술 준비도 (4 점), 경쟁 우위 (5 점), 개발 긴급도 (5 점) 가 모두 최상위권으로 평가되어 Tier 1 로 선정되었습니다. 전체 예산의 50% 를 할당하여 즉각적인 양산 확대 및 기술 고도화를 통해 2027 년 시장 폭발 시점에 최적의 제품 공급 능력을 확보하는 것이 핵심 전략입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "나트륨 이온 배터리 음극",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "tech_budget_rationale": "T05 는 2027 년 Q3 시장 폭발을 앞두고 TRL 4 의 초기 단계이지만, 리튬 의존도 탈피 및 저비용 대안 기술로서 LG Chem 의 차세대 에너지 시장 확장 전략에 필수적입니다. 전체 예산의 30% 를 할당하여 2026 년부터 본격적인 R&D 를 시작하고, 2029 년까지 상용화 준비를 완료하는 마일스톤 기반 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 즉시 나트륨 이온 배터리 음극 소재 R&D 프로젝트를 착수하고, 2027 년 Q3 시장 진입을 위한 프로토타입 개발 및 검증 단계를 완료하십시오.",
+                "reasoning": {
+                  "market_evaluation": "나트륨 이온 배터리 시장은 2025 년부터 2030 년까지 연평균 32.5% 의 초고성장률을 보이며, 2030 년대 초에 급성장할 것으로 예상됩니다. 리튬 자원의 공급 불안정성과 가격 변동성을 해소할 수 있는 저비용 대안 기술로서, 2027 년 Q3 에 예상되는 시장 폭발 시점에 맞춰 기술 확보가 시급합니다.",
+                  "tech_evaluation": "TRL 4 로 기초 연구 및 프로토타입 단계에 있어 기술 위험은 높지만, LG Chem 의 특허 포트폴리오 (Patent Score 78.5) 와 전략적 정합성이 높습니다. 리튬 이온 대비 원자재 안정성과 저비용 특성을 활용한 경쟁 우위를 확보하기 위한 핵심 기술입니다.",
+                  "investment_decision": "시장 성장성 (5 점) 과 개발 긴급도 (5 점) 가 매우 높지만, 기술 준비도 (2 점) 와 기술 위험 (4 점) 을 고려하여 Tier 1 로 선정하되, T01 보다 낮은 예산을 할당합니다. 2026 년부터 2029 년까지의 장기적인 R&D 투자를 통해 기술 성숙도를 높이고, 2027 년 시장 진입을 위한 초기 상용화 준비를 완료하는 것이 목표입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "전체 고체전지 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "tech_budget_rationale": "T02 는 2029 년 Q1 시장 폭발을 앞두고 TRL 5 의 중간 성숙도 단계로, 고체전지 특유의 계면 안정성 확보에 시간이 필요한 프론티어 기술입니다. 전체 예산의 20% 를 할당하여 2027 년부터 본격적인 개발을 시작하고, 2030 년까지 기술 고도화를 완료하는 마일스톤 기반 투자를 수행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년부터 고체전지 양극 소재 개발 프로젝트를 착수하고, 2029 년 Q1 시장 진입을 위한 기술 고도화 및 상용화 준비 단계를 완료하십시오.",
+                "reasoning": {
+                  "market_evaluation": "고체전지 양극 소재 시장은 2029 년경 상용화 본격화로 급성장할 것으로 예상되며, 2030 년 이후 본격적인 상용화 단계로 진입하여 2034 년까지 수백억 달러 규모로 성장할 것으로 예상됩니다. 연평균 28% 의 높은 CAGR 을 기록할 것으로 예상되어 시장 매력도가 매우 높습니다.",
+                  "tech_evaluation": "TRL 5 로 중간 성숙도 단계에 있어 기술 위험은 중간 수준이며, 고체 전해질과의 계면 안정성 확보에 시간이 필요합니다. LG Chem 은 이 분야에서 강력한 특허 포트폴리오 (Patent Score 88.3) 를 보유하고 있어, 경쟁사 대비 명확한 경쟁 우위를 점할 수 있는 상태입니다.",
+                  "investment_decision": "시장 성장성 (5 점) 과 경쟁 우위 (5 점) 가 높지만, 개발 긴급도 (3 점) 와 기술 준비도 (3 점) 를 고려하여 Tier 2 로 선정되었습니다. 2027 년부터 2030 년까지의 장기적인 R&D 투자를 통해 기술 성숙도를 높이고, 2029 년 시장 진입을 위한 초기 상용화 준비를 완료하는 것이 목표입니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "나트륨 이온 배터리 음극",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "나트륨 이온 배터리 음극",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T02",
+                "name": "전체 고체전지 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "나트륨 이온 배터리 음극",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T02",
+                "name": "전체 고체전지 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T05",
+                "name": "나트륨 이온 배터리 음극",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T02",
+                "name": "전체 고체전지 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "전체 고체전지 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 2904000000.0,
+            "2": 726000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T02",
+              "name": "전체 고체전지 양극 소재",
+              "category": "Material",
+              "final_score": 84.84,
+              "market_score": 82.0,
+              "boom": "2029 Q1"
+            },
+            {
+              "tech_id": "T01",
+              "name": "고니켈 양극 표면 코팅",
+              "category": "Material",
+              "final_score": 84.8,
+              "market_score": 78.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T05",
+              "name": "나트륨 이온 배터리 음극",
+              "category": "Material",
+              "final_score": 80.7,
+              "market_score": 82.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T03",
+              "name": "실리콘 기반 음극 소재",
+              "category": "Material",
+              "final_score": 80.37,
+              "market_score": 76.0,
+              "boom": "2028 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Material": 4
+          },
+          "avg_trl": 5.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "고니켈 양극 표면 코팅",
+              "stage": "roadmap",
+              "key_reason": "TAM $22.26B 및 CAGR 18.5% 의 거대 시장 성장 잠재력 확보"
+            },
+            {
+              "tech_id": "T05",
+              "name": "나트륨 이온 배터리 음극",
+              "stage": "roadmap",
+              "key_reason": "CAGR 32.5% 의 초고성장 시장 선점 및 리튬 의존도 탈피"
+            }
+          ],
+          "dependency_edges": [],
+          "boom_quarter_distribution": {
+            "2029 Q1": 1,
+            "2027 Q2": 1,
+            "2027 Q3": 1,
+            "2028 Q3": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 전략 정합성 및 포트폴리오 균형이 우수하여 최종 승인 (ACCEPT) 됨."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__기술선도__investment_strategy.json"
+  }
+}

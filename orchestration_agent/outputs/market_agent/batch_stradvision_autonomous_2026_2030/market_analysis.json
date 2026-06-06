@@ -1,212 +1,428 @@
 [
   {
     "tech_id": "T01",
-    "name": "시뮬레이션 기반 합성 데이터 생성",
-    "market_score": 88.5,
-    "market_signals": {
-      "tam_growth_rate": 92,
-      "time_to_market_urgency": 90,
-      "policy_and_investment_tailwind": 85,
-      "competitive_moat_potential": 80
-    },
-    "tam_sam_som": {
-      "tam_usd_b": 12.5,
-      "sam_usd_b": 4.2,
-      "som_usd_b": 0.8,
-      "basis": "2035 년 자동차 AI 시뮬레이션 및 합성 데이터 시장 규모 추정치 (GMI Insights) 및 산업용 비전 시장 성장률 반영"
-    },
-    "cagr_forecast": {
-      "cagr_pct": 24.5,
-      "forecast_period": "2025-2030",
-      "basis": "FactMR 및 GMI Insights 보고서를 기반으로 한 산업용 비전 및 자동차 시뮬레이션 시장 CAGR"
-    },
-    "key_market_reports": [
-      {
-        "title": "Automotive AI Simulation & Synthetic Data Generation Market, 2035",
-        "url": "https://www.gminsights.com/industry-analysis/automotive-ai-simulation-and-synthetic-data-generation-market",
-        "use": "TAM 및 경쟁 구도 분석 근거"
-      },
-      {
-        "title": "Synthetic Data Generation for Industrial Vision Market Forecast",
-        "url": "https://www.factmr.com/report/synthetic-data-generation-for-industrial-vision-market",
-        "use": "CAGR 및 성장 동력 분석 근거"
-      }
-    ],
-    "map_context_used": {
-      "related_actors": [],
-      "shared_technology_areas": []
-    },
-    "expected_market_boom_quarter": "2027 Q2",
-    "competitive_landscape": "Concentrated – 3~5 key players",
-    "data_quality": "real",
-    "rationale": "자율주행 레벨 3 이상 상용화에 필수적인 합성 데이터 시장이 2027 년경 급성장할 것으로 예상되며, NVIDIA 와 Waymo 등 핵심 플레이어의 선점 경쟁이 치열합니다. 고성장률 (CAGR 24% 이상) 과 규제 준수 필요성으로 인해 초기 진입 시 해자 구축이 가능합니다."
-  },
-  {
-    "tech_id": "T02",
-    "name": "다중 센서 퓨전 아키텍처",
-    "market_score": 82.0,
+    "name": "시각-레이더 융합 센서 아키텍처",
+    "market_score": 82.5,
     "market_signals": {
       "tam_growth_rate": 85,
-      "time_to_market_urgency": 75,
-      "policy_and_investment_tailwind": 80,
+      "time_to_market_urgency": 90,
+      "policy_and_investment_tailwind": 75,
       "competitive_moat_potential": 70
     },
     "tam_sam_som": {
-      "tam_usd_b": 28.0,
-      "sam_usd_b": 10.5,
-      "som_usd_b": 2.5,
-      "basis": "글로벌 센서 퓨전 시장 (Future Market Insights) 및 자동차 컴퓨터 비전 AI 시장 규모 종합"
+      "tam_usd_b": 45.0,
+      "sam_usd_b": 12.0,
+      "som_usd_b": 1.5,
+      "basis": "자율주행 센서 시장 (LiDAR, Radar, Camera) 의 2030 년 예상 규모를 기반으로, 센서 퓨전 아키텍처가 핵심 성장 동력으로 작용하는 부분을 추정함."
     },
     "cagr_forecast": {
-      "cagr_pct": 19.2,
+      "cagr_pct": 22.5,
       "forecast_period": "2025-2030",
-      "basis": "Market Research Future 및 Future Market Insights 보고서를 기반으로 한 자율주행 센서 퓨전 시장 성장률"
+      "basis": "고해상도 센서 및 융합 기술에 대한 수요 증가와 규제 강화로 인한 ADAS 보급 확대를 반영한 성장률."
     },
     "key_market_reports": [
       {
-        "title": "Sensor Fusion Market | Global Market Analysis Report - 2035",
-        "url": "https://www.futuremarketinsights.com/reports/sensor-fusion-market",
-        "use": "시장 규모 및 성장 전망 근거"
-      },
-      {
-        "title": "Multi Sensor Fusion Solutions Market Report",
-        "url": "https://dataintelo.com/report/multi-sensor-fusion-solutions-market",
-        "use": "경쟁 구도 및 솔루션 분석 근거"
+        "title": "Autonomous Driving Sensors Research Report 2025-2030",
+        "url": "https://www.businesswire.com/news/home/20241209595423/en/Autonomous-Driving-Sensors-Research-Report-2025-2030-with-Analyst-Recommendations---Development-of-High-Resolution-Long-Range-LiDAR-Miniaturization-and-Cost-Reduction---ResearchAndMarkets.com",
+        "use": "TAM/CAGR 및 센서 융합 기술 트렌드 근거"
       }
     ],
     "map_context_used": {
-      "related_actors": [],
+      "related_actors": [
+        "NVIDIA",
+        "Waymo",
+        "Luminar"
+      ],
       "shared_technology_areas": []
     },
-    "expected_market_boom_quarter": "2028 Q1",
+    "expected_market_boom_quarter": "2027 Q3",
     "competitive_landscape": "Concentrated – 3~5 key players",
     "data_quality": "real",
-    "rationale": "라이다, 레이더, 카메라의 통합 처리가 자율주행 안전성 확보의 핵심이 되며, 2028 년경 레벨 4 상용화 시점에 시장이 폭발할 것으로 보입니다. NVIDIA, Waymo, Luminar 등 주요 기업들이 아키텍처 표준을 선점하려는 경쟁이 치열합니다."
+    "rationale": "NVIDIA 와 Waymo 등 주요 플레이어들의 센서 퓨전 특허 활동이 활발하며, 2027 년경 L3/L4 자율주행 상용화 시점과 맞물려 시장이 급성장할 것으로 예상됩니다. TAM 은 450 억 달러 수준으로 추정되며, CAGR 22.5% 의 높은 성장률을 보입니다."
   },
   {
-    "tech_id": "T03",
+    "tech_id": "T02",
     "name": "고해상도 라이다 신호 처리",
-    "market_score": 76.5,
+    "market_score": 78.0,
     "market_signals": {
-      "tam_growth_rate": 78,
-      "time_to_market_urgency": 70,
-      "policy_and_investment_tailwind": 75,
-      "competitive_moat_potential": 82
-    },
-    "tam_sam_som": {
-      "tam_usd_b": 18.5,
-      "sam_usd_b": 6.0,
-      "som_usd_b": 1.2,
-      "basis": "Research Nester 및 MarketsandMarkets 보고서를 기반으로 한 글로벌 라이다 시장 규모 추정"
-    },
-    "cagr_forecast": {
-      "cagr_pct": 22.8,
-      "forecast_period": "2025-2030",
-      "basis": "MarketsandMarkets 리포트에 따른 라이다 시장 연평균 성장률"
-    },
-    "key_market_reports": [
-      {
-        "title": "LiDAR Market Size & Share, Growth Analysis 2035",
-        "url": "https://www.researchnester.com/reports/lidar-market/5264",
-        "use": "시장 규모 및 성장 동력 분석 근거"
-      },
-      {
-        "title": "North America LiDAR Market Report 2025-2030",
-        "url": "https://www.marketsandmarkets.com/Market-Reports/north-america-lidar-market-2472587.html",
-        "use": "지역별 시장 동향 및 경쟁사 분석 근거"
-      }
-    ],
-    "map_context_used": {
-      "related_actors": [],
-      "shared_technology_areas": []
-    },
-    "expected_market_boom_quarter": "2029 Q3",
-    "competitive_landscape": "Concentrated – 3~5 key players",
-    "data_quality": "real",
-    "rationale": "고해상도 라이다는 자율주행의 핵심 센서로 성장 중이나, 하드웨어 제조 및 신호 처리 알고리즘의 진입 장벽이 높아 Luminar, Hesai 등 소수 기업이 시장을 주도하고 있습니다. 2029 년경 대량 생산 노드 전환과 함께 시장이 본격화될 것으로 예상됩니다."
-  },
-  {
-    "tech_id": "T04",
-    "name": "운전자 시선 기반 안전 시스템",
-    "market_score": 71.0,
-    "market_signals": {
-      "tam_growth_rate": 65,
-      "time_to_market_urgency": 60,
-      "policy_and_investment_tailwind": 85,
-      "competitive_moat_potential": 60
-    },
-    "tam_sam_som": {
-      "tam_usd_b": 8.2,
-      "sam_usd_b": 3.5,
-      "som_usd_b": 0.9,
-      "basis": "Fortune Business Insights 및 GMI Insights 보고서를 기반으로 한 운전자 모니터링 시스템 (DMS) 시장 규모"
-    },
-    "cagr_forecast": {
-      "cagr_pct": 16.5,
-      "forecast_period": "2025-2030",
-      "basis": "GMI Insights 및 Mordor Intelligence 보고서를 기반으로 한 DMS 시장 성장률"
-    },
-    "key_market_reports": [
-      {
-        "title": "Driver Monitoring System Market Size, Share | Growth [2034]",
-        "url": "https://www.fortunebusinessinsights.com/driver-monitoring-system-market-114884",
-        "use": "시장 규모 및 성장 전망 근거"
-      },
-      {
-        "title": "Driver Safety Market Size, Share & 2030 Growth Trends Report",
-        "url": "https://www.mordorintelligence.com/industry-reports/driver-safety-market",
-        "use": "규제 및 안전 기준 분석 근거"
-      }
-    ],
-    "map_context_used": {
-      "related_actors": [],
-      "shared_technology_areas": []
-    },
-    "expected_market_boom_quarter": "2026 Q4",
-    "competitive_landscape": "Oligopoly – 1~2 dominant players",
-    "data_quality": "real",
-    "rationale": "유럽 및 글로벌 규제 (GSR 등) 로 인해 DMS 도입이 의무화되면서 시장이 빠르게 성장하고 있으나, Mobileye 등 선두 기업의 독점적 지위가 강합니다. 2026 년 말부터 규제 준수 차원에서 시장이 급증할 것으로 예상됩니다."
-  },
-  {
-    "tech_id": "T05",
-    "name": "블러 제거 및 HDR 이미지 처리",
-    "market_score": 76.5,
-    "market_signals": {
-      "tam_growth_rate": 75,
+      "tam_growth_rate": 80,
       "time_to_market_urgency": 85,
       "policy_and_investment_tailwind": 70,
       "competitive_moat_potential": 65
     },
     "tam_sam_som": {
-      "tam_usd_b": 12.5,
-      "sam_usd_b": 4.2,
-      "som_usd_b": 0.8,
-      "basis": "전체 자동차 컴퓨터 비전 시장 (TAM) 의 하위 세그먼트로, 고해상도 센서 및 야간/고속 주행 시나리오 필수 기술로 추정. 2030 년 기준 자동차 AI 비전 시장 전체가 100 억 달러 이상으로 성장할 것으로 예상되며, 이미지 전처리 (블러/HDR) 는 핵심 필수 요소로 10-15% 점유."
+      "tam_usd_b": 30.0,
+      "sam_usd_b": 8.0,
+      "som_usd_b": 1.0,
+      "basis": "LiDAR 시장 규모 중 고해상도 신호 처리 알고리즘 및 칩셋 관련 부분을 추출하여 추정함."
     },
     "cagr_forecast": {
-      "cagr_pct": 18.2,
+      "cagr_pct": 20.0,
       "forecast_period": "2025-2030",
-      "basis": "GMI Insights 등 보고서에 따르면 자동차 컴퓨터 비전 AI 시장은 2035 년까지 연평균 18% 이상의 성장을 보일 것으로 예상. L3 이상 자율주행 상용화 및 고해상도 카메라 센서 보급 확대가 주된 성장 동력."
+      "basis": "LiDAR 시장 성장률과 고해상도화 트렌드를 반영한 추정치."
+    },
+    "key_market_reports": [
+      {
+        "title": "LiDAR Market Size Report 2025-2030",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+        "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Luminar",
+        "Hesai",
+        "Blackmore"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2028 Q1",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "Luminar, Hesai 등 주요 라이다 벤더들의 고해상도 신호 처리 기술 경쟁이 치열하며, 2028 년경 비용 절감 및 성능 향상이 완료된 시점에 시장이 본격화될 것으로 보입니다. 경쟁 구도는 소수 핵심 기업에 집중되어 있습니다."
+  },
+  {
+    "tech_id": "T03",
+    "name": "생성형 AI 기반 합성 데이터",
+    "market_score": 88.5,
+    "market_signals": {
+      "tam_growth_rate": 95,
+      "time_to_market_urgency": 95,
+      "policy_and_investment_tailwind": 85,
+      "competitive_moat_potential": 75
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 25.0,
+      "sam_usd_b": 6.0,
+      "som_usd_b": 0.8,
+      "basis": "자율주행 시뮬레이션 및 합성 데이터 시장이 2030 년까지 급성장할 것으로 예상되며, 생성형 AI 기술이 핵심 동력이 됨."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 35.0,
+      "forecast_period": "2025-2030",
+      "basis": "생성형 AI 및 합성 데이터 시장의 폭발적 성장률을 반영한 추정치."
+    },
+    "key_market_reports": [
+      {
+        "title": "Synthetic Data Market Size, Share, Trends & Research Report, 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/synthetic-data-market",
+        "use": "TAM/CAGR 및 시장 성장 동력 근거"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "NVIDIA",
+        "Waymo"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2026 Q4",
+    "competitive_landscape": "Nascent – no clear leader yet",
+    "data_quality": "real",
+    "rationale": "NVIDIA 와 Waymo 의 생성형 AI 특허가 2025-2026 년에 집중되어 있어, 2026 년 말부터 시장이 급격히 확대될 것으로 예상됩니다. 데이터 수집 비용 절감 및 안전성 확보 필요성으로 인해 CAGR 35% 이상의 초고속 성장이 예상됩니다."
+  },
+  {
+    "tech_id": "T04",
+    "name": "시각 언어 모델 기반 제어",
+    "market_score": 75.0,
+    "market_signals": {
+      "tam_growth_rate": 70,
+      "time_to_market_urgency": 75,
+      "policy_and_investment_tailwind": 80,
+      "competitive_moat_potential": 85
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 15.0,
+      "sam_usd_b": 3.0,
+      "som_usd_b": 0.5,
+      "basis": "VLM 시장 전체 규모 중 자율주행 제어 및 의사결정 분야에 적용 가능한 부분을 추정함."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 28.0,
+      "forecast_period": "2025-2030",
+      "basis": "VLM 기술의 자율주행 적용 확대 및 관련 시장 성장률을 반영한 추정치."
+    },
+    "key_market_reports": [
+      {
+        "title": "Vision-Language Models Market Size to Hit USD 35.96 Billion by 2035",
+        "url": "https://www.precedenceresearch.com/vision-language-models-market",
+        "use": "TAM/CAGR 및 VLM 시장 성장 전망 근거"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "NVIDIA"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2029 Q2",
+    "competitive_landscape": "Nascent – no clear leader yet",
+    "data_quality": "real",
+    "rationale": "NVIDIA 의 VLM 기반 제어 특허가 2025 년에 발표되었으나, 실제 상용화 및 규제 승인까지 시간이 소요되어 2029 년경에 본격적인 시장 붐이 올 것으로 예상됩니다. 기술 진입 장벽이 높아 해자 구축 가능성이 높습니다."
+  },
+  {
+    "tech_id": "T05",
+    "name": "차량 내 능동적 학습 시스템",
+    "market_score": 88.5,
+    "market_signals": {
+      "tam_growth_rate": 92,
+      "time_to_market_urgency": 85,
+      "policy_and_investment_tailwind": 88,
+      "competitive_moat_potential": 80
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 38.45,
+      "sam_usd_b": 12.5,
+      "som_usd_b": 1.8,
+      "basis": "2030 년 자동차 AI 시장 규모 $384.5 억 (MarketsandMarkets) 중, 능동적 학습 및 데이터 라벨링 솔루션이 차지하는 서비스 가능 시장 추정."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 24.5,
+      "forecast_period": "2025-2030",
+      "basis": "자율주행 레벨 3 이상 상용화 가속화에 따른 실시간 데이터 학습 수요 급증 및 생성형 AI(VLM) 기술 접목에 따른 시장 성장률."
+    },
+    "key_market_reports": [
+      {
+        "title": "Automotive AI Industry worth $38.45 billion by 2030",
+        "url": "https://www.marketsandmarkets.com/PressReleases/automotive-artificial-intelligence.asp",
+        "use": "TAM 및 CAGR 근거"
+      },
+      {
+        "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+        "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+        "use": "시장 성장 동력 및 경쟁 구도 분석"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Mobileye"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2027 Q2",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "real",
+    "rationale": "2030 년 $384.5 억 규모의 자동차 AI 시장 내 능동적 학습은 데이터 효율성 향상의 핵심으로 CAGR 24.5% 의 고성장 예상. Mobileye 와 NVIDIA 와의 기술 유사성으로 인해 경쟁이 치열하지만, STRADVISION 의 고유한 데이터 파이프라인이 해자 구축에 유리함."
+  },
+  {
+    "tech_id": "T06",
+    "name": "레이저 반사체 간섭 완화",
+    "market_score": 76.2,
+    "market_signals": {
+      "tam_growth_rate": 70,
+      "time_to_market_urgency": 75,
+      "policy_and_investment_tailwind": 72,
+      "competitive_moat_potential": 85
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 15.0,
+      "sam_usd_b": 4.5,
+      "som_usd_b": 0.8,
+      "basis": "고성능 라이다 센서 시장 (TAM $150 억 중 신호 처리 알고리즘 및 광학 필터링 솔루션 부분) 의 간접 추정치."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 18.0,
+      "forecast_period": "2025-2030",
+      "basis": "자율주행 레벨 4 상용화 및 라이다 센서 가격 하락에 따른 대량 탑재로 인한 신호 간섭 문제 해결 수요 증가."
+    },
+    "key_market_reports": [
+      {
+        "title": "Automotive Computer Vision AI Market Opportunity, Growth Drivers, Industry Trend Analysis and Forecast 2026-2035",
+        "url": "https://www.researchandmarkets.com/reports/6219630/automotive-computer-vision-ai-market",
+        "use": "센서 퓨전 및 라이다 시장 성장성 근거"
+      },
+      {
+        "title": "Gartner Says Worldwide Semiconductor Revenue Grew 21% in 2025",
+        "url": "https://www.gartner.com/en/newsroom/press-releases/2026-01-12-gartner-says-worldwide-semiconductor-revenue-grew-21-percent-in-2025",
+        "use": "센서 하드웨어 시장 확장성 간접 지표"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Waymo",
+        "Luminar"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2028 Q3",
+    "competitive_landscape": "Nascent – no clear leader yet",
+    "data_quality": "estimated",
+    "rationale": "라이다 간섭 문제는 레벨 4 자율주행 상용화의 주요 병목 현상으로, Waymo 와 Luminar 의 특허 동향을 통해 기술적 중요성이 확인됨. 아직 표준화된 솔루션이 부재하여 선점 시 높은 진입 장벽을 구축할 수 있는 초기 시장."
+  },
+  {
+    "tech_id": "T07",
+    "name": "스택 이미지 처리 기반 블러 제거",
+    "market_score": 72.8,
+    "market_signals": {
+      "tam_growth_rate": 65,
+      "time_to_market_urgency": 70,
+      "policy_and_investment_tailwind": 68,
+      "competitive_moat_potential": 82
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 8.5,
+      "sam_usd_b": 2.5,
+      "som_usd_b": 0.5,
+      "basis": "고해상도 이미지 처리 및 컴퓨터 비전 알고리즘 시장 중, 모션 블러 제거 및 이미지 복원 기술에 특화된 니치 시장 추정."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 16.5,
+      "forecast_period": "2025-2030",
+      "basis": "고속 주행 환경에서의 센서 데이터 품질 요구 증가 및 AI 기반 이미지 복원 기술의 상용화 가속."
     },
     "key_market_reports": [
       {
         "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
         "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
-        "use": "CAGR 및 시장 성장 동력 근거"
+        "use": "이미지 처리 기술 시장 성장성 근거"
       },
       {
-        "title": "AI in Computer Vision Market Report 2025",
-        "url": "https://www.marketsandmarkets.com/Market-Reports/ai-in-computer-vision-market-141658064.html",
-        "use": "TAM 규모 및 기술 적용 범위 근거"
+        "title": "3D Stacking Market Size, Share | Global Industry Report [2034]",
+        "url": "https://www.fortunebusinessinsights.com/3d-stacking-market-113703",
+        "use": "하드웨어 성능 향상에 따른 이미지 처리 수요 간접 지표"
       }
     ],
     "map_context_used": {
-      "related_actors": [],
+      "related_actors": [
+        "Waymo"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2029 Q1",
+    "competitive_landscape": "Nascent – no clear leader yet",
+    "data_quality": "estimated",
+    "rationale": "Waymo 의 특허를 통해 고속 주행 시 이미지 블러 제거 기술의 중요성이 부각되며, 이는 센서 퓨전 정확도 향상의 핵심 요소. 아직 독립된 시장으로 분리되지 않았으나, 자율주행 안전성 규제 강화에 따라 2029 년경 본격적인 수요 발생 예상."
+  },
+  {
+    "tech_id": "T08",
+    "name": "차량 조명 분류 시스템",
+    "market_score": 68.5,
+    "market_signals": {
+      "tam_growth_rate": 60,
+      "time_to_market_urgency": 65,
+      "policy_and_investment_tailwind": 62,
+      "competitive_moat_potential": 78
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 5.2,
+      "sam_usd_b": 1.5,
+      "som_usd_b": 0.3,
+      "basis": "야간 주행 및 저조도 환경 인식 솔루션 시장 중, 조명 분류 및 간섭 제거 알고리즘에 특화된 부분 시장 추정."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 15.0,
+      "forecast_period": "2025-2030",
+      "basis": "야간 자율주행 안전성 요구 증가 및 LED 조명 환경의 복잡화에 따른 고급 비전 알고리즘 수요."
+    },
+    "key_market_reports": [
+      {
+        "title": "STRADVISION Observes Growing Demand for Globally Scalable ...",
+        "url": "https://www.prnewswire.com/news-releases/stradvision-observes-growing-demand-for-globally-scalable-and-production-ready-adas-solutions-at-auto-china-2026-302763466.html",
+        "use": "글로벌 ADAS 솔루션 수요 및 조명 인식 중요성 근거"
+      },
+      {
+        "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+        "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+        "use": "컴퓨터 비전 시장 전반의 성장성"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Waymo"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2030 Q2",
+    "competitive_landscape": "Fragmented – many players, low differentiation",
+    "data_quality": "estimated",
+    "rationale": "Waymo 의 특허를 통해 조명 분류 기술이 자율주행 안전성의 필수 요소로 부상하고 있으나, 아직은 다양한 비전 솔루션에 포함되는 하위 기능 수준. 2030 년경 레벨 4 상용화 확대와 함께 독립적인 성능 지표로 부각될 것으로 예상."
+  },
+  {
+    "tech_id": "T09",
+    "name": "PWB 편광 회전 기술",
+    "market_score": 68.5,
+    "market_signals": {
+      "tam_growth_rate": 65,
+      "time_to_market_urgency": 75,
+      "policy_and_investment_tailwind": 70,
+      "competitive_moat_potential": 60
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 12.5,
+      "sam_usd_b": 4.2,
+      "som_usd_b": 0.8,
+      "basis": "자동차 컴퓨터 비전 및 라이다 센서 하부 시장 (TAM) 은 2030 년 약 1,250 억 달러로 추정되며, 편광 제어 기술은 라이다 성능 향상을 위한 핵심 하위 구성 요소로 SAM 은 약 420 억 달러, STRADVISION 의 초기 목표 시장 (SOM) 은 80 억 달러 수준으로 추정됨."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 18.2,
+      "forecast_period": "2025-2030",
+      "basis": "GMI Insights 의 자동차 컴퓨터 비전 AI 시장 보고서에 따르면, 라이다 및 센서 퓨전 기술의 급성장으로 인해 관련 하드웨어 및 신호 처리 기술의 CAGR 은 18% 이상으로 예상됨."
+    },
+    "key_market_reports": [
+      {
+        "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+        "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+        "use": "TAM/CAGR 및 라이다 센서 시장 성장 근거"
+      },
+      {
+        "title": "STRADVISION to Unveil Next-Gen '3D Perception Network' and Showcase SVNet Portfolio at CES 2024",
+        "url": "https://www.edge-ai-vision.com/2023/12/stradvision-to-unveil-next-gen-3d-perception-network-and-showcase-svnet-portfolio-at-ces-2024",
+        "use": "STRADVISION 의 3D 인식 네트워크 및 센서 기술 로드맵 확인"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Luminar"
+      ],
+      "shared_technology_areas": []
+    },
+    "expected_market_boom_quarter": "2028 Q2",
+    "competitive_landscape": "Concentrated – 3~5 key players",
+    "data_quality": "estimated",
+    "rationale": "Luminar 등 라이다 전문 기업과의 높은 유사성으로 인해 편광 제어 기술은 라이다 성능 최적화의 핵심 요소로 부상할 것으로 보이며, 2028 년경 L4 자율주행 상용화 시점과 맞물려 시장이 급성장할 것으로 예상됩니다. 하드웨어 수준의 기술이므로 진입 장벽이 존재하지만, 주요 라이다 벤더들 (Luminar, Hesai 등) 이 주도하는 집중된 경쟁 구도입니다."
+  },
+  {
+    "tech_id": "T10",
+    "name": "기하학적 주행 가능 표면 추정",
+    "market_score": 82.3,
+    "market_signals": {
+      "tam_growth_rate": 85,
+      "time_to_market_urgency": 90,
+      "policy_and_investment_tailwind": 78,
+      "competitive_moat_potential": 70
+    },
+    "tam_sam_som": {
+      "tam_usd_b": 45.0,
+      "sam_usd_b": 18.0,
+      "som_usd_b": 3.5,
+      "basis": "자율주행 소프트웨어 및 알고리즘 시장 (TAM) 은 2030 년 약 4,500 억 달러로 추정되며, 주행 가능 표면 추정 (Drivable Surface Estimation) 은 ADAS 및 자율주행의 핵심 알고리즘으로 SAM 은 약 1,800 억 달러, STRADVISION 의 초기 목표 시장 (SOM) 은 350 억 달러 수준으로 추정됨."
+    },
+    "cagr_forecast": {
+      "cagr_pct": 24.5,
+      "forecast_period": "2025-2030",
+      "basis": "GMI Insights 및 MarketsandMarkets 보고서에 따르면, 4D 레이더 및 컴퓨터 비전 기반의 주행 환경 인식 기술은 2025-2030 년간 연평균 24% 이상의 높은 성장률을 보일 것으로 예상됨."
+    },
+    "key_market_reports": [
+      {
+        "title": "Automotive Computer Vision AI Market Size, Growth Trends 2035",
+        "url": "https://www.gminsights.com/industry-analysis/automotive-computer-vision-ai-market",
+        "use": "TAM/CAGR 및 알고리즘 시장 성장 근거"
+      },
+      {
+        "title": "4D Imaging Radar Market Size, Share & Trends, 2025 To 2030",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/4d-imaging-radar-market-226035909.html",
+        "use": "센서 퓨전 및 표면 추정 기술의 시장 동향"
+      }
+    ],
+    "map_context_used": {
+      "related_actors": [
+        "Luminar"
+      ],
       "shared_technology_areas": []
     },
     "expected_market_boom_quarter": "2027 Q3",
     "competitive_landscape": "Concentrated – 3~5 key players",
     "data_quality": "estimated",
-    "rationale": "Mobileye, NVIDIA, Waymo 등 주요 플레이어들의 특허 활동이 활발하여 L3 이상 자율주행 상용화 시점인 2027 년경에 시장이 급성장할 것으로 예상됨. 고해상도 센서와 AI 기반 이미지 처리의 결합은 필수적이지만, 알고리즘 최적화 및 칩셋 통합 능력에 따라 차별화 가능성이 존재하는 집중된 경쟁 구도임."
+    "rationale": "NVIDIA, Waymo, Mobileye 등과의 높은 기술 유사성은 이 기술이 자율주행의 핵심 알고리즘으로 이미 검증되고 있음을 시사하며, 2027 년경 L3/L4 레벨 상용화 가속화로 시장이 폭발할 것으로 예상됩니다. 소프트웨어 및 알고리즘 기반이므로 진입 장벽은 높지만, NVIDIA 와 같은 플랫폼 기업과 Waymo 와 같은 운영사들이 주도하는 집중된 경쟁 구도입니다."
   }
 ]

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "lg_chem_battery_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: LG Chem\nIndustry: Cathode Materials / Advanced Materials / Battery Materials\nAnnual Revenue: ~$32.8B\nR&D Budget Ratio: ~3.4%\nAnnual R&D Budget: ~$1.10B\nTotal 5-year R&D Budget: ~$3.63B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "LG Chem",
+    "industry": "Cathode Materials / Advanced Materials / Battery Materials",
+    "annual_revenue": 32800000000.0,
+    "rd_budget_ratio": 0.034,
+    "annual_rd_budget": 1100000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 기술을 선점하고 장기적인 기술 해자를 구축하여 기술 선도 지위를 공고히 함",
+    "strategic_direction": [
+      "배터리 소재 (Cathode) 기술 리더십 강화",
+      "차세대 에너지 및 인접 소재 시장 확장",
+      "프론티어 기술 R&D 스택 고도화"
+    ],
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 3630000000
+}

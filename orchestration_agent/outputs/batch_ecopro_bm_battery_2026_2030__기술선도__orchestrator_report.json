@@ -1,0 +1,432 @@
+{
+  "problem_frame": {
+    "industry": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 153000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "EcoPro BM",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "고니켈 양극재 기술 리더십 강화",
+      "차세대 배터리 소재 시장 확장",
+      "공격적 R&D 투자로 기술 해자 구축"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $153M 정확히 배분 (편차 0%). T01(2027 Q3), T08(2026 Q4) 등 시장 붐 시점과 개발 기간 정합."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(양극재) 완료 후 T03(공정 최적화) 시작하는 의존성 논리 정상."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "고니켈 양극재(T01) 및 공정(T03) 전략 정합성 높음. 재활용(T08)으로 지속가능성 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "T01(49%), T03(29%), T08(21%) 배분 비율이 기술 난이도 및 시장 중요도와 일치."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기(T01, T08)와 장기(T03) 투자 균형 적절. T01 집중 투자로 기술 해자 구축 가능."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "고결정도 도핑 양극재",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 88.5,
+            "market_score": 88.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T02",
+            "name": "다결정 양극활물질 구조",
+            "category": "Material",
+            "trl": 7,
+            "final_score": 83.44,
+            "market_score": 82.0,
+            "patent_score": 85.2,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T04",
+            "name": "고성능 전해질 첨가제",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 82.66,
+            "market_score": 85.0,
+            "patent_score": 79.8,
+            "expected_market_boom_quarter": "2027 Q4"
+          },
+          {
+            "tech_id": "T03",
+            "name": "전구체 합성 공정 최적화",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 80.81,
+            "market_score": 79.5,
+            "patent_score": 82.4,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T08",
+            "name": "배터리 재활용 및 원료 회수",
+            "category": "Process",
+            "trl": 4,
+            "final_score": 80.4,
+            "market_score": 88.5,
+            "patent_score": 70.5,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T06",
+            "name": "양극재 블렌드 기술",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 78.49,
+            "market_score": 82.0,
+            "patent_score": 74.2,
+            "expected_market_boom_quarter": "2028 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "고결정도 도핑 양극재",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 수준으로 상용화 직전 단계이므로 1 차년도부터 즉시 착수하여 3 차년도까지 기술 고도화 및 양산 준비를 완료합니다. 2027 Q3 예상 시장 붐을 대비하여 3 차년도 말까지 핵심 기술 장벽을 확보해야 합니다.",
+              "tech_execution": "고니켈 양극재의 안정성 확보를 위한 핵심 소재 기술로, EcoPro BM 의 기술 리더십 강화 전략을 실현하는 첫 번째 주춧돌입니다. 경쟁사들의 특허 동향을 선제적으로 대응하여 기술 해자를 구축해야 합니다.",
+              "investment_selection": "2030 년까지 연평균 24.5% 성장하는 고니켈 양극재 시장에서 초기 시장 점유율 확보를 위해 가장 시급한 투자 대상입니다. TRL 6 에서 8 로의 상향은 즉각적인 수익 창출과 기술 우위를 동시에 잡을 수 있는 최적의 투자 효율을 가집니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "전구체 합성 공정 최적화",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술인 T01 의 초기 성과가 확보된 2 차년도부터 시작하여, T01 의 상용화를 뒷받침하는 공정 기술을 5 차년도까지 지속적으로 최적화합니다. 2029 Q1 시장 붐 이후에도 원가 경쟁력을 유지하기 위해 5 차년도까지 R&D 를 연장합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "고니켈 양극재의 품질 균일성과 수율 향상을 위한 필수 공정 기술로, T01 의 소재 성능을 실제 양산 라인에서 구현하는 데 결정적입니다. 차세대 배터리 소재 시장 확장을 위한 핵심 공정 경쟁력을 확보해야 합니다.",
+              "investment_selection": "2029 년 이후 본격적인 시장 확대 시기에 원가 절감과 품질 균일성을 동시에 달성하여 경쟁 우위를 점할 수 있는 장기 투자 대상입니다. 기술 해자 구축 전략에 부합하여 공정 기술의 독점성을 확보하는 데 필수적입니다."
+            }
+          },
+          {
+            "tech_id": "T08",
+            "name": "배터리 재활용 및 원료 회수",
+            "year_idx_start": 1,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 4 로 초기 개발 단계이므로 1 차년도부터 장기적인 R&D 를 시작하여 5 차년도까지 기술 성숙도를 높입니다. 2026 Q4 시장 붐을 초기 단계로 활용하되, 순환 경제 모델의 완성을 위해 5 차년도까지 이어지는 장기 로드맵이 필요합니다.",
+              "tech_execution": "지속 가능성 전략 강화와 원료 공급 안정성을 위한 핵심 기술로, EcoPro BM 의 장기적인 경쟁력을 결정짓는 요소입니다. 고니켈 양극재 회수 기술을 통해 원료 수급 리스크를 최소화하고 친환경 이미지를 구축해야 합니다.",
+              "investment_selection": "2026 년 말부터 급성장할 재활용 시장에서 선점 효과를 얻기 위해 초기 투자부터 장기적인 기술 축적까지 일관된 자원 배분이 필요합니다. 정책 지원과 원료 수급 안정화 필요성에 따라 가장 높은 전략적 가치를 가집니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 153000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "고결정도 도핑 양극재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 75000000.0,
+                "tech_budget_rationale": "T01 은 EcoPro BM 의 핵심 전략인 '고니켈 양극재 기술 리더십'을 실현하는 가장 중요한 기술로, 2027 Q3 시장 붐을 앞두고 TRL 6 에서 상용화 (TRL 8-9) 로 전환해야 하는 시급한 과제를 안고 있습니다. 전체 예산의 약 49% 를 할당하여, 고결정도 도핑 공정의 최적화, 대량 생산 라인 구축, 그리고 경쟁사 대비 선제적인 특허 포트폴리오 확보에 집중 투자합니다. 이는 회사의 생존과 시장 점유율 확보를 위한 필수적인 선제적 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "즉시 양산 라인 구축을 위한 파일럿 플랜트 투자 및 핵심 인력 확보를 진행하며, 2027 Q3 시장 진입을 위한 기술 검증 (PoC) 을 완료해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "고니켈 양극재 시장은 2030 년까지 연평균 24.5% 의 높은 성장률 (CAGR) 을 보이며 222 억 달러 (TAM) 의 거대 시장으로 성장할 것으로 예상됩니다. 특히 2027 Q3 에 예상되는 시장 붐을 고려할 때, 고결정도 도핑 기술은 에너지 밀도 향상을 위한 필수 솔루션으로 30% 이상의 시장 점유율 확보가 가능합니다. Umicore, SK On 등 주요 경쟁사들이 이 기술을 선점하고 있어, 시장 진입 타이밍이 매우 중요합니다.",
+                  "tech_evaluation": "현재 TRL 6 수준으로 상용화 직전 단계에 있으며, 기술적 불확실성은 상대적으로 낮지만 (Tech Risk 2), 양산 공정 안정화와 품질 균일성 확보를 위한 추가 R&D 가 필요합니다. EcoPro BM 의 기존 강점과 전략적 방향성과 높은 정합성을 보이며, 경쟁 우위를 확보하기 위한 핵심 기술 해자 구축이 시급합니다.",
+                  "investment_decision": "높은 시장 성장성 (5 점), 높은 개발 긴급도 (5 점), 그리고 높은 경쟁 우위 (5 점) 를 고려하여 Tier 1 로 선정합니다. 전체 예산의 약 49% 인 7,500 만 달러를 할당하여, 2027 년 시장 진입을 위한 기술 고도화 및 양산 준비를 완료하고, 경쟁사 대비 기술적 우위를 선점하는 공격적 투자를 수행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "전구체 합성 공정 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 45000000.0,
+                "tech_budget_rationale": "T03 은 T01 의 상용화를 뒷받침하는 핵심 공정 기술로, 2029 Q1 시장 붐 이후에도 원가 경쟁력을 유지하기 위해 지속적인 최적화가 필요합니다. 전체 예산의 약 29% 를 할당하여, T01 의 초기 성과 확보 후 본격적인 공정 최적화 및 수율 향상을 위한 R&D 에 집중합니다. 이는 T01 의 기술적 성과를 실제 양산 라인에서 구현하는 데 결정적인 역할을 합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "T01 의 파일럿 플랜트 운영과 병행하여 전구체 합성 공정의 최적화 실험을 시작하고, 수율 향상을 위한 공정 변수 분석을 진행해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "전구체 시장은 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됩니다. 2029 Q1 이후 본격적인 시장 확대가 예상되므로, T01 의 상용화와 연계된 장기적인 시장 대응 전략이 필요합니다.",
+                  "tech_evaluation": "TRL 6 수준으로 T01 과 유사한 성숙도를 보이지만, T01 에 대한 의존도가 높아 기술적 위험은 중간 수준 (3 점) 입니다. Umicore, SK On 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있으므로, EcoPro BM 의 공정 경쟁력을 확보하기 위한 전략적 투자가 필요합니다.",
+                  "investment_decision": "시장 성장성 (4 점) 과 경쟁 우위 (4 점) 는 높지만, T01 에 대한 의존도로 인해 개발 긴급도 (3 점) 는 상대적으로 낮습니다. Tier 2 로 선정하여, T01 의 성과에 따라 단계적으로 예산을 집행하는 마일스톤 기반 투자를 수행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "tech_budget_rationale": "T08 은 2026 Q4 에 예상되는 시장 붐을 앞두고 TRL 4 수준으로 초기 개발 단계에 있어, 기술적 불확실성이 높지만 시장 성장성 (CAGR 24%) 이 매우 큽니다. 전체 예산의 약 22% 를 할당하여, 순환 경제 모델 구축과 원료 수급 안정화를 위한 초기 R&D 및 파일럿 프로젝트에 집중 투자합니다. 이는 EcoPro BM 의 장기적인 경쟁력과 지속 가능성 전략을 강화하는 핵심 요소입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 3,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "high",
+                "recommended_action": "2026 Q4 시장 진입을 위한 초기 R&D 및 파일럿 프로젝트를 즉시 시작하고, 재활용 공정 최적화를 위한 기술 파트너십을 모색해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "배터리 재활용 시장은 2030 년까지 연평균 24% 성장하며 350 억 달러 (TAM) 의 거대 시장으로 성장할 것으로 예상됩니다. 2026 Q4 에 예상되는 시장 붐을 초기 단계로 활용하되, 정책 지원과 원료 수급 안정화 필요성에 따라 급성장할 것으로 예상됩니다. 아직 명확한 시장 리더가 부재하여 초기 진입 기업에게 높은 성장 기회가 존재합니다.",
+                  "tech_evaluation": "TRL 4 수준으로 초기 개발 단계에 있어 기술적 불확실성이 높습니다 (Tech Risk 4 점). Umicore, CATL 등 주요 기업들이 특허 활동을 활발히 하고 있으나, EcoPro BM 이 지속 가능성 전략을 강화하기 위해 고려해야 할 장기 기술입니다. 기술적 성숙도 향상을 위한 지속적인 R&D 가 필요합니다.",
+                  "investment_decision": "높은 시장 성장성 (5 점) 과 개발 긴급도 (4 점) 를 고려하여 Tier 2 로 선정합니다. 기술적 위험이 높으므로, 초기 R&D 및 파일럿 프로젝트에 집중하여 기술 성숙도를 높이는 단계적 투자를 수행합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "고결정도 도핑 양극재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 75000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "고결정도 도핑 양극재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 75000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "고결정도 도핑 양극재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 75000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T03",
+                "name": "전구체 합성 공정 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 45000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T03",
+                "name": "전구체 합성 공정 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 45000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T03",
+                "name": "전구체 합성 공정 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 45000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T08",
+                "name": "배터리 재활용 및 원료 회수",
+                "tier": "Tier 2",
+                "tech_budget_usd": 33000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 108000000.0,
+            "3": 45000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 1,
+            "Tier 2": 2,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "고결정도 도핑 양극재",
+              "category": "Material",
+              "final_score": 88.5,
+              "market_score": 88.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T02",
+              "name": "다결정 양극활물질 구조",
+              "category": "Material",
+              "final_score": 83.44,
+              "market_score": 82.0,
+              "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T04",
+              "name": "고성능 전해질 첨가제",
+              "category": "Material",
+              "final_score": 82.66,
+              "market_score": 85.0,
+              "boom": "2027 Q4"
+            },
+            {
+              "tech_id": "T03",
+              "name": "전구체 합성 공정 최적화",
+              "category": "Process",
+              "final_score": 80.81,
+              "market_score": 79.5,
+              "boom": "2029 Q1"
+            },
+            {
+              "tech_id": "T08",
+              "name": "배터리 재활용 및 원료 회수",
+              "category": "Process",
+              "final_score": 80.4,
+              "market_score": 88.5,
+              "boom": "2026 Q4"
+            }
+          ],
+          "category_distribution": {
+            "Material": 4,
+            "Process": 2
+          },
+          "avg_trl": 5.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "고결정도 도핑 양극재",
+              "stage": "roadmap",
+              "key_reason": "TAM 222 억 달러, CAGR 24.5% 의 거대 시장 성장성과 2027 Q3 시장 붐 임박으로 개발 긴급도가 매우 높음."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T03"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q3": 1,
+            "2028 Q2": 1,
+            "2027 Q4": 1,
+            "2029 Q1": 1,
+            "2026 Q4": 1,
+            "2028 Q1": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 배분 정확하고 전략 정합성 높음. 기술 의존성 및 시계열 계획도 논리적. 수정 불필요."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_ecopro_bm_battery_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_ecopro_bm_battery_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_ecopro_bm_battery_2026_2030__기술선도__investment_strategy.json"
+  }
+}

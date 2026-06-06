@@ -515,16 +515,52 @@ reference_year={state['reference_year']} 는 로드맵 horizon 의 **목표 종�
 
         print(f"[Patent Agent] prompt variant: {prompt.variant}")
         print("[Patent Agent] LLM 분석 요청 중...")
-        response = llm.invoke(
-            [
-                SystemMessage(content=system_prompt),
-                HumanMessage(content=user_prompt),
-            ]
-        )
-        llm_raw_response = response.content
 
-        # ③ JSON 파싱
-        result = _extract_json(llm_raw_response)
+        def _validate_schema(parsed: dict) -> str | None:
+            """Return error reason if schema invalid, else None."""
+            if not isinstance(parsed, dict):
+                return f"top-level must be dict, got {type(parsed).__name__}"
+            pa = parsed.get("patent_analysis")
+            if not isinstance(pa, list):
+                return (
+                    f"`patent_analysis` must be a JSON ARRAY of candidate objects, "
+                    f"got {type(pa).__name__}"
+                )
+            if not pa:
+                return "`patent_analysis` array is empty (need 8-12 candidates)"
+            non_dict = [i for i, x in enumerate(pa) if not isinstance(x, dict)]
+            if non_dict:
+                return f"`patent_analysis` contains non-object items at indices {non_dict[:5]}"
+            return None
+
+        max_attempts = 2
+        retry_user_prompt = user_prompt
+        result = {}
+        for attempt in range(1, max_attempts + 1):
+            response = llm.invoke(
+                [
+                    SystemMessage(content=system_prompt),
+                    HumanMessage(content=retry_user_prompt),
+                ]
+            )
+            llm_raw_response = response.content
+            result = _extract_json(llm_raw_response)
+            err = _validate_schema(result)
+            if err is None:
+                break
+            print(f"[Patent Agent] ⚠️ LLM 응답 schema invalid (attempt {attempt}/{max_attempts}): {err}")
+            if attempt < max_attempts:
+                # 재요청 시 환각 패턴을 명시적으로 짚어줌
+                retry_user_prompt = (
+                    user_prompt
+                    + f"\n\n[Retry Reason — Strict Schema Required]\n"
+                    + f"Your previous response was invalid: {err}\n"
+                    + "Output `patent_analysis` MUST be a JSON ARRAY `[{...}, {...}, ...]` "
+                    + "with 8-12 candidate OBJECTS — each with tech_id, name, category, "
+                    + "patent_score, etc. NEVER a single object with summary/key_technologies/"
+                    + "trend_insights keys.\n"
+                )
+
         patent_analysis = result.get("patent_analysis", [])
         patent_maps = result.get("patent_maps", {})
         rendered_map_paths = {}

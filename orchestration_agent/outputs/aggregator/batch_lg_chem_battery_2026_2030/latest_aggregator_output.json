@@ -1,0 +1,1096 @@
+{
+  "run_id": "batch_lg_chem_battery_2026_2030",
+  "timestamp_utc": "2026-06-06T10:44:41Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고니켈 양극 표면 코팅",
+        "category": "Material",
+        "estimated_trl": 7,
+        "patent_score": 92.5,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 98,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Chem",
+          "SK On",
+          "Samsung SDI",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Chem",
+            "title": "CATHODE ACTIVE MATERIAL, PREPARATION METHOD THEREFOR, CATHODE COMPRISING SAME AND LITHIUM SECONDARY BATTERY COMPRISING SAME",
+            "date": "2025-11-18",
+            "cited_by": 0
+          },
+          {
+            "company": "SK On",
+            "title": "CATHODE ACTIVE MATERIAL FOR LITHIUM SECONDARY BATTERY AND LITHIUM SECONDARY BATTERY INCLUDING THE SAME",
+            "date": "2026-01-15",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung SDI",
+            "title": "CATHODE ACTIVE MATERIAL FOR LITHIUM SECONDARY BATTERY, CATHODE INCLUDING SAME, AND LITHIUM SECONDARY BATTERY INCLUDING SAME",
+            "date": "2026-01-15",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "LG Chem, SK On, Samsung SDI 등 주요 경쟁사들이 고니켈 양극 소재의 표면 안정화 및 코팅 기술에 집중하고 있습니다. 이는 고에너지 밀도 배터리 양산의 핵심 장벽을 해결하기 위한 필수 기술로, LG Chem 의 기술 리더십 강화 전략과 직접적으로 부합합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "전체 고체전지 양극 소재",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 88.3,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 95,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Samsung SDI",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Samsung SDI",
+            "title": "Positive electrode active material for all-solid-state rechargeable battery, method for preparing same, and all-solid-state rechargeable battery",
+            "date": "2025-09-23",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung SDI",
+            "title": "Positive electrode active material for all-solid-state rechargeable battery, method for preparing positive electrode active material, and all-solid-state rechargeable battery",
+            "date": "2025-09-23",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Samsung SDI 를 중심으로 전체 고체전지용 양극 소재 특허가 활발히 출원되고 있으며, 이는 차세대 에너지 시장 확장의 핵심 프론티어입니다. LG Chem 이 이 분야에서 선점하기 위해서는 고체 전해질과의 계면 안정성을 확보한 소재 개발이 시급합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "실리콘 기반 음극 소재",
+        "category": "Material",
+        "estimated_trl": 6,
+        "patent_score": 85.7,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Energy Solution",
+          "SK On"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Energy Solution",
+            "title": "LITHIUM SECONDARY BATTERY INCLUDING Si-BASED ANODE ACTIVE MATERIAL",
+            "date": "2026-01-08",
+            "cited_by": 0
+          },
+          {
+            "company": "SK On",
+            "title": "ANODE ACTIVE MATERIAL FOR LITHIUM SECONDARY BATTERY AND LITHIUM SECONDARY BATTERY INCLUDING THE SAME",
+            "date": "2025-11-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "LG Energy Solution 과 SK On 이 실리콘 기반 음극 소재를 통해 에너지 밀도 향상을 꾀하고 있습니다. 이는 기존 흑연 음극의 한계를 극복하고 전기차 주행거리 연장을 위한 필수 기술로, LG Chem 의 차세대 음극 전략에 포함되어야 합니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "배터리 모듈 화재 방지 구조",
+        "category": "Architecture",
+        "estimated_trl": 7,
+        "patent_score": 82.1,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Energy Solution",
+          "Samsung SDI"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Energy Solution",
+            "title": "BATTERY MODULE HAVING FIRE TRANSITION PREVENTION STRUCTURE AND BATTERY PACK INCLUDING THE SAME",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Samsung SDI",
+            "title": "ASSEMBLY SET FOR ASSEMBLING A CARRIER FRAMEWORK FOR A STACK OF BATTERY CELL BLOCKS",
+            "date": "2026-01-16",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "배터리 안전성에 대한 요구가 높아짐에 따라 LG Energy Solution 과 Samsung SDI 는 화재 전파 방지 구조 및 모듈 설계에 집중하고 있습니다. 이는 LG Chem 이 시스템 수준의 안전성을 확보하여 시장 신뢰도를 높이는 데 중요한 기술입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "나트륨 이온 배터리 음극",
+        "category": "Material",
+        "estimated_trl": 4,
+        "patent_score": 78.5,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "LG Energy Solution",
+            "title": "NEGATIVE ELECTRODE ACTIVE MATERIAL FOR SODIUM SECONDARY BATTERY, METHOD FOR PREPARING SAME, AND NEGATIVE ELECTRODE AND SODIUM SECONDARY BATTERY COMPRISING SAME",
+            "date": "2025-11-18",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "리튬 자원의 가격 변동성과 공급 불안정성을 고려할 때, LG Energy Solution 이 나트륨 이온 배터리 음극 소재에 대한 특허를 출원한 것은 장기적인 기술 다각화 전략을 시사합니다. LG Chem 도 저비용 대안 기술로서 이 분야에 대한 R&D 투자를 고려해야 합니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고니켈 양극 표면 코팅",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.26,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "고니켈 양극 소재 시장 규모가 2030 년까지 222 억 6 천만 달러에 달할 것으로 예상됨 (Precedence Research). LG Chem 등 주요 소재사들이 고에너지밀도 요구에 따라 코팅 기술 경쟁을 가속화 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "Cathode Materials Market 보고서에 따르면 2025-2030 년간 연평균 18.5% 성장 전망. 고니켈 양극의 안정성 확보를 위한 코팅 기술이 필수 요소로 부상."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion",
+            "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+            "use": "TAM 및 고니켈 양극 시장 성장 근거"
+          },
+          {
+            "title": "Cathode Materials Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+            "use": "CAGR 및 시장 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고니켈 양극 시장이 2030 년 220 억 달러 규모로 성장하며 코팅 기술이 필수화되고 있어 시장 성장률이 높음. LG Chem, SK On, 삼성 SDI 등 주요 3~5 개 기업이 기술 선점을 위한 경쟁을 벌이고 있어 진입 장벽이 존재함. 2027 년경 고니켈 양극의 대량 양산이 본격화되며 코팅 기술 수요가 급증할 것으로 예상됨."
+      },
+      {
+        "tech_id": "T02",
+        "name": "전체 고체전지 양극 소재",
+        "market_score": 82.0,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "고체전지 소재 시장은 2030 년 이후 본격적인 상용화 단계로 진입하며, 2034 년까지 수백억 달러 규모로 성장할 것으로 예상됨. 초기 시장은 프리미엄 EV 및 특수 용도에 집중될 것."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "Fortune Business Insights 등 보고서에 따르면 고체전지 소재 시장은 2025-2030 년간 연평균 28% 이상의 고성장 예상. 양극 소재는 고체전지 성능의 핵심 변수로 작용."
+        },
+        "key_market_reports": [
+          {
+            "title": "Solid State Battery Materials Market Size, Share | Growth [2034]",
+            "url": "https://www.fortunebusinessinsights.com/solid-state-battery-materials-market-116332",
+            "use": "고체전지 소재 시장 성장률 및 전망 근거"
+          },
+          {
+            "title": "Cathode Materials Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+            "use": "양극 소재의 고체전지 적용 가능성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "고체전지 양극 소재 시장은 2029 년경 상용화 본격화로 급성장할 것으로 예상되며, 아직 명확한 시장 선두주자가 없는 초기 단계임. 삼성 SDI, LG 에너지솔루션 등 주요 기업들이 기술 개발을 경쟁적으로 진행 중으로, 특허 기반의 진입 장벽이 형성될 가능성이 높음. 정책적 지원과 투자 유입이 활발하여 시장 성장 속도가 매우 빠를 것으로 판단됨."
+      },
+      {
+        "tech_id": "T03",
+        "name": "실리콘 기반 음극 소재",
+        "market_score": 76.0,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.5,
+          "basis": "실리콘 음극 소재 시장은 2030 년까지 85 억 달러 규모로 성장할 것으로 예상됨. 기존 흑연 음극 대비 에너지 밀도 향상으로 EV 시장에서의 수요가 급증 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "Research and Markets 보고서에 따르면 실리콘 음극 소재 시장은 2025-2030 년간 연평균 22% 성장 전망. 고에너지밀도 배터리 수요 증가가 주요 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Silicon Anode Material Global Market Insights 2025, Analysis and Forecast to 2030",
+            "url": "https://www.researchandmarkets.com/reports/6100451/silicon-anode-material-global-market-insights",
+            "use": "실리콘 음극 소재 시장 규모 및 성장률 근거"
+          },
+          {
+            "title": "Silicon-based Battery Anode Material Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-silicon-based-battery-anode-material-market",
+            "use": "경쟁 구도 및 기술 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "실리콘 음극 소재 시장은 2028 년경 대량 양산이 본격화되며 시장이 급성장할 것으로 예상됨. LG 에너지솔루션, SK On 등 주요 기업들이 기술 개발을 주도하고 있어 경쟁 구도가 집중화되고 있음. 고에너지밀도 배터리 수요 증가로 인해 시장 성장률이 높지만, 기술적 난이도로 인해 진입 장벽이 존재함."
+      },
+      {
+        "tech_id": "T04",
+        "name": "배터리 모듈 화재 방지 구조",
+        "market_score": 72.5,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 60
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 3.2,
+          "sam_usd_b": 1.8,
+          "som_usd_b": 0.6,
+          "basis": "전기차 배터리 화재 방지 소재 시장은 2032 년까지 32 억 달러 규모로 성장할 것으로 예상됨. 안전 규제 강화로 인해 수요가 급증 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "Staticker Business Consulting 보고서에 따르면 배터리 화재 방지 소재 시장은 2025-2030 년간 연평균 24% 성장 전망. 안전 규제 강화가 주요 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Electric Vehicle Battery Fire Protection Materials Market Size will reach $3.2 billion by 2032",
+            "url": "https://finance.yahoo.com/news/electric-vehicle-battery-fire-protection-173700377.html",
+            "use": "화재 방지 소재 시장 규모 및 성장률 근거"
+          },
+          {
+            "title": "Battery Module Fire-Resistant Enclosure Market Research Report 2033",
+            "url": "https://growthmarketreports.com/report/battery-module-fire-resistant-enclosure-market",
+            "use": "경쟁 구도 및 기술 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "배터리 모듈 화재 방지 구조 시장은 2027 년경 안전 규제 강화로 인해 수요가 급증할 것으로 예상됨. 다양한 소재 및 구조 기술이 경쟁하고 있어 시장이 분산되어 있으며, 기술적 차별화보다는 규제 준수에 따른 수요가 주를 이룸. LG 에너지솔루션, 삼성 SDI 등 주요 기업들이 안전성 강화를 위한 기술 개발을 진행 중."
+      },
+      {
+        "tech_id": "T05",
+        "name": "나트륨 이온 배터리 음극",
+        "market_score": 82.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "FactMR 및 Credence Research 보고서에 따르면 2030 년대 초 나트륨 이온 배터리 시장이 급성장할 것으로 예상되며, 음극 소재는 전체 배터리 비용의 약 15-20% 를 차지하는 핵심 구성 요소로 추정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 보고서 및 시장 분석에 따르면 나트륨 이온 배터리 시장은 2025 년부터 2030 년까지 연평균 30% 이상의 고성장률을 보일 것으로 예상되며, 이는 리튬 이온 대비 원자재 안정성과 저비용 특성 때문임."
+        },
+        "key_market_reports": [
+          {
+            "title": "Sodium-ion Battery Market | Global Market Analysis Report - 2036",
+            "url": "https://www.factmr.com/report/sodium-ion-battery-market",
+            "use": "TAM/CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "Sodium Ion Battery Market Size, Growth, Share and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/sodium-ion-battery-market",
+            "use": "시장 규모 및 음극 소재 비중 추정 근거"
+          },
+          {
+            "title": "Sodium-ion Battery Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/sodium-ion-battery-market-207269067.html",
+            "use": "경쟁 구도 및 주요 플레이어 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "나트륨 이온 배터리 시장은 2025 년 이후 상용화 가속화로 2027 년경 본격적인 시장 폭발이 예상되며, LG 에너지솔루션의 특허 활동은 이 시기에 맞춰 음극 소재 기술 고도화를 시사함. 리튬 가격 변동성 완화와 저가형 EV/ESS 수요 증가로 인해 2030 년까지 연평균 30% 이상의 성장이 예상되어 시장 매력도가 매우 높음."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Cathode Materials",
+            "Anode Materials",
+            "Battery Architecture",
+            "Safety"
+          ],
+          "rationale": "양사 모두 양극/음극 소재 및 배터리 구조 설계 분야에서 광범위한 특허를 보유하고 있으며, 기술적 유사성이 매우 높습니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "SK On",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "Cathode Materials",
+            "Anode Materials",
+            "Binder",
+            "Slurry"
+          ],
+          "rationale": "양극 소재, 음극 소재, 바인더 및 슬러리 조성 등 핵심 소재 기술에서 높은 중복성을 보입니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Samsung SDI",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Cathode Materials",
+            "All-Solid-State",
+            "Battery Module"
+          ],
+          "rationale": "고니켈 양극 및 전체 고체전지 기술, 배터리 모듈 설계 분야에서 경쟁 관계에 있으며 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Tesla",
+          "similarity": 0.45,
+          "edge_weight": 0.45,
+          "shared_keywords": [
+            "Battery Heating",
+            "Cooling System",
+            "Vehicle Integration"
+          ],
+          "rationale": "Tesla 는 배터리 소재 자체보다는 배터리 시스템 통합, 열관리, 차량 제어 등 응용 기술에 집중하고 있어 소재 중심의 LG Chem 과는 기술적 유사성이 상대적으로 낮습니다."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T02",
+        "name": "전체 고체전지 양극 소재",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 88.3,
+        "market_score": 82.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 84.84,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Samsung SDI 를 중심으로 전체 고체전지용 양극 소재 특허가 활발히 출원되고 있으며, 이는 차세대 에너지 시장 확장의 핵심 프론티어입니다. LG Chem 이 이 분야에서 선점하기 위해서는 고체 전해질과의 계면 안정성을 확보한 소재 개발이 시급합니다. [Market] 고체전지 양극 소재 시장은 2029 년경 상용화 본격화로 급성장할 것으로 예상되며, 아직 명확한 시장 선두주자가 없는 초기 단계임. 삼성 SDI, LG 에너지솔루션 등 주요 기업들이 기술 개발을 경쟁적으로 진행 중으로, 특허 기반의 진입 장벽이 형성될 가능성이 높음. 정책적 지원과 투자 유입이 활발하여 시장 성장 속도가 매우 빠를 것으로 판단됨.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "고체전지 소재 시장은 2030 년 이후 본격적인 상용화 단계로 진입하며, 2034 년까지 수백억 달러 규모로 성장할 것으로 예상됨. 초기 시장은 프리미엄 EV 및 특수 용도에 집중될 것."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "Fortune Business Insights 등 보고서에 따르면 고체전지 소재 시장은 2025-2030 년간 연평균 28% 이상의 고성장 예상. 양극 소재는 고체전지 성능의 핵심 변수로 작용."
+        },
+        "key_market_reports": [
+          {
+            "title": "Solid State Battery Materials Market Size, Share | Growth [2034]",
+            "url": "https://www.fortunebusinessinsights.com/solid-state-battery-materials-market-116332",
+            "use": "고체전지 소재 시장 성장률 및 전망 근거"
+          },
+          {
+            "title": "Cathode Materials Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+            "use": "양극 소재의 고체전지 적용 가능성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 95,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 85.14,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 1
+      },
+      {
+        "tech_id": "T01",
+        "name": "고니켈 양극 표면 코팅",
+        "category": "Material",
+        "trl": 7,
+        "patent_score": 92.5,
+        "market_score": 78.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 84.8,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] LG Chem, SK On, Samsung SDI 등 주요 경쟁사들이 고니켈 양극 소재의 표면 안정화 및 코팅 기술에 집중하고 있습니다. 이는 고에너지 밀도 배터리 양산의 핵심 장벽을 해결하기 위한 필수 기술로, LG Chem 의 기술 리더십 강화 전략과 직접적으로 부합합니다. [Market] 고니켈 양극 시장이 2030 년 220 억 달러 규모로 성장하며 코팅 기술이 필수화되고 있어 시장 성장률이 높음. LG Chem, SK On, 삼성 SDI 등 주요 3~5 개 기업이 기술 선점을 위한 경쟁을 벌이고 있어 진입 장벽이 존재함. 2027 년경 고니켈 양극의 대량 양산이 본격화되며 코팅 기술 수요가 급증할 것으로 예상됨.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.26,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "고니켈 양극 소재 시장 규모가 2030 년까지 222 억 6 천만 달러에 달할 것으로 예상됨 (Precedence Research). LG Chem 등 주요 소재사들이 고에너지밀도 요구에 따라 코팅 기술 경쟁을 가속화 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "Cathode Materials Market 보고서에 따르면 2025-2030 년간 연평균 18.5% 성장 전망. 고니켈 양극의 안정성 확보를 위한 코팅 기술이 필수 요소로 부상."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion",
+            "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+            "use": "TAM 및 고니켈 양극 시장 성장 근거"
+          },
+          {
+            "title": "Cathode Materials Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+            "use": "CAGR 및 시장 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 88,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 98,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 85.47,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T05",
+        "name": "나트륨 이온 배터리 음극",
+        "category": "Material",
+        "trl": 4,
+        "patent_score": 78.5,
+        "market_score": 82.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 80.7,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] 리튬 자원의 가격 변동성과 공급 불안정성을 고려할 때, LG Energy Solution 이 나트륨 이온 배터리 음극 소재에 대한 특허를 출원한 것은 장기적인 기술 다각화 전략을 시사합니다. LG Chem 도 저비용 대안 기술로서 이 분야에 대한 R&D 투자를 고려해야 합니다. [Market] 나트륨 이온 배터리 시장은 2025 년 이후 상용화 가속화로 2027 년경 본격적인 시장 폭발이 예상되며, LG 에너지솔루션의 특허 활동은 이 시기에 맞춰 음극 소재 기술 고도화를 시사함. 리튬 가격 변동성 완화와 저가형 EV/ESS 수요 증가로 인해 2030 년까지 연평균 30% 이상의 성장이 예상되어 시장 매력도가 매우 높음.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "FactMR 및 Credence Research 보고서에 따르면 2030 년대 초 나트륨 이온 배터리 시장이 급성장할 것으로 예상되며, 음극 소재는 전체 배터리 비용의 약 15-20% 를 차지하는 핵심 구성 요소로 추정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 보고서 및 시장 분석에 따르면 나트륨 이온 배터리 시장은 2025 년부터 2030 년까지 연평균 30% 이상의 고성장률을 보일 것으로 예상되며, 이는 리튬 이온 대비 원자재 안정성과 저비용 특성 때문임."
+        },
+        "key_market_reports": [
+          {
+            "title": "Sodium-ion Battery Market | Global Market Analysis Report - 2036",
+            "url": "https://www.factmr.com/report/sodium-ion-battery-market",
+            "use": "TAM/CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "Sodium Ion Battery Market Size, Growth, Share and Forecast 2032",
+            "url": "https://www.credenceresearch.com/report/sodium-ion-battery-market",
+            "use": "시장 규모 및 음극 소재 비중 추정 근거"
+          },
+          {
+            "title": "Sodium-ion Battery Market 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/sodium-ion-battery-market-207269067.html",
+            "use": "경쟁 구도 및 주요 플레이어 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 78,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 80.51,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T03",
+        "name": "실리콘 기반 음극 소재",
+        "category": "Material",
+        "trl": 6,
+        "patent_score": 85.7,
+        "market_score": 76.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 80.37,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] LG Energy Solution 과 SK On 이 실리콘 기반 음극 소재를 통해 에너지 밀도 향상을 꾀하고 있습니다. 이는 기존 흑연 음극의 한계를 극복하고 전기차 주행거리 연장을 위한 필수 기술로, LG Chem 의 차세대 음극 전략에 포함되어야 합니다. [Market] 실리콘 음극 소재 시장은 2028 년경 대량 양산이 본격화되며 시장이 급성장할 것으로 예상됨. LG 에너지솔루션, SK On 등 주요 기업들이 기술 개발을 주도하고 있어 경쟁 구도가 집중화되고 있음. 고에너지밀도 배터리 수요 증가로 인해 시장 성장률이 높지만, 기술적 난이도로 인해 진입 장벽이 존재함.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.5,
+          "basis": "실리콘 음극 소재 시장은 2030 년까지 85 억 달러 규모로 성장할 것으로 예상됨. 기존 흑연 음극 대비 에너지 밀도 향상으로 EV 시장에서의 수요가 급증 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "Research and Markets 보고서에 따르면 실리콘 음극 소재 시장은 2025-2030 년간 연평균 22% 성장 전망. 고에너지밀도 배터리 수요 증가가 주요 동인."
+        },
+        "key_market_reports": [
+          {
+            "title": "Silicon Anode Material Global Market Insights 2025, Analysis and Forecast to 2030",
+            "url": "https://www.researchandmarkets.com/reports/6100451/silicon-anode-material-global-market-insights",
+            "use": "실리콘 음극 소재 시장 규모 및 성장률 근거"
+          },
+          {
+            "title": "Silicon-based Battery Anode Material Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-silicon-based-battery-anode-material-market",
+            "use": "경쟁 구도 및 기술 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 82,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 90,
+          "roadmap_relevance": 88
+        },
+        "selection_score": 80.83,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 4
+      }
+    ],
+    "market_context": {
+      "target_market": "Cathode Materials / Advanced Materials / Battery Materials",
+      "expected_boom_quarter": "2027 Q3",
+      "market_research_summary": {
+        "T01": {
+          "name": "고니켈 양극 표면 코팅",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 22.26,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 3.5,
+            "basis": "고니켈 양극 소재 시장 규모가 2030 년까지 222 억 6 천만 달러에 달할 것으로 예상됨 (Precedence Research). LG Chem 등 주요 소재사들이 고에너지밀도 요구에 따라 코팅 기술 경쟁을 가속화 중."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.5,
+            "forecast_period": "2025-2030",
+            "basis": "Cathode Materials Market 보고서에 따르면 2025-2030 년간 연평균 18.5% 성장 전망. 고니켈 양극의 안정성 확보를 위한 코팅 기술이 필수 요소로 부상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion",
+              "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+              "use": "TAM 및 고니켈 양극 시장 성장 근거"
+            },
+            {
+              "title": "Cathode Materials Market 2025-2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+              "use": "CAGR 및 시장 성장 동력 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "전체 고체전지 양극 소재",
+          "market_score": 82.0,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 1.2,
+            "basis": "고체전지 소재 시장은 2030 년 이후 본격적인 상용화 단계로 진입하며, 2034 년까지 수백억 달러 규모로 성장할 것으로 예상됨. 초기 시장은 프리미엄 EV 및 특수 용도에 집중될 것."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 28.0,
+            "forecast_period": "2025-2030",
+            "basis": "Fortune Business Insights 등 보고서에 따르면 고체전지 소재 시장은 2025-2030 년간 연평균 28% 이상의 고성장 예상. 양극 소재는 고체전지 성능의 핵심 변수로 작용."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Solid State Battery Materials Market Size, Share | Growth [2034]",
+              "url": "https://www.fortunebusinessinsights.com/solid-state-battery-materials-market-116332",
+              "use": "고체전지 소재 시장 성장률 및 전망 근거"
+            },
+            {
+              "title": "Cathode Materials Market 2025-2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/cathode-material-market-246078739.html",
+              "use": "양극 소재의 고체전지 적용 가능성 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "실리콘 기반 음극 소재",
+          "market_score": 76.0,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 8.5,
+            "sam_usd_b": 4.0,
+            "som_usd_b": 1.5,
+            "basis": "실리콘 음극 소재 시장은 2030 년까지 85 억 달러 규모로 성장할 것으로 예상됨. 기존 흑연 음극 대비 에너지 밀도 향상으로 EV 시장에서의 수요가 급증 중."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "Research and Markets 보고서에 따르면 실리콘 음극 소재 시장은 2025-2030 년간 연평균 22% 성장 전망. 고에너지밀도 배터리 수요 증가가 주요 동인."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Silicon Anode Material Global Market Insights 2025, Analysis and Forecast to 2030",
+              "url": "https://www.researchandmarkets.com/reports/6100451/silicon-anode-material-global-market-insights",
+              "use": "실리콘 음극 소재 시장 규모 및 성장률 근거"
+            },
+            {
+              "title": "Silicon-based Battery Anode Material Market Research Report 2034",
+              "url": "https://dataintelo.com/report/global-silicon-based-battery-anode-material-market",
+              "use": "경쟁 구도 및 기술 동향 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "배터리 모듈 화재 방지 구조",
+          "market_score": 72.5,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 3.2,
+            "sam_usd_b": 1.8,
+            "som_usd_b": 0.6,
+            "basis": "전기차 배터리 화재 방지 소재 시장은 2032 년까지 32 억 달러 규모로 성장할 것으로 예상됨. 안전 규제 강화로 인해 수요가 급증 중."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.0,
+            "forecast_period": "2025-2030",
+            "basis": "Staticker Business Consulting 보고서에 따르면 배터리 화재 방지 소재 시장은 2025-2030 년간 연평균 24% 성장 전망. 안전 규제 강화가 주요 동인."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Electric Vehicle Battery Fire Protection Materials Market Size will reach $3.2 billion by 2032",
+              "url": "https://finance.yahoo.com/news/electric-vehicle-battery-fire-protection-173700377.html",
+              "use": "화재 방지 소재 시장 규모 및 성장률 근거"
+            },
+            {
+              "title": "Battery Module Fire-Resistant Enclosure Market Research Report 2033",
+              "url": "https://growthmarketreports.com/report/battery-module-fire-resistant-enclosure-market",
+              "use": "경쟁 구도 및 기술 동향 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "나트륨 이온 배터리 음극",
+          "market_score": 82.5,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "FactMR 및 Credence Research 보고서에 따르면 2030 년대 초 나트륨 이온 배터리 시장이 급성장할 것으로 예상되며, 음극 소재는 전체 배터리 비용의 약 15-20% 를 차지하는 핵심 구성 요소로 추정됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 32.5,
+            "forecast_period": "2025-2030",
+            "basis": "FactMR 보고서 및 시장 분석에 따르면 나트륨 이온 배터리 시장은 2025 년부터 2030 년까지 연평균 30% 이상의 고성장률을 보일 것으로 예상되며, 이는 리튬 이온 대비 원자재 안정성과 저비용 특성 때문임."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Sodium-ion Battery Market | Global Market Analysis Report - 2036",
+              "url": "https://www.factmr.com/report/sodium-ion-battery-market",
+              "use": "TAM/CAGR 및 시장 성장 동력 근거"
+            },
+            {
+              "title": "Sodium Ion Battery Market Size, Growth, Share and Forecast 2032",
+              "url": "https://www.credenceresearch.com/report/sodium-ion-battery-market",
+              "use": "시장 규모 및 음극 소재 비중 추정 근거"
+            },
+            {
+              "title": "Sodium-ion Battery Market 2025-2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/sodium-ion-battery-market-207269067.html",
+              "use": "경쟁 구도 및 주요 플레이어 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "use_patent_map_context": false,
+      "actor_map_summary": {},
+      "candidate_selection": {
+        "use_patent_map": false,
+        "use_actor_map_score": false,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "pool_count": 5,
+        "target_k": 4,
+        "selected_count": 4,
+        "selected_tech_ids": [
+          "T02",
+          "T01",
+          "T05",
+          "T03"
+        ],
+        "map_anchor_tech_ids": [],
+        "dropped_candidates": [
+          {
+            "tech_id": "T04",
+            "name": "배터리 모듈 화재 방지 구조",
+            "final_score": 76.82,
+            "selection_score": 77.28,
+            "actor_map_score": 0.0,
+            "reason": "LG Chem 의 핵심 전략인 '양극 소재 기술 리더십' 및 '소재 시장 확장'과 직접적인 연관성이 낮으며, 배터리 모듈 구조 (Architecture) 는 소재 (Material) 중심의 포트폴리오와 범주가 다름."
+          }
+        ],
+        "selection_metrics": {
+          "avg_final_score": 82.68,
+          "avg_market_score": 79.75,
+          "avg_patent_score": 86.25,
+          "avg_actor_map_score": 0.0,
+          "map_supported_count": 0
+        },
+        "selection_weights": {
+          "final_score": 0.55,
+          "patent_score": 0.25,
+          "market_score": 0.2,
+          "actor_map_score": 0.0
+        },
+        "selector": {
+          "method": "llm_fair_contextual_selector",
+          "used": true,
+          "selection_rationale": "선정된 4 개 기술은 LG Chem 의 '양극 소재 리더십 강화'와 '차세대 에너지 시장 확장' 전략에 완벽하게 부합하는 소재 중심 포트폴리오를 구성합니다. T01(고니켈 양극) 과 T02(고체전지 양극) 는 현재 및 차세대 양극 시장의 핵심 성장 동력을 선점하고, T05(나트륨 음극) 와 T03(실리콘 음극) 은 리튬 의존도 탈피 및 에너지 밀도 향상을 위한 필수적인 인접 소재 기술을 확보합니다. 이는 2026-2030 년 기간 동안 TRL 4~7 단계의 기술들이 상용화 시기와 시장 폭발 시점에 맞춰 최적의 로드맵을 형성하도록 설계되었습니다.",
+          "evidence_used": {
+            "T02": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T01": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T05": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T03": [
+              "patent",
+              "market",
+              "strategy"
+            ]
+          },
+          "fairness_note": "No numeric patent-map bonus was applied."
+        },
+        "fairness_controls": {
+          "same_final_score_formula": true,
+          "same_selection_score_formula_available_as_fallback": true,
+          "actor_map_score_is_diagnostic_only": true,
+          "map_anchor_slots": 0,
+          "llm_selector_uses_map_as_context_only": false
+        }
+      }
+    },
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T02",
+        "T01",
+        "T05",
+        "T03"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T04",
+          "name": "배터리 모듈 화재 방지 구조",
+          "final_score": 76.82,
+          "selection_score": 77.28,
+          "actor_map_score": 0.0,
+          "reason": "LG Chem 의 핵심 전략인 '양극 소재 기술 리더십' 및 '소재 시장 확장'과 직접적인 연관성이 낮으며, 배터리 모듈 구조 (Architecture) 는 소재 (Material) 중심의 포트폴리오와 범주가 다름."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 82.68,
+        "avg_market_score": 79.75,
+        "avg_patent_score": 86.25,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "선정된 4 개 기술은 LG Chem 의 '양극 소재 리더십 강화'와 '차세대 에너지 시장 확장' 전략에 완벽하게 부합하는 소재 중심 포트폴리오를 구성합니다. T01(고니켈 양극) 과 T02(고체전지 양극) 는 현재 및 차세대 양극 시장의 핵심 성장 동력을 선점하고, T05(나트륨 음극) 와 T03(실리콘 음극) 은 리튬 의존도 탈피 및 에너지 밀도 향상을 위한 필수적인 인접 소재 기술을 확보합니다. 이는 2026-2030 년 기간 동안 TRL 4~7 단계의 기술들이 상용화 시기와 시장 폭발 시점에 맞춰 최적의 로드맵을 형성하도록 설계되었습니다.",
+        "evidence_used": {
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T01": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Cathode Materials",
+            "Anode Materials",
+            "Battery Architecture",
+            "Safety"
+          ],
+          "rationale": "양사 모두 양극/음극 소재 및 배터리 구조 설계 분야에서 광범위한 특허를 보유하고 있으며, 기술적 유사성이 매우 높습니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "SK On",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "Cathode Materials",
+            "Anode Materials",
+            "Binder",
+            "Slurry"
+          ],
+          "rationale": "양극 소재, 음극 소재, 바인더 및 슬러리 조성 등 핵심 소재 기술에서 높은 중복성을 보입니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Samsung SDI",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Cathode Materials",
+            "All-Solid-State",
+            "Battery Module"
+          ],
+          "rationale": "고니켈 양극 및 전체 고체전지 기술, 배터리 모듈 설계 분야에서 경쟁 관계에 있으며 기술적 유사성이 높습니다."
+        },
+        {
+          "center_actor": "LG Chem",
+          "related_actor": "Tesla",
+          "similarity": 0.45,
+          "edge_weight": 0.45,
+          "shared_keywords": [
+            "Battery Heating",
+            "Cooling System",
+            "Vehicle Integration"
+          ],
+          "rationale": "Tesla 는 배터리 소재 자체보다는 배터리 시스템 통합, 열관리, 차량 제어 등 응용 기술에 집중하고 있어 소재 중심의 LG Chem 과는 기술적 유사성이 상대적으로 낮습니다."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 4개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q3"
+    ]
+  }
+}

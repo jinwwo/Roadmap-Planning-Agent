@@ -172,8 +172,22 @@ def _map_area_hits(shared_areas: list, candidate_text: str) -> list[str]:
 
 
 def _actor_similarity_edges(patent_maps: dict) -> list[dict]:
-    edges = (patent_maps or {}).get("actor_similarity_map") or []
-    return [edge for edge in edges if isinstance(edge, dict)]
+    raw = (patent_maps or {}).get("actor_similarity_map")
+    # LLM 환각 방어: dict-with-"edges" 패턴 (HL Mando) → edges 추출
+    if isinstance(raw, dict) and isinstance(raw.get("edges"), list):
+        raw = raw["edges"]
+    edges = raw if isinstance(raw, list) else []
+    # source/target 스키마도 center_actor/related_actor 로 정규화
+    normalized = []
+    for edge in edges:
+        if not isinstance(edge, dict):
+            continue
+        if "center_actor" not in edge and "source" in edge:
+            edge = {**edge, "center_actor": edge["source"]}
+        if "related_actor" not in edge and "target" in edge:
+            edge = {**edge, "related_actor": edge["target"]}
+        normalized.append(edge)
+    return normalized
 
 
 def _actor_map_summary(edges: list[dict]) -> dict:
@@ -682,8 +696,17 @@ def run_aggregator(state: AnalysisState) -> dict:
     print("\n[Aggregator] 시작")
     messages = []
 
-    patent_list = state.get("patent_analysis") or []
-    market_list = state.get("market_analysis") or []
+    raw_patent_list = state.get("patent_analysis") or []
+    raw_market_list = state.get("market_analysis") or []
+    # LLM 환각 방어: list of dicts 가 아니면 무효 처리
+    if not isinstance(raw_patent_list, list):
+        print(f"[Aggregator] ⚠️ patent_analysis schema 이상 (type={type(raw_patent_list).__name__}) → 빈 list 처리")
+        raw_patent_list = []
+    if not isinstance(raw_market_list, list):
+        print(f"[Aggregator] ⚠️ market_analysis schema 이상 (type={type(raw_market_list).__name__}) → 빈 list 처리")
+        raw_market_list = []
+    patent_list = [p for p in raw_patent_list if isinstance(p, dict)]
+    market_list = [m for m in raw_market_list if isinstance(m, dict) and m.get("tech_id")]
     patent_maps = state.get("patent_maps") or {}
     actor_edges = _actor_similarity_edges(patent_maps) if USE_PATENT_MAP else []
     use_patent_map_context = USE_PATENT_MAP and bool(actor_edges)

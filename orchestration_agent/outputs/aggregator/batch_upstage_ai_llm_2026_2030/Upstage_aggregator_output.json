@@ -1,0 +1,1795 @@
+{
+  "run_id": "batch_upstage_ai_llm_2026_2030",
+  "timestamp_utc": "2026-06-06T12:52:23Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 92.5,
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 98,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Anthropic",
+          "Adept AI"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Anthropic",
+            "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+            "date": "2025-09-18",
+            "cited_by": 0
+          },
+          {
+            "company": "Anthropic",
+            "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+            "date": "2025-09-18",
+            "cited_by": 0
+          },
+          {
+            "company": "Adept AI",
+            "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "date": "2021-06-02",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Anthropic 과 Adept AI 는 LLM 기반 에이전트가 UI 를 직접 조작하여 복잡한 업무 워크플로우를 자동화하는 아키텍처에 집중하고 있습니다. Upstage 는 현재 문서 인식 중심의 모델 배포에 집중하고 있으나, 프론티어 모델 경쟁력을 위해 에이전트 기반의 자동화 아키텍처 선점이 필수적입니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "원자적 문서 요소 관계 모델링",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 88.3,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 98
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Cohere"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Cohere",
+            "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "date": "2025-10-31",
+            "cited_by": 0
+          },
+          {
+            "company": "Cohere",
+            "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "date": "2025-10-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Cohere 는 문서 내 원자적 요소 (Atomic Elements) 간의 관계를 모델링하여 복잡한 문서 처리 및 검색을 수행하는 기술을 특허로 보호하고 있습니다. 이는 Upstage 의 핵심인 Document AI 영역에서 단순 인식을 넘어 구조적 이해를 제공하는 차세대 기술로, 전략적 격차 해소의 핵심입니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "category": "Process",
+        "estimated_trl": 4,
+        "patent_score": 82.1,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Cohere"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Cohere",
+            "title": "Training Transformers Using Sliceout",
+            "date": "2025-12-08",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Cohere 는 'Sliceout' 기술을 통해 트랜스포머 모델의 학습 효율성을 극대화하는 방법을 특허화했습니다. Upstage 가 프론티어 모델을 고도화하기 위해 학습 비용과 시간을 단축하는 새로운 학습 프로세스 도입이 시급한 상황입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "데이터셋 고유 샘플링 및 클러스터링",
+        "category": "Process",
+        "estimated_trl": 5,
+        "patent_score": 79.4,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Scale AI",
+          "Cohere"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Scale AI",
+            "title": "UNIQUE SAMPLING OF DATASETS",
+            "date": "2023-12-14",
+            "cited_by": 0
+          },
+          {
+            "company": "Cohere",
+            "title": "Data set clustering and AI-assisted topic extraction",
+            "date": "2025-09-11",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Scale AI 와 Cohere 는 데이터셋의 중복 제거 및 고유 샘플링, 주제 추출을 통한 고품질 학습 데이터 구축 기술에 집중하고 있습니다. Upstage 의 모델 성능 향상을 위해 데이터 품질 관리 프로세스의 고도화가 필수적입니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "암시적 데이터 의존성 기반 가시성",
+        "category": "Architecture",
+        "estimated_trl": 4,
+        "patent_score": 76.8,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 60,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Hugging Face"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Hugging Face",
+            "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+            "date": "2025-06-27",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Hugging Face 는 모델 학습 및 추론 과정에서 암시적인 데이터 의존성을 포착하여 가시성 (Observability) 과 감사 (Audit) 를 제공하는 아키텍처를 개발 중입니다. 기업용 AI 솔루션의 신뢰성 확보를 위해 Upstage 가 도입해야 할 핵심 인프라 기술입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "category": "Process",
+        "estimated_trl": 7,
+        "patent_score": 74.5,
+        "patent_signals": {
+          "peer_momentum": 65,
+          "citation_impact": 55,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Scale AI"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Scale AI",
+            "title": "Linking key-value pairs in documents",
+            "date": "2021-08-18",
+            "cited_by": 0
+          },
+          {
+            "company": "Scale AI",
+            "title": "Key-value extraction from documents",
+            "date": "2021-08-18",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Scale AI 는 문서 내 키 - 값 쌍을 추출하고 링크하는 기술을 특허로 보유하고 있습니다. Upstage 의 기존 OCR 및 문서 인식 기술과 직접적으로 연관되어 있으며, 더 정교한 정보 추출을 위한 기술 고도화 방향을 제시합니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "크로스 실로 데이터 중복 제거",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 71.2,
+        "patent_signals": {
+          "peer_momentum": 60,
+          "citation_impact": 50,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Hugging Face"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Hugging Face",
+            "title": "CROSS-SILO DATA STORAGE AND DEDUPLICATION",
+            "date": "2024-08-31",
+            "cited_by": 0
+          },
+          {
+            "company": "Hugging Face",
+            "title": "DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES",
+            "date": "2024-08-31",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Hugging Face 는 분산된 데이터 실로 (Silos) 간의 중복 제거 및 효율적인 인덱싱을 위한 아키텍처를 제안하고 있습니다. 대규모 데이터셋을 다루는 Upstage 의 인프라 효율성 및 비용 절감을 위한 중요한 기술입니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "3 차원 시정정 및 영상 전처리",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 68.9,
+        "patent_signals": {
+          "peer_momentum": 55,
+          "citation_impact": 45,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 60,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Scale AI"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Scale AI",
+            "title": "THREE-DIMENSIONAL PERSPECTIVE CORRECTION",
+            "date": "2023-10-10",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Scale AI 는 3 차원 시정정 기술을 통해 복잡한 각도에서 촬영된 문서나 이미지의 전처리 품질을 높이는 기술을 보유하고 있습니다. Upstage 의 문서 인식 정확도를 극대화하기 위한 전처리 파이프라인 강화에 활용 가능합니다."
+      },
+      {
+        "tech_id": "T09",
+        "name": "확률적 에이전트 기반 동적 제어",
+        "category": "Architecture",
+        "estimated_trl": 3,
+        "patent_score": 65.4,
+        "patent_signals": {
+          "peer_momentum": 40,
+          "citation_impact": 35,
+          "strategic_gap_opportunity": 70,
+          "cross_actor_recurrence": 55,
+          "roadmap_relevance": 75
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Adept AI"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Adept AI",
+            "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "date": "2017-03-29",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Adept AI 는 확률적 에이전트를 활용한 동적 프로세스 제어 기술을 오래전부터 연구해 왔습니다. 이는 장기적인 관점에서 Upstage 가 AI 에이전트의 불확실성 관리 및 동적 환경 적응 능력을 확보하기 위한 R&D 방향성을 제시합니다."
+      },
+      {
+        "tech_id": "T10",
+        "name": "타임트래블링 데이터 시각화",
+        "category": "Architecture",
+        "estimated_trl": 4,
+        "patent_score": 62.1,
+        "patent_signals": {
+          "peer_momentum": 35,
+          "citation_impact": 30,
+          "strategic_gap_opportunity": 65,
+          "cross_actor_recurrence": 50,
+          "roadmap_relevance": 70
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Hugging Face"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Hugging Face",
+            "title": "SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS",
+            "date": "2025-05-05",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Hugging Face 는 대규모 데이터셋의 시간적 변화를 시각화하는 '타임트래블링' 기술을 특허화했습니다. 이는 모델 학습 데이터의 진화 과정을 추적하고 디버깅하는 데 유용한 도구로, Upstage 의 데이터 관리 플랫폼 고도화에 기여할 수 있습니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 에이전트 시장이 2030 년까지 연평균 43.3% 성장할 것으로 예상되며, 워크플로우 자동화 및 멀티모달 AI 시장이 수조 달러 규모로 확장됨에 따라 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 43.3,
+          "forecast_period": "2025-2030",
+          "basis": "BCC Research 의 AI 에이전트 시장 보고서에 따르면 2030 년까지 연평균 43.3% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Agents Market to Grow 43.3% Annually Through 2030",
+            "url": "https://www.bccresearch.com/pressroom/ait/ai-agents-market-to-grow-433-annually",
+            "use": "CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "Multimodal AI Market Size & Share, Statistics Report 2025-2034",
+            "url": "https://www.gminsights.com/industry-analysis/multimodal-ai-market",
+            "use": "경쟁 구도 및 시장 규모 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "AI 에이전트 시장의 폭발적 성장률 (43.3% CAGR) 과 멀티모달 인터페이스의 급속한 채택으로 인해 시장 진입 시기가 매우 시급합니다. Anthropic, Adept AI 등 선두 기업들의 특허 활동이 활발하여 초기 진입 장벽이 높지만, 기업용 워크플로우 자동화 수요가 2027 년경 본격화될 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "원자적 문서 요소 관계 모델링",
+        "market_score": 76.2,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "문서 AI 시장이 2030 년까지 수조 달러 규모로 성장할 것으로 예상되며, 특히 의료 및 법률 등 고도화된 문서 처리 수요가 핵심 서비스 가능 시장 (SAM) 을 형성."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 의 문서 AI 시장 보고서에 따르면 2025-2030 년 기간 중 연평균 24.5% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-195513136.html",
+            "use": "TAM 및 CAGR 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "문서 AI 시장은 이미 성숙 단계에 접어들었으나, 원자적 요소 관계 모델링과 같은 고도화된 기술은 의료, 법률 등 특수 도메인에서 차별화된 가치를 창출할 수 있습니다. Cohere 의 특허 활동이 이를 뒷받침하며, 2028 년경 규제 준수 및 복잡한 문서 처리 수요가 급증할 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "market_score": 72.8,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.5,
+          "basis": "트랜스포머 최적화 AI 칩 및 학습 효율화 시장이 2034 년까지 급성장할 것으로 예상되며, 이는 간접적으로 학습 비용 절감 수요를 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "GMI 의 트랜스포머 최적화 AI 칩 시장 보고서에 따르면 관련 인프라 및 학습 효율화 기술 시장이 연평균 22% 이상 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Transformer-Optimized AI Chip Market Size, 2025-2034 Forecast",
+            "url": "https://www.gminsights.com/industry-analysis/transformer-optimized-ai-chip-market",
+            "use": "인프라 수요 및 학습 효율화 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "학습 효율화 기술은 아직 명확한 시장 리더가 부재한 초기 단계이나, 거대 모델의 학습 비용 증가로 인해 2029 년경 기술적 우위를 점한 기업이 강력한 진입 장벽을 구축할 것으로 예상됩니다. Cohere 의 특허는 이 분야에서 선점 효과를 노린 것으로 보입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "데이터셋 고유 샘플링 및 클러스터링",
+        "market_score": 68.5,
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.0,
+          "basis": "AI 데이터 센터 시장이 2035 년까지 2,032 억 달러에 달할 것으로 예상되며, 고품질 데이터셋 관리 및 최적화 수요가 이에 비례하여 증가."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "문서 AI 및 데이터 관리 시장이 연평균 19.5% 성장할 것으로 예상되며, 데이터 품질 최적화 기술이 핵심 성장 동력."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Data Center Market to Reach USD 203.26 Billion by 2035",
+            "url": "https://www.globenewswire.com/news-release/2026/03/24/3260977/0/en/ai-data-center-market-to-reach-usd-203-26-billion-by-2035-owing-to-generative-ai-workloads-and-high-performance-computing-demand-research-by-sns-insider.html",
+            "use": "데이터 인프라 및 관리 시장 규모 근거"
+          },
+          {
+            "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+            "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+            "use": "데이터 처리 및 문서 AI 시장 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "데이터셋 관리 시장은 많은 플레이어가 존재하는 분산된 구조이나, Scale AI 와 Cohere 와 같은 전문 기업들이 고유 샘플링 기술을 통해 차별화를 시도하고 있습니다. 2028 년경 데이터 품질에 대한 기업 요구가 높아지면서 시장이 재편될 것으로 예상됩니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "암시적 데이터 의존성 기반 가시성",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "생성형 AI 및 MLOps 시장 내 데이터 감사 및 가시성 솔루션의 성장세 반영. 전체 생성형 AI 시장의 10-15%를 데이터 관리 및 관측 도구로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Mordor Intelligence 등 보고서에 따른 생성형 AI 시장 CAGR 20% 이상 성장 및 데이터 거버넌스 수요 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Generative AI Market Size, Growth Analysis & Industry Forecast, 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/generative-ai-market",
+            "use": "TAM/CAGR 및 시장 성장 동력 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "생성형 AI 모델의 복잡성 증가로 데이터 의존성 추적 및 가시성 수요가 급증하고 있으며, 규제 준수 필요성으로 인해 시장 성장이 가속화될 전망이다. Hugging Face 등 선도 기업의 특허 활동이 이 분야의 초기 진입 장벽을 형성하고 있다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "market_score": 82.3,
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.5,
+          "basis": "문서 AI 시장 내 구조화되지 않은 데이터 처리 수요가 가장 높은 영역으로, 전체 문서 AI 시장의 30% 이상을 차지할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.8,
+          "forecast_period": "2025-2030",
+          "basis": "Research and Markets 등 보고서에 따른 문서 AI 시장 CAGR 20% 이상 성장 및 기업 디지털 전환 가속화."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+            "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "estimated",
+        "rationale": "기업 내 비정형 문서 처리 자동화 수요가 폭발적으로 증가하고 있으며, Scale AI 등 전문 업체의 기술 선점으로 초기 시장 진입이 시급하다. LLM 기반 추출 기술의 정확도 향상이 시장 확대의 핵심 동인이 될 것이다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "크로스 실로 데이터 중복 제거",
+        "market_score": 74.2,
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 72,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 2.8,
+          "som_usd_b": 0.6,
+          "basis": "대규모 LLM 학습 데이터 및 기업 데이터 레이크 관리 비용 절감 수요에 기반. 전체 데이터 관리 시장의 일부로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "문서 AI 및 LLM 시장 성장에 따른 데이터 효율성 솔루션 수요 증가 반영."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-1955136.html",
+            "use": "시장 규모 및 성장률 추정 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "estimated",
+        "rationale": "다양한 소스의 데이터 통합 시 발생하는 중복 문제 해결이 LLM 학습 효율성과 비용 절감의 핵심 과제로 부상하고 있다. Hugging Face의 특허는 이 분야의 초기 기술 표준을 제시하며 진입 장벽을 높일 수 있다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "3 차원 시정정 및 영상 전처리",
+        "market_score": 68.5,
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 68,
+          "competitive_moat_potential": 72
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 6.2,
+          "sam_usd_b": 1.8,
+          "som_usd_b": 0.4,
+          "basis": "3D 이미징 및 AI 기반 영상 처리 시장 내 문서/영상 전처리 니즈에 특화된 부분 시장으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "Grand View Research 등 보고서에 따른 3D 이미징 시장 성장 및 AI 영상 처리 기술 확산."
+        },
+        "key_market_reports": [
+          {
+            "title": "3D Imaging Market Size And Share | Industry Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/3d-imaging-market",
+            "use": "시장 규모 및 성장 전망 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "estimated",
+        "rationale": "3D 시정정 기술은 문서 AI의 핵심 영역보다는 특수한 영상 처리 니즈에 해당하여 시장 성장은 다소 완만할 것으로 예상되지만, Scale AI의 특허는 고난이도 전처리 기술의 차별화 포인트가 될 수 있다. 2029 년경 3D 콘텐츠 생성 및 처리 수요 증가와 맞물려 시장이 본격화될 전망이다."
+      },
+      {
+        "tech_id": "T09",
+        "name": "확률적 에이전트 기반 동적 제어",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 95,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 294.66,
+          "sam_usd_b": 85.0,
+          "som_usd_b": 12.0,
+          "basis": "AI 에이전트 시장이 2035 년까지 2,946 억 달러에 달할 것으로 예측됨 (Precedence Research). 기업용 자동화 및 동적 제어 솔루션이 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 에이전트 시장이 연평균 20% 이상의 고성장세를 보이며, 2025 년 이후 기업 도입이 본격화될 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Agents Market Size to Hit USD 294.66 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/ai-agents-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "AI Agents Market Forecast 2025-2030",
+            "url": "https://www.scribd.com/document/839614872/AI-Agents-Market-Size-Share-Trends-Industry-Report-2030",
+            "use": "시장 성장 트렌드 및 경쟁 구도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "AI 에이전트 시장은 2035 년까지 2,946 억 달러 규모로 급성장할 것으로 예상되며, 확률적 제어 기술은 초기 진입 장벽이 높아 선점 효과가 큽니다. 2027 년경 기업용 자동화 수요가 폭발할 것으로 보아 시장 붐 시기를 2027 년 2 분기로 설정합니다."
+      },
+      {
+        "tech_id": "T10",
+        "name": "타임트래블링 데이터 시각화",
+        "market_score": 72.3,
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 60,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 5.2,
+          "som_usd_b": 0.8,
+          "basis": "데이터 시각화 시장이 2030 년까지 185 억 달러 규모로 성장할 것으로 예상되며, AI 기반 시계열 분석 및 시각화 기능이 고부가가치 영역으로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "전체 AI 시장 성장에 편승하여 데이터 시각화 분야도 연평균 14% 이상 성장할 것으로 예상되며, 특히 LLM 기반 분석 도구 수요가 증가 중."
+        },
+        "key_market_reports": [
+          {
+            "title": "Data Visualization Market Size, Share & 2030 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/data-visualization-market",
+            "use": "TAM 및 시장 성장 전망"
+          },
+          {
+            "title": "Artificial Intelligence (AI) Market Research Reports & Consulting",
+            "url": "https://www.marketsandmarkets.com/artificial-intelligence-ai-market-research-270.html",
+            "use": "AI 시장 전체 성장 동력 및 시각화 기술 연관성"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "data_quality": "real",
+        "rationale": "데이터 시각화 시장은 성숙 단계에 있으나, AI 기반 시계열 분석 및 '타임트래블링' 같은 혁신적 시각화 기술은 차별화 가능성이 높습니다. 시장 붐은 2029 년경 LLM 기반 분석 도구의 대중화와 함께 예상됩니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Cohere",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "Document AI 및 원자적 요소 관계 모델링, 학습 효율화 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Scale AI",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "문서 키 - 값 추출, 데이터셋 샘플링 및 전처리 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Anthropic",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "멀티모달 에이전트 워크플로우 자동화 아키텍처에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Hugging Face",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "reason": "데이터 가시성, 중복 제거, 시각화 아키텍처에서 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Adept AI",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "reason": "확률적 에이전트 기반 동적 제어 및 모델 기반 제어 기술에서 유사성"
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 92.5,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 90.3,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Anthropic 과 Adept AI 는 LLM 기반 에이전트가 UI 를 직접 조작하여 복잡한 업무 워크플로우를 자동화하는 아키텍처에 집중하고 있습니다. Upstage 는 현재 문서 인식 중심의 모델 배포에 집중하고 있으나, 프론티어 모델 경쟁력을 위해 에이전트 기반의 자동화 아키텍처 선점이 필수적입니다. [Market] AI 에이전트 시장의 폭발적 성장률 (43.3% CAGR) 과 멀티모달 인터페이스의 급속한 채택으로 인해 시장 진입 시기가 매우 시급합니다. Anthropic, Adept AI 등 선두 기업들의 특허 활동이 활발하여 초기 진입 장벽이 높지만, 기업용 워크플로우 자동화 수요가 2027 년경 본격화될 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 에이전트 시장이 2030 년까지 연평균 43.3% 성장할 것으로 예상되며, 워크플로우 자동화 및 멀티모달 AI 시장이 수조 달러 규모로 확장됨에 따라 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 43.3,
+          "forecast_period": "2025-2030",
+          "basis": "BCC Research 의 AI 에이전트 시장 보고서에 따르면 2030 년까지 연평균 43.3% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Agents Market to Grow 43.3% Annually Through 2030",
+            "url": "https://www.bccresearch.com/pressroom/ait/ai-agents-market-to-grow-433-annually",
+            "use": "CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "Multimodal AI Market Size & Share, Statistics Report 2025-2034",
+            "url": "https://www.gminsights.com/industry-analysis/multimodal-ai-market",
+            "use": "경쟁 구도 및 시장 규모 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 95,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 98,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 90.49,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 1
+      },
+      {
+        "tech_id": "T02",
+        "name": "원자적 문서 요소 관계 모델링",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 88.3,
+        "market_score": 76.2,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 81.65,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Cohere 는 문서 내 원자적 요소 (Atomic Elements) 간의 관계를 모델링하여 복잡한 문서 처리 및 검색을 수행하는 기술을 특허로 보호하고 있습니다. 이는 Upstage 의 핵심인 Document AI 영역에서 단순 인식을 넘어 구조적 이해를 제공하는 차세대 기술로, 전략적 격차 해소의 핵심입니다. [Market] 문서 AI 시장은 이미 성숙 단계에 접어들었으나, 원자적 요소 관계 모델링과 같은 고도화된 기술은 의료, 법률 등 특수 도메인에서 차별화된 가치를 창출할 수 있습니다. Cohere 의 특허 활동이 이를 뒷받침하며, 2028 년경 규제 준수 및 복잡한 문서 처리 수요가 급증할 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 70,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "문서 AI 시장이 2030 년까지 수조 달러 규모로 성장할 것으로 예상되며, 특히 의료 및 법률 등 고도화된 문서 처리 수요가 핵심 서비스 가능 시장 (SAM) 을 형성."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 의 문서 AI 시장 보고서에 따르면 2025-2030 년 기간 중 연평균 24.5% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-195513136.html",
+            "use": "TAM 및 CAGR 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 92,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 98
+        },
+        "selection_score": 82.22,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T06",
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "category": "Process",
+        "trl": 7,
+        "patent_score": 74.5,
+        "market_score": 82.3,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 78.79,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Scale AI 는 문서 내 키 - 값 쌍을 추출하고 링크하는 기술을 특허로 보유하고 있습니다. Upstage 의 기존 OCR 및 문서 인식 기술과 직접적으로 연관되어 있으며, 더 정교한 정보 추출을 위한 기술 고도화 방향을 제시합니다. [Market] 기업 내 비정형 문서 처리 자동화 수요가 폭발적으로 증가하고 있으며, Scale AI 등 전문 업체의 기술 선점으로 초기 시장 진입이 시급하다. LLM 기반 추출 기술의 정확도 향상이 시장 확대의 핵심 동인이 될 것이다.",
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.5,
+          "basis": "문서 AI 시장 내 구조화되지 않은 데이터 처리 수요가 가장 높은 영역으로, 전체 문서 AI 시장의 30% 이상을 차지할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.8,
+          "forecast_period": "2025-2030",
+          "basis": "Research and Markets 등 보고서에 따른 문서 AI 시장 CAGR 20% 이상 성장 및 기업 디지털 전환 가속화."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+            "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+            "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 65,
+          "citation_impact": 55,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 78.42,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T09",
+        "name": "확률적 에이전트 기반 동적 제어",
+        "category": "Architecture",
+        "trl": 3,
+        "patent_score": 65.4,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 78.11,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Adept AI 는 확률적 에이전트를 활용한 동적 프로세스 제어 기술을 오래전부터 연구해 왔습니다. 이는 장기적인 관점에서 Upstage 가 AI 에이전트의 불확실성 관리 및 동적 환경 적응 능력을 확보하기 위한 R&D 방향성을 제시합니다. [Market] AI 에이전트 시장은 2035 년까지 2,946 억 달러 규모로 급성장할 것으로 예상되며, 확률적 제어 기술은 초기 진입 장벽이 높아 선점 효과가 큽니다. 2027 년경 기업용 자동화 수요가 폭발할 것으로 보아 시장 붐 시기를 2027 년 2 분기로 설정합니다.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 95,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 294.66,
+          "sam_usd_b": 85.0,
+          "som_usd_b": 12.0,
+          "basis": "AI 에이전트 시장이 2035 년까지 2,946 억 달러에 달할 것으로 예측됨 (Precedence Research). 기업용 자동화 및 동적 제어 솔루션이 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "AI 에이전트 시장이 연평균 20% 이상의 고성장세를 보이며, 2025 년 이후 기업 도입이 본격화될 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Agents Market Size to Hit USD 294.66 Billion by 2035",
+            "url": "https://www.precedenceresearch.com/ai-agents-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "AI Agents Market Forecast 2025-2030",
+            "url": "https://www.scribd.com/document/839614872/AI-Agents-Market-Size-Share-Trends-Industry-Report-2030",
+            "use": "시장 성장 트렌드 및 경쟁 구도"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 40,
+          "citation_impact": 35,
+          "strategic_gap_opportunity": 70,
+          "cross_actor_recurrence": 55,
+          "roadmap_relevance": 75
+        },
+        "selection_score": 77.01,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 4
+      },
+      {
+        "tech_id": "T05",
+        "name": "암시적 데이터 의존성 기반 가시성",
+        "category": "Architecture",
+        "trl": 4,
+        "patent_score": 76.8,
+        "market_score": 78.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 77.74,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] Hugging Face 는 모델 학습 및 추론 과정에서 암시적인 데이터 의존성을 포착하여 가시성 (Observability) 과 감사 (Audit) 를 제공하는 아키텍처를 개발 중입니다. 기업용 AI 솔루션의 신뢰성 확보를 위해 Upstage 가 도입해야 할 핵심 인프라 기술입니다. [Market] 생성형 AI 모델의 복잡성 증가로 데이터 의존성 추적 및 가시성 수요가 급증하고 있으며, 규제 준수 필요성으로 인해 시장 성장이 가속화될 전망이다. Hugging Face 등 선도 기업의 특허 활동이 이 분야의 초기 진입 장벽을 형성하고 있다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "생성형 AI 및 MLOps 시장 내 데이터 감사 및 가시성 솔루션의 성장세 반영. 전체 생성형 AI 시장의 10-15%를 데이터 관리 및 관측 도구로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Mordor Intelligence 등 보고서에 따른 생성형 AI 시장 CAGR 20% 이상 성장 및 데이터 거버넌스 수요 증가."
+        },
+        "key_market_reports": [
+          {
+            "title": "Generative AI Market Size, Growth Analysis & Industry Forecast, 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/generative-ai-market",
+            "use": "TAM/CAGR 및 시장 성장 동력 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 60,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 88
+        },
+        "selection_score": 77.66,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 5
+      },
+      {
+        "tech_id": "T03",
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "category": "Process",
+        "trl": 4,
+        "patent_score": 82.1,
+        "market_score": 72.8,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 76.98,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Cohere 는 'Sliceout' 기술을 통해 트랜스포머 모델의 학습 효율성을 극대화하는 방법을 특허화했습니다. Upstage 가 프론티어 모델을 고도화하기 위해 학습 비용과 시간을 단축하는 새로운 학습 프로세스 도입이 시급한 상황입니다. [Market] 학습 효율화 기술은 아직 명확한 시장 리더가 부재한 초기 단계이나, 거대 모델의 학습 비용 증가로 인해 2029 년경 기술적 우위를 점한 기업이 강력한 진입 장벽을 구축할 것으로 예상됩니다. Cohere 의 특허는 이 분야에서 선점 효과를 노린 것으로 보입니다.",
+        "market_signals": {
+          "tam_growth_rate": 65,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.5,
+          "basis": "트랜스포머 최적화 AI 칩 및 학습 효율화 시장이 2034 년까지 급성장할 것으로 예상되며, 이는 간접적으로 학습 비용 절감 수요를 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "GMI 의 트랜스포머 최적화 AI 칩 시장 보고서에 따르면 관련 인프라 및 학습 효율화 기술 시장이 연평균 22% 이상 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Transformer-Optimized AI Chip Market Size, 2025-2034 Forecast",
+            "url": "https://www.gminsights.com/industry-analysis/transformer-optimized-ai-chip-market",
+            "use": "인프라 수요 및 학습 효율화 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 90
+        },
+        "selection_score": 77.42,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 6
+      },
+      {
+        "tech_id": "T04",
+        "name": "데이터셋 고유 샘플링 및 클러스터링",
+        "category": "Process",
+        "trl": 5,
+        "patent_score": 79.4,
+        "market_score": 68.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 73.41,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Scale AI 와 Cohere 는 데이터셋의 중복 제거 및 고유 샘플링, 주제 추출을 통한 고품질 학습 데이터 구축 기술에 집중하고 있습니다. Upstage 의 모델 성능 향상을 위해 데이터 품질 관리 프로세스의 고도화가 필수적입니다. [Market] 데이터셋 관리 시장은 많은 플레이어가 존재하는 분산된 구조이나, Scale AI 와 Cohere 와 같은 전문 기업들이 고유 샘플링 기술을 통해 차별화를 시도하고 있습니다. 2028 년경 데이터 품질에 대한 기업 요구가 높아지면서 시장이 재편될 것으로 예상됩니다.",
+        "market_signals": {
+          "tam_growth_rate": 60,
+          "time_to_market_urgency": 65,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.0,
+          "basis": "AI 데이터 센터 시장이 2035 년까지 2,032 억 달러에 달할 것으로 예상되며, 고품질 데이터셋 관리 및 최적화 수요가 이에 비례하여 증가."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "문서 AI 및 데이터 관리 시장이 연평균 19.5% 성장할 것으로 예상되며, 데이터 품질 최적화 기술이 핵심 성장 동력."
+        },
+        "key_market_reports": [
+          {
+            "title": "AI Data Center Market to Reach USD 203.26 Billion by 2035",
+            "url": "https://www.globenewswire.com/news-release/2026/03/24/3260977/0/en/ai-data-center-market-to-reach-usd-203-26-billion-by-2035-owing-to-generative-ai-workloads-and-high-performance-computing-demand-research-by-sns-insider.html",
+            "use": "데이터 인프라 및 관리 시장 규모 근거"
+          },
+          {
+            "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+            "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+            "use": "데이터 처리 및 문서 AI 시장 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 73.93,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 7
+      },
+      {
+        "tech_id": "T07",
+        "name": "크로스 실로 데이터 중복 제거",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 71.2,
+        "market_score": 74.2,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 72.85,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [],
+        "rationale": "[Patent] Hugging Face 는 분산된 데이터 실로 (Silos) 간의 중복 제거 및 효율적인 인덱싱을 위한 아키텍처를 제안하고 있습니다. 대규모 데이터셋을 다루는 Upstage 의 인프라 효율성 및 비용 절감을 위한 중요한 기술입니다. [Market] 다양한 소스의 데이터 통합 시 발생하는 중복 문제 해결이 LLM 학습 효율성과 비용 절감의 핵심 과제로 부상하고 있다. Hugging Face의 특허는 이 분야의 초기 기술 표준을 제시하며 진입 장벽을 높일 수 있다.",
+        "market_signals": {
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 70,
+          "policy_and_investment_tailwind": 72,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 2.8,
+          "som_usd_b": 0.6,
+          "basis": "대규모 LLM 학습 데이터 및 기업 데이터 레이크 관리 비용 절감 수요에 기반. 전체 데이터 관리 시장의 일부로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "문서 AI 및 LLM 시장 성장에 따른 데이터 효율성 솔루션 수요 증가 반영."
+        },
+        "key_market_reports": [
+          {
+            "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-1955136.html",
+            "use": "시장 규모 및 성장률 추정 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 60,
+          "citation_impact": 50,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 72.71,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 8
+      }
+    ],
+    "market_context": {
+      "target_market": "Foundation Model / Document AI / LLM",
+      "expected_boom_quarter": "2027 Q2",
+      "market_research_summary": {
+        "T01": {
+          "name": "멀티모달 에이전트 워크플로우 자동화",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 1.5,
+            "basis": "AI 에이전트 시장이 2030 년까지 연평균 43.3% 성장할 것으로 예상되며, 워크플로우 자동화 및 멀티모달 AI 시장이 수조 달러 규모로 확장됨에 따라 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 43.3,
+            "forecast_period": "2025-2030",
+            "basis": "BCC Research 의 AI 에이전트 시장 보고서에 따르면 2030 년까지 연평균 43.3% 성장 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "AI Agents Market to Grow 43.3% Annually Through 2030",
+              "url": "https://www.bccresearch.com/pressroom/ait/ai-agents-market-to-grow-433-annually",
+              "use": "CAGR 및 시장 성장 동력 근거"
+            },
+            {
+              "title": "Multimodal AI Market Size & Share, Statistics Report 2025-2034",
+              "url": "https://www.gminsights.com/industry-analysis/multimodal-ai-market",
+              "use": "경쟁 구도 및 시장 규모 추정"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "원자적 문서 요소 관계 모델링",
+          "market_score": 76.2,
+          "expected_market_boom_quarter": "2028 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 0.8,
+            "basis": "문서 AI 시장이 2030 년까지 수조 달러 규모로 성장할 것으로 예상되며, 특히 의료 및 법률 등 고도화된 문서 처리 수요가 핵심 서비스 가능 시장 (SAM) 을 형성."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "MarketsandMarkets 의 문서 AI 시장 보고서에 따르면 2025-2030 년 기간 중 연평균 24.5% 성장 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-195513136.html",
+              "use": "TAM 및 CAGR 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "고효율 트랜스포머 슬라이스아웃 학습",
+          "market_score": 72.8,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 3.5,
+            "som_usd_b": 0.5,
+            "basis": "트랜스포머 최적화 AI 칩 및 학습 효율화 시장이 2034 년까지 급성장할 것으로 예상되며, 이는 간접적으로 학습 비용 절감 수요를 반영."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "GMI 의 트랜스포머 최적화 AI 칩 시장 보고서에 따르면 관련 인프라 및 학습 효율화 기술 시장이 연평균 22% 이상 성장할 것으로 예상."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Transformer-Optimized AI Chip Market Size, 2025-2034 Forecast",
+              "url": "https://www.gminsights.com/industry-analysis/transformer-optimized-ai-chip-market",
+              "use": "인프라 수요 및 학습 효율화 시장 성장 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "데이터셋 고유 샘플링 및 클러스터링",
+          "market_score": 68.5,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 25.0,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 1.0,
+            "basis": "AI 데이터 센터 시장이 2035 년까지 2,032 억 달러에 달할 것으로 예상되며, 고품질 데이터셋 관리 및 최적화 수요가 이에 비례하여 증가."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.5,
+            "forecast_period": "2025-2030",
+            "basis": "문서 AI 및 데이터 관리 시장이 연평균 19.5% 성장할 것으로 예상되며, 데이터 품질 최적화 기술이 핵심 성장 동력."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "AI Data Center Market to Reach USD 203.26 Billion by 2035",
+              "url": "https://www.globenewswire.com/news-release/2026/03/24/3260977/0/en/ai-data-center-market-to-reach-usd-203-26-billion-by-2035-owing-to-generative-ai-workloads-and-high-performance-computing-demand-research-by-sns-insider.html",
+              "use": "데이터 인프라 및 관리 시장 규모 근거"
+            },
+            {
+              "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+              "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+              "use": "데이터 처리 및 문서 AI 시장 성장 전망"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "암시적 데이터 의존성 기반 가시성",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "생성형 AI 및 MLOps 시장 내 데이터 감사 및 가시성 솔루션의 성장세 반영. 전체 생성형 AI 시장의 10-15%를 데이터 관리 및 관측 도구로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "Mordor Intelligence 등 보고서에 따른 생성형 AI 시장 CAGR 20% 이상 성장 및 데이터 거버넌스 수요 증가."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Generative AI Market Size, Growth Analysis & Industry Forecast, 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/generative-ai-market",
+              "use": "TAM/CAGR 및 시장 성장 동력 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+          "market_score": 82.3,
+          "expected_market_boom_quarter": "2026 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 18.0,
+            "sam_usd_b": 6.5,
+            "som_usd_b": 1.5,
+            "basis": "문서 AI 시장 내 구조화되지 않은 데이터 처리 수요가 가장 높은 영역으로, 전체 문서 AI 시장의 30% 이상을 차지할 것으로 예상."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.8,
+            "forecast_period": "2025-2030",
+            "basis": "Research and Markets 등 보고서에 따른 문서 AI 시장 CAGR 20% 이상 성장 및 기업 디지털 전환 가속화."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Document AI Global Market Insights 2025, Analysis and Forecast to ...",
+              "url": "https://www.researchandmarkets.com/reports/6216254/document-ai-global-market-insights-analysis",
+              "use": "TAM/CAGR 및 경쟁 구도 분석 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T07": {
+          "name": "크로스 실로 데이터 중복 제거",
+          "market_score": 74.2,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 8.5,
+            "sam_usd_b": 2.8,
+            "som_usd_b": 0.6,
+            "basis": "대규모 LLM 학습 데이터 및 기업 데이터 레이크 관리 비용 절감 수요에 기반. 전체 데이터 관리 시장의 일부로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.5,
+            "forecast_period": "2025-2030",
+            "basis": "문서 AI 및 LLM 시장 성장에 따른 데이터 효율성 솔루션 수요 증가 반영."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-1955136.html",
+              "use": "시장 규모 및 성장률 추정 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T08": {
+          "name": "3 차원 시정정 및 영상 전처리",
+          "market_score": 68.5,
+          "expected_market_boom_quarter": "2029 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 6.2,
+            "sam_usd_b": 1.8,
+            "som_usd_b": 0.4,
+            "basis": "3D 이미징 및 AI 기반 영상 처리 시장 내 문서/영상 전처리 니즈에 특화된 부분 시장으로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.2,
+            "forecast_period": "2025-2030",
+            "basis": "Grand View Research 등 보고서에 따른 3D 이미징 시장 성장 및 AI 영상 처리 기술 확산."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "3D Imaging Market Size And Share | Industry Report, 2030",
+              "url": "https://www.grandviewresearch.com/industry-analysis/3d-imaging-market",
+              "use": "시장 규모 및 성장 전망 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T09": {
+          "name": "확률적 에이전트 기반 동적 제어",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 294.66,
+            "sam_usd_b": 85.0,
+            "som_usd_b": 12.0,
+            "basis": "AI 에이전트 시장이 2035 년까지 2,946 억 달러에 달할 것으로 예측됨 (Precedence Research). 기업용 자동화 및 동적 제어 솔루션이 핵심 성장 동력."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "AI 에이전트 시장이 연평균 20% 이상의 고성장세를 보이며, 2025 년 이후 기업 도입이 본격화될 것으로 예상됨."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "AI Agents Market Size to Hit USD 294.66 Billion by 2035",
+              "url": "https://www.precedenceresearch.com/ai-agents-market",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "AI Agents Market Forecast 2025-2030",
+              "url": "https://www.scribd.com/document/839614872/AI-Agents-Market-Size-Share-Trends-Industry-Report-2030",
+              "use": "시장 성장 트렌드 및 경쟁 구도"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T10": {
+          "name": "타임트래블링 데이터 시각화",
+          "market_score": 72.3,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 5.2,
+            "som_usd_b": 0.8,
+            "basis": "데이터 시각화 시장이 2030 년까지 185 억 달러 규모로 성장할 것으로 예상되며, AI 기반 시계열 분석 및 시각화 기능이 고부가가치 영역으로 부상 중."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 14.2,
+            "forecast_period": "2025-2030",
+            "basis": "전체 AI 시장 성장에 편승하여 데이터 시각화 분야도 연평균 14% 이상 성장할 것으로 예상되며, 특히 LLM 기반 분석 도구 수요가 증가 중."
+          },
+          "competitive_landscape": "Fragmented – many players, low differentiation",
+          "key_market_reports": [
+            {
+              "title": "Data Visualization Market Size, Share & 2030 Growth Trends Report",
+              "url": "https://www.mordorintelligence.com/industry-reports/data-visualization-market",
+              "use": "TAM 및 시장 성장 전망"
+            },
+            {
+              "title": "Artificial Intelligence (AI) Market Research Reports & Consulting",
+              "url": "https://www.marketsandmarkets.com/artificial-intelligence-ai-market-research-270.html",
+              "use": "AI 시장 전체 성장 동력 및 시각화 기술 연관성"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "use_patent_map_context": false,
+      "actor_map_summary": {},
+      "candidate_selection": {
+        "use_patent_map": false,
+        "use_actor_map_score": false,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "pool_count": 10,
+        "target_k": 8,
+        "selected_count": 8,
+        "selected_tech_ids": [
+          "T01",
+          "T02",
+          "T06",
+          "T09",
+          "T05",
+          "T03",
+          "T04",
+          "T07"
+        ],
+        "map_anchor_tech_ids": [],
+        "dropped_candidates": [
+          {
+            "tech_id": "T08",
+            "name": "3 차원 시정정 및 영상 전처리",
+            "final_score": 68.68,
+            "selection_score": 68.7,
+            "actor_map_score": 0.0,
+            "reason": "3D 시정정 기술은 Upstage 의 핵심인 문서 AI 및 LLM 전략과 직접적인 연관성이 낮고, 시장 성장률 (18.2%) 과 전략적 우선순위가 상대적으로 낮음."
+          },
+          {
+            "tech_id": "T10",
+            "name": "타임트래블링 데이터 시각화",
+            "final_score": 67.71,
+            "selection_score": 67.23,
+            "actor_map_score": 0.0,
+            "reason": "타임트래블링 데이터 시각화는 보조적인 분석 도구로서 핵심 모델 성능 향상이나 워크플로우 자동화 전략에 대한 직접적인 기여도가 낮고, 시장 성숙도가 낮음."
+          }
+        ],
+        "selection_metrics": {
+          "avg_final_score": 78.73,
+          "avg_market_score": 78.69,
+          "avg_patent_score": 78.78,
+          "avg_actor_map_score": 0.0,
+          "map_supported_count": 0
+        },
+        "selection_weights": {
+          "final_score": 0.55,
+          "patent_score": 0.25,
+          "market_score": 0.2,
+          "actor_map_score": 0.0
+        },
+        "selector": {
+          "method": "llm_fair_contextual_selector",
+          "used": true,
+          "selection_rationale": "Upstage 의 'Document AI 및 LLM 기술 리더십 강화' 전략에 부합하는 고성장 분야 (T01, T09) 와 핵심 문서 처리 기술 (T02, T06) 을 최우선으로 선정했습니다. 또한, 프론티어 모델 고도화를 위한 학습 효율화 (T03) 및 데이터 품질 관리 (T04, T07) 기술과 기업용 솔루션 신뢰성 확보를 위한 가시성 기술 (T05) 을 포함하여 포트폴리오의 다양성과 로드맵 완성도를 확보했습니다. 제외된 T08과 T10은 핵심 전략과의 정합성이 낮고 시장 성장 잠재력이 상대적으로 제한적이므로 제외되었습니다.",
+          "evidence_used": {
+            "T01": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T02": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T06": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T09": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T05": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T03": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T04": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T07": [
+              "patent",
+              "market",
+              "strategy"
+            ]
+          },
+          "fairness_note": "No numeric patent-map bonus was applied."
+        },
+        "fairness_controls": {
+          "same_final_score_formula": true,
+          "same_selection_score_formula_available_as_fallback": true,
+          "actor_map_score_is_diagnostic_only": true,
+          "map_anchor_slots": 0,
+          "llm_selector_uses_map_as_context_only": false
+        }
+      }
+    },
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 10,
+      "target_k": 8,
+      "selected_count": 8,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T06",
+        "T09",
+        "T05",
+        "T03",
+        "T04",
+        "T07"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T08",
+          "name": "3 차원 시정정 및 영상 전처리",
+          "final_score": 68.68,
+          "selection_score": 68.7,
+          "actor_map_score": 0.0,
+          "reason": "3D 시정정 기술은 Upstage 의 핵심인 문서 AI 및 LLM 전략과 직접적인 연관성이 낮고, 시장 성장률 (18.2%) 과 전략적 우선순위가 상대적으로 낮음."
+        },
+        {
+          "tech_id": "T10",
+          "name": "타임트래블링 데이터 시각화",
+          "final_score": 67.71,
+          "selection_score": 67.23,
+          "actor_map_score": 0.0,
+          "reason": "타임트래블링 데이터 시각화는 보조적인 분석 도구로서 핵심 모델 성능 향상이나 워크플로우 자동화 전략에 대한 직접적인 기여도가 낮고, 시장 성숙도가 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 78.73,
+        "avg_market_score": 78.69,
+        "avg_patent_score": 78.78,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "Upstage 의 'Document AI 및 LLM 기술 리더십 강화' 전략에 부합하는 고성장 분야 (T01, T09) 와 핵심 문서 처리 기술 (T02, T06) 을 최우선으로 선정했습니다. 또한, 프론티어 모델 고도화를 위한 학습 효율화 (T03) 및 데이터 품질 관리 (T04, T07) 기술과 기업용 솔루션 신뢰성 확보를 위한 가시성 기술 (T05) 을 포함하여 포트폴리오의 다양성과 로드맵 완성도를 확보했습니다. 제외된 T08과 T10은 핵심 전략과의 정합성이 낮고 시장 성장 잠재력이 상대적으로 제한적이므로 제외되었습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T09": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T07": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Cohere",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "Document AI 및 원자적 요소 관계 모델링, 학습 효율화 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Scale AI",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "reason": "문서 키 - 값 추출, 데이터셋 샘플링 및 전처리 기술에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Anthropic",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "reason": "멀티모달 에이전트 워크플로우 자동화 아키텍처에서 높은 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Hugging Face",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "reason": "데이터 가시성, 중복 제거, 시각화 아키텍처에서 유사성"
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Adept AI",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "reason": "확률적 에이전트 기반 동적 제어 및 모델 기반 제어 기술에서 유사성"
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 8개 기술 선정 완료. 시장 개화 예상 시점: 2027 Q2"
+    ]
+  }
+}

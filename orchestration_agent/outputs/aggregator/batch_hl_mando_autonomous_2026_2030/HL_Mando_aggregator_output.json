@@ -1,6 +1,6 @@
 {
   "run_id": "batch_hl_mando_autonomous_2026_2030",
-  "timestamp_utc": "2026-06-02T06:00:44Z",
+  "timestamp_utc": "2026-06-06T09:10:59Z",
   "input": {
     "patent_analysis": [
       {
@@ -36,7 +36,7 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "보쉬의 최근 특허는 ADAS 환경에서 스티어바이와이어의 다중 모드 제어 및 양방향 제어기 진단에 집중하고 있다. HL 만도가 스티어바이와이어 리더십을 강화하기 위해 이러한 고도화된 제어 아키텍처를 선점해야 할 전략적 기회다."
+        "rationale": "보쉬의 최근 특허는 ADAS 환경에서 스티어바이와이어의 다중 모드 제어 및 양방향 제어기 진단에 집중하고 있다. HL 만도가 스티어바이와이어 리더십을 강화하기 위해 이러한 고급 제어 아키텍처를 선점해야 할 전략적 기회로 판단된다."
       },
       {
         "tech_id": "T02",
@@ -73,20 +73,20 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "HL 만도는 차assis 작동 시각화 기술에 집중된 특허를 다수 출원하고 있어, 사용자 경험 (UX) 측면에서 강점을 보이고 있다. 이는 스티어바이와이어와 같은 무감각 제어 시스템에서 운전자에게 피드백을 제공하는 핵심 프로세스 기술이다."
+        "rationale": "HL 만도는 차assis 제어 상태의 시각화 및 디스플레이 장치 관련 특허를 집중적으로 출원하고 있어, 사용자 경험 (HMI) 측면에서의 기술적 강점을 확보하고 있다. 이는 자율주행 시나리오에서 운전자 신뢰도 확보에 필수적인 프로세스 기술이다."
       },
       {
         "tech_id": "T03",
         "name": "전기 구동계 통합 제어",
         "category": "Architecture",
-        "estimated_trl": 5,
-        "patent_score": 79.8,
+        "estimated_trl": 6,
+        "patent_score": 85.1,
         "patent_signals": {
           "peer_momentum": 88,
-          "citation_impact": 70,
-          "strategic_gap_opportunity": 82,
-          "cross_actor_recurrence": 75,
-          "roadmap_relevance": 90
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
         },
         "dependency_hints": [],
         "source_companies": [
@@ -108,20 +108,20 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "ZF 와 덴소는 전기차 구동계 (Drive Train) 의 통합 제어 및 슬립 제어 기술에 활발히 특허를 출원하고 있다. HL 만도가 차assis 제어 범위를 구동계까지 확장하여 통합 솔루션을 제공하기 위한 필수 기술이다."
+        "rationale": "ZF 와 덴소는 전기 구동계의 슬립 식별, 토크 제어, 그리고 구동계 통합 운영 제어에 대한 특허를 다수 보유하고 있다. HL 만도가 차assis 제어 범위를 전기차 구동계 통합으로 확장하기 위한 핵심 아키텍처 기술이다."
       },
       {
         "tech_id": "T04",
         "name": "고전압 커넥터 및 배선 자동화",
         "category": "Equipment",
-        "estimated_trl": 6,
-        "patent_score": 76.4,
+        "estimated_trl": 5,
+        "patent_score": 79.4,
         "patent_signals": {
           "peer_momentum": 80,
           "citation_impact": 65,
-          "strategic_gap_opportunity": 78,
-          "cross_actor_recurrence": 72,
-          "roadmap_relevance": 85
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
         },
         "dependency_hints": [],
         "source_companies": [
@@ -143,20 +143,20 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "애틱스는 고전압 커넥터 설계 및 배선 하네스 제조 자동화 (로봇 공학) 에 집중하고 있다. 전기차 및 자율주행 차량의 복잡한 전기 아키텍처를 지원하기 위한 핵심 장비 및 공정 기술이다."
+        "rationale": "애틱스는 알루미늄 케이블용 고전압 커넥터 및 배선 하네스 제조 자동화 (로봇 클램핑) 관련 특허를 보유하고 있다. 전기차 고전압 시스템의 신뢰성 확보와 생산 효율화를 위한 장비 및 소재 기술로 주목된다."
       },
       {
         "tech_id": "T05",
         "name": "차량 통신 게이트웨이 및 네트워크",
         "category": "Architecture",
-        "estimated_trl": 5,
-        "patent_score": 74.1,
+        "estimated_trl": 6,
+        "patent_score": 81.7,
         "patent_signals": {
-          "peer_momentum": 78,
-          "citation_impact": 68,
-          "strategic_gap_opportunity": 80,
-          "cross_actor_recurrence": 70,
-          "roadmap_relevance": 88
+          "peer_momentum": 82,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
         },
         "dependency_hints": [
           "T03"
@@ -180,54 +180,55 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "콘티넨탈과 덴소는 차량 내 게이트웨이 시스템 및 네트워크 제어 기술에 특허를 집중하고 있다. 분산된 차assis 제어기를 통합하고 외부 통신을 처리하는 차세대 아키텍처의 핵심 요소다."
+        "rationale": "콘티넨탈과 덴소는 차량 내 게이트웨이 시스템 및 네트워크 제어에 대한 특허를 활발히 출원하고 있다. 차assis 제어와 ADAS 데이터의 실시간 연동을 위한 핵심 아키텍처 기술로 HL 만도의 HW/SW 통합 스택 선점에 필수적이다."
       },
       {
         "tech_id": "T06",
-        "name": "자율주행 센서 자동 보정",
-        "category": "Process",
-        "estimated_trl": 4,
-        "patent_score": 71.5,
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "category": "Equipment",
+        "estimated_trl": 5,
+        "patent_score": 76.8,
         "patent_signals": {
-          "peer_momentum": 75,
-          "citation_impact": 62,
-          "strategic_gap_opportunity": 85,
+          "peer_momentum": 78,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
           "cross_actor_recurrence": 65,
-          "roadmap_relevance": 82
+          "roadmap_relevance": 85
         },
         "dependency_hints": [],
         "source_companies": [
-          "Continental"
+          "Bosch"
         ],
         "evidence_patents": [
           {
-            "company": "Continental",
-            "title": "Self-calibration method and device of roadside sensor, electronic equipment and storage medium",
-            "date": "2025-12-19",
+            "company": "Bosch",
+            "title": "RADAR SYSTEM WITH ENHANCED PROCESSING FOR INCREASED CONTRAST RATIO, IMPROVED ANGULAR SEPARABILITY AND ACCURACY, AND ELIMINATION OF GHOST TARGETS IN A SINGLE-SNAPSHOT",
+            "date": "2025-12-15",
             "cited_by": 0
           }
         ],
         "data_quality": "real",
-        "rationale": "콘티넨탈은 도로변 센서 및 차량 센서의 자동 보정 기술에 특허를 출원하고 있다. 자율주행 시스템의 신뢰성을 높이기 위한 필수적인 유지보수 및 초기화 프로세스 기술이다."
+        "rationale": "보쉬는 단일 스냅샷에서 고스트 타겟을 제거하고 각도 분해능을 향상시키는 레이더 신호 처리 기술을 개발 중이다. 이는 차assis 제어의 정밀도를 높이는 센서 장비 기술로, HL 만도의 센서 퓨전 알고리즘 개발에 참고할 가치가 있다."
       },
       {
         "tech_id": "T07",
-        "name": "배터리 관리 및 충전 제어",
+        "name": "배터리 관리 시스템 (BMS) 및 충전 제어",
         "category": "Equipment",
         "estimated_trl": 6,
-        "patent_score": 70.2,
+        "patent_score": 83.2,
         "patent_signals": {
-          "peer_momentum": 72,
-          "citation_impact": 60,
-          "strategic_gap_opportunity": 75,
-          "cross_actor_recurrence": 68,
-          "roadmap_relevance": 80
+          "peer_momentum": 85,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
         },
         "dependency_hints": [
           "T03"
         ],
         "source_companies": [
-          "Denso"
+          "Denso",
+          "ZF Friedrichshafen"
         ],
         "evidence_patents": [
           {
@@ -235,29 +236,7 @@
             "title": "POWER SUPPLY SYSTEM, CONTROL APPARATUS, AND CONTROL PROGRAM",
             "date": "2026-01-14",
             "cited_by": 0
-          }
-        ],
-        "data_quality": "real",
-        "rationale": "덴소는 전원 공급 시스템 및 배터리 제어 프로그램에 특허를 출원하고 있다. 전기차 구동계와 연동하여 에너지 효율을 극대화하는 장비 및 제어 기술이다."
-      },
-      {
-        "tech_id": "T08",
-        "name": "차량 안전 테스트 및 검증",
-        "category": "Process",
-        "estimated_trl": 5,
-        "patent_score": 68.9,
-        "patent_signals": {
-          "peer_momentum": 70,
-          "citation_impact": 58,
-          "strategic_gap_opportunity": 72,
-          "cross_actor_recurrence": 60,
-          "roadmap_relevance": 78
-        },
-        "dependency_hints": [],
-        "source_companies": [
-          "ZF Friedrichshafen"
-        ],
-        "evidence_patents": [
+          },
           {
             "company": "ZF Friedrichshafen",
             "title": "TEST FIELD WITH SAFE ACTIVATION OF A DC VOLTAGE CONNECTION",
@@ -266,7 +245,37 @@
           }
         ],
         "data_quality": "real",
-        "rationale": "ZF 는 고전압 연결의 안전한 활성화 테스트 필드 기술에 특허를 출원하고 있다. 자율주행 및 전기차 시스템의 개발 및 검증 단계에서 필수적인 안전 프로세스 기술이다."
+        "rationale": "덴소와 ZF 는 전원 공급 시스템 제어 및 DC 전압 연결의 안전한 활성화 테스트 필드 관련 특허를 보유하고 있다. 전기차 구동계 제어와 연동된 배터리 관리 및 충전 안전 기술은 HL 만도의 차assis 제어 범위를 확장하는 데 중요하다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "차량 제어 시스템의 중복성 및 안전성",
+        "category": "Architecture",
+        "estimated_trl": 5,
+        "patent_score": 78.5,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "ZF Friedrichshafen"
+        ],
+        "evidence_patents": [
+          {
+            "company": "ZF Friedrichshafen",
+            "title": "USE OF THE VEHICLE INFOTAINMENT SYSTEM AS A REDUNDANT CONTROL SYSTEM",
+            "date": "2025-10-15",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "ZF 는 인포테인먼트 시스템을 중복 제어 시스템으로 활용하는 특허를 출원하여, 자율주행 시나리오에서의 시스템 안전성 및 중복성 확보를 위한 새로운 아키텍처를 제시하고 있다. HL 만도의 차assis 제어 시스템 신뢰성 향상에 참고할 수 있다."
       }
     ],
     "market_analysis": [
@@ -284,33 +293,35 @@
           "tam_usd_b": 12.5,
           "sam_usd_b": 4.2,
           "som_usd_b": 0.8,
-          "basis": "Drive-by-Wire 시장이 2031 년까지 급성장할 것으로 예상되며, 스티어바이와이어는 자율주행 레벨 3 이상 차량의 필수 구성 요소로 부상하고 있음."
+          "basis": "2025 년 중국 및 글로벌 브랜드 모델 탑재 시작 예상, 2030 년까지 스마트 스티어링 시장 급성장 전망"
         },
         "cagr_forecast": {
           "cagr_pct": 24.5,
-          "forecast_period": "2026-2030",
-          "basis": "Mordor Intelligence 및 GMI 리포트에 따르면 Drive-by-Wire 시장 CAGR 은 20% 이상이며, 스티어바이와이어는 그 중 가장 빠른 성장률을 보임."
+          "forecast_period": "2025-2030",
+          "basis": "ResearchAndMarkets 및 MarketResearchFuture 보고서에 따른 스티어바이와이어 시장 CAGR 20% 이상 성장"
         },
         "key_market_reports": [
           {
-            "title": "Automotive Steer-by-Wire System Market Report (2026)",
-            "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
-            "use": "TAM 및 시장 성장 동력 근거"
+            "title": "Global and China Passenger Car Intelligent Steering Industry Research Report 2024",
+            "url": "https://www.businesswire.com/news/home/20241129330923/en/Global-and-China-Passenger-Car-Intelligent-Steering-Industry-Research-Report-2024-Steer-by-Wire-is-Expected-to-Land-on-Independent-Brand-Models-in-2025-This-Technology-will-Disrupt-Cockpit-Design---ResearchAndMarkets.com",
+            "use": "TAM/CAGR/competition evidence"
           },
           {
-            "title": "Drive-by-Wire Market Size, Share & 2031 Growth Trends Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/drive-by-wire-market",
-            "use": "CAGR 및 기술 채택 시기 예측"
+            "title": "Automotive Steer-by-Wire System Market Size, Share, Growth to 2035",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-steer-by-wire-system-market-6389",
+            "use": "CAGR forecast and market timing"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Bosch"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2027 Q3",
+        "expected_market_boom_quarter": "2027 Q2",
         "competitive_landscape": "Concentrated – 3~5 key players",
         "data_quality": "real",
-        "rationale": "자율주행 레벨 3 이상 상용화 시점인 2027 년경에 스티어바이와이어 시장이 급격히 확대될 것으로 예상되며, 보쉬 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 다중 모드 제어 기술을 통해 안전성과 제어 정밀도에서 차별화된 경쟁 우위를 확보할 수 있음."
+        "rationale": "보쉬와의 높은 유사성 (0.92) 은 스티어바이와이어 시장이 보쉬, 만도 등 주요 플레이어 중심의 집중화 구도임을 시사하며, 2025 년 상용화 시작으로 2027 년경 본격적인 시장 폭발이 예상됩니다. CAGR 24.5% 의 높은 성장률과 안전 규제 강화로 인해 시장 진입 시기가 매우 중요합니다."
       },
       {
         "tech_id": "T02",
@@ -319,40 +330,45 @@
         "market_signals": {
           "tam_growth_rate": 75,
           "time_to_market_urgency": 70,
-          "policy_and_investment_tailwind": 80,
+          "policy_and_investment_tailwind": 72,
           "competitive_moat_potential": 65
         },
         "tam_sam_som": {
-          "tam_usd_b": 18.0,
-          "sam_usd_b": 6.5,
-          "som_usd_b": 1.2,
-          "basis": "자동차 HMI 시장이 2030 년까지 180 억 달러 규모로 성장할 것으로 예상되며, 차체 제어 시각화는 ADAS 기능의 사용자 신뢰도 향상을 위한 핵심 요소임."
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "스마트 차assis 시장 성장에 따른 HMI 수요 증가, 2030 년까지 연평균 15% 이상 성장 예상"
         },
         "cagr_forecast": {
           "cagr_pct": 16.8,
-          "forecast_period": "2026-2030",
-          "basis": "ADAS 시장 성장률 (25.3% CAGR) 과 연동하여 HMI 시장도 고성장할 것으로 예상되며, 특히 차체 제어 시각화는 차세대 인포테인먼트의 필수 기능으로 부상 중."
+          "forecast_period": "2025-2030",
+          "basis": "Dataintelo 및 InsightAce 보고서에 따른 스마트 차assis 및 HMI 시장 성장률"
         },
         "key_market_reports": [
           {
-            "title": "Automotive Human Machine Interface Market Size & Share Analysis",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-human-machine-interface-market",
-            "use": "HMI 시장 규모 및 성장률 근거"
+            "title": "Smart Chassis Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-smart-chassis-market",
+            "use": "CAGR forecast and market timing"
           },
           {
-            "title": "ADAS Market Growth Outlook to 2031: 25.3% CAGR Surge",
-            "url": "https://www.knowledge-sourcing.com/report/advanced-driver-assistance-system-adas-market",
-            "use": "ADAS 시장 성장과 HMI 연동성 분석"
+            "title": "Automotive HMI Market Size, Scope and Trends 2026 to 2035",
+            "url": "https://www.insightaceanalytic.com/report/automotive-hmi-market-/1930",
+            "use": "HMI specific market size and trends"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Bosch",
+            "ZF Friedrichshafen",
+            "Denso",
+            "Continental"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2028 Q2",
+        "expected_market_boom_quarter": "2028 Q3",
         "competitive_landscape": "Fragmented – many players, low differentiation",
         "data_quality": "real",
-        "rationale": "HMI 시장은 다양한 소프트웨어 및 하드웨어 벤더들이 참여하는 분산된 구조이나, 차체 제어 시각화라는 특정 도메인에서는 HL Mando 의 특허 기반 기술이 차별화 포인트가 될 수 있음. 2028 년경 자율주행 차량의 사용자 인터페이스 표준화가 본격화되면서 시장이 급성장할 것으로 예상됨."
+        "rationale": "차assis 제어 시각화는 보쉬, ZF, 덴소 등 다양한 플레이어들이 참여하는 분산된 시장으로, 차별화된 HMI 솔루션이 경쟁력의 핵심입니다. 2028 년경 자율주행 레벨 3 이상 차량의 대량 보급과 함께 시장이 본격화될 것으로 예상됩니다."
       },
       {
         "tech_id": "T03",
@@ -361,333 +377,336 @@
         "market_signals": {
           "tam_growth_rate": 88,
           "time_to_market_urgency": 80,
-          "policy_and_investment_tailwind": 85,
-          "competitive_moat_potential": 72
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 75
         },
         "tam_sam_som": {
-          "tam_usd_b": 25.0,
-          "sam_usd_b": 8.5,
-          "som_usd_b": 1.5,
-          "basis": "전기 구동계 통합 시장은 EV 보급 확대와 ADAS 통합 트렌드로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상됨."
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "전기차 구동계 통합 제어 시장, 2030 년까지 연평균 20% 이상 성장 예상"
         },
         "cagr_forecast": {
-          "cagr_pct": 19.2,
-          "forecast_period": "2026-2030",
-          "basis": "전기 구동계 통합 시스템 시장은 EV 시장 성장률 (약 20% CAGR) 과 유사한 속도로 성장하며, ZF 및 덴소 등 주요 플레이어들의 기술 선점이 가속화되고 있음."
+          "cagr_pct": 21.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 및 Markntel Advisors 보고서에 따른 전기차 구동계 통합 제어 시장 성장률"
         },
         "key_market_reports": [
           {
-            "title": "Electric Drives Market - Size, Analysis, Industry Growth & Trends",
-            "url": "https://www.mordorintelligence.com/industry-reports/electric-drives-market",
-            "use": "전기 구동계 시장 규모 및 성장 동력 근거"
+            "title": "Intelligent Chassis System Market, Global Market Analysis Report",
+            "url": "https://www.factmr.com/report/intelligent-chassis-system-market",
+            "use": "CAGR forecast and market timing"
           },
           {
-            "title": "Integrated Drive System Market Share Report, Trends and Outlook 2035",
-            "url": "https://www.marketresearchfuture.com/reports/integrated-drive-system-market-33970",
-            "use": "통합 구동계 시장 경쟁 구도 분석"
+            "title": "Electric Power Steering Market Share, Size & Growth Report 2030",
+            "url": "https://www.marknteladvisors.com/research-library/electric-power-steering-market.html",
+            "use": "Competitive landscape and market size"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Denso"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2027 Q1",
+        "expected_market_boom_quarter": "2029 Q1",
         "competitive_landscape": "Concentrated – 3~5 key players",
         "data_quality": "real",
-        "rationale": "전기 구동계 통합 제어는 EV 시장 성장과 ADAS 통합 트렌드로 인해 2027 년경부터 본격적인 시장 확대가 예상되며, ZF 및 덴소 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 통합 제어 알고리즘을 통해 에너지 효율성과 제어 정밀도에서 차별화된 경쟁 우위를 확보할 수 있음."
+        "rationale": "ZF 와 덴소와의 높은 유사성 (0.85) 은 구동계 통합 제어 시장이 ZF, 덴소, 만도 등 주요 플레이어 중심의 집중화 구도임을 시사하며, 2029 년경 전기차 플랫폼 통합 트렌드와 함께 시장이 본격화될 것으로 예상됩니다. CAGR 21.5% 의 높은 성장률과 전기차 보급 확대로 인해 시장 진입 시기가 매우 중요합니다."
       },
       {
         "tech_id": "T04",
         "name": "고전압 커넥터 및 배선 자동화",
         "market_score": 71.8,
         "market_signals": {
-          "tam_growth_rate": 70,
+          "tam_growth_rate": 78,
           "time_to_market_urgency": 65,
-          "policy_and_investment_tailwind": 75,
+          "policy_and_investment_tailwind": 70,
           "competitive_moat_potential": 60
         },
         "tam_sam_som": {
-          "tam_usd_b": 8.8,
-          "sam_usd_b": 3.0,
-          "som_usd_b": 0.6,
-          "basis": "EV 커넥터 시장은 2032 년까지 88 억 달러 규모로 성장할 것으로 예상되며, 고전압 커넥터 및 배선 자동화는 EV 생산 효율성 향상을 위한 핵심 기술임."
+          "tam_usd_b": 10.5,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.7,
+          "basis": "전기차 고전압 커넥터 및 배선 시스템 시장, 2030 년까지 연평균 18% 이상 성장 예상"
         },
         "cagr_forecast": {
-          "cagr_pct": 14.5,
-          "forecast_period": "2026-2030",
-          "basis": "EV 커넥터 시장은 EV 생산량 증가에 따라 연평균 14.5% 성장할 것으로 예상되며, 자동화 기술은 생산 비용 절감과 품질 향상을 위한 필수 요소로 부상 중."
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "Fortune Business Insights 및 MarketsandMarkets 보고서에 따른 고전압 커넥터 시장 성장률"
         },
         "key_market_reports": [
           {
-            "title": "EV Connector Market Report 2025- 2032 [305 Pages & 307 Tables]",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
-            "use": "EV 커넥터 시장 규모 및 성장률 근거"
+            "title": "Automotive High Voltage Wiring and Connector System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-high-voltage-wiring-and-connector-system-market-115285",
+            "use": "TAM/CAGR/competition evidence"
           },
           {
-            "title": "EV Connector Market worth $8.80 billion by 2032 - MarketsandMarkets",
-            "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
-            "use": "시장 규모 및 성장 동력 분석"
+            "title": "EV Connector Market Report 2025- 2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
+            "use": "CAGR forecast and market timing"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Denso",
+            "Aptiv"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2029 Q1",
+        "expected_market_boom_quarter": "2026 Q4",
         "competitive_landscape": "Fragmented – many players, low differentiation",
         "data_quality": "real",
-        "rationale": "고전압 커넥터 및 배선 자동화 시장은 EV 생산량 증가에 따라 2029 년경부터 본격적인 시장 확대가 예상되며, Aptiv 및 덴소 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 자동화 기술을 통해 생산 효율성과 품질 향상을 위한 차별화된 경쟁 우위를 확보할 수 있음."
+        "rationale": "애틱스와 덴소와의 유사성 (0.65) 은 고전압 커넥터 및 배선 자동화 시장이 다양한 플레이어들이 참여하는 분산된 시장임을 시사하며, 2026 년경 전기차 생산량 급증과 함께 시장이 본격화될 것으로 예상됩니다. CAGR 18.2% 의 성장률과 전기차 보급 확대로 인해 시장 진입 시기가 중요합니다."
       },
       {
         "tech_id": "T05",
         "name": "차량 통신 게이트웨이 및 네트워크",
-        "market_score": 76.2,
+        "market_score": 76.5,
         "market_signals": {
-          "tam_growth_rate": 92.0,
-          "time_to_market_urgency": 78.3,
-          "policy_and_investment_tailwind": 62.4,
-          "competitive_moat_potential": 74.8
+          "tam_growth_rate": 75,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
         },
         "tam_sam_som": {
-          "tam_usd_b": 31.0,
-          "sam_usd_b": 9.3,
-          "som_usd_b": 1.55,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전 세계 차량 통신 기술 시장이 2030 년까지 125 억 달러 규모로 성장할 것으로 예상되며, HL 만도의 핵심 고객사 (OEM) 를 중심으로 한 서비스 가능 시장 (SAM) 은 약 42 억 달러로 추정됨."
         },
         "cagr_forecast": {
-          "cagr_pct": 26.0,
+          "cagr_pct": 14.2,
           "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+          "basis": "ADAS 및 자율주행 컴포넌트 시장 성장에 따라 차량 네트워크 아키텍처 수요가 연평균 14% 이상 증가할 것으로 분석됨."
         },
         "key_market_reports": [
           {
-            "title": "Europe Automotive Infotainment Systems Market Size, Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/europe-automotive-infotainment-market",
-            "use": "fallback market evidence"
+            "title": "Automotive Communication Technology Market Size Revenue Report",
+            "url": "https://www.snsinsider.com/reports/automotive-communication-technology-market-1026",
+            "use": "TAM 및 시장 성장률 근거"
           },
           {
-            "title": "Automotive Integrated Circuits (ICs) Market Size, Trends & Global Report 2031",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-integrated-circuits-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Field-Programmable Gate Array (FPGA) Market Size, Share & Trends",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/fpga-market-194123367.html",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Automotive Diagnostic Tools Market Size, Trends & Growth Drivers, 2031",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-diagnostic-tools-market",
-            "use": "fallback market evidence"
+            "title": "Global ADAS & Autonomous Driving Components Market (2025-30)",
+            "url": "https://www.marknteladvisors.com/research-library/global-adas-autonomous-driving-components-market.html",
+            "use": "CAGR 및 성장 동력 분석"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Denso",
+            "Continental"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2028 Q1",
+        "expected_market_boom_quarter": "2027 Q2",
         "competitive_landscape": "Concentrated – 3~5 key players",
-        "data_quality": "estimated",
-        "rationale": "시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)"
+        "data_quality": "real",
+        "rationale": "콘티넨탈과 덴소와의 높은 유사성으로 인해 게이트웨이 아키텍처 시장 진입이 시급하며, 2027 년경 중앙집중형 아키텍처 전환이 본격화될 것으로 예상됨. 시장 규모는 충분히 크나 경쟁이 치열하여 차별화된 통합 솔루션이 필요함."
       },
       {
         "tech_id": "T06",
-        "name": "자율주행 센서 자동 보정",
-        "market_score": 78.5,
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "market_score": 82.3,
         "market_signals": {
-          "tam_growth_rate": 92.0,
-          "time_to_market_urgency": 78.4,
-          "policy_and_investment_tailwind": 71.3,
-          "competitive_moat_potential": 74.9
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
         },
         "tam_sam_som": {
-          "tam_usd_b": 27.62,
-          "sam_usd_b": 8.29,
-          "som_usd_b": 1.38,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.2,
+          "basis": "고성능 레이더 및 신호 처리 기술 시장은 2030 년까지 180 억 달러 규모로 성장할 것으로 보이며, 보쉬 등 주요 경쟁사의 기술 선점을 고려한 SAM 은 65 억 달러 수준."
         },
         "cagr_forecast": {
-          "cagr_pct": 26.0,
+          "cagr_pct": 21.5,
           "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+          "basis": "고해상도 레이더 및 4D 이미징 레이더의 급속한 채택으로 인해 신호 처리 알고리즘 시장이 연평균 20% 이상 성장할 것으로 예상됨."
         },
         "key_market_reports": [
           {
-            "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth Trends Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
-            "use": "fallback market evidence"
+            "title": "Advanced Signal Processing and Modeling Techniques for Automotive Radar",
+            "url": "https://www.techscience.com/CMES/v144n1/63302/html",
+            "use": "기술적 난이도 및 시장 니즈 분석"
           },
           {
-            "title": "Passenger Vehicle ADAS Market Size to Hit USD 179.72 Bn by 2035",
-            "url": "https://www.precedenceresearch.com/passenger-vehicle-adas-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Global Automotive ADAS Market Booms at 27% CAGR -- Driven by AI, Safety Regulations, and Autonomous Vehicle Growth | Valuates Reports",
-            "url": "https://www.prnewswire.com/news-releases/global-automotive-adas-market-booms-at-27-cagr--driven-by-ai-safety-regulations-and-autonomous-vehicle-growth--valuates-reports-302610215.html",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
-            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
-            "use": "fallback market evidence"
+            "title": "ADAS Market Share & Growth Forecast | 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/adas-market-51969076.html",
+            "use": "CAGR 및 시장 규모 추정"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Bosch"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2028 Q1",
+        "expected_market_boom_quarter": "2026 Q4",
         "competitive_landscape": "Concentrated – 3~5 key players",
-        "data_quality": "estimated",
-        "rationale": "시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)"
+        "data_quality": "real",
+        "rationale": "보쉬와의 높은 기술 유사성 (0.92) 은 레이더 신호 처리 분야에서 치열한 경쟁을 시사하며, 고스트 타겟 제거 기술은 L3 이상 자율주행 상용화의 핵심 병목으로 2026 년 말부터 수요가 급증할 것임. 알고리즘 기반의 높은 진입 장벽이 경쟁 우위를 확보할 수 있는 기회."
       },
       {
         "tech_id": "T07",
-        "name": "배터리 관리 및 충전 제어",
-        "market_score": 74.3,
+        "name": "배터리 관리 시스템 (BMS) 및 충전 제어",
+        "market_score": 79.8,
         "market_signals": {
-          "tam_growth_rate": 89.7,
-          "time_to_market_urgency": 74.1,
-          "policy_and_investment_tailwind": 69.4,
-          "competitive_moat_potential": 67.1
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 70
         },
         "tam_sam_som": {
-          "tam_usd_b": 26.1,
-          "sam_usd_b": 7.83,
-          "som_usd_b": 1.31,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 7.8,
+          "som_usd_b": 1.5,
+          "basis": "전기차 보급 확대에 따라 BMS 시장이 2030 년 220 억 달러 규모로 성장할 것으로 예상되며, 덴소와 ZF 의 기술 동향을 반영한 SAM 은 78 억 달러로 추정."
         },
         "cagr_forecast": {
-          "cagr_pct": 26.0,
+          "cagr_pct": 19.8,
           "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+          "basis": "전기차 충전 인프라 확충 및 고전압 배터리 시스템 도입으로 BMS 시장이 연평균 19% 이상의 높은 성장률을 기록할 것으로 분석됨."
         },
         "key_market_reports": [
+          {
+            "title": "Battery Management System Control Unit Platforms Market Sees",
+            "url": "https://www.openpr.com/news/4509692/battery-management-system-control-unit-platforms-market-sees",
+            "use": "TAM 및 시장 성장 근거"
+          },
           {
             "title": "Automotive Battery Management System Market Report 2025",
             "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-battery-management-system-market-15321159.html",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Electric Vehicle Battery Management System Market Size [2034]",
-            "url": "https://www.fortunebusinessinsights.com/electric-vehicle-battery-management-system-market-113890",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "ADAS Market Poised for Remarkable Growth - Market to Surge to $106.55 Billion by 2030 - ResearchAndMarkets.com",
-            "url": "https://www.businesswire.com/news/home/20240116894788/en/ADAS-Market-Poised-for-Remarkable-Growth---Market-to-Surge-to-%24106.55-Billion-by-2030---ResearchAndMarkets.com",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Vehicle Control Unit Market Size to Attain USD 96.36 Bn by 2035",
-            "url": "https://www.precedenceresearch.com/vehicle-control-unit-market",
-            "use": "fallback market evidence"
+            "use": "CAGR 및 경쟁 구도 분석"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Denso"
+          ],
           "shared_technology_areas": []
         },
         "expected_market_boom_quarter": "2028 Q1",
         "competitive_landscape": "Concentrated – 3~5 key players",
-        "data_quality": "estimated",
-        "rationale": "시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)"
+        "data_quality": "real",
+        "rationale": "ZF 와 덴소와의 기술 유사성은 BMS 및 충전 제어 분야에서 강력한 경쟁 구도를 형성하고 있으나, 전기차 정책 지원과 충전 인프라 확대로 시장 성장은 매우 확실함. 2028 년경 고전압 플랫폼 전환이 본격화되며 시장이 폭발할 것으로 예상."
       },
       {
         "tech_id": "T08",
-        "name": "차량 안전 테스트 및 검증",
-        "market_score": 76.7,
+        "name": "차량 제어 시스템의 중복성 및 안전성",
+        "market_score": 85.2,
         "market_signals": {
-          "tam_growth_rate": 92.0,
-          "time_to_market_urgency": 78.5,
-          "policy_and_investment_tailwind": 78.9,
-          "competitive_moat_potential": 60.0
+          "tam_growth_rate": 82,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
         },
         "tam_sam_som": {
-          "tam_usd_b": 31.0,
-          "sam_usd_b": 9.3,
-          "som_usd_b": 1.55,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+          "tam_usd_b": 15.5,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.0,
+          "basis": "자율주행 안전성 규제 강화로 중복성 제어 시스템 시장이 2030 년 155 억 달러 규모로 성장할 것으로 예상되며, ZF 의 기술 동향을 반영한 SAM 은 55 억 달러."
         },
         "cagr_forecast": {
-          "cagr_pct": 26.0,
+          "cagr_pct": 23.5,
           "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+          "basis": "L3/L4 자율주행 상용화 및 ISO 26262 기능안전 규제 강화로 인해 중복성 아키텍처 수요가 연평균 23% 이상 급증할 것으로 분석됨."
         },
         "key_market_reports": [
           {
-            "title": "Autonomous Vehicle Simulation Solutions Research Report 2025",
-            "url": "https://www.globenewswire.com/news-release/2025/10/29/3176417/28124/en/autonomous-vehicle-simulation-solutions-research-report-2025-market-size-market-share-applications-regional-outlook-growth-trends-key-players-competitive-strategies-and-forecasts-2.html",
-            "use": "fallback market evidence"
+            "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth",
+            "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
+            "use": "시장 성장 및 규제 동향 분석"
           },
           {
-            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
-            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Autonomous Vehicle Simulation Solutions Market Analysis and Forecast, 2025-2035 | Cloud-Based Platforms Reduce Costs in Autonomous Vehicle Testing - ResearchAndMarkets.com",
-            "url": "https://www.businesswire.com/news/home/20250501192822/en/Autonomous-Vehicle-Simulation-Solutions-Market-Analysis-and-Forecast-2025-2035-Cloud-Based-Platforms-Reduce-Costs-in-Autonomous-Vehicle-Testing---ResearchAndMarkets.com",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Autonomous Vehicle Market Size, Share & 2030 Growth Trends Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/autonomous-vehicle-market",
-            "use": "fallback market evidence"
+            "title": "Electronic Stability Control System Market Size, Share",
+            "url": "https://www.skyquestt.com/report/electronic-stability-control-system-market",
+            "use": "경쟁 구도 및 안전성 기술 수요"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "ZF Friedrichshafen"
+          ],
           "shared_technology_areas": []
         },
-        "expected_market_boom_quarter": "2028 Q1",
-        "competitive_landscape": "Concentrated – 3~5 key players",
-        "data_quality": "estimated",
-        "rationale": "시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)"
+        "expected_market_boom_quarter": "2029 Q2",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "ZF 와의 높은 유사성 (0.85) 은 중복성 아키텍처 분야에서 기술 경쟁이 치열할 것임을 시사하며, L3 이상 자율주행 상용화 시점인 2029 년경에 시장이 본격화될 것으로 예상됨. 안전성 규제가 강화되면서 진입 장벽이 높고 독점적 기술 확보가 가능한 영역."
       }
     ],
     "patent_maps": {
-      "actor_similarity_map": {
-        "center_actor": "HL Mando",
-        "edges": [
-          {
-            "source": "HL Mando",
-            "target": "Bosch",
-            "similarity": 0.92,
-            "edge_weight": 0.92,
-            "reason": "스티어바이와이어 및 차assis 제어 아키텍처에서 높은 기술적 유사성과 경쟁 관계"
-          },
-          {
-            "source": "HL Mando",
-            "target": "ZF Friedrichshafen",
-            "similarity": 0.85,
-            "edge_weight": 0.85,
-            "reason": "구동계 통합 제어 및 차assis 시스템의 광범위한 특허 포트폴리오 공유"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Continental",
-            "similarity": 0.78,
-            "edge_weight": 0.78,
-            "reason": "자율주행 센서 보정 및 차량 통신 게이트웨이 기술에서의 교차"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Denso",
-            "similarity": 0.75,
-            "edge_weight": 0.75,
-            "reason": "전기 구동계 제어 및 차량 네트워크 시스템에서의 기술적 겹침"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Aptiv",
-            "similarity": 0.65,
-            "edge_weight": 0.65,
-            "reason": "고전압 커넥터 및 배선 하네스 자동화 등 장비 및 공정 기술에서의 부분적 유사성"
-          }
-        ]
-      }
+      "actor_similarity_map": [
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Steer-by-wire",
+            "ADAS",
+            "Chassis Control",
+            "Safety"
+          ],
+          "rationale": "보쉬는 스티어바이와이어 및 ADAS 제어 분야에서 HL 만도와 가장 유사한 기술 포트폴리오를 보유하고 있으며, 최근 특허 출원 동향도 매우 유사하다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Drive Train",
+            "Chassis Control",
+            "Redundancy",
+            "Electric Vehicle"
+          ],
+          "rationale": "ZF 는 구동계 제어 및 중복성 아키텍처 분야에서 HL 만도의 기술 확장 방향과 높은 유사성을 보인다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Denso",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Vehicle Control",
+            "Network",
+            "Power Supply",
+            "Chassis"
+          ],
+          "rationale": "덴소는 차량 제어 네트워크 및 전원 공급 시스템 분야에서 HL 만도의 기술 포트폴리오와 중첩되는 부분이 많다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Aptiv",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_keywords": [
+            "High Voltage",
+            "Connector",
+            "Wire Harness",
+            "Equipment"
+          ],
+          "rationale": "애틱스는 고전압 커넥터 및 배선 하네스 장비 분야에서 HL 만도의 차assis 제어 시스템 구현에 필요한 하드웨어 기술과 유사성을 보인다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Continental",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "Gateway",
+            "Communication",
+            "Chassis Control",
+            "Architecture"
+          ],
+          "rationale": "콘티넨탈은 차량 게이트웨이 및 통신 제어 분야에서 HL 만도의 아키텍처 기술과 높은 유사성을 공유한다."
+        }
+      ]
     }
   },
   "output": {
@@ -699,7 +718,7 @@
         "trl": 6,
         "patent_score": 88.5,
         "market_score": 88.5,
-        "actor_map_score": 0.0,
+        "actor_map_score": 82.8,
         "actor_map_score_usage": "diagnostic_only",
         "final_score": 88.5,
         "scoring_weights": {
@@ -707,9 +726,9 @@
           "market_score": 0.55,
           "actor_map_score": 0.0
         },
-        "expected_market_boom_quarter": "2027 Q3",
+        "expected_market_boom_quarter": "2027 Q2",
         "dependency_hints": [],
-        "rationale": "[Patent] 보쉬의 최근 특허는 ADAS 환경에서 스티어바이와이어의 다중 모드 제어 및 양방향 제어기 진단에 집중하고 있다. HL 만도가 스티어바이와이어 리더십을 강화하기 위해 이러한 고도화된 제어 아키텍처를 선점해야 할 전략적 기회다. [Market] 자율주행 레벨 3 이상 상용화 시점인 2027 년경에 스티어바이와이어 시장이 급격히 확대될 것으로 예상되며, 보쉬 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 다중 모드 제어 기술을 통해 안전성과 제어 정밀도에서 차별화된 경쟁 우위를 확보할 수 있음.",
+        "rationale": "[Patent] 보쉬의 최근 특허는 ADAS 환경에서 스티어바이와이어의 다중 모드 제어 및 양방향 제어기 진단에 집중하고 있다. HL 만도가 스티어바이와이어 리더십을 강화하기 위해 이러한 고급 제어 아키텍처를 선점해야 할 전략적 기회로 판단된다. [Market] 보쉬와의 높은 유사성 (0.92) 은 스티어바이와이어 시장이 보쉬, 만도 등 주요 플레이어 중심의 집중화 구도임을 시사하며, 2025 년 상용화 시작으로 2027 년경 본격적인 시장 폭발이 예상됩니다. CAGR 24.5% 의 높은 성장률과 안전 규제 강화로 인해 시장 진입 시기가 매우 중요합니다.",
         "market_signals": {
           "tam_growth_rate": 92,
           "time_to_market_urgency": 95,
@@ -720,29 +739,40 @@
           "tam_usd_b": 12.5,
           "sam_usd_b": 4.2,
           "som_usd_b": 0.8,
-          "basis": "Drive-by-Wire 시장이 2031 년까지 급성장할 것으로 예상되며, 스티어바이와이어는 자율주행 레벨 3 이상 차량의 필수 구성 요소로 부상하고 있음."
+          "basis": "2025 년 중국 및 글로벌 브랜드 모델 탑재 시작 예상, 2030 년까지 스마트 스티어링 시장 급성장 전망"
         },
         "cagr_forecast": {
           "cagr_pct": 24.5,
-          "forecast_period": "2026-2030",
-          "basis": "Mordor Intelligence 및 GMI 리포트에 따르면 Drive-by-Wire 시장 CAGR 은 20% 이상이며, 스티어바이와이어는 그 중 가장 빠른 성장률을 보임."
+          "forecast_period": "2025-2030",
+          "basis": "ResearchAndMarkets 및 MarketResearchFuture 보고서에 따른 스티어바이와이어 시장 CAGR 20% 이상 성장"
         },
         "key_market_reports": [
           {
-            "title": "Automotive Steer-by-Wire System Market Report (2026)",
-            "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
-            "use": "TAM 및 시장 성장 동력 근거"
+            "title": "Global and China Passenger Car Intelligent Steering Industry Research Report 2024",
+            "url": "https://www.businesswire.com/news/home/20241129330923/en/Global-and-China-Passenger-Car-Intelligent-Steering-Industry-Research-Report-2024-Steer-by-Wire-is-Expected-to-Land-on-Independent-Brand-Models-in-2025-This-Technology-will-Disrupt-Cockpit-Design---ResearchAndMarkets.com",
+            "use": "TAM/CAGR/competition evidence"
           },
           {
-            "title": "Drive-by-Wire Market Size, Share & 2031 Growth Trends Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/drive-by-wire-market",
-            "use": "CAGR 및 기술 채택 시기 예측"
+            "title": "Automotive Steer-by-Wire System Market Size, Share, Growth to 2035",
+            "url": "https://www.marketresearchfuture.com/reports/automotive-steer-by-wire-system-market-6389",
+            "use": "CAGR forecast and market timing"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Bosch"
+          ],
           "shared_technology_areas": []
         },
+        "actor_map_context": [
+          {
+            "related_actor": "Bosch",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
         "patent_signals": {
           "peer_momentum": 92,
           "citation_impact": 75,
@@ -751,70 +781,320 @@
           "roadmap_relevance": 98
         },
         "selection_score": 88.5,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_mode": "llm_fair_contextual_selector_map_on",
         "selection_rank": 1
       },
       {
         "tech_id": "T03",
         "name": "전기 구동계 통합 제어",
         "category": "Architecture",
-        "trl": 5,
-        "patent_score": 79.8,
+        "trl": 6,
+        "patent_score": 85.1,
         "market_score": 82.4,
-        "actor_map_score": 0.0,
+        "actor_map_score": 73.35,
         "actor_map_score_usage": "diagnostic_only",
-        "final_score": 81.23,
+        "final_score": 83.62,
         "scoring_weights": {
           "patent_score": 0.45,
           "market_score": 0.55,
           "actor_map_score": 0.0
         },
-        "expected_market_boom_quarter": "2027 Q1",
+        "expected_market_boom_quarter": "2029 Q1",
         "dependency_hints": [],
-        "rationale": "[Patent] ZF 와 덴소는 전기차 구동계 (Drive Train) 의 통합 제어 및 슬립 제어 기술에 활발히 특허를 출원하고 있다. HL 만도가 차assis 제어 범위를 구동계까지 확장하여 통합 솔루션을 제공하기 위한 필수 기술이다. [Market] 전기 구동계 통합 제어는 EV 시장 성장과 ADAS 통합 트렌드로 인해 2027 년경부터 본격적인 시장 확대가 예상되며, ZF 및 덴소 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 통합 제어 알고리즘을 통해 에너지 효율성과 제어 정밀도에서 차별화된 경쟁 우위를 확보할 수 있음.",
+        "rationale": "[Patent] ZF 와 덴소는 전기 구동계의 슬립 식별, 토크 제어, 그리고 구동계 통합 운영 제어에 대한 특허를 다수 보유하고 있다. HL 만도가 차assis 제어 범위를 전기차 구동계 통합으로 확장하기 위한 핵심 아키텍처 기술이다. [Market] ZF 와 덴소와의 높은 유사성 (0.85) 은 구동계 통합 제어 시장이 ZF, 덴소, 만도 등 주요 플레이어 중심의 집중화 구도임을 시사하며, 2029 년경 전기차 플랫폼 통합 트렌드와 함께 시장이 본격화될 것으로 예상됩니다. CAGR 21.5% 의 높은 성장률과 전기차 보급 확대로 인해 시장 진입 시기가 매우 중요합니다.",
         "market_signals": {
           "tam_growth_rate": 88,
           "time_to_market_urgency": 80,
-          "policy_and_investment_tailwind": 85,
-          "competitive_moat_potential": 72
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 75
         },
         "tam_sam_som": {
-          "tam_usd_b": 25.0,
-          "sam_usd_b": 8.5,
-          "som_usd_b": 1.5,
-          "basis": "전기 구동계 통합 시장은 EV 보급 확대와 ADAS 통합 트렌드로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상됨."
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.2,
+          "basis": "전기차 구동계 통합 제어 시장, 2030 년까지 연평균 20% 이상 성장 예상"
         },
         "cagr_forecast": {
-          "cagr_pct": 19.2,
-          "forecast_period": "2026-2030",
-          "basis": "전기 구동계 통합 시스템 시장은 EV 시장 성장률 (약 20% CAGR) 과 유사한 속도로 성장하며, ZF 및 덴소 등 주요 플레이어들의 기술 선점이 가속화되고 있음."
+          "cagr_pct": 21.5,
+          "forecast_period": "2025-2030",
+          "basis": "FactMR 및 Markntel Advisors 보고서에 따른 전기차 구동계 통합 제어 시장 성장률"
         },
         "key_market_reports": [
           {
-            "title": "Electric Drives Market - Size, Analysis, Industry Growth & Trends",
-            "url": "https://www.mordorintelligence.com/industry-reports/electric-drives-market",
-            "use": "전기 구동계 시장 규모 및 성장 동력 근거"
+            "title": "Intelligent Chassis System Market, Global Market Analysis Report",
+            "url": "https://www.factmr.com/report/intelligent-chassis-system-market",
+            "use": "CAGR forecast and market timing"
           },
           {
-            "title": "Integrated Drive System Market Share Report, Trends and Outlook 2035",
-            "url": "https://www.marketresearchfuture.com/reports/integrated-drive-system-market-33970",
-            "use": "통합 구동계 시장 경쟁 구도 분석"
+            "title": "Electric Power Steering Market Share, Size & Growth Report 2030",
+            "url": "https://www.marknteladvisors.com/research-library/electric-power-steering-market.html",
+            "use": "Competitive landscape and market size"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Denso"
+          ],
           "shared_technology_areas": []
         },
+        "actor_map_context": [
+          {
+            "related_actor": "ZF Friedrichshafen",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Denso",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
         "patent_signals": {
           "peer_momentum": 88,
-          "citation_impact": 70,
-          "strategic_gap_opportunity": 82,
-          "cross_actor_recurrence": 75,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 85,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 83.75,
+        "selection_mode": "llm_fair_contextual_selector_map_on",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T08",
+        "name": "차량 제어 시스템의 중복성 및 안전성",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 78.5,
+        "market_score": 85.2,
+        "actor_map_score": 76.5,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 82.19,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q2",
+        "dependency_hints": [
+          "T02"
+        ],
+        "rationale": "[Patent] ZF 는 인포테인먼트 시스템을 중복 제어 시스템으로 활용하는 특허를 출원하여, 자율주행 시나리오에서의 시스템 안전성 및 중복성 확보를 위한 새로운 아키텍처를 제시하고 있다. HL 만도의 차assis 제어 시스템 신뢰성 향상에 참고할 수 있다. [Market] ZF 와의 높은 유사성 (0.85) 은 중복성 아키텍처 분야에서 기술 경쟁이 치열할 것임을 시사하며, L3 이상 자율주행 상용화 시점인 2029 년경에 시장이 본격화될 것으로 예상됨. 안전성 규제가 강화되면서 진입 장벽이 높고 독점적 기술 확보가 가능한 영역.",
+        "market_signals": {
+          "tam_growth_rate": 82,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 85
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.5,
+          "sam_usd_b": 5.5,
+          "som_usd_b": 1.0,
+          "basis": "자율주행 안전성 규제 강화로 중복성 제어 시스템 시장이 2030 년 155 억 달러 규모로 성장할 것으로 예상되며, ZF 의 기술 동향을 반영한 SAM 은 55 억 달러."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 23.5,
+          "forecast_period": "2025-2030",
+          "basis": "L3/L4 자율주행 상용화 및 ISO 26262 기능안전 규제 강화로 인해 중복성 아키텍처 수요가 연평균 23% 이상 급증할 것으로 분석됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth",
+            "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
+            "use": "시장 성장 및 규제 동향 분석"
+          },
+          {
+            "title": "Electronic Stability Control System Market Size, Share",
+            "url": "https://www.skyquestt.com/report/electronic-stability-control-system-market",
+            "use": "경쟁 구도 및 안전성 기술 수요"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "ZF Friedrichshafen"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "ZF Friedrichshafen",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 72,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 70,
           "roadmap_relevance": 90
         },
-        "selection_score": 81.11,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
-        "selection_rank": 2
+        "selection_score": 81.87,
+        "selection_mode": "llm_fair_contextual_selector_map_on",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T07",
+        "name": "배터리 관리 시스템 (BMS) 및 충전 제어",
+        "category": "Equipment",
+        "trl": 6,
+        "patent_score": 83.2,
+        "market_score": 79.8,
+        "actor_map_score": 73.35,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 81.33,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T03"
+        ],
+        "rationale": "[Patent] 덴소와 ZF 는 전원 공급 시스템 제어 및 DC 전압 연결의 안전한 활성화 테스트 필드 관련 특허를 보유하고 있다. 전기차 구동계 제어와 연동된 배터리 관리 및 충전 안전 기술은 HL 만도의 차assis 제어 범위를 확장하는 데 중요하다. [Market] ZF 와 덴소와의 기술 유사성은 BMS 및 충전 제어 분야에서 강력한 경쟁 구도를 형성하고 있으나, 전기차 정책 지원과 충전 인프라 확대로 시장 성장은 매우 확실함. 2028 년경 고전압 플랫폼 전환이 본격화되며 시장이 폭발할 것으로 예상.",
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.0,
+          "sam_usd_b": 7.8,
+          "som_usd_b": 1.5,
+          "basis": "전기차 보급 확대에 따라 BMS 시장이 2030 년 220 억 달러 규모로 성장할 것으로 예상되며, 덴소와 ZF 의 기술 동향을 반영한 SAM 은 78 억 달러로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.8,
+          "forecast_period": "2025-2030",
+          "basis": "전기차 충전 인프라 확충 및 고전압 배터리 시스템 도입으로 BMS 시장이 연평균 19% 이상의 높은 성장률을 기록할 것으로 분석됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Management System Control Unit Platforms Market Sees",
+            "url": "https://www.openpr.com/news/4509692/battery-management-system-control-unit-platforms-market-sees",
+            "use": "TAM 및 시장 성장 근거"
+          },
+          {
+            "title": "Automotive Battery Management System Market Report 2025",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-battery-management-system-market-15321159.html",
+            "use": "CAGR 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Denso"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "ZF Friedrichshafen",
+            "similarity": 85.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 76.5
+          },
+          {
+            "related_actor": "Denso",
+            "similarity": 78.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 70.2
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 81.49,
+        "selection_mode": "llm_fair_contextual_selector_map_on",
+        "selection_rank": 4
+      },
+      {
+        "tech_id": "T06",
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "category": "Equipment",
+        "trl": 5,
+        "patent_score": 76.8,
+        "market_score": 82.3,
+        "actor_map_score": 82.8,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 79.83,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] 보쉬는 단일 스냅샷에서 고스트 타겟을 제거하고 각도 분해능을 향상시키는 레이더 신호 처리 기술을 개발 중이다. 이는 차assis 제어의 정밀도를 높이는 센서 장비 기술로, HL 만도의 센서 퓨전 알고리즘 개발에 참고할 가치가 있다. [Market] 보쉬와의 높은 기술 유사성 (0.92) 은 레이더 신호 처리 분야에서 치열한 경쟁을 시사하며, 고스트 타겟 제거 기술은 L3 이상 자율주행 상용화의 핵심 병목으로 2026 년 말부터 수요가 급증할 것임. 알고리즘 기반의 높은 진입 장벽이 경쟁 우위를 확보할 수 있는 기회.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.2,
+          "basis": "고성능 레이더 및 신호 처리 기술 시장은 2030 년까지 180 억 달러 규모로 성장할 것으로 보이며, 보쉬 등 주요 경쟁사의 기술 선점을 고려한 SAM 은 65 억 달러 수준."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.5,
+          "forecast_period": "2025-2030",
+          "basis": "고해상도 레이더 및 4D 이미징 레이더의 급속한 채택으로 인해 신호 처리 알고리즘 시장이 연평균 20% 이상 성장할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Advanced Signal Processing and Modeling Techniques for Automotive Radar",
+            "url": "https://www.techscience.com/CMES/v144n1/63302/html",
+            "use": "기술적 난이도 및 시장 니즈 분석"
+          },
+          {
+            "title": "ADAS Market Share & Growth Forecast | 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/adas-market-51969076.html",
+            "use": "CAGR 및 시장 규모 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Bosch"
+          ],
+          "shared_technology_areas": []
+        },
+        "actor_map_context": [
+          {
+            "related_actor": "Bosch",
+            "similarity": 92.0,
+            "matched_by_actor": true,
+            "matched_shared_technology_areas": [],
+            "score_contribution": 82.8
+          }
+        ],
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 65,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 79.57,
+        "selection_mode": "llm_fair_contextual_selector_map_on",
+        "selection_rank": 5
       },
       {
         "tech_id": "T02",
@@ -831,44 +1111,50 @@
           "market_score": 0.55,
           "actor_map_score": 0.0
         },
-        "expected_market_boom_quarter": "2028 Q2",
+        "expected_market_boom_quarter": "2028 Q3",
         "dependency_hints": [
           "T01"
         ],
-        "rationale": "[Patent] HL 만도는 차assis 작동 시각화 기술에 집중된 특허를 다수 출원하고 있어, 사용자 경험 (UX) 측면에서 강점을 보이고 있다. 이는 스티어바이와이어와 같은 무감각 제어 시스템에서 운전자에게 피드백을 제공하는 핵심 프로세스 기술이다. [Market] HMI 시장은 다양한 소프트웨어 및 하드웨어 벤더들이 참여하는 분산된 구조이나, 차체 제어 시각화라는 특정 도메인에서는 HL Mando 의 특허 기반 기술이 차별화 포인트가 될 수 있음. 2028 년경 자율주행 차량의 사용자 인터페이스 표준화가 본격화되면서 시장이 급성장할 것으로 예상됨.",
+        "rationale": "[Patent] HL 만도는 차assis 제어 상태의 시각화 및 디스플레이 장치 관련 특허를 집중적으로 출원하고 있어, 사용자 경험 (HMI) 측면에서의 기술적 강점을 확보하고 있다. 이는 자율주행 시나리오에서 운전자 신뢰도 확보에 필수적인 프로세스 기술이다. [Market] 차assis 제어 시각화는 보쉬, ZF, 덴소 등 다양한 플레이어들이 참여하는 분산된 시장으로, 차별화된 HMI 솔루션이 경쟁력의 핵심입니다. 2028 년경 자율주행 레벨 3 이상 차량의 대량 보급과 함께 시장이 본격화될 것으로 예상됩니다.",
         "market_signals": {
           "tam_growth_rate": 75,
           "time_to_market_urgency": 70,
-          "policy_and_investment_tailwind": 80,
+          "policy_and_investment_tailwind": 72,
           "competitive_moat_potential": 65
         },
         "tam_sam_som": {
-          "tam_usd_b": 18.0,
-          "sam_usd_b": 6.5,
-          "som_usd_b": 1.2,
-          "basis": "자동차 HMI 시장이 2030 년까지 180 억 달러 규모로 성장할 것으로 예상되며, 차체 제어 시각화는 ADAS 기능의 사용자 신뢰도 향상을 위한 핵심 요소임."
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "스마트 차assis 시장 성장에 따른 HMI 수요 증가, 2030 년까지 연평균 15% 이상 성장 예상"
         },
         "cagr_forecast": {
           "cagr_pct": 16.8,
-          "forecast_period": "2026-2030",
-          "basis": "ADAS 시장 성장률 (25.3% CAGR) 과 연동하여 HMI 시장도 고성장할 것으로 예상되며, 특히 차체 제어 시각화는 차세대 인포테인먼트의 필수 기능으로 부상 중."
+          "forecast_period": "2025-2030",
+          "basis": "Dataintelo 및 InsightAce 보고서에 따른 스마트 차assis 및 HMI 시장 성장률"
         },
         "key_market_reports": [
           {
-            "title": "Automotive Human Machine Interface Market Size & Share Analysis",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-human-machine-interface-market",
-            "use": "HMI 시장 규모 및 성장률 근거"
+            "title": "Smart Chassis Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-smart-chassis-market",
+            "use": "CAGR forecast and market timing"
           },
           {
-            "title": "ADAS Market Growth Outlook to 2031: 25.3% CAGR Surge",
-            "url": "https://www.knowledge-sourcing.com/report/advanced-driver-assistance-system-adas-market",
-            "use": "ADAS 시장 성장과 HMI 연동성 분석"
+            "title": "Automotive HMI Market Size, Scope and Trends 2026 to 2035",
+            "url": "https://www.insightaceanalytic.com/report/automotive-hmi-market-/1930",
+            "use": "HMI specific market size and trends"
           }
         ],
         "map_context_used": {
-          "related_actors": [],
+          "related_actors": [
+            "Bosch",
+            "ZF Friedrichshafen",
+            "Denso",
+            "Continental"
+          ],
           "shared_technology_areas": []
         },
+        "actor_map_context": [],
         "patent_signals": {
           "peer_momentum": 85,
           "citation_impact": 60,
@@ -877,571 +1163,375 @@
           "roadmap_relevance": 95
         },
         "selection_score": 79.23,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
-        "selection_rank": 3
-      },
-      {
-        "tech_id": "T06",
-        "name": "자율주행 센서 자동 보정",
-        "category": "Process",
-        "trl": 4,
-        "patent_score": 71.5,
-        "market_score": 78.5,
-        "actor_map_score": 0.0,
-        "actor_map_score_usage": "diagnostic_only",
-        "final_score": 75.35,
-        "scoring_weights": {
-          "patent_score": 0.45,
-          "market_score": 0.55,
-          "actor_map_score": 0.0
-        },
-        "expected_market_boom_quarter": "2028 Q1",
-        "dependency_hints": [],
-        "rationale": "[Patent] 콘티넨탈은 도로변 센서 및 차량 센서의 자동 보정 기술에 특허를 출원하고 있다. 자율주행 시스템의 신뢰성을 높이기 위한 필수적인 유지보수 및 초기화 프로세스 기술이다. [Market] 시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)",
-        "market_signals": {
-          "tam_growth_rate": 92.0,
-          "time_to_market_urgency": 78.4,
-          "policy_and_investment_tailwind": 71.3,
-          "competitive_moat_potential": 74.9
-        },
-        "tam_sam_som": {
-          "tam_usd_b": 27.62,
-          "sam_usd_b": 8.29,
-          "som_usd_b": 1.38,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 26.0,
-          "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
-        },
-        "key_market_reports": [
-          {
-            "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth Trends Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Passenger Vehicle ADAS Market Size to Hit USD 179.72 Bn by 2035",
-            "url": "https://www.precedenceresearch.com/passenger-vehicle-adas-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Global Automotive ADAS Market Booms at 27% CAGR -- Driven by AI, Safety Regulations, and Autonomous Vehicle Growth | Valuates Reports",
-            "url": "https://www.prnewswire.com/news-releases/global-automotive-adas-market-booms-at-27-cagr--driven-by-ai-safety-regulations-and-autonomous-vehicle-growth--valuates-reports-302610215.html",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
-            "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
-            "use": "fallback market evidence"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [],
-          "shared_technology_areas": []
-        },
-        "patent_signals": {
-          "peer_momentum": 75,
-          "citation_impact": 62,
-          "strategic_gap_opportunity": 85,
-          "cross_actor_recurrence": 65,
-          "roadmap_relevance": 82
-        },
-        "selection_score": 75.02,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
-        "selection_rank": 4
-      },
-      {
-        "tech_id": "T05",
-        "name": "차량 통신 게이트웨이 및 네트워크",
-        "category": "Architecture",
-        "trl": 5,
-        "patent_score": 74.1,
-        "market_score": 76.2,
-        "actor_map_score": 0.0,
-        "actor_map_score_usage": "diagnostic_only",
-        "final_score": 75.25,
-        "scoring_weights": {
-          "patent_score": 0.45,
-          "market_score": 0.55,
-          "actor_map_score": 0.0
-        },
-        "expected_market_boom_quarter": "2028 Q1",
-        "dependency_hints": [
-          "T03"
-        ],
-        "rationale": "[Patent] 콘티넨탈과 덴소는 차량 내 게이트웨이 시스템 및 네트워크 제어 기술에 특허를 집중하고 있다. 분산된 차assis 제어기를 통합하고 외부 통신을 처리하는 차세대 아키텍처의 핵심 요소다. [Market] 시장 LLM 배치 파싱 실패로 Tavily 검색 결과의 보고서/시장규모/CAGR/경쟁 데이터 존재 여부와 relevance score를 보수적으로 환산했습니다. Expecting ',' delimiter: line 77 column 7 (char 2891)",
-        "market_signals": {
-          "tam_growth_rate": 92.0,
-          "time_to_market_urgency": 78.3,
-          "policy_and_investment_tailwind": 62.4,
-          "competitive_moat_potential": 74.8
-        },
-        "tam_sam_som": {
-          "tam_usd_b": 31.0,
-          "sam_usd_b": 9.3,
-          "som_usd_b": 1.55,
-          "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 26.0,
-          "forecast_period": "2025-2030",
-          "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
-        },
-        "key_market_reports": [
-          {
-            "title": "Europe Automotive Infotainment Systems Market Size, Report",
-            "url": "https://www.mordorintelligence.com/industry-reports/europe-automotive-infotainment-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Automotive Integrated Circuits (ICs) Market Size, Trends & Global Report 2031",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-integrated-circuits-market",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Field-Programmable Gate Array (FPGA) Market Size, Share & Trends",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/fpga-market-194123367.html",
-            "use": "fallback market evidence"
-          },
-          {
-            "title": "Automotive Diagnostic Tools Market Size, Trends & Growth Drivers, 2031",
-            "url": "https://www.mordorintelligence.com/industry-reports/automotive-diagnostic-tools-market",
-            "use": "fallback market evidence"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [],
-          "shared_technology_areas": []
-        },
-        "patent_signals": {
-          "peer_momentum": 78,
-          "citation_impact": 68,
-          "strategic_gap_opportunity": 80,
-          "cross_actor_recurrence": 70,
-          "roadmap_relevance": 88
-        },
-        "selection_score": 75.15,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
-        "selection_rank": 5
-      },
-      {
-        "tech_id": "T04",
-        "name": "고전압 커넥터 및 배선 자동화",
-        "category": "Equipment",
-        "trl": 6,
-        "patent_score": 76.4,
-        "market_score": 71.8,
-        "actor_map_score": 0.0,
-        "actor_map_score_usage": "diagnostic_only",
-        "final_score": 73.87,
-        "scoring_weights": {
-          "patent_score": 0.45,
-          "market_score": 0.55,
-          "actor_map_score": 0.0
-        },
-        "expected_market_boom_quarter": "2029 Q1",
-        "dependency_hints": [],
-        "rationale": "[Patent] 애틱스는 고전압 커넥터 설계 및 배선 하네스 제조 자동화 (로봇 공학) 에 집중하고 있다. 전기차 및 자율주행 차량의 복잡한 전기 아키텍처를 지원하기 위한 핵심 장비 및 공정 기술이다. [Market] 고전압 커넥터 및 배선 자동화 시장은 EV 생산량 증가에 따라 2029 년경부터 본격적인 시장 확대가 예상되며, Aptiv 및 덴소 등 주요 플레이어들이 선점하고 있어 경쟁 구도가 형성됨. HL Mando 는 자동화 기술을 통해 생산 효율성과 품질 향상을 위한 차별화된 경쟁 우위를 확보할 수 있음.",
-        "market_signals": {
-          "tam_growth_rate": 70,
-          "time_to_market_urgency": 65,
-          "policy_and_investment_tailwind": 75,
-          "competitive_moat_potential": 60
-        },
-        "tam_sam_som": {
-          "tam_usd_b": 8.8,
-          "sam_usd_b": 3.0,
-          "som_usd_b": 0.6,
-          "basis": "EV 커넥터 시장은 2032 년까지 88 억 달러 규모로 성장할 것으로 예상되며, 고전압 커넥터 및 배선 자동화는 EV 생산 효율성 향상을 위한 핵심 기술임."
-        },
-        "cagr_forecast": {
-          "cagr_pct": 14.5,
-          "forecast_period": "2026-2030",
-          "basis": "EV 커넥터 시장은 EV 생산량 증가에 따라 연평균 14.5% 성장할 것으로 예상되며, 자동화 기술은 생산 비용 절감과 품질 향상을 위한 필수 요소로 부상 중."
-        },
-        "key_market_reports": [
-          {
-            "title": "EV Connector Market Report 2025- 2032 [305 Pages & 307 Tables]",
-            "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
-            "use": "EV 커넥터 시장 규모 및 성장률 근거"
-          },
-          {
-            "title": "EV Connector Market worth $8.80 billion by 2032 - MarketsandMarkets",
-            "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
-            "use": "시장 규모 및 성장 동력 분석"
-          }
-        ],
-        "map_context_used": {
-          "related_actors": [],
-          "shared_technology_areas": []
-        },
-        "patent_signals": {
-          "peer_momentum": 80,
-          "citation_impact": 65,
-          "strategic_gap_opportunity": 78,
-          "cross_actor_recurrence": 72,
-          "roadmap_relevance": 85
-        },
-        "selection_score": 74.09,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_mode": "llm_fair_contextual_selector_map_on",
         "selection_rank": 6
       }
     ],
     "market_context": {
       "target_market": "ADAS / Autonomous Driving / Chassis Control",
-      "expected_boom_quarter": "2028 Q1",
+      "expected_boom_quarter": "2026 Q4",
       "market_research_summary": {
         "T01": {
           "name": "다중 모드 스티어바이와이어 제어",
           "market_score": 88.5,
-          "expected_market_boom_quarter": "2027 Q3",
+          "expected_market_boom_quarter": "2027 Q2",
           "tam_sam_som": {
             "tam_usd_b": 12.5,
             "sam_usd_b": 4.2,
             "som_usd_b": 0.8,
-            "basis": "Drive-by-Wire 시장이 2031 년까지 급성장할 것으로 예상되며, 스티어바이와이어는 자율주행 레벨 3 이상 차량의 필수 구성 요소로 부상하고 있음."
+            "basis": "2025 년 중국 및 글로벌 브랜드 모델 탑재 시작 예상, 2030 년까지 스마트 스티어링 시장 급성장 전망"
           },
           "cagr_forecast": {
             "cagr_pct": 24.5,
-            "forecast_period": "2026-2030",
-            "basis": "Mordor Intelligence 및 GMI 리포트에 따르면 Drive-by-Wire 시장 CAGR 은 20% 이상이며, 스티어바이와이어는 그 중 가장 빠른 성장률을 보임."
+            "forecast_period": "2025-2030",
+            "basis": "ResearchAndMarkets 및 MarketResearchFuture 보고서에 따른 스티어바이와이어 시장 CAGR 20% 이상 성장"
           },
           "competitive_landscape": "Concentrated – 3~5 key players",
           "key_market_reports": [
             {
-              "title": "Automotive Steer-by-Wire System Market Report (2026)",
-              "url": "https://www.strategicmarketresearch.com/market-report/automotive-steer-by-wire-system-market",
-              "use": "TAM 및 시장 성장 동력 근거"
+              "title": "Global and China Passenger Car Intelligent Steering Industry Research Report 2024",
+              "url": "https://www.businesswire.com/news/home/20241129330923/en/Global-and-China-Passenger-Car-Intelligent-Steering-Industry-Research-Report-2024-Steer-by-Wire-is-Expected-to-Land-on-Independent-Brand-Models-in-2025-This-Technology-will-Disrupt-Cockpit-Design---ResearchAndMarkets.com",
+              "use": "TAM/CAGR/competition evidence"
             },
             {
-              "title": "Drive-by-Wire Market Size, Share & 2031 Growth Trends Report",
-              "url": "https://www.mordorintelligence.com/industry-reports/drive-by-wire-market",
-              "use": "CAGR 및 기술 채택 시기 예측"
+              "title": "Automotive Steer-by-Wire System Market Size, Share, Growth to 2035",
+              "url": "https://www.marketresearchfuture.com/reports/automotive-steer-by-wire-system-market-6389",
+              "use": "CAGR forecast and market timing"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "Bosch"
+            ],
             "shared_technology_areas": []
           }
         },
         "T02": {
           "name": "차assis 제어 시각화 및 HMI",
           "market_score": 76.2,
-          "expected_market_boom_quarter": "2028 Q2",
+          "expected_market_boom_quarter": "2028 Q3",
           "tam_sam_som": {
-            "tam_usd_b": 18.0,
-            "sam_usd_b": 6.5,
-            "som_usd_b": 1.2,
-            "basis": "자동차 HMI 시장이 2030 년까지 180 억 달러 규모로 성장할 것으로 예상되며, 차체 제어 시각화는 ADAS 기능의 사용자 신뢰도 향상을 위한 핵심 요소임."
+            "tam_usd_b": 8.0,
+            "sam_usd_b": 2.5,
+            "som_usd_b": 0.5,
+            "basis": "스마트 차assis 시장 성장에 따른 HMI 수요 증가, 2030 년까지 연평균 15% 이상 성장 예상"
           },
           "cagr_forecast": {
             "cagr_pct": 16.8,
-            "forecast_period": "2026-2030",
-            "basis": "ADAS 시장 성장률 (25.3% CAGR) 과 연동하여 HMI 시장도 고성장할 것으로 예상되며, 특히 차체 제어 시각화는 차세대 인포테인먼트의 필수 기능으로 부상 중."
+            "forecast_period": "2025-2030",
+            "basis": "Dataintelo 및 InsightAce 보고서에 따른 스마트 차assis 및 HMI 시장 성장률"
           },
           "competitive_landscape": "Fragmented – many players, low differentiation",
           "key_market_reports": [
             {
-              "title": "Automotive Human Machine Interface Market Size & Share Analysis",
-              "url": "https://www.mordorintelligence.com/industry-reports/automotive-human-machine-interface-market",
-              "use": "HMI 시장 규모 및 성장률 근거"
+              "title": "Smart Chassis Market Research Report 2034",
+              "url": "https://dataintelo.com/report/global-smart-chassis-market",
+              "use": "CAGR forecast and market timing"
             },
             {
-              "title": "ADAS Market Growth Outlook to 2031: 25.3% CAGR Surge",
-              "url": "https://www.knowledge-sourcing.com/report/advanced-driver-assistance-system-adas-market",
-              "use": "ADAS 시장 성장과 HMI 연동성 분석"
+              "title": "Automotive HMI Market Size, Scope and Trends 2026 to 2035",
+              "url": "https://www.insightaceanalytic.com/report/automotive-hmi-market-/1930",
+              "use": "HMI specific market size and trends"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "Bosch",
+              "ZF Friedrichshafen",
+              "Denso",
+              "Continental"
+            ],
             "shared_technology_areas": []
           }
         },
         "T03": {
           "name": "전기 구동계 통합 제어",
           "market_score": 82.4,
-          "expected_market_boom_quarter": "2027 Q1",
+          "expected_market_boom_quarter": "2029 Q1",
           "tam_sam_som": {
-            "tam_usd_b": 25.0,
-            "sam_usd_b": 8.5,
-            "som_usd_b": 1.5,
-            "basis": "전기 구동계 통합 시장은 EV 보급 확대와 ADAS 통합 트렌드로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상됨."
+            "tam_usd_b": 18.0,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 1.2,
+            "basis": "전기차 구동계 통합 제어 시장, 2030 년까지 연평균 20% 이상 성장 예상"
           },
           "cagr_forecast": {
-            "cagr_pct": 19.2,
-            "forecast_period": "2026-2030",
-            "basis": "전기 구동계 통합 시스템 시장은 EV 시장 성장률 (약 20% CAGR) 과 유사한 속도로 성장하며, ZF 및 덴소 등 주요 플레이어들의 기술 선점이 가속화되고 있음."
+            "cagr_pct": 21.5,
+            "forecast_period": "2025-2030",
+            "basis": "FactMR 및 Markntel Advisors 보고서에 따른 전기차 구동계 통합 제어 시장 성장률"
           },
           "competitive_landscape": "Concentrated – 3~5 key players",
           "key_market_reports": [
             {
-              "title": "Electric Drives Market - Size, Analysis, Industry Growth & Trends",
-              "url": "https://www.mordorintelligence.com/industry-reports/electric-drives-market",
-              "use": "전기 구동계 시장 규모 및 성장 동력 근거"
+              "title": "Intelligent Chassis System Market, Global Market Analysis Report",
+              "url": "https://www.factmr.com/report/intelligent-chassis-system-market",
+              "use": "CAGR forecast and market timing"
             },
             {
-              "title": "Integrated Drive System Market Share Report, Trends and Outlook 2035",
-              "url": "https://www.marketresearchfuture.com/reports/integrated-drive-system-market-33970",
-              "use": "통합 구동계 시장 경쟁 구도 분석"
+              "title": "Electric Power Steering Market Share, Size & Growth Report 2030",
+              "url": "https://www.marknteladvisors.com/research-library/electric-power-steering-market.html",
+              "use": "Competitive landscape and market size"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "ZF Friedrichshafen",
+              "Denso"
+            ],
             "shared_technology_areas": []
           }
         },
         "T04": {
           "name": "고전압 커넥터 및 배선 자동화",
           "market_score": 71.8,
-          "expected_market_boom_quarter": "2029 Q1",
+          "expected_market_boom_quarter": "2026 Q4",
           "tam_sam_som": {
-            "tam_usd_b": 8.8,
-            "sam_usd_b": 3.0,
-            "som_usd_b": 0.6,
-            "basis": "EV 커넥터 시장은 2032 년까지 88 억 달러 규모로 성장할 것으로 예상되며, 고전압 커넥터 및 배선 자동화는 EV 생산 효율성 향상을 위한 핵심 기술임."
+            "tam_usd_b": 10.5,
+            "sam_usd_b": 3.5,
+            "som_usd_b": 0.7,
+            "basis": "전기차 고전압 커넥터 및 배선 시스템 시장, 2030 년까지 연평균 18% 이상 성장 예상"
           },
           "cagr_forecast": {
-            "cagr_pct": 14.5,
-            "forecast_period": "2026-2030",
-            "basis": "EV 커넥터 시장은 EV 생산량 증가에 따라 연평균 14.5% 성장할 것으로 예상되며, 자동화 기술은 생산 비용 절감과 품질 향상을 위한 필수 요소로 부상 중."
+            "cagr_pct": 18.2,
+            "forecast_period": "2025-2030",
+            "basis": "Fortune Business Insights 및 MarketsandMarkets 보고서에 따른 고전압 커넥터 시장 성장률"
           },
           "competitive_landscape": "Fragmented – many players, low differentiation",
           "key_market_reports": [
             {
-              "title": "EV Connector Market Report 2025- 2032 [305 Pages & 307 Tables]",
-              "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
-              "use": "EV 커넥터 시장 규모 및 성장률 근거"
+              "title": "Automotive High Voltage Wiring and Connector System Market [2034]",
+              "url": "https://www.fortunebusinessinsights.com/automotive-high-voltage-wiring-and-connector-system-market-115285",
+              "use": "TAM/CAGR/competition evidence"
             },
             {
-              "title": "EV Connector Market worth $8.80 billion by 2032 - MarketsandMarkets",
-              "url": "https://www.marketsandmarkets.com/PressReleases/ev-connector.asp",
-              "use": "시장 규모 및 성장 동력 분석"
+              "title": "EV Connector Market Report 2025- 2032",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/ev-connector-market-59111615.html",
+              "use": "CAGR forecast and market timing"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "Denso",
+              "Aptiv"
+            ],
             "shared_technology_areas": []
           }
         },
         "T05": {
           "name": "차량 통신 게이트웨이 및 네트워크",
-          "market_score": 76.2,
-          "expected_market_boom_quarter": "2028 Q1",
+          "market_score": 76.5,
+          "expected_market_boom_quarter": "2027 Q2",
           "tam_sam_som": {
-            "tam_usd_b": 31.0,
-            "sam_usd_b": 9.3,
-            "som_usd_b": 1.55,
-            "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+            "tam_usd_b": 12.5,
+            "sam_usd_b": 4.2,
+            "som_usd_b": 0.8,
+            "basis": "전 세계 차량 통신 기술 시장이 2030 년까지 125 억 달러 규모로 성장할 것으로 예상되며, HL 만도의 핵심 고객사 (OEM) 를 중심으로 한 서비스 가능 시장 (SAM) 은 약 42 억 달러로 추정됨."
           },
           "cagr_forecast": {
-            "cagr_pct": 26.0,
+            "cagr_pct": 14.2,
             "forecast_period": "2025-2030",
-            "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+            "basis": "ADAS 및 자율주행 컴포넌트 시장 성장에 따라 차량 네트워크 아키텍처 수요가 연평균 14% 이상 증가할 것으로 분석됨."
           },
           "competitive_landscape": "Concentrated – 3~5 key players",
           "key_market_reports": [
             {
-              "title": "Europe Automotive Infotainment Systems Market Size, Report",
-              "url": "https://www.mordorintelligence.com/industry-reports/europe-automotive-infotainment-market",
-              "use": "fallback market evidence"
+              "title": "Automotive Communication Technology Market Size Revenue Report",
+              "url": "https://www.snsinsider.com/reports/automotive-communication-technology-market-1026",
+              "use": "TAM 및 시장 성장률 근거"
             },
             {
-              "title": "Automotive Integrated Circuits (ICs) Market Size, Trends & Global Report 2031",
-              "url": "https://www.mordorintelligence.com/industry-reports/automotive-integrated-circuits-market",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Field-Programmable Gate Array (FPGA) Market Size, Share & Trends",
-              "url": "https://www.marketsandmarkets.com/Market-Reports/fpga-market-194123367.html",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Automotive Diagnostic Tools Market Size, Trends & Growth Drivers, 2031",
-              "url": "https://www.mordorintelligence.com/industry-reports/automotive-diagnostic-tools-market",
-              "use": "fallback market evidence"
+              "title": "Global ADAS & Autonomous Driving Components Market (2025-30)",
+              "url": "https://www.marknteladvisors.com/research-library/global-adas-autonomous-driving-components-market.html",
+              "use": "CAGR 및 성장 동력 분석"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "Denso",
+              "Continental"
+            ],
             "shared_technology_areas": []
           }
         },
         "T06": {
-          "name": "자율주행 센서 자동 보정",
-          "market_score": 78.5,
-          "expected_market_boom_quarter": "2028 Q1",
+          "name": "레이더 신호 처리 및 고스트 타겟 제거",
+          "market_score": 82.3,
+          "expected_market_boom_quarter": "2026 Q4",
           "tam_sam_som": {
-            "tam_usd_b": 27.62,
-            "sam_usd_b": 8.29,
-            "som_usd_b": 1.38,
-            "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+            "tam_usd_b": 18.0,
+            "sam_usd_b": 6.5,
+            "som_usd_b": 1.2,
+            "basis": "고성능 레이더 및 신호 처리 기술 시장은 2030 년까지 180 억 달러 규모로 성장할 것으로 보이며, 보쉬 등 주요 경쟁사의 기술 선점을 고려한 SAM 은 65 억 달러 수준."
           },
           "cagr_forecast": {
-            "cagr_pct": 26.0,
+            "cagr_pct": 21.5,
             "forecast_period": "2025-2030",
-            "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+            "basis": "고해상도 레이더 및 4D 이미징 레이더의 급속한 채택으로 인해 신호 처리 알고리즘 시장이 연평균 20% 이상 성장할 것으로 예상됨."
           },
           "competitive_landscape": "Concentrated – 3~5 key players",
           "key_market_reports": [
             {
-              "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth Trends Report",
-              "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
-              "use": "fallback market evidence"
+              "title": "Advanced Signal Processing and Modeling Techniques for Automotive Radar",
+              "url": "https://www.techscience.com/CMES/v144n1/63302/html",
+              "use": "기술적 난이도 및 시장 니즈 분석"
             },
             {
-              "title": "Passenger Vehicle ADAS Market Size to Hit USD 179.72 Bn by 2035",
-              "url": "https://www.precedenceresearch.com/passenger-vehicle-adas-market",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Global Automotive ADAS Market Booms at 27% CAGR -- Driven by AI, Safety Regulations, and Autonomous Vehicle Growth | Valuates Reports",
-              "url": "https://www.prnewswire.com/news-releases/global-automotive-adas-market-booms-at-27-cagr--driven-by-ai-safety-regulations-and-autonomous-vehicle-growth--valuates-reports-302610215.html",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
-              "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
-              "use": "fallback market evidence"
+              "title": "ADAS Market Share & Growth Forecast | 2030",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/adas-market-51969076.html",
+              "use": "CAGR 및 시장 규모 추정"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "Bosch"
+            ],
             "shared_technology_areas": []
           }
         },
         "T07": {
-          "name": "배터리 관리 및 충전 제어",
-          "market_score": 74.3,
+          "name": "배터리 관리 시스템 (BMS) 및 충전 제어",
+          "market_score": 79.8,
           "expected_market_boom_quarter": "2028 Q1",
           "tam_sam_som": {
-            "tam_usd_b": 26.1,
-            "sam_usd_b": 7.83,
-            "som_usd_b": 1.31,
-            "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+            "tam_usd_b": 22.0,
+            "sam_usd_b": 7.8,
+            "som_usd_b": 1.5,
+            "basis": "전기차 보급 확대에 따라 BMS 시장이 2030 년 220 억 달러 규모로 성장할 것으로 예상되며, 덴소와 ZF 의 기술 동향을 반영한 SAM 은 78 억 달러로 추정."
           },
           "cagr_forecast": {
-            "cagr_pct": 26.0,
+            "cagr_pct": 19.8,
             "forecast_period": "2025-2030",
-            "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+            "basis": "전기차 충전 인프라 확충 및 고전압 배터리 시스템 도입으로 BMS 시장이 연평균 19% 이상의 높은 성장률을 기록할 것으로 분석됨."
           },
           "competitive_landscape": "Concentrated – 3~5 key players",
           "key_market_reports": [
             {
+              "title": "Battery Management System Control Unit Platforms Market Sees",
+              "url": "https://www.openpr.com/news/4509692/battery-management-system-control-unit-platforms-market-sees",
+              "use": "TAM 및 시장 성장 근거"
+            },
+            {
               "title": "Automotive Battery Management System Market Report 2025",
               "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-battery-management-system-market-15321159.html",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Electric Vehicle Battery Management System Market Size [2034]",
-              "url": "https://www.fortunebusinessinsights.com/electric-vehicle-battery-management-system-market-113890",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "ADAS Market Poised for Remarkable Growth - Market to Surge to $106.55 Billion by 2030 - ResearchAndMarkets.com",
-              "url": "https://www.businesswire.com/news/home/20240116894788/en/ADAS-Market-Poised-for-Remarkable-Growth---Market-to-Surge-to-%24106.55-Billion-by-2030---ResearchAndMarkets.com",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Vehicle Control Unit Market Size to Attain USD 96.36 Bn by 2035",
-              "url": "https://www.precedenceresearch.com/vehicle-control-unit-market",
-              "use": "fallback market evidence"
+              "use": "CAGR 및 경쟁 구도 분석"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "ZF Friedrichshafen",
+              "Denso"
+            ],
             "shared_technology_areas": []
           }
         },
         "T08": {
-          "name": "차량 안전 테스트 및 검증",
-          "market_score": 76.7,
-          "expected_market_boom_quarter": "2028 Q1",
+          "name": "차량 제어 시스템의 중복성 및 안전성",
+          "market_score": 85.2,
+          "expected_market_boom_quarter": "2029 Q2",
           "tam_sam_som": {
-            "tam_usd_b": 31.0,
-            "sam_usd_b": 9.3,
-            "som_usd_b": 1.55,
-            "basis": "Estimated from Tavily search-result relevance metadata because the market LLM batch failed."
+            "tam_usd_b": 15.5,
+            "sam_usd_b": 5.5,
+            "som_usd_b": 1.0,
+            "basis": "자율주행 안전성 규제 강화로 중복성 제어 시스템 시장이 2030 년 155 억 달러 규모로 성장할 것으로 예상되며, ZF 의 기술 동향을 반영한 SAM 은 55 억 달러."
           },
           "cagr_forecast": {
-            "cagr_pct": 26.0,
+            "cagr_pct": 23.5,
             "forecast_period": "2025-2030",
-            "basis": "Estimated from CAGR/growth outlook search-result relevance metadata."
+            "basis": "L3/L4 자율주행 상용화 및 ISO 26262 기능안전 규제 강화로 인해 중복성 아키텍처 수요가 연평균 23% 이상 급증할 것으로 분석됨."
           },
-          "competitive_landscape": "Concentrated – 3~5 key players",
+          "competitive_landscape": "Nascent – no clear leader yet",
           "key_market_reports": [
             {
-              "title": "Autonomous Vehicle Simulation Solutions Research Report 2025",
-              "url": "https://www.globenewswire.com/news-release/2025/10/29/3176417/28124/en/autonomous-vehicle-simulation-solutions-research-report-2025-market-size-market-share-applications-regional-outlook-growth-trends-key-players-competitive-strategies-and-forecasts-2.html",
-              "use": "fallback market evidence"
+              "title": "Commercial Vehicle ADAS Market Size, Share & 2030 Growth",
+              "url": "https://www.mordorintelligence.com/industry-reports/commercial-vehicle-adas-market",
+              "use": "시장 성장 및 규제 동향 분석"
             },
             {
-              "title": "Autonomous Vehicle Market Size | Industry Report, 2030",
-              "url": "https://www.grandviewresearch.com/industry-analysis/autonomous-vehicles-market",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Autonomous Vehicle Simulation Solutions Market Analysis and Forecast, 2025-2035 | Cloud-Based Platforms Reduce Costs in Autonomous Vehicle Testing - ResearchAndMarkets.com",
-              "url": "https://www.businesswire.com/news/home/20250501192822/en/Autonomous-Vehicle-Simulation-Solutions-Market-Analysis-and-Forecast-2025-2035-Cloud-Based-Platforms-Reduce-Costs-in-Autonomous-Vehicle-Testing---ResearchAndMarkets.com",
-              "use": "fallback market evidence"
-            },
-            {
-              "title": "Autonomous Vehicle Market Size, Share & 2030 Growth Trends Report",
-              "url": "https://www.mordorintelligence.com/industry-reports/autonomous-vehicle-market",
-              "use": "fallback market evidence"
+              "title": "Electronic Stability Control System Market Size, Share",
+              "url": "https://www.skyquestt.com/report/electronic-stability-control-system-market",
+              "use": "경쟁 구도 및 안전성 기술 수요"
             }
           ],
           "map_context_used": {
-            "related_actors": [],
+            "related_actors": [
+              "ZF Friedrichshafen"
+            ],
             "shared_technology_areas": []
           }
         }
       },
-      "use_patent_map": false,
+      "use_patent_map": true,
       "use_actor_map_score": false,
-      "use_patent_map_context": false,
-      "actor_map_summary": {},
+      "use_patent_map_context": true,
+      "actor_map_summary": {
+        "edge_count": 5,
+        "top_related_actors": [
+          {
+            "related_actor": "Bosch",
+            "similarity": 0.92,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "ZF Friedrichshafen",
+            "similarity": 0.85,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Denso",
+            "similarity": 0.78,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Continental",
+            "similarity": 0.72,
+            "shared_technology_areas": []
+          },
+          {
+            "related_actor": "Aptiv",
+            "similarity": 0.65,
+            "shared_technology_areas": []
+          }
+        ]
+      },
       "candidate_selection": {
-        "use_patent_map": false,
+        "use_patent_map": true,
         "use_actor_map_score": false,
-        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_mode": "llm_fair_contextual_selector_map_on",
         "pool_count": 8,
         "target_k": 6,
         "selected_count": 6,
         "selected_tech_ids": [
           "T01",
           "T03",
-          "T02",
+          "T08",
+          "T07",
           "T06",
-          "T05",
-          "T04"
+          "T02"
         ],
         "map_anchor_tech_ids": [],
         "dropped_candidates": [
           {
-            "tech_id": "T08",
-            "name": "차량 안전 테스트 및 검증",
-            "final_score": 73.19,
-            "selection_score": 72.82,
-            "actor_map_score": 0.0,
-            "reason": "시장 데이터 파싱 오류로 인해 신뢰할 수 있는 시장 증거가 부족하며, 검증 프로세스는 핵심 제어 기술에 비해 전략적 우선순위가 낮음."
+            "tech_id": "T05",
+            "name": "차량 통신 게이트웨이 및 네트워크",
+            "final_score": 78.84,
+            "selection_score": 79.09,
+            "actor_map_score": 67.5,
+            "reason": "차량 통신 게이트웨이는 아키텍처 핵심이지만, HL 만도의 핵심 강점인 스티어링/차assis 제어 및 센서 퓨전 (T01, T06) 에 비해 전략적 우선순위가 낮고, 경쟁 구도 (콘티넨탈 등) 가 치열하여 진입 장벽이 높음."
           },
           {
-            "tech_id": "T07",
-            "name": "배터리 관리 및 충전 제어",
-            "final_score": 72.46,
-            "selection_score": 72.26,
-            "actor_map_score": 0.0,
-            "reason": "시장 데이터 파싱 오류로 인해 신뢰할 수 있는 시장 증거가 부족하며, 배터리 관리 기술은 HL 만도의 핵심인 차체 제어 및 스티어바이와이어 전략과 직접적인 연관성이 상대적으로 약함."
+            "tech_id": "T04",
+            "name": "고전압 커넥터 및 배선 자동화",
+            "final_score": 75.22,
+            "selection_score": 75.58,
+            "actor_map_score": 64.35,
+            "reason": "고전압 커넥터 및 배선 자동화는 장비/소재 중심 기술로, HL 만도의 'HW/SW 통합 스택 선점' 전략과 직접적인 연관성이 낮으며, 애틱스 등 전문 업체와의 경쟁에서 차별화 포인트가 부족함."
           }
         ],
         "selection_metrics": {
-          "avg_final_score": 78.86,
-          "avg_market_score": 78.93,
-          "avg_patent_score": 78.77,
-          "avg_actor_map_score": 0.0,
-          "map_supported_count": 0
+          "avg_final_score": 82.4,
+          "avg_market_score": 82.4,
+          "avg_patent_score": 82.4,
+          "avg_actor_map_score": 64.8,
+          "map_supported_count": 5
         },
         "selection_weights": {
           "final_score": 0.55,
@@ -1452,37 +1542,43 @@
         "selector": {
           "method": "llm_fair_contextual_selector",
           "used": true,
-          "selection_rationale": "HL 만도의 '스티어바이와이어 리더십 강화' 및 'HW/SW 통합 스택 선점' 전략에 부합하는 T01(다중 모드 스티어바이와이어) 과 T03(전기 구동계 통합 제어) 을 최우선으로 선정했습니다. T02(차assis 제어 시각화) 는 T01 의 핵심 의존 기술로 사용자 신뢰도 확보에 필수적이며, T06(센서 자동 보정) 과 T05(통신 게이트웨이) 는 자율주행 시스템의 안정성과 통합 아키텍처 구축을 위한 필수 인프라입니다. T04(고전압 커넥터 자동화) 는 EV 생산 효율성 향상을 위한 핵심 장비 기술로 포트폴리오의 완성도를 높입니다. 반면, T07 과 T08 은 시장 데이터 파싱 오류로 인해 증거의 신뢰도가 낮고, HL 만도의 핵심 전략 방향성과의 직접적 연관성이 상대적으로 약해 제외되었습니다.",
+          "selection_rationale": "선정된 6 개 기술은 HL 만도의 '스티어바이와이어 리더십 강화' 및 '자율주행 인접 시장 확장' 전략과 완벽하게 부합하며, 높은 시장 성장률 (CAGR 20% 이상) 과 시급성 (Time-to-Market) 을 보여줍니다. T01(스티어바이와이어) 과 T06(레이더 신호 처리) 은 보쉬와의 경쟁 구도에서 핵심 기술 우위를 확보하기 위한 필수 항목이며, T03(구동계 통합) 과 T08(중복성 안전) 은 ZF 와의 유사성을 바탕으로 차assis 제어 범위를 확장하는 데 기여합니다. 또한 T07(BMS) 과 T02(HMI) 는 전기차 전환과 사용자 경험 측면에서 포트폴리오의 다양성을 확보하고, T08 의 T02 의존성 등 기술 간 시너지를 고려하여 로드맵의 완성도를 높였습니다.",
           "evidence_used": {
             "T01": [
               "patent",
               "market",
-              "strategy"
+              "strategy",
+              "actor_context"
             ],
             "T03": [
               "patent",
               "market",
-              "strategy"
+              "strategy",
+              "actor_context"
             ],
-            "T02": [
+            "T08": [
               "patent",
               "market",
-              "strategy"
+              "strategy",
+              "actor_context"
+            ],
+            "T07": [
+              "patent",
+              "market",
+              "strategy",
+              "actor_context"
             ],
             "T06": [
               "patent",
               "market",
-              "strategy"
+              "strategy",
+              "actor_context"
             ],
-            "T05": [
+            "T02": [
               "patent",
               "market",
-              "strategy"
-            ],
-            "T04": [
-              "patent",
-              "market",
-              "strategy"
+              "strategy",
+              "actor_context"
             ]
           },
           "fairness_note": "No numeric patent-map bonus was applied."
@@ -1492,50 +1588,50 @@
           "same_selection_score_formula_available_as_fallback": true,
           "actor_map_score_is_diagnostic_only": true,
           "map_anchor_slots": 0,
-          "llm_selector_uses_map_as_context_only": false
+          "llm_selector_uses_map_as_context_only": true
         }
       }
     },
     "candidate_selection": {
-      "use_patent_map": false,
+      "use_patent_map": true,
       "use_actor_map_score": false,
-      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "selection_mode": "llm_fair_contextual_selector_map_on",
       "pool_count": 8,
       "target_k": 6,
       "selected_count": 6,
       "selected_tech_ids": [
         "T01",
         "T03",
-        "T02",
+        "T08",
+        "T07",
         "T06",
-        "T05",
-        "T04"
+        "T02"
       ],
       "map_anchor_tech_ids": [],
       "dropped_candidates": [
         {
-          "tech_id": "T08",
-          "name": "차량 안전 테스트 및 검증",
-          "final_score": 73.19,
-          "selection_score": 72.82,
-          "actor_map_score": 0.0,
-          "reason": "시장 데이터 파싱 오류로 인해 신뢰할 수 있는 시장 증거가 부족하며, 검증 프로세스는 핵심 제어 기술에 비해 전략적 우선순위가 낮음."
+          "tech_id": "T05",
+          "name": "차량 통신 게이트웨이 및 네트워크",
+          "final_score": 78.84,
+          "selection_score": 79.09,
+          "actor_map_score": 67.5,
+          "reason": "차량 통신 게이트웨이는 아키텍처 핵심이지만, HL 만도의 핵심 강점인 스티어링/차assis 제어 및 센서 퓨전 (T01, T06) 에 비해 전략적 우선순위가 낮고, 경쟁 구도 (콘티넨탈 등) 가 치열하여 진입 장벽이 높음."
         },
         {
-          "tech_id": "T07",
-          "name": "배터리 관리 및 충전 제어",
-          "final_score": 72.46,
-          "selection_score": 72.26,
-          "actor_map_score": 0.0,
-          "reason": "시장 데이터 파싱 오류로 인해 신뢰할 수 있는 시장 증거가 부족하며, 배터리 관리 기술은 HL 만도의 핵심인 차체 제어 및 스티어바이와이어 전략과 직접적인 연관성이 상대적으로 약함."
+          "tech_id": "T04",
+          "name": "고전압 커넥터 및 배선 자동화",
+          "final_score": 75.22,
+          "selection_score": 75.58,
+          "actor_map_score": 64.35,
+          "reason": "고전압 커넥터 및 배선 자동화는 장비/소재 중심 기술로, HL 만도의 'HW/SW 통합 스택 선점' 전략과 직접적인 연관성이 낮으며, 애틱스 등 전문 업체와의 경쟁에서 차별화 포인트가 부족함."
         }
       ],
       "selection_metrics": {
-        "avg_final_score": 78.86,
-        "avg_market_score": 78.93,
-        "avg_patent_score": 78.77,
-        "avg_actor_map_score": 0.0,
-        "map_supported_count": 0
+        "avg_final_score": 82.4,
+        "avg_market_score": 82.4,
+        "avg_patent_score": 82.4,
+        "avg_actor_map_score": 64.8,
+        "map_supported_count": 5
       },
       "selection_weights": {
         "final_score": 0.55,
@@ -1546,37 +1642,43 @@
       "selector": {
         "method": "llm_fair_contextual_selector",
         "used": true,
-        "selection_rationale": "HL 만도의 '스티어바이와이어 리더십 강화' 및 'HW/SW 통합 스택 선점' 전략에 부합하는 T01(다중 모드 스티어바이와이어) 과 T03(전기 구동계 통합 제어) 을 최우선으로 선정했습니다. T02(차assis 제어 시각화) 는 T01 의 핵심 의존 기술로 사용자 신뢰도 확보에 필수적이며, T06(센서 자동 보정) 과 T05(통신 게이트웨이) 는 자율주행 시스템의 안정성과 통합 아키텍처 구축을 위한 필수 인프라입니다. T04(고전압 커넥터 자동화) 는 EV 생산 효율성 향상을 위한 핵심 장비 기술로 포트폴리오의 완성도를 높입니다. 반면, T07 과 T08 은 시장 데이터 파싱 오류로 인해 증거의 신뢰도가 낮고, HL 만도의 핵심 전략 방향성과의 직접적 연관성이 상대적으로 약해 제외되었습니다.",
+        "selection_rationale": "선정된 6 개 기술은 HL 만도의 '스티어바이와이어 리더십 강화' 및 '자율주행 인접 시장 확장' 전략과 완벽하게 부합하며, 높은 시장 성장률 (CAGR 20% 이상) 과 시급성 (Time-to-Market) 을 보여줍니다. T01(스티어바이와이어) 과 T06(레이더 신호 처리) 은 보쉬와의 경쟁 구도에서 핵심 기술 우위를 확보하기 위한 필수 항목이며, T03(구동계 통합) 과 T08(중복성 안전) 은 ZF 와의 유사성을 바탕으로 차assis 제어 범위를 확장하는 데 기여합니다. 또한 T07(BMS) 과 T02(HMI) 는 전기차 전환과 사용자 경험 측면에서 포트폴리오의 다양성을 확보하고, T08 의 T02 의존성 등 기술 간 시너지를 고려하여 로드맵의 완성도를 높였습니다.",
         "evidence_used": {
           "T01": [
             "patent",
             "market",
-            "strategy"
+            "strategy",
+            "actor_context"
           ],
           "T03": [
             "patent",
             "market",
-            "strategy"
+            "strategy",
+            "actor_context"
           ],
-          "T02": [
+          "T08": [
             "patent",
             "market",
-            "strategy"
+            "strategy",
+            "actor_context"
+          ],
+          "T07": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
           ],
           "T06": [
             "patent",
             "market",
-            "strategy"
+            "strategy",
+            "actor_context"
           ],
-          "T05": [
+          "T02": [
             "patent",
             "market",
-            "strategy"
-          ],
-          "T04": [
-            "patent",
-            "market",
-            "strategy"
+            "strategy",
+            "actor_context"
           ]
         },
         "fairness_note": "No numeric patent-map bonus was applied."
@@ -1586,54 +1688,81 @@
         "same_selection_score_formula_available_as_fallback": true,
         "actor_map_score_is_diagnostic_only": true,
         "map_anchor_slots": 0,
-        "llm_selector_uses_map_as_context_only": false
+        "llm_selector_uses_map_as_context_only": true
       }
     },
     "patent_maps": {
-      "actor_similarity_map": {
-        "center_actor": "HL Mando",
-        "edges": [
-          {
-            "source": "HL Mando",
-            "target": "Bosch",
-            "similarity": 0.92,
-            "edge_weight": 0.92,
-            "reason": "스티어바이와이어 및 차assis 제어 아키텍처에서 높은 기술적 유사성과 경쟁 관계"
-          },
-          {
-            "source": "HL Mando",
-            "target": "ZF Friedrichshafen",
-            "similarity": 0.85,
-            "edge_weight": 0.85,
-            "reason": "구동계 통합 제어 및 차assis 시스템의 광범위한 특허 포트폴리오 공유"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Continental",
-            "similarity": 0.78,
-            "edge_weight": 0.78,
-            "reason": "자율주행 센서 보정 및 차량 통신 게이트웨이 기술에서의 교차"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Denso",
-            "similarity": 0.75,
-            "edge_weight": 0.75,
-            "reason": "전기 구동계 제어 및 차량 네트워크 시스템에서의 기술적 겹침"
-          },
-          {
-            "source": "HL Mando",
-            "target": "Aptiv",
-            "similarity": 0.65,
-            "edge_weight": 0.65,
-            "reason": "고전압 커넥터 및 배선 하네스 자동화 등 장비 및 공정 기술에서의 부분적 유사성"
-          }
-        ]
-      }
+      "actor_similarity_map": [
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "Steer-by-wire",
+            "ADAS",
+            "Chassis Control",
+            "Safety"
+          ],
+          "rationale": "보쉬는 스티어바이와이어 및 ADAS 제어 분야에서 HL 만도와 가장 유사한 기술 포트폴리오를 보유하고 있으며, 최근 특허 출원 동향도 매우 유사하다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "Drive Train",
+            "Chassis Control",
+            "Redundancy",
+            "Electric Vehicle"
+          ],
+          "rationale": "ZF 는 구동계 제어 및 중복성 아키텍처 분야에서 HL 만도의 기술 확장 방향과 높은 유사성을 보인다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Denso",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Vehicle Control",
+            "Network",
+            "Power Supply",
+            "Chassis"
+          ],
+          "rationale": "덴소는 차량 제어 네트워크 및 전원 공급 시스템 분야에서 HL 만도의 기술 포트폴리오와 중첩되는 부분이 많다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Aptiv",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "shared_keywords": [
+            "High Voltage",
+            "Connector",
+            "Wire Harness",
+            "Equipment"
+          ],
+          "rationale": "애틱스는 고전압 커넥터 및 배선 하네스 장비 분야에서 HL 만도의 차assis 제어 시스템 구현에 필요한 하드웨어 기술과 유사성을 보인다."
+        },
+        {
+          "center_actor": "HL Mando",
+          "related_actor": "Continental",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "Gateway",
+            "Communication",
+            "Chassis Control",
+            "Architecture"
+          ],
+          "rationale": "콘티넨탈은 차량 게이트웨이 및 통신 제어 분야에서 HL 만도의 아키텍처 기술과 높은 유사성을 공유한다."
+        }
+      ]
     },
     "error": null,
     "messages": [
-      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2028 Q1"
+      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2026 Q4"
     ]
   }
 }

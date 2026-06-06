@@ -1,0 +1,22 @@
+{
+  "use_patent_map": null,
+  "market_context": {},
+  "tech_candidates": [],
+  "candidate_selection": {},
+  "market_raw_data": {},
+  "market_analysis": [],
+  "patent_raw_data": {},
+  "patent_analysis": [],
+  "patent_maps": {},
+  "patent_map_graphs": {},
+  "patent_prompt": {
+    "agent": "patent_agent",
+    "variant": "C_company_portfolio",
+    "error": "prompt load or analysis failed"
+  },
+  "intermediate_output_dirs": {
+    "patent_agent": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/patent_agent/batch_saltlux_ai_llm_2026_2030",
+    "market_agent": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/market_agent/batch_saltlux_ai_llm_2026_2030",
+    "aggregator": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/aggregator/batch_saltlux_ai_llm_2026_2030"
+  }
+}

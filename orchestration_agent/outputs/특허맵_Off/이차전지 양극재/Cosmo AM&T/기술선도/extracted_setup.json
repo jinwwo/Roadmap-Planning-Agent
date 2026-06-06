@@ -1,0 +1,30 @@
+{
+  "scenario_id": "cosmo_amt_battery_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "prompt": "Company: Cosmo AM&T\nIndustry: Cathode Materials / Functional Materials\nAnnual Revenue: ~$326M\nR&D Budget Ratio: ~1.2%\nAnnual R&D Budget: ~$3.9M\nTotal 5-year R&D Budget: ~$11.7M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Cosmo AM&T",
+    "industry": "Cathode Materials / Functional Materials",
+    "annual_revenue": 326000000.0,
+    "rd_budget_ratio": 0.012,
+    "annual_rd_budget": 3900000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 기술을 선점하고 장기적인 기술 해자를 구축하여 기술 선도 기업으로 도약",
+    "strategic_direction": [
+      "차세대 양극재 및 기능성 소재 기술 선도",
+      "에너지 저장 및 신소재 인접 시장 확장",
+      "프론티어 기술 R&D 스택 강화"
+    ],
+    "domain": "Cathode Materials / Functional Materials",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 11700000
+}
