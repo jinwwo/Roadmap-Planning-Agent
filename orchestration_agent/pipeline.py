@@ -814,7 +814,7 @@ def run_single_agent_orchestration(
     LLM call performs technology discovery, market sizing, roadmap planning,
     investment tiering, and final review.
     """
-    del active_agents, risk_appetite, investment_horizon, stage_mode, company_scenario, strategic_direction
+    del active_agents, risk_appetite, investment_horizon, stage_mode
     category_hints = category_hints or []
     run_mode = "tool-single" if tool_augmented else "single"
     baseline_agents = ["tool-single"] if tool_augmented else ["single"]
@@ -834,6 +834,8 @@ def run_single_agent_orchestration(
         objective=objective,
         priorities=priorities,
         future_trend_summary=future_trend_summary,
+        company_scenario=company_scenario,
+        strategic_direction=strategic_direction,
     )
     if tool_augmented:
         print("[Tool Single Agent] baseline mode: patent/market tools collect evidence, then one LLM generates the full TRM.")

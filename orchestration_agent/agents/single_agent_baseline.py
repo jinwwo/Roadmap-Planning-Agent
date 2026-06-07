@@ -539,6 +539,14 @@ def _fallback_roadmap(candidates: List[dict], reference_year: int) -> List[dict]
     return roadmap
 
 
+def _year_idx_from_quarter(value: Any, reference_year: int) -> Optional[int]:
+    match = re.search(r"(20\d{2})", str(value or ""))
+    if not match:
+        return None
+    start_year = max(reference_year - 4, 2026)
+    return max(1, min(5, int(match.group(1)) - start_year + 1))
+
+
 def _fallback_strategy(
     candidates: List[dict],
     roadmap: List[dict],
@@ -596,6 +604,63 @@ def _fallback_strategy(
             "tech_investments": tech_investments,
         })
     return stages, strategy
+
+
+def _normalize_roadmap_schema(roadmap: List[dict], reference_year: int) -> None:
+    for item in roadmap:
+        if not isinstance(item, dict):
+            continue
+        if not item.get("year_idx_start"):
+            item["year_idx_start"] = _year_idx_from_quarter(item.get("start_q"), reference_year) or 1
+        if not item.get("year_idx_target"):
+            item["year_idx_target"] = (
+                _year_idx_from_quarter(item.get("target_q"), reference_year)
+                or item.get("year_idx_start")
+                or 1
+            )
+        if item["year_idx_target"] < item["year_idx_start"]:
+            item["year_idx_target"] = item["year_idx_start"]
+
+
+def _normalize_investment_schema(
+    strategy: List[dict],
+    candidates: List[dict],
+    total_budget: float,
+) -> None:
+    by_id = {c.get("tech_id"): c for c in candidates if isinstance(c, dict)}
+    default_ratios = [0.35, 0.4, 0.25]
+    for stage_idx, stage in enumerate(strategy):
+        if not isinstance(stage, dict):
+            continue
+        ratio = _num(stage.get("stage_budget_ratio"), default_ratios[min(stage_idx, len(default_ratios) - 1)])
+        stage["stage_budget_ratio"] = ratio
+        stage_budget = _num(stage.get("stage_estimated_usd"), total_budget * ratio if total_budget else 0)
+        stage["stage_estimated_usd"] = stage_budget
+        investments = [ti for ti in (stage.get("tech_investments") or []) if isinstance(ti, dict)]
+        score_sum = sum(max(1.0, _num(by_id.get(ti.get("tech_id"), {}).get("final_score"), 50)) for ti in investments)
+        for ti in investments:
+            tech = by_id.get(ti.get("tech_id"), {})
+            ti.setdefault("name", tech.get("name", ""))
+            if not ti.get("tech_budget_usd") and stage_budget and score_sum:
+                weight = max(1.0, _num(tech.get("final_score"), 50)) / score_sum
+                ti["tech_budget_usd"] = round(stage_budget * weight, 2)
+            ti.setdefault("tech_budget_rationale", "Allocated within the single-agent stage budget according to normalized candidate priority.")
+
+            scores = ti.get("evaluation_scores") if isinstance(ti.get("evaluation_scores"), dict) else {}
+            if scores:
+                scores.setdefault("market_size_growth", scores.get("market_opportunity", 3))
+                scores.setdefault("tech_readiness", scores.get("executability", 3))
+                scores.setdefault("tech_risk", scores.get("uncertainty", 3))
+                scores.setdefault("competitive_advantage", scores.get("strategic_fit", 3))
+                scores.setdefault("development_urgency", scores.get("urgency", 3))
+            else:
+                ti["evaluation_scores"] = {
+                    "market_size_growth": 3,
+                    "tech_readiness": 3,
+                    "tech_risk": 3,
+                    "competitive_advantage": 3,
+                    "development_urgency": 3,
+                }
 
 
 def _normalize_result(
@@ -689,6 +754,7 @@ def _normalize_result(
                 ).strip()
                 roadmap.append(supplemental)
                 seen.add(tech_id)
+    _normalize_roadmap_schema(roadmap, reference_year)
 
     stages = data.get("stages") if isinstance(data.get("stages"), list) else []
     strategy = data.get("investment_strategy") if isinstance(data.get("investment_strategy"), list) else []
@@ -706,6 +772,7 @@ def _normalize_result(
     }
     if not stages or not strategy or not candidate_ids.issubset(strategy_tech_ids):
         stages, strategy = _fallback_strategy(candidates, roadmap, total_budget)
+    _normalize_investment_schema(strategy, candidates, total_budget)
 
     report = data.get("orchestrator_report") if isinstance(data.get("orchestrator_report"), dict) else {}
     report.setdefault("executive_summary", "Single-agent baseline generated an integrated TRM without inter-agent decomposition.")
