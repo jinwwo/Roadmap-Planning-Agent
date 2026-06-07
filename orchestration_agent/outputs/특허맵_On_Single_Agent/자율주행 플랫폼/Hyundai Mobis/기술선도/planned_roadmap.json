@@ -23,7 +23,9 @@
       "target_q": "2026 Q4",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Establish core competency in automotive-grade HBM technology."
+      "justification": "Establish core competency in automotive-grade HBM technology.",
+      "year_idx_start": 1,
+      "year_idx_target": 1
     },
     {
       "tech_id": "S02",
@@ -35,7 +37,9 @@
         "S01"
       ],
       "lead_time_quarters": 4,
-      "justification": "Validate the feasibility of chiplet-based architectures for ADAS applications."
+      "justification": "Validate the feasibility of chiplet-based architectures for ADAS applications.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S03",
@@ -48,7 +52,9 @@
         "S02"
       ],
       "lead_time_quarters": 4,
-      "justification": "Develop a prototype of an energy-efficient AI accelerator for automotive applications."
+      "justification": "Develop a prototype of an energy-efficient AI accelerator for automotive applications.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S04",
@@ -60,7 +66,9 @@
         "S03"
       ],
       "lead_time_quarters": 4,
-      "justification": "Integrate Automotive Ethernet networking into the ADAS platform and conduct thorough testing."
+      "justification": "Integrate Automotive Ethernet networking into the ADAS platform and conduct thorough testing.",
+      "year_idx_start": 2,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S05",
@@ -72,7 +80,9 @@
         "S03"
       ],
       "lead_time_quarters": 12,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S06",
@@ -86,7 +96,9 @@
         "S03"
       ],
       "lead_time_quarters": 13,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S07",
@@ -100,7 +112,9 @@
         "S03"
       ],
       "lead_time_quarters": 14,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     }
   ],
   "dependency_tree": {},

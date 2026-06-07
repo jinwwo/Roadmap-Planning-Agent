@@ -25,7 +25,9 @@
         "TS05"
       ],
       "lead_time_quarters": 10,
-      "justification": "Capitalize on strong market demand and existing patent portfolio. Focus on optimizing material performance and scaling up production."
+      "justification": "Capitalize on strong market demand and existing patent portfolio. Focus on optimizing material performance and scaling up production.",
+      "year_idx_start": 1,
+      "year_idx_target": 3
     },
     {
       "tech_id": "S02",
@@ -38,7 +40,9 @@
         "S03"
       ],
       "lead_time_quarters": 9,
-      "justification": "Develop prototype solid-state batteries to demonstrate performance and safety advantages."
+      "justification": "Develop prototype solid-state batteries to demonstrate performance and safety advantages.",
+      "year_idx_start": 1,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S05",
@@ -48,7 +52,9 @@
       "target_q": "2027 Q3",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Validate the dry electrode coating process to reduce costs and improve production efficiency."
+      "justification": "Validate the dry electrode coating process to reduce costs and improve production efficiency.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S03",
@@ -61,7 +67,9 @@
         "Solid State Electrolytes"
       ],
       "lead_time_quarters": 10,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S04",
@@ -73,7 +81,9 @@
         "Dry Electrode Coating"
       ],
       "lead_time_quarters": 11,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S06",
@@ -86,7 +96,9 @@
         "Solid State Electrolytes"
       ],
       "lead_time_quarters": 13,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S07",
@@ -99,7 +111,9 @@
         "Solid State Electrolytes"
       ],
       "lead_time_quarters": 14,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     }
   ],
   "dependency_tree": {},

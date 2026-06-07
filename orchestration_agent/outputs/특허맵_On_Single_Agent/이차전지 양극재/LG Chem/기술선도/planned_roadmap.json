@@ -23,7 +23,9 @@
       "target_q": "2028 Q2",
       "prerequisites": [],
       "lead_time_quarters": 8,
-      "justification": "Rapidly scale production of high-nickel cathode materials to meet growing EV demand. Focus on improving stability and cycle life."
+      "justification": "Rapidly scale production of high-nickel cathode materials to meet growing EV demand. Focus on improving stability and cycle life.",
+      "year_idx_start": 1,
+      "year_idx_target": 3
     },
     {
       "tech_id": "S02",
@@ -35,7 +37,9 @@
         "S05"
       ],
       "lead_time_quarters": 10,
-      "justification": "Develop and test prototype solid-state batteries. Address challenges related to interface resistance and ionic conductivity."
+      "justification": "Develop and test prototype solid-state batteries. Address challenges related to interface resistance and ionic conductivity.",
+      "year_idx_start": 1,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S03",
@@ -45,7 +49,9 @@
       "target_q": "2028 Q3",
       "prerequisites": [],
       "lead_time_quarters": 9,
-      "justification": "Establish pilot production lines for dry electrode coating to validate cost savings and improve production efficiency."
+      "justification": "Establish pilot production lines for dry electrode coating to validate cost savings and improve production efficiency.",
+      "year_idx_start": 1,
+      "year_idx_target": 3
     },
     {
       "tech_id": "S04",
@@ -58,7 +64,9 @@
         "Advanced Battery Packaging"
       ],
       "lead_time_quarters": 11,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S05",
@@ -71,7 +79,9 @@
         "High-Nickel Cathode Materials"
       ],
       "lead_time_quarters": 12,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S06",
@@ -84,7 +94,9 @@
         "High-Nickel Cathode Materials"
       ],
       "lead_time_quarters": 13,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S07",
@@ -96,7 +108,9 @@
         "Dry Electrode Coating"
       ],
       "lead_time_quarters": 14,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     }
   ],
   "dependency_tree": {},

@@ -23,7 +23,9 @@
       "target_q": "2026 Q4",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Essential for scaling production of advanced cathode materials."
+      "justification": "Essential for scaling production of advanced cathode materials.",
+      "year_idx_start": 1,
+      "year_idx_target": 1
     },
     {
       "tech_id": "S01",
@@ -35,7 +37,9 @@
         "S05"
       ],
       "lead_time_quarters": 2,
-      "justification": "Validate coating performance and optimize manufacturing process."
+      "justification": "Validate coating performance and optimize manufacturing process.",
+      "year_idx_start": 2,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S03",
@@ -47,7 +51,9 @@
         "S05"
       ],
       "lead_time_quarters": 2,
-      "justification": "Implement dry coating process to reduce costs and environmental impact."
+      "justification": "Implement dry coating process to reduce costs and environmental impact.",
+      "year_idx_start": 2,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S02",
@@ -60,7 +66,9 @@
         "S01"
       ],
       "lead_time_quarters": 3,
-      "justification": "Optimize single crystal structure for maximum performance and durability."
+      "justification": "Optimize single crystal structure for maximum performance and durability.",
+      "year_idx_start": 3,
+      "year_idx_target": 3
     },
     {
       "tech_id": "S07",
@@ -70,7 +78,9 @@
       "target_q": "2028 Q1",
       "prerequisites": [],
       "lead_time_quarters": 1,
-      "justification": "Establish a closed-loop recycling process for cathode materials."
+      "justification": "Establish a closed-loop recycling process for cathode materials.",
+      "year_idx_start": 3,
+      "year_idx_target": 3
     },
     {
       "tech_id": "S04",
@@ -83,7 +93,9 @@
         "Single Crystal Cathode Materials"
       ],
       "lead_time_quarters": 11,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S06",
@@ -93,7 +105,9 @@
       "target_q": "2030 Q4",
       "prerequisites": [],
       "lead_time_quarters": 13,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     }
   ],
   "dependency_tree": {},

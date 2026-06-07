@@ -23,7 +23,9 @@
       "target_q": "2026 Q4",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Early exploration of HBM4 integration is crucial for staying ahead of the curve in AI memory technology."
+      "justification": "Early exploration of HBM4 integration is crucial for staying ahead of the curve in AI memory technology.",
+      "year_idx_start": 1,
+      "year_idx_target": 1
     },
     {
       "tech_id": "S02",
@@ -33,7 +35,9 @@
       "target_q": "2027 Q2",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Develop a high-performance interconnect fabric to enable scalable AI hardware designs."
+      "justification": "Develop a high-performance interconnect fabric to enable scalable AI hardware designs.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S03",
@@ -43,7 +47,9 @@
       "target_q": "2027 Q3",
       "prerequisites": [],
       "lead_time_quarters": 4,
-      "justification": "Investigate novel architectures and precision scaling techniques to minimize energy consumption."
+      "justification": "Investigate novel architectures and precision scaling techniques to minimize energy consumption.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
     },
     {
       "tech_id": "S04",
@@ -56,7 +62,9 @@
         "S02"
       ],
       "lead_time_quarters": 11,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
     },
     {
       "tech_id": "S05",
@@ -68,7 +76,9 @@
         "S06"
       ],
       "lead_time_quarters": 12,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S06",
@@ -80,7 +90,9 @@
         "S05"
       ],
       "lead_time_quarters": 13,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     },
     {
       "tech_id": "S07",
@@ -90,7 +102,9 @@
       "target_q": "2030 Q4",
       "prerequisites": [],
       "lead_time_quarters": 14,
-      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
     }
   ],
   "dependency_tree": {},
