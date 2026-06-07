@@ -1,0 +1,407 @@
+{
+  "market_context": {
+    "target_market": "AI Vision Perception / ADAS / Computer Vision",
+    "expected_boom_quarter": "2028 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "다중 센서 퓨전 아키텍처",
+        "market_score": 82.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 40.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "자율주행 소프트웨어 및 AI 하드웨어 시장이 2034 년까지 400 억 달러 규모로 성장할 것으로 예상되며, 센서 퓨전은 핵심 아키텍처로 포함됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 레벨 3 이상 상용화 가속 및 센서 퓨전 시장 성장률 (10-20% 대) 을 반영한 추정치."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Sensor Fusion Market Insights: Trends, Forecast 2030",
+            "url": "https://www.knowledge-sourcing.com/report/automotive-sensor-fusion-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Sensor Fusion In Autonomous Vehicle Market",
+            "url": "https://www.marketresearchfuture.com/reports/sensor-fusion-in-autonomous-vehicle-market-42848",
+            "use": "Competitive landscape analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Waymo",
+            "Luminar",
+            "Velodyne"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "market_score": 88.2,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 68.0,
+          "sam_usd_b": 20.0,
+          "som_usd_b": 3.0,
+          "basis": "합성 데이터 생성 시장이 2030 년까지 급성장할 것으로 예상되며, 특히 자율주행 훈련용 데이터 수요가 폭발적입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "실제 데이터 수집의 한계와 규제 강화로 인해 합성 데이터 의존도가 급증하며, CAGR 20% 이상 성장 전망."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Synthetic Data Video Generator Global Market Analysis",
+            "url": "https://www.globenewswire.com/news-release/2026/05/21/3299541/28124/en/synthetic-data-video-generator-global-market-analysis-report-2026-9-68-bn-opportunities-trends-competitive-landscape-strategies-and-forecasts-2020-2025-2025-2030f-2035f.html",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Synthetic Driving Data Generation Market Research Report 2034",
+            "url": "https://dataintelo.com/report/synthetic-driving-data-generation-market",
+            "use": "Market growth drivers"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Waymo",
+            "Velodyne"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "온-디바이스 모델 최적화",
+        "market_score": 79.8,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "온디바이스 AI 시장이 2030 년까지 350 억 달러 규모로 성장할 것으로 예상되며, ADAS 칩셋 최적화 수요가 핵심입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 27.9,
+          "forecast_period": "2025-2030",
+          "basis": "온디바이스 AI 시장 CAGR 27.9% 성장 전망 및 에지 컴퓨팅 수요 증가 반영."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "On-Device AI Market Size, Share | CAGR of 27.9%",
+            "url": "https://market.us/report/on-device-ai-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Transformer-Optimized AI Chip Market Size, 2025-2034 Forecast",
+            "url": "https://www.gminsights.com/industry-analysis/transformer-optimized-ai-chip-market",
+            "use": "Competitive landscape analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA",
+            "Mobileye"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "고해상도 라이다 수신기 기술",
+        "market_score": 74.5,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.2,
+          "basis": "자율주행 라이다 시장이 2030 년까지 250 억 달러 규모로 성장할 것으로 예상되며, 고해상도 수신기 기술이 핵심입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "라이다 시장 CAGR 20% 이상 성장 전망 및 고해상도 센서 수요 증가 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive LiDAR Market Size & Share Analysis, 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/automotive-lidar-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "LiDAR Market Size Report 2025-2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/lidar-market-1261.html",
+            "use": "Market growth drivers"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Waymo",
+            "Luminar",
+            "Velodyne"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "자율주행 안전 아키텍처",
+        "market_score": 82.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "2030 년 기준 글로벌 자율주행 소프트웨어 및 안전 아키텍처 시장 규모는 450 억 달러 이상으로 추정되며, ADAS 및 L3 이상 자율주행 차량의 안전 검증 요구가 핵심 성장 동력임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2026-2030",
+          "basis": "GMI Insights 및 MarketsandMarkets 보고서에 따르면, 자율주행 소프트웨어 및 컴퓨터 비전 시장은 연평균 20% 이상의 고성장세를 보이며, 2030 년까지 급격한 시장 확대가 예상됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive AI Market Size, Share & Trends - MarketsandMarkets",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-artificial-intelligence-market-248804391.html",
+            "use": "TAM 및 CAGR 추정 근거"
+          },
+          {
+            "title": "Autonomous Driving Software Market Size & Share Report - 2035",
+            "url": "https://www.gminsights.com/industry-analysis/autonomous-driving-software-market",
+            "use": "경쟁 구도 및 시장 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Mobileye",
+            "Waymo",
+            "Aptiv"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Mobileye",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Waymo",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Luminar",
+          "similarity": 0.78,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Velodyne",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Aptiv",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T02",
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T04",
+          "name": "고해상도 라이다 수신기 기술",
+          "final_score": 78.82,
+          "selection_score": 79.28,
+          "actor_map_score": 71.4,
+          "reason": "TRL 5 로 상용화 시기가 2029 년으로 늦고, 하드웨어 의존도가 높아 STRADVISION 의 '검증된 기술 스택 상용화 가속' 전략과 맞지 않으며, 기존 비전 중심 포트폴리오와의 시너지가 상대적으로 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 85.31,
+        "avg_market_score": 83.25,
+        "avg_patent_score": 87.83,
+        "avg_actor_map_score": 78.15,
+        "map_supported_count": 4
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "STRADVISION 의 2026-2030 년 전략인 '원가 우위'와 '상용화 가속'을 위해, T02(합성 데이터) 를 통해 데이터 비용을 절감하고 T01(센서 퓨전) 과 T05(안전 아키텍처) 로 검증된 소프트웨어 스택을 완성하는 로드맵을 구성했습니다. T03(온-디바이스 최적화) 은 에지 컴퓨팅 효율성을 높여 하드웨어 비용을 낮추는 핵심 요소로 포함되었습니다. T04 는 TRL 이 낮고 시장 진입 시기가 늦어 당장 상용화 중심의 포트폴리오에는 적합하지 않아 제외했습니다.",
+        "evidence_used": {
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "다중 센서 퓨전 아키텍처",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "의존성이 없는 핵심 아키텍처 기술로 TRL 7 수준이므로 1 차년도부터 즉시 착수하여 3 차년도까지 안정화한다. 이는 후행 기술인 T02 의 데이터 생성 및 T03 의 최적화 적용을 위한 필수 선행 조건을 마련하기 위함이다.",
+        "tech_execution": "STRADVISION 의 단일 카메라 중심 전략을 보완하여 라이다, 레이더, 카메라를 통합하는 견고한 인지 시스템을 구축해야 한다. 이는 2027 년경 예상되는 시장 진입 시점에 맞춰 경쟁사 대비 기술 격차를 해소하고 ADAS 리더십을 강화하는 데 필수적이다.",
+        "investment_selection": "NVIDIA 와 Waymo 등 주요 경쟁사가 선점하고 있는 엔드투엔드 퓨전 아키텍처 시장에서 기술적 진입 장벽을 낮추기 위한 핵심 투자 대상이다. 초기 아키텍처 확립은 향후 원가 우위 전략과 상용화 가속을 위한 기술적 토대가 되어 R&D 예산의 효율성을 극대화한다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "시뮬레이션 기반 합성 데이터 생성",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01"
+      ],
+      "reasoning": {
+        "year_placement": "선행 기술인 T01 의 아키텍처가 2 차년도에 초기 안정화되어야 적용 가능하므로 2 차년도에 시작한다. TRL 6 수준으로 2026 년 말 시장 급증에 대응하기 위해 4 차년도까지 기술 고도화와 데이터 품질 향상을 지속한다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+        "tech_execution": "실제 주행 데이터 수집의 비용과 위험을 줄이기 위해 NVIDIA 와 Velodyne 의 동향을 반영한 대규모 합성 데이터 생성 기술을 확보해야 한다. 이는 STRADVISION 의 원가 우위 전략을 실현하고 데이터 라벨링 비용을 획기적으로 절감하는 핵심 수단이다.",
+        "investment_selection": "2026 년 말부터 급격히 확대될 시뮬레이션 플랫폼 시장에서 선점 효과를 얻기 위한 필수 투자 대상이다. 데이터 수집 비용 절감은 장기적인 원가 경쟁력을 확보하고, 검증된 기술 스택의 상용화 속도를 높이는 데 결정적인 역할을 한다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "온-디바이스 모델 최적화",
+      "year_idx_start": 5,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01",
+        "T02"
+      ],
+      "reasoning": {
+        "year_placement": "T01 의 아키텍처와 T02 의 고품질 합성 데이터가 확보된 3 차년도 이후에 본격적인 최적화 작업이 가능하므로 3 차년도에 시작한다. Planning Horizon 의 마지막인 5 차년도까지 이어져 차세대 저전력 엣지 디바이스 기술 진화를 주도한다. [후처리: dependency 보정 — prereq ['T01', 'T02'] 완료 후로 2차년도 push]",
+        "tech_execution": "Mobileye 와 NVIDIA 의 최신 하드웨어 효율화 기술과 비교하여 성능 격차를 줄이고, 저전력 환경에서의 고도화된 추론 속도를 확보해야 한다. 이는 STRADVISION 의 기존 특허 기반 기술을 차별화 포인트로 발전시켜 글로벌 시장 확장을 뒷받침한다.",
+        "investment_selection": "온디바이스 최적화 시장의 진입 장벽이 높지만, 기존 특허를 기반으로 한 차별화된 기술은 장기적인 경쟁 우위를 확보할 수 있는 핵심 투자 대상이다. 2030 년까지의 장기 R&D 는 차세대 자율주행 시스템의 에너지 효율성을 극대화하여 시장 점유율을 높이는 데 기여한다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "다중 센서 퓨전 아키텍처",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [
+        "T02",
+        "T03"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "시뮬레이션 기반 합성 데이터 생성",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [
+        "T01"
+      ],
+      "dependents": [
+        "T03"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "온-디바이스 모델 최적화",
+      "category": "Process",
+      "trl": 7,
+      "prerequisites": [
+        "T01",
+        "T02"
+      ],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2028 Q2"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 3,
+    "rationale": "ADAS 리더십(T01), 원가 우위(T02), 상용화 가속(T03) 전략 정합성 확보. 2026~2028 분기별 시점 분포로 2030 로드맵 완성.",
+    "dropped": [
+      {
+        "tech_id": "T05",
+        "name": "자율주행 안전 아키텍처",
+        "reason": "T01(센서 퓨전) 과 T03(모델 최적화) 가 안전성 요구사항을 포괄하므로 중복 기능으로 제외."
+      }
+    ]
+  }
+}

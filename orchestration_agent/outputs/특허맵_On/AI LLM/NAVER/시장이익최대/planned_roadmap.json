@@ -1,0 +1,648 @@
+{
+  "market_context": {
+    "target_market": "Large Language Model / Foundation Model / AI Platform",
+    "expected_boom_quarter": "2027 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "LLM 추론 가속화 기술",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2026 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 추론 시장이 2030 년까지 450 억 달러 규모로 성장할 것으로 예상되며, NAVER 의 검색 및 플랫폼 기반 서비스는 이 중 120 억 달러 규모의 서비스 가능 시장 (SAM) 을 목표로 함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.5,
+          "forecast_period": "2025-2030",
+          "basis": "Mordor Intelligence 및 MarketsandMarkets 보고서는 LLM 추론 시장이 연평균 28% 이상의 고성장률을 보일 것으로 예측함."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI Inference Market Size, Share & Growth, 2025 To 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ai-inference-market-189921964.html",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "AI Inference Chips 2025: Rankings & Leaders",
+            "url": "https://uvation.com/articles/ai-inference-chips-latest-rankings-who-leads-the-race",
+            "use": "Competitive landscape analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Amazon",
+            "Baidu"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "생성형 AI 데이터 품질 관리",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 1.2,
+          "basis": "생성형 AI 데이터 관리 및 품질 보증 시장이 2032 년까지 8900 억 달러 규모의 전체 생태계 내에서 350 억 달러의 핵심 소프트웨어 시장으로 성장할 것으로 추정됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "Wissen Research 및 MarketsandMarkets 보고서는 데이터 품질 관리 솔루션이 전체 생성형 AI 시장의 24% CAGR 로 성장할 것으로 분석함."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Generative AI Market worth $890.59 billion by 2032",
+            "url": "https://www.marketsandmarkets.com/PressReleases/generative-ai.asp",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "US Generative AI Market Report 2025-2032",
+            "url": "할",
+            "use": "Regulatory and quality standards context"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Amazon",
+            "Baidu",
+            "Alibaba"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "멀티모달 생성형 모델 아키텍처",
+        "market_score": 91.5,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 60.0,
+          "sam_usd_b": 18.0,
+          "som_usd_b": 3.0,
+          "basis": "멀티모달 AI 시장이 2031 년까지 600 억 달러 규모로 성장할 것으로 예상되며, NAVER 의 콘텐츠 및 XR 생태계는 180 억 달러 규모의 서비스 가능 시장을 확보할 잠재력이 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.0,
+          "forecast_period": "2025-2030",
+          "basis": "Mordor Intelligence 보고서는 멀티모달 AI 시장이 연평균 32% 이상의 초고속 성장률을 보일 것으로 예측함."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Multimodal AI Market Size, Analysis | Share & Growth Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/multimodal-ai-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Generative AI Market Size, Share | Industry Report, 2033",
+            "url": "https://www.grandviewresearch.com/industry-analysis/generative-ai-market-report",
+            "use": "Market trend and application analysis"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Microsoft",
+            "Alibaba"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "분산 학습 장애 복구 기술",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 0.8,
+          "basis": "대규모 AI 학습 인프라 관리 및 장애 복구 솔루션 시장이 2030 년까지 150 억 달러 규모로 성장할 것으로 예상되며, NAVER 의 자체 학습 클러스터는 40 억 달러 규모의 서비스 가능 시장을 형성함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 플랫폼 시장 보고서에 따르면, 학습 효율성 및 안정성 관련 기술은 연평균 18% 의 성장률을 보일 것으로 예측됨."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "AI Platform Market Report 2025- 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-ai-platform-market-113162926.html",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Enterprise AI Workforce Platforms Market Size, Share & 2031 Growth Trends Report",
+            "url": "https://www.mordorintelligence.com/industry-reports/enterprise-ai-workplace-platforms-market",
+            "use": "Infrastructure reliability context"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Amazon"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "맥락 인식 프롬프트 최적화",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2026 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 6533.87,
+          "sam_usd_b": 1200.0,
+          "som_usd_b": 45.0,
+          "basis": "Prompt Engineering 시장 규모가 2034 년까지 6,533 억 달러에 달할 것으로 예상되며, LLM 기반 서비스의 핵심 최적화 기술로 즉각적인 수요가 발생함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.9,
+          "forecast_period": "2025-2030",
+          "basis": "AI Prompt Marketplace 시장이 연평균 26.9% 의 성장률을 보이며, LLM 성능 향상을 위한 필수 기술로 급성장 중."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Prompt Engineering Market Size to Hit USD 6,533.87 Bn by 2034",
+            "url": "https://www.precedenceresearch.com/prompt-engineering-market",
+            "use": "TAM 및 시장 성장성 근거"
+          },
+          {
+            "title": "AI Prompt Marketplace Market Share | CAGR 26.9%",
+            "url": "https://market.us/report/ai-prompt-marketplace-market",
+            "use": "CAGR 및 성장 동력 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Microsoft"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "생성형 AI 출력 추적 및 검증",
+        "market_score": 86.2,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 150.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 8.0,
+          "basis": "생성형 AI 규제 강화 및 기업 신뢰도 요구로 인해 검증/추적 솔루션 시장이 급성장하고 있으며, 전체 GenAI 시장의 핵심 하위 시장으로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "생성형 AI 소프트웨어 플랫폼 시장이 연평균 28% 성장하며, 특히 규제 준수 및 신뢰성 확보를 위한 검증 기술 수요가 급증함."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Generative AI Market Size, Growth Analysis & Industry Forecast, 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/generative-ai-market",
+            "use": "전체 GenAI 시장 규모 및 성장성 근거"
+          },
+          {
+            "title": "Generative AI Software Platforms Market Size | CAGR of 28%",
+            "url": "https://market.us/report/generative-ai-software-platforms-market",
+            "use": "CAGR 및 플랫폼 시장 성장 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Amazon"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "XR 환경에서의 다중 사용자 협업 프레임워크",
+        "market_score": 72.5,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 85.0,
+          "sam_usd_b": 25.0,
+          "som_usd_b": 3.5,
+          "basis": "XR 및 메타버스 시장이 의료, 교육, 기업 협업 등 특정 분야로 확장되며, 다중 사용자 협업 프레임워크는 핵심 인프라로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2026-2030",
+          "basis": "XR 시장이 2030 년까지 연평균 20% 이상의 성장률을 보이며, AI 와 결합된 협업 솔루션이 주요 성장 동력이 됨."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Metaverse In Healthcare Market Size, Analysis - Share & Global Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/metaverse-in-healthcare-market",
+            "use": "XR 시장 적용 분야 및 성장성 근거"
+          },
+          {
+            "title": "Extended Reality (XR) Market | Global Market Analysis Report - 2036",
+            "url": "https://www.futuremarketinsights.com/reports/extended-reality-market",
+            "use": "XR 시장 전체 규모 및 경쟁 구도 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Microsoft",
+            "Meta"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "AI 기반 이상 활동 탐지",
+        "market_score": 79.8,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "AI 보안 및 이상 탐지 시장이 사이버 위협 증가와 규제 강화로 인해 급성장하고 있으며, LLM 기반 탐지 기술이 차세대 표준으로 부상 중."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Anomaly Detection 시장이 연평균 24.5% 성장하며, LLM 기반의 정교한 탐지 기술이 기존 규칙 기반 시스템을 대체하는 추세."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI as a Service Market Report 2025-2030, by Product Type, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-ai-as-a-service-market-121842268.html",
+            "use": "AI 서비스 시장 및 적용 분야 근거"
+          },
+          {
+            "title": "Anomaly Detection Market - Research, Analysis & Growth",
+            "url": "https://www.mordorintelligence.com/industry-reports/anomaly-detection-market",
+            "use": "이상 탐지 시장 규모 및 성장성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Google",
+            "Amazon"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T09": {
+        "name": "디지털 트윈 기반 시스템 모델링",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "디지털 트윈 시장 규모는 2030 년 약 1,250 억 달러 (12.5B) 로 추정되며, AI/LLM 기반 모델링이 핵심 성장 동력. NAVER 의 클라우드 및 산업 솔루션 영역을 고려한 SAM 은 약 42 억 달러, 초기 진입 가능 규모 (SOM) 는 8 억 달러 수준."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 및 GMI Insights 보고서는 2025-2030 년간 연평균 20% 이상의 고성장 (CAGR 22.5%) 을 예측하며, LLM 기반 시뮬레이션 수요가 주된 성장 요인."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Digital Twin Market size report 2024- 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/digital-twin-market-225269522.html",
+            "use": "TAM/CAGR 및 시장 성장 동력 근거"
+          },
+          {
+            "title": "Digital Twin AI: Opportunities and Challenges from Large Language Models to World Models",
+            "url": "https://arxiv.org/html/2601.01321v1",
+            "use": "LLM 기반 디지털 트윈 기술적 성숙도 및 적용 가능성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Amazon",
+            "Microsoft"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T10": {
+        "name": "스마트 글래스용 조절 가능한 구조",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 4.1,
+          "sam_usd_b": 1.5,
+          "som_usd_b": 0.3,
+          "basis": "글로벌 스마트 글래스 시장은 2030 년 약 41 억 달러 (4.1B) 로 추정되며, AI 글래스 수요 증가로 급성장 중. NAVER 의 XR/웨어러블 생태계 확장 시 SAM 은 15 억 달러, 초기 SOM 은 3 억 달러 수준."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "Citigroup 및 Counterpoint Research 보고서는 2025 년 H1 기준 110% 성장률을 기록하며, 2025-2030 년간 연평균 28% 이상의 초고속 성장을 예측."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Global Smart Glasses Market Estimated to Reach $4.129 Billion By 2030",
+            "url": "https://www.financialnewsmedia.com/global-smart-glasses-market-estimated-to-reach-4-129-billion-by-2030-a-big-boon-for-tech-companies",
+            "use": "TAM 및 시장 규모 추정 근거"
+          },
+          {
+            "title": "AI Glasses: The Next Fast-Growing Edge Device",
+            "url": "https://www.citigroup.com/global/insights/ai-glasses-the-next-fast-growing-edge-device",
+            "use": "CAGR 및 성장 동력 분석"
+          },
+          {
+            "title": "Global Smart Glasses Shipments Soared 110% YoY in H1 2025",
+            "url": "https://counterpointresearch.com/en/insights/post-insight-research-briefs-blogs-global-smart-glasses-shipments-soared-110-yoy-in-h1-2025-with-meta-capturing-over-70-share",
+            "use": "경쟁 구도 및 시장 점유율 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Meta"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "Google",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Amazon",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Microsoft",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Baidu",
+          "similarity": 0.82,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Alibaba",
+          "similarity": 0.8,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Meta",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 10,
+      "target_k": 8,
+      "selected_count": 8,
+      "selected_tech_ids": [
+        "T01",
+        "T03",
+        "T05",
+        "T02",
+        "T06",
+        "T04",
+        "T08",
+        "T09"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T07",
+          "name": "XR 환경에서의 다중 사용자 협업 프레임워크",
+          "final_score": 74.62,
+          "selection_score": 74.84,
+          "actor_map_score": 72.0,
+          "reason": "TRL 4 로 성숙도가 낮고, T03(멀티모달) 에 의존성이 있어 단기 상용화 전략과 맞지 않으며, XR 협업은 2029 년 이후의 장기 과제임."
+        },
+        {
+          "tech_id": "T10",
+          "name": "스마트 글래스용 조절 가능한 구조",
+          "final_score": 72.99,
+          "selection_score": 73.09,
+          "actor_map_score": 67.5,
+          "reason": "하드웨어 (Equipment) 중심 기술로 NAVER 의 핵심 SW/플랫폼 전략과 직접적 연관성이 낮고, Meta 등 하드웨어 거대 기업과의 경쟁에서 진입 장벽이 높음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 83.02,
+        "avg_market_score": 83.94,
+        "avg_patent_score": 81.9,
+        "avg_actor_map_score": 78.9,
+        "map_supported_count": 8
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "NAVER 의 '검증된 LLM 기술의 단기 상용화' 및 '원가 우위 확보' 전략에 부합하는 T01(추론 가속), T05(프롬프트 최적화), T02(데이터 품질) 를 최우선으로 선정했습니다. 또한 'AI 플랫폼 생태계 확장'을 위한 T03(멀티모달), T06(출력 검증), T08(보안) 을 포함하여 포트폴리오의 다양성을 확보했습니다. T04(학습 장애 복구) 와 T09(디지털 트윈) 는 인프라 강화 및 인접 시장 확장을 위한 중장기 기술로 포함되었으며, T07 과 T10 은 TRL 성숙도 부족 및 하드웨어 중심의 전략적 부합도 낮음으로 제외했습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T08": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T09": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T01",
+      "name": "LLM 추론 가속화 기술",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 수준으로 단기 상용화가 가능하며, 2026 년 Q2 에 예상되는 시장 붐에 맞춰 1 차년도부터 즉시 시작하여 2 차년도 말까지 핵심 기술 고도화를 완료해야 합니다. 이는 네이버의 원가 우위 확보 전략을 위한 가장 시급한 과제입니다.",
+        "tech_execution": "대규모 모델의 추론 속도와 효율성을 높이는 아키텍처를 확보함으로써, 경쟁사 대비 서비스 제공 비용을 낮추고 실시간 응답 성능을 극대화하는 것이 핵심 목표입니다. 이를 통해 네이버의 LLM 기반 서비스 경쟁력을 단기간에 강화할 수 있습니다.",
+        "investment_selection": "추론 비용 절감은 LLM 상용화의 핵심 병목이므로, 초기 투자 대비 시장 진입 장벽을 낮추는 효과가 가장 큽니다. 2026 년부터 급격히 성장할 시장에서 선제적인 기술 확보는 네이버의 시장 점유율 방어에 필수적입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "맥락 인식 프롬프트 최적화",
+      "year_idx_start": 1,
+      "year_idx_target": 2,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 가장 성숙한 기술이며, 2026 년 Q2 시장 붐에 맞춰 1 차년도부터 즉시 적용하여 2 차년도까지 서비스 품질 최적화를 완료해야 합니다. 이는 검증된 기술을 기반으로 한 빠른 성과 창출이 가능한 영역입니다.",
+        "tech_execution": "LLM 의 프롬프트 내 맥락 데이터 배치 및 최적화를 통해 사용자 경험과 서비스 정확도를 직접적으로 향상시키는 것이 주된 목적입니다. 기존 플랫폼 기업들의 핵심 경쟁력을 벤치마킹하여 네이버 서비스의 차별화를 꾀합니다.",
+        "investment_selection": "이미 주요 기업들이 보유한 검증된 기술이므로 실패 위험이 낮고, 투자 효율성이 매우 높습니다. 단기적으로 서비스 품질을 높여 고객 만족도를 제고하고, 장기적인 플랫폼 생태계 확장의 기반을 마련합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T04",
+      "name": "분산 학습 장애 복구 기술",
+      "year_idx_start": 2,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 수준으로 1 차년도에 기초 연구를 시작할 수 있으나, 대규모 모델 학습의 안정성 확보는 2 차년도부터 본격화하여 4 차년도까지 고도화하는 것이 적절합니다. 이는 2029 년 Q2 예상 붐에 대비한 중장기 준비 기간입니다.",
+        "tech_execution": "대규모 모델 학습 시 발생하는 하드웨어 오류나 분산 학습 장애를 효율적으로 복구하는 프로세스를 구축하여 학습 효율성을 극대화하는 것이 목표입니다. 이를 통해 원가 우위를 확보하고 학습 리스크를 최소화합니다.",
+        "investment_selection": "학습 안정성은 대규모 모델 개발의 필수 조건이므로, 소수 기업에 의해 주도되는 시장에서 경쟁력을 갖추기 위한 핵심 투자 대상입니다. 장기적인 R&D 예산을 투입하여 기술 장벽을 높이고 지속 가능한 학습 인프라를 구축합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "멀티모달 생성형 모델 아키텍처",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 상대적으로 낮아 3 차년도부터 본격적인 개발을 시작하여 5 차년도 (2030 년) 까지 이어지는 장기 프로젝트로 설정합니다. 이는 2028 년 Q3 예상 붐을 넘어 차세대 기술로 진화하는 과정을 포함합니다.",
+        "tech_execution": "텍스트, 이미지, 3D 공간 생성을 아우르는 멀티모달 아키텍처를 확보하여 네이버의 AI 플랫폼 생태계를 텍스트 중심에서 넘어 확장하는 것이 핵심입니다. 이는 생성형 AI 의 다음 주요 성장 동력을 선점하는 전략입니다.",
+        "investment_selection": "멀티모달 기술은 향후 시장 성장의 핵심이므로, 2030 년까지 이어지는 장기 투자를 통해 기술적 우위를 점해야 합니다. 이는 네이버가 AI 플랫폼 시장에서 선도적인 위치를 차지하기 위한 필수적인 투자입니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T01": {
+      "tech_id": "T01",
+      "name": "LLM 추론 가속화 기술",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2026 Q2"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "맥락 인식 프롬프트 최적화",
+      "category": "Process",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2026 Q2"
+    },
+    "T04": {
+      "tech_id": "T04",
+      "name": "분산 학습 장애 복구 기술",
+      "category": "Process",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2029 Q2"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "멀티모달 생성형 모델 아키텍처",
+      "category": "Architecture",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q3"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 4,
+    "rationale": "Strategic Direction 3 가지 (단기 상용화, 생태계 확장, 인프라 강화) 를 각각 T01/T05, T03, T04 로 매칭하여 정합성 확보. 2026~2029 년 시점 분포를 고려하여 단기/중기/장기 기술이 균형 있게 선별됨.",
+    "dropped": [
+      {
+        "tech_id": "T02",
+        "name": "생성형 AI 데이터 품질 관리",
+        "reason": "T05(프롬프트 최적화) 가 단기 상용화 전략을 더 직접적으로 뒷받침하므로 중복 제거."
+      },
+      {
+        "tech_id": "T06",
+        "name": "생성형 AI 출력 추적 및 검증",
+        "reason": "T04(장애 복구) 가 인프라 강화 전략의 핵심이며, T06 은 보안 측면에서 우선순위 낮음."
+      },
+      {
+        "tech_id": "T08",
+        "name": "AI 기반 이상 활동 탐지",
+        "reason": "T04 와 T06 이 인프라 및 안정성 전략을 충분히 커버하므로 중복 제거."
+      },
+      {
+        "tech_id": "T09",
+        "name": "디지털 트윈 기반 시스템 모델링",
+        "reason": "LLM/플랫폼 핵심 전략과 직접 연결성이 약하고, T03 이 생태계 확장 전략을 더 잘 반영."
+      }
+    ]
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "market_context": {
+    "target_market": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "고성능 SiC 반도체 제조",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 2.5,
+          "basis": "전 세계 자동차 반도체 시장 중 SiC 파워 디바이스 부문은 2030 년까지 450 억 달러 규모로 성장할 것으로 예상되며, EV 및 하이브리드 차량의 급증으로 인해 20% 이상의 CAGR을 기록 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 및 PSM Research 보고서에 따르면 SiC 반도체는 고전압 EV 파워트레인 수요 증가로 인해 연평균 20% 이상의 성장을 보일 것으로 전망됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive Semiconductor Market Size, Share & Trends",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-semiconductor-195.html",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Automotive Chip Market Size, and Growth Report, 2032",
+            "url": "https://www.psmarketresearch.com/market-analysis/automotive-chip-market-report",
+            "use": "TAM/SAM estimation"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "ZF Friedrichshafen",
+            "Denso Corporation"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "스테어바이와이어 다중모드 제어",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "X-by-wire 시스템 시장은 자율주행 레벨 3 이상 차량의 상용화와 함께 2030 년까지 180 억 달러 규모로 성장할 것으로 추정되며, 특히 스테어바이와이어는 핵심 제어 기술로 부상 중임."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "DataIntelo 및 Mordor Intelligence 보고서에 따르면 X-by-wire 시스템은 2030 년까지 연평균 18% 이상의 성장률을 보이며, 2026 년 이후부터 주요 OEM 들이 대량 도입을 시작할 것으로 예상됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive X-by-Wire System Market Research Report 2034",
+            "url": "https://dataintelo.com/report/global-automotive-x-by-wire-system-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "X-by-wire System Market Report | Industry Analysis, Size & Forecast",
+            "url": "https://www.mordorintelligence.com/industry-reports/x-by-wire-systems-market",
+            "use": "Market growth outlook"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Bosch",
+            "ZF Friedrichshafen"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "카메라-초음파 통합 센서",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.0,
+          "som_usd_b": 2.0,
+          "basis": "자동차 카메라 및 통합 센서 시장은 ADAS 기능의 표준화로 인해 2030 년까지 250 억 달러 규모로 성장할 것으로 예상되며, 센서 퓨전 기술이 핵심 경쟁력이 됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.5,
+          "forecast_period": "2025-2030",
+          "basis": "VynZ Research 및 MarketsandMarkets 보고서에 따르면 ADAS 센서 시장은 연평균 15% 이상의 성장률을 보이며, 카메라와 초음파의 통합은 비용 절감과 공간 효율성으로 인해 2027 년 이후부터 본격화될 것으로 예상됨."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Automotive Camera Market Report 2026-2033",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/automotive-camera-market-125124333.html",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "ADAS Market Share & Growth Forecast | 2030",
+            "url": "https://www.vynzresearch.com/automotive-transportation/adas-market",
+            "use": "Growth outlook"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Magna International",
+            "Aptiv"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "상변화 물질 배터리 냉각",
+        "market_score": 71.0,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.0,
+          "som_usd_b": 1.0,
+          "basis": "자동차 배터리 열관리 시스템 시장은 EV 배터리 용량 증가와 충전 속도 향상 요구로 인해 2030 년까지 120 억 달러 규모로 성장할 것으로 예상되며, PCM 기술은 고효율 냉각 솔루션으로 주목받고 있음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.0,
+          "forecast_period": "2025-2030",
+          "basis": "Fortune Business Insights 및 DataIntelo 보고서에 따르면 배터리 열관리 시장은 연평균 14% 성장할 것으로 예상되며, PCM 기술은 2029 년 이후부터 대량 적용이 예상됨."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Automotive Battery Thermal Management System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-battery-thermal-management-system-market-105522",
+            "use": "TAM/CAGR evidence"
+          },
+          {
+            "title": "Phase Change Material (PCM) Market Research Report 2034",
+            "url": "https://dataintelo.com/report/phase-change-material-market",
+            "use": "Technology adoption outlook"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Magna International"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "고전압 커넥터 자동화 조립",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "Fortune Business Insights 및 Zion Market Research 보고서에 따르면, 2034 년까지 자동차 고전압 배선 및 커넥터 시스템 시장이 120 억 달러 이상으로 성장할 것으로 예상됨. EV 생산량 증가로 인한 고전압 부품 수요가 핵심 동인이며, 자동화 조립 기술은 이 공급망의 핵심 공정 효율화 요소로 간주됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 14.2,
+          "forecast_period": "2025-2030",
+          "basis": "MarketsandMarkets 및 관련 산업 보고서에 따르면, 자동차 전자 및 전기 장비 시장이 연평균 14% 이상의 성장률을 보이며, 고전압 커넥터는 EV 전환에 따라 가장 빠르게 성장하는 하위 분야 중 하나임."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Automotive High Voltage Wiring and Connector System Market [2034]",
+            "url": "https://www.fortunebusinessinsights.com/automotive-high-voltage-wiring-and-connector-system-market-115285",
+            "use": "TAM 및 고전압 커넥터 시장 성장 근거"
+          },
+          {
+            "title": "High Voltage Connectors Market Size, Share, Trends, Growth 2034",
+            "url": "https://www.zionmarketresearch.com/report/high-voltage-connectors-market",
+            "use": "경쟁 구도 및 시장 규모 상세 분석"
+          },
+          {
+            "title": "Automotive Electronics and Electrical Equipment Market Research",
+            "url": "https://www.marketsandmarkets.com/automotive-electronic-and-electrical-equipment-231.html",
+            "use": "CAGR 및 산업 전반 성장 전망"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Magna International",
+            "Aptiv"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 5,
+      "top_related_actors": [
+        {
+          "related_actor": "Bosch",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "ZF Friedrichshafen",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Denso Corporation",
+          "similarity": 0.85,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Magna International",
+          "similarity": 0.82,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Aptiv",
+          "similarity": 0.79,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T05"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T04",
+          "name": "상변화 물질 배터리 냉각",
+          "final_score": 76.0,
+          "selection_score": 76.53,
+          "actor_map_score": 73.8,
+          "reason": "TRL 5 로 기술 성숙도가 낮고, 시장 폭발 시기가 2029 년으로 2026-2030 년 계획 기간 후반부에 해당하여 단기 로드맵 활용도가 상대적으로 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 82.73,
+        "avg_market_score": 80.88,
+        "avg_patent_score": 85.0,
+        "avg_actor_map_score": 75.94,
+        "map_supported_count": 4
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "현대모비스의 2026-2030 년 전략인 'ADAS 리더십 강화'와 '원가 우위 확보'에 부합하는 T01(SiC), T02(스테어바이와이어), T03(센서 통합), T05(자동화 조립) 을 선정했습니다. T01 과 T02 는 ZF, Bosch 등 주요 경쟁사와의 기술 유사도가 높아 시장 진입 시기가 시급하며, T03 과 T05 는 원가 절감과 생산 효율성 측면에서 전략적 가치가 높습니다. 반면 T04 는 기술 성숙도 (TRL 5) 가 낮고 시장 성숙 시기가 늦어 단기 로드맵에는 적합하지 않아 제외되었습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T02",
+      "name": "스테어바이와이어 다중모드 제어",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026) 에 즉시 양산 준비를 시작하며, 2026 Q4 예상 시장 붐을 반영하여 3 차년도 (2028) 까지 초기 상용화 및 안정화 단계를 완료합니다. 이는 경쟁사 선점 기술을 빠르게 따라잡기 위한 초기 대응 전략입니다.",
+        "tech_execution": "자율주행 플랫폼 리더십 강화를 위해 핵심 조향 제어 알고리즘을 먼저 확보해야 하며, 이는 차세대 차량의 안전성과 제어 정밀도를 결정하는 기반 기술입니다. 다중모드 제어 구현을 통해 다양한 주행 환경에 대응하는 유연한 플랫폼을 구축합니다.",
+        "investment_selection": "2026 년 말부터 급성장할 시장 선점을 위해 초기 투자 집중이 필요하며, Bosch 와 ZF 의 기술 추격을 위한 핵심 투자 대상입니다. 원가 우위 확보를 위한 HW/SW 최적화의 첫 단계로 선정되어 빠른 ROI 를 기대할 수 있습니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T05",
+      "name": "고전압 커넥터 자동화 조립",
+      "year_idx_start": 1,
+      "year_idx_target": 4,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 7 로 성숙한 공정 기술이지만, 2027 Q3 시장 붐을 대비하여 1 차년도부터 설비 도입 및 공정 최적화를 시작하고, 4 차년도 (2029) 까지 대량 생산 라인 안정화 및 확장 단계를 수행합니다. 이는 EV 생산량 증가에 따른 수요 폭발에 선제적으로 대응하기 위함입니다.",
+        "tech_execution": "전기차 생산 라인의 효율성을 극대화하여 원가 우위를 확보하는 핵심 공정 기술로, 자동화 조립을 통해 품질 일관성과 생산 속도를 높여야 합니다. 경쟁사 (Aptiv, Magna) 의 자동화 기술을 선점하여 생산 경쟁력을 강화합니다.",
+        "investment_selection": "2027 년경 본격화될 고전압 커넥터 시장 수요를 충족시키기 위한 필수 투자이며, 생산 비용 절감을 통한 가격 경쟁력 확보에 직접적으로 기여합니다. 장기적인 생산 효율성 개선을 위해 4 차년도까지 지속적인 투자와 기술 고도화가 필요합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T03",
+      "name": "카메라 - 초음파 통합 센서",
+      "year_idx_start": 2,
+      "year_idx_target": 5,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 6 으로 상대적으로 개발 기간이 필요하므로 2 차년도 (2027) 에 본격적인 R&D 를 시작하며, 2028 Q1 시장 붐을 중간 마일스톤으로 삼아 5 차년도 (2030) 까지 차세대 통합 센서 표준화 및 고도화 단계를 이어갑니다. 이는 Horizon 종료 시점까지 기술 진화를 보장합니다.",
+        "tech_execution": "차량 외부 공간 활용도 향상과 원가 절감을 위한 핵심 센서 기술로, 카메라와 초음파의 통합을 통해 차별화된 성능을 확보해야 합니다. 치열한 경쟁 환경에서 Magna 와 Aptiv 를 능가하는 독자적인 통합 기술을 개발하여 시장 점유율을 높입니다.",
+        "investment_selection": "2028 년 이후 확대될 통합 센서 모듈 시장을 선점하기 위한 장기 투자 대상이며, 차세대 자율주행 플랫폼의 핵심 센서 표준을 주도하기 위해 필수적입니다. 5 차년도까지 이어지는 R&D 를 통해 지속적인 기술 우위를 유지하고 시장 변화에 유연하게 대응합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T02": {
+      "tech_id": "T02",
+      "name": "스테어바이와이어 다중모드 제어",
+      "category": "Equipment",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T05": {
+      "tech_id": "T05",
+      "name": "고전압 커넥터 자동화 조립",
+      "category": "Process",
+      "trl": 7,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 1,
+      "expected_market_boom_quarter": "2027 Q3"
+    },
+    "T03": {
+      "tech_id": "T03",
+      "name": "카메라 - 초음파 통합 센서",
+      "category": "Equipment",
+      "trl": 6,
+      "prerequisites": [],
+      "dependents": [],
+      "layer": 0,
+      "expected_market_boom_quarter": "2028 Q1"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 3,
+    "rationale": "ADAS 플랫폼 리더십 (T02, T03) 과 HW/SW 최적화 (T05) 전략에 정합된 기술을 선별. 2026~2028 년 시점 분포를 확보하여 2030 년 로드맵 완성도 강화.",
+    "dropped": [
+      {
+        "tech_id": "T01",
+        "name": "고성능 SiC 반도체 제조",
+        "reason": "SiC 제조는 소재/반도체 영역으로 현대모비스의 ADAS 플랫폼 및 HW/SW 최적화 전략과 직접 정합성이 낮음."
+      }
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "problem_frame": {
+    "industry": "Foundation Model / Document AI / LLM",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 54000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Upstage",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "Document AI 및 LLM 기술 리더십 강화",
+      "검증된 기술 기반의 단기 상용화 및 시장 확장",
+      "원가 우위 확보를 위한 효율적 기술 스택 최적화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $54M 정확히 배분. 2026-2030 기간 내 기술 성숙도 및 시장 붐 시기와 정합."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T03(모니터링) → T01(에이전트) → T04(쿼리) 순서 논리적. 전제 조건 충족."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "Upstage 의 문서 AI 리더십 및 단기 상용화 전략과 높은 정합. AI 인프라 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T03) 에 집중 투자, Tier 2(T04) 에 장기 투자. 분배 합리적."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.55,
+        "risk_balance": 0.6,
+        "comment": "단기(T03) 와 중장기(T01, T04) 균형 유지. 위험 분산 적절."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "멀티모달 에이전트 워크플로우 자동화",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 90.3,
+            "market_score": 88.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "원자적 문서 요소 관계 모델링",
+            "category": "Process",
+            "trl": 5,
+            "final_score": 84.84,
+            "market_score": 82.0,
+            "patent_score": 88.3,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T03",
+            "name": "생성형 AI 시스템 모니터링 및 평가",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 80.59,
+            "market_score": 76.5,
+            "patent_score": 85.6,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T04",
+            "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 74.34,
+            "market_score": 68.0,
+            "patent_score": 82.1,
+            "expected_market_boom_quarter": "2029 Q3"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T03",
+            "name": "생성형 AI 시스템 모니터링 및 평가",
+            "year_idx_start": 1,
+            "year_idx_target": 2,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026 년) 즉시 도입이 가능하며, 2026 Q4 예상 시장 붐에 맞춰 2 차년도 (2027 년) 까지 초기 상용화 및 검증 프로세스를 완료해야 합니다. 이는 다른 고위험 기술들의 안정적 실행을 위한 선행 조건이 됩니다.",
+              "tech_execution": "기업 고객에게 신뢰할 수 있는 AI 를 제공하기 위해 모델 성능 평가 및 편향 감지 등 검증 프로세스 기술이 필수적이므로, 전략적 방향성인 '검증된 기술 기반의 단기 상용화'를 실현하는 핵심 수단입니다.",
+              "investment_selection": "DataRobot 과 Hugging Face 와의 경쟁 구도에서 신뢰성 확보는 시장 진입의 필수 조건이며, 초기 투자 대비 빠른 ROI 를 기대할 수 있어 R&D 예산의 우선 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T01",
+            "name": "멀티모달 에이전트 워크플로우 자동화",
+            "year_idx_start": 2,
+            "year_idx_target": 4,
+            "prerequisites": [
+              "T03"
+            ],
+            "reasoning": {
+              "year_placement": "T03 의 모니터링 기술이 안정화된 2 차년도 (2027 년) 에 시작하여, 2027 Q2 예상 시장 붐을 활용하고 4 차년도 (2029 년) 까지 기술 고도화를 진행합니다. TRL 6 수준이므로 2-3 년의 개발 기간이 필요합니다.",
+              "tech_execution": "Anthropic 의 특허 동향을 반영하여 문서 AI 를 단순 인식을 넘어 업무 프로세스 자동화하는 에이전트 아키텍처로 확장함으로써, 'Document AI 및 LLM 기술 리더십 강화' 전략을 구체화합니다.",
+              "investment_selection": "멀티모달 에이전트 시장의 급성장을 선점하여 경쟁 우위를 확보하고, 문서 기반 업무 자동화라는 명확한 시장 니즈를 충족시켜 높은 시장 규모와 차별화된 가치를 창출할 수 있습니다."
+            }
+          },
+          {
+            "tech_id": "T04",
+            "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+            "year_idx_start": 4,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01 의 에이전트 워크플로우가 어느 정도 정립된 3 차년도 (2028 년) 에 시작하여, 2029 Q3 이후의 장기 시장 기회를 노리고 5 차년도 (2030 년) 까지 기술 완성도를 높입니다. 이는 Planning Horizon 의 마지막 연도까지 이어지는 장기 R&D 기술입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "단순 정보 추출을 넘어 복잡한 비즈니스 로직과 연결된 지능형 데이터베이스로 진화하기 위한 아키텍처적 방향성을 실현하여, 원가 우위 확보를 위한 효율적 기술 스택 최적화를 달성합니다.",
+              "investment_selection": "Palantir 와 유사한 고부가가치 아키텍처를 선점하여 소수의 강력한 플레이어 시장에서 경쟁력을 확보하고, 장기적인 기술 장벽을 구축하여 지속 가능한 R&D 투자 효과를 극대화합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 54000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T03",
+                "name": "생성형 AI 시스템 모니터링 및 평가",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "tech_budget_rationale": "TRL 7 의 높은 성숙도와 2026 Q4 에 임박한 시장 붐으로 인해 즉각적인 상용화 투자가 필수적입니다. 전체 예산의 33% 를 할당하여 규제 준수 (EU AI Act) 를 위한 필수 인프라를 1 차년도 내에 구축하고, 다른 고위험 기술들의 안정적 실행을 위한 선행 조건을 확보합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 1 차년도 내 모니터링 플랫폼의 초기 상용화 버전을 출시하고, 주요 고객사를 대상으로 규제 준수 검증 프로세스를 즉시 적용하십시오.",
+                "reasoning": {
+                  "market_evaluation": "AI 거버넌스 및 모니터링 시장은 2030 년까지 150 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 18.5% 의 성장률을 보입니다. 특히 2026 Q4 에 예상되는 시장 붐은 EU AI Act 등 글로벌 규제 강화로 인해 모니터링 솔루션이 필수화되는 시점과 일치합니다. Upstage 가 기업 고객에게 신뢰할 수 있는 AI 를 제공하기 위해서는 이 시기를 놓치지 않고 선점해야 합니다.",
+                  "tech_evaluation": "TRL 7 로 기술 성숙도가 높아 즉시 도입이 가능하며, 기술적 불확실성 (tech_risk) 은 낮습니다. DataRobot 과 Hugging Face 와의 높은 유사성 (0.75, 0.65) 은 경쟁이 치열함을 시사하지만, Upstage 의 문서 AI 특화 데이터와 결합하여 차별화된 검증 프로세스를 구축할 수 있는 경쟁 우위가 존재합니다.",
+                  "investment_decision": "높은 시장 긴급성과 기술 성숙도를 고려하여 Tier 1 로 선정하고, 전체 예산의 33% 를 할당합니다. 이는 '검증된 기술 기반의 단기 상용화' 전략을 실현하는 핵심 수단이며, 다른 기술들의 실행을 위한 선행 조건이므로 선제적 투자가 필요합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 24000000.0,
+                "tech_budget_rationale": "450 억 달러 규모의 거대 시장과 32.5% 의 높은 성장률로 인해 가장 높은 시장 매력도를 가집니다. TRL 6 수준으로 2-3 년의 개발 기간이 필요하므로, 2 차년도부터 4 차년도까지 집중 투자하여 2027 Q2 시장 붐을 선점하고 'Document AI 리더십'을 강화합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 5,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2027 년 2 차년도부터 멀티모달 에이전트 프로토타입 개발을 시작하여, 2027 Q2 시장 붐 직전까지 초기 상용화 버전을 준비하십시오.",
+                "reasoning": {
+                  "market_evaluation": "AI 에이전트 시장은 2030 년까지 450 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 32.5% 의 매우 높은 성장률을 보입니다. 2027 Q2 에 예상되는 시장 붐은 멀티모달 인터페이스 자동화 수요가 급증하는 시점이며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력입니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도는 중간 수준이며, Anthropic 의 특허 동향을 반영하여 문서 AI 를 단순 인식을 넘어 업무 프로세스 자동화하는 에이전트 아키텍처로 확장해야 합니다. Upstage 의 기존 문서 AI 강점과 결합하여 높은 경쟁 우위 (5 점) 를 확보할 수 있습니다.",
+                  "investment_decision": "가장 큰 시장 기회와 전략적 정합성을 고려하여 Tier 1 로 선정하고, 전체 예산의 44% 를 할당합니다. 이는 'Document AI 및 LLM 기술 리더십 강화' 전략을 구체화하는 핵심 기술이므로, T03 의 안정화 이후 2 차년도부터 집중 투자하여 시장 선점을 도모합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T04",
+                "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 12000000.0,
+                "tech_budget_rationale": "120 억 달러 규모의 점진적 성장 시장과 2029 Q3 의 먼 시장 붐 시점으로 인해 단기 투자 우선순위는 낮습니다. T01 의 에이전트 워크플로우가 정립된 4 차년도부터 시작하여, 장기적인 원가 우위 확보를 위한 효율적 기술 스택 최적화를 위한 선택적 투자를 진행합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 2,
+                  "tech_readiness": 3,
+                  "tech_risk": 4,
+                  "competitive_advantage": 3,
+                  "development_urgency": 2
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "low",
+                "recommended_action": "2028 년 4 차년도부터 온톨로지 기반 데이터베이스 프로토타입 개발을 시작하여, 2029 Q3 시장 붐 직전까지 기술 완성도를 높이는 데 집중하십시오.",
+                "reasoning": {
+                  "market_evaluation": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장은 2030 년까지 120 억 달러 (TAM) 로 점진적 성장을 보이며, 연평균 15.0% 의 성장률을 예상합니다. 2029 Q3 이후의 장기 시장 기회를 노리며, 복잡한 데이터 구조 처리에 대한 니즈가 증가할 것으로 보입니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도는 중간 수준이지만, Palantir 등 소수의 강력한 플레이어에 의해 지배될 가능성이 높아 진입 장벽이 높습니다. 단순 정보 추출을 넘어 복잡한 비즈니스 로직과 연결된 지능형 데이터베이스로 진화하기 위한 아키텍처적 방향성을 실현해야 합니다.",
+                  "investment_decision": "시장 성장률과 개발 긴급도가 상대적으로 낮아 Tier 2 로 선정하고, 전체 예산의 22% 를 할당합니다. 이는 '원가 우위 확보를 위한 효율적 기술 스택 최적화'를 달성하기 위한 장기 R&D 기술이므로, T01 의 성공 이후 4 차년도부터 단계적 투자를 진행합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T03",
+                "name": "생성형 AI 시스템 모니터링 및 평가",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T03",
+                "name": "생성형 AI 시스템 모니터링 및 평가",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              },
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 24000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 24000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 24000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T04",
+                "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 12000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T04",
+                "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 12000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 18000000.0,
+            "2": 24000000.0,
+            "4": 12000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "멀티모달 에이전트 워크플로우 자동화",
+              "category": "Architecture",
+              "final_score": 90.3,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "원자적 문서 요소 관계 모델링",
+              "category": "Process",
+              "final_score": 84.84,
+              "market_score": 82.0,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T03",
+              "name": "생성형 AI 시스템 모니터링 및 평가",
+              "category": "Process",
+              "final_score": 80.59,
+              "market_score": 76.5,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T04",
+              "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+              "category": "Architecture",
+              "final_score": 74.34,
+              "market_score": 68.0,
+              "boom": "2029 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Architecture": 2,
+            "Process": 2
+          },
+          "avg_trl": 6.0,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T03",
+              "name": "생성형 AI 시스템 모니터링 및 평가",
+              "stage": "roadmap",
+              "key_reason": "2026 Q4 시장 붐 임박으로 개발 긴급도 (5 점) 가 매우 높음."
+            },
+            {
+              "tech_id": "T01",
+              "name": "멀티모달 에이전트 워크플로우 자동화",
+              "stage": "roadmap",
+              "key_reason": "450 억 달러 규모의 거대 시장 (TAM) 과 32.5% 의 높은 CAGR."
+            }
+          ],
+          "dependency_edges": [
+            "T03 → T01",
+            "T01 → T04"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2028 Q1": 1,
+            "2026 Q4": 1,
+            "2029 Q3": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 의존성 및 시장 붐 시기 정합성 확인. 포트폴리오 균형과 전략 정합성 모두 양호하여 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__시장이익최대__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__시장이익최대__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__시장이익최대__investment_strategy.json"
+  }
+}

@@ -1,0 +1,4862 @@
+{
+  "use_patent_map": true,
+  "market_context": {
+    "target_market": "Foundation Model / Document AI / LLM",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 에이전트 시장이 2030 년까지 450 억 달러 이상으로 성장할 것으로 예상되며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.5,
+          "forecast_period": "2025-2030",
+          "basis": "멀티모달 인터페이스 자동화 수요 급증 및 Anthropic, Cohere 등 선두 기업의 기술 선점 경쟁으로 인한 고성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "The Rise of AI Agents: Market Outlook 2025-2030",
+            "url": "https://example.com/ai-agents-report",
+            "use": "TAM/CAGR 및 에이전트 워크플로우 시장 성장 근거"
+          },
+          {
+            "title": "Multimodal Interface Automation Trends",
+            "url": "https://example.com/multimodal-trends",
+            "use": "경쟁 구도 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Anthropic",
+            "Cohere"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "원자적 문서 요소 관계 모델링",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 8.5,
+          "som_usd_b": 1.2,
+          "basis": "고급 문서 AI 및 의료/법률 분야 문서 처리 시장이 2030 년까지 280 억 달러 규모로 확대될 것으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "정교한 문서 이해 (Atomic Element Modeling) 에 대한 기업 수요 증가로 인한 지속적 성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Document AI Market Analysis 2025-2030",
+            "url": "https://example.com/doc-ai-market",
+            "use": "TAM 및 문서 처리 세그먼트 성장 근거"
+          },
+          {
+            "title": "Relational Modeling in Enterprise AI",
+            "url": "https://example.com/relational-modeling",
+            "use": "기술적 차별화 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "생성형 AI 시스템 모니터링 및 평가",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "AI 거버넌스 및 모니터링 시장이 규제 강화와 함께 2030 년까지 150 억 달러 규모로 성장할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "EU AI Act 등 글로벌 규제 강화로 인한 모니터링 및 평가 솔루션의 필수화."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "AI Governance and Monitoring Market Report",
+            "url": "https://example.com/ai-governance",
+            "use": "규제 기반 시장 성장 및 TAM 근거"
+          },
+          {
+            "title": "Observability in Generative AI Systems",
+            "url": "https://example.com/ai-observability",
+            "use": "DataRobot, Hugging Face 등 경쟁사 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "DataRobot",
+            "Hugging Face"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.5,
+          "basis": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장이 2030 년까지 120 억 달러 수준으로 점진적 성장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "복잡한 데이터 구조 처리에 대한 니즈 증가로 인한 안정적 성장."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Enterprise Knowledge Graph Market Outlook",
+            "url": "https://example.com/knowledge-graph",
+            "use": "TAM 및 온톨로지 기술 시장 규모 근거"
+          },
+          {
+            "title": "Palantir and Ontology-Based Systems",
+            "url": "https://example.com/palantir-ontology",
+            "use": "Palantir 중심의 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Palantir"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "시각 언어 모델 기반 자율 주행 제어",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 3.5,
+          "basis": "자율주행 소프트웨어 및 센서 퓨전 시장 (TAM) 은 2030 년 약 1,200 억 달러로 추정되며, VLM 기반 인지 제어는 고도화된 L4/L5 솔루션 (SAM) 의 핵심 구성 요소로 부상할 것으로 예상됨. Upstage 의 문서 AI 중심 포트폴리오와 직접적인 연관성은 낮으나, NVIDIA 와의 유사성 (0.55) 을 통해 하드웨어 연동 및 제어 기술의 장기적 확장 가능성 (SOM) 이 존재함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 소프트웨어 시장은 2025 년부터 2030 년까지 연평균 24.5% 의 성장률을 보일 것으로 예상되며, 이는 VLM 기술이 기존 컴퓨터 비전 솔루션을 대체하며 고도화된 상황 인식 능력을 제공함에 따라 가속화될 것임."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Autonomous Vehicle Software Market Size & Share Analysis",
+            "url": "https://www.example.com/av-software-market-2030",
+            "use": "TAM/CAGR 및 VLM 기술 도입에 따른 시장 성장 근거"
+          },
+          {
+            "title": "NVIDIA DRIVE Platform and VLM Integration Strategy",
+            "url": "https://www.nvidia.com/en-us/autonomous-vehicles/",
+            "use": "경쟁 구도 및 NVIDIA 의 기술 로드맵 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "Anthropic",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Cohere",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "DataRobot",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Palantir",
+          "similarity": 0.68,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Hugging Face",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.55,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T05",
+          "name": "시각 언어 모델 기반 자율 주행 제어",
+          "final_score": 77.81,
+          "selection_score": 77.95,
+          "actor_map_score": 49.5,
+          "reason": "Upstage 의 핵심 전략인 문서 AI 및 LLM 리더십과 직접적인 연관성이 낮으며, TRL 4 로 단기 상용화 (2026-2030) 에 적합하지 않은 자율주행 제어 기술임."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 82.52,
+        "avg_market_score": 78.75,
+        "avg_patent_score": 87.12,
+        "avg_actor_map_score": 71.1,
+        "map_supported_count": 4
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "Upstage 의 문서 AI 및 LLM 기술 리더십 강화 전략에 부합하는 T01(에이전트 워크플로우) 과 T02(원자적 문서 모델링) 을 최우선으로 선정하여 시장 성장성과 특허 경쟁력을 확보했습니다. 검증된 기술 기반의 단기 상용화를 위해 TRL 7 의 T03(모니터링) 과 TRL 6 의 T04(온톨로지 최적화) 를 포함하여 포트폴리오의 성숙도와 다양성을 확보했습니다. T05 는 자율주행이라는 비핵심 도메인이며 기술 성숙도가 낮아 5 년 계획 로드맵에서 제외되었습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "tech_candidates": [
+    {
+      "tech_id": "T01",
+      "name": "멀티모달 에이전트 워크플로우 자동화",
+      "category": "Architecture",
+      "trl": 6,
+      "patent_score": 92.5,
+      "market_score": 88.5,
+      "actor_map_score": 81.0,
+      "actor_map_score_usage": "diagnostic_only",
+      "final_score": 90.3,
+      "scoring_weights": {
+        "patent_score": 0.45,
+        "market_score": 0.55,
+        "actor_map_score": 0.0
+      },
+      "expected_market_boom_quarter": "2027 Q2",
+      "dependency_hints": [],
+      "rationale": "[Patent] Anthropic 의 최근 특허는 LLM 이 단순 생성을 넘어 UI 를 직접 조작하는 에이전트 워크플로우 자동화에 집중하고 있다. Upstage 의 문서 AI 는 현재 텍스트/이미지 인식을 넘어, 문서 기반 업무 프로세스를 자동화하는 에이전트 아키텍처로 확장해야 경쟁력을 유지할 수 있다. [Market] Anthropic 과 Cohere 와의 높은 유사성 (0.92, 0.88) 은 멀티모달 에이전트 시장이 급성장하고 있음을 시사하며, 2027 년경 본격적인 상용화 붐이 예상됩니다. 고성장률과 초기 진입 장벽으로 인해 시장 매력도가 매우 높습니다.",
+      "market_signals": {
+        "tam_growth_rate": 92,
+        "time_to_market_urgency": 95,
+        "policy_and_investment_tailwind": 85,
+        "competitive_moat_potential": 78
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 45.0,
+        "sam_usd_b": 12.0,
+        "som_usd_b": 1.5,
+        "basis": "AI 에이전트 시장이 2030 년까지 450 억 달러 이상으로 성장할 것으로 예상되며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 32.5,
+        "forecast_period": "2025-2030",
+        "basis": "멀티모달 인터페이스 자동화 수요 급증 및 Anthropic, Cohere 등 선두 기업의 기술 선점 경쟁으로 인한 고성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "The Rise of AI Agents: Market Outlook 2025-2030",
+          "url": "https://example.com/ai-agents-report",
+          "use": "TAM/CAGR 및 에이전트 워크플로우 시장 성장 근거"
+        },
+        {
+          "title": "Multimodal Interface Automation Trends",
+          "url": "https://example.com/multimodal-trends",
+          "use": "경쟁 구도 및 기술 성숙도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Anthropic",
+          "Cohere"
+        ],
+        "shared_technology_areas": []
+      },
+      "actor_map_context": [
+        {
+          "related_actor": "Anthropic",
+          "similarity": 92.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 82.8
+        },
+        {
+          "related_actor": "Cohere",
+          "similarity": 88.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 79.2
+        }
+      ],
+      "patent_signals": {
+        "peer_momentum": 95,
+        "citation_impact": 80,
+        "strategic_gap_opportunity": 98,
+        "cross_actor_recurrence": 85,
+        "roadmap_relevance": 95
+      },
+      "selection_score": 90.49,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "selection_rank": 1
+    },
+    {
+      "tech_id": "T02",
+      "name": "원자적 문서 요소 관계 모델링",
+      "category": "Process",
+      "trl": 5,
+      "patent_score": 88.3,
+      "market_score": 82.0,
+      "actor_map_score": 79.2,
+      "actor_map_score_usage": "diagnostic_only",
+      "final_score": 84.84,
+      "scoring_weights": {
+        "patent_score": 0.45,
+        "market_score": 0.55,
+        "actor_map_score": 0.0
+      },
+      "expected_market_boom_quarter": "2028 Q1",
+      "dependency_hints": [
+        "T01"
+      ],
+      "rationale": "[Patent] Cohere 는 문서 내 원자적 요소 (문단, 표, 이미지) 간의 관계를 모델링하여 정밀한 검색 및 처리를 가능하게 하는 기술을 특허로 보호 중이다. 이는 Upstage 의 기존 OCR 기반 문서 인식 기술을 고도화하여 복잡한 문서 구조를 이해하는 핵심 프로세스로 발전시킬 기회다. [Market] Cohere 와의 직접적인 경쟁 관계 (0.88 유사도) 는 문서 요소 모델링 기술이 핵심 경쟁력이 됨을 의미하며, 2028 년경 전문화된 시장이 성숙할 것으로 보입니다. 높은 진입 장벽으로 인해 모아 잠재력이 큽니다.",
+      "market_signals": {
+        "tam_growth_rate": 85,
+        "time_to_market_urgency": 80,
+        "policy_and_investment_tailwind": 75,
+        "competitive_moat_potential": 82
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 28.0,
+        "sam_usd_b": 8.5,
+        "som_usd_b": 1.2,
+        "basis": "고급 문서 AI 및 의료/법률 분야 문서 처리 시장이 2030 년까지 280 억 달러 규모로 확대될 것으로 추정."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 24.0,
+        "forecast_period": "2025-2030",
+        "basis": "정교한 문서 이해 (Atomic Element Modeling) 에 대한 기업 수요 증가로 인한 지속적 성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "Document AI Market Analysis 2025-2030",
+          "url": "https://example.com/doc-ai-market",
+          "use": "TAM 및 문서 처리 세그먼트 성장 근거"
+        },
+        {
+          "title": "Relational Modeling in Enterprise AI",
+          "url": "https://example.com/relational-modeling",
+          "use": "기술적 차별화 및 경쟁 구도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Cohere"
+        ],
+        "shared_technology_areas": []
+      },
+      "actor_map_context": [
+        {
+          "related_actor": "Cohere",
+          "similarity": 88.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 79.2
+        }
+      ],
+      "patent_signals": {
+        "peer_momentum": 88,
+        "citation_impact": 75,
+        "strategic_gap_opportunity": 92,
+        "cross_actor_recurrence": 80,
+        "roadmap_relevance": 90
+      },
+      "selection_score": 85.14,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "selection_rank": 2
+    },
+    {
+      "tech_id": "T03",
+      "name": "생성형 AI 시스템 모니터링 및 평가",
+      "category": "Process",
+      "trl": 7,
+      "patent_score": 85.6,
+      "market_score": 76.5,
+      "actor_map_score": 63.0,
+      "actor_map_score_usage": "diagnostic_only",
+      "final_score": 80.59,
+      "scoring_weights": {
+        "patent_score": 0.45,
+        "market_score": 0.55,
+        "actor_map_score": 0.0
+      },
+      "expected_market_boom_quarter": "2026 Q4",
+      "dependency_hints": [],
+      "rationale": "[Patent] DataRobot 과 Hugging Face 는 생성형 AI 의 개발, 평가, 모니터링 및 데이터 감사 (Observability) 에 대한 특허를 활발히 출원하고 있다. Upstage 가 기업 고객에게 신뢰할 수 있는 AI 를 제공하기 위해서는 모델 성능 평가 및 편향 감지 등 검증 프로세스 기술이 필수적이다. [Market] DataRobot 과 Hugging Face 와의 유사성 (0.75, 0.65) 은 모니터링 시장이 규제에 의해 급성장하고 있으나 경쟁이 치열함을 시사합니다. 2026 년 말부터 규제 준수 수요가 폭발할 것으로 예상됩니다.",
+      "market_signals": {
+        "tam_growth_rate": 70,
+        "time_to_market_urgency": 85,
+        "policy_and_investment_tailwind": 88,
+        "competitive_moat_potential": 65
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 15.0,
+        "sam_usd_b": 5.0,
+        "som_usd_b": 0.8,
+        "basis": "AI 거버넌스 및 모니터링 시장이 규제 강화와 함께 2030 년까지 150 억 달러 규모로 성장할 것으로 예상."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 18.5,
+        "forecast_period": "2025-2030",
+        "basis": "EU AI Act 등 글로벌 규제 강화로 인한 모니터링 및 평가 솔루션의 필수화."
+      },
+      "key_market_reports": [
+        {
+          "title": "AI Governance and Monitoring Market Report",
+          "url": "https://example.com/ai-governance",
+          "use": "규제 기반 시장 성장 및 TAM 근거"
+        },
+        {
+          "title": "Observability in Generative AI Systems",
+          "url": "https://example.com/ai-observability",
+          "use": "DataRobot, Hugging Face 등 경쟁사 동향 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "DataRobot",
+          "Hugging Face"
+        ],
+        "shared_technology_areas": []
+      },
+      "actor_map_context": [
+        {
+          "related_actor": "DataRobot",
+          "similarity": 75.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 67.5
+        },
+        {
+          "related_actor": "Hugging Face",
+          "similarity": 65.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 58.5
+        }
+      ],
+      "patent_signals": {
+        "peer_momentum": 82,
+        "citation_impact": 70,
+        "strategic_gap_opportunity": 88,
+        "cross_actor_recurrence": 75,
+        "roadmap_relevance": 92
+      },
+      "selection_score": 81.02,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "selection_rank": 3
+    },
+    {
+      "tech_id": "T04",
+      "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+      "category": "Architecture",
+      "trl": 6,
+      "patent_score": 82.1,
+      "market_score": 68.0,
+      "actor_map_score": 61.2,
+      "actor_map_score_usage": "diagnostic_only",
+      "final_score": 74.34,
+      "scoring_weights": {
+        "patent_score": 0.45,
+        "market_score": 0.55,
+        "actor_map_score": 0.0
+      },
+      "expected_market_boom_quarter": "2029 Q3",
+      "dependency_hints": [
+        "T02"
+      ],
+      "rationale": "[Patent] Palantir 는 온톨로지 (개념 구조) 기반 데이터베이스에서 다중 사용자 환경의 쿼리 실행을 관리하는 기술을 보유하고 있다. Upstage 의 문서 AI 가 단순 정보 추출을 넘어 복잡한 비즈니스 로직과 연결된 지능형 데이터베이스로 진화하기 위한 아키텍처적 방향성이다. [Market] Palantir 와의 아키텍처적 유사성 (0.68) 은 이 분야가 소수의 강력한 플레이어에 의해 지배될 가능성이 높음을 의미하며, 2029 년경 대형 엔터프라이즈 도입이 본격화될 것으로 보입니다. 높은 진입 장벽이 특징입니다.",
+      "market_signals": {
+        "tam_growth_rate": 60,
+        "time_to_market_urgency": 65,
+        "policy_and_investment_tailwind": 70,
+        "competitive_moat_potential": 85
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 12.0,
+        "sam_usd_b": 3.5,
+        "som_usd_b": 0.5,
+        "basis": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장이 2030 년까지 120 억 달러 수준으로 점진적 성장."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 15.0,
+        "forecast_period": "2025-2030",
+        "basis": "복잡한 데이터 구조 처리에 대한 니즈 증가로 인한 안정적 성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "Enterprise Knowledge Graph Market Outlook",
+          "url": "https://example.com/knowledge-graph",
+          "use": "TAM 및 온톨로지 기술 시장 규모 근거"
+        },
+        {
+          "title": "Palantir and Ontology-Based Systems",
+          "url": "https://example.com/palantir-ontology",
+          "use": "Palantir 중심의 경쟁 구도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Palantir"
+        ],
+        "shared_technology_areas": []
+      },
+      "actor_map_context": [
+        {
+          "related_actor": "Palantir",
+          "similarity": 68.0,
+          "matched_by_actor": true,
+          "matched_shared_technology_areas": [],
+          "score_contribution": 61.2
+        }
+      ],
+      "patent_signals": {
+        "peer_momentum": 78,
+        "citation_impact": 65,
+        "strategic_gap_opportunity": 85,
+        "cross_actor_recurrence": 70,
+        "roadmap_relevance": 88
+      },
+      "selection_score": 75.01,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "selection_rank": 4
+    }
+  ],
+  "candidate_selection": {
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "selection_mode": "llm_fair_contextual_selector_map_on",
+    "pool_count": 5,
+    "target_k": 4,
+    "selected_count": 4,
+    "selected_tech_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T04"
+    ],
+    "map_anchor_tech_ids": [],
+    "dropped_candidates": [
+      {
+        "tech_id": "T05",
+        "name": "시각 언어 모델 기반 자율 주행 제어",
+        "final_score": 77.81,
+        "selection_score": 77.95,
+        "actor_map_score": 49.5,
+        "reason": "Upstage 의 핵심 전략인 문서 AI 및 LLM 리더십과 직접적인 연관성이 낮으며, TRL 4 로 단기 상용화 (2026-2030) 에 적합하지 않은 자율주행 제어 기술임."
+      }
+    ],
+    "selection_metrics": {
+      "avg_final_score": 82.52,
+      "avg_market_score": 78.75,
+      "avg_patent_score": 87.12,
+      "avg_actor_map_score": 71.1,
+      "map_supported_count": 4
+    },
+    "selection_weights": {
+      "final_score": 0.55,
+      "patent_score": 0.25,
+      "market_score": 0.2,
+      "actor_map_score": 0.0
+    },
+    "selector": {
+      "method": "llm_fair_contextual_selector",
+      "used": true,
+      "selection_rationale": "Upstage 의 문서 AI 및 LLM 기술 리더십 강화 전략에 부합하는 T01(에이전트 워크플로우) 과 T02(원자적 문서 모델링) 을 최우선으로 선정하여 시장 성장성과 특허 경쟁력을 확보했습니다. 검증된 기술 기반의 단기 상용화를 위해 TRL 7 의 T03(모니터링) 과 TRL 6 의 T04(온톨로지 최적화) 를 포함하여 포트폴리오의 성숙도와 다양성을 확보했습니다. T05 는 자율주행이라는 비핵심 도메인이며 기술 성숙도가 낮아 5 년 계획 로드맵에서 제외되었습니다.",
+      "evidence_used": {
+        "T01": [
+          "patent",
+          "market",
+          "strategy",
+          "actor_context"
+        ],
+        "T02": [
+          "patent",
+          "market",
+          "strategy",
+          "actor_context"
+        ],
+        "T03": [
+          "patent",
+          "market",
+          "strategy",
+          "actor_context"
+        ],
+        "T04": [
+          "patent",
+          "market",
+          "strategy",
+          "actor_context"
+        ]
+      },
+      "fairness_note": "No numeric patent-map bonus was applied."
+    },
+    "fairness_controls": {
+      "same_final_score_formula": true,
+      "same_selection_score_formula_available_as_fallback": true,
+      "actor_map_score_is_diagnostic_only": true,
+      "map_anchor_slots": 0,
+      "llm_selector_uses_map_as_context_only": true
+    }
+  },
+  "market_raw_data": {
+    "domain": "Foundation Model / Document AI / LLM",
+    "use_patent_map": true,
+    "research_process": [
+      "market_report_discovery",
+      "tam_sam_som_estimation",
+      "cagr_growth_outlook_collection",
+      "actor_similarity_map_driven_competitive_context"
+    ],
+    "actor_similarity_context": {
+      "center_actor": "Upstage",
+      "related_actors": [
+        "Anthropic",
+        "Cohere",
+        "DataRobot",
+        "Palantir",
+        "Hugging Face",
+        "NVIDIA"
+      ],
+      "shared_technology_areas": [],
+      "top_edges": [
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Anthropic",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "reason": "멀티모달 인터페이스 자동화 및 에이전트 워크플로우 아키텍처에서 높은 기술적 유사성."
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Cohere",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "reason": "원자적 문서 요소 관계 모델링 및 문서 처리 자동화 기술의 직접적인 경쟁 및 유사성."
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "DataRobot",
+          "similarity": 0.75,
+          "edge_weight": 0.75,
+          "reason": "생성형 AI 시스템의 평가, 모니터링 및 편향 감지 프로세스 기술의 유사성."
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Palantir",
+          "similarity": 0.68,
+          "edge_weight": 0.68,
+          "reason": "온톨로지 기반 데이터베이스 및 복잡한 문서 분해 (Disaggregation) 기술의 아키텍처적 유사성."
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "Hugging Face",
+          "similarity": 0.65,
+          "edge_weight": 0.65,
+          "reason": "데이터 감사 (Audit) 및 관찰 가능성 (Observability) 기술의 유사성."
+        },
+        {
+          "center_actor": "Upstage",
+          "related_actor": "NVIDIA",
+          "similarity": 0.55,
+          "edge_weight": 0.55,
+          "reason": "시각 언어 모델 (VLM) 기반의 하드웨어 연동 및 제어 기술의 장기적 확장 가능성."
+        }
+      ]
+    },
+    "technologies": {
+      "T01": {
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [
+            "Anthropic",
+            "Cohere"
+          ],
+          "shared_technology_areas": [],
+          "source_companies": [
+            "Anthropic",
+            "Cohere"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Upstage",
+              "related_actor": "Anthropic",
+              "similarity": 0.92,
+              "edge_weight": 0.92,
+              "reason": "멀티모달 인터페이스 자동화 및 에이전트 워크플로우 아키텍처에서 높은 기술적 유사성."
+            },
+            {
+              "center_actor": "Upstage",
+              "related_actor": "Cohere",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "reason": "원자적 문서 요소 관계 모델링 및 문서 처리 자동화 기술의 직접적인 경쟁 및 유사성."
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "Multimodal agent workflow automation Upstage Anthropic Cohere market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Multimodal agent workflow automation Upstage Anthropic Cohere TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Multimodal agent workflow automation Upstage Anthropic Cohere CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Multimodal agent workflow automation Upstage Anthropic Cohere market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Multimodal agent workflow automation Upstage Anthropic Cohere investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Multimodal agent workflow automation Upstage Anthropic Cohere government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Multimodal agent workflow automation Upstage Anthropic Cohere leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Multimodal agent workflow automation Upstage Anthropic Cohere commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "tech_name_en": "Multimodal agent workflow automation"
+      },
+      "T02": {
+        "tech_name": "원자적 문서 요소 관계 모델링",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": [],
+          "source_companies": [
+            "Cohere"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Upstage",
+              "related_actor": "Cohere",
+              "similarity": 0.88,
+              "edge_weight": 0.88,
+              "reason": "원자적 문서 요소 관계 모델링 및 문서 처리 자동화 기술의 직접적인 경쟁 및 유사성."
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "Atomic document element relationship modeling Upstage Cohere market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Atomic document element relationship modeling Upstage Cohere TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Atomic document element relationship modeling Upstage Cohere CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Atomic document element relationship modeling Upstage Cohere market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Atomic document element relationship modeling Upstage Cohere investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Atomic document element relationship modeling Upstage Cohere government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Atomic document element relationship modeling Upstage Cohere leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Atomic document element relationship modeling Upstage Cohere commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "tech_name_en": "Atomic document element relationship modeling"
+      },
+      "T03": {
+        "tech_name": "생성형 AI 시스템 모니터링 및 평가",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [
+            "DataRobot",
+            "Hugging Face"
+          ],
+          "shared_technology_areas": [],
+          "source_companies": [
+            "DataRobot",
+            "Hugging Face"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Upstage",
+              "related_actor": "DataRobot",
+              "similarity": 0.75,
+              "edge_weight": 0.75,
+              "reason": "생성형 AI 시스템의 평가, 모니터링 및 편향 감지 프로세스 기술의 유사성."
+            },
+            {
+              "center_actor": "Upstage",
+              "related_actor": "Hugging Face",
+              "similarity": 0.65,
+              "edge_weight": 0.65,
+              "reason": "데이터 감사 (Audit) 및 관찰 가능성 (Observability) 기술의 유사성."
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Generative AI system monitoring and evaluation Upstage DataRobot Hugging Face commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "tech_name_en": "Generative AI system monitoring and evaluation"
+      },
+      "T04": {
+        "tech_name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [
+            "Palantir"
+          ],
+          "shared_technology_areas": [],
+          "source_companies": [
+            "Palantir"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Upstage",
+              "related_actor": "Palantir",
+              "similarity": 0.68,
+              "edge_weight": 0.68,
+              "reason": "온톨로지 기반 데이터베이스 및 복잡한 문서 분해 (Disaggregation) 기술의 아키텍처적 유사성."
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "Ontology-based database query optimization Upstage Palantir market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Ontology-based database query optimization Upstage Palantir TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Ontology-based database query optimization Upstage Palantir CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Ontology-based database query optimization Upstage Palantir market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Ontology-based database query optimization Upstage Palantir investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Ontology-based database query optimization Upstage Palantir government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Ontology-based database query optimization Upstage Palantir leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Ontology-based database query optimization Upstage Palantir commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "tech_name_en": "Ontology-based database query optimization"
+      },
+      "T05": {
+        "tech_name": "시각 언어 모델 기반 자율 주행 제어",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": [],
+          "source_companies": [
+            "NVIDIA"
+          ],
+          "map_edges": [
+            {
+              "center_actor": "Upstage",
+              "related_actor": "NVIDIA",
+              "similarity": 0.55,
+              "edge_weight": 0.55,
+              "reason": "시각 언어 모델 (VLM) 기반의 하드웨어 연동 및 제어 기술의 장기적 확장 가능성."
+            }
+          ]
+        },
+        "queries": {
+          "market_reports": "Visual language model based autonomous driving control Upstage NVIDIA market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Visual language model based autonomous driving control Upstage NVIDIA TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Visual language model based autonomous driving control Upstage NVIDIA CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Visual language model based autonomous driving control Upstage NVIDIA market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Visual language model based autonomous driving control Upstage NVIDIA investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Visual language model based autonomous driving control Upstage NVIDIA government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Visual language model based autonomous driving control Upstage NVIDIA leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Visual language model based autonomous driving control Upstage NVIDIA commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "tech_name_en": "Visual language model based autonomous driving control"
+      }
+    }
+  },
+  "market_analysis": [
+    {
+      "tech_id": "T01",
+      "name": "멀티모달 에이전트 워크플로우 자동화",
+      "market_score": 88.5,
+      "market_signals": {
+        "tam_growth_rate": 92,
+        "time_to_market_urgency": 95,
+        "policy_and_investment_tailwind": 85,
+        "competitive_moat_potential": 78
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 45.0,
+        "sam_usd_b": 12.0,
+        "som_usd_b": 1.5,
+        "basis": "AI 에이전트 시장이 2030 년까지 450 억 달러 이상으로 성장할 것으로 예상되며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 32.5,
+        "forecast_period": "2025-2030",
+        "basis": "멀티모달 인터페이스 자동화 수요 급증 및 Anthropic, Cohere 등 선두 기업의 기술 선점 경쟁으로 인한 고성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "The Rise of AI Agents: Market Outlook 2025-2030",
+          "url": "https://example.com/ai-agents-report",
+          "use": "TAM/CAGR 및 에이전트 워크플로우 시장 성장 근거"
+        },
+        {
+          "title": "Multimodal Interface Automation Trends",
+          "url": "https://example.com/multimodal-trends",
+          "use": "경쟁 구도 및 기술 성숙도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Anthropic",
+          "Cohere"
+        ],
+        "shared_technology_areas": []
+      },
+      "expected_market_boom_quarter": "2027 Q2",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "Anthropic 과 Cohere 와의 높은 유사성 (0.92, 0.88) 은 멀티모달 에이전트 시장이 급성장하고 있음을 시사하며, 2027 년경 본격적인 상용화 붐이 예상됩니다. 고성장률과 초기 진입 장벽으로 인해 시장 매력도가 매우 높습니다."
+    },
+    {
+      "tech_id": "T02",
+      "name": "원자적 문서 요소 관계 모델링",
+      "market_score": 82.0,
+      "market_signals": {
+        "tam_growth_rate": 85,
+        "time_to_market_urgency": 80,
+        "policy_and_investment_tailwind": 75,
+        "competitive_moat_potential": 82
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 28.0,
+        "sam_usd_b": 8.5,
+        "som_usd_b": 1.2,
+        "basis": "고급 문서 AI 및 의료/법률 분야 문서 처리 시장이 2030 년까지 280 억 달러 규모로 확대될 것으로 추정."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 24.0,
+        "forecast_period": "2025-2030",
+        "basis": "정교한 문서 이해 (Atomic Element Modeling) 에 대한 기업 수요 증가로 인한 지속적 성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "Document AI Market Analysis 2025-2030",
+          "url": "https://example.com/doc-ai-market",
+          "use": "TAM 및 문서 처리 세그먼트 성장 근거"
+        },
+        {
+          "title": "Relational Modeling in Enterprise AI",
+          "url": "https://example.com/relational-modeling",
+          "use": "기술적 차별화 및 경쟁 구도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Cohere"
+        ],
+        "shared_technology_areas": []
+      },
+      "expected_market_boom_quarter": "2028 Q1",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "Cohere 와의 직접적인 경쟁 관계 (0.88 유사도) 는 문서 요소 모델링 기술이 핵심 경쟁력이 됨을 의미하며, 2028 년경 전문화된 시장이 성숙할 것으로 보입니다. 높은 진입 장벽으로 인해 모아 잠재력이 큽니다."
+    },
+    {
+      "tech_id": "T03",
+      "name": "생성형 AI 시스템 모니터링 및 평가",
+      "market_score": 76.5,
+      "market_signals": {
+        "tam_growth_rate": 70,
+        "time_to_market_urgency": 85,
+        "policy_and_investment_tailwind": 88,
+        "competitive_moat_potential": 65
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 15.0,
+        "sam_usd_b": 5.0,
+        "som_usd_b": 0.8,
+        "basis": "AI 거버넌스 및 모니터링 시장이 규제 강화와 함께 2030 년까지 150 억 달러 규모로 성장할 것으로 예상."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 18.5,
+        "forecast_period": "2025-2030",
+        "basis": "EU AI Act 등 글로벌 규제 강화로 인한 모니터링 및 평가 솔루션의 필수화."
+      },
+      "key_market_reports": [
+        {
+          "title": "AI Governance and Monitoring Market Report",
+          "url": "https://example.com/ai-governance",
+          "use": "규제 기반 시장 성장 및 TAM 근거"
+        },
+        {
+          "title": "Observability in Generative AI Systems",
+          "url": "https://example.com/ai-observability",
+          "use": "DataRobot, Hugging Face 등 경쟁사 동향 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "DataRobot",
+          "Hugging Face"
+        ],
+        "shared_technology_areas": []
+      },
+      "expected_market_boom_quarter": "2026 Q4",
+      "competitive_landscape": "Fragmented – many players, low differentiation",
+      "data_quality": "estimated",
+      "rationale": "DataRobot 과 Hugging Face 와의 유사성 (0.75, 0.65) 은 모니터링 시장이 규제에 의해 급성장하고 있으나 경쟁이 치열함을 시사합니다. 2026 년 말부터 규제 준수 수요가 폭발할 것으로 예상됩니다."
+    },
+    {
+      "tech_id": "T04",
+      "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+      "market_score": 68.0,
+      "market_signals": {
+        "tam_growth_rate": 60,
+        "time_to_market_urgency": 65,
+        "policy_and_investment_tailwind": 70,
+        "competitive_moat_potential": 85
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 12.0,
+        "sam_usd_b": 3.5,
+        "som_usd_b": 0.5,
+        "basis": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장이 2030 년까지 120 억 달러 수준으로 점진적 성장."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 15.0,
+        "forecast_period": "2025-2030",
+        "basis": "복잡한 데이터 구조 처리에 대한 니즈 증가로 인한 안정적 성장."
+      },
+      "key_market_reports": [
+        {
+          "title": "Enterprise Knowledge Graph Market Outlook",
+          "url": "https://example.com/knowledge-graph",
+          "use": "TAM 및 온톨로지 기술 시장 규모 근거"
+        },
+        {
+          "title": "Palantir and Ontology-Based Systems",
+          "url": "https://example.com/palantir-ontology",
+          "use": "Palantir 중심의 경쟁 구도 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "Palantir"
+        ],
+        "shared_technology_areas": []
+      },
+      "expected_market_boom_quarter": "2029 Q3",
+      "competitive_landscape": "Oligopoly – 1~2 dominant players",
+      "data_quality": "estimated",
+      "rationale": "Palantir 와의 아키텍처적 유사성 (0.68) 은 이 분야가 소수의 강력한 플레이어에 의해 지배될 가능성이 높음을 의미하며, 2029 년경 대형 엔터프라이즈 도입이 본격화될 것으로 보입니다. 높은 진입 장벽이 특징입니다."
+    },
+    {
+      "tech_id": "T05",
+      "name": "시각 언어 모델 기반 자율 주행 제어",
+      "market_score": 76.5,
+      "market_signals": {
+        "tam_growth_rate": 85,
+        "time_to_market_urgency": 70,
+        "policy_and_investment_tailwind": 80,
+        "competitive_moat_potential": 65
+      },
+      "tam_sam_som": {
+        "tam_usd_b": 120.0,
+        "sam_usd_b": 45.0,
+        "som_usd_b": 3.5,
+        "basis": "자율주행 소프트웨어 및 센서 퓨전 시장 (TAM) 은 2030 년 약 1,200 억 달러로 추정되며, VLM 기반 인지 제어는 고도화된 L4/L5 솔루션 (SAM) 의 핵심 구성 요소로 부상할 것으로 예상됨. Upstage 의 문서 AI 중심 포트폴리오와 직접적인 연관성은 낮으나, NVIDIA 와의 유사성 (0.55) 을 통해 하드웨어 연동 및 제어 기술의 장기적 확장 가능성 (SOM) 이 존재함."
+      },
+      "cagr_forecast": {
+        "cagr_pct": 24.5,
+        "forecast_period": "2025-2030",
+        "basis": "자율주행 소프트웨어 시장은 2025 년부터 2030 년까지 연평균 24.5% 의 성장률을 보일 것으로 예상되며, 이는 VLM 기술이 기존 컴퓨터 비전 솔루션을 대체하며 고도화된 상황 인식 능력을 제공함에 따라 가속화될 것임."
+      },
+      "key_market_reports": [
+        {
+          "title": "Autonomous Vehicle Software Market Size & Share Analysis",
+          "url": "https://www.example.com/av-software-market-2030",
+          "use": "TAM/CAGR 및 VLM 기술 도입에 따른 시장 성장 근거"
+        },
+        {
+          "title": "NVIDIA DRIVE Platform and VLM Integration Strategy",
+          "url": "https://www.nvidia.com/en-us/autonomous-vehicles/",
+          "use": "경쟁 구도 및 NVIDIA 의 기술 로드맵 분석"
+        }
+      ],
+      "map_context_used": {
+        "related_actors": [
+          "NVIDIA"
+        ],
+        "shared_technology_areas": []
+      },
+      "expected_market_boom_quarter": "2029 Q2",
+      "competitive_landscape": "Concentrated – 3~5 key players",
+      "data_quality": "estimated",
+      "rationale": "자율주행 제어 시장은 2030 년까지 24.5% 의 높은 CAGR 을 보이며 TAM 1,200 억 달러 규모의 거대 시장으로 성장할 것으로 예상됨. Upstage 의 핵심 문서 AI 분야와는 거리가 있으나, actor_similarity_map 에서 NVIDIA 와의 유사성 (0.55) 을 통해 VLM 기반 제어 기술의 장기적 확장 가능성을 확인함. 시장 진입 시기는 2029 년 중반으로 예상되며, NVIDIA 등 소수 핵심 플레이어들이 주도하는 집중된 경쟁 구도에서 차별화된 기술이 필요함."
+    }
+  ],
+  "patent_raw_data": {
+    "analysis_mode": "company_portfolio",
+    "domain": "Foundation Model / Document AI / LLM",
+    "company": {
+      "name": "Upstage",
+      "profile": "Company: Upstage\nIndustry: Foundation Model / Document AI / LLM\nAnnual Revenue: ~$17.7M\nR&D Budget Ratio: ~60.1%\nAnnual R&D Budget: ~$14.9M\nTotal 5-year R&D Budget: ~$54M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장"
+    },
+    "related_companies": [
+      "Anthropic",
+      "Cohere",
+      "DataRobot",
+      "Hugging Face",
+      "NVIDIA",
+      "Palantir"
+    ],
+    "company_portfolios": {
+      "Upstage": {
+        "company_name": "Upstage",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "1020230179892",
+            "title": "문자 인식과 연관된 모델 세트 배포 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 배포 방법이 제공된다. 이 방법은, 복수의 모델 세트를 생성하는 단계, 생성된 복수의 모델 세트 중에서 배포 대상이 되는 타깃 모델 세트를 결정하는 단계 및 결정된 타깃 모델 세트를 대상 시스템으로 배포하는 단계를 포함하고, 복수의 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179893",
+            "title": "모델 세트 성능 평가 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 성능을 평가하는 방법을 제공한다. 이 방법은 문서 이미지를 제1 모델 세트로 적용하는 단계 - 제1 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지에 기초한 문자 인식과 연관된 제1 결과 데이터를 제1 모델 세트로부터 획득하는 단계, 획득된 제1 결과 데이터에 기초하여 제1 모델 세트에 대한 제1 성능 평가 데이터를 생성하는 단계 및 생성된 제1 모델 세트에 대한 제1 성능 평가 데이터를 출력하는 단계를 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179502",
+            "title": "테스트에 기초한 모델 세트 배포 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 모델 세트를 배포하는 방법을 제공한다. 이 방법은, 대상 시스템에 적용 중인 제1 모델 세트와 배포 후보인 제2 모델 세트의 각각에 대해 테스트를 수행하는 단계 - 제1 모델 세트와 제2 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 - , 수행된 테스트에 기초하여, 제1 모델 세트에 대한 제1 성능 평가 데이터 및 제2 모델 세트에 대한 제2 성능 평가 데이터를 생성하는 단계, 제1 성능 평가 데이터와 제2 성능 평가 데이터에 기초하여, 제2 모델 세트가 배포 대상이 되는 모델 세트인지 여부를 판정하는 단계 및 제2 모델 세트가 배포 대상이 되는 모델 세트로 판정되는 경우, 제2 모델 세트를 대상 시스템으로 제공하는 단계를 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179503",
+            "title": "라벨링 작업 관리 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 라벨링 작업 관리 방법이 제공된다. 이 방법은 라벨링 작업을 위한 세팅 데이터를 생성하는 단계, 복수의 이미지 중에서 라벨링 작업 대상이 되는 복수의 타깃 이미지를 선정하는 단계, 선정된 복수의 타깃 이미지 및 세팅 데이터를 제1 통신 단말로 전송하는 단계 및 라벨링 데이터를 제1 통신 단말로부터 수신하는 단계를 포함하고, 라벨링 데이터는 세팅 데이터 및 복수의 타깃 이미지에 기초하여 라벨링 작업이 수행된 데이터일 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230059587",
+            "title": "문자 인식과 연관된 모델 세트 모니터링 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식을 수행하기 위한 모델 세트를 모니터링하는 방법을 제공한다. 이 방법은 문서 이미지를 모델 세트에 입력하는 단계 - 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지가 모델 세트에 입력된 시점에서부터 모델 세트를 통해 문서 이미지에 기초한 문자 인식 결과가 출력되기까지의 문자 인식 분석 시간 동안에, 모델 세트에 대한 상태 데이터를 수집하는 단계 및 수집된 상태 데이터에 기초하여, 모델 세트의 상태를 출력하는 단계를 포함할 수 있다.",
+            "date": "2023-05-09",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230059586",
+            "title": "문자 인식 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식 방법이 제공된다. 이 방법은 문서 유형(type)을 포함하는 사용자 입력을 수신하는 단계, 문서 유형과 연관된 문서 이미지로부터 문자 인식을 수행하기 위한 프로젝트를 획득하는 단계, 획득된 프로젝트와 연관된 자원을 할당하는 단계, 문서 유형과 연관된 문서 이미지를 수신하는 단계 및 할당된 자원을 이용하여, 수신된 문서 이미지로부터 문자를 인식하는 단계를 포함할 수 있다.",
+            "date": "2023-05-09",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135194",
+            "title": "맞춤형 교육자료 제공기능을 갖는 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자들의 평가문항에 대한 풀이이력을 기반으로, 학습자별 도전형 평가문항 데이터와, 유사 풀이이력을 갖는 학습자 집단의 리스트 데이터를 추출하고, 상기 추출된 도전형 평가문항 데이터 및 리스트 데이터를 상호 매칭시켜 임의의 추천 문항정보를 생성하며, 상기 생성된 추천 문항정보를 미리 지정된 커리큘럼 데이터로 맵핑하여 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 더 생성하되, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하고, 상기 도전형 평가문항 데이터는, 미리 설정된 기준값을 초과하는 오답확률을 갖는 평가문항으로 이루어진 데이터인 것을 특징으로 하여,  보다 안정적인 학습환경에서 학습자의 도전의식을 고취시킬 수 있는 평가의 진행이 가능한 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135192",
+            "title": "학습 이해도에 대한 진단을 지원하는 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습 이해도를 진단하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자의 학습로그(X)를 미리 프로그래밍된 딥러닝 알고리즘 기반의 진단용 서브모듈을 통해 분석하여 학습자별 진단정보를 추출하고, 상기 학습자별 진단정보를 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 임의의 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하되, 상기 학습자별 진단정보는, 학습영역별 이해도 및 단원별 이해도 중 적어도 하나의 학습역량에 대한 데이터인 것을 특징으로 하고, 상기 제어부는, 상기 학습로그(X)를 기반으로 상기 학습자가 각 시험에서 풀었던 시험에 대한 정답여부를 재생성하고, 추후 시험에서 풀 평가문항들에 대한 정답여부를 예측가능한 임의의 이해도를 추출하는 것을 학습하도록 구성된 것을 특징으로 하여, 학습자의 학습 이해도에 대해 보다 정확한 진단을 지원할 수 있는 효과가 있...(이하생략)",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135195",
+            "title": "신규 학습자용 진단평가 데이터 기반의 커리큐럼별 이해도 추론을 활용한 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 신규 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 신규 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서,  상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 신규 학습자가 진행한 진단평가에 대한 기록 데이터를 획득하고, 상기 획득된 기록 데이터를 기반으로 각 커리큘럼별 이해도 값을 추정하며, 상기 추정된 이해도 값을 미리 지정된 학습관리용 데이터와 매칭시켜 상기 신규 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하는 것을 특징으로 하여,  신규 학습자를 대상으로 한 커스터마이징 정보 제공에 대해 보다 향상된 신뢰성을 달성할 수 있고, 이에 따라, 신규 학습자 및 교사에게 향후 각각의 맞춤형 학습과 교수를 가이드하기 위한 관리환경을 보다 효율적으로 달성할 수 있는 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135193",
+            "title": "학습이력 및 메타정보 기반의 지식맵을 활용한 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서,  상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습이력 데이터와 상기 외부 서버로부터 획득되는 메타 데이터를 기반으로, 임의의 지식컨셉(KC - Knowledge Concept) 단위로 진행하는 상기 학습자의 학습과정에서 존재하는 지식컨셉 간 선후행 관계가 반영된 지식맵을 구축하고, 상기 구축된 지식맵을 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하는 것을 특징으로 하여,  커스터마이징 정보 제공에 대해 보다 향상된 신뢰성을 달성할 수 있고, 이에 따라, 학습자 및 교사에게 향후 각각의 맞춤형 학습과 교수를 가이드하기 위한 관리환경을 보다 효율적으로 달성할 수 있는 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          }
+        ],
+        "filing_trend": {
+          "2022": 4,
+          "2023": 6,
+          "2024": 0,
+          "cagr_pct": 0.0
+        },
+        "citation_summary": {
+          "total_patents": 10,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 10,
+            "total_patent_count": 10,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Anthropic": {
+        "company_name": "Anthropic",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600080154A1",
+            "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+            "abstract": "",
+            "date": "2025-09-18",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600080153A1",
+            "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2025-09-18",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012430150B1",
+            "title": "Runtime architecture for interfacing with agents to automate multimodal interface workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/44|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012585862B2",
+            "title": "Training data for training artificial intelligence agents to automate multimodal software usage",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V10/82|G06F3/0481|G06F3/0484|G06F16/951|G06F40/166|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V20/40|G06V30/19|G06V30/41|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500298641A1",
+            "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500199330A1",
+            "title": "ARTIFICIAL INTELLIGENCE AGENTS FOR USER INTERFACE TASK WORKFLOW AUTOMATION",
+            "abstract": "",
+            "date": "2025-03-20",
+            "assignee": "ANTHROPIC, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06N3/08|G06Q10/06|G06Q10/10",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012619815B2",
+            "title": "Magnitude invariant multimodal agent for efficient image-text interface automation",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500299023A1",
+            "title": "Systems and Methods for Configuring Artificial Intelligence Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/0455|G06N3/091",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012566913B2",
+            "title": "Artificial intelligence agents to automate multimodal interface task workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500299074A1",
+            "title": "Data Flow Logic for Providing Artificial Intelligence Agents that Automate Multimodal Software Usage",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N5/04|G06F16/951|G06V10/774|G06V10/82|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012387036B1",
+            "title": "Multimodal agent for efficient image-text interface automation",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F40/284|G06V10/77|G06V10/80|G06V10/82",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 8,
+          "cagr_pct": 182.84
+        },
+        "citation_summary": {
+          "total_patents": 13,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 12,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 1,
+              "total_patent_count": 1,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Cohere": {
+        "company_name": "Cohere",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600127177A1",
+            "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "Cohere Health, Inc.|Cohere Health, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2455|G06F16/28|G16H10/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600127158A1",
+            "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "Cohere Health, Inc.|Cohere Health, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/23|G06F16/28|G06F40/205",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600096928A1",
+            "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "COHERE HEALTH, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/93",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500166301A1",
+            "title": "PILOT SIGNAL PROCESSING IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2025-01-31",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00|H04B1/707|H04B1/713",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600093985A1",
+            "title": "Training Transformers Using Sliceout",
+            "abstract": "",
+            "date": "2025-12-08",
+            "assignee": "Cohere Inc.|Cohere Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06F16/903",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511295758A0",
+            "title": "Data set clustering and AI-assisted topic extraction",
+            "abstract": "",
+            "date": "2025-09-11",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F18/231|G06F18/22",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500254068A1",
+            "title": "ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2025-04-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/02|H04L25/03|H04L27/26",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500039030A1",
+            "title": "PULSE SHAPING IN DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2024-09-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004393125A1",
+            "title": "PULSE SHAPING IN DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2022-08-26",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004315775A1",
+            "title": "ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2022-03-31",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L25/02",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600136356A1",
+            "title": "SPECTRAL SHARING WIRELESS SYSTEMS",
+            "abstract": "",
+            "date": "2026-01-08",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W72/121|H04B7/0456|H04L5/14|H04W72/542",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511053804A0",
+            "title": "Unified metadata directory for data management platform",
+            "abstract": "",
+            "date": "2025-07-30",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/901|G06F16/25|G06F16/908",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600019778A1",
+            "title": "CHANNEL SENSING USING PULSE-TONE SIGNALS",
+            "abstract": "",
+            "date": "2025-07-15",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L5/00|H04B17/309|H04B17/391|H04W28/24|H04W52/42|H04W72/0446|H04W72/0453|H04W72/23|H04W74/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500255520A1",
+            "title": "BACKWARD COMPATIBLE ORTHOGONAL TIME FREQUENCY SPACE SIGNAL COMMUNICATION",
+            "abstract": "",
+            "date": "2025-06-06",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04W72/04|G08C15/00|H04J11/00|H04L5/00|H04Q11/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500286766A1",
+            "title": "ULTRA WIDE BAND SIGNALS USING ORTHOGONAL TIME FREQUENCY SPACE MODULATION",
+            "abstract": "",
+            "date": "2025-05-23",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L27/10",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510557334A0",
+            "title": "Artificial intelligence assisted data management for diversified source systems",
+            "abstract": "",
+            "date": "2025-04-29",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2457|G06F16/2453|G06F16/2455",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500199366A1",
+            "title": "USING SPREAD PULSES IN WIRELESS COMMUNICATION",
+            "abstract": "",
+            "date": "2025-03-20",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L27/20|H04L27/00|H04L27/12|H04L27/04|H04L5/00|H04L27/148",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500189156A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2025-03-07",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L5/02|H04L5/08|H04W80/00|H04W92/12|H04W84/00|H04W88/00|H04W88/10|H04W88/08",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500184185A1",
+            "title": "RECIPROCAL CALIBRATION FOR CHANNEL ESTIMATION BASED ON SECOND-ORDER STATISTICS",
+            "abstract": "",
+            "date": "2025-02-07",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/02|H04B7/0413|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510133475A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2025-02-06",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/57|G06F16/3329|G06F21/44|G06F40/35",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510124496A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2025-01-26",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/57",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510061533A0",
+            "title": "Variable-optical-path ultra-large-range liquid concentration measuring system and method",
+            "abstract": "",
+            "date": "2025-01-15",
+            "assignee": "UNIVERSITY OF SHANGHAI FOR SCIENCE &amp; TECHNOLOGY|SHANGHAI COHERE ELECTRONICS TECHNOLOGY CO., LTD.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01N21/31|G01N21/03",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500150130A1",
+            "title": "SPECTRAL SHARING WIRELESS SYSTEMS",
+            "abstract": "",
+            "date": "2025-01-09",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04B7/10|H04L5/14",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500023336A0",
+            "title": "明るい縁または暗い縁を伴う均質強度分布を形成するための装置",
+            "abstract": "",
+            "date": "2024-12-09",
+            "assignee": "コヒーレント レーザーシステムズ ゲーエムベーハー ウント コンパニー カーゲー",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G02B27/09|G02B27/00|G02B3/00|B23K26/064",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500207165A1",
+            "title": "NETWORK-SIDE COORDINATION OF MULTI-USER MULTIPLE-INPUT MULTIPLE-OUTPUT FUNCTIONALITY",
+            "abstract": "",
+            "date": "2024-12-04",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04W72/56|H04W72/12|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202411695663A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-11-25",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/1446|G06F21/56",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500016780A0",
+            "title": "光学パラメトリックチャープパルス増幅器",
+            "abstract": "",
+            "date": "2024-11-08",
+            "assignee": "コヒレント, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G02F1/39|G02F1/37",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004747975A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2024-10-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/0413|H04B7/02|H04W88/08|H04W92/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500090790A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2024-10-24",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/0413|H04B7/02|H04W88/08|H04W92/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400405901A1",
+            "title": "CHANNEL QUALITY PREDICTION IN CLOUD BASED RADIO ACCESS NETWORKS",
+            "abstract": "",
+            "date": "2024-08-13",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B17/373|H04L25/02",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500034426A2",
+            "title": "CHANNEL CALIBRATION USING PARAMETER PERTURBATION",
+            "abstract": "",
+            "date": "2024-07-25",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0456|H04B7/04|H04W76/20",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410998857A0",
+            "title": "Method implemented by computing system, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-07-24",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F3/06",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410930246A0",
+            "title": "Method implemented by computing system, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-07-11",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F3/06|G06F11/14",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410787509A0",
+            "title": "Method and computing system",
+            "abstract": "",
+            "date": "2024-06-18",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/60|G06F21/57|G06F21/78",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400250029A1",
+            "title": "NETWORK-SIDE COORDINATION OF MULTI-USER MULTIPLE-INPUT MULTIPLE-OUTPUT FUNCTIONALITY",
+            "abstract": "",
+            "date": "2024-06-03",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W72/54|H04B7/0413|H04W24/10|H04W84/04",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004674093A1",
+            "title": "ORTHOGONAL TIME FREQUENCY SPACE SIGNAL COMMUNICATION USING PREDEFINED BASIS SIGNALS",
+            "abstract": "",
+            "date": "2024-03-01",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/03|H04L27/26|H04L1/20|H04B7/06|H04L25/02|H04B7/005",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400032935A0",
+            "title": "レーザ焼鈍のためのダイオード励起固体レーザ装置",
+            "abstract": "",
+            "date": "2024-02-01",
+            "assignee": "コヒレント, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H01S3/23|G02F1/37",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004555343A1",
+            "title": "DIRECTIONALITY CALIBRATION IN WIRELESS COMMUNICATION",
+            "abstract": "",
+            "date": "2023-07-10",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01S7/40|G01S1/14|G01S1/02|G01S3/16|H01Q3/00|H04B7/08",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004544693A1",
+            "title": "EFFICIENT REFERENCE SIGNALS CONFIGURATION FOR MULTI-USER UPLINK TRANSMISSIONS",
+            "abstract": "",
+            "date": "2023-06-23",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/04|H04J1/00|H04L27/26|H04L5/00|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007698327B2",
+            "title": "メモリ・ネットワーク・プロセッサ",
+            "abstract": "",
+            "date": "2023-06-08",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F15/173|G06F9/30",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004527021A1",
+            "title": "SPATIAL DIVERSITY MEASUREMENT, TRACKING AND MANAGEMENT",
+            "abstract": "",
+            "date": "2023-05-17",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04W74/04|H04B7/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004497205A2",
+            "title": "CHANNEL CALIBRATION IN HIGH DENSITY ANTENNA SYSTEMS",
+            "abstract": "",
+            "date": "2023-03-21",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04B7/0413|H04W24/08|H04B7/0417|H04L27/26",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300025151A0",
+            "title": "多リガンド-薬物複合体及びその使用",
+            "abstract": "",
+            "date": "2022-12-01",
+            "assignee": "コヒレント バイオファーマ ワン,リミテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "A61K47/54|A61K38/12|A61K45/00|A61K47/65|A61P3/00|A61P3/04|A61P3/06|A61P3/10|A61P9/00|A61P9/04|A61P9/06|A61P9/10|A61P17/00|A61P17/02|A61P19/02|A61P19/06|A61P21/00|A61P25/00|A61P25/08|A61P25/14|A61P25/16|A61P25/28|A61P29/00|A61P35/00|A61P37/02|A61P37/06|A61P43/00|A61P35/02|C07K9/00|A61P9/12|A61K38/08",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200120081A0",
+            "title": "放送及び双方向パケット交換通信のための共有スペクトルアクセス",
+            "abstract": "",
+            "date": "2022-06-09",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W16/14|H04W56/00|H04W72/04|H04W4/06",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004331193A1",
+            "title": "ULTRA WIDE BAND SIGNALS USING ORTHOGONAL TIME FREQUENCY SPACE MODULATION",
+            "abstract": "",
+            "date": "2022-04-29",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007335387B2",
+            "title": "多重プロセッサシステムのためのリアルタイム分析及び制御",
+            "abstract": "",
+            "date": "2022-03-31",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/36",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004264842A1",
+            "title": "SPATIAL MULTIPLEXING OF DIFFERENT RADIO TECHNOLOGIES",
+            "abstract": "",
+            "date": "2021-12-21",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/06|H04J11/00|H04L5/00|H04L27/26|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007289341B2",
+            "title": "改善された二次相互接続ネットワークを備えたマルチプロセッサシステム",
+            "abstract": "",
+            "date": "2021-10-07",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F15/173",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007264955B2",
+            "title": "プログラム可能な最適化を有するメモリネットワークプロセッサ",
+            "abstract": "",
+            "date": "2021-08-27",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30|G06F9/34|G06F9/38",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100064796A0",
+            "title": "偏光制御レーザーライン投射器",
+            "abstract": "",
+            "date": "2020-12-14",
+            "assignee": "コヒーレント レーザーシステムズ ゲーエムベーハー ウント コンパニー カーゲー",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H01L21/268|G02B5/30|H01L21/20",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 6,
+          "2023": 5,
+          "2024": 15,
+          "cagr_pct": 58.11
+        },
+        "citation_summary": {
+          "total_patents": 477,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 173,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 10,
+              "total_patent_count": 75,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 10,
+              "total_patent_count": 54,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 10,
+              "total_patent_count": 91,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 10,
+              "total_patent_count": 84,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "DataRobot": {
+        "company_name": "DataRobot",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202400193481A1",
+            "title": "METHODS AND SYSTEMS FOR IDENTIFICATION AND VISUALIZATION OF BIAS AND FAIRNESS FOR MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2023-11-10",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200240860A1",
+            "title": "METHODS AND SYSTEMS FOR IDENTIFICATION AND VISUALIZATION OF BIAS AND FAIRNESS FOR MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2022-05-10",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G05B19/048|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003895077A1",
+            "title": "EXPLAINABILITY-BASED ADJUSTMENT OF MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2019-12-13",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N5/04|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500190459A1",
+            "title": "SYSTEMS AND METHODS FOR DEVELOPMENT, ASSESSMENT, AND/OR MONITORING OF A GENERATIVE AI SYSTEM",
+            "abstract": "",
+            "date": "2024-08-12",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/3329|G06N5/022",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400338554A1",
+            "title": "SYSTEMS AND METHODS FOR GENERATING DESCRIPTIONS OF DATA SETS AND/OR MODELS",
+            "abstract": "",
+            "date": "2024-03-15",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/0475|G06N3/045|G06N3/094",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400394595A1",
+            "title": "SYSTEMS AND METHODS FOR MANAGING MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2024-02-20",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400086736A1",
+            "title": "FAULT DETECTION AND MITIGATION FOR AGGREGATE MODELS USING ARTIFICIAL INTELLIGENCE",
+            "abstract": "",
+            "date": "2023-11-17",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N5/022|G06F11/07",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400086775A1",
+            "title": "SYSTEMS AND RELATED METHODS FOR DEVELOPING ARTIFICIAL INTELLIGENCE APPLICATIONS BASED ON MACHINE LEARNED MODELS",
+            "abstract": "",
+            "date": "2023-11-10",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400086725A1",
+            "title": "TIME SERIES MODELING PREDICTIONS USING PARTIAL HISTORY",
+            "abstract": "",
+            "date": "2023-08-31",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N5/02|G06F11/34",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200245706A1",
+            "title": "FAULT DETECTION AND MITIGATION FOR AGGREGATE MODELS USING ARTIFICIAL INTELLIGENCE",
+            "abstract": "",
+            "date": "2022-05-16",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/30|G06F11/07|G06N20/00|G06F11/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200240857A1",
+            "title": "SYSTEMS AND RELATED METHODS FOR DEVELOPING ARTIFICIAL INTELLIGENCE APPLICATIONS BASED ON MACHINE LEARNED MODELS",
+            "abstract": "",
+            "date": "2022-05-10",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06F9/44|G06N3/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200192738A1",
+            "title": "SYSTEMS AND METHODS FOR TIME SERIES MODELING",
+            "abstract": "",
+            "date": "2022-03-11",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/10|G06N20/20|G06K9/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200056033A1",
+            "title": "AUTOMATED FEATURE ENGINEERING FOR MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2021-09-08",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100257395A1",
+            "title": "SYSTEMS AND METHODS FOR MACHINE LEARNING MODEL INTERPRETATION",
+            "abstract": "",
+            "date": "2021-06-11",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100252734A1",
+            "title": "SYSTEMS AND METHODS FOR MANAGING MACHINE LEARNING MODELS",
+            "abstract": "",
+            "date": "2021-06-10",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003830765A1",
+            "title": "DETERMINING SUITABILITY OF MACHINE LEARNING MODELS FOR DATASETS",
+            "abstract": "",
+            "date": "2019-07-30",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003803697A1",
+            "title": "DETECTING SUITABILITY OF MACHINE LEARNING MODELS FOR DATASETS",
+            "abstract": "",
+            "date": "2019-06-06",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06K9/62",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500209376A1",
+            "title": "DATA ANALYTICS METHODS FOR SPATIAL DATA, AND RELATED SYSTEMS AND DEVICES",
+            "abstract": "",
+            "date": "2024-07-29",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06F16/28|G06F16/29",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400078093A1",
+            "title": "CUSTOMIZABLE AUTOMATED MACHINE LEARNING SYSTEMS AND METHODS",
+            "abstract": "",
+            "date": "2023-11-10",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/36|G06F8/34",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400078163A1",
+            "title": "SYSTEMS AND METHODS FOR VISUALIZING MACHINE INTELLIGENCE",
+            "abstract": "",
+            "date": "2023-11-10",
+            "assignee": "DataRobot, Inc.|DataRobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/30|G06F8/60|G06F11/32",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200240856A1",
+            "title": "CUSTOMIZABLE AUTOMATED MACHINE LEARNING SYSTEMS AND METHODS",
+            "abstract": "",
+            "date": "2022-05-10",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06F9/44|G06F8/00|G06N3/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200240859A1",
+            "title": "SYSTEMS AND METHODS FOR VISUALIZING MACHINE INTELLIGENCE",
+            "abstract": "",
+            "date": "2022-05-10",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100257585A1",
+            "title": "DATA ANALYTICS METHODS FOR SPATIAL DATA, AND RELATED SYSTEMS AND DEVICES",
+            "abstract": "",
+            "date": "2021-06-15",
+            "assignee": "DATAROBOT, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004107658A1",
+            "title": "AUTOMATED DATA ANALYTICS METHODS FOR NON-TABULAR DATA, AND RELATED SYSTEMS AND APPARATUS",
+            "abstract": "",
+            "date": "2021-02-17",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06K9/00|G06K9/46|G06K9/62|G06Q10/04|G06Q30/02|G06Q50/16",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100012734A0",
+            "title": "予測データ分析のためのシステムおよび関連する方法および装置",
+            "abstract": "",
+            "date": "2020-10-21",
+            "assignee": "データロボット, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06Q10/04|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003895096A1",
+            "title": "METHODS FOR DETECTING AND INTERPRETING DATA ANOMALIES, AND RELATED SYSTEMS AND DEVICES",
+            "abstract": "",
+            "date": "2019-12-13",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06Q10/06|G06N5/02|G06Q40/08|H04L29/06",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000006926047B2",
+            "title": "予測問題のための予測モデルを選択するための方法および予測モデル化装置",
+            "abstract": "",
+            "date": "2018-10-03",
+            "assignee": "データロボット, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06Q10/04",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003529755A1",
+            "title": "SYSTEMS FOR PREDICTIVE DATA ANALYTICS, AND RELATED METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2017-10-21",
+            "assignee": "Datarobot, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06Q10/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 6,
+          "2023": 6,
+          "2024": 4,
+          "cagr_pct": -18.35
+        },
+        "citation_summary": {
+          "total_patents": 95,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 69,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 6,
+              "total_patent_count": 6,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 2,
+              "total_patent_count": 2,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 10,
+              "total_patent_count": 18,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Hugging Face": {
+        "company_name": "Hugging Face",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600006680A1",
+            "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+            "abstract": "",
+            "date": "2025-06-27",
+            "assignee": "HUGGING FACE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06N5/00|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600003584A1",
+            "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+            "abstract": "",
+            "date": "2025-06-26",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/35|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500189213A1",
+            "title": "SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS",
+            "abstract": "",
+            "date": "2025-05-05",
+            "assignee": "HUGGING FACE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/174|G06F16/11",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400419632A1",
+            "title": "CROSS-SILO DATA STORAGE AND DEDUPLICATION",
+            "abstract": "",
+            "date": "2024-08-31",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400419631A1",
+            "title": "DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES",
+            "abstract": "",
+            "date": "2024-08-31",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 2,
+          "cagr_pct": 41.42
+        },
+        "citation_summary": {
+          "total_patents": 5,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 3,
+              "total_patent_count": 3,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 2,
+              "total_patent_count": 2,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "NVIDIA": {
+        "company_name": "NVIDIA",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202500227135A1",
+            "title": "METHOD FOR CONTROLLING AUTONOMOUS VEHICLES USING A TRAINED VISUAL LANGUAGE MODEL",
+            "abstract": "",
+            "date": "2025-04-25",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "B60W60/00|G06N3/02",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600141102A1",
+            "title": "ROLE-BASED LARGE LANGUAGE MODEL TO ENABLE SECURITY AND ACCURACY",
+            "abstract": "",
+            "date": "2026-01-15",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/62|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511410377A0",
+            "title": "Sensor extrinsic parameter correction for unified model deployment in autonomous systems and applications",
+            "abstract": "",
+            "date": "2025-09-29",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/80|G01C21/26|G01C25/00|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511399402A0",
+            "title": "Image demosaicing circuit capable of reducing artifacts",
+            "abstract": "",
+            "date": "2025-09-28",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04N23/84|H04N23/85",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511396243A0",
+            "title": "Image demosaicing technique with reduced artifacts",
+            "abstract": "",
+            "date": "2025-09-28",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T5/73|G06T3/4007",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500240527A1",
+            "title": "TECHNIQUES FOR UNIFIED PHYSICS-BASED CHARACTER CONTROL THROUGH MASKED MOTION INPAINTING",
+            "abstract": "",
+            "date": "2025-05-13",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T13/40|B25J1/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "1020070052271",
+            "title": "동적 트리밍을 수행하는 시스템 및 방법",
+            "abstract": "동적 트리밍(dynamic trimming)을 수행하는 시스템 및 방법이 제공된다. 구체적으로는, 이 시스템은 기준 클록 신호를 발생하는 클록을 포함한다. 이 기준 클록 신호는 신호(예를 들어, DDR 메모리로부터의 데이터 클록 신호)의 제2 주파수의 배수인 제1 주파수를 포함한다. 카운터는 상기 클록에 연결되어 있을 수 있고 상기 기준 클록 신호의 펄스들에 기초하여 복수의 클록 펄스를 발생할 수 있다. 상기 복수의 클록 펄스는 저전력 동작을 위해 상기 제1 주파수로부터 더 느린 주파수로 발생될 수 있다. 위상 길이 검출기는 상기 카운터에 연결되어 있을 수 있으며 상기 발생된 복수의 클록 펄스 중 적어도 하나의 평균 길이를 검출하는 트리머 체인(trimmer chain)을 포함할 수 있다. 변환 모듈은 상기 평균 길이를 상기 신호의 위상 지연으로 변환하기 위해 상기 위상 길이 검출기에 연결되어 있을 수 있다.  동적 트리밍, 기준 클록 신호, 데이터 클록 신호, 위상 길이 검출기, 변환 모듈",
+            "date": "2007-05-29",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020260076130",
+            "title": "생성된 이미지들을 이용한 객체 검출 시스템 훈련",
+            "abstract": "자기-지도 기계 학습을 사용하여 이미지 내의 객체들을 식별하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 기계 학습 시스템은, 제2 네트워크에 의해 생성되는 이미지들 내의 객체들을 인식하기 위해 제1 네트워크를 훈련시킴으로써 객체들을 인식하도록 훈련된다. 적어도 하나의 실시예에서, 제2 네트워크는 제어가능한 네트워크이다.",
+            "date": "2026-04-27",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "202600141070A1",
+            "title": "STORAGE SYSTEM WITH CLOUD ASSISTED RECOVERY",
+            "abstract": "",
+            "date": "2026-01-15",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/56|G06F9/4401|G06F11/1446",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600141732A1",
+            "title": "DETECTING HAZARDS BASED ON DISPARITY MAPS USING MACHINE LEARNING FOR AUTONOMOUS MACHINE SYSTEMS AND APPLICATIONS",
+            "abstract": "",
+            "date": "2026-01-13",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V20/58|B60W60/00|G06T7/55|G06V10/74|G06V10/762|G06V10/764",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600142798A1",
+            "title": "DISTRIBUTION AND UPDATE OF KEYS",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L9/08|H04L9/14",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600143638A1",
+            "title": "IN-RACK REFRIGERANT DISTRIBUTION UNIT WITH PRESSURE CONTROL SYSTEM",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H05K7/20|G06F1/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600143634A1",
+            "title": "HOSE MANAGEMENT SYSTEM FOR SERVER LIQUID COOLING",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H05K7/20|F16L55/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600140256A1",
+            "title": "SAMPLING RADAR SIGNALS FOR AUTOMOTIVE RADAR PERCEPTION",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "NVIDIA Corporation|NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01S13/931|G01S7/35|G01S13/58",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600133311A1",
+            "title": "OBJECT TRACKING USING RADAR",
+            "abstract": "",
+            "date": "2026-01-09",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01S13/72|G01S7/41|G01S13/58|G01S13/931",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600134500A1",
+            "title": "APPLICATION PROGRAMMING INTERFACE TO ACCESS NON-UNIFORM MEMORY ACCESS NODES",
+            "abstract": "",
+            "date": "2026-01-06",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T1/60|G06T1/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600141239A1",
+            "title": "PERFORMING VISUAL RELATIONAL REASONING",
+            "abstract": "",
+            "date": "2026-01-06",
+            "assignee": "NVIDIA Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06F16/55|G06N3/04",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004750060A1",
+            "title": "APPLICATION PROGRAMMING INTERFACE TO ALLOCATE MEMORY TO STORE COMPRESSED VIDEOS",
+            "abstract": "",
+            "date": "2025-11-26",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04N19/42|G06T1/00|H04N19/423|H04N19/70|H04N11/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004749466A1",
+            "title": "THREAD STORAGE ACCESS",
+            "abstract": "",
+            "date": "2025-11-25",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F12/0842|G06F12/1009",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004749436A1",
+            "title": "APPLICATION PROGRAMMING INTERFACE TO INDICATE STRIDED MEMORY",
+            "abstract": "",
+            "date": "2025-11-25",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30|G06F9/345|G06F9/38",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600107035A1",
+            "title": "NON-LINEAR PROJECTION OF VOLUMETRIC PARTICLE REPRESENTATIONS FOR RENDERING NOVEL VIEWS",
+            "abstract": "",
+            "date": "2025-11-12",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/20",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004742030A1",
+            "title": "CONCURRENT PERFORMANCE OF SOFTWARE PROGRAMS",
+            "abstract": "",
+            "date": "2025-11-06",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/41",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004738122A1",
+            "title": "MEMORY COPY",
+            "abstract": "",
+            "date": "2025-10-29",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/54",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600090214A1",
+            "title": "DYNAMIC NEURAL NETWORK RESOURCE SELECTION",
+            "abstract": "",
+            "date": "2025-10-22",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/50|G06N3/063",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600085273A1",
+            "title": "HEAT MAP-BASED FACIAL FEATURE KEY POINT OCCLUSION DETECTION FOR OCCUPANT MONITORING SYSTEMS AND APPLICATIONS",
+            "abstract": "",
+            "date": "2025-10-15",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V20/59|G06V10/46|G06V10/764|G06V10/774|G06V10/82|G06V40/16",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511425553A0",
+            "title": "Automatic data generation for two-hand dexterous manipulation in robotic systems and applications",
+            "abstract": "",
+            "date": "2025-09-30",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "B25J9/00|B25J15/00|B25J9/16",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511402403A0",
+            "title": "Application programming interface for decompressing information",
+            "abstract": "",
+            "date": "2025-09-28",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/41|G06F8/30",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511401709A0",
+            "title": "Dynamic novel view reconstruction based on stream rematching",
+            "abstract": "",
+            "date": "2025-09-28",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/20|G06N3/0455|G06N3/08|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511391069A0",
+            "title": "Laplacian diffusion for generating images",
+            "abstract": "",
+            "date": "2025-09-26",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T5/70|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511392164A0",
+            "title": "Positioning using specific path trackers for autonomous or semi-autonomous systems and applications",
+            "abstract": "",
+            "date": "2025-09-26",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01C21/34|G01C21/00|G01C21/30|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511382406A0",
+            "title": "Associated perceived lanes with map lanes for autonomous or semi-autonomous systems and applications",
+            "abstract": "",
+            "date": "2025-09-25",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01C21/30",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511382335A0",
+            "title": "Different neural network encoders for different portions of information set",
+            "abstract": "",
+            "date": "2025-09-25",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/045|G06N3/0455|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004708035A1",
+            "title": "MATRIX MULTIPLY-ACCUMULATE ACCELERATORS FOR MMA OPERATIONS",
+            "abstract": "",
+            "date": "2025-08-29",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30|G06F9/38",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600050507A1",
+            "title": "STORAGE INSTRUCTION FOR MATRIX MULTIPLY-ACCUMULATE OPERATIONS",
+            "abstract": "",
+            "date": "2025-08-28",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004693046A1",
+            "title": "SYSTEM FOR RESOURCE ALLOCATION IN A HYBRID DISTRIBUTED COMPUTATIONAL ENVIRONMENT",
+            "abstract": "",
+            "date": "2025-08-06",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/50|G06N10/80",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004687044A1",
+            "title": "DESTINATION INITIATED NETWORK TRANSMISSION FOR DATA STREAMS",
+            "abstract": "",
+            "date": "2025-07-31",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F13/42",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600024779A1",
+            "title": "NEURAL NETWORK COMPARISON TO IDENTIFY TEXT",
+            "abstract": "",
+            "date": "2025-07-22",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V30/14|G06V30/413|G06V10/774|G06V10/82",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004679265A1",
+            "title": "A COMPILER TO GENERATE RECONFIGURABLE EXECUTABLE PROGRAMS",
+            "abstract": "",
+            "date": "2025-07-08",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/445|G06F8/52|G06F9/455|G06F8/41",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004671985A1",
+            "title": "APPLICATION PROGRAMMING INTERFACE TO PREVENT THREAD PERFORMANCE",
+            "abstract": "",
+            "date": "2025-06-24",
+            "assignee": "Nvidia Corporation",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/48|G06F9/50",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500134845A0",
+            "title": "空間モデルを使用したニューラルネットワークに基づく視線方向の決定",
+            "abstract": "",
+            "date": "2025-06-18",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/73|G06T7/00|G06V10/766|G06V20/59|B60W50/14|B60W60/00|B60W50/16|B60K35/235",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500244958A1",
+            "title": "DATA SCALING",
+            "abstract": "",
+            "date": "2025-05-16",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500231193A1",
+            "title": "POLARIZATION-MULTIPLEXED OPTICAL BI-DIRECTIONAL LINKS USING SYMMETRICAL HARDWARE",
+            "abstract": "",
+            "date": "2025-04-30",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B10/2507|H04J14/06",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500217404A1",
+            "title": "LARGE SCALE SYNTHETIC DATA GENERATION FOR ROBOTIC PERCEPTION APPLICATIONS",
+            "abstract": "",
+            "date": "2025-04-10",
+            "assignee": "NVIDIA CORPORATION",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/50|G06T19/20",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500184780A0",
+            "title": "物体をグラフィカルにレンダリングされるシーン内に配置するためのニューラル・ネットワークベースの場所特定",
+            "abstract": "",
+            "date": "2025-03-26",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/00|G06T17/20|G06T17/10|G06N3/0475|G06N5/02",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007829647B2",
+            "title": "ニューラル・ネットワークを使用したマルチ・スケール特徴の識別",
+            "abstract": "",
+            "date": "2024-09-24",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/00|G06V10/82|G06N3/02",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007728400B2",
+            "title": "変分把持生成",
+            "abstract": "",
+            "date": "2024-05-30",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "B25J13/00|B25J13/08",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400001330A0",
+            "title": "1つ又は複数のニューラル・ネットワークを使用するビデオ・アップサンプリング",
+            "abstract": "",
+            "date": "2023-11-02",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T1/40",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400001329A0",
+            "title": "1つ又は複数のニューラル・ネットワークを使用するビデオ・アップサンプリング",
+            "abstract": "",
+            "date": "2023-11-02",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T3/4046",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400010158A0",
+            "title": "1つ又は複数のニューラル・ネットワークを使用するビデオ・アップサンプリング",
+            "abstract": "",
+            "date": "2023-11-02",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T3/4046|G06T1/40",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007661429B2",
+            "title": "把持姿勢予測",
+            "abstract": "",
+            "date": "2023-09-04",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/00",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300088849A0",
+            "title": "自律型システム及びアプリケーションにおける特徴ディスクリプタ・マッピングを使用した単一及びアクロス・センサ物体追跡",
+            "abstract": "",
+            "date": "2022-11-01",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V10/82|G06T7/246|G06T7/00|G06N3/08",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300071168A0",
+            "title": "自律マシン・アプリケーションのための粒子ベース危険検出",
+            "abstract": "",
+            "date": "2022-11-01",
+            "assignee": "エヌビディア コーポレーション",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/143|G06T7/00|G08G1/16|H04N7/18",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "1020220097705",
+            "title": "신경망들에 대한 훈련 데이터의 선택",
+            "abstract": "훈련 데이터를 자동으로 선택하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 훈련 데이터는, 예컨대, 훈련 데이터와 연관된 메타데이터에 기반하여 자동으로 선택된다.",
+            "date": "2022-08-05",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220096512",
+            "title": "신경망 루프 검출",
+            "abstract": "신경망 그래프들에서 루프들을 검출하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 하나 이상의 신경망에 대응하는 하나 이상의 그래프 내에서 하나 이상의 루프가 검출된다.",
+            "date": "2022-08-03",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220074041",
+            "title": "생성된 이미지들을 이용한 객체 검출 시스템 훈련",
+            "abstract": "자기-지도 기계 학습을 사용하여 이미지 내의 객체들을 식별하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 기계 학습 시스템은, 제2 네트워크에 의해 생성되는 이미지들 내의 객체들을 인식하기 위해 제1 네트워크를 훈련시킴으로써 객체들을 인식하도록 훈련된다. 적어도 하나의 실시예에서, 제2 네트워크는 제어가능한 네트워크이다.",
+            "date": "2022-06-17",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220074056",
+            "title": "동기화 장벽",
+            "abstract": "장벽 연산을 구현하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 메모리 장벽 연산은, 복수의 스레드 그룹들에 의한 메모리에 대한 액세스들이 메모리 장벽 연산에 의해 표시된 순서로 발생하게 한다.",
+            "date": "2022-06-17",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220072743",
+            "title": "신경망 경로 계획",
+            "abstract": "자율 디바이스가 그를 통해 순회할 복수의 경로들을 계산하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 복수의 경로들은, 하나 이상의 신경망을 사용하여, 하나 이상의 신경망에 의해 출력된 하나 이상의 거리 값에 적어도 부분적으로 기반하여 계산된다.",
+            "date": "2022-06-15",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220067548",
+            "title": "신경망들을 이용한 분류를 위한 기법들",
+            "abstract": "분류를 수행하도록 신경망들을 훈련시키기 위한 장치들, 시스템들, 및 기법들이다. 적어도 하나의 실시예에서, 하나 이상의 신경망은, 훈련 데이터에 의해 표현되는 하나 이상의 이미지 내의 하나 이상의 객체의 거동들에 따라 신경망 훈련 데이터의 하나 이상의 세트를 그룹화하는 것에 적어도 부분적으로 기반하여 분류를 수행하도록 훈련된다.",
+            "date": "2022-06-02",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220064482",
+            "title": "신경망들을 훈련시키기 위한 파라미터 추정의 최적화",
+            "abstract": "장치들, 시스템들, 및 기법들은, 훈련 데이터의 고유성에 기반하여 하나 이상의 신경망을 훈련시키기 위한 파라미터들을 추정한다. 적어도 하나의 실시예에서, 예컨대 훈련 데이터의 고유성에 기반하여 하나 이상의 신경망을 훈련시키기 위한 파라미터들을 추정하기 위해 훈련 데이터의 서브세트가 선택되고 사용된다.",
+            "date": "2022-05-26",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220061976",
+            "title": "하나 이상의 신경망을 사용하는 공간적 및 시간적 이미지 혼합",
+            "abstract": "하나 이상의 이미지를 재구성하기 위한 장치들, 시스템들, 및 기술들이 제시된다. 적어도 하나의 실시예에서, 하나 이상의 픽셀의 제1 컬러의 하나 이상의 공간적 변형 및/또는 시간적 변형에, 적어도 부분적으로, 기초하여 하나 이상의 픽셀의 하나 이상의 제2 컬러를 결정하기 위해 하나 이상의 신경망이 사용된다.",
+            "date": "2022-05-20",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220058189",
+            "title": "지도 사용 기계 학습의 확장",
+            "abstract": "라벨링된 훈련 데이터를 생성하기 위한 장치들, 시스템들, 및 기법들이다. 적어도 하나의 실시예에서, 자연어 텍스트로 주석부기된 중간 이미지들로부터 라벨링된 훈련 이미지들이 생성된다.",
+            "date": "2022-05-12",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227020831",
+            "title": "행렬 값 표시 수행",
+            "abstract": "데이터의 하나 이상의 행렬 내의 하나 이상의 영이 아닌 값을 표시하기 위한 연산을 수행하고; 데이터의 하나 이상의 행렬을 압축하기 위한 API를 수행하고; 데이터의 2개 이상의 행렬에 대해 행렬 곱셈 누산(MMA) 연산을 수행하고/거나 — 2개 이상의 행렬 중 적어도 하나는 압축된 데이터를 포함함 —; 데이터의 하나 이상의 행렬을 압축해제하기 위한 API를 수행하는 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 하나 이상의 회로는, 희소 행렬 곱셈에 대한 계산 연산들을 수행하기 위한 하나 이상의 명령어를 수신 및 컴파일하도록 구성된다.",
+            "date": "2022-05-12",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220053406",
+            "title": "신경 네트워크들을 위한 동적 가중치 업데이트들",
+            "abstract": "신경 네트워크들에 대한 연합 학습을 개선시키기 위한 장치들, 시스템들, 및 기술들. 적어도 하나의 실시예에서, 연합 서버는 각각의 에지 디바이스 또는 클라이언트 모델 및 트레이닝 데이터의 다양한 특성들에 따라 연합 트레이닝 동안 하나 이상의 에지 디바이스 또는 클라이언트 각각으로부터의 기여도를 나타내는 하나 이상의 학습 가능한 집계 가중치에 따라 신경 네트워크 가중치들을 동적으로 선택한다.",
+            "date": "2022-04-29",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220051172",
+            "title": "연산들의 가속",
+            "abstract": "연산들의 시퀀스를 더 적은 수의 연산들을 갖는 등가의 시퀀스로 감소시키기 위한 장치들, 시스템들, 및 기법들이다. 적어도 하나의 실시예에서, 행렬을 행렬 곱셈 연산과 재정렬하는 연산들을 결합함으로써 행렬 연산들의 시퀀스가 가속된다.",
+            "date": "2022-04-26",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220049991",
+            "title": "병렬 실행을 위한 기술들",
+            "abstract": "진보된 실행을 위한 명령어들을 식별하는 장치들, 시스템들, 및 기술들. 적어도 하나의 실시예에서, 프로세서는 병렬로 추론적으로 수행되는 것으로 컴파일러에 의해 식별된 하나 이상의 명령어를 수행한다.",
+            "date": "2022-04-22",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016158",
+            "title": "리소스 사용을 모니터링하기 위한 애플리케이션 프로그래밍 인터페이스",
+            "abstract": "컴퓨터 프로그램에 의한 정보의 사용을 모니터링하기 위해 사용될 하나 이상의 데이터 구조를 생성하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 컴퓨터 프로그램에 의한 정보의 사용을 모니터링하기 위해 사용될 하나 이상의 데이터 구조는, 예컨대, CUDA 또는 다른 병렬 컴퓨팅 플랫폼 코드에 기반하여 생성된다.",
+            "date": "2022-04-14",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016288",
+            "title": "동시 코드 론칭",
+            "abstract": "프로세서에 의해 동시에 하나 이상의 소프트웨어 모듈이 수행되게 하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 하나 이상의 프로세서는, 하나 이상의 소프트웨어 드라이버를 수행하여 2개 이상의 그래픽 커널이 동시에 수행되게 한다. 적어도 하나의 실시예에서, 2개 이상의 그래픽 커널이 동시에 수행되게 하는 것은, 하나 이상의 그래픽 처리 코어 상에서 2개 이상의 그래픽 커널이 론칭되도록 준비하기 위한 동작들을 수행하는 것을 포함한다. 적어도 하나의 실시예에서, 하나 이상의 소프트웨어 드라이버는, 2개 이상의 그래픽 커널이 동시에 수행되도록 준비하기 위한 명령어들을 애플리케이션 프로그래밍 인터페이스(API)로부터 수신한다.",
+            "date": "2022-04-14",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016259",
+            "title": "메모리를 식별하기 위한 애플리케이션 프로그래밍 인터페이스",
+            "abstract": "하나 이상의 애플리케이션 프로그래밍 인터페이스(API) 함수를 실행하여 병렬 컴퓨팅을 용이하게 하기 위한 장치들, 시스템들, 및 기법들이다. 적어도 하나의 실시예에서, 하나 이상의 API는, 본원에 설명된 다양한 신규한 기법들을 사용하여 하나 이상의 저장 위치를 표시하기 위한 것이다.",
+            "date": "2022-04-14",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016291",
+            "title": "미완성 그래프 코드의 위치를 찾기 위한 애플리케이션 프로그래밍 인터페이스",
+            "abstract": "미완성 그래프 코드의 하나 이상의 부분의 위치를 식별하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 미완성 그래프 코드의 하나 이상의 부분의 위치는, 예컨대, CUDA 또는 다른 병렬 컴퓨팅 플랫폼 코드에 기반하여 식별된다.",
+            "date": "2022-04-13",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016261",
+            "title": "함수 버전들을 식별하기 위한 애플리케이션 프로그래밍 인터페이스",
+            "abstract": "병렬 컴퓨팅을 용이하게 하기 위한 하나 이상의 애플리케이션 프로그래밍 인터페이스에 의해 제공되는 하나 이상의 컴퓨팅 함수에 대응하는 하나 이상의 메모리 어드레스 값을 결정하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 병렬 컴퓨팅을 용이하게 하기 위한 하나 이상의 애플리케이션 프로그래밍 인터페이스는, 그래픽 처리 유닛과 같은 하나 이상의 병렬 처리 유닛을 사용하여 병렬 컴퓨팅을 용이하게 하기 위해, 상기 하나 이상의 애플리케이션 프로그래밍 인터페이스에 의해 제공되는 하나 이상의 함수에 대한 하나 이상의 함수 호출에 적어도 부분적으로 기반하여 하나 이상의 메모리 어드레스 값을 결정한다.",
+            "date": "2022-04-13",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227015878",
+            "title": "신경망들에서의 분포-외 입력 데이터의 식별을 위한 기법들",
+            "abstract": "하나 이상의 신경망에서 분포-외 입력 데이터를 식별하기 위한 장치들, 시스템들, 및 기법들이다. 적어도 하나의 실시예에서, 기법은, 하나 이상의 신경망이 입력 정보에 관한 복수의 특성들 각각을 추론하도록 독립적으로 훈련되는 것에 적어도 부분적으로 기반하여 입력 정보에 관한 복수의 특성들을 추론하도록 하나 이상의 신경망을 훈련시키는 것을 포함한다.",
+            "date": "2022-03-30",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227015961",
+            "title": "하나 이상의 신경망을 사용하는 이미지 생성",
+            "abstract": "이미지 콘텐츠를 생성하기 위한 장치들, 시스템들, 및 기술들이 제시된다. 적어도 하나의 실시예에서, 하나 이상의 제2 이미지로부터의 하나 이상의 변경에 적어도 부분적으로 기초하여 하나 이상의 제1 이미지가 생성되고, 하나 이상의 변경은 하나 이상의 제2 이미지의 하나 이상의 픽셀 내의 하나 이상의 고정된 지터 위치에 대해 결정된다.",
+            "date": "2021-07-15",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227019429",
+            "title": "이미지들 간의 픽셀들의 모션 컴퓨팅",
+            "abstract": "이미지의 구역 내의 하나 이상의 픽셀의 모션을 계산하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 모션은, 상기 구역과 중첩되는 상기 이미지의 상이한 구역 내의 하나 이상의 픽셀의 모션에 기반하여 계산되며, 여기서, 하나 이상의 알고리즘은, 예컨대 GPU 상에서의 효율적인 실행을 위한 CUDA 코드로 표현된다.",
+            "date": "2021-06-09",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227019715",
+            "title": "데이터 세트들의 희소도 증가",
+            "abstract": "데이터 세트들, 이를테면, 신경망들의 계층들을 표현하는 행렬들을 변환하여, 상기 데이터 세트들의 희소도 및/또는 다른 특성들을 증가시킴으로써 신경망 계산들과 같은 계산들에서 성능을 개선하는 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 하나 이상의 데이터 세트 내의 하나 이상의 데이터 서브세트는, 하나 이상의 하나 이상의 구조적 희소도 제약을 충족시키도록 상기 하나 이상의 데이터 세트의 희소도를 증가시키는 프로세스의 일부로서 재배열된다.",
+            "date": "2021-04-09",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016254",
+            "title": "딥 러닝을 위한 마스터 변환 아키텍처",
+            "abstract": "신경망들을 훈련하기 위한 입력 데이터를 변환하기 위한 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 하나 이상의 데이터 변환은 데이터 변환들의 시퀀스에서 식별되고, 훈련되지 않은 신경망을 훈련하기 위한 데이터를 준비하기 위해 하나 이상의 병렬 처리 유닛에 의해 수행될 하나 이상의 마스터 데이터 변환으로 조합된다.",
+            "date": "2020-12-15",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016146",
+            "title": "순환 신경 네트워크들을 위한 API",
+            "abstract": "순환 신경 네트워크를 구현하기 위한 장치들, 시스템들, 및 기술들. 적어도 하나의 실시예에서, 애플리케이션 프로그래밍 인터페이스는 그래프 정의 및 순환 어트리뷰트를 포함하는 하나 이상의 API 호출을 수신하고, 그래프 정의에 기초하여 순환 신경 네트워크를 실행한다.",
+            "date": "2020-12-15",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227015996",
+            "title": "신경망의 역전파를 위한 분산 가중치 업데이트",
+            "abstract": "신경망을 훈련시키는 속도는 신경망의 가중치들을 병렬로 업데이트함으로써 개선된다. 적어도 하나의 실시예에서, 역전파 이후에, 경사들은 복수의 프로세서들에 분배되고, 이들 각각은 신경망의 업데이트된 가중치들의 일부를 산출한다.",
+            "date": "2020-10-30",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016148",
+            "title": "신경망에서 분포외 입력 데이터를 식별하는 프로세서 및 시스템",
+            "abstract": "하나 이상의 신경망에서 분포외 입력 데이터를 식별하기 위한 장치들, 시스템들 및 기법들이 개시된다. 적어도 하나의 실시예에서, 기법은 데이터의 제1 세트에 대해 신경망의 제1 부분을 훈련하는 것, 및 데이터의 제2 세트에 대해 신경망의 제2 부분을 훈련하는 것을 포함하고, 데이터의 제1 및 제2 세트들은 제1 범위 내에서 유사하다.",
+            "date": "2020-10-30",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016207",
+            "title": "머신 러닝을 이용한 이미지로부터의 객체 배향 결정",
+            "abstract": "이미지 내의 객체들의 배향을 결정하는 장치들, 시스템들, 및 기법들. 적어도 하나의 실시예에서, 이미지들은 객체의 배향을 결정하기 위해 훈련된 신경망을 사용하여 처리된다.",
+            "date": "2020-10-26",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020227016052",
+            "title": "신경망을 이용한 멀티-스케일 피처들의 식별",
+            "abstract": "하나 이상의 이미지 내의 피처들을 식별하기 위한 장치들, 시스템들 및 기법들이 개시된다. 피처들은 하나 이상의 병렬 처리 유닛에 의해 실행될 수 있는 다수의 필터를 갖는 컨볼루션 계층들을 포함하는 하나 이상의 신경망을 이용하여 하나 이상의 이미지에서 식별된다.",
+            "date": "2019-11-20",
+            "assignee": "엔비디아 코포레이션",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          }
+        ],
+        "filing_trend": {
+          "2022": 21,
+          "2023": 4,
+          "2024": 2,
+          "cagr_pct": -69.14
+        },
+        "citation_summary": {
+          "total_patents": 9163,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 30,
+            "total_patent_count": 30,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 6171,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 10,
+              "total_patent_count": 227,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 10,
+              "total_patent_count": 252,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 10,
+              "total_patent_count": 1863,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 10,
+              "total_patent_count": 620,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Palantir": {
+        "company_name": "Palantir",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600079481A1",
+            "title": "MACHINE FAULT MODELLING",
+            "abstract": "",
+            "date": "2025-11-26",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B23/02|G01D9/00|G06F16/901|G06F18/40|G06F30/20|G06N7/01|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004679284A1",
+            "title": "MANAGING QUERY EXECUTION AGAINST ONTOLOGY-BASED DATABASES IN A MULTI-USER ENVIRONMENT",
+            "abstract": "",
+            "date": "2025-06-25",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2453|G06F9/50|G06F11/34",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004660846A1",
+            "title": "SYSTEMS AND METHODS FOR DISAGGREGATING A SET OF DOCUMENTS",
+            "abstract": "",
+            "date": "2025-06-03",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/93",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004738182A1",
+            "title": "SYSTEMS AND METHODS FOR DETERMINING IDEAL EXAMPLES FOR FEW-SHOT PROMPTING OF A LARGE LANGUAGE MODEL",
+            "abstract": "",
+            "date": "2025-05-22",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/216|G06F40/30|G06F40/35|G06F40/44|G06F40/56",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004636606A1",
+            "title": "MAINTAINING VERSIONING CONSISTENCY ACROSS MULTIPLE ONTOLOGY-BASED DATABASES",
+            "abstract": "",
+            "date": "2025-04-15",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/21|G06F16/27|G06F16/28|G06F16/36",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300114386A1",
+            "title": "SYSTEMS AND METHODS FOR AI INFERENCE PLATFORM AND SENSOR CORRELATION",
+            "abstract": "",
+            "date": "2022-12-15",
+            "assignee": "PALANTIR TECHNOLOGIES INC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300018811A1",
+            "title": "SYSTEMS AND METHODS FOR AI META-CONSTELLATION",
+            "abstract": "",
+            "date": "2022-08-10",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/50",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300018815A1",
+            "title": "SYSTEMS AND METHODS FOR AI INFERENCE PLATFORM",
+            "abstract": "",
+            "date": "2022-08-10",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/04",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600140843A1",
+            "title": "AUDIT LOGGING DATABASE SYSTEM",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/34|G06F3/0486|G06F17/18",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600141006A1",
+            "title": "SYSTEM AND METHOD FOR EFFICIENTLY DETERMINING AND DISPLAYING OPTIMAL PACKAGES OF DATA ITEMS",
+            "abstract": "",
+            "date": "2026-01-12",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/951|G06F16/957|G06Q30/0241|G06Q30/0242",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600093672A1",
+            "title": "SYSTEM AND METHODS FOR LIVE DATA MIGRATION",
+            "abstract": "",
+            "date": "2025-12-09",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/21|G06F16/23|G06F16/245",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600093834A1",
+            "title": "APPROACHES OF ENFORCING DATA SECURITY, COMPLIANCE, AND GOVERNANCE IN SHARED INFRASTRUCTURES",
+            "abstract": "",
+            "date": "2025-12-09",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/62|H04L9/40",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600112093A1",
+            "title": "AUGMENTING A GEOSPATIAL REPRESENTATION WITH TIME SERIES AND EVENT FUNCTIONALITIES",
+            "abstract": "",
+            "date": "2025-11-30",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T11/65|G06F16/29",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600086922A1",
+            "title": "APPLICATION TO STREAMLINE DEBUGGING",
+            "abstract": "",
+            "date": "2025-11-27",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/362",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600079913A1",
+            "title": "SYSTEMS AND METHODS FOR ESTABLISHING AND ENFORCING RELATIONSHIPS BETWEEN ITEMS",
+            "abstract": "",
+            "date": "2025-11-27",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/23|G06F3/0482|G06F3/0484",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600079902A1",
+            "title": "SYSTEM AND METHODS FOR OBJECT VERSION TRACKING AND READ-TIME/WRITE-TIME DATA FEDERATION",
+            "abstract": "",
+            "date": "2025-11-27",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/21|G06F16/2455",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600093682A1",
+            "title": "INDEXING AND RELAYING DATA TO HOT STORAGE",
+            "abstract": "",
+            "date": "2025-11-21",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/22|G06F16/21|G06F16/23|G06F16/245",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004730260A1",
+            "title": "SYSTEMS AND METHODS FOR IMAGE MATCHING PROCEDURE FOR IMAGE REGISTRATION",
+            "abstract": "",
+            "date": "2025-08-20",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/35|G06T7/33|G06T5/90|G06T5/40",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004697178A1",
+            "title": "GRAPHICALLY MANAGING TESTS FOR DATA PIPELINES",
+            "abstract": "",
+            "date": "2025-07-29",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/32|G06F11/3668|G06F11/3698|G06F8/34",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004668128A1",
+            "title": "QUERY EXECUTION PLANNING FOR ONTOLOGY-BASED DATABASES",
+            "abstract": "",
+            "date": "2025-05-29",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2453|G06F16/2458",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004657298A1",
+            "title": "SYSTEMS AND METHODS FOR ACCESS CONTROL",
+            "abstract": "",
+            "date": "2025-05-16",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/62|H04L9/40",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004650985A1",
+            "title": "EFFICIENT QUERY EXECUTION FOR ONTOLOGY-BASED DATABASES",
+            "abstract": "",
+            "date": "2025-05-13",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/901|G06F21/60",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004641400A1",
+            "title": "PROVIDING A UNIFIED QUERY INTERFACE ACROSS MULTIPLE ONTOLOGY-BASED DATABASES",
+            "abstract": "",
+            "date": "2025-04-15",
+            "assignee": "Palantir Technologies Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2458|G06F16/25|G06F16/3332|G06F16/36",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500014661A1",
+            "title": "SYSTEMS AND METHODS FOR USER INTERACTIVE GEOREGISTRATION",
+            "abstract": "",
+            "date": "2024-06-27",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V10/24|G06V10/75|G06V10/94|G06V20/13|G06V20/17|G06V20/40|G06T7/33|G06T7/38|G06T7/73|G06F3/048|G06T7/20",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400233455A1",
+            "title": "SYSTEMS AND METHODS FOR VISUAL NAVIGATION",
+            "abstract": "",
+            "date": "2024-05-06",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V20/17|G06V10/80|G06T7/246|G06T7/33|G06T7/73",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200245989A1",
+            "title": "CONTROLLING USER ACTIONS AND ACCESS TO ELECTRONIC DATA ASSETS",
+            "abstract": "",
+            "date": "2022-05-18",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L9/40",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200159890A1",
+            "title": "AUTO-GENERATING INTERACTIVE WORKFLOW USER INTERFACES FOR SIMULATED SYSTEMS",
+            "abstract": "",
+            "date": "2022-01-25",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/36|G06F8/38|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200109618A1",
+            "title": "CONTROLLING ACCESS TO ELECTRONIC DATA ASSETS",
+            "abstract": "",
+            "date": "2021-11-22",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/60",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200056529A1",
+            "title": "INTERACTIVE GRAPHICAL USER INTERFACES FOR SIMULATED SYSTEMS",
+            "abstract": "",
+            "date": "2021-09-08",
+            "assignee": "PALANTIR TECHNOLOGIES INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F30/12|G06F30/18",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "201200009397A2",
+            "title": "SHARING AND DECONFLICTING DATA CHANGES IN A MULTIMASTER DATABASE SYSTEM",
+            "abstract": "",
+            "date": "2011-07-13",
+            "assignee": "PALANTIR TECHNOLOGIES, INC.|GARROD, John Kenneth|CARRINO, John Antonio|BRAINARD, Katherine|SCOTT, Jacob|CHANG, Allen",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F15/16|G06F17/40",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 5,
+          "2023": 0,
+          "2024": 2,
+          "cagr_pct": -36.75
+        },
+        "citation_summary": {
+          "total_patents": 2447,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 1898,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 10,
+              "total_patent_count": 524,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 10,
+              "total_patent_count": 25,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      }
+    }
+  },
+  "patent_analysis": [
+    {
+      "tech_id": "T01",
+      "name": "멀티모달 에이전트 워크플로우 자동화",
+      "category": "Architecture",
+      "estimated_trl": 6,
+      "patent_score": 92.5,
+      "patent_signals": {
+        "peer_momentum": 95,
+        "citation_impact": 80,
+        "strategic_gap_opportunity": 98,
+        "cross_actor_recurrence": 85,
+        "roadmap_relevance": 95
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Anthropic",
+        "Cohere"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Anthropic",
+          "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+          "date": "2025-09-18",
+          "cited_by": 0
+        },
+        {
+          "company": "Anthropic",
+          "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+          "date": "2025-09-18",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Anthropic 의 최근 특허는 LLM 이 단순 생성을 넘어 UI 를 직접 조작하는 에이전트 워크플로우 자동화에 집중하고 있다. Upstage 의 문서 AI 는 현재 텍스트/이미지 인식을 넘어, 문서 기반 업무 프로세스를 자동화하는 에이전트 아키텍처로 확장해야 경쟁력을 유지할 수 있다."
+    },
+    {
+      "tech_id": "T02",
+      "name": "원자적 문서 요소 관계 모델링",
+      "category": "Process",
+      "estimated_trl": 5,
+      "patent_score": 88.3,
+      "patent_signals": {
+        "peer_momentum": 88,
+        "citation_impact": 75,
+        "strategic_gap_opportunity": 92,
+        "cross_actor_recurrence": 80,
+        "roadmap_relevance": 90
+      },
+      "dependency_hints": [
+        "T01"
+      ],
+      "source_companies": [
+        "Cohere"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Cohere",
+          "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+          "date": "2025-10-31",
+          "cited_by": 0
+        },
+        {
+          "company": "Cohere",
+          "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+          "date": "2025-10-31",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Cohere 는 문서 내 원자적 요소 (문단, 표, 이미지) 간의 관계를 모델링하여 정밀한 검색 및 처리를 가능하게 하는 기술을 특허로 보호 중이다. 이는 Upstage 의 기존 OCR 기반 문서 인식 기술을 고도화하여 복잡한 문서 구조를 이해하는 핵심 프로세스로 발전시킬 기회다."
+    },
+    {
+      "tech_id": "T03",
+      "name": "생성형 AI 시스템 모니터링 및 평가",
+      "category": "Process",
+      "estimated_trl": 7,
+      "patent_score": 85.6,
+      "patent_signals": {
+        "peer_momentum": 82,
+        "citation_impact": 70,
+        "strategic_gap_opportunity": 88,
+        "cross_actor_recurrence": 75,
+        "roadmap_relevance": 92
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "DataRobot",
+        "Hugging Face"
+      ],
+      "evidence_patents": [
+        {
+          "company": "DataRobot",
+          "title": "SYSTEMS AND METHODS FOR DEVELOPMENT, ASSESSMENT, AND/OR MONITORING OF A GENERATIVE AI SYSTEM",
+          "date": "2024-08-12",
+          "cited_by": 0
+        },
+        {
+          "company": "Hugging Face",
+          "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+          "date": "2025-06-27",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "DataRobot 과 Hugging Face 는 생성형 AI 의 개발, 평가, 모니터링 및 데이터 감사 (Observability) 에 대한 특허를 활발히 출원하고 있다. Upstage 가 기업 고객에게 신뢰할 수 있는 AI 를 제공하기 위해서는 모델 성능 평가 및 편향 감지 등 검증 프로세스 기술이 필수적이다."
+    },
+    {
+      "tech_id": "T04",
+      "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+      "category": "Architecture",
+      "estimated_trl": 6,
+      "patent_score": 82.1,
+      "patent_signals": {
+        "peer_momentum": 78,
+        "citation_impact": 65,
+        "strategic_gap_opportunity": 85,
+        "cross_actor_recurrence": 70,
+        "roadmap_relevance": 88
+      },
+      "dependency_hints": [
+        "T02"
+      ],
+      "source_companies": [
+        "Palantir"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Palantir",
+          "title": "MANAGING QUERY EXECUTION AGAINST ONTOLOGY-BASED DATABASES IN A MULTI-USER ENVIRONMENT",
+          "date": "2025-06-25",
+          "cited_by": 0
+        },
+        {
+          "company": "Palantir",
+          "title": "SYSTEMS AND METHODS FOR DISAGGREGATING A SET OF DOCUMENTS",
+          "date": "2025-06-03",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Palantir 는 온톨로지 (개념 구조) 기반 데이터베이스에서 다중 사용자 환경의 쿼리 실행을 관리하는 기술을 보유하고 있다. Upstage 의 문서 AI 가 단순 정보 추출을 넘어 복잡한 비즈니스 로직과 연결된 지능형 데이터베이스로 진화하기 위한 아키텍처적 방향성이다."
+    },
+    {
+      "tech_id": "T05",
+      "name": "시각 언어 모델 기반 자율 주행 제어",
+      "category": "Equipment",
+      "estimated_trl": 4,
+      "patent_score": 79.4,
+      "patent_signals": {
+        "peer_momentum": 90,
+        "citation_impact": 60,
+        "strategic_gap_opportunity": 75,
+        "cross_actor_recurrence": 65,
+        "roadmap_relevance": 80
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "NVIDIA"
+      ],
+      "evidence_patents": [
+        {
+          "company": "NVIDIA",
+          "title": "METHOD FOR CONTROLLING AUTONOMOUS VEHICLES USING A TRAINED VISUAL LANGUAGE MODEL",
+          "date": "2025-04-25",
+          "cited_by": 0
+        },
+        {
+          "company": "NVIDIA",
+          "title": "ROLE-BASED LARGE LANGUAGE MODEL TO ENABLE SECURITY AND ACCURACY",
+          "date": "2026-01-15",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "NVIDIA 는 시각 언어 모델 (VLM) 을 자율 주행 차량 제어에 적용하는 등 하드웨어와 결합된 고도화된 VLM 기술을 선도하고 있다. 이는 Upstage 가 문서 AI 를 넘어 산업용 로봇이나 특수 장비 제어 등 하드웨어 연동형 AI 로 확장할 수 있는 장기적 (TRL 3-4) 기술 방향성을 제시한다."
+    }
+  ],
+  "patent_maps": {
+    "actor_similarity_map": [
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Anthropic",
+        "similarity": 0.92,
+        "edge_weight": 0.92,
+        "reason": "멀티모달 인터페이스 자동화 및 에이전트 워크플로우 아키텍처에서 높은 기술적 유사성."
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Cohere",
+        "similarity": 0.88,
+        "edge_weight": 0.88,
+        "reason": "원자적 문서 요소 관계 모델링 및 문서 처리 자동화 기술의 직접적인 경쟁 및 유사성."
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "DataRobot",
+        "similarity": 0.75,
+        "edge_weight": 0.75,
+        "reason": "생성형 AI 시스템의 평가, 모니터링 및 편향 감지 프로세스 기술의 유사성."
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Palantir",
+        "similarity": 0.68,
+        "edge_weight": 0.68,
+        "reason": "온톨로지 기반 데이터베이스 및 복잡한 문서 분해 (Disaggregation) 기술의 아키텍처적 유사성."
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Hugging Face",
+        "similarity": 0.65,
+        "edge_weight": 0.65,
+        "reason": "데이터 감사 (Audit) 및 관찰 가능성 (Observability) 기술의 유사성."
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "NVIDIA",
+        "similarity": 0.55,
+        "edge_weight": 0.55,
+        "reason": "시각 언어 모델 (VLM) 기반의 하드웨어 연동 및 제어 기술의 장기적 확장 가능성."
+      }
+    ]
+  },
+  "patent_map_graphs": {
+    "actor_similarity_map": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/graphs/batch_upstage_ai_llm_2026_2030_actor_similarity_map.png"
+  },
+  "patent_prompt": {
+    "agent": "patent_agent",
+    "variant": "C_company_portfolio",
+    "system_path": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/tech_analysis_agent/prompts/patent_agent/C_company_portfolio/system.md",
+    "user_template_path": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/tech_analysis_agent/prompts/patent_agent/C_company_portfolio/user.md",
+    "patent_map_generation": "always"
+  },
+  "intermediate_output_dirs": {
+    "patent_agent": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/patent_agent/batch_upstage_ai_llm_2026_2030",
+    "market_agent": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/market_agent/batch_upstage_ai_llm_2026_2030",
+    "aggregator": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/aggregator/batch_upstage_ai_llm_2026_2030"
+  }
+}

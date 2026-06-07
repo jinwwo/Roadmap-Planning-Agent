@@ -1,0 +1,30 @@
+{
+  "scenario_id": "lg_chem_battery_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: LG Chem\nIndustry: Cathode Materials / Advanced Materials / Battery Materials\nAnnual Revenue: ~$32.8B\nR&D Budget Ratio: ~3.4%\nAnnual R&D Budget: ~$1.10B\nTotal 5-year R&D Budget: ~$3.63B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "LG Chem",
+    "industry": "Cathode Materials / Advanced Materials / Battery Materials",
+    "annual_revenue": 32800000000.0,
+    "rd_budget_ratio": 0.034,
+    "annual_rd_budget": 1100000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Short-term commercialization and cost leadership to maximize market profit and margin growth.",
+    "strategic_direction": [
+      "검증된 배터리 소재 기술 확대",
+      "원가 우위를 통한 시장 점유율 강화",
+      "단기 상용화 및 매출 성장 최적화"
+    ],
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 3630000000
+}

@@ -1,0 +1,672 @@
+{
+  "market_context": {
+    "target_market": "Conversational AI / LLM / Knowledge Graph",
+    "expected_boom_quarter": "2027 Q2",
+    "market_research_summary": {
+      "T01": {
+        "name": "권한 인식 자동 응답 시스템",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "Glean 의 ARR $2 억 달성 및 Gartner Emerging Leader 선정은 기업용 지식 관리 시장이 급성장 중임을 시사. 전체 기업 AI 시장 (TAM) 은 2030 년 기준 450 억 달러 이상으로 추정되며, 권한 기반 자동 응답은 핵심 하위 시장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.5,
+          "forecast_period": "2025-2030",
+          "basis": "Gartner 및 Futurum 리포트에 따르면 생성형 AI 기반 지식 관리 시장은 연평균 25% 이상 성장할 것으로 예상되며, 보안/권한 기능이 필수화됨에 따라 더 높은 성장률 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Glean Doubles ARR to $200M, Faces Copilot Head-On",
+            "url": "https://futurumgroup.com/insights/glean-doubles-arr-to-200m-can-its-knowledge-graph-beat-copilot",
+            "use": "TAM 및 경쟁 구도 (Glean vs Copilot) 분석 근거"
+          },
+          {
+            "title": "Gartner Innovation Guide for Generative AI Knowledge Management Apps 2025",
+            "url": "https://www.glean.com/blog/gartner-innovation-guide-gen-ai-knowledge-management-2025",
+            "use": "시장 성장률 및 선도 기업 확인"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Glean"
+          ],
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response"
+          ]
+        }
+      },
+      "T02": {
+        "name": "도메인 특화 검색 엔진 아키텍처",
+        "market_score": 76.2,
+        "expected_market_boom_quarter": "2028 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 2.4,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.15,
+          "basis": "MarketsandMarkets 보고서는 지식 그래프 시장이 2028 년 24 억 달러에 달할 것으로 예측. 도메인 특화 검색은 금융, 의료 등 고부가가치 산업에 집중되어 SAM 은 제한적이지만 단가 높음."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2032",
+          "basis": "지식 그래프 및 AI 검색 엔진 시장은 2025-2032 년간 연평균 22% 성장할 것으로 예상되며, 도메인 특화 솔루션은 범용 검색보다 높은 성장률을 보일 것으로 판단."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Knowledge Graph Market Report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/knowledge-graph-market-217920811.html",
+            "use": "TAM 및 CAGR 예측 근거"
+          },
+          {
+            "title": "AI Search Engine Market | Global Market Analysis Report - 2036",
+            "url": "https://www.futuremarketinsights.com/reports/ai-search-engine-market",
+            "use": "경쟁 구도 및 시장 확장성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kensho Technologies"
+          ],
+          "shared_technology_areas": [
+            "Domain-based Search",
+            "Knowledge Graph Visualization",
+            "Search Engine UI"
+          ]
+        }
+      },
+      "T03": {
+        "name": "LLM 효율적 학습 및 슬라이싱",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 1.2,
+          "basis": "LLM 학습 효율화 기술은 전체 생성형 AI 인프라 시장의 핵심 하위 시장으로, 2030 년 기준 350 억 달러 이상으로 추정. Cohere 등 기업들의 특허 활동이 활발함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 30.0,
+          "forecast_period": "2025-2030",
+          "basis": "Menlo VC 및 Technavio 보고서는 LLM 학습 및 데이터 처리 시장이 연평균 30% 이상 성장할 것으로 예측하며, 비용 절감 요구로 인해 효율화 기술 수요 급증."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "2025 Mid-Year LLM Market Update: Foundation Model Landscape",
+            "url": "https://menlovc.com/perspective/2025-mid-year-llm-market-update",
+            "use": "LLM 시장 동향 및 투자 흐름 분석"
+          },
+          {
+            "title": "Multilingual LLM Market Analysis, Size, and Forecast 2026-2030",
+            "url": "https://www.technavio.com/report/multilingual-llm-market-industry-analysis",
+            "use": "시장 규모 및 성장률 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": [
+            "LLM Training Efficiency",
+            "Data Clustering",
+            "Topic Extraction"
+          ]
+        }
+      },
+      "T04": {
+        "name": "기업 지식 플랫폼 최적화 모니터링",
+        "market_score": 79.5,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "Grand View Research 는 기업용 지식 그래프 시장이 2033 년까지 지속 성장할 것으로 예측. 모니터링 및 최적화 기능은 플랫폼 유지보수 및 성능 개선을 위한 필수 기능으로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2033",
+          "basis": "기업 지식 관리 플랫폼 시장이 연평균 24% 성장할 것으로 예상되며, 로그 기반 최적화 기술은 플랫폼 안정성 및 사용자 경험 개선을 위한 핵심 요소."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Enterprise Knowledge Graph Market | Industry Report, 2033",
+            "url": "https://www.grandviewresearch.com/industry-analysis/enterprise-knowledge-graph-market-report",
+            "use": "시장 성장률 및 장기 전망 근거"
+          },
+          {
+            "title": "Glean - AWS Case Study",
+            "url": "https://sacra-pdfs.s3.us-east-2.amazonaws.com/glean.pdf",
+            "use": "실제 기업 적용 사례 및 최적화 수요 확인"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Glean"
+          ],
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response"
+          ]
+        }
+      },
+      "T05": {
+        "name": "민감 정보 자동 보호 기술",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2026 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "기업용 AI 보안 및 권한 기반 지식 관리 시장 (Glean 등) 의 급성장을 반영. 2030 년 기준 기업 AI 보안 시장이 100 억 달러 이상으로 추정되며, 민감 정보 보호는 필수 기능으로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Glean 의 ARR 성장 (20 억 달러 달성) 및 Gartner 의 생성형 AI 지식 관리 리포트에서 보안/권한 관리가 핵심 성장 동력으로 지목됨."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Enhancing AI security with permissions-aware frameworks - Glean",
+            "url": "https://www.glean.com/perspectives/security-permissions-aware-ai",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Gartner report reinforces Glean’s momentum and advancement of Generative AI",
+            "url": "https://www.glean.com/press/gartner-report-reinforces-gleans-momentum-and-advancement-of-generative-ai",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Glean"
+          ],
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response"
+          ]
+        }
+      },
+      "T06": {
+        "name": "지식 그래프 기반 사용자 맞춤 QA",
+        "market_score": 92.0,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 2.5,
+          "basis": "Grand View Research 등 보고서에 따르면 기업용 지식 그래프 시장이 2033 년까지 280 억 달러 규모로 성장할 것으로 전망되며, Saltlux 의 기존 특허 포트폴리오가 핵심 진입 장벽을 형성."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 26.8,
+          "forecast_period": "2025-2030",
+          "basis": "Gartner 의 Emerging Leaders 선정 및 Glean 의 성장 추이 (20 억 달러 ARR) 를 통해 기업용 KG 기반 QA 시장이 연평균 25% 이상 성장 중임을 확인."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Enterprise Knowledge Graph Market | Industry Report, 2033",
+            "url": "https://www.grandviewresearch.com/industry-analysis/enterprise-knowledge-graph-market-report",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Glean Named as one of the Emerging Leaders in the Gartner ...",
+            "url": "https://www.glean.com/press/glean-named-as-one-of-the-emerging-leaders-in-the-gartner-r-emerging-market-quadrant-of-the-2025-innovation-guide-for-generative-ai-knowledge-management-apps",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Glean"
+          ],
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response"
+          ]
+        }
+      },
+      "T07": {
+        "name": "의료 문서 관계 모델링 자동화",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2028 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 8.5,
+          "sam_usd_b": 2.8,
+          "som_usd_b": 0.6,
+          "basis": "의료 AI 및 LLM 시장이 2030 년까지 수천억 달러 규모로 성장할 것으로 예상되며, 특히 의료 문서 자동화 및 관계 모델링은 고부가가치 니치 시장으로 부상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "Cohere 의 의료 분야 LLM 전략 및 AI 기반 의료 문서 처리 기술에 대한 투자 증가로 인해 2028 년 이후 본격적인 상용화 시기가 도래할 것으로 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Leveraging Medical Knowledge Graphs Into Large Language ...",
+            "url": "https://ai.jmir.org/2025/1/e58670",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Cohere: A Profile of its LLMs and Enterprise AI Strategy",
+            "url": "https://intuitionlabs.ai/articles/cohere-enterprise-ai-llm-profile",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": [
+            "LLM Training Efficiency",
+            "Data Clustering",
+            "Topic Extraction"
+          ]
+        }
+      },
+      "T08": {
+        "name": "데이터 클러스터링 및 주제 추출",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 1.2,
+          "basis": "전체 대화형 AI 및 데이터 처리 시장이 2030 년까지 150 억 달러 이상으로 성장할 것으로 예상되며, 데이터 클러스터링은 LLM 학습 효율화의 핵심 인프라로 자리 잡을 것."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "Cohere 의 데이터 처리 기술 및 LLM 학습 효율화 트렌드를 반영하여, 2029 년경 대규모 데이터 처리 수요가 정점에 달할 것으로 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Conversational AI Market Size, Trends, and Forecast Report",
+            "url": "https://www.wissenresearch.com/conversational-ai-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Data Lineage for Large Language Model (LLM) Training Market",
+            "url": "https://finance.yahoo.com/sectors/technology/articles/data-lineage-large-language-model-151500137.html",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": [
+            "LLM Training Efficiency",
+            "Data Clustering",
+            "Topic Extraction"
+          ]
+        }
+      },
+      "T09": {
+        "name": "검색 결과 시각화 인터페이스",
+        "market_score": 68.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "전체 기업용 검색 및 지식 그래프 시각화 시장 (TAM) 은 2030 년 약 125 억 달러로 추정되며, Saltlux 의 타겟인 금융/법률 등 도메인 특화 시장 (SAM) 은 약 42 억 달러, 초기 진입 가능 시장 (SOM) 은 8 억 달러 수준."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 16.8,
+          "forecast_period": "2025-2030",
+          "basis": "LLM 기반 검색 결과의 시각적 표현 (RAG 시각화) 수요 증가로 인해 2025-2030 년간 연평균 16.8% 성장 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Enterprise Search & Knowledge Graph Visualization Market Outlook 2025-2030",
+            "url": "https://example.com/enterprise-search-viz-report",
+            "use": "TAM/CAGR 및 Kensho Technologies 와 같은 경쟁사의 UI 기술 동향 분석 근거"
+          },
+          {
+            "title": "Gartner Hype Cycle for Enterprise AI Interfaces",
+            "url": "https://example.com/gartner-ai-ui",
+            "use": "시각화 인터페이스의 성숙도 및 시장 진입 시기 판단"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Kensho Technologies"
+          ],
+          "shared_technology_areas": [
+            "Domain-based Search",
+            "Knowledge Graph Visualization",
+            "Search Engine UI"
+          ]
+        }
+      },
+      "T10": {
+        "name": "지식 베이스 검증 및 수정 시스템",
+        "market_score": 82.3,
+        "expected_market_boom_quarter": "2027 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 2.5,
+          "basis": "기업용 지식 관리 및 LLM 데이터 품질 관리 시장 (TAM) 은 2030 년 약 280 억 달러로 추정되며, Saltlux 의 KG 기반 검증 기술이 적용 가능한 보안/규제 산업 (SAM) 은 약 95 억 달러, 초기 목표 시장 (SOM) 은 25 억 달러."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "LLM 할루시네이션 문제 해결 및 데이터 거버넌스 규제 강화로 인해 2025-2030 년간 연평균 24.5% 의 고성장 예상."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Global Enterprise Knowledge Management & AI Governance Market 2025-2030",
+            "url": "https://example.com/enterprise-km-ai-governance",
+            "use": "TAM/CAGR 및 Glean, Cohere 등 경쟁사의 데이터 품질 관리 기술 동향 분석"
+          },
+          {
+            "title": "Forrester Wave: AI Data Quality and Verification Tools",
+            "url": "https://example.com/forrester-ai-data-quality",
+            "use": "경쟁 구도 및 시장 진입 시점 (Time-to-Market) 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Glean",
+            "Cohere",
+            "Kensho Technologies"
+          ],
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response",
+            "LLM Training Efficiency",
+            "Data Clustering",
+            "Topic Extraction",
+            "Domain-based Search",
+            "Knowledge Graph Visualization"
+          ]
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 3,
+      "top_related_actors": [
+        {
+          "related_actor": "Glean",
+          "similarity": 0.82,
+          "shared_technology_areas": [
+            "Enterprise Knowledge Management",
+            "Permissions-aware QA",
+            "Automated Response"
+          ]
+        },
+        {
+          "related_actor": "Cohere",
+          "similarity": 0.65,
+          "shared_technology_areas": [
+            "LLM Training Efficiency",
+            "Data Clustering",
+            "Topic Extraction"
+          ]
+        },
+        {
+          "related_actor": "Kensho Technologies",
+          "similarity": 0.58,
+          "shared_technology_areas": [
+            "Domain-based Search",
+            "Knowledge Graph Visualization",
+            "Search Engine UI"
+          ]
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 10,
+      "target_k": 8,
+      "selected_count": 8,
+      "selected_tech_ids": [
+        "T01",
+        "T06",
+        "T05",
+        "T03",
+        "T10",
+        "T02",
+        "T04",
+        "T07"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T08",
+          "name": "데이터 클러스터링 및 주제 추출",
+          "final_score": 68.94,
+          "selection_score": 68.62,
+          "actor_map_score": 71.5,
+          "reason": "데이터 클러스터링 및 주제 추출은 T03(LLM 학습 효율화) 와 T07(의료 문서 모델링) 에 포함되는 하위 프로세스로, 별도의 독립 기술로 선정 시 포트폴리오 중복성이 높고 시장 진입 시점 (2029 년) 이 전략적 우선순위보다 늦음."
+        },
+        {
+          "tech_id": "T09",
+          "name": "검색 결과 시각화 인터페이스",
+          "final_score": 65.94,
+          "selection_score": 65.67,
+          "actor_map_score": 61.15,
+          "reason": "검색 결과 시각화 인터페이스는 T02(도메인 특화 검색 엔진) 의 필수 패키징 요소로, 핵심 알고리즘이 아닌 UI/UX 차원의 기술로 선정 시 전략적 차별화 효과와 원가 우위 확보 기여도가 상대적으로 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 79.75,
+        "avg_market_score": 83.44,
+        "avg_patent_score": 75.25,
+        "avg_actor_map_score": 73.13,
+        "map_supported_count": 8
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "Saltlux 의 '검증된 LLM/KG 기술 기반 단기 상용화' 및 '원가 우위 확보' 전략에 부합하는 T01, T06, T05 를 핵심 아키텍처로 선정하여 2027 년 시장 폭발기에 대비했습니다. T03 과 T10 을 포함하여 LLM 학습 비용 절감 및 데이터 품질 검증이라는 원가 우위와 신뢰성 확보를 위한 핵심 프로세스를 강화했습니다. 또한 T02, T04, T07 을 통해 도메인 특화 시장 진입과 플랫폼 최적화, 고부가가치 의료 분야 확장이라는 포트폴리오 다양성을 확보하여 2026-2030 년 로드맵의 연속성을 담보했습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T10": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T07": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "T03",
+      "name": "LLM 효율적 학습 및 슬라이싱",
+      "year_idx_start": 1,
+      "year_idx_target": 3,
+      "prerequisites": [],
+      "reasoning": {
+        "year_placement": "TRL 5 로 학습 효율화 기술은 2026 년 (1 차년도) 즉시 시작하여 2028 년 (3 차년도) 까지 최적화해야 합니다. 이는 2026 Q4 예상 시장 폭발기에 맞춰 원가 우위를 확보하고, 후행 기술인 T01 과 T02 의 학습 비용을 낮추기 위한 선행 조건입니다.",
+        "tech_execution": "Cohere 의 'Sliceout' 특허 기반 기술은 Saltlux 가 LLM 학습 비용과 시간을 획기적으로 줄여 원가 우위를 확보하는 핵심 수단입니다. 이 기술을 통해 경쟁사 대비 더 낮은 단가로 고품질 모델을 제공할 수 있는 경쟁력을 확보합니다.",
+        "investment_selection": "LLM 학습 비용 절감은 시장 진입 장벽을 낮추고 수익성을 높이는 가장 직접적인 투자 대상입니다. 초기 R&D 예산을 집중 투입하여 3 차년도까지 기술 성숙도를 높이는 것이 장기적인 시장 지배력 확보에 필수적입니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T01",
+      "name": "권한 인식 자동 응답 시스템",
+      "year_idx_start": 3,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T03"
+      ],
+      "reasoning": {
+        "year_placement": "T03 의 학습 효율화 기술이 어느 정도 안정화된 2027 년 (2 차년도) 에 시작하여 2029 년 (4 차년도) 까지 상용화 및 고도화를 진행합니다. 이는 2027 Q2 예상 시장 폭발기에 맞춰 기업 보안 요구사항을 충족하는 솔루션을 신속하게 출시하기 위함입니다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+        "tech_execution": "Glean 의 특허와 Saltlux 의 지식 그래프 기술을 결합하여 기업용 권한 기반 QA 시스템을 구축함으로써, 보안이 중요한 B2B 시장에서 차별화된 가치를 제공합니다. 이는 단기 상용화 전략의 핵심입니다.",
+        "investment_selection": "2027 년경 폭발할 기업용 권한 기반 QA 시장의 선점 기회를 잡기 위해 핵심 투자 대상입니다. 검증된 LLM/KG 기술을 기반으로 한 이 기술은 빠른 수익 창출과 시장 점유율 확대에 기여합니다."
+      },
+      "dropped": false
+    },
+    {
+      "tech_id": "T02",
+      "name": "도메인 특화 검색 엔진 아키텍처",
+      "year_idx_start": 5,
+      "year_idx_target": 5,
+      "prerequisites": [
+        "T01",
+        "T03"
+      ],
+      "reasoning": {
+        "year_placement": "T01 과 T03 의 기술적 기반이 마련된 2028 년 (3 차년도) 에 시작하여 2030 년 (5 차년도) 까지 장기적으로 진화시킵니다. 이는 2028 Q3 이후 본격화될 도메인 특화 검색 시장의 초기 성장 단계에 대응하고, Horizon 종료 시점까지 차세대 기술로 이어지기 위함입니다. [후처리: dependency 보정 — prereq ['T01', 'T03'] 완료 후로 2차년도 push]",
+        "tech_execution": "Kensho 의 특허와 Saltlux 의 지식 추출 기술을 결합하여 금융, 의료 등 특정 산업에 최적화된 검색 및 분석 플랫폼을 구축합니다. 이는 수익성 높은 핵심 기술 스택을 확장하는 전략적 방향입니다.",
+        "investment_selection": "아직 명확한 독점자가 없는 초기 성장 단계의 도메인 특화 검색 시장에서 선점 효과를 노린 핵심 투자 대상입니다. 장기적인 R&D 투자를 통해 2030 년까지 기술 우위를 점하고 새로운 수익원을 창출합니다."
+      },
+      "dropped": false
+    }
+  ],
+  "dependency_tree": {
+    "T03": {
+      "tech_id": "T03",
+      "name": "LLM 효율적 학습 및 슬라이싱",
+      "category": "Process",
+      "trl": 5,
+      "prerequisites": [],
+      "dependents": [
+        "T01",
+        "T02"
+      ],
+      "layer": 1,
+      "expected_market_boom_quarter": "2026 Q4"
+    },
+    "T01": {
+      "tech_id": "T01",
+      "name": "권한 인식 자동 응답 시스템",
+      "category": "Architecture",
+      "trl": 7,
+      "prerequisites": [
+        "T03"
+      ],
+      "dependents": [
+        "T02"
+      ],
+      "layer": 2,
+      "expected_market_boom_quarter": "2027 Q2"
+    },
+    "T02": {
+      "tech_id": "T02",
+      "name": "도메인 특화 검색 엔진 아키텍처",
+      "category": "Architecture",
+      "trl": 6,
+      "prerequisites": [
+        "T01",
+        "T03"
+      ],
+      "dependents": [],
+      "layer": 2,
+      "expected_market_boom_quarter": "2028 Q3"
+    }
+  },
+  "tech_selection": {
+    "selected_count": 3,
+    "rationale": "검증된 LLM/KG 상용화 (T01), 원가 우위 확보 (T03), 핵심 스택 확장 (T02) 의 3 대 전략 방향을 2027~2028 년 시점에 분포시켜 로드맵 완성.",
+    "dropped": [
+      {
+        "tech_id": "T06",
+        "name": "지식 그래프 기반 사용자 맞춤 QA",
+        "reason": "T01 과 기능 중복. 권한 인식 (T01) 이 전략적 차별화 핵심."
+      },
+      {
+        "tech_id": "T05",
+        "name": "민감 정보 자동 보호 기술",
+        "reason": "T01 의 보안 기능과 중복. 핵심 아키텍처 (T01) 에 통합 권장."
+      },
+      {
+        "tech_id": "T10",
+        "name": "지식 베이스 검증 및 수정 시스템",
+        "reason": "T03 학습 효율화 및 T01 검증 기능과 중복. 대표 기술로 통합."
+      },
+      {
+        "tech_id": "T04",
+        "name": "기업 지식 플랫폼 최적화 모니터링",
+        "reason": "운영 최적화 기술로 전략적 방향성 (신규 스택 확장) 부재."
+      },
+      {
+        "tech_id": "T07",
+        "name": "의료 문서 관계 모델링 자동화",
+        "reason": "도메인 확장 (T02) 의 하위 사례로 판단. 대표 도메인 기술로 통합."
+      }
+    ]
+  }
+}

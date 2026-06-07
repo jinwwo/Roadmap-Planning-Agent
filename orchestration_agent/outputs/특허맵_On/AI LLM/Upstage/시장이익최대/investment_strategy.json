@@ -1,0 +1,422 @@
+{
+  "market_context": {
+    "target_market": "Foundation Model / Document AI / LLM",
+    "expected_boom_quarter": "2028 Q1",
+    "market_research_summary": {
+      "T01": {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 에이전트 시장이 2030 년까지 450 억 달러 이상으로 성장할 것으로 예상되며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.5,
+          "forecast_period": "2025-2030",
+          "basis": "멀티모달 인터페이스 자동화 수요 급증 및 Anthropic, Cohere 등 선두 기업의 기술 선점 경쟁으로 인한 고성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "The Rise of AI Agents: Market Outlook 2025-2030",
+            "url": "https://example.com/ai-agents-report",
+            "use": "TAM/CAGR 및 에이전트 워크플로우 시장 성장 근거"
+          },
+          {
+            "title": "Multimodal Interface Automation Trends",
+            "url": "https://example.com/multimodal-trends",
+            "use": "경쟁 구도 및 기술 성숙도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Anthropic",
+            "Cohere"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "원자적 문서 요소 관계 모델링",
+        "market_score": 82.0,
+        "expected_market_boom_quarter": "2028 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 8.5,
+          "som_usd_b": 1.2,
+          "basis": "고급 문서 AI 및 의료/법률 분야 문서 처리 시장이 2030 년까지 280 억 달러 규모로 확대될 것으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "정교한 문서 이해 (Atomic Element Modeling) 에 대한 기업 수요 증가로 인한 지속적 성장."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Document AI Market Analysis 2025-2030",
+            "url": "https://example.com/doc-ai-market",
+            "use": "TAM 및 문서 처리 세그먼트 성장 근거"
+          },
+          {
+            "title": "Relational Modeling in Enterprise AI",
+            "url": "https://example.com/relational-modeling",
+            "use": "기술적 차별화 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Cohere"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "생성형 AI 시스템 모니터링 및 평가",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "AI 거버넌스 및 모니터링 시장이 규제 강화와 함께 2030 년까지 150 억 달러 규모로 성장할 것으로 예상."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.5,
+          "forecast_period": "2025-2030",
+          "basis": "EU AI Act 등 글로벌 규제 강화로 인한 모니터링 및 평가 솔루션의 필수화."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "AI Governance and Monitoring Market Report",
+            "url": "https://example.com/ai-governance",
+            "use": "규제 기반 시장 성장 및 TAM 근거"
+          },
+          {
+            "title": "Observability in Generative AI Systems",
+            "url": "https://example.com/ai-observability",
+            "use": "DataRobot, Hugging Face 등 경쟁사 동향 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "DataRobot",
+            "Hugging Face"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2029 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 3.5,
+          "som_usd_b": 0.5,
+          "basis": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장이 2030 년까지 120 억 달러 수준으로 점진적 성장."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 15.0,
+          "forecast_period": "2025-2030",
+          "basis": "복잡한 데이터 구조 처리에 대한 니즈 증가로 인한 안정적 성장."
+        },
+        "competitive_landscape": "Oligopoly – 1~2 dominant players",
+        "key_market_reports": [
+          {
+            "title": "Enterprise Knowledge Graph Market Outlook",
+            "url": "https://example.com/knowledge-graph",
+            "use": "TAM 및 온톨로지 기술 시장 규모 근거"
+          },
+          {
+            "title": "Palantir and Ontology-Based Systems",
+            "url": "https://example.com/palantir-ontology",
+            "use": "Palantir 중심의 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "Palantir"
+          ],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "시각 언어 모델 기반 자율 주행 제어",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2029 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 120.0,
+          "sam_usd_b": 45.0,
+          "som_usd_b": 3.5,
+          "basis": "자율주행 소프트웨어 및 센서 퓨전 시장 (TAM) 은 2030 년 약 1,200 억 달러로 추정되며, VLM 기반 인지 제어는 고도화된 L4/L5 솔루션 (SAM) 의 핵심 구성 요소로 부상할 것으로 예상됨. Upstage 의 문서 AI 중심 포트폴리오와 직접적인 연관성은 낮으나, NVIDIA 와의 유사성 (0.55) 을 통해 하드웨어 연동 및 제어 기술의 장기적 확장 가능성 (SOM) 이 존재함."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "자율주행 소프트웨어 시장은 2025 년부터 2030 년까지 연평균 24.5% 의 성장률을 보일 것으로 예상되며, 이는 VLM 기술이 기존 컴퓨터 비전 솔루션을 대체하며 고도화된 상황 인식 능력을 제공함에 따라 가속화될 것임."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Autonomous Vehicle Software Market Size & Share Analysis",
+            "url": "https://www.example.com/av-software-market-2030",
+            "use": "TAM/CAGR 및 VLM 기술 도입에 따른 시장 성장 근거"
+          },
+          {
+            "title": "NVIDIA DRIVE Platform and VLM Integration Strategy",
+            "url": "https://www.nvidia.com/en-us/autonomous-vehicles/",
+            "use": "경쟁 구도 및 NVIDIA 의 기술 로드맵 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [
+            "NVIDIA"
+          ],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": true,
+    "use_actor_map_score": false,
+    "use_patent_map_context": true,
+    "actor_map_summary": {
+      "edge_count": 6,
+      "top_related_actors": [
+        {
+          "related_actor": "Anthropic",
+          "similarity": 0.92,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Cohere",
+          "similarity": 0.88,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "DataRobot",
+          "similarity": 0.75,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Palantir",
+          "similarity": 0.68,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "Hugging Face",
+          "similarity": 0.65,
+          "shared_technology_areas": []
+        },
+        {
+          "related_actor": "NVIDIA",
+          "similarity": 0.55,
+          "shared_technology_areas": []
+        }
+      ]
+    },
+    "candidate_selection": {
+      "use_patent_map": true,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_on",
+      "pool_count": 5,
+      "target_k": 4,
+      "selected_count": 4,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T05",
+          "name": "시각 언어 모델 기반 자율 주행 제어",
+          "final_score": 77.81,
+          "selection_score": 77.95,
+          "actor_map_score": 49.5,
+          "reason": "Upstage 의 핵심 전략인 문서 AI 및 LLM 리더십과 직접적인 연관성이 낮으며, TRL 4 로 단기 상용화 (2026-2030) 에 적합하지 않은 자율주행 제어 기술임."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 82.52,
+        "avg_market_score": 78.75,
+        "avg_patent_score": 87.12,
+        "avg_actor_map_score": 71.1,
+        "map_supported_count": 4
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "Upstage 의 문서 AI 및 LLM 기술 리더십 강화 전략에 부합하는 T01(에이전트 워크플로우) 과 T02(원자적 문서 모델링) 을 최우선으로 선정하여 시장 성장성과 특허 경쟁력을 확보했습니다. 검증된 기술 기반의 단기 상용화를 위해 TRL 7 의 T03(모니터링) 과 TRL 6 의 T04(온톨로지 최적화) 를 포함하여 포트폴리오의 성숙도와 다양성을 확보했습니다. T05 는 자율주행이라는 비핵심 도메인이며 기술 성숙도가 낮아 5 년 계획 로드맵에서 제외되었습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy",
+            "actor_context"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": true
+      }
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 54000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "생성형 AI 시스템 모니터링 및 평가",
+        "멀티모달 에이전트 워크플로우 자동화",
+        "온톨로지 기반 데이터베이스 쿼리 최적화"
+      ],
+      "tech_ids": [
+        "T03",
+        "T01",
+        "T04"
+      ],
+      "num_items": 3
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T03",
+          "name": "생성형 AI 시스템 모니터링 및 평가",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 4,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 18000000.0,
+          "tech_budget_rationale": "TRL 7 의 높은 성숙도와 2026 Q4 에 임박한 시장 붐으로 인해 즉각적인 상용화 투자가 필수적입니다. 전체 예산의 33% 를 할당하여 규제 준수 (EU AI Act) 를 위한 필수 인프라를 1 차년도 내에 구축하고, 다른 고위험 기술들의 안정적 실행을 위한 선행 조건을 확보합니다.",
+          "reasoning": {
+            "market_evaluation": "AI 거버넌스 및 모니터링 시장은 2030 년까지 150 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 18.5% 의 성장률을 보입니다. 특히 2026 Q4 에 예상되는 시장 붐은 EU AI Act 등 글로벌 규제 강화로 인해 모니터링 솔루션이 필수화되는 시점과 일치합니다. Upstage 가 기업 고객에게 신뢰할 수 있는 AI 를 제공하기 위해서는 이 시기를 놓치지 않고 선점해야 합니다.",
+            "tech_evaluation": "TRL 7 로 기술 성숙도가 높아 즉시 도입이 가능하며, 기술적 불확실성 (tech_risk) 은 낮습니다. DataRobot 과 Hugging Face 와의 높은 유사성 (0.75, 0.65) 은 경쟁이 치열함을 시사하지만, Upstage 의 문서 AI 특화 데이터와 결합하여 차별화된 검증 프로세스를 구축할 수 있는 경쟁 우위가 존재합니다.",
+            "investment_decision": "높은 시장 긴급성과 기술 성숙도를 고려하여 Tier 1 로 선정하고, 전체 예산의 33% 를 할당합니다. 이는 '검증된 기술 기반의 단기 상용화' 전략을 실현하는 핵심 수단이며, 다른 기술들의 실행을 위한 선행 조건이므로 선제적 투자가 필요합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 년 1 차년도 내 모니터링 플랫폼의 초기 상용화 버전을 출시하고, 주요 고객사를 대상으로 규제 준수 검증 프로세스를 즉시 적용하십시오.",
+          "rationale": [
+            "2026 Q4 시장 붐 임박으로 개발 긴급도 (5 점) 가 매우 높음.",
+            "TRL 7 로 기술 위험 (2 점) 이 낮아 단기 상용화 적합.",
+            "EU AI Act 등 규제 강화로 인한 시장 성장 (CAGR 18.5%) 이 확실함.",
+            "경쟁사 (DataRobot, Hugging Face) 대비 문서 AI 특화 검증 프로세스 차별화 가능."
+          ]
+        },
+        {
+          "tech_id": "T01",
+          "name": "멀티모달 에이전트 워크플로우 자동화",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 24000000.0,
+          "tech_budget_rationale": "450 억 달러 규모의 거대 시장과 32.5% 의 높은 성장률로 인해 가장 높은 시장 매력도를 가집니다. TRL 6 수준으로 2-3 년의 개발 기간이 필요하므로, 2 차년도부터 4 차년도까지 집중 투자하여 2027 Q2 시장 붐을 선점하고 'Document AI 리더십'을 강화합니다.",
+          "reasoning": {
+            "market_evaluation": "AI 에이전트 시장은 2030 년까지 450 억 달러 (TAM) 로 성장할 것으로 예상되며, 연평균 32.5% 의 매우 높은 성장률을 보입니다. 2027 Q2 에 예상되는 시장 붐은 멀티모달 인터페이스 자동화 수요가 급증하는 시점이며, 문서 처리 및 업무 자동화 세그먼트가 핵심 성장 동력입니다.",
+            "tech_evaluation": "TRL 6 으로 기술 성숙도는 중간 수준이며, Anthropic 의 특허 동향을 반영하여 문서 AI 를 단순 인식을 넘어 업무 프로세스 자동화하는 에이전트 아키텍처로 확장해야 합니다. Upstage 의 기존 문서 AI 강점과 결합하여 높은 경쟁 우위 (5 점) 를 확보할 수 있습니다.",
+            "investment_decision": "가장 큰 시장 기회와 전략적 정합성을 고려하여 Tier 1 로 선정하고, 전체 예산의 44% 를 할당합니다. 이는 'Document AI 및 LLM 기술 리더십 강화' 전략을 구체화하는 핵심 기술이므로, T03 의 안정화 이후 2 차년도부터 집중 투자하여 시장 선점을 도모합니다."
+          },
+          "investment_scope": "proactive",
+          "recommended_action": "2027 년 2 차년도부터 멀티모달 에이전트 프로토타입 개발을 시작하여, 2027 Q2 시장 붐 직전까지 초기 상용화 버전을 준비하십시오.",
+          "rationale": [
+            "450 억 달러 규모의 거대 시장 (TAM) 과 32.5% 의 높은 CAGR.",
+            "2027 Q2 시장 붐 임박으로 개발 긴급도 (4 점) 가 높음.",
+            "Anthropic 등 선두 기업과의 높은 유사성 (0.92) 으로 경쟁 우위 확보 가능.",
+            "TRL 6 수준으로 2-3 년 개발 기간 필요하여 선제적 투자 필수."
+          ]
+        },
+        {
+          "tech_id": "T04",
+          "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+          "evaluation_scores": {
+            "market_size_growth": 2,
+            "tech_readiness": 3,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 12000000.0,
+          "tech_budget_rationale": "120 억 달러 규모의 점진적 성장 시장과 2029 Q3 의 먼 시장 붐 시점으로 인해 단기 투자 우선순위는 낮습니다. T01 의 에이전트 워크플로우가 정립된 4 차년도부터 시작하여, 장기적인 원가 우위 확보를 위한 효율적 기술 스택 최적화를 위한 선택적 투자를 진행합니다.",
+          "reasoning": {
+            "market_evaluation": "엔터프라이즈 지식 그래프 및 온톨로지 기반 DB 시장은 2030 년까지 120 억 달러 (TAM) 로 점진적 성장을 보이며, 연평균 15.0% 의 성장률을 예상합니다. 2029 Q3 이후의 장기 시장 기회를 노리며, 복잡한 데이터 구조 처리에 대한 니즈가 증가할 것으로 보입니다.",
+            "tech_evaluation": "TRL 6 으로 기술 성숙도는 중간 수준이지만, Palantir 등 소수의 강력한 플레이어에 의해 지배될 가능성이 높아 진입 장벽이 높습니다. 단순 정보 추출을 넘어 복잡한 비즈니스 로직과 연결된 지능형 데이터베이스로 진화하기 위한 아키텍처적 방향성을 실현해야 합니다.",
+            "investment_decision": "시장 성장률과 개발 긴급도가 상대적으로 낮아 Tier 2 로 선정하고, 전체 예산의 22% 를 할당합니다. 이는 '원가 우위 확보를 위한 효율적 기술 스택 최적화'를 달성하기 위한 장기 R&D 기술이므로, T01 의 성공 이후 4 차년도부터 단계적 투자를 진행합니다."
+          },
+          "investment_scope": "selective",
+          "recommended_action": "2028 년 4 차년도부터 온톨로지 기반 데이터베이스 프로토타입 개발을 시작하여, 2029 Q3 시장 붐 직전까지 기술 완성도를 높이는 데 집중하십시오.",
+          "rationale": [
+            "120 억 달러 규모의 점진적 성장 시장 (CAGR 15.0%).",
+            "2029 Q3 시장 붐으로 개발 긴급도 (2 점) 가 낮음.",
+            "Palantir 등 강력한 경쟁사로 인해 진입 장벽이 높음.",
+            "T01 의 에이전트 워크플로우 정립 후 시작하는 장기 R&D 기술."
+          ]
+        }
+      ],
+      "stage_estimated_usd": 54000000.0
+    }
+  ]
+}
