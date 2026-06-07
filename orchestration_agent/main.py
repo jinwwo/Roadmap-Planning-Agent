@@ -86,8 +86,8 @@ def parse_args():
         dest="run_mode",
         type=str,
         default="multi",
-        choices=["multi", "single"],
-        help="multi=기존 multi-agent 파이프라인, single=단일 LLM baseline",
+        choices=["multi", "single", "tool-single"],
+        help="multi=기존 multi-agent 파이프라인, single=단일 LLM baseline, tool-single=API 근거 수집 + 단일 LLM baseline",
     )
     p.add_argument(
         "--domain", type=str,
@@ -232,8 +232,8 @@ def main():
     strategic_direction_list = priorities or None  # priorities = extracted strategic_direction
 
     # 파이프라인 실행
-    runner = run_single_agent_orchestration if args.run_mode == "single" else run_orchestration
-    result = runner(
+    runner = run_single_agent_orchestration if args.run_mode in ("single", "tool-single") else run_orchestration
+    runner_kwargs = dict(
         domain=args.domain,
         reference_year=args.year,
         category_hints=category_hints,
@@ -255,6 +255,9 @@ def main():
         company_scenario=company_scenario,
         strategic_direction=strategic_direction_list,
     )
+    if args.run_mode == "tool-single":
+        runner_kwargs["tool_augmented"] = True
+    result = runner(**runner_kwargs)
 
     # Orchestrator 최종 보고서 저장
     report_path = os.path.join(OUTPUTS_DIR, f"{args.out_prefix}{FILE_ORCHESTRATOR_REPORT}")
