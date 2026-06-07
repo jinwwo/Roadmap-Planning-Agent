@@ -1,0 +1,441 @@
+{
+  "problem_frame": {
+    "industry": "AI Vision Perception / ADAS / Computer Vision",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 43000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": []
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This TRM outlines a 5-year technology roadmap for STRADVISION, focusing on key advancements in AI hardware and software for ADAS and autonomous driving. The strategy prioritizes functional safety, model optimization, and integration of advanced technologies like HBM, chiplets, and event-based vision.",
+      "technology_strategy": "STRADVISION will leverage advancements in AI hardware and software to deliver cutting-edge perception solutions for the automotive industry. The focus is on enhancing performance, reducing power consumption, and ensuring functional safety.",
+      "roadmap_structure": "The roadmap is structured into three stages: Foundation (2026-2027), Acceleration (2028-2029), and Disruption (2030). Each stage focuses on specific technologies and milestones.",
+      "investment_strategy": "The investment strategy prioritizes foundational technologies like functional safety and model optimization in the short term, followed by investments in advanced hardware integration and disruptive technologies in the mid to long term.",
+      "trend_alignment": "The roadmap aligns with key industry trends, including the increasing demand for AI-powered ADAS, the adoption of advanced packaging technologies, and the growing importance of functional safety.",
+      "feasibility_and_risk": "The roadmap is considered feasible based on current technology trends and STRADVISION's capabilities. Major risks include delays in certification, unexpected costs, and competition from established players.",
+      "expected_outcomes": "Successful execution of this roadmap will enable STRADVISION to establish itself as a technology leader in the ADAS market, capture a significant share of the growing market, and deliver innovative perception solutions that enhance safety and improve the driving experience.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "High Bandwidth Memory (HBM) Integration",
+            "category": "Material",
+            "trl": 4,
+            "patent_score": 7.0,
+            "market_score": 8.0,
+            "final_score": 15.0,
+            "expected_market_boom_quarter": "2028 Q4",
+            "dependency_hints": [
+              "S02",
+              "S03"
+            ],
+            "rationale": "HBM is crucial for the performance of AI accelerators used in ADAS. STRADVISION's software can leverage faster data processing enabled by HBM. Patent data from NVIDIA confirms their focus on HBM for automotive applications. The actor similarity map highlights the importance of HBM to STRADVISION's ecosystem."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet-Based AI Accelerators",
+            "category": "Architecture",
+            "trl": 3,
+            "patent_score": 6.0,
+            "market_score": 7.0,
+            "final_score": 13.0,
+            "expected_market_boom_quarter": "2027 Q2",
+            "dependency_hints": [
+              "S03"
+            ],
+            "rationale": "Chiplet designs offer scalability and cost-effectiveness for AI hardware. This aligns with STRADVISION's strategy of technology leadership and reducing hardware dependencies. Patent data from NVIDIA and Qualcomm show increasing interest in chiplet architectures."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Packaging for AI",
+            "category": "Packaging",
+            "trl": 5,
+            "patent_score": 8.0,
+            "market_score": 9.0,
+            "final_score": 17.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "S01",
+              "S02"
+            ],
+            "rationale": "Advanced packaging is essential for integrating HBM and chiplets, enabling high performance and low power consumption. This is a critical enabler for STRADVISION's software running on edge devices. Strong patent activity from NVIDIA and Ambarella supports this trend."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Event-Based Vision Processing",
+            "category": "Equipment",
+            "trl": 4,
+            "patent_score": 5.0,
+            "market_score": 6.0,
+            "final_score": 11.0,
+            "expected_market_boom_quarter": "2029 Q1",
+            "dependency_hints": [],
+            "rationale": "Event-based cameras offer low latency and high dynamic range, improving perception in challenging conditions. This complements STRADVISION's software and addresses a key limitation of traditional cameras. Ambarella's patent portfolio shows a focus on event-based vision."
+          },
+          {
+            "tech_id": "S05",
+            "name": "AI Model Compression for Edge Deployment",
+            "category": "Process",
+            "trl": 6,
+            "patent_score": 4.0,
+            "market_score": 7.0,
+            "final_score": 11.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [],
+            "rationale": "Reducing model size and computational requirements is crucial for deploying AI on edge devices with limited resources. This is essential for STRADVISION's target market. The actor similarity map shows this is a shared technology area with multiple key players."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Functional Safety Certification (ISO 26262)",
+            "category": "Process",
+            "trl": 7,
+            "patent_score": 3.0,
+            "market_score": 9.0,
+            "final_score": 12.0,
+            "expected_market_boom_quarter": "2026 Q4",
+            "dependency_hints": [],
+            "rationale": "Functional safety is paramount for ADAS applications. Achieving ISO 26262 certification is essential for market access and building trust with automotive OEMs. This is a critical process requirement for STRADVISION."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Neuromorphic Computing for Low-Power Perception",
+            "category": "Architecture",
+            "trl": 2,
+            "patent_score": 2.0,
+            "market_score": 5.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2030 Q1",
+            "dependency_hints": [],
+            "rationale": "Neuromorphic computing offers potential for energy-efficient AI processing, which is crucial for edge inference in ADAS. While still early stage, it could be a disruptive technology. Limited patent data available."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S06",
+            "name": "Functional Safety Certification (ISO 26262)",
+            "phase_name": "Certification & Compliance",
+            "start_q": "2026 Q1",
+            "target_q": "2026 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Achieving ISO 26262 certification is critical for market access and building trust with automotive OEMs. This is a foundational step for STRADVISION's ADAS solutions."
+          },
+          {
+            "tech_id": "S05",
+            "name": "AI Model Compression for Edge Deployment",
+            "phase_name": "Algorithm Optimization",
+            "start_q": "2026 Q2",
+            "target_q": "2027 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 8,
+            "justification": "Optimizing AI models for edge deployment is essential for reducing computational requirements and enabling real-time performance on resource-constrained devices."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet-Based AI Accelerators",
+            "phase_name": "Hardware Integration",
+            "start_q": "2027 Q1",
+            "target_q": "2027 Q2",
+            "prerequisites": [
+              "S03"
+            ],
+            "lead_time_quarters": 2,
+            "justification": "Integrating chiplet-based AI accelerators will significantly improve the performance and scalability of STRADVISION's perception software."
+          },
+          {
+            "tech_id": "S01",
+            "name": "High Bandwidth Memory (HBM) Integration",
+            "phase_name": "Performance Enhancement",
+            "start_q": "2027 Q3",
+            "target_q": "2028 Q4",
+            "prerequisites": [
+              "S02",
+              "S03"
+            ],
+            "lead_time_quarters": 8,
+            "justification": "Leveraging HBM will unlock the full potential of STRADVISION's software by providing faster data access and improved processing speeds."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Packaging for AI",
+            "phase_name": "Hardware Platform Development",
+            "start_q": "2027 Q1",
+            "target_q": "2028 Q3",
+            "prerequisites": [],
+            "lead_time_quarters": 8,
+            "justification": "Developing advanced packaging solutions is crucial for integrating HBM and chiplets, enabling high performance and low power consumption."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Event-Based Vision Processing",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Neuromorphic Computing for Low-Power Perception",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 14,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 15049999.999999998,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "High Bandwidth Memory (HBM) Integration",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Chiplet-Based AI Accelerators",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 17200000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Advanced Packaging for AI",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "Event-Based Vision Processing",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 10750000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "AI Model Compression for Edge Deployment",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "Functional Safety Certification (ISO 26262)",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Neuromorphic Computing for Low-Power Perception",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_stradvision_autonomous_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_stradvision_autonomous_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_stradvision_autonomous_2026_2030__기술선도__investment_strategy.json"
+  }
+}

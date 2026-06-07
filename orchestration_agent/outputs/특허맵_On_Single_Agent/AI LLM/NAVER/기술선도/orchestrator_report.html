@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang='ko'><head><meta charset='UTF-8'><title>Tech Roadmap Report — (unknown)</title><style>
+body { font-family: "Noto Sans CJK KR", "Noto Sans KR", "Malgun Gothic",
+       -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #0e1014; color: #e6e8ee; max-width: 1080px; margin: 0 auto;
+       padding: 24px; line-height: 1.6; }
+h1 { color: #c08a4a; border-bottom: 2px solid #c08a4a; padding-bottom: 8px; }
+h2 { color: #d6b58c; margin-top: 32px; border-bottom: 1px solid #2a303c; padding-bottom: 6px; }
+h3 { color: #d6b58c; margin-top: 20px; }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #c08a4a;
+              background: #1d222c; padding: 2px 5px; border-radius: 3px; }
+table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13px; }
+th, td { border: 1px solid #2a303c; padding: 6px 8px; text-align: left; }
+th { background: #1d222c; color: #d6b58c; font-weight: 600; }
+tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+.tier { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 11px; font-weight: 700; font-family: ui-monospace, monospace; }
+.tier-1 { background: rgba(215,154,90,0.2); color: #d79a5a; border: 1px solid #d79a5a; }
+.tier-2 { background: rgba(138,173,217,0.2); color: #8aadd9; border: 1px solid #8aadd9; }
+.tier-3 { background: rgba(154,154,154,0.2); color: #9a9a9a; border: 1px solid #9a9a9a; }
+.tier-x { background: #1d222c; color: #9aa3b2; border: 1px solid #2a303c; }
+.budget { font-family: ui-monospace, monospace; font-weight: 700; color: #d6b58c; }
+.matrix-cell { text-align: center; min-width: 70px; }
+.matrix-cell.active { background: #d79a5a; color: #1a1a1a; font-weight: 700; }
+.matrix-cell.tier-2.active { background: #8aadd9; }
+.matrix-cell.tier-3.active { background: #9a9a9a; }
+.reason { background: #161a21; border-left: 2px solid #c08a4a; padding: 6px 12px;
+          margin: 4px 0; border-radius: 0 4px 4px 0; font-size: 13px; }
+.reason b { color: #d6b58c; }
+
+/* Gantt-style TRM visualization */
+.gantt-wrap { margin: 16px 0; }
+.gantt-header { display: grid; gap: 8px; padding: 6px 0; margin-left: 220px;
+                border-bottom: 1px solid #2a303c; }
+.gantt-header > div { text-align: center; font-family: ui-monospace, monospace;
+                      font-size: 11px; color: #d6b58c; border-left: 1px dashed #2a303c;
+                      padding: 4px 2px; }
+.gantt-header > div:first-child { border-left: none; }
+.gantt-row { display: grid; grid-template-columns: 220px 1fr 120px; gap: 10px;
+             align-items: center; padding: 10px 0;
+             border-bottom: 1px dashed #2a303c; }
+.gantt-label .id { color: #c08a4a; font-family: ui-monospace, monospace; font-size: 11px; }
+.gantt-label .name { font-weight: 600; font-size: 13px; }
+.gantt-period { font-family: ui-monospace, monospace; font-size: 10px;
+                color: #9aa3b2; margin-top: 2px; letter-spacing: 0.2px; }
+.gantt-bar-q { font-size: 10px; font-weight: 400; opacity: 0.85; margin-left: 4px; }
+.gantt-bar-wrap { position: relative; height: 24px; background: #0e1014;
+                  border: 1px solid #2a303c; border-radius: 4px; overflow: hidden; }
+.gantt-bar { position: absolute; top: 0; bottom: 0;
+             background: linear-gradient(90deg, #c08a4a 0%, #d6b58c 100%);
+             border-radius: 3px; display: flex; align-items: center;
+             padding: 0 8px; font-size: 11px; color: #1a1a1a; font-weight: 700;
+             font-family: ui-monospace, monospace; }
+.gantt-bar.tier-2 { background: linear-gradient(90deg, #8aadd9 0%, #b0c5e0 100%); }
+.gantt-bar.tier-3 { background: linear-gradient(90deg, #9a9a9a 0%, #c0c0c0 100%); }
+.gantt-budget-col { text-align: center; font-family: ui-monospace, monospace;
+                    font-size: 13px; font-weight: 700; color: #d6b58c;
+                    padding: 4px 12px; border: 1px solid #c08a4a;
+                    border-radius: 6px; background: rgba(215,154,90,0.08); }
+.gantt-budget-col.tier-1 { border-color: #d79a5a; color: #d79a5a; background: rgba(215,154,90,0.12); }
+.gantt-budget-col.tier-2 { border-color: #8aadd9; color: #8aadd9; background: rgba(138,173,217,0.12); }
+.gantt-budget-col.tier-3 { border-color: #9a9a9a; color: #9a9a9a; background: rgba(154,154,154,0.12); }
+.gantt-header.has-budget-col { margin-left: 0; gap: 10px; }
+.gantt-header.has-budget-col > .gantt-budget-head {
+  text-align: center; font-family: ui-monospace, monospace;
+  font-size: 11px; color: #d6b58c; padding: 4px 12px;
+  border-left: none; }
+.tech-card { background: #161a21; border: 1px solid #2a303c; border-radius: 8px;
+             padding: 12px 16px; margin: 10px 0; }
+.tech-card .head { display: flex; justify-content: space-between; align-items: center; }
+.tech-card h3 { margin: 0; }
+.issue { background: rgba(224,133,133,0.1); border: 1px solid #e08585; border-radius: 4px;
+         padding: 6px 10px; margin: 4px 0; }
+.decision-accept { color: #7ec27e; font-weight: 700; }
+.decision-revise { color: #e0b060; font-weight: 700; }
+ul, ol { padding-left: 22px; }
+.dim { color: #9aa3b2; font-size: 12px; }
+</style></head><body><h1>📋 기술 로드맵 보고서 — (unknown)</h1><ul><li><b>산업</b>: Large Language Model / Foundation Model / AI Platform</li><li><b>계획 기간</b>: 2026-2030 (5 years)</li><li><b>총 예산 (5년 envelope)</b>: <span class='budget'>$6.81B</span></li><li><b>평가 결정</b>: <span class='decision-accept'>ACCEPT</span> (iter 1)</li></ul><h2>🔬 Agent 1 · Technology Candidates (7)</h2><table><thead><tr><th>tech_id</th><th>name</th><th>category</th><th>TRL</th><th>final</th><th>market</th><th>patent</th><th>boom</th></tr></thead><tbody><tr><td><code>S01</code></td><td>HBM4 Memory Integration</td><td>Material</td><td>3</td><td>8.0</td><td>9.0</td><td>7.0</td><td>2028 Q4</td></tr><tr><td><code>S02</code></td><td>Chiplet Interconnect Fabric</td><td>Architecture</td><td>4</td><td>7.0</td><td>8.0</td><td>6.0</td><td>2027 Q4</td></tr><tr><td><code>S03</code></td><td>Advanced 3D Packaging (CoWoS-like)</td><td>Packaging</td><td>5</td><td>8.0</td><td>9.0</td><td>8.0</td><td>2027 Q4</td></tr><tr><td><code>S04</code></td><td>Energy-Efficient AI Accelerator Design</td><td>Equipment</td><td>3</td><td>6.0</td><td>7.0</td><td>5.0</td><td>2028 Q1</td></tr><tr><td><code>S05</code></td><td>Optical Interconnects for AI Systems</td><td>Architecture</td><td>2</td><td>5.0</td><td>6.0</td><td>4.0</td><td>2029 Q2</td></tr><tr><td><code>S06</code></td><td>AI Model Compression Algorithms</td><td>Process</td><td>6</td><td>6.0</td><td>7.0</td><td>6.0</td><td>2027 Q2</td></tr><tr><td><code>S07</code></td><td>Disaggregated AI Infrastructure</td><td>Architecture</td><td>4</td><td>4.0</td><td>5.0</td><td>3.0</td><td>2029 Q4</td></tr></tbody></table><h2>🛣️ Agent 2 · Planned Roadmap (7)</h2><div class='tech-card'><h3><code>S01</code> · HBM4 Memory Integration</h3><div class='dim'>?차년도 → ?차년도 · prereq: (none)</div></div><div class='tech-card'><h3><code>S03</code> · Advanced 3D Packaging (CoWoS-like)</h3><div class='dim'>?차년도 → ?차년도 · prereq: S01</div></div><div class='tech-card'><h3><code>S06</code> · AI Model Compression Algorithms</h3><div class='dim'>?차년도 → ?차년도 · prereq: (none)</div></div><div class='tech-card'><h3><code>S02</code> · Chiplet Interconnect Fabric</h3><div class='dim'>?차년도 → ?차년도 · prereq: S03</div></div><div class='tech-card'><h3><code>S04</code> · Energy-Efficient AI Accelerator Design</h3><div class='dim'>?차년도 → ?차년도 · prereq: S01</div></div><div class='tech-card'><h3><code>S05</code> · Optical Interconnects for AI Systems</h3><div class='dim'>?차년도 → ?차년도 · prereq: S02</div></div><div class='tech-card'><h3><code>S07</code> · Disaggregated AI Infrastructure</h3><div class='dim'>?차년도 → ?차년도 · prereq: S02</div></div><h2>💰 Agent 3 · Investment Strategy (7 techs)</h2><p><b>예산 한도</b>: <span class='budget'>$6.81B</span> · <b>배분 합</b>: <span class='budget'>-</span> · 편차 -100.0%</p><div class='tech-card'><div class='head'><h3><code>S01</code> · HBM4 Memory Integration</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S02</code> · Chiplet Interconnect Fabric</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S03</code> · Advanced 3D Packaging (CoWoS-like)</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S04</code> · Energy-Efficient AI Accelerator Design</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S05</code> · Optical Interconnects for AI Systems</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S06</code> · AI Model Compression Algorithms</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><div class='tech-card'><div class='head'><h3><code>S07</code> · Disaggregated AI Infrastructure</h3><span><span class='tier tier-2'>Tier 2</span> <span class='budget' style='margin-left:8px;'>-</span></span></div><div class='dim'>TAM=? · TRL=? · RISK=? · COMP=? · URG=?</div><div class='reason'><b>권장 액션:</b> Prioritize as part of the single-agent baseline portfolio.</div><div class='reason'><b>⚠️ 리스크:</b><ul><li>Single-agent estimate; no independent agent critique.</li></ul></div><div class='reason'><b>🔧 자원 집중:</b><ul><li>Architecture validation</li><li>partner ecosystem</li><li>software enablement</li></ul></div></div><h2>📅 차년도별 활동 요약 (1년 계획)</h2><div class='tech-card'><h3>1차년도</h3><ul><li><code>S01</code> <b>HBM4 Memory Integration</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S03</code> <b>Advanced 3D Packaging (CoWoS-like)</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S06</code> <b>AI Model Compression Algorithms</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S02</code> <b>Chiplet Interconnect Fabric</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S04</code> <b>Energy-Efficient AI Accelerator Design</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S05</code> <b>Optical Interconnects for AI Systems</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li><li><code>S07</code> <b>Disaggregated AI Infrastructure</b> <span class='tier tier-2'>Tier 2</span> — 시작 — <span class='budget'>-</span></li></ul><p class='dim'><b>1차년도 시작 예산 합계:</b> <span class='budget'>-</span></p></div><h2>✅ Final Review</h2><p><b>Decision:</b> <span class='decision-accept'>ACCEPT</span></p></body></html>

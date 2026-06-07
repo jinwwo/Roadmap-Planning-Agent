@@ -1,0 +1,104 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "Electric Vehicle (EV) and Energy Storage Systems (ESS)",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 300000000000.0,
+      "sam_usd": 90000000000.0,
+      "som_usd": 45000000000.0
+    },
+    "cagr": "15%",
+    "growth_outlook": "Strong growth driven by increasing EV adoption and ESS deployment. Demand for high-performance, sustainable cathode materials will surge.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "S05",
+      "name": "High-Precision Cathode Manufacturing",
+      "phase_name": "Equipment Upgrade",
+      "start_q": "2026 Q1",
+      "target_q": "2026 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 4,
+      "justification": "Essential for scaling production of advanced cathode materials."
+    },
+    {
+      "tech_id": "S01",
+      "name": "Nickel Rich Cathode Coatings",
+      "phase_name": "Pilot Production",
+      "start_q": "2027 Q1",
+      "target_q": "2027 Q2",
+      "prerequisites": [
+        "S05"
+      ],
+      "lead_time_quarters": 2,
+      "justification": "Validate coating performance and optimize manufacturing process."
+    },
+    {
+      "tech_id": "S03",
+      "name": "Dry Electrode Coating",
+      "phase_name": "Process Integration",
+      "start_q": "2027 Q3",
+      "target_q": "2027 Q4",
+      "prerequisites": [
+        "S05"
+      ],
+      "lead_time_quarters": 2,
+      "justification": "Implement dry coating process to reduce costs and environmental impact."
+    },
+    {
+      "tech_id": "S02",
+      "name": "Single Crystal Cathode Materials",
+      "phase_name": "Material Optimization",
+      "start_q": "2028 Q1",
+      "target_q": "2028 Q3",
+      "prerequisites": [
+        "S05",
+        "S01"
+      ],
+      "lead_time_quarters": 3,
+      "justification": "Optimize single crystal structure for maximum performance and durability."
+    },
+    {
+      "tech_id": "S07",
+      "name": "Cathode Recycling Technologies",
+      "phase_name": "Recycling Pilot",
+      "start_q": "2028 Q2",
+      "target_q": "2028 Q1",
+      "prerequisites": [],
+      "lead_time_quarters": 1,
+      "justification": "Establish a closed-loop recycling process for cathode materials."
+    },
+    {
+      "tech_id": "S04",
+      "name": "Solid State Electrolytes",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2027 Q3",
+      "target_q": "2029 Q4",
+      "prerequisites": [
+        "Nickel Rich Cathode Coatings",
+        "Single Crystal Cathode Materials"
+      ],
+      "lead_time_quarters": 11,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+    },
+    {
+      "tech_id": "S06",
+      "name": "AI-driven Material Discovery",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2028 Q3",
+      "target_q": "2030 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 13,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+    }
+  ],
+  "dependency_tree": {},
+  "tech_selection": {
+    "mode": "tool_augmented_single_agent_baseline",
+    "selected_count": 7
+  }
+}

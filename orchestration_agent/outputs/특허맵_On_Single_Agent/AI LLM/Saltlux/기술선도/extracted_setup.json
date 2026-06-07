@@ -1,0 +1,33 @@
+{
+  "run_mode": "tool-single",
+  "scenario_id": "saltlux_ai_llm_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "patent_map": "on",
+  "setup_source": "/workspace/orchestration_agent/outputs/특허맵_On/AI LLM/Saltlux/기술선도/extracted_setup.json",
+  "prompt": "Company: Saltlux\nIndustry: Conversational AI / LLM / Knowledge Graph\nAnnual Revenue: ~$29.7M\nR&D Budget Ratio: ~27.3%\nAnnual R&D Budget: ~$8.1M\nTotal 5-year R&D Budget: ~$27M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Saltlux",
+    "industry": "Conversational AI / LLM / Knowledge Graph",
+    "annual_revenue": 29700000.0,
+    "rd_budget_ratio": 0.273,
+    "annual_rd_budget": 8100000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Conversational AI 및 LLM 분야에서 프론티어 기술을 선점하여 장기적인 기술 해자를 구축하고 시장 리더십을 확보한다.",
+    "strategic_direction": [
+      "Conversational AI 및 LLM 기술 선도 확보",
+      "Knowledge Graph 기반 인접 시장 확장",
+      "공격적 R&D 투자로 HW/SW 통합 스택 강화"
+    ],
+    "domain": "Conversational AI / LLM / Knowledge Graph",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 27000000
+}

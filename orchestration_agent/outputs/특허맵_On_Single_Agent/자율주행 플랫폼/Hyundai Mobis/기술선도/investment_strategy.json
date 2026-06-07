@@ -1,0 +1,266 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "Advanced Driver-Assistance Systems (ADAS) and Autonomous Driving Platforms",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 300000000000.0,
+      "sam_usd": 60000000000.0,
+      "som_usd": 5000000000.0
+    },
+    "cagr": "25%",
+    "growth_outlook": "Strong growth driven by increasing demand for autonomous features, safety regulations, and electric vehicle adoption. The market is expected to experience significant expansion in the next 5 years.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "investment_policy": {
+    "total_budget": 5550000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "tech_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "tech_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "tech_ids": [
+        "S05",
+        "S06",
+        "S07"
+      ]
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "stage_budget_ratio": 0.35,
+      "stage_estimated_usd": 1942499999.9999998,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S01",
+          "name": "Automotive Grade HBM",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        },
+        {
+          "tech_id": "S02",
+          "name": "Chiplet Interconnect Architectures",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "stage_budget_ratio": 0.4,
+      "stage_estimated_usd": 2220000000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S03",
+          "name": "Energy Efficient AI Accelerators",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        },
+        {
+          "tech_id": "S04",
+          "name": "Automotive Ethernet Networking",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "stage_budget_ratio": 0.25,
+      "stage_estimated_usd": 1387500000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S05",
+          "name": "Advanced Driver Monitoring Systems",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        },
+        {
+          "tech_id": "S06",
+          "name": "Domain Controllers for ADAS",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        },
+        {
+          "tech_id": "S07",
+          "name": "Functional Safety Packaging",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ]
+        }
+      ]
+    }
+  ]
+}

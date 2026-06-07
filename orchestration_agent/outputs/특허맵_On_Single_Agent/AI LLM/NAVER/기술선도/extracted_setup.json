@@ -1,0 +1,33 @@
+{
+  "run_mode": "tool-single",
+  "scenario_id": "naver_ai_llm_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "patent_map": "on",
+  "setup_source": "/workspace/orchestration_agent/outputs/특허맵_On/AI LLM/NAVER/기술선도/extracted_setup.json",
+  "prompt": "Company: NAVER\nIndustry: Large Language Model / Foundation Model / AI Platform\nAnnual Revenue: ~$8.6B\nR&D Budget Ratio: ~25.8%\nAnnual R&D Budget: ~$2.22B\nTotal 5-year R&D Budget: ~$6.81B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "NAVER",
+    "industry": "Large Language Model / Foundation Model / AI Platform",
+    "annual_revenue": 8600000000.0,
+    "rd_budget_ratio": 0.258,
+    "annual_rd_budget": 2220000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 AI 기술을 선점하고 장기적인 기술 해자를 구축하여 기술 선도 지위를 확보한다.",
+    "strategic_direction": [
+      "LLM 및 Foundation Model 기술 리더십 확보",
+      "AI 플랫폼 생태계 확장 및 서비스 통합",
+      "프론티어 기술 선점을 위한 R&D 투자 강화"
+    ],
+    "domain": "Large Language Model / Foundation Model / AI Platform",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 6810000000
+}

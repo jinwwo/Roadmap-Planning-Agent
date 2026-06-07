@@ -1,0 +1,447 @@
+{
+  "problem_frame": {
+    "industry": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 153000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": []
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This TRM outlines a 5-year technology roadmap for EcoPro BM, focusing on advanced cathode materials and manufacturing processes. The strategy prioritizes investments in high-precision manufacturing, coating technologies, and sustainable recycling practices to capitalize on the growing EV and ESS markets.",
+      "technology_strategy": "The technology strategy centers around developing and deploying high-performance, sustainable cathode materials and manufacturing processes. This will enable EcoPro BM to maintain its technology leadership and capture a significant share of the rapidly growing EV battery market.",
+      "roadmap_structure": "The roadmap is structured into three stages: Foundation, Advancement, and Future. Each stage focuses on specific technologies and milestones, with clear dependencies and timelines.",
+      "investment_strategy": "The investment strategy prioritizes short-term investments in manufacturing capabilities and cost-effective processes, followed by mid-term investments in advanced materials and long-term investments in disruptive technologies.",
+      "trend_alignment": "The roadmap aligns with key industry trends, including the increasing demand for high-nickel cathodes, the need for sustainable battery materials, and the growing importance of AI in materials discovery.",
+      "feasibility_and_risk": "The roadmap is considered feasible, given EcoPro BM's existing capabilities and resources. However, there are risks associated with technology development, manufacturing scale-up, and market competition.",
+      "expected_outcomes": "Successful implementation of this roadmap is expected to result in increased market share, improved profitability, and a strengthened competitive position for EcoPro BM.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "Nickel Rich Cathode Coatings",
+            "category": "Material",
+            "trl": 6,
+            "patent_score": 8.0,
+            "market_score": 9.0,
+            "final_score": 17.0,
+            "expected_market_boom_quarter": "2027 Q2",
+            "dependency_hints": [
+              "High-Precision Cathode Manufacturing"
+            ],
+            "rationale": "Coatings enhance cathode stability, lifespan, and performance, crucial for high-nickel chemistries. Strong patent activity from EcoPro BM and LG Chem indicates significant investment. Aligns with market demand for improved battery performance."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Single Crystal Cathode Materials",
+            "category": "Material",
+            "trl": 5,
+            "patent_score": 7.0,
+            "market_score": 8.0,
+            "final_score": 15.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "High-Precision Cathode Manufacturing"
+            ],
+            "rationale": "Single crystal structures improve cycle life and reduce degradation. Patent data from Samsung SDI and EcoPro BM confirms active research. Addresses key market needs for durable and reliable batteries."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Dry Electrode Coating",
+            "category": "Process",
+            "trl": 7,
+            "patent_score": 6.0,
+            "market_score": 7.0,
+            "final_score": 13.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "High-Precision Cathode Manufacturing"
+            ],
+            "rationale": "Reduces solvent use and manufacturing costs, improving sustainability and economic viability. Multiple companies including EcoPro BM and LG Chem are actively patenting this technology."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Solid State Electrolytes",
+            "category": "Material",
+            "trl": 3,
+            "patent_score": 5.0,
+            "market_score": 6.0,
+            "final_score": 11.0,
+            "expected_market_boom_quarter": "2030 Q1",
+            "dependency_hints": [
+              "Nickel Rich Cathode Coatings",
+              "Single Crystal Cathode Materials"
+            ],
+            "rationale": "Next-generation technology with potential for significantly higher energy density and safety. While TRL is low, the potential impact is substantial. BASF and LG Chem have patent activity."
+          },
+          {
+            "tech_id": "S05",
+            "name": "High-Precision Cathode Manufacturing",
+            "category": "Equipment",
+            "trl": 8,
+            "patent_score": 7.0,
+            "market_score": 8.0,
+            "final_score": 15.0,
+            "expected_market_boom_quarter": "2026 Q4",
+            "dependency_hints": [],
+            "rationale": "Essential for producing high-quality, consistent cathode materials. Critical for realizing the benefits of advanced materials like single crystals and coated cathodes. Strong demand from all major players."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI-driven Material Discovery",
+            "category": "Architecture",
+            "trl": 4,
+            "patent_score": 4.0,
+            "market_score": 5.0,
+            "final_score": 9.0,
+            "expected_market_boom_quarter": "2029 Q2",
+            "dependency_hints": [],
+            "rationale": "Accelerates the development of new cathode materials and optimizes existing ones. While early stage, AI is becoming increasingly important in materials science."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Cathode Recycling Technologies",
+            "category": "Process",
+            "trl": 6,
+            "patent_score": 6.0,
+            "market_score": 7.0,
+            "final_score": 13.0,
+            "expected_market_boom_quarter": "2028 Q1",
+            "dependency_hints": [],
+            "rationale": "Critical for sustainable sourcing of materials and reducing environmental impact. Increasing regulatory pressure and consumer demand for sustainable products. SK Innovation and Umicore are active in this space."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S05",
+            "name": "High-Precision Cathode Manufacturing",
+            "phase_name": "Equipment Upgrade",
+            "start_q": "2026 Q1",
+            "target_q": "2026 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Essential for scaling production of advanced cathode materials."
+          },
+          {
+            "tech_id": "S01",
+            "name": "Nickel Rich Cathode Coatings",
+            "phase_name": "Pilot Production",
+            "start_q": "2027 Q1",
+            "target_q": "2027 Q2",
+            "prerequisites": [
+              "S05"
+            ],
+            "lead_time_quarters": 2,
+            "justification": "Validate coating performance and optimize manufacturing process."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Dry Electrode Coating",
+            "phase_name": "Process Integration",
+            "start_q": "2027 Q3",
+            "target_q": "2027 Q4",
+            "prerequisites": [
+              "S05"
+            ],
+            "lead_time_quarters": 2,
+            "justification": "Implement dry coating process to reduce costs and environmental impact."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Single Crystal Cathode Materials",
+            "phase_name": "Material Optimization",
+            "start_q": "2028 Q1",
+            "target_q": "2028 Q3",
+            "prerequisites": [
+              "S05",
+              "S01"
+            ],
+            "lead_time_quarters": 3,
+            "justification": "Optimize single crystal structure for maximum performance and durability."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Cathode Recycling Technologies",
+            "phase_name": "Recycling Pilot",
+            "start_q": "2028 Q2",
+            "target_q": "2028 Q1",
+            "prerequisites": [],
+            "lead_time_quarters": 1,
+            "justification": "Establish a closed-loop recycling process for cathode materials."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Solid State Electrolytes",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "Nickel Rich Cathode Coatings",
+              "Single Crystal Cathode Materials"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI-driven Material Discovery",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q3",
+            "target_q": "2030 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 13,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 53550000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "Nickel Rich Cathode Coatings",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Single Crystal Cathode Materials",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 61200000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Dry Electrode Coating",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "Solid State Electrolytes",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 38250000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "High-Precision Cathode Manufacturing",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "AI-driven Material Discovery",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Cathode Recycling Technologies",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_ecopro_bm_battery_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_ecopro_bm_battery_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_ecopro_bm_battery_2026_2030__기술선도__investment_strategy.json"
+  }
+}

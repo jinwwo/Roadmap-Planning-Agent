@@ -1,0 +1,99 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "Advanced Driver-Assistance Systems (ADAS) and Autonomous Driving",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 300000000000.0,
+      "sam_usd": 60000000000.0,
+      "som_usd": 5000000000.0
+    },
+    "cagr": "20.5%",
+    "growth_outlook": "Strong growth driven by increasing vehicle automation levels and demand for enhanced safety features. The market is expected to mature by 2028, with significant opportunities for companies offering innovative perception solutions.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "S06",
+      "name": "Functional Safety Certification (ISO 26262)",
+      "phase_name": "Certification & Compliance",
+      "start_q": "2026 Q1",
+      "target_q": "2026 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 4,
+      "justification": "Achieving ISO 26262 certification is critical for market access and building trust with automotive OEMs. This is a foundational step for STRADVISION's ADAS solutions."
+    },
+    {
+      "tech_id": "S05",
+      "name": "AI Model Compression for Edge Deployment",
+      "phase_name": "Algorithm Optimization",
+      "start_q": "2026 Q2",
+      "target_q": "2027 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 8,
+      "justification": "Optimizing AI models for edge deployment is essential for reducing computational requirements and enabling real-time performance on resource-constrained devices."
+    },
+    {
+      "tech_id": "S02",
+      "name": "Chiplet-Based AI Accelerators",
+      "phase_name": "Hardware Integration",
+      "start_q": "2027 Q1",
+      "target_q": "2027 Q2",
+      "prerequisites": [
+        "S03"
+      ],
+      "lead_time_quarters": 2,
+      "justification": "Integrating chiplet-based AI accelerators will significantly improve the performance and scalability of STRADVISION's perception software."
+    },
+    {
+      "tech_id": "S01",
+      "name": "High Bandwidth Memory (HBM) Integration",
+      "phase_name": "Performance Enhancement",
+      "start_q": "2027 Q3",
+      "target_q": "2028 Q4",
+      "prerequisites": [
+        "S02",
+        "S03"
+      ],
+      "lead_time_quarters": 8,
+      "justification": "Leveraging HBM will unlock the full potential of STRADVISION's software by providing faster data access and improved processing speeds."
+    },
+    {
+      "tech_id": "S03",
+      "name": "Advanced Packaging for AI",
+      "phase_name": "Hardware Platform Development",
+      "start_q": "2027 Q1",
+      "target_q": "2028 Q3",
+      "prerequisites": [],
+      "lead_time_quarters": 8,
+      "justification": "Developing advanced packaging solutions is crucial for integrating HBM and chiplets, enabling high performance and low power consumption."
+    },
+    {
+      "tech_id": "S04",
+      "name": "Event-Based Vision Processing",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2027 Q3",
+      "target_q": "2029 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 11,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+    },
+    {
+      "tech_id": "S07",
+      "name": "Neuromorphic Computing for Low-Power Perception",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2028 Q1",
+      "target_q": "2030 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 14,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+    }
+  ],
+  "dependency_tree": {},
+  "tech_selection": {
+    "mode": "tool_augmented_single_agent_baseline",
+    "selected_count": 7
+  }
+}
