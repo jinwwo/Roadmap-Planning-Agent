@@ -1,0 +1,115 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "AI Infrastructure for Foundation Models",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 200000000000.0,
+      "sam_usd": 40000000000.0,
+      "som_usd": 4000000000.0
+    },
+    "cagr": "25.7%",
+    "growth_outlook": "Strong growth driven by increasing demand for AI models, particularly in cloud computing, edge devices, and enterprise applications. The market is expected to experience significant expansion in the latter half of the forecast period as advanced hardware becomes more readily available.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "planned_roadmap": [
+    {
+      "tech_id": "S01",
+      "name": "HBM4 Memory Integration",
+      "phase_name": "Research & Prototyping",
+      "start_q": "2026 Q1",
+      "target_q": "2026 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 4,
+      "justification": "Early exploration of HBM4 integration is crucial for staying ahead of the curve in AI memory technology.",
+      "year_idx_start": 1,
+      "year_idx_target": 1
+    },
+    {
+      "tech_id": "S02",
+      "name": "Chiplet Interconnect Fabric",
+      "phase_name": "Design & Simulation",
+      "start_q": "2026 Q2",
+      "target_q": "2027 Q2",
+      "prerequisites": [],
+      "lead_time_quarters": 4,
+      "justification": "Develop a high-performance interconnect fabric to enable scalable AI hardware designs.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
+    },
+    {
+      "tech_id": "S03",
+      "name": "Energy-Efficient AI Accelerator",
+      "phase_name": "Architecture Exploration",
+      "start_q": "2026 Q3",
+      "target_q": "2027 Q3",
+      "prerequisites": [],
+      "lead_time_quarters": 4,
+      "justification": "Investigate novel architectures and precision scaling techniques to minimize energy consumption.",
+      "year_idx_start": 1,
+      "year_idx_target": 2
+    },
+    {
+      "tech_id": "S04",
+      "name": "3D Chip Stacking with Advanced Cooling",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2027 Q3",
+      "target_q": "2029 Q4",
+      "prerequisites": [
+        "S01",
+        "S02"
+      ],
+      "lead_time_quarters": 11,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 2,
+      "year_idx_target": 4
+    },
+    {
+      "tech_id": "S05",
+      "name": "AI-Optimized Networking Fabric",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2028 Q1",
+      "target_q": "2030 Q4",
+      "prerequisites": [
+        "S06"
+      ],
+      "lead_time_quarters": 12,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
+    },
+    {
+      "tech_id": "S06",
+      "name": "Optical Interconnects for AI",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2028 Q3",
+      "target_q": "2030 Q4",
+      "prerequisites": [
+        "S05"
+      ],
+      "lead_time_quarters": 13,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
+    },
+    {
+      "tech_id": "S07",
+      "name": "Mixed-Precision Training & Inference",
+      "phase_name": "Single-Agent Baseline Roadmap",
+      "start_q": "2028 Q1",
+      "target_q": "2030 Q4",
+      "prerequisites": [],
+      "lead_time_quarters": 14,
+      "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap.",
+      "year_idx_start": 3,
+      "year_idx_target": 5
+    }
+  ],
+  "dependency_tree": {},
+  "tech_selection": {
+    "mode": "tool_augmented_single_agent_baseline",
+    "selected_count": 7
+  }
+}

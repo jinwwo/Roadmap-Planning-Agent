@@ -1,0 +1,78 @@
+[
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Google",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "common_tech_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Microsoft",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "common_tech_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T04"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Meta",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "common_tech_ids": [
+      "T02",
+      "T04",
+      "T06",
+      "T08"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Amazon",
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "common_tech_ids": [
+      "T02",
+      "T03",
+      "T04"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Baidu",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "common_tech_ids": [
+      "T05"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "Alibaba",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "common_tech_ids": [
+      "T05"
+    ]
+  },
+  {
+    "center_actor": "NAVER",
+    "related_actor": "D-meta",
+    "similarity": 0.45,
+    "edge_weight": 0.45,
+    "common_tech_ids": [
+      "T07"
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "center_actor": "LG Chem",
+    "related_actor": "LG Energy Solution",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_keywords": [
+      "Cathode Materials",
+      "Anode Materials",
+      "Battery Architecture",
+      "Safety"
+    ],
+    "rationale": "양사 모두 양극/음극 소재 및 배터리 구조 설계 분야에서 광범위한 특허를 보유하고 있으며, 기술적 유사성이 매우 높습니다."
+  },
+  {
+    "center_actor": "LG Chem",
+    "related_actor": "SK On",
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_keywords": [
+      "Cathode Materials",
+      "Anode Materials",
+      "Binder",
+      "Slurry"
+    ],
+    "rationale": "양극 소재, 음극 소재, 바인더 및 슬러리 조성 등 핵심 소재 기술에서 높은 중복성을 보입니다."
+  },
+  {
+    "center_actor": "LG Chem",
+    "related_actor": "Samsung SDI",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_keywords": [
+      "Cathode Materials",
+      "All-Solid-State",
+      "Battery Module"
+    ],
+    "rationale": "고니켈 양극 및 전체 고체전지 기술, 배터리 모듈 설계 분야에서 경쟁 관계에 있으며 기술적 유사성이 높습니다."
+  },
+  {
+    "center_actor": "LG Chem",
+    "related_actor": "Tesla",
+    "similarity": 0.45,
+    "edge_weight": 0.45,
+    "shared_keywords": [
+      "Battery Heating",
+      "Cooling System",
+      "Vehicle Integration"
+    ],
+    "rationale": "Tesla 는 배터리 소재 자체보다는 배터리 시스템 통합, 열관리, 차량 제어 등 응용 기술에 집중하고 있어 소재 중심의 LG Chem 과는 기술적 유사성이 상대적으로 낮습니다."
+  }
+]

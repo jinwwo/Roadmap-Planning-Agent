@@ -1,0 +1,379 @@
+{
+  "problem_frame": {
+    "industry": "Cathode Materials / Advanced Materials / Battery Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 3630000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "LG Chem",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "검증된 배터리 소재 기술 확대",
+      "원가 우위를 통한 시장 점유율 강화",
+      "단기 상용화 및 매출 성장 최적화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $3.63B 내에서 정확히 배분 완료. 2026-2030 기간 내 기술 개발 일정 정상."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(2027) → T03(2028) → T02(2029) 의 선결 조건과 개발 시기가 논리적으로 정합."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "LG Chem 의 검증된 소재 확대 및 원가 우위 전략과 높은 정합성. 배터리 시장 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T03) 에 집중 투자하여 단기 상용화 목표 달성. Tier 2(T02) 는 장기 기술 확보."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.65,
+        "risk_balance": 0.6,
+        "comment": "단기(2027-2028) 투자 비중이 높으나, 장기 기술(T02) 도 포함하여 균형 유지."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "고니켈 양극 표면 코팅",
+            "category": "Material",
+            "trl": 7,
+            "final_score": 85.2,
+            "market_score": 82.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T03",
+            "name": "실리콘 기반 음극 소재",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 82.66,
+            "market_score": 85.0,
+            "patent_score": 79.8,
+            "expected_market_boom_quarter": "2028 Q3"
+          },
+          {
+            "tech_id": "T02",
+            "name": "고체전지용 양극 소재",
+            "category": "Material",
+            "trl": 5,
+            "final_score": 79.94,
+            "market_score": 78.0,
+            "patent_score": 82.3,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "나트륨 이온 배터리 음극 소재",
+            "category": "Material",
+            "trl": 4,
+            "final_score": 75.62,
+            "market_score": 78.5,
+            "patent_score": 72.1,
+            "expected_market_boom_quarter": "2028 Q2"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "고니켈 양극 표면 코팅",
+            "year_idx_start": 1,
+            "year_idx_target": 2,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 상용화 직전 단계이므로 1 차년도 (2026) 에 즉시 시작하여 2027 년 시장 붐에 맞춰 2 차년도 (2027) 에 기술 완성 및 양산 준비를 마치는 것이 적절합니다. 이는 LG Chem 의 단기 상용화 및 매출 성장 최적화 전략과 직접적으로 부합합니다.",
+              "tech_execution": "고니켈 양극 소재의 에너지 밀도 요구가 급증하는 시점에 표면 코팅 기술을 선점함으로써 기존 포트폴리오의 경쟁력을 강화하고 원가 우위를 확보해야 합니다. 이는 주요 경쟁사들이 집중하고 있는 핵심 기술 영역에서 시장 점유율을 방어하고 확장하는 데 필수적입니다.",
+              "investment_selection": "단기 내 높은 ROI 를 기대할 수 있는 기술로, R&D 예산을 효율적으로 배분하여 빠른 시장 진입을 도모할 수 있습니다. 검증된 기술 기반을 바탕으로 한 투자이므로 실패 위험이 낮으면서도 즉각적인 매출 기여가 가능합니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "실리콘 기반 음극 소재",
+            "year_idx_start": 2,
+            "year_idx_target": 4,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 중기 개발 단계이므로, T01 의 초기 성공을 바탕으로 2 차년도 (2027) 에 본격적인 R&D 를 시작하여 2028 년 시장 붐에 맞춰 4 차년도 (2029) 에 기술 성숙도를 높입니다. 이는 T01 의 양극 기술과 시너지를 내기 위한 최적의 타이밍입니다.",
+              "tech_execution": "고용량 배터리 수요 증가에 대응하여 기존 흑연 음극 기술을 실리콘 혼합 기술로 확장함으로써 에너지 밀도 향상을 꾀해야 합니다. 이는 LG Chem 이 주요 경쟁사들과의 기술 격차를 줄이고 차세대 배터리 시장에서 선점 효과를 거두기 위한 핵심 전략입니다.",
+              "investment_selection": "2028 년경 예상되는 시장 급성장을 대비하여 중기 투자로 선정되었으며, 기술 성숙도가 높아 상용화 가능성이 높습니다. 이는 장기적인 시장 점유율 강화를 위한 필수적인 투자 영역으로, R&D 예산의 상당 부분을 할당할 가치가 있습니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "고체전지용 양극 소재",
+            "year_idx_start": 4,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T03"
+            ],
+            "reasoning": {
+              "year_placement": "TRL 5 로 초기 개발 단계이므로, T03 의 기술 축적을 바탕으로 3 차년도 (2028) 에 시작하여 2029 년 시장 붐을 넘어 5 차년도 (2030) 까지 기술 고도화를 지속합니다. 이는 Planning Horizon 의 마지막 연도까지 이어지는 장기 R&D 를 보장합니다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+              "tech_execution": "고체전지 상용화를 위한 핵심 소재 기술 확보는 2030 년 로드맵 달성을 위한 필수적인 중기 전략 기술입니다. 현재 액체 전해질 기반 기술에 집중된 LG Chem 이 차세대 배터리 시장에서 경쟁력을 유지하기 위해서는 이 기술의 선제적 확보가 시급합니다.",
+              "investment_selection": "2029 년 이후 본격화될 고체전지 시장을 선점하기 위한 선제적 투자로, 장기적인 기술 우위를 확보할 수 있습니다. 이는 R&D 예산을 장기 관점에서 배분하여 미래 시장에서의 경쟁력을 강화하는 전략적 선택입니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 3630000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "tech_budget_rationale": "T01 은 2027 년 Q2 에 시장 붐이 예상되는 가장 시급한 기술로, TRL 7 의 높은 성숙도와 LG Chem 의 기존 양극 소재 강점이 결합되어 즉각적인 매출 기여가 가능합니다. 총 예산의 50% 를 할당하여 양산 라인 확충과 원가 경쟁력 확보를 위한 선제적 투자를 수행하며, 이는 '단기 상용화 및 매출 성장 최적화' 전략의 핵심입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 즉시 양산 라인 증설 및 공정 최적화 프로젝트를 착수하여 2027 년 Q2 시장 붐에 맞춰 대량 공급 능력을 확보해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "고니켈 양극 소재 시장은 2030 년까지 125 억 달러 (TAM) 규모로 성장하며 연평균 22.5% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 특히 2027 년 Q2 에 예상되는 시장 붐은 전기차 고에너지밀도 요구에 따른 필수 공정인 표면 코팅 기술의 수요를 급증시킬 것입니다. LG Chem 이 접근 가능한 서비스 가능 시장 (SAM) 은 42 억 달러로, 이 시장에서 점유율을 선점하는 것이 단기 매출 성장의 핵심입니다.",
+                  "tech_evaluation": "TRL 7 로 상용화 직전 단계에 있으며, 기술적 불확실성은 낮아 (tech_risk=2) 안정적인 투자 대상입니다. LG Chem 은 기존 양극 소재 포트폴리오와 직접 연계되어 있어 특허 포트폴리오 (patent_score 88.5) 와 공정 노하우를 활용한 강력한 경쟁 우위 (competitive_advantage=5) 를 확보할 수 있습니다.",
+                  "investment_decision": "시장 성장률 (5 점) 과 개발 긴급도 (5 점) 가 최상위권이며, 기술 위험이 낮아 Tier 1 로 선정되었습니다. 총 예산 36.3 억 달러 중 18.15 억 달러 (50%) 를 할당하여 2027 년 시장 진입을 위한 양산 준비를 완료하고, 경쟁사 (SK On, 삼성 SDI) 대비 원가 우위를 확보하는 선제적 투자를 수행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "실리콘 기반 음극 소재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "tech_budget_rationale": "T03 은 2028 년 Q3 시장 붐을 앞두고 TRL 6 단계로 중기 개발이 필요한 기술로, T01 과의 시너지를 극대화하기 위한 필수 투자입니다. 총 예산의 30% 를 할당하여 2027 년부터 본격적인 R&D 를 시작하고 2028 년 상용화를 위한 기술 성숙도를 높이는 데 집중합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2027 년부터 실리콘 음극 소재의 대량 생산 공정을 위한 파일럿 플랜트 구축 및 T01 양극 기술과의 시너지 연구를 병행해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "실리콘 기반 음극 소재 시장은 2030 년까지 150 억 달러 (TAM) 로 성장하며 연평균 28% 의 높은 CAGR 을 보일 것으로 예상됩니다. 2028 년 Q3 에 예상되는 시장 붐은 전기차 배터리 에너지 밀도 요구에 따른 필수 기술로, LG Chem 이 접근 가능한 SAM 은 50 억 달러입니다. 이 시장에서 초기 기술 축적을 통해 향후 주도권을 확보하는 것이 중요합니다.",
+                  "tech_evaluation": "TRL 6 으로 중기 개발 단계에 있으며, 기술적 불확실성은 중간 수준 (tech_risk=3) 입니다. LG Chem 은 기존 흑연 음극 기술에서 실리콘 혼합 기술로 확장하여 에너지 밀도 향상을 꾀할 수 있으며, 주요 경쟁사 (LG 에너지솔루션, SK On) 와의 기술 격차를 줄이는 데 필수적입니다.",
+                  "investment_decision": "시장 성장률 (5 점) 과 개발 긴급도 (4 점) 가 높으며, T01 과의 시너지 효과가 기대되어 Tier 1 로 선정되었습니다. 총 예산 36.3 억 달러 중 10.89 억 달러 (30%) 를 할당하여 2027 년부터 본격적인 R&D 를 시작하고 2028 년 상용화를 위한 기술 성숙도를 높이는 데 집중합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "고체전지용 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "tech_budget_rationale": "T02 는 2029 년 Q1 시장 붐을 앞두고 TRL 5 단계로 초기 개발이 필요한 기술로, 장기적인 기술 선점을 위한 필수 투자입니다. 총 예산의 20% 를 할당하여 2028 년부터 본격적인 R&D 를 시작하고 2029 년 상용화를 위한 기술 성숙도를 높이는 데 집중합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 4,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2028 년부터 고체전지 양극 소재의 핵심 공정 기술을 위한 파일럿 플랜트 구축 및 T03 음극 기술과의 시너지 연구를 병행해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "고체전지 시장은 2030 년까지 80 억 달러 (TAM) 로 성장하며 연평균 35% 의 매우 높은 CAGR 을 보일 것으로 예상됩니다. 2029 년 Q1 에 예상되는 시장 붐은 차세대 배터리 시장의 핵심으로, LG Chem 이 접근 가능한 SAM 은 25 억 달러입니다. 이 시장에서 초기 기술 축적을 통해 향후 주도권을 확보하는 것이 중요합니다.",
+                  "tech_evaluation": "TRL 5 로 초기 개발 단계에 있으며, 기술적 불확실성은 높음 (tech_risk=4) 입니다. LG Chem 은 현재 액체 전해질 기반 기술에 집중되어 있어, 고체전지 양극 소재 기술 확보는 2030 년 로드맵 달성을 위한 필수적인 중기 전략 기술입니다.",
+                  "investment_decision": "시장 성장률 (4 점) 과 개발 긴급도 (3 점) 가 중간 수준이며, 기술 위험이 높아 Tier 2 로 선정되었습니다. 총 예산 36.3 억 달러 중 7.26 억 달러 (20%) 를 할당하여 2028 년부터 본격적인 R&D 를 시작하고 2029 년 상용화를 위한 기술 성숙도를 높이는 데 집중합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "고니켈 양극 표면 코팅",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1815000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              },
+              {
+                "tech_id": "T03",
+                "name": "실리콘 기반 음극 소재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T03",
+                "name": "실리콘 기반 음극 소재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T03",
+                "name": "실리콘 기반 음극 소재",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1089000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T02",
+                "name": "고체전지용 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "고체전지용 양극 소재",
+                "tier": "Tier 2",
+                "tech_budget_usd": 726000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 1815000000.0,
+            "2": 1089000000.0,
+            "4": 726000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "고니켈 양극 표면 코팅",
+              "category": "Material",
+              "final_score": 85.2,
+              "market_score": 82.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T03",
+              "name": "실리콘 기반 음극 소재",
+              "category": "Material",
+              "final_score": 82.66,
+              "market_score": 85.0,
+              "boom": "2028 Q3"
+            },
+            {
+              "tech_id": "T02",
+              "name": "고체전지용 양극 소재",
+              "category": "Material",
+              "final_score": 79.94,
+              "market_score": 78.0,
+              "boom": "2029 Q1"
+            },
+            {
+              "tech_id": "T05",
+              "name": "나트륨 이온 배터리 음극 소재",
+              "category": "Material",
+              "final_score": 75.62,
+              "market_score": 78.5,
+              "boom": "2028 Q2"
+            }
+          ],
+          "category_distribution": {
+            "Material": 4
+          },
+          "avg_trl": 5.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "고니켈 양극 표면 코팅",
+              "stage": "roadmap",
+              "key_reason": "TAM 125 억 달러 및 CAGR 22.5% 의 거대 시장 성장세와 2027 년 Q2 시장 붐이 임박하여 개발 긴급도가 매우 높음."
+            },
+            {
+              "tech_id": "T03",
+              "name": "실리콘 기반 음극 소재",
+              "stage": "roadmap",
+              "key_reason": "TAM 150 억 달러 및 CAGR 28% 의 높은 시장 성장세와 2028 년 Q3 시장 붐이 임박하여 개발 긴급도가 높음."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T03",
+            "T03 → T02"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2028 Q3": 1,
+            "2029 Q1": 1,
+            "2028 Q2": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 의존성 및 시계열 정합성 확인. LG Chem 의 전략 방향과 높은 정합성을 보임."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__시장이익최대__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__시장이익최대__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_lg_chem_battery_2026_2030__시장이익최대__investment_strategy.json"
+  }
+}

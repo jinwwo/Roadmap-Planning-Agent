@@ -1,0 +1,33 @@
+{
+  "run_mode": "tool-single",
+  "scenario_id": "ecopro_bm_battery_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "patent_map": "on",
+  "setup_source": "/workspace/orchestration_agent/outputs/특허맵_On/이차전지 양극재/EcoPro BM/기술선도/extracted_setup.json",
+  "prompt": "Company: EcoPro BM\nIndustry: High-Nickel Cathode Materials / Secondary Battery Materials\nAnnual Revenue: ~$1.81B\nR&D Budget Ratio: ~2.3%\nAnnual R&D Budget: ~$41.6M\nTotal 5-year R&D Budget: ~$153M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "EcoPro BM",
+    "industry": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "annual_revenue": 1810000000.0,
+    "rd_budget_ratio": 0.023,
+    "annual_rd_budget": 41600000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "고니켈 양극재 분야에서 프론티어 기술을 선점하여 기술 리더십과 장기 경쟁 우위를 확보한다.",
+    "strategic_direction": [
+      "고니켈 양극재 기술 리더십 강화",
+      "차세대 배터리 소재 시장 확장",
+      "공격적 R&D 투자로 기술 해자 구축"
+    ],
+    "domain": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 153000000
+}

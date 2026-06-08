@@ -1,0 +1,456 @@
+{
+  "problem_frame": {
+    "industry": "Large Language Model / Foundation Model / AI Platform",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 6810000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "NAVER",
+    "annual_revenue": 8600000000.0,
+    "rd_budget_ratio": 0.258,
+    "annual_rd_budget": 2220000000.0,
+    "strategic_direction": [
+      "LLM 및 Foundation Model 기술 리더십 확보",
+      "AI 플랫폼 생태계 확장 및 서비스 통합",
+      "프론티어 기술 선점을 위한 R&D 투자 강화"
+    ]
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This TRM outlines a 5-year technology roadmap for NAVER to establish technology leadership in the AI infrastructure space, specifically targeting Large Language Models. The roadmap focuses on key hardware and architectural advancements, including HBM4 memory, chiplet interconnects, and advanced packaging.",
+      "technology_strategy": "The technology strategy is centered around building core competencies in critical enabling technologies and securing a competitive advantage through innovation.",
+      "roadmap_structure": "The roadmap is structured into three stages: Foundation, Scaling, and Differentiation, with clear milestones and dependencies.",
+      "investment_strategy": "The investment strategy prioritizes foundational technologies in the short term, followed by scaling and differentiation in the mid and long term.",
+      "trend_alignment": "The roadmap aligns with key industry trends, including the increasing demand for AI infrastructure, the need for energy efficiency, and the adoption of advanced packaging technologies.",
+      "feasibility_and_risk": "The roadmap is considered feasible, but requires careful management of supply chain risks and technical challenges.",
+      "expected_outcomes": "Successful execution of this roadmap will position NAVER as a leading provider of AI infrastructure for Large Language Models, enabling the development of innovative AI-powered applications.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory Integration",
+            "category": "Material",
+            "trl": 3,
+            "patent_score": 7.0,
+            "market_score": 9.0,
+            "final_score": 8.0,
+            "expected_market_boom_quarter": "2028 Q4",
+            "dependency_hints": [
+              "S02",
+              "S03"
+            ],
+            "rationale": "HBM4 is critical for LLM performance. NAVER's patent activity and the strong market demand for high-bandwidth memory make this a high-priority candidate. The patent map shows strong alignment with key competitors."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Interconnect Fabric",
+            "category": "Architecture",
+            "trl": 4,
+            "patent_score": 6.0,
+            "market_score": 8.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "S03"
+            ],
+            "rationale": "Chiplet architectures are essential for scaling LLM processors. NAVER's focus on technology leadership aligns with this trend. Patent data from AMD and Intel suggests active innovation in this area."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced 3D Packaging (CoWoS-like)",
+            "category": "Packaging",
+            "trl": 5,
+            "patent_score": 8.0,
+            "market_score": 9.0,
+            "final_score": 8.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "S01",
+              "S02"
+            ],
+            "rationale": "Advanced packaging is crucial for integrating HBM and chiplets. NAVER and competitors like Samsung are actively patenting in this space. This is a foundational technology for future LLM systems."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Energy-Efficient AI Accelerator Design",
+            "category": "Equipment",
+            "trl": 3,
+            "patent_score": 5.0,
+            "market_score": 7.0,
+            "final_score": 6.0,
+            "expected_market_boom_quarter": "2028 Q1",
+            "dependency_hints": [
+              "S01"
+            ],
+            "rationale": "Reducing power consumption is vital for scaling LLMs. While NAVER's patent activity is less pronounced here, the market demand is high. Focus on novel architectures and materials."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Optical Interconnects for AI Systems",
+            "category": "Architecture",
+            "trl": 2,
+            "patent_score": 4.0,
+            "market_score": 6.0,
+            "final_score": 5.0,
+            "expected_market_boom_quarter": "2029 Q2",
+            "dependency_hints": [
+              "S02"
+            ],
+            "rationale": "Optical interconnects offer higher bandwidth than electrical interconnects. This is a longer-term play, but essential for scaling beyond current limitations. Patent activity is emerging."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI Model Compression Algorithms",
+            "category": "Process",
+            "trl": 6,
+            "patent_score": 6.0,
+            "market_score": 7.0,
+            "final_score": 6.0,
+            "expected_market_boom_quarter": "2027 Q2",
+            "dependency_hints": [],
+            "rationale": "Reducing model size and computational requirements is crucial for efficient deployment. NAVER's recent patents in OCR and language models suggest expertise in this area."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Disaggregated AI Infrastructure",
+            "category": "Architecture",
+            "trl": 4,
+            "patent_score": 3.0,
+            "market_score": 5.0,
+            "final_score": 4.0,
+            "expected_market_boom_quarter": "2029 Q4",
+            "dependency_hints": [
+              "S02"
+            ],
+            "rationale": "Disaggregated infrastructure allows for flexible resource allocation. While NAVER's patent activity is limited, this is a growing trend in data center design."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory Integration",
+            "phase_name": "Research & Development",
+            "start_q": "2026 Q1",
+            "target_q": "2027 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 8,
+            "justification": "Establish core competency in HBM4 integration for next-generation LLM accelerators."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced 3D Packaging (CoWoS-like)",
+            "phase_name": "Pilot Production",
+            "start_q": "2027 Q1",
+            "target_q": "2028 Q2",
+            "prerequisites": [
+              "S01"
+            ],
+            "lead_time_quarters": 5,
+            "justification": "Validate 3D packaging processes and achieve high yields for HBM4 and chiplet integration."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI Model Compression Algorithms",
+            "phase_name": "Software Integration",
+            "start_q": "2026 Q3",
+            "target_q": "2027 Q2",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Optimize LLMs for efficient deployment on NAVER's infrastructure."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Interconnect Fabric",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2026 Q3",
+            "target_q": "2028 Q4",
+            "prerequisites": [
+              "S03"
+            ],
+            "lead_time_quarters": 9,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Energy-Efficient AI Accelerator Design",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "S01"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Optical Interconnects for AI Systems",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S02"
+            ],
+            "lead_time_quarters": 12,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Disaggregated AI Infrastructure",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S02"
+            ],
+            "lead_time_quarters": 14,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 2383500000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "HBM4 Memory Integration",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Chiplet Interconnect Fabric",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 2724000000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Advanced 3D Packaging (CoWoS-like)",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "Energy-Efficient AI Accelerator Design",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 1702500000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "Optical Interconnects for AI Systems",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "AI Model Compression Algorithms",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Disaggregated AI Infrastructure",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_naver_ai_llm_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_naver_ai_llm_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_naver_ai_llm_2026_2030__기술선도__investment_strategy.json"
+  }
+}

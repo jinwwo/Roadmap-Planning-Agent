@@ -1,0 +1,458 @@
+{
+  "problem_frame": {
+    "industry": "Foundation Model / Document AI / LLM",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 54000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Upstage",
+    "annual_revenue": 17700000.0,
+    "rd_budget_ratio": 0.601,
+    "annual_rd_budget": 14900000.0,
+    "strategic_direction": [
+      "Document AI 및 LLM 기술 리더십 강화",
+      "기업용 AI 솔루션 시장 확장",
+      "프론티어 모델 및 인프라 스택 고도화"
+    ]
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [
+      "Limited patent data availability hindered detailed patent scoring.",
+      "Market data is based on general forecasts and may require refinement with more specific data."
+    ],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "The TRM is based on a combination of seed technologies, market trends, and limited patent data. The assessment prioritizes technologies with high market potential and strategic fit.",
+    "report": {
+      "executive_summary": "This TRM outlines a 5-year plan for Upstage to establish technology leadership in AI infrastructure. The strategy focuses on key hardware components and architectural trends, with a strong emphasis on memory, interconnects, packaging, and energy efficiency.",
+      "technology_strategy": "Focus on developing and integrating advanced AI hardware technologies to enable high-performance, energy-efficient AI systems.",
+      "roadmap_structure": "The roadmap is structured in three stages: Foundation, Integration, and Advanced Deployment, with clear milestones and dependencies.",
+      "investment_strategy": "Prioritize investments in core technologies with high market potential and strategic fit, starting with HBM4 memory integration.",
+      "trend_alignment": "The TRM aligns with the growing demand for AI infrastructure and the need for advanced hardware solutions.",
+      "feasibility_and_risk": "The TRM is ambitious but feasible, given Upstage's R&D budget and technical expertise. Key risks include supply chain disruptions, technical challenges, and cost overruns.",
+      "expected_outcomes": "Successful execution of the TRM will position Upstage as a leader in AI infrastructure, enabling the company to capture a significant share of the rapidly growing market.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory Integration",
+            "category": "Material",
+            "trl": 3,
+            "patent_score": 0,
+            "market_score": 9.0,
+            "final_score": 9.0,
+            "expected_market_boom_quarter": "2028 Q4",
+            "dependency_hints": [
+              "S02",
+              "S04"
+            ],
+            "rationale": "HBM4 is critical for unlocking the performance potential of next-generation AI accelerators. Increased bandwidth is essential for handling the massive data requirements of large language models. Given the limitations in patent data, the market score heavily influences the overall assessment. Focus on integration and system-level optimization."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Interconnect Fabric",
+            "category": "Architecture",
+            "trl": 4,
+            "patent_score": 0,
+            "market_score": 8.0,
+            "final_score": 8.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "S01",
+              "S04"
+            ],
+            "rationale": "Chiplet architectures enable scalability and modularity in AI hardware design. A high-performance interconnect fabric is crucial for minimizing latency and maximizing bandwidth between chiplets. This is a key enabler for building large-scale AI systems."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Energy-Efficient AI Accelerator",
+            "category": "Architecture",
+            "trl": 5,
+            "patent_score": 0,
+            "market_score": 7.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2028 Q2",
+            "dependency_hints": [
+              "S01",
+              "S07"
+            ],
+            "rationale": "Reducing energy consumption is paramount for deploying AI models at scale. Developing specialized AI accelerators with optimized architectures and precision scaling techniques is essential for achieving high performance with minimal power usage."
+          },
+          {
+            "tech_id": "S04",
+            "name": "3D Chip Stacking with Advanced Cooling",
+            "category": "Packaging",
+            "trl": 4,
+            "patent_score": 0,
+            "market_score": 8.0,
+            "final_score": 8.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "S01",
+              "S02"
+            ],
+            "rationale": "3D chip stacking increases density and reduces latency, but requires advanced cooling solutions to manage thermal dissipation. This technology is crucial for building high-performance, compact AI systems."
+          },
+          {
+            "tech_id": "S05",
+            "name": "AI-Optimized Networking Fabric",
+            "category": "Equipment",
+            "trl": 3,
+            "patent_score": 0,
+            "market_score": 6.0,
+            "final_score": 6.0,
+            "expected_market_boom_quarter": "2029 Q1",
+            "dependency_hints": [
+              "S06"
+            ],
+            "rationale": "Large-scale AI models require high-bandwidth, low-latency networking fabrics for efficient communication between accelerators. Optimizing networking infrastructure for AI workloads is critical for achieving optimal performance."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Optical Interconnects for AI",
+            "category": "Equipment",
+            "trl": 2,
+            "patent_score": 0,
+            "market_score": 5.0,
+            "final_score": 5.0,
+            "expected_market_boom_quarter": "2030 Q1",
+            "dependency_hints": [
+              "S05"
+            ],
+            "rationale": "Optical interconnects offer significantly higher bandwidth and lower latency compared to traditional electrical interconnects. While still in early stages of development, this technology has the potential to revolutionize AI infrastructure."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Mixed-Precision Training & Inference",
+            "category": "Process",
+            "trl": 6,
+            "patent_score": 0,
+            "market_score": 7.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2027 Q3",
+            "dependency_hints": [],
+            "rationale": "Reducing precision (e.g., from FP32 to FP16 or INT8) can significantly reduce computational cost and memory footprint without significant accuracy loss. This is a crucial optimization technique for deploying AI models on resource-constrained devices."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory Integration",
+            "phase_name": "Research & Prototyping",
+            "start_q": "2026 Q1",
+            "target_q": "2026 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Early exploration of HBM4 integration is crucial for staying ahead of the curve in AI memory technology."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Interconnect Fabric",
+            "phase_name": "Design & Simulation",
+            "start_q": "2026 Q2",
+            "target_q": "2027 Q2",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Develop a high-performance interconnect fabric to enable scalable AI hardware designs."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Energy-Efficient AI Accelerator",
+            "phase_name": "Architecture Exploration",
+            "start_q": "2026 Q3",
+            "target_q": "2027 Q3",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Investigate novel architectures and precision scaling techniques to minimize energy consumption."
+          },
+          {
+            "tech_id": "S04",
+            "name": "3D Chip Stacking with Advanced Cooling",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "S01",
+              "S02"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S05",
+            "name": "AI-Optimized Networking Fabric",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S06"
+            ],
+            "lead_time_quarters": 12,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Optical Interconnects for AI",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q3",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S05"
+            ],
+            "lead_time_quarters": 13,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Mixed-Precision Training & Inference",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 14,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 18900000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "HBM4 Memory Integration",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Chiplet Interconnect Fabric",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 21600000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Energy-Efficient AI Accelerator",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "3D Chip Stacking with Advanced Cooling",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 13500000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "AI-Optimized Networking Fabric",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "Optical Interconnects for AI",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Mixed-Precision Training & Inference",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_upstage_ai_llm_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_upstage_ai_llm_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_upstage_ai_llm_2026_2030__기술선도__investment_strategy.json"
+  }
+}

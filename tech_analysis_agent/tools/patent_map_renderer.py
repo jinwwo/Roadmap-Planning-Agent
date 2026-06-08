@@ -84,7 +84,11 @@ def _add_node(graph, node_id: str, label: str, kind: str) -> None:
 
 
 def _top_items(items: Iterable[dict], key: str, limit: int = 20) -> list:
-    # LLM 이 가끔 dict 가 아닌 str 을 섞어 출력 → 방어적으로 dict 만 필터
+    # LLM 환각 방어:
+    # 1. dict-with-"edges" 패턴 (HL Mando) → edges 추출
+    # 2. dict 가 아닌 str 등 → 제외 (Cosmo 패턴 등)
+    if isinstance(items, dict) and isinstance(items.get("edges"), list):
+        items = items["edges"]
     safe = [x for x in (items or []) if isinstance(x, dict)]
     return sorted(safe, key=lambda x: _to_float(x.get(key)), reverse=True)[:limit]
 
@@ -506,12 +510,13 @@ def _actor_similarity_graph(items: list):
 
     graph = nx.Graph()
     for item in _top_items(items, "similarity", limit=18):
-        a = item.get("center_actor") or item.get("actor_a")
-        b = item.get("related_actor") or item.get("actor_b")
+        a = item.get("center_actor") or item.get("actor_a") or item.get("source")
+        b = item.get("related_actor") or item.get("actor_b") or item.get("target")
         if not a or not b:
             continue
-        if item.get("center_actor"):
-            graph.graph["center_actor"] = item.get("center_actor")
+        center = item.get("center_actor") or item.get("source")
+        if center:
+            graph.graph["center_actor"] = center
         _add_node(graph, f"actor:{a}", a, "actor")
         _add_node(graph, f"actor:{b}", b, "actor")
         graph.add_edge(

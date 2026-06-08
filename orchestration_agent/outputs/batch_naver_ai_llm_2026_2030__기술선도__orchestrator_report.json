@@ -1,0 +1,411 @@
+{
+  "problem_frame": {
+    "industry": "Large Language Model / Foundation Model / AI Platform",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 6810000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "NAVER",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "LLM 및 Foundation Model 기술 리더십 확보",
+      "AI 플랫폼 생태계 확장 및 서비스 통합",
+      "프론티어 기술 선점을 위한 R&D 투자 강화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $6.81B 내에서 정확히 배분됨. 5 년 차까지의 시계열 계획은 시장 붐 시점과 정합."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(협업) → T05(추론) → T02(3D) 의 의존성 순서가 논리적이며, T02 의 5 차년도 집중은 T05 완료 후 시작 가능."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.88,
+        "comment": "NAVER 의 LLM 리더십 및 플랫폼 전략과 높은 정합. AI 인프라 및 프론티어 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "선정된 3 기술에 대한 투자 배분이 전략적 우선순위와 일치하며, 과소/과투자 징후 없음."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기 (T01) 와 중장기 (T05, T02) 투자가 균형 잡혀 있으며, 위험 분산 적절."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "LLM 기반 컨텍스트 인식 협업",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 88.5,
+            "market_score": 88.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2026 Q3"
+          },
+          {
+            "tech_id": "T05",
+            "name": "대규모 모델 추론 가속화",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 85.31,
+            "market_score": 88.5,
+            "patent_score": 81.4,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T04",
+            "name": "생성형 AI 출력 추적 및 검증",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 83.12,
+            "market_score": 81.5,
+            "patent_score": 85.1,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T02",
+            "name": "생성형 AI 기반 3D 공간 생성",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 78.94,
+            "market_score": 76.2,
+            "patent_score": 82.3,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T03",
+            "name": "분산 학습 장애 복구 및 최적화",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 75.95,
+            "market_score": 72.8,
+            "patent_score": 79.8,
+            "expected_market_boom_quarter": "2027 Q1"
+          },
+          {
+            "tech_id": "T06",
+            "name": "다중 사용자 확장현실 협업 프레임워크",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 74.21,
+            "market_score": 72.0,
+            "patent_score": 76.9,
+            "expected_market_boom_quarter": "2028 Q3"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "LLM 기반 컨텍스트 인식 협업",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 기술 성숙도가 높고 2026 년 Q3 에 시장 폭발이 예상되어 1 차년도부터 즉시 착수하여 3 차년도까지 핵심 기능 완성 및 초기 상용화를 목표로 배치합니다. 이는 네이버의 기존 검색 및 서비스 통합 강점을 빠르게 AI 플랫폼으로 전환하기 위한 초기 동력입니다.",
+              "tech_execution": "LLM 기반 협업 도구는 기업 생산성 향상의 핵심이므로, 네이버의 서비스 생태계 내에서 프롬프트 최적화 및 컨텍스트 인식 기능을 선점하여 경쟁사 대비 차별화된 사용자 경험을 제공해야 합니다.",
+              "investment_selection": "2026 년부터 본격화되는 시장 성장률 (CAGR 28% 이상) 을 고려할 때, 초기 투자 대비 빠른 시장 점유율 확보가 가능하여 R&D 예산의 효율성을 극대화할 수 있는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "대규모 모델 추론 가속화",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01 의 컨텍스트 인식 협업 기술이 초기 안정화되는 2 차년도에 시작하여, 2027 년 Q2 예상 시장 폭발 시점과 맞물려 4 차년도까지 추론 속도 및 비용 최적화를 완성합니다. 이는 T01 의 서비스 확장 시 발생하는 추론 부하를 해결하기 위한 선행 조건입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "LLM 추론 비용이 학습 비용보다 빠르게 증가하는 상황에서, 하드웨어 및 알고리즘 최적화를 통해 서비스 응답 속도를 개선하고 운영 비용을 절감하여 네이버 AI 플랫폼의 확장성을 확보해야 합니다.",
+              "investment_selection": "구글, 바이두 등 주요 플레이어들의 특허 출시가 급증하는 분야로, 추론 가속화 기술을 선점하지 않으면 서비스 경쟁력 저하로 이어질 수 있어 전략적 필수 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "생성형 AI 기반 3D 공간 생성",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T05"
+            ],
+            "reasoning": {
+              "year_placement": "TRL 5 로 상대적으로 낮고 2028 년 Q2 시장 성숙이 예상되어, 추론 가속화 기술 (T05) 이 안정화된 3 차년도부터 착수하여 5 차년도 (2030 년) 까지 차세대 메타버스 및 공간 컴퓨팅 기술을 완성합니다. 이는 Planning Horizon 의 마지막 연도까지 이어지는 장기 R&D 의 핵심입니다. [후처리: dependency 보정 — prereq ['T05'] 완료 후로 2차년도 push]",
+              "tech_execution": "네이버의 AR/VR 및 지도 서비스와 생성형 AI 를 결합하여 3D 공간 생성 기술을 개발함으로써, 게임, 디지털 트윈 등 차세대 시장에서의 기술 리더십을 확보해야 합니다.",
+              "investment_selection": "2028 년 이후 CAGR 32% 의 높은 성장 잠재력을 가진 시장으로, 5 차년도까지의 장기 투자를 통해 프론티어 기술 선점 전략을 실현하고 네이버의 AI 플랫폼 생태계를 차세대 서비스로 확장할 수 있습니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 6810000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "LLM 기반 컨텍스트 인식 협업",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2800000000.0,
+                "tech_budget_rationale": "T01 은 2026 년 Q3 에 시장 폭발이 예상되는 가장 시급한 기술로, 전체 예산의 약 41% 를 할당하여 선점 효과를 극대화합니다. TRL 6 의 높은 성숙도와 네이버의 기존 검색/서비스 생태계와의 높은 시너지 (경쟁 우위 5 점) 를 고려하여, 초기 상용화 및 대규모 데이터 파이프라인 구축에 집중 투자합니다. 이는 LLM 기반 협업 도구가 기업 생산성 향상의 핵심이 되는 시점에 맞춰, 경쟁사 대비 차별화된 사용자 경험을 빠르게 제공하기 위한 필수적인 자원 배분입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2025 년 즉시 착수하여 2026 년 Q3 시장 폭발 전까지 베타 서비스 출시 및 초기 고객 피드백 루프를 완성해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 450 억 달러, CAGR 28.5% 의 거대 시장으로, 2026 년 Q3 에 폭발이 예상되어 시장 진입 타이밍이 매우 중요합니다. Microsoft 365 Copilot 및 Google Workspace AI 와의 경쟁이 치열하므로, 컨텍스트 인식 기능을 통한 차별화가 필수적입니다. 네이버의 기존 서비스 통합 강점을 활용하여 SAM 120 억 달러 세그먼트를 빠르게 점령할 수 있는 높은 잠재력을 가집니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도가 높으며, 불확실성이 상대적으로 낮아 (tech_risk 2 점) 빠른 상용화가 가능합니다. 네이버의 검색 및 서비스 통합 역량이 이 기술의 핵심 경쟁 우위 (competitive_advantage 5 점) 가 되며, 기존 인프라와의 통합이 용이합니다. 프롬프트 최적화 및 컨텍스트 인식 기술은 이미 검증된 경로를 따르므로 실패 위험이 낮습니다.",
+                  "investment_decision": "Tier 1 로 선정하여 가장 높은 우선순위와 예산을 할당합니다. 2026 년 시장 폭발을 앞두고 있어 개발 지연 시 기회 손실 위험이 크므로, 즉시 착수하여 3 차년도까지 핵심 기능 완성을 목표로 합니다. 총 예산의 41% 를 할당하여 R&D, 데이터 확보, 초기 서비스 배포에 집중 투자하여 시장 리더십을 확보합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "대규모 모델 추론 가속화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "tech_budget_rationale": "T05 는 T01 의 서비스 확장에 필수적인 인프라 기술로, 전체 예산의 약 32% 를 할당하여 추론 비용 절감 및 응답 속도 개선을 위한 핵심 투자를 수행합니다. TAM 1,200 억 달러의 거대 시장과 2027 년 Q2 시장 폭발을 고려하여, 하드웨어 및 알고리즘 최적화 기술 선점에 집중합니다. 이는 LLM 추론 비용이 학습 비용보다 빠르게 증가하는 상황에서, 네이버 AI 플랫폼의 확장성을 확보하기 위한 전략적 필수 투자입니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "T01 의 초기 안정화 후 2026 년 중 착수하여 2027 년 Q2 시장 폭발 전까지 추론 가속화 기술의 상용화 버전을 완성해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 1,200 억 달러, CAGR 28.5% 의 초대규모 시장으로, 추론 비용 절감 수요가 급증하고 있습니다. 2027 년 Q2 에 시장 폭발이 예상되어, T01 의 서비스 확장 시점과 맞물려 기술 완성도가 중요합니다. 구글, 바이두 등 주요 플레이어들의 특허 출시는 높은 진입 장벽을 시사하지만, 최적화 기술은 핵심 인프라로 부상 중입니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도가 높으나, 하드웨어 및 알고리즘 최적화의 복잡성으로 인해 기술 위험이 중간 수준 (3 점) 입니다. 네이버의 대규모 트래픽 처리 경험은 경쟁 우위 (4 점) 가 되며, 추론 가속화 기술은 서비스 응답 속도 개선에 직접적인 영향을 미칩니다. 하드웨어 의존도가 높아 비용 효율성 확보가 핵심 과제입니다.",
+                  "investment_decision": "Tier 1 로 선정하여 T01 과 함께 최우선 투자 대상으로 설정합니다. 2027 년 시장 폭발을 앞두고 있어, T01 의 서비스 안정화 후 즉시 착수하여 4 차년도까지 추론 속도 및 비용 최적화를 완성해야 합니다. 총 예산의 32% 를 할당하여 하드웨어 최적화, 알고리즘 연구, 인프라 구축에 집중 투자합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 3D 공간 생성",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1810000000.0,
+                "tech_budget_rationale": "T02 는 2028 년 Q2 시장 성숙이 예상되는 장기 R&D 기술로, 전체 예산의 약 27% 를 할당하여 차세대 메타버스 및 공간 컴퓨팅 기술 선점을 위한 투자를 수행합니다. TRL 5 로 기술 성숙도가 낮고 불확실성이 높지만, 네이버의 AR/VR 및 지도 서비스와의 시너지로 경쟁 우위 (4 점) 를 확보할 수 있습니다. 이는 Planning Horizon 의 마지막 연도까지 이어지는 장기 R&D 의 핵심으로, 마일스톤 기반의 단계적 투자를 통해 기술 위험을 관리합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 2,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "T05 의 안정화 후 2027 년 중 착수하여 2028 년 Q2 시장 성숙 전까지 프로토타입 완성 및 초기 시장 테스트를 수행해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 220 억 달러, CAGR 32% 의 고성장 시장으로, 2028 년 Q2 에 시장 성숙이 예상되어 장기적인 관점이 필요합니다. 게임, 메타버스, 디지털 트윈 수요 증가로 3D 생성 기술의 중요성이 커지고 있으며, 아직 명확한 시장 리더가 부재한 초기 단계입니다. Google, Microsoft 등의 특허 활동이 활발하여 기술적 진입 장벽과 차별화 가능성이 높습니다.",
+                  "tech_evaluation": "TRL 5 로 기술 성숙도가 낮고, 생성형 모델과 3D 공간 생성의 결합은 높은 기술 위험 (4 점) 을 내포합니다. 네이버의 AR/VR 및 지도 서비스 경험은 경쟁 우위 (4 점) 가 되며, 차세대 시장에서의 기술 리더십 확보를 위한 핵심 기술입니다. 기술적 불확실성이 높으므로 단계적 검증이 필수적입니다.",
+                  "investment_decision": "Tier 2 로 선정하여 선택적 또는 단계적 투자를 수행합니다. 2028 년 시장 성숙을 앞두고 있어, T05 의 추론 가속화 기술이 안정화된 3 차년도부터 착수하여 5 차년도까지 차세대 기술을 완성합니다. 총 예산의 27% 를 할당하여 PoC, 프로토타입 개발, 초기 시장 테스트에 집중 투자합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "LLM 기반 컨텍스트 인식 협업",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "LLM 기반 컨텍스트 인식 협업",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "LLM 기반 컨텍스트 인식 협업",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "대규모 모델 추론 가속화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T05",
+                "name": "대규모 모델 추론 가속화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T05",
+                "name": "대규모 모델 추론 가속화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T02",
+                "name": "생성형 AI 기반 3D 공간 생성",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1810000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 2800000000.0,
+            "3": 2200000000.0,
+            "5": 1810000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "LLM 기반 컨텍스트 인식 협업",
+              "category": "Architecture",
+              "final_score": 88.5,
+              "market_score": 88.5,
+              "boom": "2026 Q3"
+            },
+            {
+              "tech_id": "T05",
+              "name": "대규모 모델 추론 가속화",
+              "category": "Equipment",
+              "final_score": 85.31,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T04",
+              "name": "생성형 AI 출력 추적 및 검증",
+              "category": "Process",
+              "final_score": 83.12,
+              "market_score": 81.5,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T02",
+              "name": "생성형 AI 기반 3D 공간 생성",
+              "category": "Architecture",
+              "final_score": 78.94,
+              "market_score": 76.2,
+              "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T03",
+              "name": "분산 학습 장애 복구 및 최적화",
+              "category": "Process",
+              "final_score": 75.95,
+              "market_score": 72.8,
+              "boom": "2027 Q1"
+            }
+          ],
+          "category_distribution": {
+            "Architecture": 3,
+            "Equipment": 1,
+            "Process": 2
+          },
+          "avg_trl": 5.8,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "LLM 기반 컨텍스트 인식 협업",
+              "stage": "roadmap",
+              "key_reason": "TAM 450 억 달러, CAGR 28.5% 의 거대 시장과 2026 년 Q3 시장 폭발 시점으로 개발 긴급도 5 점 부여."
+            },
+            {
+              "tech_id": "T05",
+              "name": "대규모 모델 추론 가속화",
+              "stage": "roadmap",
+              "key_reason": "TAM 1,200 억 달러, CAGR 28.5% 의 초대규모 시장과 2027 년 Q2 시장 폭발 시점으로 개발 긴급도 4 점 부여."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T05",
+            "T05 → T02"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q3": 1,
+            "2027 Q2": 1,
+            "2026 Q4": 1,
+            "2028 Q2": 1,
+            "2027 Q1": 1,
+            "2028 Q3": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 의존성 및 전략 정합성 모두 양호. 선정된 3 기술에 대한 투자 계획이 합리적이며 수정 불필요."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_naver_ai_llm_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_naver_ai_llm_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_naver_ai_llm_2026_2030__기술선도__investment_strategy.json"
+  }
+}

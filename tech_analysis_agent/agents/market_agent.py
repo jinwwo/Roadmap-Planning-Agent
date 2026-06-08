@@ -860,7 +860,18 @@ def run_market_agent(state: AnalysisState) -> dict:
     system_prompt = _market_system_prompt()
     llm_raw_response = None
 
-    patent_analysis = state.get("patent_analysis") or []
+    raw_patent_analysis = state.get("patent_analysis") or []
+    # LLM 환각 방어: list of dicts 가 아니면 skip
+    if not isinstance(raw_patent_analysis, list):
+        msg = f"Market Agent: patent_analysis schema 이상 (type={type(raw_patent_analysis).__name__}) → skip"
+        print(f"[Market Agent] ⚠️ {msg}")
+        return {
+            "market_raw_data": {},
+            "market_analysis": [],
+            "messages": [AIMessage(content=msg)],
+            "error": msg,
+        }
+    patent_analysis = [p for p in raw_patent_analysis if isinstance(p, dict) and p.get("tech_id")]
     if not patent_analysis:
         msg = "Market Agent: patent_analysis 가 비어있어 건너뜁니다."
         print(f"[Market Agent] ⚠️ {msg}")

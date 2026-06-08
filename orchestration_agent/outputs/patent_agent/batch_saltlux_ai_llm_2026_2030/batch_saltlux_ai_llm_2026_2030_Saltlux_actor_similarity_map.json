@@ -1,0 +1,54 @@
+[
+  {
+    "center_actor": "Saltlux",
+    "related_actor": "Graphcore",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_technology_areas": [
+      "Knowledge Graph Processing",
+      "AI Accelerator Architecture",
+      "Graph-based Computation"
+    ],
+    "basis": "Saltlux 는 KG 기반 QA 및 추출 기술을 보유하고 있으며, Graphcore 는 그래프 연산에 최적화된 하드웨어 아키텍처 특허를 다수 보유하고 있어 기술적 시너지가 가장 높음.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Saltlux",
+    "related_actor": "Glean",
+    "similarity": 0.68,
+    "edge_weight": 0.68,
+    "shared_technology_areas": [
+      "Enterprise Knowledge Management",
+      "Permission-aware QA",
+      "Document Linking"
+    ],
+    "basis": "양사 모두 기업 내 지식 관리 및 권한 기반의 자동 응답 시스템에 집중하고 있으며, Saltlux 의 KG 기술이 Glean 의 보안 프로세스와 결합 가능함.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Saltlux",
+    "related_actor": "Cohere",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_technology_areas": [
+      "LLM Training Optimization",
+      "Relational Modeling",
+      "Signal Processing for AI"
+    ],
+    "basis": "Cohere 의 LLM 학습 최적화 및 관계 모델링 특허는 Saltlux 의 KG 기반 LLM 파인튜닝 전략과 직접적으로 연관되며, 신호 처리 특허는 HW 통합 가능성 제시.",
+    "evidence_level": "direct"
+  },
+  {
+    "center_actor": "Saltlux",
+    "related_actor": "Hugging Face",
+    "similarity": 0.58,
+    "edge_weight": 0.58,
+    "shared_technology_areas": [
+      "Data Deduplication",
+      "Observability",
+      "Dataset Visualization"
+    ],
+    "basis": "Hugging Face 의 데이터 관리 및 가시성 특허는 Saltlux 의 대규모 KG 구축 및 데이터 품질 관리 프로세스를 보완하는 아키텍처적 유사성을 보임.",
+    "evidence_level": "direct"
+  }
+]

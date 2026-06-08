@@ -1,40 +1,67 @@
-{
-  "center_actor": "HL Mando",
-  "edges": [
-    {
-      "source": "HL Mando",
-      "target": "Bosch",
-      "similarity": 0.92,
-      "edge_weight": 0.92,
-      "reason": "스티어바이와이어 및 차assis 제어 아키텍처에서 높은 기술적 유사성과 경쟁 관계"
-    },
-    {
-      "source": "HL Mando",
-      "target": "ZF Friedrichshafen",
-      "similarity": 0.85,
-      "edge_weight": 0.85,
-      "reason": "구동계 통합 제어 및 차assis 시스템의 광범위한 특허 포트폴리오 공유"
-    },
-    {
-      "source": "HL Mando",
-      "target": "Continental",
-      "similarity": 0.78,
-      "edge_weight": 0.78,
-      "reason": "자율주행 센서 보정 및 차량 통신 게이트웨이 기술에서의 교차"
-    },
-    {
-      "source": "HL Mando",
-      "target": "Denso",
-      "similarity": 0.75,
-      "edge_weight": 0.75,
-      "reason": "전기 구동계 제어 및 차량 네트워크 시스템에서의 기술적 겹침"
-    },
-    {
-      "source": "HL Mando",
-      "target": "Aptiv",
-      "similarity": 0.65,
-      "edge_weight": 0.65,
-      "reason": "고전압 커넥터 및 배선 하네스 자동화 등 장비 및 공정 기술에서의 부분적 유사성"
-    }
-  ]
-}
+[
+  {
+    "center_actor": "HL Mando",
+    "related_actor": "Bosch",
+    "similarity": 0.92,
+    "edge_weight": 0.92,
+    "shared_keywords": [
+      "Steer-by-wire",
+      "ADAS",
+      "Chassis Control",
+      "Safety"
+    ],
+    "rationale": "보쉬는 스티어바이와이어 및 ADAS 제어 분야에서 HL 만도와 가장 유사한 기술 포트폴리오를 보유하고 있으며, 최근 특허 출원 동향도 매우 유사하다."
+  },
+  {
+    "center_actor": "HL Mando",
+    "related_actor": "ZF Friedrichshafen",
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_keywords": [
+      "Drive Train",
+      "Chassis Control",
+      "Redundancy",
+      "Electric Vehicle"
+    ],
+    "rationale": "ZF 는 구동계 제어 및 중복성 아키텍처 분야에서 HL 만도의 기술 확장 방향과 높은 유사성을 보인다."
+  },
+  {
+    "center_actor": "HL Mando",
+    "related_actor": "Denso",
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_keywords": [
+      "Vehicle Control",
+      "Network",
+      "Power Supply",
+      "Chassis"
+    ],
+    "rationale": "덴소는 차량 제어 네트워크 및 전원 공급 시스템 분야에서 HL 만도의 기술 포트폴리오와 중첩되는 부분이 많다."
+  },
+  {
+    "center_actor": "HL Mando",
+    "related_actor": "Aptiv",
+    "similarity": 0.65,
+    "edge_weight": 0.65,
+    "shared_keywords": [
+      "High Voltage",
+      "Connector",
+      "Wire Harness",
+      "Equipment"
+    ],
+    "rationale": "애틱스는 고전압 커넥터 및 배선 하네스 장비 분야에서 HL 만도의 차assis 제어 시스템 구현에 필요한 하드웨어 기술과 유사성을 보인다."
+  },
+  {
+    "center_actor": "HL Mando",
+    "related_actor": "Continental",
+    "similarity": 0.72,
+    "edge_weight": 0.72,
+    "shared_keywords": [
+      "Gateway",
+      "Communication",
+      "Chassis Control",
+      "Architecture"
+    ],
+    "rationale": "콘티넨탈은 차량 게이트웨이 및 통신 제어 분야에서 HL 만도의 아키텍처 기술과 높은 유사성을 공유한다."
+  }
+]

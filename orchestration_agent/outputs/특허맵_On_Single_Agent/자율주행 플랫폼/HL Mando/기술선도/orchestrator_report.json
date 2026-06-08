@@ -1,0 +1,467 @@
+{
+  "problem_frame": {
+    "industry": "ADAS / Autonomous Driving / Chassis Control",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 1480000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "HL Mando",
+    "annual_revenue": 6800000000.0,
+    "rd_budget_ratio": 0.071,
+    "annual_rd_budget": 478000000.0,
+    "strategic_direction": [
+      "Steer-by-Wire 및 Chassis Control 기술 리더십 강화",
+      "자율주행 (ADAS) 인접 시장 확장 및 솔루션 다각화",
+      "공격적 R&D 투자를 통한 HW/SW 통합 스택 선점"
+    ]
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This Technology Roadmap focuses on key technologies driving innovation in ADAS and autonomous driving, with a particular emphasis on high-performance computing and advanced packaging. The roadmap prioritizes HBM, chiplet architecture, and advanced packaging as critical enablers for future AI-powered systems.",
+      "technology_strategy": "HL Mando should pursue a technology leadership strategy by investing in core competencies like steer-by-wire while simultaneously exploring and adopting emerging technologies like HBM and chiplet architecture.",
+      "roadmap_structure": "The roadmap is structured in three stages: Early Research, Development & Validation, and Production & Deployment. Each stage focuses on specific technologies and deliverables.",
+      "investment_strategy": "The investment strategy prioritizes early-stage research and development, with a focus on technologies that offer the highest potential for differentiation and market growth.",
+      "trend_alignment": "The roadmap aligns with key industry trends, including the increasing demand for AI-powered systems, the need for energy efficiency, and the shift towards modular and scalable architectures.",
+      "feasibility_and_risk": "The roadmap is considered feasible, but there are risks associated with supply chain disruptions, high development costs, and the rapid pace of technological change.",
+      "expected_outcomes": "Successful execution of this roadmap will position HL Mando as a leader in the ADAS and autonomous driving market, enabling the development of innovative and competitive products.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "High Bandwidth Memory (HBM)",
+            "category": "Material",
+            "trl": 6,
+            "patent_score": 80.0,
+            "market_score": 90.0,
+            "final_score": 85.0,
+            "expected_market_boom_quarter": "2027 Q2",
+            "dependency_hints": [
+              "Advanced Packaging Technologies",
+              "Chiplet Architecture"
+            ],
+            "rationale": "HBM is critical for the performance of AI accelerators used in ADAS, enabling high data throughput. Market reports indicate strong growth and demand, particularly with the rise of AI-driven applications.  HL Mando's partnerships with key players like Mobileye suggest a strategic alignment with this technology."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Architecture",
+            "category": "Architecture",
+            "trl": 5,
+            "patent_score": 70.0,
+            "market_score": 80.0,
+            "final_score": 75.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "Advanced Packaging Technologies",
+              "HBM"
+            ],
+            "rationale": "Chiplet architecture offers scalability and modularity for ADAS hardware, allowing for customized solutions.  It aligns with the trend of advanced packaging and is crucial for handling the increasing complexity of autonomous driving systems.  The market is shifting towards modular designs."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Packaging Technologies",
+            "category": "Packaging",
+            "trl": 6,
+            "patent_score": 75.0,
+            "market_score": 85.0,
+            "final_score": 80.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "HBM",
+              "Chiplet Architecture"
+            ],
+            "rationale": "Essential for integrating high-performance components and achieving the necessary bandwidth for AI processing in autonomous vehicles.  Advanced packaging is a key enabler for both HBM and chiplet architectures, and the market is experiencing significant growth."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Energy-Efficient AI Accelerators",
+            "category": "Equipment",
+            "trl": 5,
+            "patent_score": 60.0,
+            "market_score": 70.0,
+            "final_score": 65.0,
+            "expected_market_boom_quarter": "2029 Q1",
+            "dependency_hints": [
+              "HBM",
+              "Advanced Packaging Technologies"
+            ],
+            "rationale": "Reducing power consumption is critical for automotive applications.  Energy-efficient AI accelerators are essential for complex AI algorithms and will be a key differentiator in the market.  Demand is driven by the need for longer driving ranges and reduced thermal management requirements."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Steer-by-Wire Systems",
+            "category": "Equipment",
+            "trl": 7,
+            "patent_score": 90.0,
+            "market_score": 75.0,
+            "final_score": 82.0,
+            "expected_market_boom_quarter": "2028 Q2",
+            "dependency_hints": [
+              "Domain Controllers for ADAS",
+              "Sensor Fusion Algorithms"
+            ],
+            "rationale": "A core competency for HL Mando, advancements in steer-by-wire are vital for autonomous driving.  Recent patents demonstrate ongoing innovation in this area.  The market is driven by the demand for more precise and responsive vehicle control."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Domain Controllers for ADAS",
+            "category": "Architecture",
+            "trl": 6,
+            "patent_score": 70.0,
+            "market_score": 70.0,
+            "final_score": 70.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "Sensor Fusion Algorithms",
+              "Energy-Efficient AI Accelerators"
+            ],
+            "rationale": "Centralized processing units are essential for ADAS functions.  Domain controllers require advanced hardware and software integration to handle the increasing complexity of autonomous driving.  The trend towards centralized architectures is driving demand."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Sensor Fusion Algorithms",
+            "category": "Process",
+            "trl": 5,
+            "patent_score": 65.0,
+            "market_score": 65.0,
+            "final_score": 65.0,
+            "expected_market_boom_quarter": "2029 Q4",
+            "dependency_hints": [
+              "Domain Controllers for ADAS",
+              "Steer-by-Wire Systems"
+            ],
+            "rationale": "Combining data from multiple sensors is fundamental to robust autonomous driving.  Advanced sensor fusion algorithms are needed to improve accuracy and reliability.  The market is driven by the need for safer and more reliable autonomous systems."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S01",
+            "name": "High Bandwidth Memory (HBM)",
+            "phase_name": "Research & Development",
+            "start_q": "2026 Q1",
+            "target_q": "2026 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Establish internal expertise in HBM technology and evaluate potential integration strategies."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Chiplet Architecture",
+            "phase_name": "Proof of Concept",
+            "start_q": "2026 Q2",
+            "target_q": "2027 Q2",
+            "prerequisites": [
+              "S01"
+            ],
+            "lead_time_quarters": 4,
+            "justification": "Demonstrate the feasibility of using chiplet architecture in ADAS applications."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Packaging Technologies",
+            "phase_name": "Pilot Production",
+            "start_q": "2027 Q1",
+            "target_q": "2027 Q4",
+            "prerequisites": [
+              "S01",
+              "S02"
+            ],
+            "lead_time_quarters": 4,
+            "justification": "Scale up production of advanced packaging solutions for HBM and chiplet integration."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Steer-by-Wire Systems",
+            "phase_name": "Advanced Development",
+            "start_q": "2026 Q1",
+            "target_q": "2027 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 6,
+            "justification": "Continue to innovate and refine steer-by-wire technology for enhanced performance and safety."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Energy-Efficient AI Accelerators",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "HBM",
+              "Advanced Packaging Technologies"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Domain Controllers for ADAS",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q3",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "Sensor Fusion Algorithms",
+              "Energy-Efficient AI Accelerators"
+            ],
+            "lead_time_quarters": 13,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Sensor Fusion Algorithms",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "Domain Controllers for ADAS",
+              "Steer-by-Wire Systems"
+            ],
+            "lead_time_quarters": 14,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 517999999.99999994,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "High Bandwidth Memory (HBM)",
+                "recommended_investment_tier": "Tier 1",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Chiplet Architecture",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 592000000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Advanced Packaging Technologies",
+                "recommended_investment_tier": "Tier 1",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "Energy-Efficient AI Accelerators",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 370000000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "Steer-by-Wire Systems",
+                "recommended_investment_tier": "Tier 1",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "Domain Controllers for ADAS",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Sensor Fusion Algorithms",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_hl_mando_autonomous_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_hl_mando_autonomous_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_hl_mando_autonomous_2026_2030__기술선도__investment_strategy.json"
+  }
+}

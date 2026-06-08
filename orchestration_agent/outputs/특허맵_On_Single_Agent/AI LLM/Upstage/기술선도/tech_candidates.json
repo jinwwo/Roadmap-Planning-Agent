@@ -1,0 +1,1777 @@
+{
+  "run_mode": "tool-single",
+  "baseline_mode": "tool_augmented_single_agent",
+  "llm_data_quality": "tool_augmented_single_call_estimate",
+  "use_patent_map": true,
+  "market_context": {
+    "target_market": "AI Infrastructure for Foundation Models",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 200000000000.0,
+      "sam_usd": 40000000000.0,
+      "som_usd": 4000000000.0
+    },
+    "cagr": "25.7%",
+    "growth_outlook": "Strong growth driven by increasing demand for AI models, particularly in cloud computing, edge devices, and enterprise applications. The market is expected to experience significant expansion in the latter half of the forecast period as advanced hardware becomes more readily available.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "tech_candidates": [
+    {
+      "tech_id": "S01",
+      "name": "HBM4 Memory Integration",
+      "category": "Material",
+      "trl": 3,
+      "patent_score": 0,
+      "market_score": 90.0,
+      "final_score": 90.0,
+      "expected_market_boom_quarter": "2028 Q4",
+      "dependency_hints": [
+        "S02",
+        "S04"
+      ],
+      "rationale": "HBM4 is critical for unlocking the performance potential of next-generation AI accelerators. Increased bandwidth is essential for handling the massive data requirements of large language models. Given the limitations in patent data, the market score heavily influences the overall assessment. Focus on integration and system-level optimization.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 9.0,
+          "final_score": 9.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S02",
+      "name": "Chiplet Interconnect Fabric",
+      "category": "Architecture",
+      "trl": 4,
+      "patent_score": 0,
+      "market_score": 80.0,
+      "final_score": 80.0,
+      "expected_market_boom_quarter": "2027 Q4",
+      "dependency_hints": [
+        "S01",
+        "S04"
+      ],
+      "rationale": "Chiplet architectures enable scalability and modularity in AI hardware design. A high-performance interconnect fabric is crucial for minimizing latency and maximizing bandwidth between chiplets. This is a key enabler for building large-scale AI systems.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 8.0,
+          "final_score": 8.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S03",
+      "name": "Energy-Efficient AI Accelerator",
+      "category": "Architecture",
+      "trl": 5,
+      "patent_score": 0,
+      "market_score": 70.0,
+      "final_score": 70.0,
+      "expected_market_boom_quarter": "2028 Q2",
+      "dependency_hints": [
+        "S01",
+        "S07"
+      ],
+      "rationale": "Reducing energy consumption is paramount for deploying AI models at scale. Developing specialized AI accelerators with optimized architectures and precision scaling techniques is essential for achieving high performance with minimal power usage.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 7.0,
+          "final_score": 7.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S04",
+      "name": "3D Chip Stacking with Advanced Cooling",
+      "category": "Packaging",
+      "trl": 4,
+      "patent_score": 0,
+      "market_score": 80.0,
+      "final_score": 80.0,
+      "expected_market_boom_quarter": "2028 Q3",
+      "dependency_hints": [
+        "S01",
+        "S02"
+      ],
+      "rationale": "3D chip stacking increases density and reduces latency, but requires advanced cooling solutions to manage thermal dissipation. This technology is crucial for building high-performance, compact AI systems.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 8.0,
+          "final_score": 8.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S05",
+      "name": "AI-Optimized Networking Fabric",
+      "category": "Equipment",
+      "trl": 3,
+      "patent_score": 0,
+      "market_score": 60.0,
+      "final_score": 60.0,
+      "expected_market_boom_quarter": "2029 Q1",
+      "dependency_hints": [
+        "S06"
+      ],
+      "rationale": "Large-scale AI models require high-bandwidth, low-latency networking fabrics for efficient communication between accelerators. Optimizing networking infrastructure for AI workloads is critical for achieving optimal performance.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 6.0,
+          "final_score": 6.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S06",
+      "name": "Optical Interconnects for AI",
+      "category": "Equipment",
+      "trl": 2,
+      "patent_score": 0,
+      "market_score": 50.0,
+      "final_score": 50.0,
+      "expected_market_boom_quarter": "2030 Q1",
+      "dependency_hints": [
+        "S05"
+      ],
+      "rationale": "Optical interconnects offer significantly higher bandwidth and lower latency compared to traditional electrical interconnects. While still in early stages of development, this technology has the potential to revolutionize AI infrastructure.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 5.0,
+          "final_score": 5.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    },
+    {
+      "tech_id": "S07",
+      "name": "Mixed-Precision Training & Inference",
+      "category": "Process",
+      "trl": 6,
+      "patent_score": 0,
+      "market_score": 70.0,
+      "final_score": 70.0,
+      "expected_market_boom_quarter": "2027 Q3",
+      "dependency_hints": [],
+      "rationale": "Reducing precision (e.g., from FP32 to FP16 or INT8) can significantly reduce computational cost and memory footprint without significant accuracy loss. This is a crucial optimization technique for deploying AI models on resource-constrained devices.",
+      "_score_normalization": {
+        "from": {
+          "patent_score": 0,
+          "market_score": 7.0,
+          "final_score": 7.0
+        },
+        "rule": "single-agent scores normalized to 0-100; final_score recomputed from patent_score and market_score when both are present"
+      }
+    }
+  ],
+  "single_agent_raw": {
+    "market_context": {
+      "target_market": "AI Infrastructure for Foundation Models",
+      "expected_boom_quarter": "2028 Q4",
+      "tam_sam_som": {
+        "tam_usd": 200000000000.0,
+        "sam_usd": 40000000000.0,
+        "som_usd": 4000000000.0
+      },
+      "cagr": "25.7%",
+      "growth_outlook": "Strong growth driven by increasing demand for AI models, particularly in cloud computing, edge devices, and enterprise applications. The market is expected to experience significant expansion in the latter half of the forecast period as advanced hardware becomes more readily available.",
+      "single_agent_baseline": true,
+      "tool_augmented": true,
+      "use_patent_map": true
+    },
+    "tech_candidates": [
+      {
+        "tech_id": "S01",
+        "name": "HBM4 Memory Integration",
+        "category": "Material",
+        "trl": 3,
+        "patent_score": 0,
+        "market_score": 9.0,
+        "final_score": 9.0,
+        "expected_market_boom_quarter": "2028 Q4",
+        "dependency_hints": [
+          "S02",
+          "S04"
+        ],
+        "rationale": "HBM4 is critical for unlocking the performance potential of next-generation AI accelerators. Increased bandwidth is essential for handling the massive data requirements of large language models. Given the limitations in patent data, the market score heavily influences the overall assessment. Focus on integration and system-level optimization."
+      },
+      {
+        "tech_id": "S02",
+        "name": "Chiplet Interconnect Fabric",
+        "category": "Architecture",
+        "trl": 4,
+        "patent_score": 0,
+        "market_score": 8.0,
+        "final_score": 8.0,
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [
+          "S01",
+          "S04"
+        ],
+        "rationale": "Chiplet architectures enable scalability and modularity in AI hardware design. A high-performance interconnect fabric is crucial for minimizing latency and maximizing bandwidth between chiplets. This is a key enabler for building large-scale AI systems."
+      },
+      {
+        "tech_id": "S03",
+        "name": "Energy-Efficient AI Accelerator",
+        "category": "Architecture",
+        "trl": 5,
+        "patent_score": 0,
+        "market_score": 7.0,
+        "final_score": 7.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "dependency_hints": [
+          "S01",
+          "S07"
+        ],
+        "rationale": "Reducing energy consumption is paramount for deploying AI models at scale. Developing specialized AI accelerators with optimized architectures and precision scaling techniques is essential for achieving high performance with minimal power usage."
+      },
+      {
+        "tech_id": "S04",
+        "name": "3D Chip Stacking with Advanced Cooling",
+        "category": "Packaging",
+        "trl": 4,
+        "patent_score": 0,
+        "market_score": 8.0,
+        "final_score": 8.0,
+        "expected_market_boom_quarter": "2028 Q3",
+        "dependency_hints": [
+          "S01",
+          "S02"
+        ],
+        "rationale": "3D chip stacking increases density and reduces latency, but requires advanced cooling solutions to manage thermal dissipation. This technology is crucial for building high-performance, compact AI systems."
+      },
+      {
+        "tech_id": "S05",
+        "name": "AI-Optimized Networking Fabric",
+        "category": "Equipment",
+        "trl": 3,
+        "patent_score": 0,
+        "market_score": 6.0,
+        "final_score": 6.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [
+          "S06"
+        ],
+        "rationale": "Large-scale AI models require high-bandwidth, low-latency networking fabrics for efficient communication between accelerators. Optimizing networking infrastructure for AI workloads is critical for achieving optimal performance."
+      },
+      {
+        "tech_id": "S06",
+        "name": "Optical Interconnects for AI",
+        "category": "Equipment",
+        "trl": 2,
+        "patent_score": 0,
+        "market_score": 5.0,
+        "final_score": 5.0,
+        "expected_market_boom_quarter": "2030 Q1",
+        "dependency_hints": [
+          "S05"
+        ],
+        "rationale": "Optical interconnects offer significantly higher bandwidth and lower latency compared to traditional electrical interconnects. While still in early stages of development, this technology has the potential to revolutionize AI infrastructure."
+      },
+      {
+        "tech_id": "S07",
+        "name": "Mixed-Precision Training & Inference",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 0,
+        "market_score": 7.0,
+        "final_score": 7.0,
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [],
+        "rationale": "Reducing precision (e.g., from FP32 to FP16 or INT8) can significantly reduce computational cost and memory footprint without significant accuracy loss. This is a crucial optimization technique for deploying AI models on resource-constrained devices."
+      }
+    ],
+    "planned_roadmap": [
+      {
+        "tech_id": "S01",
+        "name": "HBM4 Memory Integration",
+        "phase_name": "Research & Prototyping",
+        "start_q": "2026 Q1",
+        "target_q": "2026 Q4",
+        "prerequisites": [],
+        "lead_time_quarters": 4,
+        "justification": "Early exploration of HBM4 integration is crucial for staying ahead of the curve in AI memory technology."
+      },
+      {
+        "tech_id": "S02",
+        "name": "Chiplet Interconnect Fabric",
+        "phase_name": "Design & Simulation",
+        "start_q": "2026 Q2",
+        "target_q": "2027 Q2",
+        "prerequisites": [],
+        "lead_time_quarters": 4,
+        "justification": "Develop a high-performance interconnect fabric to enable scalable AI hardware designs."
+      },
+      {
+        "tech_id": "S03",
+        "name": "Energy-Efficient AI Accelerator",
+        "phase_name": "Architecture Exploration",
+        "start_q": "2026 Q3",
+        "target_q": "2027 Q3",
+        "prerequisites": [],
+        "lead_time_quarters": 4,
+        "justification": "Investigate novel architectures and precision scaling techniques to minimize energy consumption."
+      },
+      {
+        "tech_id": "S04",
+        "name": "3D Chip Stacking with Advanced Cooling",
+        "phase_name": "Single-Agent Baseline Roadmap",
+        "start_q": "2027 Q3",
+        "target_q": "2029 Q4",
+        "prerequisites": [
+          "S01",
+          "S02"
+        ],
+        "lead_time_quarters": 11,
+        "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      },
+      {
+        "tech_id": "S05",
+        "name": "AI-Optimized Networking Fabric",
+        "phase_name": "Single-Agent Baseline Roadmap",
+        "start_q": "2028 Q1",
+        "target_q": "2030 Q4",
+        "prerequisites": [
+          "S06"
+        ],
+        "lead_time_quarters": 12,
+        "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      },
+      {
+        "tech_id": "S06",
+        "name": "Optical Interconnects for AI",
+        "phase_name": "Single-Agent Baseline Roadmap",
+        "start_q": "2028 Q3",
+        "target_q": "2030 Q4",
+        "prerequisites": [
+          "S05"
+        ],
+        "lead_time_quarters": 13,
+        "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      },
+      {
+        "tech_id": "S07",
+        "name": "Mixed-Precision Training & Inference",
+        "phase_name": "Single-Agent Baseline Roadmap",
+        "start_q": "2028 Q1",
+        "target_q": "2030 Q4",
+        "prerequisites": [],
+        "lead_time_quarters": 14,
+        "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+      }
+    ],
+    "stages": [
+      {
+        "stage": "Foundation",
+        "period": "2026-2027",
+        "tech_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S07"
+        ]
+      },
+      {
+        "stage": "Integration",
+        "period": "2027-2028",
+        "tech_ids": [
+          "S04",
+          "S01",
+          "S02",
+          "S03"
+        ]
+      },
+      {
+        "stage": "Advanced Deployment",
+        "period": "2028-2030",
+        "tech_ids": [
+          "S05",
+          "S06",
+          "S04"
+        ]
+      }
+    ],
+    "investment_strategy": [
+      {
+        "stage": "Foundation",
+        "period": "2026-2027",
+        "stage_budget_ratio": 0.4,
+        "stage_estimated_usd": 21600000.0,
+        "stage_assessment": "High-risk, high-reward stage focused on establishing core technologies.",
+        "tech_investments": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory Integration",
+            "recommended_investment_tier": "Tier 1",
+            "investment_attractiveness": "high",
+            "investment_urgency": "high",
+            "investment_scope": "Dedicated team, equipment, and partnerships with memory manufacturers.",
+            "evaluation_scores": {
+              "market_opportunity": 9,
+              "strategic_fit": 8,
+              "executability": 7,
+              "uncertainty": 4,
+              "urgency": 9
+            },
+            "recommended_action": "Aggressively pursue HBM4 integration to gain a competitive edge.",
+            "rationale": [
+              "Critical for future AI performance.",
+              "High market demand.",
+              "Potential for significant differentiation."
+            ],
+            "major_risks": [
+              "Supply chain disruptions.",
+              "Technical challenges in integration.",
+              "Cost overruns."
+            ],
+            "resource_focus": [
+              "Memory engineers",
+              "System architects",
+              "Partnerships with memory vendors"
+            ]
+          }
+        ]
+      }
+    ],
+    "review": {
+      "decision": "ACCEPT",
+      "trm_assessment": {},
+      "issues": [
+        "Limited patent data availability hindered detailed patent scoring.",
+        "Market data is based on general forecasts and may require refinement with more specific data."
+      ],
+      "refinement": {
+        "rerun_agents": [],
+        "feedback": []
+      },
+      "diagnostic_summary": "The TRM is based on a combination of seed technologies, market trends, and limited patent data. The assessment prioritizes technologies with high market potential and strategic fit.",
+      "report": {
+        "executive_summary": "This TRM outlines a 5-year plan for Upstage to establish technology leadership in AI infrastructure. The strategy focuses on key hardware components and architectural trends, with a strong emphasis on memory, interconnects, packaging, and energy efficiency.",
+        "technology_strategy": "Focus on developing and integrating advanced AI hardware technologies to enable high-performance, energy-efficient AI systems.",
+        "roadmap_structure": "The roadmap is structured in three stages: Foundation, Integration, and Advanced Deployment, with clear milestones and dependencies.",
+        "investment_strategy": "Prioritize investments in core technologies with high market potential and strategic fit, starting with HBM4 memory integration.",
+        "trend_alignment": "The TRM aligns with the growing demand for AI infrastructure and the need for advanced hardware solutions.",
+        "feasibility_and_risk": "The TRM is ambitious but feasible, given Upstage's R&D budget and technical expertise. Key risks include supply chain disruptions, technical challenges, and cost overruns.",
+        "expected_outcomes": "Successful execution of the TRM will position Upstage as a leader in AI infrastructure, enabling the company to capture a significant share of the rapidly growing market."
+      }
+    },
+    "orchestrator_report": {
+      "executive_summary": "This TRM outlines a 5-year plan for Upstage to establish technology leadership in AI infrastructure. The strategy focuses on key hardware components and architectural trends, with a strong emphasis on memory, interconnects, packaging, and energy efficiency.",
+      "technology_strategy": "Focus on developing and integrating advanced AI hardware technologies to enable high-performance, energy-efficient AI systems.",
+      "roadmap_structure": "The roadmap is structured in three stages: Foundation, Integration, and Advanced Deployment, with clear milestones and dependencies.",
+      "investment_strategy": "Prioritize investments in core technologies with high market potential and strategic fit, starting with HBM4 memory integration.",
+      "trend_alignment": "The TRM aligns with the growing demand for AI infrastructure and the need for advanced hardware solutions.",
+      "feasibility_and_risk": "The TRM is ambitious but feasible, given Upstage's R&D budget and technical expertise. Key risks include supply chain disruptions, technical challenges, and cost overruns.",
+      "expected_outcomes": "Successful execution of the TRM will position Upstage as a leader in AI infrastructure, enabling the company to capture a significant share of the rapidly growing market."
+    }
+  },
+  "tool_planning": {
+    "related_companies": [
+      "Nvidia",
+      "AMD",
+      "Intel",
+      "Samsung Electronics",
+      "TSMC",
+      "Broadcom"
+    ],
+    "seed_technologies": [
+      {
+        "tech_id": "TS01",
+        "name": "HBM4 memory",
+        "category": "Material",
+        "reason": "Critical for increasing bandwidth to GPUs and AI accelerators, directly impacting performance."
+      },
+      {
+        "tech_id": "TS02",
+        "name": "Chiplet interconnect architectures",
+        "category": "Architecture",
+        "reason": "Enables modular design and scaling of AI hardware, crucial for future performance gains."
+      },
+      {
+        "tech_id": "TS03",
+        "name": "Advanced AI accelerator design",
+        "category": "Architecture",
+        "reason": "Focus on energy efficiency and performance for inference and training."
+      },
+      {
+        "tech_id": "TS04",
+        "name": "3D chip stacking",
+        "category": "Packaging",
+        "reason": "Key to increasing density and reducing latency in AI hardware."
+      },
+      {
+        "tech_id": "TS05",
+        "name": "Optical interconnects",
+        "category": "Equipment",
+        "reason": "Addresses bandwidth limitations of traditional electrical interconnects."
+      },
+      {
+        "tech_id": "TS06",
+        "name": "AI-specific networking fabrics",
+        "category": "Equipment",
+        "reason": "Optimized for the communication demands of large-scale AI models."
+      },
+      {
+        "tech_id": "TS07",
+        "name": "Precision scaling techniques",
+        "category": "Process",
+        "reason": "Reducing computational cost and memory footprint without significant accuracy loss."
+      }
+    ],
+    "planning_rationale": "Given Upstage's focus on technology leadership and the growing AI infrastructure demand, researching key hardware components and architectural trends is crucial. The selected companies are major players in AI hardware. The seed technologies cover critical areas like memory, interconnects, packaging, and accelerator design, all of which are highlighted in the future trend summary.",
+    "fallback_used": false,
+    "error": null
+  },
+  "patent_raw_data": {
+    "company_portfolios": {
+      "Upstage": {
+        "company_name": "Upstage",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Nvidia": {
+        "company_name": "Nvidia",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "AMD": {
+        "company_name": "AMD",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Intel": {
+        "company_name": "Intel",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Samsung Electronics": {
+        "company_name": "Samsung Electronics",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "TSMC": {
+        "company_name": "TSMC",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Broadcom": {
+        "company_name": "Broadcom",
+        "domain_keywords": "Foundation Model / Document AI / LLM",
+        "recent_patents": [],
+        "filing_trend": {},
+        "citation_summary": {},
+        "error": {
+          "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+          "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+          "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+            }
+          }
+        },
+        "_source": "kipris:both",
+        "_mock": false
+      }
+    },
+    "companies": [
+      "Upstage",
+      "Nvidia",
+      "AMD",
+      "Intel",
+      "Samsung Electronics",
+      "TSMC",
+      "Broadcom"
+    ]
+  },
+  "market_raw_data": {
+    "domain": "Foundation Model / Document AI / LLM",
+    "use_patent_map": true,
+    "technologies": {
+      "TS01": {
+        "tech_name": "HBM4 memory",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "HBM4 memory Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "HBM4 memory Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "HBM4 memory Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "HBM4 memory Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "HBM4 memory Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "HBM4 memory Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "HBM4 memory Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "HBM4 memory Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS01",
+          "name": "HBM4 memory",
+          "category": "Material",
+          "reason": "Critical for increasing bandwidth to GPUs and AI accelerators, directly impacting performance."
+        }
+      },
+      "TS02": {
+        "tech_name": "Chiplet interconnect architectures",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "Chiplet interconnect architectures Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Chiplet interconnect architectures Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Chiplet interconnect architectures Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Chiplet interconnect architectures Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Chiplet interconnect architectures Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Chiplet interconnect architectures Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Chiplet interconnect architectures Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Chiplet interconnect architectures Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS02",
+          "name": "Chiplet interconnect architectures",
+          "category": "Architecture",
+          "reason": "Enables modular design and scaling of AI hardware, crucial for future performance gains."
+        }
+      },
+      "TS03": {
+        "tech_name": "Advanced AI accelerator design",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "Advanced AI accelerator design Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Advanced AI accelerator design Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Advanced AI accelerator design Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Advanced AI accelerator design Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Advanced AI accelerator design Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Advanced AI accelerator design Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Advanced AI accelerator design Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Advanced AI accelerator design Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS03",
+          "name": "Advanced AI accelerator design",
+          "category": "Architecture",
+          "reason": "Focus on energy efficiency and performance for inference and training."
+        }
+      },
+      "TS04": {
+        "tech_name": "3D chip stacking",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "3D chip stacking Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "3D chip stacking Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "3D chip stacking Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "3D chip stacking Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "3D chip stacking Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "3D chip stacking Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "3D chip stacking Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "3D chip stacking Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS04",
+          "name": "3D chip stacking",
+          "category": "Packaging",
+          "reason": "Key to increasing density and reducing latency in AI hardware."
+        }
+      },
+      "TS05": {
+        "tech_name": "Optical interconnects",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "Optical interconnects Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Optical interconnects Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Optical interconnects Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Optical interconnects Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Optical interconnects Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Optical interconnects Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Optical interconnects Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Optical interconnects Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS05",
+          "name": "Optical interconnects",
+          "category": "Equipment",
+          "reason": "Addresses bandwidth limitations of traditional electrical interconnects."
+        }
+      },
+      "TS06": {
+        "tech_name": "AI-specific networking fabrics",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "AI-specific networking fabrics Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "AI-specific networking fabrics Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "AI-specific networking fabrics Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "AI-specific networking fabrics Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "AI-specific networking fabrics Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "AI-specific networking fabrics Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "AI-specific networking fabrics Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "AI-specific networking fabrics Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS06",
+          "name": "AI-specific networking fabrics",
+          "category": "Equipment",
+          "reason": "Optimized for the communication demands of large-scale AI models."
+        }
+      },
+      "TS07": {
+        "tech_name": "Precision scaling techniques",
+        "domain": "Foundation Model / Document AI / LLM",
+        "actor_context": {
+          "center_actor": "Upstage",
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "queries": {
+          "market_reports": "Precision scaling techniques Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+          "tam_sam_som": "Precision scaling techniques Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+          "cagr_forecast": "Precision scaling techniques Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+          "market_size": "Precision scaling techniques Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+          "investment": "Precision scaling techniques Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+          "policy": "Precision scaling techniques Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+          "competitive": "Precision scaling techniques Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+          "timeline": "Precision scaling techniques Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+        },
+        "market_reports": [],
+        "tam_sam_som_data": [],
+        "cagr_forecast_data": [],
+        "market_size_data": [],
+        "investment_data": [],
+        "policy_data": [],
+        "competitive_data": [],
+        "timeline_data": [],
+        "_mock": false,
+        "seed": {
+          "tech_id": "TS07",
+          "name": "Precision scaling techniques",
+          "category": "Process",
+          "reason": "Reducing computational cost and memory footprint without significant accuracy loss."
+        }
+      }
+    }
+  },
+  "patent_maps": {
+    "actor_similarity_map": []
+  },
+  "tool_context": {
+    "provider_notes": {
+      "patent_provider": "kipris",
+      "market_mock": false,
+      "use_patent_map": true
+    },
+    "patent_raw_data": {
+      "company_portfolios": {
+        "Upstage": {
+          "company_name": "Upstage",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "Nvidia": {
+          "company_name": "Nvidia",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "AMD": {
+          "company_name": "AMD",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "Intel": {
+          "company_name": "Intel",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "Samsung Electronics": {
+          "company_name": "Samsung Electronics",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "TSMC": {
+          "company_name": "TSMC",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        },
+        "Broadcom": {
+          "company_name": "Broadcom",
+          "domain_keywords": "Foundation Model / Document AI / LLM",
+          "recent_patents": [],
+          "filing_trend": {},
+          "citation_summary": {},
+          "error": {
+            "domestic": "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR | LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR",
+            "foreign:US": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:EP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:JP": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:CN": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)",
+            "foreign:WO": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+          },
+          "source_breakdown": {
+            "scope": "both",
+            "domestic": {
+              "num_patents": 0,
+              "total_patent_count": 0
+            },
+            "foreign": {
+              "US": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "EP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "JP": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "CN": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              },
+              "WO": {
+                "num_patents": 0,
+                "total_patent_count": 0,
+                "error": "무료로 사용가능한 요청횟수를 초과하였습니다(Limited number of service request exceeds error)"
+              }
+            }
+          },
+          "_source": "kipris:both",
+          "_mock": false
+        }
+      },
+      "companies": [
+        "Upstage",
+        "Nvidia",
+        "AMD",
+        "Intel",
+        "Samsung Electronics",
+        "TSMC",
+        "Broadcom"
+      ]
+    },
+    "patent_maps": {
+      "actor_similarity_map": []
+    },
+    "market_raw_data": {
+      "domain": "Foundation Model / Document AI / LLM",
+      "use_patent_map": true,
+      "technologies": {
+        "TS01": {
+          "tech_name": "HBM4 memory",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "HBM4 memory Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "HBM4 memory Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "HBM4 memory Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "HBM4 memory Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "HBM4 memory Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "HBM4 memory Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "HBM4 memory Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "HBM4 memory Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS01",
+            "name": "HBM4 memory",
+            "category": "Material",
+            "reason": "Critical for increasing bandwidth to GPUs and AI accelerators, directly impacting performance."
+          }
+        },
+        "TS02": {
+          "tech_name": "Chiplet interconnect architectures",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "Chiplet interconnect architectures Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "Chiplet interconnect architectures Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "Chiplet interconnect architectures Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "Chiplet interconnect architectures Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "Chiplet interconnect architectures Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "Chiplet interconnect architectures Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "Chiplet interconnect architectures Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "Chiplet interconnect architectures Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS02",
+            "name": "Chiplet interconnect architectures",
+            "category": "Architecture",
+            "reason": "Enables modular design and scaling of AI hardware, crucial for future performance gains."
+          }
+        },
+        "TS03": {
+          "tech_name": "Advanced AI accelerator design",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "Advanced AI accelerator design Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "Advanced AI accelerator design Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "Advanced AI accelerator design Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "Advanced AI accelerator design Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "Advanced AI accelerator design Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "Advanced AI accelerator design Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "Advanced AI accelerator design Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "Advanced AI accelerator design Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS03",
+            "name": "Advanced AI accelerator design",
+            "category": "Architecture",
+            "reason": "Focus on energy efficiency and performance for inference and training."
+          }
+        },
+        "TS04": {
+          "tech_name": "3D chip stacking",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "3D chip stacking Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "3D chip stacking Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "3D chip stacking Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "3D chip stacking Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "3D chip stacking Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "3D chip stacking Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "3D chip stacking Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "3D chip stacking Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS04",
+            "name": "3D chip stacking",
+            "category": "Packaging",
+            "reason": "Key to increasing density and reducing latency in AI hardware."
+          }
+        },
+        "TS05": {
+          "tech_name": "Optical interconnects",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "Optical interconnects Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "Optical interconnects Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "Optical interconnects Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "Optical interconnects Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "Optical interconnects Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "Optical interconnects Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "Optical interconnects Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "Optical interconnects Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS05",
+            "name": "Optical interconnects",
+            "category": "Equipment",
+            "reason": "Addresses bandwidth limitations of traditional electrical interconnects."
+          }
+        },
+        "TS06": {
+          "tech_name": "AI-specific networking fabrics",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "AI-specific networking fabrics Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "AI-specific networking fabrics Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "AI-specific networking fabrics Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "AI-specific networking fabrics Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "AI-specific networking fabrics Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "AI-specific networking fabrics Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "AI-specific networking fabrics Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "AI-specific networking fabrics Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS06",
+            "name": "AI-specific networking fabrics",
+            "category": "Equipment",
+            "reason": "Optimized for the communication demands of large-scale AI models."
+          }
+        },
+        "TS07": {
+          "tech_name": "Precision scaling techniques",
+          "domain": "Foundation Model / Document AI / LLM",
+          "actor_context": {
+            "center_actor": "Upstage",
+            "related_actors": [],
+            "shared_technology_areas": []
+          },
+          "queries": {
+            "market_reports": "Precision scaling techniques Upstage market report industry analysis forecast TAM SAM SOM CAGR Foundation Model / Document AI / LLM 2025 2026 2027 2028 2030",
+            "tam_sam_som": "Precision scaling techniques Upstage TAM SAM SOM serviceable obtainable market revenue opportunity Foundation Model / Document AI / LLM billion forecast",
+            "cagr_forecast": "Precision scaling techniques Upstage CAGR growth forecast market outlook 2025 2030 Foundation Model / Document AI / LLM",
+            "market_size": "Precision scaling techniques Upstage market size TAM CAGR forecast 2025 2026 2027 2028 Foundation Model / Document AI / LLM billion growth rate",
+            "investment": "Precision scaling techniques Upstage investment funding venture capital corporate R&D 2024 2025 semiconductor tech",
+            "policy": "Precision scaling techniques Upstage government policy subsidy CHIPS Act K-Chips regulation support program Foundation Model / Document AI / LLM",
+            "competitive": "Precision scaling techniques Upstage leading companies players market share competition NVIDIA AMD Intel TSMC Samsung Qualcomm 2024 2025",
+            "timeline": "Precision scaling techniques Upstage commercialization timeline roadmap mass production volume manufacturing 2026 2027 2028"
+          },
+          "market_reports": [],
+          "tam_sam_som_data": [],
+          "cagr_forecast_data": [],
+          "market_size_data": [],
+          "investment_data": [],
+          "policy_data": [],
+          "competitive_data": [],
+          "timeline_data": [],
+          "_mock": false,
+          "seed": {
+            "tech_id": "TS07",
+            "name": "Precision scaling techniques",
+            "category": "Process",
+            "reason": "Reducing computational cost and memory footprint without significant accuracy loss."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,637 @@
+{
+  "market_context": {
+    "target_market": "Conversational AI / LLM / Knowledge Graph",
+    "expected_boom_quarter": "2027 Q3",
+    "market_research_summary": {
+      "T01": {
+        "name": "지연-도플러 도메인 신호 처리",
+        "market_score": 42.5,
+        "expected_market_boom_quarter": "2030 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 2.5,
+          "sam_usd_b": 0.8,
+          "som_usd_b": 0.1,
+          "basis": "지연-도플러 신호 처리는 주로 레이더 및 통신 하드웨어 분야에 적용되며, 대화형 AI/LLM 도메인과의 직접적인 시장 연관성이 낮아 TAM 추정치가 제한적입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 12.0,
+          "forecast_period": "2025-2030",
+          "basis": "하드웨어 신호 처리 시장의 평균 성장률을 반영하나, 본 기술이 속한 대화형 AI 생태계 내에서의 직접적인 수요는 미미합니다."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Knowledge Graph Market Report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/knowledge-graph-market-217920811.html",
+            "use": "도메인 불일치 확인 및 간접적 시장 규모 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T02": {
+        "name": "그래프 기반 AI 가속기 아키텍처",
+        "market_score": 78.5,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 3.5,
+          "basis": "AI 가속기 칩 시장이 2035 년까지 급성장할 것으로 예상되며, 그래프 특화 아키텍처는 지식 그래프 기반 AI 처리에 필수적인 인프라로 부상할 것입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 하드웨어 시장이 연평균 28% 이상의 높은 성장률을 보이며, 지식 그래프 처리에 최적화된 전용 가속기에 대한 수요가 급증할 것입니다."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI Accelerator Chips Market Size & Share | Industry Report, 2035",
+            "url": "https://www.gminsights.com/industry-analysis/ai-accelerator-chips-market",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "AI Accelerator Market Size, Share, Trends | CAGR of 28%",
+            "url": "https://market.us/report/ai-accelerator-market",
+            "use": "경쟁 구도 및 성장 동력 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T03": {
+        "name": "권한 기반 지식 그래프 응답 자동화",
+        "market_score": 86.2,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 65.5,
+          "sam_usd_b": 20.0,
+          "som_usd_b": 5.0,
+          "basis": "기업용 지식 그래프 시장이 2036 년까지 655 억 달러에 달할 것으로 예상되며, 권한 기반 응답 자동화는 기업 보안 및 데이터 거버넌스 요구에 부응하는 핵심 솔루션입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "Agentic AI 및 기업용 AI 통합 가속화로 인해 지식 그래프 기반 자동화 솔루션에 대한 수요가 연평균 24.5% 이상 성장할 것입니다."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI-Ready Enterprise Knowledge Graph Market to Reach USD 65.5 Billion by 2036",
+            "url": "https://www.morningstar.com/news/accesswire/1167718msn/ai-ready-enterprise-knowledge-graph-market-to-reach-usd-65500-million-by-2036-as-graphrag-adoption-and-enterprise-ai-integration-accelerate",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "Knowledge Graph Market Report 2025-2032",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/knowledge-graph-market-217920811.html",
+            "use": "시장 세분화 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T04": {
+        "name": "암시적 데이터 의존성 감사 및 가시성",
+        "market_score": 72.0,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 1.5,
+          "basis": "AI 데이터 관리 및 감사 시장은 규제 강화와 AI 모델의 투명성 요구로 인해 급성장할 것으로 예상되며, 암시적 의존성 추적은 핵심 니즈입니다."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.0,
+          "forecast_period": "2025-2030",
+          "basis": "산업 데이터 관리 시장이 규제 준수 및 AI 거버넌스 요구로 인해 연평균 19% 성장할 것으로 예상됩니다."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Industrial Data Management Market Report 2025 - 2030",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/industrial-data-management-market-150678178.html",
+            "use": "TAM 및 시장 성장 근거"
+          },
+          {
+            "title": "Conversational AI Market Size, Trends, and Forecast Report",
+            "url": "https://www.wissenresearch.com/conversational-ai-market",
+            "use": "AI 생태계 내 데이터 관리 니즈 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T05": {
+        "name": "콘텐츠 정의 트리 기반 데이터 중복 제거",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2027 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "LLM 데이터 파이프라인 및 벡터 DB 시장 규모 추정. 데이터 중복 제거는 LLM 학습 비용 절감의 핵심 요소로, 전체 AI 데이터 인프라 시장의 일부로 간주."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "대규모 언어 모델 학습 데이터 요구량 증가 및 고품질 데이터 확보 경쟁 심화에 따른 데이터 관리 솔루션 시장 성장률 반영."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Conversational AI market: Transforming business at an explosive rate",
+            "url": "https://www.k2view.com/blog/conversational-ai-market",
+            "use": "Conversational AI 및 LLM 데이터 인프라 시장 성장 동력 확인"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T06": {
+        "name": "Sliceout 기반 트랜스포머 학습 최적화",
+        "market_score": 82.3,
+        "expected_market_boom_quarter": "2026 Q4",
+        "tam_sam_som": {
+          "tam_usd_b": 18.0,
+          "sam_usd_b": 6.5,
+          "som_usd_b": 1.2,
+          "basis": "AI 칩 및 트랜스포머 최적화 솔루션 시장 규모. 학습 효율성 향상을 위한 알고리즘 및 하드웨어 통합 솔루션 수요 급증 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 28.0,
+          "forecast_period": "2025-2030",
+          "basis": "트랜스포머 모델 규모 확대에 따른 학습 비용 및 시간 단축 필요성으로 인한 최적화 기술 시장 성장률 추정."
+        },
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "key_market_reports": [
+          {
+            "title": "Transformer-Optimized AI Chip Market Size, 2025-2034 Forecast",
+            "url": "https://www.gminsights.com/industry-analysis/transformer-optimized-ai-chip-market",
+            "use": "트랜스포머 최적화 하드웨어 및 소프트웨어 시장 성장 전망 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T07": {
+        "name": "맥락 기반 접근 지능 보안 관리",
+        "market_score": 88.5,
+        "expected_market_boom_quarter": "2026 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 25.0,
+          "sam_usd_b": 8.5,
+          "som_usd_b": 1.5,
+          "basis": "AI 보안 및 거버넌스 시장 규모. 기업 내 LLM 도입 시 데이터 유출 및 보안 리스크 관리에 대한 규제 강화와 투자 증가 반영."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 32.0,
+          "forecast_period": "2025-2030",
+          "basis": "AI 신뢰, 위험, 보안 관리 (AI TRiSM) 시장이 급성장하고 있으며, 맥락 기반 접근 제어는 핵심 하위 분야로 성장할 것으로 예상."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "AI Trust, Risk And Security Management Market Report, 2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/ai-trust-risk-security-management-market-report",
+            "use": "AI 보안 및 거버넌스 시장 규모와 성장률의 직접적 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T08": {
+        "name": "임의 샘플 생성 및 함수 근사화 유닛",
+        "market_score": 68.0,
+        "expected_market_boom_quarter": "2029 Q1",
+        "tam_sam_som": {
+          "tam_usd_b": 8.0,
+          "sam_usd_b": 2.5,
+          "som_usd_b": 0.5,
+          "basis": "전용 AI 가속기 및 프로세싱 유닛 시장. Graphcore 와 같은 특수 목적 하드웨어 시장의 니치 규모로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "전용 AI 하드웨어 시장 성장률. 범용 GPU 대비 특수 목적 유닛의 채택 속도가 상대적으로 느리지만 장기적 효율성으로 성장 예상."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Conversational AI | A $41.39 Billion Market by 2030 - PR Newswire",
+            "url": "https://www.prnewswire.com/news-releases/conversational-ai--a-41-39-billion-market-by-2030--how-human-like-interactions-are-reshaping-customer-engagement-and-automation--the-research-insights-302492157.html",
+            "use": "전체 AI 시장 규모 및 하드웨어 수요 간접 추정"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T09": {
+        "name": "시간 여행 시각화 기반 대용량 데이터 분석",
+        "market_score": 76.5,
+        "expected_market_boom_quarter": "2028 Q2",
+        "tam_sam_som": {
+          "tam_usd_b": 12.5,
+          "sam_usd_b": 4.2,
+          "som_usd_b": 0.8,
+          "basis": "Knowledge Graph 및 고급 데이터 시각화 시장의 2030 년도 예상 규모 (Fortune Business Insights 등) 를 기반으로, 시간 기반 분석 기능이 포함된 니치 시장으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.2,
+          "forecast_period": "2025-2030",
+          "basis": "대규모 데이터 분석 및 대화형 AI 시장이 연평균 15~20% 성장할 것으로 예상되며, 시각화 기능은 필수 요소로 부상 중."
+        },
+        "competitive_landscape": "Fragmented – many players, low differentiation",
+        "key_market_reports": [
+          {
+            "title": "Knowledge Graph Market Share, Size, Trend, 2034",
+            "url": "https://www.fortunebusinessinsights.com/knowledge-graph-market-112139",
+            "use": "TAM 및 성장 동력 근거"
+          },
+          {
+            "title": "Conversational AI market: Transforming business at an explosive rate",
+            "url": "https://www.k2view.com/blog/conversational-ai-market",
+            "use": "시장 성장률 및 채택 시기 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      },
+      "T10": {
+        "name": "원자 문서 요소 관계 모델링 자동화",
+        "market_score": 82.3,
+        "expected_market_boom_quarter": "2027 Q3",
+        "tam_sam_som": {
+          "tam_usd_b": 28.0,
+          "sam_usd_b": 9.5,
+          "som_usd_b": 2.5,
+          "basis": "Document AI 및 RPA 시장의 2030 년도 규모 (MarketsandMarkets 등) 를 기반으로, 의료/법률 등 고도화된 문서 처리 니즈를 반영한 SAM 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.5,
+          "forecast_period": "2025-2030",
+          "basis": "Document AI 시장은 연평균 20% 이상의 고성장세를 보이며, 원자 단위 관계 모델링은 정확도 향상을 위한 핵심 기술로 부상 중."
+        },
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "key_market_reports": [
+          {
+            "title": "Document AI Market 2025-2030, by Offering, Geo, Tech",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/document-ai-market-195513136.html",
+            "use": "TAM/CAGR 및 기술 트렌드 근거"
+          },
+          {
+            "title": "TAM, SAM, and SOM of AI-Assisted Sales Platforms (B2B) - Keybe",
+            "url": "https://keybe.ai/articles/artificial-intelligence/tam-sam-and-som-of-ai-assisted-sales-platforms-b2b",
+            "use": "시장 세분화 및 SOM 추정 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        }
+      }
+    },
+    "use_patent_map": false,
+    "use_actor_map_score": false,
+    "use_patent_map_context": false,
+    "actor_map_summary": {},
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 10,
+      "target_k": 8,
+      "selected_count": 8,
+      "selected_tech_ids": [
+        "T07",
+        "T03",
+        "T02",
+        "T06",
+        "T10",
+        "T05",
+        "T04",
+        "T09"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T08",
+          "name": "임의 샘플 생성 및 함수 근사화 유닛",
+          "final_score": 75.43,
+          "selection_score": 76.21,
+          "actor_map_score": 0.0,
+          "reason": "임의 샘플 생성 하드웨어는 시장 성장률과 시의적절성이 낮으며, 범용 GPU 대비 니치 시장으로 2029 년 이후의 장기적 효과만 기대되어 당장 로드맵 우선순위가 낮음."
+        },
+        {
+          "tech_id": "T01",
+          "name": "지연-도플러 도메인 신호 처리",
+          "final_score": 63.2,
+          "selection_score": 65.39,
+          "actor_map_score": 0.0,
+          "reason": "지연-도플러 신호 처리는 통신/레이더 하드웨어 도메인에 특화되어 있어, Saltlux 의 Conversational AI/LLM/KG 전략 방향성과 시장 정합성이 현저히 낮음."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 81.69,
+        "avg_market_score": 80.35,
+        "avg_patent_score": 83.33,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "Saltlux 의 'Conversational AI 및 LLM 기술 선도'와 'KG 기반 시장 확장' 전략에 부합하는 핵심 기술들을 선정했습니다. T07, T03, T10은 KG 기반 보안 및 문서 처리를 통해 기업용 AI 도입의 필수 장벽을 해결하고, T02, T06은 HW/SW 통합 전략을 위한 인프라 및 학습 최적화 기술을 확보합니다. T05, T04, T09는 데이터 품질 관리와 시각화를 통해 장기적인 생태계 경쟁력을 강화하는 포트폴리오 다양성을 확보합니다.",
+        "evidence_used": {
+          "T07": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T10": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T05": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T09": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    }
+  },
+  "investment_policy": {
+    "risk_appetite": "medium",
+    "investment_horizon": "balanced",
+    "total_budget": 27000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "goal": "전체 기술 로드맵",
+      "technologies": [
+        "그래프 기반 AI 가속기 아키텍처",
+        "Sliceout 기반 트랜스포머 학습 최적화",
+        "권한 기반 지식 그래프 응답 자동화",
+        "맥락 기반 접근 지능 보안 관리",
+        "원자 문서 요소 관계 모델링 자동화",
+        "암시적 데이터 의존성 감사 및 가시성"
+      ],
+      "tech_ids": [
+        "T02",
+        "T06",
+        "T03",
+        "T07",
+        "T10",
+        "T04"
+      ],
+      "num_items": 6
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "roadmap",
+      "period": "1차년도 - 5차년도",
+      "stage_assessment": "",
+      "stage_budget_ratio": 1.0,
+      "tech_investments": [
+        {
+          "tech_id": "T02",
+          "name": "그래프 기반 AI 가속기 아키텍처",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 4,
+            "tech_risk": 2,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 5711538.0,
+          "tech_budget_rationale": "T02 는 TRL 7 로 성숙도가 높아 기술 위험이 낮으며, T06, T03 등 후행 기술들의 선행 조건인 핵심 인프라입니다. 550 만 달러를 할당하여 1 차년도부터 즉시 도입 및 최적화를 진행함으로써 전체 로드맵의 기반을 확고히 합니다.",
+          "reasoning": {
+            "market_evaluation": "AI 가속기 시장은 2035 년까지 급성장할 것으로 예상되며, 그래프 특화 아키텍처는 지식 그래프 기반 AI 처리의 병목 현상을 해결하는 핵심 인프라입니다. 2027 Q3 에 예상되는 시장 붐은 주요 플레이어들의 제품 출시와 함께 본격화될 것입니다.",
+            "tech_evaluation": "TRL 7 로 기술 성숙도가 매우 높으며, Graphcore 의 특허를 통해 지식 그래프 연산 최적화의 실현 가능성이 입증되었습니다. Saltlux 의 SW 중심 한계를 극복하고 HW/SW 통합 스택을 강화하는 데 필수적입니다.",
+            "investment_decision": "높은 기술 성숙도와 후행 기술들의 선행 조건이라는 전략적 중요성으로 Tier 1 로 선정합니다. 550 만 달러의 예산은 아키텍처 도입, 최적화 및 후행 기술들과의 통합을 지원합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "1 차년도부터 Graphcore 등 파트너사와 협력하여 아키텍처 도입 및 최적화를 시작하고, T06, T03 등 후행 기술들과의 통합 테스트를 병행하십시오.",
+          "rationale": [
+            "TRL 7 로 높은 기술 성숙도와 낮은 기술 위험",
+            "T06, T03 등 후행 기술들의 선행 조건인 핵심 인프라",
+            "2027 Q3 시장 붐을 대비한 조기 도입 필요성",
+            "Saltlux 의 SW 중심 한계를 극복하는 HW/SW 통합 전략"
+          ]
+        },
+        {
+          "tech_id": "T06",
+          "name": "Sliceout 기반 트랜스포머 학습 최적화",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 4,
+            "development_urgency": 4
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 3634615.0,
+          "tech_budget_rationale": "T06 은 TRL 4 로 기술 위험이 높고 개발 기간이 길지만, 자체 LLM 개발 시 학습 비용 절감의 핵심 기술입니다. T02 가 완료된 후 2 차년도부터 시작되므로, 350 만 달러를 할당하여 초기 연구 및 프로토타입 개발을 지원합니다.",
+          "reasoning": {
+            "market_evaluation": "트랜스포머 최적화 솔루션 시장은 연평균 28% 의 성장률을 보이며, 학습 효율성 향상을 위한 수요가 급증하고 있습니다. 2026 Q4 에 예상되는 시장 붐은 Cohere 등의 선점 효과를 고려할 때, Saltlux 의 자체 모델 개발 경쟁력 확보에 중요합니다.",
+            "tech_evaluation": "TRL 4 로 기술 성숙도가 낮아 연구 개발 위험이 높지만, Cohere 의 특허를 통해 Sliceout 기법의 실현 가능성이 입증되었습니다. T02 기반의 하드웨어 최적화와 결합 시 시너지 효과를 기대할 수 있습니다.",
+            "investment_decision": "높은 기술 위험과 긴 개발 기간으로 Tier 2 로 분류되지만, 자체 LLM 개발의 핵심 기술이므로 전략적 투자가 필요합니다. 350 만 달러의 예산은 초기 연구 및 프로토타입 개발을 지원합니다."
+          },
+          "investment_scope": "moderate",
+          "recommended_action": "T02 완료 후 2 차년도부터 연구 개발을 시작하고, Cohere 등의 특허 분석을 통해 최적화 알고리즘을 개발하십시오.",
+          "rationale": [
+            "TRL 4 로 기술 위험이 높고 개발 기간이 길어 Tier 2 분류",
+            "자체 LLM 개발 시 학습 비용 절감의 핵심 기술",
+            "T02 기반의 하드웨어 최적화와 결합 시 시너지 효과 기대",
+            "2026 Q4 시장 붐을 대비한 조기 연구 개발 필요성"
+          ]
+        },
+        {
+          "tech_id": "T03",
+          "name": "권한 기반 지식 그래프 응답 자동화",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 6230769.0,
+          "tech_budget_rationale": "T03 은 TAM $65.5B 로 가장 큰 시장 규모를 가지며, 2026 Q4 시장 붐을 앞두고 있습니다. T07 과 함께 Saltlux 의 기업용 KG 솔루션의 핵심 차별화 요소이므로, 600 만 달러를 할당하여 T07 과의 시너지를 극대화하고 시장 진입을 가속화합니다.",
+          "reasoning": {
+            "market_evaluation": "기업용 지식 그래프 시장은 2036 년까지 655 억 달러에 달할 것으로 예상되며, 연평균 24.5% 의 성장률을 보입니다. 2026 Q4 에 예상되는 붐은 Agentic AI 확산과 기업 보안 요구가 결합된 시점으로, 권한 기반 자동화 솔루션에 대한 수요가 급증할 것입니다.",
+            "tech_evaluation": "TRL 6 으로 기술 성숙도가 높으며, Glean 의 특허를 통해 권한 제어 프로세스의 실현 가능성이 입증되었습니다. Saltlux 의 KG 기술과 결합 시 데이터 거버넌스 측면에서 강력한 진입 장벽을 형성할 수 있습니다.",
+            "investment_decision": "가장 큰 시장 규모와 높은 성장률, 그리고 Saltlux 의 핵심 전략과 직접 연결되므로 Tier 1 로 선정합니다. 600 만 달러의 예산은 T07 과의 통합 개발 및 초기 고객 파이프라인 확보를 지원합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "T07 과의 통합 아키텍처 설계를 즉시 시작하고, 2026 Q4 를 목표로 초기 고객 대상 베타 테스트를 진행하십시오.",
+          "rationale": [
+            "TAM $65.5B 로 가장 큰 시장 규모와 24.5% 성장률 보유",
+            "2026 Q4 시장 붐 임박으로 개발 긴급도 최상위 (5 점)",
+            "TRL 6 기반의 검증된 기술로 실행 가능성 높음",
+            "Saltlux 의 KG 전략과 기업 보안 니즈의 완벽한 정합성"
+          ]
+        },
+        {
+          "tech_id": "T07",
+          "name": "맥락 기반 접근 지능 보안 관리",
+          "evaluation_scores": {
+            "market_size_growth": 5,
+            "tech_readiness": 3,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 5
+          },
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "recommended_investment_tier": "Tier 1",
+          "tech_budget_usd": 6750000.0,
+          "tech_budget_rationale": "T07 은 시장 붐이 2026 Q3 로 가장 임박해 있으며, TAM $25B 와 CAGR 32% 의 높은 성장 잠재력을 가집니다. Saltlux 의 KG 기반 시스템이 기업 환경으로 확장되는 데 필수적인 보안 장벽을 해결하므로, 전체 예산의 약 24% 를 할당하여 선제적 시장 선점과 규제 대응을 보장합니다.",
+          "reasoning": {
+            "market_evaluation": "AI 보안 및 거버넌스 시장은 2030 년까지 연평균 32% 의 높은 성장률을 보이며, TAM 은 250 억 달러에 달합니다. 2026 Q3 에 예상되는 시장 붐은 LLM 도입 가속화에 따른 데이터 유출 리스크 관리 니즈가 폭발할 시점을 의미하며, Saltlux 의 타겟 시장과 완벽하게 일치합니다.",
+            "tech_evaluation": "TRL 6 으로 프로토타입 검증 단계에 있어 기술적 위험은 중간 수준이나, Glean 의 특허 분석을 통해 맥락 기반 접근 제어의 실용성이 입증되었습니다. Saltlux 의 기존 KG 강점과 결합 시 강력한 경쟁 우위를 확보할 수 있는 전략적 핵심 기술입니다.",
+            "investment_decision": "시장 성장률, 시의적절성, 전략적 정합성이 모두 최상위권인 T07 은 Tier 1 로 분류됩니다. 650 만 달러의 예산은 초기 PoC 완료부터 초기 상용화까지의 개발 주기를 지원하며, 경쟁사 대비 빠른 시장 진입을 가능하게 합니다."
+          },
+          "investment_scope": "aggressive",
+          "recommended_action": "2026 Q3 시장 붐을 대비하여 즉시 핵심 인력 투입 및 PoC 개발을 시작하고, 기업용 보안 인증 획득을 병행하십시오.",
+          "rationale": [
+            "시장 성장률 32% 와 TAM $25B 로 거대 시장 진입 기회 확보",
+            "2026 Q3 시장 붐 임박으로 개발 긴급도 최상위 (5 점)",
+            "TRL 6 기반의 검증된 기술로 실행 가능성 높음",
+            "Saltlux 의 KG 전략과 보안 니즈의 완벽한 정합성"
+          ]
+        },
+        {
+          "tech_id": "T10",
+          "name": "원자 문서 요소 관계 모델링 자동화",
+          "evaluation_scores": {
+            "market_size_growth": 4,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 4,
+            "development_urgency": 3
+          },
+          "investment_attractiveness": "medium",
+          "investment_urgency": "medium",
+          "recommended_investment_tier": "Tier 2",
+          "tech_budget_usd": 3115385.0,
+          "tech_budget_rationale": "T10 은 TRL 5 로 기술 위험이 중간 수준이며, 의료 등 전문 도메인 확장의 핵심 기술입니다. T03 완료 후 3 차년도부터 시작되므로, 300 만 달러를 할당하여 초기 연구 및 프로토타입 개발을 지원합니다.",
+          "reasoning": {
+            "market_evaluation": "Document AI 시장은 연평균 22.5% 의 성장률을 보이며, 의료/법률 등 고도화된 문서 처리 니즈가 급증하고 있습니다. 2027 Q3 에 예상되는 시장 붐은 원자 단위 관계 모델링 기술의 실용성이 입증되는 시점입니다.",
+            "tech_evaluation": "TRL 5 로 기술 성숙도가 중간 수준이며, Cohere 의 특허를 통해 원자 단위 관계 모델링의 실현 가능성이 입증되었습니다. Saltlux 의 KG 기술과 결합 시 고부가가치 서비스의 핵심 차별화 요소가 될 수 있습니다.",
+            "investment_decision": "중간 수준의 기술 위험과 전문 도메인 확장 전략의 핵심 기술로 Tier 2 로 분류됩니다. 300 만 달러의 예산은 초기 연구 및 프로토타입 개발을 지원합니다."
+          },
+          "investment_scope": "moderate",
+          "recommended_action": "T03 완료 후 3 차년도부터 연구 개발을 시작하고, 의료/법률 등 전문 도메인 데이터를 활용한 프로토타입 개발을 진행하십시오.",
+          "rationale": [
+            "TRL 5 로 기술 위험이 중간 수준이며 개발 기간이 길어 Tier 2 분류",
+            "의료 등 전문 도메인 확장의 핵심 기술",
+            "T03 완료 후 3 차년도부터 시작되므로 개발 시점 고려",
+            "2027 Q3 시장 붐을 대비한 조기 연구 개발 필요성"
+          ]
+        },
+        {
+          "tech_id": "T04",
+          "name": "암시적 데이터 의존성 감사 및 가시성",
+          "evaluation_scores": {
+            "market_size_growth": 3,
+            "tech_readiness": 2,
+            "tech_risk": 4,
+            "competitive_advantage": 3,
+            "development_urgency": 2
+          },
+          "investment_attractiveness": "low",
+          "investment_urgency": "low",
+          "recommended_investment_tier": "Tier 3",
+          "tech_budget_usd": 1557692.0,
+          "tech_budget_rationale": "T04 는 시장 붐이 2028 Q2 로 가장 늦게 예상되며, TAM $18B 와 CAGR 19% 로 상대적으로 낮은 성장률을 보입니다. 독립적인 기술이지만 LLM 파이프라인 성숙도가 필요하므로, 150 만 달러를 할당하여 초기 연구 및 모니터링을 지원합니다.",
+          "reasoning": {
+            "market_evaluation": "AI 데이터 관리 및 감사 시장은 규제 강화와 AI 모델의 투명성 요구로 인해 성장할 것으로 예상되지만, 2028 Q2 에 예상되는 시장 붐은 다른 기술들에 비해 늦습니다. TAM $18B 와 CAGR 19% 로 상대적으로 낮은 성장률을 보입니다.",
+            "tech_evaluation": "TRL 5 로 기술 성숙도가 중간 수준이며, Hugging Face 의 특허를 통해 암시적 의존성 추적의 실현 가능성이 입증되었습니다. LLM 파이프라인의 성숙도가 필요한 기술로, 초기 연구 단계에 적합합니다.",
+            "investment_decision": "낮은 시장 성장률과 늦은 시장 붐 시점으로 Tier 3 로 분류됩니다. 150 만 달러의 예산은 초기 연구 및 모니터링을 지원합니다."
+          },
+          "investment_scope": "conservative",
+          "recommended_action": "4 차년도부터 초기 연구를 시작하고, LLM 파이프라인 성숙도 모니터링을 병행하십시오.",
+          "rationale": [
+            "시장 붐이 2028 Q2 로 가장 늦게 예상되어 개발 긴급도 낮음",
+            "TAM $18B 와 CAGR 19% 로 상대적으로 낮은 성장률",
+            "LLM 파이프라인 성숙도가 필요한 기술로 초기 연구 단계 적합",
+            "독립적인 기술이지만 다른 기술들과의 시너지 효과 기대"
+          ]
+        }
+      ],
+      "stage_estimated_usd": 26999999.0
+    }
+  ]
+}

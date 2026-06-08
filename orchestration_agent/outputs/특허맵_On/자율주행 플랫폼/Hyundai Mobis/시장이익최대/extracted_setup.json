@@ -1,0 +1,30 @@
+{
+  "scenario_id": "hyundai_mobis_autonomous_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: Hyundai Mobis\nIndustry: Autonomous Driving Platform / ADAS / Automotive Electronics\nAnnual Revenue: ~$43.7B\nR&D Budget Ratio: ~4.3%\nAnnual R&D Budget: ~$1.88B\nTotal 5-year R&D Budget: ~$5.55B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "Hyundai Mobis",
+    "industry": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "annual_revenue": 43700000000.0,
+    "rd_budget_ratio": 0.043,
+    "annual_rd_budget": 1880000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Short-term commercialization of autonomous driving technologies to maximize market profit and margin growth.",
+    "strategic_direction": [
+      "ADAS/자율주행 플랫폼 리더십 강화",
+      "검증된 기술의 글로벌 시장 확대",
+      "원가 우위 확보를 위한 HW/SW 최적화"
+    ],
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 5550000000
+}

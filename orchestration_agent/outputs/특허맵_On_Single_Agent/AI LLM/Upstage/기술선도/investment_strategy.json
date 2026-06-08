@@ -1,0 +1,315 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "AI Infrastructure for Foundation Models",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 200000000000.0,
+      "sam_usd": 40000000000.0,
+      "som_usd": 4000000000.0
+    },
+    "cagr": "25.7%",
+    "growth_outlook": "Strong growth driven by increasing demand for AI models, particularly in cloud computing, edge devices, and enterprise applications. The market is expected to experience significant expansion in the latter half of the forecast period as advanced hardware becomes more readily available.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "investment_policy": {
+    "total_budget": 54000000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "tech_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "tech_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "tech_ids": [
+        "S05",
+        "S06",
+        "S07"
+      ]
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "stage_budget_ratio": 0.35,
+      "stage_estimated_usd": 18900000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S01",
+          "name": "HBM4 Memory Integration",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 10005882.35,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S02",
+          "name": "Chiplet Interconnect Fabric",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 8894117.65,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "stage_budget_ratio": 0.4,
+      "stage_estimated_usd": 21600000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S03",
+          "name": "Energy-Efficient AI Accelerator",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 10080000.0,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S04",
+          "name": "3D Chip Stacking with Advanced Cooling",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 11520000.0,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "stage_budget_ratio": 0.25,
+      "stage_estimated_usd": 13500000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S05",
+          "name": "AI-Optimized Networking Fabric",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 4500000.0,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S06",
+          "name": "Optical Interconnects for AI",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 3750000.0,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S07",
+          "name": "Mixed-Precision Training & Inference",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 5250000.0,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    }
+  ]
+}

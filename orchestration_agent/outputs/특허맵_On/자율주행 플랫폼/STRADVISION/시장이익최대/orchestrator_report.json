@@ -1,0 +1,381 @@
+{
+  "problem_frame": {
+    "industry": "AI Vision Perception / ADAS / Computer Vision",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 43000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "STRADVISION",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "ADAS/Computer Vision 기술 리더십 강화",
+      "원가 우위를 통한 글로벌 시장 확장",
+      "검증된 기술 스택의 상용화 가속"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $43M 정확히 배분. 5 년 차까지의 일정은 시장 붐 시점과 정합."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T01(2026-2028) → T02(2028-2030) → T03(2030) 순서 정상."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "ADAS 리더십(T01), 원가 우위(T02), 상용화(T03) 전략 완벽 정합."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T01, T02) 에 집중 투자, Tier 2(T03) 에 적정 배분."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.55,
+        "risk_balance": 0.6,
+        "comment": "단기(2026-2028) 와 장기(2028-2030) 투자 균형 적절."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T02",
+            "name": "시뮬레이션 기반 합성 데이터 생성",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 88.7,
+            "market_score": 88.2,
+            "patent_score": 89.3,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T01",
+            "name": "다중 센서 퓨전 아키텍처",
+            "category": "Architecture",
+            "trl": 7,
+            "final_score": 87.0,
+            "market_score": 82.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          },
+          {
+            "tech_id": "T03",
+            "name": "온-디바이스 모델 최적화",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 82.95,
+            "market_score": 79.8,
+            "patent_score": 86.8,
+            "expected_market_boom_quarter": "2028 Q2"
+          },
+          {
+            "tech_id": "T05",
+            "name": "자율주행 안전 아키텍처",
+            "category": "Architecture",
+            "trl": 6,
+            "final_score": 82.59,
+            "market_score": 82.5,
+            "patent_score": 82.7,
+            "expected_market_boom_quarter": "2028 Q2"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T01",
+            "name": "다중 센서 퓨전 아키텍처",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "의존성이 없는 핵심 아키텍처 기술로 TRL 7 수준이므로 1 차년도부터 즉시 착수하여 3 차년도까지 안정화한다. 이는 후행 기술인 T02 의 데이터 생성 및 T03 의 최적화 적용을 위한 필수 선행 조건을 마련하기 위함이다.",
+              "tech_execution": "STRADVISION 의 단일 카메라 중심 전략을 보완하여 라이다, 레이더, 카메라를 통합하는 견고한 인지 시스템을 구축해야 한다. 이는 2027 년경 예상되는 시장 진입 시점에 맞춰 경쟁사 대비 기술 격차를 해소하고 ADAS 리더십을 강화하는 데 필수적이다.",
+              "investment_selection": "NVIDIA 와 Waymo 등 주요 경쟁사가 선점하고 있는 엔드투엔드 퓨전 아키텍처 시장에서 기술적 진입 장벽을 낮추기 위한 핵심 투자 대상이다. 초기 아키텍처 확립은 향후 원가 우위 전략과 상용화 가속을 위한 기술적 토대가 되어 R&D 예산의 효율성을 극대화한다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "시뮬레이션 기반 합성 데이터 생성",
+            "year_idx_start": 3,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "선행 기술인 T01 의 아키텍처가 2 차년도에 초기 안정화되어야 적용 가능하므로 2 차년도에 시작한다. TRL 6 수준으로 2026 년 말 시장 급증에 대응하기 위해 4 차년도까지 기술 고도화와 데이터 품질 향상을 지속한다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "실제 주행 데이터 수집의 비용과 위험을 줄이기 위해 NVIDIA 와 Velodyne 의 동향을 반영한 대규모 합성 데이터 생성 기술을 확보해야 한다. 이는 STRADVISION 의 원가 우위 전략을 실현하고 데이터 라벨링 비용을 획기적으로 절감하는 핵심 수단이다.",
+              "investment_selection": "2026 년 말부터 급격히 확대될 시뮬레이션 플랫폼 시장에서 선점 효과를 얻기 위한 필수 투자 대상이다. 데이터 수집 비용 절감은 장기적인 원가 경쟁력을 확보하고, 검증된 기술 스택의 상용화 속도를 높이는 데 결정적인 역할을 한다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "온-디바이스 모델 최적화",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01",
+              "T02"
+            ],
+            "reasoning": {
+              "year_placement": "T01 의 아키텍처와 T02 의 고품질 합성 데이터가 확보된 3 차년도 이후에 본격적인 최적화 작업이 가능하므로 3 차년도에 시작한다. Planning Horizon 의 마지막인 5 차년도까지 이어져 차세대 저전력 엣지 디바이스 기술 진화를 주도한다. [후처리: dependency 보정 — prereq ['T01', 'T02'] 완료 후로 2차년도 push]",
+              "tech_execution": "Mobileye 와 NVIDIA 의 최신 하드웨어 효율화 기술과 비교하여 성능 격차를 줄이고, 저전력 환경에서의 고도화된 추론 속도를 확보해야 한다. 이는 STRADVISION 의 기존 특허 기반 기술을 차별화 포인트로 발전시켜 글로벌 시장 확장을 뒷받침한다.",
+              "investment_selection": "온디바이스 최적화 시장의 진입 장벽이 높지만, 기존 특허를 기반으로 한 차별화된 기술은 장기적인 경쟁 우위를 확보할 수 있는 핵심 투자 대상이다. 2030 년까지의 장기 R&D 는 차세대 자율주행 시스템의 에너지 효율성을 극대화하여 시장 점유율을 높이는 데 기여한다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 43000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T01",
+                "name": "다중 센서 퓨전 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "tech_budget_rationale": "T01 은 전체 로드맵의 핵심 기반 아키텍처로, TRL 7 의 높은 준비도와 2027 년 Q3 시장 급증에 대응하기 위한 선제적 투자가 필수적입니다. 총 예산의 약 42% 를 할당하여 NVIDIA 와 Waymo 등 경쟁사 대비 기술 격차를 해소하고, 후행 기술인 T02 와 T03 의 성공적 적용을 위한 필수 선행 조건을 확고히 합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 1 차년도부터 즉시 착수하여 2027 년 Q3 시장 진입 전까지 프로토타입 완성 및 초기 상용화 테스트를 완료해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 400 억 달러, CAGR 18.5% 의 거대 시장으로, 2027 년 Q3 에 예상되는 시장 급증에 맞춰 2026 년부터 즉시 착수해야 합니다. 자율주행 레벨 3 상용화 정책과 맞물려 센서 퓨전 아키텍처는 필수 인프라로 부상하고 있으며, 늦어질 경우 시장 진입 장벽이 높아질 위험이 큽니다.",
+                  "tech_evaluation": "TRL 7 로 상용화 직전 단계이며, STRADVISION 의 기존 단일 카메라 전략을 보완하는 핵심 기술입니다. 특허 점수 92.5 점으로 경쟁사 대비 높은 기술적 우위를 확보할 수 있으며, 라이다/레이더/카메라 통합 아키텍처 구축을 통해 기술적 불확실성을 최소화할 수 있습니다.",
+                  "investment_decision": "Tier 1 로 선정하여 총 예산의 42% 를 집중 투자합니다. 이는 '검증된 기술 스택의 상용화 가속' 전략과 완벽히 부합하며, T02 와 T03 의 의존성 해결을 위한 가장 시급한 투자 대상입니다. 높은 시장 성장률과 기술 준비도를 고려할 때, 선제적 투자가 경쟁 우위 확보의 핵심입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "시뮬레이션 기반 합성 데이터 생성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "tech_budget_rationale": "T02 는 TAM 680 억 달러, CAGR 24.5% 의 가장 빠른 성장률을 보이며, 2026 년 Q4 시장 급증에 대응하기 위한 핵심 기술입니다. 총 예산의 약 35% 를 할당하여 실제 데이터 수집 비용 절감과 라벨링 효율화를 통해 STRADVISION 의 '원가 우위' 전략을 실현합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 2 차년도부터 T01 의 아키텍처 안정화와 병행하여 시뮬레이션 플랫폼 구축 및 합성 데이터 생성 파이프라인 개발을 시작해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 680 억 달러, CAGR 24.5% 의 폭발적 성장세로, 2026 년 Q4 에 예상되는 시장 급증에 맞춰 2026 년부터 즉시 착수해야 합니다. 실제 데이터 수집의 한계와 규제 강화로 인해 합성 데이터 의존도가 급증하며, 이는 STRADVISION 의 핵심 경쟁력이 될 수 있습니다.",
+                  "tech_evaluation": "TRL 6 으로 상용화 직전 단계이며, NVIDIA 와 Velodyne 의 동향을 반영한 대규모 합성 데이터 생성 기술을 확보해야 합니다. 특허 점수 89.3 점으로 데이터 라벨링 비용 절감 및 품질 향상을 위한 기술적 우위를 확보할 수 있습니다.",
+                  "investment_decision": "Tier 1 로 선정하여 총 예산의 35% 를 집중 투자합니다. 이는 '원가 우위를 통한 글로벌 시장 확장' 전략과 완벽히 부합하며, T01 의 아키텍처 안정화 후 즉시 적용 가능한 핵심 기술입니다. 높은 시장 성장률과 기술적 필요성을 고려할 때, 선제적 투자가 경쟁 우위 확보의 핵심입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "온-디바이스 모델 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10000000.0,
+                "tech_budget_rationale": "T03 은 TAM 350 억 달러, CAGR 27.9% 의 높은 성장률을 보이지만, 2028 년 Q2 시장 급증으로 인해 상대적으로 여유 있는 개발 기간을 가집니다. 총 예산의 약 23% 를 할당하여 T01 과 T02 의 기술이 안정화된 후 본격적인 최적화 작업을 수행하고, 저전력 엣지 디바이스 기술 진화를 주도합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년 3 차년도부터 T01 과 T02 의 기술 안정화와 병행하여 온-디바이스 모델 최적화 알고리즘 개발 및 저전력 엣지 디바이스 테스트를 시작해야 합니다.",
+                "reasoning": {
+                  "market_evaluation": "TAM 350 억 달러, CAGR 27.9% 의 높은 성장세로, 2028 년 Q2 에 예상되는 시장 급증에 맞춰 2027 년부터 착수해야 합니다. 온디바이스 AI 시장이 2030 년까지 급성장할 것으로 예상되며, ADAS 칩셋 최적화 수요가 핵심입니다.",
+                  "tech_evaluation": "TRL 7 로 상용화 직전 단계이며, STRADVISION 의 기존 특허 기반 최적화 기술을 차별화 포인트로 발전시켜야 합니다. 특허 점수 86.8 점으로 NVIDIA 와 Mobileye 의 최신 하드웨어 효율화 기술과 비교하여 성능 격차를 줄일 수 있습니다.",
+                  "investment_decision": "Tier 2 로 선정하여 총 예산의 23% 를 할당합니다. 이는 '검증된 기술 스택의 상용화 가속' 전략과 부합하며, T01 과 T02 의 기술이 안정화된 후 본격적인 최적화 작업을 수행할 수 있는 조건을 마련합니다. 높은 시장 성장률과 기술적 필요성을 고려할 때, 단계적 투자가 적절합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T01",
+                "name": "다중 센서 퓨전 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T01",
+                "name": "다중 센서 퓨전 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T01",
+                "name": "다중 센서 퓨전 아키텍처",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T02",
+                "name": "시뮬레이션 기반 합성 데이터 생성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T02",
+                "name": "시뮬레이션 기반 합성 데이터 생성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T02",
+                "name": "시뮬레이션 기반 합성 데이터 생성",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 3,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "온-디바이스 모델 최적화",
+                "tier": "Tier 2",
+                "tech_budget_usd": 10000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 18000000.0,
+            "3": 15000000.0,
+            "5": 10000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T02",
+              "name": "시뮬레이션 기반 합성 데이터 생성",
+              "category": "Process",
+              "final_score": 88.7,
+              "market_score": 88.2,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T01",
+              "name": "다중 센서 퓨전 아키텍처",
+              "category": "Architecture",
+              "final_score": 87.0,
+              "market_score": 82.5,
+              "boom": "2027 Q3"
+            },
+            {
+              "tech_id": "T03",
+              "name": "온-디바이스 모델 최적화",
+              "category": "Process",
+              "final_score": 82.95,
+              "market_score": 79.8,
+              "boom": "2028 Q2"
+            },
+            {
+              "tech_id": "T05",
+              "name": "자율주행 안전 아키텍처",
+              "category": "Architecture",
+              "final_score": 82.59,
+              "market_score": 82.5,
+              "boom": "2028 Q2"
+            }
+          ],
+          "category_distribution": {
+            "Process": 2,
+            "Architecture": 2
+          },
+          "avg_trl": 6.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T01",
+              "name": "다중 센서 퓨전 아키텍처",
+              "stage": "roadmap",
+              "key_reason": "TAM 400 억 달러, CAGR 18.5% 의 거대 시장 성장세와 2027 년 Q3 시장 급증에 대응하기 위한 선제적 투자 필요."
+            },
+            {
+              "tech_id": "T02",
+              "name": "시뮬레이션 기반 합성 데이터 생성",
+              "stage": "roadmap",
+              "key_reason": "TAM 680 억 달러, CAGR 24.5% 의 폭발적 성장세와 2026 년 Q4 시장 급증에 대응하기 위한 선제적 투자 필요."
+            }
+          ],
+          "dependency_edges": [
+            "T01 → T02",
+            "T01 → T03",
+            "T02 → T03"
+          ],
+          "boom_quarter_distribution": {
+            "2026 Q4": 1,
+            "2027 Q3": 1,
+            "2028 Q2": 2
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 의존성 및 시장 시점 정합성 확인. 전략 방향성과 투자 배분 모두 적절하여 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__시장이익최대__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__시장이익최대__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_stradvision_autonomous_2026_2030__시장이익최대__investment_strategy.json"
+  }
+}

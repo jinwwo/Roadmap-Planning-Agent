@@ -1,0 +1,468 @@
+{
+  "problem_frame": {
+    "industry": "Cathode Materials / Functional Materials",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 11700000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Cosmo AM&T",
+    "annual_revenue": 326000000.0,
+    "rd_budget_ratio": 0.012,
+    "annual_rd_budget": 3900000.0,
+    "strategic_direction": [
+      "차세대 양극재 및 기능성 소재 기술 선도",
+      "에너지 저장 및 신소재 인접 시장 확장",
+      "프론티어 기술 R&D 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This TRM focuses on advancing cathode materials and related technologies to capitalize on the growing demand for high-performance batteries. The strategy prioritizes high nickel cathode materials and solid-state electrolytes, leveraging Cosmo AM&T's existing expertise and patent portfolio.",
+      "technology_strategy": "Focus on materials innovation, process optimization, and advanced development to achieve technology leadership.",
+      "roadmap_structure": "The roadmap is structured in three stages: Materials Innovation (2026-2027), Process Optimization (2027-2028), and Advanced Development (2028-2030).",
+      "investment_strategy": "Prioritize investments in high-potential technologies with near-term revenue opportunities.",
+      "trend_alignment": "The TRM aligns with key industry trends, including the increasing demand for EVs and energy storage, and the need for higher energy density and safer batteries.",
+      "feasibility_and_risk": "The TRM is feasible given Cosmo AM&T's capabilities and resources. Major risks include raw material price volatility and competition from established players.",
+      "expected_outcomes": "Successful execution of this TRM is expected to result in increased revenue, market share, and technological leadership in the advanced battery materials space.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "High Nickel Cathode Materials",
+            "category": "Material",
+            "trl": 6,
+            "patent_score": 8.0,
+            "market_score": 9.0,
+            "final_score": 17.0,
+            "expected_market_boom_quarter": "2027 Q4",
+            "dependency_hints": [
+              "Dry Electrode Coating",
+              "AI-driven Material Discovery"
+            ],
+            "rationale": "Cosmo AM&T has recent patent activity in high nickel cathode materials. Market demand is strong, and the company's expertise aligns well with this technology. Competitors like SK On, LG Energy Solution, and Samsung SDI are also heavily investing in this area."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Solid State Electrolytes",
+            "category": "Material",
+            "trl": 4,
+            "patent_score": 6.0,
+            "market_score": 8.0,
+            "final_score": 14.0,
+            "expected_market_boom_quarter": "2029 Q1",
+            "dependency_hints": [
+              "Advanced Battery Packaging",
+              "AI-driven Material Discovery"
+            ],
+            "rationale": "Solid-state electrolytes offer significant performance and safety advantages. While TRL is lower, the potential market is substantial. Competitors are actively researching this technology, and Cosmo AM&T's recent patent activity suggests interest."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Battery Packaging",
+            "category": "Packaging",
+            "trl": 7,
+            "patent_score": 7.0,
+            "market_score": 7.0,
+            "final_score": 14.0,
+            "expected_market_boom_quarter": "2028 Q2",
+            "dependency_hints": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "rationale": "Advanced packaging is crucial for maximizing energy density and thermal management. Cosmo AM&T's patent portfolio and the competitive landscape indicate a strong market opportunity."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Silicon Anode Materials",
+            "category": "Material",
+            "trl": 5,
+            "patent_score": 5.0,
+            "market_score": 6.0,
+            "final_score": 11.0,
+            "expected_market_boom_quarter": "2028 Q3",
+            "dependency_hints": [
+              "Dry Electrode Coating"
+            ],
+            "rationale": "Increasing silicon content in anodes boosts energy density. While competition is fierce, Cosmo AM&T's expertise in materials science provides a foundation for development."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Dry Electrode Coating",
+            "category": "Process",
+            "trl": 6,
+            "patent_score": 6.0,
+            "market_score": 7.0,
+            "final_score": 13.0,
+            "expected_market_boom_quarter": "2027 Q3",
+            "dependency_hints": [
+              "High Nickel Cathode Materials",
+              "Silicon Anode Materials"
+            ],
+            "rationale": "Dry electrode coating offers cost reduction and efficiency gains. This process is critical for scaling up production of advanced battery materials."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI-driven Material Discovery",
+            "category": "Architecture",
+            "trl": 3,
+            "patent_score": 4.0,
+            "market_score": 5.0,
+            "final_score": 9.0,
+            "expected_market_boom_quarter": "2030 Q1",
+            "dependency_hints": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "rationale": "AI can accelerate material development and reduce R&D costs. While TRL is low, this technology is essential for maintaining a competitive edge."
+          },
+          {
+            "tech_id": "S07",
+            "name": "High-Throughput Battery Testing",
+            "category": "Equipment",
+            "trl": 7,
+            "patent_score": 3.0,
+            "market_score": 4.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2027 Q2",
+            "dependency_hints": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "rationale": "Rapidly evaluating new materials is crucial for accelerating innovation. This equipment is essential for supporting other technology development efforts."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S01",
+            "name": "High Nickel Cathode Materials",
+            "phase_name": "Scale-up & Optimization",
+            "start_q": "2026 Q1",
+            "target_q": "2028 Q4",
+            "prerequisites": [
+              "TS05"
+            ],
+            "lead_time_quarters": 10,
+            "justification": "Capitalize on strong market demand and existing patent portfolio. Focus on optimizing material performance and scaling up production."
+          },
+          {
+            "tech_id": "S02",
+            "name": "Solid State Electrolytes",
+            "phase_name": "Prototype Development",
+            "start_q": "2026 Q2",
+            "target_q": "2029 Q1",
+            "prerequisites": [
+              "S01",
+              "S03"
+            ],
+            "lead_time_quarters": 9,
+            "justification": "Develop prototype solid-state batteries to demonstrate performance and safety advantages."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Dry Electrode Coating",
+            "phase_name": "Process Validation",
+            "start_q": "2026 Q3",
+            "target_q": "2027 Q3",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Validate the dry electrode coating process to reduce costs and improve production efficiency."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Advanced Battery Packaging",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q1",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "lead_time_quarters": 10,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S04",
+            "name": "Silicon Anode Materials",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "Dry Electrode Coating"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S06",
+            "name": "AI-driven Material Discovery",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q3",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "lead_time_quarters": 13,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S07",
+            "name": "High-Throughput Battery Testing",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "High Nickel Cathode Materials",
+              "Solid State Electrolytes"
+            ],
+            "lead_time_quarters": 14,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 4094999.9999999995,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "High Nickel Cathode Materials",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "Solid State Electrolytes",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 4680000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Advanced Battery Packaging",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "Silicon Anode Materials",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 2925000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "Dry Electrode Coating",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "AI-driven Material Discovery",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "High-Throughput Battery Testing",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_cosmo_amt_battery_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_cosmo_amt_battery_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_cosmo_amt_battery_2026_2030__기술선도__investment_strategy.json"
+  }
+}

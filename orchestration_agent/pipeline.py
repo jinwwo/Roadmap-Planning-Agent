@@ -804,6 +804,9 @@ def run_single_agent_orchestration(
     company_profile: Optional[str] = None,
     related_companies: Optional[List[str]] = None,
     use_patent_map: Optional[bool] = None,
+    company_scenario: Optional[dict] = None,
+    strategic_direction: Optional[List[str]] = None,
+    tool_augmented: bool = False,
 ) -> Dict[str, Any]:
     """Run the single-agent baseline and write the same artifact files.
 
@@ -813,10 +816,11 @@ def run_single_agent_orchestration(
     """
     del active_agents, risk_appetite, investment_horizon, stage_mode
     category_hints = category_hints or []
-    baseline_agents = ["single"]
+    run_mode = "tool-single" if tool_augmented else "single"
+    baseline_agents = ["tool-single"] if tool_augmented else ["single"]
 
     _emit("pipeline_start", active_agents=baseline_agents, domain=domain,
-          reference_year=reference_year, run_mode="single")
+          reference_year=reference_year, run_mode=run_mode)
 
     _emit("setup_start")
     problem_frame = run_orchestrator_setup(
@@ -830,12 +834,22 @@ def run_single_agent_orchestration(
         objective=objective,
         priorities=priorities,
         future_trend_summary=future_trend_summary,
+        company_scenario=company_scenario,
+        strategic_direction=strategic_direction,
     )
-    print("[Single Agent] baseline mode: one LLM call will generate candidates, market context, roadmap, strategy, and review.")
-    _emit("setup_done", problem_frame=problem_frame, active_agents=baseline_agents, run_mode="single")
+    if tool_augmented:
+        print("[Tool Single Agent] baseline mode: patent/market tools collect evidence, then one LLM generates the full TRM.")
+    else:
+        print("[Single Agent] baseline mode: one LLM call will generate candidates, market context, roadmap, strategy, and review.")
+    _emit("setup_done", problem_frame=problem_frame, active_agents=baseline_agents, run_mode=run_mode)
 
-    _emit("agent_start", agent="single", label="Single Agent · End-to-End Baseline", active=True)
-    print("\n[Single Agent] ▶ end-to-end baseline 실행")
+    _emit(
+        "agent_start",
+        agent=run_mode,
+        label="Tool Single Agent · End-to-End Baseline" if tool_augmented else "Single Agent · End-to-End Baseline",
+        active=True,
+    )
+    print("\n[Tool Single Agent] ▶ API-augmented end-to-end baseline 실행" if tool_augmented else "\n[Single Agent] ▶ end-to-end baseline 실행")
     baseline = run_single_agent_baseline(
         domain=domain,
         reference_year=reference_year,
@@ -845,6 +859,7 @@ def run_single_agent_orchestration(
         company_profile=company_profile,
         related_companies=related_companies,
         use_patent_map=use_patent_map,
+        tool_augmented=tool_augmented,
     )
 
     tech_path = _output_path(FILE_TECH_CANDIDATES, out_prefix)
@@ -852,26 +867,31 @@ def run_single_agent_orchestration(
     strategy_path = _output_path(FILE_INVESTMENT_STRATEGY, out_prefix)
 
     tech_out = {
-        "run_mode": "single",
+        "run_mode": run_mode,
         "baseline_mode": baseline.get("baseline_mode"),
         "llm_data_quality": baseline.get("llm_data_quality"),
         "use_patent_map": use_patent_map,
         "market_context": baseline.get("market_context") or {},
         "tech_candidates": baseline.get("tech_candidates") or [],
         "single_agent_raw": baseline.get("raw_response") or {},
+        "tool_planning": baseline.get("tool_planning") or {},
+        "patent_raw_data": baseline.get("patent_raw_data") or {},
+        "market_raw_data": baseline.get("market_raw_data") or {},
+        "patent_maps": baseline.get("patent_maps") or {},
+        "tool_context": baseline.get("tool_context") or {},
     }
     roadmap_out = {
-        "run_mode": "single",
+        "run_mode": run_mode,
         "market_context": baseline.get("market_context") or {},
         "planned_roadmap": baseline.get("planned_roadmap") or [],
         "dependency_tree": {},
         "tech_selection": {
-            "mode": "single_agent_baseline",
+            "mode": "tool_augmented_single_agent_baseline" if tool_augmented else "single_agent_baseline",
             "selected_count": len(baseline.get("planned_roadmap") or []),
         },
     }
     strategy_out = {
-        "run_mode": "single",
+        "run_mode": run_mode,
         "market_context": baseline.get("market_context") or {},
         "investment_policy": {
             "total_budget": problem_frame.get("total_budget"),
@@ -903,18 +923,23 @@ def run_single_agent_orchestration(
         "agent2_planned_roadmap": planned_roadmap,
         "agent3_investment_strategy": investment_strategy,
         "insights": {
-            "run_mode": "single_agent",
+            "run_mode": "tool_augmented_single_agent" if tool_augmented else "single_agent",
             "candidate_count": len(tech_candidates),
             "roadmap_item_count": len(planned_roadmap),
             "stage_count": len(stages),
-            "note": "All artifacts were generated by one end-to-end LLM call.",
+            "note": (
+                "Patent/market tools collected evidence, then one LLM generated all artifacts."
+                if tool_augmented
+                else "All artifacts were generated by one end-to-end LLM call."
+            ),
         },
     })
 
-    print(f"[Single Agent] 저장: {tech_path!r} ({len(tech_candidates)}개 후보)")
-    print(f"[Single Agent] 저장: {roadmap_path!r} ({len(planned_roadmap)}개 로드맵 항목)")
-    print(f"[Single Agent] 저장: {strategy_path!r} ({len(stages)}개 stage)")
-    _emit("agent_end", agent="single", count=len(tech_candidates))
+    label = "[Tool Single Agent]" if tool_augmented else "[Single Agent]"
+    print(f"{label} 저장: {tech_path!r} ({len(tech_candidates)}개 후보)")
+    print(f"{label} 저장: {roadmap_path!r} ({len(planned_roadmap)}개 로드맵 항목)")
+    print(f"{label} 저장: {strategy_path!r} ({len(stages)}개 stage)")
+    _emit("agent_end", agent=run_mode, count=len(tech_candidates))
     _emit("candidates_ready", candidates=tech_candidates, market_context=market_context)
     _emit("roadmap_ready", planned_roadmap=planned_roadmap)
     _emit("strategy_ready", stages=stages, investment_strategy=investment_strategy)
@@ -922,7 +947,7 @@ def run_single_agent_orchestration(
     _emit("review_done", iteration=1, review=review)
 
     result = {
-        "run_mode": "single",
+        "run_mode": run_mode,
         "problem_frame": problem_frame,
         "active_agents": baseline_agents,
         "patent_method": patent_method,
@@ -940,5 +965,5 @@ def run_single_agent_orchestration(
             "investment_strategy": strategy_path,
         },
     }
-    _emit("pipeline_done", iteration=1, decision=review.get("decision"), run_mode="single")
+    _emit("pipeline_done", iteration=1, decision=review.get("decision"), run_mode=run_mode)
     return result

@@ -1,0 +1,315 @@
+{
+  "run_mode": "tool-single",
+  "market_context": {
+    "target_market": "Advanced Battery Materials for Electric Vehicles and Energy Storage Systems",
+    "expected_boom_quarter": "2028 Q4",
+    "tam_sam_som": {
+      "tam_usd": 350000000000.0,
+      "sam_usd": 70000000000.0,
+      "som_usd": 700000000.0
+    },
+    "cagr": "15.2%",
+    "growth_outlook": "Strong growth driven by EV adoption and increasing demand for energy storage. High nickel cathode materials and solid-state electrolytes are expected to be key growth areas.",
+    "single_agent_baseline": true,
+    "tool_augmented": true,
+    "use_patent_map": true
+  },
+  "investment_policy": {
+    "total_budget": 11700000.0,
+    "strategic_priority": []
+  },
+  "stages": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "tech_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "tech_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "tech_ids": [
+        "S05",
+        "S06",
+        "S07"
+      ]
+    }
+  ],
+  "investment_strategy": [
+    {
+      "stage": "Stage 1: Foundation",
+      "period": "2026 Q1-2027 Q4",
+      "stage_budget_ratio": 0.35,
+      "stage_estimated_usd": 4094999.9999999995,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S01",
+          "name": "High Nickel Cathode Materials",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 2237204.47,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S02",
+          "name": "Solid State Electrolytes",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 1857795.53,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    },
+    {
+      "stage": "Stage 2: Scale-up",
+      "period": "2028 Q1-2029 Q2",
+      "stage_budget_ratio": 0.4,
+      "stage_estimated_usd": 4680000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S03",
+          "name": "Advanced Battery Packaging",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 2610358.57,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S04",
+          "name": "Silicon Anode Materials",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 2069641.43,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    },
+    {
+      "stage": "Stage 3: Platform expansion",
+      "period": "2029 Q3-2030 Q4",
+      "stage_budget_ratio": 0.25,
+      "stage_estimated_usd": 2925000.0,
+      "stage_assessment": "Single-agent integrated investment judgment.",
+      "tech_investments": [
+        {
+          "tech_id": "S05",
+          "name": "Dry Electrode Coating",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 1307764.51,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S06",
+          "name": "AI-driven Material Discovery",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "medium",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 908447.1,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        },
+        {
+          "tech_id": "S07",
+          "name": "High-Throughput Battery Testing",
+          "recommended_investment_tier": "Tier 2",
+          "investment_attractiveness": "high",
+          "investment_urgency": "high",
+          "investment_scope": "R&D + ecosystem partnership",
+          "evaluation_scores": {
+            "market_opportunity": 4,
+            "strategic_fit": 5,
+            "executability": 4,
+            "uncertainty": 3,
+            "urgency": 4,
+            "market_size_growth": 4,
+            "tech_readiness": 4,
+            "tech_risk": 3,
+            "competitive_advantage": 5,
+            "development_urgency": 4
+          },
+          "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+          "rationale": [
+            "High relevance to the company scenario and roadmap horizon."
+          ],
+          "major_risks": [
+            "Single-agent estimate; no independent agent critique."
+          ],
+          "resource_focus": [
+            "Architecture validation",
+            "partner ecosystem",
+            "software enablement"
+          ],
+          "tech_budget_usd": 708788.4,
+          "tech_budget_rationale": "Allocated within the single-agent stage budget according to normalized candidate priority."
+        }
+      ]
+    }
+  ]
+}

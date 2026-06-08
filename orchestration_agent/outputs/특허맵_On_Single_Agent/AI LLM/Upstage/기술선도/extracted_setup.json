@@ -1,0 +1,33 @@
+{
+  "run_mode": "tool-single",
+  "scenario_id": "upstage_ai_llm_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "patent_map": "on",
+  "setup_source": "/workspace/orchestration_agent/outputs/특허맵_On/AI LLM/Upstage/기술선도/extracted_setup.json",
+  "prompt": "Company: Upstage\nIndustry: Foundation Model / Document AI / LLM\nAnnual Revenue: ~$17.7M\nR&D Budget Ratio: ~60.1%\nAnnual R&D Budget: ~$14.9M\nTotal 5-year R&D Budget: ~$54M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Upstage",
+    "industry": "Foundation Model / Document AI / LLM",
+    "annual_revenue": 17700000.0,
+    "rd_budget_ratio": 0.601,
+    "annual_rd_budget": 14900000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "공격적인 R&D 투자를 통해 프론티어 기술을 선점하고 장기적인 기술 해자를 구축하여 기술 선도 지위를 확보한다.",
+    "strategic_direction": [
+      "Document AI 및 LLM 기술 리더십 강화",
+      "기업용 AI 솔루션 시장 확장",
+      "프론티어 모델 및 인프라 스택 고도화"
+    ],
+    "domain": "Foundation Model / Document AI / LLM",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 54000000
+}

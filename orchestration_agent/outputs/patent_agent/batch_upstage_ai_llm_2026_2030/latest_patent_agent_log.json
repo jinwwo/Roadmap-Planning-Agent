@@ -1,0 +1,2412 @@
+{
+  "run_id": "batch_upstage_ai_llm_2026_2030",
+  "timestamp_utc": "2026-06-06T12:44:48Z",
+  "input": {
+    "domain": "Foundation Model / Document AI / LLM",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ],
+    "company_name": "Upstage",
+    "company_profile": "Company: Upstage\nIndustry: Foundation Model / Document AI / LLM\nAnnual Revenue: ~$17.7M\nR&D Budget Ratio: ~60.1%\nAnnual R&D Budget: ~$14.9M\nTotal 5-year R&D Budget: ~$54M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+    "related_companies": null,
+    "patent_map_generation": "always"
+  },
+  "prompt_variant": "C_company_portfolio",
+  "provider_summary": {
+    "Upstage": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 10,
+          "total_patent_count": 10,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 10,
+      "first_patent": {
+        "id": "1020230179892",
+        "title": "문자 인식과 연관된 모델 세트 배포 방법 및 시스템",
+        "date": "2023-12-12",
+        "assignee": "주식회사 업스테이지",
+        "jurisdiction": "KR",
+        "source": "kipris_domestic"
+      }
+    },
+    "Anthropic": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 10,
+            "total_patent_count": 12,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 1,
+            "total_patent_count": 1,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 11,
+      "first_patent": {
+        "id": "202600080154A1",
+        "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+        "date": "2025-09-18",
+        "assignee": "Anthropic, PBC",
+        "jurisdiction": "US",
+        "source": "kipris_foreign"
+      }
+    },
+    "Cohere": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 10,
+            "total_patent_count": 173,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 10,
+            "total_patent_count": 75,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 10,
+            "total_patent_count": 54,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 10,
+            "total_patent_count": 91,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 10,
+            "total_patent_count": 84,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 50,
+      "first_patent": {
+        "id": "202600127177A1",
+        "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+        "date": "2025-10-31",
+        "assignee": "Cohere Health, Inc.|Cohere Health, Inc.",
+        "jurisdiction": "US",
+        "source": "kipris_foreign"
+      }
+    },
+    "Adept AI": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 4,
+            "total_patent_count": 4,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 1,
+            "total_patent_count": 1,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 1,
+            "total_patent_count": 1,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 1,
+            "total_patent_count": 1,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 7,
+      "first_patent": {
+        "id": "202100356918A1",
+        "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+        "date": "2021-06-02",
+        "assignee": "ADEPT AI SYSTEMS INC.",
+        "jurisdiction": "US",
+        "source": "kipris_foreign"
+      }
+    },
+    "Scale AI": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 10,
+            "total_patent_count": 18,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 2,
+            "total_patent_count": 2,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 3,
+            "total_patent_count": 3,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 15,
+      "first_patent": {
+        "id": "000012182102B1",
+        "title": "Linking key-value pairs in documents",
+        "date": "2021-08-18",
+        "assignee": "Scale AI, Inc.",
+        "jurisdiction": "US",
+        "source": "kipris_foreign"
+      }
+    },
+    "Hugging Face": {
+      "source": "kipris:both",
+      "mock": false,
+      "error": null,
+      "source_breakdown": {
+        "scope": "both",
+        "domestic": {
+          "num_patents": 0,
+          "total_patent_count": 0,
+          "error": null
+        },
+        "foreign": {
+          "US": {
+            "num_patents": 3,
+            "total_patent_count": 3,
+            "error": null
+          },
+          "EP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "JP": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "CN": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "WO": {
+            "num_patents": 2,
+            "total_patent_count": 2,
+            "error": null
+          }
+        }
+      },
+      "num_patents": 5,
+      "first_patent": {
+        "id": "202600006680A1",
+        "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+        "date": "2025-06-27",
+        "assignee": "HUGGING FACE, INC.",
+        "jurisdiction": "WO",
+        "source": "kipris_foreign"
+      }
+    }
+  },
+  "patent_raw_data": {
+    "analysis_mode": "company_portfolio",
+    "domain": "Foundation Model / Document AI / LLM",
+    "company": {
+      "name": "Upstage",
+      "profile": "Company: Upstage\nIndustry: Foundation Model / Document AI / LLM\nAnnual Revenue: ~$17.7M\nR&D Budget Ratio: ~60.1%\nAnnual R&D Budget: ~$14.9M\nTotal 5-year R&D Budget: ~$54M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점"
+    },
+    "related_companies": [
+      "Anthropic",
+      "Cohere",
+      "Adept AI",
+      "Scale AI",
+      "Hugging Face"
+    ],
+    "company_portfolios": {
+      "Upstage": {
+        "company_name": "Upstage",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "1020230179892",
+            "title": "문자 인식과 연관된 모델 세트 배포 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 배포 방법이 제공된다. 이 방법은, 복수의 모델 세트를 생성하는 단계, 생성된 복수의 모델 세트 중에서 배포 대상이 되는 타깃 모델 세트를 결정하는 단계 및 결정된 타깃 모델 세트를 대상 시스템으로 배포하는 단계를 포함하고, 복수의 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179893",
+            "title": "모델 세트 성능 평가 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 성능을 평가하는 방법을 제공한다. 이 방법은 문서 이미지를 제1 모델 세트로 적용하는 단계 - 제1 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지에 기초한 문자 인식과 연관된 제1 결과 데이터를 제1 모델 세트로부터 획득하는 단계, 획득된 제1 결과 데이터에 기초하여 제1 모델 세트에 대한 제1 성능 평가 데이터를 생성하는 단계 및 생성된 제1 모델 세트에 대한 제1 성능 평가 데이터를 출력하는 단계를 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179502",
+            "title": "테스트에 기초한 모델 세트 배포 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 모델 세트를 배포하는 방법을 제공한다. 이 방법은, 대상 시스템에 적용 중인 제1 모델 세트와 배포 후보인 제2 모델 세트의 각각에 대해 테스트를 수행하는 단계 - 제1 모델 세트와 제2 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 - , 수행된 테스트에 기초하여, 제1 모델 세트에 대한 제1 성능 평가 데이터 및 제2 모델 세트에 대한 제2 성능 평가 데이터를 생성하는 단계, 제1 성능 평가 데이터와 제2 성능 평가 데이터에 기초하여, 제2 모델 세트가 배포 대상이 되는 모델 세트인지 여부를 판정하는 단계 및 제2 모델 세트가 배포 대상이 되는 모델 세트로 판정되는 경우, 제2 모델 세트를 대상 시스템으로 제공하는 단계를 포함할 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230179503",
+            "title": "라벨링 작업 관리 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 라벨링 작업 관리 방법이 제공된다. 이 방법은 라벨링 작업을 위한 세팅 데이터를 생성하는 단계, 복수의 이미지 중에서 라벨링 작업 대상이 되는 복수의 타깃 이미지를 선정하는 단계, 선정된 복수의 타깃 이미지 및 세팅 데이터를 제1 통신 단말로 전송하는 단계 및 라벨링 데이터를 제1 통신 단말로부터 수신하는 단계를 포함하고, 라벨링 데이터는 세팅 데이터 및 복수의 타깃 이미지에 기초하여 라벨링 작업이 수행된 데이터일 수 있다.",
+            "date": "2023-12-12",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230059587",
+            "title": "문자 인식과 연관된 모델 세트 모니터링 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식을 수행하기 위한 모델 세트를 모니터링하는 방법을 제공한다. 이 방법은 문서 이미지를 모델 세트에 입력하는 단계 - 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지가 모델 세트에 입력된 시점에서부터 모델 세트를 통해 문서 이미지에 기초한 문자 인식 결과가 출력되기까지의 문자 인식 분석 시간 동안에, 모델 세트에 대한 상태 데이터를 수집하는 단계 및 수집된 상태 데이터에 기초하여, 모델 세트의 상태를 출력하는 단계를 포함할 수 있다.",
+            "date": "2023-05-09",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020230059586",
+            "title": "문자 인식 방법 및 시스템",
+            "abstract": "본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식 방법이 제공된다. 이 방법은 문서 유형(type)을 포함하는 사용자 입력을 수신하는 단계, 문서 유형과 연관된 문서 이미지로부터 문자 인식을 수행하기 위한 프로젝트를 획득하는 단계, 획득된 프로젝트와 연관된 자원을 할당하는 단계, 문서 유형과 연관된 문서 이미지를 수신하는 단계 및 할당된 자원을 이용하여, 수신된 문서 이미지로부터 문자를 인식하는 단계를 포함할 수 있다.",
+            "date": "2023-05-09",
+            "assignee": "주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135194",
+            "title": "맞춤형 교육자료 제공기능을 갖는 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자들의 평가문항에 대한 풀이이력을 기반으로, 학습자별 도전형 평가문항 데이터와, 유사 풀이이력을 갖는 학습자 집단의 리스트 데이터를 추출하고, 상기 추출된 도전형 평가문항 데이터 및 리스트 데이터를 상호 매칭시켜 임의의 추천 문항정보를 생성하며, 상기 생성된 추천 문항정보를 미리 지정된 커리큘럼 데이터로 맵핑하여 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 더 생성하되, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하고, 상기 도전형 평가문항 데이터는, 미리 설정된 기준값을 초과하는 오답확률을 갖는 평가문항으로 이루어진 데이터인 것을 특징으로 하여,  보다 안정적인 학습환경에서 학습자의 도전의식을 고취시킬 수 있는 평가의 진행이 가능한 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135192",
+            "title": "학습 이해도에 대한 진단을 지원하는 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습 이해도를 진단하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자의 학습로그(X)를 미리 프로그래밍된 딥러닝 알고리즘 기반의 진단용 서브모듈을 통해 분석하여 학습자별 진단정보를 추출하고, 상기 학습자별 진단정보를 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 임의의 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하되, 상기 학습자별 진단정보는, 학습영역별 이해도 및 단원별 이해도 중 적어도 하나의 학습역량에 대한 데이터인 것을 특징으로 하고, 상기 제어부는, 상기 학습로그(X)를 기반으로 상기 학습자가 각 시험에서 풀었던 시험에 대한 정답여부를 재생성하고, 추후 시험에서 풀 평가문항들에 대한 정답여부를 예측가능한 임의의 이해도를 추출하는 것을 학습하도록 구성된 것을 특징으로 하여, 학습자의 학습 이해도에 대해 보다 정확한 진단을 지원할 수 있는 효과가 있...(이하생략)",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135195",
+            "title": "신규 학습자용 진단평가 데이터 기반의 커리큐럼별 이해도 추론을 활용한 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 신규 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 신규 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서,  상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 신규 학습자가 진행한 진단평가에 대한 기록 데이터를 획득하고, 상기 획득된 기록 데이터를 기반으로 각 커리큘럼별 이해도 값을 추정하며, 상기 추정된 이해도 값을 미리 지정된 학습관리용 데이터와 매칭시켜 상기 신규 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하는 것을 특징으로 하여,  신규 학습자를 대상으로 한 커스터마이징 정보 제공에 대해 보다 향상된 신뢰성을 달성할 수 있고, 이에 따라, 신규 학습자 및 교사에게 향후 각각의 맞춤형 학습과 교수를 가이드하기 위한 관리환경을 보다 효율적으로 달성할 수 있는 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          },
+          {
+            "id": "1020220135193",
+            "title": "학습이력 및 메타정보 기반의 지식맵을 활용한 인공지능 튜터링 시스템",
+            "abstract": "본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서,  상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습이력 데이터와 상기 외부 서버로부터 획득되는 메타 데이터를 기반으로, 임의의 지식컨셉(KC - Knowledge Concept) 단위로 진행하는 상기 학습자의 학습과정에서 존재하는 지식컨셉 간 선후행 관계가 반영된 지식맵을 구축하고, 상기 구축된 지식맵을 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제1,2 단말에 구비되어, 상기 제어부로부터 출력된 알림신호에 따라 임의의 화면 상에 시각적으로 디스플레이하는 알림부를 포함하는 것을 특징으로 하여,  커스터마이징 정보 제공에 대해 보다 향상된 신뢰성을 달성할 수 있고, 이에 따라, 학습자 및 교사에게 향후 각각의 맞춤형 학습과 교수를 가이드하기 위한 관리환경을 보다 효율적으로 달성할 수 있는 효과가 있다.",
+            "date": "2022-10-19",
+            "assignee": "주식회사  아이스크림에듀|주식회사 업스테이지",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "",
+            "cpc": "",
+            "jurisdiction": "KR",
+            "source": "kipris_domestic",
+            "_source": "kipris"
+          }
+        ],
+        "filing_trend": {
+          "2022": 4,
+          "2023": 6,
+          "2024": 0,
+          "cagr_pct": 0.0
+        },
+        "citation_summary": {
+          "total_patents": 10,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 10,
+            "total_patent_count": 10,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Anthropic": {
+        "company_name": "Anthropic",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600080154A1",
+            "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+            "abstract": "",
+            "date": "2025-09-18",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600080153A1",
+            "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2025-09-18",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012430150B1",
+            "title": "Runtime architecture for interfacing with agents to automate multimodal interface workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/44|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012585862B2",
+            "title": "Training data for training artificial intelligence agents to automate multimodal software usage",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V10/82|G06F3/0481|G06F3/0484|G06F16/951|G06F40/166|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V20/40|G06V30/19|G06V30/41|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500298641A1",
+            "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500199330A1",
+            "title": "ARTIFICIAL INTELLIGENCE AGENTS FOR USER INTERFACE TASK WORKFLOW AUTOMATION",
+            "abstract": "",
+            "date": "2025-03-20",
+            "assignee": "ANTHROPIC, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N20/00|G06N3/08|G06Q10/06|G06Q10/10",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012619815B2",
+            "title": "Magnitude invariant multimodal agent for efficient image-text interface automation",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500299023A1",
+            "title": "Systems and Methods for Configuring Artificial Intelligence Agents to Automate Multimodal Interface Workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/0455|G06N3/091",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012566913B2",
+            "title": "Artificial intelligence agents to automate multimodal interface task workflows",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F3/0484|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41|G06F9/451",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500299074A1",
+            "title": "Data Flow Logic for Providing Artificial Intelligence Agents that Automate Multimodal Software Usage",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC|Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N5/04|G06F16/951|G06V10/774|G06V10/82|G06V30/19|G06V30/41",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012387036B1",
+            "title": "Multimodal agent for efficient image-text interface automation",
+            "abstract": "",
+            "date": "2024-10-08",
+            "assignee": "Anthropic, PBC",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F40/166|G06F3/0481|G06F40/284|G06V10/77|G06V10/80|G06V10/82",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 8,
+          "cagr_pct": 182.84
+        },
+        "citation_summary": {
+          "total_patents": 13,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 12,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 1,
+              "total_patent_count": 1,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Cohere": {
+        "company_name": "Cohere",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600127177A1",
+            "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "Cohere Health, Inc.|Cohere Health, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2455|G06F16/28|G16H10/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600127158A1",
+            "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "Cohere Health, Inc.|Cohere Health, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/23|G06F16/28|G06F40/205",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600096928A1",
+            "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+            "abstract": "",
+            "date": "2025-10-31",
+            "assignee": "COHERE HEALTH, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/93",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500166301A1",
+            "title": "PILOT SIGNAL PROCESSING IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2025-01-31",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00|H04B1/707|H04B1/713",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600093985A1",
+            "title": "Training Transformers Using Sliceout",
+            "abstract": "",
+            "date": "2025-12-08",
+            "assignee": "Cohere Inc.|Cohere Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06F16/903",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511295758A0",
+            "title": "Data set clustering and AI-assisted topic extraction",
+            "abstract": "",
+            "date": "2025-09-11",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F18/231|G06F18/22",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500254068A1",
+            "title": "ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2025-04-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/02|H04L25/03|H04L27/26",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500039030A1",
+            "title": "PULSE SHAPING IN DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2024-09-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004393125A1",
+            "title": "PULSE SHAPING IN DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2022-08-26",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004315775A1",
+            "title": "ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN",
+            "abstract": "",
+            "date": "2022-03-31",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L25/02",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600136356A1",
+            "title": "SPECTRAL SHARING WIRELESS SYSTEMS",
+            "abstract": "",
+            "date": "2026-01-08",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W72/121|H04B7/0456|H04L5/14|H04W72/542",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202511053804A0",
+            "title": "Unified metadata directory for data management platform",
+            "abstract": "",
+            "date": "2025-07-30",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/901|G06F16/25|G06F16/908",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600019778A1",
+            "title": "CHANNEL SENSING USING PULSE-TONE SIGNALS",
+            "abstract": "",
+            "date": "2025-07-15",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L5/00|H04B17/309|H04B17/391|H04W28/24|H04W52/42|H04W72/0446|H04W72/0453|H04W72/23|H04W74/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500255520A1",
+            "title": "BACKWARD COMPATIBLE ORTHOGONAL TIME FREQUENCY SPACE SIGNAL COMMUNICATION",
+            "abstract": "",
+            "date": "2025-06-06",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04W72/04|G08C15/00|H04J11/00|H04L5/00|H04Q11/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500286766A1",
+            "title": "ULTRA WIDE BAND SIGNALS USING ORTHOGONAL TIME FREQUENCY SPACE MODULATION",
+            "abstract": "",
+            "date": "2025-05-23",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L27/10",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510557334A0",
+            "title": "Artificial intelligence assisted data management for diversified source systems",
+            "abstract": "",
+            "date": "2025-04-29",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/2457|G06F16/2453|G06F16/2455",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500199366A1",
+            "title": "USING SPREAD PULSES IN WIRELESS COMMUNICATION",
+            "abstract": "",
+            "date": "2025-03-20",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L27/20|H04L27/00|H04L27/12|H04L27/04|H04L5/00|H04L27/148",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500189156A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2025-03-07",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L5/02|H04L5/08|H04W80/00|H04W92/12|H04W84/00|H04W88/00|H04W88/10|H04W88/08",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500184185A1",
+            "title": "RECIPROCAL CALIBRATION FOR CHANNEL ESTIMATION BASED ON SECOND-ORDER STATISTICS",
+            "abstract": "",
+            "date": "2025-02-07",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/02|H04B7/0413|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510133475A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2025-02-06",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/57|G06F16/3329|G06F21/44|G06F40/35",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510124496A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2025-01-26",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/57",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202510061533A0",
+            "title": "Variable-optical-path ultra-large-range liquid concentration measuring system and method",
+            "abstract": "",
+            "date": "2025-01-15",
+            "assignee": "UNIVERSITY OF SHANGHAI FOR SCIENCE &amp; TECHNOLOGY|SHANGHAI COHERE ELECTRONICS TECHNOLOGY CO., LTD.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01N21/31|G01N21/03",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500150130A1",
+            "title": "SPECTRAL SHARING WIRELESS SYSTEMS",
+            "abstract": "",
+            "date": "2025-01-09",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04B7/10|H04L5/14",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500023336A0",
+            "title": "明るい縁または暗い縁を伴う均質強度分布を形成するための装置",
+            "abstract": "",
+            "date": "2024-12-09",
+            "assignee": "コヒーレント レーザーシステムズ ゲーエムベーハー ウント コンパニー カーゲー",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G02B27/09|G02B27/00|G02B3/00|B23K26/064",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500207165A1",
+            "title": "NETWORK-SIDE COORDINATION OF MULTI-USER MULTIPLE-INPUT MULTIPLE-OUTPUT FUNCTIONALITY",
+            "abstract": "",
+            "date": "2024-12-04",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04W72/56|H04W72/12|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202411695663A0",
+            "title": "Method, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-11-25",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/1446|G06F21/56",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500016780A0",
+            "title": "光学パラメトリックチャープパルス増幅器",
+            "abstract": "",
+            "date": "2024-11-08",
+            "assignee": "コヒレント, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G02F1/39|G02F1/37",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004747975A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2024-10-24",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/0413|H04B7/02|H04W88/08|H04W92/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500090790A1",
+            "title": "SHARED RADIO ACCESS NETWORK METHODS AND APPARATUS",
+            "abstract": "",
+            "date": "2024-10-24",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/0413|H04B7/02|H04W88/08|H04W92/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400405901A1",
+            "title": "CHANNEL QUALITY PREDICTION IN CLOUD BASED RADIO ACCESS NETWORKS",
+            "abstract": "",
+            "date": "2024-08-13",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B17/373|H04L25/02",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500034426A2",
+            "title": "CHANNEL CALIBRATION USING PARAMETER PERTURBATION",
+            "abstract": "",
+            "date": "2024-07-25",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0456|H04B7/04|H04W76/20",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410998857A0",
+            "title": "Method implemented by computing system, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-07-24",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F3/06",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410930246A0",
+            "title": "Method implemented by computing system, computing system and computer readable storage medium",
+            "abstract": "",
+            "date": "2024-07-11",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F3/06|G06F11/14",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202410787509A0",
+            "title": "Method and computing system",
+            "abstract": "",
+            "date": "2024-06-18",
+            "assignee": "COHERE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F21/60|G06F21/57|G06F21/78",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400250029A1",
+            "title": "NETWORK-SIDE COORDINATION OF MULTI-USER MULTIPLE-INPUT MULTIPLE-OUTPUT FUNCTIONALITY",
+            "abstract": "",
+            "date": "2024-06-03",
+            "assignee": "COHERE TECHNOLOGIES, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W72/54|H04B7/0413|H04W24/10|H04W84/04",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004674093A1",
+            "title": "ORTHOGONAL TIME FREQUENCY SPACE SIGNAL COMMUNICATION USING PREDEFINED BASIS SIGNALS",
+            "abstract": "",
+            "date": "2024-03-01",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L25/03|H04L27/26|H04L1/20|H04B7/06|H04L25/02|H04B7/005",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400032935A0",
+            "title": "レーザ焼鈍のためのダイオード励起固体レーザ装置",
+            "abstract": "",
+            "date": "2024-02-01",
+            "assignee": "コヒレント, インコーポレイテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H01S3/23|G02F1/37",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004555343A1",
+            "title": "DIRECTIONALITY CALIBRATION IN WIRELESS COMMUNICATION",
+            "abstract": "",
+            "date": "2023-07-10",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G01S7/40|G01S1/14|G01S1/02|G01S3/16|H01Q3/00|H04B7/08",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004544693A1",
+            "title": "EFFICIENT REFERENCE SIGNALS CONFIGURATION FOR MULTI-USER UPLINK TRANSMISSIONS",
+            "abstract": "",
+            "date": "2023-06-23",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/04|H04J1/00|H04L27/26|H04L5/00|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007698327B2",
+            "title": "メモリ・ネットワーク・プロセッサ",
+            "abstract": "",
+            "date": "2023-06-08",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F15/173|G06F9/30",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004527021A1",
+            "title": "SPATIAL DIVERSITY MEASUREMENT, TRACKING AND MANAGEMENT",
+            "abstract": "",
+            "date": "2023-05-17",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04W74/04|H04B7/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004497205A2",
+            "title": "CHANNEL CALIBRATION IN HIGH DENSITY ANTENNA SYSTEMS",
+            "abstract": "",
+            "date": "2023-03-21",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/06|H04B7/0413|H04W24/08|H04B7/0417|H04L27/26",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202300025151A0",
+            "title": "多リガンド-薬物複合体及びその使用",
+            "abstract": "",
+            "date": "2022-12-01",
+            "assignee": "コヒレント バイオファーマ ワン,リミテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "A61K47/54|A61K38/12|A61K45/00|A61K47/65|A61P3/00|A61P3/04|A61P3/06|A61P3/10|A61P9/00|A61P9/04|A61P9/06|A61P9/10|A61P17/00|A61P17/02|A61P19/02|A61P19/06|A61P21/00|A61P25/00|A61P25/08|A61P25/14|A61P25/16|A61P25/28|A61P29/00|A61P35/00|A61P37/02|A61P37/06|A61P43/00|A61P35/02|C07K9/00|A61P9/12|A61K38/08",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202200120081A0",
+            "title": "放送及び双方向パケット交換通信のための共有スペクトルアクセス",
+            "abstract": "",
+            "date": "2022-06-09",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04W16/14|H04W56/00|H04W72/04|H04W4/06",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004331193A1",
+            "title": "ULTRA WIDE BAND SIGNALS USING ORTHOGONAL TIME FREQUENCY SPACE MODULATION",
+            "abstract": "",
+            "date": "2022-04-29",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04L27/26|H04L5/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007335387B2",
+            "title": "多重プロセッサシステムのためのリアルタイム分析及び制御",
+            "abstract": "",
+            "date": "2022-03-31",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F11/36",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004264842A1",
+            "title": "SPATIAL MULTIPLEXING OF DIFFERENT RADIO TECHNOLOGIES",
+            "abstract": "",
+            "date": "2021-12-21",
+            "assignee": "Cohere Technologies, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H04B7/0452|H04B7/06|H04J11/00|H04L5/00|H04L27/26|H04W72/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007289341B2",
+            "title": "改善された二次相互接続ネットワークを備えたマルチプロセッサシステム",
+            "abstract": "",
+            "date": "2021-10-07",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F15/173",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000007264955B2",
+            "title": "プログラム可能な最適化を有するメモリネットワークプロセッサ",
+            "abstract": "",
+            "date": "2021-08-27",
+            "assignee": "コーヒレント・ロジックス・インコーポレーテッド",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F9/30|G06F9/34|G06F9/38",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202100064796A0",
+            "title": "偏光制御レーザーライン投射器",
+            "abstract": "",
+            "date": "2020-12-14",
+            "assignee": "コヒーレント レーザーシステムズ ゲーエムベーハー ウント コンパニー カーゲー",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "H01L21/268|G02B5/30|H01L21/20",
+            "cpc": "",
+            "jurisdiction": "JP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 6,
+          "2023": 5,
+          "2024": 15,
+          "cagr_pct": 58.11
+        },
+        "citation_summary": {
+          "total_patents": 477,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 173,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 10,
+              "total_patent_count": 75,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 10,
+              "total_patent_count": 54,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 10,
+              "total_patent_count": 91,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 10,
+              "total_patent_count": 84,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Adept AI": {
+        "company_name": "Adept AI",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202100356918A1",
+            "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "abstract": "",
+            "date": "2021-06-02",
+            "assignee": "ADEPT AI SYSTEMS INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B13/04|G06N7/00|E21B47/008|G05B23/02|E21B43/12|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202000201267A1",
+            "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "abstract": "",
+            "date": "2019-12-20",
+            "assignee": "ADEPT AI SYSTEMS INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B13/04|G06N7/00|G05B23/02|E21B41/00|E21B43/12|E21B47/00|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "201700235284A1",
+            "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "abstract": "",
+            "date": "2017-03-29",
+            "assignee": "ADEPT AI SYSTEMS INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B13/04|E21B47/00|E21B41/00|E21B43/12|G06N7/00|G06N5/04",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000003074824B1",
+            "title": "METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "abstract": "",
+            "date": "2014-11-27",
+            "assignee": "Adept AI Systems Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B17/02|G05B23/02|G06N7/00|G05B13/04",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "201480072999A0",
+            "title": "Method and system for artificially intelligent model-based control of dynamic processes using probabilistic agents",
+            "abstract": "",
+            "date": "2014-11-27",
+            "assignee": "Adept Ai Systems Inc",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B17/02|G05B23/02",
+            "cpc": "",
+            "jurisdiction": "CN",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "201500077890A1",
+            "title": "METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+            "abstract": "",
+            "date": "2014-11-27",
+            "assignee": "ADEPT AI SYSTEMS INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B17/02|G05B23/02",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000009645575B2",
+            "title": "Method and apparatus for artificially intelligent model-based control of dynamic processes using probabilistic agents",
+            "abstract": "",
+            "date": "2013-11-27",
+            "assignee": "ADEPT AI SYSTEMS INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G05B13/04|G05B23/02|G06N7/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "cagr_pct": 0.0
+        },
+        "citation_summary": {
+          "total_patents": 7,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 4,
+              "total_patent_count": 4,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 1,
+              "total_patent_count": 1,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 1,
+              "total_patent_count": 1,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 1,
+              "total_patent_count": 1,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Scale AI": {
+        "company_name": "Scale AI",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "000012182102B1",
+            "title": "Linking key-value pairs in documents",
+            "abstract": "",
+            "date": "2021-08-18",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/23|G06V10/30|G06V30/10|G06V30/14|G06V30/414",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012205395B1",
+            "title": "Key-value extraction from documents",
+            "abstract": "",
+            "date": "2021-08-18",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V30/416|G06N20/00|G06V30/414",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004634795A1",
+            "title": "UNIQUE SAMPLING OF DATASETS",
+            "abstract": "",
+            "date": "2023-12-14",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400130024A1",
+            "title": "UNIQUE SAMPLING OF DATASETS",
+            "abstract": "",
+            "date": "2023-12-14",
+            "assignee": "SCALE AI, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400130025A1",
+            "title": "UNIQUE SAMPLING OF OBJECTS IN IMAGE DATASETS",
+            "abstract": "",
+            "date": "2023-12-14",
+            "assignee": "SCALE AI, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/33|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012525013B1",
+            "title": "Prelabeling of bounding boxes in video frames",
+            "abstract": "",
+            "date": "2023-10-31",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V20/40|G06F18/214|G06F18/40|G06N20/00|G06V10/22|G06V10/25",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000004602562A1",
+            "title": "THREE-DIMENSIONAL PERSPECTIVE CORRECTION",
+            "abstract": "",
+            "date": "2023-10-10",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00",
+            "cpc": "",
+            "jurisdiction": "EP",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400081254A1",
+            "title": "THREE-DIMENSIONAL PERSPECTIVE CORRECTION",
+            "abstract": "",
+            "date": "2023-10-10",
+            "assignee": "SCALE AI, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012259865B2",
+            "title": "Unique sampling of datasets",
+            "abstract": "",
+            "date": "2022-12-14",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/22",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012499664B2",
+            "title": "Unique sampling of objects in image datasets",
+            "abstract": "",
+            "date": "2022-12-14",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06V10/774",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012322035B2",
+            "title": "Three-dimensional perspective correction",
+            "abstract": "",
+            "date": "2022-10-11",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/20|G06T7/50|G06T7/62|G06T7/70|G06T19/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012423827B1",
+            "title": "Image segmentation with object boundary refinement",
+            "abstract": "",
+            "date": "2022-03-03",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T7/136|G06T7/12|G06T7/13",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012189719B1",
+            "title": "Automatic benchmarking of labeling tasks",
+            "abstract": "",
+            "date": "2022-01-06",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F18/21|G06F18/2115|G06F18/214|G06F18/2433|G06N20/20",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000012271443B1",
+            "title": "Automatic data curation",
+            "abstract": "",
+            "date": "2021-09-23",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F18/214|G06F18/21|G06N3/088|G06N3/0895|G06N3/09|G06N20/00|G06V10/70|G16B40/20|G16B40/30|G06F16/24|G06F16/28|G06F16/332|G06F16/3329|G06F16/35|G06F16/903|G06F16/9032|G06F16/906|G06F18/23|G06N3/091|G06V10/82",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "000011625892B1",
+            "title": "Visualization techniques for data labeling",
+            "abstract": "",
+            "date": "2021-08-12",
+            "assignee": "Scale AI, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06T15/20|G06T7/90|G01S17/89|G01S17/86|G06V10/40|G06V10/75",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 5,
+          "2023": 6,
+          "2024": 0,
+          "cagr_pct": 0.0
+        },
+        "citation_summary": {
+          "total_patents": 23,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 10,
+              "total_patent_count": 18,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 2,
+              "total_patent_count": 2,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 3,
+              "total_patent_count": 3,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      },
+      "Hugging Face": {
+        "company_name": "Hugging Face",
+        "domain_keywords": "Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging",
+        "recent_patents": [
+          {
+            "id": "202600006680A1",
+            "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+            "abstract": "",
+            "date": "2025-06-27",
+            "assignee": "HUGGING FACE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06N3/08|G06N5/00|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202600003584A1",
+            "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+            "abstract": "",
+            "date": "2025-06-26",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F8/35|G06N20/00",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202500189213A1",
+            "title": "SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS",
+            "abstract": "",
+            "date": "2025-05-05",
+            "assignee": "HUGGING FACE, INC.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/174|G06F16/11",
+            "cpc": "",
+            "jurisdiction": "WO",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400419632A1",
+            "title": "CROSS-SILO DATA STORAGE AND DEDUPLICATION",
+            "abstract": "",
+            "date": "2024-08-31",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          },
+          {
+            "id": "202400419631A1",
+            "title": "DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES",
+            "abstract": "",
+            "date": "2024-08-31",
+            "assignee": "Hugging Face, Inc.",
+            "cited_by": 0,
+            "num_claims": 0,
+            "ipc": "G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06",
+            "cpc": "",
+            "jurisdiction": "US",
+            "source": "kipris_foreign",
+            "_source": "kipris_foreign"
+          }
+        ],
+        "filing_trend": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 2,
+          "cagr_pct": 41.42
+        },
+        "citation_summary": {
+          "total_patents": 5,
+          "avg_citations": 0,
+          "max_citations": 0,
+          "high_citation_ratio": 0.0
+        },
+        "source_breakdown": {
+          "scope": "both",
+          "domestic": {
+            "num_patents": 0,
+            "total_patent_count": 0,
+            "error": null
+          },
+          "foreign": {
+            "US": {
+              "num_patents": 3,
+              "total_patent_count": 3,
+              "error": null
+            },
+            "EP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "JP": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "CN": {
+              "num_patents": 0,
+              "total_patent_count": 0,
+              "error": null
+            },
+            "WO": {
+              "num_patents": 2,
+              "total_patent_count": 2,
+              "error": null
+            }
+          }
+        },
+        "source_errors": {},
+        "_source": "kipris:both",
+        "_mock": false
+      }
+    }
+  },
+  "patent_raw_for_prompt": "{\n  \"analysis_mode\": \"company_portfolio\",\n  \"domain\": \"Foundation Model / Document AI / LLM\",\n  \"company\": {\n    \"name\": \"Upstage\",\n    \"profile\": \"Company: Upstage\\nIndustry: Foundation Model / Document AI / LLM\\nAnnual Revenue: ~$17.7M\\nR&D Budget Ratio: ~60.1%\\nAnnual R&D Budget: ~$14.9M\\nTotal 5-year R&D Budget: ~$54M\\nPlanning Horizon: 2026-2030 (5 years)\\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\"\n  },\n  \"related_companies\": [\n    \"Anthropic\",\n    \"Cohere\",\n    \"Adept AI\",\n    \"Scale AI\",\n    \"Hugging Face\"\n  ],\n  \"company_portfolios\": {\n    \"Upstage\": {\n      \"company_name\": \"Upstage\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 10,\n          \"total_patent_count\": 10,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 4,\n        \"2023\": 6,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 10,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"1020230179892\",\n          \"title\": \"문자 인식과 연관된 모델 세트 배포 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 배포 방법이 제공된다. 이 방법은, 복수의 모델 세트를 생성하는 단계, 생성된 복수의 모델 세트 중에서 배포 대상이 되는 타깃 모델 세트를 결정하는 단계 및 결정된 타깃 모델 세트를 대상 시스템으로 배포하는 단계를 포함하고, 복수의 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함할 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179893\",\n          \"title\": \"모델 세트 성능 평가 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 성능을 평가하는 방법을 제공한다. 이 방법은 문서 이미지를 제1 모델 세트로 적용하는 단계 - 제1 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지에 기초한 문자 인식과 연관된 제1 결과 데이터를 제1 모델 세트로부터 획득하는 단계, 획득된 제1 결과 데이터에 기초하여 제1 모델 세트에 대한 제1 성능 평가 데이터를 생성하는 단계 및 생성된 제1 모델 세트에 대한 제1 성능 평가 데이터를 출력하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179502\",\n          \"title\": \"테스트에 기초한 모델 세트 배포 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 모델 세트를 배포하는 방법을 제공한다. 이 방법은, 대상 시스템에 적용 중인 제1 모델 세트와 배포 후보인 제2 모델 세트의 각각에 대해 테스트를 수행하는 단계 - 제1 모델 세트와 제2 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 - , 수행된 테스트에 기초하여, 제1 모델 세트에 대한 제1 성능 평가 데이터 및 제2 모델 세트에 대한 제2 성능 평가 데이터를 생성하는 단계, 제1 성능 평가 데이터와 제2 성능 평가 데이터에 기초하여, 제2 모델 세트가 배포 대상이 되는 모델 세트인지 여부를 판정하는 단계 및 제2 모델 세트가 배\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179503\",\n          \"title\": \"라벨링 작업 관리 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 라벨링 작업 관리 방법이 제공된다. 이 방법은 라벨링 작업을 위한 세팅 데이터를 생성하는 단계, 복수의 이미지 중에서 라벨링 작업 대상이 되는 복수의 타깃 이미지를 선정하는 단계, 선정된 복수의 타깃 이미지 및 세팅 데이터를 제1 통신 단말로 전송하는 단계 및 라벨링 데이터를 제1 통신 단말로부터 수신하는 단계를 포함하고, 라벨링 데이터는 세팅 데이터 및 복수의 타깃 이미지에 기초하여 라벨링 작업이 수행된 데이터일 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230059587\",\n          \"title\": \"문자 인식과 연관된 모델 세트 모니터링 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식을 수행하기 위한 모델 세트를 모니터링하는 방법을 제공한다. 이 방법은 문서 이미지를 모델 세트에 입력하는 단계 - 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지가 모델 세트에 입력된 시점에서부터 모델 세트를 통해 문서 이미지에 기초한 문자 인식 결과가 출력되기까지의 문자 인식 분석 시간 동안에, 모델 세트에 대한 상태 데이터를 수집하는 단계 및 수집된 상태 데이터에 기초하여, 모델 세트의 상태를 출력하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-05-09\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230059586\",\n          \"title\": \"문자 인식 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식 방법이 제공된다. 이 방법은 문서 유형(type)을 포함하는 사용자 입력을 수신하는 단계, 문서 유형과 연관된 문서 이미지로부터 문자 인식을 수행하기 위한 프로젝트를 획득하는 단계, 획득된 프로젝트와 연관된 자원을 할당하는 단계, 문서 유형과 연관된 문서 이미지를 수신하는 단계 및 할당된 자원을 이용하여, 수신된 문서 이미지로부터 문자를 인식하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-05-09\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020220135194\",\n          \"title\": \"맞춤형 교육자료 제공기능을 갖는 인공지능 튜터링 시스템\",\n          \"abstract\": \"본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자들의 평가문항에 대한 풀이이력을 기반으로, 학습자별 도전형 평가문항 데이터와, 유사 풀이이력을 갖는 학습자 집단의 리스트 데이터를 추출하고, 상기 추출된 도전형 평가문항 데이터 및 리스트 데이터를 상호 매칭시켜 임의의 추천 문항정보를 생성하며, 상기 생성된 추천 문항정보를 미리 지정된 커리큘럼 데이터로 맵핑하여 상기 학습자의 향후 학습과 상기 교사의 향후 교수를\",\n          \"date\": \"2022-10-19\",\n          \"assignee\": \"주식회사  아이스크림에듀|주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020220135192\",\n          \"title\": \"학습 이해도에 대한 진단을 지원하는 인공지능 튜터링 시스템\",\n          \"abstract\": \"본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습 이해도를 진단하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자의 학습로그(X)를 미리 프로그래밍된 딥러닝 알고리즘 기반의 진단용 서브모듈을 통해 분석하여 학습자별 진단정보를 추출하고, 상기 학습자별 진단정보를 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 임의의 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제\",\n          \"date\": \"2022-10-19\",\n          \"assignee\": \"주식회사  아이스크림에듀|주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 2\n    },\n    \"Anthropic\": {\n      \"company_name\": \"Anthropic\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 12,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 8,\n        \"cagr_pct\": 182.84\n      },\n      \"citation_summary\": {\n        \"total_patents\": 13,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600080154A1\",\n          \"title\": \"Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-18\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600080153A1\",\n          \"title\": \"Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-18\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012430150B1\",\n          \"title\": \"Runtime architecture for interfacing with agents to automate multimodal interface workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F9/44|G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012585862B2\",\n          \"title\": \"Training data for training artificial intelligence agents to automate multimodal software usage\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V10/82|G06F3/0481|G06F3/0484|G06F16/951|G06F40/166|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V20/40|G06V30/19|G06V30/41|G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500298641A1\",\n          \"title\": \"Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC|Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500199330A1\",\n          \"title\": \"ARTIFICIAL INTELLIGENCE AGENTS FOR USER INTERFACE TASK WORKFLOW AUTOMATION\",\n          \"abstract\": \"\",\n          \"date\": \"2025-03-20\",\n          \"assignee\": \"ANTHROPIC, PBC\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N20/00|G06N3/08|G06Q10/06|G06Q10/10\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012619815B2\",\n          \"title\": \"Magnitude invariant multimodal agent for efficient image-text interface automation\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500299023A1\",\n          \"title\": \"Systems and Methods for Configuring Artificial Intelligence Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC|Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/0455|G06N3/091\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 3\n    },\n    \"Cohere\": {\n      \"company_name\": \"Cohere\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 173,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 75,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 54,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 91,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 84,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 6,\n        \"2023\": 5,\n        \"2024\": 15,\n        \"cagr_pct\": 58.11\n      },\n      \"citation_summary\": {\n        \"total_patents\": 477,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600127177A1\",\n          \"title\": \"CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"Cohere Health, Inc.|Cohere Health, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/2455|G06F16/28|G16H10/20\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600127158A1\",\n          \"title\": \"MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"Cohere Health, Inc.|Cohere Health, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/23|G06F16/28|G06F40/205\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600096928A1\",\n          \"title\": \"MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"COHERE HEALTH, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/93\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500166301A1\",\n          \"title\": \"PILOT SIGNAL PROCESSING IN THE DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2025-01-31\",\n          \"assignee\": \"COHERE TECHNOLOGIES, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L27/26|H04L5/00|H04B1/707|H04B1/713\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600093985A1\",\n          \"title\": \"Training Transformers Using Sliceout\",\n          \"abstract\": \"\",\n          \"date\": \"2025-12-08\",\n          \"assignee\": \"Cohere Inc.|Cohere Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/08|G06F16/903\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202511295758A0\",\n          \"title\": \"Data set clustering and AI-assisted topic extraction\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-11\",\n          \"assignee\": \"COHERE, INC.\",\n          \"jurisdiction\": \"CN\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F18/231|G06F18/22\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500254068A1\",\n          \"title\": \"ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2025-04-24\",\n          \"assignee\": \"Cohere Technologies, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L25/02|H04L25/03|H04L27/26\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500039030A1\",\n          \"title\": \"PULSE SHAPING IN DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2024-09-24\",\n          \"assignee\": \"Cohere Technologies, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L27/26\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 42\n    },\n    \"Adept AI\": {\n      \"company_name\": \"Adept AI\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 4,\n            \"total_patent_count\": 4,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 7,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202100356918A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2021-06-02\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G06N7/00|E21B47/008|G05B23/02|E21B43/12|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202000201267A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2019-12-20\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G06N7/00|G05B23/02|E21B41/00|E21B43/12|E21B47/00|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201700235284A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2017-03-29\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|E21B47/00|E21B41/00|E21B43/12|G06N7/00|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000003074824B1\",\n          \"title\": \"METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"Adept AI Systems Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02|G06N7/00|G05B13/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201480072999A0\",\n          \"title\": \"Method and system for artificially intelligent model-based control of dynamic processes using probabilistic agents\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"Adept Ai Systems Inc\",\n          \"jurisdiction\": \"CN\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201500077890A1\",\n          \"title\": \"METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000009645575B2\",\n          \"title\": \"Method and apparatus for artificially intelligent model-based control of dynamic processes using probabilistic agents\",\n          \"abstract\": \"\",\n          \"date\": \"2013-11-27\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G05B23/02|G06N7/00\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 0\n    },\n    \"Scale AI\": {\n      \"company_name\": \"Scale AI\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 18,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 2,\n            \"total_patent_count\": 2,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 3,\n            \"total_patent_count\": 3,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 5,\n        \"2023\": 6,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 23,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"000012182102B1\",\n          \"title\": \"Linking key-value pairs in documents\",\n          \"abstract\": \"\",\n          \"date\": \"2021-08-18\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/23|G06V10/30|G06V30/10|G06V30/14|G06V30/414\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012205395B1\",\n          \"title\": \"Key-value extraction from documents\",\n          \"abstract\": \"\",\n          \"date\": \"2021-08-18\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V30/416|G06N20/00|G06V30/414\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000004634795A1\",\n          \"title\": \"UNIQUE SAMPLING OF DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400130024A1\",\n          \"title\": \"UNIQUE SAMPLING OF DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400130025A1\",\n          \"title\": \"UNIQUE SAMPLING OF OBJECTS IN IMAGE DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T7/33|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012525013B1\",\n          \"title\": \"Prelabeling of bounding boxes in video frames\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-31\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V20/40|G06F18/214|G06F18/40|G06N20/00|G06V10/22|G06V10/25\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000004602562A1\",\n          \"title\": \"THREE-DIMENSIONAL PERSPECTIVE CORRECTION\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-10\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400081254A1\",\n          \"title\": \"THREE-DIMENSIONAL PERSPECTIVE CORRECTION\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-10\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 7\n    },\n    \"Hugging Face\": {\n      \"company_name\": \"Hugging Face\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 3,\n            \"total_patent_count\": 3,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 2,\n            \"total_patent_count\": 2,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 2,\n        \"cagr_pct\": 41.42\n      },\n      \"citation_summary\": {\n        \"total_patents\": 5,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600006680A1\",\n          \"title\": \"SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE\",\n          \"abstract\": \"\",\n          \"date\": \"2025-06-27\",\n          \"assignee\": \"HUGGING FACE, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/08|G06N5/00|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600003584A1\",\n          \"title\": \"SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE\",\n          \"abstract\": \"\",\n          \"date\": \"2025-06-26\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F8/35|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500189213A1\",\n          \"title\": \"SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-05-05\",\n          \"assignee\": \"HUGGING FACE, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/174|G06F16/11\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400419632A1\",\n          \"title\": \"CROSS-SILO DATA STORAGE AND DEDUPLICATION\",\n          \"abstract\": \"\",\n          \"date\": \"2024-08-31\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400419631A1\",\n          \"title\": \"DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES\",\n          \"abstract\": \"\",\n          \"date\": \"2024-08-31\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 0\n    }\n  }\n}",
+  "llm_request": {
+    "system_prompt": "You are a Company-Centered Patent Analysis Agent for technology-driven roadmapping.\nYour role is to analyze patent portfolios of the user's company and related companies, then derive candidate technologies for the user's roadmap.\n\nYou do NOT invent candidates from the domain alone. Candidate technologies must be grounded in the provided company patent portfolios, especially the patents of related companies.\n\n---\n[Core Task]\n\nGiven:\n- the user's company name and profile,\n- related companies selected for patent comparison,\n- patent portfolios collected for the user company and related companies,\n- filing/citation signals for each company,\n\nproduce:\n1. `patent_analysis`: an 8-12 item candidate technology pool inferred from the compared companies' patent data.\n2. `patent_maps.actor_similarity_map`: a center-company actor similarity map only.\n\nDo NOT output actor_relations_map, technology_industry_map, or technology_affinity_map.\n\n---\n[Candidate Technology Requirements]\n\nEach candidate must be a concise technology concept that the user's company should consider for its roadmap because related companies' patents show meaningful activity, momentum, citation visibility, or strategic capability.\n\nFor each candidate technology, determine:\n- tech_id (T01, T02, ...)\n- name: concise Korean technology concept, 2-6 words\n- category: one of Material / Equipment / Process / Architecture / Packaging\n- estimated_trl: 1-9\n- patent_score: 0-100\n- patent_signals\n- dependency_hints: valid tech_ids from this output only\n- source_companies: companies whose patents support this candidate\n- evidence_patents: 1-4 representative patent snippets from the provided data\n- data_quality: \"real\" or \"estimated\"\n- rationale: Korean 2-3 sentences\n\nCandidate technologies should be derived primarily from related companies' patent portfolios, then interpreted relative to the user's company profile.\nCreate a broad candidate pool rather than only the final roadmap shortlist. Downstream selection will narrow the pool.\n\n---\n[Patent Scoring Framework]\n\npatent_score = (peer_momentum * 0.25)\n             + (citation_impact * 0.20)\n             + (strategic_gap_opportunity * 0.25)\n             + (cross_actor_recurrence * 0.20)\n             + (roadmap_relevance * 0.10)\n\n1. peer_momentum (0-100)\n   Filing growth, recency, and repeated patent activity among related companies.\n\n2. citation_impact (0-100)\n   Citation visibility, max citations, and concentrated high-impact patents.\n\n3. strategic_gap_opportunity (0-100)\n   Higher if related companies are active and the user's company should close or exploit a capability gap.\n\n4. cross_actor_recurrence (0-100)\n   Higher if multiple related companies show similar technology themes.\n\n5. roadmap_relevance (0-100)\n   Fit with the user's company profile, domain, and category hints.\n\n---\n[Actor Similarity Map]\n\nOutput only `actor_similarity_map`.\nIt must place the user's company at the center and connect it to related companies.\n\nEach edge item:\n- center_actor: user's company name\n- related_actor: related company name\n- similarity: 0.0-1.0\n- edge_weight: same as similarity unless there is a reason to differ\n- shared_technology_areas: technology keywords or concepts shared between portfolios\n- basis: Korean evidence summary\n- evidence_level: \"direct\" if based on patents from both actors, \"proxy\" if inferred mainly from related-company patents/domain fit\n\nSimilarity should reflect overlap or strategic adjacency in patent themes. Stronger similarity means a thicker edge in the rendered map.\n\n---\n[TRL Estimation]\n\n- TRL 1-3: mostly exploratory patents, weak industrialization, few repeated actors\n- TRL 4-6: active corporate R&D, prototypes/process modules, moderate citations\n- TRL 7-9: dense corporate portfolios, production-oriented claims, high citation visibility\n\n---\n[Dependency Hinting]\n\nUse roadmapping logic:\nMaterial/Equipment -> Process -> Architecture/Packaging.\nUse only tech_ids defined in THIS output.\n\n---\n[Language Rules]\n\n- `name` must be Korean technology concept, not copied patent title.\n- `rationale` and map `basis` must be Korean.\n- Company names may remain English.\n- Categories must remain English.\n\n---\n[CRITICAL]\n\nOutput ONLY valid JSON. No markdown, no prose outside JSON.\n\nOutput schema:\n{\n  \"patent_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"Backside 전력망\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 5,\n      \"patent_score\": 84.2,\n      \"patent_signals\": {\n        \"peer_momentum\": 86,\n        \"citation_impact\": 78,\n        \"strategic_gap_opportunity\": 88,\n        \"cross_actor_recurrence\": 84,\n        \"roadmap_relevance\": 90\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Intel\", \"TSMC\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Intel\",\n          \"title\": \"Representative patent title\",\n          \"date\": \"2024-01-01\",\n          \"cited_by\": 42\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"...\"\n    }\n  ],\n  \"patent_maps\": {\n    \"actor_similarity_map\": [\n      {\n        \"center_actor\": \"User Company\",\n        \"related_actor\": \"TSMC\",\n        \"similarity\": 0.86,\n        \"edge_weight\": 0.86,\n        \"shared_technology_areas\": [\"GAA\", \"Backside PDN\"],\n        \"basis\": \"...\",\n        \"evidence_level\": \"direct\"\n      }\n    ]\n  }\n}",
+    "user_prompt": "\n[Company Scenario & Strategic Direction — 상위 컨텍스트]\n- Company: Upstage\n- Industry: Foundation Model / Document AI / LLM\n- Planning Horizon: 2026-2030 (5 years)\n\n[Strategic Direction]\n  1. Document AI 및 LLM 기술 리더십 강화\n  2. 기업용 AI 솔루션 시장 확장\n  3. 프론티어 모델 및 인프라 스택 고도화\n\n도메인: Foundation Model / Document AI / LLM\n분석 기준 연도: 2030\n카테고리 힌트: ['Equipment', 'Material', 'Process', 'Architecture', 'Packaging']\n\n[우리 기업]\n기업명: Upstage\n기업 정보: Company: Upstage\nIndustry: Foundation Model / Document AI / LLM\nAnnual Revenue: ~$17.7M\nR&D Budget Ratio: ~60.1%\nAnnual R&D Budget: ~$14.9M\nTotal 5-year R&D Budget: ~$54M\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\n\n[관련 기업 후보]\n['Anthropic', 'Cohere', 'Adept AI', 'Scale AI', 'Hugging Face']\n\n아래는 우리 기업과 관련 기업들의 특허 포트폴리오 데이터입니다.\n반드시 이 데이터, 특히 관련 기업들의 특허 데이터에서 반복적으로 관찰되는 기술 테마를 근거로 후보 기술을 도출하세요.\n특허 데이터에는 국내(KR)와 해외(US/EP/JP/CN/WO 등) 관할 데이터가 함께 포함될 수 있습니다.\n각 특허의 `source`, `jurisdiction`, `assignee`를 확인하여 국내 출원과 해외 출원을 구분해 해석하세요.\n\n[수집된 기업별 특허 데이터]\n{\n  \"analysis_mode\": \"company_portfolio\",\n  \"domain\": \"Foundation Model / Document AI / LLM\",\n  \"company\": {\n    \"name\": \"Upstage\",\n    \"profile\": \"Company: Upstage\\nIndustry: Foundation Model / Document AI / LLM\\nAnnual Revenue: ~$17.7M\\nR&D Budget Ratio: ~60.1%\\nAnnual R&D Budget: ~$14.9M\\nTotal 5-year R&D Budget: ~$54M\\nPlanning Horizon: 2026-2030 (5 years)\\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점\"\n  },\n  \"related_companies\": [\n    \"Anthropic\",\n    \"Cohere\",\n    \"Adept AI\",\n    \"Scale AI\",\n    \"Hugging Face\"\n  ],\n  \"company_portfolios\": {\n    \"Upstage\": {\n      \"company_name\": \"Upstage\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 10,\n          \"total_patent_count\": 10,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 4,\n        \"2023\": 6,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 10,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"1020230179892\",\n          \"title\": \"문자 인식과 연관된 모델 세트 배포 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 배포 방법이 제공된다. 이 방법은, 복수의 모델 세트를 생성하는 단계, 생성된 복수의 모델 세트 중에서 배포 대상이 되는 타깃 모델 세트를 결정하는 단계 및 결정된 타깃 모델 세트를 대상 시스템으로 배포하는 단계를 포함하고, 복수의 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함할 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179893\",\n          \"title\": \"모델 세트 성능 평가 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식과 연관된 모델 세트 성능을 평가하는 방법을 제공한다. 이 방법은 문서 이미지를 제1 모델 세트로 적용하는 단계 - 제1 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지에 기초한 문자 인식과 연관된 제1 결과 데이터를 제1 모델 세트로부터 획득하는 단계, 획득된 제1 결과 데이터에 기초하여 제1 모델 세트에 대한 제1 성능 평가 데이터를 생성하는 단계 및 생성된 제1 모델 세트에 대한 제1 성능 평가 데이터를 출력하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179502\",\n          \"title\": \"테스트에 기초한 모델 세트 배포 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 모델 세트를 배포하는 방법을 제공한다. 이 방법은, 대상 시스템에 적용 중인 제1 모델 세트와 배포 후보인 제2 모델 세트의 각각에 대해 테스트를 수행하는 단계 - 제1 모델 세트와 제2 모델 세트의 각각은 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 - , 수행된 테스트에 기초하여, 제1 모델 세트에 대한 제1 성능 평가 데이터 및 제2 모델 세트에 대한 제2 성능 평가 데이터를 생성하는 단계, 제1 성능 평가 데이터와 제2 성능 평가 데이터에 기초하여, 제2 모델 세트가 배포 대상이 되는 모델 세트인지 여부를 판정하는 단계 및 제2 모델 세트가 배\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230179503\",\n          \"title\": \"라벨링 작업 관리 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 라벨링 작업 관리 방법이 제공된다. 이 방법은 라벨링 작업을 위한 세팅 데이터를 생성하는 단계, 복수의 이미지 중에서 라벨링 작업 대상이 되는 복수의 타깃 이미지를 선정하는 단계, 선정된 복수의 타깃 이미지 및 세팅 데이터를 제1 통신 단말로 전송하는 단계 및 라벨링 데이터를 제1 통신 단말로부터 수신하는 단계를 포함하고, 라벨링 데이터는 세팅 데이터 및 복수의 타깃 이미지에 기초하여 라벨링 작업이 수행된 데이터일 수 있다.\",\n          \"date\": \"2023-12-12\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230059587\",\n          \"title\": \"문자 인식과 연관된 모델 세트 모니터링 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식을 수행하기 위한 모델 세트를 모니터링하는 방법을 제공한다. 이 방법은 문서 이미지를 모델 세트에 입력하는 단계 - 모델 세트는 문서 이미지로부터 문자를 인식하도록 구성된 적어도 하나의 기계학습 모델을 포함함 -, 문서 이미지가 모델 세트에 입력된 시점에서부터 모델 세트를 통해 문서 이미지에 기초한 문자 인식 결과가 출력되기까지의 문자 인식 분석 시간 동안에, 모델 세트에 대한 상태 데이터를 수집하는 단계 및 수집된 상태 데이터에 기초하여, 모델 세트의 상태를 출력하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-05-09\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020230059586\",\n          \"title\": \"문자 인식 방법 및 시스템\",\n          \"abstract\": \"본 개시는 적어도 하나의 프로세서에 의해서 수행되는 문자 인식 방법이 제공된다. 이 방법은 문서 유형(type)을 포함하는 사용자 입력을 수신하는 단계, 문서 유형과 연관된 문서 이미지로부터 문자 인식을 수행하기 위한 프로젝트를 획득하는 단계, 획득된 프로젝트와 연관된 자원을 할당하는 단계, 문서 유형과 연관된 문서 이미지를 수신하는 단계 및 할당된 자원을 이용하여, 수신된 문서 이미지로부터 문자를 인식하는 단계를 포함할 수 있다.\",\n          \"date\": \"2023-05-09\",\n          \"assignee\": \"주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020220135194\",\n          \"title\": \"맞춤형 교육자료 제공기능을 갖는 인공지능 튜터링 시스템\",\n          \"abstract\": \"본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습과 상기 교사의 교수를 지원하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자들의 평가문항에 대한 풀이이력을 기반으로, 학습자별 도전형 평가문항 데이터와, 유사 풀이이력을 갖는 학습자 집단의 리스트 데이터를 추출하고, 상기 추출된 도전형 평가문항 데이터 및 리스트 데이터를 상호 매칭시켜 임의의 추천 문항정보를 생성하며, 상기 생성된 추천 문항정보를 미리 지정된 커리큘럼 데이터로 맵핑하여 상기 학습자의 향후 학습과 상기 교사의 향후 교수를\",\n          \"date\": \"2022-10-19\",\n          \"assignee\": \"주식회사  아이스크림에듀|주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"1020220135192\",\n          \"title\": \"학습 이해도에 대한 진단을 지원하는 인공지능 튜터링 시스템\",\n          \"abstract\": \"본 발명은 학습자의 제1 단말과 교사의 제2 단말을 원격 연결하여 비대면 환경에서의 상기 학습자의 학습 이해도를 진단하기 위한 인공지능 튜터링 시스템에 있어서, 상기 제1,2 단말 및 웹, 외부 서버와 네트워크를 구축하여 통신하면서 상기 제1 단말로부터 획득되는 학습자의 학습로그(X)를 미리 프로그래밍된 딥러닝 알고리즘 기반의 진단용 서브모듈을 통해 분석하여 학습자별 진단정보를 추출하고, 상기 학습자별 진단정보를 미리 지정된 학습관리용 데이터와 매칭시켜 상기 학습자의 향후 학습과 상기 교사의 향후 교수를 가이드하기 위한 임의의 커스터마이징 정보를 생성하며, 상기 커스터마이징정보에 따라 미리 설정된 알림신호를 출력하는 제어부; 및 상기 제\",\n          \"date\": \"2022-10-19\",\n          \"assignee\": \"주식회사  아이스크림에듀|주식회사 업스테이지\",\n          \"jurisdiction\": \"KR\",\n          \"source\": \"kipris_domestic\",\n          \"ipc\": \"\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 2\n    },\n    \"Anthropic\": {\n      \"company_name\": \"Anthropic\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 12,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 8,\n        \"cagr_pct\": 182.84\n      },\n      \"citation_summary\": {\n        \"total_patents\": 13,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600080154A1\",\n          \"title\": \"Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-18\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600080153A1\",\n          \"title\": \"Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-18\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012430150B1\",\n          \"title\": \"Runtime architecture for interfacing with agents to automate multimodal interface workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F9/44|G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012585862B2\",\n          \"title\": \"Training data for training artificial intelligence agents to automate multimodal software usage\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V10/82|G06F3/0481|G06F3/0484|G06F16/951|G06F40/166|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V20/40|G06V30/19|G06V30/41|G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500298641A1\",\n          \"title\": \"Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC|Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F9/451\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500199330A1\",\n          \"title\": \"ARTIFICIAL INTELLIGENCE AGENTS FOR USER INTERFACE TASK WORKFLOW AUTOMATION\",\n          \"abstract\": \"\",\n          \"date\": \"2025-03-20\",\n          \"assignee\": \"ANTHROPIC, PBC\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N20/00|G06N3/08|G06Q10/06|G06Q10/10\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012619815B2\",\n          \"title\": \"Magnitude invariant multimodal agent for efficient image-text interface automation\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F40/166|G06F3/0481|G06F3/0484|G06F9/451|G06F16/951|G06F40/174|G06F40/284|G06N3/0455|G06N3/091|G06N5/04|G06N20/00|G06V10/77|G06V10/774|G06V10/80|G06V10/82|G06V20/40|G06V30/19|G06V30/41\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500299023A1\",\n          \"title\": \"Systems and Methods for Configuring Artificial Intelligence Agents to Automate Multimodal Interface Workflows\",\n          \"abstract\": \"\",\n          \"date\": \"2024-10-08\",\n          \"assignee\": \"Anthropic, PBC|Anthropic, PBC\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/0455|G06N3/091\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 3\n    },\n    \"Cohere\": {\n      \"company_name\": \"Cohere\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 173,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 75,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 54,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 91,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 84,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 6,\n        \"2023\": 5,\n        \"2024\": 15,\n        \"cagr_pct\": 58.11\n      },\n      \"citation_summary\": {\n        \"total_patents\": 477,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600127177A1\",\n          \"title\": \"CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"Cohere Health, Inc.|Cohere Health, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/2455|G06F16/28|G16H10/20\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600127158A1\",\n          \"title\": \"MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"Cohere Health, Inc.|Cohere Health, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/23|G06F16/28|G06F40/205\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600096928A1\",\n          \"title\": \"MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-10-31\",\n          \"assignee\": \"COHERE HEALTH, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/93\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500166301A1\",\n          \"title\": \"PILOT SIGNAL PROCESSING IN THE DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2025-01-31\",\n          \"assignee\": \"COHERE TECHNOLOGIES, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L27/26|H04L5/00|H04B1/707|H04B1/713\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600093985A1\",\n          \"title\": \"Training Transformers Using Sliceout\",\n          \"abstract\": \"\",\n          \"date\": \"2025-12-08\",\n          \"assignee\": \"Cohere Inc.|Cohere Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/08|G06F16/903\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202511295758A0\",\n          \"title\": \"Data set clustering and AI-assisted topic extraction\",\n          \"abstract\": \"\",\n          \"date\": \"2025-09-11\",\n          \"assignee\": \"COHERE, INC.\",\n          \"jurisdiction\": \"CN\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F18/231|G06F18/22\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500254068A1\",\n          \"title\": \"ITERATIVE DECODING OF ORTHOGONAL TIME FREQUENCY SPACE WAVEFORMS IN THE DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2025-04-24\",\n          \"assignee\": \"Cohere Technologies, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L25/02|H04L25/03|H04L27/26\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500039030A1\",\n          \"title\": \"PULSE SHAPING IN DELAY-DOPPLER DOMAIN\",\n          \"abstract\": \"\",\n          \"date\": \"2024-09-24\",\n          \"assignee\": \"Cohere Technologies, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"H04L27/26\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 42\n    },\n    \"Adept AI\": {\n      \"company_name\": \"Adept AI\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 4,\n            \"total_patent_count\": 4,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 1,\n            \"total_patent_count\": 1,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 7,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202100356918A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2021-06-02\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G06N7/00|E21B47/008|G05B23/02|E21B43/12|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202000201267A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2019-12-20\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G06N7/00|G05B23/02|E21B41/00|E21B43/12|E21B47/00|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201700235284A1\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2017-03-29\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|E21B47/00|E21B41/00|E21B43/12|G06N7/00|G06N5/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000003074824B1\",\n          \"title\": \"METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"Adept AI Systems Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02|G06N7/00|G05B13/04\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201480072999A0\",\n          \"title\": \"Method and system for artificially intelligent model-based control of dynamic processes using probabilistic agents\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"Adept Ai Systems Inc\",\n          \"jurisdiction\": \"CN\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"201500077890A1\",\n          \"title\": \"METHOD AND SYSTEM FOR ARTIFICIALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"abstract\": \"\",\n          \"date\": \"2014-11-27\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B17/02|G05B23/02\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000009645575B2\",\n          \"title\": \"Method and apparatus for artificially intelligent model-based control of dynamic processes using probabilistic agents\",\n          \"abstract\": \"\",\n          \"date\": \"2013-11-27\",\n          \"assignee\": \"ADEPT AI SYSTEMS INC.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G05B13/04|G05B23/02|G06N7/00\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 0\n    },\n    \"Scale AI\": {\n      \"company_name\": \"Scale AI\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 10,\n            \"total_patent_count\": 18,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 2,\n            \"total_patent_count\": 2,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 3,\n            \"total_patent_count\": 3,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 5,\n        \"2023\": 6,\n        \"2024\": 0,\n        \"cagr_pct\": 0.0\n      },\n      \"citation_summary\": {\n        \"total_patents\": 23,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"000012182102B1\",\n          \"title\": \"Linking key-value pairs in documents\",\n          \"abstract\": \"\",\n          \"date\": \"2021-08-18\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/23|G06V10/30|G06V30/10|G06V30/14|G06V30/414\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012205395B1\",\n          \"title\": \"Key-value extraction from documents\",\n          \"abstract\": \"\",\n          \"date\": \"2021-08-18\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V30/416|G06N20/00|G06V30/414\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000004634795A1\",\n          \"title\": \"UNIQUE SAMPLING OF DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400130024A1\",\n          \"title\": \"UNIQUE SAMPLING OF DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/901|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400130025A1\",\n          \"title\": \"UNIQUE SAMPLING OF OBJECTS IN IMAGE DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2023-12-14\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T7/33|G06F18/21|G06F18/2323|G06F18/243|G06N3/045|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000012525013B1\",\n          \"title\": \"Prelabeling of bounding boxes in video frames\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-31\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06V20/40|G06F18/214|G06F18/40|G06N20/00|G06V10/22|G06V10/25\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"000004602562A1\",\n          \"title\": \"THREE-DIMENSIONAL PERSPECTIVE CORRECTION\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-10\",\n          \"assignee\": \"Scale AI, Inc.\",\n          \"jurisdiction\": \"EP\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400081254A1\",\n          \"title\": \"THREE-DIMENSIONAL PERSPECTIVE CORRECTION\",\n          \"abstract\": \"\",\n          \"date\": \"2023-10-10\",\n          \"assignee\": \"SCALE AI, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06T15/20|G06T5/50|G06T7/30|G06T7/80|G06T7/70|G06T19/00\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 7\n    },\n    \"Hugging Face\": {\n      \"company_name\": \"Hugging Face\",\n      \"domain_keywords\": \"Foundation Model / Document AI / LLM Equipment Material Process Architecture Packaging\",\n      \"source\": \"kipris:both\",\n      \"source_breakdown\": {\n        \"scope\": \"both\",\n        \"domestic\": {\n          \"num_patents\": 0,\n          \"total_patent_count\": 0,\n          \"error\": null\n        },\n        \"foreign\": {\n          \"US\": {\n            \"num_patents\": 3,\n            \"total_patent_count\": 3,\n            \"error\": null\n          },\n          \"EP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"JP\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"CN\": {\n            \"num_patents\": 0,\n            \"total_patent_count\": 0,\n            \"error\": null\n          },\n          \"WO\": {\n            \"num_patents\": 2,\n            \"total_patent_count\": 2,\n            \"error\": null\n          }\n        }\n      },\n      \"filing_trend\": {\n        \"2022\": 0,\n        \"2023\": 0,\n        \"2024\": 2,\n        \"cagr_pct\": 41.42\n      },\n      \"citation_summary\": {\n        \"total_patents\": 5,\n        \"avg_citations\": 0,\n        \"max_citations\": 0,\n        \"high_citation_ratio\": 0.0\n      },\n      \"recent_patents\": [\n        {\n          \"id\": \"202600006680A1\",\n          \"title\": \"SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE\",\n          \"abstract\": \"\",\n          \"date\": \"2025-06-27\",\n          \"assignee\": \"HUGGING FACE, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06N3/08|G06N5/00|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202600003584A1\",\n          \"title\": \"SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE\",\n          \"abstract\": \"\",\n          \"date\": \"2025-06-26\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F8/35|G06N20/00\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202500189213A1\",\n          \"title\": \"SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS\",\n          \"abstract\": \"\",\n          \"date\": \"2025-05-05\",\n          \"assignee\": \"HUGGING FACE, INC.\",\n          \"jurisdiction\": \"WO\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/174|G06F16/11\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400419632A1\",\n          \"title\": \"CROSS-SILO DATA STORAGE AND DEDUPLICATION\",\n          \"abstract\": \"\",\n          \"date\": \"2024-08-31\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06\",\n          \"cpc\": \"\"\n        },\n        {\n          \"id\": \"202400419631A1\",\n          \"title\": \"DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES\",\n          \"abstract\": \"\",\n          \"date\": \"2024-08-31\",\n          \"assignee\": \"Hugging Face, Inc.\",\n          \"jurisdiction\": \"US\",\n          \"source\": \"kipris_foreign\",\n          \"ipc\": \"G06F16/13|G06F16/11|G06F16/185|G06F16/215|G06F16/22|G06F16/25|H04L9/06\",\n          \"cpc\": \"\"\n        }\n      ],\n      \"omitted_patent_count\": 0\n    }\n  }\n}\n\n위 데이터를 분석하여 지정된 JSON 포맷으로 출력하세요.\n\n중요:\n- 기술 후보군은 \"조사한 다른 기업들의 특허 데이터\"를 분석해 만들어야 합니다.\n- patent_maps에는 actor_similarity_map만 포함하세요.\n- actor_similarity_map은 우리 기업을 center_actor로 두고 관련 기업을 related_actor로 연결하는 edge 리스트여야 합니다.\n- similarity/edge_weight가 높을수록 렌더링에서 edge가 두껍게 표현됩니다.\n\n[Horizon 인식 — 권장 (강제 X)]\nreference_year=2030 는 로드맵 horizon 의 **목표 종료 연도** 이다.\n후보 기술 발굴 시 다음을 고려:\n- 단기 (TRL 7+, 양산 가까운) / 중기 (TRL 5-6, 프로토타입) / 장기 (TRL 3-4, R&D) 가\n  골고루 분포하도록 권장 — 모든 후보를 한 TRL 대역으로 채우지 말 것.\n- 단 도메인 특성상 한 대역에 집중되는 게 자연스러우면 그대로 — 정직한 분석 우선.\n- 즉 \"정직한 분석\" ≫ \"TRL 분포 균형\". 둘이 충돌하면 정직성 선호, 비슷하면 분포 권장.\n\n\n[Patent Map Ablation Control]\nPatent Agent는 ablation 조건과 무관하게 항상 `patent_analysis`와\n`patent_maps.actor_similarity_map`을 모두 생성하세요.\nON/OFF 비교는 후속 Market Agent가 이 map을 사용할지 여부로만 수행됩니다.\n"
+  },
+  "llm_response": {
+    "raw_content": "{\n  \"patent_analysis\": [\n    {\n      \"tech_id\": \"T01\",\n      \"name\": \"멀티모달 에이전트 워크플로우 자동화\",\n      \"category\": \"Architecture\",\n      \"estimated_trl\": 5,\n      \"patent_score\": 92.5,\n      \"patent_signals\": {\n        \"peer_momentum\": 95,\n        \"citation_impact\": 80,\n        \"strategic_gap_opportunity\": 98,\n        \"cross_actor_recurrence\": 85,\n        \"roadmap_relevance\": 95\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Anthropic\", \"Adept AI\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Anthropic\",\n          \"title\": \"Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows\",\n          \"date\": \"2025-09-18\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Anthropic\",\n          \"title\": \"Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows\",\n          \"date\": \"2025-09-18\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Adept AI\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"date\": \"2021-06-02\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Anthropic 과 Adept AI 는 LLM 기반 에이전트가 UI 를 직접 조작하여 복잡한 업무 워크플로우를 자동화하는 아키텍처에 집중하고 있습니다. Upstage 는 현재 문서 인식 중심의 모델 배포에 집중하고 있으나, 프론티어 모델 경쟁력을 위해 에이전트 기반의 자동화 아키텍처 선점이 필수적입니다.\"\n    },\n    {\n      \"tech_id\": \"T02\",\n      \"name\": \"원자적 문서 요소 관계 모델링\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 6,\n      \"patent_score\": 88.3,\n      \"patent_signals\": {\n        \"peer_momentum\": 85,\n        \"citation_impact\": 75,\n        \"strategic_gap_opportunity\": 92,\n        \"cross_actor_recurrence\": 80,\n        \"roadmap_relevance\": 98\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Cohere\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Cohere\",\n          \"title\": \"CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"date\": \"2025-10-31\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Cohere\",\n          \"title\": \"MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS\",\n          \"date\": \"2025-10-31\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Cohere 는 문서 내 원자적 요소 (Atomic Elements) 간의 관계를 모델링하여 복잡한 문서 처리 및 검색을 수행하는 기술을 특허로 보호하고 있습니다. 이는 Upstage 의 핵심인 Document AI 영역에서 단순 인식을 넘어 구조적 이해를 제공하는 차세대 기술로, 전략적 격차 해소의 핵심입니다.\"\n    },\n    {\n      \"tech_id\": \"T03\",\n      \"name\": \"고효율 트랜스포머 슬라이스아웃 학습\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 4,\n      \"patent_score\": 82.1,\n      \"patent_signals\": {\n        \"peer_momentum\": 80,\n        \"citation_impact\": 70,\n        \"strategic_gap_opportunity\": 85,\n        \"cross_actor_recurrence\": 75,\n        \"roadmap_relevance\": 90\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Cohere\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Cohere\",\n          \"title\": \"Training Transformers Using Sliceout\",\n          \"date\": \"2025-12-08\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Cohere 는 'Sliceout' 기술을 통해 트랜스포머 모델의 학습 효율성을 극대화하는 방법을 특허화했습니다. Upstage 가 프론티어 모델을 고도화하기 위해 학습 비용과 시간을 단축하는 새로운 학습 프로세스 도입이 시급한 상황입니다.\"\n    },\n    {\n      \"tech_id\": \"T04\",\n      \"name\": \"데이터셋 고유 샘플링 및 클러스터링\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 5,\n      \"patent_score\": 79.4,\n      \"patent_signals\": {\n        \"peer_momentum\": 75,\n        \"citation_impact\": 65,\n        \"strategic_gap_opportunity\": 88,\n        \"cross_actor_recurrence\": 82,\n        \"roadmap_relevance\": 92\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Scale AI\", \"Cohere\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Scale AI\",\n          \"title\": \"UNIQUE SAMPLING OF DATASETS\",\n          \"date\": \"2023-12-14\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Cohere\",\n          \"title\": \"Data set clustering and AI-assisted topic extraction\",\n          \"date\": \"2025-09-11\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Scale AI 와 Cohere 는 데이터셋의 중복 제거 및 고유 샘플링, 주제 추출을 통한 고품질 학습 데이터 구축 기술에 집중하고 있습니다. Upstage 의 모델 성능 향상을 위해 데이터 품질 관리 프로세스의 고도화가 필수적입니다.\"\n    },\n    {\n      \"tech_id\": \"T05\",\n      \"name\": \"암시적 데이터 의존성 기반 가시성\",\n      \"category\": \"Architecture\",\n      \"estimated_trl\": 4,\n      \"patent_score\": 76.8,\n      \"patent_signals\": {\n        \"peer_momentum\": 70,\n        \"citation_impact\": 60,\n        \"strategic_gap_opportunity\": 85,\n        \"cross_actor_recurrence\": 70,\n        \"roadmap_relevance\": 88\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Hugging Face\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Hugging Face\",\n          \"title\": \"SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE\",\n          \"date\": \"2025-06-27\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Hugging Face 는 모델 학습 및 추론 과정에서 암시적인 데이터 의존성을 포착하여 가시성 (Observability) 과 감사 (Audit) 를 제공하는 아키텍처를 개발 중입니다. 기업용 AI 솔루션의 신뢰성 확보를 위해 Upstage 가 도입해야 할 핵심 인프라 기술입니다.\"\n    },\n    {\n      \"tech_id\": \"T06\",\n      \"name\": \"문서 키 - 값 쌍 자동 추출 및 링크\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 7,\n      \"patent_score\": 74.5,\n      \"patent_signals\": {\n        \"peer_momentum\": 65,\n        \"citation_impact\": 55,\n        \"strategic_gap_opportunity\": 80,\n        \"cross_actor_recurrence\": 75,\n        \"roadmap_relevance\": 95\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Scale AI\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Scale AI\",\n          \"title\": \"Linking key-value pairs in documents\",\n          \"date\": \"2021-08-18\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Scale AI\",\n          \"title\": \"Key-value extraction from documents\",\n          \"date\": \"2021-08-18\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Scale AI 는 문서 내 키 - 값 쌍을 추출하고 링크하는 기술을 특허로 보유하고 있습니다. Upstage 의 기존 OCR 및 문서 인식 기술과 직접적으로 연관되어 있으며, 더 정교한 정보 추출을 위한 기술 고도화 방향을 제시합니다.\"\n    },\n    {\n      \"tech_id\": \"T07\",\n      \"name\": \"크로스 실로 데이터 중복 제거\",\n      \"category\": \"Architecture\",\n      \"estimated_trl\": 5,\n      \"patent_score\": 71.2,\n      \"patent_signals\": {\n        \"peer_momentum\": 60,\n        \"citation_impact\": 50,\n        \"strategic_gap_opportunity\": 78,\n        \"cross_actor_recurrence\": 65,\n        \"roadmap_relevance\": 85\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Hugging Face\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Hugging Face\",\n          \"title\": \"CROSS-SILO DATA STORAGE AND DEDUPLICATION\",\n          \"date\": \"2024-08-31\",\n          \"cited_by\": 0\n        },\n        {\n          \"company\": \"Hugging Face\",\n          \"title\": \"DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES\",\n          \"date\": \"2024-08-31\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Hugging Face 는 분산된 데이터 실로 (Silos) 간의 중복 제거 및 효율적인 인덱싱을 위한 아키텍처를 제안하고 있습니다. 대규모 데이터셋을 다루는 Upstage 의 인프라 효율성 및 비용 절감을 위한 중요한 기술입니다.\"\n    },\n    {\n      \"tech_id\": \"T08\",\n      \"name\": \"3 차원 시정정 및 영상 전처리\",\n      \"category\": \"Process\",\n      \"estimated_trl\": 6,\n      \"patent_score\": 68.9,\n      \"patent_signals\": {\n        \"peer_momentum\": 55,\n        \"citation_impact\": 45,\n        \"strategic_gap_opportunity\": 75,\n        \"cross_actor_recurrence\": 60,\n        \"roadmap_relevance\": 80\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Scale AI\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Scale AI\",\n          \"title\": \"THREE-DIMENSIONAL PERSPECTIVE CORRECTION\",\n          \"date\": \"2023-10-10\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Scale AI 는 3 차원 시정정 기술을 통해 복잡한 각도에서 촬영된 문서나 이미지의 전처리 품질을 높이는 기술을 보유하고 있습니다. Upstage 의 문서 인식 정확도를 극대화하기 위한 전처리 파이프라인 강화에 활용 가능합니다.\"\n    },\n    {\n      \"tech_id\": \"T09\",\n      \"name\": \"확률적 에이전트 기반 동적 제어\",\n      \"category\": \"Architecture\",\n      \"estimated_trl\": 3,\n      \"patent_score\": 65.4,\n      \"patent_signals\": {\n        \"peer_momentum\": 40,\n        \"citation_impact\": 35,\n        \"strategic_gap_opportunity\": 70,\n        \"cross_actor_recurrence\": 55,\n        \"roadmap_relevance\": 75\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Adept AI\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Adept AI\",\n          \"title\": \"METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS\",\n          \"date\": \"2017-03-29\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Adept AI 는 확률적 에이전트를 활용한 동적 프로세스 제어 기술을 오래전부터 연구해 왔습니다. 이는 장기적인 관점에서 Upstage 가 AI 에이전트의 불확실성 관리 및 동적 환경 적응 능력을 확보하기 위한 R&D 방향성을 제시합니다.\"\n    },\n    {\n      \"tech_id\": \"T10\",\n      \"name\": \"타임트래블링 데이터 시각화\",\n      \"category\": \"Architecture\",\n      \"estimated_trl\": 4,\n      \"patent_score\": 62.1,\n      \"patent_signals\": {\n        \"peer_momentum\": 35,\n        \"citation_impact\": 30,\n        \"strategic_gap_opportunity\": 65,\n        \"cross_actor_recurrence\": 50,\n        \"roadmap_relevance\": 70\n      },\n      \"dependency_hints\": [],\n      \"source_companies\": [\"Hugging Face\"],\n      \"evidence_patents\": [\n        {\n          \"company\": \"Hugging Face\",\n          \"title\": \"SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS\",\n          \"date\": \"2025-05-05\",\n          \"cited_by\": 0\n        }\n      ],\n      \"data_quality\": \"real\",\n      \"rationale\": \"Hugging Face 는 대규모 데이터셋의 시간적 변화를 시각화하는 '타임트래블링' 기술을 특허화했습니다. 이는 모델 학습 데이터의 진화 과정을 추적하고 디버깅하는 데 유용한 도구로, Upstage 의 데이터 관리 플랫폼 고도화에 기여할 수 있습니다.\"\n    }\n  ],\n  \"patent_maps\": {\n    \"actor_similarity_map\": [\n      {\n        \"center_actor\": \"Upstage\",\n        \"related_actor\": \"Cohere\",\n        \"similarity\": 0.92,\n        \"edge_weight\": 0.92,\n        \"reason\": \"Document AI 및 원자적 요소 관계 모델링, 학습 효율화 기술에서 높은 유사성\"\n      },\n      {\n        \"center_actor\": \"Upstage\",\n        \"related_actor\": \"Scale AI\",\n        \"similarity\": 0.85,\n        \"edge_weight\": 0.85,\n        \"reason\": \"문서 키 - 값 추출, 데이터셋 샘플링 및 전처리 기술에서 높은 유사성\"\n      },\n      {\n        \"center_actor\": \"Upstage\",\n        \"related_actor\": \"Anthropic\",\n        \"similarity\": 0.78,\n        \"edge_weight\": 0.78,\n        \"reason\": \"멀티모달 에이전트 워크플로우 자동화 아키텍처에서 높은 유사성\"\n      },\n      {\n        \"center_actor\": \"Upstage\",\n        \"related_actor\": \"Hugging Face\",\n        \"similarity\": 0.72,\n        \"edge_weight\": 0.72,\n        \"reason\": \"데이터 가시성, 중복 제거, 시각화 아키텍처에서 유사성\"\n      },\n      {\n        \"center_actor\": \"Upstage\",\n        \"related_actor\": \"Adept AI\",\n        \"similarity\": 0.65,\n        \"edge_weight\": 0.65,\n        \"reason\": \"확률적 에이전트 기반 동적 제어 및 모델 기반 제어 기술에서 유사성\"\n      }\n    ]\n  }\n}"
+  },
+  "patent_analysis": [
+    {
+      "tech_id": "T01",
+      "name": "멀티모달 에이전트 워크플로우 자동화",
+      "category": "Architecture",
+      "estimated_trl": 5,
+      "patent_score": 92.5,
+      "patent_signals": {
+        "peer_momentum": 95,
+        "citation_impact": 80,
+        "strategic_gap_opportunity": 98,
+        "cross_actor_recurrence": 85,
+        "roadmap_relevance": 95
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Anthropic",
+        "Adept AI"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Anthropic",
+          "title": "Generation of Agentic Trajectories for Training Artificial Intelligence Agents to Automate Multimodal Interface Task Workflows",
+          "date": "2025-09-18",
+          "cited_by": 0
+        },
+        {
+          "company": "Anthropic",
+          "title": "Runtime Architecture for Interfacing with Agents to Automate Multimodal Interface Workflows",
+          "date": "2025-09-18",
+          "cited_by": 0
+        },
+        {
+          "company": "Adept AI",
+          "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+          "date": "2021-06-02",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Anthropic 과 Adept AI 는 LLM 기반 에이전트가 UI 를 직접 조작하여 복잡한 업무 워크플로우를 자동화하는 아키텍처에 집중하고 있습니다. Upstage 는 현재 문서 인식 중심의 모델 배포에 집중하고 있으나, 프론티어 모델 경쟁력을 위해 에이전트 기반의 자동화 아키텍처 선점이 필수적입니다."
+    },
+    {
+      "tech_id": "T02",
+      "name": "원자적 문서 요소 관계 모델링",
+      "category": "Process",
+      "estimated_trl": 6,
+      "patent_score": 88.3,
+      "patent_signals": {
+        "peer_momentum": 85,
+        "citation_impact": 75,
+        "strategic_gap_opportunity": 92,
+        "cross_actor_recurrence": 80,
+        "roadmap_relevance": 98
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Cohere"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Cohere",
+          "title": "CLINICAL PROCESSING AUTOMATION USING RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+          "date": "2025-10-31",
+          "cited_by": 0
+        },
+        {
+          "company": "Cohere",
+          "title": "MULTIMODAL RETRIEVAL BASED ON RELATIONAL MODELING OF ATOMIC DOCUMENT ELEMENTS",
+          "date": "2025-10-31",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Cohere 는 문서 내 원자적 요소 (Atomic Elements) 간의 관계를 모델링하여 복잡한 문서 처리 및 검색을 수행하는 기술을 특허로 보호하고 있습니다. 이는 Upstage 의 핵심인 Document AI 영역에서 단순 인식을 넘어 구조적 이해를 제공하는 차세대 기술로, 전략적 격차 해소의 핵심입니다."
+    },
+    {
+      "tech_id": "T03",
+      "name": "고효율 트랜스포머 슬라이스아웃 학습",
+      "category": "Process",
+      "estimated_trl": 4,
+      "patent_score": 82.1,
+      "patent_signals": {
+        "peer_momentum": 80,
+        "citation_impact": 70,
+        "strategic_gap_opportunity": 85,
+        "cross_actor_recurrence": 75,
+        "roadmap_relevance": 90
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Cohere"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Cohere",
+          "title": "Training Transformers Using Sliceout",
+          "date": "2025-12-08",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Cohere 는 'Sliceout' 기술을 통해 트랜스포머 모델의 학습 효율성을 극대화하는 방법을 특허화했습니다. Upstage 가 프론티어 모델을 고도화하기 위해 학습 비용과 시간을 단축하는 새로운 학습 프로세스 도입이 시급한 상황입니다."
+    },
+    {
+      "tech_id": "T04",
+      "name": "데이터셋 고유 샘플링 및 클러스터링",
+      "category": "Process",
+      "estimated_trl": 5,
+      "patent_score": 79.4,
+      "patent_signals": {
+        "peer_momentum": 75,
+        "citation_impact": 65,
+        "strategic_gap_opportunity": 88,
+        "cross_actor_recurrence": 82,
+        "roadmap_relevance": 92
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Scale AI",
+        "Cohere"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Scale AI",
+          "title": "UNIQUE SAMPLING OF DATASETS",
+          "date": "2023-12-14",
+          "cited_by": 0
+        },
+        {
+          "company": "Cohere",
+          "title": "Data set clustering and AI-assisted topic extraction",
+          "date": "2025-09-11",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Scale AI 와 Cohere 는 데이터셋의 중복 제거 및 고유 샘플링, 주제 추출을 통한 고품질 학습 데이터 구축 기술에 집중하고 있습니다. Upstage 의 모델 성능 향상을 위해 데이터 품질 관리 프로세스의 고도화가 필수적입니다."
+    },
+    {
+      "tech_id": "T05",
+      "name": "암시적 데이터 의존성 기반 가시성",
+      "category": "Architecture",
+      "estimated_trl": 4,
+      "patent_score": 76.8,
+      "patent_signals": {
+        "peer_momentum": 70,
+        "citation_impact": 60,
+        "strategic_gap_opportunity": 85,
+        "cross_actor_recurrence": 70,
+        "roadmap_relevance": 88
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Hugging Face"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Hugging Face",
+          "title": "SYSTEM AND METHOD FOR OBSERVABILITY AND DATA AUDIT USING IMPLICIT DATA DEPENDENCY CAPTURE",
+          "date": "2025-06-27",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Hugging Face 는 모델 학습 및 추론 과정에서 암시적인 데이터 의존성을 포착하여 가시성 (Observability) 과 감사 (Audit) 를 제공하는 아키텍처를 개발 중입니다. 기업용 AI 솔루션의 신뢰성 확보를 위해 Upstage 가 도입해야 할 핵심 인프라 기술입니다."
+    },
+    {
+      "tech_id": "T06",
+      "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+      "category": "Process",
+      "estimated_trl": 7,
+      "patent_score": 74.5,
+      "patent_signals": {
+        "peer_momentum": 65,
+        "citation_impact": 55,
+        "strategic_gap_opportunity": 80,
+        "cross_actor_recurrence": 75,
+        "roadmap_relevance": 95
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Scale AI"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Scale AI",
+          "title": "Linking key-value pairs in documents",
+          "date": "2021-08-18",
+          "cited_by": 0
+        },
+        {
+          "company": "Scale AI",
+          "title": "Key-value extraction from documents",
+          "date": "2021-08-18",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Scale AI 는 문서 내 키 - 값 쌍을 추출하고 링크하는 기술을 특허로 보유하고 있습니다. Upstage 의 기존 OCR 및 문서 인식 기술과 직접적으로 연관되어 있으며, 더 정교한 정보 추출을 위한 기술 고도화 방향을 제시합니다."
+    },
+    {
+      "tech_id": "T07",
+      "name": "크로스 실로 데이터 중복 제거",
+      "category": "Architecture",
+      "estimated_trl": 5,
+      "patent_score": 71.2,
+      "patent_signals": {
+        "peer_momentum": 60,
+        "citation_impact": 50,
+        "strategic_gap_opportunity": 78,
+        "cross_actor_recurrence": 65,
+        "roadmap_relevance": 85
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Hugging Face"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Hugging Face",
+          "title": "CROSS-SILO DATA STORAGE AND DEDUPLICATION",
+          "date": "2024-08-31",
+          "cited_by": 0
+        },
+        {
+          "company": "Hugging Face",
+          "title": "DATA INDEXING AND DEDUPLICATION USING CONTENT-DEFINED TREES",
+          "date": "2024-08-31",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Hugging Face 는 분산된 데이터 실로 (Silos) 간의 중복 제거 및 효율적인 인덱싱을 위한 아키텍처를 제안하고 있습니다. 대규모 데이터셋을 다루는 Upstage 의 인프라 효율성 및 비용 절감을 위한 중요한 기술입니다."
+    },
+    {
+      "tech_id": "T08",
+      "name": "3 차원 시정정 및 영상 전처리",
+      "category": "Process",
+      "estimated_trl": 6,
+      "patent_score": 68.9,
+      "patent_signals": {
+        "peer_momentum": 55,
+        "citation_impact": 45,
+        "strategic_gap_opportunity": 75,
+        "cross_actor_recurrence": 60,
+        "roadmap_relevance": 80
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Scale AI"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Scale AI",
+          "title": "THREE-DIMENSIONAL PERSPECTIVE CORRECTION",
+          "date": "2023-10-10",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Scale AI 는 3 차원 시정정 기술을 통해 복잡한 각도에서 촬영된 문서나 이미지의 전처리 품질을 높이는 기술을 보유하고 있습니다. Upstage 의 문서 인식 정확도를 극대화하기 위한 전처리 파이프라인 강화에 활용 가능합니다."
+    },
+    {
+      "tech_id": "T09",
+      "name": "확률적 에이전트 기반 동적 제어",
+      "category": "Architecture",
+      "estimated_trl": 3,
+      "patent_score": 65.4,
+      "patent_signals": {
+        "peer_momentum": 40,
+        "citation_impact": 35,
+        "strategic_gap_opportunity": 70,
+        "cross_actor_recurrence": 55,
+        "roadmap_relevance": 75
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Adept AI"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Adept AI",
+          "title": "METHOD AND APPARATUS FOR ARTIFICALLY INTELLIGENT MODEL-BASED CONTROL OF DYNAMIC PROCESSES USING PROBABILISTIC AGENTS",
+          "date": "2017-03-29",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Adept AI 는 확률적 에이전트를 활용한 동적 프로세스 제어 기술을 오래전부터 연구해 왔습니다. 이는 장기적인 관점에서 Upstage 가 AI 에이전트의 불확실성 관리 및 동적 환경 적응 능력을 확보하기 위한 R&D 방향성을 제시합니다."
+    },
+    {
+      "tech_id": "T10",
+      "name": "타임트래블링 데이터 시각화",
+      "category": "Architecture",
+      "estimated_trl": 4,
+      "patent_score": 62.1,
+      "patent_signals": {
+        "peer_momentum": 35,
+        "citation_impact": 30,
+        "strategic_gap_opportunity": 65,
+        "cross_actor_recurrence": 50,
+        "roadmap_relevance": 70
+      },
+      "dependency_hints": [],
+      "source_companies": [
+        "Hugging Face"
+      ],
+      "evidence_patents": [
+        {
+          "company": "Hugging Face",
+          "title": "SYSTEM AND METHOD OF PROVIDING TIME-TRAVELING VISUALIZATION ON LARGE DATASETS",
+          "date": "2025-05-05",
+          "cited_by": 0
+        }
+      ],
+      "data_quality": "real",
+      "rationale": "Hugging Face 는 대규모 데이터셋의 시간적 변화를 시각화하는 '타임트래블링' 기술을 특허화했습니다. 이는 모델 학습 데이터의 진화 과정을 추적하고 디버깅하는 데 유용한 도구로, Upstage 의 데이터 관리 플랫폼 고도화에 기여할 수 있습니다."
+    }
+  ],
+  "patent_maps": {
+    "actor_similarity_map": [
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Cohere",
+        "similarity": 0.92,
+        "edge_weight": 0.92,
+        "reason": "Document AI 및 원자적 요소 관계 모델링, 학습 효율화 기술에서 높은 유사성"
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Scale AI",
+        "similarity": 0.85,
+        "edge_weight": 0.85,
+        "reason": "문서 키 - 값 추출, 데이터셋 샘플링 및 전처리 기술에서 높은 유사성"
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Anthropic",
+        "similarity": 0.78,
+        "edge_weight": 0.78,
+        "reason": "멀티모달 에이전트 워크플로우 자동화 아키텍처에서 높은 유사성"
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Hugging Face",
+        "similarity": 0.72,
+        "edge_weight": 0.72,
+        "reason": "데이터 가시성, 중복 제거, 시각화 아키텍처에서 유사성"
+      },
+      {
+        "center_actor": "Upstage",
+        "related_actor": "Adept AI",
+        "similarity": 0.65,
+        "edge_weight": 0.65,
+        "reason": "확률적 에이전트 기반 동적 제어 및 모델 기반 제어 기술에서 유사성"
+      }
+    ]
+  },
+  "rendered_map_paths": {
+    "actor_similarity_map": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/patent_agent/batch_upstage_ai_llm_2026_2030/batch_upstage_ai_llm_2026_2030_Upstage_actor_similarity_map.png"
+  },
+  "error": null
+}

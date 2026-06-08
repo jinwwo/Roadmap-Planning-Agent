@@ -1,0 +1,482 @@
+{
+  "problem_frame": {
+    "industry": "Foundation Model / Document AI / LLM",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 54000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Upstage",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "Document AI 및 LLM 기술 리더십 강화",
+      "기업용 AI 솔루션 시장 확장",
+      "프론티어 모델 및 인프라 스택 고도화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $54M 정확히 배분. 5 년 차까지의 시계열 분포 정상."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "T06 → T02 → T01 → T03 순서 논리적. 전제 조건 충족."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.85,
+        "future_trend_alignment": 0.82,
+        "comment": "Document AI 및 LLM 전략 방향과 높은 정합. 인프라 트렌드 반영."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "선정된 4 기술에 대한 투자 배분 합리적. Tier 1/2 구분 명확."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.52,
+        "risk_balance": 0.48,
+        "comment": "단기 (T06) 와 장기 (T03) 기술 균형 적절. 위험 분산 잘 됨."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "멀티모달 에이전트 워크플로우 자동화",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 90.3,
+            "market_score": 88.5,
+            "patent_score": 92.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "원자적 문서 요소 관계 모델링",
+            "category": "Process",
+            "trl": 6,
+            "final_score": 81.65,
+            "market_score": 76.2,
+            "patent_score": 88.3,
+            "expected_market_boom_quarter": "2028 Q3"
+          },
+          {
+            "tech_id": "T06",
+            "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 78.79,
+            "market_score": 82.3,
+            "patent_score": 74.5,
+            "expected_market_boom_quarter": "2026 Q3"
+          },
+          {
+            "tech_id": "T09",
+            "name": "확률적 에이전트 기반 동적 제어",
+            "category": "Architecture",
+            "trl": 3,
+            "final_score": 78.11,
+            "market_score": 88.5,
+            "patent_score": 65.4,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T05",
+            "name": "암시적 데이터 의존성 기반 가시성",
+            "category": "Architecture",
+            "trl": 4,
+            "final_score": 77.74,
+            "market_score": 78.5,
+            "patent_score": 76.8,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T03",
+            "name": "고효율 트랜스포머 슬라이스아웃 학습",
+            "category": "Process",
+            "trl": 4,
+            "final_score": 76.98,
+            "market_score": 72.8,
+            "patent_score": 82.1,
+            "expected_market_boom_quarter": "2029 Q1"
+          },
+          {
+            "tech_id": "T04",
+            "name": "데이터셋 고유 샘플링 및 클러스터링",
+            "category": "Process",
+            "trl": 5,
+            "final_score": 73.41,
+            "market_score": 68.5,
+            "patent_score": 79.4,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T07",
+            "name": "크로스 실로 데이터 중복 제거",
+            "category": "Architecture",
+            "trl": 5,
+            "final_score": 72.85,
+            "market_score": 74.2,
+            "patent_score": 71.2,
+            "expected_market_boom_quarter": "2028 Q1"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T06",
+            "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+            "year_idx_start": 1,
+            "year_idx_target": 2,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026) 에 즉시 시작하여 2027 Q2 시장 붐 전에 2 차년도 (2027) 에 완료할 수 있습니다. 이는 Upstage 의 기존 OCR 기술과 직접 연계되어 초기 시장 진입을 위한 핵심 기반이 됩니다.",
+              "tech_execution": "기업 내 비정형 문서 처리 자동화 수요가 폭발하는 시점에 맞춰, 정교한 정보 추출 능력을 확보하여 경쟁사 대비 빠른 제품 출시를 가능하게 합니다. 이는 Document AI 리더십 강화 전략의 첫걸음입니다.",
+              "investment_selection": "높은 시장 성장률과 초기 진입 장벽이 낮은 영역이므로, 최소한의 투자로 빠른 ROI 를 확보할 수 있는 핵심 투자 대상입니다. 이는 향후 고도화된 기술 개발을 위한 자금과 데이터를 확보하는 데 기여합니다."
+            }
+          },
+          {
+            "tech_id": "T02",
+            "name": "원자적 문서 요소 관계 모델링",
+            "year_idx_start": 2,
+            "year_idx_target": 4,
+            "prerequisites": [
+              "T06"
+            ],
+            "reasoning": {
+              "year_placement": "T06 의 키 - 값 추출 기술이 완료된 후, 단순 인식을 넘어선 구조적 이해를 위한 고도화 단계로 2 차년도 (2027) 에 시작하여 4 차년도 (2029) 에 완료합니다. TRL 6 수준으로 2-3 년의 개발 기간이 필요합니다.",
+              "tech_execution": "Cohere 등의 경쟁사가 선점한 원자적 요소 모델링 기술을 따라잡아, Upstage 의 Document AI 가 단순 처리를 넘어 복잡한 문서 관계 이해를 제공할 수 있도록 차별화합니다. 이는 기업용 AI 솔루션 시장 확장의 핵심 동력입니다.",
+              "investment_selection": "성숙 단계에 접어든 문서 AI 시장에서 구조적 이해 능력을 갖춘 기술만이 경쟁 우위를 점할 수 있으므로, 중장기적인 R&D 예산을 집중 투자해야 합니다. 이는 Upstage 의 기술 격차 해소를 위한 필수 투자입니다."
+            }
+          },
+          {
+            "tech_id": "T01",
+            "name": "멀티모달 에이전트 워크플로우 자동화",
+            "year_idx_start": 4,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T02"
+            ],
+            "reasoning": {
+              "year_placement": "T02 의 문서 구조 이해 기술이 기반이 되어야 에이전트가 복잡한 워크플로우를 자동화할 수 있으므로, 2 차년도 (2027) 에 시작하여 5 차년도 (2030) 까지 장기적으로 이어집니다. TRL 5 로 3-4 년의 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['T02'] 완료 후로 2차년도 push]",
+              "tech_execution": "Anthropic 과 Adept AI 가 집중하는 프론티어 모델 경쟁력을 위해, LLM 기반 에이전트가 UI 를 직접 조작하는 아키텍처를 선점하여 Upstage 의 기술 리더십을 강화합니다. 이는 단순 문서 처리를 넘어선 차세대 자동화 솔루션입니다.",
+              "investment_selection": "AI 에이전트 시장의 폭발적 성장률 (43.3% CAGR) 을 고려할 때, 초기 시장 진입을 위한 선제적 투자가 경쟁 우위를 결정합니다. 이는 Upstage 가 프론티어 모델 스택 고도화 전략을 실현하는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "고효율 트랜스포머 슬라이스아웃 학습",
+            "year_idx_start": 5,
+            "year_idx_target": 5,
+            "prerequisites": [
+              "T01"
+            ],
+            "reasoning": {
+              "year_placement": "T01 의 에이전트 아키텍처가 구축된 후, 이를 효율적으로 학습시키기 위한 프로세스 고도화로 3 차년도 (2028) 에 시작하여 5 차년도 (2030) 에 완료합니다. TRL 4 로 가장 낮은 성숙도를 가져 3 년 이상의 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 2차년도 push]",
+              "tech_execution": "거대 모델 학습 비용 증가 문제를 해결하기 위해 Cohere 의 Sliceout 기술을 도입하여, Upstage 의 프론티어 모델 학습 효율성을 극대화합니다. 이는 장기적인 기술 경쟁력을 확보하는 핵심 프로세스입니다.",
+              "investment_selection": "학습 효율화 기술은 아직 명확한 시장 리더가 부재한 초기 단계로, 2029 년경 기술적 우위를 점한 기업이 강력한 진입 장벽을 구축할 수 있습니다. 따라서 장기적인 R&D 예산을 집중 투자하여 기술적 우위를 선점해야 합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 54000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T06",
+                "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "tech_budget_rationale": "T06 은 TRL 7 로 기술 성숙도가 높고 2026 Q3 에 시장 붐이 예상되어 즉각적인 제품화 및 시장 선점이 가능한 핵심 기술입니다. Upstage 의 기존 OCR 강점과 직접 연계되어 초기 수익 창출과 시장 점유율 확보에 가장 효율적인 투자 대상이므로, 전체 예산의 33% 를 할당하여 신속한 상용화를 도모합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 1 분기 내 프로토타입 완성 및 주요 고객사를 대상으로한 파일럿 테스트를 즉시 시작하여 2026 Q3 시장 붐에 맞춰 정식 출시를 준비하십시오.",
+                "reasoning": {
+                  "market_evaluation": "문서 AI 시장 내 구조화되지 않은 데이터 처리 수요는 전체 시장의 30% 이상을 차지하며, TAM 은 180 억 달러, CAGR 은 22.8% 로 고성장세를 보이고 있습니다. 2026 Q3 에 예상되는 시장 붐을 고려할 때, 이 시점에 정교한 정보 추출 능력을 갖춘 솔루션을 출시하지 않으면 경쟁사 (Scale AI 등) 에 의해 시장 진입 장벽이 높아질 위험이 큽니다.",
+                  "tech_evaluation": "TRL 7 로 기술이 거의 검증된 상태이며, Upstage 의 기존 OCR 기술과 직접적인 시너지를 낼 수 있어 기술적 위험은 낮습니다 (tech_risk=2). 특허 포트폴리오와 기존 인프라를 활용하여 경쟁 우위를 확보할 수 있는 최적의 영역입니다.",
+                  "investment_decision": "높은 시장 성장률과 기술 성숙도, 그리고 Upstage 의 전략적 우선순위 (Document AI 리더십) 를 고려하여 Tier 1 로 선정합니다. 1,800 만 달러의 예산은 초기 제품 개발, 데이터 라벨링, 그리고 2026 년 말까지의 상용화 배포를 위한 충분한 자금을 확보하기 위함입니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T02",
+                "name": "원자적 문서 요소 관계 모델링",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "tech_budget_rationale": "T02 는 T06 의 단순 추출을 넘어선 고도화된 문서 이해 기술로, 의료 및 법률 등 고부가가치 시장 (SAM 50 억 달러) 을 공략하기 위한 필수 기술입니다. TRL 6 수준으로 2-3 년의 개발 기간이 필요하므로, 2027 년 시작을 전제로 1,500 만 달러를 할당하여 Cohere 등 경쟁사와의 기술 격차 해소를 위한 장기 R&D 를 지원합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "recommended_action": "T06 의 상용화 병행하여 2027 년 초부터 원자적 요소 모델링 아키텍처 연구 및 특허 출원을 시작하고, 의료/법률 도메인 전문가를 영입하십시오.",
+                "reasoning": {
+                  "market_evaluation": "문서 AI 시장의 고도화 영역인 원자적 요소 모델링은 의료, 법률 등 특수 도메인에서 24.5% 의 CAGR 을 보이며 2028 Q3 에 붐이 예상됩니다. 단순 인식을 넘어선 구조적 이해를 제공하는 기술은 경쟁 구도가 집중되어 있어 (Concentrated), 초기 기술 선점이 시장 지배력을 결정하는 핵심 요소입니다.",
+                  "tech_evaluation": "TRL 6 으로 프로토타입 단계에 있으며, Cohere 의 특허를 분석하여 기술적 격차를 해소해야 합니다. 기술적 불확실성은 중간 수준 (tech_risk=3) 이지만, Upstage 의 전략적 방향성과 높은 정합성을 보여 경쟁 우위 확보가 가능합니다.",
+                  "investment_decision": "장기적인 기술 리더십 확보를 위해 Tier 1 로 선정하되, T06 의 성공적 완료 후 본격적인 개발이 시작되므로 투자 시점을 조절합니다. 1,500 만 달러는 2027 년부터 2029 년까지의 연구 개발 및 특허 확보를 위한 자금을 의미합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12000000.0,
+                "tech_budget_rationale": "T01 은 TAM 450 억 달러, CAGR 43.3% 로 가장 거대하고 빠르게 성장하는 시장이며, 2027 Q2 에 붐이 예상되어 개발 긴급도가 매우 높습니다. TRL 5 로 기술적 위험은 높지만, Upstage 의 프론티어 모델 경쟁력 확보를 위한 핵심 전략 기술이므로 1,200 만 달러를 할당하여 초기 아키텍처 설계 및 PoC 개발을 집중적으로 지원합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 5,
+                  "tech_readiness": 3,
+                  "tech_risk": 4,
+                  "competitive_advantage": 4,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2027 년 초부터 멀티모달 에이전트 아키텍처 연구 및 PoC 개발을 시작하고, Anthropic/Adept AI 등 경쟁사의 기술 동향을 실시간으로 모니터링하십시오.",
+                "reasoning": {
+                  "market_evaluation": "AI 에이전트 시장은 2030 년까지 연평균 43.3% 성장할 것으로 예상되며, TAM 은 450 억 달러에 달하는 거대 시장입니다. 2027 Q2 에 예상되는 시장 붐을 고려할 때, 멀티모달 인터페이스를 통한 워크플로우 자동화 기술은 기업용 솔루션 시장에서 필수적인 요소로 부상할 것입니다.",
+                  "tech_evaluation": "TRL 5 로 개념 증명 단계에 있으며, Anthropic 과 Adept AI 등 선두 기업들의 경쟁이 치열하여 기술적 위험이 높습니다 (tech_risk=4). 그러나 Upstage 의 LLM 기반 기술과 결합하여 차별화된 아키텍처를 구축할 수 있는 잠재력이 큽니다.",
+                  "investment_decision": "시장 규모와 성장률이 압도적이며, 전략적 우선순위가 매우 높아 Tier 1 로 선정합니다. 1,200 만 달러는 2027 년부터 2030 년까지의 장기 개발을 위한 초기 자금으로, 기술적 불확실성을 줄이기 위한 단계적 투자 전략을 적용합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "고효율 트랜스포머 슬라이스아웃 학습",
+                "tier": "Tier 2",
+                "tech_budget_usd": 9000000.0,
+                "tech_budget_rationale": "T03 은 TRL 4 로 기술 성숙도가 낮고 2029 Q1 에 시장 붐이 예상되어 당장의 수익 창출보다는 장기적인 학습 비용 절감 및 효율성 향상을 위한 투자입니다. 전체 예산의 17% 를 할당하여 Cohere 의 Sliceout 기술을 벤치마킹한 자체 기술 개발을 위한 R&D 를 지원하되, 마일스톤 기반의 조건부 투자를 적용합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 2,
+                  "tech_risk": 5,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "low",
+                "recommended_action": "2028 년 초부터 Sliceout 기술 연구 및 시뮬레이션을 시작하고, 학습 효율성 향상을 위한 구체적인 마일스톤을 설정하여 단계별 투자를 진행하십시오.",
+                "reasoning": {
+                  "market_evaluation": "학습 효율화 기술 시장은 2029 년경 본격화될 것으로 예상되며, TAM 은 120 억 달러, CAGR 은 22% 로 성장할 것입니다. 이는 직접적인 제품 시장이라기보다는 거대 모델 학습 비용 절감을 위한 내부 인프라 기술로, 간접적인 시장 가치를 가집니다.",
+                  "tech_evaluation": "TRL 4 로 가장 낮은 성숙도를 보이며, 기술적 불확실성이 매우 높습니다 (tech_risk=5). Cohere 의 특허를 분석하여 기술적 격차를 해소해야 하지만, 성공 시 Upstage 의 프론티어 모델 학습 비용을 획기적으로 줄일 수 있는 잠재력이 있습니다.",
+                  "investment_decision": "기술적 위험이 높고 시장 붐이 늦게 예상되어 Tier 2 로 선정합니다. 900 만 달러는 2028 년부터 2030 년까지의 장기 R&D 를 위한 자금으로, 기술적 마일스톤 달성 여부에 따라 추가 투자를 결정하는 조건부 투자 전략을 적용합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T06",
+                "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T06",
+                "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+                "tier": "Tier 1",
+                "tech_budget_usd": 18000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 2
+              },
+              {
+                "tech_id": "T02",
+                "name": "원자적 문서 요소 관계 모델링",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T02",
+                "name": "원자적 문서 요소 관계 모델링",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T02",
+                "name": "원자적 문서 요소 관계 모델링",
+                "tier": "Tier 1",
+                "tech_budget_usd": 15000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T01",
+                "name": "멀티모달 에이전트 워크플로우 자동화",
+                "tier": "Tier 1",
+                "tech_budget_usd": 12000000.0,
+                "year_idx_start": 4,
+                "year_idx_target": 5
+              },
+              {
+                "tech_id": "T03",
+                "name": "고효율 트랜스포머 슬라이스아웃 학습",
+                "tier": "Tier 2",
+                "tech_budget_usd": 9000000.0,
+                "year_idx_start": 5,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 18000000.0,
+            "2": 15000000.0,
+            "4": 12000000.0,
+            "5": 9000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 3,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 4,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "멀티모달 에이전트 워크플로우 자동화",
+              "category": "Architecture",
+              "final_score": 90.3,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "원자적 문서 요소 관계 모델링",
+              "category": "Process",
+              "final_score": 81.65,
+              "market_score": 76.2,
+              "boom": "2028 Q3"
+            },
+            {
+              "tech_id": "T06",
+              "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+              "category": "Process",
+              "final_score": 78.79,
+              "market_score": 82.3,
+              "boom": "2026 Q3"
+            },
+            {
+              "tech_id": "T09",
+              "name": "확률적 에이전트 기반 동적 제어",
+              "category": "Architecture",
+              "final_score": 78.11,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T05",
+              "name": "암시적 데이터 의존성 기반 가시성",
+              "category": "Architecture",
+              "final_score": 77.74,
+              "market_score": 78.5,
+              "boom": "2027 Q2"
+            }
+          ],
+          "category_distribution": {
+            "Architecture": 4,
+            "Process": 4
+          },
+          "avg_trl": 4.9,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T06",
+              "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+              "stage": "roadmap",
+              "key_reason": "TAM 180 억 달러 및 CAGR 22.8% 의 높은 시장 성장 잠재력"
+            },
+            {
+              "tech_id": "T02",
+              "name": "원자적 문서 요소 관계 모델링",
+              "stage": "roadmap",
+              "key_reason": "의료 및 법률 등 고부가가치 SAM 시장 (50 억 달러) 공략 필요"
+            },
+            {
+              "tech_id": "T01",
+              "name": "멀티모달 에이전트 워크플로우 자동화",
+              "stage": "roadmap",
+              "key_reason": "TAM 450 억 달러 및 CAGR 43.3% 의 압도적인 시장 성장 잠재력"
+            }
+          ],
+          "dependency_edges": [
+            "T06 → T02",
+            "T02 → T01",
+            "T01 → T03"
+          ],
+          "boom_quarter_distribution": {
+            "2027 Q2": 3,
+            "2028 Q3": 1,
+            "2026 Q3": 1,
+            "2029 Q1": 1,
+            "2028 Q1": 2
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 초과 없음, 기술 선정 및 시계열 배분 논리적. 전략 정합성 및 포트폴리오 균형 모두 양호하여 최종 승인."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_upstage_ai_llm_2026_2030__기술선도__investment_strategy.json"
+  }
+}

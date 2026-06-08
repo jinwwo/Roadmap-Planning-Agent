@@ -1,0 +1,460 @@
+{
+  "problem_frame": {
+    "industry": "Conversational AI / LLM / Knowledge Graph",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 27000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Saltlux",
+    "annual_revenue": 29700000.0,
+    "rd_budget_ratio": 0.273,
+    "annual_rd_budget": 8100000.0,
+    "strategic_direction": [
+      "Conversational AI 및 LLM 기술 선도 확보",
+      "Knowledge Graph 기반 인접 시장 확장",
+      "공격적 R&D 투자로 HW/SW 통합 스택 강화"
+    ]
+  },
+  "active_agents": [
+    "tool-single"
+  ],
+  "run_mode": "tool-single",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {},
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "diagnostic_summary": "",
+    "report": {
+      "executive_summary": "This TRM outlines a technology roadmap for Saltlux to establish leadership in AI infrastructure for LLM and Knowledge Graph applications. The strategy focuses on key enabling technologies such as HBM4 memory, chiplet integration, and sparse matrix acceleration. The roadmap is aligned with Saltlux's 'Technology Leadership' strategy and the projected growth of the AI market.",
+      "technology_strategy": "Focus on foundational technologies that enable high-performance AI systems. Prioritize technologies with strong market potential and strategic fit with Saltlux's existing expertise.",
+      "roadmap_structure": "The roadmap is structured in three stages: Foundation, Integration, and Optimization. Each stage focuses on specific technologies and deliverables.",
+      "investment_strategy": "Prioritize investment in core technologies with high potential for differentiation. Allocate resources strategically to maximize ROI and minimize risk.",
+      "trend_alignment": "The roadmap aligns with key industry trends such as the increasing demand for AI infrastructure, the need for high-bandwidth memory, and the adoption of chiplet architectures.",
+      "feasibility_and_risk": "The roadmap is ambitious but feasible given Saltlux's R&D budget and expertise. Key risks include supply chain disruptions, high development costs, and competition from established players.",
+      "expected_outcomes": "Successful execution of this roadmap will position Saltlux as a leader in AI infrastructure, enabling the company to capture a significant share of the growing AI market.",
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory",
+            "category": "Material",
+            "trl": 3,
+            "patent_score": 7.0,
+            "market_score": 9.0,
+            "final_score": 8.0,
+            "expected_market_boom_quarter": "2028 Q4",
+            "dependency_hints": [
+              "S02",
+              "S03"
+            ],
+            "rationale": "Critical for LLM performance and bandwidth. Saltlux has existing patent activity in knowledge graph systems, and HBM4 is a foundational element for scaling these systems. Strong market demand and high growth potential."
+          },
+          {
+            "tech_id": "S02",
+            "name": "2.5D/3D Chiplet Integration",
+            "category": "Architecture",
+            "trl": 4,
+            "patent_score": 6.0,
+            "market_score": 8.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2029 Q1",
+            "dependency_hints": [
+              "S01",
+              "S03"
+            ],
+            "rationale": "Enables scaling of AI accelerators beyond monolithic designs. Saltlux's patent portfolio shows focus on knowledge graph processing, which benefits from increased compute density. Aligns with industry trends towards heterogeneous computing."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Sparse Matrix Acceleration",
+            "category": "Architecture",
+            "trl": 5,
+            "patent_score": 5.0,
+            "market_score": 7.0,
+            "final_score": 6.0,
+            "expected_market_boom_quarter": "2029 Q2",
+            "dependency_hints": [
+              "S01",
+              "S02"
+            ],
+            "rationale": "LLMs are inherently sparse, and efficient acceleration is vital. Saltlux's expertise in knowledge graphs translates to understanding sparse data structures. This technology will improve performance and energy efficiency."
+          },
+          {
+            "tech_id": "S04",
+            "name": "CoWoS-like Advanced Packaging",
+            "category": "Packaging",
+            "trl": 6,
+            "patent_score": 8.0,
+            "market_score": 7.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2028 Q4",
+            "dependency_hints": [
+              "S01",
+              "S02"
+            ],
+            "rationale": "Necessary for integrating HBM4 and chiplets. Saltlux's focus on AI systems requires high-bandwidth interconnects. This is a critical enabler for scaling AI infrastructure."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Silicon Photonics for Data Transfer",
+            "category": "Equipment",
+            "trl": 4,
+            "patent_score": 4.0,
+            "market_score": 6.0,
+            "final_score": 5.0,
+            "expected_market_boom_quarter": "2030 Q1",
+            "dependency_hints": [
+              "S04"
+            ],
+            "rationale": "Addresses bandwidth limitations of electrical interconnects. While not a core competency for Saltlux, it's a necessary component for large-scale AI systems. Potential for strategic partnerships."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Near-Memory Computing",
+            "category": "Architecture",
+            "trl": 3,
+            "patent_score": 5.0,
+            "market_score": 6.0,
+            "final_score": 5.0,
+            "expected_market_boom_quarter": "2030 Q2",
+            "dependency_hints": [
+              "S01"
+            ],
+            "rationale": "Reduces data movement and power consumption. Aligns with Saltlux's 'Technology Leadership' strategy and the need for sustainable AI solutions. Potential for differentiation."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Vector Database Technology",
+            "category": "Architecture",
+            "trl": 5,
+            "patent_score": 7.0,
+            "market_score": 8.0,
+            "final_score": 7.0,
+            "expected_market_boom_quarter": "2029 Q3",
+            "dependency_hints": [],
+            "rationale": "Supports efficient storage and retrieval of knowledge graph data. Directly leverages Saltlux's existing expertise in knowledge graphs and conversational AI. High market demand for vector databases."
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "S01",
+            "name": "HBM4 Memory",
+            "phase_name": "Research & Development",
+            "start_q": "2026 Q1",
+            "target_q": "2027 Q4",
+            "prerequisites": [],
+            "lead_time_quarters": 8,
+            "justification": "Establish foundational expertise in HBM4 technology and secure access to key materials and manufacturing processes."
+          },
+          {
+            "tech_id": "S02",
+            "name": "2.5D/3D Chiplet Integration",
+            "phase_name": "Prototyping & Validation",
+            "start_q": "2027 Q1",
+            "target_q": "2028 Q2",
+            "prerequisites": [
+              "S01"
+            ],
+            "lead_time_quarters": 6,
+            "justification": "Develop and validate chiplet integration techniques for AI accelerators. Focus on performance, power efficiency, and scalability."
+          },
+          {
+            "tech_id": "S07",
+            "name": "Vector Database Technology",
+            "phase_name": "Productization",
+            "start_q": "2028 Q3",
+            "target_q": "2029 Q1",
+            "prerequisites": [],
+            "lead_time_quarters": 4,
+            "justification": "Develop a commercial-grade vector database solution optimized for knowledge graph applications."
+          },
+          {
+            "tech_id": "S03",
+            "name": "Sparse Matrix Acceleration",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q1",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "S01",
+              "S02"
+            ],
+            "lead_time_quarters": 10,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S04",
+            "name": "CoWoS-like Advanced Packaging",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2027 Q3",
+            "target_q": "2029 Q4",
+            "prerequisites": [
+              "S01",
+              "S02"
+            ],
+            "lead_time_quarters": 11,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S05",
+            "name": "Silicon Photonics for Data Transfer",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q1",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S04"
+            ],
+            "lead_time_quarters": 12,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          },
+          {
+            "tech_id": "S06",
+            "name": "Near-Memory Computing",
+            "phase_name": "Single-Agent Baseline Roadmap",
+            "start_q": "2028 Q3",
+            "target_q": "2030 Q4",
+            "prerequisites": [
+              "S01"
+            ],
+            "lead_time_quarters": 13,
+            "justification": "Single agent estimated sequencing from TRL, strategy fit, and market timing. Supplemental item added because the single-agent response omitted this candidate from the roadmap."
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "Stage 1: Foundation",
+            "period": "2026 Q1-2027 Q4",
+            "stage_budget_ratio": 0.35,
+            "stage_estimated_usd": 9450000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S01",
+                "name": "HBM4 Memory",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S02",
+                "name": "2.5D/3D Chiplet Integration",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 2: Scale-up",
+            "period": "2028 Q1-2029 Q2",
+            "stage_budget_ratio": 0.4,
+            "stage_estimated_usd": 10800000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S03",
+                "name": "Sparse Matrix Acceleration",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S04",
+                "name": "CoWoS-like Advanced Packaging",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "Stage 3: Platform expansion",
+            "period": "2029 Q3-2030 Q4",
+            "stage_budget_ratio": 0.25,
+            "stage_estimated_usd": 6750000.0,
+            "stage_assessment": "Single-agent integrated investment judgment.",
+            "tech_investments": [
+              {
+                "tech_id": "S05",
+                "name": "Silicon Photonics for Data Transfer",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S06",
+                "name": "Near-Memory Computing",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "medium",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              },
+              {
+                "tech_id": "S07",
+                "name": "Vector Database Technology",
+                "recommended_investment_tier": "Tier 2",
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "investment_scope": "R&D + ecosystem partnership",
+                "evaluation_scores": {
+                  "market_opportunity": 4,
+                  "strategic_fit": 5,
+                  "executability": 4,
+                  "uncertainty": 3,
+                  "urgency": 4
+                },
+                "recommended_action": "Prioritize as part of the single-agent baseline portfolio.",
+                "rationale": [
+                  "High relevance to the company scenario and roadmap horizon."
+                ],
+                "major_risks": [
+                  "Single-agent estimate; no independent agent critique."
+                ],
+                "resource_focus": [
+                  "Architecture validation",
+                  "partner ecosystem",
+                  "software enablement"
+                ]
+              }
+            ]
+          }
+        ],
+        "insights": {
+          "run_mode": "tool_augmented_single_agent",
+          "candidate_count": 7,
+          "roadmap_item_count": 7,
+          "stage_count": 3,
+          "note": "Patent/market tools collected evidence, then one LLM generated all artifacts."
+        }
+      }
+    }
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/orchestration_agent/outputs/tool_single_saltlux_ai_llm_2026_2030__기술선도__tech_candidates.json",
+    "planned_roadmap": "/workspace/orchestration_agent/outputs/tool_single_saltlux_ai_llm_2026_2030__기술선도__planned_roadmap.json",
+    "investment_strategy": "/workspace/orchestration_agent/outputs/tool_single_saltlux_ai_llm_2026_2030__기술선도__investment_strategy.json"
+  }
+}

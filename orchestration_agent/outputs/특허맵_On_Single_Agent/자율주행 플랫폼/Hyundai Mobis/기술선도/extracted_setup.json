@@ -1,0 +1,33 @@
+{
+  "run_mode": "tool-single",
+  "scenario_id": "hyundai_mobis_autonomous_2026_2030",
+  "strategy_key": "기술선도",
+  "strategy_label": "기술 선도 (Technology Leadership)",
+  "patent_map": "on",
+  "setup_source": "/workspace/orchestration_agent/outputs/특허맵_On/자율주행 플랫폼/Hyundai Mobis/기술선도/extracted_setup.json",
+  "prompt": "Company: Hyundai Mobis\nIndustry: Autonomous Driving Platform / ADAS / Automotive Electronics\nAnnual Revenue: ~$43.7B\nR&D Budget Ratio: ~4.3%\nAnnual R&D Budget: ~$1.88B\nTotal 5-year R&D Budget: ~$5.55B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 기술 선도 (Technology Leadership) — 선도 기술 확보, 공격적 R&D 투자, 장기 해자 구축, 프론티어 기술 선점",
+  "setup": {
+    "company_name": "Hyundai Mobis",
+    "industry": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "annual_revenue": 43700000000.0,
+    "rd_budget_ratio": 0.043,
+    "annual_rd_budget": 1880000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "자율주행 플랫폼 및 프론티어 기술 선점을 통해 기술 리더십과 장기 경쟁 우위를 확보한다.",
+    "strategic_direction": [
+      "자율주행 플랫폼 (ADAS) 기술 리더십 강화",
+      "모빌리티 서비스 및 소프트웨어 정의 차량 (SDV) 시장 확장",
+      "AI 및 센서 퓨전 기술 스택 고도화"
+    ],
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 5550000000
+}

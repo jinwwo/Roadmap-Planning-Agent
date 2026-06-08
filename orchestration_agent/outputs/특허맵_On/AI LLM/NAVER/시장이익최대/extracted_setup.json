@@ -1,0 +1,30 @@
+{
+  "scenario_id": "naver_ai_llm_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: NAVER\nIndustry: Large Language Model / Foundation Model / AI Platform\nAnnual Revenue: ~$8.6B\nR&D Budget Ratio: ~25.8%\nAnnual R&D Budget: ~$2.22B\nTotal 5-year R&D Budget: ~$6.81B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "NAVER",
+    "industry": "Large Language Model / Foundation Model / AI Platform",
+    "annual_revenue": 8600000000.0,
+    "rd_budget_ratio": 0.258,
+    "annual_rd_budget": 2220000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Short-term commercialization and cost leadership to maximize market profits and revenue growth.",
+    "strategic_direction": [
+      "검증된 LLM 기술의 단기 상용화 및 원가 우위 확보",
+      "AI 플랫폼 생태계를 통한 인접 시장 확장",
+      "고성능 AI 인프라 및 SW 스택 강화"
+    ],
+    "domain": "Large Language Model / Foundation Model / AI Platform",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 6810000000
+}

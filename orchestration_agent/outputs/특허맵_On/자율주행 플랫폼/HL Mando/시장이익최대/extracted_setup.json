@@ -1,0 +1,30 @@
+{
+  "scenario_id": "hl_mando_autonomous_2026_2030",
+  "strategy_key": "시장이익최대",
+  "strategy_label": "시장 이익 최대 (Market Profit Maximization)",
+  "prompt": "Company: HL Mando\nIndustry: ADAS / Autonomous Driving / Chassis Control / Steer-by-Wire\nAnnual Revenue: ~$6.8B\nR&D Budget Ratio: ~7.1%\nAnnual R&D Budget: ~$478M\nTotal 5-year R&D Budget: ~$1.48B\nPlanning Horizon: 2026-2030 (5 years)\n전략: 시장 이익 최대 (Market Profit Maximization) — 단기 상용화, 원가 우위, 검증된 기술 확대, 매출/마진 성장",
+  "setup": {
+    "company_name": "HL Mando",
+    "industry": "ADAS / Autonomous Driving / Chassis Control",
+    "annual_revenue": 6800000000.0,
+    "rd_budget_ratio": 0.071,
+    "annual_rd_budget": 478000000.0,
+    "planning_horizon": "2026-2030 (5 years)",
+    "objective": "Short-term commercialization and cost leadership to maximize market profit and margin growth.",
+    "strategic_direction": [
+      "Steer-by-Wire 및 Chassis Control 기술 리더십 강화",
+      "ADAS 시장 확대를 통한 매출 및 마진 성장",
+      "원가 우위 확보를 위한 검증된 기술 상용화"
+    ],
+    "domain": "ADAS / Autonomous Driving / Chassis Control",
+    "reference_year": 2030,
+    "category_hints": [
+      "Equipment",
+      "Material",
+      "Process",
+      "Architecture",
+      "Packaging"
+    ]
+  },
+  "total_budget_usd": 1480000000
+}

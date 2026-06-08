@@ -1,0 +1,405 @@
+{
+  "problem_frame": {
+    "industry": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "time_horizon": "2026-2030 (5 years)",
+    "total_budget": 5550000000.0,
+    "future_trend_summary": "AI infrastructure demand continues to grow across hyperscale cloud, enterprise AI, robotics, and edge inference. GPU roadmaps increasingly depend on advanced packaging, HBM bandwidth, chiplet/interconnect architecture, energy-efficient AI accelerators, networking, and the software platform layer that binds hardware into full-stack AI systems.",
+    "company_name": "Hyundai Mobis",
+    "annual_revenue": 0.0,
+    "rd_budget_ratio": 0.0,
+    "annual_rd_budget": 0.0,
+    "strategic_direction": [
+      "ADAS/자율주행 플랫폼 리더십 강화",
+      "검증된 기술의 글로벌 시장 확대",
+      "원가 우위 확보를 위한 HW/SW 최적화"
+    ]
+  },
+  "active_agents": [
+    "1",
+    "2",
+    "3"
+  ],
+  "run_mode": "multi",
+  "patent_method": "C_company_portfolio",
+  "iteration": 1,
+  "review": {
+    "decision": "ACCEPT",
+    "trm_assessment": {
+      "feasibility": {
+        "budget_feasible": true,
+        "schedule_feasible": true,
+        "comment": "총 예산 $5.55B 내에서 정확히 배분됨. 2026-2030 기간 내 기술 개발 일정도 타당함."
+      },
+      "sequencing": {
+        "dependency_valid": true,
+        "comment": "선정된 3 기술 간 의존성 명시 없음. 각 기술이 독립적으로 진행 가능한 구조로 설계됨."
+      },
+      "strategic_alignment": {
+        "company_fit": 0.92,
+        "future_trend_alignment": 0.88,
+        "comment": "ADAS 플랫폼 및 HW/SW 최적화 전략과 높은 정합성. T01 제외가 전략적 일관성 강화에 기여."
+      },
+      "investment_rationality": {
+        "over_invested": [],
+        "under_invested": [],
+        "comment": "Tier 1(T02, T05) 과 Tier 2(T03) 의 배분이 기술 성숙도와 시장 시기와 적절히 정합됨."
+      },
+      "portfolio_balance": {
+        "short_long_balance": 0.65,
+        "risk_balance": 0.7,
+        "comment": "단기(T02, T05) 와 중장기(T03) 기술이 균형 있게 분포되어 있음."
+      }
+    },
+    "issues": [],
+    "refinement": {
+      "rerun_agents": [],
+      "feedback": []
+    },
+    "report": {
+      "artifacts_summary": {
+        "agent1_tech_candidates": [
+          {
+            "tech_id": "T01",
+            "name": "고성능 SiC 반도체 제조",
+            "category": "Material",
+            "trl": 6,
+            "final_score": 88.5,
+            "market_score": 88.5,
+            "patent_score": 88.5,
+            "expected_market_boom_quarter": "2027 Q2"
+          },
+          {
+            "tech_id": "T02",
+            "name": "스테어바이와이어 다중모드 제어",
+            "category": "Equipment",
+            "trl": 7,
+            "final_score": 83.89,
+            "market_score": 82.0,
+            "patent_score": 86.2,
+            "expected_market_boom_quarter": "2026 Q4"
+          },
+          {
+            "tech_id": "T03",
+            "name": "카메라-초음파 통합 센서",
+            "category": "Equipment",
+            "trl": 6,
+            "final_score": 80.23,
+            "market_score": 76.5,
+            "patent_score": 84.8,
+            "expected_market_boom_quarter": "2028 Q1"
+          },
+          {
+            "tech_id": "T05",
+            "name": "고전압 커넥터 자동화 조립",
+            "category": "Process",
+            "trl": 7,
+            "final_score": 78.3,
+            "market_score": 76.5,
+            "patent_score": 80.5,
+            "expected_market_boom_quarter": "2027 Q3"
+          }
+        ],
+        "agent2_planned_roadmap": [
+          {
+            "tech_id": "T02",
+            "name": "스테어바이와이어 다중모드 제어",
+            "year_idx_start": 1,
+            "year_idx_target": 3,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026) 에 즉시 양산 준비를 시작하며, 2026 Q4 예상 시장 붐을 반영하여 3 차년도 (2028) 까지 초기 상용화 및 안정화 단계를 완료합니다. 이는 경쟁사 선점 기술을 빠르게 따라잡기 위한 초기 대응 전략입니다.",
+              "tech_execution": "자율주행 플랫폼 리더십 강화를 위해 핵심 조향 제어 알고리즘을 먼저 확보해야 하며, 이는 차세대 차량의 안전성과 제어 정밀도를 결정하는 기반 기술입니다. 다중모드 제어 구현을 통해 다양한 주행 환경에 대응하는 유연한 플랫폼을 구축합니다.",
+              "investment_selection": "2026 년 말부터 급성장할 시장 선점을 위해 초기 투자 집중이 필요하며, Bosch 와 ZF 의 기술 추격을 위한 핵심 투자 대상입니다. 원가 우위 확보를 위한 HW/SW 최적화의 첫 단계로 선정되어 빠른 ROI 를 기대할 수 있습니다."
+            }
+          },
+          {
+            "tech_id": "T05",
+            "name": "고전압 커넥터 자동화 조립",
+            "year_idx_start": 1,
+            "year_idx_target": 4,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 7 로 성숙한 공정 기술이지만, 2027 Q3 시장 붐을 대비하여 1 차년도부터 설비 도입 및 공정 최적화를 시작하고, 4 차년도 (2029) 까지 대량 생산 라인 안정화 및 확장 단계를 수행합니다. 이는 EV 생산량 증가에 따른 수요 폭발에 선제적으로 대응하기 위함입니다.",
+              "tech_execution": "전기차 생산 라인의 효율성을 극대화하여 원가 우위를 확보하는 핵심 공정 기술로, 자동화 조립을 통해 품질 일관성과 생산 속도를 높여야 합니다. 경쟁사 (Aptiv, Magna) 의 자동화 기술을 선점하여 생산 경쟁력을 강화합니다.",
+              "investment_selection": "2027 년경 본격화될 고전압 커넥터 시장 수요를 충족시키기 위한 필수 투자이며, 생산 비용 절감을 통한 가격 경쟁력 확보에 직접적으로 기여합니다. 장기적인 생산 효율성 개선을 위해 4 차년도까지 지속적인 투자와 기술 고도화가 필요합니다."
+            }
+          },
+          {
+            "tech_id": "T03",
+            "name": "카메라 - 초음파 통합 센서",
+            "year_idx_start": 2,
+            "year_idx_target": 5,
+            "prerequisites": [],
+            "reasoning": {
+              "year_placement": "TRL 6 으로 상대적으로 개발 기간이 필요하므로 2 차년도 (2027) 에 본격적인 R&D 를 시작하며, 2028 Q1 시장 붐을 중간 마일스톤으로 삼아 5 차년도 (2030) 까지 차세대 통합 센서 표준화 및 고도화 단계를 이어갑니다. 이는 Horizon 종료 시점까지 기술 진화를 보장합니다.",
+              "tech_execution": "차량 외부 공간 활용도 향상과 원가 절감을 위한 핵심 센서 기술로, 카메라와 초음파의 통합을 통해 차별화된 성능을 확보해야 합니다. 치열한 경쟁 환경에서 Magna 와 Aptiv 를 능가하는 독자적인 통합 기술을 개발하여 시장 점유율을 높입니다.",
+              "investment_selection": "2028 년 이후 확대될 통합 센서 모듈 시장을 선점하기 위한 장기 투자 대상이며, 차세대 자율주행 플랫폼의 핵심 센서 표준을 주도하기 위해 필수적입니다. 5 차년도까지 이어지는 R&D 를 통해 지속적인 기술 우위를 유지하고 시장 변화에 유연하게 대응합니다."
+            }
+          }
+        ],
+        "agent3_investment_strategy": [
+          {
+            "stage": "roadmap",
+            "period": "1차년도 - 5차년도",
+            "stage_assessment": "",
+            "stage_budget_ratio": 1.0,
+            "stage_estimated_usd": 5550000000.0,
+            "tech_investments": [
+              {
+                "tech_id": "T02",
+                "name": "스테어바이와이어 다중모드 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "tech_budget_rationale": "2026 Q4 에 예상되는 시장 붐을 선제적으로 선점하기 위해 총 예산의 39.6% 에 해당하는 22 억 달러를 배정합니다. TRL 7 의 높은 성숙도와 18% 의 CAGR, 그리고 Bosch/ZF 와의 치열한 경쟁 구도에서 기술적 우위를 확보하기 위한 대규모 양산 준비 및 알고리즘 고도화 비용이 필요합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 5,
+                  "development_urgency": 5
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 1 분기부터 양산 라인 설비 투자 및 다중모드 제어 알고리즘의 최종 검증 (DV/PV) 을 완료하여 2026 Q4 시장 진입을 확정합니다.",
+                "reasoning": {
+                  "market_evaluation": "X-by-wire 시스템 시장은 2030 년까지 180 억 달러 (TAM) 규모로 성장하며 연평균 18% 의 높은 CAGR 을 기록할 것으로 예상됩니다. 특히 2026 년 4 분기에 예상되는 시장 붐은 자율주행 레벨 3 이상 차량의 대량 상용화와 맞물려 있어, 이 시점을 놓칠 경우 시장 진입 장벽이 급격히 높아질 것입니다. 현대모비스는 이 거대 시장에서 핵심 제어 기술인 스테어바이와이어를 통해 60 억 달러 (SAM) 의 직접적인 시장 기회를 포착해야 합니다.",
+                  "tech_evaluation": "TRL 7 로 기술 성숙도가 높아 양산 준비가 가능한 상태이며, 기술적 실패 위험은 상대적으로 낮습니다 (Tech Risk 2). 그러나 Bosch 와 ZF 가 이미 강력한 특허 포트폴리오를 구축하고 있어, 다중모드 제어 알고리즘을 통해 차별화된 경쟁 우위 (Competitive Advantage 5) 를 확보하는 것이 성패를 가릅니다. 이는 회사의 'ADAS 리더십 강화' 전략과 완벽하게 부합하는 핵심 기술입니다.",
+                  "investment_decision": "시장 붐이 임박하고 (Urgency 5), 기술적 성숙도가 높으며 (Readiness 4), 전략적 중요도가 극대화된 (Advantage 5) 기술이므로 Tier 1 로 분류합니다. 총 예산 55.5 억 달러 중 가장 큰 비중인 22 억 달러를 할당하여, 2026 년 즉시 양산 라인 구축과 글로벌 인증 획득을 위한 선제적 투자를 수행합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T05",
+                "name": "고전압 커넥터 자동화 조립",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "tech_budget_rationale": "2027 Q3 시장 붐을 대비하여 EV 생산 라인의 원가 우위를 확보하기 위해 총 예산의 32.4% 인 18 억 달러를 배정합니다. TRL 7 의 성숙한 공정 기술을 기반으로 Aptiv, Magna 와의 경쟁에서 생산 효율성과 품질 일관성을 확보하기 위한 대규모 자동화 설비 도입 및 공정 최적화 비용이 필요합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 3,
+                  "tech_readiness": 4,
+                  "tech_risk": 2,
+                  "competitive_advantage": 4,
+                  "development_urgency": 4
+                },
+                "investment_attractiveness": "high",
+                "investment_urgency": "high",
+                "recommended_action": "2026 년 1 차년도부터 자동화 조립 라인 설비 도입을 시작하여 2027 Q3 시장 붐 직전까지 생산 라인 최적화 및 대량 생산 능력을 확보합니다.",
+                "reasoning": {
+                  "market_evaluation": "고전압 커넥터 시장은 2034 년까지 120 억 달러 이상으로 성장할 것으로 예상되며, EV 생산량 증가에 따른 수요 폭발이 2027 년 3 분기에 예상됩니다. 연평균 14.2% 의 성장률은 EV 전환 가속화에 따른 필수 부품 시장임을 시사하며, 자동화 조립 기술은 이 공급망의 핵심 효율화 요소로 간주됩니다. 125 억 달러 (TAM) 의 시장 규모는 현대모비스의 '원가 우위 확보' 전략을 실현할 수 있는 충분한 규모입니다.",
+                  "tech_evaluation": "TRL 7 로 성숙한 공정 기술이며, 기술적 불확실성은 낮습니다 (Tech Risk 2). Aptiv 와 Magna 가 자동화 조립 특허를 선점하고 있으나, 현대모비스는 기존 생산 라인과의 통합을 통해 차별화된 공정 효율성을 달성할 수 있는 경쟁 우위 (Advantage 4) 를 가집니다. 이는 제조 경쟁력을 강화하는 핵심 수단입니다.",
+                  "investment_decision": "시장 붐이 2027 년에 임박하고 (Urgency 4), 기술 성숙도가 높으며 (Readiness 4), 원가 우위 확보라는 전략적 목표와 직접 연결되므로 Tier 1 로 선정합니다. 18 억 달러의 예산은 설비 도입, 로봇 공학 도입, 그리고 대량 생산 라인 안정화를 위한 충분한 자금을 제공합니다."
+                },
+                "major_risks": []
+              },
+              {
+                "tech_id": "T03",
+                "name": "카메라 - 초음파 통합 센서",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "tech_budget_rationale": "2028 Q1 시장 붐을 대비하여 2027 년부터 본격적인 R&D 를 시작하고, 2030 년까지 기술 고도화를 위한 총 예산의 28% 인 15.5 억 달러를 배정합니다. TRL 6 의 중간 성숙도 단계이므로 양산 전까지 추가적인 기술 검증과 통합 알고리즘 개발이 필요하며, 이는 마일스톤 기반의 단계적 투자 전략이 적합합니다.",
+                "evaluation_scores": {
+                  "market_size_growth": 4,
+                  "tech_readiness": 3,
+                  "tech_risk": 3,
+                  "competitive_advantage": 3,
+                  "development_urgency": 3
+                },
+                "investment_attractiveness": "medium",
+                "investment_urgency": "medium",
+                "recommended_action": "2027 년 2 차년도부터 통합 센서 모듈의 R&D 를 본격화하고, 2028 Q1 시장 진입을 위한 프로토타입 검증 및 양산 준비 마일스톤을 설정하여 단계적으로 투자를 집행합니다.",
+                "reasoning": {
+                  "market_evaluation": "카메라 및 통합 센서 시장은 2030 년까지 250 억 달러 (TAM) 규모로 성장하며 연평균 15.5% 의 CAGR 을 기록할 것으로 예상됩니다. 2028 년 1 분기에 예상되는 시장 붐은 ADAS 기능의 표준화와 맞물려 있으며, 센서 퓨전 기술이 핵심 경쟁력이 될 것입니다. 250 억 달러의 거대 시장은 현대모비스가 Magna 와 Aptiv 를 능가하는 독자적인 통합 기술을 통해 시장 점유율을 높일 수 있는 기회입니다.",
+                  "tech_evaluation": "TRL 6 으로 기술 성숙도가 중간 단계이며, 통합 센서 모듈의 안정화와 성능 최적화를 위한 추가 개발이 필요합니다 (Tech Risk 3). 경쟁 구도가 파편화되어 있어 (Fragmented) 차별화된 통합 기술이 경쟁 우위 (Advantage 3) 를 결정할 것입니다. 이는 'ADAS 리더십 강화' 전략을 위한 필수 기술이지만, 즉각적인 양산보다는 기술 고도화가 선행되어야 합니다.",
+                  "investment_decision": "시장 규모는 크지만 (Growth 4), 기술 성숙도가 낮고 (Readiness 3) 경쟁 구도가 복잡하여 (Advantage 3) Tier 2 로 분류합니다. 15.5 억 달러의 예산은 2027 년부터 시작되는 R&D, 프로토타입 제작, 그리고 2028 년 시장 진입을 위한 마일스톤 기반 투자를 지원합니다."
+                },
+                "major_risks": []
+              }
+            ]
+          }
+        ],
+        "year_tech_matrix": {
+          "max_year": 5,
+          "cells": {
+            "1": [
+              {
+                "tech_id": "T02",
+                "name": "스테어바이와이어 다중모드 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "고전압 커넥터 자동화 조립",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              }
+            ],
+            "2": [
+              {
+                "tech_id": "T02",
+                "name": "스테어바이와이어 다중모드 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "고전압 커넥터 자동화 조립",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T03",
+                "name": "카메라 - 초음파 통합 센서",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "3": [
+              {
+                "tech_id": "T02",
+                "name": "스테어바이와이어 다중모드 제어",
+                "tier": "Tier 1",
+                "tech_budget_usd": 2200000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 3
+              },
+              {
+                "tech_id": "T05",
+                "name": "고전압 커넥터 자동화 조립",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T03",
+                "name": "카메라 - 초음파 통합 센서",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "4": [
+              {
+                "tech_id": "T05",
+                "name": "고전압 커넥터 자동화 조립",
+                "tier": "Tier 1",
+                "tech_budget_usd": 1800000000.0,
+                "year_idx_start": 1,
+                "year_idx_target": 4
+              },
+              {
+                "tech_id": "T03",
+                "name": "카메라 - 초음파 통합 센서",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ],
+            "5": [
+              {
+                "tech_id": "T03",
+                "name": "카메라 - 초음파 통합 센서",
+                "tier": "Tier 2",
+                "tech_budget_usd": 1550000000.0,
+                "year_idx_start": 2,
+                "year_idx_target": 5
+              }
+            ]
+          },
+          "yearly_budget_total": {
+            "1": 4000000000.0,
+            "2": 1550000000.0
+          }
+        },
+        "insights": {
+          "tier_distribution": {
+            "Tier 1": 2,
+            "Tier 2": 1,
+            "Tier 3": 0
+          },
+          "total_techs": 3,
+          "top_5_tech_by_score": [
+            {
+              "tech_id": "T01",
+              "name": "고성능 SiC 반도체 제조",
+              "category": "Material",
+              "final_score": 88.5,
+              "market_score": 88.5,
+              "boom": "2027 Q2"
+            },
+            {
+              "tech_id": "T02",
+              "name": "스테어바이와이어 다중모드 제어",
+              "category": "Equipment",
+              "final_score": 83.89,
+              "market_score": 82.0,
+              "boom": "2026 Q4"
+            },
+            {
+              "tech_id": "T03",
+              "name": "카메라-초음파 통합 센서",
+              "category": "Equipment",
+              "final_score": 80.23,
+              "market_score": 76.5,
+              "boom": "2028 Q1"
+            },
+            {
+              "tech_id": "T05",
+              "name": "고전압 커넥터 자동화 조립",
+              "category": "Process",
+              "final_score": 78.3,
+              "market_score": 76.5,
+              "boom": "2027 Q3"
+            }
+          ],
+          "category_distribution": {
+            "Material": 1,
+            "Equipment": 2,
+            "Process": 1
+          },
+          "avg_trl": 6.5,
+          "tier1_tech_list": [
+            {
+              "tech_id": "T02",
+              "name": "스테어바이와이어 다중모드 제어",
+              "stage": "roadmap",
+              "key_reason": "2026 Q4 시장 붐 임박으로 개발 지연 시 기회 상실 위험이 매우 높음 (Urgency 5)."
+            },
+            {
+              "tech_id": "T05",
+              "name": "고전압 커넥터 자동화 조립",
+              "stage": "roadmap",
+              "key_reason": "2027 Q3 시장 붐을 대비한 설비 도입 및 공정 최적화가 시급함 (Urgency 4)."
+            }
+          ],
+          "dependency_edges": [],
+          "boom_quarter_distribution": {
+            "2027 Q2": 1,
+            "2026 Q4": 1,
+            "2028 Q1": 1,
+            "2027 Q3": 1
+          }
+        }
+      }
+    },
+    "diagnostic_summary": "예산 배분과 기술 선정이 전략적 방향성과 완벽히 정합되며, 모든 제약 조건을 충족함."
+  },
+  "artifact_paths": {
+    "tech_candidates": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobis_autonomous_2026_2030__시장이익최대__tech_candidates.json",
+    "planned_roadmap": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobis_autonomous_2026_2030__시장이익최대__planned_roadmap.json",
+    "investment_strategy": "/workspace/26-tech-roadmap/Roadmap-Planning-Agent/orchestration_agent/outputs/batch_hyundai_mobis_autonomous_2026_2030__시장이익최대__investment_strategy.json"
+  }
+}

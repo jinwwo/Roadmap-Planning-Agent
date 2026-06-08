@@ -1,44 +1,85 @@
 [
   {
     "center_actor": "STRADVISION",
-    "related_actor": "Mobileye",
+    "related_actor": "NVIDIA",
     "similarity": 0.92,
     "edge_weight": 0.92,
-    "reason": "ADAS 및 컴퓨터 비전 도메인에서 높은 기술적 유사성. 운전자 시선 추적 및 이미지 처리 기술 공유."
-  },
-  {
-    "center_actor": "STRADVISION",
-    "related_actor": "NVIDIA",
-    "similarity": 0.88,
-    "edge_weight": 0.88,
-    "reason": "합성 데이터 생성 및 엔드투엔드 아키텍처 개발에서 높은 기술적 유사성."
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Synthetic Data",
+      "VLM"
+    ],
+    "rationale": "NVIDIA 는 생성형 AI, VLM, 센서 퓨전 등 STRADVISION 의 핵심 기술 영역과 높은 유사성을 보이며, 기술 로드맵의 방향성이 일치한다."
   },
   {
     "center_actor": "STRADVISION",
     "related_actor": "Waymo",
-    "similarity": 0.85,
-    "edge_weight": 0.85,
-    "reason": "자율주행 시스템 및 이미지 처리 기술에서 높은 기술적 유사성."
+    "similarity": 0.88,
+    "edge_weight": 0.88,
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Sensor Fusion",
+      "Image Processing"
+    ],
+    "rationale": "Waymo 는 실제 자율주행 운영 경험을 바탕으로 센서 퓨전, 이미지 처리, 조명 분류 등 STRADVISION 의 기술 갭을 메울 수 있는 핵심 기술을 보유하고 있다."
   },
   {
     "center_actor": "STRADVISION",
     "related_actor": "Luminar",
-    "similarity": 0.75,
-    "edge_weight": 0.75,
-    "reason": "라이다 및 센서 퓨전 기술에서 부분적 유사성."
+    "similarity": 0.85,
+    "edge_weight": 0.85,
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Lidar",
+      "Signal Processing"
+    ],
+    "rationale": "Luminar 는 라이다 센서 및 신호 처리 기술에 강점을 가지고 있어, STRADVISION 의 비전 중심 포트폴리오를 보완할 수 있는 중요한 파트너 또는 경쟁사다."
   },
   {
     "center_actor": "STRADVISION",
     "related_actor": "Hesai",
-    "similarity": 0.7,
-    "edge_weight": 0.7,
-    "reason": "라이다 신호 처리 기술에서 부분적 유사성."
+    "similarity": 0.82,
+    "edge_weight": 0.82,
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Lidar",
+      "Signal Processing"
+    ],
+    "rationale": "Hesai 는 라이다 신호 처리 및 데이터 획득 기술에 집중하고 있어, STRADVISION 의 센서 퓨전 아키텍처 구현에 필요한 기술적 통찰을 제공한다."
   },
   {
     "center_actor": "STRADVISION",
     "related_actor": "Blackmore",
-    "similarity": 0.65,
-    "edge_weight": 0.65,
-    "reason": "라이다 및 광학 센싱 기술에서 부분적 유사성."
+    "similarity": 0.78,
+    "edge_weight": 0.78,
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Lidar",
+      "Optical Ranging"
+    ],
+    "rationale": "Blackmore 는 광학 거리 측정 및 라이다 시스템 최적화 기술에 강점을 가지고 있어, STRADVISION 의 센서 성능 향상에 기여할 수 있다."
+  },
+  {
+    "center_actor": "STRADVISION",
+    "related_actor": "Mobileye",
+    "similarity": 0.75,
+    "edge_weight": 0.75,
+    "shared_keywords": [
+      "AI Vision Perception",
+      "ADAS",
+      "Computer Vision",
+      "Active Learning"
+    ],
+    "rationale": "Mobileye 는 능동적 학습 및 자율주행 훈련 시스템에 강점을 가지고 있어, STRADVISION 의 기존 기술과 유사하지만 고도화된 접근법을 제공한다."
   }
 ]

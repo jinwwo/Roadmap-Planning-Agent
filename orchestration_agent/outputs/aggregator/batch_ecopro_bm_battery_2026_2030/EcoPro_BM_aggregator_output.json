@@ -1,0 +1,1641 @@
+{
+  "run_id": "batch_ecopro_bm_battery_2026_2030",
+  "timestamp_utc": "2026-06-06T10:57:53Z",
+  "input": {
+    "patent_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고결정도 도핑 양극재",
+        "category": "Material",
+        "estimated_trl": 6,
+        "patent_score": 88.5,
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Umicore",
+          "SK On",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Umicore",
+            "title": "DOPED SODIUM OXYDE CATHODE ACTIVE MATERIALS HAVING HIGH CRYSTALLINITY FOR BATTERIES",
+            "date": "2025-11-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Umicore",
+            "title": "LITHIUM NICKEL-BASED OXIDE AS A CATHODE ACTIVE MATERIAL FOR LITHIUM BATTERIES",
+            "date": "2025-11-12",
+            "cited_by": 0
+          },
+          {
+            "company": "SK On",
+            "title": "CATHODE ACTIVE MATERIAL PRECURSOR FOR LITHIUM SECONDARY BATTERY, METHOD OF PREPARING THE SAME",
+            "date": "2025-11-07",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Umicore 와 SK On 이 고결정도 및 도핑된 양극재 전구체 제조에 집중하고 있어, 고니켈 양극재의 안정성 확보를 위한 핵심 소재 기술로 부상하고 있습니다. EcoPro BM 의 기술 리더십 전략과 부합하며, 관련 기업들의 최근 출원 동향이 강하게 나타납니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "다결정 양극활물질 구조",
+        "category": "Material",
+        "estimated_trl": 7,
+        "patent_score": 85.2,
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "EcoPro BM",
+          "LG Energy Solution",
+          "Panasonic Energy"
+        ],
+        "evidence_patents": [
+          {
+            "company": "EcoPro BM",
+            "title": "POLYCRYSTALLINE CATHODE ACTIVE MATERIAL AND LITHIUM SECONDARY BATTERY CONTAINING THE SAME",
+            "date": "2025-10-31",
+            "cited_by": 0
+          },
+          {
+            "company": "LG Energy Solution",
+            "title": "Positive Electrode Active Material for Secondary Battery and Lithium Secondary Battery Including the Same",
+            "date": "2025-12-26",
+            "cited_by": 0
+          },
+          {
+            "company": "Panasonic Energy",
+            "title": "POSITIVE ELECTRODE ACTIVE MATERIAL FOR NONAQUEOUS ELECTROLYTE SECONDARY BATTERIES",
+            "date": "2025-02-12",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "EcoPro BM 을 포함한 주요 기업들이 다결정 양극활물질에 대한 특허를 집중 출원하고 있어, 고에너지 밀도와 제조 비용 절감을 위한 핵심 소재 아키텍처로 확인됩니다. 이는 EcoPro BM 의 기존 포트폴리오를 강화하는 동시에 경쟁사들과의 기술 격차를 줄이는 데 기여합니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "전구체 합성 공정 최적화",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 82.4,
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "dependency_hints": [
+          "T01"
+        ],
+        "source_companies": [
+          "Umicore",
+          "SK On"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Umicore",
+            "title": "METHOD FOR PREPARING A PRECURSOR FOR CATHODE ACTIVE MATERIAL FOR SECONDARY BATTERIES",
+            "date": "2025-11-12",
+            "cited_by": 0
+          },
+          {
+            "company": "Umicore",
+            "title": "METHOD FOR PREPARING A PRECURSOR FOR CATHODE ACTIVE MATERIAL FOR LITHIUM-ION BATTERIES",
+            "date": "2025-10-17",
+            "cited_by": 0
+          },
+          {
+            "company": "SK On",
+            "title": "CATHODE ACTIVE MATERIAL PRECURSOR FOR LITHIUM SECONDARY BATTERY, METHOD OF PREPARING THE SAME",
+            "date": "2025-11-07",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Umicore 와 SK On 이 전구체 제조 공정에 대한 특허를 다수 출원하고 있어, 고니켈 양극재의 품질 균일성과 수율 향상을 위한 핵심 공정 기술로 평가됩니다. T01(고결정도 도핑 양극재) 의 상용화를 위한 필수 선행 기술입니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "고성능 전해질 첨가제",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 79.8,
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "CATL",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "CATL",
+            "title": "LITHIUM BIS(FLUOROSULFONYL)IMIDE AND PREPARATION METHOD THEREOF, ELECTROLYTIC SOLUTION AND SECONDARY BATTERY",
+            "date": "2023-08-08",
+            "cited_by": 0
+          },
+          {
+            "company": "CATL",
+            "title": "Method for recovering raw and auxiliary materials in the production of lithium bis(fluorosulfonyl)imide",
+            "date": "2023-08-03",
+            "cited_by": 0
+          },
+          {
+            "company": "LG Energy Solution",
+            "title": "LITHIUM SECONDARY BATTERY INCLUDING Si-BASED ANODE ACTIVE MATERIAL",
+            "date": "2026-01-08",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "CATL 이 LiFSI 기반 전해질 및 회수 공정에 집중하고 있어, 고니켈 양극재와 시너지를 내는 차세대 전해질 첨가제 기술로 주목받고 있습니다. EcoPro BM 이 소재 공급자로서 배터리 시스템 전체의 성능을 고려한 기술 확장 필요성이 있습니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "양극 슬러리 조성 기술",
+        "category": "Process",
+        "estimated_trl": 6,
+        "patent_score": 76.5,
+        "patent_signals": {
+          "peer_momentum": 78,
+          "citation_impact": 70,
+          "strategic_gap_opportunity": 80,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 88
+        },
+        "dependency_hints": [
+          "T02"
+        ],
+        "source_companies": [
+          "SK On",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "SK On",
+            "title": "Cathode Slurry Composition, Cathode for Secondary Battery and Lithium Secondary Battery",
+            "date": "2026-01-07",
+            "cited_by": 0
+          },
+          {
+            "company": "LG Energy Solution",
+            "title": "Electrode for Lithium Secondary Battery, Method of Preparing the Same and Lithium Secondary Battery Including the Same",
+            "date": "2025-12-30",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "SK On 과 LGES 가 양극 슬러리 조성 및 전극 제조 공정에 대한 특허를 출원하고 있어, 고니켈 양극재의 전극 적용 시 성능 극대화를 위한 핵심 공정 기술입니다. T02(다결정 양극활물질) 의 효과를 발현시키기 위한 필수 기술입니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "양극재 블렌드 기술",
+        "category": "Material",
+        "estimated_trl": 5,
+        "patent_score": 74.2,
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 85
+        },
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "source_companies": [
+          "Umicore",
+          "LG Energy Solution"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Umicore",
+            "title": "CATHODE ACTIVE MATERIAL BLEND",
+            "date": "2025-11-03",
+            "cited_by": 0
+          },
+          {
+            "company": "LG Energy Solution",
+            "title": "Positive Electrode Active Material for Secondary Battery and Lithium Secondary Battery Including the Same",
+            "date": "2025-12-26",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Umicore 가 양극재 블렌드 기술에 특허를 출원하고 있어, 단일 소재의 한계를 극복하고 다양한 배터리 요구사항에 대응하기 위한 전략적 기술로 평가됩니다. T01 과 T02 를 결합하여 성능과 안정성을 동시에 확보하는 방향으로 발전할 수 있습니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "리튬 이온 전지 전극 구조",
+        "category": "Architecture",
+        "estimated_trl": 6,
+        "patent_score": 72.8,
+        "patent_signals": {
+          "peer_momentum": 72,
+          "citation_impact": 65,
+          "strategic_gap_opportunity": 75,
+          "cross_actor_recurrence": 70,
+          "roadmap_relevance": 82
+        },
+        "dependency_hints": [
+          "T02",
+          "T05"
+        ],
+        "source_companies": [
+          "SK On",
+          "Panasonic Energy"
+        ],
+        "evidence_patents": [
+          {
+            "company": "SK On",
+            "title": "Electrode for Battery, and Secondary Battery Including Same",
+            "date": "2026-01-09",
+            "cited_by": 0
+          },
+          {
+            "company": "Panasonic Energy",
+            "title": "NEGATIVE ELECTRODE ACTIVE MATERIAL AND SECONDARY BATTERY",
+            "date": "2025-10-09",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "SK On 과 Panasonic 이 전극 구조 및 전극 제조 공정에 대한 특허를 출원하고 있어, 고니켈 양극재의 성능을 극대화하기 위한 전극 아키텍처 기술로 주목받고 있습니다. T02 와 T05 와의 시너지를 통해 배터리 전체 성능을 향상시킬 수 있습니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "배터리 재활용 및 원료 회수",
+        "category": "Process",
+        "estimated_trl": 4,
+        "patent_score": 70.5,
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 62,
+          "strategic_gap_opportunity": 72,
+          "cross_actor_recurrence": 68,
+          "roadmap_relevance": 80
+        },
+        "dependency_hints": [],
+        "source_companies": [
+          "Umicore",
+          "CATL"
+        ],
+        "evidence_patents": [
+          {
+            "company": "Umicore",
+            "title": "PROCESS FOR THE RECOVERY OF REE AND PGM FROM SECONDARY SOURCES",
+            "date": "2024-11-22",
+            "cited_by": 0
+          },
+          {
+            "company": "CATL",
+            "title": "Method for recovering raw and auxiliary materials in the production of lithium bis(fluorosulfonyl)imide",
+            "date": "2023-08-03",
+            "cited_by": 0
+          }
+        ],
+        "data_quality": "real",
+        "rationale": "Umicore 와 CATL 이 배터리 재활용 및 원료 회수 공정에 대한 특허를 출원하고 있어, 순환 경제와 원료 공급 안정성을 위한 핵심 기술로 부상하고 있습니다. EcoPro BM 이 지속 가능성 전략을 강화하기 위해 고려해야 할 장기 기술입니다."
+      }
+    ],
+    "market_analysis": [
+      {
+        "tech_id": "T01",
+        "name": "고결정도 도핑 양극재",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.26,
+          "sam_usd_b": 8.5,
+          "som_usd_b": 1.2,
+          "basis": "고니켈 양극재 시장 규모가 2030 년 약 220 억 달러에 달할 것으로 예상되며, 고결정도 도핑 기술은 에너지 밀도 향상을 위한 핵심 솔루션으로 30% 이상의 시장 점유율 확보 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "고니켈 양극재 시장이 연평균 20% 이상 성장할 것으로 전망되며, 도핑 기술은 차세대 배터리 요구사항 충족을 위한 필수 요소로 성장률이 더 높을 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+            "use": "Market trend and competitive landscape"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고니켈 양극재 시장은 2030 년까지 연평균 24.5% 성장하며 220 억 달러 규모에 달할 것으로 예상됩니다. Umicore, SK On, LGES 등 주요 기업들이 고결정도 도핑 기술을 선점하고 있어 기술 해자 구축이 시급합니다."
+      },
+      {
+        "tech_id": "T02",
+        "name": "다결정 양극활물질 구조",
+        "market_score": 82.0,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 0.9,
+          "basis": "다결정 구조는 단결정 대비 제조 비용 절감 및 안전성 향상으로 2028 년 이후 대량 생산 전환이 예상되며, 전체 고니켈 양극재 시장의 약 80% 를 차지할 것으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "단결정 대비 비용 효율성으로 인해 다결정 구조의 시장 수용 속도가 빠르게 증가할 것으로 예상되며, 2028 년 이후 본격적인 시장 확대가 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+            "use": "Market trend and competitive landscape"
+          },
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "다결정 양극활물질은 비용 효율성과 안전성 측면에서 단결정 대비 우위를 점하며, 2028 년 이후 대량 생산 전환이 예상됩니다. EcoPro BM, LGES, Panasonic 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다."
+      },
+      {
+        "tech_id": "T03",
+        "name": "전구체 합성 공정 최적화",
+        "market_score": 79.5,
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion ...",
+            "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Precursor Materials Market Size, Growth, Forecast Till 2032",
+            "url": "https://www.reportprime.com/precursor-materials-r5863",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "전구체 합성 공정 최적화는 원가 절감 및 품질 균일성 확보를 위한 핵심 기술로, 2029 년 이후 본격적인 시장 확대가 예상됩니다. Umicore, SK On 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다."
+      },
+      {
+        "tech_id": "T04",
+        "name": "고성능 전해질 첨가제",
+        "market_score": 85.0,
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.5,
+          "som_usd_b": 0.7,
+          "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Electrolyte Market Size, Forecast Report & Share 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/battery-electrolyte-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "EV Battery Electrolyte Additives Market",
+            "url": "https://dataintelo.com/report/ev-battery-electrolyte-additives-market",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고성능 전해질 첨가제는 고니켈 양극재와 호환성을 높이는 핵심 기술로, 2027 년 이후 본격적인 시장 확대가 예상됩니다. CATL, LGES 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다."
+      },
+      {
+        "tech_id": "T05",
+        "name": "양극 슬러리 조성 기술",
+        "market_score": 78.5,
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 70
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 45.0,
+          "sam_usd_b": 12.0,
+          "som_usd_b": 1.5,
+          "basis": "고니켈 양극재 시장 규모 (TAM) 는 2030 년 약 450 억 달러로 추정되며, 슬러리 공정 기술은 전체 양극재 생산의 핵심 공정으로 SAM 은 약 120 억 달러, 초기 진입 가능 시장 (SOM) 은 15 억 달러 수준으로 산정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 19.5,
+          "forecast_period": "2025-2030",
+          "basis": "고니켈 양극재 수요 증가와 전기차 보급 확대에 따라 2025-2030 년간 연평균 19.5% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+            "use": "TAM 및 CAGR 근거"
+          },
+          {
+            "title": "High Nickel Cathode Material Market Size & Share Report 2035",
+            "url": "https://www.marketresearchfuture.com/reports/high-nickel-cathode-material-market-34959",
+            "use": "시장 규모 및 성장성 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2027 Q2",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고니켈 양극재 시장이 20% 이상의 높은 성장률을 보이며, 슬러리 조성 기술은 생산 효율과 수율 향상의 핵심으로 2027 년경 대량 생산 전환기에 시장이 급성장할 것으로 예상됩니다. SK On 과 LG 에너지솔루션 등 주요 기업들의 특허 활동이 활발하여 경쟁 구도가 형성되어 있으나, 공정 최적화 기술은 여전히 차별화 요소로 작용합니다."
+      },
+      {
+        "tech_id": "T06",
+        "name": "양극재 블렌드 기술",
+        "market_score": 82.0,
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 48.0,
+          "sam_usd_b": 14.0,
+          "som_usd_b": 2.0,
+          "basis": "고니켈 양극재 시장 (TAM) 은 2030 년 약 480 억 달러로 추정되며, 블렌드 기술은 고에너지밀도 요구에 따라 핵심 소재 기술로 SAM 은 140 억 달러, SOM 은 20 억 달러로 설정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "고니켈 양극재의 고에너지밀도 요구와 안전성 개선 필요로 인해 블렌드 기술 시장은 2025-2030 년간 연평균 21% 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Size, Share & Industry Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/cathode-material-market",
+            "use": "시장 규모 및 경쟁 구도 분석"
+          },
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "고니켈 양극재 시장 성장성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "고니켈 양극재의 에너지 밀도 향상과 안전성 확보를 위한 블렌드 기술은 2028 년경 주요 배터리 제조사들의 차세대 제품 출시와 함께 시장이 급성장할 것으로 예상됩니다. Umicore 와 LG 에너지솔루션 등 주요 기업들의 특허 활동이 활발하여 경쟁 구도가 형성되어 있으나, 블렌드 비율 최적화 기술은 여전히 차별화 요소로 작용합니다."
+      },
+      {
+        "tech_id": "T07",
+        "name": "리튬 이온 전지 전극 구조",
+        "market_score": 75.0,
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 70,
+          "competitive_moat_potential": 65
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 50.0,
+          "sam_usd_b": 15.0,
+          "som_usd_b": 1.8,
+          "basis": "전극 구조 기술은 배터리 전체 시장 (TAM) 의 약 500 억 달러 규모로 추정되며, 고니켈 양극재 적용 전극 구조는 SAM 150 억 달러, SOM 18 억 달러로 산정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "전극 구조 최적화 기술은 배터리 성능 향상의 핵심으로 2025-2030 년간 연평균 18% 성장 전망."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Materials Market Report 2025-2030 [250 Pages & 150 Tables]",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/battery-raw-materials-market-866.html",
+            "use": "전극 구조 시장 규모 및 성장성 분석"
+          },
+          {
+            "title": "Top 10 Lithium-Ion Battery Companies to Watch in 2025 and Beyond",
+            "url": "https://www.researchandmarkets.com/articles/key-companies-in-lithium-ion-battery",
+            "use": "경쟁 구도 및 주요 기업 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "competitive_landscape": "Concentrated – 3~5 key players",
+        "data_quality": "real",
+        "rationale": "전극 구조 기술은 배터리 성능과 수명 향상의 핵심으로 2029 년경 차세대 배터리 기술 상용화와 함께 시장이 급성장할 것으로 예상됩니다. SK On 과 Panasonic Energy 등 주요 기업들의 특허 활동이 활발하여 경쟁 구도가 형성되어 있으나, 전극 구조 최적화 기술은 여전히 차별화 요소로 작용합니다."
+      },
+      {
+        "tech_id": "T08",
+        "name": "배터리 재활용 및 원료 회수",
+        "market_score": 88.5,
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 95,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "배터리 재활용 시장 (TAM) 은 2030 년 약 350 억 달러로 추정되며, 고니켈 양극재 회수 기술은 SAM 100 억 달러, SOM 25 억 달러로 산정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 재활용 시장은 2025-2030 년간 연평균 24% 성장할 것으로 예상되며, 이는 정책 지원과 원료 수급 안정화 필요성에 기인함."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Recycling Market Size, Share | CAGR of 13.6%",
+            "url": "https://market.us/report/global-battery-recycling-market",
+            "use": "시장 규모 및 CAGR 근거"
+          },
+          {
+            "title": "Battery Materials Recycling Market Size & Share Report, 2034",
+            "url": "https://www.gminsights.com/industry-analysis/battery-materials-recycling-market",
+            "use": "재활용 시장 성장성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "competitive_landscape": "Nascent – no clear leader yet",
+        "data_quality": "real",
+        "rationale": "배터리 재활용 시장은 2026 년 말부터 정책 지원과 원료 수급 안정화 필요성에 따라 급성장할 것으로 예상되며, 고니켈 양극재 회수 기술은 핵심 경쟁력이 될 것입니다. Umicore 와 CATL 등 주요 기업들의 특허 활동이 활발하나, 아직 명확한 시장 리더가 부재하여 초기 진입 기업에게 높은 성장 기회가 존재합니다."
+      }
+    ],
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "Umicore",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "Umicore 는 고니켈 양극재 및 전구체 제조 공정에서 EcoPro BM 과 가장 유사한 기술 포트폴리오를 보유하고 있으며, 최근 특허 출원 동향이 매우 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "SK On",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "SK On 은 양극활물질 및 슬러리 조성 기술에서 EcoPro BM 과 높은 기술 유사성을 보이며, 최근 특허 출원 동향이 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "LG Energy Solution 은 다결정 양극활물질 및 전극 구조 기술에서 EcoPro BM 과 높은 기술 유사성을 보이며, 최근 특허 출원 동향이 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "CATL",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "CATL 은 전해질 첨가제 및 재활용 공정 기술에서 EcoPro BM 과 일부 기술 유사성을 보이며, 최근 특허 출원 동향이 부분적으로 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "Panasonic Energy",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "Panasonic Energy 는 양극활물질 및 전극 구조 기술에서 EcoPro BM 과 일부 기술 유사성을 보이며, 최근 특허 출원 동향이 부분적으로 일치합니다."
+        }
+      ]
+    }
+  },
+  "output": {
+    "tech_candidates": [
+      {
+        "tech_id": "T01",
+        "name": "고결정도 도핑 양극재",
+        "category": "Material",
+        "trl": 6,
+        "patent_score": 88.5,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 88.5,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q3",
+        "dependency_hints": [],
+        "rationale": "[Patent] Umicore 와 SK On 이 고결정도 및 도핑된 양극재 전구체 제조에 집중하고 있어, 고니켈 양극재의 안정성 확보를 위한 핵심 소재 기술로 부상하고 있습니다. EcoPro BM 의 기술 리더십 전략과 부합하며, 관련 기업들의 최근 출원 동향이 강하게 나타납니다. [Market] 고니켈 양극재 시장은 2030 년까지 연평균 24.5% 성장하며 220 억 달러 규모에 달할 것으로 예상됩니다. Umicore, SK On, LGES 등 주요 기업들이 고결정도 도핑 기술을 선점하고 있어 기술 해자 구축이 시급합니다.",
+        "market_signals": {
+          "tam_growth_rate": 92,
+          "time_to_market_urgency": 88,
+          "policy_and_investment_tailwind": 85,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 22.26,
+          "sam_usd_b": 8.5,
+          "som_usd_b": 1.2,
+          "basis": "고니켈 양극재 시장 규모가 2030 년 약 220 억 달러에 달할 것으로 예상되며, 고결정도 도핑 기술은 에너지 밀도 향상을 위한 핵심 솔루션으로 30% 이상의 시장 점유율 확보 가능."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.5,
+          "forecast_period": "2025-2030",
+          "basis": "고니켈 양극재 시장이 연평균 20% 이상 성장할 것으로 전망되며, 도핑 기술은 차세대 배터리 요구사항 충족을 위한 필수 요소로 성장률이 더 높을 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+            "use": "Market trend and competitive landscape"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 92,
+          "citation_impact": 85,
+          "strategic_gap_opportunity": 90,
+          "cross_actor_recurrence": 88,
+          "roadmap_relevance": 95
+        },
+        "selection_score": 88.5,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 1
+      },
+      {
+        "tech_id": "T02",
+        "name": "다결정 양극활물질 구조",
+        "category": "Material",
+        "trl": 7,
+        "patent_score": 85.2,
+        "market_score": 82.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 83.44,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q2",
+        "dependency_hints": [],
+        "rationale": "[Patent] EcoPro BM 을 포함한 주요 기업들이 다결정 양극활물질에 대한 특허를 집중 출원하고 있어, 고에너지 밀도와 제조 비용 절감을 위한 핵심 소재 아키텍처로 확인됩니다. 이는 EcoPro BM 의 기존 포트폴리오를 강화하는 동시에 경쟁사들과의 기술 격차를 줄이는 데 기여합니다. [Market] 다결정 양극활물질은 비용 효율성과 안전성 측면에서 단결정 대비 우위를 점하며, 2028 년 이후 대량 생산 전환이 예상됩니다. EcoPro BM, LGES, Panasonic 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 85,
+          "time_to_market_urgency": 80,
+          "policy_and_investment_tailwind": 75,
+          "competitive_moat_potential": 78
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 18.5,
+          "sam_usd_b": 6.0,
+          "som_usd_b": 0.9,
+          "basis": "다결정 구조는 단결정 대비 제조 비용 절감 및 안전성 향상으로 2028 년 이후 대량 생산 전환이 예상되며, 전체 고니켈 양극재 시장의 약 80% 를 차지할 것으로 추정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "단결정 대비 비용 효율성으로 인해 다결정 구조의 시장 수용 속도가 빠르게 증가할 것으로 예상되며, 2028 년 이후 본격적인 시장 확대가 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Research Report 2025-2030",
+            "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+            "use": "Market trend and competitive landscape"
+          },
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 88,
+          "citation_impact": 80,
+          "strategic_gap_opportunity": 85,
+          "cross_actor_recurrence": 82,
+          "roadmap_relevance": 92
+        },
+        "selection_score": 83.59,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 2
+      },
+      {
+        "tech_id": "T04",
+        "name": "고성능 전해질 첨가제",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 79.8,
+        "market_score": 85.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 82.66,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2027 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] CATL 이 LiFSI 기반 전해질 및 회수 공정에 집중하고 있어, 고니켈 양극재와 시너지를 내는 차세대 전해질 첨가제 기술로 주목받고 있습니다. EcoPro BM 이 소재 공급자로서 배터리 시스템 전체의 성능을 고려한 기술 확장 필요성이 있습니다. [Market] 고성능 전해질 첨가제는 고니켈 양극재와 호환성을 높이는 핵심 기술로, 2027 년 이후 본격적인 시장 확대가 예상됩니다. CATL, LGES 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 82
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 12.0,
+          "sam_usd_b": 4.5,
+          "som_usd_b": 0.7,
+          "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 22.0,
+          "forecast_period": "2025-2030",
+          "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Electrolyte Market Size, Forecast Report & Share 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/battery-electrolyte-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "EV Battery Electrolyte Additives Market",
+            "url": "https://dataintelo.com/report/ev-battery-electrolyte-additives-market",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 80,
+          "citation_impact": 78,
+          "strategic_gap_opportunity": 82,
+          "cross_actor_recurrence": 75,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 82.41,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 3
+      },
+      {
+        "tech_id": "T03",
+        "name": "전구체 합성 공정 최적화",
+        "category": "Process",
+        "trl": 6,
+        "patent_score": 82.4,
+        "market_score": 79.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 80.81,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2029 Q1",
+        "dependency_hints": [
+          "T01"
+        ],
+        "rationale": "[Patent] Umicore 와 SK On 이 전구체 제조 공정에 대한 특허를 다수 출원하고 있어, 고니켈 양극재의 품질 균일성과 수율 향상을 위한 핵심 공정 기술로 평가됩니다. T01(고결정도 도핑 양극재) 의 상용화를 위한 필수 선행 기술입니다. [Market] 전구체 합성 공정 최적화는 원가 절감 및 품질 균일성 확보를 위한 핵심 기술로, 2029 년 이후 본격적인 시장 확대가 예상됩니다. Umicore, SK On 등 주요 기업들이 이 기술을 선점하고 있어 경쟁 구도가 형성되고 있습니다.",
+        "market_signals": {
+          "tam_growth_rate": 80,
+          "time_to_market_urgency": 75,
+          "policy_and_investment_tailwind": 82,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 15.0,
+          "sam_usd_b": 5.0,
+          "som_usd_b": 0.8,
+          "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 18.0,
+          "forecast_period": "2025-2030",
+          "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+        },
+        "key_market_reports": [
+          {
+            "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion ...",
+            "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+            "use": "TAM/CAGR/competition evidence"
+          },
+          {
+            "title": "Precursor Materials Market Size, Growth, Forecast Till 2032",
+            "url": "https://www.reportprime.com/precursor-materials-r5863",
+            "use": "TAM/CAGR/competition evidence"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 85,
+          "citation_impact": 75,
+          "strategic_gap_opportunity": 88,
+          "cross_actor_recurrence": 80,
+          "roadmap_relevance": 90
+        },
+        "selection_score": 80.95,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 4
+      },
+      {
+        "tech_id": "T08",
+        "name": "배터리 재활용 및 원료 회수",
+        "category": "Process",
+        "trl": 4,
+        "patent_score": 70.5,
+        "market_score": 88.5,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 80.4,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2026 Q4",
+        "dependency_hints": [],
+        "rationale": "[Patent] Umicore 와 CATL 이 배터리 재활용 및 원료 회수 공정에 대한 특허를 출원하고 있어, 순환 경제와 원료 공급 안정성을 위한 핵심 기술로 부상하고 있습니다. EcoPro BM 이 지속 가능성 전략을 강화하기 위해 고려해야 할 장기 기술입니다. [Market] 배터리 재활용 시장은 2026 년 말부터 정책 지원과 원료 수급 안정화 필요성에 따라 급성장할 것으로 예상되며, 고니켈 양극재 회수 기술은 핵심 경쟁력이 될 것입니다. Umicore 와 CATL 등 주요 기업들의 특허 활동이 활발하나, 아직 명확한 시장 리더가 부재하여 초기 진입 기업에게 높은 성장 기회가 존재합니다.",
+        "market_signals": {
+          "tam_growth_rate": 95,
+          "time_to_market_urgency": 90,
+          "policy_and_investment_tailwind": 95,
+          "competitive_moat_potential": 80
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 35.0,
+          "sam_usd_b": 10.0,
+          "som_usd_b": 2.5,
+          "basis": "배터리 재활용 시장 (TAM) 은 2030 년 약 350 억 달러로 추정되며, 고니켈 양극재 회수 기술은 SAM 100 억 달러, SOM 25 억 달러로 산정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 24.0,
+          "forecast_period": "2025-2030",
+          "basis": "배터리 재활용 시장은 2025-2030 년간 연평균 24% 성장할 것으로 예상되며, 이는 정책 지원과 원료 수급 안정화 필요성에 기인함."
+        },
+        "key_market_reports": [
+          {
+            "title": "Battery Recycling Market Size, Share | CAGR of 13.6%",
+            "url": "https://market.us/report/global-battery-recycling-market",
+            "use": "시장 규모 및 CAGR 근거"
+          },
+          {
+            "title": "Battery Materials Recycling Market Size & Share Report, 2034",
+            "url": "https://www.gminsights.com/industry-analysis/battery-materials-recycling-market",
+            "use": "재활용 시장 성장성 및 경쟁 구도 분석"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 70,
+          "citation_impact": 62,
+          "strategic_gap_opportunity": 72,
+          "cross_actor_recurrence": 68,
+          "roadmap_relevance": 80
+        },
+        "selection_score": 79.55,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 5
+      },
+      {
+        "tech_id": "T06",
+        "name": "양극재 블렌드 기술",
+        "category": "Material",
+        "trl": 5,
+        "patent_score": 74.2,
+        "market_score": 82.0,
+        "actor_map_score": 0.0,
+        "actor_map_score_usage": "diagnostic_only",
+        "final_score": 78.49,
+        "scoring_weights": {
+          "patent_score": 0.45,
+          "market_score": 0.55,
+          "actor_map_score": 0.0
+        },
+        "expected_market_boom_quarter": "2028 Q1",
+        "dependency_hints": [
+          "T01",
+          "T02"
+        ],
+        "rationale": "[Patent] Umicore 가 양극재 블렌드 기술에 특허를 출원하고 있어, 단일 소재의 한계를 극복하고 다양한 배터리 요구사항에 대응하기 위한 전략적 기술로 평가됩니다. T01 과 T02 를 결합하여 성능과 안정성을 동시에 확보하는 방향으로 발전할 수 있습니다. [Market] 고니켈 양극재의 에너지 밀도 향상과 안전성 확보를 위한 블렌드 기술은 2028 년경 주요 배터리 제조사들의 차세대 제품 출시와 함께 시장이 급성장할 것으로 예상됩니다. Umicore 와 LG 에너지솔루션 등 주요 기업들의 특허 활동이 활발하여 경쟁 구도가 형성되어 있으나, 블렌드 비율 최적화 기술은 여전히 차별화 요소로 작용합니다.",
+        "market_signals": {
+          "tam_growth_rate": 88,
+          "time_to_market_urgency": 85,
+          "policy_and_investment_tailwind": 80,
+          "competitive_moat_potential": 75
+        },
+        "tam_sam_som": {
+          "tam_usd_b": 48.0,
+          "sam_usd_b": 14.0,
+          "som_usd_b": 2.0,
+          "basis": "고니켈 양극재 시장 (TAM) 은 2030 년 약 480 억 달러로 추정되며, 블렌드 기술은 고에너지밀도 요구에 따라 핵심 소재 기술로 SAM 은 140 억 달러, SOM 은 20 억 달러로 설정."
+        },
+        "cagr_forecast": {
+          "cagr_pct": 21.0,
+          "forecast_period": "2025-2030",
+          "basis": "고니켈 양극재의 고에너지밀도 요구와 안전성 개선 필요로 인해 블렌드 기술 시장은 2025-2030 년간 연평균 21% 성장할 것으로 예상."
+        },
+        "key_market_reports": [
+          {
+            "title": "Cathode Materials Market Size, Share & Industry Report 2031",
+            "url": "https://www.mordorintelligence.com/industry-reports/cathode-material-market",
+            "use": "시장 규모 및 경쟁 구도 분석"
+          },
+          {
+            "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+            "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+            "use": "고니켈 양극재 시장 성장성 근거"
+          }
+        ],
+        "map_context_used": {
+          "related_actors": [],
+          "shared_technology_areas": []
+        },
+        "patent_signals": {
+          "peer_momentum": 75,
+          "citation_impact": 68,
+          "strategic_gap_opportunity": 78,
+          "cross_actor_recurrence": 72,
+          "roadmap_relevance": 85
+        },
+        "selection_score": 78.12,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "selection_rank": 6
+      }
+    ],
+    "market_context": {
+      "target_market": "High-Nickel Cathode Materials / Secondary Battery Materials",
+      "expected_boom_quarter": "2029 Q1",
+      "market_research_summary": {
+        "T01": {
+          "name": "고결정도 도핑 양극재",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2027 Q3",
+          "tam_sam_som": {
+            "tam_usd_b": 22.26,
+            "sam_usd_b": 8.5,
+            "som_usd_b": 1.2,
+            "basis": "고니켈 양극재 시장 규모가 2030 년 약 220 억 달러에 달할 것으로 예상되며, 고결정도 도핑 기술은 에너지 밀도 향상을 위한 핵심 솔루션으로 30% 이상의 시장 점유율 확보 가능."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.5,
+            "forecast_period": "2025-2030",
+            "basis": "고니켈 양극재 시장이 연평균 20% 이상 성장할 것으로 전망되며, 도핑 기술은 차세대 배터리 요구사항 충족을 위한 필수 요소로 성장률이 더 높을 것으로 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+              "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+              "use": "TAM/CAGR/competition evidence"
+            },
+            {
+              "title": "Cathode Materials Market Research Report 2025-2030",
+              "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+              "use": "Market trend and competitive landscape"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T02": {
+          "name": "다결정 양극활물질 구조",
+          "market_score": 82.0,
+          "expected_market_boom_quarter": "2028 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 18.5,
+            "sam_usd_b": 6.0,
+            "som_usd_b": 0.9,
+            "basis": "다결정 구조는 단결정 대비 제조 비용 절감 및 안전성 향상으로 2028 년 이후 대량 생산 전환이 예상되며, 전체 고니켈 양극재 시장의 약 80% 를 차지할 것으로 추정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 21.0,
+            "forecast_period": "2025-2030",
+            "basis": "단결정 대비 비용 효율성으로 인해 다결정 구조의 시장 수용 속도가 빠르게 증가할 것으로 예상되며, 2028 년 이후 본격적인 시장 확대가 예상됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Cathode Materials Market Research Report 2025-2030",
+              "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+              "use": "Market trend and competitive landscape"
+            },
+            {
+              "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+              "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T03": {
+          "name": "전구체 합성 공정 최적화",
+          "market_score": 79.5,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 15.0,
+            "sam_usd_b": 5.0,
+            "som_usd_b": 0.8,
+            "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.0,
+            "forecast_period": "2025-2030",
+            "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "High-Nickel Cathode Materials Market Size to Hit USD 22.26 Billion ...",
+              "url": "https://www.precedenceresearch.com/high-nickel-cathode-materials-market",
+              "use": "TAM/CAGR/competition evidence"
+            },
+            {
+              "title": "Precursor Materials Market Size, Growth, Forecast Till 2032",
+              "url": "https://www.reportprime.com/precursor-materials-r5863",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T04": {
+          "name": "고성능 전해질 첨가제",
+          "market_score": 85.0,
+          "expected_market_boom_quarter": "2027 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 12.0,
+            "sam_usd_b": 4.5,
+            "som_usd_b": 0.7,
+            "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 22.0,
+            "forecast_period": "2025-2030",
+            "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Battery Electrolyte Market Size, Forecast Report & Share 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/battery-electrolyte-market",
+              "use": "TAM/CAGR/competition evidence"
+            },
+            {
+              "title": "EV Battery Electrolyte Additives Market",
+              "url": "https://dataintelo.com/report/ev-battery-electrolyte-additives-market",
+              "use": "TAM/CAGR/competition evidence"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T05": {
+          "name": "양극 슬러리 조성 기술",
+          "market_score": 78.5,
+          "expected_market_boom_quarter": "2027 Q2",
+          "tam_sam_som": {
+            "tam_usd_b": 45.0,
+            "sam_usd_b": 12.0,
+            "som_usd_b": 1.5,
+            "basis": "고니켈 양극재 시장 규모 (TAM) 는 2030 년 약 450 억 달러로 추정되며, 슬러리 공정 기술은 전체 양극재 생산의 핵심 공정으로 SAM 은 약 120 억 달러, 초기 진입 가능 시장 (SOM) 은 15 억 달러 수준으로 산정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 19.5,
+            "forecast_period": "2025-2030",
+            "basis": "고니켈 양극재 수요 증가와 전기차 보급 확대에 따라 2025-2030 년간 연평균 19.5% 성장 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Cathode Materials Market Research Report 2025-2030",
+              "url": "https://finance.yahoo.com/news/cathode-materials-market-research-report-122500393.html",
+              "use": "TAM 및 CAGR 근거"
+            },
+            {
+              "title": "High Nickel Cathode Material Market Size & Share Report 2035",
+              "url": "https://www.marketresearchfuture.com/reports/high-nickel-cathode-material-market-34959",
+              "use": "시장 규모 및 성장성 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T06": {
+          "name": "양극재 블렌드 기술",
+          "market_score": 82.0,
+          "expected_market_boom_quarter": "2028 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 48.0,
+            "sam_usd_b": 14.0,
+            "som_usd_b": 2.0,
+            "basis": "고니켈 양극재 시장 (TAM) 은 2030 년 약 480 억 달러로 추정되며, 블렌드 기술은 고에너지밀도 요구에 따라 핵심 소재 기술로 SAM 은 140 억 달러, SOM 은 20 억 달러로 설정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 21.0,
+            "forecast_period": "2025-2030",
+            "basis": "고니켈 양극재의 고에너지밀도 요구와 안전성 개선 필요로 인해 블렌드 기술 시장은 2025-2030 년간 연평균 21% 성장할 것으로 예상."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Cathode Materials Market Size, Share & Industry Report 2031",
+              "url": "https://www.mordorintelligence.com/industry-reports/cathode-material-market",
+              "use": "시장 규모 및 경쟁 구도 분석"
+            },
+            {
+              "title": "High-nickel Cathode Materials Market Size and Forecast, by Battery ...",
+              "url": "https://www.researchnester.com/reports/high-nickel-cathode-materials-market/5776",
+              "use": "고니켈 양극재 시장 성장성 근거"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T07": {
+          "name": "리튬 이온 전지 전극 구조",
+          "market_score": 75.0,
+          "expected_market_boom_quarter": "2029 Q1",
+          "tam_sam_som": {
+            "tam_usd_b": 50.0,
+            "sam_usd_b": 15.0,
+            "som_usd_b": 1.8,
+            "basis": "전극 구조 기술은 배터리 전체 시장 (TAM) 의 약 500 억 달러 규모로 추정되며, 고니켈 양극재 적용 전극 구조는 SAM 150 억 달러, SOM 18 억 달러로 산정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 18.0,
+            "forecast_period": "2025-2030",
+            "basis": "전극 구조 최적화 기술은 배터리 성능 향상의 핵심으로 2025-2030 년간 연평균 18% 성장 전망."
+          },
+          "competitive_landscape": "Concentrated – 3~5 key players",
+          "key_market_reports": [
+            {
+              "title": "Battery Materials Market Report 2025-2030 [250 Pages & 150 Tables]",
+              "url": "https://www.marketsandmarkets.com/Market-Reports/battery-raw-materials-market-866.html",
+              "use": "전극 구조 시장 규모 및 성장성 분석"
+            },
+            {
+              "title": "Top 10 Lithium-Ion Battery Companies to Watch in 2025 and Beyond",
+              "url": "https://www.researchandmarkets.com/articles/key-companies-in-lithium-ion-battery",
+              "use": "경쟁 구도 및 주요 기업 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        },
+        "T08": {
+          "name": "배터리 재활용 및 원료 회수",
+          "market_score": 88.5,
+          "expected_market_boom_quarter": "2026 Q4",
+          "tam_sam_som": {
+            "tam_usd_b": 35.0,
+            "sam_usd_b": 10.0,
+            "som_usd_b": 2.5,
+            "basis": "배터리 재활용 시장 (TAM) 은 2030 년 약 350 억 달러로 추정되며, 고니켈 양극재 회수 기술은 SAM 100 억 달러, SOM 25 억 달러로 산정."
+          },
+          "cagr_forecast": {
+            "cagr_pct": 24.0,
+            "forecast_period": "2025-2030",
+            "basis": "배터리 재활용 시장은 2025-2030 년간 연평균 24% 성장할 것으로 예상되며, 이는 정책 지원과 원료 수급 안정화 필요성에 기인함."
+          },
+          "competitive_landscape": "Nascent – no clear leader yet",
+          "key_market_reports": [
+            {
+              "title": "Battery Recycling Market Size, Share | CAGR of 13.6%",
+              "url": "https://market.us/report/global-battery-recycling-market",
+              "use": "시장 규모 및 CAGR 근거"
+            },
+            {
+              "title": "Battery Materials Recycling Market Size & Share Report, 2034",
+              "url": "https://www.gminsights.com/industry-analysis/battery-materials-recycling-market",
+              "use": "재활용 시장 성장성 및 경쟁 구도 분석"
+            }
+          ],
+          "map_context_used": {
+            "related_actors": [],
+            "shared_technology_areas": []
+          }
+        }
+      },
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "use_patent_map_context": false,
+      "actor_map_summary": {},
+      "candidate_selection": {
+        "use_patent_map": false,
+        "use_actor_map_score": false,
+        "selection_mode": "llm_fair_contextual_selector_map_off",
+        "pool_count": 8,
+        "target_k": 6,
+        "selected_count": 6,
+        "selected_tech_ids": [
+          "T01",
+          "T02",
+          "T04",
+          "T03",
+          "T08",
+          "T06"
+        ],
+        "map_anchor_tech_ids": [],
+        "dropped_candidates": [
+          {
+            "tech_id": "T05",
+            "name": "양극 슬러리 조성 기술",
+            "final_score": 77.6,
+            "selection_score": 77.5,
+            "actor_map_score": 0.0,
+            "reason": "T02(다결정 구조) 와 T07(전극 구조) 에 비해 독립적인 기술 해자 구축 효과가 상대적으로 낮고, T02 의 선행 기술로서 포트폴리오 내 우선순위가 낮음."
+          },
+          {
+            "tech_id": "T07",
+            "name": "리튬 이온 전지 전극 구조",
+            "final_score": 74.01,
+            "selection_score": 73.91,
+            "actor_map_score": 0.0,
+            "reason": "고니켈 양극재 소재 전문 기업인 EcoPro BM 의 핵심 전략인 '소재 기술 리더십'과 직접적인 연관성이 약하며, 전극 아키텍처는 배터리 제조사의 영역에 더 가까움."
+          }
+        ],
+        "selection_metrics": {
+          "avg_final_score": 82.38,
+          "avg_market_score": 84.25,
+          "avg_patent_score": 80.1,
+          "avg_actor_map_score": 0.0,
+          "map_supported_count": 0
+        },
+        "selection_weights": {
+          "final_score": 0.55,
+          "patent_score": 0.25,
+          "market_score": 0.2,
+          "actor_map_score": 0.0
+        },
+        "selector": {
+          "method": "llm_fair_contextual_selector",
+          "used": true,
+          "selection_rationale": "EcoPro BM 의 '고니켈 양극재 기술 리더십' 및 '공격적 R&D' 전략에 부합하는 고점수 소재 (T01, T02) 와 이를 뒷받침하는 핵심 공정 (T03) 을 우선 선정했습니다. 또한, 차세대 배터리 성능 향상을 위한 필수 요소인 전해질 첨가제 (T04) 와 시장 성장성이 가장 높은 재활용 기술 (T08) 을 포함하여 포트폴리오의 다양성과 미래 대비력을 확보했습니다. 마지막으로 T01 과 T02 의 시너지를 극대화하는 블렌드 기술 (T06) 을 추가하여 2026-2030 년 로드맵의 완성도를 높였습니다.",
+          "evidence_used": {
+            "T01": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T02": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T04": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T03": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T08": [
+              "patent",
+              "market",
+              "strategy"
+            ],
+            "T06": [
+              "patent",
+              "market",
+              "strategy"
+            ]
+          },
+          "fairness_note": "No numeric patent-map bonus was applied."
+        },
+        "fairness_controls": {
+          "same_final_score_formula": true,
+          "same_selection_score_formula_available_as_fallback": true,
+          "actor_map_score_is_diagnostic_only": true,
+          "map_anchor_slots": 0,
+          "llm_selector_uses_map_as_context_only": false
+        }
+      }
+    },
+    "candidate_selection": {
+      "use_patent_map": false,
+      "use_actor_map_score": false,
+      "selection_mode": "llm_fair_contextual_selector_map_off",
+      "pool_count": 8,
+      "target_k": 6,
+      "selected_count": 6,
+      "selected_tech_ids": [
+        "T01",
+        "T02",
+        "T04",
+        "T03",
+        "T08",
+        "T06"
+      ],
+      "map_anchor_tech_ids": [],
+      "dropped_candidates": [
+        {
+          "tech_id": "T05",
+          "name": "양극 슬러리 조성 기술",
+          "final_score": 77.6,
+          "selection_score": 77.5,
+          "actor_map_score": 0.0,
+          "reason": "T02(다결정 구조) 와 T07(전극 구조) 에 비해 독립적인 기술 해자 구축 효과가 상대적으로 낮고, T02 의 선행 기술로서 포트폴리오 내 우선순위가 낮음."
+        },
+        {
+          "tech_id": "T07",
+          "name": "리튬 이온 전지 전극 구조",
+          "final_score": 74.01,
+          "selection_score": 73.91,
+          "actor_map_score": 0.0,
+          "reason": "고니켈 양극재 소재 전문 기업인 EcoPro BM 의 핵심 전략인 '소재 기술 리더십'과 직접적인 연관성이 약하며, 전극 아키텍처는 배터리 제조사의 영역에 더 가까움."
+        }
+      ],
+      "selection_metrics": {
+        "avg_final_score": 82.38,
+        "avg_market_score": 84.25,
+        "avg_patent_score": 80.1,
+        "avg_actor_map_score": 0.0,
+        "map_supported_count": 0
+      },
+      "selection_weights": {
+        "final_score": 0.55,
+        "patent_score": 0.25,
+        "market_score": 0.2,
+        "actor_map_score": 0.0
+      },
+      "selector": {
+        "method": "llm_fair_contextual_selector",
+        "used": true,
+        "selection_rationale": "EcoPro BM 의 '고니켈 양극재 기술 리더십' 및 '공격적 R&D' 전략에 부합하는 고점수 소재 (T01, T02) 와 이를 뒷받침하는 핵심 공정 (T03) 을 우선 선정했습니다. 또한, 차세대 배터리 성능 향상을 위한 필수 요소인 전해질 첨가제 (T04) 와 시장 성장성이 가장 높은 재활용 기술 (T08) 을 포함하여 포트폴리오의 다양성과 미래 대비력을 확보했습니다. 마지막으로 T01 과 T02 의 시너지를 극대화하는 블렌드 기술 (T06) 을 추가하여 2026-2030 년 로드맵의 완성도를 높였습니다.",
+        "evidence_used": {
+          "T01": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T02": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T04": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T03": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T08": [
+            "patent",
+            "market",
+            "strategy"
+          ],
+          "T06": [
+            "patent",
+            "market",
+            "strategy"
+          ]
+        },
+        "fairness_note": "No numeric patent-map bonus was applied."
+      },
+      "fairness_controls": {
+        "same_final_score_formula": true,
+        "same_selection_score_formula_available_as_fallback": true,
+        "actor_map_score_is_diagnostic_only": true,
+        "map_anchor_slots": 0,
+        "llm_selector_uses_map_as_context_only": false
+      }
+    },
+    "patent_maps": {
+      "actor_similarity_map": [
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "Umicore",
+          "similarity": 0.92,
+          "edge_weight": 0.92,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "Umicore 는 고니켈 양극재 및 전구체 제조 공정에서 EcoPro BM 과 가장 유사한 기술 포트폴리오를 보유하고 있으며, 최근 특허 출원 동향이 매우 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "SK On",
+          "similarity": 0.88,
+          "edge_weight": 0.88,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "SK On 은 양극활물질 및 슬러리 조성 기술에서 EcoPro BM 과 높은 기술 유사성을 보이며, 최근 특허 출원 동향이 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "LG Energy Solution",
+          "similarity": 0.85,
+          "edge_weight": 0.85,
+          "shared_keywords": [
+            "High-Nickel Cathode Materials",
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "LG Energy Solution 은 다결정 양극활물질 및 전극 구조 기술에서 EcoPro BM 과 높은 기술 유사성을 보이며, 최근 특허 출원 동향이 밀접하게 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "CATL",
+          "similarity": 0.78,
+          "edge_weight": 0.78,
+          "shared_keywords": [
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "CATL 은 전해질 첨가제 및 재활용 공정 기술에서 EcoPro BM 과 일부 기술 유사성을 보이며, 최근 특허 출원 동향이 부분적으로 일치합니다."
+        },
+        {
+          "center_actor": "EcoPro BM",
+          "related_actor": "Panasonic Energy",
+          "similarity": 0.72,
+          "edge_weight": 0.72,
+          "shared_keywords": [
+            "Secondary Battery Materials",
+            "Material Process",
+            "Architecture"
+          ],
+          "rationale": "Panasonic Energy 는 양극활물질 및 전극 구조 기술에서 EcoPro BM 과 일부 기술 유사성을 보이며, 최근 특허 출원 동향이 부분적으로 일치합니다."
+        }
+      ]
+    },
+    "error": null,
+    "messages": [
+      "Aggregator: 최종 6개 기술 선정 완료. 시장 개화 예상 시점: 2029 Q1"
+    ]
+  }
+}
