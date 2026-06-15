@@ -36,6 +36,12 @@ from dataclasses import dataclass, field
 from datetime import date, datetime
 from typing import List, Dict, Optional, Any
 
+def _stable_hash(text: str) -> int:
+    """프로세스 무관 결정론적 hash (Python hash()는 PYTHONHASHSEED로 매번 달라짐)."""
+    import hashlib
+    return int(hashlib.md5(text.encode("utf-8")).hexdigest(), 16)
+
+
 
 # ═══════════════════════════════════════════════════════════════
 #  1. Data Container Classes
@@ -347,7 +353,7 @@ class MockPatentConnector(PatentConnector):
             data = self.fixture[key][as_of_date]
         else:
             # 기본 mock: 키워드 개수에 비례한 가짜 값
-            total = len(keywords) * 50 + hash(key + as_of_date) % 200
+            total = len(keywords) * 50 + _stable_hash(key + as_of_date) % 200
             data = {"total": abs(total), "yearly_counts": {}}
 
         return PatentQueryResult(
@@ -374,7 +380,7 @@ class MockMarketConnector(MarketConnector):
         if key in self.fixture and as_of_date in self.fixture[key]:
             data = self.fixture[key][as_of_date]
         else:
-            size = abs(hash(key + as_of_date)) % 10000 + 500
+            size = abs(_stable_hash(key + as_of_date)) % 10000 + 500
             data = {"market_size_m": float(size), "cagr": 0.15}
 
         return MarketQueryResult(
@@ -387,6 +393,74 @@ class MockMarketConnector(MarketConnector):
             source=self.name,
         )
 
+
+class AgentPatentConnector(PatentConnector):
+    """patent_agent raw(company_portfolios.filing_trend)로 시점별 특허 건수 재사용.
+    KIPRIS 직접호출 미사용 — Agent가 수집한 객관 카운트만 (patent_score 등 LLM 판단 제외).
+    회사 단위 filing_trend를 모든 기술에 적용."""
+    name = "agent_patent"
+    AGENT_BASE = "/root/Roadmap-Planning-Agent/orchestration_agent/outputs/patent_agent"
+
+    def __init__(self, company: str = "", eval_year: int = 2030):
+        self.company = company or ""
+        self.eval_year = int(eval_year)
+        self._trend = {}
+        self._cagr = None
+        self._total = 0
+        self._load()
+
+    def _load(self):
+        import os, glob, json as _json
+        if not self.company:
+            return
+        safe = self.company.replace(" ", "_").replace("&", "_")
+        cands = glob.glob(os.path.join(self.AGENT_BASE, "batch_*", "*" + safe + "*patent_agent_log.json"))
+        cands += glob.glob(os.path.join(self.AGENT_BASE, "batch_*", "*patent_agent_log.json"))
+        if not cands:
+            return
+        try:
+            d = _json.load(open(cands[0], encoding="utf-8"))
+        except Exception:
+            return
+        cp = (d.get("patent_raw_data", {}) or {}).get("company_portfolios", {}) or {}
+        port = cp.get(self.company)
+        if port is None:
+            for k, v in cp.items():
+                if k.lower().replace(" ", "") == self.company.lower().replace(" ", ""):
+                    port = v; break
+        if port is None:
+            return
+        ft = port.get("filing_trend", {}) or {}
+        for k, v in ft.items():
+            if k == "cagr_pct":
+                try: self._cagr = float(v) / 100.0
+                except Exception: pass
+            else:
+                try: self._trend[int(k)] = int(v)
+                except Exception: pass
+        cs = port.get("citation_summary", {}) or {}
+        self._total = int(cs.get("total_patents", 0) or 0)
+
+    def fetch_patents(self, keywords, as_of_date, window_years: int = 5):
+        try:
+            year = int(str(as_of_date)[:4])
+        except Exception:
+            year = self.eval_year
+        lo = year - window_years
+        if self._trend:
+            yearly = {y: c for y, c in self._trend.items() if lo < y <= year}
+            total = sum(yearly.values())
+            max_y = max(self._trend.keys())
+            if year > max_y and self._cagr and self._cagr > -1:
+                base = sum(c for y, c in self._trend.items() if lo < y <= max_y)
+                total = int(round(base * ((1.0 + self._cagr) ** (year - max_y))))
+            return PatentQueryResult(
+                keywords=keywords, as_of_date=as_of_date, window_years=window_years,
+                total_patents=max(0, total), yearly_counts=yearly,
+                top_assignees=[], source=self.name)
+        return PatentQueryResult(
+            keywords=keywords, as_of_date=as_of_date, window_years=window_years,
+            total_patents=0, yearly_counts={}, top_assignees=[], source=self.name + "_miss")
 
 class AgentMarketConnector(MarketConnector):
     """Agent가 LLM으로 정제한 market_analysis(객관 수치만)를 holdout으로 재사용.
@@ -407,34 +481,55 @@ class AgentMarketConnector(MarketConnector):
         return frozenset(w for w in toks if len(w) > 1)
 
     def _load(self):
-        import os
+        import os, glob
         if not self.company:
             return
-        fn = os.path.join(self.AGENT_DIR, self.company.replace(" ", "_") + "_market_agent_log.json")
+        # 회사명 정규화: 공백·& → _  (예: 'Cosmo AM&T' → 'Cosmo_AM_T')
+        safe = self.company.replace(" ", "_").replace("&", "_")
+        base = os.path.dirname(self.AGENT_DIR)  # .../market_agent
+        # run_01(구) + batch_*/(신) 전부 탐색
+        cands = (
+            glob.glob(os.path.join(self.AGENT_DIR, safe + "_market_agent_log.json"))
+            + glob.glob(os.path.join(base, "batch_*", safe + "_market_agent_log.json"))
+        )
+        if not cands:
+            return  # 파일 없음 → 빈 인덱스 → 전부 결측
         try:
-            with open(fn, encoding="utf-8") as fh:
+            with open(cands[0], encoding="utf-8") as fh:
                 d = json.load(fh)
         except Exception:
-            return  # 파일 없음 → 빈 인덱스 → 전부 결측
+            return
         for m in d.get("market_analysis", []):
             toks = self._tok(m.get("name", ""))
             if not toks:
                 continue
             t = m.get("tam_sam_som", {}) or {}
             c = m.get("cagr_forecast", {}) or {}
+            # V3.3: SAM(서비스 가능 시장) 사용 — TAM은 과대, SAM이 회사 공략 가능 시장
+            sam_b = t.get("sam_usd_b")
             tam_b = t.get("tam_usd_b")
+            mkt_b = sam_b if sam_b else tam_b   # SAM 우선, 없으면 TAM fallback
             cagr_pct = c.get("cagr_pct")
             rec = {
-                "tam_m": float(tam_b) * 1000.0 if tam_b else 0.0,  # 십억$ → 백만$
+                "tam_m": float(mkt_b) * 1000.0 if mkt_b else 0.0,  # 십억$ → 백만$ (SAM 기준)
                 "cagr": (float(cagr_pct) / 100.0) if cagr_pct else None,
             }
             self._index[toks] = rec
 
     def _match(self, keywords):
         q = frozenset(keywords or [])
-        best, best_ov = None, 0
+        best, best_ov = None, 0.0
         for toks, rec in self._index.items():
-            ov = len(q & toks)
+            # 정확 교집합 + 부분 문자열 매칭 (고체전지 ⊂ 고체전지용, 양극 ⊂ 양극재)
+            ov = 0.0
+            for qw in q:
+                if qw in toks:
+                    ov += 1.0          # 정확 일치
+                else:
+                    for tw in toks:
+                        if (qw in tw or tw in qw) and min(len(qw), len(tw)) >= 2:
+                            ov += 0.6   # 부분 일치 (접미사/조사 차이 흡수)
+                            break
             if ov > best_ov:
                 best, best_ov = rec, ov
         return best

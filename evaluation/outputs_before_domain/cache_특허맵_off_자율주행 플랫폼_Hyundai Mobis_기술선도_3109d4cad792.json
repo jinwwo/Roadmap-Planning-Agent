@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6) and T08 (TRL 5) have reasonable 2-year development windows, but T03 (TRL 7→completion) is scheduled as a zero-duration project (2030-Q1 to 2030-Q1), which is unrealistic for even a mature technology requiring integration and validation.",
+      "strategic_fidelity": "The portfolio leans toward mid-to-high TRL technologies (5-7) with relatively short timelines, which is more consistent with market-profit strategies; a true 기술선도 portfolio would include lower-TRL exploratory technologies and a longer R&D horizon extending well beyond 2030.",
+      "competitive_awareness": "The roadmap shows no explicit competitive differentiation rationale or evidence of competitor positioning analysis; technology selections appear driven by dependency chains rather than strategic competitive gap exploitation in the autonomous driving landscape.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before market boom windows, but all three technologies complete after their boom windows (T01: 0.75yr late, T08: 2.25yr late, T03: 2.0yr late), meaning the portfolio consistently misses even the market-profit timing window, let alone the preemption window.",
+      "patent_market_convergence": "The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are active patent areas with real market growth, suggesting some convergence awareness, but the narrow 3-technology portfolio and absence of emerging convergence areas like LiDAR-AI fusion or edge computing limits this assessment to coincidental rather than deliberate targeting."
+    },
+    "strengths": [
+      "Zero dependency violations — the sequential T01→T08→T03 chain is logically sound and properly respected in scheduling",
+      "Budget utilization is exactly at capacity with no overrun, indicating disciplined financial planning"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, with a mean timing error of 1.67 years — this is a fundamental strategic failure for both 기술선도 and 시장이익최대 strategies",
+      "The portfolio is extremely narrow (only 3 technologies) and skewed toward higher TRL levels, which contradicts the 기술선도 mandate that requires exploratory, lower-TRL investments to establish technology leadership"
+    ],
+    "missing_technologies": [
+      "LiDAR-based perception systems (lower TRL, high patent activity, foundational for 기술선도)",
+      "Edge AI inference accelerators for ADAS (emerging convergence zone)",
+      "V2X communication modules (critical ecosystem technology for autonomous driving leadership)",
+      "High-definition map generation and localization (key differentiator in autonomous driving platform)"
+    ],
+    "investment_issues": [
+      "All three technologies are classified as Strategic or High tier despite the portfolio lacking true exploratory/frontier investments expected in a 기술선도 strategy",
+      "스테어 바이 와이어 제어 (TRL 7, lowest uncertainty score of 2.0) receiving High-tier investment suggests over-investment in a near-mature technology relative to the strategic direction"
+    ],
+    "timing_issues": [
+      "3D 포즈 추정 시스템 completes 2.25 years after its 2027-Q4 boom — entirely misses the market window and provides no preemption advantage",
+      "스테어 바이 와이어 제어 has a zero-duration development phase (2030-Q1 to 2030-Q1), which is not credible for system integration and validation",
+      "다중 센서 퓨전 카메라 completes 0.75 years after its boom; even with 기술선도 strategy requiring early completion, this is late rather than preemptive"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T01 (TRL 6) and T08 (TRL 5) have reasonable 2-year development windows, but T03 (TRL 7→completion) is scheduled as a zero-duration project (2030-Q1 to 2030-Q1), which is unrealistic for even a mature technology requiring integration and validation.",
+      "strategic_fidelity": "score 3/5 - The portfolio leans toward mid-to-high TRL technologies (5-7) with relatively short timelines, which is more consistent with market-profit strategies; a true 기술선도 portfolio would include lower-TRL exploratory technologies and a longer R&D horizon extending well beyond 2030.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit competitive differentiation rationale or evidence of competitor positioning analysis; technology selections appear driven by dependency chains rather than strategic competitive gap exploitation in the autonomous driving landscape.",
+      "market_timing": "score 2/5 - For 기술선도 strategy, technologies should complete 1-2 years before market boom windows, but all three technologies complete after their boom windows (T01: 0.75yr late, T08: 2.25yr late, T03: 2.0yr late), meaning the portfolio consistently misses even the market-profit timing window, let alone the preemption window.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are active patent areas with real market growth, suggesting some convergence awareness, but the narrow 3-technology portfolio and absence of emerging convergence areas like LiDAR-AI fusion or edge computing limits this assessment to coincidental rather than deliberate targeting.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 65.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.593,
+        "market_size_norm": 1.0,
+        "value": 0.8779,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 9.4811
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "3D 포즈 추정 시스템",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8182,
+        "cost_adjusted_return": -7.4961
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "patent_growth_norm": 0.0305,
+        "market_growth_norm": 0.8218,
+        "market_size_norm": 0.5392,
+        "value": 0.4205,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7045,
+        "cost_adjusted_return": 5.9972
+      }
+    ],
+    "selection_quality": 47.7,
+    "cost_adjusted_return": 48.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 49.9,
+    "backtest_score": 56.4,
+    "backtest_score_v1": 58.5,
+    "description": {
+      "selection_quality": "47.7/100 — 3개 기술 평균 value=0.477\n  ▲ 다중 센서 퓨전 카메라: value=0.878 (특허↑=1.00, 시장↑=0.59, 규모=1.00)\n  ▼ 스테어 바이 와이어 제어: value=0.420 (특허↑=0.03, 시장↑=0.82, 규모=0.54)\n  ▼ 3D 포즈 추정 시스템: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → 3D 포즈 추정 시스템: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "48.0/100 — 평균 return=2.661\n  다중 센서 퓨전 카메라: value=0.878 - 0.15×1.00(cost) = return +9.481 [Strategic]\n  스테어 바이 와이어 제어: value=0.420 - 0.15×0.67(cost) = return +5.997 [High]\n  3D 포즈 추정 시스템: value=0.133 - 0.15×1.00(cost) = return -7.496 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 3D 포즈 추정 시스템: value 0.133인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "49.9/100 — 평균 오차 1.67년\n  3D 포즈 추정 시스템: 2.2년 늦음 ⚠\n  스테어 바이 와이어 제어: 2.0년 늦음 ⚠\n  다중 센서 퓨전 카메라: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×47.7 + 0.35×48.0 + 0.05×100.0 + 0.05×100.0 + 0.10×49.9 = 56.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.67,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "3D 포즈 추정 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 49.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "total_penalty": 3.3,
+    "final_composite_score": 46.5,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×56.4(Backtest) = 49.8. Penalty: timing_error: -3.3pt. 총 -3.3pt. 최종 = 46.5.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 56.4점. 제약 위반으로 3.3점 차감. 최종 Composite Score: 46.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: 3D 포즈 추정 시스템의 완료시점이 시장 개화 대비 2.25년 차이",
+      "타이밍 이슈: 스테어 바이 와이어 제어의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

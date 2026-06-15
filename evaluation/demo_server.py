@@ -72,7 +72,8 @@ result_store: dict = {}  # {id: {name, result, created_at}}
 # ═══════════════════════════════════════
 
 config = {
-    "connector": os.environ.get("EVAL_CONNECTOR", "mock"),        # mock, csv, uspto, csv+uspto, tavily+uspto
+    "connector": os.environ.get("EVAL_CONNECTOR", "mock"),
+    "api_direct": ((os.environ.get("EVAL_API","").lower() in ("1","true","yes")) if os.environ.get("EVAL_API") else None),        # mock, csv, uspto, csv+uspto, tavily+uspto
     "holdout_mode": os.environ.get("EVAL_HOLDOUT_MODE", "global"),  # global, per-tech
     "baseline_date": os.environ.get("EVAL_BASELINE", "2020-12-31"),
     "evaluation_date": os.environ.get("EVAL_EVALUATION", "2025-12-31"),
@@ -91,12 +92,27 @@ if os.environ.get("GOOGLE_API_KEY"):
 
 def _build_extractor(company: str = "", eval_year: int = 2030):
     connector = config["connector"]
+    # API 스위치: True=직접호출(kipris/tavily), False=Agent raw 재사용
+    import os as _os
+    api_mode = config.get("api_direct")
+    if api_mode is None:
+        _ev = _os.environ.get("EVAL_API", "")
+        api_mode = _ev.lower() in ("1", "true", "yes") if _ev else None
     # 특허
-    if "kipris" in connector:
+    if api_mode is True:
+        from data_sources import KiprisConnector
+        ps = PatentDataSource(KiprisConnector())
+    elif api_mode is False:
+        from data_sources import AgentPatentConnector
+        ps = PatentDataSource(AgentPatentConnector(company, eval_year))
+    elif "kipris" in connector:
         from data_sources import KiprisConnector
         ps = PatentDataSource(KiprisConnector())
     elif "uspto" in connector:
         ps = PatentDataSource(USPTOConnector())
+    elif "agent" in connector:
+        from data_sources import AgentPatentConnector
+        ps = PatentDataSource(AgentPatentConnector(company, eval_year))
     else:
         ps = PatentDataSource(MockPatentConnector({}))
 
@@ -105,7 +121,12 @@ def _build_extractor(company: str = "", eval_year: int = 2030):
 
 
     # 시장
-    if "agent" in connector:
+    if api_mode is True:
+        ms = MarketDataSource(TavilyMarketConnector())
+    elif api_mode is False:
+        from data_sources import AgentMarketConnector
+        ms = MarketDataSource(AgentMarketConnector(company, eval_year))
+    elif "agent" in connector:
         from data_sources import AgentMarketConnector
         ms = MarketDataSource(AgentMarketConnector(company, eval_year))
     elif "tavily" in connector:
@@ -494,6 +515,22 @@ def scan_outputs_on_startup():
                         if not os.path.isdir(strat_path):
                             continue
                         display_name = f"특허맵_on_{industry}_{company}_{strategy}"
+                        _scan_leaf_dir(strat_path, display_name)
+        elif entry == "특허맵_On_Single_Agent":
+            # single agent ON: 특허맵_On_Single_Agent/{industry}/{company}/{strategy}/
+            for industry in sorted(os.listdir(entry_path)):
+                ind_path = os.path.join(entry_path, industry)
+                if not os.path.isdir(ind_path):
+                    continue
+                for company in sorted(os.listdir(ind_path)):
+                    comp_path = os.path.join(ind_path, company)
+                    if not os.path.isdir(comp_path):
+                        continue
+                    for strategy in sorted(os.listdir(comp_path)):
+                        strat_path = os.path.join(comp_path, strategy)
+                        if not os.path.isdir(strat_path):
+                            continue
+                        display_name = f"특허맵_on_single_{industry}_{company}_{strategy}"
                         _scan_leaf_dir(strat_path, display_name)
         else:
             # past, past_0601 등 기타 디렉토리는 스캔 안 함

@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Large Language Model / Foundation Model / AI Platform",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6) over 8 quarters and T05 (TRL 6) over 8 quarters are plausible, but T02 (TRL 5→target) with a 0-quarter development window (2030-Q1 → 2030-Q1) is effectively zero development time, making its TRL progression infeasible.",
+      "strategic_fidelity": "The portfolio mixes some exploratory elements (T02 at TRL 5) consistent with 기술선도, but T01 and T05 at TRL 6 are relatively mature, and the overall portfolio is small and narrow, lacking the R&D-heavy, patent-trend-aligned breadth expected of a genuine technology leadership strategy.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, technology gap analysis, or differentiation strategy embedded in the technology selection or timing; choices appear made on standalone merit rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도, completion 1-2 years before boom is ideal, but all three technologies complete after their boom windows (T01: +1.5yr late, T05: +2.75yr late, T02: +1.75yr late), representing systematic post-boom completion rather than pre-emptive positioning.",
+      "patent_market_convergence": "The selected technologies (LLM collaboration, inference acceleration, generative 3D) are active areas of both patent filing and market growth, suggesting some convergence awareness, but the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Dependency chain (T01→T05→T02) is logically coherent and technically sound, with no dependency violations",
+      "Budget is fully utilized without overspending, indicating disciplined resource allocation"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, undermining the preemptive positioning central to a 기술선도 strategy",
+      "T02 (생성형 AI 기반 3D 공간 생성) has a zero-duration development window (2030-Q1 to 2030-Q1), making any meaningful TRL advancement impossible"
+    ],
+    "missing_technologies": [
+      "Low-TRL foundational model architecture research (e.g., novel attention mechanisms or neuromorphic computing) to strengthen the exploratory R&D profile expected of 기술선도",
+      "Multi-agent orchestration or autonomous agent framework technology to better align with the multi-agent scenario context"
+    ],
+    "investment_issues": [
+      "T02 is classified as Tier=High despite having executability=2.0 and uncertainty=4.0, and a zero development window — the investment tier does not reflect the extreme execution risk",
+      "All investments are concentrated in a three-technology sequential chain with no diversification into exploratory or parallel tracks, creating high single-chain failure risk for a 기술선도 portfolio"
+    ],
+    "timing_issues": [
+      "T05 (대규모 모델 추론 가속화) completes 2.75 years after its boom window (2027-Q2), representing the most severe timing misalignment and likely missing peak commercial leverage",
+      "The entire pipeline is sequentially gated, causing late-chain technologies to absorb compounding delays with no parallel development tracks to hedge timing risk"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T01 (TRL 6) over 8 quarters and T05 (TRL 6) over 8 quarters are plausible, but T02 (TRL 5→target) with a 0-quarter development window (2030-Q1 → 2030-Q1) is effectively zero development time, making its TRL progression infeasible.",
+      "strategic_fidelity": "score 3/5 - The portfolio mixes some exploratory elements (T02 at TRL 5) consistent with 기술선도, but T01 and T05 at TRL 6 are relatively mature, and the overall portfolio is small and narrow, lacking the R&D-heavy, patent-trend-aligned breadth expected of a genuine technology leadership strategy.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence of competitor positioning, technology gap analysis, or differentiation strategy embedded in the technology selection or timing; choices appear made on standalone merit rather than competitive landscape intelligence.",
+      "market_timing": "score 2/5 - For 기술선도, completion 1-2 years before boom is ideal, but all three technologies complete after their boom windows (T01: +1.5yr late, T05: +2.75yr late, T02: +1.75yr late), representing systematic post-boom completion rather than pre-emptive positioning.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (LLM collaboration, inference acceleration, generative 3D) are active areas of both patent filing and market growth, suggesting some convergence awareness, but the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 5,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 85.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 기반 컨텍스트 인식 협업",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9115,
+        "market_size_norm": 1.0,
+        "value": 0.5734,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4234
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "대규모 모델 추론 가속화",
+        "patent_growth_norm": 0.2572,
+        "market_growth_norm": 0.9115,
+        "market_size_norm": 1.0,
+        "value": 0.6763,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.7857,
+        "cost_adjusted_return": 0.5585
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "생성형 AI 기반 3D 공간 생성",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9617,
+        "market_size_norm": 0.6443,
+        "value": 0.4818,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6464,
+        "cost_adjusted_return": 0.3848
+      }
+    ],
+    "selection_quality": 57.7,
+    "cost_adjusted_return": 45.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 40.0,
+    "backtest_score": 60.8,
+    "backtest_score_v1": 60.1,
+    "description": {
+      "selection_quality": "57.7/100 — 3개 기술 평균 value=0.577\n  ▲ 대규모 모델 추론 가속화: value=0.676 (특허↑=0.26, 시장↑=0.91, 규모=1.00)\n  ▼ LLM 기반 컨텍스트 인식 협업: value=0.573 (특허↑=0.00, 시장↑=0.91, 규모=1.00)\n  ▼ 생성형 AI 기반 3D 공간 생성: value=0.482 (특허↑=0.00, 시장↑=0.96, 규모=0.64)",
+      "cost_adjusted_return": "45.6/100 — 평균 return=0.456\n  대규모 모델 추론 가속화: value=0.676 - 0.15×1.00(cost) = return +0.558 [Strategic]\n  LLM 기반 컨텍스트 인식 협업: value=0.573 - 0.15×1.00(cost) = return +0.423 [Strategic]\n  생성형 AI 기반 3D 공간 생성: value=0.482 - 0.15×0.67(cost) = return +0.385 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "40.0/100 — 평균 오차 2.00년\n  대규모 모델 추론 가속화: 2.8년 늦음 ⚠\n  생성형 AI 기반 3D 공간 생성: 1.8년 늦음 ⚠\n  LLM 기반 컨텍스트 인식 협업: 1.5년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×57.7 + 0.35×45.6 + 0.05×100.0 + 0.05×100.0 + 0.10×40.0 = 60.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.0,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 기반 컨텍스트 인식 협업",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "대규모 모델 추론 가속화",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "생성형 AI 기반 3D 공간 생성",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 1.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 52.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "total_penalty": 5.0,
+    "final_composite_score": 47.5,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×60.8(Backtest) = 52.5. Penalty: timing_error: -5.0pt. 총 -5.0pt. 최종 = 47.5.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(60.8)가 LLM(40.0)보다 20.8pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 60.8점. 제약 위반으로 5.0점 차감. 최종 Composite Score: 47.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: LLM 기반 컨텍스트 인식 협업의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 대규모 모델 추론 가속화의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 생성형 AI 기반 3D 공간 생성의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

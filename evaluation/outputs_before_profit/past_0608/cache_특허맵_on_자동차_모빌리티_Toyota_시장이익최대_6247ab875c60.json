@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are reasonable: T01 (TRL6, 2yr timeline), T02 (TRL7, 1yr timeline), T03 (TRL6, 1yr timeline) are all plausible given near-market starting points. T06 (TRL4→market-ready in 3 years) is somewhat aggressive for an equipment-category technology requiring physical integration validation.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대, which should favor high-TRL, near-commercialization technologies. T01 (TRL6) and T02 (TRL7) fit well, but T06 at TRL4 with low market_opp (2.0) and high uncertainty (4.0) is a poor fit for profit maximization. The portfolio mixes exploratory and commercial-ready technologies inconsistently.",
+      "competitive_awareness": "The roadmap shows no explicit competitive differentiation rationale or timing strategy relative to competitors. Technology selections and sequencing appear internally driven without evidence of exploiting competitive gaps or preempting rival developments in battery or vehicle architecture segments.",
+      "market_timing": "For 시장이익최대, technologies should complete within ±0.5 years of the boom. T03 (0.25yr error) and T06 (-0.25yr, slightly early) are well-timed. T01 (0.5yr late) is borderline. T02 completes 1.0 year after its boom window, which is a meaningful miss for a profit-maximization strategy where market entry timing is critical.",
+      "patent_market_convergence": "The portfolio includes high market_opp scores for T01 and T02 and high strategic_fit scores, suggesting some convergence awareness. However, T06 has low market_opp (2.0) and was still selected, and there is no explicit articulation of patent-market convergence zones driving selection decisions."
+    },
+    "strengths": [
+      "Dependency chain between T01 and T02 is logically sound and correctly sequenced, ensuring prerequisite completion before dependent technology development begins.",
+      "T03 (차량 제어 융합 아키텍처) is well-timed relative to its boom window (0.25yr error) and carries high strategic_fit, representing the strongest market-aligned pick in the portfolio."
+    ],
+    "weaknesses": [
+      "T02 (고성능 양극 활물질) completes 1 full year after its market boom (2029-Q1 vs 2028-Q1 boom), which is a critical miss for a profit-maximization strategy and reduces ROI potential significantly.",
+      "T06 (태양광 모듈 통합 차량) at TRL4 with low market opportunity (2.0), high uncertainty (4.0), and low executability (2.0) is poorly aligned with 시장이익최대 strategy and weakens overall portfolio coherence."
+    ],
+    "missing_technologies": [
+      "고체 전해질 배터리 (Solid-state battery) — high TRL momentum and large near-term market boom aligned with profit maximization",
+      "전기차 열관리 시스템 (EV thermal management) — near-commercial TRL with strong market demand in 2026-2028 window"
+    ],
+    "investment_issues": [
+      "All three core technologies are classified as Strategic tier despite T03 having lower market_opp (4.0) than T01 (5.0), suggesting tier differentiation is not granular enough to guide capital prioritization.",
+      "Budget shows 0 spent against a 41.7B total, indicating the investment allocation may be theoretical rather than operationally committed, raising execution credibility concerns."
+    ],
+    "timing_issues": [
+      "T02 completes 1.0 year after boom (2029-Q1 vs 2028-Q1): for market profit maximization, this represents a missed peak revenue window that could be partially corrected by starting T01 earlier or compressing T02 development.",
+      "T01 completes 0.5 years after boom (2028-Q1 vs 2027-Q3): while borderline acceptable, the late delivery reduces first-mover commercial advantage in the dry electrode film market."
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Most TRL progressions are reasonable: T01 (TRL6, 2yr timeline), T02 (TRL7, 1yr timeline), T03 (TRL6, 1yr timeline) are all plausible given near-market starting points. T06 (TRL4→market-ready in 3 years) is somewhat aggressive for an equipment-category technology requiring physical integration validation.",
+      "strategic_fidelity": "score 3/5 - The declared strategy is 시장이익최대, which should favor high-TRL, near-commercialization technologies. T01 (TRL6) and T02 (TRL7) fit well, but T06 at TRL4 with low market_opp (2.0) and high uncertainty (4.0) is a poor fit for profit maximization. The portfolio mixes exploratory and commercial-ready technologies inconsistently.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit competitive differentiation rationale or timing strategy relative to competitors. Technology selections and sequencing appear internally driven without evidence of exploiting competitive gaps or preempting rival developments in battery or vehicle architecture segments.",
+      "market_timing": "score 3/5 - For 시장이익최대, technologies should complete within ±0.5 years of the boom. T03 (0.25yr error) and T06 (-0.25yr, slightly early) are well-timed. T01 (0.5yr late) is borderline. T02 completes 1.0 year after its boom window, which is a meaningful miss for a profit-maximization strategy where market entry timing is critical.",
+      "patent_market_convergence": "score 3/5 - The portfolio includes high market_opp scores for T01 and T02 and high strategic_fit scores, suggesting some convergence awareness. However, T06 has low market_opp (2.0) and was still selected, and there is no explicit articulation of patent-market convergence zones driving selection decisions.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 75.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.9576,
+        "value": 0.9873,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.8373
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "patent_growth_norm": 0.4542,
+        "market_growth_norm": 0.488,
+        "market_size_norm": 1.0,
+        "value": 0.6281,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4781
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "patent_growth_norm": 0.7789,
+        "market_growth_norm": 0.7999,
+        "market_size_norm": 0.7301,
+        "value": 0.7705,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6205
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "태양광 모듈 통합 차량",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": -0.05
+      }
+    ],
+    "selection_quality": 59.6,
+    "cost_adjusted_return": 47.1,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 85.0,
+    "backtest_score": 72.9,
+    "backtest_score_v1": 65.9,
+    "description": {
+      "selection_quality": "59.6/100 — 4개 기술 평균 value=0.596\n  ▲ 건식 전극 필름 제조: value=0.987 (특허↑=1.00, 시장↑=1.00, 규모=0.96)\n  ▲ 차량 제어 융합 아키텍처: value=0.770 (특허↑=0.78, 시장↑=0.80, 규모=0.73)\n  ▲ 고성능 양극 활물질: value=0.628 (특허↑=0.45, 시장↑=0.49, 규모=1.00)\n  ▼ 태양광 모듈 통합 차량: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 태양광 모듈 통합 차량: 특허 성장률 낮음 (norm=0.00)\n  → 태양광 모듈 통합 차량: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "47.1/100 — 평균 return=0.471\n  건식 전극 필름 제조: value=0.987 - 0.15×1.00(cost) = return +0.837 [Strategic]\n  차량 제어 융합 아키텍처: value=0.770 - 0.15×1.00(cost) = return +0.621 [Strategic]\n  고성능 양극 활물질: value=0.628 - 0.15×1.00(cost) = return +0.478 [Strategic]\n  태양광 모듈 통합 차량: value=0.000 - 0.15×0.33(cost) = return -0.050 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "85.0/100 — 평균 오차 0.50년\n  고성능 양극 활물질: 1.0년 늦음\n  건식 전극 필름 제조: 0.5년 늦음\n  차량 제어 융합 아키텍처: 0.2년 늦음\n  태양광 모듈 통합 차량: 0.2년 이름",
+      "formula": "backtest_score = 0.35×59.6 + 0.35×47.1 + 0.05×100.0 + 0.05×100.0 + 0.10×85.0 = 72.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.5,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "태양광 모듈 통합 차량",
+        "target_q": "2030-Q1",
+        "boom_q": "2030-Q2",
+        "error_years": -0.25
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 64.2,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 64.2,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×72.9(Backtest) = 64.2. 페널티 없음. 최종 = 64.2.\n  [진단] Backtest(72.9)가 LLM(51.2)보다 21.7pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 72.9점. 최종 Composite Score: 64.2점.",
+    "key_failure_points": [],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

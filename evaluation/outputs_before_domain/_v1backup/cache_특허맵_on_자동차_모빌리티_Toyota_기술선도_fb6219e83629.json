@@ -1,0 +1,209 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 3,
+    "investment": 3,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 52.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 3,
+        "sequencing": 3,
+        "investment": 3,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "The selected technologies (dry electrode, anhydrous electrolyte, thermal composites, large-format casting) align well with EV/battery growth markets through 2030, but significant timing errors (mean 1.5 years late) indicate missed market windows, particularly for 건식 전극 필름 제조 which arrives 2.75 years after its boom.",
+      "sequencing": "Dependency chains are respected (T08→T01→T02→T03) with zero dependency violations, but 대형 주조 배터리 하우징 has a zero-duration development window (2030-Q1 to 2030-Q1), which is physically unrealistic for a TRL-6 packaging technology requiring manufacturing scale-up.",
+      "investment": "Strategic tier assignment for 건식 전극 필름 제조 and 비상상황 협력 제어 시스템 is justified by high market opportunity and urgency scores, and budget is fully unspent (0/41.7B), suggesting the investment allocation exists only on paper without actual capital deployment planning.",
+      "coherence": "Technologies form a coherent EV battery ecosystem narrative: electrolyte → electrode → housing → thermal management, with an autonomous safety layer (T05), representing a logical research-to-deployment progression across materials, process, and architecture categories.",
+      "balance": "All five technologies are clustered in Strategic or High tiers with no Exploratory or Low-tier bets, budget spend is 0%, and all completion dates converge at 2030-Q1, creating severe concentration risk with no short-term deliverables or portfolio diversification across time horizons."
+    },
+    "strengths": [
+      "Dependency chain integrity is perfect with zero violations, ensuring technically sound sequencing from foundational materials to integrated systems.",
+      "The technology set forms a coherent EV battery platform narrative spanning materials, process, packaging, and thermal management with cross-domain coverage."
+    ],
+    "weaknesses": [
+      "Mean timing error of 1.5 years across all technologies means the roadmap systematically misses market boom windows, with 건식 전극 필름 제조 arriving nearly 3 years too late to capture peak opportunity.",
+      "Zero budget spend despite a 41.7B allocation and all milestones clustering at 2030-Q1 suggests an unrealistic or incomplete execution plan with no staged capital deployment."
+    ],
+    "missing_technologies": [
+      "Solid-state electrolyte interface technology to bridge anhydrous electrolyte (T08) toward next-generation cell chemistry",
+      "BMS (Battery Management System) software/AI layer to complement the hardware-heavy portfolio",
+      "Fast-charging thermal regulation system as a near-term (2026-2027) deployable technology to create early revenue milestones"
+    ],
+    "investment_issues": [
+      "Total budget spend of 0 out of 41.7 billion indicates no actual capital has been allocated or phased, rendering the investment strategy purely theoretical.",
+      "무수 전해액 조성 (T08) receives Strategic tier despite executability score of 2.0 and high uncertainty (4.0), suggesting overinvestment relative to its execution risk profile.",
+      "No Exploratory-tier technology exists in the portfolio, eliminating optionality for breakthrough discoveries that could replace or enhance the current battery chemistry pathway."
+    ],
+    "timing_issues": [
+      "건식 전극 필름 제조 (T01) completes at 2030-Q1 but market boom is 2027-Q2 — a 2.75-year delay that risks ceding first-mover advantage to competitors.",
+      "대형 주조 배터리 하우징 (T02) is scheduled with identical start and end dates (2030-Q1 to 2030-Q1), implying zero development time which is infeasible for a complex manufacturing process.",
+      "비상상황 협력 제어 시스템 (T05) at TRL-6 targeting 2028-Q1 completion misses its 2027-Q1 boom by one full year despite being the most execution-ready technology in the portfolio."
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 건식 전극 필름 제조 (norm=1.000)\n  시장 성장률 기준 최저: 차량용 열흡수 복합소재 (norm=0.000)\n  전체 평균: 0.200",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 3/5 — tier 불일치 4건:\n  ⚠ 무수 전해액 조성: value=0.400 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 비상상황 협력 제어 시스템: value=0.153 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 대형 주조 배터리 하우징: value=0.000 → 기대 Low, 실제 High (차이 2단계)\n  ⚠ 차량용 열흡수 복합소재: value=0.230 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Material(2개), Process(1개), Architecture(1개), Packaging(1개)\n  TRL 범위: 4~6\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(2개), Strategic(3개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×3 + 0.2×3 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 52.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 0.8855,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.9542,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.8042
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "patent_growth_norm": 0.3821,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.1529,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.0029
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": -0.1
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "차량용 열흡수 복합소재",
+        "patent_growth_norm": 0.5753,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2301,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.1301
+      }
+    ],
+    "selection_quality": 34.7,
+    "cost_adjusted_return": 21.7,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "backtest_score": 45.3,
+    "description": {
+      "selection_quality": "34.7/100 — 5개 기술 평균 value=0.347\n  ▲ 건식 전극 필름 제조: value=0.954 (특허↑=0.89, 시장↑=1.00, 규모=1.00)\n  ▲ 무수 전해액 조성: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)\n  ▼ 차량용 열흡수 복합소재: value=0.230 (특허↑=0.58, 시장↑=0.00, 규모=0.00)\n  ▼ 비상상황 협력 제어 시스템: value=0.153 (특허↑=0.38, 시장↑=0.00, 규모=0.00)\n  ▼ 대형 주조 배터리 하우징: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 비상상황 협력 제어 시스템: 시장 성장률 낮음 (norm=0.00)\n  → 대형 주조 배터리 하우징: 특허 성장률 낮음 (norm=0.00)\n  → 대형 주조 배터리 하우징: 시장 성장률 낮음 (norm=0.00)\n  → 차량용 열흡수 복합소재: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "21.7/100 — 평균 return=0.217\n  건식 전극 필름 제조: value=0.954 - 0.15×1.00(cost) = return +0.804 [Strategic]\n  무수 전해액 조성: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]\n  차량용 열흡수 복합소재: value=0.230 - 0.15×0.67(cost) = return +0.130 [High] ⚠ 과다투자\n  비상상황 협력 제어 시스템: value=0.153 - 0.15×1.00(cost) = return +0.003 [Strategic] ⚠ 과다투자\n  대형 주조 배터리 하우징: value=0.000 - 0.15×0.67(cost) = return -0.100 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 비상상황 협력 제어 시스템: value 0.153인데 Strategic tier\n  → 대형 주조 배터리 하우징: value 0.000인데 High tier\n  → 차량용 열흡수 복합소재: value 0.230인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  건식 전극 필름 제조: 2.8년 늦음 ⚠\n  대형 주조 배터리 하우징: 2.0년 늦음 ⚠\n  비상상황 협력 제어 시스템: 1.0년 늦음\n  차량용 열흡수 복합소재: 1.0년 늦음\n  무수 전해액 조성: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×34.7 + 0.35×21.7 + 0.10×100.0 + 0.10×100.0 + 0.10×55.0 = 45.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "차량용 열흡수 복합소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 48.2,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 45.7,
+    "description": "pre_penalty = 0.4×52.5(LLM) + 0.6×45.3(Backtest) = 48.2. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 45.7.\n  [진단] Backtest 점수(45.3)가 낮음 → 기술 선택 또는 투자 배분 재검토."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 52.5점, Backtest 경제성 평가 45.3점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 45.7점.",
+    "key_failure_points": [
+      "타이밍 이슈: 건식 전극 필름 제조의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 대형 주조 배터리 하우징의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

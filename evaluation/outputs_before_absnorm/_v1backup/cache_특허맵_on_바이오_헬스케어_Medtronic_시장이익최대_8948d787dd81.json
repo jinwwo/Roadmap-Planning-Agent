@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Medical Devices / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 4,
+    "investment": 3,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 57.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 3,
+        "sequencing": 4,
+        "investment": 3,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "The selected technologies (intravascular 3D imaging, surgical AI guidance, high-sensitivity diagnostic automation) are well-suited to high-growth medical device markets, but significant timing misalignment exists—particularly for T02, which completes 3.25 years after its market boom in 2026-Q4, severely reducing competitive positioning.",
+      "sequencing": "Dependency chains are respected: T01 (TRL7) is scheduled to complete by 2028-Q1 before T02 begins, and there are zero dependency violations reported; TRL-based lead times of 2-4 years are broadly realistic for TRL 6-7 technologies in regulated medical device domains.",
+      "investment": "T01 and T02 both receive Strategic tier investment which is justified by their high market opportunity and strategic fit scores; however, T03 with lower urgency (3.0) and market opportunity (3.0) is still allocated High tier, which may be slightly aggressive relative to its lower priority profile.",
+      "coherence": "The three technologies form a logical clinical workflow progression—from imaging infrastructure (T01), to AI-guided surgical application (T02), to diagnostic automation (T03)—reflecting a coherent strategy of building a comprehensive AI-augmented medical imaging and diagnostics platform.",
+      "balance": "The portfolio is heavily skewed toward Strategic/High tiers with no Low or Medium tier exploratory investments, and all three technologies are concentrated in the imaging/diagnostics subsegment; this creates risk concentration with no hedge against emerging disruptions or early-stage bets."
+    },
+    "strengths": [
+      "Dependency sequencing is correctly implemented with T01 completing before T02 starts, ensuring no prerequisite violations.",
+      "Technologies form a coherent, synergistic clinical workflow ecosystem covering imaging, surgical AI, and diagnostic automation."
+    ],
+    "weaknesses": [
+      "T02 (Surgical AI Image Processing) has a severe 3.25-year timing miss relative to its 2026-Q4 market boom, risking loss of first-mover advantage to competitors.",
+      "Portfolio lacks diversification across investment tiers and technology categories, with all selections concentrated in imaging/diagnostics and no early-stage or exploratory technologies."
+    ],
+    "missing_technologies": [
+      "Wearable continuous patient monitoring platforms (complements diagnostic automation for remote care)",
+      "Robotic-assisted surgical systems (natural extension of surgical AI guidance, T02)",
+      "AI-powered pathology and digital biopsy tools (adjacent high-growth area in medical AI)"
+    ],
+    "investment_issues": [
+      "T03 is allocated High tier despite having the lowest urgency (3.0) and market opportunity (3.0) scores among the three technologies—Medium tier may be more appropriate.",
+      "Budget utilization is reported as 0 spent against 13.5B total, suggesting investment allocation may be aspirational rather than operationally committed.",
+      "No Low or Medium tier investments exist, meaning the portfolio has no cost-efficient exploratory positions to hedge against technology or market uncertainty."
+    ],
+    "timing_issues": [
+      "T02 targets completion in 2030-Q1 but its market boom is 2026-Q4—a 3.25-year delay that likely causes the organization to miss peak market adoption windows.",
+      "T03 completes in 2030-Q1 versus a 2028-Q1 boom, representing a 2-year lag that reduces competitive advantage in diagnostic automation.",
+      "Starting T02 development only after T01 completes in 2028-Q1 contributes to its late-to-market position; parallel or earlier initiation should be evaluated."
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 혈관 내 3D 이미징 및 워크플로우 (norm=0.500)\n  시장 성장률 기준 최저: 고감도 진단 자동화 시스템 (norm=0.500)\n  전체 평균: 0.500",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 3/5 — tier 불일치 2건:\n  ⚠ 혈관 내 3D 이미징 및 워크플로우: value=0.300 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 수술용 AI 기반 이미지 처리 및 안내: value=0.700 → 기대 Medium, 실제 Strategic (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Equipment(2개), Architecture(1개)\n  TRL 범위: 6~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×4 + 0.2×3 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 57.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.3,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.15
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.7,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.55
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고감도 진단 자동화 시스템",
+        "patent_growth_norm": 0.9959,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6983,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5983
+      }
+    ],
+    "selection_quality": 56.6,
+    "cost_adjusted_return": 43.3,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 40.0,
+    "backtest_score": 59.0,
+    "description": {
+      "selection_quality": "56.6/100 — 3개 기술 평균 value=0.566\n  ▲ 수술용 AI 기반 이미지 처리 및 안내: value=0.700 (특허↑=1.00, 시장↑=0.50, 규모=0.50)\n  ▲ 고감도 진단 자동화 시스템: value=0.698 (특허↑=1.00, 시장↑=0.50, 규모=0.50)\n  ▼ 혈관 내 3D 이미징 및 워크플로우: value=0.300 (특허↑=0.00, 시장↑=0.50, 규모=0.50)",
+      "cost_adjusted_return": "43.3/100 — 평균 return=0.433\n  고감도 진단 자동화 시스템: value=0.698 - 0.15×0.67(cost) = return +0.598 [High]\n  수술용 AI 기반 이미지 처리 및 안내: value=0.700 - 0.15×1.00(cost) = return +0.550 [Strategic]\n  혈관 내 3D 이미징 및 워크플로우: value=0.300 - 0.15×1.00(cost) = return +0.150 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 혈관 내 3D 이미징 및 워크플로우: value 0.300인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "40.0/100 — 평균 오차 2.00년\n  수술용 AI 기반 이미지 처리 및 안내: 3.2년 늦음 ⚠\n  고감도 진단 자동화 시스템: 2.0년 늦음 ⚠\n  혈관 내 3D 이미징 및 워크플로우: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×56.6 + 0.35×43.3 + 0.10×100.0 + 0.10×100.0 + 0.10×40.0 = 59.0"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.0,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고감도 진단 자동화 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 58.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "total_penalty": 5.0,
+    "final_composite_score": 53.4,
+    "description": "pre_penalty = 0.4×57.5(LLM) + 0.6×59.0(Backtest) = 58.4. Penalty: timing_error: -5.0pt. 총 -5.0pt. 최종 = 53.4."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 57.5점, Backtest 경제성 평가 59.0점. 제약 위반으로 5.0점 차감. 최종 Composite Score: 53.4점.",
+    "key_failure_points": [
+      "타이밍 이슈: 수술용 AI 기반 이미지 처리 및 안내의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 고감도 진단 자동화 시스템의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

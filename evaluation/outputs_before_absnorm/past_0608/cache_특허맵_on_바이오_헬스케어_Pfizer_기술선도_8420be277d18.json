@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Healthcare",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 2,
+    "llm_structural_score": 42.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 2
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are reasonable given the timelines — TRL 6 technologies with 1-2 year development windows and TRL 5 AI model with 3 years are broadly feasible, though ADC at TRL 7 with a 2-year runway to commercialization is slightly aggressive for a complex biologic platform.",
+      "strategic_fidelity": "The declared 기술선도 (Technology Leadership) strategy should emphasize lower-TRL exploratory technologies and R&D-heavy, patent-aligned selections, but the portfolio is dominated by TRL 6-7 near-market technologies (PAT, ADC, blood glucose monitoring, PCSK9) with only one genuinely exploratory entry (AI clinical model at TRL 5); this looks more like a 시장이익최대 portfolio.",
+      "competitive_awareness": "The roadmap shows no explicit differentiation logic, no identification of competitor technology gaps, and no timing advantage design relative to industry rivals; technology selections appear driven by market size signals rather than competitive positioning or white-space exploitation.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; PAT at +0.25yr late is acceptable, but ADC finishing 1.75yr after boom and AI clinical model finishing 2.0yr after boom are significant misalignments that reduce preemptive advantage, yielding a mixed timing picture.",
+      "patent_market_convergence": "The portfolio skews toward high market opportunity scores (ADC: 5.0, AI: 5.0, blood glucose: 4.0) with limited evidence that patent activity convergence was a deliberate selection criterion; no patent-trend rationale is visible in the technology choices or investment scoring."
+    },
+    "strengths": [
+      "TRL progression timelines are mostly realistic and development durations are proportional to technical complexity",
+      "ADC platform receives the highest strategic investment (Strategic tier, market_opp=5, strategic_fit=5), correctly identifying it as a high-value biopharmaceutical opportunity"
+    ],
+    "weaknesses": [
+      "Portfolio is overly mature-TRL focused (TRL 6-7 dominates) for a declared 기술선도 strategy, undermining the claim of technology leadership through early-stage innovation",
+      "Multiple technologies complete well after their market boom windows (ADC: 1.75yr late, AI model: 2.0yr late), which is particularly damaging for a preemption-oriented strategy"
+    ],
+    "missing_technologies": [
+      "mRNA therapeutic platforms or nucleic acid delivery systems (lower TRL, high patent activity, aligns with true technology leadership)",
+      "CRISPR/gene editing therapeutics (early-stage, high differentiation potential for 기술선도)",
+      "Digital biomarker discovery platforms leveraging federated learning (early TRL AI in pharma R&D)"
+    ],
+    "investment_issues": [
+      "PCSK9 receives only Medium tier investment despite being a validated mechanism; if retained in a leadership portfolio it warrants higher commitment, or should be dropped in favor of earlier-stage cardiovascular targets",
+      "Budget utilization is reported as 0 spent against 52B total, suggesting investment allocation may not have been concretely operationalized or phased across the timeline",
+      "PAT technology receives High tier investment with urgency=5 but has relatively low market opportunity (3.0), creating a mismatch between investment intensity and expected return"
+    ],
+    "timing_issues": [
+      "AI 기반 임상 데이터 예측 모델 completes 2.0 years after its market boom (2030-Q1 vs 2028-Q1 boom), missing the window where leadership positioning would generate maximum advantage",
+      "항체-약물 접합체 (ADC) 플랫폼 completes 1.75 years after its boom (2029-Q1 vs 2027-Q2), losing first-mover benefit despite being the flagship Strategic-tier investment",
+      "혈당 모니터링 시스템 completes 1.0 year after boom, reducing competitive differentiation in a fast-moving medical device market"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Most TRL progressions are reasonable given the timelines — TRL 6 technologies with 1-2 year development windows and TRL 5 AI model with 3 years are broadly feasible, though ADC at TRL 7 with a 2-year runway to commercialization is slightly aggressive for a complex biologic platform.",
+      "strategic_fidelity": "score 2/5 - The declared 기술선도 (Technology Leadership) strategy should emphasize lower-TRL exploratory technologies and R&D-heavy, patent-aligned selections, but the portfolio is dominated by TRL 6-7 near-market technologies (PAT, ADC, blood glucose monitoring, PCSK9) with only one genuinely exploratory entry (AI clinical model at TRL 5); this looks more like a 시장이익최대 portfolio.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit differentiation logic, no identification of competitor technology gaps, and no timing advantage design relative to industry rivals; technology selections appear driven by market size signals rather than competitive positioning or white-space exploitation.",
+      "market_timing": "score 3/5 - For 기술선도, completing 1-2 years before boom is ideal; PAT at +0.25yr late is acceptable, but ADC finishing 1.75yr after boom and AI clinical model finishing 2.0yr after boom are significant misalignments that reduce preemptive advantage, yielding a mixed timing picture.",
+      "patent_market_convergence": "score 2/5 - The portfolio skews toward high market opportunity scores (ADC: 5.0, AI: 5.0, blood glucose: 4.0) with limited evidence that patent activity convergence was a deliberate selection criterion; no patent-trend rationale is visible in the technology choices or investment scoring.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×3 + 0.1×2 - 1) / 4 × 100 = 42.5"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "실시간 공정 분석 기술 (PAT)",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.6541,
+        "market_size_norm": 0.8644,
+        "value": 0.4556,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.3556
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+        "patent_growth_norm": 0.5664,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2265,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.0765
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "patent_growth_norm": 0.5509,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8203,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6703
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "AI 기반 임상 데이터 예측 모델",
+        "patent_growth_norm": 0.5086,
+        "market_growth_norm": 0.8778,
+        "market_size_norm": 0.9639,
+        "value": 0.7559,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.6559
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "PCSK9 저감을 통한 심혈관 질환 예방",
+        "patent_growth_norm": 0.4354,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.1741,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.1241
+      }
+    ],
+    "selection_quality": 48.6,
+    "cost_adjusted_return": 37.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 64.0,
+    "backtest_score": 59.6,
+    "backtest_score_v1": 56.6,
+    "description": {
+      "selection_quality": "48.6/100 — 5개 기술 평균 value=0.486\n  ▲ 항체-약물 접합체 (ADC) 플랫폼: value=0.820 (특허↑=0.55, 시장↑=1.00, 규모=1.00)\n  ▲ AI 기반 임상 데이터 예측 모델: value=0.756 (특허↑=0.51, 시장↑=0.88, 규모=0.96)\n  ▼ 실시간 공정 분석 기술 (PAT): value=0.456 (특허↑=0.00, 시장↑=0.65, 규모=0.86)\n  ▼ 혈당 모니터링 및 인슐린 볼러스 계산 시스템: value=0.227 (특허↑=0.57, 시장↑=0.00, 규모=0.00)\n  ▼ PCSK9 저감을 통한 심혈관 질환 예방: value=0.174 (특허↑=0.44, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 혈당 모니터링 및 인슐린 볼러스 계산 시스템: 시장 성장률 낮음 (norm=0.00)\n  → PCSK9 저감을 통한 심혈관 질환 예방: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "37.6/100 — 평균 return=0.376\n  항체-약물 접합체 (ADC) 플랫폼: value=0.820 - 0.15×1.00(cost) = return +0.670 [Strategic]\n  AI 기반 임상 데이터 예측 모델: value=0.756 - 0.15×0.67(cost) = return +0.656 [High]\n  실시간 공정 분석 기술 (PAT): value=0.456 - 0.15×0.67(cost) = return +0.356 [High]\n  PCSK9 저감을 통한 심혈관 질환 예방: value=0.174 - 0.15×0.33(cost) = return +0.124 [Medium]\n  혈당 모니터링 및 인슐린 볼러스 계산 시스템: value=0.227 - 0.15×1.00(cost) = return +0.076 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 혈당 모니터링 및 인슐린 볼러스 계산 시스템: value 0.227인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "64.0/100 — 평균 오차 1.20년\n  AI 기반 임상 데이터 예측 모델: 2.0년 늦음 ⚠\n  항체-약물 접합체 (ADC) 플랫폼: 1.8년 늦음 ⚠\n  혈당 모니터링 및 인슐린 볼러스 계산 시스템: 1.0년 늦음\n  PCSK9 저감을 통한 심혈관 질환 예방: 1.0년 늦음\n  실시간 공정 분석 기술 (PAT): 0.2년 늦음",
+      "formula": "backtest_score = 0.35×48.6 + 0.35×37.6 + 0.05×100.0 + 0.05×100.0 + 0.10×64.0 = 59.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.2,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "실시간 공정 분석 기술 (PAT)",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "AI 기반 임상 데이터 예측 모델",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "PCSK9 저감을 통한 심혈관 질환 예방",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 52.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 1.0
+      }
+    ],
+    "total_penalty": 1.0,
+    "final_composite_score": 51.8,
+    "description": "pre_penalty = 0.4×42.5(LLM) + 0.6×59.6(Backtest) = 52.8. Penalty: timing_error: -1.0pt. 총 -1.0pt. 최종 = 51.8.\n  [진단] LLM 구조 점수(42.5)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 42.5점, Backtest 경제성 평가 59.6점. 제약 위반으로 1.0점 차감. 최종 Composite Score: 51.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 항체-약물 접합체 (ADC) 플랫폼의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: AI 기반 임상 데이터 예측 모델의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

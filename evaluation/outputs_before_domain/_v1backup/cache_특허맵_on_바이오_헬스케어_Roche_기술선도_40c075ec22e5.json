@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Diagnostics / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 3,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 57.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 3,
+        "sequencing": 3,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "All three technologies target high-growth areas in biopharmaceuticals and healthcare AI, and declining markets are avoided; however, all technologies are scheduled to complete deployment at or after their market boom windows, meaning the roadmap misses peak market timing by 2-3.75 years on average.",
+      "sequencing": "Dependency chains are structurally respected (T02 precedes T03 and T01 with no violations), but ADC and mass spectrometry are both planned to start and complete in 2030-Q1 with zero development duration, which is unrealistic given their TRL levels and complexity.",
+      "investment": "The highest-urgency, highest-market-opportunity technology (T02) is correctly assigned Strategic tier, and ADC (T03) is also Strategic given strong market and fit scores; mass spectrometry at High tier is proportionally appropriate, and the budget remains unspent suggesting under-allocation or planning incompleteness.",
+      "coherence": "The three technologies form a coherent narrative: AI data analytics enables downstream drug delivery optimization (ADC) and precision measurement (mass spectrometry), reflecting a logical research-to-deployment arc within the biopharma/diagnostics domain.",
+      "balance": "The portfolio is heavily skewed toward a single reference endpoint (2030-Q1) for all technologies, with no short-term deliverables and zero budget utilization, resulting in concentrated temporal and financial risk with no early-stage or exploratory bets to diversify the portfolio."
+    },
+    "strengths": [
+      "Dependency structure is correctly enforced with zero violations, ensuring T02 foundational AI capability precedes dependent technologies T03 and T01.",
+      "Investment tier assignments are rationally calibrated to market opportunity and strategic fit scores, with the highest-scoring technology receiving the highest tier."
+    ],
+    "weaknesses": [
+      "All technologies are scheduled to complete at 2030-Q1, well after their respective market boom windows (2026-Q2, 2027-Q3, 2028-Q1), resulting in a mean timing error of 2.75 years and likely missed first-mover advantages.",
+      "Zero budget has been allocated or spent despite a substantial total budget, and the portfolio contains only 3 technologies all converging on a single timeline point, reflecting poor portfolio breadth and financial planning."
+    ],
+    "missing_technologies": [
+      "Next-generation sequencing (NGS) platforms for genomic diagnostics to complement ADC targeting",
+      "Digital biomarker and wearable sensor integration to feed the AI data stream analytics pipeline",
+      "Bioinformatics / multi-omics data integration middleware bridging mass spectrometry outputs to AI analytics"
+    ],
+    "investment_issues": [
+      "Total budget spend is 0, indicating no investment has been committed or modeled, rendering the budget constraint meaningless and the strategy incomplete.",
+      "With only two tiers used (Strategic and High) across three technologies, there is no exploratory or low-tier investment to hedge against uncertainty or fund early-stage research."
+    ],
+    "timing_issues": [
+      "T02 (AI 기반 의료 데이터 스트림 분석) has a 3.75-year lag behind its 2026-Q2 boom, meaning the roadmap enters the market well past peak opportunity.",
+      "T01 and T03 both have zero planned development duration (2030-Q1 to 2030-Q1), which is infeasible for TRL 7 technologies requiring validation and scale-up.",
+      "No technology in the portfolio has an early deployment window before 2030, leaving the organization with no near-term market presence or revenue generation."
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 항체-약물 접합체 (ADC) 표적 전달 (norm=0.317)\n  시장 성장률 기준 최저: AI 기반 의료 데이터 스트림 분석 (norm=0.000)\n  전체 평균: 0.167",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ AI 기반 의료 데이터 스트림 분석: value=0.689 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 항체-약물 접합체 (ADC) 표적 전달: value=0.563 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 고해상도 질량분석기 이온 광학: value=0.234 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Architecture(1개), Material(1개), Equipment(1개)\n  TRL 범위: 6~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 57.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "AI 기반 의료 데이터 스트림 분석",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.9647,
+        "value": 0.6894,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5394
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "항체-약물 접합체 (ADC) 표적 전달",
+        "patent_growth_norm": 0.4995,
+        "market_growth_norm": 0.3166,
+        "market_size_norm": 0.8932,
+        "value": 0.5627,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4127
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "고해상도 질량분석기 이온 광학",
+        "patent_growth_norm": 0.447,
+        "market_growth_norm": 0.1832,
+        "market_size_norm": 0.0,
+        "value": 0.2338,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.1338
+      }
+    ],
+    "selection_quality": 49.5,
+    "cost_adjusted_return": 36.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 17.5,
+    "backtest_score": 51.8,
+    "description": {
+      "selection_quality": "49.5/100 — 3개 기술 평균 value=0.495\n  ▲ AI 기반 의료 데이터 스트림 분석: value=0.689 (특허↑=1.00, 시장↑=0.00, 규모=0.96)\n  ▲ 항체-약물 접합체 (ADC) 표적 전달: value=0.563 (특허↑=0.50, 시장↑=0.32, 규모=0.89)\n  ▼ 고해상도 질량분석기 이온 광학: value=0.234 (특허↑=0.45, 시장↑=0.18, 규모=0.00)\n  [낮은 원인]\n  → 고해상도 질량분석기 이온 광학: 시장 성장률 낮음 (norm=0.18)",
+      "cost_adjusted_return": "36.2/100 — 평균 return=0.362\n  AI 기반 의료 데이터 스트림 분석: value=0.689 - 0.15×1.00(cost) = return +0.539 [Strategic]\n  항체-약물 접합체 (ADC) 표적 전달: value=0.563 - 0.15×1.00(cost) = return +0.413 [Strategic]\n  고해상도 질량분석기 이온 광학: value=0.234 - 0.15×0.67(cost) = return +0.134 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 고해상도 질량분석기 이온 광학: value 0.234인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "17.5/100 — 평균 오차 2.75년\n  AI 기반 의료 데이터 스트림 분석: 3.8년 늦음 ⚠\n  고해상도 질량분석기 이온 광학: 2.5년 늦음 ⚠\n  항체-약물 접합체 (ADC) 표적 전달: 2.0년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×49.5 + 0.35×36.2 + 0.10×100.0 + 0.10×100.0 + 0.10×17.5 = 51.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.75,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "AI 기반 의료 데이터 스트림 분석",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q2",
+        "error_years": 3.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "항체-약물 접합체 (ADC) 표적 전달",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "고해상도 질량분석기 이온 광학",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 54.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 8.8
+      }
+    ],
+    "total_penalty": 8.8,
+    "final_composite_score": 45.3,
+    "description": "pre_penalty = 0.4×57.5(LLM) + 0.6×51.8(Backtest) = 54.1. Penalty: timing_error: -8.8pt. 총 -8.8pt. 최종 = 45.3."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 57.5점, Backtest 경제성 평가 51.8점. 제약 위반으로 8.8점 차감. 최종 Composite Score: 45.3점.",
+    "key_failure_points": [
+      "타이밍 이슈: AI 기반 의료 데이터 스트림 분석의 완료시점이 시장 개화 대비 3.75년 차이",
+      "타이밍 이슈: 항체-약물 접합체 (ADC) 표적 전달의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: 고해상도 질량분석기 이온 광학의 완료시점이 시장 개화 대비 2.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

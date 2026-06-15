@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Diagnostics / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 5,
+    "investment": 5,
+    "coherence": 4,
+    "balance": 3,
+    "llm_structural_score": 75.0,
+    "aggregation": "single",
+    "models_used": [],
+    "per_model_scores": {},
+    "evidence": {},
+    "strengths": [
+      "선행관계가 올바르게 구성됨"
+    ],
+    "weaknesses": [],
+    "missing_technologies": [],
+    "investment_issues": [],
+    "timing_issues": [
+      "신경독소 건조 및 안정화 기술: 시장 개화(2028-Q1) 대비 2.0년 지연",
+      "항체-약물 접합체 (ADC) 제조공정: 시장 개화(2026-Q3) 대비 3.5년 지연",
+      "고해상도 질량분석기 이온 광학: 시장 개화(2027-Q2) 대비 2.75년 지연"
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 고해상도 질량분석기 이온 광학 (norm=1.000)\n  시장 성장률 기준 최저: 신경독소 건조 및 안정화 기술 (norm=0.000)\n  전체 평균: 0.557",
+      "sequencing": "점수 5/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 5/5 — tier 불일치 3건:\n  ⚠ 신경독소 건조 및 안정화 기술: value=0.400 → 기대 Low, 실제 High (차이 2단계)\n  ⚠ 항체-약물 접합체 (ADC) 제조공정: value=0.577 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 고해상도 질량분석기 이온 광학: value=0.600 → 기대 Medium, 실제 Strategic (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Material(1개), Process(1개), Equipment(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 3/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×5 + 0.2×5 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 75.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "신경독소 건조 및 안정화 기술",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.3
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "항체-약물 접합체 (ADC) 제조공정",
+        "patent_growth_norm": 0.434,
+        "market_growth_norm": 0.6724,
+        "market_size_norm": 0.6724,
+        "value": 0.5771,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4271
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "고해상도 질량분석기 이온 광학",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.45
+      }
+    ],
+    "selection_quality": 52.6,
+    "cost_adjusted_return": 39.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 17.5,
+    "backtest_score": 53.9,
+    "description": {
+      "selection_quality": "52.6/100 — 3개 기술 평균 value=0.526\n  ▲ 고해상도 질량분석기 이온 광학: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▲ 항체-약물 접합체 (ADC) 제조공정: value=0.577 (특허↑=0.43, 시장↑=0.67, 규모=0.67)\n  ▼ 신경독소 건조 및 안정화 기술: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)",
+      "cost_adjusted_return": "39.2/100 — 평균 return=0.392\n  고해상도 질량분석기 이온 광학: value=0.600 - 0.15×1.00(cost) = return +0.450 [Strategic]\n  항체-약물 접합체 (ADC) 제조공정: value=0.577 - 0.15×1.00(cost) = return +0.427 [Strategic]\n  신경독소 건조 및 안정화 기술: value=0.400 - 0.15×0.67(cost) = return +0.300 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "17.5/100 — 평균 오차 2.75년\n  항체-약물 접합체 (ADC) 제조공정: 3.5년 늦음 ⚠\n  고해상도 질량분석기 이온 광학: 2.8년 늦음 ⚠\n  신경독소 건조 및 안정화 기술: 2.0년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×52.6 + 0.35×39.2 + 0.10×100.0 + 0.10×100.0 + 0.10×17.5 = 53.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.75,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "신경독소 건조 및 안정화 기술",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "항체-약물 접합체 (ADC) 제조공정",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 3.5
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "고해상도 질량분석기 이온 광학",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 62.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 8.8
+      }
+    ],
+    "total_penalty": 8.8,
+    "final_composite_score": 53.5,
+    "description": "pre_penalty = 0.4×75.0(LLM) + 0.6×53.9(Backtest) = 62.3. Penalty: timing_error: -8.8pt. 총 -8.8pt. 최종 = 53.5.\n  [진단] LLM(75.0)과 Backtest(53.9) 격차 21.1pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 75.0점, Backtest 경제성 평가 53.9점. 제약 위반으로 8.8점 차감. 최종 Composite Score: 53.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: 신경독소 건조 및 안정화 기술의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: 항체-약물 접합체 (ADC) 제조공정의 완료시점이 시장 개화 대비 3.5년 차이",
+      "타이밍 이슈: 고해상도 질량분석기 이온 광학의 완료시점이 시장 개화 대비 2.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

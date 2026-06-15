@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "scenario_label": "multi-agent",
+    "domain": "AI Semiconductor",
+    "evaluation_cutoff_year": 2025
+  },
+  "tech_candidates": [
+    {
+      "tech_id": "T001",
+      "tech_name": "Edge AI Chip",
+      "category": "Hardware",
+      "TRL": 6,
+      "patent_score": 82,
+      "market_score": 75,
+      "final_score": 78,
+      "expected_market_boom_quarter": "2027-Q3",
+      "dependency_hints": [
+        "T003"
+      ],
+      "keywords": [
+        "edge ai",
+        "ai chip",
+        "npu"
+      ]
+    },
+    {
+      "tech_id": "T002",
+      "tech_name": "On-Device LLM",
+      "category": "Software",
+      "TRL": 4,
+      "patent_score": 90,
+      "market_score": 85,
+      "final_score": 87,
+      "expected_market_boom_quarter": "2028-Q1",
+      "dependency_hints": [
+        "T001"
+      ],
+      "keywords": [
+        "on-device llm",
+        "edge inference",
+        "small language model"
+      ]
+    },
+    {
+      "tech_id": "T003",
+      "tech_name": "Chiplet Packaging",
+      "category": "Manufacturing",
+      "TRL": 7,
+      "patent_score": 65,
+      "market_score": 60,
+      "final_score": 62,
+      "expected_market_boom_quarter": "2026-Q4",
+      "dependency_hints": [],
+      "keywords": [
+        "chiplet",
+        "advanced packaging",
+        "2.5d packaging"
+      ]
+    },
+    {
+      "tech_id": "T004",
+      "tech_name": "Neuromorphic Sensor",
+      "category": "Hardware",
+      "TRL": 3,
+      "patent_score": 45,
+      "market_score": 38,
+      "final_score": 41,
+      "expected_market_boom_quarter": "2030-Q2",
+      "dependency_hints": [
+        "T001"
+      ],
+      "keywords": [
+        "neuromorphic",
+        "spiking neural network",
+        "event camera"
+      ]
+    }
+  ],
+  "planned_roadmap": [
+    {
+      "tech_id": "T003",
+      "tech_name": "Chiplet Packaging",
+      "start_q": "2025-Q1",
+      "target_q": "2026-Q3",
+      "prerequisites": []
+    },
+    {
+      "tech_id": "T001",
+      "tech_name": "Edge AI Chip",
+      "start_q": "2025-Q3",
+      "target_q": "2027-Q2",
+      "prerequisites": [
+        "T003"
+      ]
+    },
+    {
+      "tech_id": "T002",
+      "tech_name": "On-Device LLM",
+      "start_q": "2026-Q4",
+      "target_q": "2028-Q1",
+      "prerequisites": [
+        "T001"
+      ]
+    },
+    {
+      "tech_id": "T004",
+      "tech_name": "Neuromorphic Sensor",
+      "start_q": "2027-Q1",
+      "target_q": "2029-Q4",
+      "prerequisites": [
+        "T001"
+      ]
+    }
+  ],
+  "investment_strategy": [
+    {
+      "tech_id": "T001",
+      "tech_name": "Edge AI Chip",
+      "investment_tier": "High",
+      "market_opportunity": 4.2,
+      "strategic_fit": 4.5,
+      "executability": 3.8,
+      "uncertainty": 2.5,
+      "urgency": 4.0
+    },
+    {
+      "tech_id": "T002",
+      "tech_name": "On-Device LLM",
+      "investment_tier": "Strategic",
+      "market_opportunity": 4.8,
+      "strategic_fit": 4.6,
+      "executability": 3.2,
+      "uncertainty": 3.0,
+      "urgency": 3.5
+    },
+    {
+      "tech_id": "T003",
+      "tech_name": "Chiplet Packaging",
+      "investment_tier": "Medium",
+      "market_opportunity": 3.5,
+      "strategic_fit": 3.8,
+      "executability": 4.2,
+      "uncertainty": 1.8,
+      "urgency": 4.5
+    },
+    {
+      "tech_id": "T004",
+      "tech_name": "Neuromorphic Sensor",
+      "investment_tier": "Low",
+      "market_opportunity": 2.8,
+      "strategic_fit": 3.0,
+      "executability": 2.5,
+      "uncertainty": 4.0,
+      "urgency": 1.5
+    }
+  ],
+  "constraints": {
+    "total_budget": 100,
+    "budget_allocation": {
+      "Low": 10,
+      "Medium": 20,
+      "High": 35,
+      "Strategic": 45
+    },
+    "max_concurrent_projects": 3,
+    "planning_horizon_end": "2030-Q4"
+  },
+  "holdout_data": {
+    "T001": {
+      "past_patents": 120,
+      "future_patents": 340,
+      "past_market_size_m": 2800,
+      "future_market_size_m": 8500
+    },
+    "T002": {
+      "past_patents": 80,
+      "future_patents": 310,
+      "past_market_size_m": 1200,
+      "future_market_size_m": 6800
+    },
+    "T003": {
+      "past_patents": 200,
+      "future_patents": 380,
+      "past_market_size_m": 3500,
+      "future_market_size_m": 7200
+    },
+    "T004": {
+      "past_patents": 30,
+      "future_patents": 55,
+      "past_market_size_m": 400,
+      "future_market_size_m": 900
+    },
+    "T_U1": {
+      "past_patents": 50,
+      "future_patents": 60,
+      "past_market_size_m": 600,
+      "future_market_size_m": 700
+    },
+    "T_U2": {
+      "past_patents": 500,
+      "future_patents": 1500,
+      "past_market_size_m": 10000,
+      "future_market_size_m": 35000
+    },
+    "T_U3": {
+      "past_patents": 10,
+      "future_patents": 12,
+      "past_market_size_m": 150,
+      "future_market_size_m": 180
+    }
+  }
+}

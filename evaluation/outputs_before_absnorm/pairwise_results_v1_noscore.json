@@ -1,0 +1,1109 @@
+[
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "AI LLM",
+    "company": "NAVER",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A includes T03 (TRL7) as foundation before advancing TRL6 techs, creating more realistic step-wise progression. B jumps directly from TRL6 T01 to dependent TRL6 T05 without infrastructure base."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A explicitly invests in foundational distributed training infrastructure (T03) before frontier techs, better matching '프론티어 기술 선점을 위한 R&D 투자 강화'. B skips this enabler layer."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A includes distributed training fault recovery as a competitive differentiator for LLM leadership, showing deeper understanding that infra capability underpins model leadership. B lacks this layer."
+        },
+        "market_timing": {
+          "winner": "tie",
+          "reason": "Both achieve mean timing error of 2.0yr. A's errors: -1.0, 2.75, 2.75, 1.5. B's errors: 1.5, 2.75, 1.75. B slightly better on individual tech spread but aggregate equal."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's inclusion of T03 (distributed training) alongside T01/T05 covers a broader patent-active space in LLM infra. B's 3-tech portfolio has narrower patent convergence coverage across the foundation model domain."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A's inclusion of T03 as infrastructural foundation creates a more coherent, strategically faithful roadmap for LLM leadership with better TRL scaffolding and competitive differentiation, despite identical mean timing error and budget utilization.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "AI LLM",
+    "company": "Saltlux",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A's TRL 5→6→4 chain with 2yr development windows is more realistic. B starts TRL7 hardware then chains TRL4 process dependencies, creating unrealistic ordering where low-TRL depends on high-TRL equipment."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A directly targets LLM optimization→KG→HW stack integration matching all 3 strategic pillars linearly. B spreads across 6 techs diluting focus, though covers similar territory with less coherent narrative."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B's 6-tech portfolio covering accelerators, security management, document modeling, and data auditing shows broader competitive landscape mapping. A's 3 techs offer depth but limited breadth."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A mean error 1.5yr vs B's 2.29yr. A's T01 and T04 are reasonably timed; T02 is late but only one miss. B has 4 of 6 techs completing 2-3.5yr after boom, worse overall timing performance."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's 3 technologies each show strong market_opp=5.0 scores with focused patent keyword clusters. B dilutes with Medium-tier T04 (market_opp=3.0) and several high-uncertainty low-executability selections."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on 4 of 5 axes: better TRL realism, strategic fidelity, market timing, and patent-market convergence. B offers broader competitive coverage but suffers from 2.29yr mean timing error and dependency ordering issues. A's focused 3-tech stack better executes the declared strategic direction.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "AI LLM",
+    "company": "Upstage",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "tie",
+          "reason": "Both roadmaps have identical timelines and TRL progressions (TRL7→6→5→4), with same durations and dependency chains. No meaningful difference."
+        },
+        "strategic_fidelity": {
+          "winner": "B",
+          "reason": "B elevates multimodal agent workflow to Strategic tier (urgency=5), better reflecting the declared LLM/agent leadership and enterprise AI expansion goals vs A's High tier for that technology."
+        },
+        "competitive_awareness": {
+          "winner": "tie",
+          "reason": "Both roadmaps select identical technologies and show similar differentiation logic. Investment score differences are minor and neither demonstrates deeper competitive landscape insight."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error is same (1.19yr) but T02 boom is 2028-Q3 vs A's 2028-Q1, making B's 2029-Q1 completion only 0.5yr late vs A's 1.0yr late for that tech. B has better T02 timing."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B assigns higher urgency (5) and Strategic tier to multimodal agent workflow, which has the clearest patent+market convergence signal as a high-growth architecture tech, better capturing convergence value."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B slightly edges A by better aligning investment tiers with strategic priorities (elevating multimodal agents to Strategic) and achieving marginally better market timing on T02. Both share identical timelines and mean timing errors.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "이차전지 양극재",
+    "company": "Cosmo AM&T",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "Both start TRL=1, but A completes techs in 2-4yr windows. B has two techs finishing in 0 quarters (2030-Q1→2030-Q1), which is unrealistic zero-duration development."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "Strategy is 기술선도 (tech leadership/preemptive). A selects core cathode+functional materials and progresses independently. B's chain dependencies delay key techs to 2030, undermining preemptive positioning."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A covers cathode, functional material (LiFSI), and anode (Si) diversifying across the cell stack. B stacks dependencies sequentially, creating bottlenecks that reduce competitive flexibility."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "기술선도 favors 1-2yr before boom. A's mean error=0.92yr fits well. B's mean error=1.88yr with TECH-001 at 2.75yr late is severely mistimed, mostly arriving after boom."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A selects high market_opp=5 techs (TECH-001, TECH-004) with earlier completion near boom windows. B's late completions miss the convergence window for all four selected technologies."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "clear",
+      "overall_reason": "Roadmap A dominates on all five axes. Its mean timing error of 0.92yr aligns well with 기술선도 strategy, all technologies complete with realistic durations, and portfolio diversification across cathode/functional/anode segments is stronger than B's serially-chained, boom-missing plan.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "이차전지 양극재",
+    "company": "EcoPro BM",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "tie",
+          "reason": "Both roadmaps share T01(TRL6) and T03(TRL6) with identical timelines. A's T06(TRL4) and B's T08(TRL4) both span 4 years, reasonable for low-TRL tech. No meaningful difference."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "Strategy emphasizes 고니켈 기술 리더십 and 차세대 배터리 소재. Na-ion (T06) aligns better with next-gen cathode expansion than battery recycling (T08), which is more peripheral to the declared tech leadership focus."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "Na-ion cathode is an emerging competitive front in next-gen batteries. Recycling is important but less differentiated for a cathode material company claiming tech leadership. A's tech stack better reflects competitive battery material landscape."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A's mean timing error is 0.92yr vs B's 1.58yr. B's T08 misses boom by 3.25yr (completing 2030 vs boom 2026-Q4), a severe late-timing penalty. A's worst error is 1.5yr for T06, significantly better."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "Na-ion cathode has active patent growth converging with market expansion around 2028. T08 recycling boom is 2026-Q4 but completion is 2030—poor convergence. A's technologies align patent/market windows more consistently."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "clear",
+      "overall_reason": "Roadmap A wins on 4 of 5 axes. Its critical advantage is market timing: B's battery recycling technology completes 3.25 years after its market boom, a severe misalignment. A's Na-ion selection also better fits the declared 차세대 배터리 소재 strategy and competitive differentiation.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "이차전지 양극재",
+    "company": "LG Chem",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B's T01 starts at TRL7 (near-ready), reducing risk. A's T01 at TRL6 is comparable but dependency chain A(T01→T02) adds sequential risk vs B's independent tracks."
+        },
+        "strategic_fidelity": {
+          "winner": "tie",
+          "reason": "Both roadmaps cover cathode leadership, next-gen energy expansion, and frontier R&D. Technology mix is nearly identical in scope and tier assignments, making differentiation negligible."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A includes precursor uniformization (upstream process control) alongside surface coating analog, showing deeper value-chain awareness. B skips precursor step, missing supply-chain differentiation angle."
+        },
+        "market_timing": {
+          "winner": "tie",
+          "reason": "Both have identical mean timing error of 1.08yr. Individual errors mirror each other (0.75, 1.5, 1.0) just redistributed across different technologies, yielding no net advantage."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's T05 (Na-ion anode, boom 2027-Q3) and T01 (surface coating, high TRL7) reflect stronger patent-active, near-boom convergence. A's Na anode targets 2029-Q1 boom with lower urgency score."
+        }
+      },
+      "overall_winner": "tie",
+      "margin": "tie",
+      "overall_reason": "Both roadmaps share identical timing errors, budgets, and broadly similar technology coverage. A shows better value-chain depth; B has higher TRL entry point and slightly better patent-market convergence. Net result is a tie.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "자율주행 플랫폼",
+    "company": "HL Mando",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts T03 at TRL5 with 2yr runway, reasonable. A's T03 has 0yr development window (2030-Q1→2030-Q1), making progression implausible. B avoids this critical flaw."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A includes radar signal processing enabling SbW stack, better aligning with HW/SW integration leadership. B replaces radar with vehicle gateway (T05), weaker fit for ADAS/chassis core stack."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A's radar→SbW→drivetrain chain reflects deeper ADAS sensor-fusion competitive logic. B's gateway addition is more commodity-oriented with lower strategic_fit score (3 vs 4-5)."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean timing error 1.5yr vs A's 1.67yr. Strategic direction implies preemptive positioning; B's errors are more uniform. A's SbW misses boom by 2.75yr, a significant penalty."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "Radar signal processing + SbW is a high-patent-activity zone with clear market convergence. B's T05 gateway is more mature/fragmented patent space with lower convergence potential."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B edges out with better timing error (1.5 vs 1.67yr), no zero-duration development window, and more realistic TRL execution. A's zero-window T03 and 2.75yr SbW timing miss are significant flaws despite better tech stack coherence.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "자율주행 플랫폼",
+    "company": "Hyundai Mobis",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A progresses TRL5→7 technologies with reasonable timelines. B's steer-by-wire (TRL7) completes same quarter it starts (2030-Q1→2030-Q1), which is unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "Strategy is tech leadership (기술선도). A covers sensor fusion, SiC semiconductors, and steer-by-wire—broader stack. B's dependency chain delays steer-by-wire to reference year end, weakening leadership posture."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B includes 3D pose estimation (T08) as a dependency bridge, showing deeper understanding of how sensor fusion enables downstream autonomy stack differentiation."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A mean error 1.5yr vs B's 1.67yr. For 기술선도, targeting 1-2yr before boom is ideal. A's errors cluster in acceptable range; B has two technologies 2+yr late, penalized."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A selects SiC semiconductors (high patent activity + growing EV/ADAS market) alongside sensor fusion, achieving better patent-market convergence across its three technologies."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on 4 of 5 axes: better TRL realism, broader strategic stack, superior market timing, and stronger patent-market convergence. B's dependency chain creates a zero-duration steer-by-wire task and pushes two technologies 2+yr past boom, undermining its roadmap credibility.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "ON_vs_OFF",
+    "industry": "자율주행 플랫폼",
+    "company": "STRADVISION",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_Off",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B's technologies start at TRL 6-7 vs A's TRL 5-6, making 2-year development windows more credible. A's T02→T01→T04 chain with TRL5 start is riskier within timeline."
+        },
+        "strategic_fidelity": {
+          "winner": "tie",
+          "reason": "Both target frontier ADAS stack with similar strategic fit scores. A's generative AI pipeline is more cutting-edge; B's higher-TRL choices are more execution-safe. Both serve stated directions adequately."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A's generative AI synthetic data + visual-radar fusion + gaze tracking forms a more differentiated, moat-building stack. B's choices (simulation data, sensor fusion, HDR) are more commoditized technologies."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error 1.08yr vs A's 1.58yr. B's HDR processing completes 0.5yr before boom (ideal for 기술선도). A's radar fusion misses boom by 2.5yr, heavily penalized."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's technologies (sensor fusion TRL7, HDR processing) are in active patent-filing zones near their boom windows. A's T04 gaze tracking completes exactly at boom with less patent runway advantage."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B wins on timing accuracy (1.08 vs 1.58yr error), TRL realism, and better patent-market convergence. A has stronger differentiation potential but its 2.5yr timing miss on core radar fusion and lower TRL starting points undermine execution credibility.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "AI LLM",
+    "company": "NAVER",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts with TRL6-7 techs and progresses logically. A's 3D space gen (TRL5) completes same quarter it starts (2030-Q1→2030-Q1), an impossible zero-duration plan."
+        },
+        "strategic_fidelity": {
+          "winner": "tie",
+          "reason": "A targets frontier/leadership (기술선도) but misses market booms badly. B targets commercialization/ROI but also has one 1.5yr late tech. Both partially fulfill their declared directions."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B selects techs with clearer near-term market differentiation (inference accel, prompt optimization). A's dependency chain creates bottlenecks and late delivery reduces competitive positioning."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean error 0.81yr vs A's 2.0yr. A is 2.75yr late on two key techs (T01,T05). B's worst miss is 1.5yr on multimodal, others within ~0.75yr of boom."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's early techs (LLM inference, prompt optimization) have high TRL and near-term boom alignment, suggesting active patent landscapes. A's late completions miss convergence windows."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "clear",
+      "overall_reason": "B substantially outperforms A on market timing (0.81yr vs 2.0yr mean error), has no impossible zero-duration milestones, and better aligns technology readiness with market boom windows across all four selected technologies.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "AI LLM",
+    "company": "Saltlux",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts with TRL 7 techs enabling faster commercialization; A includes TRL4 hardware with 0-quarter development window (2030-Q1→2030-Q1), which is unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "tie",
+          "reason": "A targets 기술선도 with exploratory HW stack but includes TRL6 dependency issues; B targets 시장이익최대 but timing errors exceed ±0.5yr threshold on most techs."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B selects higher-TRL proven techs with domain-specific search differentiation, showing clearer market positioning; A's HW unit lacks differentiation context."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean error 1.19yr vs A's 1.5yr; A's KG tech misses boom by 3.25yr (critical). B's best tech hits within 0.25yr of boom, more consistent overall."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B selects techs with higher TRL and near-term boom alignment (2026-Q4 cluster), indicating stronger patent-market convergence; A's TRL4 HW has uncertain patent landscape."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B outperforms on timing accuracy, TRL realism, and strategic execution. A's critical 3.25yr timing miss on KG tech and zero-duration HW development are significant weaknesses despite stronger exploratory ambition.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "AI LLM",
+    "company": "Upstage",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts with TRL7→6→6 chain, all mature. A includes TRL4 tech (T03) with zero-duration slot (2030-Q1→2030-Q1), indicating unrealistic execution for low-TRL work."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A's direction emphasizes frontier model/LLM leadership and infra stack, better matched by T02/T03 exploratory techs. B's direction is commercialization-focused but picks lower market_opp techs like T04 (opp=2)."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A covers a broader differentiated stack (doc extraction→relation modeling→multimodal agents→efficient transformers), suggesting deeper awareness of competitive layers in Document AI/LLM space."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error 0.83yr vs A's 1.19yr. B's strategy is commercialization-focused (시장이익최대-like), requiring tighter timing, and it delivers better across all three technologies."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's tech selection (multimodal agents, efficient transformers, doc relation modeling) aligns with high patent activity zones in LLM/Document AI. B's T04 ontology DB optimization is a weaker convergence pick (market_opp=2)."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A better matches its leadership-oriented strategic direction with richer tech coverage and stronger patent-market convergence. B has better timing precision but its tech selection lacks depth and T04 is a weak strategic fit, limiting overall roadmap quality.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "이차전지 양극재",
+    "company": "Cosmo AM&T",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "Both start at TRL1, but A's timelines (2yr, 3yr, 4yr) are more graduated and realistic. B has two techs completing in 0 quarters (2030-Q1→2030-Q1), implying instantaneous development which is unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A targets '기술선도' (exploratory/preemptive) with frontier R&D focus and appropriately high uncertainty scores. B claims 시장이익최대-like short-term commercialization but has massive timing errors (2.19yr avg), contradicting its own strategy."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A selects distinct tech pillars (high-Ni polycrystalline, LiFSI, Si anode) showing breadth. B's dependency chain is logical but sequential bottleneck risks and zero-duration tasks suggest weaker execution planning."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A's mean timing error is 0.92yr vs B's 2.19yr. For 기술선도, completing 1yr before boom is ideal. A's errors (0.75, 1.0, 1.0yr) align well with preemptive strategy; B misses most booms by 1.75-3.5yr."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's three technologies (high-Ni polycrystalline, LiFSI, Si anode) each have distinct market boom windows spread 2027-2029, suggesting better patent/market diversification vs B's front-loaded 2026 booms it can't reach in time."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "clear",
+      "overall_reason": "Roadmap A dominates on all five axes. Its 0.92yr mean timing error suits its 기술선도 strategy perfectly, timelines are realistic with no zero-duration tasks, and technology selection shows better patent-market convergence across diverse categories.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "이차전지 양극재",
+    "company": "EcoPro BM",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts with TRL 7,7,6 vs A's 6,6,4. B's sodium-ion equivalent (silicon anode TRL6) is more executable than A's TRL4 sodium-ion over 4 years."
+        },
+        "strategic_fidelity": {
+          "winner": "tie",
+          "reason": "A targets tech leadership (기술선도) with exploratory sodium-ion; B targets cost/commercialization. Both are internally consistent with their own stated directions, which differ."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B selects silicon composite anode alongside cathode stack, showing system-level battery differentiation. A's sodium-ion is exploratory but less differentiated in near-term high-nickel competitive landscape."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean timing error 0.83yr vs A's 0.92yr. A's sodium-ion misses boom by 1.5yr; B's worst error is 1.0yr. B's market-timing strategy demands tighter fit, which it achieves better."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's TRL7 technologies with higher executability scores suggest mature patent-market convergence zones. A's TRL4 sodium-ion has higher uncertainty(4) indicating less convergence certainty."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B consistently outperforms on TRL realism, timing accuracy, and system-level differentiation. A's inclusion of TRL4 sodium-ion introduces execution risk and timing miss of 1.5yr, weakening its roadmap coherence despite valid tech-leadership intent.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "이차전지 양극재",
+    "company": "LG Chem",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts at TRL7/6/5 with shorter development windows fitting higher maturity. A's TRL6→completion in 2yr and TRL4 over 4yr are plausible but B's higher starting TRLs reduce execution risk."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A targets 기술선도 with exploratory Na-ion, solid-state, and high-Ni precursor stack. B's 시장이익최대 direction is well-matched to its near-market TRL choices and commercialization focus."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A covers cathode precursor, solid-state, AND Na-ion—broader frontier differentiation. B focuses on incremental surface coating and Si anode, more commoditized spaces with heavier competition."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error of 0.58yr vs A's 1.08yr. For 시장이익최대, B hits within ±0.5yr on T01 and near-boom on T03. A overshoots boom dates by 0.75–1.5yr, penalized for 기술선도 too."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "Na-ion and solid-state cathode are high patent-activity growth zones with converging market signals. B's Si anode and surface coating are mature patent spaces with less convergence upside."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B's superior market timing (0.58yr error), higher starting TRLs, and strategic alignment with commercialization-focused direction give it a practical edge. A scores better on differentiation and patent convergence but suffers consistent timing delays of 1–1.5yr.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "자율주행 플랫폼",
+    "company": "HL Mando",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts T06 at TRL6 vs A's TRL5, indicating more mature baseline and more realistic near-term completion. A's TRL5 start for radar adds execution risk."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A's strategy is explicitly 기술선도/preemptive R&D stack leadership, fitting lower TRL exploratory investment. B targets 시장이익최대/commercialization, but selects same late-completing technologies misaligned with ROI timing."
+        },
+        "competitive_awareness": {
+          "winner": "tie",
+          "reason": "Both roadmaps select identical technologies with same keywords and dependencies. Neither demonstrates differentiated competitive landscape analysis or unique positioning insight."
+        },
+        "market_timing": {
+          "winner": "tie",
+          "reason": "Both roadmaps have identical timing schedules and identical mean timing errors (1.67yr). No differentiation possible on this axis."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A scores T06 market_opp=5.0 vs B's 4.0, better recognizing radar signal processing patent/market convergence strength. B undervalues T06 convergence signal."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "Roadmaps are nearly identical in structure and timing. A edges out on strategic fidelity (tech-leadership framing suits exploratory TRL5 investments) and better patent-market convergence scoring for T06, while B's commercialization strategy is undermined by the same late-timing execution plan.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "자율주행 플랫폼",
+    "company": "Hyundai Mobis",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A includes TRL5 SiC tech requiring more development steps, but overall portfolio spans TRL5-7 with logical progression. B is all TRL6-7 which is safer, but A's SiC pathway shows deeper technical ambition with realistic staging."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A's strategy explicitly targets AI/sensor fusion tech stack and SDV leadership. Multi-sensor fusion camera and SiC semiconductor directly align. B's high-voltage connector assembly is peripheral to ADAS/autonomous driving core tech leadership."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A targets SiC semiconductors and advanced multi-sensor fusion—key competitive moats in ADAS. B includes high-voltage connector assembly which is more commodity/supply-chain than differentiated tech, showing weaker competitive positioning."
+        },
+        "market_timing": {
+          "winner": "tie",
+          "reason": "A mean error 1.5yr vs B 1.58yr—marginally better for A but effectively the same. Both strategies are 기술선도 so 1-2yr before boom is acceptable. Both miss optimal window similarly across their portfolios."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "SiC semiconductors and multi-sensor fusion camera have strong patent activity convergence with growing EV/ADAS markets. B's high-voltage connector assembly has lower patent intensity and weaker market growth convergence for differentiation."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A better aligns with its declared tech-leadership strategy through SiC semiconductors and sensor fusion—both high patent-activity, high-growth areas. B's inclusion of high-voltage connector assembly weakens strategic coherence and competitive differentiation despite similar timing performance.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "기술선도_vs_시장이익",
+    "industry": "자율주행 플랫폼",
+    "company": "STRADVISION",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On",
+      "시장이익최대"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A starts at TRL5-6, showing genuine progression potential. B's TRL7 base technologies leave less headroom; also B's dependency ordering (T01→T02) is counterintuitive for data pipeline preceding sensor fusion."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A explicitly targets frontier tech stack preemption and leadership (기술선도 flavor) with generative AI pipeline + sensor fusion + gaze tracking. B's cost-advantage/commercialization direction fits 시장이익최대 but timing errors undermine it."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A chains generative AI synthetic data → visual-radar fusion → driver state monitoring, forming a defensible moat stack. B's on-device optimization is commercially relevant but less differentiated as standalone competitive barrier."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A mean error 1.58yr vs B's 1.83yr. B's synthetic data misses boom by 3.25yr (severe). A's worst error is 2.5yr for sensor fusion. A is consistently closer across all three technologies."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "Generative AI synthetic data and visual-radar fusion both sit at high patent activity + high market growth intersection for ADAS. B's on-device optimization is mature/crowded; weaker convergence signal for patent-market overlap."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on 4 of 5 axes: better TRL progression, stronger strategic fidelity to tech-leadership direction, clearer competitive moat through stacked dependencies, and lower mean timing error. B has higher base TRL executability but its 3.25yr synthetic data timing miss and weaker differentiation offset this advantage.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "AI LLM",
+    "company": "NAVER",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A starts TRL7→6→5 with 0 dependency violations. B has 5 dependency violations where projects start before prerequisites finish, making TRL progression unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A focuses on LLM/foundation model architecture and inference directly aligned with stated strategy. B selects hardware/chip technologies (HBM4, CoWoS, chiplets) tangential to LLM platform leadership."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B covers 7 technologies spanning the full hardware stack (memory, packaging, interconnects, accelerators) showing broader competitive landscape awareness vs A's 4 more narrowly scoped picks."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean timing error 0.96yr vs A's 2.0yr. A severely misses T01 and T05 booms by 2.75yr each. B has much tighter alignment despite strategic direction favoring early preemption."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's technologies (LLM context, inference acceleration, 3D spatial AI) sit at higher patent activity convergence with AI platform markets. B's hardware IDs appear more semiconductor-domain specific."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on strategic fidelity, TRL integrity, and patent-market convergence for the LLM/AI platform domain. B has better market timing numerically but 5 dependency violations and hardware focus misalign with the declared AI platform leadership strategy.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "AI LLM",
+    "company": "Saltlux",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A starts at TRL5-6 with 2-year development windows. B starts at TRL3-4 technologies but has 6 dependency violations, making its progression sequence unrealistic despite better individual TRL steps."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A directly addresses Conversational AI/LLM/KG domains matching all three strategic pillars. B focuses on HW packaging/memory stack which partially covers HW/SW integration but misses Conversational AI and KG market expansion."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B covers a broader integrated HW stack (HBM4, chiplets, photonics, near-memory) showing awareness of AI infrastructure competition. A's 3-tech selection is narrower and less differentiated in competitive context."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error is 0.71yr vs A's 1.5yr. A's KG tech misses boom by 3.25yr (critical failure). B's errors are smaller and more evenly distributed despite being slightly early on most technologies."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B selects 7 technologies in active patent-filing HW AI infrastructure space with converging market growth. A's T02 KG tech misses boom by 3.25yr, significantly undermining patent-market convergence alignment."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B wins on timing accuracy, patent-market convergence, and competitive breadth. A wins on strategic domain fidelity and dependency compliance. B's 6 dependency violations are serious but its 0.71yr mean timing error vs A's critical 3.25yr KG miss tips the balance to B.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "AI LLM",
+    "company": "Upstage",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A progresses TRL 7→6→5→4 sequentially with dependency chain. B starts TRL3 tech completing in just 3 quarters and has circular dependency violations between S05/S06."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A directly targets Document AI and LLM with document extraction, multimodal agents, and transformer training—core to stated strategy. B focuses on hardware/chip technologies misaligned with Document AI/LLM leadership."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A selects differentiated document-AI-specific technologies building a coherent stack. B picks generic semiconductor hardware with uniform scores suggesting templated rather than researched assessment."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A mean error 1.19yr vs B's 1.46yr. B has 2 critical circular dependency violations and Mixed-Precision 3.25yr late; A's worst miss is 2.75yr on multimodal agent but no violations."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's document AI technologies show clear patent-market convergence in 2026-2029 window. B's hardware picks are dominated by established semiconductor players with less convergence opportunity for a software-focused firm."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "clear",
+      "overall_reason": "Roadmap A is superior across all axes: better TRL progression, direct strategic alignment with Document AI/LLM leadership, no dependency violations, lower timing error, and coherent technology stack. Roadmap B has circular dependencies, hardware-focus misalignment, and uniform cookie-cutter scoring.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "이차전지 양극재",
+    "company": "Cosmo AM&T",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B uses TRL 4-7 techs with realistic progression timelines. A starts all at TRL 1 with executability=1.0, making 2-4yr development to market highly unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "Strategy is '기술선도' (tech leadership/preemptive). A's TRL-1 frontier picks align with exploratory R&D stacking. B's TRL 6-7 picks lean toward near-market exploitation."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B covers broader ecosystem (electrolytes, packaging, AI discovery, testing) showing system-level competitive thinking. A's 3 siloed picks lack differentiation narrative."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A's mean timing error 0.92yr vs B's 1.14yr. B has critical failures: High-Throughput Testing 3.5yr late, Advanced Packaging 1.5yr late. A's errors are consistently ~1yr, more predictable."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B selects techs with active patent ecosystems (solid-state, dry electrode, AI discovery) at TRLs where patent-market convergence is demonstrable. A's TRL-1 techs have sparse patent landscapes."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A better matches the declared 기술선도 frontier strategy with consistent timing. B has 2 dependency violations and a 3.5yr timing miss on High-Throughput Testing, undermining its stronger TRL and competitive breadth advantages.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "이차전지 양극재",
+    "company": "EcoPro BM",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A starts TRL6 techs with 2yr development windows; B completes TRL8→boom in 1Q and TRL5→boom in 2Q which are unrealistically short progressions. Cathode Recycling target precedes start date."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "Strategy calls for 기술선도(tech leadership) via aggressive R&D. A selects exploratory sodium-ion(TRL4) and differentiates tiers strategically. B assigns uniform scores across all 7 techs suggesting template fill rather than strategic reasoning."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B covers broader competitive landscape: recycling, dry electrode, AI-driven discovery, solid-state—showing awareness of industry-wide shifts. A's 3-tech portfolio is narrower and less differentiated competitively."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B mean timing error 0.25yr vs A's 0.92yr. B hits 5 of 7 booms exactly. A's sodium-ion misses by 1.5yr (too late). For 기술선도, 1-2yr early is ideal; B's slight earliness on SSE is acceptable."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's technologies (single crystal, dry electrode, solid-state, AI discovery) are all high patent-activity domains with clear market boom alignment. A's three techs are solid but fewer convergence points."
+        }
+      },
+      "overall_winner": "B",
+      "margin": "slight",
+      "overall_reason": "B wins on timing precision, competitive breadth, and patent-market convergence. A shows better strategic differentiation and slightly more realistic TRL pacing, but B's superior market timing and portfolio depth outweigh those advantages for a tech-leadership strategy.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "이차전지 양극재",
+    "company": "LG Chem",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A has clean TRL 6→5→4 progression with no dependency violations. B has a critical dependency violation (S02 starts before S05 completes) and TRL 9 LFP is redundant for leadership goals."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A focuses tightly on cathode leadership and frontier R&D (고니켈→고체전지→나트륨) with differentiated tiers. B applies uniform scoring across 7 techs including mature LFP (TRL9), diluting strategic focus."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A selects differentiated, Korea-relevant cathode/anode technologies. B includes TRL9 LFP (commodity) and misses cathode-specific differentiation, showing less competitive targeting."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B achieves 0.0yr error on SSE and Dry Electrode; mean 1.32yr. A has 1.08yr mean but all technologies complete AFTER boom. B hits more booms precisely despite outliers from LFP and packaging."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's three focused technologies (고니켈, 고체전지, 나트륨) represent high patent activity zones with growing markets. B dilutes with mature LFP and packaging where patent/market convergence is weaker for differentiation."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on strategic focus, dependency integrity, TRL realism, and patent-market alignment. B has better timing on some individual techs but a critical dependency violation, commodity LFP inclusion, and uniform scoring undermine its strategic coherence.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "자율주행 플랫폼",
+    "company": "HL Mando",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "B",
+          "reason": "B starts most techs at TRL5-7 and progresses logically across 2-3yr spans. A's T03 has zero duration (2030-Q1→2030-Q1) at TRL6, making its final step unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A directly targets SbW, chassis control, and radar—core to stated strategy. B includes HBM/Chiplet/Packaging which are semiconductor supply-chain techs, peripheral to SbW/ADAS leadership."
+        },
+        "competitive_awareness": {
+          "winner": "A",
+          "reason": "A selects domain-specific techs (radar ghost target, SbW, drivetrain integration) showing ADAS competitive landscape awareness. B's semiconductor focus lacks ADAS competitive differentiation."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error 0.89yr vs A's 1.67yr. B hits several booms within ±1yr; A misses SbW boom by 2.75yr, significant for a tech-leadership strategy."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's techs (radar processing, SbW, e-drivetrain) sit at convergence of active automotive patents and growing ADAS/EV markets. B's semiconductor packaging techs have weaker patent-market fit to automotive chassis domain."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A better aligns with the declared SbW/chassis/ADAS strategic direction and shows stronger domain-specific competitive and patent awareness. B has better timing metrics but includes off-strategy semiconductor techs and 2 dependency violations, undermining its roadmap integrity.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "자율주행 플랫폼",
+    "company": "Hyundai Mobis",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A has no dependency violations and realistic TRL 5-7 progression. B has 4 dependency violations with overlapping parallel starts before prerequisites complete, making execution infeasible."
+        },
+        "strategic_fidelity": {
+          "winner": "B",
+          "reason": "B covers ADAS domain controllers, AI accelerators, Ethernet networking - deeper alignment with ADAS leadership and SDV/AI stack goals. A's SiC pick is more peripheral to the declared strategy."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B's 7-technology stack (HBM, chiplet, AI accelerators, Ethernet, DMS, domain controllers, safety packaging) shows comprehensive competitive landscape understanding for ADAS/SDV differentiation."
+        },
+        "market_timing": {
+          "winner": "A",
+          "reason": "A mean error 1.5yr vs B's 1.86yr. B has severe late completions (DMS, Domain Controllers, Safety Packaging all 2.75-3.25yr late) and HBM 2yr early, penalizing badly."
+        },
+        "patent_market_convergence": {
+          "winner": "B",
+          "reason": "B's technologies (HBM, chiplet interconnect, AI accelerators, domain controllers) are high patent-activity areas with strong market growth convergence in ADAS/SDV space despite timing issues."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on execution feasibility: zero dependency violations vs B's 4, better mean timing error (1.5 vs 1.86yr), and clean TRL progression. B has richer strategic coverage but critical dependency and timing failures undermine its viability.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  },
+  {
+    "comparison": "multi_vs_single",
+    "industry": "자율주행 플랫폼",
+    "company": "STRADVISION",
+    "A": [
+      "특허맵_On",
+      "기술선도"
+    ],
+    "B": [
+      "특허맵_On_Single_Agent",
+      "기술선도"
+    ],
+    "pairwise": {
+      "axis_comparison": {
+        "trl_pathway": {
+          "winner": "A",
+          "reason": "A's TRL 5→6→6 chain is coherent with dependency sequencing. B includes TRL 2 (Neuromorphic) and TRL 3 (Chiplet) with dependency violations making progression unrealistic."
+        },
+        "strategic_fidelity": {
+          "winner": "A",
+          "reason": "A's stack (synthetic data→sensor fusion→driver monitoring) directly maps to ADAS/AI vision leadership and frontier preemption. B's hardware/packaging focus drifts toward semiconductor supply chain."
+        },
+        "competitive_awareness": {
+          "winner": "B",
+          "reason": "B covers broader competitive stack (edge compression, chiplets, HBM, event vision, neuromorphic) showing awareness of multiple differentiation vectors vs A's narrower three-tech selection."
+        },
+        "market_timing": {
+          "winner": "B",
+          "reason": "B's mean timing error is 0.21yr vs A's 1.58yr. Despite dependency violations, B's per-technology timing is far more precise. A's radar fusion arrives 2.5yr late."
+        },
+        "patent_market_convergence": {
+          "winner": "A",
+          "reason": "A's technologies (generative AI data, sensor fusion, gaze tracking) sit in active patent filing zones aligned with ADAS boom cycles. B's hardware patents are dominated by semiconductor giants, reducing differentiation."
+        }
+      },
+      "overall_winner": "A",
+      "margin": "slight",
+      "overall_reason": "A wins on strategic fidelity, TRL realism, and patent/market convergence for the declared ADAS leadership strategy. B's near-perfect market timing is undermined by 2 dependency violations and strategic drift toward semiconductor hardware, making A the more coherent roadmap overall.",
+      "_model": "anthropic:claude-sonnet-4-6"
+    }
+  }
+]

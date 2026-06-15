@@ -205,8 +205,8 @@ function bar(v,label){const w=cl(v),c=sc(v);
   return`<div class="bar-r"><span class="bar-l">${label}</span><div class="bar-t"><div class="bar-f" style="width:${w}%;background:${c}"></div></div><span class="bar-v" style="color:${c}">${fm(v)}</span></div>`}
 
 function radar(ax,sz=190){
-  const ks=['trl_pathway','strategic_fidelity','competitive_awareness','market_timing','patent_market_convergence'],ls=['TRL','\uc804\ub7b5','\uacbd\uc7c1','\ud0c0\uc774\ubc0d','\uc218\ub834'];
-  const cx=sz/2,cy=sz/2,mr=sz*.36,st=2*Math.PI/5;
+  const ks=['trl_pathway','competitive_awareness','market_timing','patent_market_convergence'],ls=['TRL','\uacbd\uc7c1','\ud0c0\uc774\ubc0d','\uc218\ub834'];
+  const cx=sz/2,cy=sz/2,mr=sz*.36,st=2*Math.PI/4;
   const pt=(i,r)=>{const a=-Math.PI/2+i*st;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};
   let s=`<svg width="${sz}" height="${sz}" style="display:block;margin:0 auto">`;
   for(let l=1;l<=5;l++){const r=l/5*mr;s+=`<polygon points="${ks.map((_,i)=>pt(i,r).join(',')).join(' ')}" fill="none" stroke="var(--brd)" stroke-width="1" opacity=".4"/>`}
@@ -234,16 +234,16 @@ function N(r){
   if(r.llmScore!==undefined&&r.backtest?.bt!==undefined)return r;
   const lj=r.llm_judge||{},bt=r.backtest||{},co=r.composite||{},cr=r.constraints||{};
   return{metadata:r.metadata||{},
-    axes:{trl_pathway:lj.trl_pathway||3,strategic_fidelity:lj.strategic_fidelity||3,competitive_awareness:lj.competitive_awareness||3,market_timing:lj.market_timing||3,patent_market_convergence:lj.patent_market_convergence||3},
-    llmScore:lj.llm_structural_score||0,
+    axes:{trl_pathway:lj.trl_pathway||3,competitive_awareness:lj.competitive_awareness||3,market_timing:lj.market_timing||3,patent_market_convergence:lj.patent_market_convergence||3},
+    llmScore:(function(){var t=lj.trl_pathway||3,c=lj.competitive_awareness||3,m=lj.market_timing||3,v=lj.patent_market_convergence||3;return ((0.333*t+0.267*c+0.267*m+0.133*v-1)/4)*100;})(),
     backtest:{sq:bt.selection_quality||0,car:bt.cost_adjusted_return||0,ir:bt.investment_rationality_score||0,
       bf:bt.budget_feasibility_score||0,dv:bt.dependency_validity_score||0,ta:bt.timing_accuracy_score||0,bt:bt.backtest_score||0},
     techDetails:(bt.tech_details||[]).map(t=>({tech_id:t.tech_id||'',tech_name:t.tech_name||'',
       pgn:t.patent_growth_norm||0,mgn:t.market_growth_norm||0,msn:t.market_size_norm||0,
       value:t.value||0,investment_tier:t.investment_tier||'Medium',costProxy:t.cost_proxy||2,adjReturn:t.cost_adjusted_return||0})),
     constraints:{bvp:cr.budget_violation_pct||0,depV:cr.dependency_violations||0,mte:cr.mean_timing_error_years||0,te:cr.timing_details||[]},
-    composite:{pre:co.pre_penalty_score||0,pen:co.total_penalty||0,fin:co.final_composite_score||0},
-    llmDesc:lj.description||{},btDesc:bt.description||{},compDesc:co.description||''};
+    composite:(function(){var t=lj.trl_pathway||3,c=lj.competitive_awareness||3,m=lj.market_timing||3,v=lj.patent_market_convergence||3,L=((0.333*t+0.267*c+0.267*m+0.133*v-1)/4)*100,B=bt.backtest_score||0,P=co.total_penalty||0,pre=0.4*L+0.6*B;return{pre:pre,pen:P,fin:Math.max(0,pre-P)};})(),
+    llmDesc:(function(){var d=Object.assign({},lj.description||{});delete d.strategic_fidelity;var t=lj.trl_pathway||3,c=lj.competitive_awareness||3,m=lj.market_timing||3,v=lj.patent_market_convergence||3,L=((0.333*t+0.267*c+0.267*m+0.133*v-1)/4)*100;d.formula='llm_structural_score = (0.333\u00d7'+t+' + 0.267\u00d7'+c+' + 0.267\u00d7'+m+' + 0.133\u00d7'+v+' - 1) / 4 \u00d7 100 = '+L.toFixed(1);return d;})(),btDesc:(function(){var sd=bt.description||{};var sq=bt.selection_quality||0,car=bt.cost_adjusted_return||0,ir=bt.investment_rationality_score||0,ta=bt.timing_accuracy_score||0,bf=bt.budget_feasibility_score||0,dv=bt.dependency_validity_score||0,con=(bf+dv)/2;var d={};d.selection_quality=sd.selection_quality||(sq.toFixed(1)+'/100');d.cost_adjusted_return=sd.cost_adjusted_return||(car.toFixed(1)+'/100');d.investment_rationality=sd.investment_rationality||(ir.toFixed(1)+'/100 \u2014 \uae30\ub300 tier vs \uc2e4\uc81c tier \uc77c\uce58\ub3c4');d.timing_accuracy=sd.timing_accuracy||(ta.toFixed(1)+'/100');d['\uc81c\uc57d \uc900\uc218']=con.toFixed(1)+'/100 \u2014 \uc608\uc0b0 '+bf.toFixed(0)+', \uc758\uc874\uc131 '+dv.toFixed(0);d.formula='backtest_score = 0.25\u00d7'+sq.toFixed(1)+' + 0.25\u00d7'+car.toFixed(1)+' + 0.15\u00d7'+ir.toFixed(1)+' + 0.25\u00d7'+ta.toFixed(1)+' + 0.10\u00d7'+con.toFixed(1)+'(\uc81c\uc57d) = '+(bt.backtest_score||0).toFixed(1);return d;})(),compDesc:co.description||''};
 }
 
 // ═══════════════════════════════════════
@@ -260,11 +260,11 @@ function renderDetail(raw){
     <div style="text-align:center">${badge((r.metadata||{}).scenario_label||'','var(--cy)')}<div style="margin-top:4px;font-size:11px;color:var(--dim)">${(r.metadata||{}).domain||''}</div></div>
   </div>`;
   h+=`<div class="card card-alt"><div class="hd"><h3>Composite</h3></div><div style="font-size:12px;color:var(--dim);font-family:var(--mono)">${r.compDesc||''}</div></div>`;
-  h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM Judge</h3>${badge('5축','var(--pr)')}</div>${radar(r.axes)}
+  h+=`<div class="g2"><div class="card"><div class="hd"><h3>LLM Judge</h3>${badge('4축','var(--pr)')}</div>${radar(r.axes)}
     <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(r.llmScore)}">${fm(r.llmScore)}</span></div>
     ${descPanel(r.llmDesc)}</div>
     <div class="card"><div class="hd"><h3>Back Test</h3>${badge('5지표','var(--pr)')}</div>
-    ${bar(bt.sq,'Selection Quality')}${bar(bt.car,'Cost-Adj Return')}${bar(bt.bf,'Budget Feasibility')}${bar(bt.dv,'Dep Validity')}${bar(bt.ta,'Timing Accuracy')}
+    ${bar(bt.sq,'Selection Quality')}${bar(bt.car,'Cost-Adj Return')}${bar(bt.ir,'Investment Rationality')}${bar(bt.ta,'Timing Accuracy')}${bar((bt.bf+bt.dv)/2,'제약 준수 (예산+의존성)')}
     <div style="margin-top:10px;padding:8px 12px;background:var(--s2);border-radius:8px;display:flex;justify-content:space-between"><span style="font-size:12px;color:var(--dim)">Score</span><span class="m b" style="color:${sc(bt.bt)}">${fm(bt.bt)}</span></div>
     ${descPanel(r.btDesc)}</div></div>`;
   if(r.techDetails&&r.techDetails.length){

@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI Vision Perception / ADAS / Computer Vision",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 38.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Chiplet-Based AI Accelerators (TRL 3) is scheduled to complete in just 1 quarter (2027-Q1 to 2027-Q2), which is wholly unrealistic for a TRL 3 architecture technology; similarly, HBM Integration (TRL 4) and Event-Based Vision Processing (TRL 4) have aggressive timelines that do not reflect standard maturation cycles for hardware-level technologies.",
+      "strategic_fidelity": "The portfolio includes low-TRL exploratory technologies (Neuromorphic TRL 2, Chiplet TRL 3) consistent with 기술선도, but the heavy inclusion of high-TRL process technologies (ISO 26262 at TRL 7, AI Model Compression at TRL 6) and the uniform 'High' tier investment across all technologies suggests a mixed rather than genuinely R&D-leading portfolio composition.",
+      "competitive_awareness": "The roadmap shows no explicit differentiation rationale or competitor positioning — technology selections appear driven by market boom timing rather than identified competitive gaps or timing advantages relative to known industry players in ADAS/CV space.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years BEFORE market boom to preempt; however, most completions are exactly at boom time (error 0.0yr), which is market-profit-maximization behavior, not technology leadership preemption. Event-Based Vision and Neuromorphic both complete 0.75yr after boom, which is mildly penalized.",
+      "patent_market_convergence": "The selected technologies (HBM, Chiplet, Neuromorphic, Event-Based Vision) do span areas of active patent filing and market growth in AI hardware, suggesting some convergence awareness, but there is no explicit evidence of deliberate convergence-zone targeting — the selection reads more as a standard ADAS hardware stack than a patent-informed convergence strategy."
+    },
+    "strengths": [
+      "Portfolio spans the full TRL spectrum from TRL 2 (Neuromorphic) to TRL 7 (ISO 26262), showing breadth in technology maturity coverage",
+      "Dependency chain from Advanced Packaging → Chiplet → HBM reflects a coherent architectural layering logic for AI hardware development"
+    ],
+    "weaknesses": [
+      "Critical dependency violations: Chiplet-Based AI Accelerators and HBM Integration both start before their prerequisite (S03 Advanced Packaging) completes, making the schedule structurally infeasible",
+      "Chiplet-Based AI Accelerators (TRL 3) is planned to complete in a single quarter, which is impossible for an architecture-level technology requiring prototyping, validation, and integration cycles"
+    ],
+    "missing_technologies": [
+      "Transformer-based vision model architectures (e.g., Vision Transformers for edge ADAS) — low-TRL exploratory area aligned with 기술선도",
+      "Federated learning / privacy-preserving perception — emerging area with patent activity and strategic differentiation potential",
+      "3D scene reconstruction / Neural Radiance Fields for autonomous perception — early-stage technology with leadership positioning opportunity"
+    ],
+    "investment_issues": [
+      "All 7 technologies are assigned identical investment scores (market_opp=4.0, strategic_fit=5.0, executability=4.0, uncertainty=3.0, urgency=4.0) and all are Tier=High, indicating no differentiated prioritization — this is implausible and suggests a scoring artifact rather than genuine strategic allocation",
+      "Allocating High tier to ISO 26262 certification (a process/compliance activity at TRL 7) on par with frontier technologies like Neuromorphic Computing misrepresents strategic R&D priorities for a 기술선도 roadmap"
+    ],
+    "timing_issues": [
+      "For 기술선도 strategy, all technologies completing exactly at boom time (0.0yr error) means no preemptive market entry advantage — completions should target 4-8 quarters BEFORE boom peaks",
+      "Event-Based Vision Processing completes 0.75yr after its boom (2029-Q4 vs 2029-Q1), missing the window",
+      "Neuromorphic Computing completes 0.75yr after its boom (2030-Q4 vs 2030-Q1), missing the window for a technology that should be the flagship 기술선도 asset"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - Chiplet-Based AI Accelerators (TRL 3) is scheduled to complete in just 1 quarter (2027-Q1 to 2027-Q2), which is wholly unrealistic for a TRL 3 architecture technology; similarly, HBM Integration (TRL 4) and Event-Based Vision Processing (TRL 4) have aggressive timelines that do not reflect standard maturation cycles for hardware-level technologies.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes low-TRL exploratory technologies (Neuromorphic TRL 2, Chiplet TRL 3) consistent with 기술선도, but the heavy inclusion of high-TRL process technologies (ISO 26262 at TRL 7, AI Model Compression at TRL 6) and the uniform 'High' tier investment across all technologies suggests a mixed rather than genuinely R&D-leading portfolio composition.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit differentiation rationale or competitor positioning — technology selections appear driven by market boom timing rather than identified competitive gaps or timing advantages relative to known industry players in ADAS/CV space.",
+      "market_timing": "score 3/5 - For 기술선도 strategy, technologies should complete 1-2 years BEFORE market boom to preempt; however, most completions are exactly at boom time (error 0.0yr), which is market-profit-maximization behavior, not technology leadership preemption. Event-Based Vision and Neuromorphic both complete 0.75yr after boom, which is mildly penalized.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (HBM, Chiplet, Neuromorphic, Event-Based Vision) do span areas of active patent filing and market growth in AI hardware, suggesting some convergence awareness, but there is no explicit evidence of deliberate convergence-zone targeting — the selection reads more as a standard ADAS hardware stack than a patent-informed convergence strategy.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 38.7"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 3,
+      "investment": 4,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 70.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S06",
+        "tech_name": "Functional Safety Certification (ISO 26262)",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4162,
+        "cost_adjusted_return": -1.6755
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "AI Model Compression for Edge Deployment",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 1.0,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3733,
+        "cost_adjusted_return": 12.2755
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet-Based AI Accelerators",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6703,
+        "cost_adjusted_return": 11.7647
+      },
+      {
+        "tech_id": "S01",
+        "tech_name": "High Bandwidth Memory (HBM) Integration",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7727,
+        "cost_adjusted_return": -2.2037
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Packaging for AI",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 1.0,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 12.2755
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Event-Based Vision Processing",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6491,
+        "cost_adjusted_return": -2.0503
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Neuromorphic Computing for Low-Power Perception",
+        "patent_growth_norm": 0.8229,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.4617,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.2412,
+        "cost_adjusted_return": -1.2571
+      }
+    ],
+    "selection_quality": 60.9,
+    "cost_adjusted_return": 60.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 60,
+    "timing_accuracy_score": 93.7,
+    "backtest_score": 76.8,
+    "backtest_score_v1": 67.9,
+    "description": {
+      "selection_quality": "60.9/100 — 7개 기술 평균 value=0.609\n  ▲ AI Model Compression for Edge Deployment: value=1.000 (특허↑=1.00, 시장↑=1.00, 규모=1.00)\n  ▲ Advanced Packaging for AI: value=1.000 (특허↑=1.00, 시장↑=1.00, 규모=1.00)\n  ▼ Chiplet-Based AI Accelerators: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▼ High Bandwidth Memory (HBM) Integration: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▼ Event-Based Vision Processing: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▼ Neuromorphic Computing for Low-Power Perception: value=0.462 (특허↑=0.82, 시장↑=0.44, 규모=0.00)\n  ▼ Functional Safety Certification (ISO 26262): value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → Functional Safety Certification (ISO 26262): 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "60.6/100 — 평균 return=4.161\n  AI Model Compression for Edge Deployment: value=1.000 - 0.15×0.67(cost) = return +12.275 [High]\n  Advanced Packaging for AI: value=1.000 - 0.15×0.67(cost) = return +12.275 [High]\n  Chiplet-Based AI Accelerators: value=0.600 - 0.15×0.67(cost) = return +11.765 [High]\n  Neuromorphic Computing for Low-Power Perception: value=0.462 - 0.15×0.67(cost) = return -1.257 [High]\n  Functional Safety Certification (ISO 26262): value=0.133 - 0.15×0.67(cost) = return -1.675 [High] ⚠ 과다투자\n  Event-Based Vision Processing: value=0.533 - 0.15×0.67(cost) = return -2.050 [High]\n  High Bandwidth Memory (HBM) Integration: value=0.533 - 0.15×0.67(cost) = return -2.204 [High]\n  [과다투자 진단]\n  → Functional Safety Certification (ISO 26262): value 0.133인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "60.0/100 — 위반 2건 (1건당 -20점)\n  ⚠ Chiplet-Based AI Accelerators: 선행 S03 완료 전 시작 (gap: -6.0Q)\n  ⚠ High Bandwidth Memory (HBM) Integration: 선행 S03 완료 전 시작 (gap: -4.0Q)",
+      "timing_accuracy": "93.7/100 — 평균 오차 0.21년\n  Event-Based Vision Processing: 0.8년 늦음\n  Neuromorphic Computing for Low-Power Perception: 0.8년 늦음\n  Functional Safety Certification (ISO 26262): 0.0년 이름\n  AI Model Compression for Edge Deployment: 0.0년 이름\n  Chiplet-Based AI Accelerators: 0.0년 이름\n  High Bandwidth Memory (HBM) Integration: 0.0년 이름\n  Advanced Packaging for AI: 0.0년 이름",
+      "formula": "backtest_score = 0.35×60.9 + 0.35×60.6 + 0.05×100.0 + 0.05×60.0 + 0.10×93.7 = 76.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 2,
+    "dependency_details": [
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet-Based AI Accelerators",
+        "prerequisite": "S03",
+        "tech_start": "2027-Q1",
+        "prereq_end": "~2028.5",
+        "gap_quarters": -6.0
+      },
+      {
+        "tech_id": "S01",
+        "tech_name": "High Bandwidth Memory (HBM) Integration",
+        "prerequisite": "S03",
+        "tech_start": "2027-Q3",
+        "prereq_end": "~2028.5",
+        "gap_quarters": -4.0
+      }
+    ],
+    "mean_timing_error_years": 0.21,
+    "timing_details": [
+      {
+        "tech_id": "S06",
+        "tech_name": "Functional Safety Certification (ISO 26262)",
+        "target_q": "2026-Q4",
+        "boom_q": "2026-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "AI Model Compression for Edge Deployment",
+        "target_q": "2027-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet-Based AI Accelerators",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q2",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S01",
+        "tech_name": "High Bandwidth Memory (HBM) Integration",
+        "target_q": "2028-Q4",
+        "boom_q": "2028-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Packaging for AI",
+        "target_q": "2028-Q3",
+        "boom_q": "2028-Q3",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Event-Based Vision Processing",
+        "target_q": "2029-Q4",
+        "boom_q": "2029-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Neuromorphic Computing for Low-Power Perception",
+        "target_q": "2030-Q4",
+        "boom_q": "2030-Q1",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 61.6,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      }
+    ],
+    "total_penalty": 6,
+    "final_composite_score": 55.6,
+    "description": "pre_penalty = 0.4×38.7(LLM) + 0.6×76.8(Backtest) = 61.6. Penalty: dependency_violation: -6.0pt. 총 -6.0pt. 최종 = 55.6.\n  [진단] LLM 구조 점수(38.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(76.8)가 LLM(38.7)보다 38.1pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 38.7점, Backtest 경제성 평가 76.8점. 제약 위반으로 6점 차감. 최종 Composite Score: 55.6점.",
+    "key_failure_points": [
+      "의존성 위반: Chiplet-Based AI Accelerators이 선행기술 S03 완료 전에 시작 (gap: -6.0Q)",
+      "의존성 위반: High Bandwidth Memory (HBM) Integration이 선행기술 S03 완료 전에 시작 (gap: -4.0Q)"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

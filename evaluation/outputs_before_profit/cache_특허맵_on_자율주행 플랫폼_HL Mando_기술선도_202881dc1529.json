@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "ADAS / Autonomous Driving / Chassis Control",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 33.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T06 (TRL 5) progresses over 2 years to completion which is plausible, and T01 (TRL 6) over 2 years is reasonable, but T03 (전기 구동계 통합 제어) has a zero-duration development window (2030-Q1 → 2030-Q1), making its TRL progression effectively instantaneous and unrealistic.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but the selected technologies are all TRL 5-6 (near-market), which better suits a 시장이익최대 strategy; the portfolio lacks truly frontier or exploratory R&D technologies.",
+      "competitive_awareness": "The roadmap shows no explicit differentiation rationale or competitor positioning — technology selections cover broadly known ADAS domains (radar, steer-by-wire, EV drivetrain) without evidence of deliberate gap exploitation or timing designed around competitor trajectories.",
+      "market_timing": "For 기술선도, ideal completion is 1-2 years before boom; T06 completes 1.25yr after boom, T01 completes 2.75yr after boom, and T03 completes 1yr after boom — all technologies lag their respective market windows rather than preempting them, representing systematic misalignment.",
+      "patent_market_convergence": "All three technologies operate in active market growth areas (ADAS/EV), and the investment scores show high market opportunity (5.0) across the board, but there is limited evidence that patent activity convergence was deliberately analyzed to drive selection rather than market signals alone."
+    },
+    "strengths": [
+      "Dependency chain (T06→T01→T03) is logically coherent and technically sound, with zero dependency violations",
+      "Budget is fully utilized without overspend, and all three technologies carry high market opportunity scores (5.0)"
+    ],
+    "weaknesses": [
+      "All technologies are TRL 5-6 near-market technologies, fundamentally misaligned with the 기술선도 exploratory R&D mandate",
+      "Systematic late timing across all technologies — the portfolio consistently misses market boom windows rather than preempting them, which is the opposite of technology leadership positioning"
+    ],
+    "missing_technologies": [
+      "Low-TRL (TRL 2-4) sensor fusion or neuromorphic perception technology for genuine technology leadership",
+      "AI-based predictive chassis control or digital twin simulation platform (frontier R&D)",
+      "V2X / cooperative driving communication protocol (enabling differentiated ecosystem leadership)"
+    ],
+    "investment_issues": [
+      "All technologies are classified as Strategic or High tier despite the portfolio lacking truly frontier R&D, suggesting tier inflation",
+      "Executability scores of 3.0 across all technologies combined with aggressive timelines creates execution risk that is not reflected in investment hedging or staged gate allocation"
+    ],
+    "timing_issues": [
+      "T06 completes 1.25 years after its market boom (2026-Q4), missing the preemption window entirely",
+      "T01 completes 2.75 years after its market boom (2027-Q2), the worst timing error in the portfolio",
+      "T03 has a zero-duration development window (2030-Q1 to 2030-Q1), making it a scheduling artifact rather than a real development plan"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T06 (TRL 5) progresses over 2 years to completion which is plausible, and T01 (TRL 6) over 2 years is reasonable, but T03 (전기 구동계 통합 제어) has a zero-duration development window (2030-Q1 → 2030-Q1), making its TRL progression effectively instantaneous and unrealistic.",
+      "strategic_fidelity": "score 2/5 - The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but the selected technologies are all TRL 5-6 (near-market), which better suits a 시장이익최대 strategy; the portfolio lacks truly frontier or exploratory R&D technologies.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit differentiation rationale or competitor positioning — technology selections cover broadly known ADAS domains (radar, steer-by-wire, EV drivetrain) without evidence of deliberate gap exploitation or timing designed around competitor trajectories.",
+      "market_timing": "score 2/5 - For 기술선도, ideal completion is 1-2 years before boom; T06 completes 1.25yr after boom, T01 completes 2.75yr after boom, and T03 completes 1yr after boom — all technologies lag their respective market windows rather than preempting them, representing systematic misalignment.",
+      "patent_market_convergence": "score 3/5 - All three technologies operate in active market growth areas (ADAS/EV), and the investment scores show high market opportunity (5.0) across the board, but there is limited evidence that patent activity convergence was deliberately analyzed to drive selection rather than market signals alone.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 33.7"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 2,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 62.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "patent_growth_norm": 0.4932,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3299,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.1799
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 모드 스티어바이와이어 제어",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8521,
+        "market_size_norm": 0.4738,
+        "value": 0.3978,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.9423,
+        "cost_adjusted_return": 0.2564
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "전기 구동계 통합 제어",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8521,
+        "market_size_norm": 0.4738,
+        "value": 0.7978,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.9038,
+        "cost_adjusted_return": 0.6622
+      }
+    ],
+    "selection_quality": 50.9,
+    "cost_adjusted_return": 36.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 49.9,
+    "backtest_score": 54.3,
+    "backtest_score_v1": 55.6,
+    "description": {
+      "selection_quality": "50.9/100 — 3개 기술 평균 value=0.509\n  ▲ 전기 구동계 통합 제어: value=0.798 (특허↑=1.00, 시장↑=0.85, 규모=0.47)\n  ▼ 다중 모드 스티어바이와이어 제어: value=0.398 (특허↑=0.00, 시장↑=0.85, 규모=0.47)\n  ▼ 레이더 신호 처리 및 고스트 타겟 제거: value=0.330 (특허↑=0.49, 시장↑=0.44, 규모=0.00)",
+      "cost_adjusted_return": "36.6/100 — 평균 return=0.366\n  전기 구동계 통합 제어: value=0.798 - 0.15×0.67(cost) = return +0.662 [High]\n  다중 모드 스티어바이와이어 제어: value=0.398 - 0.15×1.00(cost) = return +0.256 [Strategic] ⚠ 과다투자\n  레이더 신호 처리 및 고스트 타겟 제거: value=0.330 - 0.15×1.00(cost) = return +0.180 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 레이더 신호 처리 및 고스트 타겟 제거: value 0.330인데 Strategic tier\n  → 다중 모드 스티어바이와이어 제어: value 0.398인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "49.9/100 — 평균 오차 1.67년\n  다중 모드 스티어바이와이어 제어: 2.8년 늦음 ⚠\n  레이더 신호 처리 및 고스트 타겟 제거: 1.2년 늦음 ⚠\n  전기 구동계 통합 제어: 1.0년 늦음",
+      "formula": "backtest_score = 0.35×50.9 + 0.35×36.6 + 0.05×100.0 + 0.05×100.0 + 0.10×49.9 = 54.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.67,
+    "timing_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 모드 스티어바이와이어 제어",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "전기 구동계 통합 제어",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 46.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "total_penalty": 3.3,
+    "final_composite_score": 42.8,
+    "description": "pre_penalty = 0.4×33.7(LLM) + 0.6×54.3(Backtest) = 46.1. Penalty: timing_error: -3.3pt. 총 -3.3pt. 최종 = 42.8.\n  [진단] LLM 구조 점수(33.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(54.3)가 LLM(33.7)보다 20.6pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 33.7점, Backtest 경제성 평가 54.3점. 제약 위반으로 3.3점 차감. 최종 Composite Score: 42.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 레이더 신호 처리 및 고스트 타겟 제거의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 다중 모드 스티어바이와이어 제어의 완료시점이 시장 개화 대비 2.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

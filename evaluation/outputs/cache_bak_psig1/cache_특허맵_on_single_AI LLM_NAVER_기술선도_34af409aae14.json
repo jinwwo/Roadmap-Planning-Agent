@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Large Language Model / Foundation Model / AI Platform",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 2,
+    "llm_structural_score": 31.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 2
+      }
+    },
+    "evidence": {
+      "trl_pathway": "HBM4 (TRL 3→completion in 7 quarters) and Energy-Efficient AI Accelerator (TRL 3→completion in 9 quarters) are aggressive but borderline feasible; however, Optical Interconnects (TRL 2→completion in ~12 quarters) is extremely ambitious for a TRL-2 technology, and the 5 dependency violations mean several technologies are scheduled to start before their prerequisites are complete, undermining TRL pathway realism.",
+      "strategic_fidelity": "The declared strategy is 기술선도 (Technology Leadership), which should emphasize exploratory, lower-TRL, R&D-heavy foundational AI/LLM technologies; instead the portfolio is dominated by hardware packaging, memory, and semiconductor interconnect technologies (HBM4, CoWoS, Chiplet, optical interconnects) that are core semiconductor manufacturing competencies, not LLM/Foundation Model leadership technologies — a fundamental mismatch with the stated domain and strategy.",
+      "competitive_awareness": "The company's stated domain is Large Language Model / Foundation Model / AI Platform, yet every selected technology is a semiconductor hardware/packaging technology (HBM4, 3D packaging, chiplet interconnects, optical interconnects) where incumbents like TSMC, Samsung, and SK Hynix hold overwhelming competitive advantages; this represents severe domain drift with no established competitive position, and there is no evidence of LLM-specific competitive differentiation.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before the market boom; however, most technologies miss this window — Energy-Efficient AI Accelerator finishes 1.75 years late, Optical Interconnects 1.5 years late, Chiplet Interconnect 1.0 year late, and Disaggregated AI Infrastructure 1.0 year late; only AI Model Compression hits its target precisely, and there are 5 dependency violations that further compromise timing reliability.",
+      "patent_market_convergence": "All 7 technologies are assigned identical scores (market_opp=4.0, strategic_fit=5.0, executability=4.0, uncertainty=3.0, urgency=4.0), which strongly suggests mechanical/uniform scoring rather than deliberate convergence-zone targeting; there is no differentiated evidence that selections were made based on patent-market convergence analysis specific to the LLM/AI platform domain."
+    },
+    "strengths": [
+      "AI Model Compression Algorithms (S06) is the one technology genuinely aligned with the LLM/Foundation Model domain, with a TRL-6 starting point and perfect market timing (0.0yr error)",
+      "Disaggregated AI Infrastructure (S07) has some relevance to AI platform architecture and a reasonable development timeline"
+    ],
+    "weaknesses": [
+      "Severe domain drift: 6 of 7 selected technologies are semiconductor hardware/packaging technologies (HBM4, CoWoS, Chiplet, Optical Interconnects, AI Accelerator) where an LLM company has no competitive advantage against TSMC, Samsung, or SK Hynix",
+      "Five dependency violations mean the roadmap is structurally invalid — multiple projects are scheduled to begin before their prerequisite technologies are completed, making the entire timeline sequence unreliable"
+    ],
+    "missing_technologies": [
+      "Foundation Model Pre-training Architecture (e.g., mixture-of-experts, sparse transformers)",
+      "LLM Inference Optimization / Serving Infrastructure",
+      "Retrieval-Augmented Generation (RAG) Frameworks",
+      "AI Safety and Alignment Research Technologies",
+      "Multimodal Foundation Model Architectures",
+      "Federated Learning / Privacy-Preserving AI Training"
+    ],
+    "investment_issues": [
+      "All 7 technologies are allocated Tier=High with identical scoring profiles, indicating no prioritization discipline — a real portfolio requires tiered differentiation to reflect actual risk, return, and strategic importance differences",
+      "Allocating High-tier investment to hardware semiconductor technologies (HBM4, CoWoS, Chiplet) is strategically misaligned for an LLM/AI Platform company that lacks semiconductor manufacturing infrastructure and IP",
+      "The uniform investment scoring (all metrics identical across all technologies) suggests the investment strategy was not individually calibrated, reducing its credibility as a decision-making framework"
+    ],
+    "timing_issues": [
+      "Energy-Efficient AI Accelerator Design completes 1.75 years after its market boom (2029-Q4 vs 2028-Q1), missing even the 기술선도 preemption window entirely",
+      "Optical Interconnects for AI Systems completes 1.5 years after boom (2030-Q4 vs 2029-Q2), far too late for either technology leadership or market capture",
+      "Chiplet Interconnect Fabric is scheduled to start (2026-Q3) before its prerequisite S03 is complete (~2028-Q2), a violation of ~1.5 years",
+      "Both Optical Interconnects and Disaggregated AI Infrastructure start in 2028-Q1 but depend on S02 (Chiplet) which doesn't complete until 2028-Q4"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - HBM4 (TRL 3→completion in 7 quarters) and Energy-Efficient AI Accelerator (TRL 3→completion in 9 quarters) are aggressive but borderline feasible; however, Optical Interconnects (TRL 2→completion in ~12 quarters) is extremely ambitious for a TRL-2 technology, and the 5 dependency violations mean several technologies are scheduled to start before their prerequisites are complete, undermining TRL pathway realism.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 기술선도 (Technology Leadership), which should emphasize exploratory, lower-TRL, R&D-heavy foundational AI/LLM technologies; instead the portfolio is dominated by hardware packaging, memory, and semiconductor interconnect technologies (HBM4, CoWoS, Chiplet, optical interconnects) that are core semiconductor manufacturing competencies, not LLM/Foundation Model leadership technologies — a fundamental mismatch with the stated domain and strategy.",
+      "competitive_awareness": "score 2/5 - The company's stated domain is Large Language Model / Foundation Model / AI Platform, yet every selected technology is a semiconductor hardware/packaging technology (HBM4, 3D packaging, chiplet interconnects, optical interconnects) where incumbents like TSMC, Samsung, and SK Hynix hold overwhelming competitive advantages; this represents severe domain drift with no established competitive position, and there is no evidence of LLM-specific competitive differentiation.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years before the market boom; however, most technologies miss this window — Energy-Efficient AI Accelerator finishes 1.75 years late, Optical Interconnects 1.5 years late, Chiplet Interconnect 1.0 year late, and Disaggregated AI Infrastructure 1.0 year late; only AI Model Compression hits its target precisely, and there are 5 dependency violations that further compromise timing reliability.",
+      "patent_market_convergence": "score 2/5 - All 7 technologies are assigned identical scores (market_opp=4.0, strategic_fit=5.0, executability=4.0, uncertainty=3.0, urgency=4.0), which strongly suggests mechanical/uniform scoring rather than deliberate convergence-zone targeting; there is no differentiated evidence that selections were made based on patent-market convergence analysis specific to the LLM/AI platform domain.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×2 - 1) / 4 × 100 = 31.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 1,
+      "investment": 4,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 60.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "HBM4 Memory Integration",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.799,
+        "cost_adjusted_return": -0.8198
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced 3D Packaging (CoWoS-like)",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9611,
+        "market_size_norm": 0.4472,
+        "value": 0.4225,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.9516
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI Model Compression Algorithms",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.9611,
+        "market_size_norm": 0.4472,
+        "value": 0.8225,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4454,
+        "cost_adjusted_return": -0.5353
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Fabric",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7003,
+        "cost_adjusted_return": -0.7483
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Energy-Efficient AI Accelerator Design",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.9611,
+        "market_size_norm": 0.4472,
+        "value": 0.8225,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7135,
+        "cost_adjusted_return": -0.7581
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Optical Interconnects for AI Systems",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.9611,
+        "market_size_norm": 0.4472,
+        "value": 0.8225,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3468,
+        "cost_adjusted_return": -0.4391
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Disaggregated AI Infrastructure",
+        "patent_growth_norm": 0.8306,
+        "market_growth_norm": 0.9611,
+        "market_size_norm": 0.4472,
+        "value": 0.7548,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.2788,
+        "cost_adjusted_return": -0.3669
+      }
+    ],
+    "selection_quality": 61.6,
+    "cost_adjusted_return": 33.5,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 0,
+    "timing_accuracy_score": 71.2,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 61.6,
+    "backtest_score_v1": 50.4,
+    "description": {
+      "selection_quality": "61.6/100 — 7개 기술 평균 value=0.616\n  ▲ AI Model Compression Algorithms: value=0.823 (특허↑=1.00, 시장↑=0.96, 규모=0.45)\n  ▲ Energy-Efficient AI Accelerator Design: value=0.823 (특허↑=1.00, 시장↑=0.96, 규모=0.45)\n  ▲ Optical Interconnects for AI Systems: value=0.823 (특허↑=1.00, 시장↑=0.96, 규모=0.45)\n  ▲ Disaggregated AI Infrastructure: value=0.755 (특허↑=0.83, 시장↑=0.96, 규모=0.45)\n  ▼ Chiplet Interconnect Fabric: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▼ Advanced 3D Packaging (CoWoS-like): value=0.422 (특허↑=0.00, 시장↑=0.96, 규모=0.45)\n  ▼ HBM4 Memory Integration: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → HBM4 Memory Integration: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "33.5/100 — 평균 return=-0.660\n  Disaggregated AI Infrastructure: 순이익(log)=-0.367 [High]\n  Optical Interconnects for AI Systems: 순이익(log)=-0.439 [High]\n  AI Model Compression Algorithms: 순이익(log)=-0.535 [High]\n  Chiplet Interconnect Fabric: 순이익(log)=-0.748 [High]\n  Energy-Efficient AI Accelerator Design: 순이익(log)=-0.758 [High]\n  HBM4 Memory Integration: 순이익(log)=-0.820 [High] ⚠ 과다투자\n  Advanced 3D Packaging (CoWoS-like): 순이익(log)=-0.952 [High]\n  [과다투자 진단]\n  → HBM4 Memory Integration: value 0.133인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "0.0/100 — 위반 5건 (1건당 -20점)\n  ⚠ Advanced 3D Packaging (CoWoS-like): 선행 S01 완료 전 시작 (gap: -3.0Q)\n  ⚠ Chiplet Interconnect Fabric: 선행 S03 완료 전 시작 (gap: -7.0Q)\n  ⚠ Energy-Efficient AI Accelerator Design: 선행 S01 완료 전 시작 (gap: -1.0Q)\n  ⚠ Optical Interconnects for AI Systems: 선행 S02 완료 전 시작 (gap: -3.0Q)\n  ⚠ Disaggregated AI Infrastructure: 선행 S02 완료 전 시작 (gap: -3.0Q)",
+      "timing_accuracy": "71.2/100 — 평균 오차 0.96년\n  Energy-Efficient AI Accelerator Design: 1.8년 늦음 ⚠\n  Optical Interconnects for AI Systems: 1.5년 늦음 ⚠\n  HBM4 Memory Integration: 1.0년 이름\n  Chiplet Interconnect Fabric: 1.0년 늦음\n  Disaggregated AI Infrastructure: 1.0년 늦음\n  Advanced 3D Packaging (CoWoS-like): 0.5년 늦음\n  AI Model Compression Algorithms: 0.0년 이름",
+      "formula": "backtest_score = 0.25×61.6(기술선택) + 0.25×33.5(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×0.0(의존성) + 0.25×71.2(타이밍) = 61.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 5,
+    "dependency_details": [
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced 3D Packaging (CoWoS-like)",
+        "prerequisite": "S01",
+        "tech_start": "2027-Q1",
+        "prereq_end": "~2027.75",
+        "gap_quarters": -3.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Fabric",
+        "prerequisite": "S03",
+        "tech_start": "2026-Q3",
+        "prereq_end": "~2028.25",
+        "gap_quarters": -7.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Energy-Efficient AI Accelerator Design",
+        "prerequisite": "S01",
+        "tech_start": "2027-Q3",
+        "prereq_end": "~2027.75",
+        "gap_quarters": -1.0
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Optical Interconnects for AI Systems",
+        "prerequisite": "S02",
+        "tech_start": "2028-Q1",
+        "prereq_end": "~2028.75",
+        "gap_quarters": -3.0
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Disaggregated AI Infrastructure",
+        "prerequisite": "S02",
+        "tech_start": "2028-Q1",
+        "prereq_end": "~2028.75",
+        "gap_quarters": -3.0
+      }
+    ],
+    "mean_timing_error_years": 0.96,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "HBM4 Memory Integration",
+        "target_q": "2027-Q4",
+        "boom_q": "2028-Q4",
+        "error_years": -1.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced 3D Packaging (CoWoS-like)",
+        "target_q": "2028-Q2",
+        "boom_q": "2027-Q4",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI Model Compression Algorithms",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q2",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Fabric",
+        "target_q": "2028-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Energy-Efficient AI Accelerator Design",
+        "target_q": "2029-Q4",
+        "boom_q": "2028-Q1",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Optical Interconnects for AI Systems",
+        "target_q": "2030-Q4",
+        "boom_q": "2029-Q2",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Disaggregated AI Infrastructure",
+        "target_q": "2030-Q4",
+        "boom_q": "2029-Q4",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 49.4,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 15
+      }
+    ],
+    "total_penalty": 15,
+    "final_composite_score": 34.4,
+    "description": "pre_penalty = 0.4×31.2(LLM) + 0.6×61.6(Backtest) = 49.4. Penalty: dependency_violation: -15.0pt. 총 -15.0pt. 최종 = 34.4.\n  [진단] LLM 구조 점수(31.2)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] 페널티(-15.0)가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요.\n  [진단] Backtest(61.6)가 LLM(31.2)보다 30.4pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 31.2점, Backtest 경제성 평가 61.6점. 제약 위반으로 15점 차감. 최종 Composite Score: 34.4점.",
+    "key_failure_points": [
+      "의존성 위반: Advanced 3D Packaging (CoWoS-like)이 선행기술 S01 완료 전에 시작 (gap: -3.0Q)",
+      "의존성 위반: Chiplet Interconnect Fabric이 선행기술 S03 완료 전에 시작 (gap: -7.0Q)",
+      "의존성 위반: Energy-Efficient AI Accelerator Design이 선행기술 S01 완료 전에 시작 (gap: -1.0Q)",
+      "의존성 위반: Optical Interconnects for AI Systems이 선행기술 S02 완료 전에 시작 (gap: -3.0Q)",
+      "의존성 위반: Disaggregated AI Infrastructure이 선행기술 S02 완료 전에 시작 (gap: -3.0Q)",
+      "타이밍 이슈: Energy-Efficient AI Accelerator Design의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: Optical Interconnects for AI Systems의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

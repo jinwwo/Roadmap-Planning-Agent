@@ -281,7 +281,8 @@ class AgentOutputNormalizer:
             raw_features[tid] = {
                 "patent_growth_raw": pg,
                 "market_growth_raw": mg,
-                "market_size_raw": ms
+                "market_size_raw": ms,
+                "future_market_m": future_m   # V3.2: 순이익 계산용 실제 시장규모(백만$)
             }
 
         # ── §7: universe 전체 기준 min-max 정규화 ──
@@ -289,8 +290,15 @@ class AgentOutputNormalizer:
         all_mg = [f["market_growth_raw"] for f in raw_features.values()]
         all_ms = [f["market_size_raw"] for f in raw_features.values()]
 
-        def minmax(val, vals):
-            # V2: None 처리 — 결측 시 중앙값 0.5
+        # V3: 절대 정규화 (케이스 내 min-max 대신 고정 기준 — 그룹 의존성 제거)
+        # 36케이스 227기술 raw 분포의 p10~p90을 0~1로 매핑
+        _ABS_RANGE = {"pg": (-0.35, 0.34), "mg": (-1.18, 1.49), "ms": (6.10, 8.81)}
+        def absnorm(val, kind):
+            if val is None:
+                return 0.5
+            lo, hi = _ABS_RANGE[kind]
+            return max(0.0, min(1.0, (val - lo) / (hi - lo)))
+        def minmax(val, vals):  # 호환용 — 더 이상 사용 안 함
             if val is None:
                 return 0.5
             valid = [v for v in vals if v is not None]
@@ -304,9 +312,10 @@ class AgentOutputNormalizer:
         normalized = {}
         for tid, feat in raw_features.items():
             normalized[tid] = {
-                "patent_growth_norm": minmax(feat["patent_growth_raw"], all_pg),
-                "market_growth_norm": minmax(feat["market_growth_raw"], all_mg),
-                "market_size_norm": minmax(feat["market_size_raw"], all_ms),
+                "patent_growth_norm": absnorm(feat["patent_growth_raw"], "pg"),
+                "market_growth_norm": absnorm(feat["market_growth_raw"], "mg"),
+                "market_size_norm": absnorm(feat["market_size_raw"], "ms"),
+                "future_market_m": feat["future_market_m"],
                 **feat  # raw도 보관
             }
 
@@ -341,7 +350,15 @@ class AgentOutputNormalizer:
                 "market_growth_raw": normalized[tid]["market_growth_raw"],
                 "market_size_raw": normalized[tid]["market_size_raw"],
                 # cost proxy
-                "cost_proxy": self.COST_MAP.get(invest[tid]["investment_tier"], 2)
+                "cost_proxy": self.COST_MAP.get(invest[tid]["investment_tier"], 2),
+                "tech_budget_usd": invest[tid].get("tech_budget_usd", 0) or 0,
+                # V3: 순이익 계산용 시장규모(백만$)
+                "realized_market_m": normalized[tid].get("future_market_m", 0),
+                # V4: SOM(수익가능시장, 십억$) — 투자대비수익(순수익) 계산용
+                "som_usd_b": (techs[tid].get("tam_sam_som", {}) or {}).get("som_usd_b", 0) or 0,
+                # 실제 KIPRIS 기반 기술별 특허신호 (mock holdout 대체)
+                "patent_signals": techs[tid].get("patent_signals", {}) or {},
+                "patent_score": techs[tid].get("patent_score", 0) or 0
             }
             merged.append(entry)
 
@@ -375,7 +392,12 @@ class ConstraintChecker:
         # ── 예산 검사 ──
         budget_total = constraints["total_budget"]
         budget_alloc = constraints.get("budget_allocation", {})
-        spent = sum(budget_alloc.get(t["investment_tier"], 0) for t in techs)
+        # 실제 기술별 예산(tech_budget_usd) 합산; 없으면 기존 tier 기반 fallback
+        _real_budgets = [t.get("tech_budget_usd", 0) or 0 for t in techs]
+        if any(_real_budgets):
+            spent = sum(_real_budgets)  # raw USD (constraints.total_budget도 raw USD)
+        else:
+            spent = sum(budget_alloc.get(t["investment_tier"], 0) for t in techs)
         budget_violation = max(0, spent - budget_total)
         budget_violation_pct = (budget_violation / budget_total * 100) if budget_total > 0 else 0
 
@@ -507,7 +529,7 @@ class AnthropicClient(BaseLLMClient):
 class OpenAIClient(BaseLLMClient):
     """GPT-4o / GPT-4.1 (OpenAI) — Chat Completions API"""
     name = "openai"
-    default_model = "gpt-4o"
+    default_model = "gpt-4.1"
 
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         if not _HAS_OPENAI:
@@ -615,13 +637,20 @@ class LLMStructuralJudge:
         "balance": 0.1
     }
 
-    # ── V2 weights (new primary) ──
+    # ── V2 weights (4axis primary, strategic_fidelity 제외) ──
     WEIGHTS = {
-        "trl_pathway": 0.25,
-        "strategic_fidelity": 0.25,
-        "competitive_awareness": 0.20,
-        "market_timing": 0.20,
-        "patent_market_convergence": 0.10,
+        "trl_pathway": 0.35,
+        "competitive_awareness": 0.25,
+        "market_timing": 0.25,
+        "patent_market_convergence": 0.15,
+    }
+    # LLM 축 수집/strategic_fidelity 보존용 (5축, score 계산엔 미사용)
+    WEIGHTS_FULL = {
+        "trl_pathway": 0.35,
+        "strategic_fidelity": 0.0,
+        "competitive_awareness": 0.25,
+        "market_timing": 0.25,
+        "patent_market_convergence": 0.15,
     }
 
     # ── V1 prompt (preserved) ──
@@ -729,11 +758,16 @@ Each axis is scored 1-5 (1=very poor, 2=poor, 3=adequate, 4=good, 5=excellent).
    - Is there evidence of competitor technology positioning awareness?
    - Are technology gaps or differentiation opportunities being exploited?
    - Is there timing advantage design relative to competitors?
-   - 5: Rich competitive intelligence embedded in technology selection and timing
-   - 4: Good competitive awareness with clear differentiation rationale
-   - 3: Some competitive context but shallow
-   - 2: Little evidence of competitive landscape consideration
-   - 1: No competitive awareness, selections appear made in isolation
+   - DOMAIN FIT: Do the selected technologies belong to the company's stated Domain?
+     Technologies far outside the core domain (e.g., an "AI LLM" company developing
+     memory semiconductors like HBM, or an "자율주행" company developing battery cathodes)
+     signal weak competitive positioning — the company would compete in a market where
+     it has no established advantage. Penalize clear domain drift.
+   - 5: Rich competitive intelligence; all selections fit the company's domain
+   - 4: Good competitive awareness with clear differentiation rationale, on-domain
+   - 3: Some competitive context but shallow, or minor domain drift
+   - 2: Little competitive landscape consideration, or notable off-domain selections
+   - 1: No competitive awareness, or selections largely outside the company's domain
 
 4. **Market Timing Precision** (market_timing)
    Are technology completion times strategically aligned with market boom windows?
@@ -757,10 +791,11 @@ Each axis is scored 1-5 (1=very poor, 2=poor, 3=adequate, 4=good, 5=excellent).
    - 1: No evidence of convergence awareness
 
 ## Important Notes
-- Evaluate based ONLY on the roadmap content provided. Do not infer data sources.
+- Evaluate based ONLY on the roadmap content provided. Do not infer hidden data sources.
 - Consider the declared strategic direction when scoring axes 2 and 4.
-- Evaluate competitive awareness from what is visible in the roadmap's technology choices,
-  not from metadata about data sources.
+- The stated Domain IS a valid evaluation signal: assess whether selected technologies
+  align with the company's core domain when scoring competitive_awareness (axis 3).
+  Selections far outside the stated Domain indicate weak competitive positioning.
 
 ## Output Format
 Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
@@ -851,7 +886,7 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
                 # 각 모델의 점수 보관
                 for provider, payload in results.items():
                     per_model_scores[provider] = {
-                        axis: payload.get(axis, 3) for axis in self.WEIGHTS
+                        axis: payload.get(axis, 3) for axis in self.WEIGHTS_FULL
                     }
 
                 # 앙상블 집계
@@ -910,7 +945,7 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
             try:
                 parsed = client.call(self.JUDGE_SYSTEM_PROMPT, user_prompt)
                 # 점수 범위 검증
-                for axis in self.WEIGHTS:
+                for axis in self.WEIGHTS_FULL:
                     if axis in parsed:
                         parsed[axis] = max(1, min(5, int(parsed[axis])))
                 results[provider_label] = parsed
@@ -923,7 +958,7 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
 
     def _aggregate_scores(self, results: Dict[str, dict]) -> dict:
         """여러 모델의 점수를 집계 (평균 또는 중간값)."""
-        axes = list(self.WEIGHTS.keys())
+        axes = list(self.WEIGHTS_FULL.keys())
         aggregated = {}
 
         for axis in axes:
@@ -1033,12 +1068,73 @@ Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
 
         return "\n".join(lines)
 
+    # ===== PAIRWISE 비교 평가 (LLM 상대판단 전용) =====
+    PAIRWISE_SYSTEM_PROMPT = """You are a Technology Roadmap (TRM) expert evaluator.
+You will receive TWO technology roadmaps (ROADMAP A and ROADMAP B) for the SAME company and SAME strategic direction. They are two alternative plans.
+
+Your task: COMPARE the two roadmaps on exactly 5 axes. For EACH axis, give BOTH roadmaps a score from 1 to 5 (1=very poor, 5=excellent), judged RELATIVE to each other on that axis, then declare the winner. If A is clearly better on an axis, A should score higher than B on that axis; ties are allowed only when genuinely comparable.
+
+## Comparison Axes (score both A and B, 1-5)
+1. trl_pathway: realistic TRL progression within the timeline?
+2. strategic_fidelity: faithfully executes the declared strategic direction (기술선도=low-TRL exploratory/preemptive; 시장이익최대=near-market/ROI-timed)?
+3. competitive_awareness: depth of competitive landscape understanding and differentiation?
+4. market_timing: completion timed well for its strategy (기술선도=1-2yr before boom; 시장이익최대=within +-0.5yr of boom; 2+yr after boom penalized)?
+5. patent_market_convergence: selects technologies where patent activity AND market growth converge?
+
+For each axis: score_a (1-5), score_b (1-5), winner (A/B/tie), reason (<=200 chars).
+Then overall_winner (A/B/tie), margin (clear/slight/tie), overall_reason (<=300 chars).
+
+Respond ONLY with this JSON object (no prose, no markdown fences):
+{
+  "axis_comparison": {
+    "trl_pathway": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "strategic_fidelity": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "competitive_awareness": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "market_timing": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "patent_market_convergence": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""}
+  },
+  "overall_winner": "A|B|tie",
+  "margin": "clear|slight|tie",
+  "overall_reason": ""
+}"""
+
+    def _build_pairwise_prompt(self, data_a: dict, data_b: dict) -> str:
+        prompt_a = self._build_user_prompt(data_a)
+        prompt_b = self._build_user_prompt(data_b)
+        cut = "Please evaluate this roadmap and respond ONLY with the JSON object."
+        prompt_a = prompt_a.replace(cut, "").rstrip()
+        prompt_b = prompt_b.replace(cut, "").rstrip()
+        out = []
+        out.append("# ROADMAP A")
+        out.append(prompt_a)
+        out.append("")
+        out.append("# ROADMAP B")
+        out.append(prompt_b)
+        out.append("")
+        out.append("Compare ROADMAP A and ROADMAP B. Respond ONLY with the JSON object.")
+        return "\n".join(out)
+
+    def compare_pairwise(self, data_a: dict, data_b: dict, use_api: bool = False) -> dict:
+        if not (use_api and self.clients):
+            return {"_error": "pairwise needs API (use_api=True, clients)"}
+        user_prompt = self._build_pairwise_prompt(data_a, data_b)
+        for client in self.clients:
+            provider = f"{client.name}:{client.model}"
+            try:
+                parsed = client.call(self.PAIRWISE_SYSTEM_PROMPT, user_prompt)
+                parsed["_model"] = provider
+                return parsed
+            except Exception as e:
+                print(f"    pairwise {provider} fail: {e}")
+                continue
+        return {"_error": "all clients failed"}
+
     def _format_fallback(self) -> dict:
         """API 실패 시 기본값 반환 (전부 3점)"""
         return {
             "trl_pathway": 3, "strategic_fidelity": 3, "competitive_awareness": 3,
             "market_timing": 3, "patent_market_convergence": 3,
-            "evidence": {k: "API call failed, fallback score" for k in self.WEIGHTS},
+            "evidence": {k: "API call failed, fallback score" for k in self.WEIGHTS_FULL},
             "key_strengths": [], "key_weaknesses": [],
             "missing_technologies": [], "timing_issues": [],
             "investment_issues": []
@@ -1220,6 +1316,14 @@ class BackTestEvaluator:
     def run(self, judged_output: dict) -> dict:
         techs = judged_output["merged_techs"]
         cr = judged_output["constraint_results"]
+        for _t in techs:
+            _ps = _t.get("patent_signals", {}) or {}
+            _sig = [_ps.get(k, 0) for k in ("peer_momentum","citation_impact","strategic_gap_opportunity","cross_actor_recurrence")]
+            if any(v > 0 for v in _sig):
+                _avg = sum(_sig) / 4.0
+                _t["patent_growth_norm"] = max(0.0, min(1.0, (_avg - 60.0) / 35.0))
+            elif (_t.get("patent_score", 0) or 0) > 0:
+                _t["patent_growth_norm"] = max(0.0, min(1.0, (_t["patent_score"] - 60.0) / 35.0))
 
         # ── 기술별 value & return 계산 ──
         tech_details = []
@@ -1229,8 +1333,20 @@ class BackTestEvaluator:
                 + 0.3 * t["market_growth_norm"]
                 + 0.3 * t["market_size_norm"]
             )
-            cost_norm = (t["cost_proxy"] - 1) / 3  # 0~1 정규화
-            adj_return = value - self.LAMBDA * cost_norm
+            # V3: 순이익 기반 — 시장규모 x value - 투자금 (절대 수익)
+            # cost_norm은 호환용으로 남겨둠 (description/기존 출력 참조)
+            _budgets = [tt.get("tech_budget_usd", 0) or 0 for tt in techs]
+            _max_b = max(_budgets) if any(_budgets) else 0
+            if _max_b > 0:
+                cost_norm = (t.get("tech_budget_usd", 0) or 0) / _max_b
+            else:
+                cost_norm = (t["cost_proxy"] - 1) / 3
+            # V4: 순수익(십억$) = SOM(수익가능시장) − 투자금. 단위 정합·value 미곱셈
+            _som_b = t.get("som_usd_b", 0) or 0
+            _bud_b = (t.get("tech_budget_usd", 0) or 0) / 1e9   # 원단위 → 십억$
+            net_profit_b = _som_b - _bud_b
+            # 부호보존 log 스케일
+            adj_return = math.copysign(math.log1p(abs(net_profit_b)), net_profit_b)
 
             tech_details.append({
                 "tech_id": t["tech_id"],
@@ -1251,10 +1367,12 @@ class BackTestEvaluator:
         values = [td["value"] for td in tech_details]
         selection_quality = (sum(values) / len(values)) * 100 if values else 0
 
-        # 2) cost_adjusted_return: 합산 후 정규화 (0~100)
-        returns = [td["cost_adjusted_return"] for td in tech_details]
+        # 2) cost_adjusted_return: 평균 log순이익을 p10~p90 기준 0~100으로 정규화
+        #    log순이익 분포(36케이스): p10=-3.05, p90=8.85 → 0~100 매핑
+        # V5: 본전(순수익0)=50점 기준. 흑자 가점, 적자 감점. 가중치 25
+        returns = [td["cost_adjusted_return"] for td in tech_details]  # 부호보존 log순이익
         car_raw = sum(returns) / len(returns) if returns else 0
-        cost_adjusted_return = max(0, min(100, car_raw * 100))
+        cost_adjusted_return = max(0, min(100, 50 + car_raw * 25))
 
         # 3) investment_rationality_score: §8 rule-based 기대 tier 비교
         tier_map = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
@@ -1339,6 +1457,7 @@ class BackTestEvaluator:
                 "budget_feasibility_score": round(budget_feasibility, 1),
                 "dependency_validity_score": round(dependency_validity, 1),
                 "timing_accuracy_score": round(timing_accuracy, 1),
+                "investment_rationality_score": round(investment_rationality, 1),
                 "backtest_score": round(bt_score, 1),
                 "backtest_score_v1": round(bt_score_v1, 1),
             }
@@ -1458,6 +1577,7 @@ class BenchmarkReportGenerator:
                 "budget_feasibility_score": bt["budget_feasibility_score"],
                 "dependency_validity_score": bt["dependency_validity_score"],
                 "timing_accuracy_score": bt["timing_accuracy_score"],
+                "investment_rationality_score": bt.get("investment_rationality_score", 0),
                 "backtest_score": bt["backtest_score"],
                 "backtest_score_v1": bt.get("backtest_score_v1", 0),
                 "description": self._describe_backtest(bt, cr, techs),
@@ -1660,8 +1780,7 @@ class BenchmarkReportGenerator:
                 elif v > 0.6 and cost <= 1:
                     flag = " ★ 효율적"
                 ret_lines.append(
-                    f"  {t.get('tech_name', '?')}: value={v:.3f} - 0.15×{cost_norm:.2f}(cost) "
-                    f"= return {ret:+.3f} [{tier}]{flag}"
+                    f"  {t.get('tech_name', '?')}: 순이익(log)={ret:+.3f} [{tier}]{flag}"
                 )
             car_detail = (
                 f"{bt['cost_adjusted_return']:.1f}/100 — 평균 return={avg_ret:.3f}\n"
@@ -1721,9 +1840,12 @@ class BenchmarkReportGenerator:
 
         # ── formula ──
         formula = (
-            f"backtest_score = 0.35×{bt['selection_quality']:.1f} + 0.35×{bt['cost_adjusted_return']:.1f} "
-            f"+ 0.05×{bt['budget_feasibility_score']:.1f} "
-            f"+ 0.05×{bt['dependency_validity_score']:.1f} + 0.10×{bt['timing_accuracy_score']:.1f} "
+            f"backtest_score = 0.25×{bt['selection_quality']:.1f}(기술선택) "
+            f"+ 0.25×{bt['cost_adjusted_return']:.1f}(투자대비수익) "
+            f"+ 0.15×{bt.get('investment_rationality_score', 0):.1f}(투자적합성) "
+            f"+ 0.05×{bt['budget_feasibility_score']:.1f}(예산) "
+            f"+ 0.05×{bt['dependency_validity_score']:.1f}(의존성) "
+            f"+ 0.25×{bt['timing_accuracy_score']:.1f}(타이밍) "
             f"= {bt['backtest_score']:.1f}"
         )
 

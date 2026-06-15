@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 35.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Starting TRL levels (6 and 7) are relatively mature, and the development durations (2 years for T03, 3 years for T01, 1 year for T02) are broadly consistent with advancing near-market technologies to deployment readiness, though the 1-year window for T02 (TRL 7 to target) is slightly compressed.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (Market Profit Maximization), which demands completion within ±0.5 years of the boom window, yet all three technologies complete significantly after their respective boom periods — T03 by 1.25 years, T01 by 1.5 years, and T02 by 2.0 years — fundamentally undermining the profit-maximization objective.",
+      "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing designed to exploit competitive gaps; technology selections appear driven by internal fit scores rather than competitive landscape intelligence.",
+      "market_timing": "All three technologies miss their market boom windows by 1.25 to 2.0 years (mean error 1.58 years), which is severely misaligned for a 시장이익최대 strategy requiring ±0.5-year precision; no technology achieves its optimal timing window.",
+      "patent_market_convergence": "The selected technologies (battery process, materials, and vehicle architecture) represent active patent and market growth domains in automotive electrification, suggesting some convergence awareness, but the selection rationale does not explicitly demonstrate deliberate targeting of convergence zones."
+    },
+    "strengths": [
+      "Technologies are selected at relatively high TRL (6-7), appropriate for a market-profit-maximization strategy targeting near-term commercialization.",
+      "Dependency chain between T01 (건식 전극 필름 제조) and T02 (고성능 양극 활물질) is correctly sequenced with no dependency violations."
+    ],
+    "weaknesses": [
+      "All technologies complete significantly after their market boom windows, making the 시장이익최대 strategy essentially unexecutable as planned — this is a fundamental structural failure.",
+      "The roadmap lacks any competitive differentiation logic; there is no evidence that timing or technology selection was designed relative to competitor positioning."
+    ],
+    "missing_technologies": [
+      "Fast-charging infrastructure / 급속충전 인터페이스 기술 — a high-TRL, near-boom commercialization opportunity highly aligned with 시장이익최대",
+      "전고체 배터리 패키징 기술 — bridges the electrode and cathode material selections with a marketable product-level technology"
+    ],
+    "investment_issues": [
+      "Budget utilization shows 0 spent against a 41.7B budget, suggesting the investment strategy exists only on paper without actual allocation execution.",
+      "Assigning T03 (차량 제어 융합 아키텍처) as Strategic tier with urgency=5 is inconsistent with a completion timeline that misses the boom by 1.25 years — high urgency scores should drive earlier completion targets.",
+      "T02 (고성능 양극 활물질) is rated High (not Strategic) despite being the terminal deliverable of the battery development chain, potentially under-resourcing the most market-critical output."
+    ],
+    "timing_issues": [
+      "차량 제어 융합 아키텍처 completes in 2028-Q1 but boom is 2026-Q4, missing by 1.25 years — development should have started earlier or timeline compressed to target 2027-Q1 at latest.",
+      "건식 전극 필름 제조 completes in 2029-Q1 vs boom 2027-Q3, a 1.5-year miss — a 3-year development window starting 2026-Q1 is too long for a TRL-6 process technology.",
+      "고성능 양극 활물질 completes in 2030-Q1 vs boom 2028-Q1, the worst timing error at 2.0 years — the dependency on T01 forces a late start but the boom window is not accommodated in the schedule design."
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Starting TRL levels (6 and 7) are relatively mature, and the development durations (2 years for T03, 3 years for T01, 1 year for T02) are broadly consistent with advancing near-market technologies to deployment readiness, though the 1-year window for T02 (TRL 7 to target) is slightly compressed.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 시장이익최대 (Market Profit Maximization), which demands completion within ±0.5 years of the boom window, yet all three technologies complete significantly after their respective boom periods — T03 by 1.25 years, T01 by 1.5 years, and T02 by 2.0 years — fundamentally undermining the profit-maximization objective.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing designed to exploit competitive gaps; technology selections appear driven by internal fit scores rather than competitive landscape intelligence.",
+      "market_timing": "score 1/5 - All three technologies miss their market boom windows by 1.25 to 2.0 years (mean error 1.58 years), which is severely misaligned for a 시장이익최대 strategy requiring ±0.5-year precision; no technology achieves its optimal timing window.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (battery process, materials, and vehicle architecture) represent active patent and market growth domains in automotive electrification, suggesting some convergence awareness, but the selection rationale does not explicitly demonstrate deliberate targeting of convergence zones.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 35.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 82.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "patent_growth_norm": 0.7789,
+        "market_growth_norm": 0.7999,
+        "market_size_norm": 0.7301,
+        "value": 0.7705,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6205
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.9576,
+        "value": 0.9873,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.8373
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "patent_growth_norm": 0.4542,
+        "market_growth_norm": 0.488,
+        "market_size_norm": 1.0,
+        "value": 0.6281,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5281
+      }
+    ],
+    "selection_quality": 79.5,
+    "cost_adjusted_return": 66.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "backtest_score": 74.6,
+    "backtest_score_v1": 76.3,
+    "description": {
+      "selection_quality": "79.5/100 — 3개 기술 평균 value=0.795\n  ▲ 건식 전극 필름 제조: value=0.987 (특허↑=1.00, 시장↑=1.00, 규모=0.96)\n  ▼ 차량 제어 융합 아키텍처: value=0.770 (특허↑=0.78, 시장↑=0.80, 규모=0.73)\n  ▼ 고성능 양극 활물질: value=0.628 (특허↑=0.45, 시장↑=0.49, 규모=1.00)",
+      "cost_adjusted_return": "66.2/100 — 평균 return=0.662\n  건식 전극 필름 제조: value=0.987 - 0.15×1.00(cost) = return +0.837 [Strategic]\n  차량 제어 융합 아키텍처: value=0.770 - 0.15×1.00(cost) = return +0.621 [Strategic]\n  고성능 양극 활물질: value=0.628 - 0.15×0.67(cost) = return +0.528 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  고성능 양극 활물질: 2.0년 늦음 ⚠\n  건식 전극 필름 제조: 1.5년 늦음 ⚠\n  차량 제어 융합 아키텍처: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×79.5 + 0.35×66.2 + 0.05×100.0 + 0.05×100.0 + 0.10×52.6 = 74.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 58.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 55.9,
+    "description": "pre_penalty = 0.4×35.0(LLM) + 0.6×74.6(Backtest) = 58.8. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 55.9.\n  [진단] LLM 구조 점수(35.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(74.6)가 LLM(35.0)보다 39.6pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 35.0점, Backtest 경제성 평가 74.6점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 55.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: 차량 제어 융합 아키텍처의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 건식 전극 필름 제조의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 고성능 양극 활물질의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

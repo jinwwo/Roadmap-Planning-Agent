@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI Vision Perception / ADAS / Computer Vision",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are reasonable: T01 (TRL 7) and T03 (TRL 7) are near-market technologies with short development windows, and T02 (TRL 6) has a 2-year runway, all consistent with industry norms for mature-ish technologies. The zero-duration schedule for T03 (2030-Q1 → 2030-Q1) is unrealistic, however, suggesting a scheduling artifact.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (market profit maximization), which demands near-market timing and commercialization focus, but T02 completes 3.25 years after its market boom and T03 completes 1.75 years late, severely undermining revenue capture. Only T01 is reasonably timed, making the overall portfolio execution poorly aligned with the declared strategy.",
+      "competitive_awareness": "The roadmap contains no explicit competitive positioning rationale — there is no evidence of differentiation strategy, competitor gap analysis, or timing designed to preempt or outmaneuver rivals. Technology selections are sensible for the ADAS domain but appear chosen in isolation from competitive context.",
+      "market_timing": "For 시장이익최대, technologies should complete within ±0.5 years of the boom window. T01 misses by 0.5 years (borderline acceptable), T02 misses by 3.25 years, and T03 misses by 1.75 years — mean error of 1.83 years. Two of three technologies substantially miss their optimal commercialization windows, representing systematic late-arrival timing.",
+      "patent_market_convergence": "All three selected technologies (sensor fusion, synthetic data generation, on-device optimization) are active areas of both patent filing and market growth in the ADAS/CV domain, suggesting some convergence awareness. However, there is no explicit evidence that convergence-zone analysis drove the selection; the overlap may be coincidental given the domain's general activity."
+    },
+    "strengths": [
+      "TRL levels are appropriately high (6-7) for a market-profit-maximization strategy, indicating near-commercialization readiness.",
+      "Dependency chain is logically structured (T01 → T02 → T03) with zero constraint violations, and budget is fully utilized without overspend."
+    ],
+    "weaknesses": [
+      "Critical timing failures: T02 and T03 complete well after their respective market boom windows, missing the peak revenue opportunity that is central to the 시장이익최대 strategy.",
+      "T03 has a zero-duration development schedule (2030-Q1 to 2030-Q1), which is implausible and likely indicates a planning error in scheduling."
+    ],
+    "missing_technologies": [
+      "Real-time object detection/tracking (e.g., transformer-based vision models near TRL 7-8) with earlier market timing",
+      "Edge AI inference accelerator integration technologies to complement on-device optimization with near-term market entry",
+      "Regulatory compliance / functional safety (ISO 26262) tooling, critical for ADAS commercialization timelines"
+    ],
+    "investment_issues": [
+      "T02 is rated Strategic tier with urgency=5 yet is scheduled to complete 3.25 years post-boom — the high urgency score is contradicted by the late delivery timeline.",
+      "T03 is rated High tier with urgency=3 and is the final deliverable, but receives no dedicated time allocation (zero duration), suggesting under-investment in execution planning.",
+      "No investment diversification beyond three technologies leaves the portfolio vulnerable to single-technology failure with no fallback options for revenue generation."
+    ],
+    "timing_issues": [
+      "T02 (시뮬레이션 기반 합성 데이터 생성) completes 3.25 years after its market boom (2026-Q4), entirely missing the commercialization window.",
+      "T03 (온-디바이스 모델 최적화) completes 1.75 years after its boom (2028-Q2), and its zero-duration schedule suggests it was not properly planned.",
+      "The sequential dependency chain forces T02 and T03 into progressively later completion dates, compounding timing misalignment across the portfolio."
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are reasonable: T01 (TRL 7) and T03 (TRL 7) are near-market technologies with short development windows, and T02 (TRL 6) has a 2-year runway, all consistent with industry norms for mature-ish technologies. The zero-duration schedule for T03 (2030-Q1 → 2030-Q1) is unrealistic, however, suggesting a scheduling artifact.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 시장이익최대 (market profit maximization), which demands near-market timing and commercialization focus, but T02 completes 3.25 years after its market boom and T03 completes 1.75 years late, severely undermining revenue capture. Only T01 is reasonably timed, making the overall portfolio execution poorly aligned with the declared strategy.",
+      "competitive_awareness": "score 2/5 - The roadmap contains no explicit competitive positioning rationale — there is no evidence of differentiation strategy, competitor gap analysis, or timing designed to preempt or outmaneuver rivals. Technology selections are sensible for the ADAS domain but appear chosen in isolation from competitive context.",
+      "market_timing": "score 2/5 - For 시장이익최대, technologies should complete within ±0.5 years of the boom window. T01 misses by 0.5 years (borderline acceptable), T02 misses by 3.25 years, and T03 misses by 1.75 years — mean error of 1.83 years. Two of three technologies substantially miss their optimal commercialization windows, representing systematic late-arrival timing.",
+      "patent_market_convergence": "score 3/5 - All three selected technologies (sensor fusion, synthetic data generation, on-device optimization) are active areas of both patent filing and market growth in the ADAS/CV domain, suggesting some convergence awareness. However, there is no explicit evidence that convergence-zone analysis drove the selection; the overlap may be coincidental given the domain's general activity.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 아키텍처",
+        "patent_growth_norm": 0.2219,
+        "market_growth_norm": 0.8219,
+        "market_size_norm": 1.0,
+        "value": 0.6354,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4854
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "시뮬레이션 기반 합성 데이터 생성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 1.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8333,
+        "cost_adjusted_return": 0.875
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "온-디바이스 모델 최적화",
+        "patent_growth_norm": 0.6,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3726,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5556,
+        "cost_adjusted_return": 0.2893
+      }
+    ],
+    "selection_quality": 66.9,
+    "cost_adjusted_return": 55.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 45.1,
+    "backtest_score": 66.8,
+    "backtest_score_v1": 67.2,
+    "description": {
+      "selection_quality": "66.9/100 — 3개 기술 평균 value=0.669\n  ▲ 시뮬레이션 기반 합성 데이터 생성: value=1.000 (특허↑=1.00, 시장↑=1.00, 규모=1.00)\n  ▼ 다중 센서 퓨전 아키텍처: value=0.635 (특허↑=0.22, 시장↑=0.82, 규모=1.00)\n  ▼ 온-디바이스 모델 최적화: value=0.373 (특허↑=0.60, 시장↑=0.44, 규모=0.00)",
+      "cost_adjusted_return": "55.0/100 — 평균 return=0.550\n  시뮬레이션 기반 합성 데이터 생성: value=1.000 - 0.15×1.00(cost) = return +0.875 [Strategic]\n  다중 센서 퓨전 아키텍처: value=0.635 - 0.15×1.00(cost) = return +0.485 [Strategic]\n  온-디바이스 모델 최적화: value=0.373 - 0.15×0.67(cost) = return +0.289 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 온-디바이스 모델 최적화: value 0.373인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "45.1/100 — 평균 오차 1.83년\n  시뮬레이션 기반 합성 데이터 생성: 3.2년 늦음 ⚠\n  온-디바이스 모델 최적화: 1.8년 늦음 ⚠\n  다중 센서 퓨전 아키텍처: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×66.9 + 0.35×55.0 + 0.05×100.0 + 0.05×100.0 + 0.10×45.1 = 66.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.83,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 아키텍처",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "시뮬레이션 기반 합성 데이터 생성",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "온-디바이스 모델 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 1.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 56.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 4.2
+      }
+    ],
+    "total_penalty": 4.2,
+    "final_composite_score": 51.9,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×66.8(Backtest) = 56.1. Penalty: timing_error: -4.2pt. 총 -4.2pt. 최종 = 51.9.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(66.8)가 LLM(40.0)보다 26.8pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 66.8점. 제약 위반으로 4.2점 차감. 최종 Composite Score: 51.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: 시뮬레이션 기반 합성 데이터 생성의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 온-디바이스 모델 최적화의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

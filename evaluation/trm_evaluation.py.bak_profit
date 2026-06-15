@@ -1,0 +1,2202 @@
+"""
+TRM Final Evaluation Suite
+===========================
+Agent Output → Normalizer → Constraint Checker → LLM Structural Judge
+→ Back Test Evaluator → Score Aggregator → Benchmark Report
+
+사용법:
+    from trm_evaluation import TRMEvaluationSuite
+    suite = TRMEvaluationSuite()
+    result = suite.evaluate(input_pack)
+    suite.print_report(result)
+"""
+
+import json
+import math
+import copy
+import os
+import re
+import httpx
+from dataclasses import dataclass, field, asdict
+from typing import List, Dict, Optional, Any, Union
+from abc import ABC, abstractmethod
+
+# Optional provider SDKs (import lazily at client init)
+try:
+    from openai import OpenAI
+    _HAS_OPENAI = True
+except ImportError:
+    _HAS_OPENAI = False
+
+try:
+    from google import genai as google_genai
+    _HAS_GEMINI = True
+except ImportError:
+    _HAS_GEMINI = False
+
+
+# ═══════════════════════════════════════════════════════════════
+#  1. Input Schema Definitions
+# ═══════════════════════════════════════════════════════════════
+
+SAMPLE_INPUT_PACK = {
+    "metadata": {
+        "scenario_label": "multi-agent",
+        "domain": "AI Semiconductor",
+        "evaluation_cutoff_year": 2025
+    },
+
+    # --- Agent 1: Technology Analysis Agent 출력 ---
+    "tech_candidates": [
+        {
+            "tech_id": "T001",
+            "tech_name": "Edge AI Chip",
+            "category": "Hardware",
+            "TRL": 6,
+            "patent_score": 82,          # agent 내부 점수 (평가에 직접 사용 X)
+            "market_score": 75,           # agent 내부 점수 (평가에 직접 사용 X)
+            "final_score": 78,            # agent 내부 점수 (평가에 직접 사용 X)
+            "expected_market_boom_quarter": "2027-Q3",
+            "dependency_hints": ["T003"],
+            "keywords": ["edge ai", "ai chip", "npu"]
+        },
+        {
+            "tech_id": "T002",
+            "tech_name": "On-Device LLM",
+            "category": "Software",
+            "TRL": 4,
+            "patent_score": 90,
+            "market_score": 85,
+            "final_score": 87,
+            "expected_market_boom_quarter": "2028-Q1",
+            "dependency_hints": ["T001"],
+            "keywords": ["on-device llm", "edge inference", "small language model"]
+        },
+        {
+            "tech_id": "T003",
+            "tech_name": "Chiplet Packaging",
+            "category": "Manufacturing",
+            "TRL": 7,
+            "patent_score": 65,
+            "market_score": 60,
+            "final_score": 62,
+            "expected_market_boom_quarter": "2026-Q4",
+            "dependency_hints": [],
+            "keywords": ["chiplet", "advanced packaging", "2.5d packaging"]
+        },
+        {
+            "tech_id": "T004",
+            "tech_name": "Neuromorphic Sensor",
+            "category": "Hardware",
+            "TRL": 3,
+            "patent_score": 45,
+            "market_score": 38,
+            "final_score": 41,
+            "expected_market_boom_quarter": "2030-Q2",
+            "dependency_hints": ["T001"],
+            "keywords": ["neuromorphic", "spiking neural network", "event camera"]
+        }
+    ],
+
+    # --- Agent 2: Roadmap Planner 출력 ---
+    "planned_roadmap": [
+        {
+            "tech_id": "T003",
+            "tech_name": "Chiplet Packaging",
+            "start_q": "2025-Q1",
+            "target_q": "2026-Q3",
+            "prerequisites": []
+        },
+        {
+            "tech_id": "T001",
+            "tech_name": "Edge AI Chip",
+            "start_q": "2025-Q3",
+            "target_q": "2027-Q2",
+            "prerequisites": ["T003"]
+        },
+        {
+            "tech_id": "T002",
+            "tech_name": "On-Device LLM",
+            "start_q": "2026-Q4",
+            "target_q": "2028-Q1",
+            "prerequisites": ["T001"]
+        },
+        {
+            "tech_id": "T004",
+            "tech_name": "Neuromorphic Sensor",
+            "start_q": "2027-Q1",
+            "target_q": "2029-Q4",
+            "prerequisites": ["T001"]
+        }
+    ],
+
+    # --- Agent 3: Investment Strategist 출력 ---
+    "investment_strategy": [
+        {
+            "tech_id": "T001",
+            "tech_name": "Edge AI Chip",
+            "investment_tier": "High",
+            "market_opportunity": 4.2,
+            "strategic_fit": 4.5,
+            "executability": 3.8,
+            "uncertainty": 2.5,
+            "urgency": 4.0
+        },
+        {
+            "tech_id": "T002",
+            "tech_name": "On-Device LLM",
+            "investment_tier": "Strategic",
+            "market_opportunity": 4.8,
+            "strategic_fit": 4.6,
+            "executability": 3.2,
+            "uncertainty": 3.0,
+            "urgency": 3.5
+        },
+        {
+            "tech_id": "T003",
+            "tech_name": "Chiplet Packaging",
+            "investment_tier": "Medium",
+            "market_opportunity": 3.5,
+            "strategic_fit": 3.8,
+            "executability": 4.2,
+            "uncertainty": 1.8,
+            "urgency": 4.5
+        },
+        {
+            "tech_id": "T004",
+            "tech_name": "Neuromorphic Sensor",
+            "investment_tier": "Low",
+            "market_opportunity": 2.8,
+            "strategic_fit": 3.0,
+            "executability": 2.5,
+            "uncertainty": 4.0,
+            "urgency": 1.5
+        }
+    ],
+
+    # --- 제약 조건 ---
+    "constraints": {
+        "total_budget": 100,
+        "budget_allocation": {
+            "Low": 10,
+            "Medium": 20,
+            "High": 35,
+            "Strategic": 45
+        },
+        "max_concurrent_projects": 3,
+        "planning_horizon_end": "2030-Q4"
+    },
+
+    # --- 외부 Holdout 데이터 (Back Test용, agent가 생성한 것이 아님) ---
+    "holdout_data": {
+        "T001": {
+            "past_patents": 120,
+            "future_patents": 340,
+            "past_market_size_m": 2800,
+            "future_market_size_m": 8500
+        },
+        "T002": {
+            "past_patents": 80,
+            "future_patents": 310,
+            "past_market_size_m": 1200,
+            "future_market_size_m": 6800
+        },
+        "T003": {
+            "past_patents": 200,
+            "future_patents": 380,
+            "past_market_size_m": 3500,
+            "future_market_size_m": 7200
+        },
+        "T004": {
+            "past_patents": 30,
+            "future_patents": 55,
+            "past_market_size_m": 400,
+            "future_market_size_m": 900
+        },
+        # universe에는 포함되지만 agent가 선택하지 않은 기술들 (정규화 기준용)
+        "T_U1": {
+            "past_patents": 50,
+            "future_patents": 60,
+            "past_market_size_m": 600,
+            "future_market_size_m": 700
+        },
+        "T_U2": {
+            "past_patents": 500,
+            "future_patents": 1500,
+            "past_market_size_m": 10000,
+            "future_market_size_m": 35000
+        },
+        "T_U3": {
+            "past_patents": 10,
+            "future_patents": 12,
+            "past_market_size_m": 150,
+            "future_market_size_m": 180
+        }
+    }
+}
+
+
+# ═══════════════════════════════════════════════════════════════
+#  2. Pipeline Modules
+# ═══════════════════════════════════════════════════════════════
+
+class AgentOutputNormalizer:
+    """
+    Step 1: Agent 출력 정규화
+    - tech_candidates, planned_roadmap, investment_strategy를 tech_id 기준으로 병합
+    - holdout 데이터에서 raw feature 계산 (log-ratio)
+    - §7 원칙: 전체 universe 기준 min-max 정규화
+    """
+
+    COST_MAP = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+
+    def run(self, input_pack: dict) -> dict:
+        techs = {t["tech_id"]: t for t in input_pack["tech_candidates"]}
+        roadmap = {r["tech_id"]: r for r in input_pack["planned_roadmap"]}
+        invest = {s["tech_id"]: s for s in input_pack["investment_strategy"]}
+        holdout = input_pack["holdout_data"]
+
+        # ── raw feature 계산: 전체 universe ──
+        # Supports two schemas:
+        #   Legacy: past_patents / future_patents / past_market_size_m / future_market_size_m
+        #   New    : baseline_patents / realized_patents / baseline_market_m / realized_market_m
+        # baseline/realized는 시점 의미가 명확해서 권장.
+        raw_features = {}
+        for tid, hd in holdout.items():
+            past = hd.get("baseline_patents", hd.get("past_patents"))
+            future = hd.get("realized_patents", hd.get("future_patents"))
+            past_m = hd.get("baseline_market_m", hd.get("past_market_size_m"))
+            future_m = hd.get("realized_market_m", hd.get("future_market_size_m"))
+
+            if None in (past, future, past_m, future_m):
+                raise KeyError(
+                    f"holdout_data[{tid}]에 필수 필드 누락. "
+                    f"필요: baseline_patents/realized_patents/baseline_market_m/realized_market_m "
+                    f"(또는 legacy: past_patents/future_patents/past_market_size_m/future_market_size_m)"
+                )
+
+            pg = math.log((future + 1) / (past + 1))
+            mg = math.log((future_m + 1) / (past_m + 1))
+            ms = math.log(future_m + 1)
+            raw_features[tid] = {
+                "patent_growth_raw": pg,
+                "market_growth_raw": mg,
+                "market_size_raw": ms
+            }
+
+        # ── §7: universe 전체 기준 min-max 정규화 ──
+        all_pg = [f["patent_growth_raw"] for f in raw_features.values()]
+        all_mg = [f["market_growth_raw"] for f in raw_features.values()]
+        all_ms = [f["market_size_raw"] for f in raw_features.values()]
+
+        # V3: 절대 정규화 (케이스 내 min-max 대신 고정 기준 — 그룹 의존성 제거)
+        # 36케이스 227기술 raw 분포의 p10~p90을 0~1로 매핑
+        _ABS_RANGE = {"pg": (-0.35, 0.34), "mg": (-1.18, 1.49), "ms": (7.58, 9.18)}
+        def absnorm(val, kind):
+            if val is None:
+                return 0.5
+            lo, hi = _ABS_RANGE[kind]
+            return max(0.0, min(1.0, (val - lo) / (hi - lo)))
+        def minmax(val, vals):  # 호환용 — 더 이상 사용 안 함
+            if val is None:
+                return 0.5
+            valid = [v for v in vals if v is not None]
+            if not valid:
+                return 0.5
+            lo, hi = min(valid), max(valid)
+            if hi == lo:
+                return 0.5
+            return (val - lo) / (hi - lo)
+
+        normalized = {}
+        for tid, feat in raw_features.items():
+            normalized[tid] = {
+                "patent_growth_norm": absnorm(feat["patent_growth_raw"], "pg"),
+                "market_growth_norm": absnorm(feat["market_growth_raw"], "mg"),
+                "market_size_norm": absnorm(feat["market_size_raw"], "ms"),
+                **feat  # raw도 보관
+            }
+
+        # ── 선택된 기술만 병합 ──
+        selected_ids = [r["tech_id"] for r in input_pack["planned_roadmap"]]
+        merged = []
+        for tid in selected_ids:
+            entry = {
+                "tech_id": tid,
+                "tech_name": techs[tid]["tech_name"],
+                "category": techs[tid]["category"],
+                "TRL": techs[tid]["TRL"],
+                "expected_market_boom_quarter": techs[tid]["expected_market_boom_quarter"],
+                "dependency_hints": techs[tid]["dependency_hints"],
+                "keywords": techs[tid]["keywords"],
+                # roadmap
+                "start_q": roadmap[tid]["start_q"],
+                "target_q": roadmap[tid]["target_q"],
+                "prerequisites": roadmap[tid]["prerequisites"],
+                # investment
+                "investment_tier": invest[tid]["investment_tier"],
+                "market_opportunity": invest[tid]["market_opportunity"],
+                "strategic_fit": invest[tid]["strategic_fit"],
+                "executability": invest[tid]["executability"],
+                "uncertainty": invest[tid]["uncertainty"],
+                "urgency": invest[tid]["urgency"],
+                # holdout-based normalized features
+                "patent_growth_norm": normalized[tid]["patent_growth_norm"],
+                "market_growth_norm": normalized[tid]["market_growth_norm"],
+                "market_size_norm": normalized[tid]["market_size_norm"],
+                "patent_growth_raw": normalized[tid]["patent_growth_raw"],
+                "market_growth_raw": normalized[tid]["market_growth_raw"],
+                "market_size_raw": normalized[tid]["market_size_raw"],
+                # cost proxy
+                "cost_proxy": self.COST_MAP.get(invest[tid]["investment_tier"], 2),
+                "tech_budget_usd": invest[tid].get("tech_budget_usd", 0) or 0
+            }
+            merged.append(entry)
+
+        return {
+            "merged_techs": merged,
+            "universe_normalized": normalized,
+            "constraints": input_pack["constraints"],
+            "metadata": input_pack["metadata"]
+        }
+
+
+class ConstraintChecker:
+    """
+    Step 2: Hard Constraint 위반 검사
+    - 예산 초과
+    - 의존성(선행관계) 위반
+    - 타이밍 오류 (시장 개화 시점 vs 개발 완료 시점)
+    """
+
+    @staticmethod
+    def _q_to_float(q_str: str) -> float:
+        """'2027-Q3' → 2027.5 식으로 변환"""
+        year, q = q_str.split("-")
+        quarter = int(q.replace("Q", ""))
+        return int(year) + (quarter - 1) * 0.25
+
+    def run(self, norm_output: dict) -> dict:
+        techs = norm_output["merged_techs"]
+        constraints = norm_output["constraints"]
+
+        # ── 예산 검사 ──
+        budget_total = constraints["total_budget"]
+        budget_alloc = constraints.get("budget_allocation", {})
+        # 실제 기술별 예산(tech_budget_usd) 합산; 없으면 기존 tier 기반 fallback
+        _real_budgets = [t.get("tech_budget_usd", 0) or 0 for t in techs]
+        if any(_real_budgets):
+            spent = sum(_real_budgets)  # raw USD (constraints.total_budget도 raw USD)
+        else:
+            spent = sum(budget_alloc.get(t["investment_tier"], 0) for t in techs)
+        budget_violation = max(0, spent - budget_total)
+        budget_violation_pct = (budget_violation / budget_total * 100) if budget_total > 0 else 0
+
+        # ── 의존성 검사 ──
+        target_map = {}
+        for t in techs:
+            target_map[t["tech_id"]] = self._q_to_float(t["target_q"])
+
+        dep_violations = []
+        for t in techs:
+            start = self._q_to_float(t["start_q"])
+            for pre_id in t["prerequisites"]:
+                if pre_id in target_map:
+                    pre_end = target_map[pre_id]
+                    if start < pre_end:
+                        dep_violations.append({
+                            "tech_id": t["tech_id"],
+                            "tech_name": t["tech_name"],
+                            "prerequisite": pre_id,
+                            "tech_start": t["start_q"],
+                            "prereq_end": f"~{pre_end}",
+                            "gap_quarters": round((start - pre_end) * 4, 1)
+                        })
+
+        # ── 타이밍 검사: target_q vs expected_market_boom_quarter ──
+        timing_errors = []
+        for t in techs:
+            if t["expected_market_boom_quarter"]:
+                target = self._q_to_float(t["target_q"])
+                boom = self._q_to_float(t["expected_market_boom_quarter"])
+                error_years = target - boom  # 양수면 시장보다 늦음
+                timing_errors.append({
+                    "tech_id": t["tech_id"],
+                    "tech_name": t["tech_name"],
+                    "target_q": t["target_q"],
+                    "boom_q": t["expected_market_boom_quarter"],
+                    "error_years": round(error_years, 2)
+                })
+
+        mean_timing_error = 0
+        if timing_errors:
+            mean_timing_error = sum(abs(e["error_years"]) for e in timing_errors) / len(timing_errors)
+
+        return {
+            **norm_output,
+            "constraint_results": {
+                "budget_violation_pct": round(budget_violation_pct, 1),
+                "budget_spent": spent,
+                "budget_total": budget_total,
+                "dependency_violations": dep_violations,
+                "dependency_violation_count": len(dep_violations),
+                "timing_errors": timing_errors,
+                "mean_timing_error_years": round(mean_timing_error, 2)
+            }
+        }
+
+
+class BaseLLMClient(ABC):
+    """
+    LLM Provider 추상화 클래스.
+    모든 provider는 (system_prompt, user_prompt) → JSON dict를 반환.
+    """
+    name: str = "base"
+    default_model: str = ""
+
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+        self.api_key = api_key
+        self.model = model or self.default_model
+
+    @abstractmethod
+    def call(self, system_prompt: str, user_prompt: str, max_tokens: int = 1500) -> dict:
+        """JSON object를 반환. 실패 시 예외."""
+        pass
+
+    @staticmethod
+    def _parse_json(text: str) -> dict:
+        """LLM 응답에서 JSON 추출 (```json 래핑, 앞뒤 텍스트 처리)"""
+        text = re.sub(r"```json\s*", "", text)
+        text = re.sub(r"```\s*", "", text)
+        text = text.strip()
+        # 첫 { 부터 마지막 } 까지만 추출 (LLM이 앞뒤에 설명 붙였을 수 있음)
+        start = text.find("{")
+        end = text.rfind("}")
+        if start >= 0 and end > start:
+            text = text[start : end + 1]
+        return json.loads(text)
+
+
+class AnthropicClient(BaseLLMClient):
+    """Claude (Anthropic) — Messages API 직접 호출"""
+    name = "anthropic"
+    default_model = "claude-sonnet-4-6"
+
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+        key = api_key or os.environ.get("ANTHROPIC_API_KEY")
+        super().__init__(key, model)
+
+    def call(self, system_prompt: str, user_prompt: str, max_tokens: int = 1500) -> dict:
+        if not self.api_key:
+            raise RuntimeError("ANTHROPIC_API_KEY not set")
+
+        payload = {
+            "model": self.model,
+            "max_tokens": max_tokens,
+            "system": system_prompt,
+            "messages": [{"role": "user", "content": user_prompt}],
+        }
+        headers = {
+            "Content-Type": "application/json",
+            "x-api-key": self.api_key,
+            "anthropic-version": "2023-06-01",
+        }
+        with httpx.Client(timeout=60) as client:
+            resp = client.post(
+                "https://api.anthropic.com/v1/messages",
+                headers=headers,
+                json=payload,
+            )
+            resp.raise_for_status()
+            result = resp.json()
+
+        text = ""
+        for block in result.get("content", []):
+            if block.get("type") == "text":
+                text += block["text"]
+        return self._parse_json(text)
+
+
+class OpenAIClient(BaseLLMClient):
+    """GPT-4o / GPT-4.1 (OpenAI) — Chat Completions API"""
+    name = "openai"
+    default_model = "gpt-4o"
+
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+        if not _HAS_OPENAI:
+            raise ImportError("openai package not installed. Run: pip install openai")
+        key = api_key or os.environ.get("OPENAI_API_KEY")
+        super().__init__(key, model)
+        self._client = OpenAI(api_key=self.api_key) if self.api_key else None
+
+    def call(self, system_prompt: str, user_prompt: str, max_tokens: int = 1500) -> dict:
+        if not self._client:
+            raise RuntimeError("OPENAI_API_KEY not set")
+
+        resp = self._client.chat.completions.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            response_format={"type": "json_object"},  # JSON mode 강제
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+        text = resp.choices[0].message.content
+        return self._parse_json(text)
+
+
+class GeminiClient(BaseLLMClient):
+    """Gemini (Google) — google-genai SDK"""
+    name = "gemini"
+    default_model = "gemini-2.0-flash-001"
+
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+        if not _HAS_GEMINI:
+            raise ImportError("google-genai package not installed. Run: pip install google-genai")
+        key = api_key or os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+        super().__init__(key, model)
+        self._client = google_genai.Client(api_key=self.api_key) if self.api_key else None
+
+    def call(self, system_prompt: str, user_prompt: str, max_tokens: int = 1500) -> dict:
+        if not self._client:
+            raise RuntimeError("GOOGLE_API_KEY (or GEMINI_API_KEY) not set")
+
+        # Gemini는 system을 config.system_instruction으로 분리
+        from google.genai import types
+        resp = self._client.models.generate_content(
+            model=self.model,
+            contents=user_prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                max_output_tokens=max_tokens,
+                response_mime_type="application/json",
+            ),
+        )
+        text = resp.text
+        return self._parse_json(text)
+
+
+def make_client(provider: str, api_key: Optional[str] = None,
+                model: Optional[str] = None) -> BaseLLMClient:
+    """Provider 이름으로 client 생성"""
+    p = provider.lower()
+    if p in ("anthropic", "claude"):
+        return AnthropicClient(api_key, model)
+    elif p in ("openai", "gpt"):
+        return OpenAIClient(api_key, model)
+    elif p in ("google", "gemini"):
+        return GeminiClient(api_key, model)
+    else:
+        raise ValueError(f"Unknown provider: {provider}. Use 'anthropic', 'openai', or 'gemini'.")
+
+
+class LLMStructuralJudge:
+    """
+    Step 3: LLM-as-a-Judge 구조 평가
+    - 5개 축 (1~5점) 평가
+    - §3 가중치로 structural score 계산
+    - ACCEPT/REVISE 없이 scoring만 수행
+
+    4가지 모드:
+      1) llm_scores 직접 전달 → 그대로 사용
+      2) 단일 client → 해당 provider만 호출
+      3) 앙상블 (여러 client) → 축별 평균 집계
+      4) client 없음 → rule-based proxy (fallback)
+
+    사용법:
+        # 단일 provider
+        judge = LLMStructuralJudge(clients=AnthropicClient())
+
+        # 앙상블 (3개 모델 평균)
+        judge = LLMStructuralJudge(clients=[
+            AnthropicClient(),
+            OpenAIClient(),
+            GeminiClient(),
+        ])
+
+        # 편의 함수로 provider 이름만 전달
+        judge = LLMStructuralJudge.from_providers(["anthropic", "openai"])
+    """
+
+    # ── V1 weights (preserved for backward compatibility) ──
+    WEIGHTS_V1 = {
+        "alignment": 0.3,
+        "sequencing": 0.2,
+        "investment": 0.2,
+        "coherence": 0.2,
+        "balance": 0.1
+    }
+
+    # ── V2 weights (new primary) ──
+    WEIGHTS = {
+        "trl_pathway": 0.25,
+        "strategic_fidelity": 0.25,
+        "competitive_awareness": 0.20,
+        "market_timing": 0.20,
+        "patent_market_convergence": 0.10,
+    }
+
+    # ── V1 prompt (preserved) ──
+    JUDGE_SYSTEM_PROMPT_V1 = """You are a Technology Roadmap (TRM) expert evaluator.
+You will receive a complete technology roadmap package including:
+- Technology candidates with their characteristics
+- A planned development roadmap with timelines and dependencies
+- An investment strategy with tier allocations
+- Constraint information (budget, dependencies, timing)
+
+Your task is to evaluate the roadmap's structural quality on exactly 5 axes.
+Each axis is scored 1-5 (1=very poor, 2=poor, 3=adequate, 4=good, 5=excellent).
+
+## Evaluation Axes
+
+1. **Technology-Market Alignment** (alignment)
+   - Do selected technologies match high-growth market opportunities?
+   - Are declining or saturated markets avoided?
+   - Is there evidence of market timing awareness?
+
+2. **Temporal & Sequencing Validity** (sequencing)
+   - Are prerequisite technologies scheduled before dependent ones?
+   - Are TRL-based lead times realistic?
+   - Does the timeline respect dependency chains?
+
+3. **Investment Allocation Rationality** (investment)
+   - Do high-value, high-urgency technologies receive higher investment?
+   - Are low-potential technologies kept at Low/Medium tiers?
+   - Is the budget distributed proportionally to expected returns?
+
+4. **Strategic Coherence** (coherence)
+   - Do technologies form a logical progression?
+   - Is there a clear strategic narrative connecting selections?
+   - Are TRL stages covered (research → development → deployment)?
+
+5. **Portfolio Balance** (balance)
+   - Is there diversity across investment tiers?
+   - Are short-term and long-term bets both represented?
+   - Is risk distributed, not concentrated?
+
+## Evaluation Priority Order
+Evaluate in this order of importance:
+feasibility → dependency correctness → strategic alignment → economic potential → portfolio balance
+
+## Output Format
+Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
+
+{
+  "alignment": <1-5>,
+  "sequencing": <1-5>,
+  "investment": <1-5>,
+  "coherence": <1-5>,
+  "balance": <1-5>,
+  "evidence": {
+    "alignment": "<1-2 sentence justification>",
+    "sequencing": "<1-2 sentence justification>",
+    "investment": "<1-2 sentence justification>",
+    "coherence": "<1-2 sentence justification>",
+    "balance": "<1-2 sentence justification>"
+  },
+  "key_strengths": ["<strength 1>", "<strength 2>"],
+  "key_weaknesses": ["<weakness 1>", "<weakness 2>"],
+  "missing_technologies": ["<tech that should have been included>"],
+  "timing_issues": ["<timing problem description>"],
+  "investment_issues": ["<investment allocation problem>"]
+}"""
+
+    # ── V2 prompt (new primary — blind to patent map ON/OFF) ──
+    JUDGE_SYSTEM_PROMPT = """You are a Technology Roadmap (TRM) expert evaluator.
+You will receive a complete technology roadmap package including:
+- Technology candidates with their characteristics
+- A planned development roadmap with timelines and dependencies
+- An investment strategy with tier allocations
+- Constraint information (budget, dependencies, timing)
+- The declared strategic direction (기술선도 or 시장이익최대)
+
+Your task is to evaluate the roadmap's structural quality on exactly 5 axes.
+Each axis is scored 1-5 (1=very poor, 2=poor, 3=adequate, 4=good, 5=excellent).
+
+## Evaluation Axes
+
+1. **TRL Pathway Realism** (trl_pathway)
+   Is the TRL progression from current to target achievable within the given timeline?
+   - 5: All TRL jumps are realistic given industry norms (e.g., TRL 4→6 in 3+ years)
+   - 4: Most pathways are realistic with minor aggressive assumptions
+   - 3: Some pathways require optimistic assumptions (e.g., TRL 4→7 in 2 years)
+   - 2: Multiple pathways are unrealistic given standard development cycles
+   - 1: Most pathways are infeasible within the stated timelines
+   Consider: industry-specific TRL maturation rates, technology complexity, historical precedents.
+
+2. **Strategic Direction Fidelity** (strategic_fidelity)
+   Does the roadmap actually execute the declared strategic direction?
+   - For 기술선도 (Technology Leadership): expect lower-TRL exploratory technologies,
+     patent-trend-aligned selections, longer timelines, R&D-heavy portfolio
+   - For 시장이익최대 (Market Profit Maximization): expect higher-TRL near-market technologies,
+     market-size-aligned selections, shorter timelines, commercialization-focused portfolio
+   - 5: Portfolio perfectly embodies the declared strategy
+   - 4: Mostly aligned with minor deviations
+   - 3: Mixed signals — some selections contradict the strategy
+   - 2: Significant mismatch between declaration and execution
+   - 1: Portfolio contradicts the declared strategy entirely
+
+3. **Competitive Landscape Awareness** (competitive_awareness)
+   Does the roadmap demonstrate understanding of the competitive technology landscape?
+   - Is there evidence of competitor technology positioning awareness?
+   - Are technology gaps or differentiation opportunities being exploited?
+   - Is there timing advantage design relative to competitors?
+   - 5: Rich competitive intelligence embedded in technology selection and timing
+   - 4: Good competitive awareness with clear differentiation rationale
+   - 3: Some competitive context but shallow
+   - 2: Little evidence of competitive landscape consideration
+   - 1: No competitive awareness, selections appear made in isolation
+
+4. **Market Timing Precision** (market_timing)
+   Are technology completion times strategically aligned with market boom windows?
+   - For 기술선도: completing 1-2 years BEFORE market boom is ideal (preemption)
+   - For 시장이익최대: completing within ±0.5 years of boom is ideal (maximum ROI)
+   - Both strategies: completing 2+ years AFTER boom is penalized
+   - 5: All technologies hit their strategy-optimal timing windows
+   - 4: Most technologies are well-timed for their strategy
+   - 3: Timing is adequate but not strategy-optimized
+   - 2: Multiple technologies miss their windows
+   - 1: Systematic timing misalignment across the portfolio
+
+5. **Patent-Market Convergence** (patent_market_convergence)
+   Were technologies selected where patent activity AND market growth converge?
+   - Is there intentional selection of technologies in convergence zones?
+   - Or are selections skewed toward patent-only or market-only signals?
+   - 5: Clear evidence of deliberate convergence-zone targeting
+   - 4: Most selections show patent-market alignment
+   - 3: Some convergence, but appears coincidental rather than intentional
+   - 2: Selections lean heavily on one signal (patent or market only)
+   - 1: No evidence of convergence awareness
+
+## Important Notes
+- Evaluate based ONLY on the roadmap content provided. Do not infer data sources.
+- Consider the declared strategic direction when scoring axes 2 and 4.
+- Evaluate competitive awareness from what is visible in the roadmap's technology choices,
+  not from metadata about data sources.
+
+## Output Format
+Respond ONLY with a JSON object. No markdown, no explanation, no preamble.
+
+{
+  "trl_pathway": <1-5>,
+  "strategic_fidelity": <1-5>,
+  "competitive_awareness": <1-5>,
+  "market_timing": <1-5>,
+  "patent_market_convergence": <1-5>,
+  "evidence": {
+    "trl_pathway": "<1-2 sentence justification>",
+    "strategic_fidelity": "<1-2 sentence justification>",
+    "competitive_awareness": "<1-2 sentence justification>",
+    "market_timing": "<1-2 sentence justification>",
+    "patent_market_convergence": "<1-2 sentence justification>"
+  },
+  "key_strengths": ["<strength 1>", "<strength 2>"],
+  "key_weaknesses": ["<weakness 1>", "<weakness 2>"],
+  "missing_technologies": ["<tech that should have been included>"],
+  "timing_issues": ["<timing problem description>"],
+  "investment_issues": ["<investment allocation problem>"]
+}"""
+
+    def __init__(self,
+                 clients: Optional[Union[BaseLLMClient, List[BaseLLMClient]]] = None,
+                 aggregation: str = "mean"):
+        """
+        Args:
+            clients: 단일 client 또는 client 리스트 (앙상블)
+            aggregation: 앙상블 집계 방식 ('mean' 또는 'median')
+        """
+        if clients is None:
+            self.clients = []
+        elif isinstance(clients, BaseLLMClient):
+            self.clients = [clients]
+        else:
+            self.clients = list(clients)
+        self.aggregation = aggregation
+
+    @classmethod
+    def from_providers(cls, providers: List[str],
+                       api_keys: Optional[Dict[str, str]] = None,
+                       models: Optional[Dict[str, str]] = None,
+                       aggregation: str = "mean") -> "LLMStructuralJudge":
+        """
+        Provider 이름 리스트로 간편 생성.
+
+        Example:
+            judge = LLMStructuralJudge.from_providers(
+                ["anthropic", "openai", "gemini"],
+                models={"openai": "gpt-4o", "gemini": "gemini-2.0-flash-001"}
+            )
+        """
+        api_keys = api_keys or {}
+        models = models or {}
+        clients = [
+            make_client(p, api_key=api_keys.get(p), model=models.get(p))
+            for p in providers
+        ]
+        return cls(clients=clients, aggregation=aggregation)
+
+    def run(self, checked_output: dict,
+            llm_scores: Optional[dict] = None,
+            use_api: bool = False) -> dict:
+        """
+        Args:
+            checked_output: Constraint Checker 출력
+            llm_scores: 직접 전달하는 5축 점수 dict (있으면 최우선)
+            use_api: True면 등록된 client로 API 호출 (앙상블 자동 수행)
+        """
+        evidence = {}
+        diagnostics_from_llm = {}
+        per_model_scores = {}  # 앙상블 시 각 모델의 원본 점수 보관
+
+        if llm_scores:
+            # 모드 1: 직접 전달
+            scores = llm_scores
+
+        elif use_api and self.clients:
+            # 모드 2 or 3: 단일 또는 앙상블 API 호출
+            results = self._call_all_clients(checked_output)
+
+            if not results:
+                print(f"  ✗ 모든 client 호출 실패 → rule-based fallback")
+                scores = self._rule_based_proxy(checked_output)
+            else:
+                # 각 모델의 점수 보관
+                for provider, payload in results.items():
+                    per_model_scores[provider] = {
+                        axis: payload.get(axis, 3) for axis in self.WEIGHTS
+                    }
+
+                # 앙상블 집계
+                scores = self._aggregate_scores(results)
+
+                # evidence: 첫 번째 성공한 모델 것 사용 (혹은 조합 가능)
+                first = next(iter(results.values()))
+                evidence = first.get("evidence", {})
+                diagnostics_from_llm = self._merge_diagnostics(results)
+
+                mode_label = "앙상블" if len(results) > 1 else f"단일({list(results.keys())[0]})"
+                print(f"  ✓ LLM Judge {mode_label} 완료: {list(results.keys())}")
+
+        else:
+            # 모드 4: rule-based fallback
+            scores = self._rule_based_proxy(checked_output)
+
+        # 가중합 → 0~100 변환 (V2)
+        raw = sum(self.WEIGHTS[k] * scores.get(k, 3) for k in self.WEIGHTS)
+        structural_score = (raw - 1) / 4 * 100
+
+        # V1 점수도 보존: rule-based proxy로 v1 축 계산
+        v1_proxy = self._rule_based_proxy_v1(checked_output)
+        raw_v1 = sum(self.WEIGHTS_V1[k] * v1_proxy.get(k, 3) for k in self.WEIGHTS_V1)
+        structural_score_v1 = (raw_v1 - 1) / 4 * 100
+
+        # 진단 정보
+        if diagnostics_from_llm:
+            diagnostics = diagnostics_from_llm
+        else:
+            diagnostics = self._generate_diagnostics(checked_output, scores)
+
+        return {
+            **checked_output,
+            "llm_judge": {
+                "axis_scores": scores,
+                "axis_scores_v1": v1_proxy,
+                "per_model_scores": per_model_scores,
+                "aggregation": self.aggregation if len(per_model_scores) > 1 else "single",
+                "models_used": list(per_model_scores.keys()),
+                "evidence": evidence,
+                "llm_raw": round(raw, 3),
+                "llm_structural_score": round(structural_score, 1),
+                "llm_structural_score_v1": round(structural_score_v1, 1),
+                **diagnostics,
+            },
+        }
+
+    def _call_all_clients(self, data: dict) -> Dict[str, dict]:
+        """모든 등록된 client를 순차 호출. 실패한 client는 skip."""
+        user_prompt = self._build_user_prompt(data)
+        results = {}
+
+        for client in self.clients:
+            provider_label = f"{client.name}:{client.model}"
+            try:
+                parsed = client.call(self.JUDGE_SYSTEM_PROMPT, user_prompt)
+                # 점수 범위 검증
+                for axis in self.WEIGHTS:
+                    if axis in parsed:
+                        parsed[axis] = max(1, min(5, int(parsed[axis])))
+                results[provider_label] = parsed
+                print(f"    ✓ {provider_label} 호출 성공")
+            except Exception as e:
+                err_msg = str(e)[:150]
+                print(f"    ✗ {provider_label} 호출 실패: {err_msg}")
+
+        return results
+
+    def _aggregate_scores(self, results: Dict[str, dict]) -> dict:
+        """여러 모델의 점수를 집계 (평균 또는 중간값)."""
+        axes = list(self.WEIGHTS.keys())
+        aggregated = {}
+
+        for axis in axes:
+            vals = [r.get(axis, 3) for r in results.values()]
+            if self.aggregation == "median":
+                vals_sorted = sorted(vals)
+                n = len(vals_sorted)
+                if n % 2 == 1:
+                    aggregated[axis] = vals_sorted[n // 2]
+                else:
+                    aggregated[axis] = round((vals_sorted[n // 2 - 1] + vals_sorted[n // 2]) / 2)
+            else:  # mean (기본)
+                aggregated[axis] = round(sum(vals) / len(vals))
+            aggregated[axis] = max(1, min(5, aggregated[axis]))
+
+        return aggregated
+
+    def _merge_diagnostics(self, results: Dict[str, dict]) -> dict:
+        """여러 모델의 strengths/weaknesses를 합침 (중복 제거)"""
+        strengths, weaknesses = [], []
+        missing_techs, timing_issues, investment_issues = [], [], []
+
+        for r in results.values():
+            strengths.extend(r.get("key_strengths", []))
+            weaknesses.extend(r.get("key_weaknesses", []))
+            missing_techs.extend(r.get("missing_technologies", []))
+            timing_issues.extend(r.get("timing_issues", []))
+            investment_issues.extend(r.get("investment_issues", []))
+
+        # 중복 제거 (순서 유지)
+        def dedupe(lst):
+            seen, out = set(), []
+            for item in lst:
+                if item not in seen:
+                    seen.add(item)
+                    out.append(item)
+            return out
+
+        return {
+            "strengths": dedupe(strengths),
+            "weaknesses": dedupe(weaknesses),
+            "missing_technologies": dedupe(missing_techs),
+            "timing_issues": dedupe(timing_issues),
+            "investment_issues": dedupe(investment_issues),
+        }
+
+    def _build_user_prompt(self, data: dict) -> str:
+        """Constraint Checker 출력에서 LLM judge에게 보낼 프롬프트 조립 (V2: blind to patent map)"""
+        techs = data["merged_techs"]
+        cr = data["constraint_results"]
+        meta = data["metadata"]
+
+        lines = []
+        lines.append(f"## Evaluation Target")
+        lines.append(f"Domain: {meta['domain']}")
+        lines.append(f"Reference Year: {meta['evaluation_cutoff_year']}")
+        lines.append(f"Scenario: {meta['scenario_label']}")
+
+        # V2: Include strategic direction for Strategy Fidelity & Market Timing axes
+        strategic_dir = meta.get("strategy_type", "") or meta.get("strategic_direction", "")
+        if strategic_dir:
+            lines.append(f"Strategic Direction: {strategic_dir}")
+        lines.append("")
+
+        # 기술 후보 정보
+        lines.append("## Selected Technologies")
+        for t in techs:
+            lines.append(f"- **{t['tech_name']}** (ID: {t['tech_id']})")
+            lines.append(f"  Category: {t['category']} | TRL: {t['TRL']}")
+            lines.append(f"  Market Boom Expected: {t['expected_market_boom_quarter']}")
+            lines.append(f"  Dependencies: {t['dependency_hints']}")
+            lines.append(f"  Keywords: {', '.join(t['keywords'])}")
+            lines.append("")
+
+        # 로드맵 타임라인
+        lines.append("## Planned Roadmap Timeline")
+        for t in techs:
+            lines.append(f"- {t['tech_name']}: {t['start_q']} → {t['target_q']} "
+                         f"(prerequisites: {t['prerequisites']})")
+        lines.append("")
+
+        # 투자 전략
+        lines.append("## Investment Strategy")
+        for t in techs:
+            lines.append(f"- {t['tech_name']}: Tier={t['investment_tier']} | "
+                         f"market_opp={t['market_opportunity']:.1f} "
+                         f"strategic_fit={t['strategic_fit']:.1f} "
+                         f"executability={t['executability']:.1f} "
+                         f"uncertainty={t['uncertainty']:.1f} "
+                         f"urgency={t['urgency']:.1f}")
+        lines.append("")
+
+        # 제약 조건 현황
+        lines.append("## Constraint Status")
+        lines.append(f"- Budget: spent {cr['budget_spent']} / total {cr['budget_total']} "
+                     f"(violation: {cr['budget_violation_pct']}%)")
+        lines.append(f"- Dependency violations: {cr['dependency_violation_count']}")
+        for dv in cr["dependency_violations"]:
+            lines.append(f"  → {dv['tech_name']} starts at {dv['tech_start']} "
+                         f"but prerequisite {dv['prerequisite']} ends at {dv['prereq_end']}")
+        lines.append(f"- Mean timing error: {cr['mean_timing_error_years']} years")
+        for te in cr["timing_errors"]:
+            lines.append(f"  → {te['tech_name']}: target {te['target_q']} vs boom {te['boom_q']} "
+                         f"(error: {te['error_years']}yr)")
+        lines.append("")
+        lines.append("Please evaluate this roadmap and respond ONLY with the JSON object.")
+
+        return "\n".join(lines)
+
+    # ===== PAIRWISE 비교 평가 (LLM 상대판단 전용) =====
+    PAIRWISE_SYSTEM_PROMPT = """You are a Technology Roadmap (TRM) expert evaluator.
+You will receive TWO technology roadmaps (ROADMAP A and ROADMAP B) for the SAME company and SAME strategic direction. They are two alternative plans.
+
+Your task: COMPARE the two roadmaps on exactly 5 axes. For EACH axis, give BOTH roadmaps a score from 1 to 5 (1=very poor, 5=excellent), judged RELATIVE to each other on that axis, then declare the winner. If A is clearly better on an axis, A should score higher than B on that axis; ties are allowed only when genuinely comparable.
+
+## Comparison Axes (score both A and B, 1-5)
+1. trl_pathway: realistic TRL progression within the timeline?
+2. strategic_fidelity: faithfully executes the declared strategic direction (기술선도=low-TRL exploratory/preemptive; 시장이익최대=near-market/ROI-timed)?
+3. competitive_awareness: depth of competitive landscape understanding and differentiation?
+4. market_timing: completion timed well for its strategy (기술선도=1-2yr before boom; 시장이익최대=within +-0.5yr of boom; 2+yr after boom penalized)?
+5. patent_market_convergence: selects technologies where patent activity AND market growth converge?
+
+For each axis: score_a (1-5), score_b (1-5), winner (A/B/tie), reason (<=200 chars).
+Then overall_winner (A/B/tie), margin (clear/slight/tie), overall_reason (<=300 chars).
+
+Respond ONLY with this JSON object (no prose, no markdown fences):
+{
+  "axis_comparison": {
+    "trl_pathway": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "strategic_fidelity": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "competitive_awareness": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "market_timing": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""},
+    "patent_market_convergence": {"score_a": 3, "score_b": 3, "winner": "A|B|tie", "reason": ""}
+  },
+  "overall_winner": "A|B|tie",
+  "margin": "clear|slight|tie",
+  "overall_reason": ""
+}"""
+
+    def _build_pairwise_prompt(self, data_a: dict, data_b: dict) -> str:
+        prompt_a = self._build_user_prompt(data_a)
+        prompt_b = self._build_user_prompt(data_b)
+        cut = "Please evaluate this roadmap and respond ONLY with the JSON object."
+        prompt_a = prompt_a.replace(cut, "").rstrip()
+        prompt_b = prompt_b.replace(cut, "").rstrip()
+        out = []
+        out.append("# ROADMAP A")
+        out.append(prompt_a)
+        out.append("")
+        out.append("# ROADMAP B")
+        out.append(prompt_b)
+        out.append("")
+        out.append("Compare ROADMAP A and ROADMAP B. Respond ONLY with the JSON object.")
+        return "\n".join(out)
+
+    def compare_pairwise(self, data_a: dict, data_b: dict, use_api: bool = False) -> dict:
+        if not (use_api and self.clients):
+            return {"_error": "pairwise needs API (use_api=True, clients)"}
+        user_prompt = self._build_pairwise_prompt(data_a, data_b)
+        for client in self.clients:
+            provider = f"{client.name}:{client.model}"
+            try:
+                parsed = client.call(self.PAIRWISE_SYSTEM_PROMPT, user_prompt)
+                parsed["_model"] = provider
+                return parsed
+            except Exception as e:
+                print(f"    pairwise {provider} fail: {e}")
+                continue
+        return {"_error": "all clients failed"}
+
+    def _format_fallback(self) -> dict:
+        """API 실패 시 기본값 반환 (전부 3점)"""
+        return {
+            "trl_pathway": 3, "strategic_fidelity": 3, "competitive_awareness": 3,
+            "market_timing": 3, "patent_market_convergence": 3,
+            "evidence": {k: "API call failed, fallback score" for k in self.WEIGHTS},
+            "key_strengths": [], "key_weaknesses": [],
+            "missing_technologies": [], "timing_issues": [],
+            "investment_issues": []
+        }
+
+    def _rule_based_proxy(self, data: dict) -> dict:
+        """
+        V2 rule-based fallback: 새 5축에 대한 구조적 근사.
+        LLM 호출 실패 시 사용.
+        """
+        techs = data["merged_techs"]
+        cr = data["constraint_results"]
+        meta = data.get("metadata", {})
+        strategic_dir = meta.get("strategy_type", "") or meta.get("strategic_direction", "")
+
+        # 1) trl_pathway: TRL gap / timeline 비율
+        trl_scores = []
+        for t in techs:
+            try:
+                s_year = int(t["start_q"].split("-")[0])
+                t_year = int(t["target_q"].split("-")[0])
+                years = max(1, t_year - s_year)
+                trl = t.get("TRL", 5)
+                gap = max(0, 7 - trl)  # target TRL ~7 가정
+                ratio = gap / years
+                if ratio <= 0.8:
+                    trl_scores.append(5)
+                elif ratio <= 1.2:
+                    trl_scores.append(4)
+                elif ratio <= 1.5:
+                    trl_scores.append(3)
+                elif ratio <= 2.0:
+                    trl_scores.append(2)
+                else:
+                    trl_scores.append(1)
+            except:
+                trl_scores.append(3)
+        trl_pathway = round(sum(trl_scores) / max(len(trl_scores), 1))
+
+        # 2) strategic_fidelity: 전략 프로파일 매치
+        is_tech_lead = "기술선도" in strategic_dir or "technology" in strategic_dir.lower()
+        low_trl_count = sum(1 for t in techs if t.get("TRL", 5) <= 5)
+        high_trl_count = sum(1 for t in techs if t.get("TRL", 5) >= 6)
+        total = max(len(techs), 1)
+        if is_tech_lead:
+            match_rate = low_trl_count / total
+        else:
+            match_rate = high_trl_count / total
+        strategic_fidelity = min(5, max(1, round(1 + match_rate * 4)))
+
+        # 3) competitive_awareness: 기본 3점 (rule-based로는 판단 어려움)
+        competitive_awareness = 3
+
+        # 4) market_timing: 전략별 기준 적용
+        timing_scores = []
+        for te in cr.get("timing_errors", []):
+            err = te.get("error_years", 0)
+            if is_tech_lead:
+                if err <= -0.5:
+                    timing_scores.append(5)
+                elif err <= 0.5:
+                    timing_scores.append(4)
+                elif err <= 1.5:
+                    timing_scores.append(3)
+                else:
+                    timing_scores.append(max(1, 5 - int(err)))
+            else:
+                if abs(err) <= 0.5:
+                    timing_scores.append(5)
+                elif abs(err) <= 1.0:
+                    timing_scores.append(4)
+                elif abs(err) <= 2.0:
+                    timing_scores.append(3)
+                else:
+                    timing_scores.append(max(1, 5 - int(abs(err))))
+        market_timing = round(sum(timing_scores) / max(len(timing_scores), 1)) if timing_scores else 3
+
+        # 5) patent_market_convergence: patent_norm × market_norm 곱 기반
+        conv_scores = []
+        for t in techs:
+            pn = t.get("patent_growth_norm", 0.5)
+            mn = t.get("market_growth_norm", 0.5)
+            conv = pn * mn
+            conv_scores.append(conv)
+        avg_conv = sum(conv_scores) / max(len(conv_scores), 1)
+        patent_market_convergence = min(5, max(1, round(1 + avg_conv * 4)))
+
+        return {
+            "trl_pathway": max(1, min(5, trl_pathway)),
+            "strategic_fidelity": max(1, min(5, strategic_fidelity)),
+            "competitive_awareness": max(1, min(5, competitive_awareness)),
+            "market_timing": max(1, min(5, market_timing)),
+            "patent_market_convergence": max(1, min(5, patent_market_convergence)),
+        }
+
+    def _rule_based_proxy_v1(self, data: dict) -> dict:
+        """V1 rule-based proxy for backward-compatible v1 scores."""
+        techs = data["merged_techs"]
+        cr = data["constraint_results"]
+
+        avg_market_growth = sum(t["market_growth_norm"] for t in techs) / len(techs) if techs else 0
+        alignment = min(5, max(1, round(1 + avg_market_growth * 4)))
+
+        dep_penalty = cr["dependency_violation_count"]
+        sequencing = max(1, 5 - dep_penalty)
+
+        tier_match_count = 0
+        for t in techs:
+            value = 0.4 * t["patent_growth_norm"] + 0.3 * t["market_growth_norm"] + 0.3 * t["market_size_norm"]
+            expected_tier = "Strategic" if value > 0.75 else "High" if value > 0.5 else "Medium" if value > 0.25 else "Low"
+            actual_cost = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+            expected_cost = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+            if abs(actual_cost.get(t["investment_tier"], 2) - expected_cost.get(expected_tier, 2)) <= 1:
+                tier_match_count += 1
+        investment = min(5, max(1, round(1 + (tier_match_count / max(len(techs), 1)) * 4)))
+
+        categories = set(t["category"] for t in techs)
+        trl_spread = max(t["TRL"] for t in techs) - min(t["TRL"] for t in techs) if techs else 0
+        coherence_raw = min(1, len(categories) / 3) * 0.5 + min(1, trl_spread / 4) * 0.5
+        coherence = min(5, max(1, round(1 + coherence_raw * 4)))
+
+        tiers = set(t["investment_tier"] for t in techs)
+        balance = min(5, max(1, round(1 + (len(tiers) / 4) * 4)))
+
+        return {
+            "alignment": alignment, "sequencing": sequencing,
+            "investment": investment, "coherence": coherence, "balance": balance,
+        }
+
+    def _generate_diagnostics(self, data: dict, scores: dict) -> dict:
+        techs = data["merged_techs"]
+        cr = data["constraint_results"]
+
+        strengths, weaknesses = [], []
+        missing_techs, investment_issues, timing_issues = [], [], []
+
+        if scores.get("trl_pathway", 3) >= 4:
+            strengths.append("TRL progression pathways are realistic for the given timelines")
+        if scores.get("strategic_fidelity", 3) >= 4:
+            strengths.append("Roadmap faithfully executes the declared strategic direction")
+        if scores.get("competitive_awareness", 3) >= 4:
+            strengths.append("Strong competitive landscape awareness in technology selection")
+
+        if scores.get("trl_pathway", 3) <= 2:
+            weaknesses.append("Multiple TRL pathways are unrealistic for the stated timelines")
+        if scores.get("strategic_fidelity", 3) <= 2:
+            weaknesses.append("Significant mismatch between declared strategy and actual portfolio")
+        if scores.get("market_timing", 3) <= 2:
+            weaknesses.append("Systematic market timing misalignment across the portfolio")
+        if scores.get("patent_market_convergence", 3) <= 2:
+            weaknesses.append("Technology selections lack patent-market convergence")
+
+        for err in cr["timing_errors"]:
+            if err["error_years"] > 0.5:
+                timing_issues.append(
+                    f"{err['tech_name']}: 시장 개화({err['boom_q']}) 대비 "
+                    f"{err['error_years']}년 지연"
+                )
+
+        return {
+            "strengths": strengths,
+            "weaknesses": weaknesses,
+            "missing_technologies": missing_techs,
+            "investment_issues": investment_issues,
+            "timing_issues": timing_issues
+        }
+
+
+class BackTestEvaluator:
+    """
+    Step 4: Back Test 경제성 평가
+    - §5: holdout 데이터 기반 value_i 계산
+    - §6: agent 내부 점수 재사용 안 함 (독립성)
+    - §8: 6개 backtest 지표 산출
+    """
+
+    LAMBDA = 0.15  # 비용 가중치
+
+    def run(self, judged_output: dict) -> dict:
+        techs = judged_output["merged_techs"]
+        cr = judged_output["constraint_results"]
+
+        # ── 기술별 value & return 계산 ──
+        tech_details = []
+        for t in techs:
+            value = (
+                0.4 * t["patent_growth_norm"]
+                + 0.3 * t["market_growth_norm"]
+                + 0.3 * t["market_size_norm"]
+            )
+            # 실제 예산(tech_budget_usd) 기반 cost_norm (케이스 내 상대 정규화)
+            _budgets = [tt.get("tech_budget_usd", 0) or 0 for tt in techs]
+            _max_b = max(_budgets) if any(_budgets) else 0
+            if _max_b > 0:
+                cost_norm = (t.get("tech_budget_usd", 0) or 0) / _max_b
+            else:
+                cost_norm = (t["cost_proxy"] - 1) / 3  # 예산 정보 없으면 tier fallback
+            adj_return = value - self.LAMBDA * cost_norm
+
+            tech_details.append({
+                "tech_id": t["tech_id"],
+                "tech_name": t["tech_name"],
+                "patent_growth_norm": round(t["patent_growth_norm"], 4),
+                "market_growth_norm": round(t["market_growth_norm"], 4),
+                "market_size_norm": round(t["market_size_norm"], 4),
+                "value": round(value, 4),
+                "investment_tier": t["investment_tier"],
+                "cost_proxy": t["cost_proxy"],
+                "cost_norm": round(cost_norm, 4),
+                "cost_adjusted_return": round(adj_return, 4)
+            })
+
+        # ── §8: 6개 지표 계산 ──
+
+        # 1) selection_quality: 선택된 기술들의 평균 value (0~100)
+        values = [td["value"] for td in tech_details]
+        selection_quality = (sum(values) / len(values)) * 100 if values else 0
+
+        # 2) cost_adjusted_return: 합산 후 정규화 (0~100)
+        returns = [td["cost_adjusted_return"] for td in tech_details]
+        car_raw = sum(returns) / len(returns) if returns else 0
+        cost_adjusted_return = max(0, min(100, car_raw * 100))
+
+        # 3) investment_rationality_score: §8 rule-based 기대 tier 비교
+        tier_map = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+        mismatches = 0
+        tier_details = []
+        for t in techs:
+            value = (0.4 * t["patent_growth_norm"]
+                     + 0.3 * t["market_growth_norm"]
+                     + 0.3 * t["market_size_norm"])
+            boom_proximity = self._boom_proximity(t)
+            is_critical_dep = len([
+                other for other in techs
+                if t["tech_id"] in other.get("prerequisites", [])
+            ]) > 0
+
+            # 기대 tier 결정 (§8 rule-based)
+            expected_level = 1
+            if value > 0.5:
+                expected_level += 1
+            if value > 0.7:
+                expected_level += 1
+            if boom_proximity < 2:  # 시장 개화 2년 이내
+                expected_level += 1
+            if is_critical_dep:
+                expected_level += 1
+            if t["TRL"] >= 6:
+                expected_level = max(expected_level, 2)  # 성숙 기술은 최소 Medium
+            expected_level = min(4, expected_level)
+
+            actual_level = tier_map.get(t["investment_tier"], 2)
+            mismatch = abs(actual_level - expected_level)
+            if mismatch > 1:
+                mismatches += 1
+
+            tier_details.append({
+                "tech_id": t["tech_id"],
+                "expected_level": expected_level,
+                "actual_level": actual_level,
+                "mismatch": mismatch
+            })
+
+        investment_rationality = (1 - mismatches / max(len(techs), 1)) * 100
+
+        # 4) budget_feasibility_score
+        budget_viol = cr["budget_violation_pct"]
+        budget_feasibility = max(0, 100 - budget_viol * 2)
+
+        # 5) dependency_validity_score
+        dep_viol = cr["dependency_violation_count"]
+        dependency_validity = max(0, 100 - dep_viol * 20)
+
+        # 6) timing_accuracy_score
+        mean_err = cr["mean_timing_error_years"]
+        timing_accuracy = max(0, 100 - mean_err * 30)
+
+        # ── Backtest composite (V2 가중치) ──
+        bt_score = (
+            0.25 * selection_quality
+            + 0.25 * cost_adjusted_return
+            + 0.15 * investment_rationality
+            + 0.05 * budget_feasibility
+            + 0.05 * dependency_validity
+            + 0.25 * timing_accuracy
+        )
+
+        # ── V1 점수도 보존 ──
+        bt_score_v1 = (
+            0.35 * selection_quality
+            + 0.35 * cost_adjusted_return
+            + 0.10 * budget_feasibility
+            + 0.10 * dependency_validity
+            + 0.10 * timing_accuracy
+        )
+
+        return {
+            **judged_output,
+            "backtest": {
+                "tech_details": tech_details,
+                "tier_analysis": tier_details,
+                "selection_quality": round(selection_quality, 1),
+                "cost_adjusted_return": round(cost_adjusted_return, 1),
+                "budget_feasibility_score": round(budget_feasibility, 1),
+                "dependency_validity_score": round(dependency_validity, 1),
+                "timing_accuracy_score": round(timing_accuracy, 1),
+                "backtest_score": round(bt_score, 1),
+                "backtest_score_v1": round(bt_score_v1, 1),
+            }
+        }
+
+    @staticmethod
+    def _boom_proximity(tech: dict) -> float:
+        """시장 개화 시점까지 남은 연수"""
+        try:
+            year, q = tech["expected_market_boom_quarter"].split("-")
+            boom = int(year) + (int(q.replace("Q", "")) - 1) * 0.25
+            t_year, t_q = tech["target_q"].split("-")
+            target = int(t_year) + (int(t_q.replace("Q", "")) - 1) * 0.25
+            return abs(boom - target)
+        except:
+            return 5.0
+
+
+class ScoreAggregator:
+    """
+    Step 5: 최종 점수 통합
+    - §9: composite = 0.4 * LLM + 0.6 * Backtest - penalties
+    - Hard constraint penalty 후처리
+    """
+
+    def run(self, bt_output: dict) -> dict:
+        llm_score = bt_output["llm_judge"]["llm_structural_score"]
+        bt_score = bt_output["backtest"]["backtest_score"]
+        cr = bt_output["constraint_results"]
+
+        # ── Penalty 계산 ──
+        penalties = []
+        if cr["dependency_violation_count"] > 0:
+            p = cr["dependency_violation_count"] * 3
+            penalties.append({"type": "dependency_violation", "amount": p})
+        if cr["budget_violation_pct"] > 0:
+            p = cr["budget_violation_pct"] * 0.5
+            penalties.append({"type": "budget_violation", "amount": round(p, 1)})
+        if cr["mean_timing_error_years"] > 1.0:
+            p = (cr["mean_timing_error_years"] - 1.0) * 5
+            penalties.append({"type": "timing_error", "amount": round(p, 1)})
+
+        total_penalty = sum(p["amount"] for p in penalties)
+
+        pre_penalty = 0.4 * llm_score + 0.6 * bt_score
+        final_score = max(0, pre_penalty - total_penalty)
+
+        return {
+            **bt_output,
+            "composite": {
+                "pre_penalty_score": round(pre_penalty, 1),
+                "penalties": penalties,
+                "total_penalty": round(total_penalty, 1),
+                "final_composite_score": round(final_score, 1)
+            }
+        }
+
+
+class BenchmarkReportGenerator:
+    """
+    Step 6: 최종 보고서 생성
+    - 깔끔한 JSON 출력 포맷 (§12)
+    - 진단 요약
+    - Description: 각 점수가 왜 이렇게 산출되었는지 설명
+    """
+
+    def run(self, agg_output: dict) -> dict:
+        meta = agg_output["metadata"]
+        llm = agg_output["llm_judge"]
+        bt = agg_output["backtest"]
+        cr = agg_output["constraint_results"]
+        comp = agg_output["composite"]
+        techs = agg_output["merged_techs"]
+        
+        # tech_details의 value/norm 정보를 techs에 병합 (XAI description용)
+        td_map = {t["tech_id"]: t for t in bt.get("tech_details", [])}
+        for t in techs:
+            tid = t.get("tech_id", "")
+            if tid in td_map:
+                td = td_map[tid]
+                t["value"] = td.get("value", 0)
+                t["patent_growth_norm"] = td.get("patent_growth_norm", 0)
+                t["market_growth_norm"] = td.get("market_growth_norm", 0)
+                t["market_size_norm"] = td.get("market_size_norm", 0)
+                t["cost_adjusted_return"] = td.get("cost_adjusted_return", 0)
+
+        return {
+            "metadata": {
+                "scenario": meta["scenario_label"],
+                "mode": "absolute",
+                "reference_year": meta["evaluation_cutoff_year"],
+                "domain": meta["domain"],
+                "num_technologies": len(techs)
+            },
+            "llm_judge": {
+                **llm["axis_scores"],
+                "llm_structural_score": llm["llm_structural_score"],
+                "aggregation": llm.get("aggregation", "single"),
+                "models_used": llm.get("models_used", []),
+                "per_model_scores": llm.get("per_model_scores", {}),
+                "evidence": llm.get("evidence", {}),
+                "strengths": llm["strengths"],
+                "weaknesses": llm["weaknesses"],
+                "missing_technologies": llm["missing_technologies"],
+                "investment_issues": llm["investment_issues"],
+                "timing_issues": llm["timing_issues"],
+                "description": self._describe_llm(llm, techs, cr),
+                "v1_scores": {
+                    **llm.get("axis_scores_v1", {}),
+                    "llm_structural_score_v1": llm.get("llm_structural_score_v1", 0),
+                },
+            },
+            "backtest": {
+                "tech_details": bt["tech_details"],
+                "selection_quality": bt["selection_quality"],
+                "cost_adjusted_return": bt["cost_adjusted_return"],
+                "budget_feasibility_score": bt["budget_feasibility_score"],
+                "dependency_validity_score": bt["dependency_validity_score"],
+                "timing_accuracy_score": bt["timing_accuracy_score"],
+                "backtest_score": bt["backtest_score"],
+                "backtest_score_v1": bt.get("backtest_score_v1", 0),
+                "description": self._describe_backtest(bt, cr, techs),
+            },
+            "constraints": {
+                "budget_violation_pct": cr["budget_violation_pct"],
+                "dependency_violations": cr["dependency_violation_count"],
+                "dependency_details": cr["dependency_violations"],
+                "mean_timing_error_years": cr["mean_timing_error_years"],
+                "timing_details": cr["timing_errors"]
+            },
+            "composite": {
+                **comp,
+                "description": self._describe_composite(llm, bt, comp),
+            },
+            "diagnostics": {
+                "summary": self._generate_summary(llm, bt, comp),
+                "key_failure_points": self._find_failures(cr, bt),
+                "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+            }
+        }
+
+    # ── Description 생성 ──
+
+    def _describe_llm(self, llm, techs, cr) -> dict:
+        """LLM Judge 각 축 점수의 XAI 분석"""
+        axes = llm["axis_scores"]
+        # V2 분기: 새 5축이면 evidence 기반 description 반환
+        if "trl_pathway" in axes:
+            ev = llm.get("evidence", {})
+            w = LLMStructuralJudge.WEIGHTS
+            d = {}
+            for k in w:
+                d[k] = f"score {axes.get(k, 3)}/5 - " + ev.get(k, "")
+            mul = chr(0x00D7)
+            fp = " + ".join(f"{w[k]}{mul}{axes.get(k, 3)}" for k in w)
+            d["formula"] = f"llm_structural_score = ({fp} - 1) / 4 {mul} 100 = {llm.get(chr(108)+chr(108)+chr(109)+chr(95)+chr(115)+chr(116)+chr(114)+chr(117)+chr(99)+chr(116)+chr(117)+chr(114)+chr(97)+chr(108)+chr(95)+chr(115)+chr(99)+chr(111)+chr(114)+chr(101), 0)}"
+            return d
+        categories = {}
+        for t in techs:
+            cat = t.get("category", "Unknown")
+            categories[cat] = categories.get(cat, 0) + 1
+        tiers = {}
+        for t in techs:
+            tier = t.get("investment_tier", "Medium")
+            tiers[tier] = tiers.get(tier, 0) + 1
+        trl_vals = [t.get("TRL", t.get("trl", 5)) for t in techs]
+        trl_range = f"{min(trl_vals)}~{max(trl_vals)}" if trl_vals else "N/A"
+        dep_count = cr.get("dependency_violation_count", 0)
+        dep_details = cr.get("dependency_violations", [])
+
+        # alignment 상세: 어떤 기술의 시장 성장률이 높고 낮은지
+        merged = [t for t in techs if "market_growth_norm" in t]
+        if merged:
+            sorted_by_mg = sorted(merged, key=lambda x: x.get("market_growth_norm", 0), reverse=True)
+            top = sorted_by_mg[0]
+            bottom = sorted_by_mg[-1]
+            align_detail = (
+                f"점수 {axes['alignment']}/5.\n"
+                f"  시장 성장률 기준 최고: {top.get('tech_name', top.get('tech_id'))} "
+                f"(norm={top.get('market_growth_norm', 0):.3f})\n"
+                f"  시장 성장률 기준 최저: {bottom.get('tech_name', bottom.get('tech_id'))} "
+                f"(norm={bottom.get('market_growth_norm', 0):.3f})\n"
+                f"  전체 평균: {sum(t.get('market_growth_norm', 0) for t in merged)/len(merged):.3f}"
+            )
+        else:
+            align_detail = f"점수 {axes['alignment']}/5 — holdout 데이터 기반 시장 성장률 평균."
+
+        # sequencing 상세: 위반 건 구체적 나열
+        if dep_count == 0:
+            seq_detail = f"점수 {axes['sequencing']}/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨."
+        else:
+            violations = []
+            for dv in dep_details:
+                violations.append(
+                    f"  ⚠ {dv.get('tech_name', '?')}이 선행기술 {dv.get('prerequisite', '?')} "
+                    f"완료 전 시작 (gap: {dv.get('gap_quarters', '?')}Q)"
+                )
+            seq_detail = (
+                f"점수 {axes['sequencing']}/5 — 의존성 위반 {dep_count}건:\n"
+                + "\n".join(violations)
+            )
+
+        # investment 상세: 어떤 기술이 tier 불일치인지
+        mismatches = []
+        for t in techs:
+            value = t.get("value", 0)
+            actual_tier = t.get("investment_tier", "Medium")
+            # 기대 tier 계산
+            expected_cost = 1
+            if value > 0.5:
+                expected_cost += 1
+            if value > 0.7:
+                expected_cost += 1
+            expected_cost = min(4, expected_cost)
+            cost_map = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+            actual_cost = cost_map.get(actual_tier, 2)
+            if abs(actual_cost - expected_cost) > 1:
+                rev_map = {1: "Low", 2: "Medium", 3: "High", 4: "Strategic"}
+                mismatches.append(
+                    f"  ⚠ {t.get('tech_name', t.get('tech_id'))}: "
+                    f"value={value:.3f} → 기대 {rev_map.get(expected_cost, '?')}, "
+                    f"실제 {actual_tier} (차이 {abs(actual_cost - expected_cost)}단계)"
+                )
+        if mismatches:
+            inv_detail = (
+                f"점수 {axes['investment']}/5 — tier 불일치 {len(mismatches)}건:\n"
+                + "\n".join(mismatches)
+            )
+        else:
+            inv_detail = f"점수 {axes['investment']}/5 — 모든 기술의 value 대비 투자등급이 적절함."
+
+        # coherence 상세
+        cat_str = ", ".join(f"{k}({v}개)" for k, v in sorted(categories.items(), key=lambda x: -x[1]))
+        coher_detail = (
+            f"점수 {axes['coherence']}/5\n"
+            f"  카테고리 분포: {cat_str}\n"
+            f"  TRL 범위: {trl_range}\n"
+            f"  {'다양한 카테고리와 넓은 TRL 범위 → 높은 점수' if axes['coherence'] >= 4 else '카테고리 편중 또는 TRL 범위 좁음'}"
+        )
+
+        # balance 상세
+        tier_str = ", ".join(f"{k}({v}개)" for k, v in sorted(tiers.items()))
+        missing_tiers = [t for t in ["Strategic", "High", "Medium", "Low"] if t not in tiers]
+        balance_detail = (
+            f"점수 {axes['balance']}/5\n"
+            f"  투자등급 분포: {tier_str}\n"
+            + (f"  없는 등급: {', '.join(missing_tiers)}" if missing_tiers else "  모든 등급 사용")
+        )
+
+        formula = (
+            f"llm_structural_score = (0.3×{axes['alignment']} + 0.2×{axes['sequencing']} "
+            f"+ 0.2×{axes['investment']} + 0.2×{axes['coherence']} "
+            f"+ 0.1×{axes['balance']} - 1) / 4 × 100 = {llm['llm_structural_score']:.1f}"
+        )
+
+        return {
+            "alignment": align_detail,
+            "sequencing": seq_detail,
+            "investment": inv_detail,
+            "coherence": coher_detail,
+            "balance": balance_detail,
+            "formula": formula,
+        }
+
+    def _describe_backtest(self, bt, cr, techs) -> dict:
+        """Back Test 각 지표의 XAI 분석 — 기술별 기여도 + 원인 진단"""
+        td = bt.get("tech_details", [])
+
+        # ── selection_quality: 기술별 value 분해 ──
+        if td:
+            sorted_by_value = sorted(td, key=lambda x: x.get("value", 0), reverse=True)
+            avg_val = sum(t.get("value", 0) for t in td) / len(td)
+            tech_lines = []
+            for t in sorted_by_value:
+                v = t.get("value", 0)
+                contrib = "▲" if v > avg_val else "▼"
+                pg = t.get("patent_growth_norm", 0)
+                mg = t.get("market_growth_norm", 0)
+                ms = t.get("market_size_norm", 0)
+                tech_lines.append(
+                    f"  {contrib} {t.get('tech_name', '?')}: value={v:.3f} "
+                    f"(특허↑={pg:.2f}, 시장↑={mg:.2f}, 규모={ms:.2f})"
+                )
+            sq_detail = (
+                f"{bt['selection_quality']:.1f}/100 — {len(td)}개 기술 평균 value={avg_val:.3f}\n"
+                + "\n".join(tech_lines)
+            )
+            # 점수가 낮은 원인 진단
+            low_techs = [t for t in td if t.get("value", 0) < 0.3]
+            if low_techs:
+                reasons = []
+                for t in low_techs:
+                    pg = t.get("patent_growth_norm", 0)
+                    mg = t.get("market_growth_norm", 0)
+                    if pg < 0.3:
+                        reasons.append(f"  → {t.get('tech_name')}: 특허 성장률 낮음 (norm={pg:.2f})")
+                    if mg < 0.3:
+                        reasons.append(f"  → {t.get('tech_name')}: 시장 성장률 낮음 (norm={mg:.2f})")
+                if reasons:
+                    sq_detail += "\n  [낮은 원인]\n" + "\n".join(reasons)
+        else:
+            sq_detail = f"{bt['selection_quality']:.1f}/100 — 기술 데이터 없음"
+
+        # ── cost_adjusted_return: 기술별 투자 효율 ──
+        if td:
+            sorted_by_ret = sorted(td, key=lambda x: x.get("cost_adjusted_return", 0), reverse=True)
+            avg_ret = sum(t.get("cost_adjusted_return", 0) for t in td) / len(td)
+            ret_lines = []
+            for t in sorted_by_ret:
+                v = t.get("value", 0)
+                ret = t.get("cost_adjusted_return", 0)
+                tier = t.get("investment_tier", "?")
+                cost_map = {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}
+                cost = cost_map.get(tier, 2)
+                cost_norm = (cost - 1) / 3
+                flag = ""
+                if v < 0.4 and cost >= 3:
+                    flag = " ⚠ 과다투자"
+                elif v > 0.6 and cost <= 1:
+                    flag = " ★ 효율적"
+                ret_lines.append(
+                    f"  {t.get('tech_name', '?')}: value={v:.3f} - 0.15×{cost_norm:.2f}(cost) "
+                    f"= return {ret:+.3f} [{tier}]{flag}"
+                )
+            car_detail = (
+                f"{bt['cost_adjusted_return']:.1f}/100 — 평균 return={avg_ret:.3f}\n"
+                + "\n".join(ret_lines)
+            )
+            overinvested = [t for t in td if t.get("value", 0) < 0.4 and 
+                           {"Low": 1, "Medium": 2, "High": 3, "Strategic": 4}.get(t.get("investment_tier"), 2) >= 3]
+            if overinvested:
+                car_detail += "\n  [과다투자 진단]"
+                for t in overinvested:
+                    car_detail += f"\n  → {t.get('tech_name')}: value {t.get('value', 0):.3f}인데 {t.get('investment_tier')} tier"
+        else:
+            car_detail = f"{bt['cost_adjusted_return']:.1f}/100"
+
+        # ── budget_feasibility ──
+        bvp = cr.get("budget_violation_pct", 0)
+        bf_detail = (
+            f"{bt['budget_feasibility_score']:.1f}/100 — "
+            + ("예산 내 집행." if bvp == 0 else f"예산 {bvp:.1f}% 초과.")
+        )
+
+        # ── dependency_validity ──
+        dep_count = cr.get("dependency_violation_count", 0)
+        if dep_count == 0:
+            dv_detail = f"{bt['dependency_validity_score']:.1f}/100 — 의존성 위반 0건. 전체 선행관계 준수."
+        else:
+            dv_lines = []
+            for dv in cr.get("dependency_violations", []):
+                dv_lines.append(
+                    f"  ⚠ {dv.get('tech_name')}: 선행 {dv.get('prerequisite')} 완료 전 시작 "
+                    f"(gap: {dv.get('gap_quarters')}Q)"
+                )
+            dv_detail = (
+                f"{bt['dependency_validity_score']:.1f}/100 — 위반 {dep_count}건 (1건당 -20점)\n"
+                + "\n".join(dv_lines)
+            )
+
+        # ── timing_accuracy ──
+        mte = cr.get("mean_timing_error_years", 0)
+        timing_errors = cr.get("timing_errors", [])
+        if timing_errors:
+            sorted_te = sorted(timing_errors, key=lambda x: abs(x.get("error_years", 0)), reverse=True)
+            te_lines = []
+            for te in sorted_te:
+                err = te.get("error_years", 0)
+                direction = "늦음" if err > 0 else "이름"
+                flag = " ⚠" if abs(err) > 1 else ""
+                te_lines.append(
+                    f"  {te.get('tech_name')}: {abs(err):.1f}년 {direction}{flag}"
+                )
+            ta_detail = (
+                f"{bt['timing_accuracy_score']:.1f}/100 — 평균 오차 {mte:.2f}년\n"
+                + "\n".join(te_lines)
+            )
+        else:
+            ta_detail = f"{bt['timing_accuracy_score']:.1f}/100 — 평균 오차 {mte:.2f}년"
+
+        # ── formula ──
+        formula = (
+            f"backtest_score = 0.35×{bt['selection_quality']:.1f} + 0.35×{bt['cost_adjusted_return']:.1f} "
+            f"+ 0.05×{bt['budget_feasibility_score']:.1f} "
+            f"+ 0.05×{bt['dependency_validity_score']:.1f} + 0.10×{bt['timing_accuracy_score']:.1f} "
+            f"= {bt['backtest_score']:.1f}"
+        )
+
+        return {
+            "selection_quality": sq_detail,
+            "cost_adjusted_return": car_detail,
+            "budget_feasibility": bf_detail,
+            "dependency_validity": dv_detail,
+            "timing_accuracy": ta_detail,
+            "formula": formula,
+        }
+
+    def _describe_composite(self, llm, bt, comp) -> str:
+        """Composite 점수 XAI 분석"""
+        penalty_parts = []
+        for p in comp.get("penalties", []):
+            penalty_parts.append(f"{p['type']}: -{p['amount']:.1f}pt")
+
+        penalty_str = "페널티 없음."
+        if comp["total_penalty"] > 0:
+            penalty_str = f"Penalty: {', '.join(penalty_parts)}. 총 -{comp['total_penalty']:.1f}pt."
+
+        # 어느 축이 점수를 끌어내리는지 진단
+        llm_score = llm["llm_structural_score"]
+        bt_score = bt["backtest_score"]
+        
+        diagnosis = ""
+        if llm_score < 50:
+            diagnosis += f"\n  [진단] LLM 구조 점수({llm_score:.1f})가 낮음 → 로드맵 구조 개선 필요."
+        if bt_score < 50:
+            diagnosis += f"\n  [진단] Backtest 점수({bt_score:.1f})가 낮음 → 기술 선택 또는 투자 배분 재검토."
+        if comp["total_penalty"] > 10:
+            diagnosis += f"\n  [진단] 페널티(-{comp['total_penalty']:.1f})가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요."
+        
+        gap = abs(llm_score - bt_score)
+        if gap > 20:
+            if llm_score > bt_score:
+                diagnosis += f"\n  [진단] LLM({llm_score:.1f})과 Backtest({bt_score:.1f}) 격차 {gap:.1f}pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+            else:
+                diagnosis += f"\n  [진단] Backtest({bt_score:.1f})가 LLM({llm_score:.1f})보다 {gap:.1f}pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+
+        return (
+            f"pre_penalty = 0.4×{llm_score:.1f}(LLM) "
+            f"+ 0.6×{bt_score:.1f}(Backtest) = {comp['pre_penalty_score']:.1f}. "
+            f"{penalty_str} "
+            f"최종 = {comp['final_composite_score']:.1f}."
+            f"{diagnosis}"
+        )
+
+    def _generate_summary(self, llm, bt, comp) -> str:
+        parts = []
+        parts.append(f"LLM 구조 평가 {llm['llm_structural_score']}점, "
+                      f"Backtest 경제성 평가 {bt['backtest_score']}점.")
+        if comp["total_penalty"] > 0:
+            parts.append(f"제약 위반으로 {comp['total_penalty']}점 차감.")
+        parts.append(f"최종 Composite Score: {comp['final_composite_score']}점.")
+        return " ".join(parts)
+
+    def _find_failures(self, cr, bt) -> list:
+        failures = []
+        for dv in cr["dependency_violations"]:
+            failures.append(
+                f"의존성 위반: {dv['tech_name']}이 선행기술 {dv['prerequisite']} "
+                f"완료 전에 시작 (gap: {dv['gap_quarters']}Q)"
+            )
+        for te in cr["timing_errors"]:
+            if abs(te["error_years"]) > 1:
+                failures.append(
+                    f"타이밍 이슈: {te['tech_name']}의 완료시점이 "
+                    f"시장 개화 대비 {te['error_years']}년 차이"
+                )
+        return failures
+
+
+# ═══════════════════════════════════════════════════════════════
+#  3. Pairwise Comparator (§10)
+# ═══════════════════════════════════════════════════════════════
+
+class PairwiseComparator:
+    """§10: 두 시나리오를 나란히 비교"""
+
+    def compare(self, report_a: dict, report_b: dict) -> dict:
+        axes = ["trl_pathway", "strategic_fidelity", "competitive_awareness",
+                "market_timing", "patent_market_convergence"]
+        axis_comparison = {}
+        for ax in axes:
+            va = report_a["llm_judge"].get(ax, 0)
+            vb = report_b["llm_judge"].get(ax, 0)
+            axis_comparison[ax] = {
+                "A": va, "B": vb,
+                "winner": "A" if va > vb else "B" if vb > va else "Tie"
+            }
+
+        bt_keys = [
+            "selection_quality", "cost_adjusted_return",
+            "budget_feasibility_score",
+            "dependency_validity_score", "timing_accuracy_score"
+        ]
+        bt_comparison = {}
+        for k in bt_keys:
+            va = report_a["backtest"].get(k, 0)
+            vb = report_b["backtest"].get(k, 0)
+            bt_comparison[k] = {
+                "A": va, "B": vb,
+                "winner": "A" if va > vb else "B" if vb > va else "Tie"
+            }
+
+        fa = report_a["composite"]["final_composite_score"]
+        fb = report_b["composite"]["final_composite_score"]
+
+        return {
+            "mode": "pairwise",
+            "scenario_A": report_a["metadata"]["scenario"],
+            "scenario_B": report_b["metadata"]["scenario"],
+            "llm_judge_comparison": {
+                "axis_detail": axis_comparison,
+                "score_A": report_a["llm_judge"]["llm_structural_score"],
+                "score_B": report_b["llm_judge"]["llm_structural_score"],
+                "llm_winner": "A" if report_a["llm_judge"]["llm_structural_score"] >
+                              report_b["llm_judge"]["llm_structural_score"] else "B"
+            },
+            "backtest_comparison": {
+                "metric_detail": bt_comparison,
+                "score_A": report_a["backtest"]["backtest_score"],
+                "score_B": report_b["backtest"]["backtest_score"],
+                "backtest_winner": "A" if report_a["backtest"]["backtest_score"] >
+                                   report_b["backtest"]["backtest_score"] else "B"
+            },
+            "final_comparison": {
+                "score_A": fa,
+                "score_B": fb,
+                "delta": round(abs(fa - fb), 1),
+                "final_winner": "A" if fa > fb else "B" if fb > fa else "Tie"
+            }
+        }
+
+
+# ═══════════════════════════════════════════════════════════════
+#  4. Main Pipeline Orchestrator
+# ═══════════════════════════════════════════════════════════════
+
+class TRMEvaluationSuite:
+    """
+    전체 파이프라인 실행:
+    Agent Output Normalizer
+      → Constraint Checker
+        → LLM Structural Judge (multi-provider)
+          → Back Test Evaluator
+            → Score Aggregator
+              → Benchmark Report
+
+    사용법:
+        # 모드 A: rule-based (API 없이)
+        suite = TRMEvaluationSuite()
+        report = suite.evaluate(input_pack)
+
+        # 모드 B: 단일 provider
+        suite = TRMEvaluationSuite(providers=["anthropic"])
+        report = suite.evaluate(input_pack, use_api=True)
+
+        # 모드 C: 앙상블 (3개 모델 평균)
+        suite = TRMEvaluationSuite(providers=["anthropic", "openai", "gemini"])
+        report = suite.evaluate(input_pack, use_api=True)
+
+        # 모드 D: client 객체 직접 주입 (모델 세부 제어)
+        suite = TRMEvaluationSuite(clients=[
+            AnthropicClient(model="claude-sonnet-4-6"),
+            OpenAIClient(model="gpt-4.1"),
+            GeminiClient(model="gemini-2.0-flash-001"),
+        ])
+        report = suite.evaluate(input_pack, use_api=True)
+
+        # 모드 E: 점수 직접 전달
+        report = suite.evaluate(input_pack, llm_scores={"alignment":4, ...})
+    """
+
+    def __init__(self,
+                 providers: Optional[List[str]] = None,
+                 clients: Optional[List[BaseLLMClient]] = None,
+                 api_keys: Optional[Dict[str, str]] = None,
+                 models: Optional[Dict[str, str]] = None,
+                 aggregation: str = "mean"):
+        """
+        Args:
+            providers: provider 이름 리스트 (예: ['anthropic', 'openai', 'gemini'])
+            clients: 이미 생성된 BaseLLMClient 리스트 (providers 대신 사용)
+            api_keys: {'anthropic': 'sk-...', 'openai': 'sk-...', 'gemini': '...'}
+            models: {'anthropic': 'claude-opus-4', 'openai': 'gpt-4o', ...}
+            aggregation: 'mean' 또는 'median' (앙상블 집계 방식)
+        """
+        self.normalizer = AgentOutputNormalizer()
+        self.constraint_checker = ConstraintChecker()
+
+        if clients:
+            self.llm_judge = LLMStructuralJudge(clients=clients, aggregation=aggregation)
+        elif providers:
+            self.llm_judge = LLMStructuralJudge.from_providers(
+                providers, api_keys=api_keys, models=models, aggregation=aggregation
+            )
+        else:
+            self.llm_judge = LLMStructuralJudge()
+
+        self.backtest = BackTestEvaluator()
+        self.aggregator = ScoreAggregator()
+        self.reporter = BenchmarkReportGenerator()
+        self.comparator = PairwiseComparator()
+
+    def evaluate(self, input_pack: dict,
+                 llm_scores: Optional[dict] = None,
+                 use_api: bool = False) -> dict:
+        """Absolute 평가 실행."""
+        step1 = self.normalizer.run(input_pack)
+        step2 = self.constraint_checker.run(step1)
+        step3 = self.llm_judge.run(step2, llm_scores=llm_scores, use_api=use_api)
+        step4 = self.backtest.run(step3)
+        step5 = self.aggregator.run(step4)
+        report = self.reporter.run(step5)
+        return report
+
+    def compare(self, input_a: dict, input_b: dict,
+                llm_scores_a: Optional[dict] = None,
+                llm_scores_b: Optional[dict] = None,
+                use_api: bool = False) -> dict:
+        """Pairwise 비교 실행."""
+        report_a = self.evaluate(input_a, llm_scores=llm_scores_a, use_api=use_api)
+        report_b = self.evaluate(input_b, llm_scores=llm_scores_b, use_api=use_api)
+        comparison = self.comparator.compare(report_a, report_b)
+        return {
+            "report_A": report_a,
+            "report_B": report_b,
+            "pairwise": comparison
+        }
+
+    @staticmethod
+    def print_report(report: dict, indent: int = 2):
+        """보고서를 예쁘게 출력"""
+        print(json.dumps(report, indent=indent, ensure_ascii=False))
+
+    @staticmethod
+    def print_summary(report: dict):
+        """한 눈에 보는 요약 출력"""
+        m = report["metadata"]
+        l = report["llm_judge"]
+        b = report["backtest"]
+        c = report["composite"]
+        d = report["diagnostics"]
+
+        print("=" * 60)
+        print(f"  TRM Evaluation Report — {m['scenario']} / {m['domain']}")
+        print("=" * 60)
+        print()
+        print(f"  ┌─ LLM Structural Judge ─────── {l['llm_structural_score']:>5.1f} / 100")
+        print(f"  │   alignment={l['alignment']}  sequencing={l['sequencing']}  "
+              f"investment={l['investment']}  coherence={l['coherence']}  balance={l['balance']}")
+        print(f"  │")
+        print(f"  ├─ Backtest Score ────────────── {b['backtest_score']:>5.1f} / 100")
+        print(f"  │   selection_quality   = {b['selection_quality']:>5.1f}")
+        print(f"  │   cost_adjusted_return= {b['cost_adjusted_return']:>5.1f}")
+        print(f"  │   budget_feasibility  = {b['budget_feasibility_score']:>5.1f}")
+        print(f"  │   dependency_validity = {b['dependency_validity_score']:>5.1f}")
+        print(f"  │   timing_accuracy     = {b['timing_accuracy_score']:>5.1f}")
+        print(f"  │")
+        print(f"  ├─ Composite ─────────────────── {c['final_composite_score']:>5.1f} / 100")
+        print(f"  │   pre-penalty = {c['pre_penalty_score']:.1f}")
+        print(f"  │   penalty     = -{c['total_penalty']:.1f}")
+        print(f"  │")
+        print(f"  └─ Diagnostics")
+        print(f"      {d['summary']}")
+        if d["key_failure_points"]:
+            for fp in d["key_failure_points"]:
+                print(f"      ⚠ {fp}")
+        print()
+
+
+# ═══════════════════════════════════════════════════════════════
+#  5. Demo 실행
+# ═══════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+
+    # ═══════════════════════════════════════
+    # [1] Rule-based 평가 (API 없이)
+    # ═══════════════════════════════════════
+    print("\n" + "━" * 60)
+    print("  [1] Rule-based 평가 (API 없이)")
+    print("━" * 60 + "\n")
+
+    suite = TRMEvaluationSuite()
+    report = suite.evaluate(SAMPLE_INPUT_PACK)
+    suite.print_summary(report)
+
+    # ═══════════════════════════════════════
+    # [2] 사용 가능한 provider 자동 감지
+    # ═══════════════════════════════════════
+    available_providers = []
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        available_providers.append("anthropic")
+    if os.environ.get("OPENAI_API_KEY"):
+        available_providers.append("openai")
+    if os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"):
+        available_providers.append("gemini")
+
+    print("\n" + "━" * 60)
+    print(f"  [2] 감지된 provider: {available_providers or '(없음)'}")
+    print("━" * 60 + "\n")
+
+    if not available_providers:
+        print("  다음 환경변수 중 하나 이상을 설정하세요:")
+        print("    export ANTHROPIC_API_KEY='sk-ant-...'")
+        print("    export OPENAI_API_KEY='sk-...'")
+        print("    export GOOGLE_API_KEY='...'   (또는 GEMINI_API_KEY)")
+        print()
+
+    # ═══════════════════════════════════════
+    # [3] 단일 provider 모드 (각각 호출)
+    # ═══════════════════════════════════════
+    for prov in available_providers:
+        print("\n" + "━" * 60)
+        print(f"  [3] 단일 provider: {prov}")
+        print("━" * 60 + "\n")
+        try:
+            suite_single = TRMEvaluationSuite(providers=[prov])
+            report_single = suite_single.evaluate(SAMPLE_INPUT_PACK, use_api=True)
+            suite_single.print_summary(report_single)
+
+            ev = report_single.get("llm_judge", {}).get("evidence", {})
+            if ev:
+                print(f"  ── {prov} Evidence ──")
+                for axis, reason in ev.items():
+                    print(f"    {axis}: {reason}")
+                print()
+        except Exception as e:
+            print(f"  ✗ {prov} 모드 실행 실패: {e}")
+
+    # ═══════════════════════════════════════
+    # [4] 앙상블 모드 (여러 모델 평균)
+    # ═══════════════════════════════════════
+    if len(available_providers) >= 2:
+        print("\n" + "━" * 60)
+        print(f"  [4] 앙상블 ({' + '.join(available_providers)}) — 평균")
+        print("━" * 60 + "\n")
+
+        suite_ensemble = TRMEvaluationSuite(
+            providers=available_providers,
+            aggregation="mean"
+        )
+        report_ens = suite_ensemble.evaluate(SAMPLE_INPUT_PACK, use_api=True)
+        suite_ensemble.print_summary(report_ens)
+
+        # 각 모델의 원본 점수 출력
+        per_model = report_ens["llm_judge"].get("per_model_scores", {})
+        if per_model:
+            print("  ── 모델별 원본 점수 (aggregation 전) ──")
+            axes = list(LLMStructuralJudge.WEIGHTS.keys())
+            header = "Provider".ljust(35) + " ".join(a[:5].rjust(6) for a in axes)
+            print(f"    {header}")
+            print(f"    {'-' * len(header)}")
+            for model, s in per_model.items():
+                row = model[:33].ljust(35) + " ".join(str(s[a]).rjust(6) for a in axes)
+                print(f"    {row}")
+            aggregated = report_ens["llm_judge"]["axis_scores"]
+            agg_row = "AGGREGATED (mean)".ljust(35) + " ".join(str(aggregated[a]).rjust(6) for a in axes)
+            print(f"    {agg_row}")
+            print()
+
+    # ═══════════════════════════════════════
+    # [5] Pairwise 비교
+    # ═══════════════════════════════════════
+    single_agent_pack = copy.deepcopy(SAMPLE_INPUT_PACK)
+    single_agent_pack["metadata"]["scenario_label"] = "single-agent"
+    single_agent_pack["investment_strategy"][3]["investment_tier"] = "Strategic"
+    single_agent_pack["planned_roadmap"][1]["start_q"] = "2025-Q1"
+    single_agent_pack["planned_roadmap"][3]["start_q"] = "2025-Q2"
+
+    print("\n" + "━" * 60)
+    print("  [5] Pairwise 비교: Multi-Agent vs Single-Agent")
+    print("━" * 60 + "\n")
+
+    use_api_cmp = bool(available_providers)
+    suite_cmp = (TRMEvaluationSuite(providers=available_providers)
+                 if available_providers else TRMEvaluationSuite())
+    comparison = suite_cmp.compare(SAMPLE_INPUT_PACK, single_agent_pack,
+                                   use_api=use_api_cmp)
+    pw = comparison["pairwise"]
+
+    print(f"  LLM Judge  → A: {pw['llm_judge_comparison']['score_A']:.1f}  "
+          f"B: {pw['llm_judge_comparison']['score_B']:.1f}  "
+          f"Winner: {pw['llm_judge_comparison']['llm_winner']}")
+    print(f"  Backtest   → A: {pw['backtest_comparison']['score_A']:.1f}  "
+          f"B: {pw['backtest_comparison']['score_B']:.1f}  "
+          f"Winner: {pw['backtest_comparison']['backtest_winner']}")
+    print(f"  Final      → A: {pw['final_comparison']['score_A']:.1f}  "
+          f"B: {pw['final_comparison']['score_B']:.1f}  "
+          f"Δ={pw['final_comparison']['delta']:.1f}  "
+          f"Winner: {pw['final_comparison']['final_winner']}")
+    print()

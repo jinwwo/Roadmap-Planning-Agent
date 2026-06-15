@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 4,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 4,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are largely realistic: T03 (TRL7) completes in 2 years, T01 (TRL6) in 3 years, and T02 (TRL5) in 3 years — all within acceptable industry norms for incremental advancement, though T02's material-category jump from TRL5 to deployment-ready in 3 years is slightly optimistic.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but two of three selected technologies are already at TRL 6-7, suggesting a more commercialization-oriented portfolio; only T02 (TRL5, SiC semiconductor) represents genuine exploratory R&D leadership.",
+      "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing strategy relative to industry rivals; technology selections appear driven by internal scoring rather than competitive landscape analysis.",
+      "market_timing": "For 기술선도 strategy, completing 1-2 years before market boom is ideal; all three technologies complete approximately 1.25–1.75 years after their boom windows (mean error 1.5yr), which partially aligns with the preemption ideal but consistently overshoots rather than leading the market.",
+      "patent_market_convergence": "All three technologies operate in domains with known patent and market activity (ADAS sensors, SiC power electronics, steer-by-wire), suggesting some convergence awareness, but the roadmap provides no explicit evidence that convergence-zone targeting was a deliberate selection criterion."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined resource allocation across the three-technology portfolio",
+      "TRL progression timelines are broadly realistic with no dependency violations, suggesting executable development planning"
+    ],
+    "weaknesses": [
+      "Portfolio is dominated by high-TRL (TRL6-7) technologies, contradicting the 기술선도 strategic direction which should emphasize lower-TRL frontier exploration",
+      "All three technologies complete after their respective market boom windows rather than before, undermining the preemptive market leadership that 기술선도 demands"
+    ],
+    "missing_technologies": [
+      "Low-TRL (TRL 2-4) autonomous decision-making AI or neuromorphic computing technology to represent genuine technology leadership",
+      "V2X communication or cooperative perception technology for next-generation ADAS differentiation",
+      "LiDAR-on-chip or solid-state LiDAR technology representing a frontier patent-active domain"
+    ],
+    "investment_issues": [
+      "Assigning Strategic tier to 스테어 바이 와이어 제어 (TRL7, a mature process technology) is inconsistent with 기술선도 framing where strategic investment should fund frontier, high-uncertainty technologies",
+      "With only three technologies selected and budget fully exhausted, the portfolio lacks diversification depth expected for a technology leadership strategy spanning to 2030"
+    ],
+    "timing_issues": [
+      "스테어 바이 와이어 제어 completes 1.25 years after its 2026-Q4 boom, missing the preemption window for a 기술선도 strategy",
+      "다중 센서 퓨전 카메라 completes 1.75 years after its 2027-Q2 boom, the worst timing misalignment in the portfolio",
+      "고성능 SiC 반도체 제조 completes 1.5 years after its 2028-Q3 boom despite having the longest development runway"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are largely realistic: T03 (TRL7) completes in 2 years, T01 (TRL6) in 3 years, and T02 (TRL5) in 3 years — all within acceptable industry norms for incremental advancement, though T02's material-category jump from TRL5 to deployment-ready in 3 years is slightly optimistic.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but two of three selected technologies are already at TRL 6-7, suggesting a more commercialization-oriented portfolio; only T02 (TRL5, SiC semiconductor) represents genuine exploratory R&D leadership.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing strategy relative to industry rivals; technology selections appear driven by internal scoring rather than competitive landscape analysis.",
+      "market_timing": "score 4/5 - For 기술선도 strategy, completing 1-2 years before market boom is ideal; all three technologies complete approximately 1.25–1.75 years after their boom windows (mean error 1.5yr), which partially aligns with the preemption ideal but consistently overshoots rather than leading the market.",
+      "patent_market_convergence": "score 3/5 - All three technologies operate in domains with known patent and market activity (ADAS sensors, SiC power electronics, steer-by-wire), suggesting some convergence awareness, but the roadmap provides no explicit evidence that convergence-zone targeting was a deliberate selection criterion.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "patent_growth_norm": 0.0305,
+        "market_growth_norm": 0.8218,
+        "market_size_norm": 0.5392,
+        "value": 0.4205,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.2705
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.593,
+        "market_size_norm": 1.0,
+        "value": 0.8779,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7045,
+        "cost_adjusted_return": 0.7722
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 SiC 반도체 제조",
+        "patent_growth_norm": 0.6612,
+        "market_growth_norm": 0.904,
+        "market_size_norm": 0.4885,
+        "value": 0.6822,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8182,
+        "cost_adjusted_return": 0.5595
+      }
+    ],
+    "selection_quality": 66.0,
+    "cost_adjusted_return": 53.4,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "backtest_score": 63.6,
+    "backtest_score_v1": 67.3,
+    "description": {
+      "selection_quality": "66.0/100 — 3개 기술 평균 value=0.660\n  ▲ 다중 센서 퓨전 카메라: value=0.878 (특허↑=1.00, 시장↑=0.59, 규모=1.00)\n  ▲ 고성능 SiC 반도체 제조: value=0.682 (특허↑=0.66, 시장↑=0.90, 규모=0.49)\n  ▼ 스테어 바이 와이어 제어: value=0.420 (특허↑=0.03, 시장↑=0.82, 규모=0.54)",
+      "cost_adjusted_return": "53.4/100 — 평균 return=0.534\n  다중 센서 퓨전 카메라: value=0.878 - 0.15×0.67(cost) = return +0.772 [High]\n  고성능 SiC 반도체 제조: value=0.682 - 0.15×1.00(cost) = return +0.559 [Strategic]\n  스테어 바이 와이어 제어: value=0.420 - 0.15×1.00(cost) = return +0.271 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  다중 센서 퓨전 카메라: 1.8년 늦음 ⚠\n  고성능 SiC 반도체 제조: 1.5년 늦음 ⚠\n  스테어 바이 와이어 제어: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×66.0 + 0.35×53.4 + 0.05×100.0 + 0.05×100.0 + 0.10×55.0 = 63.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 SiC 반도체 제조",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 60.6,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 58.1,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×63.6(Backtest) = 60.6. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 58.1."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 63.6점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 58.1점.",
+    "key_failure_points": [
+      "타이밍 이슈: 스테어 바이 와이어 제어의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 다중 센서 퓨전 카메라의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: 고성능 SiC 반도체 제조의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / IDM / Foundry",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "GAA at TRL 7 completing in 2 years is reasonable, and T05/T02 at TRL 6 over 2 years is manageable, but T03 (메모리 내 연산 아키텍처) at TRL 5 is allocated zero development time (2030-Q1 → 2030-Q1), making its TRL progression to any deployable state essentially impossible within the roadmap.",
+      "strategic_fidelity": "The portfolio includes some exploratory technologies (T03 at TRL 5, T05 at TRL 6) consistent with 기술선도, but the roadmap is heavily anchored on GAA (TRL 7, near-commercial) and lacks truly frontier or patent-pioneering plays; T03 is under-invested (Medium tier, near-zero timeline) which undermines R&D-heavy leadership positioning.",
+      "competitive_awareness": "There is no explicit differentiation rationale against TSMC, Samsung, or Intel Foundry in the technology selection or timing; the dependency chain (T01→T02→T03) is logically structured but does not articulate competitive gaps or timing advantages relative to known competitor roadmaps.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before the market boom; GAA misses by only 0.75yr (acceptable), but 하이브리드 본딩 패키징 completes 3.25 years after its boom and 백사이드 PDN completes 2 years after its boom — systematic late delivery undermines the preemption objective.",
+      "patent_market_convergence": "The selected technologies (GAA, Hybrid Bonding, Backside PDN, CIM) are all active patent battlegrounds with strong market growth signals, suggesting some convergence awareness, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted rather than selecting broadly known hot technologies."
+    },
+    "strengths": [
+      "Logical dependency chain (GAA → Hybrid Bonding/Backside PDN → CIM) reflects sound systems-level thinking about technology enablement",
+      "GAA is correctly identified as the foundational strategic investment with highest urgency and market opportunity scores"
+    ],
+    "weaknesses": [
+      "하이브리드 본딩 패키징 completes 3.25 years after its market boom — the single largest timing failure in the portfolio — rendering the Strategic tier investment largely ineffective for market capture",
+      "메모리 내 연산 아키텍처 has a zero-duration development window (2030-Q1 to 2030-Q1) making it a placeholder rather than an actionable roadmap item"
+    ],
+    "missing_technologies": [
+      "2nm/1.4nm EUV/High-NA EUV lithography (critical enabler for GAA scaling, absent from roadmap)",
+      "3D IC stacking / die-to-wafer bonding (complementary to hybrid bonding, needed for leadership differentiation)",
+      "Neuromorphic or analog compute-in-memory (lower TRL frontier tech more consistent with 기술선도 positioning)"
+    ],
+    "investment_issues": [
+      "메모리 내 연산 아키텍처 receives Medium tier investment despite being the most strategically differentiated (lowest TRL, highest future potential) — underweighted for a 기술선도 portfolio",
+      "Budget shows 0 spent against 82.8B allocation — no actual resource deployment is modeled, making investment tier assignments non-binding and the financial strategy unverifiable",
+      "Strategic tier for 하이브리드 본딩 패키징 is misallocated given it will miss its market window by 3+ years; resources would be better deployed accelerating its timeline or shifting to next-generation packaging"
+    ],
+    "timing_issues": [
+      "하이브리드 본딩 패키징 (T02): completes Q1-2030, but market boom peaked Q4-2026 — 3.25 year miss means competitors will have captured market leadership long before this roadmap delivers",
+      "백사이드 전력망 (T05): completes Q1-2030 vs boom Q1-2028 — 2-year late delivery loses first-mover advantage critical for 기술선도 strategy",
+      "The dependency chain forces T02 to wait for T01 completion (Q1-2028), compressing T02 development to only 2 years when starting after its boom has already passed"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - GAA at TRL 7 completing in 2 years is reasonable, and T05/T02 at TRL 6 over 2 years is manageable, but T03 (메모리 내 연산 아키텍처) at TRL 5 is allocated zero development time (2030-Q1 → 2030-Q1), making its TRL progression to any deployable state essentially impossible within the roadmap.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes some exploratory technologies (T03 at TRL 5, T05 at TRL 6) consistent with 기술선도, but the roadmap is heavily anchored on GAA (TRL 7, near-commercial) and lacks truly frontier or patent-pioneering plays; T03 is under-invested (Medium tier, near-zero timeline) which undermines R&D-heavy leadership positioning.",
+      "competitive_awareness": "score 2/5 - There is no explicit differentiation rationale against TSMC, Samsung, or Intel Foundry in the technology selection or timing; the dependency chain (T01→T02→T03) is logically structured but does not articulate competitive gaps or timing advantages relative to known competitor roadmaps.",
+      "market_timing": "score 2/5 - For 기술선도 strategy, technologies should complete 1-2 years before the market boom; GAA misses by only 0.75yr (acceptable), but 하이브리드 본딩 패키징 completes 3.25 years after its boom and 백사이드 PDN completes 2 years after its boom — systematic late delivery undermines the preemption objective.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (GAA, Hybrid Bonding, Backside PDN, CIM) are all active patent battlegrounds with strong market growth signals, suggesting some convergence awareness, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted rather than selecting broadly known hot technologies.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.45
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 패키징",
+        "patent_growth_norm": 0.8088,
+        "market_growth_norm": 0.5064,
+        "market_size_norm": 0.894,
+        "value": 0.7436,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5936
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "백사이드 전력망 (Backside PDN)",
+        "patent_growth_norm": 0.357,
+        "market_growth_norm": 0.5884,
+        "market_size_norm": 0.0,
+        "value": 0.3193,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.2193
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 아키텍처",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.3021,
+        "value": 0.4906,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.4406
+      }
+    ],
+    "selection_quality": 53.8,
+    "cost_adjusted_return": 42.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 47.5,
+    "backtest_score": 61.0,
+    "backtest_score_v1": 58.5,
+    "description": {
+      "selection_quality": "53.8/100 — 4개 기술 평균 value=0.538\n  ▲ 하이브리드 본딩 패키징: value=0.744 (특허↑=0.81, 시장↑=0.51, 규모=0.89)\n  ▲ GAA 트랜지스터 게이트 공정: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▼ 메모리 내 연산 아키텍처: value=0.491 (특허↑=1.00, 시장↑=0.00, 규모=0.30)\n  ▼ 백사이드 전력망 (Backside PDN): value=0.319 (특허↑=0.36, 시장↑=0.59, 규모=0.00)",
+      "cost_adjusted_return": "42.6/100 — 평균 return=0.426\n  하이브리드 본딩 패키징: value=0.744 - 0.15×1.00(cost) = return +0.594 [Strategic]\n  GAA 트랜지스터 게이트 공정: value=0.600 - 0.15×1.00(cost) = return +0.450 [Strategic]\n  메모리 내 연산 아키텍처: value=0.491 - 0.15×0.33(cost) = return +0.441 [Medium]\n  백사이드 전력망 (Backside PDN): value=0.319 - 0.15×0.67(cost) = return +0.219 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 백사이드 전력망 (Backside PDN): value 0.319인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "47.5/100 — 평균 오차 1.75년\n  하이브리드 본딩 패키징: 3.2년 늦음 ⚠\n  백사이드 전력망 (Backside PDN): 2.0년 늦음 ⚠\n  메모리 내 연산 아키텍처: 1.0년 늦음\n  GAA 트랜지스터 게이트 공정: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×53.8 + 0.35×42.6 + 0.05×100.0 + 0.05×100.0 + 0.10×47.5 = 61.0"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.75,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 패키징",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "백사이드 전력망 (Backside PDN)",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 52.6,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.8
+      }
+    ],
+    "total_penalty": 3.8,
+    "final_composite_score": 48.8,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×61.0(Backtest) = 52.6. Penalty: timing_error: -3.8pt. 총 -3.8pt. 최종 = 48.8.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(61.0)가 LLM(40.0)보다 21.0pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 61.0점. 제약 위반으로 3.8점 차감. 최종 Composite Score: 48.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 하이브리드 본딩 패키징의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 백사이드 전력망 (Backside PDN)의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

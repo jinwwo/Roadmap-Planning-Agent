@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "ADAS / Autonomous Driving / Chassis Control",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 4,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 61.3,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 4,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL 5→target over ~2 years for T03 and TRL 6→target over ~3 years for T01 are broadly achievable in automotive systems, and T05 starting at TRL 5 with a 2-year runway after T03 completes is reasonable; no egregious jumps are present.",
+      "strategic_fidelity": "While the technologies are architecturally relevant and mid-TRL (5-6) which fits a technology leadership posture, the portfolio is very small (3 technologies) and leans toward well-established architectural components rather than exploratory, patent-trend-leading innovations; the strategy declaration of 기술선도 is only partially embodied.",
+      "competitive_awareness": "All three technologies—steer-by-wire, electric drivetrain integration, and vehicle communication gateways—fall squarely within the ADAS/Chassis/Autonomous Driving domain, demonstrating solid domain coherence; however, there is no explicit evidence of competitor differentiation analysis or timing advantage design against known rivals.",
+      "market_timing": "Under 기술선도 strategy, completions should ideally precede booms by 1-2 years; T03 completes 1 year late (2028-Q1 vs 2027-Q1 boom), T01 completes 1.5 years late (2029-Q1 vs 2027-Q3 boom), and T05 completes 2 years late (2030-Q1 vs 2028-Q1 boom), meaning all technologies miss the preemption window and none achieve the early-mover advantage expected of a technology leader.",
+      "patent_market_convergence": "All selected technologies show high market opportunity scores (5.0) and are active patent fields in automotive electrification and chassis control, suggesting some alignment; however, the selection rationale does not explicitly demonstrate deliberate targeting of patent-market convergence zones, making the overlap appear structural rather than intentional."
+    },
+    "strengths": [
+      "Perfect domain alignment — all three technologies are core to ADAS/Chassis/Autonomous Driving with no off-domain drift",
+      "Dependency chain is correctly structured (T05 depends on T03, and T03 completes before T05 starts), with zero dependency violations and full budget utilization"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, undermining the 기술선도 preemption rationale and yielding a mean timing error of 1.5 years",
+      "The portfolio is extremely narrow (only 3 technologies), which is insufficient for a credible technology leadership strategy; a 기술선도 portfolio should include more exploratory, lower-TRL bets to establish future competitive moats"
+    ],
+    "missing_technologies": [
+      "AI-based predictive chassis control / 차량 동역학 예측 제어 (lower TRL, exploratory)",
+      "V2X / V2V 통신 기반 협력 자율주행 기술 for competitive differentiation",
+      "센서 퓨전 및 엣지 AI 처리 아키텍처 aligned with ADAS domain and patent-active space"
+    ],
+    "investment_issues": [
+      "차량 통신 게이트웨이 및 네트워크 is downgraded to Tier=High despite market_opp=5.0, yet it has the worst timing error (2 years late), suggesting investment tier alone cannot compensate for schedule misalignment",
+      "With only 3 technologies consuming the entire budget, there is no portfolio diversification or hedge against execution risk on any individual technology"
+    ],
+    "timing_issues": [
+      "전기 구동계 통합 제어 completes 2028-Q1 but boom is 2027-Q1 — 1 year late, missing preemption opportunity",
+      "다중 모드 스티어바이와이어 제어 completes 2029-Q1 but boom is 2027-Q3 — 1.5 years late, product arrives in post-peak market",
+      "차량 통신 게이트웨이 및 네트워크 completes 2030-Q1 but boom is 2028-Q1 — 2 years late, severely misses market window"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL 5→target over ~2 years for T03 and TRL 6→target over ~3 years for T01 are broadly achievable in automotive systems, and T05 starting at TRL 5 with a 2-year runway after T03 completes is reasonable; no egregious jumps are present.",
+      "strategic_fidelity": "score 3/5 - While the technologies are architecturally relevant and mid-TRL (5-6) which fits a technology leadership posture, the portfolio is very small (3 technologies) and leans toward well-established architectural components rather than exploratory, patent-trend-leading innovations; the strategy declaration of 기술선도 is only partially embodied.",
+      "competitive_awareness": "score 4/5 - All three technologies—steer-by-wire, electric drivetrain integration, and vehicle communication gateways—fall squarely within the ADAS/Chassis/Autonomous Driving domain, demonstrating solid domain coherence; however, there is no explicit evidence of competitor differentiation analysis or timing advantage design against known rivals.",
+      "market_timing": "score 3/5 - Under 기술선도 strategy, completions should ideally precede booms by 1-2 years; T03 completes 1 year late (2028-Q1 vs 2027-Q1 boom), T01 completes 1.5 years late (2029-Q1 vs 2027-Q3 boom), and T05 completes 2 years late (2030-Q1 vs 2028-Q1 boom), meaning all technologies miss the preemption window and none achieve the early-mover advantage expected of a technology leader.",
+      "patent_market_convergence": "score 3/5 - All selected technologies show high market opportunity scores (5.0) and are active patent fields in automotive electrification and chassis control, suggesting some alignment; however, the selection rationale does not explicitly demonstrate deliberate targeting of patent-market convergence zones, making the overlap appear structural rather than intentional.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×4 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 61.3"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 2,
+      "balance": 3,
+      "llm_structural_score_v1": 67.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "전기 구동계 통합 제어",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.7706,
+        "market_size_norm": 0.6353,
+        "value": 0.8218,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8462,
+        "cost_adjusted_return": 0.6678
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 모드 스티어바이와이어 제어",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8518,
+        "market_size_norm": 0.4236,
+        "value": 0.3826,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.1398
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "차량 통신 게이트웨이 및 네트워크",
+        "patent_growth_norm": 0.5072,
+        "market_growth_norm": 0.7986,
+        "market_size_norm": 0.5404,
+        "value": 0.6046,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4308,
+        "cost_adjusted_return": 0.8198
+      }
+    ],
+    "selection_quality": 60.3,
+    "cost_adjusted_return": 63.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "investment_rationality_score": 66.7,
+    "backtest_score": 64.7,
+    "backtest_score_v1": 68.9,
+    "description": {
+      "selection_quality": "60.3/100 — 3개 기술 평균 value=0.603\n  ▲ 전기 구동계 통합 제어: value=0.822 (특허↑=1.00, 시장↑=0.77, 규모=0.64)\n  ▲ 차량 통신 게이트웨이 및 네트워크: value=0.605 (특허↑=0.51, 시장↑=0.80, 규모=0.54)\n  ▼ 다중 모드 스티어바이와이어 제어: value=0.383 (특허↑=0.00, 시장↑=0.85, 규모=0.42)",
+      "cost_adjusted_return": "63.6/100 — 평균 return=0.542\n  차량 통신 게이트웨이 및 네트워크: 순이익(log)=+0.820 [High]\n  전기 구동계 통합 제어: 순이익(log)=+0.668 [Strategic]\n  다중 모드 스티어바이와이어 제어: 순이익(log)=+0.140 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 다중 모드 스티어바이와이어 제어: value 0.383인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  차량 통신 게이트웨이 및 네트워크: 2.0년 늦음 ⚠\n  다중 모드 스티어바이와이어 제어: 1.5년 늦음 ⚠\n  전기 구동계 통합 제어: 1.0년 늦음",
+      "formula": "backtest_score = 0.25×60.3(기술선택) + 0.25×63.6(투자대비수익) + 0.15×66.7(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×55.0(타이밍) = 64.7"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "전기 구동계 통합 제어",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 모드 스티어바이와이어 제어",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "차량 통신 게이트웨이 및 네트워크",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 63.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 60.8,
+    "description": "pre_penalty = 0.4×61.3(LLM) + 0.6×64.7(Backtest) = 63.3. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 60.8."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 61.3점, Backtest 경제성 평가 64.7점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 60.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 다중 모드 스티어바이와이어 제어의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 차량 통신 게이트웨이 및 네트워크의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

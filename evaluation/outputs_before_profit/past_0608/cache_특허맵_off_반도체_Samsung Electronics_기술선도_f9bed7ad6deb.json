@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Memory / Foundry",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6→target in 2 years) and T03 (TRL 5→target in 2 years) are moderately aggressive but plausible; T02 (TRL 7) starting after T01 completion is realistic given its higher maturity, making overall TRL progression mostly achievable.",
+      "strategic_fidelity": "The portfolio includes mid-to-high TRL technologies (TRL 5-7) which partially contradicts 기술선도 strategy that should favor lower-TRL exploratory technologies; CIM at TRL 5 is the only genuinely exploratory pick, while T01 and T02 are relatively mature.",
+      "competitive_awareness": "There is no explicit competitive differentiation rationale, no competitor positioning logic visible in technology selection or timing, and the roadmap does not demonstrate awareness of where competitors stand on these widely-adopted technology tracks.",
+      "market_timing": "Hybrid bonding (T02) completes 3.25 years after its boom window (2026-Q4), a severe miss; for 기술선도 strategy, T01 is marginally late (0.5yr after boom), and only CIM shows near-preemptive timing; the systematic lateness of T02 is a significant flaw.",
+      "patent_market_convergence": "CIM and 3D NAND are active patent and market growth areas showing some convergence, but the selection rationale does not demonstrate deliberate targeting of convergence zones; the portfolio appears driven more by dependency logic than patent-market signal analysis."
+    },
+    "strengths": [
+      "Dependency sequencing is logically sound — T01 correctly precedes T02 and T03 with no violations",
+      "CIM architecture selection at TRL 5 aligns with 기술선도 exploratory intent and targets a high-growth future market"
+    ],
+    "weaknesses": [
+      "Hybrid bonding (T02) completes 3.25 years after its market boom, rendering the investment strategically misaligned and likely to miss competitive window",
+      "Portfolio is too mature-technology-heavy (TRL 6-7 dominant) for a declared 기술선도 strategy, lacking sufficient low-TRL breakthrough candidates"
+    ],
+    "missing_technologies": [
+      "Neuromorphic memory or MRAM (low-TRL, high patent activity for 기술선도 positioning)",
+      "Photonic interconnect for memory (emerging, pre-competitive, aligns with 기술선도)",
+      "Advanced EUV lithography process nodes (critical competitive differentiator in foundry/memory)"
+    ],
+    "investment_issues": [
+      "T02 receives Strategic tier investment despite the worst timing alignment in the portfolio, misallocating premium resources to a post-boom technology",
+      "Budget utilization shows 0 spent against 116.2B budget — investment allocation appears nominal rather than operationally grounded"
+    ],
+    "timing_issues": [
+      "T02 (하이브리드 본딩) targets 2030-Q1 completion but market boom is 2026-Q4 — a 3.25-year post-boom completion that wastes strategic investment",
+      "T01 misses its boom by 0.5 years which is acceptable for 기술선도 but still slightly late rather than preemptive"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 (TRL 6→target in 2 years) and T03 (TRL 5→target in 2 years) are moderately aggressive but plausible; T02 (TRL 7) starting after T01 completion is realistic given its higher maturity, making overall TRL progression mostly achievable.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes mid-to-high TRL technologies (TRL 5-7) which partially contradicts 기술선도 strategy that should favor lower-TRL exploratory technologies; CIM at TRL 5 is the only genuinely exploratory pick, while T01 and T02 are relatively mature.",
+      "competitive_awareness": "score 2/5 - There is no explicit competitive differentiation rationale, no competitor positioning logic visible in technology selection or timing, and the roadmap does not demonstrate awareness of where competitors stand on these widely-adopted technology tracks.",
+      "market_timing": "score 2/5 - Hybrid bonding (T02) completes 3.25 years after its boom window (2026-Q4), a severe miss; for 기술선도 strategy, T01 is marginally late (0.5yr after boom), and only CIM shows near-preemptive timing; the systematic lateness of T02 is a significant flaw.",
+      "patent_market_convergence": "score 3/5 - CIM and 3D NAND are active patent and market growth areas showing some convergence, but the selection rationale does not demonstrate deliberate targeting of convergence zones; the portfolio appears driven more by dependency logic than patent-market signal analysis.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 2,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 60.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 수직 에피택셜 실리콘",
+        "patent_growth_norm": 0.3775,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 1.0,
+        "value": 0.451,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.301
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 통합 공정",
+        "patent_growth_norm": 0.4214,
+        "market_growth_norm": 0.4681,
+        "market_size_norm": 0.54,
+        "value": 0.471,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.321
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.0,
+        "value": 0.3,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.2
+      }
+    ],
+    "selection_quality": 40.7,
+    "cost_adjusted_return": 27.4,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "backtest_score": 50.8,
+    "backtest_score_v1": 49.3,
+    "description": {
+      "selection_quality": "40.7/100 — 3개 기술 평균 value=0.407\n  ▲ 하이브리드 본딩 통합 공정: value=0.471 (특허↑=0.42, 시장↑=0.47, 규모=0.54)\n  ▲ 3D NAND 수직 에피택셜 실리콘: value=0.451 (특허↑=0.38, 시장↑=0.00, 규모=1.00)\n  ▼ 메모리 내 연산 (CIM) 아키텍처: value=0.300 (특허↑=0.00, 시장↑=1.00, 규모=0.00)",
+      "cost_adjusted_return": "27.4/100 — 평균 return=0.274\n  하이브리드 본딩 통합 공정: value=0.471 - 0.15×1.00(cost) = return +0.321 [Strategic]\n  3D NAND 수직 에피택셜 실리콘: value=0.451 - 0.15×1.00(cost) = return +0.301 [Strategic]\n  메모리 내 연산 (CIM) 아키텍처: value=0.300 - 0.15×0.67(cost) = return +0.200 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 메모리 내 연산 (CIM) 아키텍처: value 0.300인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  하이브리드 본딩 통합 공정: 3.2년 늦음 ⚠\n  메모리 내 연산 (CIM) 아키텍처: 0.8년 늦음\n  3D NAND 수직 에피택셜 실리콘: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×40.7 + 0.35×27.4 + 0.05×100.0 + 0.05×100.0 + 0.10×55.0 = 50.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 수직 에피택셜 실리콘",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 통합 공정",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 49.0,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 46.5,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×50.8(Backtest) = 49.0. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 46.5.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 50.8점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 46.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: 하이브리드 본딩 통합 공정의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

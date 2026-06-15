@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "scenario": "multi-agent",
+    "mode": "absolute",
+    "reference_year": 2025,
+    "domain": "AI Semiconductor",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 2,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 3,
+    "llm_structural_score": 62.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 2,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 3
+      }
+    },
+    "evidence": {
+      "alignment": "The selected technologies (Chiplet Packaging → Edge AI Chip → On-Device LLM → Neuromorphic Sensor) map well onto high-growth AI semiconductor markets with boom windows spanning 2026-2030, and timing errors are modest (mean 0.25yr). There is clear awareness of market timing, with most technologies completing just before their respective boom windows.",
+      "sequencing": "All three dependent technologies start before their prerequisites complete, creating formal dependency violations: Edge AI Chip starts Q3-2025 while T003 ends Q3-2026, On-Device LLM starts Q4-2026 while T001 ends Q2-2027, and Neuromorphic Sensor starts Q1-2027 while T001 also ends Q2-2027. These overlaps undermine feasibility and suggest the timeline was not validated against the dependency chain.",
+      "investment": "The tiering logic is broadly sound: Edge AI Chip (High) and On-Device LLM (Strategic) receive the largest allocations commensurate with their high market opportunity and strategic fit scores, while Neuromorphic Sensor (Low) reflects its high uncertainty and low urgency. However, Chiplet Packaging as a foundational enabler receiving only Medium tier may slightly underweight its role as a prerequisite for all downstream hardware.",
+      "coherence": "The portfolio forms a clear and logical vertical stack from manufacturing infrastructure (Chiplet Packaging) through hardware (Edge AI Chip) to software (On-Device LLM) and future sensing (Neuromorphic Sensor), covering TRL 3-7 and spanning research through near-deployment stages. The strategic narrative of enabling edge AI inference is coherent and well-structured.",
+      "balance": "The roadmap covers short-term (2025-2026), medium-term (2027), and long-term (2029-2030) horizons with risk distributed across tiers, but the budget violation of 10% and concentration of dependencies on T001 create fragility. There is no Low-TRL exploratory bet outside the neuromorphic track, and the portfolio is heavily weighted toward a single hardware-software stack."
+    },
+    "strengths": [
+      "Clear vertical integration narrative from packaging infrastructure through hardware to software, forming a coherent edge AI value chain",
+      "Investment tiering is well-calibrated to market opportunity and urgency scores, with Strategic tier correctly assigned to On-Device LLM which has the highest market_opp score"
+    ],
+    "weaknesses": [
+      "All three dependent technologies begin before their prerequisites are completed, representing systematic sequencing failures that would cause execution risk in practice",
+      "Budget is overspent by 10% with no mitigation strategy noted, and the foundational Chiplet Packaging technology may be underfunded relative to its critical enabler role"
+    ],
+    "missing_technologies": [
+      "AI-optimized memory (HBM/CXL) — critical for both edge AI chips and on-device LLM inference performance",
+      "Low-power inference accelerator / NPU IP — bridges chip hardware and software deployment at the edge",
+      "On-device model compression / quantization toolchain — essential software enabler for On-Device LLM at TRL 4-5"
+    ],
+    "investment_issues": [
+      "Total budget spend of 110 against a cap of 100 represents a 10% overrun with no stated contingency or reallocation plan",
+      "Chiplet Packaging assigned Medium tier despite being the sole prerequisite for all other hardware technologies — under-investment here creates a bottleneck risk for the entire roadmap"
+    ],
+    "timing_issues": [
+      "Edge AI Chip development starts 2025-Q3 but its prerequisite Chiplet Packaging does not complete until 2026-Q3, creating a ~3-quarter overlap where the chip cannot be properly developed",
+      "On-Device LLM starts 2026-Q4 but Edge AI Chip (T001) completes 2027-Q2, meaning software development begins ~2 quarters before the hardware platform is ready",
+      "Neuromorphic Sensor starts 2027-Q1 but also depends on T001 completing in 2027-Q2, leaving a 1-quarter gap that may be manageable but still constitutes a formal violation"
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: Chiplet Packaging (norm=0.500)\n  시장 성장률 기준 최저: Neuromorphic Sensor (norm=0.500)\n  전체 평균: 0.500",
+      "sequencing": "점수 2/5 — 의존성 위반 3건:\n  ⚠ Edge AI Chip이 선행기술 T003 완료 전 시작 (gap: -4.0Q)\n  ⚠ On-Device LLM이 선행기술 T001 완료 전 시작 (gap: -2.0Q)\n  ⚠ Neuromorphic Sensor이 선행기술 T001 완료 전 시작 (gap: -1.0Q)",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ Edge AI Chip: value=0.500 → 기대 Low, 실제 High (차이 2단계)\n  ⚠ On-Device LLM: value=0.500 → 기대 Low, 실제 Strategic (차이 3단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Hardware(2개), Manufacturing(1개), Software(1개)\n  TRL 범위: 3~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 3/5\n  투자등급 분포: High(1개), Low(1개), Medium(1개), Strategic(1개)\n  모든 등급 사용",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×2 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 62.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T003",
+        "tech_name": "Chiplet Packaging",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.5,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.45
+      },
+      {
+        "tech_id": "T001",
+        "tech_name": "Edge AI Chip",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.5,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.4
+      },
+      {
+        "tech_id": "T002",
+        "tech_name": "On-Device LLM",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.5,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.35
+      },
+      {
+        "tech_id": "T004",
+        "tech_name": "Neuromorphic Sensor",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.5,
+        "investment_tier": "Low",
+        "cost_proxy": 1,
+        "cost_norm": 0.0,
+        "cost_adjusted_return": 0.5
+      }
+    ],
+    "selection_quality": 50.0,
+    "cost_adjusted_return": 42.5,
+    "budget_feasibility_score": 80.0,
+    "dependency_validity_score": 40,
+    "timing_accuracy_score": 92.5,
+    "backtest_score": 53.6,
+    "description": {
+      "selection_quality": "50.0/100 — 4개 기술 평균 value=0.500\n  ▼ Chiplet Packaging: value=0.500 (특허↑=0.50, 시장↑=0.50, 규모=0.50)\n  ▼ Edge AI Chip: value=0.500 (특허↑=0.50, 시장↑=0.50, 규모=0.50)\n  ▼ On-Device LLM: value=0.500 (특허↑=0.50, 시장↑=0.50, 규모=0.50)\n  ▼ Neuromorphic Sensor: value=0.500 (특허↑=0.50, 시장↑=0.50, 규모=0.50)",
+      "cost_adjusted_return": "42.5/100 — 평균 return=0.425\n  Neuromorphic Sensor: value=0.500 - 0.15×0.00(cost) = return +0.500 [Low]\n  Chiplet Packaging: value=0.500 - 0.15×0.33(cost) = return +0.450 [Medium]\n  Edge AI Chip: value=0.500 - 0.15×0.67(cost) = return +0.400 [High]\n  On-Device LLM: value=0.500 - 0.15×1.00(cost) = return +0.350 [Strategic]",
+      "budget_feasibility": "80.0/100 — 예산 10.0% 초과.",
+      "dependency_validity": "40.0/100 — 위반 3건 (1건당 -20점)\n  ⚠ Edge AI Chip: 선행 T003 완료 전 시작 (gap: -4.0Q)\n  ⚠ On-Device LLM: 선행 T001 완료 전 시작 (gap: -2.0Q)\n  ⚠ Neuromorphic Sensor: 선행 T001 완료 전 시작 (gap: -1.0Q)",
+      "timing_accuracy": "92.5/100 — 평균 오차 0.25년\n  Neuromorphic Sensor: 0.5년 이름\n  Chiplet Packaging: 0.2년 이름\n  Edge AI Chip: 0.2년 이름\n  On-Device LLM: 0.0년 이름",
+      "formula": "backtest_score = 0.35×50.0 + 0.35×42.5 + 0.10×80.0 + 0.10×40.0 + 0.10×92.5 = 53.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 10.0,
+    "dependency_violations": 3,
+    "dependency_details": [
+      {
+        "tech_id": "T001",
+        "tech_name": "Edge AI Chip",
+        "prerequisite": "T003",
+        "tech_start": "2025-Q3",
+        "prereq_end": "~2026.5",
+        "gap_quarters": -4.0
+      },
+      {
+        "tech_id": "T002",
+        "tech_name": "On-Device LLM",
+        "prerequisite": "T001",
+        "tech_start": "2026-Q4",
+        "prereq_end": "~2027.25",
+        "gap_quarters": -2.0
+      },
+      {
+        "tech_id": "T004",
+        "tech_name": "Neuromorphic Sensor",
+        "prerequisite": "T001",
+        "tech_start": "2027-Q1",
+        "prereq_end": "~2027.25",
+        "gap_quarters": -1.0
+      }
+    ],
+    "mean_timing_error_years": 0.25,
+    "timing_details": [
+      {
+        "tech_id": "T003",
+        "tech_name": "Chiplet Packaging",
+        "target_q": "2026-Q3",
+        "boom_q": "2026-Q4",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T001",
+        "tech_name": "Edge AI Chip",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q3",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T002",
+        "tech_name": "On-Device LLM",
+        "target_q": "2028-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "T004",
+        "tech_name": "Neuromorphic Sensor",
+        "target_q": "2029-Q4",
+        "boom_q": "2030-Q2",
+        "error_years": -0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 57.2,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 9
+      },
+      {
+        "type": "budget_violation",
+        "amount": 5.0
+      }
+    ],
+    "total_penalty": 14.0,
+    "final_composite_score": 43.2,
+    "description": "pre_penalty = 0.4×62.5(LLM) + 0.6×53.6(Backtest) = 57.2. Penalty: dependency_violation: -9.0pt, budget_violation: -5.0pt. 총 -14.0pt. 최종 = 43.2.\n  [진단] 페널티(-14.0)가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 62.5점, Backtest 경제성 평가 53.6점. 제약 위반으로 14.0점 차감. 최종 Composite Score: 43.2점.",
+    "key_failure_points": [
+      "의존성 위반: Edge AI Chip이 선행기술 T003 완료 전에 시작 (gap: -4.0Q)",
+      "의존성 위반: On-Device LLM이 선행기술 T001 완료 전에 시작 (gap: -2.0Q)",
+      "의존성 위반: Neuromorphic Sensor이 선행기술 T001 완료 전에 시작 (gap: -1.0Q)"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

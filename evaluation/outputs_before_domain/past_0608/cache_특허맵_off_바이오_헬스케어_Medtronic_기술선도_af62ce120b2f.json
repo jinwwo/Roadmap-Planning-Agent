@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Medical Devices / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are generally reasonable: T01 (TRL 6) over 2 years and T04 (TRL 4) over 4 years are achievable, though T02 (TRL 5→target) starting in 2028 after T01 completion is tight but manageable given the 2-year window.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but T01 at TRL 6 is already near-market; only T04 at TRL 4 is genuinely exploratory, creating a mixed rather than leadership-focused portfolio.",
+      "competitive_awareness": "There is little evidence of competitor positioning awareness or differentiation strategy in technology selection; the three technologies span unrelated domains (vascular imaging, surgical AI, ophthalmic materials) without articulated competitive gaps being targeted.",
+      "market_timing": "T02 completes in 2030-Q1 but its market boom was 2026-Q4, a 3.25-year miss that is severely misaligned even for a 기술선도 preemption strategy; T01 and T04 are better timed but the portfolio average timing error of 1.58 years reflects significant misalignment.",
+      "patent_market_convergence": "T02 has strong market opportunity scores (5.0) and T01 has high urgency, suggesting some signal alignment, but T04's low market opportunity (2.0) against high uncertainty suggests it is patent/innovation-driven rather than convergence-zone selected."
+    },
+    "strengths": [
+      "T01→T02 dependency chain is properly structured and respects sequential development logic with no constraint violations",
+      "T04 (TRL 4, high uncertainty) genuinely embodies technology leadership philosophy with a 4-year development runway appropriate for material-stage innovation"
+    ],
+    "weaknesses": [
+      "T02 (Surgical AI) completes 3.25 years after market boom, making it nearly impossible to capture first-mover or leadership advantage in that segment",
+      "Portfolio spans three disconnected medical domains (vascular, surgical AI, ophthalmic) without synergistic platform logic, weakening competitive positioning and resource focus"
+    ],
+    "missing_technologies": [
+      "AI-driven predictive diagnostics platform that could bridge T01 and T02 synergistically and target an earlier boom window",
+      "Next-generation minimally invasive robotic surgery technology (lower TRL, higher strategic fit for 기술선도) to complement the surgical AI track"
+    ],
+    "investment_issues": [
+      "T04 receives 'High' tier investment despite market_opp=2.0 and executability=2.0, suggesting over-investment in a technology with weak near-term return signals",
+      "Budget shows 0 spent against 13.5B allocation — absence of concrete budget distribution across tiers makes it impossible to assess whether investment is proportionate to strategic value"
+    ],
+    "timing_issues": [
+      "T02 market boom occurred in 2026-Q4 but development doesn't complete until 2030-Q1 — a 3.25-year post-boom completion that negates any technology leadership value",
+      "Even under 기술선도 logic (preemption 1-2 years before boom), T02 should have started and completed by 2025-2026, not 2028-2030"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are generally reasonable: T01 (TRL 6) over 2 years and T04 (TRL 4) over 4 years are achievable, though T02 (TRL 5→target) starting in 2028 after T01 completion is tight but manageable given the 2-year window.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but T01 at TRL 6 is already near-market; only T04 at TRL 4 is genuinely exploratory, creating a mixed rather than leadership-focused portfolio.",
+      "competitive_awareness": "score 2/5 - There is little evidence of competitor positioning awareness or differentiation strategy in technology selection; the three technologies span unrelated domains (vascular imaging, surgical AI, ophthalmic materials) without articulated competitive gaps being targeted.",
+      "market_timing": "score 2/5 - T02 completes in 2030-Q1 but its market boom was 2026-Q4, a 3.25-year miss that is severely misaligned even for a 기술선도 preemption strategy; T01 and T04 are better timed but the portfolio average timing error of 1.58 years reflects significant misalignment.",
+      "patent_market_convergence": "score 3/5 - T02 has strong market opportunity scores (5.0) and T01 has high urgency, suggesting some signal alignment, but T04's low market opportunity (2.0) against high uncertainty suggests it is patent/innovation-driven rather than convergence-zone selected.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.6179,
+        "market_size_norm": 0.9494,
+        "value": 0.4702,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.3202
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "patent_growth_norm": 0.9807,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.9914,
+        "value": 0.9897,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.8397
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "광 조절 가능 안과 임플란트 소재",
+        "patent_growth_norm": 0.3622,
+        "market_growth_norm": 0.4843,
+        "market_size_norm": 0.8545,
+        "value": 0.5465,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.4465
+      }
+    ],
+    "selection_quality": 66.9,
+    "cost_adjusted_return": 53.5,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "backtest_score": 68.3,
+    "backtest_score_v1": 67.4,
+    "description": {
+      "selection_quality": "66.9/100 — 3개 기술 평균 value=0.669\n  ▲ 수술용 AI 기반 이미지 처리 및 안내: value=0.990 (특허↑=0.98, 시장↑=1.00, 규모=0.99)\n  ▼ 광 조절 가능 안과 임플란트 소재: value=0.546 (특허↑=0.36, 시장↑=0.48, 규모=0.85)\n  ▼ 혈관 내 3D 이미징 및 워크플로우: value=0.470 (특허↑=0.00, 시장↑=0.62, 규모=0.95)",
+      "cost_adjusted_return": "53.5/100 — 평균 return=0.535\n  수술용 AI 기반 이미지 처리 및 안내: value=0.990 - 0.15×1.00(cost) = return +0.840 [Strategic]\n  광 조절 가능 안과 임플란트 소재: value=0.546 - 0.15×0.67(cost) = return +0.447 [High]\n  혈관 내 3D 이미징 및 워크플로우: value=0.470 - 0.15×1.00(cost) = return +0.320 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  수술용 AI 기반 이미지 처리 및 안내: 3.2년 늦음 ⚠\n  광 조절 가능 안과 임플란트 소재: 1.0년 늦음\n  혈관 내 3D 이미징 및 워크플로우: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×66.9 + 0.35×53.5 + 0.05×100.0 + 0.05×100.0 + 0.10×52.6 = 68.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "혈관 내 3D 이미징 및 워크플로우",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "수술용 AI 기반 이미지 처리 및 안내",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "광 조절 가능 안과 임플란트 소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 56.6,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×68.3(Backtest) = 59.5. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 56.6.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(68.3)가 LLM(46.2)보다 22.1pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 68.3점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 56.6점.",
+    "key_failure_points": [
+      "타이밍 이슈: 수술용 AI 기반 이미지 처리 및 안내의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

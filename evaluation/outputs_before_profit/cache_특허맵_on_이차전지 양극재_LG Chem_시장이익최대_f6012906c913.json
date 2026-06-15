@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 3,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 3,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 7) completing in 4 quarters and T03 (TRL 6) in 8 quarters are reasonable progressions; T02 (TRL 5) moving to market-ready in 4 quarters is somewhat aggressive but not infeasible given dependency on T03 groundwork.",
+      "strategic_fidelity": "The portfolio starts well with a high-TRL near-market technology (T01, TRL 7) aligned with 시장이익최대, but includes T02 at TRL 5 with a solid-state battery focus that is more exploratory and R&D-oriented, introducing strategic tension with a pure profit-maximization mandate.",
+      "competitive_awareness": "Technology sequencing from nickel-rich cathode coatings through silicon anodes to solid-state cathodes follows a logical competitive progression in the EV battery space, but there is no explicit differentiation rationale or competitor positioning evidence embedded in the roadmap.",
+      "market_timing": "T01 completes 0.25 years early relative to boom (excellent for 시장이익최대), T03 completes 0.5 years late (marginal miss), and T02 completes 1.0 year after its boom window (significant miss), yielding a mixed overall timing picture.",
+      "patent_market_convergence": "All three technologies are active patent filing areas with known market growth trajectories in battery materials, but the roadmap does not explicitly demonstrate deliberate targeting of patent-market convergence zones — alignment appears structurally reasonable rather than strategically engineered."
+    },
+    "strengths": [
+      "T01 (고니켈 양극 표면 코팅) is well-timed with high market opportunity and urgency scores, representing a strong near-term commercial anchor for the portfolio",
+      "Zero dependency violations and full budget utilization indicate disciplined sequencing and resource allocation"
+    ],
+    "weaknesses": [
+      "T02 (고체전지용 양극 소재) misses its market boom by a full year, significantly reducing ROI potential under the 시장이익최대 strategy",
+      "Including a TRL 5 solid-state technology under a profit-maximization strategy introduces execution risk and dilutes commercial focus compared to higher-TRL alternatives"
+    ],
+    "missing_technologies": [
+      "고망간계 양극재 (High-Mn cathode) — higher TRL near-market alternative that could better serve 시장이익최대 timing requirements",
+      "LFP 고밀도화 기술 — mature, commercially proven cathode technology with strong near-term market demand aligned with profit maximization"
+    ],
+    "investment_issues": [
+      "T02 receiving 'High' tier investment despite low strategic fit (3.0) and high uncertainty (4.0) under a profit-maximization strategy represents suboptimal capital allocation",
+      "No exploratory or watch-list tier technologies are included, leaving the portfolio with no hedge against market shifts or technology disruptions"
+    ],
+    "timing_issues": [
+      "T02 completion at 2030-Q1 misses the 2029-Q1 boom by 1.0 year, meaning peak market demand will have passed before technology readiness",
+      "T03 completion at 2029-Q1 is 0.5 years late relative to 2028-Q3 boom, missing the optimal commercial window for silicon anode materials"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 (TRL 7) completing in 4 quarters and T03 (TRL 6) in 8 quarters are reasonable progressions; T02 (TRL 5) moving to market-ready in 4 quarters is somewhat aggressive but not infeasible given dependency on T03 groundwork.",
+      "strategic_fidelity": "score 3/5 - The portfolio starts well with a high-TRL near-market technology (T01, TRL 7) aligned with 시장이익최대, but includes T02 at TRL 5 with a solid-state battery focus that is more exploratory and R&D-oriented, introducing strategic tension with a pure profit-maximization mandate.",
+      "competitive_awareness": "score 3/5 - Technology sequencing from nickel-rich cathode coatings through silicon anodes to solid-state cathodes follows a logical competitive progression in the EV battery space, but there is no explicit differentiation rationale or competitor positioning evidence embedded in the roadmap.",
+      "market_timing": "score 3/5 - T01 completes 0.25 years early relative to boom (excellent for 시장이익최대), T03 completes 0.5 years late (marginal miss), and T02 completes 1.0 year after its boom window (significant miss), yielding a mixed overall timing picture.",
+      "patent_market_convergence": "score 3/5 - All three technologies are active patent filing areas with known market growth trajectories in battery materials, but the roadmap does not explicitly demonstrate deliberate targeting of patent-market convergence zones — alignment appears structurally reasonable rather than strategically engineered.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×3 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 표면 코팅",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.3826
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "실리콘 기반 음극 소재",
+        "patent_growth_norm": 0.9743,
+        "market_growth_norm": 0.8143,
+        "market_size_norm": 1.0,
+        "value": 0.934,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.6,
+        "cost_adjusted_return": 0.844
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고체전지용 양극 소재",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 1.0,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4,
+        "cost_adjusted_return": 0.94
+      }
+    ],
+    "selection_quality": 82.2,
+    "cost_adjusted_return": 72.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 82.6,
+    "backtest_score": 84.3,
+    "backtest_score_v1": 82.3,
+    "description": {
+      "selection_quality": "82.2/100 — 3개 기술 평균 value=0.822\n  ▲ 고체전지용 양극 소재: value=1.000 (특허↑=1.00, 시장↑=1.00, 규모=1.00)\n  ▲ 실리콘 기반 음극 소재: value=0.934 (특허↑=0.97, 시장↑=0.81, 규모=1.00)\n  ▼ 고니켈 양극 표면 코팅: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)",
+      "cost_adjusted_return": "72.2/100 — 평균 return=0.722\n  고체전지용 양극 소재: value=1.000 - 0.15×0.67(cost) = return +0.940 [High]\n  실리콘 기반 음극 소재: value=0.934 - 0.15×1.00(cost) = return +0.844 [Strategic]\n  고니켈 양극 표면 코팅: value=0.533 - 0.15×1.00(cost) = return +0.383 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "82.6/100 — 평균 오차 0.58년\n  고체전지용 양극 소재: 1.0년 늦음\n  실리콘 기반 음극 소재: 0.5년 늦음\n  고니켈 양극 표면 코팅: 0.2년 이름",
+      "formula": "backtest_score = 0.35×82.2 + 0.35×72.2 + 0.05×100.0 + 0.05×100.0 + 0.10×82.6 = 84.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.58,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 표면 코팅",
+        "target_q": "2027-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "실리콘 기반 음극 소재",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고체전지용 양극 소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 73.1,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 73.1,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×84.3(Backtest) = 73.1. 페널티 없음. 최종 = 73.1.\n  [진단] Backtest(84.3)가 LLM(56.2)보다 28.1pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 84.3점. 최종 Composite Score: 73.1점.",
+    "key_failure_points": [],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

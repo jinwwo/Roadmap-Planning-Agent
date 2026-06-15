@@ -1,0 +1,110 @@
+import json, os, glob
+from trm_evaluation import TRMEvaluationSuite
+import demo_server as ds
+
+API_KEY = os.environ["ANTHROPIC_API_KEY"]
+os.environ.setdefault("EVAL_CONNECTOR", "agent+kipris")
+
+BASE = "../orchestration_agent/outputs"
+COMPANIES = {
+    "AI LLM": ["NAVER","Saltlux","Upstage"],
+    "이차전지 양극재": ["Cosmo AM&T","EcoPro BM","LG Chem"],
+    "자율주행 플랫폼": ["HL Mando","Hyundai Mobis","STRADVISION"],
+}
+
+def load_bundle(variant_dir, ind, co, strat):
+    leaf = os.path.join(BASE, variant_dir, ind, co, strat)
+    # ── API=True: tech_analysis_agent 실시간 호출로 tech_candidates 생성 ──
+    if os.environ.get("EVAL_API", "").lower() in ("1","true","yes"):
+        try:
+            from tech_candidates_source import generate_tech_candidates
+        except Exception as e:
+            print(f"    API=True import 실패: {e}"); return None
+        strat_dir = ["기술선도"] if "기술선도" in strat else ["시장이익최대"]
+        use_pm = ("On" in variant_dir or "on" in variant_dir)
+        gen = generate_tech_candidates(company=co, reference_year=2030,
+                                       strategic_direction=strat_dir, use_patent_map=use_pm)
+        if gen.get("error") or not gen.get("tech_candidates"):
+            print(f"    API=True 생성 실패 {co}: {str(gen.get('error',''))[:80]}"); return None
+        if not os.path.isdir(leaf): return None
+        try:
+            rd=json.load(open(os.path.join(leaf,"planned_roadmap.json"),encoding="utf-8"))
+            iv=json.load(open(os.path.join(leaf,"investment_strategy.json"),encoding="utf-8"))
+        except Exception as e:
+            print(f"    roadmap/investment load fail {leaf}: {e}"); return None
+        bundle={"orchestrator_report":None,"tech_candidates":gen["tech_candidates"],
+            "planned_roadmap":rd.get("planned_roadmap",[]),"investment_strategy":iv.get("investment_strategy",[]),
+            "stages":iv.get("stages",[]),"market_context":gen.get("market_context",{}),
+            "active_agents":["1","2","3"]}
+        return ds._detect_and_convert(bundle)
+    # ── API=False: agent 출력 파일 읽기 (기존) ──
+    if not os.path.isdir(leaf): return None
+    try:
+        td=json.load(open(os.path.join(leaf,"tech_candidates.json"),encoding="utf-8"))
+        rd=json.load(open(os.path.join(leaf,"planned_roadmap.json"),encoding="utf-8"))
+        iv=json.load(open(os.path.join(leaf,"investment_strategy.json"),encoding="utf-8"))
+        rp=None
+        rf=os.path.join(leaf,"orchestrator_report.json")
+        if os.path.exists(rf): rp=json.load(open(rf,encoding="utf-8"))
+    except Exception as e:
+        print(f"    load fail {leaf}: {e}"); return None
+    bundle={"orchestrator_report":rp,"tech_candidates":td.get("tech_candidates",[]),
+        "planned_roadmap":rd.get("planned_roadmap",[]),"investment_strategy":iv.get("investment_strategy",[]),
+        "stages":iv.get("stages",[]),"market_context":td.get("market_context",{}),
+        "active_agents":rp.get("active_agents",["1","2","3"]) if rp else ["1","2","3"]}
+    return ds._detect_and_convert(bundle)
+
+def prep(pack, suite):
+    # holdout 추출 + step1,2 (compare_pairwise가 쓰는 형태로)
+    md=pack.get("metadata") or {}
+    ext=ds._build_extractor(md.get("company_name",""), int(md.get("reference_year",2030) or 2030))
+    try:
+        if not pack.get("holdout_data"): pack=ext.extract_and_assemble(pack)
+    except Exception: pass
+    step1=suite.normalizer.run(pack)
+    step2=suite.constraint_checker.run(step1)
+    return step2
+
+suite=ds._build_suite()
+judge=suite.llm_judge
+
+# 3종류 비교 정의: (이름, A설정, B설정)  A=ON/기술선도/multi, B=OFF/시장이익/single
+COMPARISONS = [
+    ("ON_vs_OFF",        ("특허맵_On","기술선도"),     ("특허맵_Off","기술선도")),
+    ("기술선도_vs_시장이익", ("특허맵_On","기술선도"),     ("특허맵_On","시장이익최대")),
+    ("multi_vs_single",  ("특허맵_On","기술선도"),     ("특허맵_On_Single_Agent","기술선도")),
+]
+
+results=[]
+for cmp_name, a_cfg, b_cfg in COMPARISONS:
+    for ind, cos in COMPANIES.items():
+        for co in cos:
+            a_pack=load_bundle(a_cfg[0], ind, co, a_cfg[1])
+            b_pack=load_bundle(b_cfg[0], ind, co, b_cfg[1])
+            if a_pack is None or b_pack is None:
+                print(f"  skip {cmp_name} {co}: 한쪽 없음"); continue
+            a_prep=prep(a_pack, suite); b_prep=prep(b_pack, suite)
+            print(f"  pairwise: {cmp_name} | {ind[:6]} {co} ...", end=" ", flush=True)
+            pw=judge.compare_pairwise(a_prep, b_prep, use_api=True)
+            ow=pw.get("overall_winner","?"); mg=pw.get("margin","?")
+            print(f"→ winner={ow} ({mg})")
+            # 4축 가중 종합점수 (단독 llm_structural_score와 같은 WEIGHTS·척도, strategic 제외)
+            W = {"trl_pathway":0.35,"competitive_awareness":0.25,
+                 "market_timing":0.25,"patent_market_convergence":0.15}
+            ax = pw.get("axis_comparison",{})
+            try:
+                sa = sum(W[k]*ax[k]["score_a"] for k in W)  # 1~5 가중합
+                sb = sum(W[k]*ax[k]["score_b"] for k in W)
+                # 단독 llm_structural_score 환산식과 동일하게 (score-1)/4*100
+                pw["weighted_score_a"] = round((sa-1)/4*100, 1)
+                pw["weighted_score_b"] = round((sb-1)/4*100, 1)
+                pw["weighted_winner"] = "A" if sa>sb else ("B" if sb>sa else "tie")
+            except Exception as e:
+                pw["weighted_score_a"]=None; pw["weighted_score_b"]=None
+                pw["weighted_winner"]=None
+                print(f"    (가중합 실패: {e})")
+            results.append({"comparison":cmp_name,"industry":ind,"company":co,
+                "A":a_cfg,"B":b_cfg,"pairwise":pw})
+            json.dump(results, open("outputs/pairwise_results.json","w"), ensure_ascii=False, indent=2)
+
+print(f"\n✓ 총 {len(results)}쌍 완료 → outputs/pairwise_results.json")

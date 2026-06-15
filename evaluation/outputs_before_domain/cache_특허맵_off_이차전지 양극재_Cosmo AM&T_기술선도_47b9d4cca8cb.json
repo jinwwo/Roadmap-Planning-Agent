@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Functional Materials",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 1,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 22.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 1,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "All four technologies start at TRL 1, yet TECH-011 and TECH-002 are scheduled to complete in 0 quarters (2030-Q1 → 2030-Q1), making their TRL progressions from 1 to any deployable level literally infeasible; even TECH-007 attempts TRL 1→market-ready in 8 quarters, which is extremely aggressive for early-stage functional materials research.",
+      "strategic_fidelity": "The portfolio correctly targets low-TRL, exploratory technologies aligned with 기술선도, and the dependency chain shows a coherent research progression; however, the roadmap fails to exploit the pre-market-boom preemption timing that defines technology leadership, and executability scores of 1.0 across all technologies suggest the plan acknowledges but does not resolve feasibility gaps.",
+      "competitive_awareness": "Technology selections cover plausible next-generation battery material themes (high-Ni cathodes, LiFSI electrolytes, advanced binders), but there is no visible differentiation logic, no identification of competitor gaps, and no timing design relative to known competitive positions in the cathode materials space.",
+      "market_timing": "Under 기술선도 strategy, technologies should complete 1-2 years before market boom for preemption; instead, all four technologies complete significantly AFTER their boom windows (errors of 1.25 to 2.75 years), with a mean error of 1.88 years post-boom, representing systematic late delivery across the entire portfolio.",
+      "patent_market_convergence": "The selected technologies (high-Ni polycrystalline cathodes, next-gen synthesis, LiFSI recovery) are broadly active areas of both patent filing and market growth in battery materials, suggesting some alignment, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted versus selected on other grounds."
+    },
+    "strengths": [
+      "Internally consistent dependency chain (TECH-007 → TECH-001 → TECH-011/TECH-002) reflects logical technology building blocks",
+      "Portfolio of all TRL-1 technologies is conceptually appropriate for a 기술선도 (technology leadership) strategic direction"
+    ],
+    "weaknesses": [
+      "Zero-duration development windows for TECH-011 and TECH-002 (both scheduled 2030-Q1 → 2030-Q1) make these roadmap entries technically meaningless and infeasible",
+      "All technologies complete after their market boom windows, meaning the portfolio will miss every commercialization opportunity it targets"
+    ],
+    "missing_technologies": [
+      "Mid-TRL cathode coating or surface modification technology to bridge the TRL 1 gap toward commercialization",
+      "Solid-state or semi-solid electrolyte interface technology that could provide competitive differentiation and pre-boom timing alignment"
+    ],
+    "investment_issues": [
+      "Executability scores of 1.0 across all technologies indicate extremely low confidence in execution, yet all are classified as Strategic or High tier — investment risk is not reflected in tier downgrading or staged gating",
+      "Concentrating full budget (11.7M, 0% slack) on TRL-1 technologies with executability=1.0 and uncertainty=5.0 provides no financial buffer for the inevitable delays and failures inherent in early-stage R&D"
+    ],
+    "timing_issues": [
+      "TECH-001 (High-Nickel Polycrystalline Cathode) completes 2.75 years after its 2027-Q2 boom, the largest timing miss in the portfolio",
+      "TECH-011 and TECH-002 have zero allocated development time at the end of the roadmap, making their completion dates planning artifacts rather than achievable milestones",
+      "The sequential dependency chain compresses all downstream technologies into the final period, creating an unavoidable late-delivery cascade"
+    ],
+    "description": {
+      "trl_pathway": "score 1/5 - All four technologies start at TRL 1, yet TECH-011 and TECH-002 are scheduled to complete in 0 quarters (2030-Q1 → 2030-Q1), making their TRL progressions from 1 to any deployable level literally infeasible; even TECH-007 attempts TRL 1→market-ready in 8 quarters, which is extremely aggressive for early-stage functional materials research.",
+      "strategic_fidelity": "score 3/5 - The portfolio correctly targets low-TRL, exploratory technologies aligned with 기술선도, and the dependency chain shows a coherent research progression; however, the roadmap fails to exploit the pre-market-boom preemption timing that defines technology leadership, and executability scores of 1.0 across all technologies suggest the plan acknowledges but does not resolve feasibility gaps.",
+      "competitive_awareness": "score 2/5 - Technology selections cover plausible next-generation battery material themes (high-Ni cathodes, LiFSI electrolytes, advanced binders), but there is no visible differentiation logic, no identification of competitor gaps, and no timing design relative to known competitive positions in the cathode materials space.",
+      "market_timing": "score 1/5 - Under 기술선도 strategy, technologies should complete 1-2 years before market boom for preemption; instead, all four technologies complete significantly AFTER their boom windows (errors of 1.25 to 2.75 years), with a mean error of 1.88 years post-boom, representing systematic late delivery across the entire portfolio.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (high-Ni polycrystalline cathodes, next-gen synthesis, LiFSI recovery) are broadly active areas of both patent filing and market growth in battery materials, suggesting some alignment, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted versus selected on other grounds.",
+      "formula": "llm_structural_score = (0.25×1 + 0.25×3 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 22.5"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 3,
+      "coherence": 2,
+      "balance": 3,
+      "llm_structural_score_v1": 62.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "TECH-007",
+        "tech_name": "Advanced Binder Compositions for Electrodes",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7422,
+        "market_size_norm": 0.4163,
+        "value": 0.3475,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 7.187
+      },
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7327,
+        "market_size_norm": 0.6732,
+        "value": 0.4218,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.9143,
+        "cost_adjusted_return": 7.7928
+      },
+      {
+        "tech_id": "TECH-011",
+        "tech_name": "Next-Gen Positive Electrode Active Material Synthesis",
+        "patent_growth_norm": 0.0167,
+        "market_growth_norm": 0.8523,
+        "market_size_norm": 1.0,
+        "value": 0.5624,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7143,
+        "cost_adjusted_return": 9.043
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8517,
+        "market_size_norm": 0.0,
+        "value": 0.2555,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7143,
+        "cost_adjusted_return": 5.778
+      }
+    ],
+    "selection_quality": 39.7,
+    "cost_adjusted_return": 88.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 43.6,
+    "backtest_score": 64.1,
+    "backtest_score_v1": 69.1,
+    "description": {
+      "selection_quality": "39.7/100 — 4개 기술 평균 value=0.397\n  ▲ Next-Gen Positive Electrode Active Material Synthesis: value=0.562 (특허↑=0.02, 시장↑=0.85, 규모=1.00)\n  ▲ High-Nickel Polycrystalline Cathode Materials: value=0.422 (특허↑=0.00, 시장↑=0.73, 규모=0.67)\n  ▼ Advanced Binder Compositions for Electrodes: value=0.347 (특허↑=0.00, 시장↑=0.74, 규모=0.42)\n  ▼ Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery: value=0.256 (특허↑=0.00, 시장↑=0.85, 규모=0.00)\n  [낮은 원인]\n  → Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "88.2/100 — 평균 return=7.450\n  Next-Gen Positive Electrode Active Material Synthesis: value=0.562 - 0.15×0.67(cost) = return +9.043 [High]\n  High-Nickel Polycrystalline Cathode Materials: value=0.422 - 0.15×1.00(cost) = return +7.793 [Strategic]\n  Advanced Binder Compositions for Electrodes: value=0.347 - 0.15×1.00(cost) = return +7.187 [Strategic] ⚠ 과다투자\n  Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery: value=0.256 - 0.15×0.67(cost) = return +5.778 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → Advanced Binder Compositions for Electrodes: value 0.347인데 Strategic tier\n  → Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery: value 0.256인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "43.6/100 — 평균 오차 1.88년\n  High-Nickel Polycrystalline Cathode Materials: 2.8년 늦음 ⚠\n  Next-Gen Positive Electrode Active Material Synthesis: 2.0년 늦음 ⚠\n  Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery: 1.5년 늦음 ⚠\n  Advanced Binder Compositions for Electrodes: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×39.7 + 0.35×88.2 + 0.05×100.0 + 0.05×100.0 + 0.10×43.6 = 64.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.88,
+    "timing_details": [
+      {
+        "tech_id": "TECH-007",
+        "tech_name": "Advanced Binder Compositions for Electrodes",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "TECH-011",
+        "tech_name": "Next-Gen Positive Electrode Active Material Synthesis",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 47.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 4.4
+      }
+    ],
+    "total_penalty": 4.4,
+    "final_composite_score": 43.1,
+    "description": "pre_penalty = 0.4×22.5(LLM) + 0.6×64.1(Backtest) = 47.5. Penalty: timing_error: -4.4pt. 총 -4.4pt. 최종 = 43.1.\n  [진단] LLM 구조 점수(22.5)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(64.1)가 LLM(22.5)보다 41.6pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 22.5점, Backtest 경제성 평가 64.1점. 제약 위반으로 4.4점 차감. 최종 Composite Score: 43.1점.",
+    "key_failure_points": [
+      "타이밍 이슈: Advanced Binder Compositions for Electrodes의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: High-Nickel Polycrystalline Cathode Materials의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: Next-Gen Positive Electrode Active Material Synthesis의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

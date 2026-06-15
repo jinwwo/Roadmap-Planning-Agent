@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Foundry",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 28.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6→target in 2 years) and T05 (TRL 6) are plausible, but T03 (TRL 7) is scheduled with a 0-quarter development window (2030-Q1→2030-Q1), and T08 (TRL 4→target in 0 quarters) is similarly impossible, suggesting the dependency chain compression creates infeasible late-stage development timelines.",
+      "strategic_fidelity": "The declared 시장이익최대 strategy demands near-market technologies and commercialization focus, yet T08 (TRL 4, high uncertainty score 4.0) is included with Medium investment, and nearly all technologies complete well after their market boom windows, undermining profit-maximization logic.",
+      "competitive_awareness": "Technology selections cover mainstream semiconductor trends (GAA, 3D packaging, photonics) but the roadmap shows no explicit differentiation rationale, competitor timing analysis, or gap-exploitation strategy — selections appear driven by technology maturity rather than competitive positioning.",
+      "market_timing": "The mean timing error of 2.0 years post-boom is severe for a 시장이익최대 strategy; T03 completes 3.25 years after its boom window, T05 misses by 2.5 years, and only T01 approaches acceptable timing at 0.75 years late — systematic late delivery across the portfolio negates market profit potential.",
+      "patent_market_convergence": "Technologies like GAA gate optimization and 3D stacking are in active patent-filing zones that align with market growth signals, suggesting some convergence awareness, but T08 (photonic integration) at TRL 4 with low urgency score appears driven more by patent/technology curiosity than near-term market convergence."
+    },
+    "strengths": [
+      "Zero dependency violations indicate a logically sound sequential development chain with T01 correctly anchored as the foundational prerequisite",
+      "Strategic and High tier investments are concentrated on higher-TRL, higher-executability technologies (T01, T03, T05), showing reasonable resource prioritization"
+    ],
+    "weaknesses": [
+      "Systematic post-boom completion across all five technologies (mean error 2.0 years) is fundamentally incompatible with the 시장이익최대 strategy, which requires capturing peak market demand",
+      "T03 and T08 have zero-duration development windows in the schedule (both start and end 2030-Q1), making their planned development phases physically impossible to execute"
+    ],
+    "missing_technologies": [
+      "High-NA EUV 리소그래피 공정 (near-market, high TRL, immediate revenue impact aligned with 시장이익최대)",
+      "첨단 패키징 이종집적 인터커넥트 기술 (complementary to T03, higher TRL, closer to 2026-2027 boom windows)"
+    ],
+    "investment_issues": [
+      "T03 is rated Strategic tier with urgency 5.0 yet its scheduled completion (2030-Q1) is 3.25 years past its boom — high investment in a chronically late technology destroys ROI for 시장이익최대",
+      "T08 (TRL 4, executability 2.0, uncertainty 4.0) is inconsistent with 시장이익최대 and should either be dropped or deferred to avoid diverting resources from higher-TRL, near-boom technologies",
+      "Budget utilization is reported as 0 spent against a 31.2B budget, suggesting investment allocation exists only on paper without concrete resource commitment plans"
+    ],
+    "timing_issues": [
+      "T03 (고밀도 3D 스택 패키징) targets completion in 2030-Q1 but market boom is 2026-Q4 — a 3.25-year miss that wastes the highest-scored market opportunity in the portfolio",
+      "T05 (반도체 제조 공정 자동화 제어) completes 2.5 years after its 2027-Q3 boom, despite having no upstream dependency bottleneck that would justify this delay",
+      "The dependency chain forces T02 and T03 to complete sequentially after T01 finishes in 2028-Q1, making it structurally impossible to hit 2026-2028 boom windows for downstream technologies"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T01 (TRL 6→target in 2 years) and T05 (TRL 6) are plausible, but T03 (TRL 7) is scheduled with a 0-quarter development window (2030-Q1→2030-Q1), and T08 (TRL 4→target in 0 quarters) is similarly impossible, suggesting the dependency chain compression creates infeasible late-stage development timelines.",
+      "strategic_fidelity": "score 2/5 - The declared 시장이익최대 strategy demands near-market technologies and commercialization focus, yet T08 (TRL 4, high uncertainty score 4.0) is included with Medium investment, and nearly all technologies complete well after their market boom windows, undermining profit-maximization logic.",
+      "competitive_awareness": "score 2/5 - Technology selections cover mainstream semiconductor trends (GAA, 3D packaging, photonics) but the roadmap shows no explicit differentiation rationale, competitor timing analysis, or gap-exploitation strategy — selections appear driven by technology maturity rather than competitive positioning.",
+      "market_timing": "score 1/5 - The mean timing error of 2.0 years post-boom is severe for a 시장이익최대 strategy; T03 completes 3.25 years after its boom window, T05 misses by 2.5 years, and only T01 approaches acceptable timing at 0.75 years late — systematic late delivery across the portfolio negates market profit potential.",
+      "patent_market_convergence": "score 3/5 - Technologies like GAA gate optimization and 3D stacking are in active patent-filing zones that align with market growth signals, suggesting some convergence awareness, but T08 (photonic integration) at TRL 4 with low urgency score appears driven more by patent/technology curiosity than near-term market convergence.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×2 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 28.7"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 85.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 게이트 전극 공차 최적화",
+        "patent_growth_norm": 0.0695,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6278,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4778
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백면 전극 패터닝 및 리세스",
+        "patent_growth_norm": 0.2772,
+        "market_growth_norm": 0.9074,
+        "market_size_norm": 0.993,
+        "value": 0.681,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.581
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고밀도 3D 스택 패키징",
+        "patent_growth_norm": 0.5899,
+        "market_growth_norm": 0.8887,
+        "market_size_norm": 0.9772,
+        "value": 0.7957,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6457
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "반도체 제조 공정 자동화 제어",
+        "patent_growth_norm": 0.4857,
+        "market_growth_norm": 0.5979,
+        "market_size_norm": 0.9505,
+        "value": 0.6588,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5588
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "광전자 통합 회로 아키텍처",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.35
+      }
+    ],
+    "selection_quality": 63.3,
+    "cost_adjusted_return": 52.3,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 40.0,
+    "backtest_score": 63.9,
+    "backtest_score_v1": 64.4,
+    "description": {
+      "selection_quality": "63.3/100 — 5개 기술 평균 value=0.633\n  ▲ 고밀도 3D 스택 패키징: value=0.796 (특허↑=0.59, 시장↑=0.89, 규모=0.98)\n  ▲ 백면 전극 패터닝 및 리세스: value=0.681 (특허↑=0.28, 시장↑=0.91, 규모=0.99)\n  ▲ 반도체 제조 공정 자동화 제어: value=0.659 (특허↑=0.49, 시장↑=0.60, 규모=0.95)\n  ▼ GAA 게이트 전극 공차 최적화: value=0.628 (특허↑=0.07, 시장↑=1.00, 규모=1.00)\n  ▼ 광전자 통합 회로 아키텍처: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)",
+      "cost_adjusted_return": "52.3/100 — 평균 return=0.523\n  고밀도 3D 스택 패키징: value=0.796 - 0.15×1.00(cost) = return +0.646 [Strategic]\n  백면 전극 패터닝 및 리세스: value=0.681 - 0.15×0.67(cost) = return +0.581 [High]\n  반도체 제조 공정 자동화 제어: value=0.659 - 0.15×0.67(cost) = return +0.559 [High]\n  GAA 게이트 전극 공차 최적화: value=0.628 - 0.15×1.00(cost) = return +0.478 [Strategic]\n  광전자 통합 회로 아키텍처: value=0.400 - 0.15×0.33(cost) = return +0.350 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "40.0/100 — 평균 오차 2.00년\n  고밀도 3D 스택 패키징: 3.2년 늦음 ⚠\n  반도체 제조 공정 자동화 제어: 2.5년 늦음 ⚠\n  백면 전극 패터닝 및 리세스: 2.0년 늦음 ⚠\n  광전자 통합 회로 아키텍처: 1.5년 늦음 ⚠\n  GAA 게이트 전극 공차 최적화: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×63.3 + 0.35×52.3 + 0.05×100.0 + 0.05×100.0 + 0.10×40.0 = 63.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.0,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 게이트 전극 공차 최적화",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백면 전극 패터닝 및 리세스",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고밀도 3D 스택 패키징",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "반도체 제조 공정 자동화 제어",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "광전자 통합 회로 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 49.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "total_penalty": 5.0,
+    "final_composite_score": 44.8,
+    "description": "pre_penalty = 0.4×28.7(LLM) + 0.6×63.9(Backtest) = 49.8. Penalty: timing_error: -5.0pt. 총 -5.0pt. 최종 = 44.8.\n  [진단] LLM 구조 점수(28.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(63.9)가 LLM(28.7)보다 35.2pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 28.7점, Backtest 경제성 평가 63.9점. 제약 위반으로 5.0점 차감. 최종 Composite Score: 44.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 백면 전극 패터닝 및 리세스의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: 고밀도 3D 스택 패키징의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 반도체 제조 공정 자동화 제어의 완료시점이 시장 개화 대비 2.5년 차이",
+      "타이밍 이슈: 광전자 통합 회로 아키텍처의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

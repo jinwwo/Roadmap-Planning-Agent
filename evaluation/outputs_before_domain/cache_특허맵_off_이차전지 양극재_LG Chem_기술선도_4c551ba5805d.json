@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 7→commercial in 2 years) and T02 (TRL 5→target in 3 years) are plausible given industry norms; T05 (TRL 4→deployable in 3 years) is moderately aggressive but not infeasible for sodium-ion battery anodes given current research momentum.",
+      "strategic_fidelity": "The portfolio mixes a near-market high-TRL technology (T01, TRL 7) with exploratory ones (T05 TRL 4, T02 TRL 5), but labeling T01 as 'Strategic' with maximum urgency scores contradicts a 기술선도 posture that should prioritize frontier R&D; the selection skews somewhat toward market-ready commercialization.",
+      "competitive_awareness": "The roadmap provides no explicit evidence of competitor positioning, technology gap analysis, or differentiation rationale — technology choices appear driven by market opportunity scores alone rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; T01 completes 0.75yr late (post-boom), T05 completes 1.5yr late, and T02 completes 1yr late — all three technologies miss their boom windows rather than achieving pre-emptive completion, resulting in consistently post-boom delivery.",
+      "patent_market_convergence": "All three technologies receive maximum market opportunity scores (5.0), suggesting market signal awareness, but there is no visible patent trend alignment rationale in the selection logic — convergence appears incidental rather than deliberately engineered."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined resource allocation across the portfolio",
+      "TRL progression timelines are mostly realistic, with adequate development windows allocated per technology complexity"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, undermining the preemptive advantage central to 기술선도 strategy",
+      "Inclusion of T01 (TRL 7, high-maturity) as a Strategic-tier investment weakens the frontier R&D orientation expected of a technology leadership posture"
+    ],
+    "missing_technologies": [
+      "Lithium-sulfur cathode materials (lower TRL, high patent activity, aligns with 기술선도 exploratory mandate)",
+      "Single-ion conducting solid electrolyte interface materials (enabling technology for T02, creates dependency-chain depth appropriate for leadership strategy)"
+    ],
+    "investment_issues": [
+      "T01 (TRL 7) receiving Strategic tier investment equivalent to T05 (TRL 4) misallocates frontier R&D budget toward a near-commercialization asset",
+      "T02 classified as High (not Strategic) despite being the most technically complex and strategically differentiated asset in the portfolio — tier assignment appears inconsistent with technology leadership priorities"
+    ],
+    "timing_issues": [
+      "고니켈 양극 표면 코팅 completes 0.75yr after boom (2028-Q1 vs 2027-Q2) — should start earlier to achieve pre-boom completion",
+      "나트륨 이온 배터리 음극 completes 1.5yr after boom (2029-Q1 vs 2027-Q3) — the largest timing gap; earlier start or accelerated development needed",
+      "전체 고체전지 양극 소재 completes 1yr after boom (2030-Q1 vs 2029-Q1) — for 기술선도, completion should target 2028-Q1 to preempt market"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 (TRL 7→commercial in 2 years) and T02 (TRL 5→target in 3 years) are plausible given industry norms; T05 (TRL 4→deployable in 3 years) is moderately aggressive but not infeasible for sodium-ion battery anodes given current research momentum.",
+      "strategic_fidelity": "score 3/5 - The portfolio mixes a near-market high-TRL technology (T01, TRL 7) with exploratory ones (T05 TRL 4, T02 TRL 5), but labeling T01 as 'Strategic' with maximum urgency scores contradicts a 기술선도 posture that should prioritize frontier R&D; the selection skews somewhat toward market-ready commercialization.",
+      "competitive_awareness": "score 2/5 - The roadmap provides no explicit evidence of competitor positioning, technology gap analysis, or differentiation rationale — technology choices appear driven by market opportunity scores alone rather than competitive landscape intelligence.",
+      "market_timing": "score 3/5 - For 기술선도, completing 1-2 years before boom is ideal; T01 completes 0.75yr late (post-boom), T05 completes 1.5yr late, and T02 completes 1yr late — all three technologies miss their boom windows rather than achieving pre-emptive completion, resulting in consistently post-boom delivery.",
+      "patent_market_convergence": "score 3/5 - All three technologies receive maximum market opportunity scores (5.0), suggesting market signal awareness, but there is no visible patent trend alignment rationale in the selection logic — convergence appears incidental rather than deliberately engineered.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 70.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 표면 코팅",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -7.5044
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "나트륨 이온 배터리 음극",
+        "patent_growth_norm": 0.3271,
+        "market_growth_norm": 0.8143,
+        "market_size_norm": 1.0,
+        "value": 0.6751,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.6,
+        "cost_adjusted_return": 9.2255
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "전체 고체전지 양극 소재",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4,
+        "cost_adjusted_return": -6.5889
+      }
+    ],
+    "selection_quality": 58.0,
+    "cost_adjusted_return": 12.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 67.6,
+    "backtest_score": 59.4,
+    "backtest_score_v1": 51.3,
+    "description": {
+      "selection_quality": "58.0/100 — 3개 기술 평균 value=0.580\n  ▲ 나트륨 이온 배터리 음극: value=0.675 (특허↑=0.33, 시장↑=0.81, 규모=1.00)\n  ▼ 고니켈 양극 표면 코팅: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▼ 전체 고체전지 양극 소재: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)",
+      "cost_adjusted_return": "12.0/100 — 평균 return=-1.623\n  나트륨 이온 배터리 음극: value=0.675 - 0.15×1.00(cost) = return +9.226 [Strategic]\n  전체 고체전지 양극 소재: value=0.533 - 0.15×0.67(cost) = return -6.589 [High]\n  고니켈 양극 표면 코팅: value=0.533 - 0.15×1.00(cost) = return -7.504 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "67.6/100 — 평균 오차 1.08년\n  나트륨 이온 배터리 음극: 1.5년 늦음 ⚠\n  전체 고체전지 양극 소재: 1.0년 늦음\n  고니켈 양극 표면 코팅: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×58.0 + 0.35×12.0 + 0.05×100.0 + 0.05×100.0 + 0.10×67.6 = 59.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.08,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 표면 코팅",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "나트륨 이온 배터리 음극",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "전체 고체전지 양극 소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 56.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "total_penalty": 0.4,
+    "final_composite_score": 55.7,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×59.4(Backtest) = 56.1. Penalty: timing_error: -0.4pt. 총 -0.4pt. 최종 = 55.7."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 59.4점. 제약 위반으로 0.4점 차감. 최종 Composite Score: 55.7점.",
+    "key_failure_points": [
+      "타이밍 이슈: 나트륨 이온 배터리 음극의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

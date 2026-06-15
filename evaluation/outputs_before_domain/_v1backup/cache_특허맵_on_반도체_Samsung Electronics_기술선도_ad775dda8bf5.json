@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Memory / Foundry",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 5,
+    "balance": 3,
+    "llm_structural_score": 77.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 5,
+        "balance": 3
+      }
+    },
+    "evidence": {
+      "alignment": "All four technologies target high-growth semiconductor segments (advanced NAND scaling, GAA logic, heterogeneous packaging, and AI-driven memory architectures) with market booms clustered in 2027–2029, confirming strong domain relevance. No declining or saturated markets are represented, though the small portfolio limits diversification.",
+      "sequencing": "Dependency chains are fully respected: T01 completes by 2028-Q1 before T02 and T03 begin, and T04 runs in parallel with no prerequisites. However, mean timing error is 1.06 years, with the Hybrid Bonding completion (2030-Q1) arriving two full years after its market boom (2028-Q1), representing a significant missed-window risk.",
+      "investment": "Strategic tier is appropriately assigned to T01, T02, and T04, which carry high market opportunity and urgency scores (4–5). CIM architecture is correctly placed at High (not Strategic) given lower executability (2.0) and higher uncertainty (4.0). Allocation logic is internally consistent with the scoring inputs.",
+      "coherence": "The portfolio forms a coherent vertical stack: foundational NAND process scaling (T01) and GAA logic (T04) enable advanced packaging (T02), which together underpin CIM architecture (T03). This research-to-deployment narrative is clear and technically sound for the semiconductor/memory/foundry domain.",
+      "balance": "All technologies are either Strategic or High tier—there are no exploratory or speculative (Low/Medium) bets, creating concentration risk. The portfolio is entirely short-to-mid-term (2026–2030) with no long-horizon exploratory investments, and covers only four technologies, limiting risk distribution across the full domain."
+    },
+    "strengths": [
+      "Zero dependency violations with a logically sound T01→T02/T03 prerequisite chain that mirrors real-world process-packaging-architecture maturation order.",
+      "Strong strategic coherence—technologies form a unified vertical narrative from foundational process nodes through heterogeneous integration to in-memory compute, maximizing cross-technology synergies."
+    ],
+    "weaknesses": [
+      "Hybrid Bonding (T02) completion is projected 2.0 years after its market boom, meaning the roadmap risks missing the primary commercialization window for what is scored as the highest market-opportunity technology.",
+      "Portfolio is entirely Strategic/High tier with no low-tier exploratory investments, resulting in a risk-concentrated, short-horizon portfolio with no hedge against longer-term disruptions."
+    ],
+    "missing_technologies": [
+      "EUV High-NA lithography process (enabler for sub-2nm GAA and advanced NAND patterning)",
+      "Chiplet interconnect standards (UCIe or equivalent, needed for scalable hybrid bonding ecosystem)",
+      "Neuromorphic or Analog In-Memory Compute (longer-horizon CIM complement with distinct risk/return profile)",
+      "Advanced thermal management / integrated cooling (critical enabler for high-density 3D stacked architectures)"
+    ],
+    "investment_issues": [
+      "Budget utilization shows 0 spent against a ~116B allocation, suggesting investment scheduling or reporting is incomplete and actual capital deployment has not been planned at the activity level.",
+      "All investments are concentrated in Strategic/High tiers; absence of any Medium or Low exploratory allocations creates portfolio rigidity and leaves no budget for opportunistic pivots or emerging disruptors."
+    ],
+    "timing_issues": [
+      "Hybrid Bonding (T02): completion target 2030-Q1 is 2.0 years after market boom 2028-Q1—the roadmap will likely miss peak demand and early-mover advantage.",
+      "GAA 트랜지스터 (T04): completion target 2028-Q1 is 1.0 year after market boom 2027-Q1, risking late entry in a fast-moving logic process race dominated by leading foundries.",
+      "Overall mean timing error of 1.06 years suggests systematic schedule lag relative to market windows across the portfolio."
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: GAA 트랜지스터 금속 게이트 절단 (norm=1.000)\n  시장 성장률 기준 최저: 하이브리드 본딩 통합 공정 (norm=0.000)\n  전체 평균: 0.644",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ 3D NAND 수직 에피택셜 실리콘: value=0.621 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 하이브리드 본딩 통합 공정: value=0.209 → 기대 Low, 실제 Strategic (차이 3단계)",
+      "coherence": "점수 5/5\n  카테고리 분포: Process(2개), Packaging(1개), Architecture(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 3/5\n  투자등급 분포: High(1개), Strategic(3개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×5 + 0.1×3 - 1) / 4 × 100 = 77.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 수직 에피택셜 실리콘",
+        "patent_growth_norm": 0.4682,
+        "market_growth_norm": 0.7228,
+        "market_size_norm": 0.7228,
+        "value": 0.621,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.471
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "GAA 트랜지스터 금속 게이트 절단",
+        "patent_growth_norm": 0.8382,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.9353,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.7853
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 통합 공정",
+        "patent_growth_norm": 0.5225,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.209,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.059
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8514,
+        "market_size_norm": 0.8514,
+        "value": 0.5108,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.4108
+      }
+    ],
+    "selection_quality": 56.9,
+    "cost_adjusted_return": 43.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 68.2,
+    "backtest_score": 61.8,
+    "description": {
+      "selection_quality": "56.9/100 — 4개 기술 평균 value=0.569\n  ▲ GAA 트랜지스터 금속 게이트 절단: value=0.935 (특허↑=0.84, 시장↑=1.00, 규모=1.00)\n  ▲ 3D NAND 수직 에피택셜 실리콘: value=0.621 (특허↑=0.47, 시장↑=0.72, 규모=0.72)\n  ▼ 메모리 내 연산 (CIM) 아키텍처: value=0.511 (특허↑=0.00, 시장↑=0.85, 규모=0.85)\n  ▼ 하이브리드 본딩 통합 공정: value=0.209 (특허↑=0.52, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 하이브리드 본딩 통합 공정: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "43.2/100 — 평균 return=0.432\n  GAA 트랜지스터 금속 게이트 절단: value=0.935 - 0.15×1.00(cost) = return +0.785 [Strategic]\n  3D NAND 수직 에피택셜 실리콘: value=0.621 - 0.15×1.00(cost) = return +0.471 [Strategic]\n  메모리 내 연산 (CIM) 아키텍처: value=0.511 - 0.15×0.67(cost) = return +0.411 [High]\n  하이브리드 본딩 통합 공정: value=0.209 - 0.15×1.00(cost) = return +0.059 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 하이브리드 본딩 통합 공정: value 0.209인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "68.2/100 — 평균 오차 1.06년\n  하이브리드 본딩 통합 공정: 2.0년 늦음 ⚠\n  GAA 트랜지스터 금속 게이트 절단: 1.0년 늦음\n  메모리 내 연산 (CIM) 아키텍처: 0.8년 늦음\n  3D NAND 수직 에피택셜 실리콘: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×56.9 + 0.35×43.2 + 0.10×100.0 + 0.10×100.0 + 0.10×68.2 = 61.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.06,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 수직 에피택셜 실리콘",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "GAA 트랜지스터 금속 게이트 절단",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "하이브리드 본딩 통합 공정",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 68.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.3
+      }
+    ],
+    "total_penalty": 0.3,
+    "final_composite_score": 67.8,
+    "description": "pre_penalty = 0.4×77.5(LLM) + 0.6×61.8(Backtest) = 68.1. Penalty: timing_error: -0.3pt. 총 -0.3pt. 최종 = 67.8."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 77.5점, Backtest 경제성 평가 61.8점. 제약 위반으로 0.3점 차감. 최종 Composite Score: 67.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 하이브리드 본딩 통합 공정의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

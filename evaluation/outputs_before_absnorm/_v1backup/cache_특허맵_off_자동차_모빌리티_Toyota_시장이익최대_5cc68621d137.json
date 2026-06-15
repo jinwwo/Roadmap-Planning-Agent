@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 70.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "All three technologies target high-growth automotive/EV markets with strong market opportunity scores (4-5), covering both vehicle control architecture and battery manufacturing, which are central to 2025-2030 mobility transitions. However, all technologies miss their market boom windows by 1.25-2.0 years, reducing actual market capture effectiveness.",
+      "sequencing": "The dependency chain is correctly respected: T01 (건식 전극 필름 제조) completes by 2029-Q1 before T02 (고성능 양극 활물질) starts, with zero dependency violations. TRL-based lead times are plausible given TRL 6-7 starting points, though the extended timelines cause market timing drift.",
+      "investment": "Strategic tier assignments for T01 and T03 are well-justified by their high market opportunity (5.0) and urgency scores. T02's High tier with lower urgency (3.0) is appropriate. The tiering hierarchy is internally consistent, though all technologies missing their boom windows suggests investment timing could be front-loaded.",
+      "coherence": "The portfolio forms a coherent EV/intelligent vehicle narrative: battery process innovation (T01) enables advanced materials (T02), while vehicle control architecture (T03) addresses the software-defined vehicle trend. The progression from process → material → architecture covers multiple value chain layers logically.",
+      "balance": "The portfolio is critically under-diversified with only 3 technologies, all concentrated in EV/automotive and all assigned Strategic or High tiers — no Core or Exploratory bets exist. There is no short-term quick-win technology and no representation of emerging/speculative research-stage technologies, creating concentration risk."
+    },
+    "strengths": [
+      "Dependency chain is flawlessly executed with T01 completing before T02 begins, ensuring no execution risk from prerequisite failures.",
+      "Investment tier assignments are internally consistent with market opportunity and urgency scores, with Strategic resources appropriately directed at highest-value technologies."
+    ],
+    "weaknesses": [
+      "All three technologies miss their market boom windows by 1.25-2.0 years on average, meaning the roadmap systematically delivers too late to capture peak market demand.",
+      "Extreme portfolio concentration with only 3 technologies, no tier diversity below High, and no exploratory/research-stage investments creates significant strategic fragility."
+    ],
+    "missing_technologies": [
+      "Solid-state electrolyte technology (complementary battery research-stage bet)",
+      "V2X communication / connected vehicle infrastructure (complements vehicle control architecture)",
+      "Battery management system (BMS) AI/ML optimization (bridges T01/T02 battery stack to T03 architecture)",
+      "Thermal management materials for high-performance batteries (enabler for T02 at scale)"
+    ],
+    "investment_issues": [
+      "Zero budget spent against a 41.7B allocation indicates the investment strategy has not been operationalized — tier designations exist without actual capital commitment.",
+      "No Core or Exploratory tier technologies exist, meaning the entire portfolio is high-stakes with no low-risk anchor investments to stabilize returns.",
+      "Investment urgency scores (5, 4, 3) are not reflected in accelerated timelines — high-urgency technologies should have compressed development schedules to match boom windows."
+    ],
+    "timing_issues": [
+      "차량 제어 융합 아키텍처 completes in 2028-Q1 but market boom is 2026-Q4 — a 1.25-year miss suggesting start date should be pulled forward to 2024-Q4 to target 2026-Q4 readiness.",
+      "건식 전극 필름 제조 targets 2029-Q1 completion but boom is 2027-Q3 — development should begin no later than 2025-Q3 to align with market timing.",
+      "고성능 양극 활물질 has the largest timing error at 2.0 years; since it depends on T01, the cascading delay from T01's late start propagates and worsens the boom miss for T02."
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 차량 제어 융합 아키텍처 (norm=1.000)\n  시장 성장률 기준 최저: 고성능 양극 활물질 (norm=0.000)\n  전체 평균: 0.370",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 1건:\n  ⚠ 고성능 양극 활물질: value=0.182 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Architecture(1개), Process(1개), Material(1개)\n  TRL 범위: 6~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 70.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "patent_growth_norm": 0.7789,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.6999,
+        "value": 0.8215,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6715
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.1103,
+        "market_size_norm": 1.0,
+        "value": 0.7331,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5831
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "patent_growth_norm": 0.4542,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.1817,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.0817
+      }
+    ],
+    "selection_quality": 57.9,
+    "cost_adjusted_return": 44.5,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "backtest_score": 61.1,
+    "description": {
+      "selection_quality": "57.9/100 — 3개 기술 평균 value=0.579\n  ▲ 차량 제어 융합 아키텍처: value=0.822 (특허↑=0.78, 시장↑=1.00, 규모=0.70)\n  ▲ 건식 전극 필름 제조: value=0.733 (특허↑=1.00, 시장↑=0.11, 규모=1.00)\n  ▼ 고성능 양극 활물질: value=0.182 (특허↑=0.45, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 고성능 양극 활물질: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "44.5/100 — 평균 return=0.445\n  차량 제어 융합 아키텍처: value=0.822 - 0.15×1.00(cost) = return +0.671 [Strategic]\n  건식 전극 필름 제조: value=0.733 - 0.15×1.00(cost) = return +0.583 [Strategic]\n  고성능 양극 활물질: value=0.182 - 0.15×0.67(cost) = return +0.082 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 고성능 양극 활물질: value 0.182인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  고성능 양극 활물질: 2.0년 늦음 ⚠\n  건식 전극 필름 제조: 1.5년 늦음 ⚠\n  차량 제어 융합 아키텍처: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×57.9 + 0.35×44.5 + 0.10×100.0 + 0.10×100.0 + 0.10×52.6 = 61.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "차량 제어 융합 아키텍처",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고성능 양극 활물질",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 64.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 61.8,
+    "description": "pre_penalty = 0.4×70.0(LLM) + 0.6×61.1(Backtest) = 64.7. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 61.8."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 70.0점, Backtest 경제성 평가 61.1점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 61.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 차량 제어 융합 아키텍처의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 건식 전극 필름 제조의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 고성능 양극 활물질의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

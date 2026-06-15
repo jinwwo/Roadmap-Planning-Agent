@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 38.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Nickel Rich Cathode Coatings (TRL 6) is scheduled for completion in just one quarter (2027-Q1 to Q2), and Solid State Electrolytes starts at TRL 3 yet is expected to complete in ~2.25 years — both are highly aggressive; additionally, Cathode Recycling Technologies has an impossible timeline where the end date (2028-Q1) precedes or equals the stated start date (2028-Q2), indicating a structural error.",
+      "strategic_fidelity": "The portfolio includes low-TRL exploratory technologies (Solid State Electrolytes TRL 3, AI-driven Material Discovery TRL 4) consistent with 기술선도, but the majority of the portfolio (5 of 7 technologies) are at TRL 6-8, suggesting a more commercially-oriented portfolio than a true technology leadership strategy would favor; R&D-heavy framing is only partially realized.",
+      "competitive_awareness": "There is no explicit differentiation rationale, competitor positioning analysis, or timing-based competitive preemption logic visible in the roadmap; technology selections appear driven by internal scoring rather than external competitive landscape intelligence.",
+      "market_timing": "Most technologies (5 of 7) hit their boom windows exactly or within 0.25 years, which is strong; however, AI-driven Material Discovery completes 1.5 years after its boom window (2030-Q4 vs 2029-Q2), and for a 기술선도 strategy, ideal completion should be 1-2 years BEFORE the boom — meaning even the 'exact' completions are not strategy-optimal.",
+      "patent_market_convergence": "The selected technologies (high-nickel cathodes, solid-state electrolytes, dry electrode, AI-driven discovery) represent active areas of both patent filing and market growth, suggesting reasonable convergence; however, the uniform scoring (all technologies rated 4.0 for market_opp) provides no evidence that convergence zone targeting was deliberately differentiated."
+    },
+    "strengths": [
+      "Dependency chain is logically structured with S05 as a foundational enabler feeding downstream material and process technologies",
+      "Budget is fully utilized without violation, and most technologies are timed to match their market boom windows precisely"
+    ],
+    "weaknesses": [
+      "Cathode Recycling Technologies has an invalid timeline where the completion date (2028-Q1) precedes the start date (2028-Q2), indicating a critical scheduling error",
+      "AI-driven Material Discovery completes 1.5 years after its market boom, and Solid State Electrolytes (TRL 3) has an unrealistically compressed development timeline of ~2.25 years to reach commercialization"
+    ],
+    "missing_technologies": [
+      "Next-generation prelithiation techniques for high-nickel cathodes",
+      "Advanced binder systems compatible with high-Ni and single-crystal materials",
+      "In-situ characterization and quality control technologies for cathode production"
+    ],
+    "investment_issues": [
+      "All 7 technologies are assigned Tier=High with identical scoring (4.0/5.0/4.0/3.0/4.0), indicating no differentiation in investment prioritization — this uniform allocation fails to concentrate resources on highest-strategic-value or highest-risk technologies",
+      "Solid State Electrolytes (TRL 3, highest uncertainty) receives the same tier and scores as High-Precision Cathode Manufacturing (TRL 8, near-commercial), which is inappropriate risk-weighting for a technology leadership portfolio"
+    ],
+    "timing_issues": [
+      "AI-driven Material Discovery targets 2030-Q4 but boom is 2029-Q2 — 1.5 year late arrival misses the market window entirely",
+      "For 기술선도 strategy, technologies should complete 1-2 years BEFORE their boom windows to establish leadership; all technologies except Solid State Electrolytes complete at or after boom, not before",
+      "Cathode Recycling Technologies has start date 2028-Q2 after end date 2028-Q1 — logically impossible schedule"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - Nickel Rich Cathode Coatings (TRL 6) is scheduled for completion in just one quarter (2027-Q1 to Q2), and Solid State Electrolytes starts at TRL 3 yet is expected to complete in ~2.25 years — both are highly aggressive; additionally, Cathode Recycling Technologies has an impossible timeline where the end date (2028-Q1) precedes or equals the stated start date (2028-Q2), indicating a structural error.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes low-TRL exploratory technologies (Solid State Electrolytes TRL 3, AI-driven Material Discovery TRL 4) consistent with 기술선도, but the majority of the portfolio (5 of 7 technologies) are at TRL 6-8, suggesting a more commercially-oriented portfolio than a true technology leadership strategy would favor; R&D-heavy framing is only partially realized.",
+      "competitive_awareness": "score 2/5 - There is no explicit differentiation rationale, competitor positioning analysis, or timing-based competitive preemption logic visible in the roadmap; technology selections appear driven by internal scoring rather than external competitive landscape intelligence.",
+      "market_timing": "score 3/5 - Most technologies (5 of 7) hit their boom windows exactly or within 0.25 years, which is strong; however, AI-driven Material Discovery completes 1.5 years after its boom window (2030-Q4 vs 2029-Q2), and for a 기술선도 strategy, ideal completion should be 1-2 years BEFORE the boom — meaning even the 'exact' completions are not strategy-optimal.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (high-nickel cathodes, solid-state electrolytes, dry electrode, AI-driven discovery) represent active areas of both patent filing and market growth, suggesting reasonable convergence; however, the uniform scoring (all technologies rated 4.0 for market_opp) provides no evidence that convergence zone targeting was deliberately differentiated.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 38.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S05",
+        "tech_name": "High-Precision Cathode Manufacturing",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.7,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4674,
+        "cost_adjusted_return": 0.6299
+      },
+      {
+        "tech_id": "S01",
+        "tech_name": "Nickel Rich Cathode Coatings",
+        "patent_growth_norm": 0.7391,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.5956,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8584,
+        "cost_adjusted_return": 0.4669
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Dry Electrode Coating",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.3,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.15
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Single Crystal Cathode Materials",
+        "patent_growth_norm": 0.8667,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6467,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.758,
+        "cost_adjusted_return": 0.533
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Cathode Recycling Technologies",
+        "patent_growth_norm": 0.9384,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6754,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4055,
+        "cost_adjusted_return": 0.6145
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Solid State Electrolytes",
+        "patent_growth_norm": 0.8207,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.6283,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8473,
+        "cost_adjusted_return": 0.5012
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "patent_growth_norm": 0.3045,
+        "market_growth_norm": 0.5,
+        "market_size_norm": 0.5,
+        "value": 0.4218,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.2817,
+        "cost_adjusted_return": 0.3795
+      }
+    ],
+    "selection_quality": 56.7,
+    "cost_adjusted_return": 46.8,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 92.5,
+    "backtest_score": 74.0,
+    "backtest_score_v1": 65.5,
+    "description": {
+      "selection_quality": "56.7/100 — 7개 기술 평균 value=0.567\n  ▲ High-Precision Cathode Manufacturing: value=0.700 (특허↑=1.00, 시장↑=0.50, 규모=0.50)\n  ▲ Cathode Recycling Technologies: value=0.675 (특허↑=0.94, 시장↑=0.50, 규모=0.50)\n  ▲ Single Crystal Cathode Materials: value=0.647 (특허↑=0.87, 시장↑=0.50, 규모=0.50)\n  ▲ Solid State Electrolytes: value=0.628 (특허↑=0.82, 시장↑=0.50, 규모=0.50)\n  ▲ Nickel Rich Cathode Coatings: value=0.596 (특허↑=0.74, 시장↑=0.50, 규모=0.50)\n  ▼ AI-driven Material Discovery: value=0.422 (특허↑=0.30, 시장↑=0.50, 규모=0.50)\n  ▼ Dry Electrode Coating: value=0.300 (특허↑=0.00, 시장↑=0.50, 규모=0.50)",
+      "cost_adjusted_return": "46.8/100 — 평균 return=0.468\n  High-Precision Cathode Manufacturing: value=0.700 - 0.15×0.67(cost) = return +0.630 [High]\n  Cathode Recycling Technologies: value=0.675 - 0.15×0.67(cost) = return +0.615 [High]\n  Single Crystal Cathode Materials: value=0.647 - 0.15×0.67(cost) = return +0.533 [High]\n  Solid State Electrolytes: value=0.628 - 0.15×0.67(cost) = return +0.501 [High]\n  Nickel Rich Cathode Coatings: value=0.596 - 0.15×0.67(cost) = return +0.467 [High]\n  AI-driven Material Discovery: value=0.422 - 0.15×0.67(cost) = return +0.380 [High]\n  Dry Electrode Coating: value=0.300 - 0.15×0.67(cost) = return +0.150 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → Dry Electrode Coating: value 0.300인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "92.5/100 — 평균 오차 0.25년\n  AI-driven Material Discovery: 1.5년 늦음 ⚠\n  Solid State Electrolytes: 0.2년 이름\n  High-Precision Cathode Manufacturing: 0.0년 이름\n  Nickel Rich Cathode Coatings: 0.0년 이름\n  Dry Electrode Coating: 0.0년 이름\n  Single Crystal Cathode Materials: 0.0년 이름\n  Cathode Recycling Technologies: 0.0년 이름",
+      "formula": "backtest_score = 0.35×56.7 + 0.35×46.8 + 0.05×100.0 + 0.05×100.0 + 0.10×92.5 = 74.0"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.25,
+    "timing_details": [
+      {
+        "tech_id": "S05",
+        "tech_name": "High-Precision Cathode Manufacturing",
+        "target_q": "2026-Q4",
+        "boom_q": "2026-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S01",
+        "tech_name": "Nickel Rich Cathode Coatings",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q2",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Dry Electrode Coating",
+        "target_q": "2027-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Single Crystal Cathode Materials",
+        "target_q": "2028-Q3",
+        "boom_q": "2028-Q3",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Cathode Recycling Technologies",
+        "target_q": "2028-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Solid State Electrolytes",
+        "target_q": "2029-Q4",
+        "boom_q": "2030-Q1",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "target_q": "2030-Q4",
+        "boom_q": "2029-Q2",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.9,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 59.9,
+    "description": "pre_penalty = 0.4×38.7(LLM) + 0.6×74.0(Backtest) = 59.9. 페널티 없음. 최종 = 59.9.\n  [진단] LLM 구조 점수(38.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(74.0)가 LLM(38.7)보다 35.3pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 38.7점, Backtest 경제성 평가 74.0점. 최종 Composite Score: 59.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: AI-driven Material Discovery의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

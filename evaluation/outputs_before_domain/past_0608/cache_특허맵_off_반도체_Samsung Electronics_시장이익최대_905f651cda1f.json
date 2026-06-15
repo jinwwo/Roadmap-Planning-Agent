@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Memory / Foundry",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 28.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL 6→target and TRL 7→target progressions over 2-year windows are broadly feasible for mature semiconductor domains, but the PIM and optical link technologies show zero development duration (2030-Q1 → 2030-Q1), which is physically unrealistic for TRL 5-6 technologies requiring validation cycles.",
+      "strategic_fidelity": "Declared strategy is 시장이익최대 (market profit maximization), which demands near-market, high-TRL selections with tight market-window alignment; however, the portfolio includes TRL 5 optical link equipment and systematically completes all technologies well after their boom windows, contradicting a commercialization-first mandate.",
+      "competitive_awareness": "There is no visible differentiation rationale, no competitor positioning logic, and no timing-advantage design relative to competing foundries or memory players; technology selections appear driven by internal dependency chains rather than competitive gap analysis.",
+      "market_timing": "Every single technology in the portfolio completes after its boom window, with errors ranging from 0.75 to 2.25 years and a mean of 1.65 years late; for 시장이익최대 strategy requiring ±0.5 year precision, this constitutes systematic and severe timing misalignment across the entire portfolio.",
+      "patent_market_convergence": "The selection of GAA transistors, 3D NAND, and PIM touches areas of both high patent activity and strong market growth in semiconductor scaling, suggesting some convergence awareness, but the inclusion of optical link filtering (lower market alignment score of 3.0) and the absence of deliberate convergence-zone articulation weakens confidence in intentionality."
+    },
+    "strengths": [
+      "Dependency chain is structurally sound with zero dependency violations, creating a logical technology stack from process → architecture → packaging → compute → interconnect",
+      "Investment tier allocation is internally consistent, with foundational technologies (GAA, 3D NAND) correctly placed at Strategic tier and derivative technologies at lower tiers"
+    ],
+    "weaknesses": [
+      "All five technologies complete after their respective market boom windows, with the worst offender (고집적 패키징) arriving 2.25 years late — fundamentally incompatible with a market profit maximization strategy",
+      "Two technologies (PIM and optical link filtering) have zero planned development duration (same start and end quarter), making the roadmap physically implausible for those items"
+    ],
+    "missing_technologies": [
+      "High-bandwidth memory (HBM) integration technology — directly aligned with AI/GPU market boom and high convergence of patent + market signals in the 2026-2027 window",
+      "Advanced EUV lithography process optimization — critical enabler for GAA commercialization with strong near-term market demand"
+    ],
+    "investment_issues": [
+      "Budget utilization is reported as 0 spent against 116.2B total, suggesting the investment strategy exists only on paper without actual resource allocation modeling",
+      "광학 링크 변조 필터링 at TRL 5 receives Medium tier investment despite being a terminal dependency with the latest completion date — insufficient resourcing for the highest-risk item in the chain"
+    ],
+    "timing_issues": [
+      "GAA 트랜지스터 게이트 절단 completes in 2028-Q1 but boom is 2026-Q3, meaning the technology misses peak market demand by 1.5 years — unacceptable for a profit-maximization strategy",
+      "고집적 패키징 마크 프레임 and 메모리 내 연산 (PIM) 가속화 both miss their boom windows by over 2 years, suggesting the dependency chain architecture itself is the root cause of systematic late delivery",
+      "PIM and optical link technologies show identical start and end dates (2030-Q1), implying no actual development time is planned, which is inconsistent with their TRL levels"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - TRL 6→target and TRL 7→target progressions over 2-year windows are broadly feasible for mature semiconductor domains, but the PIM and optical link technologies show zero development duration (2030-Q1 → 2030-Q1), which is physically unrealistic for TRL 5-6 technologies requiring validation cycles.",
+      "strategic_fidelity": "score 2/5 - Declared strategy is 시장이익최대 (market profit maximization), which demands near-market, high-TRL selections with tight market-window alignment; however, the portfolio includes TRL 5 optical link equipment and systematically completes all technologies well after their boom windows, contradicting a commercialization-first mandate.",
+      "competitive_awareness": "score 2/5 - There is no visible differentiation rationale, no competitor positioning logic, and no timing-advantage design relative to competing foundries or memory players; technology selections appear driven by internal dependency chains rather than competitive gap analysis.",
+      "market_timing": "score 1/5 - Every single technology in the portfolio completes after its boom window, with errors ranging from 0.75 to 2.25 years and a mean of 1.65 years late; for 시장이익최대 strategy requiring ±0.5 year precision, this constitutes systematic and severe timing misalignment across the entire portfolio.",
+      "patent_market_convergence": "score 3/5 - The selection of GAA transistors, 3D NAND, and PIM touches areas of both high patent activity and strong market growth in semiconductor scaling, suggesting some convergence awareness, but the inclusion of optical link filtering (lower market alignment score of 3.0) and the absence of deliberate convergence-zone articulation weakens confidence in intentionality.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×2 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 28.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T04",
+        "tech_name": "GAA 트랜지스터 게이트 절단",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7991,
+        "market_size_norm": 0.2792,
+        "value": 0.3235,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.1735
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 대칭성 최적화",
+        "patent_growth_norm": 0.7954,
+        "market_growth_norm": 0.0325,
+        "market_size_norm": 1.0,
+        "value": 0.6279,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4779
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고집적 패키징 마크 프레임",
+        "patent_growth_norm": 0.4851,
+        "market_growth_norm": 0.1924,
+        "market_size_norm": 0.2539,
+        "value": 0.3279,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.2279
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "메모리 내 연산 (PIM) 가속화",
+        "patent_growth_norm": 0.9272,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.0348,
+        "value": 0.6813,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5813
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "광학 링크 변조 필터링",
+        "patent_growth_norm": 0.1621,
+        "market_growth_norm": 0.5021,
+        "market_size_norm": 0.1967,
+        "value": 0.2745,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.2245
+      }
+    ],
+    "selection_quality": 44.7,
+    "cost_adjusted_return": 33.7,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 50.5,
+    "backtest_score": 57.2,
+    "backtest_score_v1": 52.5,
+    "description": {
+      "selection_quality": "44.7/100 — 5개 기술 평균 value=0.447\n  ▲ 메모리 내 연산 (PIM) 가속화: value=0.681 (특허↑=0.93, 시장↑=1.00, 규모=0.03)\n  ▲ 3D NAND 대칭성 최적화: value=0.628 (특허↑=0.80, 시장↑=0.03, 규모=1.00)\n  ▼ 고집적 패키징 마크 프레임: value=0.328 (특허↑=0.49, 시장↑=0.19, 규모=0.25)\n  ▼ GAA 트랜지스터 게이트 절단: value=0.324 (특허↑=0.00, 시장↑=0.80, 규모=0.28)\n  ▼ 광학 링크 변조 필터링: value=0.275 (특허↑=0.16, 시장↑=0.50, 규모=0.20)\n  [낮은 원인]\n  → 광학 링크 변조 필터링: 특허 성장률 낮음 (norm=0.16)",
+      "cost_adjusted_return": "33.7/100 — 평균 return=0.337\n  메모리 내 연산 (PIM) 가속화: value=0.681 - 0.15×0.67(cost) = return +0.581 [High]\n  3D NAND 대칭성 최적화: value=0.628 - 0.15×1.00(cost) = return +0.478 [Strategic]\n  고집적 패키징 마크 프레임: value=0.328 - 0.15×0.67(cost) = return +0.228 [High] ⚠ 과다투자\n  광학 링크 변조 필터링: value=0.275 - 0.15×0.33(cost) = return +0.225 [Medium]\n  GAA 트랜지스터 게이트 절단: value=0.324 - 0.15×1.00(cost) = return +0.173 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → GAA 트랜지스터 게이트 절단: value 0.324인데 Strategic tier\n  → 고집적 패키징 마크 프레임: value 0.328인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "50.5/100 — 평균 오차 1.65년\n  고집적 패키징 마크 프레임: 2.2년 늦음 ⚠\n  메모리 내 연산 (PIM) 가속화: 2.0년 늦음 ⚠\n  광학 링크 변조 필터링: 1.8년 늦음 ⚠\n  GAA 트랜지스터 게이트 절단: 1.5년 늦음 ⚠\n  3D NAND 대칭성 최적화: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×44.7 + 0.35×33.7 + 0.05×100.0 + 0.05×100.0 + 0.10×50.5 = 57.2"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.65,
+    "timing_details": [
+      {
+        "tech_id": "T04",
+        "tech_name": "GAA 트랜지스터 게이트 절단",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "3D NAND 대칭성 최적화",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고집적 패키징 마크 프레임",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "메모리 내 연산 (PIM) 가속화",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "광학 링크 변조 필터링",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 1.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 45.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.2
+      }
+    ],
+    "total_penalty": 3.2,
+    "final_composite_score": 42.6,
+    "description": "pre_penalty = 0.4×28.7(LLM) + 0.6×57.2(Backtest) = 45.8. Penalty: timing_error: -3.2pt. 총 -3.2pt. 최종 = 42.6.\n  [진단] LLM 구조 점수(28.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(57.2)가 LLM(28.7)보다 28.5pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 28.7점, Backtest 경제성 평가 57.2점. 제약 위반으로 3.2점 차감. 최종 Composite Score: 42.6점.",
+    "key_failure_points": [
+      "타이밍 이슈: GAA 트랜지스터 게이트 절단의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 고집적 패키징 마크 프레임의 완료시점이 시장 개화 대비 2.25년 차이",
+      "타이밍 이슈: 메모리 내 연산 (PIM) 가속화의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: 광학 링크 변조 필터링의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

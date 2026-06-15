@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 4,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 4,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are plausible: S02 (TRL4→target in ~3 years), S04 (TRL5 with 2.25 years), and S06 (TRL3 starting 2028) are reasonable; however S06 starting at TRL3 with only ~2.5 years to completion is somewhat aggressive for an architecture-level AI discovery platform.",
+      "strategic_fidelity": "The portfolio includes genuinely exploratory technologies (AI-driven Material Discovery at TRL3, Solid State Electrolytes at TRL4) consistent with 기술선도, but also includes a highly mature TRL9 LFP Chemistry which is a purely commercial/defensive play that contradicts technology leadership orientation; the strategy is mixed.",
+      "competitive_awareness": "All selected technologies are firmly within the cathode/battery materials domain, demonstrating strong domain fit; the inclusion of AI-driven material discovery and solid-state electrolytes shows awareness of next-generation competitive frontiers, though explicit competitor differentiation rationale is not documented.",
+      "market_timing": "Two technologies have severe timing errors: Advanced Battery Packaging completes 3.0 years after its boom (2027-Q4) and LFP Chemistry completes 3.5 years after its boom (2027-Q2); High-Nickel Cathode Materials misses by 1 year and Silicon Anode by 1 year; only Solid State Electrolytes and Dry Electrode Coating are well-timed, giving systematic late-delivery issues.",
+      "patent_market_convergence": "The selection of High-Nickel, Solid State Electrolytes, and Silicon Anode suggests awareness of both patent-active and market-growing segments, but LFP at TRL9 is a market-only signal with limited patent differentiation opportunity, and the uniform scoring across all technologies (market_opp=4.0 for all) suggests mechanical rather than convergence-informed selection."
+    },
+    "strengths": [
+      "Strong domain coherence — all 7 technologies belong squarely within the battery/cathode materials domain, ensuring competitive relevance",
+      "Solid State Electrolytes and Dry Electrode Coating achieve near-perfect market timing alignment (0.0 year error each), demonstrating precise planning for core strategic technologies"
+    ],
+    "weaknesses": [
+      "Critical dependency violation: Solid State Electrolytes (S02) is scheduled to start 2026-Q2 but its prerequisite Advanced Battery Packaging (S05) does not complete until 2030-Q4, making the entire S02 timeline structurally invalid",
+      "Advanced Battery Packaging and LFP Chemistry complete 3.0 and 3.5 years after their respective market booms, representing wasted investment that delivers into declining market windows"
+    ],
+    "missing_technologies": [
+      "Manganese-rich or LNMO cathode materials as a differentiated high-voltage technology leadership candidate",
+      "Lithium metal anode technologies, which are a natural complement to solid-state electrolytes for true technology leadership",
+      "Recycling/second-life cathode material recovery processes, an emerging area with strong patent and market convergence"
+    ],
+    "investment_issues": [
+      "All 7 technologies are assigned Tier=High with identical scoring (4.0/5.0/4.0/3.0/4.0), indicating no portfolio differentiation — a technology leadership strategy should concentrate higher investment in exploratory/lower-TRL technologies and reduce allocation for mature TRL9 assets",
+      "LFP Chemistry at TRL9 receiving Tier=High investment is misallocated given its late completion versus market boom and its non-exploratory nature inconsistent with 기술선도 strategy",
+      "Budget is fully exhausted (0% slack) with no contingency reserve, which is risky given the dependency violation and the presence of TRL3-4 technologies with inherent uncertainty"
+    ],
+    "timing_issues": [
+      "Advanced Battery Packaging (S05) targets 2030-Q4 but market boom is 2027-Q4 — a 3-year miss that wastes high-tier investment and delivers into a post-peak market",
+      "LFP Chemistry (S07) targets 2030-Q4 but market boom is 2027-Q2 — a 3.5-year miss; as a TRL9 technology this could have been completed much earlier with minimal development effort",
+      "The dependency chain creates a circular/impossible scheduling issue: S02 depends on S05, but S05 depends on S02, and S05 ends far after S02 starts"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Most TRL progressions are plausible: S02 (TRL4→target in ~3 years), S04 (TRL5 with 2.25 years), and S06 (TRL3 starting 2028) are reasonable; however S06 starting at TRL3 with only ~2.5 years to completion is somewhat aggressive for an architecture-level AI discovery platform.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes genuinely exploratory technologies (AI-driven Material Discovery at TRL3, Solid State Electrolytes at TRL4) consistent with 기술선도, but also includes a highly mature TRL9 LFP Chemistry which is a purely commercial/defensive play that contradicts technology leadership orientation; the strategy is mixed.",
+      "competitive_awareness": "score 4/5 - All selected technologies are firmly within the cathode/battery materials domain, demonstrating strong domain fit; the inclusion of AI-driven material discovery and solid-state electrolytes shows awareness of next-generation competitive frontiers, though explicit competitor differentiation rationale is not documented.",
+      "market_timing": "score 2/5 - Two technologies have severe timing errors: Advanced Battery Packaging completes 3.0 years after its boom (2027-Q4) and LFP Chemistry completes 3.5 years after its boom (2027-Q2); High-Nickel Cathode Materials misses by 1 year and Silicon Anode by 1 year; only Solid State Electrolytes and Dry Electrode Coating are well-timed, giving systematic late-delivery issues.",
+      "patent_market_convergence": "score 3/5 - The selection of High-Nickel, Solid State Electrolytes, and Silicon Anode suggests awareness of both patent-active and market-growing segments, but LFP at TRL9 is a market-only signal with limited patent differentiation opportunity, and the uniform scoring across all technologies (market_opp=4.0 for all) suggests mechanical rather than convergence-informed selection.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×4 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 4,
+      "investment": 3,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 62.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High-Nickel Cathode Materials",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.9223,
+        "cost_adjusted_return": -0.5156
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "patent_growth_norm": 0.277,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.2434,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8144,
+        "cost_adjusted_return": -0.4674
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Dry Electrode Coating",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.549
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Silicon Anode Materials",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.9847,
+        "cost_adjusted_return": -0.5426
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Advanced Battery Packaging",
+        "patent_growth_norm": 0.6717,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.4013,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4546,
+        "cost_adjusted_return": -0.2871
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3604,
+        "cost_adjusted_return": -0.234
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Lithium Iron Phosphate (LFP) Chemistry",
+        "patent_growth_norm": 0.5993,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3723,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4254,
+        "cost_adjusted_return": -0.271
+      }
+    ],
+    "selection_quality": 33.5,
+    "cost_adjusted_return": 39.8,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 80,
+    "timing_accuracy_score": 60.4,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 57.4,
+    "backtest_score_v1": 49.7,
+    "description": {
+      "selection_quality": "33.5/100 — 7개 기술 평균 value=0.335\n  ▲ High-Nickel Cathode Materials: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ Silicon Anode Materials: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ Advanced Battery Packaging: value=0.401 (특허↑=0.67, 시장↑=0.44, 규모=0.00)\n  ▲ Lithium Iron Phosphate (LFP) Chemistry: value=0.372 (특허↑=0.60, 시장↑=0.44, 규모=0.00)\n  ▼ Solid State Electrolytes: value=0.243 (특허↑=0.28, 시장↑=0.44, 규모=0.00)\n  ▼ Dry Electrode Coating: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  ▼ AI-driven Material Discovery: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → Solid State Electrolytes: 특허 성장률 낮음 (norm=0.28)\n  → Dry Electrode Coating: 특허 성장률 낮음 (norm=0.00)\n  → AI-driven Material Discovery: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "39.8/100 — 평균 return=-0.410\n  AI-driven Material Discovery: 순이익(log)=-0.234 [High] ⚠ 과다투자\n  Lithium Iron Phosphate (LFP) Chemistry: 순이익(log)=-0.271 [High] ⚠ 과다투자\n  Advanced Battery Packaging: 순이익(log)=-0.287 [High]\n  Solid State Electrolytes: 순이익(log)=-0.467 [High] ⚠ 과다투자\n  High-Nickel Cathode Materials: 순이익(log)=-0.516 [High]\n  Silicon Anode Materials: 순이익(log)=-0.543 [High]\n  Dry Electrode Coating: 순이익(log)=-0.549 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → Solid State Electrolytes: value 0.243인데 High tier\n  → Dry Electrode Coating: value 0.133인데 High tier\n  → AI-driven Material Discovery: value 0.133인데 High tier\n  → Lithium Iron Phosphate (LFP) Chemistry: value 0.372인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "80.0/100 — 위반 1건 (1건당 -20점)\n  ⚠ Solid State Electrolytes: 선행 S05 완료 전 시작 (gap: -18.0Q)",
+      "timing_accuracy": "60.4/100 — 평균 오차 1.32년\n  Lithium Iron Phosphate (LFP) Chemistry: 3.5년 늦음 ⚠\n  Advanced Battery Packaging: 3.0년 늦음 ⚠\n  High-Nickel Cathode Materials: 1.0년 늦음\n  Silicon Anode Materials: 1.0년 늦음\n  AI-driven Material Discovery: 0.8년 늦음\n  Solid State Electrolytes: 0.0년 이름\n  Dry Electrode Coating: 0.0년 이름",
+      "formula": "backtest_score = 0.25×33.5(기술선택) + 0.25×39.8(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×80.0(의존성) + 0.25×60.4(타이밍) = 57.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 1,
+    "dependency_details": [
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "prerequisite": "S05",
+        "tech_start": "2026-Q2",
+        "prereq_end": "~2030.75",
+        "gap_quarters": -18.0
+      }
+    ],
+    "mean_timing_error_years": 1.32,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High-Nickel Cathode Materials",
+        "target_q": "2028-Q2",
+        "boom_q": "2027-Q2",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "target_q": "2029-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Dry Electrode Coating",
+        "target_q": "2028-Q3",
+        "boom_q": "2028-Q3",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Silicon Anode Materials",
+        "target_q": "2029-Q4",
+        "boom_q": "2028-Q4",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Advanced Battery Packaging",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 3.0
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "target_q": "2030-Q4",
+        "boom_q": "2030-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Lithium Iron Phosphate (LFP) Chemistry",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q2",
+        "error_years": 3.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 56.9,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 3
+      },
+      {
+        "type": "timing_error",
+        "amount": 1.6
+      }
+    ],
+    "total_penalty": 4.6,
+    "final_composite_score": 52.3,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×57.4(Backtest) = 56.9. Penalty: dependency_violation: -3.0pt, timing_error: -1.6pt. 총 -4.6pt. 최종 = 52.3."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 57.4점. 제약 위반으로 4.6점 차감. 최종 Composite Score: 52.3점.",
+    "key_failure_points": [
+      "의존성 위반: Solid State Electrolytes이 선행기술 S05 완료 전에 시작 (gap: -18.0Q)",
+      "타이밍 이슈: Advanced Battery Packaging의 완료시점이 시장 개화 대비 3.0년 차이",
+      "타이밍 이슈: Lithium Iron Phosphate (LFP) Chemistry의 완료시점이 시장 개화 대비 3.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

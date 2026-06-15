@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Conversational AI / LLM / Knowledge Graph",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 33.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T04 (AI 추론 전용 프로세싱 유닛) is planned to start 2030-Q1 and complete 2030-Q1, implying zero development time for a TRL-4 hardware technology — this is physically impossible and renders the pathway entirely infeasible for that technology.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory technologies (T04 at TRL 4) consistent with 기술선도, but only three technologies with heavy chaining dependencies limits the exploratory breadth expected from a technology leadership strategy; the portfolio feels more like a linear product pipeline than an R&D-rich leadership portfolio.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing advantage design relative to competitors; technology selections appear driven by internal dependency chains rather than competitive landscape gaps.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal. T01 completes 0.75yr after boom (acceptable), T04 completes 0.5yr after boom (acceptable), but T02 completes 3.25 years after its market boom (2026-Q4), representing a severe timing misalignment that undermines the leadership preemption goal.",
+      "patent_market_convergence": "All three technologies are assigned maximum market opportunity scores (5.0), suggesting market signal consideration, but there is no explicit evidence of patent activity analysis driving selections; the convergence appears coincidental given the limited portfolio size."
+    },
+    "strengths": [
+      "Budget is fully utilized without violation, indicating disciplined resource allocation",
+      "Dependency ordering is respected with zero violations, maintaining logical development sequencing"
+    ],
+    "weaknesses": [
+      "T04 has a zero-duration development window (2030-Q1 to 2030-Q1) making it technically infeasible for a TRL-4 hardware technology",
+      "T02 misses its market boom by 3.25 years, critically undermining the technology leadership preemption objective"
+    ],
+    "missing_technologies": [
+      "Multi-agent orchestration framework (to justify the 'multi-agent' scenario designation)",
+      "Federated learning or privacy-preserving AI (to strengthen the knowledge graph permission-awareness angle)",
+      "LLM inference optimization middleware (bridging T01 and T04 with a software layer)"
+    ],
+    "investment_issues": [
+      "T04 is rated executability=2 and uncertainty=4 yet still receives High tier investment with no mitigation or stage-gate mechanism visible in the roadmap",
+      "All three technologies consuming the entire budget with no reserve for pivots or emergent opportunities is risky given the high uncertainty scores"
+    ],
+    "timing_issues": [
+      "T02 (지식 그래프 기반 권한 인식 응답) completes in 2030-Q1 but market boom was 2026-Q4 — a 3.25-year post-boom completion that means entering a potentially saturated market",
+      "T04 development window of zero quarters is not a realistic timeline for TRL-4 to deployment-ready hardware"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - T04 (AI 추론 전용 프로세싱 유닛) is planned to start 2030-Q1 and complete 2030-Q1, implying zero development time for a TRL-4 hardware technology — this is physically impossible and renders the pathway entirely infeasible for that technology.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes lower-TRL exploratory technologies (T04 at TRL 4) consistent with 기술선도, but only three technologies with heavy chaining dependencies limits the exploratory breadth expected from a technology leadership strategy; the portfolio feels more like a linear product pipeline than an R&D-rich leadership portfolio.",
+      "competitive_awareness": "score 2/5 - There is no visible evidence of competitor positioning, differentiation rationale, or timing advantage design relative to competitors; technology selections appear driven by internal dependency chains rather than competitive landscape gaps.",
+      "market_timing": "score 2/5 - For 기술선도, completing 1-2 years before boom is ideal. T01 completes 0.75yr after boom (acceptable), T04 completes 0.5yr after boom (acceptable), but T02 completes 3.25 years after its market boom (2026-Q4), representing a severe timing misalignment that undermines the leadership preemption goal.",
+      "patent_market_convergence": "score 3/5 - All three technologies are assigned maximum market opportunity scores (5.0), suggesting market signal consideration, but there is no explicit evidence of patent activity analysis driving selections; the convergence appears coincidental given the limited portfolio size.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 33.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 75.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 슬라이스아웃 학습 최적화",
+        "patent_growth_norm": 0.7833,
+        "market_growth_norm": 0.7031,
+        "market_size_norm": 0.0921,
+        "value": 0.5518,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4018
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "지식 그래프 기반 권한 인식 응답",
+        "patent_growth_norm": 0.4301,
+        "market_growth_norm": 0.4362,
+        "market_size_norm": 1.0,
+        "value": 0.6029,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.9474,
+        "cost_adjusted_return": 0.4608
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 추론 전용 프로세싱 유닛",
+        "patent_growth_norm": 0.7945,
+        "market_growth_norm": 0.7036,
+        "market_size_norm": 0.6737,
+        "value": 0.731,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8947,
+        "cost_adjusted_return": 0.5968
+      }
+    ],
+    "selection_quality": 62.9,
+    "cost_adjusted_return": 48.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "backtest_score": 66.6,
+    "backtest_score_v1": 64.5,
+    "description": {
+      "selection_quality": "62.9/100 — 3개 기술 평균 value=0.629\n  ▲ AI 추론 전용 프로세싱 유닛: value=0.731 (특허↑=0.79, 시장↑=0.70, 규모=0.67)\n  ▼ 지식 그래프 기반 권한 인식 응답: value=0.603 (특허↑=0.43, 시장↑=0.44, 규모=1.00)\n  ▼ LLM 슬라이스아웃 학습 최적화: value=0.552 (특허↑=0.78, 시장↑=0.70, 규모=0.09)",
+      "cost_adjusted_return": "48.6/100 — 평균 return=0.486\n  AI 추론 전용 프로세싱 유닛: value=0.731 - 0.15×0.67(cost) = return +0.597 [High]\n  지식 그래프 기반 권한 인식 응답: value=0.603 - 0.15×1.00(cost) = return +0.461 [Strategic]\n  LLM 슬라이스아웃 학습 최적화: value=0.552 - 0.15×1.00(cost) = return +0.402 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  지식 그래프 기반 권한 인식 응답: 3.2년 늦음 ⚠\n  LLM 슬라이스아웃 학습 최적화: 0.8년 늦음\n  AI 추론 전용 프로세싱 유닛: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×62.9 + 0.35×48.6 + 0.05×100.0 + 0.05×100.0 + 0.10×55.0 = 66.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 슬라이스아웃 학습 최적화",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "지식 그래프 기반 권한 인식 응답",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 추론 전용 프로세싱 유닛",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q3",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 53.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 50.9,
+    "description": "pre_penalty = 0.4×33.7(LLM) + 0.6×66.6(Backtest) = 53.4. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 50.9.\n  [진단] LLM 구조 점수(33.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(66.6)가 LLM(33.7)보다 32.9pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 33.7점, Backtest 경제성 평가 66.6점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 50.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: 지식 그래프 기반 권한 인식 응답의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Conversational AI / LLM / Knowledge Graph",
+    "num_technologies": 6
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are achievable: T02 (TRL 7, 8 quarters) and T03 (TRL 6, 4 quarters) are reasonable, though T06 (TRL 4→completion in 8 quarters) is moderately aggressive for a Process technology with high uncertainty. T10 and T04 (TRL 5, 4 quarters each) are tight but not infeasible.",
+      "strategic_fidelity": "The strategy is declared as 기술선도, yet the portfolio is dominated by TRL 5-7 technologies with near-term market applications rather than low-TRL exploratory R&D; only T06 (TRL 4) represents genuine frontier exploration, and the overall portfolio leans more toward commercialization than technology leadership.",
+      "competitive_awareness": "There is no explicit evidence of competitor technology positioning, differentiation gaps, or timing strategies designed relative to known competitors; technology selections appear driven by internal dependency logic rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도 strategy, ideal completion is 1-2 years before the boom; however, mean timing error is 2.29 years late, with four of six technologies completing significantly after their boom windows (T07 at +3.5yr, T06 at +3.25yr, T10 at +2.5yr, T03 at +2.25yr), indicating systematic post-boom completion rather than preemptive positioning.",
+      "patent_market_convergence": "Several selected technologies (T02, T03, T07) are in domains with recognized patent and market activity convergence in AI/knowledge graph space, but the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting; the overlap appears partially coincidental given the dependency-chain structure."
+    },
+    "strengths": [
+      "Dependency chain is logically structured with zero violations, building from hardware accelerator (T02) through knowledge graph automation (T03) to security and modeling layers",
+      "Budget utilization is near-perfect (99.99%), indicating disciplined resource allocation across all tiers"
+    ],
+    "weaknesses": [
+      "Systematic post-boom completion: 5 of 6 technologies finish after their market boom windows, undermining both market timing and the preemptive advantage expected from a 기술선도 strategy",
+      "Portfolio TRL profile (mostly TRL 5-7) is more consistent with 시장이익최대 than 기술선도, creating a fundamental strategic misalignment"
+    ],
+    "missing_technologies": [
+      "Low-TRL (TRL 1-3) foundational research technologies in multi-agent reasoning or neuromorphic computing to genuinely anchor a technology leadership position",
+      "Federated learning or privacy-preserving AI technologies that would complement the security management layer (T07) with forward-looking differentiation"
+    ],
+    "investment_issues": [
+      "Three technologies rated 'Strategic' tier (T02, T03, T07) all have post-boom completion dates, meaning premium investment is being deployed into technologies that will arrive too late to capture peak market value",
+      "T06 receives 'High' tier investment despite TRL 4 and executability score of 2.0, creating high-risk capital exposure with a 3.25-year timing miss"
+    ],
+    "timing_issues": [
+      "맥락 기반 접근 지능 보안 관리 completes 3.5 years after its boom (2026-Q3), making it a laggard rather than a leader in the security AI space",
+      "Sliceout 기반 트랜스포머 학습 최적화 completes 3.25 years after its boom (2026-Q4), severely limiting competitive relevance at completion",
+      "The sequential dependency chain (T02→T03→T07/T10) forces late completions for downstream technologies even though their market windows have already closed"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Most TRL progressions are achievable: T02 (TRL 7, 8 quarters) and T03 (TRL 6, 4 quarters) are reasonable, though T06 (TRL 4→completion in 8 quarters) is moderately aggressive for a Process technology with high uncertainty. T10 and T04 (TRL 5, 4 quarters each) are tight but not infeasible.",
+      "strategic_fidelity": "score 3/5 - The strategy is declared as 기술선도, yet the portfolio is dominated by TRL 5-7 technologies with near-term market applications rather than low-TRL exploratory R&D; only T06 (TRL 4) represents genuine frontier exploration, and the overall portfolio leans more toward commercialization than technology leadership.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence of competitor technology positioning, differentiation gaps, or timing strategies designed relative to known competitors; technology selections appear driven by internal dependency logic rather than competitive landscape intelligence.",
+      "market_timing": "score 2/5 - For 기술선도 strategy, ideal completion is 1-2 years before the boom; however, mean timing error is 2.29 years late, with four of six technologies completing significantly after their boom windows (T07 at +3.5yr, T06 at +3.25yr, T10 at +2.5yr, T03 at +2.25yr), indicating systematic post-boom completion rather than preemptive positioning.",
+      "patent_market_convergence": "score 3/5 - Several selected technologies (T02, T03, T07) are in domains with recognized patent and market activity convergence in AI/knowledge graph space, but the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting; the overlap appears partially coincidental given the dependency-chain structure.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 80.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "그래프 기반 AI 가속기 아키텍처",
+        "patent_growth_norm": 0.3706,
+        "market_growth_norm": 0.9042,
+        "market_size_norm": 1.0,
+        "value": 0.7195,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8462,
+        "cost_adjusted_return": 9.1504
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "Sliceout 기반 트랜스포머 학습 최적화",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9041,
+        "market_size_norm": 0.615,
+        "value": 0.4557,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5385,
+        "cost_adjusted_return": 7.7768
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "권한 기반 지식 그래프 응답 자동화",
+        "patent_growth_norm": 0.0239,
+        "market_growth_norm": 0.8523,
+        "market_size_norm": 1.0,
+        "value": 0.5653,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.9231,
+        "cost_adjusted_return": 9.4232
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "맥락 기반 접근 지능 보안 관리",
+        "patent_growth_norm": 0.389,
+        "market_growth_norm": 0.9617,
+        "market_size_norm": 0.7241,
+        "value": 0.6613,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 8.3236
+      },
+      {
+        "tech_id": "T10",
+        "tech_name": "원자 문서 요소 관계 모델링 자동화",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8219,
+        "market_size_norm": 1.0,
+        "value": 0.5466,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4615,
+        "cost_adjusted_return": 8.6208
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "암시적 데이터 의존성 감사 및 가시성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.7676,
+        "market_size_norm": 0.8428,
+        "value": 0.8831,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.2308,
+        "cost_adjusted_return": 8.804
+      }
+    ],
+    "selection_quality": 63.9,
+    "cost_adjusted_return": 98.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 31.3,
+    "backtest_score": 65.9,
+    "backtest_score_v1": 80.0,
+    "description": {
+      "selection_quality": "63.9/100 — 6개 기술 평균 value=0.639\n  ▲ 암시적 데이터 의존성 감사 및 가시성: value=0.883 (특허↑=1.00, 시장↑=0.77, 규모=0.84)\n  ▲ 그래프 기반 AI 가속기 아키텍처: value=0.720 (특허↑=0.37, 시장↑=0.90, 규모=1.00)\n  ▲ 맥락 기반 접근 지능 보안 관리: value=0.661 (특허↑=0.39, 시장↑=0.96, 규모=0.72)\n  ▼ 권한 기반 지식 그래프 응답 자동화: value=0.565 (특허↑=0.02, 시장↑=0.85, 규모=1.00)\n  ▼ 원자 문서 요소 관계 모델링 자동화: value=0.547 (특허↑=0.00, 시장↑=0.82, 규모=1.00)\n  ▼ Sliceout 기반 트랜스포머 학습 최적화: value=0.456 (특허↑=0.00, 시장↑=0.90, 규모=0.61)",
+      "cost_adjusted_return": "98.6/100 — 평균 return=8.683\n  권한 기반 지식 그래프 응답 자동화: value=0.565 - 0.15×1.00(cost) = return +9.423 [Strategic]\n  그래프 기반 AI 가속기 아키텍처: value=0.720 - 0.15×1.00(cost) = return +9.150 [Strategic]\n  암시적 데이터 의존성 감사 및 가시성: value=0.883 - 0.15×0.33(cost) = return +8.804 [Medium]\n  원자 문서 요소 관계 모델링 자동화: value=0.547 - 0.15×0.67(cost) = return +8.621 [High]\n  맥락 기반 접근 지능 보안 관리: value=0.661 - 0.15×1.00(cost) = return +8.324 [Strategic]\n  Sliceout 기반 트랜스포머 학습 최적화: value=0.456 - 0.15×0.67(cost) = return +7.777 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "31.3/100 — 평균 오차 2.29년\n  맥락 기반 접근 지능 보안 관리: 3.5년 늦음 ⚠\n  Sliceout 기반 트랜스포머 학습 최적화: 3.2년 늦음 ⚠\n  원자 문서 요소 관계 모델링 자동화: 2.5년 늦음 ⚠\n  권한 기반 지식 그래프 응답 자동화: 2.2년 늦음 ⚠\n  암시적 데이터 의존성 감사 및 가시성: 1.8년 늦음 ⚠\n  그래프 기반 AI 가속기 아키텍처: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×63.9 + 0.35×98.6 + 0.05×100.0 + 0.05×100.0 + 0.10×31.3 = 65.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.29,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "그래프 기반 AI 가속기 아키텍처",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "Sliceout 기반 트랜스포머 학습 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "권한 기반 지식 그래프 응답 자동화",
+        "target_q": "2029-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "맥락 기반 접근 지능 보안 관리",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 3.5
+      },
+      {
+        "tech_id": "T10",
+        "tech_name": "원자 문서 요소 관계 모델링 자동화",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "암시적 데이터 의존성 감사 및 가시성",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 1.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 58.0,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 6.5
+      }
+    ],
+    "total_penalty": 6.5,
+    "final_composite_score": 51.5,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×65.9(Backtest) = 58.0. Penalty: timing_error: -6.5pt. 총 -6.5pt. 최종 = 51.5.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 65.9점. 제약 위반으로 6.5점 차감. 최종 Composite Score: 51.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: Sliceout 기반 트랜스포머 학습 최적화의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 권한 기반 지식 그래프 응답 자동화의 완료시점이 시장 개화 대비 2.25년 차이",
+      "타이밍 이슈: 맥락 기반 접근 지능 보안 관리의 완료시점이 시장 개화 대비 3.5년 차이",
+      "타이밍 이슈: 원자 문서 요소 관계 모델링 자동화의 완료시점이 시장 개화 대비 2.5년 차이",
+      "타이밍 이슈: 암시적 데이터 의존성 감사 및 가시성의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

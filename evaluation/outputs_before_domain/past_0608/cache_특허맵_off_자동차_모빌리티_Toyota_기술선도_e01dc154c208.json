@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 4,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 41.3,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 4,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T08 (TRL 4→target) over 4 years is plausible, but T01 and T02 show zero planned development duration (both start and end at 2030-Q1), making TRL progression for those technologies structurally undefined and unrealistic as planned.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory materials (T08 at TRL 4) and process innovations (T01 at TRL 5) consistent with a 기술선도 strategy, and investment tiers reflect R&D-heavy prioritization; however, the inclusion of T02 (TRL 6, packaging) and T05 (TRL 6, architecture) slightly dilutes the leadership focus.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selection or timing decisions; choices appear driven by internal scoring rather than competitive landscape intelligence.",
+      "market_timing": "All four technologies complete at 2030-Q1, but all market booms occur in 2026-Q3 to 2027-Q2, resulting in systematic 2.75–3.5 year post-boom completion across the entire portfolio — even for a 기술선도 strategy where preemption 1-2 years before boom is ideal, this is a severe misalignment.",
+      "patent_market_convergence": "The selected technologies (solid-state/dry electrode materials, large-scale battery packaging, emergency control systems) are plausible convergence-zone candidates in the EV/mobility domain, but there is no explicit evidence that convergence-zone targeting was deliberate rather than coincidental based on the roadmap content provided."
+    },
+    "strengths": [
+      "Portfolio composition with TRL 4-5 foundational materials and process technologies aligns well with a technology leadership strategy requiring long-horizon R&D investment.",
+      "Dependency chain (T08→T01→T02) reflects logical technology sequencing from materials to process to packaging, showing sound systems-level thinking."
+    ],
+    "weaknesses": [
+      "Systematic and severe market timing misalignment: all technologies complete 2.75–3.5 years after their respective market boom windows, meaning commercial value will be substantially diminished for the entire portfolio.",
+      "T01 (건식 전극 필름 제조) and T02 (대형 주조 배터리 하우징) have zero planned development duration (start = end = 2030-Q1), which is structurally incoherent and makes TRL progression impossible to evaluate."
+    ],
+    "missing_technologies": [
+      "Solid-state electrolyte (고체 전해질) — natural complement to 무수 전해액 조성 for technology leadership in next-gen battery chemistry",
+      "Battery Management System AI/ML optimization — bridges the gap between materials innovation and system-level commercialization",
+      "Autonomous emergency braking integration — would strengthen the 비상상황 협력 제어 시스템 value chain with a nearer-market companion technology"
+    ],
+    "investment_issues": [
+      "Three of four technologies are classified as Tier=Strategic, leaving insufficient tier differentiation to prioritize resource allocation during execution when trade-offs arise.",
+      "T08 has executability scored at 2.0 yet receives the highest Strategic tier, creating a risk that the foundational dependency for the entire battery technology chain may stall and cascade failures to T01 and T02.",
+      "Budget utilization shows 0 spent against a 41.7B budget, suggesting the investment strategy has not been operationalized or translated into actual resource commitments."
+    ],
+    "timing_issues": [
+      "Every technology in the portfolio misses its market boom window by 2.75–3.5 years post-boom, which is catastrophic even under a 기술선도 strategy where completing 1-2 years BEFORE boom is the target.",
+      "The roadmap appears to have anchored all completion dates at 2030-Q1 without back-calculating from market boom dates, resulting in uniform but systematically wrong timing across all four technologies.",
+      "T01 and T02 both show a start date equal to their end date (2030-Q1 → 2030-Q1), suggesting a planning error where development duration was not computed."
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T08 (TRL 4→target) over 4 years is plausible, but T01 and T02 show zero planned development duration (both start and end at 2030-Q1), making TRL progression for those technologies structurally undefined and unrealistic as planned.",
+      "strategic_fidelity": "score 4/5 - The portfolio includes lower-TRL exploratory materials (T08 at TRL 4) and process innovations (T01 at TRL 5) consistent with a 기술선도 strategy, and investment tiers reflect R&D-heavy prioritization; however, the inclusion of T02 (TRL 6, packaging) and T05 (TRL 6, architecture) slightly dilutes the leadership focus.",
+      "competitive_awareness": "score 2/5 - There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selection or timing decisions; choices appear driven by internal scoring rather than competitive landscape intelligence.",
+      "market_timing": "score 1/5 - All four technologies complete at 2030-Q1, but all market booms occur in 2026-Q3 to 2027-Q2, resulting in systematic 2.75–3.5 year post-boom completion across the entire portfolio — even for a 기술선도 strategy where preemption 1-2 years before boom is ideal, this is a severe misalignment.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (solid-state/dry electrode materials, large-scale battery packaging, emergency control systems) are plausible convergence-zone candidates in the EV/mobility domain, but there is no explicit evidence that convergence-zone targeting was deliberate rather than coincidental based on the roadmap content provided.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×4 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 41.3"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 0.8855,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.9542,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.8042
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.6968,
+        "market_size_norm": 0.8971,
+        "value": 0.4782,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.3782
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "patent_growth_norm": 0.3821,
+        "market_growth_norm": 0.9074,
+        "market_size_norm": 0.9494,
+        "value": 0.7099,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5599
+      }
+    ],
+    "selection_quality": 63.6,
+    "cost_adjusted_return": 49.8,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 6.4,
+    "backtest_score": 51.2,
+    "backtest_score_v1": 60.3,
+    "description": {
+      "selection_quality": "63.6/100 — 4개 기술 평균 value=0.636\n  ▲ 건식 전극 필름 제조: value=0.954 (특허↑=0.89, 시장↑=1.00, 규모=1.00)\n  ▲ 비상상황 협력 제어 시스템: value=0.710 (특허↑=0.38, 시장↑=0.91, 규모=0.95)\n  ▼ 대형 주조 배터리 하우징: value=0.478 (특허↑=0.00, 시장↑=0.70, 규모=0.90)\n  ▼ 무수 전해액 조성: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)",
+      "cost_adjusted_return": "49.8/100 — 평균 return=0.498\n  건식 전극 필름 제조: value=0.954 - 0.15×1.00(cost) = return +0.804 [Strategic]\n  비상상황 협력 제어 시스템: value=0.710 - 0.15×1.00(cost) = return +0.560 [Strategic]\n  대형 주조 배터리 하우징: value=0.478 - 0.15×0.67(cost) = return +0.378 [High]\n  무수 전해액 조성: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "6.4/100 — 평균 오차 3.12년\n  비상상황 협력 제어 시스템: 3.5년 늦음 ⚠\n  대형 주조 배터리 하우징: 3.2년 늦음 ⚠\n  무수 전해액 조성: 3.0년 늦음 ⚠\n  건식 전극 필름 제조: 2.8년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×63.6 + 0.35×49.8 + 0.05×100.0 + 0.05×100.0 + 0.10×6.4 = 51.2"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 3.12,
+    "timing_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 3.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 3.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 47.2,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 10.6
+      }
+    ],
+    "total_penalty": 10.6,
+    "final_composite_score": 36.6,
+    "description": "pre_penalty = 0.4×41.3(LLM) + 0.6×51.2(Backtest) = 47.2. Penalty: timing_error: -10.6pt. 총 -10.6pt. 최종 = 36.6.\n  [진단] LLM 구조 점수(41.3)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] 페널티(-10.6)가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 41.3점, Backtest 경제성 평가 51.2점. 제약 위반으로 10.6점 차감. 최종 Composite Score: 36.6점.",
+    "key_failure_points": [
+      "타이밍 이슈: 무수 전해액 조성의 완료시점이 시장 개화 대비 3.0년 차이",
+      "타이밍 이슈: 건식 전극 필름 제조의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 대형 주조 배터리 하우징의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 비상상황 협력 제어 시스템의 완료시점이 시장 개화 대비 3.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

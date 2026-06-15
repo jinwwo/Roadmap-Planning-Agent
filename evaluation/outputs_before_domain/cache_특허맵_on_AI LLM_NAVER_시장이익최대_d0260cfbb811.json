@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Large Language Model / Foundation Model / AI Platform",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are generally achievable: T01 (TRL6) and T05 (TRL7) completing in 4 quarters is realistic for near-mature technologies, T04 (TRL6) over 8 quarters is comfortable, and T03 (TRL5) over 8 quarters to target deployment is feasible though slightly optimistic for a complex multimodal architecture.",
+      "strategic_fidelity": "The portfolio mixes high-TRL near-market technologies (T01, T05) consistent with 시장이익최대, but T03 (TRL5 multimodal architecture) classified as 'High' tier with high uncertainty (4.0) leans more toward exploratory investment, somewhat contradicting a pure market-profit maximization posture.",
+      "competitive_awareness": "There is no explicit evidence in the roadmap of competitor positioning, differentiation rationale, or timing designed relative to competitor trajectories; technology selections appear driven by market opportunity scores rather than competitive gap analysis.",
+      "market_timing": "T04 (분산 학습) completes very close to its boom window (±0.25yr), which is ideal for 시장이익최대. However, T01 and T05 complete 0.75 years after the 2026-Q2 boom (borderline for ±0.5yr ideal), and T03 completes 1.5 years after its 2028-Q3 boom, significantly missing the optimal window.",
+      "patent_market_convergence": "T01 and T05 both have high market opportunity scores (5.0) and are near-mature (TRL 6-7), suggesting alignment with active patent and market zones. However, there is no explicit evidence of deliberate convergence-zone targeting; the convergence appears partially coincidental based on market opportunity scores alone."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined financial planning across the four-technology portfolio.",
+      "T04 (분산 학습 장애 복구) demonstrates near-perfect timing alignment with its market boom window, exemplifying the 시장이익최대 ideal of completing within the boom period."
+    ],
+    "weaknesses": [
+      "T03 (멀티모달 생성형 모델 아키텍처) completes 1.5 years after its market boom, significantly reducing the ROI capture opportunity that 시장이익최대 demands.",
+      "No competitive landscape analysis is embedded in the roadmap; technology selections and timings show no evidence of being designed to outmaneuver or differentiate from specific competitors."
+    ],
+    "missing_technologies": [
+      "RAG (Retrieval-Augmented Generation) optimization technology — high TRL, near-market, strong commercial demand aligned with 시장이익최대",
+      "LLM fine-tuning and domain adaptation platforms — near-market commercialization opportunity with immediate enterprise revenue potential",
+      "AI inference cost reduction / model compression (quantization, distillation) — directly monetizable and strategically aligned with profit maximization"
+    ],
+    "investment_issues": [
+      "T03 is classified as 'High' investment tier despite high uncertainty (4.0) and a 1.5-year timing miss relative to boom — this allocation is inconsistent with a risk-calibrated 시장이익최대 strategy.",
+      "T04 (분산 학습) is classified as 'Medium' tier despite having the best timing alignment in the portfolio; under-investment in the best-timed asset is a missed optimization opportunity."
+    ],
+    "timing_issues": [
+      "T01 and T05 both target 2027-Q1 completion against a 2026-Q2 boom, resulting in 0.75-year delays that fall outside the ±0.5yr optimal window for 시장이익최대, potentially ceding first-mover commercial advantage.",
+      "T03 (멀티모달) completes in 2030-Q1 but the market boom peaks at 2028-Q3, a 1.5-year miss that substantially undermines profit maximization for a 'High' tier investment."
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are generally achievable: T01 (TRL6) and T05 (TRL7) completing in 4 quarters is realistic for near-mature technologies, T04 (TRL6) over 8 quarters is comfortable, and T03 (TRL5) over 8 quarters to target deployment is feasible though slightly optimistic for a complex multimodal architecture.",
+      "strategic_fidelity": "score 3/5 - The portfolio mixes high-TRL near-market technologies (T01, T05) consistent with 시장이익최대, but T03 (TRL5 multimodal architecture) classified as 'High' tier with high uncertainty (4.0) leans more toward exploratory investment, somewhat contradicting a pure market-profit maximization posture.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence in the roadmap of competitor positioning, differentiation rationale, or timing designed relative to competitor trajectories; technology selections appear driven by market opportunity scores rather than competitive gap analysis.",
+      "market_timing": "score 3/5 - T04 (분산 학습) completes very close to its boom window (±0.25yr), which is ideal for 시장이익최대. However, T01 and T05 complete 0.75 years after the 2026-Q2 boom (borderline for ±0.5yr ideal), and T03 completes 1.5 years after its 2028-Q3 boom, significantly missing the optimal window.",
+      "patent_market_convergence": "score 3/5 - T01 and T05 both have high market opportunity scores (5.0) and are near-mature (TRL 6-7), suggesting alignment with active patent and market zones. However, there is no explicit evidence of deliberate convergence-zone targeting; the convergence appears partially coincidental based on market opportunity scores alone.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 5,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 4,
+      "llm_structural_score_v1": 87.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 추론 가속화 기술",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9115,
+        "market_size_norm": 1.0,
+        "value": 0.5735,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 9.7554
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "맥락 인식 프롬프트 최적화",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9115,
+        "market_size_norm": 1.0,
+        "value": 0.5734,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8333,
+        "cost_adjusted_return": 8.5887
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "분산 학습 장애 복구 기술",
+        "patent_growth_norm": 0.4194,
+        "market_growth_norm": 0.8447,
+        "market_size_norm": 0.7142,
+        "value": 0.6354,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3439,
+        "cost_adjusted_return": 8.0324
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "멀티모달 생성형 모델 아키텍처",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.9617,
+        "market_size_norm": 0.6443,
+        "value": 0.8818,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 8.085
+      }
+    ],
+    "selection_quality": 66.6,
+    "cost_adjusted_return": 98.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 75.7,
+    "backtest_score": 85.1,
+    "backtest_score_v1": 85.2,
+    "description": {
+      "selection_quality": "66.6/100 — 4개 기술 평균 value=0.666\n  ▲ 멀티모달 생성형 모델 아키텍처: value=0.882 (특허↑=1.00, 시장↑=0.96, 규모=0.64)\n  ▼ 분산 학습 장애 복구 기술: value=0.635 (특허↑=0.42, 시장↑=0.84, 규모=0.71)\n  ▼ LLM 추론 가속화 기술: value=0.574 (특허↑=0.00, 시장↑=0.91, 규모=1.00)\n  ▼ 맥락 인식 프롬프트 최적화: value=0.573 (특허↑=0.00, 시장↑=0.91, 규모=1.00)",
+      "cost_adjusted_return": "98.0/100 — 평균 return=8.615\n  LLM 추론 가속화 기술: value=0.574 - 0.15×1.00(cost) = return +9.755 [Strategic]\n  맥락 인식 프롬프트 최적화: value=0.573 - 0.15×1.00(cost) = return +8.589 [Strategic]\n  멀티모달 생성형 모델 아키텍처: value=0.882 - 0.15×0.67(cost) = return +8.085 [High]\n  분산 학습 장애 복구 기술: value=0.635 - 0.15×0.33(cost) = return +8.032 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "75.7/100 — 평균 오차 0.81년\n  멀티모달 생성형 모델 아키텍처: 1.5년 늦음 ⚠\n  LLM 추론 가속화 기술: 0.8년 늦음\n  맥락 인식 프롬프트 최적화: 0.8년 늦음\n  분산 학습 장애 복구 기술: 0.2년 이름",
+      "formula": "backtest_score = 0.35×66.6 + 0.35×98.0 + 0.05×100.0 + 0.05×100.0 + 0.10×75.7 = 85.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.81,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 추론 가속화 기술",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "맥락 인식 프롬프트 최적화",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "분산 학습 장애 복구 기술",
+        "target_q": "2029-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "멀티모달 생성형 모델 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 71.5,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 71.5,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×85.1(Backtest) = 71.5. 페널티 없음. 최종 = 71.5.\n  [진단] Backtest(85.1)가 LLM(51.2)보다 33.9pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 85.1점. 최종 Composite Score: 71.5점.",
+    "key_failure_points": [
+      "타이밍 이슈: 멀티모달 생성형 모델 아키텍처의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}
