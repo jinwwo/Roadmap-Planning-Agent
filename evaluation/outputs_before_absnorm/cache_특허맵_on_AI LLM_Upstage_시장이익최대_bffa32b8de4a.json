@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Foundation Model / Document AI / LLM",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T03 starts at TRL 7 and requires only 1 year to complete, which is realistic for a near-mature technology; T01 (TRL 6) gets 2 years and T04 (TRL 6) gets 1 year, which is slightly aggressive but feasible given sequential dependency structuring.",
+      "strategic_fidelity": "The portfolio includes two Strategic-tier technologies aligned with high market opportunity, which fits 시장이익최대, but T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market_opp (2.0) and low urgency (2.0) as a High-tier investment, contradicting profit-maximization logic in a 3-technology portfolio where every selection must count.",
+      "competitive_awareness": "The roadmap shows sequential dependency logic but provides no visible evidence of competitor positioning, differentiation strategy, or timing designed around competitive gaps; technology selections appear driven by internal dependency chains rather than competitive landscape analysis.",
+      "market_timing": "T03 completes 0.25yr after boom (good for 시장이익최대), T04 completes 0.5yr after boom (acceptable), but T01 completes 1.75yr after its 2027-Q2 boom window, representing a significant timing miss for the highest market-opportunity technology in the portfolio.",
+      "patent_market_convergence": "T01 with market_opp=5.0 and Strategic tier suggests some convergence awareness, and T03's urgency=5.0 aligns with an imminent boom; however, T04's low market_opp paired with high uncertainty suggests it may be patent-signal-driven without corresponding market validation, weakening overall convergence intentionality."
+    },
+    "strengths": [
+      "Clean dependency chain with zero violations ensures logical technology progression from monitoring infrastructure through workflow automation to query optimization",
+      "Budget is fully utilized with no overspend, and the two Strategic-tier technologies are correctly anchored on high market_opp and strategic_fit scores"
+    ],
+    "weaknesses": [
+      "멀티모달 에이전트 워크플로우 자동화, the highest market_opp technology (5.0), misses its market boom by 1.75 years — a critical timing failure for a profit-maximization strategy",
+      "온톨로지 기반 데이터베이스 쿼리 최적화 has low market_opp (2.0) and low urgency (2.0), making it a poor fit for a 시장이익최대 portfolio with only three technologies"
+    ],
+    "missing_technologies": [
+      "RAG(Retrieval-Augmented Generation) 기반 엔터프라이즈 지식관리 시스템 — high market growth area with near-term boom alignment in the 2026-2027 window",
+      "LLM 기반 문서 자동화 및 계약 분석 플랫폼 — directly monetizable in Document AI domain with strong near-term market pull"
+    ],
+    "investment_issues": [
+      "Allocating a High-tier investment to T04 (market_opp=2.0, urgency=2.0) in a 3-technology portfolio is capital misallocation for a 시장이익최대 strategy — those funds would yield higher returns redirected to a higher-market-opportunity technology",
+      "No explicit budget differentiation between Strategic and High tiers is visible, suggesting flat resource distribution rather than market-opportunity-weighted investment scaling"
+    ],
+    "timing_issues": [
+      "멀티모달 에이전트 워크플로우 자동화 is scheduled to complete in 2029-Q1 but its market boom peaks at 2027-Q2, resulting in a 1.75-year post-boom completion that severely undermines profit-maximization ROI potential",
+      "The sequential dependency structure forces T01 to start only after T03 completes in 2027-Q1, making it structurally impossible to hit the 2027-Q2 boom even with parallel development considerations"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T03 starts at TRL 7 and requires only 1 year to complete, which is realistic for a near-mature technology; T01 (TRL 6) gets 2 years and T04 (TRL 6) gets 1 year, which is slightly aggressive but feasible given sequential dependency structuring.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes two Strategic-tier technologies aligned with high market opportunity, which fits 시장이익최대, but T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market_opp (2.0) and low urgency (2.0) as a High-tier investment, contradicting profit-maximization logic in a 3-technology portfolio where every selection must count.",
+      "competitive_awareness": "score 2/5 - The roadmap shows sequential dependency logic but provides no visible evidence of competitor positioning, differentiation strategy, or timing designed around competitive gaps; technology selections appear driven by internal dependency chains rather than competitive landscape analysis.",
+      "market_timing": "score 3/5 - T03 completes 0.25yr after boom (good for 시장이익최대), T04 completes 0.5yr after boom (acceptable), but T01 completes 1.75yr after its 2027-Q2 boom window, representing a significant timing miss for the highest market-opportunity technology in the portfolio.",
+      "patent_market_convergence": "score 3/5 - T01 with market_opp=5.0 and Strategic tier suggests some convergence awareness, and T03's urgency=5.0 aligns with an imminent boom; however, T04's low market_opp paired with high uncertainty suggests it may be patent-signal-driven without corresponding market validation, weakening overall convergence intentionality.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 65.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "생성형 AI 시스템 모니터링 및 평가",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.75,
+        "cost_adjusted_return": -0.1125
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "patent_growth_norm": 0.5603,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8241,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6741
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "patent_growth_norm": 0.3261,
+        "market_growth_norm": 0.6091,
+        "market_size_norm": 0.9352,
+        "value": 0.5937,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5,
+        "cost_adjusted_return": 0.5187
+      }
+    ],
+    "selection_quality": 47.3,
+    "cost_adjusted_return": 36.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 75.1,
+    "backtest_score": 64.6,
+    "backtest_score_v1": 56.7,
+    "description": {
+      "selection_quality": "47.3/100 — 3개 기술 평균 value=0.473\n  ▲ 멀티모달 에이전트 워크플로우 자동화: value=0.824 (특허↑=0.56, 시장↑=1.00, 규모=1.00)\n  ▲ 온톨로지 기반 데이터베이스 쿼리 최적화: value=0.594 (특허↑=0.33, 시장↑=0.61, 규모=0.94)\n  ▼ 생성형 AI 시스템 모니터링 및 평가: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 생성형 AI 시스템 모니터링 및 평가: 특허 성장률 낮음 (norm=0.00)\n  → 생성형 AI 시스템 모니터링 및 평가: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "36.0/100 — 평균 return=0.360\n  멀티모달 에이전트 워크플로우 자동화: value=0.824 - 0.15×1.00(cost) = return +0.674 [Strategic]\n  온톨로지 기반 데이터베이스 쿼리 최적화: value=0.594 - 0.15×0.67(cost) = return +0.519 [High]\n  생성형 AI 시스템 모니터링 및 평가: value=0.000 - 0.15×1.00(cost) = return -0.113 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 생성형 AI 시스템 모니터링 및 평가: value 0.000인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "75.1/100 — 평균 오차 0.83년\n  멀티모달 에이전트 워크플로우 자동화: 1.8년 늦음 ⚠\n  온톨로지 기반 데이터베이스 쿼리 최적화: 0.5년 늦음\n  생성형 AI 시스템 모니터링 및 평가: 0.2년 늦음",
+      "formula": "backtest_score = 0.35×47.3 + 0.35×36.0 + 0.05×100.0 + 0.05×100.0 + 0.10×75.1 = 64.6"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.83,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "생성형 AI 시스템 모니터링 및 평가",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q3",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.2,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 59.2,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×64.6(Backtest) = 59.2. 페널티 없음. 최종 = 59.2."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 64.6점. 최종 Composite Score: 59.2점.",
+    "key_failure_points": [
+      "타이밍 이슈: 멀티모달 에이전트 워크플로우 자동화의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

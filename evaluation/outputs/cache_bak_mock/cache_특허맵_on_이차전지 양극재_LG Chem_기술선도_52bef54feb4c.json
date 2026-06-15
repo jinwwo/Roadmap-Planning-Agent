@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Advanced Materials / Battery Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 4,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 61.3,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 4,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL6→completion in 2yr) and T02 (TRL5→completion in 2yr) are reasonable for process/material maturation; T03 (TRL4→completion in 4yr) is appropriately paced for an early-stage material, making all pathways broadly realistic.",
+      "strategic_fidelity": "The portfolio includes mid-to-lower TRL technologies (TRL 4-6) consistent with 기술선도, but all three selections are relatively near-market materials rather than truly exploratory frontier research, and the short 3-technology portfolio lacks the R&D-heavy depth expected of a technology leadership strategy.",
+      "competitive_awareness": "All three technologies are firmly within the Cathode/Battery Materials domain, demonstrating solid domain alignment; the selection covers nickel-rich, solid-state, and sodium-ion vectors which represent the major competitive battlegrounds in next-generation battery materials.",
+      "market_timing": "Under 기술선도, completing 1-2 years before boom is ideal; T01 completes 0.75yr after boom (slight miss), T02 completes 1.5yr after boom (significant miss for preemption), and T03 completes 1.0yr after boom — none achieve the pre-boom positioning that technology leadership demands.",
+      "patent_market_convergence": "The selected technologies (high-Ni precursor, solid-state cathode, Na-ion anode) are all active patent filing areas with growing markets, suggesting reasonable convergence awareness, but the roadmap documentation does not provide explicit evidence of deliberate convergence-zone targeting methodology."
+    },
+    "strengths": [
+      "All three technologies are strictly on-domain within battery/cathode materials, ensuring competitive relevance and leveraging existing organizational expertise",
+      "Dependency chain between T01 and T02 is logically sound — high-Ni precursor uniformization providing foundational process knowledge for solid-state cathode optimization"
+    ],
+    "weaknesses": [
+      "All technologies complete after their respective market boom windows, meaning the portfolio fails to achieve the preemptive market positioning that defines 기술선도 strategy",
+      "Portfolio is too small (3 technologies) and too concentrated in near-commercialization TRL ranges (4-6) to represent a genuine technology leadership posture — lacks truly exploratory early-stage bets"
+    ],
+    "missing_technologies": [
+      "Single-crystal cathode morphology engineering (TRL 2-3) for long-term technology leadership positioning",
+      "Lithium-sulfur or lithium-air cathode materials for next-generation beyond-lithium-ion leadership",
+      "AI-driven cathode composition discovery / high-throughput computational screening (TRL 3-4)"
+    ],
+    "investment_issues": [
+      "T03 (나트륨 이차전지 음극 소재) is classified as 'High' tier despite being an anode material — in a cathode-materials-domain company, this represents a capability stretch that may not justify Strategic-level resourcing relative to core cathode competencies",
+      "Budget is fully exhausted (0% slack) leaving no contingency for acceleration if timing corrections are needed to achieve pre-boom completion for T02 or T03",
+      "Executability scores of 2.0-3.0 across the portfolio combined with full budget utilization creates high execution risk with no financial buffer"
+    ],
+    "timing_issues": [
+      "T02 고체전지 양극 소재 최적화 completes 1.5 years after the 2028-Q3 boom — the most critical miss, as solid-state battery is the highest-value opportunity in the portfolio",
+      "T03 나트륨 이차전지 음극 소재 completes exactly 1 year after the 2029-Q1 boom, losing first-mover advantage in the sodium-ion market window",
+      "No technology in the portfolio achieves pre-boom completion, which is the defining requirement for 기술선도 timing strategy"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 (TRL6→completion in 2yr) and T02 (TRL5→completion in 2yr) are reasonable for process/material maturation; T03 (TRL4→completion in 4yr) is appropriately paced for an early-stage material, making all pathways broadly realistic.",
+      "strategic_fidelity": "score 3/5 - The portfolio includes mid-to-lower TRL technologies (TRL 4-6) consistent with 기술선도, but all three selections are relatively near-market materials rather than truly exploratory frontier research, and the short 3-technology portfolio lacks the R&D-heavy depth expected of a technology leadership strategy.",
+      "competitive_awareness": "score 4/5 - All three technologies are firmly within the Cathode/Battery Materials domain, demonstrating solid domain alignment; the selection covers nickel-rich, solid-state, and sodium-ion vectors which represent the major competitive battlegrounds in next-generation battery materials.",
+      "market_timing": "score 3/5 - Under 기술선도, completing 1-2 years before boom is ideal; T01 completes 0.75yr after boom (slight miss), T02 completes 1.5yr after boom (significant miss for preemption), and T03 completes 1.0yr after boom — none achieve the pre-boom positioning that technology leadership demands.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (high-Ni precursor, solid-state cathode, Na-ion anode) are all active patent filing areas with growing markets, suggesting reasonable convergence awareness, but the roadmap documentation does not provide explicit evidence of deliberate convergence-zone targeting methodology.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×4 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 61.3"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 전구체 균일화",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7517,
+        "market_size_norm": 0.5867,
+        "value": 0.4015,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.028
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고체전지 양극 소재 최적화",
+        "patent_growth_norm": 0.6722,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8689,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.875,
+        "cost_adjusted_return": 0.7713
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "나트륨 이차전지 음극 소재",
+        "patent_growth_norm": 0.5188,
+        "market_growth_norm": 0.8142,
+        "market_size_norm": 0.9305,
+        "value": 0.7309,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5,
+        "cost_adjusted_return": 0.2117
+      }
+    ],
+    "selection_quality": 66.7,
+    "cost_adjusted_return": 58.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 67.6,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 73.1,
+    "backtest_score_v1": 70.4,
+    "description": {
+      "selection_quality": "66.7/100 — 3개 기술 평균 value=0.667\n  ▲ 고체전지 양극 소재 최적화: value=0.869 (특허↑=0.67, 시장↑=1.00, 규모=1.00)\n  ▲ 나트륨 이차전지 음극 소재: value=0.731 (특허↑=0.52, 시장↑=0.81, 규모=0.93)\n  ▼ 고니켈 양극 전구체 균일화: value=0.402 (특허↑=0.00, 시장↑=0.75, 규모=0.59)",
+      "cost_adjusted_return": "58.0/100 — 평균 return=0.318\n  고체전지 양극 소재 최적화: 순이익(log)=+0.771 [Strategic]\n  나트륨 이차전지 음극 소재: 순이익(log)=+0.212 [High]\n  고니켈 양극 전구체 균일화: 순이익(log)=-0.028 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "67.6/100 — 평균 오차 1.08년\n  고체전지 양극 소재 최적화: 1.5년 늦음 ⚠\n  나트륨 이차전지 음극 소재: 1.0년 늦음\n  고니켈 양극 전구체 균일화: 0.8년 늦음",
+      "formula": "backtest_score = 0.25×66.7(기술선택) + 0.25×58.0(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×67.6(타이밍) = 73.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.08,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극 전구체 균일화",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "고체전지 양극 소재 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "나트륨 이차전지 음극 소재",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 68.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "total_penalty": 0.4,
+    "final_composite_score": 68.0,
+    "description": "pre_penalty = 0.4×61.3(LLM) + 0.6×73.1(Backtest) = 68.4. Penalty: timing_error: -0.4pt. 총 -0.4pt. 최종 = 68.0."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 61.3점, Backtest 경제성 평가 73.1점. 제약 위반으로 0.4점 차감. 최종 Composite Score: 68.0점.",
+    "key_failure_points": [
+      "타이밍 이슈: 고체전지 양극 소재 최적화의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

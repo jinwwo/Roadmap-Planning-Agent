@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Functional Materials",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 4,
+    "competitive_awareness": 4,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 4,
+        "competitive_awareness": 4,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are plausible (e.g., TRL 6→target over 2-3 years for High Nickel, TRL 4 Solid State Electrolytes over ~3 years), but the dependency violations mean Solid State Electrolytes starts before its prerequisites are complete, making its TRL pathway structurally impossible as planned. AI-driven Material Discovery at TRL 3 with a 2-year development window is aggressive but defensible for a 기술선도 strategy.",
+      "strategic_fidelity": "The portfolio is well-aligned with 기술선도: it includes low-TRL exploratory technologies (AI-driven Material Discovery at TRL 3, Solid State Electrolytes at TRL 4), longer development timelines, and R&D-heavy selections. However, all seven technologies are assigned the same Tier=High investment with identical scores, suggesting a lack of strategic prioritization rather than a nuanced leadership-oriented allocation.",
+      "competitive_awareness": "All selected technologies are firmly within the Cathode Materials / Functional Materials domain (battery materials, electrode processes, packaging, testing), showing strong domain fit. The inclusion of AI-driven Material Discovery as a differentiator and the dependency chain building toward next-generation solid-state batteries suggests awareness of competitive technology directions, though explicit competitor gap analysis is not evident.",
+      "market_timing": "High-Throughput Battery Testing misses its boom window by 3.5 years (completing 2030-Q4 vs boom 2027-Q2), Advanced Battery Packaging misses by 1.5 years, Silicon Anode Materials by 1.25 years, and High Nickel Cathode Materials by 1.0 year. For 기술선도, completions 1-2 years before boom are ideal, but most completions occur after the boom, which is penalized under any strategy. Only Solid State Electrolytes and Dry Electrode Coating are well-timed.",
+      "patent_market_convergence": "The portfolio covers established high-patent-activity areas (solid-state electrolytes, silicon anodes, high-nickel cathodes) alongside growing market segments, suggesting some awareness of convergence zones. However, the uniform scoring across all technologies (market_opp=4.0 for all) does not differentiate based on actual patent-market convergence strength, indicating the selections may reflect general industry trends rather than deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Strong domain coherence — all seven technologies are firmly within the battery/cathode materials domain, ensuring competitive relevance and leverageable core competencies.",
+      "Inclusion of exploratory, low-TRL technologies (AI-driven Material Discovery, Solid State Electrolytes) appropriately reflects the 기술선도 strategic direction with a forward-looking, R&D-oriented portfolio."
+    ],
+    "weaknesses": [
+      "Critical dependency violations: Solid State Electrolytes is scheduled to start in 2026-Q2 but depends on S01 (completing 2028-Q4) and S03 (completing 2029-Q4), making this development plan structurally incoherent.",
+      "High-Throughput Battery Testing misses its market boom by 3.5 years, representing a major timing failure that will result in missed competitive window and reduced ROI for the highest-TRL technology in the portfolio."
+    ],
+    "missing_technologies": [
+      "Lithium Metal Anode stabilization (complementary to solid-state electrolytes pathway)",
+      "Thermal management materials for next-gen battery packs (bridges packaging and materials domain gap)"
+    ],
+    "investment_issues": [
+      "All seven technologies are assigned identical Tier=High investment with exactly the same scores across all dimensions (4.0/5.0/4.0/3.0/4.0), which is unrealistic and suggests a lack of genuine portfolio prioritization — a 기술선도 strategy should differentiate investment based on exploratory vs. near-market technology positioning.",
+      "High-Throughput Battery Testing at TRL 7 (most mature technology, 3.5-year timing miss) receiving the same Tier=High allocation as exploratory TRL 3 AI-driven Material Discovery represents a misallocation of R&D resources."
+    ],
+    "timing_issues": [
+      "High-Throughput Battery Testing (TRL 7) completes 3.5 years after its 2027-Q2 market boom — given its high TRL, this should be accelerated or deprioritized in favor of earlier-stage technologies.",
+      "Advanced Battery Packaging completes 1.5 years after its boom window, and its start date depends on Solid State Electrolytes which itself has unresolved dependency violations, compounding the delay risk.",
+      "Solid State Electrolytes dependency chain is circular/premature: it starts before its prerequisites (S01, S03) are completed, requiring a full schedule restructuring."
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - Most TRL progressions are plausible (e.g., TRL 6→target over 2-3 years for High Nickel, TRL 4 Solid State Electrolytes over ~3 years), but the dependency violations mean Solid State Electrolytes starts before its prerequisites are complete, making its TRL pathway structurally impossible as planned. AI-driven Material Discovery at TRL 3 with a 2-year development window is aggressive but defensible for a 기술선도 strategy.",
+      "strategic_fidelity": "score 4/5 - The portfolio is well-aligned with 기술선도: it includes low-TRL exploratory technologies (AI-driven Material Discovery at TRL 3, Solid State Electrolytes at TRL 4), longer development timelines, and R&D-heavy selections. However, all seven technologies are assigned the same Tier=High investment with identical scores, suggesting a lack of strategic prioritization rather than a nuanced leadership-oriented allocation.",
+      "competitive_awareness": "score 4/5 - All selected technologies are firmly within the Cathode Materials / Functional Materials domain (battery materials, electrode processes, packaging, testing), showing strong domain fit. The inclusion of AI-driven Material Discovery as a differentiator and the dependency chain building toward next-generation solid-state batteries suggests awareness of competitive technology directions, though explicit competitor gap analysis is not evident.",
+      "market_timing": "score 2/5 - High-Throughput Battery Testing misses its boom window by 3.5 years (completing 2030-Q4 vs boom 2027-Q2), Advanced Battery Packaging misses by 1.5 years, Silicon Anode Materials by 1.25 years, and High Nickel Cathode Materials by 1.0 year. For 기술선도, completions 1-2 years before boom are ideal, but most completions occur after the boom, which is penalized under any strategy. Only Solid State Electrolytes and Dry Electrode Coating are well-timed.",
+      "patent_market_convergence": "score 3/5 - The portfolio covers established high-patent-activity areas (solid-state electrolytes, silicon anodes, high-nickel cathodes) alongside growing market segments, suggesting some awareness of convergence zones. However, the uniform scoring across all technologies (market_opp=4.0 for all) does not differentiate based on actual patent-market convergence strength, indicating the selections may reflect general industry trends rather than deliberate convergence-zone targeting.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×4 + 0.2×4 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 3,
+      "investment": 5,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 75.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High Nickel Cathode Materials",
+        "patent_growth_norm": 0.5714,
+        "market_growth_norm": 0.7325,
+        "market_size_norm": 0.5413,
+        "value": 0.6107,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.857,
+        "cost_adjusted_return": -0.0022
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8505,
+        "market_size_norm": 0.0,
+        "value": 0.2551,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7117,
+        "cost_adjusted_return": -0.0019
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Dry Electrode Coating",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8183,
+        "market_size_norm": 0.3069,
+        "value": 0.3376,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.501,
+        "cost_adjusted_return": -0.0013
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Battery Packaging",
+        "patent_growth_norm": 0.2857,
+        "market_growth_norm": 0.7277,
+        "market_size_norm": 0.546,
+        "value": 0.4964,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.0026
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Silicon Anode Materials",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8183,
+        "market_size_norm": 0.3069,
+        "value": 0.3376,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7929,
+        "cost_adjusted_return": -0.0021
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8521,
+        "market_size_norm": 0.8108,
+        "value": 0.4989,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.348,
+        "cost_adjusted_return": -0.0009
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "High-Throughput Battery Testing",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7325,
+        "market_size_norm": 0.5413,
+        "value": 0.3821,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.2715,
+        "cost_adjusted_return": -0.0007
+      }
+    ],
+    "selection_quality": 41.7,
+    "cost_adjusted_return": 50.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 60,
+    "timing_accuracy_score": 65.8,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 62.4,
+    "backtest_score_v1": 54.7,
+    "description": {
+      "selection_quality": "41.7/100 — 7개 기술 평균 value=0.417\n  ▲ High Nickel Cathode Materials: value=0.611 (특허↑=0.57, 시장↑=0.73, 규모=0.54)\n  ▲ AI-driven Material Discovery: value=0.499 (특허↑=0.00, 시장↑=0.85, 규모=0.81)\n  ▲ Advanced Battery Packaging: value=0.496 (특허↑=0.29, 시장↑=0.73, 규모=0.55)\n  ▼ High-Throughput Battery Testing: value=0.382 (특허↑=0.00, 시장↑=0.73, 규모=0.54)\n  ▼ Dry Electrode Coating: value=0.338 (특허↑=0.00, 시장↑=0.82, 규모=0.31)\n  ▼ Silicon Anode Materials: value=0.338 (특허↑=0.00, 시장↑=0.82, 규모=0.31)\n  ▼ Solid State Electrolytes: value=0.255 (특허↑=0.00, 시장↑=0.85, 규모=0.00)\n  [낮은 원인]\n  → Solid State Electrolytes: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "50.0/100 — 평균 return=-0.002\n  High-Throughput Battery Testing: 순이익(log)=-0.001 [High] ⚠ 과다투자\n  AI-driven Material Discovery: 순이익(log)=-0.001 [High]\n  Dry Electrode Coating: 순이익(log)=-0.001 [High] ⚠ 과다투자\n  Solid State Electrolytes: 순이익(log)=-0.002 [High] ⚠ 과다투자\n  Silicon Anode Materials: 순이익(log)=-0.002 [High] ⚠ 과다투자\n  High Nickel Cathode Materials: 순이익(log)=-0.002 [High]\n  Advanced Battery Packaging: 순이익(log)=-0.003 [High]\n  [과다투자 진단]\n  → Solid State Electrolytes: value 0.255인데 High tier\n  → Dry Electrode Coating: value 0.338인데 High tier\n  → Silicon Anode Materials: value 0.338인데 High tier\n  → High-Throughput Battery Testing: value 0.382인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "60.0/100 — 위반 2건 (1건당 -20점)\n  ⚠ Solid State Electrolytes: 선행 S01 완료 전 시작 (gap: -10.0Q)\n  ⚠ Solid State Electrolytes: 선행 S03 완료 전 시작 (gap: -14.0Q)",
+      "timing_accuracy": "65.8/100 — 평균 오차 1.14년\n  High-Throughput Battery Testing: 3.5년 늦음 ⚠\n  Advanced Battery Packaging: 1.5년 늦음 ⚠\n  Silicon Anode Materials: 1.2년 늦음 ⚠\n  High Nickel Cathode Materials: 1.0년 늦음\n  AI-driven Material Discovery: 0.8년 늦음\n  Solid State Electrolytes: 0.0년 이름\n  Dry Electrode Coating: 0.0년 이름",
+      "formula": "backtest_score = 0.25×41.7(기술선택) + 0.25×50.0(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×60.0(의존성) + 0.25×65.8(타이밍) = 62.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 2,
+    "dependency_details": [
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "prerequisite": "S01",
+        "tech_start": "2026-Q2",
+        "prereq_end": "~2028.75",
+        "gap_quarters": -10.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "prerequisite": "S03",
+        "tech_start": "2026-Q2",
+        "prereq_end": "~2029.75",
+        "gap_quarters": -14.0
+      }
+    ],
+    "mean_timing_error_years": 1.14,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High Nickel Cathode Materials",
+        "target_q": "2028-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Solid State Electrolytes",
+        "target_q": "2029-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Dry Electrode Coating",
+        "target_q": "2027-Q3",
+        "boom_q": "2027-Q3",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Battery Packaging",
+        "target_q": "2029-Q4",
+        "boom_q": "2028-Q2",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Silicon Anode Materials",
+        "target_q": "2029-Q4",
+        "boom_q": "2028-Q3",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "AI-driven Material Discovery",
+        "target_q": "2030-Q4",
+        "boom_q": "2030-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "High-Throughput Battery Testing",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q2",
+        "error_years": 3.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.9,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      },
+      {
+        "type": "timing_error",
+        "amount": 0.7
+      }
+    ],
+    "total_penalty": 6.7,
+    "final_composite_score": 53.2,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×62.4(Backtest) = 59.9. Penalty: dependency_violation: -6.0pt, timing_error: -0.7pt. 총 -6.7pt. 최종 = 53.2."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 62.4점. 제약 위반으로 6.7점 차감. 최종 Composite Score: 53.2점.",
+    "key_failure_points": [
+      "의존성 위반: Solid State Electrolytes이 선행기술 S01 완료 전에 시작 (gap: -10.0Q)",
+      "의존성 위반: Solid State Electrolytes이 선행기술 S03 완료 전에 시작 (gap: -14.0Q)",
+      "타이밍 이슈: Advanced Battery Packaging의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: Silicon Anode Materials의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: High-Throughput Battery Testing의 완료시점이 시장 개화 대비 3.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

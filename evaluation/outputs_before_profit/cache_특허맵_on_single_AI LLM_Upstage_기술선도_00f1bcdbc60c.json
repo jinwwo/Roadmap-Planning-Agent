@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Foundation Model / Document AI / LLM",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 33.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "HBM4 Memory Integration jumps from TRL 3 to deployment-ready in only 3 quarters (2026-Q1 to 2026-Q4), which is highly unrealistic for a materials-level technology; similarly, Optical Interconnects for AI at TRL 2 is scheduled to complete in ~9 quarters, which is aggressive but marginally more defensible, yet the circular dependency between S05 and S06 renders both pathways structurally broken.",
+      "strategic_fidelity": "The portfolio does include lower-TRL exploratory technologies (TRL 2-4) consistent with 기술선도, and the domain focus on hardware acceleration aligns with a leadership posture; however, Mixed-Precision Training & Inference at TRL 6 is a near-mature process technology that contradicts early-stage leadership positioning, and the uniform High-tier investment across all technologies suggests a lack of strategic prioritization rather than deliberate R&D-heavy focus.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing strategies designed to preempt rivals; technology selections appear driven by domain relevance rather than identified competitive gaps, and the roadmap does not articulate any first-mover or IP-acquisition logic relative to the competitive landscape.",
+      "market_timing": "For 기술선도, completion 1-2 years before market boom is ideal, but results are mixed: HBM4 completes 2 years early (acceptable), Chiplet and Energy-Efficient AI Accelerator are slightly early (acceptable), but Mixed-Precision Training & Inference completes 3.25 years after its boom (severely late), and AI-Optimized Networking Fabric misses by 1.75 years post-boom, representing systematic late arrivals for several key technologies.",
+      "patent_market_convergence": "The selected technologies (HBM4, Chiplet, 3D stacking, optical interconnects) are all active patent filing areas aligned with growing AI hardware markets, suggesting some awareness of convergence zones; however, the uniform scoring (market_opp=4.0, strategic_fit=5.0 for all) and inclusion of Mixed-Precision Training & Inference — a maturing process technology with a 2027 boom — suggests convergence selection may be coincidental rather than deliberately optimized."
+    },
+    "strengths": [
+      "Portfolio includes genuinely early-stage technologies (TRL 2-4) such as Optical Interconnects and HBM4 that are appropriate for a technology leadership strategy",
+      "Budget is fully utilized without overspending, indicating disciplined financial planning within stated constraints"
+    ],
+    "weaknesses": [
+      "Critical circular dependency between S05 (AI-Optimized Networking Fabric) and S06 (Optical Interconnects for AI) makes both technologies structurally undeliverable as planned, representing a fundamental roadmap integrity failure",
+      "Mixed-Precision Training & Inference (TRL 6, boom 2027-Q3) completes in 2030-Q4 — 3.25 years after market peak — wasting High-tier investment on a late-to-market mature technology"
+    ],
+    "missing_technologies": [
+      "Neuromorphic computing or in-memory computing architectures (low-TRL, high patent activity, strategic for leadership)",
+      "Photonic AI chips or silicon photonics integration (complementary to optical interconnects, earlier TRL exploration needed)",
+      "Large-scale sparse model training frameworks (LLM-domain specific, aligns with foundation model focus declared in domain)"
+    ],
+    "investment_issues": [
+      "All 7 technologies are assigned identical High-tier investment with identical scores (market_opp=4.0, strategic_fit=5.0, executability=4.0, uncertainty=3.0, urgency=4.0), indicating a lack of genuine portfolio differentiation and risk-weighted allocation",
+      "Optical Interconnects for AI (TRL 2) and AI-Optimized Networking Fabric receive High-tier investment despite their circular dependency making both currently unexecutable, representing misallocated capital",
+      "Mixed-Precision Training & Inference at TRL 6 with a passed boom window receives the same High investment tier as frontier TRL 2-3 technologies, misaligning investment intensity with strategic and temporal value"
+    ],
+    "timing_issues": [
+      "HBM4 Memory Integration completes 2 full years before its market boom (2026-Q4 vs 2028-Q4), risking technology obsolescence or premature commercialization pressure before market readiness",
+      "Mixed-Precision Training & Inference misses its 2027-Q3 boom by 3.25 years, arriving in 2030-Q4 when the market window has long closed",
+      "AI-Optimized Networking Fabric cannot start meaningfully until S06 is complete (~2030-Q4), yet is scheduled to start in 2028-Q1, making its 2030-Q4 completion date impossible given the dependency violation"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - HBM4 Memory Integration jumps from TRL 3 to deployment-ready in only 3 quarters (2026-Q1 to 2026-Q4), which is highly unrealistic for a materials-level technology; similarly, Optical Interconnects for AI at TRL 2 is scheduled to complete in ~9 quarters, which is aggressive but marginally more defensible, yet the circular dependency between S05 and S06 renders both pathways structurally broken.",
+      "strategic_fidelity": "score 3/5 - The portfolio does include lower-TRL exploratory technologies (TRL 2-4) consistent with 기술선도, and the domain focus on hardware acceleration aligns with a leadership posture; however, Mixed-Precision Training & Inference at TRL 6 is a near-mature process technology that contradicts early-stage leadership positioning, and the uniform High-tier investment across all technologies suggests a lack of strategic prioritization rather than deliberate R&D-heavy focus.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence of competitor positioning, differentiation rationale, or timing strategies designed to preempt rivals; technology selections appear driven by domain relevance rather than identified competitive gaps, and the roadmap does not articulate any first-mover or IP-acquisition logic relative to the competitive landscape.",
+      "market_timing": "score 2/5 - For 기술선도, completion 1-2 years before market boom is ideal, but results are mixed: HBM4 completes 2 years early (acceptable), Chiplet and Energy-Efficient AI Accelerator are slightly early (acceptable), but Mixed-Precision Training & Inference completes 3.25 years after its boom (severely late), and AI-Optimized Networking Fabric misses by 1.75 years post-boom, representing systematic late arrivals for several key technologies.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (HBM4, Chiplet, 3D stacking, optical interconnects) are all active patent filing areas aligned with growing AI hardware markets, suggesting some awareness of convergence zones; however, the uniform scoring (market_opp=4.0, strategic_fit=5.0 for all) and inclusion of Mixed-Precision Training & Inference — a maturing process technology with a 2027 boom — suggests convergence selection may be coincidental rather than deliberately optimized.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 33.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 3,
+      "investment": 2,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 52.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "HBM4 Memory Integration",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8686,
+        "cost_adjusted_return": 0.0023
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Fabric",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7721,
+        "cost_adjusted_return": 0.4168
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy-Efficient AI Accelerator",
+        "patent_growth_norm": 0.525,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3426,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.875,
+        "cost_adjusted_return": 0.2113
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "3D Chip Stacking with Advanced Cooling",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.0174
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "AI-Optimized Networking Fabric",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3906,
+        "cost_adjusted_return": 0.074
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Optical Interconnects for AI",
+        "patent_growth_norm": 0.2519,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.2334,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3255,
+        "cost_adjusted_return": 0.1845
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Mixed-Precision Training & Inference",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.4557,
+        "cost_adjusted_return": 0.0642
+      }
+    ],
+    "selection_quality": 23.4,
+    "cost_adjusted_return": 13.4,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 60,
+    "timing_accuracy_score": 56.2,
+    "backtest_score": 46.2,
+    "backtest_score_v1": 34.5,
+    "description": {
+      "selection_quality": "23.4/100 — 7개 기술 평균 value=0.234\n  ▲ Chiplet Interconnect Fabric: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ Energy-Efficient AI Accelerator: value=0.343 (특허↑=0.53, 시장↑=0.44, 규모=0.00)\n  ▼ Optical Interconnects for AI: value=0.233 (특허↑=0.25, 시장↑=0.44, 규모=0.00)\n  ▼ HBM4 Memory Integration: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  ▼ 3D Chip Stacking with Advanced Cooling: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  ▼ AI-Optimized Networking Fabric: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  ▼ Mixed-Precision Training & Inference: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → HBM4 Memory Integration: 특허 성장률 낮음 (norm=0.00)\n  → 3D Chip Stacking with Advanced Cooling: 특허 성장률 낮음 (norm=0.00)\n  → AI-Optimized Networking Fabric: 특허 성장률 낮음 (norm=0.00)\n  → Optical Interconnects for AI: 특허 성장률 낮음 (norm=0.25)\n  → Mixed-Precision Training & Inference: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "13.4/100 — 평균 return=0.134\n  Chiplet Interconnect Fabric: value=0.533 - 0.15×0.67(cost) = return +0.417 [High]\n  Energy-Efficient AI Accelerator: value=0.343 - 0.15×0.67(cost) = return +0.211 [High] ⚠ 과다투자\n  Optical Interconnects for AI: value=0.233 - 0.15×0.67(cost) = return +0.184 [High] ⚠ 과다투자\n  AI-Optimized Networking Fabric: value=0.133 - 0.15×0.67(cost) = return +0.074 [High] ⚠ 과다투자\n  Mixed-Precision Training & Inference: value=0.133 - 0.15×0.67(cost) = return +0.064 [High] ⚠ 과다투자\n  HBM4 Memory Integration: value=0.133 - 0.15×0.67(cost) = return +0.002 [High] ⚠ 과다투자\n  3D Chip Stacking with Advanced Cooling: value=0.133 - 0.15×0.67(cost) = return -0.017 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → HBM4 Memory Integration: value 0.133인데 High tier\n  → Energy-Efficient AI Accelerator: value 0.343인데 High tier\n  → 3D Chip Stacking with Advanced Cooling: value 0.133인데 High tier\n  → AI-Optimized Networking Fabric: value 0.133인데 High tier\n  → Optical Interconnects for AI: value 0.233인데 High tier\n  → Mixed-Precision Training & Inference: value 0.133인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "60.0/100 — 위반 2건 (1건당 -20점)\n  ⚠ AI-Optimized Networking Fabric: 선행 S06 완료 전 시작 (gap: -11.0Q)\n  ⚠ Optical Interconnects for AI: 선행 S05 완료 전 시작 (gap: -9.0Q)",
+      "timing_accuracy": "56.2/100 — 평균 오차 1.46년\n  Mixed-Precision Training & Inference: 3.2년 늦음 ⚠\n  HBM4 Memory Integration: 2.0년 이름 ⚠\n  AI-Optimized Networking Fabric: 1.8년 늦음 ⚠\n  3D Chip Stacking with Advanced Cooling: 1.2년 늦음 ⚠\n  Energy-Efficient AI Accelerator: 0.8년 이름\n  Optical Interconnects for AI: 0.8년 늦음\n  Chiplet Interconnect Fabric: 0.5년 이름",
+      "formula": "backtest_score = 0.35×23.4 + 0.35×13.4 + 0.05×100.0 + 0.05×60.0 + 0.10×56.2 = 46.2"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 2,
+    "dependency_details": [
+      {
+        "tech_id": "S05",
+        "tech_name": "AI-Optimized Networking Fabric",
+        "prerequisite": "S06",
+        "tech_start": "2028-Q1",
+        "prereq_end": "~2030.75",
+        "gap_quarters": -11.0
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Optical Interconnects for AI",
+        "prerequisite": "S05",
+        "tech_start": "2028-Q3",
+        "prereq_end": "~2030.75",
+        "gap_quarters": -9.0
+      }
+    ],
+    "mean_timing_error_years": 1.46,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "HBM4 Memory Integration",
+        "target_q": "2026-Q4",
+        "boom_q": "2028-Q4",
+        "error_years": -2.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Fabric",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q4",
+        "error_years": -0.5
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy-Efficient AI Accelerator",
+        "target_q": "2027-Q3",
+        "boom_q": "2028-Q2",
+        "error_years": -0.75
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "3D Chip Stacking with Advanced Cooling",
+        "target_q": "2029-Q4",
+        "boom_q": "2028-Q3",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "AI-Optimized Networking Fabric",
+        "target_q": "2030-Q4",
+        "boom_q": "2029-Q1",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Optical Interconnects for AI",
+        "target_q": "2030-Q4",
+        "boom_q": "2030-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Mixed-Precision Training & Inference",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q3",
+        "error_years": 3.25
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 41.2,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      },
+      {
+        "type": "timing_error",
+        "amount": 2.3
+      }
+    ],
+    "total_penalty": 8.3,
+    "final_composite_score": 32.9,
+    "description": "pre_penalty = 0.4×33.7(LLM) + 0.6×46.2(Backtest) = 41.2. Penalty: dependency_violation: -6.0pt, timing_error: -2.3pt. 총 -8.3pt. 최종 = 32.9.\n  [진단] LLM 구조 점수(33.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest 점수(46.2)가 낮음 → 기술 선택 또는 투자 배분 재검토."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 33.7점, Backtest 경제성 평가 46.2점. 제약 위반으로 8.3점 차감. 최종 Composite Score: 32.9점.",
+    "key_failure_points": [
+      "의존성 위반: AI-Optimized Networking Fabric이 선행기술 S06 완료 전에 시작 (gap: -11.0Q)",
+      "의존성 위반: Optical Interconnects for AI이 선행기술 S05 완료 전에 시작 (gap: -9.0Q)",
+      "타이밍 이슈: HBM4 Memory Integration의 완료시점이 시장 개화 대비 -2.0년 차이",
+      "타이밍 이슈: 3D Chip Stacking with Advanced Cooling의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: AI-Optimized Networking Fabric의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: Mixed-Precision Training & Inference의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

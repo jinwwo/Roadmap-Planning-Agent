@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / EV",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 4,
+    "competitive_awareness": 3,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 62.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 4,
+        "competitive_awareness": 3,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are largely realistic: T02 (TRL5→target over 2 years), T04 (TRL6→target over 2 years starting after T02 completes), T05 (TRL5 over 3 years), and T06 (TRL4 over 3 years) all fall within acceptable industry norms for automotive/EV development cycles, with no egregious jumps.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory technologies (T06 at TRL4, T05 at TRL5) and longer development timelines consistent with 기술선도 strategy; however, two technologies (T02, T04) are relatively high-TRL and commercially oriented, slightly diluting the pure technology-leadership posture.",
+      "competitive_awareness": "The selection of asymmetric autonomous computing architecture (T06) and autonomous charging docking (T05) suggests awareness of emerging differentiation opportunities in the EV/mobility space, but there is no explicit articulation of competitor positioning, technology gaps being exploited, or timing advantages designed relative to known competitors.",
+      "market_timing": "For 기술선도, completing 1-2 years before the boom is ideal; T02 completes 1.25yr late relative to boom, T04 completes 2.5yr late, T05 completes 0.75yr late (acceptable), and T06 completes 1yr late — the pattern shows most technologies finishing after rather than before the market boom, which is misaligned with preemptive technology leadership intent.",
+      "patent_market_convergence": "The selected technologies (high-capacity cathode materials, BMS, autonomous charging docking, asymmetric computing) represent domains with both active patent filings and growing market signals in the EV sector, suggesting some convergence awareness, but the roadmap does not explicitly demonstrate deliberate targeting of patent-market convergence zones."
+    },
+    "strengths": [
+      "Dependency sequencing is correctly structured — T04 (BMS) starts only after T02 (cathode materials) completes, respecting the declared prerequisite chain with zero violations.",
+      "Portfolio spans both hardware/material layers (T02, T04) and systems/architecture layers (T05, T06), providing a multi-level technology leadership position in the EV ecosystem."
+    ],
+    "weaknesses": [
+      "T04 (고정밀 BMS) completes 2.5 years after its market boom window (2027-Q3 vs 2030-Q1 completion), severely undermining the technology leadership preemption rationale.",
+      "The overall mean timing error of 1.38 years with most technologies completing after — not before — their boom windows contradicts the preemptive nature of 기술선도 strategy."
+    ],
+    "missing_technologies": [
+      "전고체 배터리 (Solid-State Battery) — a hallmark 기술선도 technology with lower TRL and high long-term differentiation potential in the EV domain",
+      "차세대 전력반도체 (SiC/GaN power semiconductors) — critical enabling layer for both BMS and autonomous charging with strong patent activity"
+    ],
+    "investment_issues": [
+      "T04 (BMS) receives Strategic tier investment despite a 2.5-year post-boom completion — the capital allocation does not reflect the diminished strategic window value at time of delivery.",
+      "Budget utilization shows 0 spent against 18.4B total, suggesting the investment plan may be notional rather than operationally committed, raising execution credibility concerns."
+    ],
+    "timing_issues": [
+      "고정밀 BMS (T04) is scheduled to complete in 2030-Q1, a full 2.5 years after the 2027-Q3 market boom — this is the most critical timing failure and may render the investment commercially irrelevant.",
+      "고용량 양극 활물질 합성 (T02) completes 1.25 years after the 2026-Q4 boom; accelerating the start date or compressing the timeline would better serve technology leadership positioning."
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are largely realistic: T02 (TRL5→target over 2 years), T04 (TRL6→target over 2 years starting after T02 completes), T05 (TRL5 over 3 years), and T06 (TRL4 over 3 years) all fall within acceptable industry norms for automotive/EV development cycles, with no egregious jumps.",
+      "strategic_fidelity": "score 4/5 - The portfolio includes lower-TRL exploratory technologies (T06 at TRL4, T05 at TRL5) and longer development timelines consistent with 기술선도 strategy; however, two technologies (T02, T04) are relatively high-TRL and commercially oriented, slightly diluting the pure technology-leadership posture.",
+      "competitive_awareness": "score 3/5 - The selection of asymmetric autonomous computing architecture (T06) and autonomous charging docking (T05) suggests awareness of emerging differentiation opportunities in the EV/mobility space, but there is no explicit articulation of competitor positioning, technology gaps being exploited, or timing advantages designed relative to known competitors.",
+      "market_timing": "score 3/5 - For 기술선도, completing 1-2 years before the boom is ideal; T02 completes 1.25yr late relative to boom, T04 completes 2.5yr late, T05 completes 0.75yr late (acceptable), and T06 completes 1yr late — the pattern shows most technologies finishing after rather than before the market boom, which is misaligned with preemptive technology leadership intent.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (high-capacity cathode materials, BMS, autonomous charging docking, asymmetric computing) represent domains with both active patent filings and growing market signals in the EV sector, suggesting some convergence awareness, but the roadmap does not explicitly demonstrate deliberate targeting of patent-market convergence zones.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×4 + 0.2×3 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 62.5"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "고용량 양극 활물질 합성",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.15
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "고정밀 배터리 관리 시스템 (BMS)",
+        "patent_growth_norm": 0.1063,
+        "market_growth_norm": 0.8861,
+        "market_size_norm": 0.9311,
+        "value": 0.5877,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4377
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "자율주행 차량 자동 충전 도킹",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8281,
+        "market_size_norm": 0.9042,
+        "value": 0.9197,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.8197
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "비대칭 자율주행 컴퓨팅 아키텍처",
+        "patent_growth_norm": 0.2413,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6965,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5965
+      }
+    ],
+    "selection_quality": 55.1,
+    "cost_adjusted_return": 42.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 58.6,
+    "backtest_score": 60.3,
+    "backtest_score_v1": 60.1,
+    "description": {
+      "selection_quality": "55.1/100 — 4개 기술 평균 value=0.551\n  ▲ 자율주행 차량 자동 충전 도킹: value=0.920 (특허↑=1.00, 시장↑=0.83, 규모=0.90)\n  ▲ 비대칭 자율주행 컴퓨팅 아키텍처: value=0.697 (특허↑=0.24, 시장↑=1.00, 규모=1.00)\n  ▲ 고정밀 배터리 관리 시스템 (BMS): value=0.588 (특허↑=0.11, 시장↑=0.89, 규모=0.93)\n  ▼ 고용량 양극 활물질 합성: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 고용량 양극 활물질 합성: 특허 성장률 낮음 (norm=0.00)\n  → 고용량 양극 활물질 합성: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "42.6/100 — 평균 return=0.426\n  자율주행 차량 자동 충전 도킹: value=0.920 - 0.15×0.67(cost) = return +0.820 [High]\n  비대칭 자율주행 컴퓨팅 아키텍처: value=0.697 - 0.15×0.67(cost) = return +0.597 [High]\n  고정밀 배터리 관리 시스템 (BMS): value=0.588 - 0.15×1.00(cost) = return +0.438 [Strategic]\n  고용량 양극 활물질 합성: value=0.000 - 0.15×1.00(cost) = return -0.150 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 고용량 양극 활물질 합성: value 0.000인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "58.6/100 — 평균 오차 1.38년\n  고정밀 배터리 관리 시스템 (BMS): 2.5년 늦음 ⚠\n  고용량 양극 활물질 합성: 1.2년 늦음 ⚠\n  비대칭 자율주행 컴퓨팅 아키텍처: 1.0년 늦음\n  자율주행 차량 자동 충전 도킹: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×55.1 + 0.35×42.6 + 0.05×100.0 + 0.05×100.0 + 0.10×58.6 = 60.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.38,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "고용량 양극 활물질 합성",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "고정밀 배터리 관리 시스템 (BMS)",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "자율주행 차량 자동 충전 도킹",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "비대칭 자율주행 컴퓨팅 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 61.2,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 1.9
+      }
+    ],
+    "total_penalty": 1.9,
+    "final_composite_score": 59.3,
+    "description": "pre_penalty = 0.4×62.5(LLM) + 0.6×60.3(Backtest) = 61.2. Penalty: timing_error: -1.9pt. 총 -1.9pt. 최종 = 59.3."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 62.5점, Backtest 경제성 평가 60.3점. 제약 위반으로 1.9점 차감. 최종 Composite Score: 59.3점.",
+    "key_failure_points": [
+      "타이밍 이슈: 고용량 양극 활물질 합성의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 고정밀 배터리 관리 시스템 (BMS)의 완료시점이 시장 개화 대비 2.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

@@ -229,6 +229,8 @@ class AgentOutputAdapter:
             meta["company_type"] = pf.get("company_type", "")
             meta["objective"] = pf.get("objective", "")
             meta["strategic_priorities"] = pf.get("strategic_priorities", [])
+            meta["strategic_direction"] = pf.get("strategic_direction", [])
+            meta["company_name"] = pf.get("company_name", "")
         return meta
 
     # ─────────────────────────────────────────
@@ -277,6 +279,10 @@ class AgentOutputAdapter:
                 "expected_market_boom_quarter": self._norm_q(boom_q),
                 "dependency_hints": t.get("dependency_hints", []),
                 "keywords": self._gen_keywords(name),
+                # V4: SOM(수익가능시장) 보존 — 투자대비수익 계산용
+                "tam_sam_som": t.get("tam_sam_som", {}) or {},
+                # 실제 KIPRIS 기반 기술별 특허신호 보존 (mock holdout 대체용)
+                "patent_signals": t.get("patent_signals", {}) or {},
             }
             result.append(tech)
         return result

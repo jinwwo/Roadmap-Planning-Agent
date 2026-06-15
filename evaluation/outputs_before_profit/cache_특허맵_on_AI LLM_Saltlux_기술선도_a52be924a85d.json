@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Conversational AI / LLM / Knowledge Graph",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 33.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T04 (AI 추론 전용 프로세싱 유닛) is scheduled to start at 2030-Q1 and complete at 2030-Q1, implying zero development time from TRL 4 to completion, which is entirely infeasible; T01 (TRL 5) progresses over 8 quarters which is reasonable, but the 0-quarter window for T04 makes the overall pathway critically flawed.",
+      "strategic_fidelity": "The 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolios with longer timelines, and T04 at TRL 4 and T01 at TRL 5 partially align; however, T02 at TRL 6 is relatively mature and the portfolio of only 3 technologies is too narrow for genuine technology leadership, showing mixed strategic execution.",
+      "competitive_awareness": "The roadmap shows no explicit differentiation rationale or competitor positioning logic — technology selections appear driven by dependency chains rather than competitive gap analysis or timing advantages relative to known competitors in the LLM/knowledge graph space.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before market boom; T01 completes 0.75yr after boom (acceptable but not preemptive), T02 completes 3.25 years after its boom window (severely late), and T04 has a 0-duration development window; the systematic lateness, especially T02, significantly undermines strategic value.",
+      "patent_market_convergence": "All three technologies operate in the LLM/knowledge graph/AI hardware space where patent and market activity are known to converge, suggesting some awareness; however, with only 3 technologies and no explicit articulation of convergence zone targeting, the alignment appears partially coincidental rather than deliberately engineered."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined financial planning",
+      "Dependency ordering is correctly respected across all three technologies (T01→T02→T04)"
+    ],
+    "weaknesses": [
+      "T04 (AI 추론 전용 프로세싱 유닛) has a zero-duration development window (2030-Q1 to 2030-Q1) starting from TRL 4, making it technically impossible to execute",
+      "T02 (지식 그래프 기반 권한 인식 응답) completes 3.25 years after its market boom, severely missing its commercialization window and wasting strategic investment"
+    ],
+    "missing_technologies": [
+      "Multi-agent orchestration framework (core to the multi-agent scenario but absent)",
+      "RAG (Retrieval-Augmented Generation) pipeline technology to bridge knowledge graph and LLM layers",
+      "Federated learning or privacy-preserving AI technology for knowledge-graph-based permission systems"
+    ],
+    "investment_issues": [
+      "T04 receives 'High' tier investment despite having executability score of 2.0 and zero scheduled development time — investment will have no productive deployment",
+      "Both T01 and T02 are rated 'Strategic' tier with identical market_opp scores of 5.0, but T02's 3.25-year post-boom completion makes its strategic designation questionable",
+      "The entire portfolio is only 3 technologies, concentrating all 27M budget in a narrow dependency chain with no diversification hedge against execution failure"
+    ],
+    "timing_issues": [
+      "T02 targets 2030-Q1 completion but market boom is 2026-Q4 — a 3.25-year miss that renders the technology commercially irrelevant at launch",
+      "T04 is allocated zero development quarters (start = end = 2030-Q1) despite being at TRL 4, making the schedule physically impossible",
+      "The sequential dependency chain forces T02 and T04 into progressively later slots, creating a structural timing cascade failure"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - T04 (AI 추론 전용 프로세싱 유닛) is scheduled to start at 2030-Q1 and complete at 2030-Q1, implying zero development time from TRL 4 to completion, which is entirely infeasible; T01 (TRL 5) progresses over 8 quarters which is reasonable, but the 0-quarter window for T04 makes the overall pathway critically flawed.",
+      "strategic_fidelity": "score 3/5 - The 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolios with longer timelines, and T04 at TRL 4 and T01 at TRL 5 partially align; however, T02 at TRL 6 is relatively mature and the portfolio of only 3 technologies is too narrow for genuine technology leadership, showing mixed strategic execution.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit differentiation rationale or competitor positioning logic — technology selections appear driven by dependency chains rather than competitive gap analysis or timing advantages relative to known competitors in the LLM/knowledge graph space.",
+      "market_timing": "score 2/5 - For 기술선도 strategy, technologies should complete 1-2 years before market boom; T01 completes 0.75yr after boom (acceptable but not preemptive), T02 completes 3.25 years after its boom window (severely late), and T04 has a 0-duration development window; the systematic lateness, especially T02, significantly undermines strategic value.",
+      "patent_market_convergence": "score 3/5 - All three technologies operate in the LLM/knowledge graph/AI hardware space where patent and market activity are known to converge, suggesting some awareness; however, with only 3 technologies and no explicit articulation of convergence zone targeting, the alignment appears partially coincidental rather than deliberately engineered.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 33.7"
+    },
+    "v1_scores": {
+      "alignment": 5,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 90.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 슬라이스아웃 학습 최적화",
+        "patent_growth_norm": 0.9181,
+        "market_growth_norm": 0.9041,
+        "market_size_norm": 0.615,
+        "value": 0.823,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.673
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "지식 그래프 기반 권한 인식 응답",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8523,
+        "market_size_norm": 1.0,
+        "value": 0.5557,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.9474,
+        "cost_adjusted_return": 0.4136
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 추론 전용 프로세싱 유닛",
+        "patent_growth_norm": 0.9576,
+        "market_growth_norm": 0.9042,
+        "market_size_norm": 1.0,
+        "value": 0.9543,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8947,
+        "cost_adjusted_return": 0.8201
+      }
+    ],
+    "selection_quality": 77.8,
+    "cost_adjusted_return": 63.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 55.0,
+    "backtest_score": 74.1,
+    "backtest_score_v1": 75.0,
+    "description": {
+      "selection_quality": "77.8/100 — 3개 기술 평균 value=0.778\n  ▲ AI 추론 전용 프로세싱 유닛: value=0.954 (특허↑=0.96, 시장↑=0.90, 규모=1.00)\n  ▲ LLM 슬라이스아웃 학습 최적화: value=0.823 (특허↑=0.92, 시장↑=0.90, 규모=0.61)\n  ▼ 지식 그래프 기반 권한 인식 응답: value=0.556 (특허↑=0.00, 시장↑=0.85, 규모=1.00)",
+      "cost_adjusted_return": "63.6/100 — 평균 return=0.636\n  AI 추론 전용 프로세싱 유닛: value=0.954 - 0.15×0.67(cost) = return +0.820 [High]\n  LLM 슬라이스아웃 학습 최적화: value=0.823 - 0.15×1.00(cost) = return +0.673 [Strategic]\n  지식 그래프 기반 권한 인식 응답: value=0.556 - 0.15×1.00(cost) = return +0.414 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "55.0/100 — 평균 오차 1.50년\n  지식 그래프 기반 권한 인식 응답: 3.2년 늦음 ⚠\n  LLM 슬라이스아웃 학습 최적화: 0.8년 늦음\n  AI 추론 전용 프로세싱 유닛: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×77.8 + 0.35×63.6 + 0.05×100.0 + 0.05×100.0 + 0.10×55.0 = 74.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.5,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "LLM 슬라이스아웃 학습 최적화",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "지식 그래프 기반 권한 인식 응답",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 추론 전용 프로세싱 유닛",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q3",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 57.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "total_penalty": 2.5,
+    "final_composite_score": 55.4,
+    "description": "pre_penalty = 0.4×33.7(LLM) + 0.6×74.1(Backtest) = 57.9. Penalty: timing_error: -2.5pt. 총 -2.5pt. 최종 = 55.4.\n  [진단] LLM 구조 점수(33.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(74.1)가 LLM(33.7)보다 40.4pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 33.7점, Backtest 경제성 평가 74.1점. 제약 위반으로 2.5점 차감. 최종 Composite Score: 55.4점.",
+    "key_failure_points": [
+      "타이밍 이슈: 지식 그래프 기반 권한 인식 응답의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

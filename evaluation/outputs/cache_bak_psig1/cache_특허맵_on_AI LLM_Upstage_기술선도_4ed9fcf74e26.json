@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Foundation Model / Document AI / LLM",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 4,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 50.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 4,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T06 (TRL 7) and T02 (TRL 6) have realistic progressions given 1-2 year windows, but T03 (TRL 4) is allocated only a single quarter (2030-Q1 to 2030-Q1) — essentially zero development time — making its completion entirely infeasible; T01 (TRL 5) progresses to deployment in 1 year which is aggressive but marginally acceptable.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for an R&D-heavy, exploratory portfolio with lower-TRL technologies, yet the portfolio is anchored by TRL 7 and TRL 6 technologies (T06, T02) that are already near-market; only T03 (TRL 4) represents true frontier exploration, creating a mixed signal between leadership intent and execution.",
+      "competitive_awareness": "All four technologies are firmly within the Foundation Model / Document AI / LLM domain — document extraction, relational modeling, multimodal agent workflows, and efficient transformer training are all core competencies; the dependency chain also shows coherent vertical integration thinking appropriate for competitive positioning.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before the market boom; T01 (멀티모달 에이전트 워크플로우 자동화) finishes 2.75 years after its boom window (2027-Q2 vs 2030-Q1), representing a critical missed opportunity; T02 also completes 1 year post-boom; only T06 and T03 are reasonably timed.",
+      "patent_market_convergence": "T06 and T02 show reasonable alignment between documented urgency/market scores and strategic investment tiers, but the portfolio selection rationale does not explicitly demonstrate convergence-zone targeting; the high uncertainty score on T03 suggests patent landscape awareness but the overall selection feels more dependency-chain-driven than convergence-zone-driven."
+    },
+    "strengths": [
+      "All technologies are firmly within the company's core Domain (Foundation Model / Document AI / LLM), ensuring competitive advantage is built on existing capabilities",
+      "Dependency chain is logically structured (T06→T02→T01→T03) with zero dependency violations, reflecting sound systems thinking"
+    ],
+    "weaknesses": [
+      "T03 (고효율 트랜스포머 슬라이스아웃 학습) is allocated zero development time (2030-Q1 to 2030-Q1) despite being TRL 4 — this is operationally infeasible and undermines the entire roadmap's credibility",
+      "T01 (멀티모달 에이전트 워크플로우 자동화) completes 2.75 years after its market boom, which is the single largest timing failure and negates the technology leadership positioning for the most commercially significant technology in the portfolio"
+    ],
+    "missing_technologies": [
+      "RAG (Retrieval-Augmented Generation) 최적화 기술 — a critical enabling layer for Document AI leadership that would naturally precede or complement T02",
+      "LLM 경량화 / 온디바이스 추론 기술 — aligns with 기술선도 at lower TRL and supports T03's efficient transformer direction"
+    ],
+    "investment_issues": [
+      "T03 receives Medium tier investment despite TRL 4 status — for a 기술선도 strategy, the lowest-TRL technology typically warrants higher exploratory investment, not lower",
+      "T01 receives High (not Strategic) tier despite being the most domain-defining technology (multimodal agent workflows) and having the largest market opportunity score (5.0), suggesting investment tier calibration does not reflect strategic importance"
+    ],
+    "timing_issues": [
+      "T01 (멀티모달 에이전트 워크플로우 자동화): completes 2030-Q1 but market boom is 2027-Q2 — 2.75 year post-boom arrival misses the window entirely and is the most severe timing failure",
+      "T02 (원자적 문서 요소 관계 모델링): completes 2029-Q1 but market boom is 2028-Q1 — 1 year post-boom reduces commercial leverage significantly",
+      "The sequential dependency chain forces T01 and T03 into late completion slots; a parallel development track should have been considered to decouple timing"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T06 (TRL 7) and T02 (TRL 6) have realistic progressions given 1-2 year windows, but T03 (TRL 4) is allocated only a single quarter (2030-Q1 to 2030-Q1) — essentially zero development time — making its completion entirely infeasible; T01 (TRL 5) progresses to deployment in 1 year which is aggressive but marginally acceptable.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy calls for an R&D-heavy, exploratory portfolio with lower-TRL technologies, yet the portfolio is anchored by TRL 7 and TRL 6 technologies (T06, T02) that are already near-market; only T03 (TRL 4) represents true frontier exploration, creating a mixed signal between leadership intent and execution.",
+      "competitive_awareness": "score 4/5 - All four technologies are firmly within the Foundation Model / Document AI / LLM domain — document extraction, relational modeling, multimodal agent workflows, and efficient transformer training are all core competencies; the dependency chain also shows coherent vertical integration thinking appropriate for competitive positioning.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years before the market boom; T01 (멀티모달 에이전트 워크플로우 자동화) finishes 2.75 years after its boom window (2027-Q2 vs 2030-Q1), representing a critical missed opportunity; T02 also completes 1 year post-boom; only T06 and T03 are reasonably timed.",
+      "patent_market_convergence": "score 3/5 - T06 and T02 show reasonable alignment between documented urgency/market scores and strategic investment tiers, but the portfolio selection rationale does not explicitly demonstrate convergence-zone targeting; the high uncertainty score on T03 suggests patent landscape awareness but the overall selection feels more dependency-chain-driven than convergence-zone-driven.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×4 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 50.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 80.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "patent_growth_norm": 0.25,
+        "market_growth_norm": 0.8263,
+        "market_size_norm": 0.61,
+        "value": 0.5309,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 1.5001
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "원자적 문서 요소 관계 모델링",
+        "patent_growth_norm": 0.6571,
+        "market_growth_norm": 0.8519,
+        "market_size_norm": 0.4879,
+        "value": 0.6648,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8333,
+        "cost_adjusted_return": 0.7816
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "patent_growth_norm": 0.8429,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.5514,
+        "value": 0.8026,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.9115
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.8138,
+        "market_size_norm": 0.3937,
+        "value": 0.5623,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.5,
+        "cost_adjusted_return": 0.5828
+      }
+    ],
+    "selection_quality": 64.0,
+    "cost_adjusted_return": 73.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 64.3,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 75.5,
+    "backtest_score_v1": 74.6,
+    "description": {
+      "selection_quality": "64.0/100 — 4개 기술 평균 value=0.640\n  ▲ 멀티모달 에이전트 워크플로우 자동화: value=0.803 (특허↑=0.84, 시장↑=1.00, 규모=0.55)\n  ▲ 원자적 문서 요소 관계 모델링: value=0.665 (특허↑=0.66, 시장↑=0.85, 규모=0.49)\n  ▼ 고효율 트랜스포머 슬라이스아웃 학습: value=0.562 (특허↑=0.50, 시장↑=0.81, 규모=0.39)\n  ▼ 문서 키 - 값 쌍 자동 추출 및 링크: value=0.531 (특허↑=0.25, 시장↑=0.83, 규모=0.61)",
+      "cost_adjusted_return": "73.6/100 — 평균 return=0.944\n  문서 키 - 값 쌍 자동 추출 및 링크: 순이익(log)=+1.500 [Strategic]\n  멀티모달 에이전트 워크플로우 자동화: 순이익(log)=+0.911 [High]\n  원자적 문서 요소 관계 모델링: 순이익(log)=+0.782 [Strategic]\n  고효율 트랜스포머 슬라이스아웃 학습: 순이익(log)=+0.583 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "64.3/100 — 평균 오차 1.19년\n  멀티모달 에이전트 워크플로우 자동화: 2.8년 늦음 ⚠\n  원자적 문서 요소 관계 모델링: 1.0년 늦음\n  문서 키 - 값 쌍 자동 추출 및 링크: 0.5년 늦음\n  고효율 트랜스포머 슬라이스아웃 학습: 0.5년 늦음",
+      "formula": "backtest_score = 0.25×64.0(기술선택) + 0.25×73.6(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×64.3(타이밍) = 75.5"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.19,
+    "timing_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "원자적 문서 요소 관계 모델링",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q3",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 65.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "total_penalty": 0.9,
+    "final_composite_score": 64.4,
+    "description": "pre_penalty = 0.4×50.0(LLM) + 0.6×75.5(Backtest) = 65.3. Penalty: timing_error: -0.9pt. 총 -0.9pt. 최종 = 64.4.\n  [진단] Backtest(75.5)가 LLM(50.0)보다 25.5pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 50.0점, Backtest 경제성 평가 75.5점. 제약 위반으로 0.9점 차감. 최종 Composite Score: 64.4점.",
+    "key_failure_points": [
+      "타이밍 이슈: 멀티모달 에이전트 워크플로우 자동화의 완료시점이 시장 개화 대비 2.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

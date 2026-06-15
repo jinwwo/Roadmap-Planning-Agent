@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Healthcare",
+    "num_technologies": 6
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 3,
+    "investment": 3,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 52.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 3,
+        "sequencing": 3,
+        "investment": 3,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "Selected technologies (ADC, IL-17, PCSK9, MS antibodies) are well-aligned with high-growth biopharmaceutical markets, and AI clinical prediction as a foundation is strategically sound. However, the mean timing error of 2.04 years indicates significant market timing misalignment, with most technologies completing well after their boom windows.",
+      "sequencing": "Dependency chains are technically respected (T03 precedes all dependents, T01 precedes T05/T06), and there are zero dependency violations. However, PCSK9 and MS antibody timelines show zero development duration (2030-Q1 to 2030-Q1), which is unrealistic and suggests planning gaps.",
+      "investment": "Strategic tier is assigned to the three highest market_opp/urgency technologies (T03, T01, T07), and High tier to the remaining three, which is broadly rational. However, T07 (혈당 모니터링) receiving Strategic tier equal to T03 and T01 is questionable given its lower strategic_fit and no lower uncertainty, and all six technologies cluster in just two tiers with no Medium or Low tier diversity.",
+      "coherence": "There is a clear strategic narrative: AI clinical data modeling as a foundation enabling ADC platform development, which then enables advanced therapeutic applications (PCSK9, MS). The progression from architecture → material → process follows a logical TRL and application hierarchy.",
+      "balance": "The entire portfolio is concentrated in Strategic and High tiers only, with no Medium or Low tier exploratory bets. All technologies are late-stage (TRL 6-7) with no early-stage research investments, creating a risk-concentrated portfolio with no long-term exploratory diversity."
+    },
+    "strengths": [
+      "Clear dependency hierarchy with zero violations: T03 as AI foundation enabling all downstream therapeutic platforms creates a coherent, executable sequence.",
+      "Strong domain coherence across the biopharmaceutical value chain, covering oncology (ADC), autoimmune (IL-17, MS), metabolic (blood glucose), and cardiovascular (PCSK9) segments."
+    ],
+    "weaknesses": [
+      "Severe market timing misalignment: most technologies complete 1.25-3.0 years after their market boom, meaning the portfolio risks missing optimal commercialization windows.",
+      "Zero-duration development plans for PCSK9 and MS antibody compositions (2030-Q1 to 2030-Q1) are implausible and indicate incomplete roadmap planning for late-stage technologies."
+    ],
+    "missing_technologies": [
+      "Early-stage mRNA therapeutic platform (TRL 3-4) for long-term pipeline diversification",
+      "Gene editing/CRISPR-based therapy as a complementary next-generation modality to ADC",
+      "Digital biomarker or real-world evidence platform to support regulatory submissions and complement the AI clinical model"
+    ],
+    "investment_issues": [
+      "All six technologies are allocated to only two tiers (Strategic and High), eliminating portfolio risk distribution and leaving no room for exploratory or speculative investments.",
+      "T07 (혈당 모니터링) assigned Strategic tier despite lower strategic_fit (4.0 vs 5.0 for T03/T01) and the largest timing error (3.0 years), suggesting tier assignment did not adequately penalize timing risk.",
+      "Budget utilization shows 0 spent of 52 billion, indicating the investment strategy may be aspirational rather than operationally committed."
+    ],
+    "timing_issues": [
+      "ADC platform completes in 2030-Q1 but market boom is 2027-Q2, a 2.75-year miss that could cede market leadership to competitors.",
+      "Blood glucose monitoring system targets 2030-Q1 completion vs. 2027-Q1 boom, a 3.0-year gap that is the worst timing error in the portfolio.",
+      "IL-17 autoimmune therapy misses its 2027-Q3 boom by 2.5 years, undermining the rationale for Strategic-adjacent investment.",
+      "PCSK9 and MS antibody show zero development duration (start = end = 2030-Q1), which is not feasible for TRL 6-7 materials requiring clinical validation."
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 항체-약물 접합체 (ADC) 플랫폼 (norm=0.855)\n  시장 성장률 기준 최저: IL-17 표적 자가면역 질환 치료제 (norm=0.000)\n  전체 평균: 0.516",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 3/5 — tier 불일치 4건:\n  ⚠ AI 기반 임상 데이터 예측 모델: value=0.350 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 항체-약물 접합체 (ADC) 플랫폼: value=0.692 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 혈당 모니터링 및 인슐린 볼러스 계산 시스템: value=0.373 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ IL-17 표적 자가면역 질환 치료제: value=0.138 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Material(3개), Architecture(1개), Equipment(1개), Process(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(3개), Strategic(3개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×3 + 0.2×3 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 52.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "AI 기반 임상 데이터 예측 모델",
+        "patent_growth_norm": 0.5086,
+        "market_growth_norm": 0.4882,
+        "market_size_norm": 0.0,
+        "value": 0.3499,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.1999
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "patent_growth_norm": 0.5509,
+        "market_growth_norm": 0.8549,
+        "market_size_norm": 0.7165,
+        "value": 0.6918,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5418
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+        "patent_growth_norm": 0.5664,
+        "market_growth_norm": 0.4882,
+        "market_size_norm": 0.0,
+        "value": 0.373,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.223
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "IL-17 표적 자가면역 질환 치료제",
+        "patent_growth_norm": 0.3452,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.1381,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.0381
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "PCSK9 저감을 통한 심혈관 질환 예방",
+        "patent_growth_norm": 0.4354,
+        "market_growth_norm": 0.7744,
+        "market_size_norm": 0.5592,
+        "value": 0.5742,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.4742
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "다발성 경화증 (MS) 치료용 항체 조성물",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4882,
+        "market_size_norm": 0.0,
+        "value": 0.5464,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.4464
+      }
+    ],
+    "selection_quality": 44.6,
+    "cost_adjusted_return": 32.1,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 38.8,
+    "backtest_score": 50.7,
+    "description": {
+      "selection_quality": "44.6/100 — 6개 기술 평균 value=0.446\n  ▲ 항체-약물 접합체 (ADC) 플랫폼: value=0.692 (특허↑=0.55, 시장↑=0.85, 규모=0.72)\n  ▲ PCSK9 저감을 통한 심혈관 질환 예방: value=0.574 (특허↑=0.44, 시장↑=0.77, 규모=0.56)\n  ▲ 다발성 경화증 (MS) 치료용 항체 조성물: value=0.546 (특허↑=1.00, 시장↑=0.49, 규모=0.00)\n  ▼ 혈당 모니터링 및 인슐린 볼러스 계산 시스템: value=0.373 (특허↑=0.57, 시장↑=0.49, 규모=0.00)\n  ▼ AI 기반 임상 데이터 예측 모델: value=0.350 (특허↑=0.51, 시장↑=0.49, 규모=0.00)\n  ▼ IL-17 표적 자가면역 질환 치료제: value=0.138 (특허↑=0.35, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → IL-17 표적 자가면역 질환 치료제: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "32.1/100 — 평균 return=0.321\n  항체-약물 접합체 (ADC) 플랫폼: value=0.692 - 0.15×1.00(cost) = return +0.542 [Strategic]\n  PCSK9 저감을 통한 심혈관 질환 예방: value=0.574 - 0.15×0.67(cost) = return +0.474 [High]\n  다발성 경화증 (MS) 치료용 항체 조성물: value=0.546 - 0.15×0.67(cost) = return +0.446 [High]\n  혈당 모니터링 및 인슐린 볼러스 계산 시스템: value=0.373 - 0.15×1.00(cost) = return +0.223 [Strategic] ⚠ 과다투자\n  AI 기반 임상 데이터 예측 모델: value=0.350 - 0.15×1.00(cost) = return +0.200 [Strategic] ⚠ 과다투자\n  IL-17 표적 자가면역 질환 치료제: value=0.138 - 0.15×0.67(cost) = return +0.038 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → AI 기반 임상 데이터 예측 모델: value 0.350인데 Strategic tier\n  → 혈당 모니터링 및 인슐린 볼러스 계산 시스템: value 0.373인데 Strategic tier\n  → IL-17 표적 자가면역 질환 치료제: value 0.138인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "38.8/100 — 평균 오차 2.04년\n  혈당 모니터링 및 인슐린 볼러스 계산 시스템: 3.0년 늦음 ⚠\n  항체-약물 접합체 (ADC) 플랫폼: 2.8년 늦음 ⚠\n  IL-17 표적 자가면역 질환 치료제: 2.5년 늦음 ⚠\n  PCSK9 저감을 통한 심혈관 질환 예방: 1.8년 늦음 ⚠\n  AI 기반 임상 데이터 예측 모델: 1.2년 늦음 ⚠\n  다발성 경화증 (MS) 치료용 항체 조성물: 1.0년 늦음",
+      "formula": "backtest_score = 0.35×44.6 + 0.35×32.1 + 0.10×100.0 + 0.10×100.0 + 0.10×38.8 = 50.7"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.04,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "AI 기반 임상 데이터 예측 모델",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T07",
+        "tech_name": "혈당 모니터링 및 인슐린 볼러스 계산 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 3.0
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "IL-17 표적 자가면역 질환 치료제",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "PCSK9 저감을 통한 심혈관 질환 예방",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "다발성 경화증 (MS) 치료용 항체 조성물",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 51.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.2
+      }
+    ],
+    "total_penalty": 5.2,
+    "final_composite_score": 46.2,
+    "description": "pre_penalty = 0.4×52.5(LLM) + 0.6×50.7(Backtest) = 51.4. Penalty: timing_error: -5.2pt. 총 -5.2pt. 최종 = 46.2."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 52.5점, Backtest 경제성 평가 50.7점. 제약 위반으로 5.2점 차감. 최종 Composite Score: 46.2점.",
+    "key_failure_points": [
+      "타이밍 이슈: AI 기반 임상 데이터 예측 모델의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 항체-약물 접합체 (ADC) 플랫폼의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 혈당 모니터링 및 인슐린 볼러스 계산 시스템의 완료시점이 시장 개화 대비 3.0년 차이",
+      "타이밍 이슈: IL-17 표적 자가면역 질환 치료제의 완료시점이 시장 개화 대비 2.5년 차이",
+      "타이밍 이슈: PCSK9 저감을 통한 심혈관 질환 예방의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

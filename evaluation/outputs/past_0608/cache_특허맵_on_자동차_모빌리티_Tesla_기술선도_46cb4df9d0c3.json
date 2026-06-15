@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / EV / AI",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Starting TRLs of 6-7 with 2-4 year development windows are generally realistic for incremental advancement to deployment-ready stages; no extreme TRL jumps are required, though TRL 6 to production-ready in 2 years for 건식 전극 제조 공정 is moderately ambitious.",
+      "strategic_fidelity": "The declared strategy is 기술선도 (Technology Leadership), but the portfolio is dominated by relatively mature technologies (TRL 6-7) rather than lower-TRL exploratory R&D; a true technology leadership strategy should include earlier-stage, patent-frontier technologies rather than near-commercial ones.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selections or timing decisions; choices appear driven by market opportunity scores rather than competitive landscape intelligence.",
+      "market_timing": "All four technologies complete AFTER their market boom windows, with errors ranging from 1.25 to 2.75 years post-boom; for 기술선도 strategy, technologies should complete 1-2 years BEFORE boom, making these completions significantly misaligned — they arrive late rather than preemptively.",
+      "patent_market_convergence": "Technologies like 다중 태스크 자율주행 AI and 건식 전극 제조 공정 are in active patent and market growth areas, suggesting some convergence awareness; however, the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Dependency management is clean with zero violations and logical sequencing (T08 correctly follows T03)",
+      "TRL progression timelines are broadly realistic with no infeasible jumps within the given windows"
+    ],
+    "weaknesses": [
+      "All technologies complete after their market boom windows, systematically undermining the technology leadership preemption advantage",
+      "Portfolio is too mature (TRL 6-7) for a 기술선도 strategy; lacks early-stage, high-uncertainty technologies that would signal genuine technology leadership intent"
+    ],
+    "missing_technologies": [
+      "Low-TRL solid-state battery technology (e.g., TRL 3-4) to signal genuine R&D leadership",
+      "AI-based predictive vehicle health monitoring at early TRL stages",
+      "Next-generation sensor fusion architecture (LiDAR/radar integration) at exploratory stages"
+    ],
+    "investment_issues": [
+      "건식 전극 제조 공정 rated Strategic tier despite being a process technology not strongly aligned with AI/architecture-driven technology leadership",
+      "차량용 충전 인프라 매칭 receives High tier investment but has strategic_fit score of only 3.0, suggesting misallocation relative to leadership priorities",
+      "Budget utilization shows 0 spent against 22.7B allocation — investment deployment appears unplanned or execution has not commenced"
+    ],
+    "timing_issues": [
+      "차량용 전장 제어보드 completes 2.75 years after boom (2030-Q1 vs 2027-Q2) — severely late for any strategy",
+      "차량용 충전 인프라 매칭 completes 2.25 years after boom — misses commercialization window entirely",
+      "다중 태스크 자율주행 AI, the flagship technology, completes 1.25 years post-boom rather than pre-boom as 기술선도 requires"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Starting TRLs of 6-7 with 2-4 year development windows are generally realistic for incremental advancement to deployment-ready stages; no extreme TRL jumps are required, though TRL 6 to production-ready in 2 years for 건식 전극 제조 공정 is moderately ambitious.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 기술선도 (Technology Leadership), but the portfolio is dominated by relatively mature technologies (TRL 6-7) rather than lower-TRL exploratory R&D; a true technology leadership strategy should include earlier-stage, patent-frontier technologies rather than near-commercial ones.",
+      "competitive_awareness": "score 2/5 - There is no explicit evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selections or timing decisions; choices appear driven by market opportunity scores rather than competitive landscape intelligence.",
+      "market_timing": "score 2/5 - All four technologies complete AFTER their market boom windows, with errors ranging from 1.25 to 2.75 years post-boom; for 기술선도 strategy, technologies should complete 1-2 years BEFORE boom, making these completions significantly misaligned — they arrive late rather than preemptively.",
+      "patent_market_convergence": "score 3/5 - Technologies like 다중 태스크 자율주행 AI and 건식 전극 제조 공정 are in active patent and market growth areas, suggesting some convergence awareness; however, the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 3,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 65.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "다중 태스크 자율주행 AI",
+        "patent_growth_norm": 0.0757,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6303,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4803
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "차량용 전장 제어보드",
+        "patent_growth_norm": 0.1286,
+        "market_growth_norm": 0.0404,
+        "market_size_norm": 0.5662,
+        "value": 0.2334,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.1334
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 제조 공정",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.5906,
+        "market_size_norm": 0.5996,
+        "value": 0.7571,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6071
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "차량용 충전 인프라 매칭",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0404,
+        "market_size_norm": 0.5662,
+        "value": 0.182,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.082
+      }
+    ],
+    "selection_quality": 45.1,
+    "cost_adjusted_return": 32.6,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 41.8,
+    "backtest_score": 54.9,
+    "backtest_score_v1": 51.4,
+    "description": {
+      "selection_quality": "45.1/100 — 4개 기술 평균 value=0.451\n  ▲ 건식 전극 제조 공정: value=0.757 (특허↑=1.00, 시장↑=0.59, 규모=0.60)\n  ▲ 다중 태스크 자율주행 AI: value=0.630 (특허↑=0.08, 시장↑=1.00, 규모=1.00)\n  ▼ 차량용 전장 제어보드: value=0.233 (특허↑=0.13, 시장↑=0.04, 규모=0.57)\n  ▼ 차량용 충전 인프라 매칭: value=0.182 (특허↑=0.00, 시장↑=0.04, 규모=0.57)\n  [낮은 원인]\n  → 차량용 전장 제어보드: 특허 성장률 낮음 (norm=0.13)\n  → 차량용 전장 제어보드: 시장 성장률 낮음 (norm=0.04)\n  → 차량용 충전 인프라 매칭: 특허 성장률 낮음 (norm=0.00)\n  → 차량용 충전 인프라 매칭: 시장 성장률 낮음 (norm=0.04)",
+      "cost_adjusted_return": "32.6/100 — 평균 return=0.326\n  건식 전극 제조 공정: value=0.757 - 0.15×1.00(cost) = return +0.607 [Strategic]\n  다중 태스크 자율주행 AI: value=0.630 - 0.15×1.00(cost) = return +0.480 [Strategic]\n  차량용 전장 제어보드: value=0.233 - 0.15×0.67(cost) = return +0.133 [High] ⚠ 과다투자\n  차량용 충전 인프라 매칭: value=0.182 - 0.15×0.67(cost) = return +0.082 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 차량용 전장 제어보드: value 0.233인데 High tier\n  → 차량용 충전 인프라 매칭: value 0.182인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "41.8/100 — 평균 오차 1.94년\n  차량용 전장 제어보드: 2.8년 늦음 ⚠\n  차량용 충전 인프라 매칭: 2.2년 늦음 ⚠\n  건식 전극 제조 공정: 1.5년 늦음 ⚠\n  다중 태스크 자율주행 AI: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×45.1 + 0.35×32.6 + 0.05×100.0 + 0.05×100.0 + 0.10×41.8 = 54.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.94,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "다중 태스크 자율주행 AI",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "차량용 전장 제어보드",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 제조 공정",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "차량용 충전 인프라 매칭",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 48.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 4.7
+      }
+    ],
+    "total_penalty": 4.7,
+    "final_composite_score": 44.2,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×54.9(Backtest) = 48.9. Penalty: timing_error: -4.7pt. 총 -4.7pt. 최종 = 44.2.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 54.9점. 제약 위반으로 4.7점 차감. 최종 Composite Score: 44.2점.",
+    "key_failure_points": [
+      "타이밍 이슈: 다중 태스크 자율주행 AI의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 차량용 전장 제어보드의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 건식 전극 제조 공정의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 차량용 충전 인프라 매칭의 완료시점이 시장 개화 대비 2.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

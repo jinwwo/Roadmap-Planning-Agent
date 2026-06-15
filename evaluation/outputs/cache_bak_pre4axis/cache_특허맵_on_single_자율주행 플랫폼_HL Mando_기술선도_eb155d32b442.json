@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "ADAS / Autonomous Driving / Chassis Control",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 33.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are manageable (e.g., TRL 6→target for HBM in ~3 quarters, TRL 5→target for Sensor Fusion over ~2.75 years), but the circular dependency between Domain Controllers and Sensor Fusion Algorithms makes both pathways structurally incoherent — they depend on each other, making any realistic TRL progression impossible as planned.",
+      "strategic_fidelity": "The declared strategy is 기술선도 (Technology Leadership), which should emphasize exploratory, lower-TRL technologies and R&D-heavy portfolio; however, the portfolio is dominated by semiconductor packaging and memory technologies (HBM, Chiplet, Advanced Packaging) that are fundamentally component-supplier plays, not technology leadership within ADAS/autonomous driving, and only two technologies (Domain Controllers, Sensor Fusion) are core to the domain.",
+      "competitive_awareness": "The domain is ADAS/Autonomous Driving/Chassis Control, yet three of seven selected technologies (HBM, Chiplet Architecture, Advanced Packaging) are semiconductor manufacturing and memory technologies where the company would compete against established semiconductor giants (Samsung, SK Hynix, TSMC, Intel) with no established advantage — significant domain drift that weakens competitive positioning.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before boom; Domain Controllers for ADAS misses its 2028-Q3 boom by 2.25 years post-boom (completed 2030-Q4), Energy-Efficient AI Accelerators completes 0.75 years after boom, and only Advanced Packaging Technologies hits its window precisely — systematic late-completion issues undermine the preemption objective.",
+      "patent_market_convergence": "Some technologies like Energy-Efficient AI Accelerators and Domain Controllers for ADAS show genuine convergence between patent activity and growing ADAS market demand, but the heavy weighting toward semiconductor infrastructure technologies (HBM, Chiplet, Packaging) appears driven more by patent trend signals than coherent market-domain convergence for an ADAS company."
+    },
+    "strengths": [
+      "Steer-by-Wire Systems and Domain Controllers for ADAS are genuinely domain-relevant technologies with clear ADAS application, providing a core of legitimate strategic value.",
+      "Budget is fully allocated without overspend, and the dependency sequencing for the semiconductor stack (HBM→Chiplet→Packaging) follows a logical build-up logic."
+    ],
+    "weaknesses": [
+      "Circular dependency between Domain Controllers for ADAS and Sensor Fusion Algorithms (each listed as prerequisite of the other) makes the core ADAS technology stack structurally infeasible.",
+      "Heavy investment in semiconductor infrastructure technologies (HBM, Chiplet Architecture, Advanced Packaging at Strategic/High tiers) is a severe domain drift for an ADAS company, misallocating resources to markets where the company has no competitive advantage."
+    ],
+    "missing_technologies": [
+      "LiDAR/Radar sensor processing algorithms (core ADAS perception stack)",
+      "Vehicle-to-Everything (V2X) communication protocols",
+      "Functional Safety (ISO 26262) verification frameworks for autonomous systems",
+      "Edge AI inference engines optimized for automotive environments",
+      "HD Map generation and localization technologies"
+    ],
+    "investment_issues": [
+      "Three Strategic-tier investments allocated to semiconductor technologies (HBM, Advanced Packaging, Steer-by-Wire) leaves the most domain-critical technologies (Domain Controllers, Sensor Fusion) at merely High tier — inverted priority relative to ADAS domain leadership.",
+      "All investment scores appear uniform (market_opp=4.0, strategic_fit=5.0, executability=4.0, uncertainty=3.0, urgency=4.0 across all technologies), suggesting scores were not genuinely differentiated based on technology-specific analysis, reducing the credibility of the prioritization framework.",
+      "Allocating Strategic-tier budget to HBM — a technology dominated by memory manufacturers — represents poor capital efficiency for an ADAS-focused company with no semiconductor fabrication capability."
+    ],
+    "timing_issues": [
+      "Domain Controllers for ADAS completes at 2030-Q4 but market boom is 2028-Q3 — 2.25 years late, missing the entire opportunity window and contradicting 기술선도 preemption logic.",
+      "Chiplet Architecture starts at 2026-Q2 but its prerequisite S01 (HBM) only ends at 2026-Q4 (Q3 per constraint), creating a dependency violation where development begins before the prerequisite is complete.",
+      "Advanced Packaging Technologies starts at 2027-Q1 but prerequisite Chiplet Architecture ends at 2027-Q2, another dependency violation compressing development overlap.",
+      "Sensor Fusion Algorithms completes 1.0 year after its market boom (2030-Q4 vs 2029-Q4), undermining timely market entry."
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - Most TRL progressions are manageable (e.g., TRL 6→target for HBM in ~3 quarters, TRL 5→target for Sensor Fusion over ~2.75 years), but the circular dependency between Domain Controllers and Sensor Fusion Algorithms makes both pathways structurally incoherent — they depend on each other, making any realistic TRL progression impossible as planned.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 기술선도 (Technology Leadership), which should emphasize exploratory, lower-TRL technologies and R&D-heavy portfolio; however, the portfolio is dominated by semiconductor packaging and memory technologies (HBM, Chiplet, Advanced Packaging) that are fundamentally component-supplier plays, not technology leadership within ADAS/autonomous driving, and only two technologies (Domain Controllers, Sensor Fusion) are core to the domain.",
+      "competitive_awareness": "score 2/5 - The domain is ADAS/Autonomous Driving/Chassis Control, yet three of seven selected technologies (HBM, Chiplet Architecture, Advanced Packaging) are semiconductor manufacturing and memory technologies where the company would compete against established semiconductor giants (Samsung, SK Hynix, TSMC, Intel) with no established advantage — significant domain drift that weakens competitive positioning.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years before boom; Domain Controllers for ADAS misses its 2028-Q3 boom by 2.25 years post-boom (completed 2030-Q4), Energy-Efficient AI Accelerators completes 0.75 years after boom, and only Advanced Packaging Technologies hits its window precisely — systematic late-completion issues undermine the preemption objective.",
+      "patent_market_convergence": "score 3/5 - Some technologies like Energy-Efficient AI Accelerators and Domain Controllers for ADAS show genuine convergence between patent activity and growing ADAS market demand, but the heavy weighting toward semiconductor infrastructure technologies (HBM, Chiplet, Packaging) appears driven more by patent trend signals than coherent market-domain convergence for an ADAS company.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 33.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 3,
+      "investment": 2,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 50.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High Bandwidth Memory (HBM)",
+        "patent_growth_norm": 0.5714,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3612,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8428,
+        "cost_adjusted_return": -0.243
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Architecture",
+        "patent_growth_norm": 0.2857,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.2469,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7442,
+        "cost_adjusted_return": -0.2175
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Packaging Technologies",
+        "patent_growth_norm": 0.4286,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.304,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.2825
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Steer-by-Wire Systems",
+        "patent_growth_norm": 0.8571,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.4754,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.4277,
+        "cost_adjusted_return": -0.1307
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Energy-Efficient AI Accelerators",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.8137,
+        "cost_adjusted_return": -0.2355
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Domain Controllers for ADAS",
+        "patent_growth_norm": 0.2857,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.2469,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.366,
+        "cost_adjusted_return": -0.1129
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Sensor Fusion Algorithms",
+        "patent_growth_norm": 0.1429,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1897,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3399,
+        "cost_adjusted_return": -0.1052
+      }
+    ],
+    "selection_quality": 28.0,
+    "cost_adjusted_return": 45.3,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 60,
+    "timing_accuracy_score": 73.3,
+    "investment_rationality_score": 71.4,
+    "backtest_score": 55.3,
+    "backtest_score_v1": 49.0,
+    "description": {
+      "selection_quality": "28.0/100 — 7개 기술 평균 value=0.280\n  ▲ Steer-by-Wire Systems: value=0.475 (특허↑=0.86, 시장↑=0.44, 규모=0.00)\n  ▲ High Bandwidth Memory (HBM): value=0.361 (특허↑=0.57, 시장↑=0.44, 규모=0.00)\n  ▲ Advanced Packaging Technologies: value=0.304 (특허↑=0.43, 시장↑=0.44, 규모=0.00)\n  ▼ Chiplet Architecture: value=0.247 (특허↑=0.29, 시장↑=0.44, 규모=0.00)\n  ▼ Domain Controllers for ADAS: value=0.247 (특허↑=0.29, 시장↑=0.44, 규모=0.00)\n  ▼ Sensor Fusion Algorithms: value=0.190 (특허↑=0.14, 시장↑=0.44, 규모=0.00)\n  ▼ Energy-Efficient AI Accelerators: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → Chiplet Architecture: 특허 성장률 낮음 (norm=0.29)\n  → Energy-Efficient AI Accelerators: 특허 성장률 낮음 (norm=0.00)\n  → Domain Controllers for ADAS: 특허 성장률 낮음 (norm=0.29)\n  → Sensor Fusion Algorithms: 특허 성장률 낮음 (norm=0.14)",
+      "cost_adjusted_return": "45.3/100 — 평균 return=-0.190\n  Sensor Fusion Algorithms: 순이익(log)=-0.105 [High] ⚠ 과다투자\n  Domain Controllers for ADAS: 순이익(log)=-0.113 [High] ⚠ 과다투자\n  Steer-by-Wire Systems: 순이익(log)=-0.131 [Strategic]\n  Chiplet Architecture: 순이익(log)=-0.217 [High] ⚠ 과다투자\n  Energy-Efficient AI Accelerators: 순이익(log)=-0.235 [High] ⚠ 과다투자\n  High Bandwidth Memory (HBM): 순이익(log)=-0.243 [Strategic] ⚠ 과다투자\n  Advanced Packaging Technologies: 순이익(log)=-0.282 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → High Bandwidth Memory (HBM): value 0.361인데 Strategic tier\n  → Chiplet Architecture: value 0.247인데 High tier\n  → Advanced Packaging Technologies: value 0.304인데 Strategic tier\n  → Energy-Efficient AI Accelerators: value 0.133인데 High tier\n  → Domain Controllers for ADAS: value 0.247인데 High tier\n  → Sensor Fusion Algorithms: value 0.190인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "60.0/100 — 위반 2건 (1건당 -20점)\n  ⚠ Chiplet Architecture: 선행 S01 완료 전 시작 (gap: -2.0Q)\n  ⚠ Advanced Packaging Technologies: 선행 S02 완료 전 시작 (gap: -1.0Q)",
+      "timing_accuracy": "73.3/100 — 평균 오차 0.89년\n  Domain Controllers for ADAS: 2.2년 늦음 ⚠\n  Chiplet Architecture: 1.2년 이름 ⚠\n  Sensor Fusion Algorithms: 1.0년 늦음\n  Energy-Efficient AI Accelerators: 0.8년 늦음\n  High Bandwidth Memory (HBM): 0.5년 이름\n  Steer-by-Wire Systems: 0.5년 이름\n  Advanced Packaging Technologies: 0.0년 이름",
+      "formula": "backtest_score = 0.25×28.0(기술선택) + 0.25×45.3(투자대비수익) + 0.15×71.4(투자적합성) + 0.05×100.0(예산) + 0.05×60.0(의존성) + 0.25×73.3(타이밍) = 55.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 2,
+    "dependency_details": [
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Architecture",
+        "prerequisite": "S01",
+        "tech_start": "2026-Q2",
+        "prereq_end": "~2026.75",
+        "gap_quarters": -2.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Packaging Technologies",
+        "prerequisite": "S02",
+        "tech_start": "2027-Q1",
+        "prereq_end": "~2027.25",
+        "gap_quarters": -1.0
+      }
+    ],
+    "mean_timing_error_years": 0.89,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "High Bandwidth Memory (HBM)",
+        "target_q": "2026-Q4",
+        "boom_q": "2027-Q2",
+        "error_years": -0.5
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Architecture",
+        "target_q": "2027-Q2",
+        "boom_q": "2028-Q3",
+        "error_years": -1.25
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Advanced Packaging Technologies",
+        "target_q": "2027-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 0.0
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Steer-by-Wire Systems",
+        "target_q": "2027-Q4",
+        "boom_q": "2028-Q2",
+        "error_years": -0.5
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Energy-Efficient AI Accelerators",
+        "target_q": "2029-Q4",
+        "boom_q": "2029-Q1",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Domain Controllers for ADAS",
+        "target_q": "2030-Q4",
+        "boom_q": "2028-Q3",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Sensor Fusion Algorithms",
+        "target_q": "2030-Q4",
+        "boom_q": "2029-Q4",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 46.7,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      }
+    ],
+    "total_penalty": 6,
+    "final_composite_score": 40.7,
+    "description": "pre_penalty = 0.4×33.7(LLM) + 0.6×55.3(Backtest) = 46.7. Penalty: dependency_violation: -6.0pt. 총 -6.0pt. 최종 = 40.7.\n  [진단] LLM 구조 점수(33.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(55.3)가 LLM(33.7)보다 21.6pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 33.7점, Backtest 경제성 평가 55.3점. 제약 위반으로 6점 차감. 최종 Composite Score: 40.7점.",
+    "key_failure_points": [
+      "의존성 위반: Chiplet Architecture이 선행기술 S01 완료 전에 시작 (gap: -2.0Q)",
+      "의존성 위반: Advanced Packaging Technologies이 선행기술 S02 완료 전에 시작 (gap: -1.0Q)",
+      "타이밍 이슈: Chiplet Architecture의 완료시점이 시장 개화 대비 -1.25년 차이",
+      "타이밍 이슈: Domain Controllers for ADAS의 완료시점이 시장 개화 대비 2.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

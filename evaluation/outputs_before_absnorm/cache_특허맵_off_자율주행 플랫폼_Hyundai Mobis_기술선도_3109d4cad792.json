@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 3,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 3,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL6→completion in 2 years) and T03 (TRL7→completion in 0 quarters, same start/end date 2030-Q1) are problematic — T03 effectively has zero development time allocated despite being TRL7 with a non-trivial dependency chain. T08 at TRL5 gets 2 years which is borderline but feasible.",
+      "strategic_fidelity": "The declared 기술선도 strategy would expect lower-TRL exploratory technologies and R&D-heavy portfolio, but T03 (TRL7) is near-commercialization and the portfolio of only 3 technologies is thin for true technology leadership; some alignment exists via T08 (TRL5) but overall depth is insufficient.",
+      "competitive_awareness": "There is no discernible competitive differentiation rationale in technology selection or timing — the choices appear driven by dependency chains rather than competitive positioning or gap exploitation in the autonomous driving landscape.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before market boom (preemption), but all three technologies complete AFTER their respective boom windows by 0.75, 2.25, and 2.0 years respectively, representing systematic post-boom completion rather than preemption.",
+      "patent_market_convergence": "The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are all active patent areas in autonomous driving with growing markets, suggesting some convergence awareness, but the selection of only 3 technologies and the absence of explicit convergence-zone targeting makes this appear partially coincidental."
+    },
+    "strengths": [
+      "Dependency chain is properly respected with zero violations, ensuring logical technology progression from sensing (T01) to perception (T08) to actuation (T03)",
+      "Budget is fully utilized with no overspend, indicating disciplined financial planning within constraints"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their market boom windows (mean error 1.67 years), fundamentally undermining both market capture and the preemption intent of 기술선도 strategy",
+      "T03 (Steer-by-Wire) has identical start and end dates (2030-Q1), implying zero development time which is infeasible for any technology regardless of TRL"
+    ],
+    "missing_technologies": [
+      "LiDAR point cloud processing / solid-state LiDAR (lower TRL, high patent activity, core to technology leadership in autonomous driving)",
+      "Vehicle-to-everything (V2X) communication technology (critical for autonomous driving ecosystem, aligns with 기술선도 strategy)",
+      "AI-based end-to-end driving model / neural network inference accelerator (foundational for competitive differentiation)"
+    ],
+    "investment_issues": [
+      "All technologies are classified as Strategic or High tier with no Core/Exploratory balance, inappropriate for a 기술선도 strategy that should include more speculative/exploratory bets",
+      "With only 3 technologies in the portfolio and full budget consumption, the investment is over-concentrated — technology leadership typically requires a broader, more diversified exploratory portfolio",
+      "T03 receiving High tier investment despite TRL7 maturity and post-boom completion timing represents misallocation for a leadership-oriented strategy"
+    ],
+    "timing_issues": [
+      "3D 포즈 추정 시스템 completes in 2030-Q1 but market boom was 2027-Q4 — a 2.25-year post-boom completion misses the primary market window entirely",
+      "스테어 바이 와이어 제어 has zero-duration development (2030-Q1 to 2030-Q1) which is a scheduling artifact, not a realistic plan",
+      "All technologies follow a sequential dependency chain that pushes completion dates too late; parallel development tracks should have been explored"
+    ],
+    "description": {
+      "trl_pathway": "score 3/5 - T01 (TRL6→completion in 2 years) and T03 (TRL7→completion in 0 quarters, same start/end date 2030-Q1) are problematic — T03 effectively has zero development time allocated despite being TRL7 with a non-trivial dependency chain. T08 at TRL5 gets 2 years which is borderline but feasible.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy would expect lower-TRL exploratory technologies and R&D-heavy portfolio, but T03 (TRL7) is near-commercialization and the portfolio of only 3 technologies is thin for true technology leadership; some alignment exists via T08 (TRL5) but overall depth is insufficient.",
+      "competitive_awareness": "score 2/5 - There is no discernible competitive differentiation rationale in technology selection or timing — the choices appear driven by dependency chains rather than competitive positioning or gap exploitation in the autonomous driving landscape.",
+      "market_timing": "score 2/5 - For 기술선도 strategy, technologies should complete 1-2 years before market boom (preemption), but all three technologies complete AFTER their respective boom windows by 0.75, 2.25, and 2.0 years respectively, representing systematic post-boom completion rather than preemption.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are all active patent areas in autonomous driving with growing markets, suggesting some convergence awareness, but the selection of only 3 technologies and the absence of explicit convergence-zone targeting makes this appear partially coincidental.",
+      "formula": "llm_structural_score = (0.25×3 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 65.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "patent_growth_norm": 0.8015,
+        "market_growth_norm": 0.3269,
+        "market_size_norm": 1.0,
+        "value": 0.7186,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5686
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "3D 포즈 추정 시스템",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8182,
+        "cost_adjusted_return": -0.1227
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "patent_growth_norm": 0.2199,
+        "market_growth_norm": 0.8222,
+        "market_size_norm": 0.8645,
+        "value": 0.5939,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7045,
+        "cost_adjusted_return": 0.4883
+      }
+    ],
+    "selection_quality": 43.8,
+    "cost_adjusted_return": 31.1,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 49.9,
+    "backtest_score": 51.2,
+    "backtest_score_v1": 51.2,
+    "description": {
+      "selection_quality": "43.8/100 — 3개 기술 평균 value=0.438\n  ▲ 다중 센서 퓨전 카메라: value=0.719 (특허↑=0.80, 시장↑=0.33, 규모=1.00)\n  ▲ 스테어 바이 와이어 제어: value=0.594 (특허↑=0.22, 시장↑=0.82, 규모=0.86)\n  ▼ 3D 포즈 추정 시스템: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 3D 포즈 추정 시스템: 특허 성장률 낮음 (norm=0.00)\n  → 3D 포즈 추정 시스템: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "31.1/100 — 평균 return=0.311\n  다중 센서 퓨전 카메라: value=0.719 - 0.15×1.00(cost) = return +0.569 [Strategic]\n  스테어 바이 와이어 제어: value=0.594 - 0.15×0.67(cost) = return +0.488 [High]\n  3D 포즈 추정 시스템: value=0.000 - 0.15×1.00(cost) = return -0.123 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 3D 포즈 추정 시스템: value 0.000인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "49.9/100 — 평균 오차 1.67년\n  3D 포즈 추정 시스템: 2.2년 늦음 ⚠\n  스테어 바이 와이어 제어: 2.0년 늦음 ⚠\n  다중 센서 퓨전 카메라: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×43.8 + 0.35×31.1 + 0.05×100.0 + 0.05×100.0 + 0.10×49.9 = 51.2"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.67,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "다중 센서 퓨전 카메라",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "3D 포즈 추정 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "스테어 바이 와이어 제어",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 46.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "total_penalty": 3.3,
+    "final_composite_score": 43.4,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×51.2(Backtest) = 46.7. Penalty: timing_error: -3.3pt. 총 -3.3pt. 최종 = 43.4.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 51.2점. 제약 위반으로 3.3점 차감. 최종 Composite Score: 43.4점.",
+    "key_failure_points": [
+      "타이밍 이슈: 3D 포즈 추정 시스템의 완료시점이 시장 개화 대비 2.25년 차이",
+      "타이밍 이슈: 스테어 바이 와이어 제어의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

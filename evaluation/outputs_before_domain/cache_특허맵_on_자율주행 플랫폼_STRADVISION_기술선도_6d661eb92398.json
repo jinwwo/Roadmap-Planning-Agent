@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI Vision Perception / ADAS / Computer Vision",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL 5→target and TRL 6→target progressions over 2-year windows are generally reasonable for the ADAS domain, with T02 (TRL 5, 2 years) and T01 (TRL 6, 2 years) being achievable; however T04's planned duration of 0 quarters (2030-Q1 to 2030-Q1) is structurally invalid and raises serious feasibility concerns.",
+      "strategic_fidelity": "The declared 기술선도 strategy is partially reflected in selecting foundational pipeline and sensor fusion technologies, but the portfolio is small (only 3 technologies), lacks truly low-TRL exploratory bets, and the dependency chain creates a sequential bottleneck that undermines leadership positioning; T04 being downgraded to 'High' tier further dilutes R&D-heavy commitment.",
+      "competitive_awareness": "The roadmap shows no explicit competitive differentiation rationale — technology selections are logical but appear driven by dependency logic rather than competitor gap analysis or timing advantage design; there is no evidence of awareness of which competitors are pursuing similar sensor fusion or gaze-tracking paths.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years BEFORE the boom to preempt the market, yet all three technologies complete AFTER their respective boom windows (errors: 1.25yr, 2.5yr, 1.0yr); particularly T01's 2.5-year post-boom completion is a serious preemption failure for a leadership strategy.",
+      "patent_market_convergence": "T01 (sensor fusion) and T02 (synthetic data pipelines) sit in active patent and market growth zones for ADAS, suggesting some convergence awareness; however the reasoning appears driven by market opportunity scores rather than explicit patent-market convergence analysis, and T04 shows weaker alignment with both signals."
+    },
+    "strengths": [
+      "Dependency chain is logically structured with zero violations — T02 feeds T01 which feeds T04, reflecting sound systems thinking",
+      "Budget is fully utilized with no overspend, indicating disciplined financial planning"
+    ],
+    "weaknesses": [
+      "T04 has a zero-duration development window (2030-Q1 to 2030-Q1), which is technically invalid and signals a planning error",
+      "All three technologies complete after their market boom windows, which fundamentally contradicts the 기술선도 preemption imperative"
+    ],
+    "missing_technologies": [
+      "Edge AI inference accelerators for real-time perception (lower TRL, high patent activity)",
+      "Neuromorphic vision sensors or event cameras (emerging, low-TRL, aligned with technology leadership)",
+      "4D LiDAR-camera fusion (complementary to radar-vision, high competitive differentiation potential)",
+      "Federated learning for distributed ADAS model training (privacy-preserving, growing patent space)"
+    ],
+    "investment_issues": [
+      "T04 (시선 추적) is downgraded to 'High' tier despite being the only human-facing safety technology, which may under-resource a critical differentiation opportunity",
+      "With only 3 technologies in the portfolio, the entire $43M budget is concentrated in a single linear dependency chain — no parallel exploratory investments to hedge technology leadership risk",
+      "Strategic tier assignment for both T01 and T02 is appropriate, but the absence of any 'Exploratory' tier investments is inconsistent with a genuine 기술선도 posture"
+    ],
+    "timing_issues": [
+      "시각-레이더 융합 센서 아키텍처 completes 2.5 years after its boom (2027-Q3), missing the leadership window entirely and entering a potentially commoditized market",
+      "생성형 AI 기반 합성 데이터 파이프라인 completes 1.25 years after its boom, meaning the foundational technology is late, cascading delays to all downstream technologies",
+      "시선 추적 기반 운전자 상태 인지 has a zero-length planned duration, indicating a timeline collapse that needs immediate correction"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL 5→target and TRL 6→target progressions over 2-year windows are generally reasonable for the ADAS domain, with T02 (TRL 5, 2 years) and T01 (TRL 6, 2 years) being achievable; however T04's planned duration of 0 quarters (2030-Q1 to 2030-Q1) is structurally invalid and raises serious feasibility concerns.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy is partially reflected in selecting foundational pipeline and sensor fusion technologies, but the portfolio is small (only 3 technologies), lacks truly low-TRL exploratory bets, and the dependency chain creates a sequential bottleneck that undermines leadership positioning; T04 being downgraded to 'High' tier further dilutes R&D-heavy commitment.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit competitive differentiation rationale — technology selections are logical but appear driven by dependency logic rather than competitor gap analysis or timing advantage design; there is no evidence of awareness of which competitors are pursuing similar sensor fusion or gaze-tracking paths.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years BEFORE the boom to preempt the market, yet all three technologies complete AFTER their respective boom windows (errors: 1.25yr, 2.5yr, 1.0yr); particularly T01's 2.5-year post-boom completion is a serious preemption failure for a leadership strategy.",
+      "patent_market_convergence": "score 3/5 - T01 (sensor fusion) and T02 (synthetic data pipelines) sit in active patent and market growth zones for ADAS, suggesting some convergence awareness; however the reasoning appears driven by market opportunity scores rather than explicit patent-market convergence analysis, and T04 shows weaker alignment with both signals.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 11.7646
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "시각-레이더 융합 센서 아키텍처",
+        "patent_growth_norm": 0.2948,
+        "market_growth_norm": 0.8219,
+        "market_size_norm": 1.0,
+        "value": 0.6645,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8333,
+        "cost_adjusted_return": 9.2897
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "시선 추적 기반 운전자 상태 인지",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7279,
+        "market_size_norm": 0.6558,
+        "value": 0.4151,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5556,
+        "cost_adjusted_return": 7.7459
+      }
+    ],
+    "selection_quality": 56.0,
+    "cost_adjusted_return": 100,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "backtest_score": 77.1,
+    "backtest_score_v1": 79.9,
+    "description": {
+      "selection_quality": "56.0/100 — 3개 기술 평균 value=0.560\n  ▲ 시각-레이더 융합 센서 아키텍처: value=0.664 (특허↑=0.29, 시장↑=0.82, 규모=1.00)\n  ▲ 생성형 AI 기반 합성 데이터 파이프라인: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▼ 시선 추적 기반 운전자 상태 인지: value=0.415 (특허↑=0.00, 시장↑=0.73, 규모=0.66)",
+      "cost_adjusted_return": "100.0/100 — 평균 return=9.600\n  생성형 AI 기반 합성 데이터 파이프라인: value=0.600 - 0.15×1.00(cost) = return +11.765 [Strategic]\n  시각-레이더 융합 센서 아키텍처: value=0.664 - 0.15×1.00(cost) = return +9.290 [Strategic]\n  시선 추적 기반 운전자 상태 인지: value=0.415 - 0.15×0.67(cost) = return +7.746 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  시각-레이더 융합 센서 아키텍처: 2.5년 늦음 ⚠\n  생성형 AI 기반 합성 데이터 파이프라인: 1.2년 늦음 ⚠\n  시선 추적 기반 운전자 상태 인지: 1.0년 늦음",
+      "formula": "backtest_score = 0.35×56.0 + 0.35×100.0 + 0.05×100.0 + 0.05×100.0 + 0.10×52.6 = 77.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "시각-레이더 융합 센서 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "시선 추적 기반 운전자 상태 인지",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 64.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 61.8,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×77.1(Backtest) = 64.7. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 61.8.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(77.1)가 LLM(46.2)보다 30.9pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 77.1점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 61.8점.",
+    "key_failure_points": [
+      "타이밍 이슈: 생성형 AI 기반 합성 데이터 파이프라인의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 시각-레이더 융합 센서 아키텍처의 완료시점이 시장 개화 대비 2.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

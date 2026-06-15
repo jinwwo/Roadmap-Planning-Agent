@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Foundry",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 51.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "TRL progressions are generally reasonable: T01 (TRL6→target in 2yr), T03 (TRL7→target in 2yr), T02 (TRL5→target in 2yr with dependency on T01), and T04 (TRL4→target in 3yr) are within plausible industry norms, though T04's jump from TRL4 to commercial readiness in 3 years for a complex architecture is somewhat optimistic.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but two of four technologies are at TRL 6-7 (near-commercial), and the portfolio lacks cutting-edge exploratory bets; only T04 (TRL4) and T02 (TRL5) represent genuine frontier R&D, creating mixed strategic signals.",
+      "competitive_awareness": "The roadmap shows no explicit differentiation rationale, competitor positioning analysis, or timing-advantage design relative to competitors; technology selections (GAA, 3D stacking) are obvious industry choices without evidence of exploiting unique competitive gaps or white spaces.",
+      "market_timing": "For 기술선도, completing 1-2 years before the boom is ideal; T01 completes 0.75yr after boom (slight miss), T03 completes 1.25yr after boom (miss), T02 completes 2.0yr after boom (significant miss), and T04 completes 0.75yr after boom (near miss), meaning no technology achieves pre-boom completion and one has a problematic 2-year lag.",
+      "patent_market_convergence": "The selected technologies (GAA processes, 3D packaging, backside interconnects, compute-in-memory) represent active patent and market growth areas in semiconductor, suggesting some awareness of convergence zones, but there is no explicit evidence that convergence analysis drove selection priorities or tier assignments."
+    },
+    "strengths": [
+      "Dependency chain from T01→T02 is correctly structured and respected, ensuring foundational GAA process precedes backside recess development",
+      "TRL progression timelines are mostly realistic and avoid implausibly large jumps, with T04 receiving the longest development window appropriate to its low TRL"
+    ],
+    "weaknesses": [
+      "Portfolio is too weighted toward mature, near-commercial technologies (TRL 6-7) for a declared 기술선도 strategy, undermining long-term differentiation",
+      "Systematic post-boom completions across all four technologies mean no technology achieves the preemptive market positioning that technology leadership requires"
+    ],
+    "missing_technologies": [
+      "Sub-1nm lithography or EUV high-NA process development (lower TRL, genuinely frontier for leadership)",
+      "2D materials (MoS2, graphene) transistor integration for post-silicon leadership positioning",
+      "Neuromorphic computing hardware or analog AI accelerator architectures for deeper compute-in-memory differentiation"
+    ],
+    "investment_issues": [
+      "T03 (3D 스택형 반도체 패키징, TRL7) is classified Strategic tier despite being near-commercial and not pioneering, overweighting mature technology in a leadership portfolio",
+      "T04 (메모리 내 연산 아키텍처) receives only High tier despite being the most genuinely exploratory technology aligned with 기술선도; it deserves Strategic investment for authentic leadership positioning",
+      "Budget spend is reported as 0, suggesting investment allocation may not have been fully executed or modeled, creating uncertainty about actual resource deployment"
+    ],
+    "timing_issues": [
+      "백사이드 소스/드레인 리세스 기술 completes 2.0 years after its market boom window (2028-Q1), representing the most critical timing failure and wasted strategic opportunity",
+      "3D 스택형 반도체 패키징 completes 1.25 years after its boom (2026-Q4), missing the peak commercialization window and ceding first-mover advantage to competitors",
+      "No technology in the portfolio achieves pre-boom completion, which is the hallmark of genuine technology leadership strategy"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - TRL progressions are generally reasonable: T01 (TRL6→target in 2yr), T03 (TRL7→target in 2yr), T02 (TRL5→target in 2yr with dependency on T01), and T04 (TRL4→target in 3yr) are within plausible industry norms, though T04's jump from TRL4 to commercial readiness in 3 years for a complex architecture is somewhat optimistic.",
+      "strategic_fidelity": "score 3/5 - The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolio, but two of four technologies are at TRL 6-7 (near-commercial), and the portfolio lacks cutting-edge exploratory bets; only T04 (TRL4) and T02 (TRL5) represent genuine frontier R&D, creating mixed strategic signals.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit differentiation rationale, competitor positioning analysis, or timing-advantage design relative to competitors; technology selections (GAA, 3D stacking) are obvious industry choices without evidence of exploiting unique competitive gaps or white spaces.",
+      "market_timing": "score 3/5 - For 기술선도, completing 1-2 years before the boom is ideal; T01 completes 0.75yr after boom (slight miss), T03 completes 1.25yr after boom (miss), T02 completes 2.0yr after boom (significant miss), and T04 completes 0.75yr after boom (near miss), meaning no technology achieves pre-boom completion and one has a problematic 2-year lag.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (GAA processes, 3D packaging, backside interconnects, compute-in-memory) represent active patent and market growth areas in semiconductor, suggesting some awareness of convergence zones, but there is no explicit evidence that convergence analysis drove selection priorities or tier assignments.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 51.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 4,
+      "balance": 3,
+      "llm_structural_score_v1": 82.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 공통 금속 게이트 공정",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.45
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "3D 스택형 반도체 패키징",
+        "patent_growth_norm": 0.6884,
+        "market_growth_norm": 0.8887,
+        "market_size_norm": 0.9772,
+        "value": 0.8351,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6851
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 소스/드레인 리세스 기술",
+        "patent_growth_norm": 0.4265,
+        "market_growth_norm": 0.9074,
+        "market_size_norm": 0.993,
+        "value": 0.7407,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.6407
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "메모리 내 연산 아키텍처",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.3
+      }
+    ],
+    "selection_quality": 64.4,
+    "cost_adjusted_return": 51.9,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 64.3,
+    "backtest_score": 70.1,
+    "backtest_score_v1": 67.1,
+    "description": {
+      "selection_quality": "64.4/100 — 4개 기술 평균 value=0.644\n  ▲ 3D 스택형 반도체 패키징: value=0.835 (특허↑=0.69, 시장↑=0.89, 규모=0.98)\n  ▲ 백사이드 소스/드레인 리세스 기술: value=0.741 (특허↑=0.43, 시장↑=0.91, 규모=0.99)\n  ▼ GAA 공통 금속 게이트 공정: value=0.600 (특허↑=0.00, 시장↑=1.00, 규모=1.00)\n  ▼ 메모리 내 연산 아키텍처: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)",
+      "cost_adjusted_return": "51.9/100 — 평균 return=0.519\n  3D 스택형 반도체 패키징: value=0.835 - 0.15×1.00(cost) = return +0.685 [Strategic]\n  백사이드 소스/드레인 리세스 기술: value=0.741 - 0.15×0.67(cost) = return +0.641 [High]\n  GAA 공통 금속 게이트 공정: value=0.600 - 0.15×1.00(cost) = return +0.450 [Strategic]\n  메모리 내 연산 아키텍처: value=0.400 - 0.15×0.67(cost) = return +0.300 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "64.3/100 — 평균 오차 1.19년\n  백사이드 소스/드레인 리세스 기술: 2.0년 늦음 ⚠\n  3D 스택형 반도체 패키징: 1.2년 늦음 ⚠\n  GAA 공통 금속 게이트 공정: 0.8년 늦음\n  메모리 내 연산 아키텍처: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×64.4 + 0.35×51.9 + 0.05×100.0 + 0.05×100.0 + 0.10×64.3 = 70.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.19,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 공통 금속 게이트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "3D 스택형 반도체 패키징",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 소스/드레인 리세스 기술",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "메모리 내 연산 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 62.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "total_penalty": 0.9,
+    "final_composite_score": 61.6,
+    "description": "pre_penalty = 0.4×51.2(LLM) + 0.6×70.1(Backtest) = 62.5. Penalty: timing_error: -0.9pt. 총 -0.9pt. 최종 = 61.6."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 51.2점, Backtest 경제성 평가 70.1점. 제약 위반으로 0.9점 차감. 최종 Composite Score: 61.6점.",
+    "key_failure_points": [
+      "타이밍 이슈: 3D 스택형 반도체 패키징의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 백사이드 소스/드레인 리세스 기술의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

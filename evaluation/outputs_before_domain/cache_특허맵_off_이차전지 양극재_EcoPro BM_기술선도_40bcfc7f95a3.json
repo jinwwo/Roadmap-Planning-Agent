@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 40.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 and T03 start at TRL 6 with 2-year development windows, which is reasonable for incremental advancement; T08 at TRL 4 with a 4-year window (2026-2030) is plausible but ambitious given the complexity of battery recycling processes and regulatory requirements.",
+      "strategic_fidelity": "For a 기술선도 (Technology Leadership) strategy, the portfolio is surprisingly shallow — only 3 technologies, two of which are already at TRL 6 (near-market), which is more characteristic of 시장이익최대; a true technology leadership portfolio should include lower-TRL exploratory materials and more patents-oriented frontier technologies.",
+      "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing designed to preempt competitors; technology selections appear driven by internal scoring rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom to preempt; T01 completes 0.5yr after boom (acceptable), but T03 completes 1yr after boom and T08 completes 3.25 years after its boom window (2026-Q4), representing a severe timing failure for the recycling technology.",
+      "patent_market_convergence": "T01 and T03 in cathode materials represent a domain with known patent-market convergence in high-nickel battery materials, but T08 (battery recycling) appears selected primarily on market opportunity score without clear evidence of patent activity alignment."
+    },
+    "strengths": [
+      "T01→T03 dependency chain is logically structured and technically coherent, with cathode material development feeding process optimization",
+      "Budget utilization is exact with zero violations and zero dependency conflicts, indicating disciplined planning execution"
+    ],
+    "weaknesses": [
+      "배터리 재활용 및 원료 회수 (T08) misses its market boom by 3.25 years, rendering the investment strategically ineffective and wasting High-tier allocation",
+      "Portfolio of only 3 technologies, predominantly at TRL 6, fails to embody 기술선도 strategy — lacks exploratory, frontier, or disruptive technology bets"
+    ],
+    "missing_technologies": [
+      "Low-TRL solid-state electrolyte or all-solid-state cathode interface technologies (TRL 2-4) for genuine technology leadership positioning",
+      "Single-crystal or monocrystalline high-nickel cathode material technologies to address structural degradation at frontier level",
+      "AI/ML-driven materials discovery platform for next-generation cathode composition optimization"
+    ],
+    "investment_issues": [
+      "High-tier investment in 배터리 재활용 및 원료 회수 with executability score of 2.0 and a 3.25-year timing miss represents poor capital allocation — should be deferred or deprioritized",
+      "Strategic-tier allocation concentrated on a single TRL-6 material (T01) is inconsistent with technology leadership; strategic investment should diversify across lower-TRL bets to build future pipeline"
+    ],
+    "timing_issues": [
+      "배터리 재활용 및 원료 회수 completion in 2030-Q1 is 3.25 years after its market boom of 2026-Q4, missing the window entirely and likely entering a commoditized market",
+      "전구체 합성 공정 최적화 completing 1 year after its boom (2029-Q1) is suboptimal for technology leadership, which requires preemptive market entry"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 and T03 start at TRL 6 with 2-year development windows, which is reasonable for incremental advancement; T08 at TRL 4 with a 4-year window (2026-2030) is plausible but ambitious given the complexity of battery recycling processes and regulatory requirements.",
+      "strategic_fidelity": "score 2/5 - For a 기술선도 (Technology Leadership) strategy, the portfolio is surprisingly shallow — only 3 technologies, two of which are already at TRL 6 (near-market), which is more characteristic of 시장이익최대; a true technology leadership portfolio should include lower-TRL exploratory materials and more patents-oriented frontier technologies.",
+      "competitive_awareness": "score 2/5 - The roadmap shows no explicit evidence of competitor positioning, differentiation rationale, or timing designed to preempt competitors; technology selections appear driven by internal scoring rather than competitive landscape intelligence.",
+      "market_timing": "score 2/5 - For 기술선도, technologies should complete 1-2 years before market boom to preempt; T01 completes 0.5yr after boom (acceptable), but T03 completes 1yr after boom and T08 completes 3.25 years after its boom window (2026-Q4), representing a severe timing failure for the recycling technology.",
+      "patent_market_convergence": "score 3/5 - T01 and T03 in cathode materials represent a domain with known patent-market convergence in high-nickel battery materials, but T08 (battery recycling) appears selected primarily on market opportunity score without clear evidence of patent activity alignment.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 40.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고결정도 도핑 양극재",
+        "patent_growth_norm": 0.3585,
+        "market_growth_norm": 0.8522,
+        "market_size_norm": 0.8344,
+        "value": 0.6494,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 8.4677
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "전구체 합성 공정 최적화",
+        "patent_growth_norm": 0.8715,
+        "market_growth_norm": 0.7518,
+        "market_size_norm": 0.7552,
+        "value": 0.8007,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6,
+        "cost_adjusted_return": 8.5576
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "배터리 재활용 및 원료 회수",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8447,
+        "market_size_norm": 1.0,
+        "value": 0.9534,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.44,
+        "cost_adjusted_return": 9.337
+      }
+    ],
+    "selection_quality": 80.1,
+    "cost_adjusted_return": 99.5,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "backtest_score": 83.0,
+    "backtest_score_v1": 88.1,
+    "description": {
+      "selection_quality": "80.1/100 — 3개 기술 평균 value=0.801\n  ▲ 배터리 재활용 및 원료 회수: value=0.953 (특허↑=1.00, 시장↑=0.84, 규모=1.00)\n  ▼ 전구체 합성 공정 최적화: value=0.801 (특허↑=0.87, 시장↑=0.75, 규모=0.76)\n  ▼ 고결정도 도핑 양극재: value=0.649 (특허↑=0.36, 시장↑=0.85, 규모=0.83)",
+      "cost_adjusted_return": "99.5/100 — 평균 return=8.787\n  배터리 재활용 및 원료 회수: value=0.953 - 0.15×0.67(cost) = return +9.337 [High]\n  전구체 합성 공정 최적화: value=0.801 - 0.15×0.67(cost) = return +8.558 [High]\n  고결정도 도핑 양극재: value=0.649 - 0.15×1.00(cost) = return +8.468 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  배터리 재활용 및 원료 회수: 3.2년 늦음 ⚠\n  전구체 합성 공정 최적화: 1.0년 늦음\n  고결정도 도핑 양극재: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×80.1 + 0.35×99.5 + 0.05×100.0 + 0.05×100.0 + 0.10×52.6 = 83.0"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고결정도 도핑 양극재",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "전구체 합성 공정 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "배터리 재활용 및 원료 회수",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 65.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 62.9,
+    "description": "pre_penalty = 0.4×40.0(LLM) + 0.6×83.0(Backtest) = 65.8. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 62.9.\n  [진단] LLM 구조 점수(40.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(83.0)가 LLM(40.0)보다 43.0pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 40.0점, Backtest 경제성 평가 83.0점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 62.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: 배터리 재활용 및 원료 회수의 완료시점이 시장 개화 대비 3.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

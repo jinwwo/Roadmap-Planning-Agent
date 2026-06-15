@@ -1,0 +1,778 @@
+[
+  {
+    "name": "agent_output_only",
+    "composite": 43.2,
+    "penalty": 14.0,
+    "llm_score": 62.5,
+    "backtest": 53.6,
+    "sel_quality": 50.0,
+    "cost_adj": 42.5,
+    "timing": 92.5,
+    "dep_valid": 40,
+    "budget": 80.0,
+    "align": 4,
+    "seq": 2,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "mock_orchestrator_bundle",
+    "composite": 67.6,
+    "penalty": 0,
+    "llm_score": 80.0,
+    "backtest": 59.3,
+    "sel_quality": 49.9,
+    "cost_adj": 39.9,
+    "timing": 78.7,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 5,
+    "bal": 4,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "web_ccfb8d91..._final",
+    "composite": 71.4,
+    "penalty": 0,
+    "llm_score": 77.5,
+    "backtest": 67.4,
+    "sel_quality": 62.4,
+    "cost_adj": 51.4,
+    "timing": 76.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 5,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Medtronic_기술선도",
+    "composite": 50.6,
+    "penalty": 2.9,
+    "llm_score": 52.5,
+    "backtest": 54.1,
+    "sel_quality": 47.9,
+    "cost_adj": 34.6,
+    "timing": 52.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 3,
+    "coher": 3,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Medtronic_시장이익최대",
+    "composite": 56.5,
+    "penalty": 4.2,
+    "llm_score": 62.5,
+    "backtest": 59.5,
+    "sel_quality": 56.6,
+    "cost_adj": 43.3,
+    "timing": 45.1,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Pfizer_기술선도",
+    "composite": 46.2,
+    "penalty": 5.2,
+    "llm_score": 52.5,
+    "backtest": 50.7,
+    "sel_quality": 44.6,
+    "cost_adj": 32.1,
+    "timing": 38.8,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 3,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Pfizer_시장이익최대",
+    "composite": 54.3,
+    "penalty": 2.1,
+    "llm_score": 65.0,
+    "backtest": 50.7,
+    "sel_quality": 42.3,
+    "cost_adj": 28.9,
+    "timing": 57.4,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Roche_기술선도",
+    "composite": 59.8,
+    "penalty": 5.4,
+    "llm_score": 62.5,
+    "backtest": 67.0,
+    "sel_quality": 68.5,
+    "cost_adj": 55.1,
+    "timing": 37.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_바이오_헬스케어_Roche_시장이익최대",
+    "composite": 53.5,
+    "penalty": 8.8,
+    "llm_score": 75.0,
+    "backtest": 53.9,
+    "sel_quality": 52.6,
+    "cost_adj": 39.2,
+    "timing": 17.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 5,
+    "invest": 5,
+    "coher": 4,
+    "bal": 3,
+    "models": []
+  },
+  {
+    "name": "특허맵_off_반도체_Intel_기술선도",
+    "composite": 55.7,
+    "penalty": 0.4,
+    "llm_score": 70.0,
+    "backtest": 46.8,
+    "sel_quality": 35.4,
+    "cost_adj": 22.0,
+    "timing": 67.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_반도체_Intel_시장이익최대",
+    "composite": 60.6,
+    "penalty": 0.3,
+    "llm_score": 77.5,
+    "backtest": 49.9,
+    "sel_quality": 39.0,
+    "cost_adj": 27.0,
+    "timing": 68.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 5,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_반도체_Samsung Electronics_기술선도",
+    "composite": 53.9,
+    "penalty": 2.5,
+    "llm_score": 65.0,
+    "backtest": 50.7,
+    "sel_quality": 42.6,
+    "cost_adj": 29.3,
+    "timing": 55.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_반도체_Samsung Electronics_시장이익최대",
+    "composite": 50.7,
+    "penalty": 3.2,
+    "llm_score": 65.0,
+    "backtest": 46.5,
+    "sel_quality": 36.1,
+    "cost_adj": 25.1,
+    "timing": 50.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_반도체_TSMC_기술선도",
+    "composite": 69.2,
+    "penalty": 0.9,
+    "llm_score": 77.5,
+    "backtest": 65.2,
+    "sel_quality": 61.7,
+    "cost_adj": 49.2,
+    "timing": 64.3,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 5,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_반도체_TSMC_시장이익최대",
+    "composite": 47.6,
+    "penalty": 5.0,
+    "llm_score": 60.0,
+    "backtest": 47.7,
+    "sel_quality": 39.3,
+    "cost_adj": 28.3,
+    "timing": 40.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Hyundai Motor_기술선도",
+    "composite": 45.6,
+    "penalty": 1.9,
+    "llm_score": 72.5,
+    "backtest": 30.9,
+    "sel_quality": 13.5,
+    "cost_adj": 1.0,
+    "timing": 58.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Hyundai Motor_시장이익최대",
+    "composite": 60.5,
+    "penalty": 3.8,
+    "llm_score": 67.5,
+    "backtest": 62.1,
+    "sel_quality": 59.5,
+    "cost_adj": 47.0,
+    "timing": 47.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Tesla_기술선도",
+    "composite": 59.8,
+    "penalty": 5.0,
+    "llm_score": 72.5,
+    "backtest": 59.6,
+    "sel_quality": 57.0,
+    "cost_adj": 44.5,
+    "timing": 40.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Tesla_시장이익최대",
+    "composite": 42.4,
+    "penalty": 3.4,
+    "llm_score": 67.5,
+    "backtest": 31.4,
+    "sel_quality": 15.5,
+    "cost_adj": 3.0,
+    "timing": 49.3,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Toyota_기술선도",
+    "composite": 44.1,
+    "penalty": 10.6,
+    "llm_score": 65.0,
+    "backtest": 47.9,
+    "sel_quality": 45.8,
+    "cost_adj": 32.0,
+    "timing": 6.4,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_off_자동차_모빌리티_Toyota_시장이익최대",
+    "composite": 61.8,
+    "penalty": 2.9,
+    "llm_score": 70.0,
+    "backtest": 61.1,
+    "sel_quality": 57.9,
+    "cost_adj": 44.5,
+    "timing": 52.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Medtronic_기술선도",
+    "composite": 61.5,
+    "penalty": 1.2,
+    "llm_score": 67.5,
+    "backtest": 59.5,
+    "sel_quality": 53.2,
+    "cost_adj": 41.9,
+    "timing": 62.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 3,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Medtronic_시장이익최대",
+    "composite": 53.4,
+    "penalty": 5.0,
+    "llm_score": 57.5,
+    "backtest": 59.0,
+    "sel_quality": 56.6,
+    "cost_adj": 43.3,
+    "timing": 40.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Pfizer_기술선도",
+    "composite": 58.6,
+    "penalty": 1.0,
+    "llm_score": 62.5,
+    "backtest": 57.7,
+    "sel_quality": 50.2,
+    "cost_adj": 39.2,
+    "timing": 64.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 3,
+    "coher": 3,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Pfizer_시장이익최대",
+    "composite": 59.8,
+    "penalty": 0,
+    "llm_score": 65.0,
+    "backtest": 56.4,
+    "sel_quality": 46.0,
+    "cost_adj": 34.4,
+    "timing": 82.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 3,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Roche_기술선도",
+    "composite": 45.3,
+    "penalty": 8.8,
+    "llm_score": 57.5,
+    "backtest": 51.8,
+    "sel_quality": 49.5,
+    "cost_adj": 36.2,
+    "timing": 17.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_바이오_헬스케어_Roche_시장이익최대",
+    "composite": 55.8,
+    "penalty": 0.6,
+    "llm_score": 65.0,
+    "backtest": 50.7,
+    "sel_quality": 40.0,
+    "cost_adj": 28.7,
+    "timing": 66.4,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 2,
+    "seq": 5,
+    "invest": 4,
+    "coher": 4,
+    "bal": 4,
+    "models": []
+  },
+  {
+    "name": "특허맵_on_반도체_Intel_기술선도",
+    "composite": 51.1,
+    "penalty": 3.8,
+    "llm_score": 67.5,
+    "backtest": 46.5,
+    "sel_quality": 36.7,
+    "cost_adj": 25.4,
+    "timing": 47.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_반도체_Intel_시장이익최대",
+    "composite": 55.9,
+    "penalty": 1.2,
+    "llm_score": 67.5,
+    "backtest": 50.1,
+    "sel_quality": 40.1,
+    "cost_adj": 28.1,
+    "timing": 62.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_반도체_Samsung Electronics_기술선도",
+    "composite": 67.8,
+    "penalty": 0.3,
+    "llm_score": 77.5,
+    "backtest": 61.8,
+    "sel_quality": 56.9,
+    "cost_adj": 43.2,
+    "timing": 68.2,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 5,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_반도체_Samsung Electronics_시장이익최대",
+    "composite": 61.5,
+    "penalty": 0.7,
+    "llm_score": 67.5,
+    "backtest": 58.7,
+    "sel_quality": 52.5,
+    "cost_adj": 39.5,
+    "timing": 65.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_반도체_TSMC_기술선도",
+    "composite": 41.7,
+    "penalty": 5.0,
+    "llm_score": 62.5,
+    "backtest": 36.2,
+    "sel_quality": 24.0,
+    "cost_adj": 10.7,
+    "timing": 40.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_반도체_TSMC_시장이익최대",
+    "composite": 51.8,
+    "penalty": 2.8,
+    "llm_score": 65.0,
+    "backtest": 47.6,
+    "sel_quality": 38.6,
+    "cost_adj": 24.9,
+    "timing": 53.2,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Hyundai Motor_기술선도",
+    "composite": 39.2,
+    "penalty": 3.8,
+    "llm_score": 60.0,
+    "backtest": 31.6,
+    "sel_quality": 16.0,
+    "cost_adj": 3.5,
+    "timing": 47.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Hyundai Motor_시장이익최대",
+    "composite": 56.5,
+    "penalty": 3.2,
+    "llm_score": 72.5,
+    "backtest": 51.1,
+    "sel_quality": 43.7,
+    "cost_adj": 30.7,
+    "timing": 50.5,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Tesla_기술선도",
+    "composite": 60.1,
+    "penalty": 4.7,
+    "llm_score": 72.5,
+    "backtest": 59.7,
+    "sel_quality": 57.0,
+    "cost_adj": 44.5,
+    "timing": 41.8,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Tesla_시장이익최대",
+    "composite": 41.1,
+    "penalty": 4.4,
+    "llm_score": 67.5,
+    "backtest": 30.8,
+    "sel_quality": 15.5,
+    "cost_adj": 3.0,
+    "timing": 43.6,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 3,
+    "invest": 4,
+    "coher": 4,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Toyota_기술선도",
+    "composite": 45.7,
+    "penalty": 2.5,
+    "llm_score": 52.5,
+    "backtest": 45.3,
+    "sel_quality": 34.7,
+    "cost_adj": 21.7,
+    "timing": 55.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 3,
+    "seq": 3,
+    "invest": 3,
+    "coher": 4,
+    "bal": 2,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  },
+  {
+    "name": "특허맵_on_자동차_모빌리티_Toyota_시장이익최대",
+    "composite": 61.6,
+    "penalty": 0,
+    "llm_score": 67.5,
+    "backtest": 57.6,
+    "sel_quality": 47.8,
+    "cost_adj": 35.3,
+    "timing": 85.0,
+    "dep_valid": 100,
+    "budget": 100.0,
+    "align": 4,
+    "seq": 4,
+    "invest": 4,
+    "coher": 3,
+    "bal": 3,
+    "models": [
+      "anthropic:claude-sonnet-4-6"
+    ]
+  }
+]

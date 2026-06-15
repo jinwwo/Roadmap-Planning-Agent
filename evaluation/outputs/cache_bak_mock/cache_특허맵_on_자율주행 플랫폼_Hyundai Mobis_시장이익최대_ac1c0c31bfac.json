@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 4,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 50.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 4,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6-7 and target completion within 2-3 years, which is realistic for near-market technologies; TRL jumps are modest and timelines are reasonable given the mature starting points.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (Market Profit Maximization), which requires completion close to market boom windows, yet all three technologies complete 1.25 to 2.0 years AFTER their respective booms — systematically missing the profit maximization window and acting more like a conservative R&D portfolio.",
+      "competitive_awareness": "All three technologies (steer-by-wire, high-voltage connector assembly, camera-ultrasonic sensor fusion) are firmly within the Autonomous Driving/ADAS/Automotive Electronics domain, showing coherent domain focus and reasonable differentiation awareness.",
+      "market_timing": "With a mean timing error of 1.58 years and all completions lagging behind boom windows (스테어바이와이어: +1.25yr late, 고전압커넥터: +1.5yr late, 카메라초음파: +2.0yr late), the portfolio systematically misses the ±0.5 year ideal window required for market profit maximization strategy.",
+      "patent_market_convergence": "The selected technologies are commercially relevant and patent-active areas within ADAS, but the roadmap provides no explicit evidence of deliberate convergence-zone targeting; alignment appears incidental rather than analytically driven."
+    },
+    "strengths": [
+      "All selected technologies are domain-coherent, firmly within Autonomous Driving/ADAS/Automotive Electronics with no off-domain drift",
+      "TRL pathways are realistic — high starting TRLs (6-7) with manageable development windows reduce execution risk"
+    ],
+    "weaknesses": [
+      "Systematic late completion across all three technologies means the portfolio will miss peak market demand windows under a profit-maximization strategy",
+      "The investment horizon is too long for the declared 시장이익최대 strategy; development timelines should be compressed or start dates advanced to align with boom periods"
+    ],
+    "missing_technologies": [
+      "LiDAR-based perception middleware (higher TRL, strong 2027-2028 market window alignment)",
+      "ADAS domain controller / central compute platform (high commercial urgency, fits domain perfectly)"
+    ],
+    "investment_issues": [
+      "Assigning 카메라-초음파 통합 센서 (lowest strategic fit score of 3.0) to Tier=High while it has the worst timing error suggests misaligned tier prioritization",
+      "No budget headroom (100% utilization) leaves zero flexibility for accelerating timelines or pivoting if market windows shift"
+    ],
+    "timing_issues": [
+      "스테어바이와이어 다중모드 제어 completes Q1 2028 but boom is Q4 2026 — 1.25 years late, missing prime commercialization window",
+      "고전압 커넥터 자동화 조립 completes Q1 2029 but boom is Q3 2027 — 1.5 years late, significant revenue opportunity loss",
+      "카메라-초음파 통합 센서 completes Q1 2030 but boom is Q1 2028 — 2.0 years late, the worst timing misalignment in the portfolio"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - All three technologies start at TRL 6-7 and target completion within 2-3 years, which is realistic for near-market technologies; TRL jumps are modest and timelines are reasonable given the mature starting points.",
+      "strategic_fidelity": "score 2/5 - The declared strategy is 시장이익최대 (Market Profit Maximization), which requires completion close to market boom windows, yet all three technologies complete 1.25 to 2.0 years AFTER their respective booms — systematically missing the profit maximization window and acting more like a conservative R&D portfolio.",
+      "competitive_awareness": "score 4/5 - All three technologies (steer-by-wire, high-voltage connector assembly, camera-ultrasonic sensor fusion) are firmly within the Autonomous Driving/ADAS/Automotive Electronics domain, showing coherent domain focus and reasonable differentiation awareness.",
+      "market_timing": "score 2/5 - With a mean timing error of 1.58 years and all completions lagging behind boom windows (스테어바이와이어: +1.25yr late, 고전압커넥터: +1.5yr late, 카메라초음파: +2.0yr late), the portfolio systematically misses the ±0.5 year ideal window required for market profit maximization strategy.",
+      "patent_market_convergence": "score 3/5 - The selected technologies are commercially relevant and patent-active areas within ADAS, but the roadmap provides no explicit evidence of deliberate convergence-zone targeting; alignment appears incidental rather than analytically driven.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×4 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 50.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "스테어바이와이어 다중모드 제어",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8217,
+        "market_size_norm": 0.5529,
+        "value": 0.4124,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.5306
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "고전압 커넥터 자동화 조립",
+        "patent_growth_norm": 0.5276,
+        "market_growth_norm": 0.5895,
+        "market_size_norm": 0.9292,
+        "value": 0.6666,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8182,
+        "cost_adjusted_return": -0.6931
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "카메라-초음파 통합 센서",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.593,
+        "market_size_norm": 1.0,
+        "value": 0.4779,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7045,
+        "cost_adjusted_return": 0.3716
+      }
+    ],
+    "selection_quality": 51.9,
+    "cost_adjusted_return": 42.9,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 52.6,
+    "investment_rationality_score": 66.7,
+    "backtest_score": 56.8,
+    "backtest_score_v1": 58.4,
+    "description": {
+      "selection_quality": "51.9/100 — 3개 기술 평균 value=0.519\n  ▲ 고전압 커넥터 자동화 조립: value=0.667 (특허↑=0.53, 시장↑=0.59, 규모=0.93)\n  ▼ 카메라-초음파 통합 센서: value=0.478 (특허↑=0.00, 시장↑=0.59, 규모=1.00)\n  ▼ 스테어바이와이어 다중모드 제어: value=0.412 (특허↑=0.00, 시장↑=0.82, 규모=0.55)",
+      "cost_adjusted_return": "42.9/100 — 평균 return=-0.284\n  카메라-초음파 통합 센서: 순이익(log)=+0.372 [High]\n  스테어바이와이어 다중모드 제어: 순이익(log)=-0.531 [Strategic]\n  고전압 커넥터 자동화 조립: 순이익(log)=-0.693 [Strategic]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "52.6/100 — 평균 오차 1.58년\n  카메라-초음파 통합 센서: 2.0년 늦음 ⚠\n  고전압 커넥터 자동화 조립: 1.5년 늦음 ⚠\n  스테어바이와이어 다중모드 제어: 1.2년 늦음 ⚠",
+      "formula": "backtest_score = 0.25×51.9(기술선택) + 0.25×42.9(투자대비수익) + 0.15×66.7(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×52.6(타이밍) = 56.8"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.58,
+    "timing_details": [
+      {
+        "tech_id": "T02",
+        "tech_name": "스테어바이와이어 다중모드 제어",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "고전압 커넥터 자동화 조립",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "카메라-초음파 통합 센서",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 54.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "total_penalty": 2.9,
+    "final_composite_score": 51.2,
+    "description": "pre_penalty = 0.4×50.0(LLM) + 0.6×56.8(Backtest) = 54.1. Penalty: timing_error: -2.9pt. 총 -2.9pt. 최종 = 51.2."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 50.0점, Backtest 경제성 평가 56.8점. 제약 위반으로 2.9점 차감. 최종 Composite Score: 51.2점.",
+    "key_failure_points": [
+      "타이밍 이슈: 스테어바이와이어 다중모드 제어의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 고전압 커넥터 자동화 조립의 완료시점이 시장 개화 대비 1.5년 차이",
+      "타이밍 이슈: 카메라-초음파 통합 센서의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

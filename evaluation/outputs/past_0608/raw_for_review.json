@@ -1,0 +1,2829 @@
+{
+  "Cosmo AM&T": {
+    "industry": "이차전지 양극재",
+    "variants": {
+      "on": {
+        "agent_roadmap": [
+          {
+            "name": "High-Nickel Polycrystalline Cathode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 1 단계로 기초 연구가 필요하여 1 차년도부터 시작하며, 2027 년 Q2 시장 폭발 시점을 고려하여 3 차년도 (2028 년) 까지 기술 성숙 및 양산 준비를 완료하는 것이 적절합니다. 이는 초기 시장 진입을 위한 최적의 타이밍을 확보합니다.",
+              "tech_execution": "고니켈 양극재는 전기차 에너지 밀도 요구에 대응하는 핵심 기술로, 치열한 경쟁 환경에서 차별화된 공정 기술을 확보해야 합니다. 이를 통해 주요 플레이어와의 특허 유사도를 극복하고 시장 진입 장벽을 낮출 수 있습니다.",
+              "investment_selection": "100 억 달러 이상의 시장 규모와 빠른 성장 잠재력을 고려할 때, 초기 R&D 투자가 경쟁 우위를 선점하는 데 결정적입니다. 이는 회사의 차세대 양극재 기술 선도 전략과 직접적으로 부합합니다."
+            }
+          },
+          {
+            "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 1 단계로 장기적인 연구 개발이 필요하며, 2028 년 Q1 시장 확대 시점을 고려하여 4 차년도 (2029 년) 까지 기술 고도화와 비용 경쟁력 확보를 목표로 합니다. 이는 시장 진입 전 충분한 기술 검증 시간을 확보합니다.",
+              "tech_execution": "LiFSI 는 고전압 배터리 필수 소재로, 회수 및 합성 기술은 비용 경쟁력 확보의 핵심입니다. CATL 등과의 특허 경쟁을 극복하기 위해 독자적인 기술 스택을 강화해야 합니다.",
+              "investment_selection": "정책적 지원과 투자 유입이 활발한 분야로, 초기 투자 시점의 선택이 향후 시장 점유율에 큰 영향을 미칩니다. 이는 에너지 저장 및 신소재 인접 시장 확장 전략을 실현하는 데 필수적입니다."
+            }
+          },
+          {
+            "name": "Silicon-Based Negative Electrode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 1 단계로 가장 긴 연구 개발 기간이 필요하며, 2029 년 Q1 시장 확대 시점을 고려하여 5 차년도 (2030 년) 까지 기술 성숙과 상용화를 목표로 합니다. 이는 프론티어 기술 R&D 스택 강화를 위한 장기적인 비전을 반영합니다.",
+              "tech_execution": "실리콘 음극재는 기술 성숙도가 낮아 초기 진입 장벽이 높지만, 시장 규모가 60 억 달러 이상으로 성장할 것으로 예상됩니다. Panasonic Energy 등과의 특허 경쟁을 극복하기 위해 차별화된 기술 개발이 필요합니다.",
+              "investment_selection": "차세대 배터리 기술의 핵심으로, 초기 투자 시점의 선택이 향후 시장 선점과 기술 주도권 확보에 결정적입니다. 이는 회사의 프론티어 기술 R&D 스택 강화 전략을 실현하는 데 필수적입니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 48.7,
+          "penalty": 0,
+          "penalties": [],
+          "llm_score": 37.5,
+          "axes": {
+            "trl_pathway": 1,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 4,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 56.2,
+          "selection_quality": 51.2,
+          "cost_adjusted": 41.2,
+          "timing_accuracy": 72.4,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "High-Nickel Polycrystall",
+              0.48,
+              0.31
+            ],
+            [
+              "Lithium Bis(fluorosulfon",
+              0.3,
+              0.0
+            ],
+            [
+              "Silicon-Based Negative E",
+              0.75,
+              0.85
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "All three technologies start at TRL 1 (basic research) and must reach deployment-ready status within 2-4 years, which is extremely aggressive; industry norms for TRL 1 to commercial-ready progression typically require 7-10+ years, making all three pathways essentially infeasible within the stated timelines.",
+            "strategic_fidelity": "The selection of TRL 1 technologies and longer development horizons is consistent with 기술선도 (Technology Leadership) orientation, and the portfolio covers complementary battery material domains; however, strategic_fit scores are moderate (3-4) for most technologies and the executability scores of 1.0 across the board signal serious implementation concerns that undermine the leadership ambition.",
+            "competitive_awareness": "There is no explicit evidence of competitor positioning analysis, differentiation rationale, or technology gap exploitation embedded in the roadmap; technology selections appear driven by market opportunity signals rather than a deliberate strategy to leapfrog or differentiate from identified competitors.",
+            "market_timing": "For 기술선도 strategy, completing 1-2 years before market boom is ideal; all three technologies complete approximately 0.75-1.0 years after their respective boom windows, which is a modest post-boom miss but not severely misaligned — the mean timing error of 0.92 years represents a marginal overshoot rather than systematic late delivery.",
+            "patent_market_convergence": "All selected technologies carry high market opportunity scores (4-5) suggesting market signal awareness, but there is no visible evidence of patent trend analysis driving selections; the convergence appears coincidental given that these are broadly recognized high-growth battery material categories rather than specifically targeted convergence zones."
+          },
+          "strengths": [
+            "Portfolio targets three complementary high-growth battery material segments (cathode, electrolyte salt, anode) providing diversified coverage of the EV/energy storage value chain",
+            "Strategic tier allocation (Strategic/High/Medium) appropriately prioritizes technologies by combined market opportunity and urgency scores"
+          ],
+          "weaknesses": [
+            "All technologies begin at TRL 1 with executability scores of 1.0, making the planned development timelines of 2-4 years to market-ready status fundamentally infeasible and representing the most critical flaw in the roadmap",
+            "All three technologies complete after their market boom windows rather than before them, which contradicts the preemptive positioning required for 기술선도 strategy and risks missing first-mover advantages"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "TECH-001",
+              "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+              "target_q": "2028-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "TECH-002",
+              "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+              "target_q": "2029-Q1",
+              "boom_q": "2028-Q1",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "TECH-004",
+              "tech_name": "Silicon-Based Negative Electrode Materials",
+              "target_q": "2030-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 1.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "off": {
+        "agent_roadmap": [
+          {
+            "name": "Advanced Binder Compositions for Electrodes",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "2026 년 말 (1 차년도 말) 에 시장 폭발이 예상되므로 1 차년도부터 즉시 R&D 를 시작하여 3 차년도까지 상용화 및 초기 양산 기술을 완성해야 합니다. TRL 1 단계이므로 3 년의 개발 기간이 필요하며, 이는 다른 양극재 기술의 전제 조건이 될 수 있습니다.",
+              "tech_execution": "고성능 양극재 및 고체전지 상용화에 필수적인 바인더 조성 기술을 확보하여 Cosmo AM&T 의 기능성 소재 포트폴리오를 강화해야 합니다. 이는 차세대 배터리 성능 향상에 직접적인 기여를 하며, 특허 기반의 진입 장벽을 형성하는 핵심 전략입니다.",
+              "investment_selection": "2026 년 말부터 급성장할 시장 선점을 위해 초기 투자 집중이 필요하며, 상대적으로 짧은 개발 주기로 빠른 ROI 를 기대할 수 있습니다. 기능성 소재 시장 확장의敲门석 역할을 하여 향후 고부가가치 기술로 확장하는 데 필수적입니다."
+            }
+          },
+          {
+            "name": "High-Nickel Polycrystalline Cathode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "고니켈 양극재는 2027 년 Q2 시장 폭발을 앞두고 1 차년도부터 개발을 시작해야 하며, 바인더 기술 (TECH-007) 의 초기 성과와 병행하여 4 차년도까지 품질 안정화 및 원가 경쟁력 확보를 완료합니다. TRL 1 단계이므로 4 년의 긴 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['TECH-007'] 완료 후로 2차년도 push]",
+              "tech_execution": "EV 주행거리 요구 증가에 대응하는 고니켈 양극재 기술을 선도하여 CATL, LG 에너지솔루션 등 주요 플레이어들과 경쟁할 수 있는 기술적 우위를 확보해야 합니다. 이는 Cosmo AM&T 의 차세대 양극재 기술 선도 전략의 핵심입니다.",
+              "investment_selection": "집중화된 시장 구조에서 선점하기 위해 초기부터 지속적인 R&D 예산 투입이 필요하며, 기술 진입 장벽을 극복하는 데 핵심 투자 대상입니다. 시장 규모가 크고 경쟁 우위를 점할 경우 장기적인 수익 창출이 기대됩니다."
+            }
+          },
+          {
+            "name": "Next-Gen Positive Electrode Active Material Synthesis",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "고니켈 양극재 (TECH-001) 의 초기 개발 성과 (2 차년도) 를 바탕으로 차세대 합성 기술을 2 차년도부터 시작하여 5 차년도 (2030 년) 까지 프론티어 기술로 완성합니다. TRL 1 단계이므로 4 년의 개발 기간이 필요하며, 2028 년 Q1 시장 폭발을 대비합니다. [후처리: dependency 보정 — prereq ['TECH-001'] 완료 후로 3차년도 push]",
+              "tech_execution": "2028 년경 본격화될 차세대 양극재 시장 선점을 위해 합성 기술을 고도화하여 Cosmo AM&T 의 핵심 성장 동력을 확보해야 합니다. 이는 기술 진입 장벽이 높은 시장에서 지배력을 확보하는 데 필수적입니다.",
+              "investment_selection": "장기적인 시장 지배력을 확보하기 위해 5 차년도까지 이어지는 R&D 투자가 필요하며, 프론티어 기술 스택 강화를 위한 핵심 투자 대상입니다. 초기 기술 (TECH-001) 의 성공을 바탕으로 확장 가능한 고부가가치 기술입니다."
+            }
+          },
+          {
+            "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "고에너지 밀도 배터리 수요 증가에 따른 2028 년 Q3 시장 폭발을 대비하여, 양극재 기술 (TECH-001, TECH-011) 의 초기 성과 (3 차년도) 를 바탕으로 3 차년도부터 재활용 기술을 시작하여 5 차년도까지 완성합니다. TRL 1 단계이므로 3 년의 개발 기간이 필요합니다. [후처리: dependency 보정 — prereq ['TECH-001', 'TECH-011'] 완료 후로 2차년도 push]",
+              "tech_execution": "LiFSI 전해질 재활용 기술을 통해 원가 절감 및 지속가능성 측면에서 부가 가치를 창출하며, 고에너지 밀도 배터리 시장의 프론티어 기술을 선점해야 합니다. 이는 Cosmo AM&T 의 에너지 저장 및 신소재 인접 시장 확장 전략에 부합합니다.",
+              "investment_selection": "아직 초기 단계인 재활용 기술 시장에서 선점 가능성을 높이기 위해 5 차년도까지 이어지는 R&D 투자가 필요하며, 지속가능성 트렌드에 부합하는 핵심 투자 대상입니다. 시장 규모가 커지고 경쟁 우위를 점할 경우 장기적인 수익 창출이 기대됩니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 34.0,
+          "penalty": 4.4,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 4.4
+            }
+          ],
+          "llm_score": 22.5,
+          "axes": {
+            "trl_pathway": 1,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 1,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 49.0,
+          "selection_quality": 39.9,
+          "cost_adjusted": 27.4,
+          "timing_accuracy": 43.6,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 4,
+          "tech_values": [
+            [
+              "Advanced Binder Composit",
+              0.22,
+              0.13
+            ],
+            [
+              "High-Nickel Polycrystall",
+              0.33,
+              0.34
+            ],
+            [
+              "Next-Gen Positive Electr",
+              0.75,
+              0.37
+            ],
+            [
+              "Lithium Bis(fluorosulfon",
+              0.3,
+              0.0
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "All four technologies start at TRL 1, yet Next-Gen Positive Electrode Active Material Synthesis and LiFSI Electrolyte Recovery are scheduled to complete in the same quarter they begin (2030-Q1 → 2030-Q1), implying zero development time, which is physically impossible regardless of domain or complexity.",
+            "strategic_fidelity": "The portfolio correctly selects deep-TRL-1 exploratory technologies consistent with 기술선도, and the dependency chain shows long-horizon R&D thinking; however, the near-zero execution time for two technologies and a budget spend of zero suggest the roadmap was not actually executed, undermining the strategic intent.",
+            "competitive_awareness": "Technology selections cover high-nickel cathodes, next-gen synthesis, and LiFSI — areas of intense global competition — but the roadmap provides no differentiation rationale, no competitor positioning, and no timing-advantage design relative to known industry players, indicating shallow competitive awareness.",
+            "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom; instead, all four technologies complete after their respective boom windows, with errors ranging from 1.25 to 2.75 years post-boom, meaning the company would arrive late to every market opportunity rather than preempting competitors.",
+            "patent_market_convergence": "The technologies chosen (high-nickel cathodes, next-gen synthesis, LiFSI) do sit in active patent-and-market growth zones for battery materials, suggesting some awareness of convergence signals, but the evidence is coincidental given the absence of explicit convergence-driven selection rationale and the zero-budget execution."
+          },
+          "strengths": [
+            "Logical dependency chain (binder → high-nickel cathode → next-gen synthesis → LiFSI) reflects sound scientific understanding of development prerequisites",
+            "All technologies are at TRL 1 with high strategic_fit and uncertainty scores, which is appropriately aligned with a 기술선도 exploratory portfolio philosophy"
+          ],
+          "weaknesses": [
+            "Two technologies (TECH-011 and TECH-002) have identical start and end dates (2030-Q1 → 2030-Q1), making their development timelines zero — a fundamental planning failure",
+            "Every technology completes after its market boom window, with a mean timing error of 1.88 years post-boom, systematically inverting the preemption objective of 기술선도"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "TECH-007",
+              "tech_name": "Advanced Binder Compositions for Electrodes",
+              "target_q": "2028-Q1",
+              "boom_q": "2026-Q4",
+              "error_years": 1.25
+            },
+            {
+              "tech_id": "TECH-001",
+              "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+              "target_q": "2030-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "TECH-011",
+              "tech_name": "Next-Gen Positive Electrode Active Material Synthesis",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q1",
+              "error_years": 2.0
+            },
+            {
+              "tech_id": "TECH-002",
+              "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q3",
+              "error_years": 1.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "on_single": {
+        "agent_roadmap": [
+          {
+            "name": "High Nickel Cathode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Solid State Electrolytes",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Dry Electrode Coating",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Advanced Battery Packaging",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Silicon Anode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "AI-driven Material Discovery",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "High-Throughput Battery Testing",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          }
+        ],
+        "eval": {
+          "composite": 54.9,
+          "penalty": 6.7,
+          "penalties": [
+            {
+              "type": "dependency_violation",
+              "amount": 6
+            },
+            {
+              "type": "timing_error",
+              "amount": 0.7
+            }
+          ],
+          "llm_score": 51.2,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 4,
+            "competitive_awareness": 3,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 68.5,
+          "selection_quality": 63.1,
+          "cost_adjusted": 53.1,
+          "timing_accuracy": 65.8,
+          "dependency": 60,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "High Nickel Cathode Mate",
+              0.88,
+              1.0
+            ],
+            [
+              "Solid State Electrolytes",
+              0.2,
+              0.51
+            ],
+            [
+              "Dry Electrode Coating",
+              0.53,
+              0.0
+            ],
+            [
+              "Advanced Battery Packagi",
+              0.71,
+              0.57
+            ],
+            [
+              "Silicon Anode Materials",
+              0.79,
+              0.65
+            ],
+            [
+              "AI-driven Material Disco",
+              0.68,
+              0.19
+            ],
+            [
+              "High-Throughput Battery ",
+              0.63,
+              0.38
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Most TRL progressions are plausible (e.g., S02 TRL4→target over ~3 years, S04 TRL5→target over ~2.5 years), but Dry Electrode Coating (TRL6) completing in just 4 quarters is aggressive, and AI-driven Material Discovery (TRL3) reaching deployment-ready status in ~2.5 years is optimistic for such an early-stage architecture technology.",
+            "strategic_fidelity": "The portfolio is well-aligned with 기술선도: it includes low-TRL exploratory technologies (AI-driven Material Discovery at TRL3, Solid State Electrolytes at TRL4), longer development timelines, and R&D-heavy investments. The inclusion of higher-TRL enabling tools slightly dilutes the leadership posture but is justifiable as infrastructure.",
+            "competitive_awareness": "Technology selections cover the major competitive battlegrounds in next-gen battery development (solid-state, high-nickel, silicon anode), suggesting awareness of industry trends. However, there is no explicit differentiation logic—why these specific technologies provide competitive advantage over rivals is not articulated in the roadmap structure.",
+            "market_timing": "For 기술선도 strategy, ideal completion is 1-2 years before boom. High-Throughput Battery Testing completes 3.5 years after its boom (2027-Q2), representing a severe miss. Advanced Battery Packaging (+1.5yr late) and Silicon Anode Materials (+1.25yr late) also miss their windows. Only Solid State Electrolytes and Dry Electrode Coating are well-timed.",
+            "patent_market_convergence": "The selected technologies (solid-state electrolytes, high-nickel cathodes, silicon anodes, AI material discovery) are all active patent and market growth areas in the battery domain, suggesting convergence awareness. However, all technologies receive identical scoring across all dimensions, indicating the selection may not have been fine-tuned based on actual patent-market signal strength."
+          },
+          "strengths": [
+            "Inclusion of early-stage technologies (TRL3-4) like AI-driven Material Discovery and Solid State Electrolytes demonstrates genuine commitment to the 기술선도 strategic direction",
+            "Solid State Electrolytes and Dry Electrode Coating achieve near-perfect market timing alignment, showing strong planning capability for those specific items"
+          ],
+          "weaknesses": [
+            "High-Throughput Battery Testing (TRL7) completes 3.5 years after its market boom window—a critical timing failure that wastes investment on an already-mature technology missing its commercial window",
+            "Solid State Electrolytes has active dependency violations: it is scheduled to start in 2026-Q2 but its declared prerequisites (S01 ending 2028-Q4, S03 ending 2029-Q4) are not yet complete, making the timeline structurally inconsistent"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S01",
+              "tech_name": "High Nickel Cathode Materials",
+              "target_q": "2028-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Solid State Electrolytes",
+              "target_q": "2029-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S05",
+              "tech_name": "Dry Electrode Coating",
+              "target_q": "2027-Q3",
+              "boom_q": "2027-Q3",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Advanced Battery Packaging",
+              "target_q": "2029-Q4",
+              "boom_q": "2028-Q2",
+              "error_years": 1.5
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Silicon Anode Materials",
+              "target_q": "2029-Q4",
+              "boom_q": "2028-Q3",
+              "error_years": 1.25
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "AI-driven Material Discovery",
+              "target_q": "2030-Q4",
+              "boom_q": "2030-Q1",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "High-Throughput Battery Testing",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q2",
+              "error_years": 3.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      }
+    },
+    "market_raw": [
+      {
+        "name": "High-Nickel Polycrystalline Cathode Materials",
+        "boom": "2027 Q2",
+        "market_score": 82.5,
+        "tam_b": 12.5,
+        "cagr": 16.8,
+        "basis": "Market Research Future 및 Research Nester 보고서에 따르면 고니켈 양극재는 2025 년부터 2030 년까지 연평균 16.8% 성장할 것으로 전망됨."
+      },
+      {
+        "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+        "boom": "2028 Q3",
+        "market_score": 76.0,
+        "tam_b": 3.8,
+        "cagr": 24.5,
+        "basis": "Intel Market Research 보고서에 따르면 LiFSI 전해질 시장은 2025 년부터 2032 년까지 연평균 24.5% 성장할 것으로 전망됨."
+      },
+      {
+        "name": "Silicon-Based Negative Electrode Materials",
+        "boom": "2026 Q4",
+        "market_score": 88.0,
+        "tam_b": 8.5,
+        "cagr": 22.3,
+        "basis": "IDTechEx 보고서에 따르면 실리콘 음극재 시장은 2025 년부터 2035 년까지 연평균 22.3% 성장할 것으로 전망됨."
+      },
+      {
+        "name": "Automated Battery Module Assembly Systems",
+        "boom": "2029 Q1",
+        "market_score": 72.0,
+        "tam_b": 5.2,
+        "cagr": 18.2,
+        "basis": "DataIntelo 보고서에 따르면 배터리 모듈 조립 자동화 시장은 2025 년부터 2033 년까지 연평균 18.2% 성장할 것으로 전망됨."
+      },
+      {
+        "name": "Eco-Friendly Battery Module Packaging",
+        "boom": "2027 Q2",
+        "market_score": 76.5,
+        "tam_b": 12.5,
+        "cagr": 16.5,
+        "basis": "배터리 재활용 규제 (EU Battery Regulation) 및 탄소 배출 감축 목표에 따른 친환경 포장재 수요 급증 반영."
+      },
+      {
+        "name": "Sulfuryl Fluoride Electrofluorination Process",
+        "boom": "2029 Q1",
+        "market_score": 58.2,
+        "tam_b": 1.8,
+        "cagr": 11.2,
+        "basis": "전통적인 방부제 시장 성장은 둔화되나, 고순도 불소 화합물 수요 증가로 인한 특수 공정 기술의 성장률 반영."
+      },
+      {
+        "name": "Advanced Binder Compositions for Electrodes",
+        "boom": "2026 Q4",
+        "market_score": 88.4,
+        "tam_b": 8.5,
+        "cagr": 17.4,
+        "basis": "고성능 배터리 수요 증가 및 바인더 화학 조성 최적화 필요성에 따른 시장 성장률 (17.4% CAGR) 반영."
+      },
+      {
+        "name": "Battery Cell OCV Detection and Quality Control",
+        "boom": "2028 Q3",
+        "market_score": 72.8,
+        "tam_b": 6.2,
+        "cagr": 14.8,
+        "basis": "배터리 생산량 증가 및 불량률 감소 요구에 따른 자동화 검사 장비 시장 성장률 반영."
+      },
+      {
+        "name": "Cathode Slurry Composition Optimization",
+        "boom": "2027 Q2",
+        "market_score": 76.5,
+        "tam_b": 12.5,
+        "cagr": 16.5,
+        "basis": "고용량 양극재 (NCMA, 고니켈) 로의 전환으로 슬러리 점도 및 안정성 제어 기술에 대한 수요가 급증하고 있음."
+      },
+      {
+        "name": "Tandem Formation and Capacity Grading",
+        "boom": "2026 Q4",
+        "market_score": 82.0,
+        "tam_b": 8.0,
+        "cagr": 22.0,
+        "basis": "고성능 배터리 수요 증가로 인해 형성 시간 단축 및 정밀 분류가 필수화되며, 관련 장비 교체 및 신규 설비 투자 속도가 빠름."
+      },
+      {
+        "name": "Next-Gen Positive Electrode Active Material Synthesis",
+        "boom": "2028 Q1",
+        "market_score": 88.5,
+        "tam_b": 45.0,
+        "cagr": 24.5,
+        "basis": "전기차 주행거리 요구사항 증가 및 에너지 밀도 향상 필요성으로 인해 차세대 양극재 합성 기술에 대한 투자와 수요가 폭발적으로 증가 중."
+      },
+      {
+        "name": "Automated Tray Loading and Stacking for Sealing Bodies",
+        "boom": "2029 Q3",
+        "market_score": 68.0,
+        "tam_b": 3.5,
+        "cagr": 14.0,
+        "basis": "인건비 상승 및 생산 라인 자동화 요구로 인해 관련 장비 수요가 꾸준히 증가하나, 시장 규모 자체는 상대적으로 작음."
+      }
+    ]
+  },
+  "EcoPro BM": {
+    "industry": "이차전지 양극재",
+    "variants": {
+      "on": {
+        "agent_roadmap": [
+          {
+            "name": "고결정도 도핑 양극재",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 수준으로 2027 년 Q2 시장 폭발 시점 대비 2026 년 (1 차년도) 즉시 착수하여 2028 년 (3 차년도) 까지 양산 준비를 완료해야 합니다. 이는 T03 의 선행 기술로서 공정 최적화 전에 소재 자체의 안정성을 확보해야 하므로 초기에 배치되었습니다.",
+              "tech_execution": "고니켈 양극재 시장의 20% 이상 CAGR 성장과 Umicore, SK On 등의 경쟁사 동향을 고려할 때, 열안정성과 수명 향상을 위한 핵심 도핑 기술을 조기에 확보해야 기술 리더십을 유지할 수 있습니다.",
+              "investment_selection": "가장 빠른 시장 진입이 가능한 핵심 소재 기술로, 초기 투자 대비 시장 점유율 확보 효과가 가장 크며 경쟁사 대비 기술 격차를 줄이는 데 필수적인 투자 대상입니다."
+            }
+          },
+          {
+            "name": "전구체 합성 공정 최적화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "T01 소재 기술의 초기 검증이 완료된 2027 년 (2 차년도) 에 시작하여, 2029 년 (4 차년도) 까지 공정 최적화와 대량 생산 체계를 구축합니다. T01 의 의존성으로 인해 선행 기술 종료 시점 이후에 본격화되어야 합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "고결정도 및 균일한 입자 크기 분포를 확보하기 위한 공정 기술은 T01 소재의 성능을 극대화하는 필수 단계로, 경쟁사들의 특허 장벽을 우회하고 생산 효율성을 높이는 핵심 전략입니다.",
+              "investment_selection": "소재 개발 이후의 양산 단계에서 경쟁 우위를 결정짓는 공정 기술로, 생산 비용 절감과 품질 일관성 확보를 통해 시장 진입 장벽을 낮추는 데 가장 효과적인 투자 영역입니다."
+            }
+          },
+          {
+            "name": "나트륨 이온 양극재",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 4 로 상대적으로 낮아 2026 년 (1 차년도) 부터 기초 연구에 착수하며, 2028 년 Q3 시장 폭발 시점을 넘어 2030 년 (5 차년도) 까지 차세대 기술로 진화시키는 장기 로드맵을 설정합니다. 이는 Planning Horizon 의 마지막 연도까지 이어져야 하는 필수 조건을 충족합니다.",
+              "tech_execution": "리튬 공급망 리스크 분산과 차세대 배터리 시장 확장을 위한 장기적 기술 해법으로, 명확한 선두 기업이 부재한 초기 시장에서 기술 해자를 구축하는 데 중점을 둡니다.",
+              "investment_selection": "단기적 수익성보다는 2030 년 이후의 시장 주도권을 선점하기 위한 전략적 투자로, 리스크 분산과 차세대 기술 리더십 확보를 위해 지속적인 R&D 예산 할당이 필요합니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 59.9,
+          "penalty": 0,
+          "penalties": [],
+          "llm_score": 38.7,
+          "axes": {
+            "trl_pathway": 2,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 3,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 74.0,
+          "selection_quality": 56.7,
+          "cost_adjusted": 46.7,
+          "timing_accuracy": 92.5,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "High-Precision Cathode M",
+              0.7,
+              1.0
+            ],
+            [
+              "Nickel Rich Cathode Coat",
+              0.6,
+              0.74
+            ],
+            [
+              "Dry Electrode Coating",
+              0.3,
+              0.0
+            ],
+            [
+              "Single Crystal Cathode M",
+              0.65,
+              0.87
+            ],
+            [
+              "Cathode Recycling Techno",
+              0.68,
+              0.94
+            ],
+            [
+              "Solid State Electrolytes",
+              0.63,
+              0.82
+            ],
+            [
+              "AI-driven Material Disco",
+              0.42,
+              0.3
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Multiple TRL pathways are highly aggressive: Nickel Rich Cathode Coatings (TRL 6) is planned to complete in just one quarter (2027-Q1 to Q2), Single Crystal Cathode Materials (TRL 5) completes in just two quarters, and Solid State Electrolytes at TRL 3 is expected to reach deployment in roughly 2.25 years — while TRL 3→market-ready in that timeframe for a material as complex as solid-state electrolytes is widely considered unrealistic. Additionally, Cathode Recycling Technologies has an illogical timeline where the end date (2028-Q1) precedes or equals the start date (2028-Q2), indicating a scheduling error.",
+            "strategic_fidelity": "The declared 기술선도 strategy is partially reflected through inclusion of low-TRL exploratory technologies like Solid State Electrolytes (TRL 3) and AI-driven Material Discovery (TRL 4), but the portfolio is dominated by high-TRL, near-market technologies (S05 at TRL 8, S03 at TRL 7) that are more characteristic of a market-profit-maximization strategy; the R&D-heavy exploratory character expected of technology leadership is diluted.",
+            "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, technology gap analysis, or differentiation strategy — technology selections appear driven by internal dependencies and market boom dates rather than by competitive intelligence or timing advantage design relative to known industry players in the high-nickel cathode space.",
+            "market_timing": "For 기술선도, ideal completion is 1-2 years before market boom to preempt competition; most technologies in this roadmap are timed to complete exactly at or on the boom date (0.0yr error), which is market-profit-maximization timing rather than technology leadership preemption. AI-driven Material Discovery completes 1.5 years AFTER its boom window (2030-Q4 vs 2029-Q2), a significant miss.",
+            "patent_market_convergence": "The portfolio includes technologies like Solid State Electrolytes and AI-driven Material Discovery that are active patent filing areas converging with growing market signals, suggesting some convergence awareness; however, the uniform scoring across all technologies (market_opp=4.0 for every single technology) suggests algorithmic rather than deliberate convergence-zone targeting."
+          },
+          "strengths": [
+            "Dependency chain is logically structured — S05 as a foundational equipment technology enabling downstream material and process technologies reflects sound sequencing logic.",
+            "Inclusion of genuinely exploratory technologies (Solid State Electrolytes at TRL 3, AI-driven Material Discovery at TRL 4) provides some alignment with the technology leadership strategic intent."
+          ],
+          "weaknesses": [
+            "TRL progression timelines are severely compressed — completing TRL 6 technologies in a single quarter and TRL 3 solid-state electrolytes in under 2.5 years is inconsistent with industry development norms.",
+            "All technologies assigned identical investment scores (4.0/5.0/4.0/3.0/4.0) and Tier=High with zero budget spent suggests the investment strategy was not genuinely differentiated, undermining portfolio prioritization."
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S05",
+              "tech_name": "High-Precision Cathode Manufacturing",
+              "target_q": "2026-Q4",
+              "boom_q": "2026-Q4",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S01",
+              "tech_name": "Nickel Rich Cathode Coatings",
+              "target_q": "2027-Q2",
+              "boom_q": "2027-Q2",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Dry Electrode Coating",
+              "target_q": "2027-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Single Crystal Cathode Materials",
+              "target_q": "2028-Q3",
+              "boom_q": "2028-Q3",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Cathode Recycling Technologies",
+              "target_q": "2028-Q1",
+              "boom_q": "2028-Q1",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Solid State Electrolytes",
+              "target_q": "2029-Q4",
+              "boom_q": "2030-Q1",
+              "error_years": -0.25
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "AI-driven Material Discovery",
+              "target_q": "2030-Q4",
+              "boom_q": "2029-Q2",
+              "error_years": 1.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "off": {
+        "agent_roadmap": [
+          {
+            "name": "고결정도 도핑 양극재",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 수준으로 상용화 직전 단계이므로 1 차년도부터 즉시 착수하여 3 차년도까지 기술 고도화 및 양산 준비를 완료합니다. 2027 Q3 예상 시장 붐을 대비하여 3 차년도 말까지 핵심 기술 장벽을 확보해야 합니다.",
+              "tech_execution": "고니켈 양극재의 안정성 확보를 위한 핵심 소재 기술로, EcoPro BM 의 기술 리더십 강화 전략을 실현하는 첫 번째 주춧돌입니다. 경쟁사들의 특허 동향을 선제적으로 대응하여 기술 해자를 구축해야 합니다.",
+              "investment_selection": "2030 년까지 연평균 24.5% 성장하는 고니켈 양극재 시장에서 초기 시장 점유율 확보를 위해 가장 시급한 투자 대상입니다. TRL 6 에서 8 로의 상향은 즉각적인 수익 창출과 기술 우위를 동시에 잡을 수 있는 최적의 투자 효율을 가집니다."
+            }
+          },
+          {
+            "name": "전구체 합성 공정 최적화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "선행 기술인 T01 의 초기 성과가 확보된 2 차년도부터 시작하여, T01 의 상용화를 뒷받침하는 공정 기술을 5 차년도까지 지속적으로 최적화합니다. 2029 Q1 시장 붐 이후에도 원가 경쟁력을 유지하기 위해 5 차년도까지 R&D 를 연장합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "고니켈 양극재의 품질 균일성과 수율 향상을 위한 필수 공정 기술로, T01 의 소재 성능을 실제 양산 라인에서 구현하는 데 결정적입니다. 차세대 배터리 소재 시장 확장을 위한 핵심 공정 경쟁력을 확보해야 합니다.",
+              "investment_selection": "2029 년 이후 본격적인 시장 확대 시기에 원가 절감과 품질 균일성을 동시에 달성하여 경쟁 우위를 점할 수 있는 장기 투자 대상입니다. 기술 해자 구축 전략에 부합하여 공정 기술의 독점성을 확보하는 데 필수적입니다."
+            }
+          },
+          {
+            "name": "배터리 재활용 및 원료 회수",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 4 로 초기 개발 단계이므로 1 차년도부터 장기적인 R&D 를 시작하여 5 차년도까지 기술 성숙도를 높입니다. 2026 Q4 시장 붐을 초기 단계로 활용하되, 순환 경제 모델의 완성을 위해 5 차년도까지 이어지는 장기 로드맵이 필요합니다.",
+              "tech_execution": "지속 가능성 전략 강화와 원료 공급 안정성을 위한 핵심 기술로, EcoPro BM 의 장기적인 경쟁력을 결정짓는 요소입니다. 고니켈 양극재 회수 기술을 통해 원료 수급 리스크를 최소화하고 친환경 이미지를 구축해야 합니다.",
+              "investment_selection": "2026 년 말부터 급성장할 재활용 시장에서 선점 효과를 얻기 위해 초기 투자부터 장기적인 기술 축적까지 일관된 자원 배분이 필요합니다. 정책 지원과 원료 수급 안정화 필요성에 따라 가장 높은 전략적 가치를 가집니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 52.1,
+          "penalty": 2.9,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 2.9
+            }
+          ],
+          "llm_score": 40.0,
+          "axes": {
+            "trl_pathway": 4,
+            "strategic_fidelity": 2,
+            "competitive_awareness": 2,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 65.0,
+          "selection_quality": 59.5,
+          "cost_adjusted": 47.9,
+          "timing_accuracy": 52.6,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "고결정도 도핑 양극재",
+              0.57,
+              0.41
+            ],
+            [
+              "전구체 합성 공정 최적화",
+              0.33,
+              0.62
+            ],
+            [
+              "배터리 재활용 및 원료 회수",
+              0.89,
+              1.0
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "T01 (TRL 6→completion in 2 years) and T03 (TRL 6→completion in 2 years) are plausible for process/material refinement; T08 at TRL 4 being developed over 4 years to completion is reasonable though ambitious given its low executability score.",
+            "strategic_fidelity": "A 기술선도 strategy should emphasize lower-TRL exploratory and patent-aligned technologies, but all three selected technologies start at TRL 4–6 with near-market profiles; the portfolio looks more like market exploitation than technology leadership, and only 3 technologies with no truly exploratory picks weakens the R&D-heavy posture expected.",
+            "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing advantage design relative to industry peers; technology selections appear driven by internal scoring rather than competitive landscape intelligence.",
+            "market_timing": "For 기술선도, completions 1–2 years before boom are ideal: T01 completes 0.5yr after boom (borderline), T03 completes 1.0yr after boom (suboptimal), and T08 completes 3.25yr after its 2026-Q4 boom window — a severe miss that drags overall timing alignment down significantly.",
+            "patent_market_convergence": "T01 and T03 in high-nickel cathode materials represent areas of active patent and market growth convergence, but T08 (battery recycling) appears selected primarily on market opportunity score without clear patent-trend alignment in the roadmap narrative, suggesting partial rather than deliberate convergence targeting."
+          },
+          "strengths": [
+            "T01→T03 dependency chain is logically structured and well-sequenced, enabling process optimization to build on material development outcomes",
+            "TRL progressions for T01 and T03 are realistic given their starting TRL 6 baseline and allocated timelines"
+          ],
+          "weaknesses": [
+            "T08 (배터리 재활용) is catastrophically mistimed — completing 3.25 years after its market boom, wasting investment on a window already closed",
+            "Portfolio of only 3 technologies, all at TRL 4–6, fundamentally contradicts the 기술선도 strategic direction which requires lower-TRL exploratory investments and a broader innovation pipeline"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T01",
+              "tech_name": "고결정도 도핑 양극재",
+              "target_q": "2028-Q1",
+              "boom_q": "2027-Q3",
+              "error_years": 0.5
+            },
+            {
+              "tech_id": "T03",
+              "tech_name": "전구체 합성 공정 최적화",
+              "target_q": "2030-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "T08",
+              "tech_name": "배터리 재활용 및 원료 회수",
+              "target_q": "2030-Q1",
+              "boom_q": "2026-Q4",
+              "error_years": 3.25
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "on_single": {
+        "agent_roadmap": [
+          {
+            "name": "High-Precision Cathode Manufacturing",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Nickel Rich Cathode Coatings",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Dry Electrode Coating",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Single Crystal Cathode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Cathode Recycling Technologies",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Solid State Electrolytes",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "AI-driven Material Discovery",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          }
+        ],
+        "eval": {
+          "composite": 59.9,
+          "penalty": 0,
+          "penalties": [],
+          "llm_score": 38.7,
+          "axes": {
+            "trl_pathway": 2,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 3,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 74.0,
+          "selection_quality": 56.7,
+          "cost_adjusted": 46.7,
+          "timing_accuracy": 92.5,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "High-Precision Cathode M",
+              0.7,
+              1.0
+            ],
+            [
+              "Nickel Rich Cathode Coat",
+              0.6,
+              0.74
+            ],
+            [
+              "Dry Electrode Coating",
+              0.3,
+              0.0
+            ],
+            [
+              "Single Crystal Cathode M",
+              0.65,
+              0.87
+            ],
+            [
+              "Cathode Recycling Techno",
+              0.68,
+              0.94
+            ],
+            [
+              "Solid State Electrolytes",
+              0.63,
+              0.82
+            ],
+            [
+              "AI-driven Material Disco",
+              0.42,
+              0.3
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Multiple TRL pathways are highly aggressive: Nickel Rich Cathode Coatings (TRL 6) is planned to complete in just one quarter (2027-Q1 to Q2), Single Crystal Cathode Materials (TRL 5) completes in just two quarters, and Solid State Electrolytes at TRL 3 is expected to reach deployment in roughly 2.25 years — while TRL 3→market-ready in that timeframe for a material as complex as solid-state electrolytes is widely considered unrealistic. Additionally, Cathode Recycling Technologies has an illogical timeline where the end date (2028-Q1) precedes or equals the start date (2028-Q2), indicating a scheduling error.",
+            "strategic_fidelity": "The declared 기술선도 strategy is partially reflected through inclusion of low-TRL exploratory technologies like Solid State Electrolytes (TRL 3) and AI-driven Material Discovery (TRL 4), but the portfolio is dominated by high-TRL, near-market technologies (S05 at TRL 8, S03 at TRL 7) that are more characteristic of a market-profit-maximization strategy; the R&D-heavy exploratory character expected of technology leadership is diluted.",
+            "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, technology gap analysis, or differentiation strategy — technology selections appear driven by internal dependencies and market boom dates rather than by competitive intelligence or timing advantage design relative to known industry players in the high-nickel cathode space.",
+            "market_timing": "For 기술선도, ideal completion is 1-2 years before market boom to preempt competition; most technologies in this roadmap are timed to complete exactly at or on the boom date (0.0yr error), which is market-profit-maximization timing rather than technology leadership preemption. AI-driven Material Discovery completes 1.5 years AFTER its boom window (2030-Q4 vs 2029-Q2), a significant miss.",
+            "patent_market_convergence": "The portfolio includes technologies like Solid State Electrolytes and AI-driven Material Discovery that are active patent filing areas converging with growing market signals, suggesting some convergence awareness; however, the uniform scoring across all technologies (market_opp=4.0 for every single technology) suggests algorithmic rather than deliberate convergence-zone targeting."
+          },
+          "strengths": [
+            "Dependency chain is logically structured — S05 as a foundational equipment technology enabling downstream material and process technologies reflects sound sequencing logic.",
+            "Inclusion of genuinely exploratory technologies (Solid State Electrolytes at TRL 3, AI-driven Material Discovery at TRL 4) provides some alignment with the technology leadership strategic intent."
+          ],
+          "weaknesses": [
+            "TRL progression timelines are severely compressed — completing TRL 6 technologies in a single quarter and TRL 3 solid-state electrolytes in under 2.5 years is inconsistent with industry development norms.",
+            "All technologies assigned identical investment scores (4.0/5.0/4.0/3.0/4.0) and Tier=High with zero budget spent suggests the investment strategy was not genuinely differentiated, undermining portfolio prioritization."
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S05",
+              "tech_name": "High-Precision Cathode Manufacturing",
+              "target_q": "2026-Q4",
+              "boom_q": "2026-Q4",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S01",
+              "tech_name": "Nickel Rich Cathode Coatings",
+              "target_q": "2027-Q2",
+              "boom_q": "2027-Q2",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Dry Electrode Coating",
+              "target_q": "2027-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Single Crystal Cathode Materials",
+              "target_q": "2028-Q3",
+              "boom_q": "2028-Q3",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Cathode Recycling Technologies",
+              "target_q": "2028-Q1",
+              "boom_q": "2028-Q1",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Solid State Electrolytes",
+              "target_q": "2029-Q4",
+              "boom_q": "2030-Q1",
+              "error_years": -0.25
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "AI-driven Material Discovery",
+              "target_q": "2030-Q4",
+              "boom_q": "2029-Q2",
+              "error_years": 1.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      }
+    },
+    "market_raw": [
+      {
+        "name": "고결정도 도핑 양극재",
+        "boom": "2027 Q3",
+        "market_score": 88.5,
+        "tam_b": 22.26,
+        "cagr": 24.5,
+        "basis": "고니켈 양극재 시장이 연평균 20% 이상 성장할 것으로 전망되며, 도핑 기술은 차세대 배터리 요구사항 충족을 위한 필수 요소로 성장률이 더 높을 것으로 예상."
+      },
+      {
+        "name": "다결정 양극활물질 구조",
+        "boom": "2028 Q2",
+        "market_score": 82.0,
+        "tam_b": 18.5,
+        "cagr": 21.0,
+        "basis": "단결정 대비 비용 효율성으로 인해 다결정 구조의 시장 수용 속도가 빠르게 증가할 것으로 예상되며, 2028 년 이후 본격적인 시장 확대가 예상됨."
+      },
+      {
+        "name": "전구체 합성 공정 최적화",
+        "boom": "2029 Q1",
+        "market_score": 79.5,
+        "tam_b": 15.0,
+        "cagr": 18.0,
+        "basis": "전구체 시장이 2032 년까지 연평균 18% 성장할 것으로 예상되며, 공정 최적화 기술은 원가 절감 및 품질 균일성 확보를 위한 핵심 요소로 평가됨."
+      },
+      {
+        "name": "고성능 전해질 첨가제",
+        "boom": "2027 Q4",
+        "market_score": 85.0,
+        "tam_b": 12.0,
+        "cagr": 22.0,
+        "basis": "전해질 첨가제 시장이 2031 년까지 연평균 22% 성장할 것으로 예상되며, 고니켈 양극재와 호환되는 고성능 첨가제 수요가 급증할 것으로 예상됨."
+      },
+      {
+        "name": "양극 슬러리 조성 기술",
+        "boom": "2027 Q2",
+        "market_score": 78.5,
+        "tam_b": 45.0,
+        "cagr": 19.5,
+        "basis": "고니켈 양극재 수요 증가와 전기차 보급 확대에 따라 2025-2030 년간 연평균 19.5% 성장 전망."
+      },
+      {
+        "name": "양극재 블렌드 기술",
+        "boom": "2028 Q1",
+        "market_score": 82.0,
+        "tam_b": 48.0,
+        "cagr": 21.0,
+        "basis": "고니켈 양극재의 고에너지밀도 요구와 안전성 개선 필요로 인해 블렌드 기술 시장은 2025-2030 년간 연평균 21% 성장할 것으로 예상."
+      },
+      {
+        "name": "리튬 이온 전지 전극 구조",
+        "boom": "2029 Q1",
+        "market_score": 75.0,
+        "tam_b": 50.0,
+        "cagr": 18.0,
+        "basis": "전극 구조 최적화 기술은 배터리 성능 향상의 핵심으로 2025-2030 년간 연평균 18% 성장 전망."
+      },
+      {
+        "name": "배터리 재활용 및 원료 회수",
+        "boom": "2026 Q4",
+        "market_score": 88.5,
+        "tam_b": 35.0,
+        "cagr": 24.0,
+        "basis": "배터리 재활용 시장은 2025-2030 년간 연평균 24% 성장할 것으로 예상되며, 이는 정책 지원과 원료 수급 안정화 필요성에 기인함."
+      }
+    ]
+  },
+  "NAVER": {
+    "industry": "AI LLM",
+    "variants": {
+      "on": {
+        "agent_roadmap": [
+          {
+            "name": "분산 학습 장애 복구 및 최적화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 7 로 성숙도가 높아 1 차년도부터 즉시 도입이 가능하며, 대규모 모델 학습의 기반 인프라이므로 다른 기술들의 선행 조건으로 3 차년도까지 안정화한다.",
+              "tech_execution": "네이버의 대규모 모델 학습 효율성을 극대화하고 비용 절감을 위해 필수적인 인프라 기술로, 학습 파이프라인의 신뢰성을 확보하는 데 핵심적이다.",
+              "investment_selection": "클라우드 거대 기업들의 독점 기술에 대응하여 자체 학습 비용 경쟁력을 확보하고, 향후 더 큰 규모의 모델 개발을 위한 필수 투자 대상이다."
+            }
+          },
+          {
+            "name": "LLM 기반 컨텍스트 인식 협업",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "T03 의 학습 인프라 최적화가 선행되어야 효율적인 LLM 적용이 가능하므로 2 차년도에 시작하며, 2027 Q2 시장 붐을 대비해 4 차년도까지 서비스 통합을 완료한다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+              "tech_execution": "검색 및 콘텐츠 생태계에서 사용자 경험을 차별화하기 위해 컨텍스트 인식 기술을 접목하여 네이버의 핵심 서비스 경쟁력을 강화한다.",
+              "investment_selection": "Google 과 Microsoft 의 선점 영역에서 네이버만의 데이터와 서비스 특성을 반영한 기술로 시장 점유율을 방어하고 확장하는 전략적 투자 대상이다."
+            }
+          },
+          {
+            "name": "대규모 모델 추론 가속화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "T03 에 기반하여 2 차년도부터 시작하며, 실시간 서비스 품질 향상을 위해 2027 Q2 이후에도 지속적인 최적화가 필요하므로 5 차년도까지 연장한다. [후처리: dependency 보정 — prereq ['T03'] 완료 후로 1차년도 push]",
+              "tech_execution": "대규모 모델의 실시간 추론 속도를 높여 네이버의 다양한 AI 서비스 응답성을 개선하고, 하드웨어 및 알고리즘 최적화를 통해 기술 리더십을 확보한다.",
+              "investment_selection": "2030 년까지 고성장할 추론 시장에서 경쟁사 대비 비용 효율성과 성능 우위를 점하기 위한 장기적인 R&D 투자 핵심 대상이다."
+            }
+          },
+          {
+            "name": "생성형 AI 기반 3D 공간 생성",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "T01 의 컨텍스트 인식 및 T05 의 추론 가속화가 선행되어야 복잡한 3D 생성이 가능하므로 3 차년도에 시작하며, 2028 Q3 이후 XR 시장 성숙을 대비해 5 차년도까지 연구한다. [후처리: dependency 보정 — prereq ['T01', 'T05'] 완료 후로 2차년도 push]",
+              "tech_execution": "네이버의 AR/VR 및 지도 서비스와 결합하여 메타버스 및 공간 컴퓨팅 분야에서 차별화된 경험을 제공하고 프론티어 기술을 선점한다.",
+              "investment_selection": "Meta 와 Google 이 치열하게 경쟁하는 XR 및 3D 기술 시장에서 네이버의 고유한 생태계를 활용한 새로운 성장 동력을 확보하기 위한 전략적 투자 대상이다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 39.7,
+          "penalty": 5.0,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 5.0
+            }
+          ],
+          "llm_score": 40.0,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 47.9,
+          "selection_quality": 40.2,
+          "cost_adjusted": 26.5,
+          "timing_accuracy": 40.0,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 4,
+          "tech_values": [
+            [
+              "분산 학습 장애 복구 및 최적화",
+              0.39,
+              0.77
+            ],
+            [
+              "LLM 기반 컨텍스트 인식 협업",
+              0.34,
+              0.1
+            ],
+            [
+              "대규모 모델 추론 가속화",
+              0.6,
+              0.43
+            ],
+            [
+              "생성형 AI 기반 3D 공간 생성",
+              0.28,
+              0.0
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "T03 (TRL 7) completes in 2 years which is reasonable, and T01/T05 (TRL 6) have 2-year development windows that are moderately feasible, but T02 (TRL 5→target) is scheduled with a 0-quarter duration (2030-Q1 to 2030-Q1), making its completion instantaneous and infeasible for a complex architecture technology.",
+            "strategic_fidelity": "The declared 기술선도 strategy implies exploratory, lower-TRL R&D-heavy portfolio, but the portfolio is dominated by TRL 6-7 near-deployment technologies; only T02 (TRL 5) represents genuine exploratory work, and the roadmap lacks early-stage speculative bets expected of a true technology leadership posture.",
+            "competitive_awareness": "There is no explicit competitive differentiation rationale visible in technology selection or timing—no evidence of targeting competitor gaps, leveraging patent whitespace, or designing timing advantages relative to industry peers; selections appear driven by internal scoring rather than competitive landscape intelligence.",
+            "market_timing": "For 기술선도 strategy, completion 1-2 years BEFORE boom is ideal; T03 completes 1 year early (acceptable), but T01 and T05 complete 2.75 years AFTER their boom windows, and T02 completes 1.5 years after its boom—representing systematic late-arrival across most of the portfolio.",
+            "patent_market_convergence": "The selected technologies (LLM collaboration, inference acceleration, 3D generation) align with known high-activity patent and market growth areas in the LLM/AI space, suggesting some convergence awareness, but the alignment appears structural rather than the result of deliberate convergence-zone targeting based on explicit patent-market analysis."
+          },
+          "strengths": [
+            "Dependency chain is logically structured with T03 as a foundational layer enabling T01 and T05, which then gate T02—showing coherent build-up logic",
+            "All technologies classified as Strategic or High tier, with high strategic_fit scores, indicating alignment between portfolio composition and organizational priorities"
+          ],
+          "weaknesses": [
+            "T01 and T05 complete 2.75 years after their respective market boom windows, severely undermining the value of those investments and contradicting the 기술선도 preemption objective",
+            "T02 has a zero-duration development window (2030-Q1 to 2030-Q1), which is technically nonsensical and suggests a planning error that makes the entire downstream deliverable unreliable"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T03",
+              "tech_name": "분산 학습 장애 복구 및 최적화",
+              "target_q": "2028-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": -1.0
+            },
+            {
+              "tech_id": "T01",
+              "tech_name": "LLM 기반 컨텍스트 인식 협업",
+              "target_q": "2030-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "T05",
+              "tech_name": "대규모 모델 추론 가속화",
+              "target_q": "2030-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "T02",
+              "tech_name": "생성형 AI 기반 3D 공간 생성",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q3",
+              "error_years": 1.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "off": {
+        "agent_roadmap": [
+          {
+            "name": "LLM 기반 컨텍스트 인식 협업",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 으로 기술 성숙도가 높고 2026 년 Q3 에 시장 폭발이 예상되어 1 차년도부터 즉시 착수하여 3 차년도까지 핵심 기능 완성 및 초기 상용화를 목표로 배치합니다. 이는 네이버의 기존 검색 및 서비스 통합 강점을 빠르게 AI 플랫폼으로 전환하기 위한 초기 동력입니다.",
+              "tech_execution": "LLM 기반 협업 도구는 기업 생산성 향상의 핵심이므로, 네이버의 서비스 생태계 내에서 프롬프트 최적화 및 컨텍스트 인식 기능을 선점하여 경쟁사 대비 차별화된 사용자 경험을 제공해야 합니다.",
+              "investment_selection": "2026 년부터 본격화되는 시장 성장률 (CAGR 28% 이상) 을 고려할 때, 초기 투자 대비 빠른 시장 점유율 확보가 가능하여 R&D 예산의 효율성을 극대화할 수 있는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "name": "대규모 모델 추론 가속화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "T01 의 컨텍스트 인식 협업 기술이 초기 안정화되는 2 차년도에 시작하여, 2027 년 Q2 예상 시장 폭발 시점과 맞물려 4 차년도까지 추론 속도 및 비용 최적화를 완성합니다. 이는 T01 의 서비스 확장 시 발생하는 추론 부하를 해결하기 위한 선행 조건입니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "LLM 추론 비용이 학습 비용보다 빠르게 증가하는 상황에서, 하드웨어 및 알고리즘 최적화를 통해 서비스 응답 속도를 개선하고 운영 비용을 절감하여 네이버 AI 플랫폼의 확장성을 확보해야 합니다.",
+              "investment_selection": "구글, 바이두 등 주요 플레이어들의 특허 출시가 급증하는 분야로, 추론 가속화 기술을 선점하지 않으면 서비스 경쟁력 저하로 이어질 수 있어 전략적 필수 투자 대상입니다."
+            }
+          },
+          {
+            "name": "생성형 AI 기반 3D 공간 생성",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 5 로 상대적으로 낮고 2028 년 Q2 시장 성숙이 예상되어, 추론 가속화 기술 (T05) 이 안정화된 3 차년도부터 착수하여 5 차년도 (2030 년) 까지 차세대 메타버스 및 공간 컴퓨팅 기술을 완성합니다. 이는 Planning Horizon 의 마지막 연도까지 이어지는 장기 R&D 의 핵심입니다. [후처리: dependency 보정 — prereq ['T05'] 완료 후로 2차년도 push]",
+              "tech_execution": "네이버의 AR/VR 및 지도 서비스와 생성형 AI 를 결합하여 3D 공간 생성 기술을 개발함으로써, 게임, 디지털 트윈 등 차세대 시장에서의 기술 리더십을 확보해야 합니다.",
+              "investment_selection": "2028 년 이후 CAGR 32% 의 높은 성장 잠재력을 가진 시장으로, 5 차년도까지의 장기 투자를 통해 프론티어 기술 선점 전략을 실현하고 네이버의 AI 플랫폼 생태계를 차세대 서비스로 확장할 수 있습니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 44.8,
+          "penalty": 5.0,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 5.0
+            }
+          ],
+          "llm_score": 40.0,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 56.4,
+          "selection_quality": 49.5,
+          "cost_adjusted": 36.1,
+          "timing_accuracy": 40.0,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "LLM 기반 컨텍스트 인식 협업",
+              0.43,
+              0.25
+            ],
+            [
+              "대규모 모델 추론 가속화",
+              0.7,
+              0.62
+            ],
+            [
+              "생성형 AI 기반 3D 공간 생성",
+              0.35,
+              0.14
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "T01 (TRL 6) progressing over 2 years and T05 (TRL 6) over 2 years are plausible, but T02 (TRL 5) has a zero-duration development window (2030-Q1 to 2030-Q1) which is infeasible for a technology requiring significant maturation from TRL 5 to deployment-ready state.",
+            "strategic_fidelity": "The portfolio includes mid-to-moderate TRL technologies (TRL 5-6) which partially suit 기술선도, but the very small portfolio (only 3 techs) and reliance on relatively mature starting points (TRL 6 for T01 and T05) suggest insufficient exploratory depth; a true technology leadership strategy would typically include lower-TRL frontier research.",
+            "competitive_awareness": "There is no visible competitive differentiation rationale in technology selection or timing; the choices reflect general AI infrastructure trends without evidence of competitor gap analysis or deliberate positioning to outpace rivals in specific niches.",
+            "market_timing": "All three technologies complete significantly after their market boom windows (errors of 1.5yr, 2.75yr, and 1.75yr respectively), with a mean error of 2.0 years; even for 기술선도 which tolerates early completion, late completion after boom is penalized, and none achieve the ideal 1-2 year preemption window.",
+            "patent_market_convergence": "The selected technologies (LLM collaboration, inference acceleration, 3D spatial generation) are active areas of both patent activity and market growth, suggesting some convergence awareness, but the rationale appears to follow broad market trends rather than deliberate targeting of high-convergence zones."
+          },
+          "strengths": [
+            "Dependency chain is logically structured (T01→T05→T02) reflecting a sound technical build-up from foundation models to acceleration to application",
+            "Investment tiers are appropriately allocated with Strategic tier for foundational infrastructure technologies and High tier for the more uncertain application layer"
+          ],
+          "weaknesses": [
+            "All technologies complete after their market boom windows, undermining both commercial value and the preemptive advantage expected of a 기술선도 strategy",
+            "T02 has a zero-duration development window (2030-Q1 to 2030-Q1) making its execution plan entirely infeasible"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T01",
+              "tech_name": "LLM 기반 컨텍스트 인식 협업",
+              "target_q": "2028-Q1",
+              "boom_q": "2026-Q3",
+              "error_years": 1.5
+            },
+            {
+              "tech_id": "T05",
+              "tech_name": "대규모 모델 추론 가속화",
+              "target_q": "2030-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "T02",
+              "tech_name": "생성형 AI 기반 3D 공간 생성",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q2",
+              "error_years": 1.75
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "on_single": {
+        "agent_roadmap": [
+          {
+            "name": "HBM4 Memory Integration",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Advanced 3D Packaging (CoWoS-like)",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "AI Model Compression Algorithms",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Chiplet Interconnect Fabric",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Energy-Efficient AI Accelerator Design",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Optical Interconnects for AI Systems",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Disaggregated AI Infrastructure",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          }
+        ],
+        "eval": {
+          "composite": 43.5,
+          "penalty": 15,
+          "penalties": [
+            {
+              "type": "dependency_violation",
+              "amount": 15
+            }
+          ],
+          "llm_score": 45.0,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 3,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 67.5,
+          "selection_quality": 64.5,
+          "cost_adjusted": 54.5,
+          "timing_accuracy": 71.2,
+          "dependency": 0,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "HBM4 Memory Integration",
+              0.0,
+              0.0
+            ],
+            [
+              "Advanced 3D Packaging (C",
+              0.62,
+              0.05
+            ],
+            [
+              "AI Model Compression Alg",
+              1.0,
+              1.0
+            ],
+            [
+              "Chiplet Interconnect Fab",
+              0.24,
+              0.61
+            ],
+            [
+              "Energy-Efficient AI Acce",
+              0.97,
+              0.92
+            ],
+            [
+              "Optical Interconnects fo",
+              0.9,
+              0.75
+            ],
+            [
+              "Disaggregated AI Infrast",
+              0.78,
+              0.46
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "HBM4 (TRL 3→completed in ~7 quarters) and Energy-Efficient AI Accelerator (TRL 3→completed in ~9 quarters) are aggressive but borderline feasible; Optical Interconnects advancing from TRL 2 to completion in ~12 quarters is optimistic given the fundamental photonics integration challenges. Most other pathways (TRL 4-6) are plausible within stated timelines.",
+            "strategic_fidelity": "The portfolio includes appropriately low-TRL exploratory technologies (TRL 2-3) consistent with 기술선도, and dependency chains reflect a long-horizon R&D build-up; however, all 7 technologies receive identical High-tier investment scores with uniform attribute ratings, suggesting a lack of differentiated strategic prioritization that true technology leadership would demand.",
+            "competitive_awareness": "The selection of foundational stack technologies (HBM4, CoWoS-like packaging, chiplet interconnects, optical interconnects) reflects awareness of the AI hardware competitive landscape and the NVIDIA/TSMC/Intel battlegrounds; however, no explicit differentiation rationale or competitor gap analysis is visible in the roadmap structure itself.",
+            "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom to achieve preemption; instead, 5 of 7 technologies complete AFTER their boom windows (errors of +0.5yr to +1.75yr), and there are 5 dependency violations causing cascading delays — this represents systematic post-boom completion across the portfolio.",
+            "patent_market_convergence": "Technologies like HBM4, Advanced 3D Packaging, and AI Model Compression sit at intersections of high patent activity and strong market growth signals in the AI hardware domain; however, the uniform scoring across all technologies (market_opp=4.0 for all) suggests convergence selection may be coincidental rather than deliberately calibrated."
+          },
+          "strengths": [
+            "Well-structured dependency chain building from foundational memory (HBM4) through packaging and interconnects to system-level disaggregation, reflecting coherent architectural thinking",
+            "Inclusion of low-TRL technologies (Optical Interconnects TRL 2, HBM4 TRL 3) appropriately signals long-horizon technology leadership orientation"
+          ],
+          "weaknesses": [
+            "Five dependency violations cause cascading start-time errors, meaning the actual completion dates will slip further beyond boom windows than already reported",
+            "All seven technologies are assigned identical investment scores and High tier with no differentiation, indicating a lack of genuine portfolio prioritization and risk-adjusted resource allocation"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S01",
+              "tech_name": "HBM4 Memory Integration",
+              "target_q": "2027-Q4",
+              "boom_q": "2028-Q4",
+              "error_years": -1.0
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Advanced 3D Packaging (CoWoS-like)",
+              "target_q": "2028-Q2",
+              "boom_q": "2027-Q4",
+              "error_years": 0.5
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "AI Model Compression Algorithms",
+              "target_q": "2027-Q2",
+              "boom_q": "2027-Q2",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Chiplet Interconnect Fabric",
+              "target_q": "2028-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Energy-Efficient AI Accelerator Design",
+              "target_q": "2029-Q4",
+              "boom_q": "2028-Q1",
+              "error_years": 1.75
+            },
+            {
+              "tech_id": "S05",
+              "tech_name": "Optical Interconnects for AI Systems",
+              "target_q": "2030-Q4",
+              "boom_q": "2029-Q2",
+              "error_years": 1.5
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Disaggregated AI Infrastructure",
+              "target_q": "2030-Q4",
+              "boom_q": "2029-Q4",
+              "error_years": 1.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      }
+    },
+    "market_raw": [
+      {
+        "name": "LLM 기반 컨텍스트 인식 협업",
+        "boom": "2026 Q3",
+        "market_score": 88.5,
+        "tam_b": 45.0,
+        "cagr": 28.5,
+        "basis": "MarketsandMarkets 및 NextMSC 보고서에 따른 LLM 시장 연평균 성장률 25% 이상 반영. 컨텍스트 인식 기능은 필수 기능으로 전환 중."
+      },
+      {
+        "name": "생성형 AI 기반 3D 공간 생성",
+        "boom": "2028 Q2",
+        "market_score": 76.2,
+        "tam_b": 22.0,
+        "cagr": 32.0,
+        "basis": "Fortune Business Insights 및 Mordor Intelligence 보고서에 따른 생성형 AI 시장 고성장 (30% 이상) 반영. 3D 생성은 게임, e-commerce, 디지털 트윈 수요 증가로 가속화."
+      },
+      {
+        "name": "분산 학습 장애 복구 및 최적화",
+        "boom": "2027 Q1",
+        "market_score": 72.8,
+        "tam_b": 18.0,
+        "cagr": 24.0,
+        "basis": "AI 플랫폼 시장 성장률 (20% 이상) 및 모델 규모 증가에 따른 학습 효율성 요구 증대 반영."
+      },
+      {
+        "name": "생성형 AI 출력 추적 및 검증",
+        "boom": "2026 Q4",
+        "market_score": 81.5,
+        "tam_b": 15.0,
+        "cagr": 35.0,
+        "basis": "Mordor Intelligence 보고서에 따른 생성형 AI 시장 고성장 (35% 이상) 및 글로벌 AI 규제 강화로 인한 검증 기술 수요 급증 반영."
+      },
+      {
+        "name": "대규모 모델 추론 가속화",
+        "boom": "2027 Q2",
+        "market_score": 88.5,
+        "tam_b": 120.0,
+        "cagr": 28.5,
+        "basis": "LLM 시장 전체 성장률 (20% 이상) 과 추론 비용 절감 수요 증가에 따른 가속화 기술의 높은 CAGR 추정."
+      },
+      {
+        "name": "다중 사용자 확장현실 협업 프레임워크",
+        "boom": "2028 Q3",
+        "market_score": 72.0,
+        "tam_b": 35.0,
+        "cagr": 22.0,
+        "basis": "XR 하드웨어 보급률 증가와 메타버스 플랫폼 간 상호 운용성 요구에 따른 소프트웨어 프레임워크 시장 성장률 추정."
+      },
+      {
+        "name": "AI 기반 열차 관제 및 시뮬레이션",
+        "boom": "2029 Q4",
+        "market_score": 45.0,
+        "tam_b": 2.5,
+        "cagr": 12.0,
+        "basis": "전통적인 철도 인프라의 디지털 전환 속도가 느리며, AI 적용이 점진적으로 이루어질 것으로 예상됨."
+      },
+      {
+        "name": "스마트 글래스용 조절 가능한 코 브릿지",
+        "boom": "2030 Q1",
+        "market_score": 38.0,
+        "tam_b": 1.8,
+        "cagr": 15.0,
+        "basis": "스마트 글래스 시장 성장률 (약 12-15%) 을 따르나, 특정 부품 기술은 시장 전체 성장보다 더 제한적임."
+      }
+    ]
+  },
+  "LG Chem": {
+    "industry": "이차전지 양극재",
+    "variants": {
+      "on": {
+        "agent_roadmap": [
+          {
+            "name": "고니켈 양극 전구체 균일화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 수준으로 상대적으로 성숙도가 높아 1 차년도부터 즉시 착수 가능하며, 2027 년 Q2 예상 시장 붐을 대비하여 3 차년도까지 양산 준비를 완료하는 것이 적절합니다. 이는 고니켈 양극 시장의 빠른 성장세에 대응하여 초기 시장 선점을 위한 최적의 타이밍입니다.",
+              "tech_execution": "테슬라 및 경쟁사들의 고니켈 양극 공정 특허 동향을 선제적으로 분석하여 LG Chem 의 양극 소재 리더십을 공고히 하기 위해 필수적인 기술입니다. 전구체 균일화 및 복합화 공정을 통해 차세대 고용량 양극의 대량 생산 가능성을 확보해야 합니다.",
+              "investment_selection": "고니켈 양극 소재 시장의 높은 CAGR(20% 이상) 과 2027 년 대량 생산 전환 시점을 고려할 때, 초기 투자 대비 시장 점유율 확보 효과가 가장 큽니다. 경쟁사 대비 공정 기술 우위를 점하여 R&D 예산의 효율성을 극대화할 수 있는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "name": "고체전지 양극 소재 최적화",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 5 로 중간 성숙도를 가지며, T01 의 공정 기술 기반 위에서 고체전지 특화 소재 최적화를 진행하므로 2 차년도부터 시작하여 5 차년도까지 장기 R&D 를 이어가는 것이 타당합니다. 2028 년 Q3 시장 붐을 넘어 2030 년 상용화 및 차세대 기술 고도화를 목표로 합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "고체전지 시장의 급성장 (35% CAGR) 에 대응하여 2030 년 로드맵의 핵심인 상용화 전환을 위한 필수 소재 기술을 확보해야 합니다. 삼성 SDI 와 LG 에너지솔루션의 특허 동향을 반영하여 차세대 에너지 시장에서의 기술적 차별화를 이루는 것이 전략적 목표입니다.",
+              "investment_selection": "고체전지는 차세대 배터리 시장의 주도권을 결정할 핵심 분야로, 장기적인 R&D 투자가 경쟁 우위를 확보하는 유일한 방법입니다. 2030 년까지 이어지는 기술 개발은 LG Chem 의 프론티어 기술 스택 고도화 전략과 완벽하게 부합하는 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "name": "나트륨 이차전지 음극 소재",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 4 로 가장 낮은 성숙도를 가지므로 1 차년도부터 기초 연구에 착수하여 5 차년도까지 상용화 준비를 완료하는 긴 개발 주기가 필요합니다. 2029 년 Q1 시장 붐을 중간 마일스톤으로 삼아 2030 년까지 기술 완성도를 높이는 전략을 취합니다.",
+              "tech_execution": "리튬 의존도를 낮추고 저비용 에너지 저장 시스템을 구축하기 위한 차세대 기술로, LG 에너지솔루션의 특허 동향을 반영하여 시장 진입 시기를 선점해야 합니다. 나트륨 이차전지 시장의 28% CAGR 성장세를 고려할 때, 장기적인 기술 개발이 필수적입니다.",
+              "investment_selection": "나트륨 이차전지는 에너지 저장 시스템 (ESS) 및 저가형 EV 시장에서의 경쟁력을 결정하는 핵심 기술로, 초기 투자 시점의 중요성이 매우 큽니다. 2030 년까지 이어지는 R&D 는 LG Chem 의 차세대 에너지 시장 확장 전략을 실현하는 데 필수적인 핵심 투자 대상입니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 49.1,
+          "penalty": 0.4,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 0.4
+            }
+          ],
+          "llm_score": 51.2,
+          "axes": {
+            "trl_pathway": 4,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 3,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 48.3,
+          "selection_quality": 29.4,
+          "cost_adjusted": 16.0,
+          "timing_accuracy": 67.6,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "고니켈 양극 전구체 균일화",
+              0.6,
+              0.0
+            ],
+            [
+              "고체전지 양극 소재 최적화",
+              0.15,
+              0.37
+            ],
+            [
+              "나트륨 이차전지 음극 소재",
+              0.13,
+              0.33
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "TRL progressions are generally reasonable: T01 (TRL 6) over 2 years, T02 (TRL 5) over 2 years, and T03 (TRL 4) over 4 years all fall within plausible industry norms for battery materials, though T02's jump from TRL 5 to commercialization-ready in 2 years is mildly aggressive.",
+            "strategic_fidelity": "The declared 기술선도 strategy would favor lower-TRL exploratory technologies and longer R&D horizons, but T01 at TRL 6 is already near-market and the portfolio is small (3 technologies), limiting the breadth of exploratory research expected of a technology leadership posture.",
+            "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing advantages designed relative to competitors embedded in the technology selections or timeline design; selections appear driven by intrinsic technology merit alone.",
+            "market_timing": "Under 기술선도 strategy, completing 1-2 years before market boom is ideal; T01 completes 0.75yr after boom, T02 completes 1.5yr after boom, and T03 completes 1.0yr after boom — all technologies finish after their respective boom windows rather than preempting them, which is suboptimal but not catastrophically late.",
+            "patent_market_convergence": "The selected technologies (high-Ni precursor, solid-state cathode, sodium-ion anode) are active patent and market growth areas, suggesting some alignment, but there is no explicit evidence that selections were made by deliberately targeting patent-market convergence zones rather than general industry relevance."
+          },
+          "strengths": [
+            "Dependency chain between T01 and T02 is logically sound and reflects real material development sequencing in solid-state battery research.",
+            "TRL progression timelines are broadly realistic for battery materials, avoiding overly aggressive jumps that would signal planning naivety."
+          ],
+          "weaknesses": [
+            "All three technologies complete after their respective market boom windows, meaning the portfolio fails to achieve the preemptive positioning central to a 기술선도 strategy.",
+            "The portfolio is too narrow (only 3 technologies) for a technology leadership strategy, lacking the exploratory low-TRL investments needed to secure future competitive differentiation."
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T01",
+              "tech_name": "고니켈 양극 전구체 균일화",
+              "target_q": "2028-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "T02",
+              "tech_name": "고체전지 양극 소재 최적화",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q3",
+              "error_years": 1.5
+            },
+            {
+              "tech_id": "T03",
+              "tech_name": "나트륨 이차전지 음극 소재",
+              "target_q": "2030-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 1.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "off": {
+        "agent_roadmap": [
+          {
+            "name": "고니켈 양극 표면 코팅",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026 년) 즉시 양산 최적화 및 상용화 준비를 시작하며, 2027 년 Q3 시장 폭발 시점을 고려하여 3 차년도 (2028 년) 까지 기술 고도화 및 대량 생산 안정화를 완료합니다.",
+              "tech_execution": "고니켈 양극 소재의 표면 안정화는 고에너지 밀도 배터리 양산의 핵심 장벽으로, LG Chem 의 기술 리더십 강화 전략을 실현하기 위해 가장 먼저 확보해야 할 필수 기술입니다.",
+              "investment_selection": "2030 년 220 억 달러 규모의 시장 성장과 코팅 기술의 필수화 추세를 반영하여, 단기적인 시장 점유율 확보와 경쟁사 대비 기술 우위를 점하기 위한 핵심 투자 대상입니다."
+            }
+          },
+          {
+            "name": "나트륨 이온 배터리 음극",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 4 로 기초 연구 및 프로토타입 단계이므로 1 차년도 (2026 년) 부터 R&D 를 시작하며, 2027 년 Q3 시장 폭발을 대비한 초기 상용화 준비를 4 차년도 (2029 년) 까지 연장하여 기술 성숙도를 높입니다.",
+              "tech_execution": "리튬 자원의 공급 불안정성을 해소하기 위한 저비용 대안 기술로서, LG Chem 의 차세대 에너지 시장 확장 전략을 위한 기술 다각화의 핵심 축입니다.",
+              "investment_selection": "2025 년 이후 상용화 가속화되는 나트륨 이온 배터리 시장에서 선점 효과를 극대화하고, 장기적인 원가 경쟁력을 확보하기 위해 중장기 R&D 예산을 집중 투자해야 합니다."
+            }
+          },
+          {
+            "name": "전체 고체전지 양극 소재",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 5 로 중간 성숙도이나 고체전지 특유의 계면 안정성 확보에 시간이 필요하므로 2 차년도 (2027 년) 에 본격적인 개발을 시작하여 5 차년도 (2030 년) 까지 프론티어 기술 고도화를 완료합니다.",
+              "tech_execution": "차세대 에너지 시장의 핵심인 고체전지 양극 소재는 삼성 SDI 등 경쟁사의 특허 출원이 활발한 분야로, LG Chem 이 기술 선점과 차세대 시장 확장을 위해 반드시 수행해야 할 전략적 과제입니다.",
+              "investment_selection": "2029 년경 본격적인 상용화 예상과 명확한 시장 선두주자가 부재한 초기 단계임을 고려하여, 장기적인 기술 우위 확보와 차세대 배터리 시장에서의 주도권 장악을 위해 5 차년도까지 지속 투자합니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 54.4,
+          "penalty": 0.4,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 0.4
+            }
+          ],
+          "llm_score": 56.2,
+          "axes": {
+            "trl_pathway": 4,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 4,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 53.8,
+          "selection_quality": 40.5,
+          "cost_adjusted": 27.2,
+          "timing_accuracy": 67.6,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "고니켈 양극 표면 코팅",
+              0.4,
+              1.0
+            ],
+            [
+              "나트륨 이온 배터리 음극",
+              0.6,
+              0.0
+            ],
+            [
+              "전체 고체전지 양극 소재",
+              0.22,
+              0.54
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "T01 (TRL 7→completion in 2yr) and T02 (TRL 5→completion in 3yr) are realistic progressions; T05 (TRL 4→completion in 3yr) is slightly aggressive but achievable with dedicated resources, making the overall pathway mostly sound with minor optimism.",
+            "strategic_fidelity": "The portfolio mixes a near-market TRL 7 technology (T01) with exploratory ones (T05 TRL 4, T02 TRL 5), which partially suits 기술선도, but the heavy Strategic-tier investment in TRL 7 T01 and the urgency scores suggest a commercialization-leaning orientation rather than pure technology leadership; the portfolio lacks truly frontier or pre-TRL 4 exploratory technologies expected for 기술선도.",
+            "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing advantage design relative to known industry players in the roadmap; technology selections appear driven by internal scoring rather than competitive landscape intelligence.",
+            "market_timing": "For 기술선도, completing 1-2 years before boom is ideal: T01 completes 0.75yr after boom (slight miss), T05 completes 1.5yr after boom (acceptable given 기술선도 tolerance), and T02 completes 1yr after boom (marginal); none achieve clear pre-boom completion but errors are moderate rather than severe.",
+            "patent_market_convergence": "All three technologies are in high-activity battery material domains where both patent and market signals are strong, but the roadmap does not articulate deliberate convergence-zone targeting — the alignment appears structurally reasonable but incidental rather than explicitly designed."
+          },
+          "strengths": [
+            "TRL progression timelines are generally realistic, avoiding unrealistic multi-level jumps within compressed timeframes",
+            "Portfolio covers three distinct cathode/anode material trajectories (high-nickel, sodium-ion, solid-state) providing technology diversification"
+          ],
+          "weaknesses": [
+            "Heavy investment in TRL 7 T01 (Strategic tier, urgency 5) contradicts 기술선도 strategy which should favor earlier-stage exploratory technologies",
+            "No competitive landscape awareness is embedded — the roadmap lacks differentiation rationale or timing advantage design relative to industry competitors"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T01",
+              "tech_name": "고니켈 양극 표면 코팅",
+              "target_q": "2028-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "T05",
+              "tech_name": "나트륨 이온 배터리 음극",
+              "target_q": "2029-Q1",
+              "boom_q": "2027-Q3",
+              "error_years": 1.5
+            },
+            {
+              "tech_id": "T02",
+              "tech_name": "전체 고체전지 양극 소재",
+              "target_q": "2030-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 1.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "on_single": {
+        "agent_roadmap": [
+          {
+            "name": "High-Nickel Cathode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Solid State Electrolytes",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Dry Electrode Coating",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Silicon Anode Materials",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Advanced Battery Packaging",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "AI-driven Material Discovery",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Lithium Iron Phosphate (LFP) Chemistry",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          }
+        ],
+        "eval": {
+          "composite": 48.3,
+          "penalty": 4.6,
+          "penalties": [
+            {
+              "type": "dependency_violation",
+              "amount": 3
+            },
+            {
+              "type": "timing_error",
+              "amount": 1.6
+            }
+          ],
+          "llm_score": 40.0,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 61.5,
+          "selection_quality": 49.9,
+          "cost_adjusted": 39.9,
+          "timing_accuracy": 60.4,
+          "dependency": 80,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "High-Nickel Cathode Mate",
+              0.7,
+              1.0
+            ],
+            [
+              "Solid State Electrolytes",
+              0.5,
+              0.51
+            ],
+            [
+              "Dry Electrode Coating",
+              0.3,
+              0.0
+            ],
+            [
+              "Silicon Anode Materials",
+              0.56,
+              0.65
+            ],
+            [
+              "Advanced Battery Packagi",
+              0.53,
+              0.57
+            ],
+            [
+              "AI-driven Material Disco",
+              0.38,
+              0.19
+            ],
+            [
+              "Lithium Iron Phosphate (",
+              0.52,
+              0.56
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Most TRL progressions are plausible (e.g., S02 TRL4→target over ~3 years, S06 TRL3 over ~2.5 years), but S05 Advanced Battery Packaging at TRL8 running from 2028-Q1 to 2030-Q4 is an unusually long timeline for a mature technology, and the dependency violation (S02 requires S05 which ends after S02's start) suggests structural planning errors that undermine pathway coherence.",
+            "strategic_fidelity": "The inclusion of low-TRL exploratory technologies (S06 AI-driven Material Discovery at TRL3, S02 Solid State Electrolytes at TRL4) aligns with 기술선도 intent, but the portfolio also includes highly mature technologies like LFP (TRL9) and Advanced Battery Packaging (TRL8) with no clear leadership differentiation rationale, diluting the technology leadership narrative.",
+            "competitive_awareness": "The roadmap shows no explicit competitive differentiation logic — technology selections appear driven by general market relevance rather than targeted gaps or timing advantages over competitors; there is no evidence of positioning relative to known industry leaders in solid-state or high-nickel domains.",
+            "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before boom for preemption, but Advanced Battery Packaging misses by 3.0 years, LFP by 3.5 years, and High-Nickel Cathode Materials by 1.0 year in the wrong direction (completing after boom); only Solid State Electrolytes and Dry Electrode Coating hit their windows precisely.",
+            "patent_market_convergence": "The selection of technologies like Solid State Electrolytes and AI-driven Material Discovery reflects areas of known patent-market convergence in battery materials, but LFP (a saturated, mature patent space) and the uniform investment scoring across all technologies suggest convergence targeting was not deliberately applied."
+          },
+          "strengths": [
+            "Inclusion of genuinely exploratory technologies (AI-driven Material Discovery TRL3, Solid State Electrolytes TRL4) demonstrates authentic technology leadership ambition",
+            "Solid State Electrolytes and Dry Electrode Coating achieve precise market timing alignment with their respective boom windows"
+          ],
+          "weaknesses": [
+            "Critical dependency violation: Solid State Electrolytes is scheduled to start in 2026-Q2 but its prerequisite (Advanced Battery Packaging) does not complete until 2030-Q4, making the entire S02 development path logically invalid",
+            "LFP Chemistry (TRL9) and Advanced Battery Packaging (TRL8) both complete 3+ years after their market booms, representing severe late-market entries that destroy potential ROI and contradict leadership positioning"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S01",
+              "tech_name": "High-Nickel Cathode Materials",
+              "target_q": "2028-Q2",
+              "boom_q": "2027-Q2",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Solid State Electrolytes",
+              "target_q": "2029-Q1",
+              "boom_q": "2029-Q1",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Dry Electrode Coating",
+              "target_q": "2028-Q3",
+              "boom_q": "2028-Q3",
+              "error_years": 0.0
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Silicon Anode Materials",
+              "target_q": "2029-Q4",
+              "boom_q": "2028-Q4",
+              "error_years": 1.0
+            },
+            {
+              "tech_id": "S05",
+              "tech_name": "Advanced Battery Packaging",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 3.0
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "AI-driven Material Discovery",
+              "target_q": "2030-Q4",
+              "boom_q": "2030-Q1",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Lithium Iron Phosphate (LFP) Chemistry",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q2",
+              "error_years": 3.5
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      }
+    },
+    "market_raw": [
+      {
+        "name": "고니켈 양극 표면 코팅",
+        "boom": "2027 Q2",
+        "market_score": 78.5,
+        "tam_b": 22.26,
+        "cagr": 18.5,
+        "basis": "Cathode Materials Market 보고서에 따르면 2025-2030 년간 연평균 18.5% 성장 전망. 고니켈 양극의 안정성 확보를 위한 코팅 기술이 필수 요소로 부상."
+      },
+      {
+        "name": "전체 고체전지 양극 소재",
+        "boom": "2029 Q1",
+        "market_score": 82.0,
+        "tam_b": 15.0,
+        "cagr": 28.0,
+        "basis": "Fortune Business Insights 등 보고서에 따르면 고체전지 소재 시장은 2025-2030 년간 연평균 28% 이상의 고성장 예상. 양극 소재는 고체전지 성능의 핵심 변수로 작용."
+      },
+      {
+        "name": "실리콘 기반 음극 소재",
+        "boom": "2028 Q3",
+        "market_score": 76.0,
+        "tam_b": 8.5,
+        "cagr": 22.0,
+        "basis": "Research and Markets 보고서에 따르면 실리콘 음극 소재 시장은 2025-2030 년간 연평균 22% 성장 전망. 고에너지밀도 배터리 수요 증가가 주요 동인."
+      },
+      {
+        "name": "배터리 모듈 화재 방지 구조",
+        "boom": "2027 Q4",
+        "market_score": 72.5,
+        "tam_b": 3.2,
+        "cagr": 24.0,
+        "basis": "Staticker Business Consulting 보고서에 따르면 배터리 화재 방지 소재 시장은 2025-2030 년간 연평균 24% 성장 전망. 안전 규제 강화가 주요 동인."
+      },
+      {
+        "name": "나트륨 이온 배터리 음극",
+        "boom": "2027 Q3",
+        "market_score": 82.5,
+        "tam_b": 12.5,
+        "cagr": 32.5,
+        "basis": "FactMR 보고서 및 시장 분석에 따르면 나트륨 이온 배터리 시장은 2025 년부터 2030 년까지 연평균 30% 이상의 고성장률을 보일 것으로 예상되며, 이는 리튬 이온 대비 원자재 안정성과 저비용 특성 때문임."
+      }
+    ]
+  },
+  "Hyundai Mobis": {
+    "industry": "자율주행 플랫폼",
+    "variants": {
+      "on": {
+        "agent_roadmap": [
+          {
+            "name": "스테어 바이 와이어 제어",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 7 로 기술 성숙도가 높아 1 차년도 (2026 년) 즉시 개발 착수가 가능하며, 2026 년 말 시장 붐을 대비하여 3 차년도 (2028 년) 까지 상용화 및 초기 양산 준비를 완료하는 것이 적절합니다.",
+              "tech_execution": "자율주행 레벨 3 상용화 시점인 2026 년부터 SDV 환경에서 차량 제어의 핵심 프로세스인 스테어 바이 와이어 기술은 현대모비스의 조향 시스템 포트폴리오 고도화를 위해 선제적으로 확보해야 합니다.",
+              "investment_selection": "Bosch 와의 기술 유사성이 높고 시장 진입 시기가 빠르므로, 초기 R&D 예산을 집중 투자하여 경쟁사 대비 빠른 시장 선점과 기술 리더십 확보를 도모해야 합니다."
+            }
+          },
+          {
+            "name": "다중 센서 퓨전 카메라",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 으로 중간 성숙도를 가지며, 2027 년 시장 붐을 고려하여 1 차년도부터 개발을 시작하되 하드웨어 통합의 복잡성으로 인해 4 차년도 (2029 년) 까지 기술 고도화 및 안정화를 진행합니다.",
+              "tech_execution": "경쟁사 대비 하드웨어 통합 기술 갭을 해소하고, 소프트웨어 중심의 퓨전 알고리즘 강점과 결합하여 자율주행 레벨 2+ 차량 대량 보급에 대응하는 핵심 센서 솔루션을 구축해야 합니다.",
+              "investment_selection": "센서 퓨전 카메라 시장의 급성장 국면 진입을 앞두고 있어, Magna 와 Aptiv 등의 경쟁사를 제치고 하드웨어 아키텍처 선점을 위한 지속적인 투자와 기술 차별화가 필수적입니다."
+            }
+          },
+          {
+            "name": "고성능 SiC 반도체 제조",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 5 로 상대적으로 낮아 긴 개발 주기가 필요하므로 2 차년도 (2027 년) 에 본격적인 R&D 를 시작하며, 2028 년 시장 붐 이후에도 차세대 전력전자 기술 진화를 위해 5 차년도 (2030 년) 까지 이어집니다.",
+              "tech_execution": "자율주행 플랫폼의 고전압 시스템 효율 향상을 위해 필수적인 SiC 기반 전력변환기 기술을 확보하고, Denso 등의 경쟁사와의 기술 격차를 줄이는 동시에 차세대 소재 기술을 선점해야 합니다.",
+              "investment_selection": "SiC 반도체는 전기차 효율성 향상의 핵심으로 장기적인 시장 성장이 예상되므로, 초기 개발 리스크를 감수하고도 2030 년까지 이어지는 장기 투자 전략을 통해 기술 주도권을 확보해야 합니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 24.6,
+          "penalty": 16.3,
+          "penalties": [
+            {
+              "type": "dependency_violation",
+              "amount": 12
+            },
+            {
+              "type": "timing_error",
+              "amount": 4.3
+            }
+          ],
+          "llm_score": 28.7,
+          "axes": {
+            "trl_pathway": 2,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 1,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 49.1,
+          "selection_quality": 43.3,
+          "cost_adjusted": 33.3,
+          "timing_accuracy": 44.2,
+          "dependency": 20,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "Automotive Grade HBM",
+              0.48,
+              0.44
+            ],
+            [
+              "Chiplet Interconnect Arc",
+              0.3,
+              0.0
+            ],
+            [
+              "Energy Efficient AI Acce",
+              0.33,
+              0.07
+            ],
+            [
+              "Automotive Ethernet Netw",
+              0.37,
+              0.17
+            ],
+            [
+              "Advanced Driver Monitori",
+              0.7,
+              1.0
+            ],
+            [
+              "Domain Controllers for A",
+              0.43,
+              0.32
+            ],
+            [
+              "Functional Safety Packag",
+              0.43,
+              0.33
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Automotive Grade HBM at TRL 4 is planned to complete in just 3 quarters (2026-Q1 to 2026-Q4), which is highly aggressive for a material-category technology requiring automotive qualification; additionally, 4 dependency violations indicate the sequencing logic is fundamentally broken, with downstream technologies starting before prerequisites are completed.",
+            "strategic_fidelity": "The portfolio does include lower-TRL exploratory technologies (TRL 4-5) consistent with 기술선도, but the uniform 'High' tier allocation across all 7 technologies with identical scores suggests a lack of differentiated R&D prioritization, and several selections (TRL 7-8) are more aligned with near-market commercialization than leadership exploration.",
+            "competitive_awareness": "There is no visible evidence of competitor technology positioning, differentiation rationale, or timing design relative to competitors in the roadmap; technology selections appear driven by dependency chains rather than competitive gap analysis or first-mover advantage considerations.",
+            "market_timing": "The mean timing error of 1.86 years is severe, with Advanced Driver Monitoring Systems completing 3.25 years after boom, Functional Safety Packaging 3.0 years late, and Domain Controllers 2.75 years late; even for 기술선도 strategy requiring 1-2 year pre-boom completion, most technologies either complete too early (HBM) or dramatically too late, showing systematic misalignment.",
+            "patent_market_convergence": "The technology selections do cover areas of known patent and market activity convergence in automotive AI and ADAS domains, but the uniform scoring across all dimensions (market_opp=4.0, strategic_fit=5.0 for all) suggests the convergence analysis was not granular or intentional enough to differentiate between stronger and weaker convergence zones."
+          },
+          "strengths": [
+            "Logical dependency chain from foundational hardware (HBM, Chiplet) through compute (AI Accelerators) to application layers (ADAS, DMS) reflects sound architectural thinking",
+            "Portfolio includes genuinely early-stage technologies (TRL 4-5) appropriate for a technology leadership strategy in the automotive electronics domain"
+          ],
+          "weaknesses": [
+            "Four hard dependency violations render the roadmap structurally infeasible as planned — downstream projects cannot start before prerequisites complete",
+            "Systematic market timing failures across 5 of 7 technologies, with critical application-layer technologies (DMS, Domain Controllers, Functional Safety Packaging) completing 2.75-3.25 years after their market boom windows"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S01",
+              "tech_name": "Automotive Grade HBM",
+              "target_q": "2026-Q4",
+              "boom_q": "2028-Q4",
+              "error_years": -2.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Chiplet Interconnect Architectures",
+              "target_q": "2027-Q2",
+              "boom_q": "2027-Q3",
+              "error_years": -0.25
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Energy Efficient AI Accelerators",
+              "target_q": "2027-Q3",
+              "boom_q": "2028-Q4",
+              "error_years": -1.25
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Automotive Ethernet Networking",
+              "target_q": "2027-Q4",
+              "boom_q": "2027-Q2",
+              "error_years": 0.5
+            },
+            {
+              "tech_id": "S05",
+              "tech_name": "Advanced Driver Monitoring Systems",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q3",
+              "error_years": 3.25
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "Domain Controllers for ADAS",
+              "target_q": "2030-Q4",
+              "boom_q": "2028-Q1",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Functional Safety Packaging",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 3.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "off": {
+        "agent_roadmap": [
+          {
+            "name": "다중 센서 퓨전 카메라",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "TRL 6 수준으로 2027 년 Q2 시장 붐을 앞두고 2026 년 (1 차년도) 에 즉시 개발을 시작하여 2028 년 (3 차년도) 까지 양산 준비를 완료하는 것이 적절합니다. 이는 하드웨어 통합 기술의 경쟁사 대비 갭을 줄이고 초기 시장 진입을 위한 핵심 시점입니다.",
+              "tech_execution": "소프트웨어 중심의 퓨전 알고리즘 강점을 바탕으로 하드웨어 통합 아키텍처를 선점하여 레벨 3 자율주행 상용화 시점에 필수적인 센서 스택을 완성해야 합니다. 이는 현대모비스의 SDV 전략에서 센서 데이터의 신뢰성을 확보하는 기반이 됩니다.",
+              "investment_selection": "2030 년 33 억 달러 규모의 시장 성장과 2027 년 급성장 시점을 고려할 때, 초기 투자로 기술 장벽을 구축하는 것이 경쟁 우위를 확보하는 가장 합리적인 전략입니다."
+            }
+          },
+          {
+            "name": "3D 포즈 추정 시스템",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "다중 센서 퓨전 카메라 (T01) 의 데이터 처리를 전제로 하므로 2027 년 (2 차년도) 부터 시작하여 2030 년 (5 차년도) 까지 장기적인 고도화를 진행합니다. TRL 5 수준으로 초기 기술이므로 2027 년 Q4 시장 붐 이후에도 차세대 정밀 위치 인식 기술 개발이 필요합니다. [후처리: dependency 보정 — prereq ['T01'] 완료 후로 1차년도 push]",
+              "tech_execution": "자율주행 레벨 3 이상 구현을 위한 정밀한 위치 인식 및 환경 이해 능력을 확보하여, 하드웨어 센서 데이터를 소프트웨어적으로 최적화하는 핵심 스택을 완성해야 합니다. 이는 Aptiv 등 선두 업체의 기술 장벽을 극복하는 데 필수적입니다.",
+              "investment_selection": "아직 명확한 시장 리더가 없는 초기 단계이므로, 2030 년까지 이어지는 R&D 투자를 통해 기술 표준을 선점하고 차세대 자율주행 플랫폼의 핵심 경쟁력을 확보할 수 있습니다."
+            }
+          },
+          {
+            "name": "스테어 바이 와이어 제어",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": {
+              "year_placement": "정밀한 위치 추정 (T08) 이 확보된 2028 년 (3 차년도) 부터 제어 알고리즘 개발을 본격화하여 2030 년 (5 차년도) 까지 상용화 및 고도화를 완료합니다. TRL 7 로 성숙도가 높지만, 자율주행 모드 전환 및 햅틱 피드백 등 SDV 환경에 특화된 최적화가 필요합니다. [후처리: dependency 보정 — prereq ['T08'] 완료 후로 2차년도 push]",
+              "tech_execution": "자율주행과 수동 모드 간 원활한 전환을 위한 제어 알고리즘을 완성하여 현대모비스의 조향 시스템 포트폴리오를 SDV 시대에 맞게 고도화해야 합니다. 이는 Bosch 등 경쟁사의 기술 표준을 따라잡거나 앞서는 데 필수적입니다.",
+              "investment_selection": "2028 년경 대량 적용이 예상되는 시장 붐을 대비하여, 2030 년까지 이어지는 기술 진화를 통해 차세대 조향 시스템의 시장 지배력을 확보하는 것이 R&D 예산 측면에서 가장 효율적입니다."
+            }
+          }
+        ],
+        "eval": {
+          "composite": 43.3,
+          "penalty": 3.3,
+          "penalties": [
+            {
+              "type": "timing_error",
+              "amount": 3.3
+            }
+          ],
+          "llm_score": 40.0,
+          "axes": {
+            "trl_pathway": 3,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 2,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 51.0,
+          "selection_quality": 43.8,
+          "cost_adjusted": 30.4,
+          "timing_accuracy": 49.9,
+          "dependency": 100,
+          "budget": 100.0,
+          "n_tech": 3,
+          "tech_values": [
+            [
+              "다중 센서 퓨전 카메라",
+              0.72,
+              0.8
+            ],
+            [
+              "3D 포즈 추정 시스템",
+              0.0,
+              0.0
+            ],
+            [
+              "스테어 바이 와이어 제어",
+              0.59,
+              0.22
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "T01 (TRL 6→completion in 2 years) and T03 (TRL 7) are reasonable, but T08 scheduled for 2028-Q1 to 2030-Q1 (2 years from TRL 5) is optimistic for a complex 3D estimation system, and T03's zero-duration development (2030-Q1→2030-Q1) is structurally implausible.",
+            "strategic_fidelity": "The portfolio includes mid-to-high TRL technologies (TRL 5-7) rather than the lower-TRL exploratory selections expected for a 기술선도 strategy; while the dependency chain shows some R&D thinking, the overall portfolio leans more toward near-commercial technologies than true technology leadership.",
+            "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing design relative to competitive actors; technology selections appear driven purely by internal dependency logic rather than competitive landscape awareness.",
+            "market_timing": "For 기술선도, completing 1-2 years before boom is ideal, but T08 completes 2.25 years after its boom (2027-Q4) and T03 completes 2.0 years after its boom (2028-Q1); only T01 is within an acceptable window at 0.75 years post-boom, making systematic late completion the dominant pattern.",
+            "patent_market_convergence": "The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are all active areas in both patent filings and autonomous driving market growth, suggesting some alignment, but there is no explicit evidence that convergence zones were deliberately targeted versus being incidental to domain selection."
+          },
+          "strengths": [
+            "Dependency chain is logically structured with no violations (T01→T08→T03), reflecting coherent technical sequencing",
+            "Budget utilization is clean with no overspend, and all three technologies receive Strategic or High tier investment aligned with their scoring profiles"
+          ],
+          "weaknesses": [
+            "Systematic late completion across the portfolio (mean error 1.67 years post-boom) undermines both market capture and 기술선도 preemption objectives",
+            "T03 (스테어 바이 와이어) has a zero-duration development window (2030-Q1 to 2030-Q1), which is structurally invalid and suggests a scheduling artifact rather than a real plan"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "T01",
+              "tech_name": "다중 센서 퓨전 카메라",
+              "target_q": "2028-Q1",
+              "boom_q": "2027-Q2",
+              "error_years": 0.75
+            },
+            {
+              "tech_id": "T08",
+              "tech_name": "3D 포즈 추정 시스템",
+              "target_q": "2030-Q1",
+              "boom_q": "2027-Q4",
+              "error_years": 2.25
+            },
+            {
+              "tech_id": "T03",
+              "tech_name": "스테어 바이 와이어 제어",
+              "target_q": "2030-Q1",
+              "boom_q": "2028-Q1",
+              "error_years": 2.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      },
+      "on_single": {
+        "agent_roadmap": [
+          {
+            "name": "Automotive Grade HBM",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Chiplet Interconnect Architectures",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Energy Efficient AI Accelerators",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Automotive Ethernet Networking",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Advanced Driver Monitoring Systems",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Domain Controllers for ADAS",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          },
+          {
+            "name": "Functional Safety Packaging",
+            "trl_start": null,
+            "trl_target": null,
+            "start": null,
+            "end": null,
+            "tier": null,
+            "boom": null,
+            "reasoning": null
+          }
+        ],
+        "eval": {
+          "composite": 24.6,
+          "penalty": 16.3,
+          "penalties": [
+            {
+              "type": "dependency_violation",
+              "amount": 12
+            },
+            {
+              "type": "timing_error",
+              "amount": 4.3
+            }
+          ],
+          "llm_score": 28.7,
+          "axes": {
+            "trl_pathway": 2,
+            "strategic_fidelity": 3,
+            "competitive_awareness": 2,
+            "market_timing": 1,
+            "patent_market_convergence": 3
+          },
+          "bt_score": 49.1,
+          "selection_quality": 43.3,
+          "cost_adjusted": 33.3,
+          "timing_accuracy": 44.2,
+          "dependency": 20,
+          "budget": 100.0,
+          "n_tech": 7,
+          "tech_values": [
+            [
+              "Automotive Grade HBM",
+              0.48,
+              0.44
+            ],
+            [
+              "Chiplet Interconnect Arc",
+              0.3,
+              0.0
+            ],
+            [
+              "Energy Efficient AI Acce",
+              0.33,
+              0.07
+            ],
+            [
+              "Automotive Ethernet Netw",
+              0.37,
+              0.17
+            ],
+            [
+              "Advanced Driver Monitori",
+              0.7,
+              1.0
+            ],
+            [
+              "Domain Controllers for A",
+              0.43,
+              0.32
+            ],
+            [
+              "Functional Safety Packag",
+              0.43,
+              0.33
+            ]
+          ],
+          "evidence": {
+            "trl_pathway": "Automotive Grade HBM at TRL 4 is planned to complete in just 3 quarters (2026-Q1 to 2026-Q4), which is highly aggressive for a material-category technology requiring automotive qualification; additionally, 4 dependency violations indicate the sequencing logic is fundamentally broken, with downstream technologies starting before prerequisites are completed.",
+            "strategic_fidelity": "The portfolio does include lower-TRL exploratory technologies (TRL 4-5) consistent with 기술선도, but the uniform 'High' tier allocation across all 7 technologies with identical scores suggests a lack of differentiated R&D prioritization, and several selections (TRL 7-8) are more aligned with near-market commercialization than leadership exploration.",
+            "competitive_awareness": "There is no visible evidence of competitor technology positioning, differentiation rationale, or timing design relative to competitors in the roadmap; technology selections appear driven by dependency chains rather than competitive gap analysis or first-mover advantage considerations.",
+            "market_timing": "The mean timing error of 1.86 years is severe, with Advanced Driver Monitoring Systems completing 3.25 years after boom, Functional Safety Packaging 3.0 years late, and Domain Controllers 2.75 years late; even for 기술선도 strategy requiring 1-2 year pre-boom completion, most technologies either complete too early (HBM) or dramatically too late, showing systematic misalignment.",
+            "patent_market_convergence": "The technology selections do cover areas of known patent and market activity convergence in automotive AI and ADAS domains, but the uniform scoring across all dimensions (market_opp=4.0, strategic_fit=5.0 for all) suggests the convergence analysis was not granular or intentional enough to differentiate between stronger and weaker convergence zones."
+          },
+          "strengths": [
+            "Logical dependency chain from foundational hardware (HBM, Chiplet) through compute (AI Accelerators) to application layers (ADAS, DMS) reflects sound architectural thinking",
+            "Portfolio includes genuinely early-stage technologies (TRL 4-5) appropriate for a technology leadership strategy in the automotive electronics domain"
+          ],
+          "weaknesses": [
+            "Four hard dependency violations render the roadmap structurally infeasible as planned — downstream projects cannot start before prerequisites complete",
+            "Systematic market timing failures across 5 of 7 technologies, with critical application-layer technologies (DMS, Domain Controllers, Functional Safety Packaging) completing 2.75-3.25 years after their market boom windows"
+          ],
+          "timing_details": [
+            {
+              "tech_id": "S01",
+              "tech_name": "Automotive Grade HBM",
+              "target_q": "2026-Q4",
+              "boom_q": "2028-Q4",
+              "error_years": -2.0
+            },
+            {
+              "tech_id": "S02",
+              "tech_name": "Chiplet Interconnect Architectures",
+              "target_q": "2027-Q2",
+              "boom_q": "2027-Q3",
+              "error_years": -0.25
+            },
+            {
+              "tech_id": "S03",
+              "tech_name": "Energy Efficient AI Accelerators",
+              "target_q": "2027-Q3",
+              "boom_q": "2028-Q4",
+              "error_years": -1.25
+            },
+            {
+              "tech_id": "S04",
+              "tech_name": "Automotive Ethernet Networking",
+              "target_q": "2027-Q4",
+              "boom_q": "2027-Q2",
+              "error_years": 0.5
+            },
+            {
+              "tech_id": "S05",
+              "tech_name": "Advanced Driver Monitoring Systems",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q3",
+              "error_years": 3.25
+            },
+            {
+              "tech_id": "S06",
+              "tech_name": "Domain Controllers for ADAS",
+              "target_q": "2030-Q4",
+              "boom_q": "2028-Q1",
+              "error_years": 2.75
+            },
+            {
+              "tech_id": "S07",
+              "tech_name": "Functional Safety Packaging",
+              "target_q": "2030-Q4",
+              "boom_q": "2027-Q4",
+              "error_years": 3.0
+            }
+          ],
+          "models_used": [
+            "anthropic:claude-sonnet-4-6"
+          ]
+        }
+      }
+    },
+    "market_raw": [
+      {
+        "name": "다중 센서 퓨전 카메라",
+        "boom": "2027 Q2",
+        "market_score": 78.5,
+        "tam_b": 3.3,
+        "cagr": 18.5,
+        "basis": "자율주행 레벨 2+ 및 레벨 3 상용화 가속화로 인해 센서 퓨전 기술에 대한 수요가 연평균 18% 이상 성장할 것으로 예상됨."
+      },
+      {
+        "name": "고성능 SiC 반도체 제조",
+        "boom": "2026 Q3",
+        "market_score": 92.0,
+        "tam_b": 133.05,
+        "cagr": 24.0,
+        "basis": "EV 전환 가속화 및 800V 고전압 아키텍처 도입으로 SiC 수요가 연평균 24% 이상 성장할 것으로 전망됨."
+      },
+      {
+        "name": "스테어 바이 와이어 제어",
+        "boom": "2028 Q1",
+        "market_score": 81.5,
+        "tam_b": 12.5,
+        "cagr": 22.0,
+        "basis": "자율주행 레벨 3 이상 차량의 의무화 및 소프트웨어 정의 차량 (SDV) 트렌드로 인해 연평균 22% 성장 예상."
+      },
+      {
+        "name": "PCM 기반 배터리 열관리",
+        "boom": "2029 Q2",
+        "market_score": 74.0,
+        "tam_b": 30.0,
+        "cagr": 16.5,
+        "basis": "EV 배터리 용량 증가 및 충전 속도 향상 요구로 인해 열관리 기술에 대한 수요가 연평균 16.5% 성장할 것으로 예상됨."
+      },
+      {
+        "name": "고전압 커넥터 모듈화",
+        "boom": "2027 Q2",
+        "market_score": 76.5,
+        "tam_b": 8.8,
+        "cagr": 14.5,
+        "basis": "전기차 보급 확대 및 고전압 아키텍처 (800V) 로의 전환이 시장 성장을 주도합니다."
+      },
+      {
+        "name": "전력전자 모듈 통합 아키텍처",
+        "boom": "2028 Q1",
+        "market_score": 82.0,
+        "tam_b": 45.0,
+        "cagr": 16.8,
+        "basis": "SDV(소프트웨어 정의 차량) 및 전기차 효율성 요구로 인해 통합 전력 모듈 수요가 급증하고 있습니다."
+      },
+      {
+        "name": "전기 구동장치 슬립 제어",
+        "boom": "2029 Q3",
+        "market_score": 68.5,
+        "tam_b": 12.0,
+        "cagr": 11.2,
+        "basis": "자율주행 레벨 2+ 및 레벨 3 차량의 증가로 정밀한 슬립 제어 기술 수요가 점진적으로 확대됩니다."
+      },
+      {
+        "name": "3D 포즈 추정 시스템",
+        "boom": "2027 Q4",
+        "market_score": 88.5,
+        "tam_b": 25.0,
+        "cagr": 24.5,
+        "basis": "자율주행 차량의 센서 퓨전 및 환경 인식 기술 수요가 폭발적으로 증가하고 있습니다."
+      }
+    ]
+  }
+}

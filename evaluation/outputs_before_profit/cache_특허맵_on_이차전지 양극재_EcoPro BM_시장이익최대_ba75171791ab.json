@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "High-Nickel Cathode Materials / Secondary Battery Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 5,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 57.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 5,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6-7 and require relatively modest advancement over 2-3 year windows, which is well within industry norms for near-commercial materials technologies; no unrealistic TRL jumps are present.",
+      "strategic_fidelity": "The portfolio selects high-TRL, near-market technologies consistent with 시장이익최대, but with only 3 technologies — all completing 0.75–1.0 years after their boom windows — the commercialization focus is partially undermined by systematic late timing and a very narrow portfolio that limits market capture breadth.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing design relative to competitive threats; technology selections appear driven by internal metrics rather than competitive landscape intelligence.",
+      "market_timing": "For 시장이익최대, all three technologies complete 0.75–1.0 years after their respective boom windows, consistently missing the ±0.5 year ideal window; while not catastrophically late, the systematic overshoot reduces peak-market ROI capture across the entire portfolio.",
+      "patent_market_convergence": "Technologies selected (high-nickel cathode, precursor synthesis, silicon composite anode) are active areas of both patent filing and market growth, suggesting some convergence awareness, but there is no explicit evidence that convergence zones were deliberately targeted versus chosen for other reasons."
+    },
+    "strengths": [
+      "TRL progression is highly realistic with all technologies at mature stages (TRL 6-7), minimizing execution risk for a market-profit strategy.",
+      "Budget is fully utilized without violation and dependency ordering is correctly enforced (T03 follows T01 completion)."
+    ],
+    "weaknesses": [
+      "All technologies complete after their market boom windows (mean error 0.83 years), systematically missing peak ROI capture moments critical to 시장이익최대.",
+      "Portfolio is extremely narrow (only 3 technologies), providing insufficient diversification to maximize market revenue and leaving adjacent high-growth segments (e.g., electrolyte, solid-state) unaddressed."
+    ],
+    "missing_technologies": [
+      "고체 전해질 소재 (solid-state electrolyte) — rapidly growing patent and market activity with convergence opportunity",
+      "리튬인산철(LFP) 양극재 고도화 — strong market demand in energy storage and mid-range EV segments",
+      "배터리 열관리 소재 — enabling technology with near-term market boom aligned with EV scale-up"
+    ],
+    "investment_issues": [
+      "Tier allocation between Strategic and High is reasonable, but with only 3 technologies, the absence of any Exploratory-tier investment means no pipeline for post-2030 market cycles, undermining long-term revenue sustainability.",
+      "고성능 음극재 has executability score of 3.0 and uncertainty of 3.0, yet receives High-tier investment without mitigation strategies visible in the roadmap — risk-adjusted allocation may be overweighted."
+    ],
+    "timing_issues": [
+      "고니켈 양극재 다결정화 기술 completes 2028-Q1 vs boom 2027-Q2, missing peak window by ~0.75 years — start date should be advanced to 2025-Q2 to hit market.",
+      "양극재 전구체 합성 최적화 completes 2030-Q1 vs boom 2029-Q1, the largest timing error at 1.0 year post-boom, significantly reducing commercial value.",
+      "고성능 음극재 (실리콘 복합) completes 2030-Q1 vs boom 2029-Q2, missing by 0.75 years — development timeline of 3 years for a TRL 6 technology could be compressed."
+    ],
+    "description": {
+      "trl_pathway": "score 5/5 - All three technologies start at TRL 6-7 and require relatively modest advancement over 2-3 year windows, which is well within industry norms for near-commercial materials technologies; no unrealistic TRL jumps are present.",
+      "strategic_fidelity": "score 3/5 - The portfolio selects high-TRL, near-market technologies consistent with 시장이익최대, but with only 3 technologies — all completing 0.75–1.0 years after their boom windows — the commercialization focus is partially undermined by systematic late timing and a very narrow portfolio that limits market capture breadth.",
+      "competitive_awareness": "score 2/5 - There is no visible evidence of competitor positioning, differentiation rationale, or timing design relative to competitive threats; technology selections appear driven by internal metrics rather than competitive landscape intelligence.",
+      "market_timing": "score 3/5 - For 시장이익최대, all three technologies complete 0.75–1.0 years after their respective boom windows, consistently missing the ±0.5 year ideal window; while not catastrophically late, the systematic overshoot reduces peak-market ROI capture across the entire portfolio.",
+      "patent_market_convergence": "score 3/5 - Technologies selected (high-nickel cathode, precursor synthesis, silicon composite anode) are active areas of both patent filing and market growth, suggesting some convergence awareness, but there is no explicit evidence that convergence zones were deliberately targeted versus chosen for other reasons.",
+      "formula": "llm_structural_score = (0.25×5 + 0.25×3 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 57.5"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극재 다결정화 기술",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.7989,
+        "market_size_norm": 1.0,
+        "value": 0.9397,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.7897
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "양극재 전구체 합성 최적화",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.7518,
+        "market_size_norm": 0.7552,
+        "value": 0.8521,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.44,
+        "cost_adjusted_return": 0.7861
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "고성능 음극재 (실리콘 복합)",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8142,
+        "market_size_norm": 0.5116,
+        "value": 0.7977,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6,
+        "cost_adjusted_return": 0.7077
+      }
+    ],
+    "selection_quality": 86.3,
+    "cost_adjusted_return": 76.1,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 75.1,
+    "backtest_score": 84.4,
+    "backtest_score_v1": 84.4,
+    "description": {
+      "selection_quality": "86.3/100 — 3개 기술 평균 value=0.863\n  ▲ 고니켈 양극재 다결정화 기술: value=0.940 (특허↑=1.00, 시장↑=0.80, 규모=1.00)\n  ▼ 양극재 전구체 합성 최적화: value=0.852 (특허↑=1.00, 시장↑=0.75, 규모=0.76)\n  ▼ 고성능 음극재 (실리콘 복합): value=0.798 (특허↑=1.00, 시장↑=0.81, 규모=0.51)",
+      "cost_adjusted_return": "76.1/100 — 평균 return=0.761\n  고니켈 양극재 다결정화 기술: value=0.940 - 0.15×1.00(cost) = return +0.790 [Strategic]\n  양극재 전구체 합성 최적화: value=0.852 - 0.15×0.67(cost) = return +0.786 [High]\n  고성능 음극재 (실리콘 복합): value=0.798 - 0.15×0.67(cost) = return +0.708 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "75.1/100 — 평균 오차 0.83년\n  양극재 전구체 합성 최적화: 1.0년 늦음\n  고니켈 양극재 다결정화 기술: 0.8년 늦음\n  고성능 음극재 (실리콘 복합): 0.8년 늦음",
+      "formula": "backtest_score = 0.35×86.3 + 0.35×76.1 + 0.05×100.0 + 0.05×100.0 + 0.10×75.1 = 84.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.83,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "고니켈 양극재 다결정화 기술",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "양극재 전구체 합성 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T08",
+        "tech_name": "고성능 음극재 (실리콘 복합)",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 73.6,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 73.6,
+    "description": "pre_penalty = 0.4×57.5(LLM) + 0.6×84.4(Backtest) = 73.6. 페널티 없음. 최종 = 73.6.\n  [진단] Backtest(84.4)가 LLM(57.5)보다 26.9pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 57.5점, Backtest 경제성 평가 84.4점. 최종 Composite Score: 73.6점.",
+    "key_failure_points": [],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

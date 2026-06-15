@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Foundation Model / Document AI / LLM",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 3,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 3,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T03 at TRL 7 requires only incremental development over 4 quarters, which is realistic; T01 at TRL 6 developing over 8 quarters and T04 at TRL 6 over 4 quarters are both achievable, though T04's compressed timeline given its ontology complexity is slightly optimistic.",
+      "strategic_fidelity": "The portfolio leans toward higher-TRL (6-7) technologies suitable for 시장이익최대, but T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market opportunity (2.0) and low urgency (2.0), making it a poor fit for a market-profit-maximization strategy; only 2 of 3 selections strongly align.",
+      "competitive_awareness": "All three technologies fall within the Foundation Model/Document AI/LLM domain, showing reasonable domain alignment; however, the competitive differentiation rationale is shallow — ontology-based query optimization is a niche area with limited competitive signaling relative to the declared domain.",
+      "market_timing": "T03 completes 0.25 years after boom (acceptable for 시장이익최대), T04 completes 0.5 years after boom (acceptable), but T01 completes 1.75 years after its 2027-Q2 boom window — a significant miss that reduces portfolio timing effectiveness for a market-profit strategy.",
+      "patent_market_convergence": "T01 shows high market opportunity (5.0) and strategic fit (5.0), suggesting some convergence awareness; however, T04's low market opportunity (2.0) despite being included suggests patent signals may have driven that selection without commensurate market validation."
+    },
+    "strengths": [
+      "Zero dependency violations and full budget utilization indicate well-structured execution planning",
+      "T03 and T01 are core LLM/multi-agent domain technologies with strong strategic fit scores, anchoring the portfolio in the declared domain"
+    ],
+    "weaknesses": [
+      "T01 (멀티모달 에이전트 워크플로우 자동화) misses its market boom by 1.75 years, which is a critical timing failure for a 시장이익최대 strategy",
+      "T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market opportunity and urgency scores, making it a weak fit for a market-profit-maximization portfolio"
+    ],
+    "missing_technologies": [
+      "RAG (Retrieval-Augmented Generation) 파이프라인 최적화 — high market demand within Document AI domain",
+      "LLM 파인튜닝 및 도메인 특화 모델 적응 기술 — directly addresses commercialization needs in the Foundation Model domain"
+    ],
+    "investment_issues": [
+      "온톨로지 기반 데이터베이스 쿼리 최적화 is allocated Tier=High investment despite having the lowest market opportunity (2.0) and urgency (2.0) scores in the portfolio, misaligning capital with market-profit objectives"
+    ],
+    "timing_issues": [
+      "멀티모달 에이전트 워크플로우 자동화 completes in 2029-Q1 but market boom peaks at 2027-Q2 — 1.75-year delay means missing the primary revenue window"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T03 at TRL 7 requires only incremental development over 4 quarters, which is realistic; T01 at TRL 6 developing over 8 quarters and T04 at TRL 6 over 4 quarters are both achievable, though T04's compressed timeline given its ontology complexity is slightly optimistic.",
+      "strategic_fidelity": "score 3/5 - The portfolio leans toward higher-TRL (6-7) technologies suitable for 시장이익최대, but T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market opportunity (2.0) and low urgency (2.0), making it a poor fit for a market-profit-maximization strategy; only 2 of 3 selections strongly align.",
+      "competitive_awareness": "score 3/5 - All three technologies fall within the Foundation Model/Document AI/LLM domain, showing reasonable domain alignment; however, the competitive differentiation rationale is shallow — ontology-based query optimization is a niche area with limited competitive signaling relative to the declared domain.",
+      "market_timing": "score 3/5 - T03 completes 0.25 years after boom (acceptable for 시장이익최대), T04 completes 0.5 years after boom (acceptable), but T01 completes 1.75 years after its 2027-Q2 boom window — a significant miss that reduces portfolio timing effectiveness for a market-profit strategy.",
+      "patent_market_convergence": "score 3/5 - T01 shows high market opportunity (5.0) and strategic fit (5.0), suggesting some convergence awareness; however, T04's low market opportunity (2.0) despite being included suggests patent signals may have driven that selection without commensurate market validation.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×3 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "생성형 AI 시스템 모니터링 및 평가",
+        "patent_growth_norm": 0.5357,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.3469,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.75,
+        "cost_adjusted_return": 0.5777
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "patent_growth_norm": 0.8429,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 0.5514,
+        "value": 0.8026,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.9066
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "patent_growth_norm": 0.4143,
+        "market_growth_norm": 0.8518,
+        "market_size_norm": 0.4236,
+        "value": 0.5483,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5,
+        "cost_adjusted_return": 0.3974
+      }
+    ],
+    "selection_quality": 56.6,
+    "cost_adjusted_return": 65.7,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 75.1,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 74.3,
+    "backtest_score_v1": 70.3,
+    "description": {
+      "selection_quality": "56.6/100 — 3개 기술 평균 value=0.566\n  ▲ 멀티모달 에이전트 워크플로우 자동화: value=0.803 (특허↑=0.84, 시장↑=1.00, 규모=0.55)\n  ▼ 온톨로지 기반 데이터베이스 쿼리 최적화: value=0.548 (특허↑=0.41, 시장↑=0.85, 규모=0.42)\n  ▼ 생성형 AI 시스템 모니터링 및 평가: value=0.347 (특허↑=0.54, 시장↑=0.44, 규모=0.00)",
+      "cost_adjusted_return": "65.7/100 — 평균 return=0.627\n  멀티모달 에이전트 워크플로우 자동화: 순이익(log)=+0.907 [Strategic]\n  생성형 AI 시스템 모니터링 및 평가: 순이익(log)=+0.578 [Strategic] ⚠ 과다투자\n  온톨로지 기반 데이터베이스 쿼리 최적화: 순이익(log)=+0.397 [High]\n  [과다투자 진단]\n  → 생성형 AI 시스템 모니터링 및 평가: value 0.347인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "75.1/100 — 평균 오차 0.83년\n  멀티모달 에이전트 워크플로우 자동화: 1.8년 늦음 ⚠\n  온톨로지 기반 데이터베이스 쿼리 최적화: 0.5년 늦음\n  생성형 AI 시스템 모니터링 및 평가: 0.2년 늦음",
+      "formula": "backtest_score = 0.25×56.6(기술선택) + 0.25×65.7(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×75.1(타이밍) = 74.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.83,
+    "timing_details": [
+      {
+        "tech_id": "T03",
+        "tech_name": "생성형 AI 시스템 모니터링 및 평가",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "멀티모달 에이전트 워크플로우 자동화",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q3",
+        "error_years": 0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 67.1,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 67.1,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×74.3(Backtest) = 67.1. 페널티 없음. 최종 = 67.1."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 74.3점. 최종 Composite Score: 67.1점.",
+    "key_failure_points": [
+      "타이밍 이슈: 멀티모달 에이전트 워크플로우 자동화의 완료시점이 시장 개화 대비 1.75년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

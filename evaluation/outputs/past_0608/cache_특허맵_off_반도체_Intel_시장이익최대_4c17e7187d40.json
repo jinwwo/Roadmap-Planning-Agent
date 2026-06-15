@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / IDM / Foundry",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 3,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 56.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 3,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are plausible: T01 (TRL7, 2yr timeline), T04 (TRL6, 1yr) are achievable, though T04's 1-year jump to completion is aggressive for AI process control systems; T05 (TRL5→commercial in 2yr) is the most challenging given architectural complexity but is given a medium tier with modest urgency, which is appropriate.",
+      "strategic_fidelity": "The declared 시장이익최대 strategy is partially reflected in the selection of high-TRL (6-7) commercialization-ready technologies like T01 and T03, but T05 (Compute-in-Memory, TRL5) is a lower-maturity, higher-uncertainty selection that is more characteristic of a technology leadership strategy; the portfolio is mostly but not perfectly aligned.",
+      "competitive_awareness": "Technology selections (GAA, Backside power, Hybrid bonding) align with well-known semiconductor roadmap directions pursued by TSMC, Samsung, and Intel, suggesting awareness of competitive trends, but there is no explicit differentiation strategy or timing advantage designed relative to named competitors—the roadmap follows rather than preempts.",
+      "market_timing": "For 시장이익최대, completions should be within ±0.5 years of the boom; T04 achieves this (0.5yr error), T01 and T05 are marginal (0.75yr), but T02 (1.0yr late) and especially T03 (2.25yr after the 2027-Q4 boom, completing in 2030-Q1) represent significant misalignment that would substantially reduce market profit capture.",
+      "patent_market_convergence": "The selected technologies (GAA, Backside power delivery, Hybrid bonding) are all in high-activity patent zones for advanced semiconductor nodes, and market growth signals are strong, suggesting reasonable convergence awareness; however, T05 (CiM) shows weaker market urgency scores and T04 has moderate patent-market alignment, making the convergence appear partially systematic rather than fully deliberate."
+    },
+    "strengths": [
+      "High-TRL portfolio core (T01, T03 at TRL7) aligns well with market profit maximization by reducing commercialization risk",
+      "Zero dependency violations and logical sequential chaining (T01→T02→T03) ensures technically sound execution pathway"
+    ],
+    "weaknesses": [
+      "하이브리드 본딩 패키징 (T03) completes 2.25 years after its market boom window, critically undermining profit maximization for what is designated a Strategic-tier investment",
+      "Compute-in-Memory (T05, TRL5) is a misfit for 시장이익최대 strategy given its high uncertainty (4.0), low executability (2.0), and low urgency (2.0), resembling a technology leadership bet"
+    ],
+    "missing_technologies": [
+      "EUV/High-NA lithography process technology — central to advanced node competitiveness and high patent-market convergence",
+      "3D NAND or advanced memory integration technology — strong near-term market boom alignment for profit maximization",
+      "Chiplet interconnect standards (UCIe) — high commercial readiness and market timing opportunity in 2026-2028 window"
+    ],
+    "investment_issues": [
+      "T03 (하이브리드 본딩) is rated Strategic tier but its roadmap completion date (2030-Q1) is so far past the 2027-Q4 boom that Strategic investment level may not generate proportional market returns",
+      "T05 (Compute-in-Memory) at Medium tier with executability 2.0 and uncertainty 4.0 may still represent resource misallocation for a profit-maximization strategy where capital should concentrate on near-market, high-certainty technologies"
+    ],
+    "timing_issues": [
+      "하이브리드 본딩 패키징 boom is 2027-Q4 but roadmap completion is 2030-Q1 — a 2.25-year delay that misses peak market demand entirely, representing the most critical timing failure in the portfolio",
+      "Backside 전력망 형성 기술 completes 1 year after its boom (2029-Q1 vs 2028-Q1 boom), partially missing the optimal revenue window for a Strategic-tier asset"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - Most TRL progressions are plausible: T01 (TRL7, 2yr timeline), T04 (TRL6, 1yr) are achievable, though T04's 1-year jump to completion is aggressive for AI process control systems; T05 (TRL5→commercial in 2yr) is the most challenging given architectural complexity but is given a medium tier with modest urgency, which is appropriate.",
+      "strategic_fidelity": "score 3/5 - The declared 시장이익최대 strategy is partially reflected in the selection of high-TRL (6-7) commercialization-ready technologies like T01 and T03, but T05 (Compute-in-Memory, TRL5) is a lower-maturity, higher-uncertainty selection that is more characteristic of a technology leadership strategy; the portfolio is mostly but not perfectly aligned.",
+      "competitive_awareness": "score 3/5 - Technology selections (GAA, Backside power, Hybrid bonding) align with well-known semiconductor roadmap directions pursued by TSMC, Samsung, and Intel, suggesting awareness of competitive trends, but there is no explicit differentiation strategy or timing advantage designed relative to named competitors—the roadmap follows rather than preempts.",
+      "market_timing": "score 3/5 - For 시장이익최대, completions should be within ±0.5 years of the boom; T04 achieves this (0.5yr error), T01 and T05 are marginal (0.75yr), but T02 (1.0yr late) and especially T03 (2.25yr after the 2027-Q4 boom, completing in 2030-Q1) represent significant misalignment that would substantially reduce market profit capture.",
+      "patent_market_convergence": "score 3/5 - The selected technologies (GAA, Backside power delivery, Hybrid bonding) are all in high-activity patent zones for advanced semiconductor nodes, and market growth signals are strong, suggesting reasonable convergence awareness; however, T05 (CiM) shows weaker market urgency scores and T04 has moderate patent-market alignment, making the convergence appear partially systematic rather than fully deliberate.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×3 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 56.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 4,
+      "balance": 4,
+      "llm_structural_score_v1": 80.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "patent_growth_norm": 0.0476,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.6191,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.4691
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "Backside 전력망 형성 기술",
+        "patent_growth_norm": 0.552,
+        "market_growth_norm": 0.7439,
+        "market_size_norm": 0.0827,
+        "value": 0.4688,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.3188
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "하이브리드 본딩 패키징",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.6928,
+        "market_size_norm": 0.9028,
+        "value": 0.8787,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.7287
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 기반 공정 제어 및 예측",
+        "patent_growth_norm": 0.8174,
+        "market_growth_norm": 0.4309,
+        "market_size_norm": 0.728,
+        "value": 0.6746,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5746
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Compute-in-Memory 아키텍처",
+        "patent_growth_norm": 0.1807,
+        "market_growth_norm": 0.3777,
+        "market_size_norm": 0.3598,
+        "value": 0.2935,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.2435
+      }
+    ],
+    "selection_quality": 58.7,
+    "cost_adjusted_return": 46.7,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 68.5,
+    "backtest_score": 68.5,
+    "backtest_score_v1": 63.7,
+    "description": {
+      "selection_quality": "58.7/100 — 5개 기술 평균 value=0.587\n  ▲ 하이브리드 본딩 패키징: value=0.879 (특허↑=1.00, 시장↑=0.69, 규모=0.90)\n  ▲ AI 기반 공정 제어 및 예측: value=0.675 (특허↑=0.82, 시장↑=0.43, 규모=0.73)\n  ▲ GAA 트랜지스터 게이트 공정: value=0.619 (특허↑=0.05, 시장↑=1.00, 규모=1.00)\n  ▼ Backside 전력망 형성 기술: value=0.469 (특허↑=0.55, 시장↑=0.74, 규모=0.08)\n  ▼ Compute-in-Memory 아키텍처: value=0.293 (특허↑=0.18, 시장↑=0.38, 규모=0.36)\n  [낮은 원인]\n  → Compute-in-Memory 아키텍처: 특허 성장률 낮음 (norm=0.18)",
+      "cost_adjusted_return": "46.7/100 — 평균 return=0.467\n  하이브리드 본딩 패키징: value=0.879 - 0.15×1.00(cost) = return +0.729 [Strategic]\n  AI 기반 공정 제어 및 예측: value=0.675 - 0.15×0.67(cost) = return +0.575 [High]\n  GAA 트랜지스터 게이트 공정: value=0.619 - 0.15×1.00(cost) = return +0.469 [Strategic]\n  Backside 전력망 형성 기술: value=0.469 - 0.15×1.00(cost) = return +0.319 [Strategic]\n  Compute-in-Memory 아키텍처: value=0.293 - 0.15×0.33(cost) = return +0.243 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "68.5/100 — 평균 오차 1.05년\n  하이브리드 본딩 패키징: 2.2년 늦음 ⚠\n  Backside 전력망 형성 기술: 1.0년 늦음\n  GAA 트랜지스터 게이트 공정: 0.8년 늦음\n  Compute-in-Memory 아키텍처: 0.8년 늦음\n  AI 기반 공정 제어 및 예측: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×58.7 + 0.35×46.7 + 0.05×100.0 + 0.05×100.0 + 0.10×68.5 = 68.5"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.05,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "Backside 전력망 형성 기술",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "하이브리드 본딩 패키징",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 기반 공정 제어 및 예측",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Compute-in-Memory 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 63.6,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.3
+      }
+    ],
+    "total_penalty": 0.3,
+    "final_composite_score": 63.3,
+    "description": "pre_penalty = 0.4×56.2(LLM) + 0.6×68.5(Backtest) = 63.6. Penalty: timing_error: -0.3pt. 총 -0.3pt. 최종 = 63.3."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 56.2점, Backtest 경제성 평가 68.5점. 제약 위반으로 0.3점 차감. 최종 Composite Score: 63.3점.",
+    "key_failure_points": [
+      "타이밍 이슈: 하이브리드 본딩 패키징의 완료시점이 시장 개화 대비 2.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

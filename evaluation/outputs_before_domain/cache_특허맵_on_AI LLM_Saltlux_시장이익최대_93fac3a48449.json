@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Conversational AI / LLM / Knowledge Graph",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 2,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 46.2,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 2,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T06 (TRL 7) and T01 (TRL 7) have short development windows of ~4 quarters each which is feasible given their high starting TRL; T03 (TRL 5→completion in 8 quarters) and T02 (TRL 6→completion in 4 quarters) are somewhat aggressive but within plausible range for the domain.",
+      "strategic_fidelity": "The strategy declares 시장이익최대 (market profit maximization), which calls for near-market, high-TRL selections and tight timing to boom windows; while TRL levels are reasonably high (5-7), three of four technologies complete significantly after their market boom, undermining commercialization focus.",
+      "competitive_awareness": "The roadmap shows a logical dependency chain suggesting architectural awareness of the technology stack, but there is no explicit evidence of competitor positioning, differentiation strategy, or timing designed to preempt or respond to competitive moves in conversational AI/LLM space.",
+      "market_timing": "Mean timing error of 1.19 years is problematic for a 시장이익최대 strategy requiring ±0.5 year precision; only T06 hits near its boom window (0.25yr late), while T01 misses by 1.75yr, T03 by 1.25yr, and T02 by 1.5yr—all completing well after their respective boom periods.",
+      "patent_market_convergence": "Technologies like knowledge graph QA and domain-specific search engines are active areas in both patent filings and market growth, suggesting some alignment; however, the selection rationale does not explicitly demonstrate deliberate targeting of patent-market convergence zones."
+    },
+    "strengths": [
+      "Zero dependency violations with a well-structured sequential development chain (T06→T01→T02, T03→T02) ensuring prerequisite readiness",
+      "Budget perfectly utilized (0% violation) with Strategic tier assigned to highest market opportunity technologies (T06, T01)"
+    ],
+    "weaknesses": [
+      "Systematic post-boom completion across 3 of 4 technologies severely undermines the 시장이익최대 strategy objective of capturing peak market ROI",
+      "No competitive intelligence or differentiation rationale is embedded in technology selection or timing decisions"
+    ],
+    "missing_technologies": [
+      "RAG (Retrieval-Augmented Generation) optimization technology to strengthen the search-to-generation pipeline near-term",
+      "Multi-modal conversational interface technology to capture adjacent market opportunities in the 2026-2027 boom window"
+    ],
+    "investment_issues": [
+      "T02 rated market_opp=3.0 yet receives High tier investment—for 시장이익최대 strategy, lower market opportunity technologies should be deprioritized or cut in favor of accelerating higher-opportunity items",
+      "Strategic tier investments in T06 and T01 are justified by scores, but the resulting sequential dependency chain creates unavoidable timing misalignment that the investment strategy does not account for or mitigate"
+    ],
+    "timing_issues": [
+      "T01 (권한 인식 자동 응답 시스템) completes 1.75 years after its 2027-Q2 boom—dependency on T06 forces this delay but earlier parallel development could reduce the gap",
+      "T03 (LLM 효율적 학습 및 슬라이싱) takes 8 quarters despite no prerequisites, missing its 2026-Q4 boom by 1.25 years; an accelerated 5-6 quarter plan would better serve the market timing objective",
+      "T02 (도메인 특화 검색 엔진 아키텍처) is scheduled last (2029-2030) but its boom peaks in 2028-Q3, suggesting the development sequencing should be front-loaded or parallelized more aggressively"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T06 (TRL 7) and T01 (TRL 7) have short development windows of ~4 quarters each which is feasible given their high starting TRL; T03 (TRL 5→completion in 8 quarters) and T02 (TRL 6→completion in 4 quarters) are somewhat aggressive but within plausible range for the domain.",
+      "strategic_fidelity": "score 3/5 - The strategy declares 시장이익최대 (market profit maximization), which calls for near-market, high-TRL selections and tight timing to boom windows; while TRL levels are reasonably high (5-7), three of four technologies complete significantly after their market boom, undermining commercialization focus.",
+      "competitive_awareness": "score 2/5 - The roadmap shows a logical dependency chain suggesting architectural awareness of the technology stack, but there is no explicit evidence of competitor positioning, differentiation strategy, or timing designed to preempt or respond to competitive moves in conversational AI/LLM space.",
+      "market_timing": "score 2/5 - Mean timing error of 1.19 years is problematic for a 시장이익최대 strategy requiring ±0.5 year precision; only T06 hits near its boom window (0.25yr late), while T01 misses by 1.75yr, T03 by 1.25yr, and T02 by 1.5yr—all completing well after their respective boom periods.",
+      "patent_market_convergence": "score 3/5 - Technologies like knowledge graph QA and domain-specific search engines are active areas in both patent filings and market growth, suggesting some alignment; however, the selection rationale does not explicitly demonstrate deliberate targeting of patent-market convergence zones.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×3 + 0.2×2 + 0.2×2 + 0.1×3 - 1) / 4 × 100 = 46.2"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 77.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "지식 그래프 기반 사용자 맞춤 QA",
+        "patent_growth_norm": 0.9194,
+        "market_growth_norm": 0.8523,
+        "market_size_norm": 1.0,
+        "value": 0.9234,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 9.9141
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "LLM 효율적 학습 및 슬라이싱",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.9041,
+        "market_size_norm": 0.615,
+        "value": 0.4557,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6316,
+        "cost_adjusted_return": 7.7759
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "권한 인식 자동 응답 시스템",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8523,
+        "market_size_norm": 1.0,
+        "value": 0.9557,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8421,
+        "cost_adjusted_return": 9.9485
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "도메인 특화 검색 엔진 아키텍처",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.654,
+        "market_size_norm": 0.0,
+        "value": 0.5962,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3684,
+        "cost_adjusted_return": 6.7372
+      }
+    ],
+    "selection_quality": 73.3,
+    "cost_adjusted_return": 97.8,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 64.3,
+    "backtest_score": 83.9,
+    "backtest_score_v1": 86.3,
+    "description": {
+      "selection_quality": "73.3/100 — 4개 기술 평균 value=0.733\n  ▲ 권한 인식 자동 응답 시스템: value=0.956 (특허↑=1.00, 시장↑=0.85, 규모=1.00)\n  ▲ 지식 그래프 기반 사용자 맞춤 QA: value=0.923 (특허↑=0.92, 시장↑=0.85, 규모=1.00)\n  ▼ 도메인 특화 검색 엔진 아키텍처: value=0.596 (특허↑=1.00, 시장↑=0.65, 규모=0.00)\n  ▼ LLM 효율적 학습 및 슬라이싱: value=0.456 (특허↑=0.00, 시장↑=0.90, 규모=0.61)",
+      "cost_adjusted_return": "97.8/100 — 평균 return=8.594\n  권한 인식 자동 응답 시스템: value=0.956 - 0.15×1.00(cost) = return +9.948 [Strategic]\n  지식 그래프 기반 사용자 맞춤 QA: value=0.923 - 0.15×1.00(cost) = return +9.914 [Strategic]\n  LLM 효율적 학습 및 슬라이싱: value=0.456 - 0.15×0.67(cost) = return +7.776 [High]\n  도메인 특화 검색 엔진 아키텍처: value=0.596 - 0.15×0.67(cost) = return +6.737 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "64.3/100 — 평균 오차 1.19년\n  권한 인식 자동 응답 시스템: 1.8년 늦음 ⚠\n  도메인 특화 검색 엔진 아키텍처: 1.5년 늦음 ⚠\n  LLM 효율적 학습 및 슬라이싱: 1.2년 늦음 ⚠\n  지식 그래프 기반 사용자 맞춤 QA: 0.2년 늦음",
+      "formula": "backtest_score = 0.35×73.3 + 0.35×97.8 + 0.05×100.0 + 0.05×100.0 + 0.10×64.3 = 83.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.19,
+    "timing_details": [
+      {
+        "tech_id": "T06",
+        "tech_name": "지식 그래프 기반 사용자 맞춤 QA",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 0.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "LLM 효율적 학습 및 슬라이싱",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "권한 인식 자동 응답 시스템",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "도메인 특화 검색 엔진 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q3",
+        "error_years": 1.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 68.8,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "total_penalty": 0.9,
+    "final_composite_score": 67.9,
+    "description": "pre_penalty = 0.4×46.2(LLM) + 0.6×83.9(Backtest) = 68.8. Penalty: timing_error: -0.9pt. 총 -0.9pt. 최종 = 67.9.\n  [진단] LLM 구조 점수(46.2)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(83.9)가 LLM(46.2)보다 37.7pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 46.2점, Backtest 경제성 평가 83.9점. 제약 위반으로 0.9점 차감. 최종 Composite Score: 67.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: LLM 효율적 학습 및 슬라이싱의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: 권한 인식 자동 응답 시스템의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: 도메인 특화 검색 엔진 아키텍처의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

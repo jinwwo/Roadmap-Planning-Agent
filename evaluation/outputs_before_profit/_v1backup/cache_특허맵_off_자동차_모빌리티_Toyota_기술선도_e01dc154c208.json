@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Automotive / Mobility / Multi-Pathway",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 3,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 65.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 3,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "Selected technologies (dry electrode, anhydrous electrolyte, large-cast battery housing, emergency cooperative control) align well with high-growth EV and autonomous mobility markets expected to boom in 2026-2027. Market opportunities are correctly scored at 4-5, indicating strong awareness of growth sectors.",
+      "sequencing": "Dependency chains are technically respected (T08→T01→T02), with zero dependency violations reported. However, the timeline compression is severe: T01 and T02 are both scheduled to complete at 2030-Q1 with zero lead time between dependent technologies, which is unrealistic for TRL 4-6 technologies requiring meaningful development cycles.",
+      "investment": "High-value technologies (T08, T01, T05) are correctly assigned Strategic tier with urgency scores of 5, and T02 with lower uncertainty is appropriately placed at High tier. The differentiation between Strategic and High tiers reflects rational scoring based on market opportunity and executability trade-offs.",
+      "coherence": "The battery technology stack (anhydrous electrolyte → dry electrode film → large-cast housing) forms a coherent material-to-packaging progression narrative. T05 (emergency cooperative control) adds an autonomous safety dimension, creating a dual-pillar strategy around next-gen batteries and intelligent mobility.",
+      "balance": "All four technologies are concentrated at Strategic or High investment tiers with no Medium or Low tier entries, creating excessive risk concentration. All completion dates converge at 2030-Q1 with no short-term milestones, and the portfolio lacks diversity in TRL maturity stages and timeline distribution."
+    },
+    "strengths": [
+      "Coherent battery technology dependency chain (T08→T01→T02) shows clear material-to-system integration thinking",
+      "Investment scoring correctly differentiates tiers based on executability and uncertainty, with Strategic tier reserved for highest-opportunity technologies"
+    ],
+    "weaknesses": [
+      "All technologies miss their market boom windows by 2.75-3.5 years, meaning the roadmap arrives significantly late to capture peak market opportunity",
+      "Zero portfolio diversity in investment tiers (only Strategic and High) and all milestones compressed to a single end-date of 2030-Q1 with no intermediate deliverables"
+    ],
+    "missing_technologies": [
+      "Solid-state electrolyte (complements anhydrous electrolyte strategy at higher TRL)",
+      "Battery Management System (BMS) with AI diagnostics (links battery stack to vehicle-level intelligence)",
+      "V2X communication infrastructure (natural complement to emergency cooperative control system)"
+    ],
+    "investment_issues": [
+      "Budget utilization shows 0 spent against 41.7B total, suggesting the investment strategy has not been translated into actual resource allocation or the spending model is not connected to the roadmap",
+      "Absence of any Low or Medium tier technologies creates an unbalanced portfolio with no hedge investments or exploratory bets to manage uncertainty"
+    ],
+    "timing_issues": [
+      "Mean timing error of 3.12 years means all technologies are planned to complete well after their respective market boom windows, resulting in missed first-mover advantage",
+      "T01 (dry electrode film) and T02 (large-cast battery housing) both have start and end dates of 2030-Q1, implying zero development duration for dependent technologies which is infeasible",
+      "T05 boom is 2026-Q3 but deployment targets 2030-Q1, a 3.5-year delay that risks competitors capturing the autonomous safety market first"
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 비상상황 협력 제어 시스템 (norm=1.000)\n  시장 성장률 기준 최저: 대형 주조 배터리 하우징 (norm=0.000)\n  전체 평균: 0.269",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ 무수 전해액 조성: value=0.400 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 건식 전극 필름 제조: value=0.677 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 대형 주조 배터리 하우징: value=0.000 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Material(1개), Process(1개), Packaging(1개), Architecture(1개)\n  TRL 범위: 4~6\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(3개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 65.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.25
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "patent_growth_norm": 0.8855,
+        "market_growth_norm": 0.0772,
+        "market_size_norm": 1.0,
+        "value": 0.6774,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5274
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": -0.1
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "patent_growth_norm": 0.3821,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.7529,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.6029
+      }
+    ],
+    "selection_quality": 45.8,
+    "cost_adjusted_return": 32.0,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 6.4,
+    "backtest_score": 47.9,
+    "description": {
+      "selection_quality": "45.8/100 — 4개 기술 평균 value=0.458\n  ▲ 비상상황 협력 제어 시스템: value=0.753 (특허↑=0.38, 시장↑=1.00, 규모=1.00)\n  ▲ 건식 전극 필름 제조: value=0.677 (특허↑=0.89, 시장↑=0.08, 규모=1.00)\n  ▼ 무수 전해액 조성: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)\n  ▼ 대형 주조 배터리 하우징: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 대형 주조 배터리 하우징: 특허 성장률 낮음 (norm=0.00)\n  → 대형 주조 배터리 하우징: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "32.0/100 — 평균 return=0.320\n  비상상황 협력 제어 시스템: value=0.753 - 0.15×1.00(cost) = return +0.603 [Strategic]\n  건식 전극 필름 제조: value=0.677 - 0.15×1.00(cost) = return +0.527 [Strategic]\n  무수 전해액 조성: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]\n  대형 주조 배터리 하우징: value=0.000 - 0.15×0.67(cost) = return -0.100 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → 대형 주조 배터리 하우징: value 0.000인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "6.4/100 — 평균 오차 3.12년\n  비상상황 협력 제어 시스템: 3.5년 늦음 ⚠\n  대형 주조 배터리 하우징: 3.2년 늦음 ⚠\n  무수 전해액 조성: 3.0년 늦음 ⚠\n  건식 전극 필름 제조: 2.8년 늦음 ⚠",
+      "formula": "backtest_score = 0.35×45.8 + 0.35×32.0 + 0.10×100.0 + 0.10×100.0 + 0.10×6.4 = 47.9"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 3.12,
+    "timing_details": [
+      {
+        "tech_id": "T08",
+        "tech_name": "무수 전해액 조성",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q1",
+        "error_years": 3.0
+      },
+      {
+        "tech_id": "T01",
+        "tech_name": "건식 전극 필름 제조",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "대형 주조 배터리 하우징",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "비상상황 협력 제어 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 3.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 54.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 10.6
+      }
+    ],
+    "total_penalty": 10.6,
+    "final_composite_score": 44.1,
+    "description": "pre_penalty = 0.4×65.0(LLM) + 0.6×47.9(Backtest) = 54.7. Penalty: timing_error: -10.6pt. 총 -10.6pt. 최종 = 44.1.\n  [진단] Backtest 점수(47.9)가 낮음 → 기술 선택 또는 투자 배분 재검토.\n  [진단] 페널티(-10.6)가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 65.0점, Backtest 경제성 평가 47.9점. 제약 위반으로 10.6점 차감. 최종 Composite Score: 44.1점.",
+    "key_failure_points": [
+      "타이밍 이슈: 무수 전해액 조성의 완료시점이 시장 개화 대비 3.0년 차이",
+      "타이밍 이슈: 건식 전극 필름 제조의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: 대형 주조 배터리 하우징의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 비상상황 협력 제어 시스템의 완료시점이 시장 개화 대비 3.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

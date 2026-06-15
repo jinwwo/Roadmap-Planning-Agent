@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI / Semiconductor / GPU",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 5,
+    "balance": 3,
+    "llm_structural_score": 77.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 5,
+        "balance": 3
+      }
+    },
+    "evidence": {
+      "alignment": "Technologies span the full GPU/AI semiconductor value chain (interconnect, packaging, process, material) with clear alignment to high-growth AI infrastructure markets; however, 3D GPU die stacking and Backside PDN are scheduled well after their respective market booms, reducing capture potential.",
+      "sequencing": "Dependency chains are correctly ordered—T01 precedes T02 and T03, T02 precedes T05—with zero dependency violations; TRL-based lead times are plausible, though the 1.0–1.5 year lag behind market booms for T02, T03, and T05 suggests timing could be tightened.",
+      "investment": "Strategic tier is correctly assigned to the highest market-opportunity, highest-urgency technologies (T01, T02), High tier to mid-value technologies (T03, T05), and Medium tier to the speculative long-horizon material play (T06); allocation logic is internally consistent with the scoring metrics.",
+      "coherence": "The roadmap forms a clear architectural stack: interconnect foundation → advanced packaging → rack-scale fabric and process enhancement → future materials research, representing a coherent progression from near-term deployment to long-horizon innovation with no narrative gaps.",
+      "balance": "The portfolio is almost entirely concentrated in the high-investment tiers (2 Strategic, 2 High, 1 Medium) with no Low-tier exploratory bets and only one long-horizon speculative technology; short-term coverage is strong but risk diversification across maturity levels is limited."
+    },
+    "strengths": [
+      "Zero dependency violations with a logically ordered prerequisite chain that correctly builds from foundational interconnect technology to higher-level system architectures",
+      "Investment tier assignments are tightly correlated with quantitative scores—market opportunity, strategic fit, and urgency consistently drive tier selection"
+    ],
+    "weaknesses": [
+      "Three of five technologies (T02, T03, T05) arrive 1.0–1.5 years after their market boom windows, risking competitive disadvantage and reduced first-mover returns",
+      "Portfolio lacks breadth at the low end—no Low-tier or exploratory technologies beyond T06, leaving the roadmap exposed if Strategic/High bets underperform"
+    ],
+    "missing_technologies": [
+      "Chiplet interconnect standards (UCIe) enabling multi-vendor ecosystem integration",
+      "AI-optimized memory (HBM4/CXL memory pooling) as a direct enabler for rack-scale fabric",
+      "Photonic interconnect for data-center-scale AI fabric beyond electrical limits"
+    ],
+    "investment_issues": [
+      "Budget utilization shows 0 spent against a 60B allocation, indicating the financial plan has not been operationalized or cost estimates have not been mapped to individual technologies",
+      "Backside PDN 공정 receives High-tier investment despite moderate scores (all 3.0) and the largest timing miss, suggesting the tier may be inflated relative to realistic return potential given the delay"
+    ],
+    "timing_issues": [
+      "3D GPU 다이 스태킹 completes in 2028-Q1 but market boom is 2026-Q4—a 1.25-year delay that risks ceding packaging leadership to competitors already at the boom",
+      "Backside PDN 공정 targets 2029-Q1 delivery against a 2027-Q3 boom, a 1.5-year gap that is the largest timing error and may render the technology adoption as catch-up rather than leadership",
+      "랙스케일 AI 패브릭 is delayed one full year past its 2028-Q1 boom, limiting ecosystem influence during the critical early-adoption phase"
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 2D 채널 소재 적용 (norm=1.000)\n  시장 성장률 기준 최저: Backside PDN 공정 (norm=0.428)\n  전체 평균: 0.787",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ 코히어런트 GPU 인터커넥트: value=0.661 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ Backside PDN 공정: value=0.328 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 5/5\n  카테고리 분포: Architecture(2개), Packaging(1개), Process(1개), Material(1개)\n  TRL 범위: 3~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 3/5\n  투자등급 분포: High(2개), Medium(1개), Strategic(2개)\n  없는 등급: Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×4 + 0.2×4 + 0.2×5 + 0.1×3 - 1) / 4 × 100 = 77.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "코히어런트 GPU 인터커넥트",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.8313,
+        "market_size_norm": 0.7051,
+        "value": 0.6609,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5109
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "3D GPU 다이 스태킹",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.8924,
+        "market_size_norm": 0.8119,
+        "value": 0.7113,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5613
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "랙스케일 AI 패브릭",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.7825,
+        "market_size_norm": 0.6197,
+        "value": 0.6207,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.5207
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Backside PDN 공정",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 0.4281,
+        "market_size_norm": 0.0,
+        "value": 0.3284,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.2284
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "2D 채널 소재 적용",
+        "patent_growth_norm": 0.5,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 0.8,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.75
+      }
+    ],
+    "selection_quality": 62.4,
+    "cost_adjusted_return": 51.4,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 76.0,
+    "backtest_score": 67.4,
+    "description": {
+      "selection_quality": "62.4/100 — 5개 기술 평균 value=0.624\n  ▲ 2D 채널 소재 적용: value=0.800 (특허↑=0.50, 시장↑=1.00, 규모=1.00)\n  ▲ 3D GPU 다이 스태킹: value=0.711 (특허↑=0.50, 시장↑=0.89, 규모=0.81)\n  ▲ 코히어런트 GPU 인터커넥트: value=0.661 (특허↑=0.50, 시장↑=0.83, 규모=0.71)\n  ▼ 랙스케일 AI 패브릭: value=0.621 (특허↑=0.50, 시장↑=0.78, 규모=0.62)\n  ▼ Backside PDN 공정: value=0.328 (특허↑=0.50, 시장↑=0.43, 규모=0.00)",
+      "cost_adjusted_return": "51.4/100 — 평균 return=0.514\n  2D 채널 소재 적용: value=0.800 - 0.15×0.33(cost) = return +0.750 [Medium]\n  3D GPU 다이 스태킹: value=0.711 - 0.15×1.00(cost) = return +0.561 [Strategic]\n  랙스케일 AI 패브릭: value=0.621 - 0.15×0.67(cost) = return +0.521 [High]\n  코히어런트 GPU 인터커넥트: value=0.661 - 0.15×1.00(cost) = return +0.511 [Strategic]\n  Backside PDN 공정: value=0.328 - 0.15×0.67(cost) = return +0.228 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → Backside PDN 공정: value 0.328인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "76.0/100 — 평균 오차 0.80년\n  Backside PDN 공정: 1.5년 늦음 ⚠\n  3D GPU 다이 스태킹: 1.2년 늦음 ⚠\n  랙스케일 AI 패브릭: 1.0년 늦음\n  코히어런트 GPU 인터커넥트: 0.2년 이름\n  2D 채널 소재 적용: 0.0년 이름",
+      "formula": "backtest_score = 0.35×62.4 + 0.35×51.4 + 0.10×100.0 + 0.10×100.0 + 0.10×76.0 = 67.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.8,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "코히어런트 GPU 인터커넥트",
+        "target_q": "2027-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "3D GPU 다이 스태킹",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 1.25
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "랙스케일 AI 패브릭",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "Backside PDN 공정",
+        "target_q": "2029-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 1.5
+      },
+      {
+        "tech_id": "T06",
+        "tech_name": "2D 채널 소재 적용",
+        "target_q": "2030-Q1",
+        "boom_q": "2030-Q1",
+        "error_years": 0.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 71.4,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 71.4,
+    "description": "pre_penalty = 0.4×77.5(LLM) + 0.6×67.4(Backtest) = 71.4. 페널티 없음. 최종 = 71.4."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 77.5점, Backtest 경제성 평가 67.4점. 최종 Composite Score: 71.4점.",
+    "key_failure_points": [
+      "타이밍 이슈: 3D GPU 다이 스태킹의 완료시점이 시장 개화 대비 1.25년 차이",
+      "타이밍 이슈: Backside PDN 공정의 완료시점이 시장 개화 대비 1.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

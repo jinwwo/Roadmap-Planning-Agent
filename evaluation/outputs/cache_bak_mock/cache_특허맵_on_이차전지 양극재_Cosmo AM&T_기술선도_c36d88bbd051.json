@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Functional Materials",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 4,
+    "competitive_awareness": 4,
+    "market_timing": 4,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 60.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 4,
+        "competitive_awareness": 4,
+        "market_timing": 4,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 1 and must reach market-ready status within 2-4 years, which is extremely aggressive; TRL 1→commercialization in 2 years (TECH-001) or even 4 years (TECH-004) defies standard R&D cycles where TRL 1→6 typically requires 5-8 years in materials science.",
+      "strategic_fidelity": "The portfolio correctly targets 기술선도 by selecting low-TRL (TRL 1) exploratory technologies with long development horizons and high uncertainty scores, and the 2030 reference year allows extended R&D runway; the mix of cathode and functional materials reflects a research-heavy orientation consistent with technology leadership.",
+      "competitive_awareness": "All three selected technologies fall squarely within the Cathode Materials / Functional Materials domain, demonstrating strong domain fit; high-nickel polycrystalline, LiFSI electrolyte chemistry, and silicon anode materials are all strategically relevant and adjacent technology segments where a cathode materials company can leverage existing competencies.",
+      "market_timing": "For 기술선도 strategy, completing 1-2 years before boom is ideal; TECH-001 completes 0.75yr after boom (slight miss), TECH-002 and TECH-004 complete ~1yr after boom — these are modest post-boom completions rather than preemptive, but the errors are within acceptable range and not severely late relative to boom windows.",
+      "patent_market_convergence": "The selections are plausible convergence-zone candidates (all have high market_opp scores of 4-5), but there is no explicit evidence in the roadmap that patent activity signals were cross-referenced with market growth data to deliberately target convergence zones; the alignment appears partially coincidental."
+    },
+    "strengths": [
+      "Strong domain coherence — all technologies align with the company's core Cathode/Functional Materials domain, preserving competitive advantage",
+      "Consistent 기술선도 orientation with TRL 1 starting points, high uncertainty tolerance, and multi-year development horizons reflecting genuine R&D commitment"
+    ],
+    "weaknesses": [
+      "TRL progression is critically unrealistic — all three technologies must advance from TRL 1 to deployment-ready in 2-4 years, which is infeasible under normal materials R&D timelines",
+      "All technologies share executability score of 1.0, indicating the team itself recognizes near-zero near-term execution feasibility, yet no mitigation strategies or phased TRL gates are reflected in the timeline"
+    ],
+    "missing_technologies": [
+      "Mid-TRL bridging cathode technology (TRL 4-6) to ensure near-term revenue while long-horizon bets mature",
+      "Solid-state electrolyte or polymer electrolyte materials to complement LiFSI chemistry and strengthen the functional materials portfolio",
+      "Manganese-rich or LMFP cathode materials as a lower-uncertainty complement to the high-nickel bet"
+    ],
+    "investment_issues": [
+      "Assigning Strategic tier to a TRL 1 technology with executability=1.0 concentrates maximum budget on the highest-risk, lowest-readiness asset without intermediate milestones to validate progress",
+      "Budget is fully consumed (0% slack) across three TRL 1 technologies with no reserve for unexpected R&D setbacks, which is particularly risky given universally low executability scores"
+    ],
+    "timing_issues": [
+      "TECH-001 completes 0.75 years after the 2027-Q2 boom — misses the 기술선도 preemption window by arriving post-peak rather than 1-2 years before",
+      "TECH-002 and TECH-004 both complete exactly 1 year after their respective boom windows, missing the optimal preemption positioning expected for a technology leadership strategy"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - All three technologies start at TRL 1 and must reach market-ready status within 2-4 years, which is extremely aggressive; TRL 1→commercialization in 2 years (TECH-001) or even 4 years (TECH-004) defies standard R&D cycles where TRL 1→6 typically requires 5-8 years in materials science.",
+      "strategic_fidelity": "score 4/5 - The portfolio correctly targets 기술선도 by selecting low-TRL (TRL 1) exploratory technologies with long development horizons and high uncertainty scores, and the 2030 reference year allows extended R&D runway; the mix of cathode and functional materials reflects a research-heavy orientation consistent with technology leadership.",
+      "competitive_awareness": "score 4/5 - All three selected technologies fall squarely within the Cathode Materials / Functional Materials domain, demonstrating strong domain fit; high-nickel polycrystalline, LiFSI electrolyte chemistry, and silicon anode materials are all strategically relevant and adjacent technology segments where a cathode materials company can leverage existing competencies.",
+      "market_timing": "score 4/5 - For 기술선도 strategy, completing 1-2 years before boom is ideal; TECH-001 completes 0.75yr after boom (slight miss), TECH-002 and TECH-004 complete ~1yr after boom — these are modest post-boom completions rather than preemptive, but the errors are within acceptable range and not severely late relative to boom windows.",
+      "patent_market_convergence": "score 3/5 - The selections are plausible convergence-zone candidates (all have high market_opp scores of 4-5), but there is no explicit evidence in the roadmap that patent activity signals were cross-referenced with market growth data to deliberately target convergence zones; the alignment appears partially coincidental.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×4 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 60.0"
+    },
+    "v1_scores": {
+      "alignment": 4,
+      "sequencing": 5,
+      "investment": 4,
+      "coherence": 2,
+      "balance": 4,
+      "llm_structural_score_v1": 70.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.7325,
+        "market_size_norm": 0.5413,
+        "value": 0.3821,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.585
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8505,
+        "market_size_norm": 0.0,
+        "value": 0.2551,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7,
+        "cost_adjusted_return": 0.2597
+      },
+      {
+        "tech_id": "TECH-004",
+        "tech_name": "Silicon-Based Negative Electrode Materials",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.8183,
+        "market_size_norm": 0.3069,
+        "value": 0.7376,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.64,
+        "cost_adjusted_return": 0.3342
+      }
+    ],
+    "selection_quality": 45.8,
+    "cost_adjusted_return": 59.8,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 72.4,
+    "investment_rationality_score": 33.3,
+    "backtest_score": 59.5,
+    "backtest_score_v1": 64.2,
+    "description": {
+      "selection_quality": "45.8/100 — 3개 기술 평균 value=0.458\n  ▲ Silicon-Based Negative Electrode Materials: value=0.738 (특허↑=1.00, 시장↑=0.82, 규모=0.31)\n  ▼ High-Nickel Polycrystalline Cathode Materials: value=0.382 (특허↑=0.00, 시장↑=0.73, 규모=0.54)\n  ▼ Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis: value=0.255 (특허↑=0.00, 시장↑=0.85, 규모=0.00)\n  [낮은 원인]\n  → Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis: 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "59.8/100 — 평균 return=0.393\n  High-Nickel Polycrystalline Cathode Materials: 순이익(log)=+0.585 [Strategic] ⚠ 과다투자\n  Silicon-Based Negative Electrode Materials: 순이익(log)=+0.334 [Medium]\n  Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis: 순이익(log)=+0.260 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → High-Nickel Polycrystalline Cathode Materials: value 0.382인데 Strategic tier\n  → Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis: value 0.255인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "72.4/100 — 평균 오차 0.92년\n  Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis: 1.0년 늦음\n  Silicon-Based Negative Electrode Materials: 1.0년 늦음\n  High-Nickel Polycrystalline Cathode Materials: 0.8년 늦음",
+      "formula": "backtest_score = 0.25×45.8(기술선택) + 0.25×59.8(투자대비수익) + 0.15×33.3(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×72.4(타이밍) = 59.5"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 0.92,
+    "timing_details": [
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "High-Nickel Polycrystalline Cathode Materials",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+        "target_q": "2029-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 1.0
+      },
+      {
+        "tech_id": "TECH-004",
+        "tech_name": "Silicon-Based Negative Electrode Materials",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 59.7,
+    "penalties": [],
+    "total_penalty": 0,
+    "final_composite_score": 59.7,
+    "description": "pre_penalty = 0.4×60.0(LLM) + 0.6×59.5(Backtest) = 59.7. 페널티 없음. 최종 = 59.7."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 60.0점, Backtest 경제성 평가 59.5점. 최종 Composite Score: 59.7점.",
+    "key_failure_points": [],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Biopharmaceutical / Healthcare",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 3,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 65.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 3,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "All three technologies target high-growth biopharmaceutical markets with boom periods in 2027-2029, demonstrating strong market timing awareness; ADC and digital diagnostics are particularly well-positioned for explosive growth.",
+      "sequencing": "No dependency violations exist and TRL-based lead times are generally plausible, but the mean timing error of 1.42 years is notable—especially for Digital Healthcare/AI diagnostics which completes 2.5 years after its market boom, risking missed first-mover advantage.",
+      "investment": "ADC platform correctly receives Strategic tier with top scores across all dimensions, and polymer drug delivery at High tier reflects its lower urgency; however, Digital Healthcare/AI at Strategic tier despite TRL 5 and high uncertainty (3.0) raises execution risk concerns.",
+      "coherence": "The three technologies form a logical biopharmaceutical ecosystem—drug discovery (ADC), delivery (polymer systems), and diagnostics (AI health)—covering a coherent therapeutic value chain from TRL 5 to 7 with clear progression.",
+      "balance": "All technologies are clustered at Strategic/High tiers with no Medium or Low tier investments, representing heavy concentration risk; the portfolio lacks early-stage exploratory bets and foundational research technologies that could support longer-term pipeline diversification."
+    },
+    "strengths": [
+      "Strong technology-market alignment with all three technologies targeting confirmed high-growth segments in biopharmaceuticals",
+      "Zero dependency violations and a logically coherent therapeutic ecosystem covering drug design, delivery, and diagnostics"
+    ],
+    "weaknesses": [
+      "Portfolio lacks tier diversity—all investments at Strategic/High with no Medium/Low tier technologies, creating excessive concentration risk",
+      "Digital Healthcare/AI diagnostics completion date (2030-Q1) misses the market boom by 2.5 years, significantly reducing competitive positioning"
+    ],
+    "missing_technologies": [
+      "mRNA therapeutics platform (foundational research-stage bet for post-2030 pipeline)",
+      "Cell and gene therapy manufacturing (complements ADC and drug delivery ecosystem)",
+      "Real-world evidence (RWE) and regulatory AI tools (supports digital health commercialization)"
+    ],
+    "investment_issues": [
+      "No budget allocation is recorded (spent 0 of 52B), suggesting investment strategy is planned but not yet operationalized—execution readiness is unclear",
+      "Assigning Strategic tier to T04 (TRL 5, uncertainty 3.0) alongside T01 (TRL 7, uncertainty 2.0) may overweight resources on a less mature technology with higher execution risk"
+    ],
+    "timing_issues": [
+      "Digital Healthcare/AI diagnostics (T04) targets completion at 2030-Q1 but market boom is 2027-Q3—a 2.5-year lag that risks ceding market leadership to early movers",
+      "ADC platform completes at 2028-Q1 vs boom at 2027-Q2, a 0.75-year gap that may be manageable but warrants acceleration consideration"
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 항체-약물 접합체 (ADC) 플랫폼 (norm=0.717)\n  시장 성장률 기준 최저: 고분자 기반 약물 전달 시스템 (norm=0.000)\n  전체 평균: 0.239",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ 항체-약물 접합체 (ADC) 플랫폼: value=0.691 → 기대 Medium, 실제 Strategic (차이 2단계)\n  ⚠ 디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 고분자 기반 약물 전달 시스템: value=0.311 → 기대 Low, 실제 High (차이 2단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Material(1개), Architecture(1개), Process(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 65.0"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "patent_growth_norm": 0.6529,
+        "market_growth_norm": 0.7165,
+        "market_size_norm": 0.7165,
+        "value": 0.6911,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.5411
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "patent_growth_norm": 0.6636,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2654,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.1154
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "고분자 기반 약물 전달 시스템",
+        "patent_growth_norm": 0.7783,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.3113,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.2113
+      }
+    ],
+    "selection_quality": 42.3,
+    "cost_adjusted_return": 28.9,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 57.4,
+    "backtest_score": 50.7,
+    "description": {
+      "selection_quality": "42.3/100 — 3개 기술 평균 value=0.423\n  ▲ 항체-약물 접합체 (ADC) 플랫폼: value=0.691 (특허↑=0.65, 시장↑=0.72, 규모=0.72)\n  ▼ 고분자 기반 약물 전달 시스템: value=0.311 (특허↑=0.78, 시장↑=0.00, 규모=0.00)\n  ▼ 디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 (특허↑=0.66, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → 디지털 헬스케어 및 AI 기반 진단 시스템: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "28.9/100 — 평균 return=0.289\n  항체-약물 접합체 (ADC) 플랫폼: value=0.691 - 0.15×1.00(cost) = return +0.541 [Strategic]\n  고분자 기반 약물 전달 시스템: value=0.311 - 0.15×0.67(cost) = return +0.211 [High] ⚠ 과다투자\n  디지털 헬스케어 및 AI 기반 진단 시스템: value=0.265 - 0.15×1.00(cost) = return +0.115 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → 디지털 헬스케어 및 AI 기반 진단 시스템: value 0.265인데 Strategic tier\n  → 고분자 기반 약물 전달 시스템: value 0.311인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "57.4/100 — 평균 오차 1.42년\n  디지털 헬스케어 및 AI 기반 진단 시스템: 2.5년 늦음 ⚠\n  고분자 기반 약물 전달 시스템: 1.0년 늦음\n  항체-약물 접합체 (ADC) 플랫폼: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×42.3 + 0.35×28.9 + 0.10×100.0 + 0.10×100.0 + 0.10×57.4 = 50.7"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.42,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "항체-약물 접합체 (ADC) 플랫폼",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "디지털 헬스케어 및 AI 기반 진단 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "고분자 기반 약물 전달 시스템",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 56.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.1
+      }
+    ],
+    "total_penalty": 2.1,
+    "final_composite_score": 54.3,
+    "description": "pre_penalty = 0.4×65.0(LLM) + 0.6×50.7(Backtest) = 56.4. Penalty: timing_error: -2.1pt. 총 -2.1pt. 최종 = 54.3."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 65.0점, Backtest 경제성 평가 50.7점. 제약 위반으로 2.1점 차감. 최종 Composite Score: 54.3점.",
+    "key_failure_points": [
+      "타이밍 이슈: 디지털 헬스케어 및 AI 기반 진단 시스템의 완료시점이 시장 개화 대비 2.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

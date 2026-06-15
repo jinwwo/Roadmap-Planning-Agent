@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / Foundry",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "alignment": 3,
+    "sequencing": 4,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 2,
+    "llm_structural_score": 62.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 3,
+        "sequencing": 4,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 2
+      }
+    },
+    "evidence": {
+      "alignment": "All three technologies target high-growth semiconductor markets (GAA process nodes, advanced packaging, backside processing) with strong market opportunity scores, but the significant timing errors—especially the 3.25-year miss for 3D stacking—suggest market timing awareness is weak in execution.",
+      "sequencing": "Dependency chain is correctly honored: T01 (GAA) is scheduled to complete by 2028-Q1 before T02 (Backside S/D) begins, and no dependency violations are reported; TRL-based lead times are plausible given TRL 6 and 7 starting points.",
+      "investment": "High market opportunity and urgency scores for T01 and T03 correctly receive Strategic tier, while T02's higher uncertainty and lower executability appropriately land it at High tier rather than Strategic; allocation logic is internally consistent.",
+      "coherence": "The three technologies form a coherent advanced logic process narrative: GAA gate integration → backside source/drain refinement → 3D stacked packaging, covering process development through advanced packaging deployment with a clear foundry technology progression.",
+      "balance": "The portfolio is extremely small (3 technologies), all concentrated in leading-edge logic/packaging with no mid-TRL exploratory bets, no lower-tier investments, and no coverage of adjacent domains (EUV metrology, interconnect materials, chiplet standards), resulting in high concentration risk."
+    },
+    "strengths": [
+      "Dependency sequencing is flawless—T01 correctly precedes T02 with zero violations, ensuring technical prerequisites are respected.",
+      "Investment tier differentiation is rational, with Strategic designation for high-urgency, high-market-opportunity technologies and High tier for the more uncertain backside process technology."
+    ],
+    "weaknesses": [
+      "Severe timing misalignment for 고밀도 3D 스택형 반도체 패키지, with a 3.25-year delay past the market boom (2026-Q4), risking missing the primary adoption window entirely.",
+      "Portfolio is dangerously narrow with only 3 technologies, all in the same advanced logic process stack, creating extreme concentration risk with no hedge positions or exploratory early-stage investments."
+    ],
+    "missing_technologies": [
+      "EUV or High-NA EUV lithography process integration",
+      "Advanced chiplet interconnect standards (UCIe, hybrid bonding)",
+      "Low-resistance back-end-of-line (BEOL) metallization materials",
+      "Power delivery network (PDN) optimization for GAA-based designs",
+      "CXL or next-gen memory interface technologies"
+    ],
+    "investment_issues": [
+      "Zero budget spend reported despite a 31.2B budget allocation—it is unclear whether investment has actually been committed or if the strategy is still in planning, creating execution uncertainty.",
+      "No Low or Medium tier investments exist, meaning there are no low-cost exploratory positions to optionally scale up if market conditions shift or if higher-tier projects face delays."
+    ],
+    "timing_issues": [
+      "고밀도 3D 스택형 반도체 패키지 completes in 2030-Q1 but market boom is 2026-Q4—a 3.25-year overshoot means the technology may arrive after competitors have already captured market share.",
+      "백사이드 소스/드레인 리세스 기술 finishes in 2030-Q1 vs. boom in 2028-Q1, a 2-year delay that risks missing peak demand for this process innovation.",
+      "Mean timing error of 2.0 years across the portfolio indicates a systemic tendency to schedule development completion too late relative to market inflection points."
+    ],
+    "description": {
+      "alignment": "점수 3/5.\n  시장 성장률 기준 최고: 백사이드 소스/드레인 리세스 기술 (norm=0.907)\n  시장 성장률 기준 최저: 고밀도 3D 스택형 반도체 패키지 (norm=0.000)\n  전체 평균: 0.302",
+      "sequencing": "점수 4/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 2건:\n  ⚠ GAA 공통 금속 게이트 공정: value=0.004 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 고밀도 3D 스택형 반도체 패키지: value=0.000 → 기대 Low, 실제 Strategic (차이 3단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Process(2개), Packaging(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 2/5\n  투자등급 분포: High(1개), Strategic(2개)\n  없는 등급: Medium, Low",
+      "formula": "llm_structural_score = (0.3×3 + 0.2×4 + 0.2×4 + 0.2×4 + 0.1×2 - 1) / 4 × 100 = 62.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 공통 금속 게이트 공정",
+        "patent_growth_norm": 0.0098,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0039,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.1461
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고밀도 3D 스택형 반도체 패키지",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.15
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 소스/드레인 리세스 기술",
+        "patent_growth_norm": 0.4321,
+        "market_growth_norm": 0.9073,
+        "market_size_norm": 0.9073,
+        "value": 0.7172,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.6172
+      }
+    ],
+    "selection_quality": 24.0,
+    "cost_adjusted_return": 10.7,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 40.0,
+    "backtest_score": 36.2,
+    "description": {
+      "selection_quality": "24.0/100 — 3개 기술 평균 value=0.240\n  ▲ 백사이드 소스/드레인 리세스 기술: value=0.717 (특허↑=0.43, 시장↑=0.91, 규모=0.91)\n  ▼ GAA 공통 금속 게이트 공정: value=0.004 (특허↑=0.01, 시장↑=0.00, 규모=0.00)\n  ▼ 고밀도 3D 스택형 반도체 패키지: value=0.000 (특허↑=0.00, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → GAA 공통 금속 게이트 공정: 특허 성장률 낮음 (norm=0.01)\n  → GAA 공통 금속 게이트 공정: 시장 성장률 낮음 (norm=0.00)\n  → 고밀도 3D 스택형 반도체 패키지: 특허 성장률 낮음 (norm=0.00)\n  → 고밀도 3D 스택형 반도체 패키지: 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "10.7/100 — 평균 return=0.107\n  백사이드 소스/드레인 리세스 기술: value=0.717 - 0.15×0.67(cost) = return +0.617 [High]\n  GAA 공통 금속 게이트 공정: value=0.004 - 0.15×1.00(cost) = return -0.146 [Strategic] ⚠ 과다투자\n  고밀도 3D 스택형 반도체 패키지: value=0.000 - 0.15×1.00(cost) = return -0.150 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → GAA 공통 금속 게이트 공정: value 0.004인데 Strategic tier\n  → 고밀도 3D 스택형 반도체 패키지: value 0.000인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "40.0/100 — 평균 오차 2.00년\n  고밀도 3D 스택형 반도체 패키지: 3.2년 늦음 ⚠\n  백사이드 소스/드레인 리세스 기술: 2.0년 늦음 ⚠\n  GAA 공통 금속 게이트 공정: 0.8년 늦음",
+      "formula": "backtest_score = 0.35×24.0 + 0.35×10.7 + 0.10×100.0 + 0.10×100.0 + 0.10×40.0 = 36.2"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.0,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 공통 금속 게이트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "고밀도 3D 스택형 반도체 패키지",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q4",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 소스/드레인 리세스 기술",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 46.7,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "total_penalty": 5.0,
+    "final_composite_score": 41.7,
+    "description": "pre_penalty = 0.4×62.5(LLM) + 0.6×36.2(Backtest) = 46.7. Penalty: timing_error: -5.0pt. 총 -5.0pt. 최종 = 41.7.\n  [진단] Backtest 점수(36.2)가 낮음 → 기술 선택 또는 투자 배분 재검토.\n  [진단] LLM(62.5)과 Backtest(36.2) 격차 26.3pt → 구조는 좋지만 실제 데이터 뒷받침 부족."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 62.5점, Backtest 경제성 평가 36.2점. 제약 위반으로 5.0점 차감. 최종 Composite Score: 41.7점.",
+    "key_failure_points": [
+      "타이밍 이슈: 고밀도 3D 스택형 반도체 패키지의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: 백사이드 소스/드레인 리세스 기술의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

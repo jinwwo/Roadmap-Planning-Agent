@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Cathode Materials / Functional Materials",
+    "num_technologies": 4
+  },
+  "llm_judge": {
+    "trl_pathway": 1,
+    "strategic_fidelity": 1,
+    "competitive_awareness": 3,
+    "market_timing": 1,
+    "patent_market_convergence": 2,
+    "llm_structural_score": 12.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 1,
+        "strategic_fidelity": 1,
+        "competitive_awareness": 3,
+        "market_timing": 1,
+        "patent_market_convergence": 2
+      }
+    },
+    "evidence": {
+      "trl_pathway": "All four technologies start at TRL 1 yet are scheduled to complete within 2-4 years; jumping from TRL 1 to commercial-ready status in such compressed timelines (especially TECH-003 and TECH-002 both completing in 2030-Q1 with zero development duration) is fundamentally infeasible by any industry standard.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (Market Profit Maximization), which demands near-market, high-TRL technologies with short timelines; instead, every selected technology starts at TRL 1 with executability scores of 1.0 and the portfolio is entirely exploratory R&D-stage, directly contradicting the commercialization-focused mandate.",
+      "competitive_awareness": "The selected technologies (High-Ni cathode, slurry process, Si-anode, all-solid-state cathode) all fit within the declared Cathode Materials / Functional Materials domain, showing reasonable domain coherence; however, there is no evidence of competitor positioning analysis or differentiation rationale beyond the domain alignment.",
+      "market_timing": "For 시장이익최대 strategy, completion should be within ±0.5 years of boom; instead, the mean timing error is 2.19 years with all technologies completing significantly after their boom windows — TECH-006 misses by 3.5 years and TECH-003 by 2.5 years — representing systematic and severe post-boom delivery.",
+      "patent_market_convergence": "Technologies selected (High-Ni, Si-anode, all-solid-state) are broadly recognized as active patent and market growth areas, suggesting some awareness of convergence zones; however, with executability uniformly scored at 1.0 and all starting at TRL 1, the selection appears to reflect generic trend-following rather than deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "All selected technologies remain within the declared core domain (Cathode Materials / Functional Materials), avoiding domain drift",
+      "Dependency graph is structurally sound with no violations and a logical sequencing from surface modification through slurry process to advanced applications"
+    ],
+    "weaknesses": [
+      "All technologies begin at TRL 1 with executability scored at 1.0, making the entire portfolio unsuitable for a 시장이익최대 strategy and rendering the timelines completely infeasible",
+      "Every technology misses its market boom window by 1–3.5 years post-boom, meaning commercialization will arrive too late to capture peak market value under any strategy"
+    ],
+    "missing_technologies": [
+      "High-TRL (TRL 6-8) near-commercialization High-Ni cathode coating technologies already proven at pilot scale",
+      "Dry electrode process optimization (TRL 5+) with near-term boom alignment",
+      "NCM/NCA composition tuning technologies with existing IP portfolios and imminent market windows"
+    ],
+    "investment_issues": [
+      "Assigning Strategic tier to TECH-001 and TECH-006 despite executability scores of 1.0 misallocates the highest investment priority to the least executable technologies",
+      "Budget is fully consumed (100%) on four TRL-1 technologies with no reserve for pivot or acceleration, creating extreme risk concentration in an all-early-stage portfolio under a profit-maximization strategy",
+      "TECH-002 (All-Solid-State, highest market_opp=5.0) receives only Medium tier investment despite having the closest timing alignment (1.0yr error), representing an inversion of rational capital allocation"
+    ],
+    "timing_issues": [
+      "TECH-006 (Cathode Slurry Process) completes in 2030-Q1, missing its 2026-Q3 boom by 3.5 years — peak market demand will have passed entirely",
+      "TECH-003 (Si-Based Anode) and TECH-002 (All-Solid-State) are both scheduled to complete instantaneously in 2030-Q1 (zero development duration), which is logistically impossible and likely a planning error",
+      "TECH-001 (High-Ni Surface Modification) starts in 2026-Q1 but its boom is 2026-Q2, meaning development begins just as the market peaks with completion 1.75 years after"
+    ],
+    "description": {
+      "trl_pathway": "score 1/5 - All four technologies start at TRL 1 yet are scheduled to complete within 2-4 years; jumping from TRL 1 to commercial-ready status in such compressed timelines (especially TECH-003 and TECH-002 both completing in 2030-Q1 with zero development duration) is fundamentally infeasible by any industry standard.",
+      "strategic_fidelity": "score 1/5 - The declared strategy is 시장이익최대 (Market Profit Maximization), which demands near-market, high-TRL technologies with short timelines; instead, every selected technology starts at TRL 1 with executability scores of 1.0 and the portfolio is entirely exploratory R&D-stage, directly contradicting the commercialization-focused mandate.",
+      "competitive_awareness": "score 3/5 - The selected technologies (High-Ni cathode, slurry process, Si-anode, all-solid-state cathode) all fit within the declared Cathode Materials / Functional Materials domain, showing reasonable domain coherence; however, there is no evidence of competitor positioning analysis or differentiation rationale beyond the domain alignment.",
+      "market_timing": "score 1/5 - For 시장이익최대 strategy, completion should be within ±0.5 years of boom; instead, the mean timing error is 2.19 years with all technologies completing significantly after their boom windows — TECH-006 misses by 3.5 years and TECH-003 by 2.5 years — representing systematic and severe post-boom delivery.",
+      "patent_market_convergence": "score 2/5 - Technologies selected (High-Ni, Si-anode, all-solid-state) are broadly recognized as active patent and market growth areas, suggesting some awareness of convergence zones; however, with executability uniformly scored at 1.0 and all starting at TRL 1, the selection appears to reflect generic trend-following rather than deliberate convergence-zone targeting.",
+      "formula": "llm_structural_score = (0.25×1 + 0.25×1 + 0.2×3 + 0.2×1 + 0.1×2 - 1) / 4 × 100 = 12.5"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 4,
+      "llm_structural_score_v1": 72.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification)",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 1.5031
+      },
+      {
+        "tech_id": "TECH-006",
+        "tech_name": "양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process)",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.7111,
+        "cost_adjusted_return": 1.5034
+      },
+      {
+        "tech_id": "TECH-003",
+        "tech_name": "실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization)",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5556,
+        "cost_adjusted_return": 1.252
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface)",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.9157
+      }
+    ],
+    "selection_quality": 43.3,
+    "cost_adjusted_return": 82.3,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 34.3,
+    "investment_rationality_score": 100.0,
+    "backtest_score": 65.0,
+    "backtest_score_v1": 67.4,
+    "description": {
+      "selection_quality": "43.3/100 — 4개 기술 평균 value=0.433\n  ▲ 고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification): value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ 양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process): value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ 실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization): value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▼ 전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface): value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → 전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface): 특허 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "82.3/100 — 평균 return=1.294\n  양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process): 순이익(log)=+1.503 [Strategic]\n  고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification): 순이익(log)=+1.503 [Strategic]\n  실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization): 순이익(log)=+1.252 [High]\n  전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface): 순이익(log)=+0.916 [Medium]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "34.3/100 — 평균 오차 2.19년\n  양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process): 3.5년 늦음 ⚠\n  실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization): 2.5년 늦음 ⚠\n  고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification): 1.8년 늦음 ⚠\n  전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface): 1.0년 늦음",
+      "formula": "backtest_score = 0.25×43.3(기술선택) + 0.25×82.3(투자대비수익) + 0.15×100.0(투자적합성) + 0.05×100.0(예산) + 0.05×100.0(의존성) + 0.25×34.3(타이밍) = 65.0"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 2.19,
+    "timing_details": [
+      {
+        "tech_id": "TECH-001",
+        "tech_name": "고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification)",
+        "target_q": "2028-Q1",
+        "boom_q": "2026-Q2",
+        "error_years": 1.75
+      },
+      {
+        "tech_id": "TECH-006",
+        "tech_name": "양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process)",
+        "target_q": "2030-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 3.5
+      },
+      {
+        "tech_id": "TECH-003",
+        "tech_name": "실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization)",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": 2.5
+      },
+      {
+        "tech_id": "TECH-002",
+        "tech_name": "전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface)",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q1",
+        "error_years": 1.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 44.0,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.9
+      }
+    ],
+    "total_penalty": 5.9,
+    "final_composite_score": 38.1,
+    "description": "pre_penalty = 0.4×12.5(LLM) + 0.6×65.0(Backtest) = 44.0. Penalty: timing_error: -5.9pt. 총 -5.9pt. 최종 = 38.1.\n  [진단] LLM 구조 점수(12.5)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(65.0)가 LLM(12.5)보다 52.5pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 12.5점, Backtest 경제성 평가 65.0점. 제약 위반으로 5.9점 차감. 최종 Composite Score: 38.1점.",
+    "key_failure_points": [
+      "타이밍 이슈: 고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification)의 완료시점이 시장 개화 대비 1.75년 차이",
+      "타이밍 이슈: 양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process)의 완료시점이 시장 개화 대비 3.5년 차이",
+      "타이밍 이슈: 실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization)의 완료시점이 시장 개화 대비 2.5년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

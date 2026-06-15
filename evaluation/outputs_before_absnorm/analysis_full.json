@@ -1,0 +1,4221 @@
+{
+  "single|자율주행 플랫폼|Hyundai Mobis|기술선도": {
+    "comp": 24.8,
+    "llm": 28.7,
+    "bt": 49.3,
+    "pen": 16.3,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 12
+      },
+      {
+        "type": "timing_error",
+        "amount": 4.3
+      }
+    ],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 1,
+      "patent_market_convergence": 3
+    },
+    "sel": 43.3,
+    "cost": 34.1,
+    "timing": 44.2,
+    "dep": 20,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 1.86,
+    "evidence": {
+      "trl_pathway": "Automotive Grade HBM (TRL 4) is scheduled to complete in just 3 quarters (2026-Q1 to 2026-Q4), which is highly aggressive for a material-level technology at TRL 4; similarly, Energy Efficient AI Accelerators starts before its prerequisite S02 is complete, creating 4 dependency violations that undermine the entire sequential development logic.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory technologies (S01 at TRL 4, S02 at TRL 5, S07 at TRL 5) consistent with 기술선도, but the uniform High-tier investment across all 7 technologies with identical scores lacks the differentiated R&D-heavy prioritization expected of a genuine technology leadership strategy.",
+      "competitive_awareness": "Technology selections span a coherent ADAS/autonomous driving stack suggesting some systems-level thinking, but there is no visible evidence of competitor positioning, differentiation rationale, or timing design relative to industry players — selections appear stack-complete rather than competitively differentiated.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom; instead, Advanced Driver Monitoring Systems, Domain Controllers for ADAS, and Functional Safety Packaging all complete 2.75-3.25 years AFTER their boom windows, and Automotive Grade HBM completes 2 full years before its boom — the portfolio shows systematic timing misalignment with mean error of 1.86 years.",
+      "patent_market_convergence": "The selected technologies (HBM, Chiplet, AI Accelerators, ADAS domain controllers) do align with known high-patent-activity and growing-market segments in automotive electronics, but the uniform scoring across all dimensions (market_opp=4.0, strategic_fit=5.0 for every technology) suggests mechanical rather than deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Coherent technology stack covering the full ADAS compute pipeline from memory (HBM) through interconnect, acceleration, networking, and application layers",
+      "Inclusion of genuinely low-TRL technologies (S01 at TRL 4, S07 at TRL 5) is appropriate for a 기술선도 strategy targeting future leadership positions"
+    ],
+    "weaknesses": [
+      "Four hard dependency violations undermine the sequential development logic — Chiplet Interconnect and Energy Efficient AI Accelerators are scheduled to start before their prerequisites complete",
+      "Systematic post-boom completion for three key technologies (ADMS, Domain Controllers, Functional Safety Packaging) with errors of 2.75-3.25 years, meaning the organization will miss the most valuable market windows entirely"
+    ],
+    "tech_details": [
+      {
+        "name": "Automotive Grade HBM",
+        "value": 0.476,
+        "pg": 0.44,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.799,
+        "adj": 0.356
+      },
+      {
+        "name": "Chiplet Interconnect Architectures",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.7,
+        "adj": 0.195
+      },
+      {
+        "name": "Energy Efficient AI Accelerators",
+        "value": 0.329,
+        "pg": 0.07,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.179
+      },
+      {
+        "name": "Automotive Ethernet Networking",
+        "value": 0.367,
+        "pg": 0.17,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.714,
+        "adj": 0.261
+      },
+      {
+        "name": "Advanced Driver Monitoring Systems",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.396,
+        "adj": 0.641
+      },
+      {
+        "name": "Domain Controllers for ADAS",
+        "value": 0.426,
+        "pg": 0.32,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.39,
+        "adj": 0.368
+      },
+      {
+        "name": "Functional Safety Packaging",
+        "value": 0.432,
+        "pg": 0.33,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.284,
+        "adj": 0.39
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "Automotive Grade HBM",
+        "target": "2026-Q4",
+        "boom": "2028-Q4",
+        "err": -2.0
+      },
+      {
+        "name": "Chiplet Interconnect Architectures",
+        "target": "2027-Q2",
+        "boom": "2027-Q3",
+        "err": -0.25
+      },
+      {
+        "name": "Energy Efficient AI Accelerators",
+        "target": "2027-Q3",
+        "boom": "2028-Q4",
+        "err": -1.25
+      },
+      {
+        "name": "Automotive Ethernet Networking",
+        "target": "2027-Q4",
+        "boom": "2027-Q2",
+        "err": 0.5
+      },
+      {
+        "name": "Advanced Driver Monitoring Systems",
+        "target": "2030-Q4",
+        "boom": "2027-Q3",
+        "err": 3.25
+      },
+      {
+        "name": "Domain Controllers for ADAS",
+        "target": "2030-Q4",
+        "boom": "2028-Q1",
+        "err": 2.75
+      },
+      {
+        "name": "Functional Safety Packaging",
+        "target": "2030-Q4",
+        "boom": "2027-Q4",
+        "err": 3.0
+      }
+    ]
+  },
+  "on|AI LLM|NAVER|기술선도": {
+    "comp": 40.0,
+    "llm": 40.0,
+    "bt": 48.3,
+    "pen": 5.0,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 40.2,
+    "cost": 28.0,
+    "timing": 40.0,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 2.0,
+    "evidence": {
+      "trl_pathway": "T03 (TRL 7) completes in 2 years which is plausible, and T01/T05 (TRL 6) get 2 years each which is tight but workable; however T02 (TRL 5) has a zero-duration development window (2030-Q1 → 2030-Q1) despite needing to advance from TRL 5 with high uncertainty, making it effectively infeasible.",
+      "strategic_fidelity": "The declared 기술선도 strategy expects lower-TRL exploratory technologies and R&D-heavy portfolios, but the portfolio is dominated by mid-to-high TRL technologies (TRL 6-7), with only T02 at TRL 5 providing genuine frontier exploration; the portfolio leans more toward commercialization readiness than true technology leadership.",
+      "competitive_awareness": "There is no discernible evidence of competitor positioning analysis, differentiation strategy, or timing design relative to competitive threats; technology selections appear driven by internal dependency logic rather than competitive gap exploitation or preemption strategy.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years BEFORE the market boom to achieve preemption; T03 completes 1 year early (good), but T01 and T05 complete 2.75 years AFTER their boom windows, and T02 completes 1.5 years after its boom, representing systematic late-arrival rather than preemption.",
+      "patent_market_convergence": "The selected technologies (distributed training, LLM collaboration, inference acceleration, 3D generation) cover active patent and market growth areas in the AI/LLM domain, suggesting some convergence awareness, but the selection rationale does not demonstrate deliberate targeting of patent-market convergence zones."
+    },
+    "strengths": [
+      "Dependency chain is logically sound with T03 as a foundational enabler for downstream technologies, and zero dependency violations indicate disciplined sequencing",
+      "Budget utilization is exact at 100% with no overrun, demonstrating tight financial planning discipline"
+    ],
+    "weaknesses": [
+      "T01 and T05 complete 2.75 years after their respective market boom windows (2027-Q2), meaning the organization will miss peak market opportunity for two of its three Strategic-tier investments",
+      "T02 (생성형 AI 기반 3D 공간 생성) has a zero-duration development window and low executability score (2.0), making it a non-functional roadmap entry rather than a credible development plan"
+    ],
+    "tech_details": [
+      {
+        "name": "분산 학습 장애 복구 및 최적화",
+        "value": 0.385,
+        "pg": 0.77,
+        "mg": 0.0,
+        "ms": 0.26,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.857,
+        "adj": 0.257
+      },
+      {
+        "name": "LLM 기반 컨텍스트 인식 협업",
+        "value": 0.34,
+        "pg": 0.1,
+        "mg": 0.42,
+        "ms": 0.58,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.19
+      },
+      {
+        "name": "대규모 모델 추론 가속화",
+        "value": 0.599,
+        "pg": 0.43,
+        "mg": 0.42,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.714,
+        "adj": 0.491
+      },
+      {
+        "name": "생성형 AI 기반 3D 공간 생성",
+        "value": 0.285,
+        "pg": 0.0,
+        "mg": 0.74,
+        "ms": 0.21,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.671,
+        "adj": 0.184
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "분산 학습 장애 복구 및 최적화",
+        "target": "2028-Q1",
+        "boom": "2029-Q1",
+        "err": -1.0
+      },
+      {
+        "name": "LLM 기반 컨텍스트 인식 협업",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "대규모 모델 추론 가속화",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "생성형 AI 기반 3D 공간 생성",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "on|이차전지 양극재|LG Chem|기술선도": {
+    "comp": 49.2,
+    "llm": 51.2,
+    "bt": 48.6,
+    "pen": 0.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 29.4,
+    "cost": 17.5,
+    "timing": 67.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.08,
+    "evidence": {
+      "trl_pathway": "TRL progressions are broadly reasonable: T01 (TRL 6) completing in 2 years, T02 (TRL 5) in 2 years, and T03 (TRL 4) in 4 years are all within industry norms for battery materials, with T03's longer runway appropriately reflecting lower maturity.",
+      "strategic_fidelity": "While the portfolio includes lower-TRL exploratory technologies consistent with 기술선도, all three selections are classified as Strategic or High tier with high market_opp scores, suggesting commercialization pressure rather than pure technology leadership; the absence of truly frontier (TRL 2-3) or patent-pioneering technologies weakens the leadership posture.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing advantage design relative to competing firms in the roadmap; technology selections appear driven by internal metrics rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도 strategy, completing 1-2 years before the market boom is ideal; T01 completes 0.75yr after boom (acceptable), T02 completes 1.5yr after boom (misaligned), and T03 completes 1.0yr after boom — all completions trail the boom rather than preempting it, which contradicts the preemption objective of technology leadership.",
+      "patent_market_convergence": "The selected technologies (high-nickel cathode precursors, solid-state battery cathodes, sodium-ion anodes) are active areas of both patent filing and market growth, suggesting reasonable convergence awareness, but there is no explicit evidence that convergence zone targeting was a deliberate selection criterion."
+    },
+    "strengths": [
+      "TRL progression timelines are realistic and well-calibrated, particularly T03's 4-year development runway for a TRL 4 material technology",
+      "Dependency chain (T01→T02) is logically structured and correctly enforced, with solid-state cathode optimization building on high-nickel precursor work"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, which is the opposite of the preemptive timing required for 기술선도 strategy",
+      "The portfolio lacks truly exploratory or frontier technologies (TRL 2-3) that would signal genuine technology leadership ambition beyond incremental advancement"
+    ],
+    "tech_details": [
+      {
+        "name": "고니켈 양극 전구체 균일화",
+        "value": 0.6,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.45
+      },
+      {
+        "name": "고체전지 양극 소재 최적화",
+        "value": 0.148,
+        "pg": 0.37,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.875,
+        "adj": 0.016
+      },
+      {
+        "name": "나트륨 이차전지 음극 소재",
+        "value": 0.133,
+        "pg": 0.33,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.5,
+        "adj": 0.058
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고니켈 양극 전구체 균일화",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "고체전지 양극 소재 최적화",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      },
+      {
+        "name": "나트륨 이차전지 음극 소재",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|STRADVISION|시장이익최대": {
+    "comp": 46.8,
+    "llm": 40.0,
+    "bt": 58.3,
+    "pen": 4.2,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 4.2
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 50.1,
+    "cost": 38.2,
+    "timing": 45.1,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.83,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6-7 and the development windows (2 years for T01, 2 years for T02) are reasonable for near-market technologies; however, T03's planned duration of 0 quarters (2030-Q1 to 2030-Q1) is physically implausible and raises serious feasibility concerns.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대, which requires completing technologies close to or before their market boom windows, yet T02 finishes 3.25 years after its boom and T03 finishes 1.75 years after its boom — the portfolio systematically misses commercialization windows rather than maximizing market profit.",
+      "competitive_awareness": "There is no visible competitive positioning rationale in technology selection or timing; the roadmap does not articulate differentiation opportunities, competitor gaps, or timing advantages relative to market incumbents in ADAS/computer vision.",
+      "market_timing": "For 시장이익최대 strategy the ideal completion is within ±0.5 years of boom; T01 achieves this (0.5yr error), but T02 misses by 3.25 years and T03 misses by 1.75 years, resulting in a mean error of 1.83 years and systematic late-arrival across the majority of the portfolio.",
+      "patent_market_convergence": "The selected technologies (sensor fusion, synthetic data, on-device optimization) are active areas of both patent filing and market growth in ADAS, suggesting some alignment with convergence zones, but the roadmap provides no explicit evidence that convergence signals drove the selection or sequencing decisions."
+    },
+    "strengths": [
+      "T01 (다중 센서 퓨전 아키텍처) is well-timed with only 0.5yr deviation from its market boom, and its high urgency/strategic-fit scores are appropriate for a foundational dependency technology.",
+      "Dependency ordering is correctly respected (T01 before T02, T01+T02 before T03) with zero dependency violations and a fully utilized budget."
+    ],
+    "weaknesses": [
+      "T02 completes 3.25 years after its market boom (2026-Q4), meaning the synthetic data generation capability will arrive long after competitors have likely captured the market opportunity.",
+      "T03 has a zero-duration development window (2030-Q1 to 2030-Q1), which is operationally impossible and suggests a planning error; it also finishes 1.75 years post-boom."
+    ],
+    "tech_details": [
+      {
+        "name": "다중 센서 퓨전 아키텍처",
+        "value": 0.426,
+        "pg": 0.05,
+        "mg": 0.56,
+        "ms": 0.79,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.276
+      },
+      {
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "value": 1.0,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.875
+      },
+      {
+        "name": "온-디바이스 모델 최적화",
+        "value": 0.077,
+        "pg": 0.19,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.556,
+        "adj": -0.006
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "다중 센서 퓨전 아키텍처",
+        "target": "2028-Q1",
+        "boom": "2027-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "target": "2030-Q1",
+        "boom": "2026-Q4",
+        "err": 3.25
+      },
+      {
+        "name": "온-디바이스 모델 최적화",
+        "target": "2030-Q1",
+        "boom": "2028-Q2",
+        "err": 1.75
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|HL Mando|기술선도": {
+    "comp": 47.8,
+    "llm": 33.7,
+    "bt": 62.7,
+    "pen": 3.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 57.6,
+    "cost": 43.4,
+    "timing": 49.9,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.67,
+    "evidence": {
+      "trl_pathway": "T06 (TRL 5) and T01/T03 (TRL 6) each have 2-year development windows which is marginally feasible, but T03's roadmap shows a 0-duration development period (2030-Q1 → 2030-Q1) suggesting an instantaneous completion, which is unrealistic regardless of TRL level.",
+      "strategic_fidelity": "The declared strategy is 기술선도 (Technology Leadership), which calls for lower-TRL exploratory technologies and R&D-heavy portfolio; however, all three selected technologies are already at TRL 5-6 (near-commercialization), and the portfolio of only 3 technologies lacks the breadth and exploratory depth expected of a technology leadership posture.",
+      "competitive_awareness": "The roadmap contains no explicit evidence of competitor positioning, technology gap analysis, or differentiation rationale — technology selections appear driven by internal dependencies rather than competitive landscape intelligence or timing advantage design.",
+      "market_timing": "For 기술선도 strategy, completion 1-2 years before market boom is ideal; T06 completes 1.25 years after its boom (2026-Q4), T01 completes 2.75 years after its boom (2027-Q2), and only T03 is roughly aligned — resulting in systematic late-arrival across the portfolio rather than preemptive positioning.",
+      "patent_market_convergence": "All three technologies operate in high-growth ADAS domains with known patent activity (radar signal processing, steer-by-wire, EV drivetrain integration), suggesting some alignment, but there is no explicit evidence that convergence zone targeting was a deliberate selection criterion."
+    },
+    "strengths": [
+      "Dependency chain is logically structured (T06 → T01 → T03) and has zero violations, ensuring sequential build-up of capabilities",
+      "Budget is fully utilized with no overspend, indicating disciplined resource allocation across the three technologies"
+    ],
+    "weaknesses": [
+      "Systematic market timing delays — all three technologies complete after their respective boom windows, undermining the technology leadership preemption objective",
+      "T03 (전기 구동계 통합 제어) has a zero-duration development window (2030-Q1 to 2030-Q1), which is technically nonsensical and likely a planning error"
+    ],
+    "tech_details": [
+      {
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "value": 0.154,
+        "pg": 0.38,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.004
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "value": 0.612,
+        "pg": 0.12,
+        "mg": 1.0,
+        "ms": 0.87,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.942,
+        "adj": 0.471
+      },
+      {
+        "name": "전기 구동계 통합 제어",
+        "value": 0.962,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 0.87,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.904,
+        "adj": 0.826
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "전기 구동계 통합 제어",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "single|AI LLM|NAVER|기술선도": {
+    "comp": 43.7,
+    "llm": 45.0,
+    "bt": 67.8,
+    "pen": 15,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 15
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 3,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 64.5,
+    "cost": 55.3,
+    "timing": 71.2,
+    "dep": 0,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 0.96,
+    "evidence": {
+      "trl_pathway": "HBM4 (TRL 3→completion in ~7 quarters) and Energy-Efficient AI Accelerator (TRL 3→completion in ~9 quarters) are moderately aggressive but plausible; however, Optical Interconnects jumping from TRL 2 to completion in ~12 quarters is highly optimistic for a hardware architecture technology with significant integration challenges, and S07 (TRL 4) completing in ~12 quarters is reasonable but dependent on a chain of unresolved prerequisites.",
+      "strategic_fidelity": "The portfolio does include low-TRL exploratory technologies (TRL 2-3 for optical interconnects and HBM4) consistent with 기술선도, and the dependency chain shows a coherent long-horizon R&D architecture; however, AI Model Compression (TRL 6) is a near-mature commercialization-ready technology that feels misaligned with a technology leadership posture, and all seven technologies receiving identical High-tier investment scores with uniform metrics suggests a lack of differentiated strategic prioritization.",
+      "competitive_awareness": "The roadmap constructs a plausible hardware stack dependency chain (memory → packaging → interconnect → accelerator/infrastructure) that reflects awareness of where the competitive frontier lies in AI compute; however, there is no explicit evidence of competitor positioning, differentiation rationale, or deliberate timing design to preempt specific rivals, making the competitive intelligence shallow.",
+      "market_timing": "For 기술선도, ideal completion is 1-2 years before market boom; HBM4 completes 1 year early (good), but most other technologies complete late relative to boom windows — Energy-Efficient AI Accelerator is 1.75 years late, Optical Interconnects 1.5 years late, and Chiplet Interconnect Fabric 1 year late — indicating systematic timing slippage rather than strategic preemption.",
+      "patent_market_convergence": "The selected technologies (HBM4, CoWoS-like packaging, chiplet interconnects, optical interconnects) are all active areas of both patent filing and market growth in the AI hardware domain, suggesting some convergence awareness; however, the uniform scoring across all technologies (market_opp=4.0 for all) implies no deliberate differentiation based on patent-market convergence intensity, weakening the case for intentional targeting."
+    },
+    "strengths": [
+      "Coherent dependency chain from foundational memory (HBM4) through packaging and interconnect to higher-level architecture technologies reflects sound systems-level R&D planning",
+      "Inclusion of early-TRL technologies (Optical Interconnects TRL 2, HBM4 TRL 3) is appropriate for a 기술선도 strategy targeting 2030 horizon"
+    ],
+    "weaknesses": [
+      "Five out of seven technologies have dependency violations where downstream work begins before upstream prerequisites are complete, undermining execution feasibility",
+      "Systematic late completion relative to market boom windows means the portfolio misses both preemption opportunities (기술선도 ideal) and peak market capture, with mean timing error of 0.96 years skewed toward lateness"
+    ],
+    "tech_details": [
+      {
+        "name": "HBM4 Memory Integration",
+        "value": 0.0,
+        "pg": 0.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.799,
+        "adj": -0.12
+      },
+      {
+        "name": "Advanced 3D Packaging (CoWoS-like)",
+        "value": 0.62,
+        "pg": 0.05,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.47
+      },
+      {
+        "name": "AI Model Compression Algorithms",
+        "value": 1.0,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.445,
+        "adj": 0.933
+      },
+      {
+        "name": "Chiplet Interconnect Fabric",
+        "value": 0.244,
+        "pg": 0.61,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.7,
+        "adj": 0.139
+      },
+      {
+        "name": "Energy-Efficient AI Accelerator Design",
+        "value": 0.968,
+        "pg": 0.92,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.714,
+        "adj": 0.861
+      },
+      {
+        "name": "Optical Interconnects for AI Systems",
+        "value": 0.899,
+        "pg": 0.75,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.347,
+        "adj": 0.847
+      },
+      {
+        "name": "Disaggregated AI Infrastructure",
+        "value": 0.783,
+        "pg": 0.46,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.279,
+        "adj": 0.741
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "HBM4 Memory Integration",
+        "target": "2027-Q4",
+        "boom": "2028-Q4",
+        "err": -1.0
+      },
+      {
+        "name": "Advanced 3D Packaging (CoWoS-like)",
+        "target": "2028-Q2",
+        "boom": "2027-Q4",
+        "err": 0.5
+      },
+      {
+        "name": "AI Model Compression Algorithms",
+        "target": "2027-Q2",
+        "boom": "2027-Q2",
+        "err": 0.0
+      },
+      {
+        "name": "Chiplet Interconnect Fabric",
+        "target": "2028-Q4",
+        "boom": "2027-Q4",
+        "err": 1.0
+      },
+      {
+        "name": "Energy-Efficient AI Accelerator Design",
+        "target": "2029-Q4",
+        "boom": "2028-Q1",
+        "err": 1.75
+      },
+      {
+        "name": "Optical Interconnects for AI Systems",
+        "target": "2030-Q4",
+        "boom": "2029-Q2",
+        "err": 1.5
+      },
+      {
+        "name": "Disaggregated AI Infrastructure",
+        "target": "2030-Q4",
+        "boom": "2029-Q4",
+        "err": 1.0
+      }
+    ]
+  },
+  "off|자율주행 플랫폼|STRADVISION|기술선도": {
+    "comp": 52.2,
+    "llm": 45.0,
+    "bt": 57.7,
+    "pen": 0.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 47.5,
+    "cost": 35.6,
+    "timing": 67.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.08,
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6) over 2 years and T02 (TRL 7) over 2 years are modest, reasonable progressions; T05 (TRL 6) completing in 1 year is slightly aggressive but not infeasible for a process-level technology, making overall TRL pathways mostly realistic.",
+      "strategic_fidelity": "A 기술선도 strategy should feature lower-TRL exploratory technologies and a deeper, more R&D-heavy portfolio; instead, all three technologies have mid-to-high TRL (6–7), the portfolio is very small (only 3 technologies), and the selections lean toward near-market readiness rather than frontier exploration.",
+      "competitive_awareness": "There is no visible differentiation rationale, no competitor positioning logic, and no timing advantage design relative to competitors embedded in the technology selections or scheduling; the choices appear made on market opportunity scores alone.",
+      "market_timing": "T05 completes 0.5 years before boom (good for 기술선도 preemption), T01 completes 0.75 years after boom (marginally acceptable), but T02 completes 2.0 years after its market boom — a significant miss that undermines the portfolio's strategic timing coherence.",
+      "patent_market_convergence": "All three technologies have reasonably high market_opp scores (4–5), suggesting market signal awareness, but there is no explicit evidence that patent activity convergence was used as a selection criterion; the alignment appears incidental rather than deliberately targeted."
+    },
+    "strengths": [
+      "Dependency sequencing is correctly implemented — T02 properly waits for T01 completion before starting.",
+      "Budget is fully utilized with zero violation, indicating disciplined resource allocation."
+    ],
+    "weaknesses": [
+      "Portfolio is far too small (only 3 technologies) for a 기술선도 strategy, lacking exploratory or early-TRL frontier technologies.",
+      "T02 (다중 센서 퓨전 아키텍처) misses its market boom by 2 full years, severely undermining market impact for the highest-dependency technology."
+    ],
+    "tech_details": [
+      {
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "value": 1.0,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.85
+      },
+      {
+        "name": "다중 센서 퓨전 아키텍처",
+        "value": 0.255,
+        "pg": 0.43,
+        "mg": 0.0,
+        "ms": 0.28,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.13
+      },
+      {
+        "name": "블러 제거 및 HDR 이미지 처리",
+        "value": 0.171,
+        "pg": 0.37,
+        "mg": 0.08,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.556,
+        "adj": 0.088
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "시뮬레이션 기반 합성 데이터 생성",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "다중 센서 퓨전 아키텍처",
+        "target": "2030-Q1",
+        "boom": "2028-Q1",
+        "err": 2.0
+      },
+      {
+        "name": "블러 제거 및 HDR 이미지 처리",
+        "target": "2027-Q1",
+        "boom": "2027-Q3",
+        "err": -0.5
+      }
+    ]
+  },
+  "single|AI LLM|Saltlux|기술선도": {
+    "comp": 38.5,
+    "llm": 45.0,
+    "bt": 64.2,
+    "pen": 18,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 18
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 53.8,
+    "cost": 44.1,
+    "timing": 78.7,
+    "dep": 0,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 0.71,
+    "evidence": {
+      "trl_pathway": "HBM4 Memory (TRL 3→completion in ~7 quarters) and Near-Memory Computing (TRL 3→completion in ~9 quarters) require aggressive TRL jumps that push the boundary of realism; Silicon Photonics (TRL 4) over 11 quarters is more reasonable, but several low-TRL technologies are compressed into tight windows without sufficient maturation buffer.",
+      "strategic_fidelity": "The portfolio does include low-TRL exploratory technologies (TRL 3-4: HBM4, Near-Memory Computing, Silicon Photonics) consistent with 기술선도, but the uniform Tier=High investment across all 7 technologies with identical scores (4.0/5.0/4.0/3.0/4.0) suggests no differentiated R&D-heavy focus — a true technology leadership strategy would prioritize frontier technologies over higher-TRL near-market ones like Vector Database (TRL 5) and CoWoS Packaging (TRL 6).",
+      "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning analysis, differentiation rationale, or timing designed to outmaneuver specific competitors; technology selection appears driven by general domain relevance rather than identified competitive gaps or white-space opportunities.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; HBM4 completes 1 year early (good), Chiplet 0.75yr early (good), but CoWoS completes 1 year AFTER its boom, Silicon Photonics 0.75yr after, and Near-Memory Computing 0.5yr after — meaning roughly half the portfolio misses the preemptive window, with post-boom completions undermining leadership positioning.",
+      "patent_market_convergence": "The selected technologies are broadly in high-activity domains (HBM, chiplets, vector DB) that show both patent and market momentum, but there is no explicit evidence of deliberate convergence-zone targeting — the identical investment scores across all technologies suggest a formulaic rather than intelligence-driven selection process."
+    },
+    "strengths": [
+      "Dependency chain architecture (HBM4 → Chiplet → Sparse Matrix/CoWoS → Silicon Photonics) reflects sound technical sequencing for hardware-software stack development",
+      "Inclusion of genuinely frontier technologies (TRL 3: HBM4, Near-Memory Computing) demonstrates commitment to long-horizon 기술선도 positioning"
+    ],
+    "weaknesses": [
+      "Six dependency violations undermine the entire roadmap's feasibility — technologies are scheduled to start before their prerequisites complete, making the timeline internally inconsistent",
+      "Uniform Tier=High allocation with identical scoring across all 7 technologies indicates no strategic prioritization, wasting budget differentiation opportunities and diluting focus"
+    ],
+    "tech_details": [
+      {
+        "name": "HBM4 Memory",
+        "value": 0.581,
+        "pg": 0.7,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.848,
+        "adj": 0.454
+      },
+      {
+        "name": "2.5D/3D Chiplet Integration",
+        "value": 0.507,
+        "pg": 0.52,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.743,
+        "adj": 0.395
+      },
+      {
+        "name": "Vector Database Technology",
+        "value": 0.691,
+        "pg": 0.98,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.472,
+        "adj": 0.62
+      },
+      {
+        "name": "Sparse Matrix Acceleration",
+        "value": 0.515,
+        "pg": 0.54,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.819,
+        "adj": 0.393
+      },
+      {
+        "name": "CoWoS-like Advanced Packaging",
+        "value": 0.475,
+        "pg": 0.44,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.325
+      },
+      {
+        "name": "Silicon Photonics for Data Transfer",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.319,
+        "adj": 0.652
+      },
+      {
+        "name": "Near-Memory Computing",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.347,
+        "adj": 0.248
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "HBM4 Memory",
+        "target": "2027-Q4",
+        "boom": "2028-Q4",
+        "err": -1.0
+      },
+      {
+        "name": "2.5D/3D Chiplet Integration",
+        "target": "2028-Q2",
+        "boom": "2029-Q1",
+        "err": -0.75
+      },
+      {
+        "name": "Vector Database Technology",
+        "target": "2029-Q1",
+        "boom": "2029-Q3",
+        "err": -0.5
+      },
+      {
+        "name": "Sparse Matrix Acceleration",
+        "target": "2029-Q4",
+        "boom": "2029-Q2",
+        "err": 0.5
+      },
+      {
+        "name": "CoWoS-like Advanced Packaging",
+        "target": "2029-Q4",
+        "boom": "2028-Q4",
+        "err": 1.0
+      },
+      {
+        "name": "Silicon Photonics for Data Transfer",
+        "target": "2030-Q4",
+        "boom": "2030-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "Near-Memory Computing",
+        "target": "2030-Q4",
+        "boom": "2030-Q2",
+        "err": 0.5
+      }
+    ]
+  },
+  "off|이차전지 양극재|LG Chem|기술선도": {
+    "comp": 56.9,
+    "llm": 61.3,
+    "bt": 54.7,
+    "pen": 0.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 3,
+      "market_timing": 4,
+      "patent_market_convergence": 3
+    },
+    "sel": 40.5,
+    "cost": 30.5,
+    "timing": 67.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.08,
+    "evidence": {
+      "trl_pathway": "TRL progressions are generally realistic: T01 (TRL 7) completing in 2 years is achievable for a near-mature technology, T05 (TRL 4) over 3 years to target is plausible though ambitious for sodium-ion anode scale-up, and T02 (TRL 5) over 3 years for all-solid-state cathode is reasonable given the complexity.",
+      "strategic_fidelity": "The declared 기술선도 strategy calls for lower-TRL exploratory technologies and R&D-heavy portfolios, but T01 at TRL 7 is a near-commercial material that better fits 시장이익최대; T05 (TRL 4) and T02 (TRL 5) are more aligned with technology leadership, creating a mixed signal.",
+      "competitive_awareness": "The selection covers three distinct electrochemical technology vectors (high-Ni cathode coatings, sodium-ion, solid-state), suggesting some awareness of the competitive landscape, but there is no explicit evidence of competitor positioning, differentiation gaps, or timing-based competitive preemption logic embedded in the roadmap.",
+      "market_timing": "For 기술선도, completing 1-2 years before market boom is ideal: T01 completes 0.75yr after boom (slight miss), T05 completes 1.5yr after boom (moderate miss), and T02 completes 1.0yr after boom; while not perfectly preemptive, most errors are within a tolerable range for a technology leadership strategy.",
+      "patent_market_convergence": "All three technologies sit in high-activity battery materials domains with strong market growth signals, suggesting some convergence awareness, but the roadmap does not demonstrate deliberate targeting of patent-market convergence zones — the alignment may be coincidental given the breadth of the selected domain."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violations and a disciplined three-tier portfolio covering near-term, mid-term, and long-term technology horizons.",
+      "Zero dependency violations and a logically sequenced timeline with staggered start dates reduce execution risk across the portfolio."
+    ],
+    "weaknesses": [
+      "T01 (고니켈 양극 표면 코팅 at TRL 7) is too mature for a 기술선도 strategy and completes after its market boom, undermining both strategic fidelity and timing preemption.",
+      "All three technologies complete after their respective market boom windows, meaning the roadmap fails to achieve the preemptive positioning that technology leadership demands."
+    ],
+    "tech_details": [
+      {
+        "name": "고니켈 양극 표면 코팅",
+        "value": 0.4,
+        "pg": 1.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.25
+      },
+      {
+        "name": "나트륨 이온 배터리 음극",
+        "value": 0.6,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.6,
+        "adj": 0.51
+      },
+      {
+        "name": "전체 고체전지 양극 소재",
+        "value": 0.216,
+        "pg": 0.54,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.4,
+        "adj": 0.156
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고니켈 양극 표면 코팅",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "나트륨 이온 배터리 음극",
+        "target": "2029-Q1",
+        "boom": "2027-Q3",
+        "err": 1.5
+      },
+      {
+        "name": "전체 고체전지 양극 소재",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "single|이차전지 양극재|LG Chem|기술선도": {
+    "comp": 48.2,
+    "llm": 40.0,
+    "bt": 61.4,
+    "pen": 4.6,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 3
+      },
+      {
+        "type": "timing_error",
+        "amount": 1.6
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 49.9,
+    "cost": 39.2,
+    "timing": 60.4,
+    "dep": 80,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 1.32,
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are plausible (S02: TRL4→target in ~2.75yr, S06: TRL3→target in ~2.5yr are aggressive), but S07 at TRL9 with a 2.75-year development window and S05 at TRL8 with a 2.75-year window are unnecessarily long, suggesting misalignment between TRL maturity and timeline assumptions.",
+      "strategic_fidelity": "The portfolio includes low-TRL exploratory technologies (S06 at TRL3, S02 at TRL4) consistent with 기술선도, but including TRL9 (S07/LFP) and TRL8 (S05) mature technologies dilutes the R&D-leadership character; additionally, all technologies receive identical Tier=High investment scores, showing no differentiation toward frontier R&D.",
+      "competitive_awareness": "There is no discernible evidence of competitor positioning, differentiation strategy, or timing advantage design relative to competitors in either technology selection or roadmap structure; the portfolio reads as a generic battery materials coverage rather than a competitively-informed selection.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before their boom windows; instead, Advanced Battery Packaging misses by 3.0 years post-boom, LFP misses by 3.5 years post-boom, High-Nickel misses by 1.0 year post-boom, and Silicon Anode misses by 1.0 year post-boom, with only 3 of 7 technologies achieving acceptable timing alignment.",
+      "patent_market_convergence": "The selection spans both high-patent-activity areas (solid-state electrolytes, high-nickel cathode) and mature market-driven areas (LFP at TRL9), suggesting partial convergence awareness, but the inclusion of TRL9 LFP and the uniform scoring across all technologies implies convergence targeting was not a deliberate selection criterion."
+    },
+    "strengths": [
+      "Inclusion of AI-driven Material Discovery (TRL3) and Solid State Electrolytes (TRL4) demonstrates genuine technology leadership intent with exploratory frontier investments",
+      "Dependency chain from S05→S02→S04/S06 shows some systems-thinking in technology sequencing for next-generation battery architecture"
+    ],
+    "weaknesses": [
+      "Critical dependency violation: Solid State Electrolytes starts 2026-Q2 but its prerequisite Advanced Battery Packaging does not complete until 2030-Q4, making the entire SSE development timeline structurally invalid",
+      "Advanced Battery Packaging and LFP Chemistry complete 3.0 and 3.5 years after their respective market boom windows, severely undermining strategic value and ROI for both technologies"
+    ],
+    "tech_details": [
+      {
+        "name": "High-Nickel Cathode Materials",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.922,
+        "adj": 0.562
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "value": 0.503,
+        "pg": 0.51,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.814,
+        "adj": 0.381
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.15
+      },
+      {
+        "name": "Silicon Anode Materials",
+        "value": 0.559,
+        "pg": 0.65,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.985,
+        "adj": 0.412
+      },
+      {
+        "name": "Advanced Battery Packaging",
+        "value": 0.529,
+        "pg": 0.57,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.455,
+        "adj": 0.461
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "value": 0.375,
+        "pg": 0.19,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.36,
+        "adj": 0.321
+      },
+      {
+        "name": "Lithium Iron Phosphate (LFP) Chemistry",
+        "value": 0.524,
+        "pg": 0.56,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.425,
+        "adj": 0.46
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "High-Nickel Cathode Materials",
+        "target": "2028-Q2",
+        "boom": "2027-Q2",
+        "err": 1.0
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "target": "2029-Q1",
+        "boom": "2029-Q1",
+        "err": 0.0
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "target": "2028-Q3",
+        "boom": "2028-Q3",
+        "err": 0.0
+      },
+      {
+        "name": "Silicon Anode Materials",
+        "target": "2029-Q4",
+        "boom": "2028-Q4",
+        "err": 1.0
+      },
+      {
+        "name": "Advanced Battery Packaging",
+        "target": "2030-Q4",
+        "boom": "2027-Q4",
+        "err": 3.0
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "target": "2030-Q4",
+        "boom": "2030-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "Lithium Iron Phosphate (LFP) Chemistry",
+        "target": "2030-Q4",
+        "boom": "2027-Q2",
+        "err": 3.5
+      }
+    ]
+  },
+  "single|AI LLM|Upstage|기술선도": {
+    "comp": 39.3,
+    "llm": 33.7,
+    "bt": 56.9,
+    "pen": 8.3,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      },
+      {
+        "type": "timing_error",
+        "amount": 2.3
+      }
+    ],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 44.8,
+    "cost": 34.8,
+    "timing": 56.2,
+    "dep": 60,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 1.46,
+    "evidence": {
+      "trl_pathway": "HBM4 Memory Integration jumps from TRL 3 to presumably deployment-ready in just 3 quarters (2026-Q1 to 2026-Q4), which is highly aggressive for a material-category technology; similarly, Optical Interconnects at TRL 2 is scheduled for a 2.5-year development window which is unrealistic for such an early-stage technology. Multiple technologies show compressed timelines inconsistent with standard TRL maturation norms.",
+      "strategic_fidelity": "The portfolio does include lower-TRL exploratory technologies (S01 at TRL 3, S06 at TRL 2) consistent with 기술선도, and all 7 technologies receive High-tier investment suggesting R&D-heavy commitment; however, the flat uniform scoring across all technologies (identical investment scores) indicates a lack of differentiated strategic prioritization, and Mixed-Precision Training at TRL 6 is a near-commercial technology inconsistent with a pure technology leadership stance.",
+      "competitive_awareness": "The roadmap shows no explicit competitive differentiation rationale — technology selections appear driven by domain relevance rather than competitor gap analysis, and there is no evidence of timing strategies designed to pre-empt specific competitors or exploit identified technology white spaces in the AI hardware landscape.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; HBM4 completes 2 full years early (acceptable) but Mixed-Precision Training & Inference completes 3.25 years after its boom window, representing a severe miss. AI-Optimized Networking Fabric also completes 1.75 years post-boom, and 3D Chip Stacking completes 1.25 years late, indicating systematic late-completion problems across the portfolio.",
+      "patent_market_convergence": "The selected technologies (HBM4, Chiplet Interconnect, Optical Interconnects) are active patent filing areas that also show market growth signals, suggesting some convergence awareness; however, the uniform investment scoring across all technologies with no differentiation based on patent density or market trajectory strength implies the convergence was not deliberately leveraged in prioritization."
+    },
+    "strengths": [
+      "Inclusion of genuinely early-stage technologies (S06 at TRL 2, S01 at TRL 3) reflects authentic technology leadership ambition appropriate for 기술선도 strategy",
+      "Full budget utilization with High-tier investment across all technologies demonstrates commitment to building a comprehensive AI hardware foundation portfolio"
+    ],
+    "weaknesses": [
+      "Critical circular dependency between S05 and S06 (each listed as prerequisite of the other) makes both development paths logically infeasible and represents a fundamental planning failure",
+      "Mixed-Precision Training & Inference (TRL 6) completes 3.25 years after its market boom, wasting investment on a technology that will have commoditized before delivery"
+    ],
+    "tech_details": [
+      {
+        "name": "HBM4 Memory Integration",
+        "value": 0.358,
+        "pg": 0.15,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.869,
+        "adj": 0.228
+      },
+      {
+        "name": "Chiplet Interconnect Fabric",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.772,
+        "adj": 0.584
+      },
+      {
+        "name": "Energy-Efficient AI Accelerator",
+        "value": 0.569,
+        "pg": 0.67,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.875,
+        "adj": 0.437
+      },
+      {
+        "name": "3D Chip Stacking with Advanced Cooling",
+        "value": 0.357,
+        "pg": 0.14,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.207
+      },
+      {
+        "name": "AI-Optimized Networking Fabric",
+        "value": 0.325,
+        "pg": 0.06,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.391,
+        "adj": 0.266
+      },
+      {
+        "name": "Optical Interconnects for AI",
+        "value": 0.528,
+        "pg": 0.57,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.326,
+        "adj": 0.479
+      },
+      {
+        "name": "Mixed-Precision Training & Inference",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.456,
+        "adj": 0.232
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "HBM4 Memory Integration",
+        "target": "2026-Q4",
+        "boom": "2028-Q4",
+        "err": -2.0
+      },
+      {
+        "name": "Chiplet Interconnect Fabric",
+        "target": "2027-Q2",
+        "boom": "2027-Q4",
+        "err": -0.5
+      },
+      {
+        "name": "Energy-Efficient AI Accelerator",
+        "target": "2027-Q3",
+        "boom": "2028-Q2",
+        "err": -0.75
+      },
+      {
+        "name": "3D Chip Stacking with Advanced Cooling",
+        "target": "2029-Q4",
+        "boom": "2028-Q3",
+        "err": 1.25
+      },
+      {
+        "name": "AI-Optimized Networking Fabric",
+        "target": "2030-Q4",
+        "boom": "2029-Q1",
+        "err": 1.75
+      },
+      {
+        "name": "Optical Interconnects for AI",
+        "target": "2030-Q4",
+        "boom": "2030-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "Mixed-Precision Training & Inference",
+        "target": "2030-Q4",
+        "boom": "2027-Q3",
+        "err": 3.25
+      }
+    ]
+  },
+  "single|자율주행 플랫폼|STRADVISION|기술선도": {
+    "comp": 49.7,
+    "llm": 38.7,
+    "bt": 67.0,
+    "pen": 6,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      }
+    ],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 45.5,
+    "cost": 36.6,
+    "timing": 93.7,
+    "dep": 60,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 0.21,
+    "evidence": {
+      "trl_pathway": "Chiplet-Based AI Accelerators attempts a TRL 3→target jump within only 2 quarters (2027-Q1 to 2027-Q2), which is virtually impossible by any industry standard; similarly, HBM Integration (TRL 4) and Event-Based Vision Processing (TRL 4) face compressed development windows that are unrealistic given hardware maturation norms.",
+      "strategic_fidelity": "The portfolio includes low-TRL exploratory technologies (Neuromorphic TRL 2, Chiplet TRL 3) consistent with 기술선도, but also heavily weighted toward near-market process technologies (ISO 26262 TRL 7, AI Compression TRL 6) that are more commercialization-oriented, creating a mixed signal rather than a coherent leadership stance.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing-based competitive preemption logic embedded in the technology selection or sequencing; choices appear driven by market boom alignment rather than competitive landscape intelligence.",
+      "market_timing": "For a 기술선도 strategy, technologies should ideally complete 1-2 years BEFORE the market boom to achieve preemption, but most completions are timed exactly at boom quarters (0.0 error), which is more characteristic of 시장이익최대; Event-Based Vision and Neuromorphic Computing finish 0.75 years after their respective booms, further penalizing the portfolio.",
+      "patent_market_convergence": "The selected technologies broadly align with active patent and market growth areas in AI hardware and perception, but the uniform scoring (market_opp=4.0, strategic_fit=5.0 for all items) suggests convergence was not rigorously differentiated, implying coincidental rather than deliberate targeting of convergence zones."
+    },
+    "strengths": [
+      "Inclusion of genuinely early-stage technologies (Neuromorphic TRL 2, Chiplet TRL 3) provides authentic exploratory R&D character expected of a 기술선도 portfolio.",
+      "Budget is fully utilized with zero overspend, and most market boom timing errors are zero or near-zero for the majority of technologies."
+    ],
+    "weaknesses": [
+      "Critical dependency violations: Chiplet-Based AI Accelerators and HBM Integration both start before their prerequisite (Advanced Packaging S03) completes, making those development paths structurally invalid.",
+      "Chiplet-Based AI Accelerators is allocated only 2 quarters of development time from TRL 3, which is fundamentally infeasible and undermines the entire hardware stack roadmap."
+    ],
+    "tech_details": [
+      {
+        "name": "Functional Safety Certification (ISO 26262)",
+        "value": 0.0,
+        "pg": 0.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.416,
+        "adj": -0.062
+      },
+      {
+        "name": "AI Model Compression for Edge Deployment",
+        "value": 0.847,
+        "pg": 0.62,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.373,
+        "adj": 0.791
+      },
+      {
+        "name": "Chiplet-Based AI Accelerators",
+        "value": 0.632,
+        "pg": 0.08,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.67,
+        "adj": 0.531
+      },
+      {
+        "name": "High Bandwidth Memory (HBM) Integration",
+        "value": 0.359,
+        "pg": 0.9,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.773,
+        "adj": 0.243
+      },
+      {
+        "name": "Advanced Packaging for AI",
+        "value": 0.787,
+        "pg": 0.47,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.637
+      },
+      {
+        "name": "Event-Based Vision Processing",
+        "value": 0.4,
+        "pg": 1.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.649,
+        "adj": 0.303
+      },
+      {
+        "name": "Neuromorphic Computing for Low-Power Perception",
+        "value": 0.159,
+        "pg": 0.4,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.241,
+        "adj": 0.122
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "Functional Safety Certification (ISO 26262)",
+        "target": "2026-Q4",
+        "boom": "2026-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "AI Model Compression for Edge Deployment",
+        "target": "2027-Q4",
+        "boom": "2027-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "Chiplet-Based AI Accelerators",
+        "target": "2027-Q2",
+        "boom": "2027-Q2",
+        "err": 0.0
+      },
+      {
+        "name": "High Bandwidth Memory (HBM) Integration",
+        "target": "2028-Q4",
+        "boom": "2028-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "Advanced Packaging for AI",
+        "target": "2028-Q3",
+        "boom": "2028-Q3",
+        "err": 0.0
+      },
+      {
+        "name": "Event-Based Vision Processing",
+        "target": "2029-Q4",
+        "boom": "2029-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "Neuromorphic Computing for Low-Power Perception",
+        "target": "2030-Q4",
+        "boom": "2030-Q1",
+        "err": 0.75
+      }
+    ]
+  },
+  "on|이차전지 양극재|LG Chem|시장이익최대": {
+    "comp": 68.3,
+    "llm": 56.2,
+    "bt": 76.4,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 3,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 66.6,
+    "cost": 56.6,
+    "timing": 82.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 0.58,
+    "evidence": {
+      "trl_pathway": "T01 (TRL 7) completing in 4 quarters and T03 (TRL 6) in 8 quarters are realistic; T02 (TRL 5→target) in 4 quarters is slightly aggressive but not infeasible given the sequential dependency structure providing foundational knowledge transfer.",
+      "strategic_fidelity": "The portfolio includes TRL 5-7 technologies which is appropriate for 시장이익최대, but T02 (TRL 5, high uncertainty=4.0, strategic_fit=3.0) is a weaker market-profit fit; the cascade dependency structure delays commercialization and somewhat contradicts rapid market capture intent.",
+      "competitive_awareness": "Technology selection follows a logical battery materials progression (cathode coating → silicon anode → solid-state cathode) suggesting awareness of industry evolution, but there is no explicit evidence of competitor positioning, differentiation gaps, or timing advantage design relative to known competitors.",
+      "market_timing": "T01 completes 0.25yr before boom (good for 시장이익최대), T03 completes 0.5yr after boom (marginal miss), and T02 completes 1.0yr after its boom window (notable miss for a profit-maximization strategy), resulting in degrading timing precision across the portfolio.",
+      "patent_market_convergence": "All three technologies are high-activity areas in both patent filings and market growth within battery materials, suggesting reasonable convergence awareness, but the selection appears driven by technical dependency logic rather than explicit convergence-zone targeting."
+    },
+    "strengths": [
+      "T01 (고니켈 양극 표면 코팅) is near-perfectly timed at -0.25yr before boom with high TRL (7), maximizing near-term revenue capture for the flagship technology.",
+      "Zero dependency violations and full budget utilization demonstrate disciplined constraint management with a clean sequential execution plan."
+    ],
+    "weaknesses": [
+      "T02 (고체전지용 양극 소재) misses its market boom by a full year and carries TRL 5 with uncertainty=4.0, making it a weak fit for 시장이익최대 which demands near-market, low-risk selections.",
+      "The rigid linear dependency chain (T01→T03→T02) creates a compounding timing delay problem where late completion of T03 cascades into T02 missing its market window entirely."
+    ],
+    "tech_details": [
+      {
+        "name": "고니켈 양극 표면 코팅",
+        "value": 0.306,
+        "pg": 0.77,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.156
+      },
+      {
+        "name": "실리콘 기반 음극 소재",
+        "value": 0.691,
+        "pg": 0.55,
+        "mg": 0.66,
+        "ms": 0.91,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.6,
+        "adj": 0.601
+      },
+      {
+        "name": "고체전지용 양극 소재",
+        "value": 1.0,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.4,
+        "adj": 0.94
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고니켈 양극 표면 코팅",
+        "target": "2027-Q1",
+        "boom": "2027-Q2",
+        "err": -0.25
+      },
+      {
+        "name": "실리콘 기반 음극 소재",
+        "target": "2029-Q1",
+        "boom": "2028-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "고체전지용 양극 소재",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|Hyundai Mobis|기술선도": {
+    "comp": 55.2,
+    "llm": 45.0,
+    "bt": 66.2,
+    "pen": 2.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 61.3,
+    "cost": 48.7,
+    "timing": 55.0,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.5,
+    "evidence": {
+      "trl_pathway": "TRL progressions are broadly achievable: T03 (TRL 7) over 2 years, T01 (TRL 6) over 3 years, and T02 (TRL 5) over 3 years are all consistent with industry norms for automotive electronics development, though T02's material-level jump to production readiness in 3 years is moderately ambitious.",
+      "strategic_fidelity": "The declared 기술선도 (Technology Leadership) strategy is poorly reflected: TRL 7 and TRL 6 technologies are near-market, not exploratory; the portfolio lacks low-TRL pioneering research; and urgency scores are high, suggesting commercialization pressure rather than long-horizon R&D leadership.",
+      "competitive_awareness": "There is little evidence of deliberate competitive differentiation or gap analysis in the technology selection; the three technologies are broadly pursued industry-wide with no apparent timing-advantage design or niche positioning relative to known competitors in ADAS and automotive electronics.",
+      "market_timing": "For 기술선도, completing 1-2 years before the market boom is ideal; all three technologies complete after their respective boom windows (errors of 1.25–1.75 years late), which is the opposite of the preemptive timing expected for a technology leadership strategy.",
+      "patent_market_convergence": "SiC semiconductors and multi-sensor fusion cameras are active patent convergence zones with growing market signals, suggesting some alignment, but the selection of steer-by-wire (a more mature process technology) introduces imbalance, and the overall convergence targeting appears partially coincidental."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violations and no dependency conflicts, indicating disciplined resource allocation.",
+      "TRL progression timelines are generally feasible and grounded in realistic development cycles for the automotive domain."
+    ],
+    "weaknesses": [
+      "All three technologies complete after their market boom windows, fundamentally undermining the preemptive advantage required for 기술선도 strategy.",
+      "The portfolio is dominated by mid-to-high TRL technologies (TRL 5–7), which contradicts the exploratory, R&D-heavy character expected of a technology leadership roadmap."
+    ],
+    "tech_details": [
+      {
+        "name": "스테어 바이 와이어 제어",
+        "value": 0.507,
+        "pg": 0.0,
+        "mg": 0.82,
+        "ms": 0.86,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.357
+      },
+      {
+        "name": "다중 센서 퓨전 카메라",
+        "value": 0.697,
+        "pg": 0.75,
+        "mg": 0.33,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.705,
+        "adj": 0.591
+      },
+      {
+        "name": "고성능 SiC 반도체 제조",
+        "value": 0.636,
+        "pg": 0.2,
+        "mg": 1.0,
+        "ms": 0.86,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.818,
+        "adj": 0.513
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "스테어 바이 와이어 제어",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "다중 센서 퓨전 카메라",
+        "target": "2029-Q1",
+        "boom": "2027-Q2",
+        "err": 1.75
+      },
+      {
+        "name": "고성능 SiC 반도체 제조",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|Hyundai Mobis|시장이익최대": {
+    "comp": 47.5,
+    "llm": 46.2,
+    "bt": 53.2,
+    "pen": 2.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 46.4,
+    "cost": 33.8,
+    "timing": 52.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.58,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6-7 and the development windows (2-3 years) are reasonable for mature-stage advancement; no implausible TRL jumps are required, though specific target TRLs are not stated.",
+      "strategic_fidelity": "The portfolio selects relatively high-TRL, near-market technologies consistent with 시장이익최대, but the timelines are too long (2-3 years for TRL 7 tech) and all three technologies complete well after their market booms, undermining the commercialization-first mandate.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing designed around competitive threats; technology selections appear driven by internal scoring rather than landscape analysis.",
+      "market_timing": "All three technologies complete significantly after their respective boom windows (errors of 1.25, 1.5, and 2.0 years), which is a critical failure for 시장이익최대 strategy where ±0.5yr alignment is ideal; the mean timing error of 1.58 years reflects systematic late-to-market positioning.",
+      "patent_market_convergence": "The selected technologies (steer-by-wire, high-voltage connectors, camera-ultrasonic fusion) are active areas with both patent and market activity in the ADAS/EV domain, suggesting some convergence awareness, but the scoring metadata does not explicitly reflect deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "All selected technologies are at high TRL (6-7), appropriate for a market-profit-maximization strategy seeking near-term commercialization",
+      "Budget is fully utilized with zero violation, and dependency constraints are cleanly satisfied with no conflicts"
+    ],
+    "weaknesses": [
+      "Systematic late-to-market timing across all three technologies — all completion dates fall well past their respective boom windows, directly contradicting the 시장이익최대 objective",
+      "No competitive landscape differentiation is evident; the roadmap lacks strategic timing design relative to competitor moves or market entry windows"
+    ],
+    "tech_details": [
+      {
+        "name": "스테어바이와이어 다중모드 제어",
+        "value": 0.482,
+        "pg": 0.61,
+        "mg": 0.74,
+        "ms": 0.06,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.332
+      },
+      {
+        "name": "고전압 커넥터 자동화 조립",
+        "value": 0.606,
+        "pg": 0.94,
+        "mg": 0.0,
+        "ms": 0.76,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.818,
+        "adj": 0.483
+      },
+      {
+        "name": "카메라-초음파 통합 센서",
+        "value": 0.303,
+        "pg": 0.0,
+        "mg": 0.01,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.705,
+        "adj": 0.198
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "스테어바이와이어 다중모드 제어",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "고전압 커넥터 자동화 조립",
+        "target": "2029-Q1",
+        "boom": "2027-Q3",
+        "err": 1.5
+      },
+      {
+        "name": "카메라-초음파 통합 센서",
+        "target": "2030-Q1",
+        "boom": "2028-Q1",
+        "err": 2.0
+      }
+    ]
+  },
+  "on|이차전지 양극재|Cosmo AM&T|기술선도": {
+    "comp": 51.0,
+    "llm": 43.8,
+    "bt": 55.8,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 4,
+      "patent_market_convergence": 3
+    },
+    "sel": 51.2,
+    "cost": 39.5,
+    "timing": 72.4,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 0.92,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 1 (basic research) and are expected to reach market-ready status within 2-4 years, which is extremely aggressive; TRL 1 to commercial deployment in 2 years for High-Nickel Polycrystalline is particularly unrealistic given industry norms requiring 5-7+ years from fundamental research to commercial scale.",
+      "strategic_fidelity": "The selection of TRL 1 exploratory technologies and longer R&D timelines aligns with 기술선도 (Technology Leadership) in spirit, but the portfolio is small (only 3 technologies) and lacks breadth of exploratory research that true technology leadership would demand; executability scores of 1.0 across all technologies signal severe capability gaps.",
+      "competitive_awareness": "The roadmap shows no explicit evidence of competitor positioning, technology gap analysis, or differentiation strategy; technology selections appear driven by market opportunity scores alone without articulating how these choices create competitive moats or exploit gaps in competitor portfolios.",
+      "market_timing": "For 기술선도 strategy, completing 1-2 years before market boom is ideal; all three technologies complete roughly 0.75-1.0 years after their boom windows, which is a mild overrun but not severe, representing adequate preemptive positioning for a leadership strategy despite missing the optimal pre-boom window.",
+      "patent_market_convergence": "All selected technologies have high market_opp scores (4-5) suggesting market signal awareness, but there is no explicit evidence that patent activity trends were cross-referenced to identify convergence zones; the selection could be market-signal-driven rather than a deliberate patent-market convergence strategy."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined financial planning",
+      "Technology selections in high-growth battery materials domains (high-nickel cathode, LiFSI, silicon anode) are strategically coherent and address emerging EV/energy storage megatrends"
+    ],
+    "weaknesses": [
+      "All technologies start at TRL 1 with extremely compressed development timelines (2-4 years to commercialization), making the roadmap technically infeasible without massive external partnerships or technology acquisition",
+      "Executability scores of 1.0 for all technologies indicate critically low internal capability, yet there is no mitigation strategy such as partnerships, licensing, or phased TRL gating visible in the roadmap"
+    ],
+    "tech_details": [
+      {
+        "name": "High-Nickel Polycrystalline Cathode Materials",
+        "value": 0.484,
+        "pg": 0.31,
+        "mg": 0.21,
+        "ms": 0.99,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.334
+      },
+      {
+        "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.7,
+        "adj": 0.195
+      },
+      {
+        "name": "Silicon-Based Negative Electrode Materials",
+        "value": 0.752,
+        "pg": 0.85,
+        "mg": 0.78,
+        "ms": 0.59,
+        "tier": "Medium",
+        "budget": 0.0,
+        "cost_norm": 0.64,
+        "adj": 0.656
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "High-Nickel Polycrystalline Cathode Materials",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Recovery & Synthesis",
+        "target": "2029-Q1",
+        "boom": "2028-Q1",
+        "err": 1.0
+      },
+      {
+        "name": "Silicon-Based Negative Electrode Materials",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|AI LLM|Saltlux|시장이익최대": {
+    "comp": 63.0,
+    "llm": 46.2,
+    "bt": 75.7,
+    "pen": 0.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 74.5,
+    "cost": 63.9,
+    "timing": 64.3,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 1.19,
+    "evidence": {
+      "trl_pathway": "T06 (TRL 7→completion in 4Q) and T01 (TRL 7→completion in 8Q) are realistic; T03 (TRL 5→completion in 8Q) and T02 (TRL 6→completion in 4Q) are achievable but moderately aggressive given dependency chains, with no obvious infeasible jumps.",
+      "strategic_fidelity": "The 시장이익최대 strategy calls for near-market, commercialization-focused selections, and the portfolio's TRL profile (5-7) partially fits, but T03 at TRL 5 with a 2-year development cycle and T02 completing in 2030 against a 2028-Q3 boom window diverge from the profit-maximization ethos of tight market alignment.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selection or timing decisions; choices appear driven by internal dependency logic rather than competitive landscape intelligence.",
+      "market_timing": "Only T06 achieves near-ideal timing (0.25yr post-boom); T03 misses by 1.25yr, T01 by 1.75yr, and T02 by 1.5yr — the mean error of 1.19 years means the majority of technologies complete well after their respective boom windows, a systematic misalignment inconsistent with 시장이익최대.",
+      "patent_market_convergence": "Selected technologies (knowledge graph QA, domain-specific search, permission-aware response) are active areas of both patent filing and market growth in the LLM/enterprise AI space, suggesting some convergence awareness, but the rationale appears coincidental rather than explicitly targeting convergence zones."
+    },
+    "strengths": [
+      "Zero dependency violations with a clean sequential pipeline (T06→T01→T02, T03→T02) demonstrating sound architectural planning",
+      "Budget is fully utilized with no overspend, and the two Strategic-tier designations (T06, T01) correctly prioritize the highest market opportunity and strategic fit assets"
+    ],
+    "weaknesses": [
+      "Systematic late-market timing across 3 of 4 technologies means the portfolio will largely miss peak demand windows, critically undermining the 시장이익최대 objective",
+      "No competitive landscape intelligence is reflected in technology selection or timing, leaving the roadmap blind to potential first-mover threats or differentiation opportunities"
+    ],
+    "tech_details": [
+      {
+        "name": "지식 그래프 기반 사용자 맞춤 QA",
+        "value": 0.827,
+        "pg": 0.65,
+        "mg": 0.89,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.677
+      },
+      {
+        "name": "LLM 효율적 학습 및 슬라이싱",
+        "value": 0.557,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 0.86,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.632,
+        "adj": 0.462
+      },
+      {
+        "name": "권한 인식 자동 응답 시스템",
+        "value": 0.966,
+        "pg": 1.0,
+        "mg": 0.89,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.842,
+        "adj": 0.84
+      },
+      {
+        "name": "도메인 특화 검색 엔진 아키텍처",
+        "value": 0.631,
+        "pg": 0.69,
+        "mg": 0.46,
+        "ms": 0.73,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.368,
+        "adj": 0.576
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "지식 그래프 기반 사용자 맞춤 QA",
+        "target": "2027-Q1",
+        "boom": "2026-Q4",
+        "err": 0.25
+      },
+      {
+        "name": "LLM 효율적 학습 및 슬라이싱",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "권한 인식 자동 응답 시스템",
+        "target": "2029-Q1",
+        "boom": "2027-Q2",
+        "err": 1.75
+      },
+      {
+        "name": "도메인 특화 검색 엔진 아키텍처",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "on|이차전지 양극재|EcoPro BM|시장이익최대": {
+    "comp": 75.7,
+    "llm": 63.7,
+    "bt": 83.7,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 5,
+      "strategic_fidelity": 4,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 85.0,
+    "cost": 74.8,
+    "timing": 75.1,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 0.83,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6-7 and require modest incremental advancement over 2-3 year development windows, which is highly realistic for mature cathode/anode material domains with established industrial processes.",
+      "strategic_fidelity": "The portfolio is appropriately high-TRL (6-7) and commercially oriented, consistent with 시장이익최대; however, the portfolio is narrow (only 3 technologies) and lacks electrolyte or cell integration technologies that would maximize market capture, limiting full strategic execution.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing strategies relative to known market players; technology selections appear driven by internal scoring rather than competitive landscape analysis.",
+      "market_timing": "For 시장이익최대, completion within ±0.5 years of boom is ideal, but all three technologies complete 0.75-1.0 years after their respective boom windows, systematically missing the peak ROI window; no technology achieves the optimal timing alignment.",
+      "patent_market_convergence": "The selected technologies (high-nickel cathode, precursor synthesis, silicon anode) are all active areas of both patent filing and market growth in the secondary battery space, suggesting some convergence awareness, but the rationale appears driven by market opportunity scores rather than explicit patent-market convergence analysis."
+    },
+    "strengths": [
+      "High starting TRL (6-7) across all technologies ensures realistic and executable development pathways within the stated timelines",
+      "Budget is fully utilized with zero violations and dependency ordering is correctly maintained (T01 prerequisite for T03)"
+    ],
+    "weaknesses": [
+      "All technologies complete systematically late relative to their market boom windows (0.75-1.0 years), reducing peak ROI capture for a 시장이익최대 strategy",
+      "Portfolio is very narrow with only 3 technologies, lacking diversification into adjacent high-value areas such as solid-state electrolytes or advanced binders that could amplify market returns"
+    ],
+    "tech_details": [
+      {
+        "name": "고니켈 양극재 다결정화 기술",
+        "value": 0.792,
+        "pg": 0.51,
+        "mg": 0.96,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.642
+      },
+      {
+        "name": "양극재 전구체 합성 최적화",
+        "value": 0.8,
+        "pg": 0.7,
+        "mg": 0.83,
+        "ms": 0.89,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.44,
+        "adj": 0.734
+      },
+      {
+        "name": "고성능 음극재 (실리콘 복합)",
+        "value": 0.956,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 0.85,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.6,
+        "adj": 0.866
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고니켈 양극재 다결정화 기술",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "양극재 전구체 합성 최적화",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      },
+      {
+        "name": "고성능 음극재 (실리콘 복합)",
+        "target": "2030-Q1",
+        "boom": "2029-Q2",
+        "err": 0.75
+      }
+    ]
+  },
+  "off|이차전지 양극재|EcoPro BM|기술선도": {
+    "comp": 52.3,
+    "llm": 40.0,
+    "bt": 65.4,
+    "pen": 2.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 59.5,
+    "cost": 49.3,
+    "timing": 52.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.58,
+    "evidence": {
+      "trl_pathway": "T01 and T03 start at TRL 6 with 2-year development windows, which is reasonable for mature material technologies; T08 at TRL 4 with a 4-year window (2026-2030) is plausible but ambitious given recycling process complexity and the executability score of 2.0.",
+      "strategic_fidelity": "Declared strategy is 기술선도 (Technology Leadership), but the portfolio is dominated by TRL 6 technologies with near-term commercialization focus rather than exploratory lower-TRL candidates; only T08 at TRL 4 suggests exploratory work, but it scores low on strategic_fit (3.0), undermining the leadership narrative.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing designed to preempt rivals; technology selections appear driven by market opportunity scores rather than competitive gap analysis or patent-trend differentiation.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom to preempt; T01 completes only 0.5yr before boom (acceptable), but T03 completes 1.0yr after boom and T08 completes a critical 3.25 years after its boom window, representing systematic late-arrival failures.",
+      "patent_market_convergence": "T01 and T03 both show high market_opp (5.0 and 4.0) with high strategic_fit suggesting some alignment with patent-active areas in high-nickel cathode materials; however T08's low strategic_fit (3.0) despite high market_opp (5.0) suggests market-signal-only selection without patent convergence evidence."
+    },
+    "strengths": [
+      "T01 → T03 dependency chain is logically structured and the sequential timeline respects the prerequisite relationship with no violations",
+      "Budget is fully utilized with zero violation, indicating disciplined resource allocation across the three-technology portfolio"
+    ],
+    "weaknesses": [
+      "Portfolio of only 3 technologies, all in adjacent material/process categories, is too narrow for a genuine 기술선도 strategy that requires exploratory breadth and lower-TRL frontier investments",
+      "배터리 재활용 및 원료 회수 (T08) completes 3.25 years after its market boom window, making the investment largely ineffective for either leadership or profit maximization"
+    ],
+    "tech_details": [
+      {
+        "name": "고결정도 도핑 양극재",
+        "value": 0.572,
+        "pg": 0.41,
+        "mg": 1.0,
+        "ms": 0.36,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.422
+      },
+      {
+        "name": "전구체 합성 공정 최적화",
+        "value": 0.329,
+        "pg": 0.62,
+        "mg": 0.0,
+        "ms": 0.27,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.6,
+        "adj": 0.239
+      },
+      {
+        "name": "배터리 재활용 및 원료 회수",
+        "value": 0.885,
+        "pg": 1.0,
+        "mg": 0.93,
+        "ms": 0.69,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.44,
+        "adj": 0.82
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고결정도 도핑 양극재",
+        "target": "2028-Q1",
+        "boom": "2027-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "전구체 합성 공정 최적화",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      },
+      {
+        "name": "배터리 재활용 및 원료 회수",
+        "target": "2030-Q1",
+        "boom": "2026-Q4",
+        "err": 3.25
+      }
+    ]
+  },
+  "off|AI LLM|Saltlux|기술선도": {
+    "comp": 42.8,
+    "llm": 46.2,
+    "bt": 51.4,
+    "pen": 6.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 6.5
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 57.2,
+    "cost": 47.2,
+    "timing": 31.3,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 6,
+    "mean_err": 2.29,
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are reasonable: T02 (TRL7, 2yr dev), T03 (TRL6, 1yr dev), T07 (TRL6, 1yr dev) are achievable, and T06 (TRL4, 2yr dev) and T10 (TRL5, 1yr dev) are moderately aggressive but not infeasible. The dependency chain is logically structured, though T10 and T07 completing in only 1 year from mid-TRL starting points is slightly optimistic.",
+      "strategic_fidelity": "The portfolio includes some lower-TRL exploratory technologies (T06 at TRL4, T10 at TRL5) consistent with 기술선도, but the dominant selections are mid-to-high TRL (T02 at TRL7, T03 and T07 at TRL6), which lean toward near-market execution rather than frontier R&D. The portfolio lacks genuinely early-stage or patent-frontier technologies expected of a true technology leadership strategy.",
+      "competitive_awareness": "There is no explicit evidence of competitor positioning, differentiation rationale, or timing design relative to competitive threats in the roadmap. Technology selections appear driven by internal dependency logic rather than landscape awareness or gap exploitation.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before market boom to enable preemption. However, the mean timing error is 2.29 years late, with most technologies completing well after their boom windows (T07: 3.5yr late, T06: 3.25yr late, T10: 2.5yr late). Only T02 is reasonably timed (0.5yr late). This represents a systematic failure to preempt market windows.",
+      "patent_market_convergence": "Several selected technologies (T03, T07) occupy knowledge graph and security domains with plausible patent-market overlap in conversational AI. However, there is no explicit evidence that convergence zones were deliberately targeted; the selection appears dependency-driven rather than convergence-zone-optimized, and T04 (암시적 데이터 의존성) shows weaker market signals."
+    },
+    "strengths": [
+      "Dependency chain is logically sound with zero violations, building a coherent technology stack from hardware (T02) through process layers (T03, T06, T07, T10, T04)",
+      "Budget utilization is near-perfect (99.99%), indicating disciplined resource allocation across tiers"
+    ],
+    "weaknesses": [
+      "Systematic late-market timing across 5 of 6 technologies means the roadmap fails to preempt any market boom window, undermining the core value of a 기술선도 strategy",
+      "Portfolio TRL profile skews too high (average TRL ~5.5) for a technology leadership strategy; insufficient investment in genuinely frontier or early-stage technologies"
+    ],
+    "tech_details": [
+      {
+        "name": "그래프 기반 AI 가속기 아키텍처",
+        "value": 0.706,
+        "pg": 0.72,
+        "mg": 0.72,
+        "ms": 0.67,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.846,
+        "adj": 0.579
+      },
+      {
+        "name": "Sliceout 기반 트랜스포머 학습 최적화",
+        "value": 0.415,
+        "pg": 0.43,
+        "mg": 0.72,
+        "ms": 0.09,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.538,
+        "adj": 0.334
+      },
+      {
+        "name": "권한 기반 지식 그래프 응답 자동화",
+        "value": 0.682,
+        "pg": 0.6,
+        "mg": 0.47,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.923,
+        "adj": 0.543
+      },
+      {
+        "name": "맥락 기반 접근 지능 보안 관리",
+        "value": 0.651,
+        "pg": 0.73,
+        "mg": 1.0,
+        "ms": 0.2,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.501
+      },
+      {
+        "name": "원자 문서 요소 관계 모델링 자동화",
+        "value": 0.461,
+        "pg": 0.53,
+        "mg": 0.32,
+        "ms": 0.51,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.462,
+        "adj": 0.392
+      },
+      {
+        "name": "암시적 데이터 의존성 감사 및 가시성",
+        "value": 0.515,
+        "pg": 1.0,
+        "mg": 0.06,
+        "ms": 0.32,
+        "tier": "Medium",
+        "budget": 0.0,
+        "cost_norm": 0.231,
+        "adj": 0.481
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "그래프 기반 AI 가속기 아키텍처",
+        "target": "2028-Q1",
+        "boom": "2027-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "Sliceout 기반 트랜스포머 학습 최적화",
+        "target": "2030-Q1",
+        "boom": "2026-Q4",
+        "err": 3.25
+      },
+      {
+        "name": "권한 기반 지식 그래프 응답 자동화",
+        "target": "2029-Q1",
+        "boom": "2026-Q4",
+        "err": 2.25
+      },
+      {
+        "name": "맥락 기반 접근 지능 보안 관리",
+        "target": "2030-Q1",
+        "boom": "2026-Q3",
+        "err": 3.5
+      },
+      {
+        "name": "원자 문서 요소 관계 모델링 자동화",
+        "target": "2030-Q1",
+        "boom": "2027-Q3",
+        "err": 2.5
+      },
+      {
+        "name": "암시적 데이터 의존성 감사 및 가시성",
+        "target": "2030-Q1",
+        "boom": "2028-Q2",
+        "err": 1.75
+      }
+    ]
+  },
+  "on|이차전지 양극재|Cosmo AM&T|시장이익최대": {
+    "comp": 30.7,
+    "llm": 2.5,
+    "bt": 59.3,
+    "pen": 5.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 1,
+      "strategic_fidelity": 1,
+      "competitive_awareness": 1,
+      "market_timing": 1,
+      "patent_market_convergence": 2
+    },
+    "sel": 56.4,
+    "cost": 46.6,
+    "timing": 34.3,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 2.19,
+    "evidence": {
+      "trl_pathway": "All four technologies start at TRL 1, yet two of them (TECH-003 and TECH-002) are scheduled to complete in 0 quarters (2030-Q1 → 2030-Q1), making TRL progression from 1 to deployment-ready literally instantaneous, which is physically impossible; even TECH-001 attempts TRL 1 to market-ready in 8 quarters, an extreme compression for nascent research.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (Market Profit Maximization), which demands high-TRL near-market technologies and short commercialization timelines, yet the entire portfolio consists of TRL-1 basic research technologies with executability scores of 1.0, representing the antithesis of a profit-maximization portfolio.",
+      "competitive_awareness": "There is no evidence of competitor positioning, technology gap analysis, or differentiation rationale in the roadmap; technology selections and timings appear driven purely by dependency chains with no reference to what competitors are doing or where windows of competitive advantage exist.",
+      "market_timing": "With a mean timing error of 2.19 years and all technologies completing after their market boom windows (errors ranging from 1.0 to 3.5 years late), the roadmap systematically misses every market boom for a profit-maximization strategy where ±0.5 year precision is required; TECH-006 arrives 3.5 years after its boom.",
+      "patent_market_convergence": "While technologies like high-Ni cathode and all-solid-state batteries are active areas in both patent and market growth, the selection appears driven by dependency logic rather than deliberate targeting of patent-market convergence zones, and the zero-duration scheduling for two technologies suggests mechanical rather than strategic selection."
+    },
+    "strengths": [
+      "Budget constraint is fully respected with zero overspend violation.",
+      "Dependency ordering is structurally correct with zero dependency violations across the four technologies."
+    ],
+    "weaknesses": [
+      "All technologies begin at TRL 1 with executability scores of 1.0, making the entire portfolio fundamentally incompatible with a market-profit-maximization strategy that requires near-commercialization assets.",
+      "Two technologies (TECH-003 and TECH-002) have zero development duration (2030-Q1 to 2030-Q1), which is a critical planning failure rendering those roadmap entries meaningless."
+    ],
+    "tech_details": [
+      {
+        "name": "고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification)",
+        "value": 0.605,
+        "pg": 0.76,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.455
+      },
+      {
+        "name": "양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process)",
+        "value": 0.636,
+        "pg": 0.84,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.711,
+        "adj": 0.53
+      },
+      {
+        "name": "실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization)",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.556,
+        "adj": 0.617
+      },
+      {
+        "name": "전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface)",
+        "value": 0.313,
+        "pg": 0.03,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Medium",
+        "budget": 0.0,
+        "cost_norm": 0.333,
+        "adj": 0.263
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고니켈 양극 소재 표면 개질 기술 (High-Ni Cathode Surface Modification)",
+        "target": "2028-Q1",
+        "boom": "2026-Q2",
+        "err": 1.75
+      },
+      {
+        "name": "양극 슬러리 조성 및 공정 최적화 (Cathode Slurry Composition & Process)",
+        "target": "2030-Q1",
+        "boom": "2026-Q3",
+        "err": 3.5
+      },
+      {
+        "name": "실리콘 기반 음극 소재 및 바인더 최적화 (Si-Based Anode & Binder Optimization)",
+        "target": "2030-Q1",
+        "boom": "2027-Q3",
+        "err": 2.5
+      },
+      {
+        "name": "전고체 배터리용 양극 소재 및 인터페이스 제어 (All-Solid-State Cathode Interface)",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|STRADVISION|기술선도": {
+    "comp": 53.7,
+    "llm": 46.2,
+    "bt": 63.6,
+    "pen": 2.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 56.8,
+    "cost": 44.8,
+    "timing": 52.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.58,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 5-6 and the 2-year development windows are reasonable for incremental progression; T01 (TRL 6) completing in 2 years and T04 (TRL 6) having a 0-quarter window is problematic but the base TRL levels are manageable.",
+      "strategic_fidelity": "The 기술선도 strategy calls for exploratory, lower-TRL technologies and R&D-heavy portfolios, but all selected technologies are at TRL 5-6 (near-market) and the portfolio is small (3 technologies), suggesting insufficient exploratory depth; however, synthetic data pipelines and sensor fusion do reflect forward-looking R&D intent.",
+      "competitive_awareness": "There is no visible differentiation rationale, no competitor positioning analysis, and no explicit timing advantage design relative to competitors; technology selections appear driven by internal dependency logic rather than competitive landscape intelligence.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years BEFORE the market boom; T02 completes 1.25 years AFTER boom (2028-Q1 vs 2026-Q4), T01 completes 2.5 years AFTER boom, and only T04 (1.0yr late) approaches acceptable range — systematic post-boom completion defeats the preemption objective.",
+      "patent_market_convergence": "Technologies like synthetic data pipelines and radar-vision fusion are active patent areas with growing markets, suggesting some alignment, but there is no explicit evidence that convergence-zone targeting was intentional in the selection process."
+    },
+    "strengths": [
+      "Dependency chain is logically structured (T02→T01→T04) reflecting realistic technology build-up",
+      "Budget is fully utilized without violation, indicating disciplined resource allocation"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, fundamentally undermining the 기술선도 preemption strategy",
+      "Portfolio is too narrow (only 3 technologies) for a 기술선도 strategy that requires broader exploratory coverage and R&D depth"
+    ],
+    "tech_details": [
+      {
+        "name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "value": 0.764,
+        "pg": 0.41,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.614
+      },
+      {
+        "name": "시각-레이더 융합 센서 아키텍처",
+        "value": 0.601,
+        "pg": 0.49,
+        "mg": 0.56,
+        "ms": 0.79,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.476
+      },
+      {
+        "name": "시선 추적 기반 운전자 상태 인지",
+        "value": 0.338,
+        "pg": 0.0,
+        "mg": 0.42,
+        "ms": 0.7,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.556,
+        "adj": 0.255
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "생성형 AI 기반 합성 데이터 파이프라인",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "시각-레이더 융합 센서 아키텍처",
+        "target": "2030-Q1",
+        "boom": "2027-Q3",
+        "err": 2.5
+      },
+      {
+        "name": "시선 추적 기반 운전자 상태 인지",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "off|AI LLM|Upstage|기술선도": {
+    "comp": 50.4,
+    "llm": 40.0,
+    "bt": 58.9,
+    "pen": 0.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 41.3,
+    "cost": 30.0,
+    "timing": 64.3,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 1.19,
+    "evidence": {
+      "trl_pathway": "T06 (TRL 7) completing in 1 year is reasonable, and T02 (TRL 6→target) over 2 years is acceptable, but T03 (TRL 4) with a 0-quarter development window (2030-Q1 → 2030-Q1) is highly unrealistic and suggests no actual development time was allocated to the lowest-maturity technology.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory technologies (T01 TRL 5, T03 TRL 4) consistent with 기술선도, but anchoring the chain on a TRL 7 commodity process technology (T06) and assigning T03 zero development time undermines the R&D-heavy, forward-looking character expected of a technology leadership strategy.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing designed to outpace rivals; technology selections appear driven by dependency chaining rather than explicit competitive landscape analysis.",
+      "market_timing": "For 기술선도, completions 1-2 years before boom are ideal. T06 and T02 each miss by ~0.5 years (completing after boom), T03 misses by 1 year, and most critically T01 (멀티모달 에이전트 워크플로우 자동화) completes 2.75 years after its 2027-Q2 boom — a severe timing misalignment for the portfolio's highest market-opportunity asset.",
+      "patent_market_convergence": "The selection of document AI, multimodal agent workflows, and efficient transformer training touches active patent and market growth zones in LLM/Document AI, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted; the alignment appears partially coincidental given the dependency-driven sequencing."
+    },
+    "strengths": [
+      "Dependency chain is internally consistent with zero violations, building from document extraction through relational modeling to multimodal automation and efficient training.",
+      "Budget is fully utilized with no overspend, and the tiering reflects uncertainty scores reasonably (T03 high uncertainty → High tier vs Strategic for others)."
+    ],
+    "weaknesses": [
+      "멀티모달 에이전트 워크플로우 자동화 (T01) — the highest market-opportunity technology (score 5.0) — completes 2.75 years after its market boom, squandering the most valuable asset in the portfolio.",
+      "T03 (고효율 트랜스포머 슬라이스아웃 학습) is allocated zero development time (start = end = 2030-Q1), making its inclusion in the roadmap effectively notional rather than executable."
+    ],
+    "tech_details": [
+      {
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "value": 0.228,
+        "pg": 0.32,
+        "mg": 0.15,
+        "ms": 0.18,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.077
+      },
+      {
+        "name": "원자적 문서 요소 관계 모델링",
+        "value": 0.519,
+        "pg": 1.0,
+        "mg": 0.23,
+        "ms": 0.17,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.394
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "value": 0.59,
+        "pg": 0.55,
+        "mg": 1.0,
+        "ms": 0.23,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.667,
+        "adj": 0.49
+      },
+      {
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "value": 0.315,
+        "pg": 0.65,
+        "mg": 0.11,
+        "ms": 0.07,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.5,
+        "adj": 0.24
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "target": "2027-Q1",
+        "boom": "2026-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "원자적 문서 요소 관계 모델링",
+        "target": "2029-Q1",
+        "boom": "2028-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|AI LLM|Upstage|기술선도": {
+    "comp": 50.4,
+    "llm": 40.0,
+    "bt": 58.9,
+    "pen": 0.9,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.9
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 41.3,
+    "cost": 30.0,
+    "timing": 64.3,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 1.19,
+    "evidence": {
+      "trl_pathway": "The TRL 7 → completion for T06 in 1 year is reasonable, and T02 (TRL 6) over 2 years is acceptable, but T03 (TRL 4) is allocated only a single quarter (2030-Q1 → 2030-Q1), which is effectively zero development time for a low-TRL technology with high uncertainty — this is highly unrealistic.",
+      "strategic_fidelity": "The portfolio includes some lower-TRL exploratory technologies (T03 at TRL 4, T01 at TRL 5) consistent with 기술선도, but anchoring the roadmap on T06 (TRL 7, high urgency, market-ready) reads more like market exploitation than technology leadership, creating mixed strategic signals.",
+      "competitive_awareness": "There is little evidence of competitor positioning, differentiation strategy, or timing designed to outpace rivals; technology selections appear driven by dependency chains rather than explicit competitive gap analysis or first-mover design.",
+      "market_timing": "For 기술선도, completion 1-2 years before boom is ideal; T06 completes 0.5yr after boom (borderline), T02 completes 1yr after boom (acceptable), but T01 completes 2.75yr after boom (significant miss), and T03's zero-duration development plan renders its timing meaningless — overall timing execution is poor.",
+      "patent_market_convergence": "T01 (멀티모달 에이전트 워크플로우) and T02 (관계 모델링) occupy spaces where patent and market activity are both growing in the LLM/Document AI domain, suggesting some convergence awareness, but the selection rationale does not explicitly demonstrate deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Dependency chain is logically structured and violation-free, building from document extraction (T06) through relational modeling (T02) to agentic workflows (T01) and efficient training (T03).",
+      "Budget is fully utilized with zero violation, indicating disciplined resource allocation across the four technologies."
+    ],
+    "weaknesses": [
+      "T03 (고효율 트랜스포머 슬라이스아웃 학습) is allocated zero development time (2030-Q1 → 2030-Q1) despite being at TRL 4 with maximum uncertainty (5.0), making its inclusion practically meaningless.",
+      "T01 (멀티모달 에이전트 워크플로우 자동화) completes 2.75 years after its market boom window, severely undermining the value of the largest strategic investment area in the portfolio."
+    ],
+    "tech_details": [
+      {
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "value": 0.228,
+        "pg": 0.32,
+        "mg": 0.15,
+        "ms": 0.18,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.077
+      },
+      {
+        "name": "원자적 문서 요소 관계 모델링",
+        "value": 0.519,
+        "pg": 1.0,
+        "mg": 0.23,
+        "ms": 0.17,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.394
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "value": 0.59,
+        "pg": 0.55,
+        "mg": 1.0,
+        "ms": 0.23,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.667,
+        "adj": 0.49
+      },
+      {
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "value": 0.315,
+        "pg": 0.65,
+        "mg": 0.11,
+        "ms": 0.07,
+        "tier": "Medium",
+        "budget": 0.0,
+        "cost_norm": 0.5,
+        "adj": 0.24
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "문서 키 - 값 쌍 자동 추출 및 링크",
+        "target": "2027-Q1",
+        "boom": "2026-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "원자적 문서 요소 관계 모델링",
+        "target": "2029-Q1",
+        "boom": "2028-Q1",
+        "err": 1.0
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "고효율 트랜스포머 슬라이스아웃 학습",
+        "target": "2030-Q1",
+        "boom": "2029-Q3",
+        "err": 0.5
+      }
+    ]
+  },
+  "single|이차전지 양극재|Cosmo AM&T|기술선도": {
+    "comp": 54.9,
+    "llm": 51.2,
+    "bt": 68.6,
+    "pen": 6.7,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      },
+      {
+        "type": "timing_error",
+        "amount": 0.7
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 4,
+      "competitive_awareness": 3,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 63.1,
+    "cost": 53.5,
+    "timing": 65.8,
+    "dep": 60,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 1.14,
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are plausible (e.g., S02 TRL4→completion in ~3 years, S04 TRL5→completion in ~2.5 years), but Dry Electrode Coating (TRL6→target in only 4 quarters) and AI-driven Material Discovery (TRL3→completion in ~2.5 years) are aggressive; the latter in particular is highly optimistic for such an early-stage architecture technology.",
+      "strategic_fidelity": "The portfolio appropriately emphasizes lower-TRL exploratory technologies (AI-driven Material Discovery at TRL3, Solid State Electrolytes at TRL4, Silicon Anode at TRL5) consistent with a 기술선도 strategy, with longer development timelines and R&D-heavy framing, though the inclusion of TRL7 High-Throughput Battery Testing is slightly misaligned.",
+      "competitive_awareness": "Technology selections cover emerging battery technology fronts (solid-state, silicon anode, AI discovery) that signal awareness of competitive trajectories, but there is no explicit differentiation rationale or competitor positioning logic embedded in timing or selection decisions.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; High Nickel Cathode completes 1 year late, Advanced Battery Packaging 1.5 years late, Silicon Anode 1.25 years late, and critically High-Throughput Battery Testing completes 3.5 years after its boom window, representing a systematic pattern of late delivery rather than strategic preemption.",
+      "patent_market_convergence": "The portfolio covers technologies with both active patent development and growing market signals (solid-state electrolytes, high-nickel cathodes, silicon anodes), but the uniform scoring across all technologies (identical market_opp, strategic_fit values) suggests convergence selection may be formulaic rather than evidence of deliberate convergence-zone targeting."
+    },
+    "strengths": [
+      "Strong inclusion of genuinely early-stage technologies (AI-driven Material Discovery TRL3, Solid State Electrolytes TRL4) that are well-suited to a technology leadership strategy",
+      "Logical dependency chain from foundational materials through packaging and discovery layers creates a coherent technology stack"
+    ],
+    "weaknesses": [
+      "High-Throughput Battery Testing (TRL7, boom 2027-Q2) completes in 2030-Q4 — a 3.5-year miss that wastes investment on a mature technology with no preemptive advantage",
+      "Solid State Electrolytes has critical dependency violations (starts 2026-Q2 but depends on S01 ending 2028-Q4 and S03 ending 2029-Q4), making the planned start date structurally infeasible"
+    ],
+    "tech_details": [
+      {
+        "name": "High Nickel Cathode Materials",
+        "value": 0.883,
+        "pg": 1.0,
+        "mg": 0.71,
+        "ms": 0.9,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.857,
+        "adj": 0.754
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "value": 0.203,
+        "pg": 0.51,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.712,
+        "adj": 0.096
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "value": 0.526,
+        "pg": 0.0,
+        "mg": 0.92,
+        "ms": 0.84,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.501,
+        "adj": 0.451
+      },
+      {
+        "name": "Advanced Battery Packaging",
+        "value": 0.708,
+        "pg": 0.57,
+        "mg": 0.7,
+        "ms": 0.9,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.558
+      },
+      {
+        "name": "Silicon Anode Materials",
+        "value": 0.786,
+        "pg": 0.65,
+        "mg": 0.92,
+        "ms": 0.84,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.793,
+        "adj": 0.667
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "value": 0.675,
+        "pg": 0.19,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.348,
+        "adj": 0.623
+      },
+      {
+        "name": "High-Throughput Battery Testing",
+        "value": 0.633,
+        "pg": 0.38,
+        "mg": 0.71,
+        "ms": 0.9,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.272,
+        "adj": 0.593
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "High Nickel Cathode Materials",
+        "target": "2028-Q4",
+        "boom": "2027-Q4",
+        "err": 1.0
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "target": "2029-Q1",
+        "boom": "2029-Q1",
+        "err": 0.0
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "target": "2027-Q3",
+        "boom": "2027-Q3",
+        "err": 0.0
+      },
+      {
+        "name": "Advanced Battery Packaging",
+        "target": "2029-Q4",
+        "boom": "2028-Q2",
+        "err": 1.5
+      },
+      {
+        "name": "Silicon Anode Materials",
+        "target": "2029-Q4",
+        "boom": "2028-Q3",
+        "err": 1.25
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "target": "2030-Q4",
+        "boom": "2030-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "High-Throughput Battery Testing",
+        "target": "2030-Q4",
+        "boom": "2027-Q2",
+        "err": 3.5
+      }
+    ]
+  },
+  "on|자율주행 플랫폼|HL Mando|시장이익최대": {
+    "comp": 47.1,
+    "llm": 33.7,
+    "bt": 61.5,
+    "pen": 3.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 2,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 54.8,
+    "cost": 41.3,
+    "timing": 49.9,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.67,
+    "evidence": {
+      "trl_pathway": "All three technologies start at TRL 6, which is reasonable, but T06 (레이더 신호 처리) spans 2 years for what should be a moderate jump, while T03 (전기 구동계 통합 제어) has a zero-duration development window (2030-Q1 → 2030-Q1), which is unrealistic for any meaningful TRL progression.",
+      "strategic_fidelity": "The declared strategy is 시장이익최대 (market profit maximization), which demands technologies completing near or within market boom windows, but the mean timing error is 1.67 years and T01 misses its boom by 2.75 years — a fundamental misalignment with commercialization-focused execution.",
+      "competitive_awareness": "There is no visible differentiation rationale, no timing advantage design against competitors, and no evidence that technology selections were made with awareness of competitor positioning in ADAS/chassis control domains; selections appear sequentially chained without competitive context.",
+      "market_timing": "For 시장이익최대, technologies should complete within ±0.5 years of boom; T06 misses by 1.25yr, T01 misses by 2.75yr (severely late), and T03 misses by 1.0yr — no technology hits the optimal window, and T01's miss is particularly damaging for a market-profit strategy.",
+      "patent_market_convergence": "The selected technologies (radar signal processing, steer-by-wire, electrified drivetrain integration) are all active areas of both patent filing and market growth in ADAS/EV domains, suggesting some convergence alignment, but the roadmap provides no explicit evidence that convergence zones were deliberately targeted."
+    },
+    "strengths": [
+      "Dependency chain is logically structured and correctly sequenced (T06 → T01 → T03), with zero dependency violations",
+      "Budget is fully utilized without overspend, and all three technologies are placed at Strategic or High investment tiers with strong market opportunity scores"
+    ],
+    "weaknesses": [
+      "Market timing is systematically late across all technologies, fundamentally contradicting the 시장이익최대 strategy that requires completion near boom windows",
+      "T03 (전기 구동계 통합 제어) has a zero-duration development window (2030-Q1 → 2030-Q1), making its TRL progression plan meaningless and unexecutable"
+    ],
+    "tech_details": [
+      {
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "value": 0.119,
+        "pg": 0.3,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.818,
+        "adj": -0.004
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "value": 0.562,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 0.87,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.412
+      },
+      {
+        "name": "전기 구동계 통합 제어",
+        "value": 0.962,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 0.87,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.873,
+        "adj": 0.831
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "레이더 신호 처리 및 고스트 타겟 제거",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "전기 구동계 통합 제어",
+        "target": "2030-Q1",
+        "boom": "2029-Q1",
+        "err": 1.0
+      }
+    ]
+  },
+  "single|이차전지 양극재|EcoPro BM|기술선도": {
+    "comp": 59.9,
+    "llm": 38.7,
+    "bt": 74.0,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 56.7,
+    "cost": 46.8,
+    "timing": 92.5,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 0.25,
+    "evidence": {
+      "trl_pathway": "Nickel Rich Cathode Coatings (TRL 6) is scheduled for completion in just one quarter (2027-Q1 to Q2), and Solid State Electrolytes starts at TRL 3 yet is expected to complete in ~2.25 years — both are highly aggressive; additionally, Cathode Recycling Technologies has an impossible timeline where the end date (2028-Q1) precedes or equals the stated start date (2028-Q2), indicating a structural error.",
+      "strategic_fidelity": "The portfolio includes low-TRL exploratory technologies (Solid State Electrolytes TRL 3, AI-driven Material Discovery TRL 4) consistent with 기술선도, but the majority of the portfolio (5 of 7 technologies) are at TRL 6-8, suggesting a more commercially-oriented portfolio than a true technology leadership strategy would favor; R&D-heavy framing is only partially realized.",
+      "competitive_awareness": "There is no explicit differentiation rationale, competitor positioning analysis, or timing-based competitive preemption logic visible in the roadmap; technology selections appear driven by internal scoring rather than external competitive landscape intelligence.",
+      "market_timing": "Most technologies (5 of 7) hit their boom windows exactly or within 0.25 years, which is strong; however, AI-driven Material Discovery completes 1.5 years after its boom window (2030-Q4 vs 2029-Q2), and for a 기술선도 strategy, ideal completion should be 1-2 years BEFORE the boom — meaning even the 'exact' completions are not strategy-optimal.",
+      "patent_market_convergence": "The selected technologies (high-nickel cathodes, solid-state electrolytes, dry electrode, AI-driven discovery) represent active areas of both patent filing and market growth, suggesting reasonable convergence; however, the uniform scoring (all technologies rated 4.0 for market_opp) provides no evidence that convergence zone targeting was deliberately differentiated."
+    },
+    "strengths": [
+      "Dependency chain is logically structured with S05 as a foundational enabler feeding downstream material and process technologies",
+      "Budget is fully utilized without violation, and most technologies are timed to match their market boom windows precisely"
+    ],
+    "weaknesses": [
+      "Cathode Recycling Technologies has an invalid timeline where the completion date (2028-Q1) precedes the start date (2028-Q2), indicating a critical scheduling error",
+      "AI-driven Material Discovery completes 1.5 years after its market boom, and Solid State Electrolytes (TRL 3) has an unrealistically compressed development timeline of ~2.25 years to reach commercialization"
+    ],
+    "tech_details": [
+      {
+        "name": "High-Precision Cathode Manufacturing",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.467,
+        "adj": 0.63
+      },
+      {
+        "name": "Nickel Rich Cathode Coatings",
+        "value": 0.596,
+        "pg": 0.74,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.858,
+        "adj": 0.467
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.15
+      },
+      {
+        "name": "Single Crystal Cathode Materials",
+        "value": 0.647,
+        "pg": 0.87,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.758,
+        "adj": 0.533
+      },
+      {
+        "name": "Cathode Recycling Technologies",
+        "value": 0.675,
+        "pg": 0.94,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.406,
+        "adj": 0.615
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "value": 0.628,
+        "pg": 0.82,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.847,
+        "adj": 0.501
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "value": 0.422,
+        "pg": 0.3,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.282,
+        "adj": 0.38
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "High-Precision Cathode Manufacturing",
+        "target": "2026-Q4",
+        "boom": "2026-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "Nickel Rich Cathode Coatings",
+        "target": "2027-Q2",
+        "boom": "2027-Q2",
+        "err": 0.0
+      },
+      {
+        "name": "Dry Electrode Coating",
+        "target": "2027-Q4",
+        "boom": "2027-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "Single Crystal Cathode Materials",
+        "target": "2028-Q3",
+        "boom": "2028-Q3",
+        "err": 0.0
+      },
+      {
+        "name": "Cathode Recycling Technologies",
+        "target": "2028-Q1",
+        "boom": "2028-Q1",
+        "err": 0.0
+      },
+      {
+        "name": "Solid State Electrolytes",
+        "target": "2029-Q4",
+        "boom": "2030-Q1",
+        "err": -0.25
+      },
+      {
+        "name": "AI-driven Material Discovery",
+        "target": "2030-Q4",
+        "boom": "2029-Q2",
+        "err": 1.5
+      }
+    ]
+  },
+  "off|자율주행 플랫폼|HL Mando|기술선도": {
+    "comp": 48.0,
+    "llm": 51.2,
+    "bt": 50.1,
+    "pen": 2.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 48.4,
+    "cost": 37.0,
+    "timing": 55.0,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.5,
+    "evidence": {
+      "trl_pathway": "TRL 5→target over 2 years for T03 and T05, and TRL 6→target over 3 years for T01 are broadly achievable in automotive systems, though T05 starting at TRL 5 with only 2 years of development before T03 dependency is resolved is moderately aggressive.",
+      "strategic_fidelity": "The portfolio includes mid-TRL technologies (TRL 5-6) which partially fits 기술선도, but all three selections are Architecture-category incremental technologies rather than truly exploratory frontier R&D; strategic_fit scores of 3-5 and urgency signals suggest a mixed commercialization/leadership posture rather than pure technology leadership.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning analysis, differentiation gaps, or timing design relative to competitor trajectories; technology selections appear driven by internal scoring without reference to competitive landscape dynamics.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; T03 completes 1.0yr late (post-boom), T01 completes 1.5yr late, and T05 completes 2.0yr late — none achieve the preemptive positioning expected of a technology leadership strategy, though T03 is only marginally late.",
+      "patent_market_convergence": "All three technologies show high market_opp scores (5.0), suggesting market signal alignment, but there is no explicit evidence that patent activity convergence was a deliberate selection criterion; the convergence appears incidental to the market-driven scoring."
+    },
+    "strengths": [
+      "Zero dependency violations with T05 correctly sequenced after T03 completion, demonstrating sound dependency management",
+      "Budget is fully utilized without overrun, indicating disciplined resource allocation across the three strategic technologies"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their respective market boom windows, undermining the preemptive positioning that defines 기술선도 strategy",
+      "Portfolio is limited to Architecture-category technologies with no truly exploratory or low-TRL frontier technology, weakening the technology leadership narrative"
+    ],
+    "tech_details": [
+      {
+        "name": "전기 구동계 통합 제어",
+        "value": 0.721,
+        "pg": 1.0,
+        "mg": 1.0,
+        "ms": 0.07,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.846,
+        "adj": 0.594
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "value": 0.321,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 0.07,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.171
+      },
+      {
+        "name": "차량 통신 게이트웨이 및 네트워크",
+        "value": 0.411,
+        "pg": 0.3,
+        "mg": 0.65,
+        "ms": 0.32,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.431,
+        "adj": 0.347
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "전기 구동계 통합 제어",
+        "target": "2028-Q1",
+        "boom": "2027-Q1",
+        "err": 1.0
+      },
+      {
+        "name": "다중 모드 스티어바이와이어 제어",
+        "target": "2029-Q1",
+        "boom": "2027-Q3",
+        "err": 1.5
+      },
+      {
+        "name": "차량 통신 게이트웨이 및 네트워크",
+        "target": "2030-Q1",
+        "boom": "2028-Q1",
+        "err": 2.0
+      }
+    ]
+  },
+  "on|AI LLM|NAVER|시장이익최대": {
+    "comp": 54.5,
+    "llm": 51.2,
+    "bt": 56.7,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 45.8,
+    "cost": 35.1,
+    "timing": 75.7,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 0.81,
+    "evidence": {
+      "trl_pathway": "TRL progressions are generally achievable: T01 (TRL6) and T05 (TRL7) completing in 1 year are realistic given their maturity, T04 (TRL6) over 2 years is sound, and T03 (TRL5) over 2 years is slightly aggressive but defensible for multimodal architecture work.",
+      "strategic_fidelity": "The strategy declares 시장이익최대 (Market Profit Maximization), which calls for near-market, high-TRL, commercialization-focused portfolio; T01 and T05 align well, but T03 (TRL5 multimodal architecture) is exploratory and more fitting for a technology leadership strategy, creating a strategic tension.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, technology gap analysis, or differentiation rationale embedded in the technology selection and timing decisions; choices appear driven primarily by internal scoring rather than competitive landscape intelligence.",
+      "market_timing": "For 시장이익최대, completions should align within ±0.5 years of boom windows; T04 achieves this well (−0.25yr), T01 and T05 are moderately late (~0.75yr after boom), and T03 misses its window significantly at 1.5 years post-boom, dragging overall precision down.",
+      "patent_market_convergence": "High market_opp scores on T01, T05, and T03 suggest market signal awareness, but there is no explicit evidence of patent activity cross-referencing or deliberate convergence-zone targeting; alignment appears partially coincidental."
+    },
+    "strengths": [
+      "Budget is fully utilized with zero violation, indicating disciplined financial planning and constraint management.",
+      "T04 (분산 학습 장애 복구 기술) achieves near-perfect market timing alignment for the 시장이익최대 strategy with only −0.25yr error."
+    ],
+    "weaknesses": [
+      "T03 (멀티모달 생성형 모델 아키텍처) completes 1.5 years after its market boom window, significantly reducing commercial ROI and misaligning with the profit maximization strategy.",
+      "No competitive landscape analysis is evident; technology selections and timing decisions lack visible differentiation rationale or competitor positioning context."
+    ],
+    "tech_details": [
+      {
+        "name": "LLM 추론 가속화 기술",
+        "value": 0.469,
+        "pg": 0.11,
+        "mg": 0.42,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.319
+      },
+      {
+        "name": "맥락 인식 프롬프트 최적화",
+        "value": 0.36,
+        "pg": 0.15,
+        "mg": 0.42,
+        "ms": 0.58,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.833,
+        "adj": 0.235
+      },
+      {
+        "name": "분산 학습 장애 복구 기술",
+        "value": 0.318,
+        "pg": 0.6,
+        "mg": 0.0,
+        "ms": 0.26,
+        "tier": "Medium",
+        "budget": 0.0,
+        "cost_norm": 0.344,
+        "adj": 0.267
+      },
+      {
+        "name": "멀티모달 생성형 모델 아키텍처",
+        "value": 0.685,
+        "pg": 1.0,
+        "mg": 0.74,
+        "ms": 0.21,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.667,
+        "adj": 0.585
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "LLM 추론 가속화 기술",
+        "target": "2027-Q1",
+        "boom": "2026-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "맥락 인식 프롬프트 최적화",
+        "target": "2027-Q1",
+        "boom": "2026-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "분산 학습 장애 복구 기술",
+        "target": "2029-Q1",
+        "boom": "2029-Q2",
+        "err": -0.25
+      },
+      {
+        "name": "멀티모달 생성형 모델 아키텍처",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "off|자율주행 플랫폼|Hyundai Mobis|기술선도": {
+    "comp": 43.4,
+    "llm": 40.0,
+    "bt": 51.2,
+    "pen": 3.3,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 3.3
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 43.8,
+    "cost": 31.1,
+    "timing": 49.9,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.67,
+    "evidence": {
+      "trl_pathway": "T01 (TRL6→completion in 2 years) and T03 (TRL7→completion in 0 quarters, same start/end date 2030-Q1) are problematic — T03 effectively has zero development time allocated despite being TRL7 with a non-trivial dependency chain. T08 at TRL5 gets 2 years which is borderline but feasible.",
+      "strategic_fidelity": "The declared 기술선도 strategy would expect lower-TRL exploratory technologies and R&D-heavy portfolio, but T03 (TRL7) is near-commercialization and the portfolio of only 3 technologies is thin for true technology leadership; some alignment exists via T08 (TRL5) but overall depth is insufficient.",
+      "competitive_awareness": "There is no discernible competitive differentiation rationale in technology selection or timing — the choices appear driven by dependency chains rather than competitive positioning or gap exploitation in the autonomous driving landscape.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before market boom (preemption), but all three technologies complete AFTER their respective boom windows by 0.75, 2.25, and 2.0 years respectively, representing systematic post-boom completion rather than preemption.",
+      "patent_market_convergence": "The selected technologies (sensor fusion, 3D pose estimation, steer-by-wire) are all active patent areas in autonomous driving with growing markets, suggesting some convergence awareness, but the selection of only 3 technologies and the absence of explicit convergence-zone targeting makes this appear partially coincidental."
+    },
+    "strengths": [
+      "Dependency chain is properly respected with zero violations, ensuring logical technology progression from sensing (T01) to perception (T08) to actuation (T03)",
+      "Budget is fully utilized with no overspend, indicating disciplined financial planning within constraints"
+    ],
+    "weaknesses": [
+      "All three technologies complete after their market boom windows (mean error 1.67 years), fundamentally undermining both market capture and the preemption intent of 기술선도 strategy",
+      "T03 (Steer-by-Wire) has identical start and end dates (2030-Q1), implying zero development time which is infeasible for any technology regardless of TRL"
+    ],
+    "tech_details": [
+      {
+        "name": "다중 센서 퓨전 카메라",
+        "value": 0.719,
+        "pg": 0.8,
+        "mg": 0.33,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.569
+      },
+      {
+        "name": "3D 포즈 추정 시스템",
+        "value": 0.0,
+        "pg": 0.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.818,
+        "adj": -0.123
+      },
+      {
+        "name": "스테어 바이 와이어 제어",
+        "value": 0.594,
+        "pg": 0.22,
+        "mg": 0.82,
+        "ms": 0.86,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.705,
+        "adj": 0.488
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "다중 센서 퓨전 카메라",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "3D 포즈 추정 시스템",
+        "target": "2030-Q1",
+        "boom": "2027-Q4",
+        "err": 2.25
+      },
+      {
+        "name": "스테어 바이 와이어 제어",
+        "target": "2030-Q1",
+        "boom": "2028-Q1",
+        "err": 2.0
+      }
+    ]
+  },
+  "single|자율주행 플랫폼|HL Mando|기술선도": {
+    "comp": 50.9,
+    "llm": 45.0,
+    "bt": 64.8,
+    "pen": 6,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 6
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 3,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 56.1,
+    "cost": 46.4,
+    "timing": 73.3,
+    "dep": 60,
+    "budget": 100.0,
+    "ntech": 7,
+    "mean_err": 0.89,
+    "evidence": {
+      "trl_pathway": "Most TRL progressions are reasonable — HBM (TRL 6) completing in ~3 quarters and Steer-by-Wire (TRL 7) in ~7 quarters are acceptable, but Energy-Efficient AI Accelerators (TRL 5 → target in ~9 quarters) and Domain Controllers (TRL 6 → 2.5 years) push boundaries given dependency complexity. The circular dependency between Sensor Fusion Algorithms and Domain Controllers is a structural flaw that makes both pathways unrealistic as stated.",
+      "strategic_fidelity": "The portfolio includes several lower-to-mid TRL technologies (TRL 5-6) like Chiplet Architecture, Sensor Fusion Algorithms, and Energy-Efficient AI Accelerators that align with 기술선도 exploration intent, but the roadmap lacks truly frontier/exploratory technologies (TRL 2-4) expected for genuine technology leadership; the selection feels more like near-commercialization than deep R&D leadership.",
+      "competitive_awareness": "The technology selection covers a coherent ADAS compute stack (HBM → Chiplet → Packaging → AI Accelerators → Domain Controllers) suggesting some awareness of where the competitive frontier lies in automotive AI silicon, but there is no explicit differentiation rationale, no evidence of gap analysis against specific competitors, and no timing designed around competitor product release cycles.",
+      "market_timing": "For 기술선도 strategy, technologies should complete 1-2 years before boom; Domain Controllers misses its boom by +2.25 years (completes well after market peak), Energy-Efficient AI Accelerators is 0.75 years late, and Sensor Fusion Algorithms is 1.0 year late — systematic late-completion is the opposite of preemption strategy. Only Advanced Packaging Technologies hits its window precisely.",
+      "patent_market_convergence": "The selected technologies (HBM, Chiplet Architecture, Advanced Packaging) represent active patent filing domains in automotive/AI semiconductor space that also show strong market growth signals, suggesting some convergence awareness, but the scoring uniformity (all market_opp=4.0, strategic_fit=5.0) across diverse technologies suggests convergence was not rigorously differentiated rather than deliberately targeted."
+    },
+    "strengths": [
+      "Coherent vertical technology stack from memory (HBM) through packaging to AI accelerators and ADAS domain controllers, showing systemic thinking about the compute architecture dependency chain",
+      "Budget is fully utilized without overspend, and several early-stage technologies (HBM, Steer-by-Wire) complete with reasonable negative timing errors appropriate for a preemption strategy"
+    ],
+    "weaknesses": [
+      "Circular dependency between Sensor Fusion Algorithms and Domain Controllers for ADAS creates a logically unresolvable development sequence that invalidates both timelines",
+      "Domain Controllers and Sensor Fusion Algorithms complete significantly after their market boom windows (2.25yr and 1.0yr late respectively), directly contradicting the 기술선도 preemption intent"
+    ],
+    "tech_details": [
+      {
+        "name": "High Bandwidth Memory (HBM)",
+        "value": 0.539,
+        "pg": 0.6,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.843,
+        "adj": 0.413
+      },
+      {
+        "name": "Chiplet Architecture",
+        "value": 0.637,
+        "pg": 0.84,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.744,
+        "adj": 0.525
+      },
+      {
+        "name": "Advanced Packaging Technologies",
+        "value": 0.685,
+        "pg": 0.96,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.535
+      },
+      {
+        "name": "Steer-by-Wire Systems",
+        "value": 0.493,
+        "pg": 0.48,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.428,
+        "adj": 0.429
+      },
+      {
+        "name": "Energy-Efficient AI Accelerators",
+        "value": 0.576,
+        "pg": 0.69,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.814,
+        "adj": 0.454
+      },
+      {
+        "name": "Domain Controllers for ADAS",
+        "value": 0.7,
+        "pg": 1.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.366,
+        "adj": 0.645
+      },
+      {
+        "name": "Sensor Fusion Algorithms",
+        "value": 0.3,
+        "pg": 0.0,
+        "mg": 0.5,
+        "ms": 0.5,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.34,
+        "adj": 0.249
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "High Bandwidth Memory (HBM)",
+        "target": "2026-Q4",
+        "boom": "2027-Q2",
+        "err": -0.5
+      },
+      {
+        "name": "Chiplet Architecture",
+        "target": "2027-Q2",
+        "boom": "2028-Q3",
+        "err": -1.25
+      },
+      {
+        "name": "Advanced Packaging Technologies",
+        "target": "2027-Q4",
+        "boom": "2027-Q4",
+        "err": 0.0
+      },
+      {
+        "name": "Steer-by-Wire Systems",
+        "target": "2027-Q4",
+        "boom": "2028-Q2",
+        "err": -0.5
+      },
+      {
+        "name": "Energy-Efficient AI Accelerators",
+        "target": "2029-Q4",
+        "boom": "2029-Q1",
+        "err": 0.75
+      },
+      {
+        "name": "Domain Controllers for ADAS",
+        "target": "2030-Q4",
+        "boom": "2028-Q3",
+        "err": 2.25
+      },
+      {
+        "name": "Sensor Fusion Algorithms",
+        "target": "2030-Q4",
+        "boom": "2029-Q4",
+        "err": 1.0
+      }
+    ]
+  },
+  "on|이차전지 양극재|EcoPro BM|기술선도": {
+    "comp": 59.8,
+    "llm": 51.2,
+    "bt": 65.5,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 50.0,
+    "cost": 39.8,
+    "timing": 72.4,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 0.92,
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6→target in 2 years) and T03 (TRL 6→target in 2 years) are reasonable for mature process improvements, but T06 jumping from TRL 4 over 4 years to commercialization is moderately aggressive for sodium-ion cathode materials given the complexity involved.",
+      "strategic_fidelity": "The 기술선도 declaration is only partially honored: T01 at TRL 6 is near-market rather than exploratory, and the portfolio of only 3 technologies is narrow for a leadership strategy; T06 at TRL 4 provides some R&D depth but the overall portfolio skews toward execution-ready rather than frontier exploration.",
+      "competitive_awareness": "There is little evidence in the roadmap of explicit competitor positioning, differentiation rationale, or timing designed relative to competitive moves; technology selections appear driven by internal scores rather than a mapped competitive landscape.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal; T01 completes 0.5yr after boom (slightly late), T03 completes 0.75yr after boom (borderline), and T06 completes 1.5yr after its boom window—missing the preemption window—resulting in mixed but not catastrophic timing performance.",
+      "patent_market_convergence": "T01 and T03 both carry high market_opp and strategic_fit scores suggesting some alignment between patent activity and market signals, but T06's lower strategic_fit (3.0) alongside high urgency hints at market-pull without strong patent convergence; intentional convergence-zone targeting is not clearly demonstrated."
+    },
+    "strengths": [
+      "Zero dependency violations and full budget utilization indicate disciplined execution planning with T03 correctly sequenced after T01.",
+      "T06 (나트륨 이온 양극재) at TRL 4 provides genuine R&D depth and forward-looking positioning in an emerging technology segment consistent with some 기술선도 intent."
+    ],
+    "weaknesses": [
+      "Portfolio breadth is critically limited to only 3 technologies, insufficient for a true 기술선도 strategy that should span multiple exploratory and frontier technology bets.",
+      "나트륨 이온 양극재 completes 1.5 years after its market boom window, missing the preemption opportunity that is central to a technology leadership strategy."
+    ],
+    "tech_details": [
+      {
+        "name": "고결정도 도핑 양극재",
+        "value": 0.595,
+        "pg": 0.65,
+        "mg": 1.0,
+        "ms": 0.12,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.445
+      },
+      {
+        "name": "전구체 합성 공정 최적화",
+        "value": 0.317,
+        "pg": 0.79,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.667,
+        "adj": 0.217
+      },
+      {
+        "name": "나트륨 이온 양극재",
+        "value": 0.588,
+        "pg": 0.63,
+        "mg": 1.0,
+        "ms": 0.12,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.373,
+        "adj": 0.532
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "고결정도 도핑 양극재",
+        "target": "2028-Q1",
+        "boom": "2027-Q3",
+        "err": 0.5
+      },
+      {
+        "name": "전구체 합성 공정 최적화",
+        "target": "2030-Q1",
+        "boom": "2029-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "나트륨 이온 양극재",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "on|AI LLM|Saltlux|기술선도": {
+    "comp": 50.9,
+    "llm": 33.7,
+    "bt": 66.6,
+    "pen": 2.5,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 2.5
+      }
+    ],
+    "axes": {
+      "trl_pathway": 2,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 62.9,
+    "cost": 48.6,
+    "timing": 55.0,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 1.5,
+    "evidence": {
+      "trl_pathway": "T04 (AI 추론 전용 프로세싱 유닛) is planned to start 2030-Q1 and complete 2030-Q1, implying zero development time for a TRL-4 hardware technology — this is physically impossible and renders the pathway entirely infeasible for that technology.",
+      "strategic_fidelity": "The portfolio includes lower-TRL exploratory technologies (T04 at TRL 4) consistent with 기술선도, but only three technologies with heavy chaining dependencies limits the exploratory breadth expected from a technology leadership strategy; the portfolio feels more like a linear product pipeline than an R&D-rich leadership portfolio.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation rationale, or timing advantage design relative to competitors; technology selections appear driven by internal dependency chains rather than competitive landscape gaps.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal. T01 completes 0.75yr after boom (acceptable), T04 completes 0.5yr after boom (acceptable), but T02 completes 3.25 years after its market boom (2026-Q4), representing a severe timing misalignment that undermines the leadership preemption goal.",
+      "patent_market_convergence": "All three technologies are assigned maximum market opportunity scores (5.0), suggesting market signal consideration, but there is no explicit evidence of patent activity analysis driving selections; the convergence appears coincidental given the limited portfolio size."
+    },
+    "strengths": [
+      "Budget is fully utilized without violation, indicating disciplined resource allocation",
+      "Dependency ordering is respected with zero violations, maintaining logical development sequencing"
+    ],
+    "weaknesses": [
+      "T04 has a zero-duration development window (2030-Q1 to 2030-Q1) making it technically infeasible for a TRL-4 hardware technology",
+      "T02 misses its market boom by 3.25 years, critically undermining the technology leadership preemption objective"
+    ],
+    "tech_details": [
+      {
+        "name": "LLM 슬라이스아웃 학습 최적화",
+        "value": 0.552,
+        "pg": 0.78,
+        "mg": 0.7,
+        "ms": 0.09,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.402
+      },
+      {
+        "name": "지식 그래프 기반 권한 인식 응답",
+        "value": 0.603,
+        "pg": 0.43,
+        "mg": 0.44,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.947,
+        "adj": 0.461
+      },
+      {
+        "name": "AI 추론 전용 프로세싱 유닛",
+        "value": 0.731,
+        "pg": 0.79,
+        "mg": 0.7,
+        "ms": 0.67,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.895,
+        "adj": 0.597
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "LLM 슬라이스아웃 학습 최적화",
+        "target": "2028-Q1",
+        "boom": "2027-Q2",
+        "err": 0.75
+      },
+      {
+        "name": "지식 그래프 기반 권한 인식 응답",
+        "target": "2030-Q1",
+        "boom": "2026-Q4",
+        "err": 3.25
+      },
+      {
+        "name": "AI 추론 전용 프로세싱 유닛",
+        "target": "2030-Q1",
+        "boom": "2029-Q3",
+        "err": 0.5
+      }
+    ]
+  },
+  "off|이차전지 양극재|Cosmo AM&T|기술선도": {
+    "comp": 33.9,
+    "llm": 22.5,
+    "bt": 48.9,
+    "pen": 4.4,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 4.4
+      }
+    ],
+    "axes": {
+      "trl_pathway": 1,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 1,
+      "patent_market_convergence": 3
+    },
+    "sel": 39.9,
+    "cost": 27.3,
+    "timing": 43.6,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 4,
+    "mean_err": 1.88,
+    "evidence": {
+      "trl_pathway": "All four technologies start at TRL 1, yet TECH-011 and TECH-002 are scheduled to complete in 0 quarters (2030-Q1 → 2030-Q1), which is physically impossible; even TECH-007 must advance from TRL 1 to deployment-ready in only 8 quarters, which is extremely aggressive for a TRL 1 technology.",
+      "strategic_fidelity": "The selection of four TRL-1 technologies is consistent with a 기술선도 (Technology Leadership) posture, and the dependency chain shows a coherent R&D build-up; however, the zero-duration development slots for two technologies and the overall failure to achieve pre-boom completion undermine the leadership narrative.",
+      "competitive_awareness": "The roadmap shows a logical dependency chain (binders → high-Ni cathodes → next-gen synthesis → electrolyte recovery) that reflects domain knowledge, but there is no visible evidence of competitor positioning, differentiation timing strategy, or gap exploitation to justify technology selection relative to rivals.",
+      "market_timing": "All four technologies complete at or after their respective market boom windows, with errors ranging from 1.25 to 2.75 years late; for 기술선도 the target is to complete 1-2 years BEFORE the boom, so every technology fails this criterion significantly, resulting in systematic timing misalignment.",
+      "patent_market_convergence": "The selected technologies (high-Ni cathodes, next-gen active materials, LiFSI electrolyte, advanced binders) are all active patent filing areas that also have growing market signals, suggesting some awareness of convergence zones, but the evidence appears coincidental given the lack of explicit differentiation rationale."
+    },
+    "strengths": [
+      "Coherent dependency chain from foundational binder materials through cathode synthesis to electrolyte recovery reflects sound domain understanding",
+      "All four technologies reside in high-strategic-fit, high-market-opportunity zones, and budget is fully utilized without violation"
+    ],
+    "weaknesses": [
+      "Two technologies (TECH-011, TECH-002) have zero-duration development windows (2030-Q1 → 2030-Q1), making their roadmap entries physically meaningless and indicative of severe planning failure",
+      "Every technology completes significantly after its market boom window (mean error 1.88 years late), directly contradicting the 기술선도 preemption requirement of finishing 1-2 years before the boom"
+    ],
+    "tech_details": [
+      {
+        "name": "Advanced Binder Compositions for Electrodes",
+        "value": 0.218,
+        "pg": 0.13,
+        "mg": 0.12,
+        "ms": 0.44,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.068
+      },
+      {
+        "name": "High-Nickel Polycrystalline Cathode Materials",
+        "value": 0.329,
+        "pg": 0.34,
+        "mg": 0.04,
+        "ms": 0.61,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.914,
+        "adj": 0.192
+      },
+      {
+        "name": "Next-Gen Positive Electrode Active Material Synthesis",
+        "value": 0.748,
+        "pg": 0.37,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.714,
+        "adj": 0.641
+      },
+      {
+        "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+        "value": 0.299,
+        "pg": 0.0,
+        "mg": 1.0,
+        "ms": 0.0,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.714,
+        "adj": 0.192
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "Advanced Binder Compositions for Electrodes",
+        "target": "2028-Q1",
+        "boom": "2026-Q4",
+        "err": 1.25
+      },
+      {
+        "name": "High-Nickel Polycrystalline Cathode Materials",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "Next-Gen Positive Electrode Active Material Synthesis",
+        "target": "2030-Q1",
+        "boom": "2028-Q1",
+        "err": 2.0
+      },
+      {
+        "name": "Lithium Bis(fluorosulfonyl)imide (LiFSI) Electrolyte Recovery",
+        "target": "2030-Q1",
+        "boom": "2028-Q3",
+        "err": 1.5
+      }
+    ]
+  },
+  "off|AI LLM|NAVER|기술선도": {
+    "comp": 45.0,
+    "llm": 40.0,
+    "bt": 56.7,
+    "pen": 5.0,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 5.0
+      }
+    ],
+    "axes": {
+      "trl_pathway": 3,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 2,
+      "patent_market_convergence": 3
+    },
+    "sel": 49.5,
+    "cost": 37.3,
+    "timing": 40.0,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 2.0,
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6) and T05 (TRL 6) completing in 2 years each is reasonable, but T02 (TRL 5) with a 0-quarter development window (2030-Q1 to 2030-Q1) is essentially impossible — a TRL 5 technology cannot reach deployment-ready status with zero development time allocated.",
+      "strategic_fidelity": "The declared strategy is 기술선도 (Technology Leadership), which calls for lower-TRL exploratory technologies and R&D-heavy portfolio; however, two of three technologies start at TRL 6, which is relatively mature, and the portfolio of only 3 technologies is narrow for a true leadership strategy — though the 3D spatial generation inclusion at TRL 5 shows some exploratory intent.",
+      "competitive_awareness": "There is little evidence of competitor positioning or differentiation logic embedded in the technology selections or sequencing; the dependency chain (T01→T05→T02) is technically logical but does not reflect awareness of competitor timelines or gaps in the competitive landscape that this roadmap is designed to exploit.",
+      "market_timing": "All three technologies complete significantly after their respective market boom windows: T01 completes 1.5 years late, T05 completes 2.75 years late, and T02 completes 1.75 years late; for 기술선도, completing 1-2 years BEFORE the boom is ideal, meaning the actual timing error is even worse than the raw numbers suggest — the roadmap is systematically late across all technologies.",
+      "patent_market_convergence": "The selected technologies (LLM context collaboration, inference acceleration, 3D spatial generation) all sit in areas of active patent filing and growing market interest in the LLM/AI domain, suggesting some convergence awareness, but there is no explicit evidence that convergence zones were deliberately targeted versus coincidental alignment with hot AI topics."
+    },
+    "strengths": [
+      "Dependency chain is logically structured and violation-free, with T01 enabling T05 which enables T02 forming a coherent capability build sequence",
+      "Budget is fully utilized without violation, and all three technologies are classified as Strategic or High tier reflecting appropriate prioritization"
+    ],
+    "weaknesses": [
+      "Systematic late timing across all three technologies — all complete after their market boom windows rather than before them, which is particularly damaging for a 기술선도 strategy that requires preemptive positioning",
+      "T02 (생성형 AI 기반 3D 공간 생성) is allocated zero development time (2030-Q1 to 2030-Q1), making it technically infeasible from TRL 5 to completion regardless of investment"
+    ],
+    "tech_details": [
+      {
+        "name": "LLM 기반 컨텍스트 인식 협업",
+        "value": 0.428,
+        "pg": 0.25,
+        "mg": 0.51,
+        "ms": 0.58,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.278
+      },
+      {
+        "name": "대규모 모델 추론 가속화",
+        "value": 0.703,
+        "pg": 0.62,
+        "mg": 0.51,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.786,
+        "adj": 0.585
+      },
+      {
+        "name": "생성형 AI 기반 3D 공간 생성",
+        "value": 0.353,
+        "pg": 0.14,
+        "mg": 0.78,
+        "ms": 0.21,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.646,
+        "adj": 0.256
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "LLM 기반 컨텍스트 인식 협업",
+        "target": "2028-Q1",
+        "boom": "2026-Q3",
+        "err": 1.5
+      },
+      {
+        "name": "대규모 모델 추론 가속화",
+        "target": "2030-Q1",
+        "boom": "2027-Q2",
+        "err": 2.75
+      },
+      {
+        "name": "생성형 AI 기반 3D 공간 생성",
+        "target": "2030-Q1",
+        "boom": "2028-Q2",
+        "err": 1.75
+      }
+    ]
+  },
+  "on|AI LLM|Upstage|시장이익최대": {
+    "comp": 59.2,
+    "llm": 51.2,
+    "bt": 64.6,
+    "pen": 0,
+    "penalties": [],
+    "axes": {
+      "trl_pathway": 4,
+      "strategic_fidelity": 3,
+      "competitive_awareness": 2,
+      "market_timing": 3,
+      "patent_market_convergence": 3
+    },
+    "sel": 47.3,
+    "cost": 36.0,
+    "timing": 75.1,
+    "dep": 100,
+    "budget": 100.0,
+    "ntech": 3,
+    "mean_err": 0.83,
+    "evidence": {
+      "trl_pathway": "T03 starts at TRL 7 and requires only 1 year to complete, which is realistic for a near-mature technology; T01 (TRL 6) gets 2 years and T04 (TRL 6) gets 1 year, which is slightly aggressive but feasible given sequential dependency structuring.",
+      "strategic_fidelity": "The portfolio includes two Strategic-tier technologies aligned with high market opportunity, which fits 시장이익최대, but T04 (온톨로지 기반 데이터베이스 쿼리 최적화) has low market_opp (2.0) and low urgency (2.0) as a High-tier investment, contradicting profit-maximization logic in a 3-technology portfolio where every selection must count.",
+      "competitive_awareness": "The roadmap shows sequential dependency logic but provides no visible evidence of competitor positioning, differentiation strategy, or timing designed around competitive gaps; technology selections appear driven by internal dependency chains rather than competitive landscape analysis.",
+      "market_timing": "T03 completes 0.25yr after boom (good for 시장이익최대), T04 completes 0.5yr after boom (acceptable), but T01 completes 1.75yr after its 2027-Q2 boom window, representing a significant timing miss for the highest market-opportunity technology in the portfolio.",
+      "patent_market_convergence": "T01 with market_opp=5.0 and Strategic tier suggests some convergence awareness, and T03's urgency=5.0 aligns with an imminent boom; however, T04's low market_opp paired with high uncertainty suggests it may be patent-signal-driven without corresponding market validation, weakening overall convergence intentionality."
+    },
+    "strengths": [
+      "Clean dependency chain with zero violations ensures logical technology progression from monitoring infrastructure through workflow automation to query optimization",
+      "Budget is fully utilized with no overspend, and the two Strategic-tier technologies are correctly anchored on high market_opp and strategic_fit scores"
+    ],
+    "weaknesses": [
+      "멀티모달 에이전트 워크플로우 자동화, the highest market_opp technology (5.0), misses its market boom by 1.75 years — a critical timing failure for a profit-maximization strategy",
+      "온톨로지 기반 데이터베이스 쿼리 최적화 has low market_opp (2.0) and low urgency (2.0), making it a poor fit for a 시장이익최대 portfolio with only three technologies"
+    ],
+    "tech_details": [
+      {
+        "name": "생성형 AI 시스템 모니터링 및 평가",
+        "value": 0.0,
+        "pg": 0.0,
+        "mg": 0.0,
+        "ms": 0.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 0.75,
+        "adj": -0.113
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "value": 0.824,
+        "pg": 0.56,
+        "mg": 1.0,
+        "ms": 1.0,
+        "tier": "Strategic",
+        "budget": 0.0,
+        "cost_norm": 1.0,
+        "adj": 0.674
+      },
+      {
+        "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "value": 0.594,
+        "pg": 0.33,
+        "mg": 0.61,
+        "ms": 0.94,
+        "tier": "High",
+        "budget": 0.0,
+        "cost_norm": 0.5,
+        "adj": 0.519
+      }
+    ],
+    "timing_details": [
+      {
+        "name": "생성형 AI 시스템 모니터링 및 평가",
+        "target": "2027-Q1",
+        "boom": "2026-Q4",
+        "err": 0.25
+      },
+      {
+        "name": "멀티모달 에이전트 워크플로우 자동화",
+        "target": "2029-Q1",
+        "boom": "2027-Q2",
+        "err": 1.75
+      },
+      {
+        "name": "온톨로지 기반 데이터베이스 쿼리 최적화",
+        "target": "2030-Q1",
+        "boom": "2029-Q3",
+        "err": 0.5
+      }
+    ]
+  }
+}

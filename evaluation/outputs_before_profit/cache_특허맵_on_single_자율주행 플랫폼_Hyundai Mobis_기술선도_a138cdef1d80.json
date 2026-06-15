@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "scenario": "noA1,2,3",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Autonomous Driving Platform / ADAS / Automotive Electronics",
+    "num_technologies": 7
+  },
+  "llm_judge": {
+    "trl_pathway": 2,
+    "strategic_fidelity": 3,
+    "competitive_awareness": 2,
+    "market_timing": 1,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 28.7,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 2,
+        "strategic_fidelity": 3,
+        "competitive_awareness": 2,
+        "market_timing": 1,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "Automotive Grade HBM (TRL 4) is expected to complete in just 3 quarters, which is extremely aggressive for a material at TRL 4 in a safety-critical automotive context; similarly, Chiplet Interconnect Architectures (TRL 5) and Energy Efficient AI Accelerators (TRL 6) have implausibly short development windows of 4 quarters each, with 4 dependency violations indicating the sequencing itself is internally inconsistent.",
+      "strategic_fidelity": "The portfolio does include lower-TRL exploratory technologies (S01 at TRL 4, S02 at TRL 5, S07 at TRL 5) consistent with 기술선도, but the uniform 'High' tier investment across all 7 technologies with identical scores suggests a lack of genuine strategic differentiation, and the extremely early completions for foundational technologies contradict a leadership-through-depth approach.",
+      "competitive_awareness": "There is no discernible evidence of competitor positioning, technology gap analysis, or differentiation strategy embedded in the technology selection or timing decisions; all technologies receive identical investment scores, suggesting selections were made without competitive landscape intelligence.",
+      "market_timing": "For 기술선도, technologies should complete 1-2 years before boom; however, Advanced Driver Monitoring Systems (3.25yr early), Domain Controllers for ADAS (2.75yr early), and Functional Safety Packaging (3.0yr early) complete far too early after their late 2030-Q4 target dates actually overshoot boom windows, while Automotive Grade HBM completes 2 years before its boom — the mean timing error of 1.86 years and multiple large misalignments represent systematic failure.",
+      "patent_market_convergence": "The selected technologies — HBM, chiplets, AI accelerators, ADAS domain controllers — do represent areas of genuine patent and market activity convergence in automotive electronics, but the uniform scoring across all dimensions (market_opp=4.0, strategic_fit=5.0 for all) suggests this convergence was not deliberately analyzed or differentiated."
+    },
+    "strengths": [
+      "Technology selection covers a coherent stack from foundational hardware (HBM, chiplets) through system integration (domain controllers, safety packaging), showing architectural thinking",
+      "Inclusion of low-TRL technologies (S01 at TRL 4, S07 at TRL 5) is appropriate for a 기술선도 strategy targeting 2030"
+    ],
+    "weaknesses": [
+      "Four dependency violations indicate the timeline sequencing is internally broken — prerequisite technologies have not been completed before dependent projects begin",
+      "Systematic late completion for three technologies (ADMS, Domain Controllers, Functional Safety Packaging all at 2030-Q4) causes them to miss their respective boom windows by 2.75–3.25 years"
+    ],
+    "missing_technologies": [
+      "In-cabin sensing / occupant monitoring fusion technologies for next-gen ADAS differentiation",
+      "Neuromorphic or edge-AI inference chips for low-latency autonomous decision making",
+      "Over-the-air (OTA) software update security frameworks as a patent-active differentiator"
+    ],
+    "investment_issues": [
+      "All 7 technologies are assigned identical scores across all 5 investment dimensions (market_opp=4, strategic_fit=5, executability=4, uncertainty=3, urgency=4), which is statistically implausible and indicates a lack of genuine portfolio differentiation analysis",
+      "Uniform 'High' tier allocation across all technologies means there is no prioritization mechanism — a true 기술선도 strategy should concentrate heavier investment on the lowest-TRL, highest-differentiation candidates"
+    ],
+    "timing_issues": [
+      "Advanced Driver Monitoring Systems completes at 2030-Q4 but market boom is 2027-Q3 — a 3.25-year miss that wastes first-mover opportunity entirely",
+      "Domain Controllers for ADAS completes at 2030-Q4 vs boom at 2028-Q1 — 2.75-year delay means competitors will have established market positions before completion",
+      "Automotive Grade HBM is rushed to completion in 3 quarters at TRL 4, which is unrealistic and also results in a 2-year premature completion relative to its 2028-Q4 boom"
+    ],
+    "description": {
+      "trl_pathway": "score 2/5 - Automotive Grade HBM (TRL 4) is expected to complete in just 3 quarters, which is extremely aggressive for a material at TRL 4 in a safety-critical automotive context; similarly, Chiplet Interconnect Architectures (TRL 5) and Energy Efficient AI Accelerators (TRL 6) have implausibly short development windows of 4 quarters each, with 4 dependency violations indicating the sequencing itself is internally inconsistent.",
+      "strategic_fidelity": "score 3/5 - The portfolio does include lower-TRL exploratory technologies (S01 at TRL 4, S02 at TRL 5, S07 at TRL 5) consistent with 기술선도, but the uniform 'High' tier investment across all 7 technologies with identical scores suggests a lack of genuine strategic differentiation, and the extremely early completions for foundational technologies contradict a leadership-through-depth approach.",
+      "competitive_awareness": "score 2/5 - There is no discernible evidence of competitor positioning, technology gap analysis, or differentiation strategy embedded in the technology selection or timing decisions; all technologies receive identical investment scores, suggesting selections were made without competitive landscape intelligence.",
+      "market_timing": "score 1/5 - For 기술선도, technologies should complete 1-2 years before boom; however, Advanced Driver Monitoring Systems (3.25yr early), Domain Controllers for ADAS (2.75yr early), and Functional Safety Packaging (3.0yr early) complete far too early after their late 2030-Q4 target dates actually overshoot boom windows, while Automotive Grade HBM completes 2 years before its boom — the mean timing error of 1.86 years and multiple large misalignments represent systematic failure.",
+      "patent_market_convergence": "score 3/5 - The selected technologies — HBM, chiplets, AI accelerators, ADAS domain controllers — do represent areas of genuine patent and market activity convergence in automotive electronics, but the uniform scoring across all dimensions (market_opp=4.0, strategic_fit=5.0 for all) suggests this convergence was not deliberately analyzed or differentiated.",
+      "formula": "llm_structural_score = (0.25×2 + 0.25×3 + 0.2×2 + 0.2×1 + 0.1×3 - 1) / 4 × 100 = 28.7"
+    },
+    "v1_scores": {
+      "alignment": 3,
+      "sequencing": 1,
+      "investment": 4,
+      "coherence": 5,
+      "balance": 2,
+      "llm_structural_score_v1": 52.5
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "Automotive Grade HBM",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.799,
+        "cost_adjusted_return": 0.4127
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Architectures",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7003,
+        "cost_adjusted_return": 0.0275
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy Efficient AI Accelerators",
+        "patent_growth_norm": 0.0332,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.1459,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.0041
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Automotive Ethernet Networking",
+        "patent_growth_norm": 0.3128,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.2577,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.7135,
+        "cost_adjusted_return": 0.1507
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Advanced Driver Monitoring Systems",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.5326,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.396,
+        "cost_adjusted_return": 0.4732
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Domain Controllers for ADAS",
+        "patent_growth_norm": 0.745,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.4306,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.3904,
+        "cost_adjusted_return": 0.372
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Functional Safety Packaging",
+        "patent_growth_norm": 0.7883,
+        "market_growth_norm": 0.4419,
+        "market_size_norm": 0.0,
+        "value": 0.4479,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.2845,
+        "cost_adjusted_return": 0.4052
+      }
+    ],
+    "selection_quality": 35.4,
+    "cost_adjusted_return": 26.2,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 20,
+    "timing_accuracy_score": 44.2,
+    "backtest_score": 45.3,
+    "backtest_score_v1": 38.0,
+    "description": {
+      "selection_quality": "35.4/100 — 7개 기술 평균 value=0.354\n  ▲ Automotive Grade HBM: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ Advanced Driver Monitoring Systems: value=0.533 (특허↑=1.00, 시장↑=0.44, 규모=0.00)\n  ▲ Functional Safety Packaging: value=0.448 (특허↑=0.79, 시장↑=0.44, 규모=0.00)\n  ▲ Domain Controllers for ADAS: value=0.431 (특허↑=0.74, 시장↑=0.44, 규모=0.00)\n  ▼ Automotive Ethernet Networking: value=0.258 (특허↑=0.31, 시장↑=0.44, 규모=0.00)\n  ▼ Energy Efficient AI Accelerators: value=0.146 (특허↑=0.03, 시장↑=0.44, 규모=0.00)\n  ▼ Chiplet Interconnect Architectures: value=0.133 (특허↑=0.00, 시장↑=0.44, 규모=0.00)\n  [낮은 원인]\n  → Chiplet Interconnect Architectures: 특허 성장률 낮음 (norm=0.00)\n  → Energy Efficient AI Accelerators: 특허 성장률 낮음 (norm=0.03)",
+      "cost_adjusted_return": "26.2/100 — 평균 return=0.262\n  Advanced Driver Monitoring Systems: value=0.533 - 0.15×0.67(cost) = return +0.473 [High]\n  Automotive Grade HBM: value=0.533 - 0.15×0.67(cost) = return +0.413 [High]\n  Functional Safety Packaging: value=0.448 - 0.15×0.67(cost) = return +0.405 [High]\n  Domain Controllers for ADAS: value=0.431 - 0.15×0.67(cost) = return +0.372 [High]\n  Automotive Ethernet Networking: value=0.258 - 0.15×0.67(cost) = return +0.151 [High] ⚠ 과다투자\n  Chiplet Interconnect Architectures: value=0.133 - 0.15×0.67(cost) = return +0.028 [High] ⚠ 과다투자\n  Energy Efficient AI Accelerators: value=0.146 - 0.15×0.67(cost) = return -0.004 [High] ⚠ 과다투자\n  [과다투자 진단]\n  → Chiplet Interconnect Architectures: value 0.133인데 High tier\n  → Energy Efficient AI Accelerators: value 0.146인데 High tier\n  → Automotive Ethernet Networking: value 0.258인데 High tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "20.0/100 — 위반 4건 (1건당 -20점)\n  ⚠ Chiplet Interconnect Architectures: 선행 S01 완료 전 시작 (gap: -2.0Q)\n  ⚠ Energy Efficient AI Accelerators: 선행 S01 완료 전 시작 (gap: -1.0Q)\n  ⚠ Energy Efficient AI Accelerators: 선행 S02 완료 전 시작 (gap: -3.0Q)\n  ⚠ Automotive Ethernet Networking: 선행 S03 완료 전 시작 (gap: -2.0Q)",
+      "timing_accuracy": "44.2/100 — 평균 오차 1.86년\n  Advanced Driver Monitoring Systems: 3.2년 늦음 ⚠\n  Functional Safety Packaging: 3.0년 늦음 ⚠\n  Domain Controllers for ADAS: 2.8년 늦음 ⚠\n  Automotive Grade HBM: 2.0년 이름 ⚠\n  Energy Efficient AI Accelerators: 1.2년 이름 ⚠\n  Automotive Ethernet Networking: 0.5년 늦음\n  Chiplet Interconnect Architectures: 0.2년 이름",
+      "formula": "backtest_score = 0.35×35.4 + 0.35×26.2 + 0.05×100.0 + 0.05×20.0 + 0.10×44.2 = 45.3"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 4,
+    "dependency_details": [
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Architectures",
+        "prerequisite": "S01",
+        "tech_start": "2026-Q2",
+        "prereq_end": "~2026.75",
+        "gap_quarters": -2.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy Efficient AI Accelerators",
+        "prerequisite": "S01",
+        "tech_start": "2026-Q3",
+        "prereq_end": "~2026.75",
+        "gap_quarters": -1.0
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy Efficient AI Accelerators",
+        "prerequisite": "S02",
+        "tech_start": "2026-Q3",
+        "prereq_end": "~2027.25",
+        "gap_quarters": -3.0
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Automotive Ethernet Networking",
+        "prerequisite": "S03",
+        "tech_start": "2027-Q1",
+        "prereq_end": "~2027.5",
+        "gap_quarters": -2.0
+      }
+    ],
+    "mean_timing_error_years": 1.86,
+    "timing_details": [
+      {
+        "tech_id": "S01",
+        "tech_name": "Automotive Grade HBM",
+        "target_q": "2026-Q4",
+        "boom_q": "2028-Q4",
+        "error_years": -2.0
+      },
+      {
+        "tech_id": "S02",
+        "tech_name": "Chiplet Interconnect Architectures",
+        "target_q": "2027-Q2",
+        "boom_q": "2027-Q3",
+        "error_years": -0.25
+      },
+      {
+        "tech_id": "S03",
+        "tech_name": "Energy Efficient AI Accelerators",
+        "target_q": "2027-Q3",
+        "boom_q": "2028-Q4",
+        "error_years": -1.25
+      },
+      {
+        "tech_id": "S04",
+        "tech_name": "Automotive Ethernet Networking",
+        "target_q": "2027-Q4",
+        "boom_q": "2027-Q2",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "S05",
+        "tech_name": "Advanced Driver Monitoring Systems",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q3",
+        "error_years": 3.25
+      },
+      {
+        "tech_id": "S06",
+        "tech_name": "Domain Controllers for ADAS",
+        "target_q": "2030-Q4",
+        "boom_q": "2028-Q1",
+        "error_years": 2.75
+      },
+      {
+        "tech_id": "S07",
+        "tech_name": "Functional Safety Packaging",
+        "target_q": "2030-Q4",
+        "boom_q": "2027-Q4",
+        "error_years": 3.0
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 38.7,
+    "penalties": [
+      {
+        "type": "dependency_violation",
+        "amount": 12
+      },
+      {
+        "type": "timing_error",
+        "amount": 4.3
+      }
+    ],
+    "total_penalty": 16.3,
+    "final_composite_score": 22.4,
+    "description": "pre_penalty = 0.4×28.7(LLM) + 0.6×45.3(Backtest) = 38.7. Penalty: dependency_violation: -12.0pt, timing_error: -4.3pt. 총 -16.3pt. 최종 = 22.4.\n  [진단] LLM 구조 점수(28.7)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest 점수(45.3)가 낮음 → 기술 선택 또는 투자 배분 재검토.\n  [진단] 페널티(-16.3)가 큼 → 의존성/예산/타이밍 제약 위반 해소 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 28.7점, Backtest 경제성 평가 45.3점. 제약 위반으로 16.3점 차감. 최종 Composite Score: 22.4점.",
+    "key_failure_points": [
+      "의존성 위반: Chiplet Interconnect Architectures이 선행기술 S01 완료 전에 시작 (gap: -2.0Q)",
+      "의존성 위반: Energy Efficient AI Accelerators이 선행기술 S01 완료 전에 시작 (gap: -1.0Q)",
+      "의존성 위반: Energy Efficient AI Accelerators이 선행기술 S02 완료 전에 시작 (gap: -3.0Q)",
+      "의존성 위반: Automotive Ethernet Networking이 선행기술 S03 완료 전에 시작 (gap: -2.0Q)",
+      "타이밍 이슈: Automotive Grade HBM의 완료시점이 시장 개화 대비 -2.0년 차이",
+      "타이밍 이슈: Energy Efficient AI Accelerators의 완료시점이 시장 개화 대비 -1.25년 차이",
+      "타이밍 이슈: Advanced Driver Monitoring Systems의 완료시점이 시장 개화 대비 3.25년 차이",
+      "타이밍 이슈: Domain Controllers for ADAS의 완료시점이 시장 개화 대비 2.75년 차이",
+      "타이밍 이슈: Functional Safety Packaging의 완료시점이 시장 개화 대비 3.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

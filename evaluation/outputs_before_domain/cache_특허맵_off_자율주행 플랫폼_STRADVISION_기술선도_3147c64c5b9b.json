@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "AI Vision Perception / ADAS / Computer Vision",
+    "num_technologies": 3
+  },
+  "llm_judge": {
+    "trl_pathway": 4,
+    "strategic_fidelity": 2,
+    "competitive_awareness": 2,
+    "market_timing": 3,
+    "patent_market_convergence": 3,
+    "llm_structural_score": 45.0,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "trl_pathway": 4,
+        "strategic_fidelity": 2,
+        "competitive_awareness": 2,
+        "market_timing": 3,
+        "patent_market_convergence": 3
+      }
+    },
+    "evidence": {
+      "trl_pathway": "T01 (TRL 6) and T05 (TRL 6) have 2-year and 1-year timelines respectively — T05's 1-year window (TRL 6 to target) is aggressive but not impossible, while T01 and T02's progressions are reasonable given their durations.",
+      "strategic_fidelity": "A 기술선도 strategy should feature lower-TRL exploratory technologies (TRL 3-5) and a broader R&D-heavy portfolio, but all three selected technologies are TRL 6-7 (near-commercial), the portfolio is very small (only 3 technologies), and strategic_fit scores for T05 are only 3.0, suggesting a market-followership rather than technology leadership orientation.",
+      "competitive_awareness": "There is no visible evidence of competitor positioning, differentiation opportunities, or timing advantage design relative to competitors; technology selections appear driven by scoring metrics rather than a coherent competitive intelligence framework.",
+      "market_timing": "For 기술선도, completing 1-2 years before boom is ideal. T05 completes 0.5 years early (good), T01 completes 0.75 years late (missing the boom window), and T02 completes 2.0 years after its boom (a significant miss), dragging down overall timing performance.",
+      "patent_market_convergence": "All three technologies are in active ADAS/CV domains with both patent and market activity, suggesting some convergence awareness, but the small portfolio and lack of explicit convergence rationale make it appear partially coincidental rather than deliberately targeted."
+    },
+    "strengths": [
+      "Dependency structure is correctly enforced — T02 properly starts after T01 completes, with zero dependency violations",
+      "Budget is fully utilized with no overspend, indicating disciplined resource allocation"
+    ],
+    "weaknesses": [
+      "Portfolio is too small (3 technologies) and too high-TRL (6-7) for a credible 기술선도 strategy, lacking the exploratory, pre-competitive R&D investments expected",
+      "T02 (다중 센서 퓨전 아키텍처) misses its market boom by 2.0 years, representing a fundamental timing misalignment for the anchor architecture technology"
+    ],
+    "missing_technologies": [
+      "Low-TRL (3-5) neuromorphic or event-driven vision sensing technologies for true technology leadership positioning",
+      "Transformer-based end-to-end perception architectures (TRL 3-4) as a forward-looking R&D bet",
+      "Adversarial robustness and domain adaptation technologies to differentiate from commodity ADAS solutions"
+    ],
+    "investment_issues": [
+      "Allocating Strategic tier to all three technologies dilutes the meaning of strategic prioritization — a true leadership portfolio should differentiate between core bets and enabling technologies",
+      "T05 (블러 제거 및 HDR 이미지 처리) with strategic_fit=3.0 receiving High tier investment may represent misallocation relative to the declared technology leadership objective"
+    ],
+    "timing_issues": [
+      "T02 (다중 센서 퓨전 아키텍처) completes at 2030-Q1 but market boom is 2028-Q1 — a 2-year post-boom delivery renders it commercially reactive rather than market-leading",
+      "T05 (블러 제거 및 HDR 이미지 처리) completes 0.5 years before boom, which is slightly early but acceptable; however, for 기술선도 a 1-1.5 year preemption would be more strategically optimal"
+    ],
+    "description": {
+      "trl_pathway": "score 4/5 - T01 (TRL 6) and T05 (TRL 6) have 2-year and 1-year timelines respectively — T05's 1-year window (TRL 6 to target) is aggressive but not impossible, while T01 and T02's progressions are reasonable given their durations.",
+      "strategic_fidelity": "score 2/5 - A 기술선도 strategy should feature lower-TRL exploratory technologies (TRL 3-5) and a broader R&D-heavy portfolio, but all three selected technologies are TRL 6-7 (near-commercial), the portfolio is very small (only 3 technologies), and strategic_fit scores for T05 are only 3.0, suggesting a market-followership rather than technology leadership orientation.",
+      "competitive_awareness": "score 2/5 - There is no visible evidence of competitor positioning, differentiation opportunities, or timing advantage design relative to competitors; technology selections appear driven by scoring metrics rather than a coherent competitive intelligence framework.",
+      "market_timing": "score 3/5 - For 기술선도, completing 1-2 years before boom is ideal. T05 completes 0.5 years early (good), T01 completes 0.75 years late (missing the boom window), and T02 completes 2.0 years after its boom (a significant miss), dragging down overall timing performance.",
+      "patent_market_convergence": "score 3/5 - All three technologies are in active ADAS/CV domains with both patent and market activity, suggesting some convergence awareness, but the small portfolio and lack of explicit convergence rationale make it appear partially coincidental rather than deliberately targeted.",
+      "formula": "llm_structural_score = (0.25×4 + 0.25×2 + 0.2×2 + 0.2×3 + 0.1×3 - 1) / 4 × 100 = 45.0"
+    },
+    "v1_scores": {
+      "alignment": 5,
+      "sequencing": 5,
+      "investment": 5,
+      "coherence": 3,
+      "balance": 3,
+      "llm_structural_score_v1": 85.0
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "시뮬레이션 기반 합성 데이터 생성",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 1.0,
+        "market_size_norm": 1.0,
+        "value": 1.0,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 12.2755
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "다중 센서 퓨전 아키텍처",
+        "patent_growth_norm": 0.2219,
+        "market_growth_norm": 0.8219,
+        "market_size_norm": 1.0,
+        "value": 0.6354,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 0.8333,
+        "cost_adjusted_return": 9.2448
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "블러 제거 및 HDR 이미지 처리",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8447,
+        "market_size_norm": 0.7142,
+        "value": 0.4677,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.5556,
+        "cost_adjusted_return": 7.9594
+      }
+    ],
+    "selection_quality": 70.1,
+    "cost_adjusted_return": 100,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 67.6,
+    "backtest_score": 79.4,
+    "backtest_score_v1": 86.3,
+    "description": {
+      "selection_quality": "70.1/100 — 3개 기술 평균 value=0.701\n  ▲ 시뮬레이션 기반 합성 데이터 생성: value=1.000 (특허↑=1.00, 시장↑=1.00, 규모=1.00)\n  ▼ 다중 센서 퓨전 아키텍처: value=0.635 (특허↑=0.22, 시장↑=0.82, 규모=1.00)\n  ▼ 블러 제거 및 HDR 이미지 처리: value=0.468 (특허↑=0.00, 시장↑=0.84, 규모=0.71)",
+      "cost_adjusted_return": "100.0/100 — 평균 return=9.827\n  시뮬레이션 기반 합성 데이터 생성: value=1.000 - 0.15×1.00(cost) = return +12.275 [Strategic]\n  다중 센서 퓨전 아키텍처: value=0.635 - 0.15×1.00(cost) = return +9.245 [Strategic]\n  블러 제거 및 HDR 이미지 처리: value=0.468 - 0.15×0.67(cost) = return +7.959 [High]",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "67.6/100 — 평균 오차 1.08년\n  다중 센서 퓨전 아키텍처: 2.0년 늦음 ⚠\n  시뮬레이션 기반 합성 데이터 생성: 0.8년 늦음\n  블러 제거 및 HDR 이미지 처리: 0.5년 이름",
+      "formula": "backtest_score = 0.35×70.1 + 0.35×100.0 + 0.05×100.0 + 0.05×100.0 + 0.10×67.6 = 79.4"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.08,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "시뮬레이션 기반 합성 데이터 생성",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "다중 센서 퓨전 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "블러 제거 및 HDR 이미지 처리",
+        "target_q": "2027-Q1",
+        "boom_q": "2027-Q3",
+        "error_years": -0.5
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 65.6,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 0.4
+      }
+    ],
+    "total_penalty": 0.4,
+    "final_composite_score": 65.2,
+    "description": "pre_penalty = 0.4×45.0(LLM) + 0.6×79.4(Backtest) = 65.6. Penalty: timing_error: -0.4pt. 총 -0.4pt. 최종 = 65.2.\n  [진단] LLM 구조 점수(45.0)가 낮음 → 로드맵 구조 개선 필요.\n  [진단] Backtest(79.4)가 LLM(45.0)보다 34.4pt 높음 → 좋은 기술 선택이지만 로드맵 구조 정비 필요."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 45.0점, Backtest 경제성 평가 79.4점. 제약 위반으로 0.4점 차감. 최종 Composite Score: 65.2점.",
+    "key_failure_points": [
+      "타이밍 이슈: 다중 센서 퓨전 아키텍처의 완료시점이 시장 개화 대비 2.0년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}

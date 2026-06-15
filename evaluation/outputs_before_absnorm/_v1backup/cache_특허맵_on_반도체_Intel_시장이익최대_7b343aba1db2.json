@@ -1,0 +1,208 @@
+{
+  "metadata": {
+    "scenario": "multi-agent (full)",
+    "mode": "absolute",
+    "reference_year": 2030,
+    "domain": "Semiconductor / IDM / Foundry",
+    "num_technologies": 5
+  },
+  "llm_judge": {
+    "alignment": 4,
+    "sequencing": 3,
+    "investment": 4,
+    "coherence": 4,
+    "balance": 3,
+    "llm_structural_score": 67.5,
+    "aggregation": "single",
+    "models_used": [
+      "anthropic:claude-sonnet-4-6"
+    ],
+    "per_model_scores": {
+      "anthropic:claude-sonnet-4-6": {
+        "alignment": 4,
+        "sequencing": 3,
+        "investment": 4,
+        "coherence": 4,
+        "balance": 3
+      }
+    },
+    "evidence": {
+      "alignment": "All five technologies target high-growth semiconductor segments (advanced logic nodes, AI-driven manufacturing, advanced packaging, and compute-in-memory) that are well-positioned for the 2027-2030 boom window, showing strong market awareness. No declining or saturated markets are included, though the mean timing error of 1.25 years indicates market timing execution is imperfect.",
+      "sequencing": "Dependency chains are technically respected (T01→T02→T03, zero violations), but the hybrid bonding packaging timeline collapses to a zero-duration phase (2030-Q1 to 2030-Q1), which is operationally implausible and suggests a scheduling artifact rather than a real development plan.",
+      "investment": "The Strategic tier is correctly assigned to GAA, Backside PDN, and Hybrid Bonding given their high market opportunity and strategic fit scores; AI-based process control at High tier and CIM at Medium tier are consistent with their lower market_opp and higher uncertainty scores, reflecting rational allocation logic.",
+      "coherence": "The roadmap tells a coherent story of advancing from transistor-level process (GAA) through power delivery (Backside PDN) to advanced packaging (Hybrid Bonding), while enabling AI-driven manufacturing intelligence and future compute paradigms (CIM), covering TRL 5-7 across research-to-near-deployment stages.",
+      "balance": "The portfolio is concentrated heavily in the Strategic investment tier (three of five technologies), with limited Low-tier or exploratory bets, creating risk concentration; short-term coverage is thin as the earliest completion is 2027-Q1 for AI process control, and the zero-duration hybrid bonding phase undermines near-term delivery credibility."
+    },
+    "strengths": [
+      "Zero dependency violations across all five technologies, ensuring the logical prerequisite chain (GAA→Backside PDN→Hybrid Bonding) is strictly honored.",
+      "Strong technology-market alignment with all selections targeting confirmed high-growth semiconductor domains and investment tiers well-correlated to market opportunity and strategic fit scores."
+    ],
+    "weaknesses": [
+      "Hybrid bonding packaging has a zero-duration development window (2030-Q1 to 2030-Q1) with a 2.25-year timing error relative to the 2027-Q4 market boom, rendering it effectively a missed-market opportunity.",
+      "Over-concentration in the Strategic investment tier (60% of portfolio) with no Low-tier technologies, reducing portfolio risk diversification and leaving little room for exploratory or hedge bets."
+    ],
+    "missing_technologies": [
+      "EUV/High-NA lithography process technology, which is a fundamental enabler for sub-2nm nodes and directly prerequisite to GAA commercialization at scale",
+      "Advanced thermal management / liquid cooling solutions, critical for high-density 3D-stacked packages enabled by hybrid bonding",
+      "Chiplet interconnect standards (UCIe), needed to fully leverage hybrid bonding and backside PDN in heterogeneous integration scenarios"
+    ],
+    "investment_issues": [
+      "Three Strategic-tier designations with no Low-tier technologies creates an unbalanced portfolio where all investments are high-commitment, eliminating optionality for pivoting if market conditions shift.",
+      "CIM architecture at Medium tier with TRL 5 and a 2029-Q2 boom may be under-resourced to reach deployment readiness in time, given the longer maturation lead time typically required from TRL 5."
+    ],
+    "timing_issues": [
+      "Hybrid bonding packaging completion is scheduled at 2030-Q1 but the market boom is 2027-Q4, a 2.25-year lag that risks ceding first-mover advantage to competitors already at TRL 7.",
+      "Backside PDN completes at 2030-Q1 versus a 2028-Q1 market boom (2.0-year error), meaning the technology arrives after the peak adoption window.",
+      "Hybrid bonding shows a zero-duration development phase (start = end = 2030-Q1), which is a scheduling inconsistency that must be corrected for the plan to be executable."
+    ],
+    "description": {
+      "alignment": "점수 4/5.\n  시장 성장률 기준 최고: 메모리 내 연산 (CIM) 아키텍처 (norm=0.850)\n  시장 성장률 기준 최저: 하이브리드 본딩 패키징 (norm=0.000)\n  전체 평균: 0.333",
+      "sequencing": "점수 3/5 — 의존성 위반 0건. 모든 선행관계가 올바르게 구성됨.",
+      "investment": "점수 4/5 — tier 불일치 3건:\n  ⚠ GAA 트랜지스터 게이트 공정: value=0.061 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 백사이드 전력망 (Backside PDN): value=0.210 → 기대 Low, 실제 Strategic (차이 3단계)\n  ⚠ 하이브리드 본딩 패키징: value=0.400 → 기대 Low, 실제 Strategic (차이 3단계)",
+      "coherence": "점수 4/5\n  카테고리 분포: Architecture(2개), Process(1개), Packaging(1개), Equipment(1개)\n  TRL 범위: 5~7\n  다양한 카테고리와 넓은 TRL 범위 → 높은 점수",
+      "balance": "점수 3/5\n  투자등급 분포: High(1개), Medium(1개), Strategic(3개)\n  없는 등급: Low",
+      "formula": "llm_structural_score = (0.3×4 + 0.2×3 + 0.2×4 + 0.2×4 + 0.1×3 - 1) / 4 × 100 = 67.5"
+    }
+  },
+  "backtest": {
+    "tech_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "patent_growth_norm": 0.1515,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.0606,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": -0.0894
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 전력망 (Backside PDN)",
+        "patent_growth_norm": 0.526,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.2104,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.0604
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "하이브리드 본딩 패키징",
+        "patent_growth_norm": 1.0,
+        "market_growth_norm": 0.0,
+        "market_size_norm": 0.0,
+        "value": 0.4,
+        "investment_tier": "Strategic",
+        "cost_proxy": 4,
+        "cost_norm": 1.0,
+        "cost_adjusted_return": 0.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 기반 공정 제어 및 예측",
+        "patent_growth_norm": 0.8373,
+        "market_growth_norm": 0.8159,
+        "market_size_norm": 0.8159,
+        "value": 0.8245,
+        "investment_tier": "High",
+        "cost_proxy": 3,
+        "cost_norm": 0.6667,
+        "cost_adjusted_return": 0.7245
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "patent_growth_norm": 0.0,
+        "market_growth_norm": 0.8498,
+        "market_size_norm": 0.8498,
+        "value": 0.5099,
+        "investment_tier": "Medium",
+        "cost_proxy": 2,
+        "cost_norm": 0.3333,
+        "cost_adjusted_return": 0.4599
+      }
+    ],
+    "selection_quality": 40.1,
+    "cost_adjusted_return": 28.1,
+    "budget_feasibility_score": 100.0,
+    "dependency_validity_score": 100,
+    "timing_accuracy_score": 62.5,
+    "backtest_score": 50.1,
+    "description": {
+      "selection_quality": "40.1/100 — 5개 기술 평균 value=0.401\n  ▲ AI 기반 공정 제어 및 예측: value=0.825 (특허↑=0.84, 시장↑=0.82, 규모=0.82)\n  ▲ 메모리 내 연산 (CIM) 아키텍처: value=0.510 (특허↑=0.00, 시장↑=0.85, 규모=0.85)\n  ▼ 하이브리드 본딩 패키징: value=0.400 (특허↑=1.00, 시장↑=0.00, 규모=0.00)\n  ▼ 백사이드 전력망 (Backside PDN): value=0.210 (특허↑=0.53, 시장↑=0.00, 규모=0.00)\n  ▼ GAA 트랜지스터 게이트 공정: value=0.061 (특허↑=0.15, 시장↑=0.00, 규모=0.00)\n  [낮은 원인]\n  → GAA 트랜지스터 게이트 공정: 특허 성장률 낮음 (norm=0.15)\n  → GAA 트랜지스터 게이트 공정: 시장 성장률 낮음 (norm=0.00)\n  → 백사이드 전력망 (Backside PDN): 시장 성장률 낮음 (norm=0.00)",
+      "cost_adjusted_return": "28.1/100 — 평균 return=0.281\n  AI 기반 공정 제어 및 예측: value=0.825 - 0.15×0.67(cost) = return +0.725 [High]\n  메모리 내 연산 (CIM) 아키텍처: value=0.510 - 0.15×0.33(cost) = return +0.460 [Medium]\n  하이브리드 본딩 패키징: value=0.400 - 0.15×1.00(cost) = return +0.250 [Strategic]\n  백사이드 전력망 (Backside PDN): value=0.210 - 0.15×1.00(cost) = return +0.060 [Strategic] ⚠ 과다투자\n  GAA 트랜지스터 게이트 공정: value=0.061 - 0.15×1.00(cost) = return -0.089 [Strategic] ⚠ 과다투자\n  [과다투자 진단]\n  → GAA 트랜지스터 게이트 공정: value 0.061인데 Strategic tier\n  → 백사이드 전력망 (Backside PDN): value 0.210인데 Strategic tier",
+      "budget_feasibility": "100.0/100 — 예산 내 집행.",
+      "dependency_validity": "100.0/100 — 의존성 위반 0건. 전체 선행관계 준수.",
+      "timing_accuracy": "62.5/100 — 평균 오차 1.25년\n  하이브리드 본딩 패키징: 2.2년 늦음 ⚠\n  백사이드 전력망 (Backside PDN): 2.0년 늦음 ⚠\n  GAA 트랜지스터 게이트 공정: 0.8년 늦음\n  메모리 내 연산 (CIM) 아키텍처: 0.8년 늦음\n  AI 기반 공정 제어 및 예측: 0.5년 늦음",
+      "formula": "backtest_score = 0.35×40.1 + 0.35×28.1 + 0.10×100.0 + 0.10×100.0 + 0.10×62.5 = 50.1"
+    }
+  },
+  "constraints": {
+    "budget_violation_pct": 0.0,
+    "dependency_violations": 0,
+    "dependency_details": [],
+    "mean_timing_error_years": 1.25,
+    "timing_details": [
+      {
+        "tech_id": "T01",
+        "tech_name": "GAA 트랜지스터 게이트 공정",
+        "target_q": "2028-Q1",
+        "boom_q": "2027-Q2",
+        "error_years": 0.75
+      },
+      {
+        "tech_id": "T02",
+        "tech_name": "백사이드 전력망 (Backside PDN)",
+        "target_q": "2030-Q1",
+        "boom_q": "2028-Q1",
+        "error_years": 2.0
+      },
+      {
+        "tech_id": "T03",
+        "tech_name": "하이브리드 본딩 패키징",
+        "target_q": "2030-Q1",
+        "boom_q": "2027-Q4",
+        "error_years": 2.25
+      },
+      {
+        "tech_id": "T04",
+        "tech_name": "AI 기반 공정 제어 및 예측",
+        "target_q": "2027-Q1",
+        "boom_q": "2026-Q3",
+        "error_years": 0.5
+      },
+      {
+        "tech_id": "T05",
+        "tech_name": "메모리 내 연산 (CIM) 아키텍처",
+        "target_q": "2030-Q1",
+        "boom_q": "2029-Q2",
+        "error_years": 0.75
+      }
+    ]
+  },
+  "composite": {
+    "pre_penalty_score": 57.1,
+    "penalties": [
+      {
+        "type": "timing_error",
+        "amount": 1.2
+      }
+    ],
+    "total_penalty": 1.2,
+    "final_composite_score": 55.9,
+    "description": "pre_penalty = 0.4×67.5(LLM) + 0.6×50.1(Backtest) = 57.1. Penalty: timing_error: -1.2pt. 총 -1.2pt. 최종 = 55.9."
+  },
+  "diagnostics": {
+    "summary": "LLM 구조 평가 67.5점, Backtest 경제성 평가 50.1점. 제약 위반으로 1.2점 차감. 최종 Composite Score: 55.9점.",
+    "key_failure_points": [
+      "타이밍 이슈: 백사이드 전력망 (Backside PDN)의 완료시점이 시장 개화 대비 2.0년 차이",
+      "타이밍 이슈: 하이브리드 본딩 패키징의 완료시점이 시장 개화 대비 2.25년 차이"
+    ],
+    "comparison_note": "pairwise mode를 사용하여 다른 시나리오와 비교하세요."
+  }
+}
